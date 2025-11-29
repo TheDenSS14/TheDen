@@ -109,9 +109,11 @@ public sealed class HealingSystem : EntitySystem
             }
         }
 
-        // Restores missing blood
-        if (healing.ModifyBloodLevel != 0)
+        // Restores missing blood if it should
+        if (healing.ModifyBloodLevel != 0 && ShouldChangeBlood(entity.Owner, (args.Used.Value, healing)))
+        {
             _bloodstreamSystem.TryModifyBloodLevel(entity.Owner, healing.ModifyBloodLevel);
+        }
 
         var healed = _damageable.TryChangeDamage(entity.Owner, healing.Damage * _damageable.UniversalTopicalsHealModifier, true, origin: args.User, canSever: false); // Shitmed Change
 
@@ -152,6 +154,19 @@ public sealed class HealingSystem : EntitySystem
         if (!args.Repeat && !dontRepeat)
             _popupSystem.PopupEntity(Loc.GetString("medical-item-finished-using", ("item", args.Used)), entity.Owner, args.User);
         args.Handled = true;
+    }
+
+    private bool ShouldChangeBlood(EntityUid target, Entity<HealingComponent?> healing)
+    {
+        if (!Resolve(healing.Owner, ref healing.Comp, false))
+            return false;
+
+        var currentBloodReagent = _bloodstreamSystem.GetCurrentBloodReagent(target);
+
+        if (healing.Comp.ModifyExclusively.Count == 0 || currentBloodReagent == null)
+            return true;
+
+        return healing.Comp.ModifyExclusively.Contains(currentBloodReagent.Value);
     }
 
     private bool HasDamage(DamageableComponent component, HealingComponent healing)
@@ -226,9 +241,14 @@ public sealed class HealingSystem : EntitySystem
             HasDamage(targetDamage, component) ||
             IsPartDamaged(user, target) || // Shitmed Change
             component.ModifyBloodLevel > 0 // Special case if healing item can restore lost blood...
-                && TryComp<BloodstreamComponent>(target, out var bloodstream)
-                && _solutionContainerSystem.ResolveSolution(target, bloodstream.BloodSolutionName, ref bloodstream.BloodSolution, out var bloodSolution)
-                && bloodSolution.Volume < bloodSolution.MaxVolume; // ...and there is lost blood to restore.
+            && TryComp<BloodstreamComponent>(target, out var bloodstream)
+            && _solutionContainerSystem.ResolveSolution(
+                target,
+                bloodstream.BloodSolutionName,
+                ref bloodstream.BloodSolution,
+                out var bloodSolution)
+            && bloodSolution.Volume < bloodSolution.MaxVolume // ...and there is lost blood to restore.
+            && ShouldChangeBlood(target, (uid, null));
 
         if (!anythingToDo)
         {

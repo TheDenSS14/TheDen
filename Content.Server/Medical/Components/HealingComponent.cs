@@ -24,9 +24,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Server.Medical.Components
@@ -55,6 +57,10 @@ namespace Content.Server.Medical.Components
         [DataField("ModifyBloodLevel")]
         [ViewVariables(VVAccess.ReadWrite)]
         public float ModifyBloodLevel = 0.0f;
+
+        [DataField]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public List<ProtoId<ReagentPrototype>> ModifyExclusively = [];
 
         /// <remarks>
         ///     The supported damage types are specified using a <see cref="DamageContainerPrototype"/>s. For a
