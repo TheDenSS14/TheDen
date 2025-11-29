@@ -1,0 +1,13 @@
+- type: listing
+  id: UplinkBloodRedRoseBox
+  name: uplink-bloodredrosekit-name
+  description: uplink-bloodredrosekit-desc
+  icon: { sprite: /Textures/_Impstation/Objects/Storage/boxes.rsi, state: syndicaterosebox }
+  productEntity: BloodRedRoseBox
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 5
+  cost:
+    Telecrystal: 15
+  categories:
+    - UplinkWeaponry
