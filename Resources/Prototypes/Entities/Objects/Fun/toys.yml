@@ -91,7 +91,7 @@
 # SPDX-FileCopyrightText: 2025 slarticodefast
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # A "squeaky toy" is just a toy that squeaks. They lack stashes as well. Plushies are made of fabric and all.
 
@@ -2533,44 +2533,6 @@
     - type: FoodSequenceElement
       entries:
         CottonBurger: ShadowkinPlushie
-
-- type: entity
-  parent: BasePlushie
-  id: PlushieGrim
-  name: grimble plushie
-  description: Smells like ginger.
-  components:
-  - type: Sprite
-    sprite: Objects/Fun/toys.rsi
-    state: plushie_grim
-  - type: StaminaDamageOnHit
-    damage: 0.8
-  - type: EmitSoundOnActivate
-    sound:
-      collection: ToySqueak
-  - type: EmitSoundOnUse
-    sound:
-      collection: ToySqueak
-  - type: EmitSoundOnCollide
-    sound:
-      collection: ToySqueak
-  - type: EmitSoundOnLand
-    sound:
-      collection: ToySqueak
-  - type: UseDelay
-    delay: 1.5
-  - type: MeleeWeapon
-    wideAnimationRotation: -135
-    attackRate: 1.2
-    damage:
-      types:
-        Blunt: 0
-    soundHit:
-      collection: ToySqueak
-    soundSwing:
-      collection: ToySqueak
-    soundNoDamage:
-      collection: ToySqueak
 
 - type: entity
   parent: BasePlushie

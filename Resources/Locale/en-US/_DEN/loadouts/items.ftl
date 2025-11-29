@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # head
 loadout-name-LoadoutHeadHatPatrolCap = patrol cap (colorable)
@@ -32,6 +32,7 @@ loadout-name-LoadoutClothingWaistApronStripesVertical = waist apron (vertical st
 loadout-name-LoadoutClothingOuterCoatTurtleneckHalfBlouse = turtleneck half blouse (colorable)
 loadout-name-LoadoutClothingOuterCoatBomberWhite = lightweight bomber jacket (colorable)
 loadout-name-LoadoutClothingOuterCoatBomberWhiteLoose = lightweight bomber jacket (loose, colorable)
+loadout-name-LoadoutOuterVestValet = valet vest
 
 # innerclothing
 loadout-name-LoadoutClothingUniformBootyShorts = booty shorts (colorable)

@@ -28,7 +28,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_meal.yml
 # A bunch of different meals. This stuff doesn't come off their plates because
@@ -457,10 +457,10 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 10
+        maxVol: 12 # DEN: 10 -> 15
         reagents:
-        - ReagentId: Nutriment
-          Quantity: 2
+        - ReagentId: Protein # DEN: 2 nutriment -> 6 protein
+          Quantity: 6
         - ReagentId: TableSalt
           Quantity: 1
         - ReagentId: Blackpepper
@@ -468,6 +468,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement # DEN - Make fried eggs burger ingredients
+    entries:
+      Burger: FriedEgg
 # Tastes like egg, salt, pepper.
 
 - type: entity

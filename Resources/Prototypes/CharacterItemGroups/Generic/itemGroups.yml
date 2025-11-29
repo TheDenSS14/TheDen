@@ -7,7 +7,7 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tonk-GCR
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Alphabetically ordered
 # Please do not flood this one file with groups, make more files to sort them
@@ -448,6 +448,60 @@
       id: ClothingUniformJumpskirtTacticalMaid
     - type: loadout
       id: ClothingUniformJumpsuitTacticool
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtBlueElegantDress
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtYellowOldDress
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtRedTurtleneckDress
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtOrangeStripedDress
+    - type: loadout
+      id: LoadoutMilitaryBratJumpsuitAlt
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtBlackElegantDress
+    - type: loadout
+      id: LoadoutUniformBandedDancersGarb
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtPurpleElegantDress
+    - type: loadout
+      id: LoadoutUniformWhiteTurtleskirt
+    - type: loadout
+      id: LoadoutUniformRedSidelessDress
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtYellowTurtleneckDress
+    - type: loadout
+      id: LoadoutClothingUniformSwimsuitBlue
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtGreenTurtleneckDress
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtPurpleTurtleneckDress
+    - type: loadout
+      id: LoadoutUniformBlackPetticoatDress
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtCyanStripedDress
+    - type: loadout
+      id: LoadoutUniformRedDancersGarb
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtPinkStripedDress
+    - type: loadout
+      id: LoadoutUniformPurpleNightclubDress
+    - type: loadout
+      id: LoadoutUniformWhiteTurtleneck
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtRedElegantDress
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtGreenElegantDress
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtRedStripedDress
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtGreenStripedDress
+    - type: loadout
+      id: LoadoutUniformBlueFancyLad
+    - type: loadout
+      id: LoadoutUniformJumpsuitLederhosen
+    # End DEN
     # TheDen - Below
     - type: loadout
       id: ClothingUniformNudityPermit
@@ -495,5 +549,9 @@
       id: LoadoutClothingUniformSimplePants
     - type: loadout
       id: LoadoutMilitaryBratJumpsuit
+    - type: loadout
+      id: LoadoutUniformJumpsuitBlackTurtleneckShorts
+    - type: loadout
+      id: LoadoutUniformJumpsuitBlackTurtleneckShortsFlipped
     - type: loadout
       id: LoadoutClothingUniformSkirtColorable

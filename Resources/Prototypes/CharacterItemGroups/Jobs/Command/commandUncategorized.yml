@@ -2,9 +2,10 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # All Command
 - type: characterItemGroup
@@ -23,7 +24,7 @@
   maxItems: 3
   items:
     - type: loadout
-      id: DrinkCommandFlaskFull
+      id: LoadoutCommandFlaskFull # DEN: Fix tests
 
 #- type: characterItemGroup
 #  id: LoadoutCommandBelt

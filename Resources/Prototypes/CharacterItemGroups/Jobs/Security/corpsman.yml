@@ -5,9 +5,10 @@
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Corpsman
 - type: characterItemGroup
@@ -54,6 +55,10 @@
       id: LoadoutMedicalEyesCorpsmanEyepatchHudMedical
     - type: loadout
       id: LoadoutClothingEyesCorpsmanHudMedPrescription
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutCorpsmanMedicalGlasses
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutCorpsmanGloves
@@ -115,8 +120,8 @@
   maxItems: 1
   items:
     - type: loadout
-      id: LoadoutClothingUniformJumpsuitCorpsman
+      id: LoadoutUniformJumpsuitCorpsman # DEN: Fix tests
     - type: loadout
-      id: LoadoutClothingUniformJumpskirtCorpsman
+      id: LoadoutUniformJumpskirtCorpsman # DEN: Fix tests
     - type: loadout
-      id: LoadoutClothingUniformJumpsuitCorpsmanSummer
+      id: LoadoutUniformJumpsuitCorpsmanSummer # DEN: Fix tests

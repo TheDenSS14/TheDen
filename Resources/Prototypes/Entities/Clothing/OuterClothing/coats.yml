@@ -43,6 +43,7 @@
 # SPDX-FileCopyrightText: 2025 GNUtopia
 # SPDX-FileCopyrightText: 2025 KekaniCreates
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 RosySaturniidae
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
@@ -493,15 +494,21 @@
     coefficient: 0.8 #Den
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: ClothingOuterStorageFoldableBase #den (so it can zip)
   id: ClothingOuterCoatParamedicWB
   name: paramedic windbreaker
   description: A paramedic's trusty windbreaker, for all the space wind.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Coats/windbreaker_paramedic.rsi
+    sprite: _DEN/Clothing/OuterClothing/Coats/windbreaker_paramedic.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Coats/windbreaker_paramedic.rsi
+    sprite: _DEN/Clothing/OuterClothing/Coats/windbreaker_paramedic.rsi
+
+
+- type: entity #den
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatParamedicWB]
+  id: ClothingOuterCoatParamedicWBOpened
+  name: paramedic windbreaker
 
 - type: entity
   parent: ClothingOuterStorageBase

@@ -2,9 +2,10 @@
 # SPDX-FileCopyrightText: 2025 Alice
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Detective
 #- type: characterItemGroup
@@ -38,6 +39,10 @@
   items:
     - type: loadout
       id: LoadoutDetectiveGloves
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutClothingHandsDetectiveWarmers
+    # End DEN
 
 #- type: characterItemGroup
 #  id: LoadoutDetectiveHead
@@ -69,6 +74,10 @@
       id: LoadoutOuterVestDetective
     - type: loadout
       id: LoadoutOuterCoatOpenCoatDetective
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutClothingOuterOpenCoatDetective
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutDetectiveShoes
@@ -90,7 +99,7 @@
     - type: loadout
       id: LoadoutUniformJumpskirtDetectiveGrey
     - type: loadout
-      id: LoadoutUniformJumpsuitNanotrasenDetective
+      id: LoadoutClothingUniformJumpsuitNanotrasenDetective # DEN: Fix tests
     - type: loadout
       id: LoadoutClothingUniformDetectiveThong
     - type: loadout # DEN

@@ -138,6 +138,28 @@
       group: LoadoutUniformsCivilian
 
 - type: loadout
+  id: LoadoutUniformJumpsuitBlackTurtleneckShorts
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitBlackTurtleneckShorts
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+
+- type: loadout
+  id: LoadoutUniformJumpsuitBlackTurtleneckShortsFlipped
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitBlackTurtleneckShortsFlipped
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+      
+- type: loadout
   id: LoadoutClothingUniformSkirtColorable
   category: Uniform
   cost: 0

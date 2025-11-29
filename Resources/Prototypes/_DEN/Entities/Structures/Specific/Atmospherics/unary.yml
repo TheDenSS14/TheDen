@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: GasVentScrubber
+  id: GasVentScrubberExcludingVapor
+  suffix: Exclude water vapor
+  components:
+  - type: GasVentScrubber
+    wideNet: true # Air alarm with auto mode overrides filters with hardcoded defaults so default to widenet
+    filterGases:
+    # Exclude water vapor from this list
+    - CarbonDioxide
+    - Plasma
+    - Tritium
+    - Ammonia
+    - NitrousOxide
+    - Frezon
+    - BZ
+    - Healium
+    - Nitrium
+    - Pluoxium
+    - Hydrogen
+    - HyperNoblium
+    - ProtoNitrate
+    - Zauker
+    - Halon
+    - Helium
+    - AntiNoblium

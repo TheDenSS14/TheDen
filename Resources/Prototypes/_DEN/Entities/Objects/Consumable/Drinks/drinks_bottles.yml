@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -19,3 +20,183 @@
   - type: Sprite
     sprite: _DEN/Objects/Consumable/Drinks/jaegermisterbottle.rsi
   - type: Sealable
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkJuiceAppleJug
+  suffix: apple juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: JuiceApple
+          Quantity: 150
+  - type: Label
+    currentLabel: apple juice
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkJuiceBananaJug
+  suffix: banana juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: JuiceBanana
+          Quantity: 150
+  - type: Label
+    currentLabel: banana juice
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkJuiceBerryJug
+  suffix: berry juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: JuiceBerry
+          Quantity: 150
+  - type: Label
+    currentLabel: berry juice
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkBloodJug
+  suffix: blood
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: Blood
+          Quantity: 150
+  - type: Label
+    currentLabel: blood
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkShimmeringBloodJug
+  suffix: psychedelic blood
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: ShimmeringBlood
+          Quantity: 150
+  - type: Label
+    currentLabel: psychedelic blood
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkJuiceCherryJug
+  suffix: cherry juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: JuiceCherry
+          Quantity: 150
+  - type: Label
+    currentLabel: cherry juice
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkJuiceGrapeJug
+  suffix: grape juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: JuiceGrape
+          Quantity: 150
+  - type: Label
+    currentLabel: grape juice
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkJuiceLemonJug
+  suffix: lemon juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: JuiceLemon
+          Quantity: 150
+  - type: Label
+    currentLabel: lemon juice
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkJuicePineappleJug
+  suffix: pineapple juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: JuicePineapple
+          Quantity: 150
+  - type: Label
+    currentLabel: pineapple juice
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkJuicePomegranateJug
+  suffix: pomegranate juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: JuicePomegranate
+          Quantity: 150
+  - type: Label
+    currentLabel: pomegranate juice
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkPomelustineJug
+  suffix: pomelustine
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: Pomelustine
+          Quantity: 150
+  - type: Label
+    currentLabel: pomelustine
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkJuiceWatermelonJug
+  suffix: watermelon juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: JuiceWatermelon
+          Quantity: 150
+  - type: Label
+    currentLabel: watermelon juice
