@@ -343,12 +343,17 @@
   parent: ClothingBackpack
   id: ClothingBackpackSyndicate
   name: syndicate backpack
-  description:
+  description: An ominous backpack, with a suspiciously gun-shaped storage pocket added.
   components:
   - type: Sprite
     sprite: Clothing/Back/Backpacks/syndicate.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.1
+  - type: Storage
+    grid:
+    - 0,0,6,3
+    - 8,1,8,2
+    - 9,1,9,1
 
 #Special
 - type: entity
