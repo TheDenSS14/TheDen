@@ -2792,12 +2792,26 @@
   name: ornamental red rose # den edit - changed name to reflect these not being botany roses
   description: A red rose - age old symbol of passionate love and desire. This one's a rare planetary cultivar, too delicate to be grown in space. # den edit
   id: RedRose
-  parent: ProduceBase
+  parent: FoodProduceBase # den edit
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/red_rose.rsi
     scale: 0.75,0.75
- # - type: SolutionContainerManager
+  - type: SolutionContainerManager # den edit - added rose juice
+    solutions:
+      food:
+        maxVol: 2
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+  - type: Extractable # den edit - added rose juice
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceRose
+        Quantity: 10
+  - type: FlavorProfile # den edit
+    flavors:
+      - rose
  # - type: Produce
  #   seedId: red_rose
   - type: PotencyVisuals
@@ -2811,12 +2825,26 @@
   name: ornamental white rose # den edit - changed name to reflect these not being botany roses
   description: A white rose - often a symbol of new everlasting love and loyalty. This one's a rare planetary cultivar, too delicate to be grown in space. # den edit
   id: WhiteRose
-  parent: ProduceBase
+  parent: FoodProduceBase # den edit
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/white_rose.rsi
     scale: 0.75,0.75
- # - type: SolutionContainerManager
+  - type: SolutionContainerManager # den edit - added rose juice
+    solutions:
+      food:
+        maxVol: 2
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+  - type: Extractable # den edit - added rose juice
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceRose
+        Quantity: 10
+  - type: FlavorProfile # den edit
+    flavors:
+      - rose
  # - type: Produce
  #   seedId: white_rose
   - type: PotencyVisuals
@@ -2830,12 +2858,26 @@
   name: ornamental pink rose # den edit - changed name to reflect these not being botany roses
   description: A pink rose - sometimes used to express admiration and appreciation. This one's a rare planetary cultivar, too delicate to be grown in space. # den edit
   id: PinkRose
-  parent: ProduceBase
+  parent: FoodProduceBase # den edit
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/pink_rose.rsi
     scale: 0.75,0.75
- # - type: SolutionContainerManager
+  - type: SolutionContainerManager # den edit - added rose juice
+    solutions:
+      food:
+        maxVol: 2
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+  - type: Extractable # den edit - added rose juice
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceRose
+        Quantity: 10
+  - type: FlavorProfile # den edit
+    flavors:
+      - rose
  # - type: Produce
  #   seedId: pink_rose
   - type: PotencyVisuals

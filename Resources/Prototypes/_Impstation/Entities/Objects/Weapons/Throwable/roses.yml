@@ -48,6 +48,9 @@
     solutions:
       food:
         maxVol: 2
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1
   - type: MeleeChemicalInjector
     solution: food
   - type: InjectableSolution
