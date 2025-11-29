@@ -43,6 +43,14 @@ marking-LizardTailSmooth = Lizard Tail (Smooth)
 marking-LizardTailSmoothAnimated = Lizard Tail (Smooth) (Animated)
 marking-LizardTailSmoothAnimated-tail_smooth_wagging_primary = Tail primary
 marking-LizardTailSmoothAnimated-tail_smooth_wagging_secondary = Tail secondary
+# TheDen - Converted to layers
+marking-LizardTailSmooth-tail_smooth_front = Lizard Tail
+marking-LizardTailSmooth-tail_smooth_behind = Lizard Tail
+marking-LizardTailSmooth-tail_smooth_behind_secondary = Under Tone
+marking-LizardTailSmooth-tail_smooth_wagging_front = Lizard Tail
+marking-LizardTailSmooth-tail_smooth_wagging_front_secondary = Under Tone
+marking-LizardTailSmooth-tail_smooth_wagging_behind = Lizard Tail
+marking-LizardTailSmooth-tail_smooth_wagging_behind_secondary = Under Tone
 
 marking-LizardTailLarge-tail_large = Lizard Tail (Large)
 marking-LizardTailLarge = Lizard Tail (Large)
