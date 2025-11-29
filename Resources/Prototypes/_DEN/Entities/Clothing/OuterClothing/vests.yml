@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingOuterBase, ClothingUniformRollableBase]
+  parent: ClothingOuterFoldableBase
   id: ClothingOuterVestValet
   name: valet jacket
   description: A tacky red vest with gold accents. Expect people to make you carry their bags for them.
@@ -8,6 +8,12 @@
     sprite: _DEN/Clothing/OuterClothing/Vests/valet.rsi
   - type: Clothing
     sprite: _DEN/Clothing/OuterClothing/Vests/valet.rsi
+  - type: Foldable
+    unfoldVerbText: fold-unrollsleeves-verb
+    foldVerbText: fold-rollsleeves-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: rolled
+    foldedHeldPrefix: rolled
 
 - type: entity
   parent: ClothingOuterVestValet
