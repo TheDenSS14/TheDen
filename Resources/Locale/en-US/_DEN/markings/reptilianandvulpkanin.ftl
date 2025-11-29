@@ -23,6 +23,15 @@ marking-ReptilianTailFurred = Furred Tail
 marking-ReptilianTailFurred-furred_tail_under = Tail
 marking-ReptilianTailFurred-furred_tail_over = Tail
 
+marking-LizardTailSmoothSkirtFriendly = Lizard Tail (Smooth, Skirt-Friendly, No Wag)
+marking-LizardTailSmoothSkirtFriendly-tail_smooth_front = Lizard Tail
+marking-LizardTailSmoothSkirtFriendly-tail_smooth_behind = Lizard Tail
+marking-LizardTailSmoothSkirtFriendly-tail_smooth_behind_secondary = Under Tone
+marking-LizardTailSmoothSkirtFriendly-tail_smooth_wagging_front = Lizard Tail
+marking-LizardTailSmoothSkirtFriendly-tail_smooth_wagging_front_secondary = Under Tone
+marking-LizardTailSmoothSkirtFriendly-tail_smooth_wagging_behind = Lizard Tail
+marking-LizardTailSmoothSkirtFriendly-tail_smooth_wagging_behind_secondary = Under Tone
+
 # New Sergal
 marking-EarsCheesegal=  Sergal Ears
 marking-EarsCheesegal-sergears-1=  External

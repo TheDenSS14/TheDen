@@ -150,17 +150,16 @@
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_double
 
-# TheDen - Replaced with a layered version in reptilianmarks.yml
-#- type: marking
-#  id: LizardTailSmooth
-#  bodyPart: Tail
-#  markingCategory: Tail
-#  speciesRestriction: [Reptilian, Human, IPC, SlimePerson] # Floof
-#  sprites:
-#  - sprite: Mobs/Customization/reptilian_parts.rsi
-#    state: tail_smooth_primary
-#  - sprite: Mobs/Customization/reptilian_parts.rsi
-#    state: tail_smooth_secondary
+- type: marking
+  id: LizardTailSmooth
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian, Human, IPC, SlimePerson] # Floof
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: tail_smooth_primary
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: tail_smooth_secondary
 
 - type: marking
   id: LizardTailLarge
@@ -356,17 +355,16 @@
     state: body_backspikes
 
 # Animated
-# TheDen - Replaced with a layered version in reptilianmarks.yml
-#- type: marking
-#  id: LizardTailSmoothAnimated
-#  bodyPart: Tail
-#  markingCategory: Tail
-#  speciesRestriction: []
-#  sprites:
-#    - sprite: Mobs/Customization/reptilian_parts.rsi
-#      state: tail_smooth_wagging_primary
-#    - sprite: Mobs/Customization/reptilian_parts.rsi
-#      state: tail_smooth_wagging_secondary
+- type: marking
+  id: LizardTailSmoothAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+    - sprite: Mobs/Customization/reptilian_parts.rsi
+      state: tail_smooth_wagging_primary
+    - sprite: Mobs/Customization/reptilian_parts.rsi
+      state: tail_smooth_wagging_secondary
 
 - type: marking
   id: LizardTailSpikesAnimated
