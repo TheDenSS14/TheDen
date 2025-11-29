@@ -32,6 +32,7 @@ loadout-name-LoadoutClothingWaistApronStripesVertical = waist apron (vertical st
 loadout-name-LoadoutClothingOuterCoatTurtleneckHalfBlouse = turtleneck half blouse (colorable)
 loadout-name-LoadoutClothingOuterCoatBomberWhite = lightweight bomber jacket (colorable)
 loadout-name-LoadoutClothingOuterCoatBomberWhiteLoose = lightweight bomber jacket (loose, colorable)
+loadout-name-LoadoutOuterVestValet = valet vest
 
 # innerclothing
 loadout-name-LoadoutClothingUniformBootyShorts = booty shorts (colorable)

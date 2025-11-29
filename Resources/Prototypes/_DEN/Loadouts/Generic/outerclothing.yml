@@ -111,3 +111,13 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterVestValetUnrolled
+  category: Outer
+  cost: 1
+  items:
+  - ClothingOuterVestValet
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutOuter
