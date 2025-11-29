@@ -77,13 +77,12 @@
   name: ert-security-loadout-3-name
   description: ert-security-loadout-3-desc
   sprite:
-    sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
+    sprite: _DEN/Objects/Weapons/Guns/Shotguns/salamander.rsi
     state: icon
   content:
-    - WeaponShotgunEnforcer
-    - MagazineShotgun
-    - MagazineShotgun
-    - MagazineShotgunSlug
+    - WeaponShotgunSalamander
+    - MagazineBoxShotgunHighCaliber
+    - MagazineBoxShotgunSlugHighCaliber
     - GrenadeStinger
     - GrenadeStinger
 
@@ -232,3 +231,33 @@
     - CleanerGrenade
     - CleanerGrenade
     - CleanerGrenade
+
+# ERT CBURN
+- type: selectableSet
+  id: ERTCBURNLoadout1
+  name: ert-cburn-loadout-1-name
+  description: ert-cburn-loadout-1-desc
+  sprite:
+    sprite: _DEN/Objects/Weapons/Guns/Shotguns/salamander.rsi
+    state: icon
+  content:
+    - BoxSurvivalEngineering
+    - WeaponShotgunSalamanderIncendiary
+    - MagazineBoxShotgunIncendiaryHighCaliber
+    - MagazineBoxShotgunIncendiaryHighCaliber
+    - MagazineBoxShotgunHighCaliber
+    - GrenadeIncendiary
+    - GrenadeIncendiary
+    - TearGasGrenade
+    - TearGasGrenade
+    - PillAmbuzolPlus
+    - PillCanisterAmbuzol
+    - Zipties
+    - Zipties
+    - Zipties
+    - Zipties
+    - Flare
+    - Flare
+    - Flare
+    - Flare
+

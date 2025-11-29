@@ -844,3 +844,15 @@
     contents:
     - id: PillEthyloxyephedrine
       amount: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterAmbuzol
+  suffix: Ambuzol, 10u x5
+  components:
+  - type: Label
+    currentLabel: ambuzol 10u
+  - type: StorageFill
+    contents:
+    - id: PillAmbuzol
+      amount: 5

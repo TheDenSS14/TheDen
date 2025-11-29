@@ -97,3 +97,116 @@
         fontSize: 12
         color: "#ff4f00"
         requireDetailRange: false
+
+- type: entity
+  name: MA-A22 Wyvern
+  parent: [BaseWeaponRifle, BaseSecurityContraband]
+  id: WeaponRifleWyvern
+  description: A futuristic assault rifle featuring a built in scope designed and a burst-fire toggle manufactured by Meridian Armouries. It was originally designed with boarding actions in mind and has proved its worth through extensive use by PMCs.
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Guns/Rifles/wyvern.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _DEN/Objects/Weapons/Guns/Rifles/wyvern.rsi
+    slots:
+    - Back
+    - suitStorage
+  - type: Gun
+    minAngle: 10
+    maxAngle: 18
+    fireRate: 6
+    burstFireRate: 8.5
+    shotsPerBurst: 3
+    burstCooldown: 0.3
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+      - Burst
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+      params:
+        volume: -4
+    fireOnDropChance: 0.5
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineLightRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Execution
+  - type: MeleeWeapon
+    attackRate: 1.3333
+    damage:
+      types:
+        Blunt: 9.5
+    bluntStaminaDamageFactor: 1.25
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 3.5
+  - type: DamageOtherOnHit
+    staminaCost: 7.5
+
+- type: entity
+  name: "MA-A22 Wyvern"
+  parent: [WeaponRifleWyvern]
+  id: WeaponRifleWyvernIncendiary
+  suffix: Incendiary
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifleIncendiary
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineLightRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifleIncendiary
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle

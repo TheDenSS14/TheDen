@@ -301,6 +301,8 @@
   components:
   - type: Storage
     maxItemSize: Huge
+    grid:
+    - 0,0,21,10
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1

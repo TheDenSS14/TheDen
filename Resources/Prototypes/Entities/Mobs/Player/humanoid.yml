@@ -163,6 +163,7 @@
   name: ERT leader spawner
   id: ERTLeaderSpawner
   parent: MarkerBase
+  suffix: Job spawn
   components:
   - type: Sprite
     layers:
@@ -227,6 +228,7 @@
   name: ERT chaplain spawner
   id: ERTChaplainSpawner
   parent: MarkerBase
+  suffix: Job spawn
   components:
   - type: Sprite
     layers:
@@ -291,6 +293,7 @@
   name: ERT janitor spawner
   id: ERTJanitorSpawner
   parent: MarkerBase
+  suffix: Job spawn
   components:
   - type: Sprite
     layers:
@@ -354,6 +357,7 @@
   name: ERT engineer spawner
   id: ERTEngineerSpawner
   parent: MarkerBase
+  suffix: Job spawn
   components:
   - type: Sprite
     layers:
@@ -417,6 +421,7 @@
   name: ERT security spawner
   id: ERTSecuritySpawner
   parent: MarkerBase
+  suffix: Job spawn
   components:
   - type: Sprite
     layers:
@@ -480,6 +485,7 @@
   name: ERT medic spawner
   id: ERTMedicalSpawner
   parent: MarkerBase
+  suffix: Job spawn
   components:
   - type: Sprite
     layers:
@@ -491,25 +497,10 @@
     prototypes:
     - RandomHumanoidSpawnerERTMedical
 
-## CBURN
-
-- type: entity
-  id: RandomHumanoidSpawnerCBURNUnit
-  name: CBURN Agent
-  suffix: ERTRole
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: cburn
-    - type: RandomHumanoidSpawner
-      settings: CBURNAgent
-
+# CBURN
 - type: randomHumanoidSettings
   id: CBURNAgent
-  speciesBlacklist:
-    - Shadowkin
-    - Monkey # Shitmed Change
-    - Kobold # Shitmed Change
+  parent: ERTLeader
   components:
     # Den begin additions
     - type: RandomHumanoidAppearance
@@ -524,7 +515,7 @@
       implants:
       - BluespaceLifelineImplant
     - type: Loadout
-      prototypes: [CBURNGear]
+      prototypes: [ERTCBURNGear]
     - type: GhostRole
       name: ghost-role-information-cburn-agent-name
       description: ghost-role-information-cburn-agent-description
@@ -536,6 +527,34 @@
       - NamesMilitaryFirst
       - NamesMilitaryLast
       nameFormat: name-format-ert
+
+- type: entity
+  id: RandomHumanoidSpawnerCBURNUnit
+  parent: RandomHumanoidSpawnerERTLeader
+  name: CBURN Agent
+  suffix: ERTRole
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: cburn
+    - type: RandomHumanoidSpawner
+      settings: CBURNAgent
+
+- type: entity
+  name: CBURN agent spawner
+  id: ERTCBURNpawner
+  parent: MarkerBase
+  suffix: Job spawn
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Markers/jobs.rsi
+        state: green
+      - sprite: Markers/jobs.rsi
+        state: cburn
+  - type: RandomSpawner
+    prototypes:
+    - RandomHumanoidSpawnerCBURNUnit
 
 ## Central Command
 
