@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -15,3 +15,5 @@ guide-entry-species-lore-shadowkin = Shadowkin Lore
 guide-entry-species-lore-tajaran = Tajaran Lore
 
 guide-entry-cooking-food-sequence = Sequence Cooking
+
+guide-entry-rules-eternity = Eternity Rules

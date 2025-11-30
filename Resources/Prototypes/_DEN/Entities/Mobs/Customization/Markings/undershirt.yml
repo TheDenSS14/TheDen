@@ -108,3 +108,75 @@
     state: undershirt-buttons
   - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem.rsi
     state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpGrayscale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_grayscale.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_grayscale.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_grayscale.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpFemGrayscale
+  sexRestriction: [Male]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_fem_grayscale.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_fem_grayscale.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_fem_grayscale.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpPartialGrayscale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_grayscale.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_grayscale.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_grayscale.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpPartialFemGrayscale
+  sexRestriction: [Male]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_fem_grayscale.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_fem_grayscale.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_fem_grayscale.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpOpenGrayscale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_grayscale.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_grayscale.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_grayscale.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpOpenFemGrayscale
+  sexRestriction: [Male]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem_grayscale.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem_grayscale.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem_grayscale.rsi
+    state: undershirt-collar

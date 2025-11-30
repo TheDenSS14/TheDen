@@ -1,11 +1,12 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity # Pretty much a copy of the Water Bottle, shifted all sex-lube like. Copied from Entities/Objects/Consumable/Drinks/drinks_bottles.yml
-  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseInventory]
+  parent: [BaseObjectVerbsLewd, DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseInventory]
   id: SexLube
   name: sexual lubricant
   description: A bottle of synthetic lubricant to help with sexual activity. #Too straight to the point, although I'm not sure what else you use lube for than sex lmao -KC
@@ -35,7 +36,3 @@
     inHandsFillBaseName: -fill-
   - type: Openable
     closeable: true #this ain't a packet, you should be able to reseal it.
-  - type: InteractionVerbs
-    allowedVerbs:
-      - KissObject
-      - LickObject

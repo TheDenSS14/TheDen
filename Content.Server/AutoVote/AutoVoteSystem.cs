@@ -1,5 +1,4 @@
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -10,16 +9,26 @@ using Content.Shared.Voting;
 using Content.Shared.CCVar;
 using Robust.Server.Player;
 using Content.Server.GameTicking;
+using Robust.Shared.Timing;
+
 
 namespace Content.Server.AutoVote;
 
 public sealed class AutoVoteSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] public readonly IVoteManager _voteManager = default!;
-    [Dependency] public readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = null!;
+    [Dependency] private readonly IGameTiming _timing = null!;
+    [Dependency] private readonly IPlayerManager _playerManager = null!;
+    [Dependency] private readonly IVoteManager _voteManager = null!;
 
-    public bool _shouldVoteNextJoin = false;
+    private bool _shouldVoteNextJoin;
+    private TimeSpan? _voteStart;
+
+    // CCVars
+    private bool _autoVoteEnabled;
+    private bool _mapVoteEnabled;
+    private bool _presetVoteEnabled;
+    private int _firstRoundDelaySeconds;
 
     public override void Initialize()
     {
@@ -27,6 +36,28 @@ public sealed class AutoVoteSystem : EntitySystem
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnReturnedToLobby);
         SubscribeLocalEvent<PlayerJoinedLobbyEvent>(OnPlayerJoinedLobby);
+
+        _autoVoteEnabled = _cfg.GetCVar(CCVars.AutoVoteEnabled);
+        _mapVoteEnabled = _cfg.GetCVar(CCVars.MapAutoVoteEnabled);
+        _presetVoteEnabled = _cfg.GetCVar(CCVars.PresetAutoVoteEnabled);
+        _firstRoundDelaySeconds = _cfg.GetCVar(CCVars.PresetAutoVoteFirstDelaySeconds);
+
+        Subs.CVar(_cfg, CCVars.AutoVoteEnabled, OnAutoVoteStatusChanged, true);
+        Subs.CVar(_cfg, CCVars.MapAutoVoteEnabled, OnMapVoteStatusChanged, true);
+        Subs.CVar(_cfg, CCVars.PresetAutoVoteEnabled, OnPresetVoteStatusChanged, true);
+        Subs.CVar(_cfg, CCVars.PresetAutoVoteFirstDelaySeconds, OnFirstRoundDelaySecondsChanged, true);
+    }
+
+    public override void Update(float deltaTime)
+    {
+        if (_voteStart == null)
+            return;
+
+        if (_voteStart > _timing.RealTime)
+            return;
+
+        CallAutovote();
+        _voteStart = null;
     }
 
     public void OnReturnedToLobby(RoundRestartCleanupEvent ev) => CallAutovote();
@@ -36,13 +67,13 @@ public sealed class AutoVoteSystem : EntitySystem
         if (!_shouldVoteNextJoin)
             return;
 
-        CallAutovote();
+        _voteStart = _timing.RealTime + TimeSpan.FromSeconds(_firstRoundDelaySeconds);
         _shouldVoteNextJoin = false;
     }
 
     private void CallAutovote()
     {
-        if (!_cfg.GetCVar(CCVars.AutoVoteEnabled))
+        if (!_autoVoteEnabled)
             return;
 
         if (_playerManager.PlayerCount == 0)
@@ -51,9 +82,18 @@ public sealed class AutoVoteSystem : EntitySystem
             return;
         }
 
-        if (_cfg.GetCVar(CCVars.MapAutoVoteEnabled))
+        if (_mapVoteEnabled)
             _voteManager.CreateStandardVote(null, StandardVoteType.Map);
-        if (_cfg.GetCVar(CCVars.PresetAutoVoteEnabled))
+
+        if (_presetVoteEnabled)
             _voteManager.CreateStandardVote(null, StandardVoteType.Preset);
     }
+
+    private void OnAutoVoteStatusChanged(bool newValue) => _autoVoteEnabled = newValue;
+
+    private void OnMapVoteStatusChanged(bool newValue) => _mapVoteEnabled = newValue;
+
+    private void OnPresetVoteStatusChanged(bool newValue) => _presetVoteEnabled = newValue;
+
+    private void OnFirstRoundDelaySecondsChanged(int newValue) => _firstRoundDelaySeconds = newValue;
 }

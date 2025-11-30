@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: 2025 pathetic meowmeow
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -33,6 +33,8 @@ using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Toolshed.TypeParsers;
 using System.Linq;
+using Content.Shared.Silicons.Borgs.Components;
+
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
@@ -175,8 +177,8 @@ public abstract partial class SharedSurgerySystem
         //if (!HasComp<ForcedSleepingComponent>(args.Body))
         //    //RaiseLocalEvent(args.Body, new MoodEffectEvent("SurgeryPain"));
         // No mood on Goob :(
-        if (!_inventory.TryGetSlotEntity(args.User, "gloves", out var _)
-            || !_inventory.TryGetSlotEntity(args.User, "mask", out var _))
+        if (!HasComp<BorgChassisComponent>(args.User) && (!_inventory.TryGetSlotEntity(args.User, "gloves", out var _)
+            || !_inventory.TryGetSlotEntity(args.User, "mask", out var _)))
         {
             if (!HasComp<SanitizedComponent>(args.User))
             {

@@ -1,9 +1,11 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Psionic Mantis
 #- type: characterItemGroup
@@ -91,6 +93,10 @@
       id: LoadoutPsionicMantisShoesMantisBoots
     - type: loadout
       id: LoadoutClothingUnderSocksMantisEpi
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutPsionicMantisShoes
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutPsionicMantisUniforms
@@ -101,4 +107,4 @@
     - type: loadout
       id: LoadoutPsionicMantisUniformSkirt
     - type: loadout
-      id: LoadoutClothingHandsMantisEpiWarmers
+      id: LoadoutClothingUniformMantisEpiThong # DEN: Fix tests

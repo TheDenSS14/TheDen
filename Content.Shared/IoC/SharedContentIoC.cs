@@ -9,6 +9,7 @@
 // SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared._AS.Consent;
+using Content.Shared._DEN.Hub;
 using Content.Shared._DEN.ServerContent;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Localizations;

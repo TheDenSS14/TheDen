@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 XenoOutlier
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
@@ -48,3 +49,10 @@
   - job-name-alternate-junior-engineer
   - job-name-alternate-junior-technician
   - job-name-alternate-engineering-apprentice
+
+- type: alternateJobTitle
+  id: DefaultChiefEngineer
+  jobId: ChiefEngineer
+  titles:
+  - job-name-alternate-chief-architect
+  - job-name-alternate-senior-director-of-engineering

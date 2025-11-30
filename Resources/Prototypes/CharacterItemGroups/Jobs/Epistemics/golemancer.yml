@@ -2,9 +2,10 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Golemancer
 - type: characterItemGroup
@@ -83,6 +84,10 @@
       id: LoadoutScienceUniformLabcoatRobo # TheDen
     - type: loadout
       id: LoadoutClothingOuterRoboOveralls # TheDen
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutScienceOuterCoatRobo
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutGolemancerShoes

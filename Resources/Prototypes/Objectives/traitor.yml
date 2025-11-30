@@ -15,10 +15,11 @@
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Memeji Dankiri
 # SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 oberonics
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   abstract: true
@@ -126,7 +127,7 @@
   categories: [HideSpawnMenu]
   parent: [BaseTraitorObjective, BaseKillObjective]
   id: KillRandomPersonObjective
-  description: Ensure they learn what death feels like; it does not matter if they are revived.
+  description: Permanently or not, ensure they learn what death feels like; it does not matter if they are revived.
   components:
   - type: Objective
     difficulty: 1.75

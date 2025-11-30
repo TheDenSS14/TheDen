@@ -1,10 +1,12 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Domino
 # SPDX-FileCopyrightText: 2025 Lonofera
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: characterItemGroup
   id: LoadoutBotanistBackpacks
@@ -72,6 +74,8 @@
   items:
   - type: loadout
     id: LoadoutServiceBotanistWinterCoat
+  - type: loadout
+    id: LoadoutServiceBotanistApron
 #
 #- type: characterItemGroup
 #  id: LoadoutBotanistShoes
@@ -90,7 +94,9 @@
       id: LoadoutServiceJumpsuitHydroponicsIdris
     - type: loadout
       id: LoadoutServiceJumpsuitHydroponicsOrion
+    # DEN start: New additions
     - type: loadout
-      id: ClothingUniformJumpsuitHydroponics
+      id: LoadoutServiceJumpskirtHydroponics
     - type: loadout
-      id: ClothingUniformJumpskirtHydroponics
+      id: LoadoutServiceJumpsuitHydroponics
+    # End DEN

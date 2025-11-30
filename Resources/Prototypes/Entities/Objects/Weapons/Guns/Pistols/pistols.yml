@@ -46,7 +46,7 @@
 
 - type: entity
   name: BasePistol
-  parent: BaseItem
+  parent: [BaseObjectVerbsCommon, BaseItem] # DEN: Add interaction verb parent
   id: BaseWeaponPistol
   description: A rooty tooty point and shooty.
   abstract: true
@@ -127,11 +127,6 @@
       collection: MetalThud
   - type: DamageOtherOnHit
     staminaCost: 5
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   name: viper

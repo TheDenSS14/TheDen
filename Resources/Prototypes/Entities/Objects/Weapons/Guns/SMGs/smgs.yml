@@ -40,7 +40,7 @@
 
 - type: entity
   name: BaseSMG
-  parent: BaseItem
+  parent: [BaseObjectVerbsCommon, BaseItem] # DEN: Add interaction verb parent
   id: BaseWeaponSubMachineGun
   description: A rooty tooty point and shooty.
   abstract: true
@@ -116,11 +116,6 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 8
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   name: Atreides

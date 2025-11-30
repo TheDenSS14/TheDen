@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2024 RichardRahl123 <130261520+RichardRahl123@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 dustylens <54123313+dustylens@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 KyuPolaris <tabi@kyuudev.me>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RichardRahl123
+# SPDX-FileCopyrightText: 2024 dustylens
+# SPDX-FileCopyrightText: 2025 KyuPolaris
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -121,7 +122,7 @@
 
 - type: entity
   name: greek salad
-  parent: FoodBowlBase
+  parent: FoodBowlSaladBase # DEN - SALAD...
   id: FoodSaladGreek
   description: This is the salad everyone is eating in those commercials.
   components:
@@ -154,7 +155,7 @@
 
 - type: entity
   name: avocado salad
-  parent: FoodBowlBase
+  parent: FoodBowlSaladBase # DEN - SALAD...
   id: FoodSaladAvocado
   description: You were so close to making guacamole. So close.
   components:
@@ -184,7 +185,7 @@
     tags:
     - Vegetable
     - Fruit
-  
+
 - type: entity
   name: poached pears
   parent: FoodBowlBase
@@ -251,7 +252,7 @@
 
 - type: entity
   name: basic noodles
-  parent: FoodBowlBase
+  parent: FoodBowlNoodlesBase # DEN: NOODLES...
   id: FoodMealBasicNoodles
   description: A simple ramen bowl of noodles and broth. Yum!
   components:
@@ -276,7 +277,7 @@
 
 - type: entity
   name: miso noodles
-  parent: FoodBowlBase
+  parent: FoodBowlNoodlesBase # DEN: NOODLES...
   id: FoodMealMisoNoodles
   description: Miso, or fermented bean paste, broth with scallion and egg. Robust!
   components:
@@ -309,7 +310,7 @@
 
 - type: entity
   name: shio noodles
-  parent: FoodBowlBase
+  parent: FoodBowlNoodlesBase # DEN: NOODLES...
   id: FoodMealShioNoodles
   description: Sea salt broth with corn and seaweed. Light!
   components:
@@ -341,7 +342,7 @@
 
 - type: entity
   name: shoyu noodles
-  parent: FoodBowlBase
+  parent: FoodBowlNoodlesBase # DEN: NOODLES...
   id: FoodMealShoyuNoodles
   description: Soy sauce broth with corn, egg, and pork. Salty!
   components:
@@ -375,7 +376,7 @@
 
 - type: entity
   name: spicy noodles
-  parent: FoodBowlBase
+  parent: FoodBowlNoodlesBase # DEN: NOODLES...
   id: FoodMealSpicyNoodles
   description: A not-so-simple ramen bowl of noodles, broth, and tofu. Hot!
   components:
@@ -408,7 +409,7 @@
 
 - type: entity
   name: tonkatsu noodles
-  parent: FoodBowlBase
+  parent: FoodBowlNoodlesBase # DEN: NOODLES...
   id: FoodMealTonkatsuNoodles
   description: Pork bone broth with garlic and pork. Rich!
   components:

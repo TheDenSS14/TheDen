@@ -39,13 +39,14 @@
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: Window
-  parent: BaseStructure
+  parent: [BaseObjectVerbsStructure, BaseStructure] # DEN: Add object verb parent
   name: window
   description: Don't smudge up the glass down there.
   placement:
@@ -137,10 +138,6 @@
   - type: StaticPrice
     price: 100
   - type: BlockWeather
-  - type: InteractionVerbs
-    allowedVerbs:
-    - KnockOn
-    - LickObject
   - type: PressureDestructible
     maxPressureDifferential: 2000.0
 
@@ -154,7 +151,7 @@
 
 - type: entity
   id: WindowDirectional
-  parent: BaseStructure
+  parent: [BaseObjectVerbsStructure, BaseStructure] # DEN: Add interaction verb parent
   name: directional window
   description: Don't smudge up the glass down there.
   placement:
@@ -243,10 +240,6 @@
       sprite: Structures/Windows/cracks_directional.rsi
   - type: StaticPrice
     price: 10
-  - type: InteractionVerbs
-    allowedVerbs:
-    - KnockOn
-    - LickObject
   - type: PressureDestructible
     maxPressureDifferential: 3000.0
 

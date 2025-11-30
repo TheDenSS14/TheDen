@@ -3,8 +3,9 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: loadout
   id: LoadoutToyBasketball
@@ -37,14 +38,6 @@
   canBeHeirloom: true
   items:
     - SkimmerDiscus
-
-- type: loadout
-  id: LoadoutPlushieGrim
-  category: GeneralToys
-  cost: 0
-  canBeHeirloom: true
-  items:
-    - PlushieGrim
 
 - type: loadout
   id: LoadoutPlushieVega

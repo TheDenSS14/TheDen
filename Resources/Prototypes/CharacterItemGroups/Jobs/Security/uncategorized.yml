@@ -17,7 +17,7 @@
 # SPDX-FileCopyrightText: 2025 neuPanda
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # All Security
 - type: characterItemGroup
@@ -105,6 +105,20 @@
       id: LoadoutMagazineShotgunBeanbag
     - type: loadout
       id: LoadoutSDeviceSirenSecurity
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutMagazineWT550
+    - type: loadout
+      id: LoadoutMagazineRifleBSOAk
+    - type: loadout
+      id: LoadoutMagazineBRDIP15
+    - type: loadout
+      id: LoadoutMagazineRifleBRDIR25
+    - type: loadout
+      id: LoadoutSecurityDisabler
+    - type: loadout
+      id: LoadoutMagazineShotgunLeverRifle
+    # End DEN
 
 - type: characterItemGroup
   maxItems: 1
@@ -167,8 +181,6 @@
       id: LoadoutClothingEyesGlassesSecurityBig
     - type: loadout
       id: LoadoutClothingEyesGlassesSecurityVisor
-    - type: loadout
-      id: LoadoutClothingEyesGlassesCorpsman
 
 - type: characterItemGroup
   id: LoadoutSecurityGloves

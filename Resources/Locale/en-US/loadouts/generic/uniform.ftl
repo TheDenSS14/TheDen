@@ -58,3 +58,5 @@ loadout-name-LoadoutUniformEnvirosuitBlackPinkAlt = black pink envirosuit, alter
 loadout-name-LoadoutUniformEnvirosuitEnviroslacksMNKAlt = MNK enviroslacks, alternative
 loadout-name-LoadoutMilitaryBratJumpsuit = military brat's cargo pants
 loadout-name-LoadoutMilitaryBratJumpsuitAlt = military brat's cargo pants
+loadout-name-LoadoutUniformJumpsuitBlackTurtleneckShorts = black turtleneck shorts
+loadout-name-LoadoutUniformJumpsuitBlackTurtleneckShortsFlipped = black turtleneck shorts, rolled sleeves

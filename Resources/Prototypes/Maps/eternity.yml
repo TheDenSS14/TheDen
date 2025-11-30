@@ -16,13 +16,13 @@
 # SPDX-FileCopyrightText: 2025 Zilanthros
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: gameMap
   id: Eternity
   mapName: Eternity
   mapPath: /Maps/TheDen/eternity.yml
-  minPlayers: 15
+  minPlayers: 0
   maxPlayers: 70
   stations:
     Eternity:
@@ -34,7 +34,7 @@
         mapNameTemplate: '{0} Eternity {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
-          prefixCreator: 'NY'
+          prefixCreator: 'TD'
       - type: StationJobs
         overflowJobs:
         - Passenger
@@ -70,7 +70,7 @@
           # Prosecutor: [ 1, 1 ]
         #medical
           #ChiefMedicalOfficer: [ 1, 1 ]
-          #Chemist: [ 1, 2 ]
+          Chemist: [ 1, 1 ]
           #Paramedic: [ 1, 2 ]
           Psychologist: [ 1, 1 ]
           MedicalDoctor: [ 1, 2 ]

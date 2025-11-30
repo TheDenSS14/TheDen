@@ -42,12 +42,13 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: energy sword
-  parent: [ BaseRivalCompanyContraband, BaseItem ]
+  parent: [ BaseObjectVerbsCommon, BaseRivalCompanyContraband, BaseItem ] # DEN: Add interaction verb parent
   id: EnergySword
   description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
   components:
@@ -149,11 +150,6 @@
       path: /Audio/Weapons/eblade1.ogg
       params:
         variation: 0.250
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   name: antique energy sword

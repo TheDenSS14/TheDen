@@ -31,12 +31,13 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: Sword
-  parent: [ BaseSalvageSpecialistSecurityContraband, BaseItem ]
+  parent: [ BaseObjectVerbsCommon, BaseSalvageSpecialistSecurityContraband, BaseItem ] # DEN: Add interaction verb parent
   id: BaseSword
   description: A sharp sword.
   abstract: true
@@ -53,11 +54,6 @@
   - type: Utensil
     types:
       - Knife
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   name: captain's sabre

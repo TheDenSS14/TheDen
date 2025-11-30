@@ -1,31 +1,30 @@
 <!--
-SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
-SPDX-FileCopyrightText: 2021 moonheart08 <moonheart08@users.noreply.github.com>
-SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-SPDX-FileCopyrightText: 2022 Jesse Rougeau <jmaster9999@gmail.com>
-SPDX-FileCopyrightText: 2022 Jessica M <jessica@jessicamaybe.com>
-SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
-SPDX-FileCopyrightText: 2022 Justin Trotter <trotter.justin@gmail.com>
-SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-SPDX-FileCopyrightText: 2022 Morbo <exstrominer@gmail.com>
-SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-SPDX-FileCopyrightText: 2022 ike709 <ike709@github.com>
-SPDX-FileCopyrightText: 2022 ike709 <ike709@users.noreply.github.com>
-SPDX-FileCopyrightText: 2022 theashtronaut <112137107+theashtronaut@users.noreply.github.com>
-SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 12rabbits <53499656+12rabbits@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Evgencheg <73418250+Evgencheg@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
-SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+SPDX-FileCopyrightText: 2021 Visne
+SPDX-FileCopyrightText: 2021 moonheart08
+SPDX-FileCopyrightText: 2022 Flipp Syder
+SPDX-FileCopyrightText: 2022 Jesse Rougeau
+SPDX-FileCopyrightText: 2022 Jessica M
+SPDX-FileCopyrightText: 2022 Jezithyr
+SPDX-FileCopyrightText: 2022 Justin Trotter
+SPDX-FileCopyrightText: 2022 Kara
+SPDX-FileCopyrightText: 2022 Leon Friedrich
+SPDX-FileCopyrightText: 2022 Morbo
+SPDX-FileCopyrightText: 2022 Pieter-Jan Briers
+SPDX-FileCopyrightText: 2022 ike709
+SPDX-FileCopyrightText: 2022 theashtronaut
+SPDX-FileCopyrightText: 2022 wrexbe
+SPDX-FileCopyrightText: 2023 AJCM-git
+SPDX-FileCopyrightText: 2023 DrSmugleaf
+SPDX-FileCopyrightText: 2023 Vordenburg
+SPDX-FileCopyrightText: 2024 12rabbits
+SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+SPDX-FileCopyrightText: 2024 Evgencheg
+SPDX-FileCopyrightText: 2024 metalgearsloth
+SPDX-FileCopyrightText: 2025 Piras314
+SPDX-FileCopyrightText: 2025 sleepyyapril
 
-SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 -->
 
 <lobbyUi:LobbyGui
@@ -38,7 +37,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
     xmlns:style="clr-namespace:Content.Client.Stylesheets"
     xmlns:lobbyUi="clr-namespace:Content.Client.Lobby.UI"
     xmlns:info="clr-namespace:Content.Client.Info"
-    xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets">
+    xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets"
+    xmlns:hub="clr-namespace:Content.Client._DEN.Hub">
     <!-- Background -->
     <TextureRect Access="Public" VerticalExpand="True" HorizontalExpand="True" Name="Background"
                  Stretch="KeepAspectCovered" />
@@ -83,14 +83,17 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                     <!-- Vertical Padding-->
                     <Control VerticalExpand="True" />
                     <!-- Left Bot Panel -->
-                    <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" SeparationOverride="4">
-                        <info:DevInfoBanner Name="DevInfoBanner" VerticalExpand="false" Margin="3 3 3 3" />
-                        <PanelContainer StyleClasses="AngleRect">
-                            <RichTextLabel Name="LobbySong" Access="Public" HorizontalAlignment="Center" />
-                        </PanelContainer>
-                        <PanelContainer StyleClasses="AngleRect">
-                            <RichTextLabel Name="LobbyBackground" Access="Public" HorizontalAlignment="Center" />
-                        </PanelContainer>
+                    <BoxContainer Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                        <hub:HubPanel />
+                        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" SeparationOverride="4">
+                            <info:DevInfoBanner Name="DevInfoBanner" VerticalExpand="false" Margin="3 3 3 3" />
+                            <PanelContainer StyleClasses="AngleRect">
+                                <RichTextLabel Name="LobbySong" Access="Public" HorizontalAlignment="Center" />
+                            </PanelContainer>
+                            <PanelContainer StyleClasses="AngleRect">
+                                <RichTextLabel Name="LobbyBackground" Access="Public" HorizontalAlignment="Center" />
+                            </PanelContainer>
+                        </BoxContainer>
                     </BoxContainer>
                 </Control>
                 <!-- Character setup state -->

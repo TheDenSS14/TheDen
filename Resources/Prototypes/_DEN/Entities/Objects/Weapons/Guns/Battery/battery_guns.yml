@@ -40,24 +40,24 @@
     angleIncrease: 10 #Starts off very accurate, but quickly loses that accuracy after only a couple of shots.
     angleDecay: 10
     selectedMode: SemiAuto
-    fireRate: 2
+    fireRate: 3
     availableModes:
       - SemiAuto
       - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanBatteryAmmoProvider
-    proto: Pulse
+    proto: PulsePDW
     fireCost: 200
   - type: Battery
-    maxCharge: 3005
-    startingCharge: 3005
+    maxCharge: 5005
+    startingCharge: 5005
   - type: Tag
     tags:
     - PulsePDW
     - Sidearm
-  - type: BatterySelfRecharger # 30 seconds to fully recharge, but it does not do so if it has been fired in the last 5 seconds. 35 seconds total when empty.
+  - type: BatterySelfRecharger # 50 seconds to fully recharge, but it does not do so if it has been fired in the last 10 seconds. 60 seconds total when empty.
     autoRecharge: true
     autoRechargeRate: 100
     autoRechargePause: true
-    autoRechargePauseTime: 5
+    autoRechargePauseTime: 10

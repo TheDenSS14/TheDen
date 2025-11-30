@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: MIT
+
+- type: hubServer
+  id: salvation
+  connectionString: "http://51.222.244.125:1212"
+  displayName: hub-server-salvation-name
+
+- type: hubServer
+  id: eternity
+  connectionString: "http://51.222.244.125:1215"
+  displayName: hub-server-eternity-name
+  canConnect: false
+
+- type: hubServer
+  id: damnation
+  connectionString: "http://51.222.244.125:1213"
+  displayName: hub-server-damnation-name
+
+- type: hubServer
+  id: mapping
+  connectionString: "http://51.222.244.125:1214"
+  displayName: hub-server-mapping-name

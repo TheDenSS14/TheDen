@@ -1,4 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Kellaris
 # SPDX-FileCopyrightText: 2025 Memeji Dankiri
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -7,7 +9,7 @@
 - type: trait
   id: TraitorNonTargetable
   category: Marked
-  points: -1
+  points: 0
   slots: 0
   requirements:
     - !type:CharacterTraitRequirement
@@ -29,7 +31,7 @@
 - type: trait
   id: TraitorKillTarget
   category: Marked
-  points: 1
+  points: 0
   slots: 0
   requirements:
     - !type:CharacterTraitRequirement
