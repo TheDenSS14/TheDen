@@ -49,6 +49,7 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
     [Dependency] private readonly EntityLookupSystem _lookup = default!; // DEN
 
     private List<VentCritterLocationData> _locations = new();
+    private Entity<TransformComponent> _selectedBeacon = new();
 
     protected override void Added(EntityUid uid, VentCrittersRuleComponent comp, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
@@ -62,11 +63,15 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
 
         foreach (var location in _locations)
         {
-
-            Audio.PlayPvs(comp.Sound, location.LocationUid, AudioParams.Default.AddVolume(250));
-
             _chatSystem.TrySendInGameICMessage(location.LocationUid, "emits an ominous rumbling sound...", Shared.Chat.InGameICChatType.Emote, Shared.Chat.ChatTransmitRange.Normal, false, null, null, "nearby vent", false, true);
         }
+
+        var audio = AudioParams.Default;
+        audio.Volume = 200;
+        audio.RolloffFactor = 0.01f;
+        audio.ReferenceDistance = 400;
+
+        Audio.PlayPvs(comp.Sound, _selectedBeacon.Comp.Coordinates, audio);
 
         base.Added(uid, comp, gameRule, args);
     }
@@ -136,10 +141,10 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
         if (!beaconList.Any())
             return;
 
-        var selectedBeacon = RobustRandom.Pick(beaconList);
+        _selectedBeacon = RobustRandom.Pick(beaconList);
 
         // 10 tile range is purely arbitrary, it would be better to pick vents up to a maximum value instead but
-        var ventsInRange = _lookup.GetEntitiesInRange<VentCritterSpawnLocationComponent>(selectedBeacon.Comp.Coordinates, 10).Where(x => x.Comp.CanSpawn);
+        var ventsInRange = _lookup.GetEntitiesInRange<VentCritterSpawnLocationComponent>(_selectedBeacon.Comp.Coordinates, 10).Where(x => x.Comp.CanSpawn);
 
         foreach (var vent in ventsInRange)
         {
