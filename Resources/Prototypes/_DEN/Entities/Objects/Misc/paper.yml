@@ -120,3 +120,11 @@
         whitelist:
           tags:
           - Write
+
+- type: entity
+  parent: PaperDyedSec
+  id: PaperStolenWeapon
+  name: Oops...
+  components:
+  - type: Paper
+    content: doc-text-stolen

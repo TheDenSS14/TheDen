@@ -1095,3 +1095,11 @@ doc-text-printer-dessert-menu =
     {"["}check] [bold][color=#294225]Ask us about deserts and treats![/bold][/color]
     ─────────────────────────────────────
     {"["}italic] Place for Seals [/italic]
+doc-text-stolen =
+    {" "}
+    Hey there, so you might be wondering where your funny weapon's gone.
+
+    Well, you see... I got a little hungry... and then I ate it...
+    You know how it is. Sorry about the inconvenience, hope you don't need it.
+
+    - A Friend
