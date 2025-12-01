@@ -34,13 +34,13 @@ public sealed partial class CargoTelepadComponent : Component
     ///     The base amount of time it takes to teleport from the telepad
     /// </summary>
     [DataField]
-    public float BaseDelay = 10f;
+    public TimeSpan BaseDelay = TimeSpan.FromSeconds(10);
 
     /// <summary>
     ///     The actual amount of time it takes to teleport from the telepad
     /// </summary>
     [DataField]
-    public float Delay = 10f;
+    public TimeSpan Delay = TimeSpan.FromSeconds(10);
 
     /// <summary>
     ///     The machine part that affects <see cref="Delay"/>
@@ -55,10 +55,10 @@ public sealed partial class CargoTelepadComponent : Component
     public float PartRatingTeleportDelay = 0.8f;
 
     /// <summary>
-    ///     How much time we've accumulated until next teleport.
+    ///     The next teleport.
     /// </summary>
     [DataField]
-    public float Accumulator;
+    public TimeSpan NextTeleport;
 
     [DataField]
     public CargoTelepadState CurrentState = CargoTelepadState.Unpowered;
@@ -72,6 +72,6 @@ public sealed partial class CargoTelepadComponent : Component
     [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>)), ViewVariables(VVAccess.ReadWrite)]
     public string PrinterOutput = "PaperCargoInvoice";
 
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>)), ViewVariables(VVAccess.ReadWrite)]
-    public string ReceiverPort = "OrderReceiver";
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public ProtoId<SinkPortPrototype> ReceiverPort = "OrderReceiver";
 }

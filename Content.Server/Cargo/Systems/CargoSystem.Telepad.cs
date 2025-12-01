@@ -55,6 +55,7 @@ public sealed partial class CargoSystem
     private void OnTelepadFulfillCargoOrder(ref FulfillCargoOrderEvent args)
     {
         var query = EntityQueryEnumerator<CargoTelepadComponent, TransformComponent>();
+
         while (query.MoveNext(out var uid, out var tele, out var xform))
         {
             if (tele.CurrentState != CargoTelepadState.Idle)
@@ -67,19 +68,19 @@ public sealed partial class CargoSystem
                 continue;
 
             // todo cannot be fucking asked to figure out device linking rn but this shouldn't just default to the first port.
-            if (!TryComp<DeviceLinkSinkComponent>(uid, out var sinkComponent) ||
-                sinkComponent.LinkedSources.FirstOrNull() is not { } console ||
-                console != args.OrderConsole.Owner)
+            if (!TryComp<DeviceLinkSinkComponent>(uid, out var sinkComponent)
+                || sinkComponent.LinkedSources.FirstOrNull() is not { } console
+                || console != args.OrderConsole.Owner)
                 continue;
 
             for (var i = 0; i < args.Order.OrderQuantity; i++)
             {
                 tele.CurrentOrders.Add(args.Order);
             }
-            tele.Accumulator = tele.Delay;
+
+            tele.NextTeleport = _gameTiming.CurTime + tele.Delay;
             args.Handled = true;
             args.FulfillmentEntity = uid;
-            return;
         }
     }
 
@@ -88,35 +89,29 @@ public sealed partial class CargoSystem
         var query = EntityQueryEnumerator<CargoTelepadComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
+            
+
             // Don't EntityQuery for it as it's not required.
             TryComp<AppearanceComponent>(uid, out var appearance);
 
             if (comp.CurrentState == CargoTelepadState.Unpowered)
             {
                 comp.CurrentState = CargoTelepadState.Idle;
-                _appearance.SetData(uid, CargoTelepadVisuals.State, CargoTelepadState.Idle, appearance);
-                comp.Accumulator = comp.Delay;
-                continue;
-            }
-
-            comp.Accumulator -= frameTime;
-
-            // Uhh listen teleporting takes time and I just want the 1 float.
-            if (comp.Accumulator > 0f)
-            {
-                comp.CurrentState = CargoTelepadState.Idle;
+                comp.NextTeleport = _gameTiming.CurTime + comp.Delay;
                 _appearance.SetData(uid, CargoTelepadVisuals.State, CargoTelepadState.Idle, appearance);
                 continue;
             }
 
             if (comp.CurrentOrders.Count == 0)
             {
-                comp.Accumulator += comp.Delay;
+                comp.CurrentState = CargoTelepadState.Idle;
+                _appearance.SetData(uid, CargoTelepadVisuals.State, CargoTelepadState.Idle, appearance);
                 continue;
             }
 
             var xform = Transform(uid);
             var currentOrder = comp.CurrentOrders.First();
+
             if (FulfillOrder(currentOrder, xform.Coordinates, comp.PrinterOutput))
             {
                 _audio.PlayPvs(_audio.GetSound(comp.TeleportSound), uid, AudioParams.Default.WithVolume(-8f));
@@ -128,8 +123,6 @@ public sealed partial class CargoSystem
                 comp.CurrentState = CargoTelepadState.Teleporting;
                 _appearance.SetData(uid, CargoTelepadVisuals.State, CargoTelepadState.Teleporting, appearance);
             }
-
-            comp.Accumulator += comp.Delay;
         }
     }
 
@@ -146,7 +139,7 @@ public sealed partial class CargoSystem
 
     private void OnUpgradeExamine(EntityUid uid, CargoTelepadComponent component, UpgradeExamineEvent args)
     {
-        args.AddPercentageUpgrade("cargo-telepad-delay-upgrade", component.Delay / component.BaseDelay);
+        args.AddPercentageUpgrade("cargo-telepad-delay-upgrade", (float) (component.Delay / component.BaseDelay));
     }
 
     private void OnShutdown(Entity<CargoTelepadComponent> ent, ref ComponentShutdown args)
