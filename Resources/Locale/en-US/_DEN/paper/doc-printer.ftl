@@ -32,7 +32,7 @@ doc-text-printer-closing-indictment =
     {"["}check] [bold][color=#BD4040]Blue[/color][/bold]
     {"["}check] [bold][color=#BD4040]Red[/color][/bold]
     {"["}check] [bold][color=#BD4040]Yellow[/color][/bold]
-    {"["}check] [bold][bold][color=#BD4040]White[/color][/bold]
+    {"["}check] [bold][color=#BD4040]White[/color][/bold]
     {"["}check] [bold][color=#BD4040]Violet[/color][/bold]
 
     {"["}check] [bold][color=#BD4040]Is the suspect the reason for the alert level?[/color][/bold]

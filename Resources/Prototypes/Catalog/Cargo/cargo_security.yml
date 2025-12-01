@@ -21,6 +21,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 themias
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -121,4 +122,13 @@
   cost: 1000
   category: cargoproduct-category-name-security
   group: market
-  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
+
+- type: cargoProduct
+  id: SecurityGenPopCloset
+  icon:
+    sprite: Structures/Storage/closet.rsi
+    state: genpop
+  product: LockerPrisoner
+  cost: 250
+  category: cargoproduct-category-name-security
+  group: market
