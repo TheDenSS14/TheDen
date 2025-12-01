@@ -358,3 +358,52 @@
     state: panty_m
   - sprite: _DEN/Mobs/Customization/Underwear/low-coverage_panty.rsi
     state: frills
+
+- type: marking
+  id: UnderwearAnkleCuffs
+  bodyPart: Underwear
+  markingCategory: Underwear
+  coloring:
+      default:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      layers:
+        anklecuff:
+          type: !type:SimpleColoring
+              color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/cuffs.rsi
+    state: anklecuff
+
+- type: marking
+  id: UnderwearAnkleCuffsFrilled
+  parent: UnderwearAnkleCuffs
+  coloring:
+      layers:
+        anklecuff:
+          type: !type:SimpleColoring
+              color: "#FFFFFF"
+        anklecuff_frills:
+          type: !type:SimpleColoring
+              color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/cuffs.rsi
+    state: anklecuff
+  - sprite: _DEN/Mobs/Customization/Undershirt/cuffs.rsi
+    state: anklecuff_frills
+
+- type: marking
+  id: UnderwearAnkleCuffsThick
+  bodyPart: Underwear
+  markingCategory: Underwear
+  coloring:
+      default:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      layers:
+        anklecuff_thick:
+          type: !type:SimpleColoring
+              color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/cuffs.rsi
+    state: anklecuff_thick

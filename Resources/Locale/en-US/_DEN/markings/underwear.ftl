@@ -59,3 +59,13 @@ marking-UnderwearLowCoveragePantiesMale-panty_m = Panty
 marking-UnderwearLowCoverageFrillyPantiesMale = Low-Coverage Panties (male)
 marking-UnderwearLowCoverageFrillyPantiesMale-panty_m = Panty
 marking-UnderwearLowCoverageFrillyPantiesMale-frills = Frills
+
+marking-UnderwearAnkleCuffs = Ankle Cuffs
+marking-UnderwearAnkleCuffs-anklecuff = Cuffs
+
+marking-UnderwearAnkleCuffsFrilled = Frilly Ankle Cuffs
+marking-UnderwearAnkleCuffsFrilled-anklecuff = Cuffs
+marking-UnderwearAnkleCuffsFrilled-anklecuff_frills = Frills
+
+marking-UnderwearAnkleCuffsThick = Thick Ankle Cuffs
+marking-UnderwearAnkleCuffsThick-anklecuff_thick = Cuffs

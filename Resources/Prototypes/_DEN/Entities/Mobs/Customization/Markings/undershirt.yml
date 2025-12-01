@@ -450,3 +450,57 @@
     state: choker_m
   - sprite: _DEN/Mobs/Customization/Undershirt/choker.rsi
     state: choker_clip
+
+
+- type: marking
+  id: UndershirtWristCuffs
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      wristcuffs:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/cuffs.rsi
+    state: wristcuff
+
+- type: marking
+  id: UndershirtWristCuffsFrilled
+  parent: UndershirtWristCuffs
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      wristcuffs:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      wristcuffs_frills:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/cuffs.rsi
+    state: wristcuff
+  - sprite: _DEN/Mobs/Customization/Undershirt/cuffs.rsi
+    state: wristcuff_frills
+
+- type: marking
+  id: UndershirtWristCuffsThick
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      wristcuffs_thick:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/cuffs.rsi
+    state: wristcuff_thick
+
