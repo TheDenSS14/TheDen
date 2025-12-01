@@ -117,3 +117,17 @@ marking-UndershirtLowCoverageBraMale-bra_m = Bra
 marking-UndershirtLowCoverageFrilledBraMale = Low Coverage Frilled Bra (male)
 marking-UndershirtLowCoverageFrilledBraMale-bra_m = Bra
 marking-UndershirtLowCoverageFrilledBraMale-frills_m = Frills
+
+marking-UndershirtChokerFemale = Choker
+marking-UndershirtChokerFemale-choker_f = Choker
+
+marking-UndershirtClipChokerFemale = Clipped Choker
+marking-UndershirtClipChokerFemale-choker_f = Choker
+marking-UndershirtClipChokerFemale-choker_clip = Clip
+
+marking-UndershirtChokerMale = Choker
+marking-UndershirtChokerMale-choker_m = Choker
+
+marking-UndershirtClipChokerMale = Clipped Choker
+marking-UndershirtClipChokerMale-choker_m = Choker
+marking-UndershirtClipChokerMale-choker_clip = Clip

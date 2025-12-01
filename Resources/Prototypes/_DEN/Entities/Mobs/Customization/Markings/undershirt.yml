@@ -382,3 +382,71 @@
     state: bra_m
   - sprite: _DEN/Mobs/Customization/Undershirt/low-coverage_bra.rsi
     state: frills_m
+
+- type: marking
+  id: UndershirtChokerFemale
+  sexRestriction: [Female]
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      choker_f:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/choker.rsi
+    state: choker_f
+
+- type: marking
+  id: UndershirtClipChokerFemale
+  parent: UndershirtChokerFemale
+  coloring:
+    layers:
+      choker_f:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      choker_clip:
+        type: !type:SimpleColoring
+            color: "#999999"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/choker.rsi
+    state: choker_f
+  - sprite: _DEN/Mobs/Customization/Undershirt/choker.rsi
+    state: choker_clip
+
+- type: marking
+  id: UndershirtChokerMale
+  sexRestriction: [Male]
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      choker_m:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/choker.rsi
+    state: choker_m
+
+- type: marking
+  id: UndershirtClipChokerMale
+  parent: UndershirtChokerMale
+  coloring:
+    layers:
+      choker_m:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      choker_clip:
+        type: !type:SimpleColoring
+            color: "#999999"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/choker.rsi
+    state: choker_m
+  - sprite: _DEN/Mobs/Customization/Undershirt/choker.rsi
+    state: choker_clip
