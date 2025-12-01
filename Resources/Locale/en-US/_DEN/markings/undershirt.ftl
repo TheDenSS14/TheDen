@@ -67,3 +67,12 @@ marking-UndershirtButtonUpPartialFemGrayscale = Button-up Shirt (grayscale, part
 marking-UndershirtButtonUpPartialFemGrayscale-undershirt = Shirt
 marking-UndershirtButtonUpPartialFemGrayscale-undershirt-buttons = Button
 marking-UndershirtButtonUpPartialFemGrayscale-undershirt-collar = Collar
+
+marking-UndershirtGarterbelt = Garterbelt
+marking-UndershirtGarterbelt-garterbelt = Garterbelt
+marking-UndershirtGarterbelt-garterbelt_clips = Garterbelt Clips
+
+marking-UndershirtFrilledGarterbelt = Frilled Garterbelt
+marking-UndershirtFrilledGarterbelt-garterbelt = Garterbelt
+marking-UndershirtFrilledGarterbelt-garterbelt_frills = Garterbelt
+marking-UndershirtFrilledGarterbelt-garterbelt_clips = Garterbelt Clips

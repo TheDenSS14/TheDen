@@ -180,3 +180,50 @@
     state: undershirt-buttons
   - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem_grayscale.rsi
     state: undershirt-collar
+
+- type: marking
+  id: UndershirtGarterbelt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      garterbelt:
+        type: !type:SimpleColoring
+            color: "#AAAAAA"
+      garterbelt_clips:
+        type: !type:SimpleColoring
+            color: "#AAAAAA"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_clips
+
+- type: marking
+  id: UndershirtFrilledGarterbelt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      garterbelt:
+        type: !type:SimpleColoring
+            color: "#AAAAAA"
+      garterbelt_clips:
+        type: !type:SimpleColoring
+            color: "#808080"
+      garterbelt_frills:
+        type: !type:SimpleColoring
+            color: "#ffffff"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_clips
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_frills
