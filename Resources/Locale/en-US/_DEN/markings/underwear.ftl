@@ -38,3 +38,24 @@ marking-UnderwearLeggings-base = Leggings
 
 marking-UnderwearSocksStockings = Stockings
 marking-UnderwearSocksStockings-stockings-right = Stockings
+
+marking-UnderwearGarterStrapRight = Garter Strap (right)
+marking-UnderwearGarterStrapRight-garter_right = Garter Strap
+
+marking-UnderwearGarterStrapLeft = Garter Strap (left)
+marking-UnderwearGarterStrapLeft-garter_left = Garter Strap
+
+
+marking-UnderwearLowCoveragePantiesFemale = Low-Coverage Panties (female)
+marking-UnderwearLowCoveragePantiesFemale-panty_f = Panty
+
+marking-UnderwearLowCoverageFrillyPantiesFemale = Low-Coverage Frilly Panties (female)
+marking-UnderwearLowCoverageFrillyPantiesFemale-panty_f = Panty
+marking-UnderwearLowCoverageFrillyPantiesFemale-frills = Frills
+
+marking-UnderwearLowCoveragePantiesMale = Low-Coverage Panties (male)
+marking-UnderwearLowCoveragePantiesMale-panty_m = Panty
+
+marking-UnderwearLowCoverageFrillyPantiesMale = Low-Coverage Panties (male)
+marking-UnderwearLowCoverageFrillyPantiesMale-panty_m = Panty
+marking-UnderwearLowCoverageFrillyPantiesMale-frills = Frills

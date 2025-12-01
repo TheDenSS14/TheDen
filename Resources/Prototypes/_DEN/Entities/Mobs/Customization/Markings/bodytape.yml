@@ -1,0 +1,256 @@
+- type: marking
+  id: NippleTapeTriangleFemale
+  sexRestriction: [Female]
+  invertSpeciesRestriction: True
+  speciesRestriction: [Thaven, Vulpkanin]
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#343434"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: triangle_f
+
+- type: marking
+  id: NippleTapeVerticalFemale
+  parent: NippleTapeTriangleFemale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: vertical_f
+
+- type: marking
+  id: NippleTapeXCrossFemale
+  parent: NippleTapeTriangleFemale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: xcross_f
+
+- type: marking
+  id: NippleTapeCrossFemale
+  parent: NippleTapeTriangleFemale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: cross_f
+
+- type: marking
+  id: NippleTapeHeartFemale
+  parent: NippleTapeTriangleFemale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: heart_f
+
+- type: marking
+  id: NippleTapeHorizontalFemale
+  parent: NippleTapeTriangleFemale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: horizontal_f
+
+
+
+- type: marking
+  id: NippleTapeTriangleMale
+  sexRestriction: [Male]
+  invertSpeciesRestriction: True
+  speciesRestriction: [Thaven, Vulpkanin]
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#343434"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: triangle_m
+
+- type: marking
+  id: NippleTapeVerticalMale
+  parent: NippleTapeTriangleMale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: vertical_m
+
+- type: marking
+  id: NippleTapeXCrossMale
+  parent: NippleTapeTriangleMale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: xcross_m
+
+- type: marking
+  id: NippleTapeCrossMale
+  parent: NippleTapeTriangleMale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: cross_m
+
+- type: marking
+  id: NippleTapeHeartMale
+  parent: NippleTapeTriangleMale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: heart_m
+
+- type: marking
+  id: NippleTapeHorizontalMale
+  parent: NippleTapeTriangleMale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: horizontal_m
+
+
+
+
+
+- type: marking
+  id: NippleTapeTriangleThavenFemale
+  sexRestriction: [Female]
+  speciesRestriction: [Thaven]
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#343434"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: triangle_thaven_f
+
+- type: marking
+  id: NippleTapeVerticalThavenFemale
+  parent: NippleTapeTriangleThavenFemale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: vertical_thaven_f
+
+- type: marking
+  id: NippleTapeXCrossThavenFemale
+  parent: NippleTapeTriangleThavenFemale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: xcross_thaven_f
+
+- type: marking
+  id: NippleTapeCrossThavenFemale
+  parent: NippleTapeTriangleThavenFemale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: cross_thaven_f
+
+- type: marking
+  id: NippleTapeHeartThavenFemale
+  parent: NippleTapeTriangleThavenFemale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: heart_thaven_f
+
+- type: marking
+  id: NippleTapeHorizontalThavenFemale
+  parent: NippleTapeTriangleThavenFemale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: horizontal_thaven_f
+
+
+- type: marking
+  id: NippleTapeTriangleThavenMale
+  sexRestriction: [Male]
+  speciesRestriction: [Thaven]
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#343434"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: triangle_thaven_m
+
+- type: marking
+  id: NippleTapeVerticalThavenMale
+  parent: NippleTapeTriangleThavenMale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: vertical_thaven_m
+
+- type: marking
+  id: NippleTapeXCrossThavenMale
+  parent: NippleTapeTriangleThavenMale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: xcross_thaven_m
+
+- type: marking
+  id: NippleTapeCrossThavenMale
+  parent: NippleTapeTriangleThavenMale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: cross_thaven_m
+
+- type: marking
+  id: NippleTapeHeartThavenMale
+  parent: NippleTapeTriangleThavenMale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: heart_thaven_m
+
+- type: marking
+  id: NippleTapeHorizontalThavenMale
+  parent: NippleTapeTriangleThavenMale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: horizontal_thaven_m
+
+
+
+
+- type: marking
+  id: NippleTapeTriangleVulp
+  sexRestriction: [Female]
+  speciesRestriction: [Vulpkanin]
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#343434"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: triangle_m
+
+- type: marking
+  id: NippleTapeVerticalVulp
+  parent: NippleTapeTriangleVulp
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: vertical_m
+
+- type: marking
+  id: NippleTapeXCrossVulp
+  parent: NippleTapeTriangleVulp
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: xcross_m
+
+- type: marking
+  id: NippleTapeCrossVulp
+  parent: NippleTapeTriangleVulp
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: cross_m
+
+- type: marking
+  id: NippleTapeHeartVulp
+  parent: NippleTapeTriangleVulp
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: heart_m
+
+- type: marking
+  id: NippleTapeHorizontalVulp
+  parent: NippleTapeTriangleVulp
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/nipple_tape.rsi
+    state: horizontal_m

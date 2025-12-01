@@ -274,3 +274,87 @@
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
     state: stockings-right
 
+- type: marking
+  id: UnderwearGarterStrapRight
+  bodyPart: Underwear
+  markingCategory: Underwear
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/garter_strap.rsi
+    state: garter_right
+
+- type: marking
+  id: UnderwearGarterStrapLeft
+  parent: UnderwearGarterStrapRight
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/garter_strap.rsi
+    state: garter_left
+
+- type: marking
+  id: UnderwearLowCoveragePantiesFemale
+  bodyPart: Underwear
+  markingCategory: Underwear
+  coloring:
+      default:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      layers:
+        panty_f:
+          type: !type:SimpleColoring
+              color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/low-coverage_panty.rsi
+    state: panty_f
+
+- type: marking
+  id: UnderwearLowCoverageFrillyPantiesFemale
+  parent: UnderwearLowCoveragePantiesFemale
+  coloring:
+    layers:
+        panty_f:
+          type: !type:SimpleColoring
+              color: "#FFFFFF"
+        frills:
+          type: !type:SimpleColoring
+              color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/low-coverage_panty.rsi
+    state: panty_f
+  - sprite: _DEN/Mobs/Customization/Underwear/low-coverage_panty.rsi
+    state: frills
+
+- type: marking
+  id: UnderwearLowCoveragePantiesMale
+  bodyPart: Underwear
+  markingCategory: Underwear
+  coloring:
+      default:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      layers:
+        panty_m:
+          type: !type:SimpleColoring
+              color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/low-coverage_panty.rsi
+    state: panty_m
+
+- type: marking
+  id: UnderwearLowCoverageFrillyPantiesMale
+  parent: UnderwearLowCoveragePantiesMale
+  coloring:
+      layers:
+        panty_m:
+          type: !type:SimpleColoring
+              color: "#FFFFFF"
+        frills:
+          type: !type:SimpleColoring
+              color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/low-coverage_panty.rsi
+    state: panty_m
+  - sprite: _DEN/Mobs/Customization/Underwear/low-coverage_panty.rsi
+    state: frills
