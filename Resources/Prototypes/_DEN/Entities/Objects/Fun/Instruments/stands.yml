@@ -1,0 +1,48 @@
+- type: entity
+  abstract: true
+  parent: BasePlaceableInstrumentRotatable
+  id: BaseInstrumentStand
+  components:
+  - type: InstrumentStand
+    slotId: instrument_slot
+  - type: ContainerContainer
+    containers:
+      instrument_slot: !type:ContainerSlot
+  - type: Sprite
+    noRot: true
+  - type: Transform
+    noRot: true
+
+- type: entity
+  parent: BaseInstrumentStand
+  id: InstrumentStandMicrophone
+  name: microphone stand
+  description: This handy dandy microphone stand keeps your hands open so you can pluck at a guitar while you sing.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/Instruments/microphone_stand.rsi
+    layers:
+    - state: stand
+      map: ["stand"]
+    - state: microphone
+      map: ["microphone"]
+      visible: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.5,0.2,-0.25"
+        density: 50
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: ItemSlots
+    slots:
+      instrument_slot:
+        ejectOnInteract: false
+        name: instrument-stand-component-slot-name-microphone
+        whitelist:
+          tags:
+          - Microphone
