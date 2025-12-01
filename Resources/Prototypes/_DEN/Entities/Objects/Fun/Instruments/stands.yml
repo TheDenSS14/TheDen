@@ -10,8 +10,6 @@
       instrument_slot: !type:ContainerSlot
   - type: Sprite
     noRot: true
-  - type: Transform
-    noRot: true
 
 - type: entity
   parent: BaseInstrumentStand
@@ -31,13 +29,14 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeAabb
-          bounds: "-0.2,-0.5,0.2,-0.25"
-        density: 50
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 80
         mask:
         - MachineMask
         layer:
         - MachineLayer
+        hard: false
   - type: ItemSlots
     slots:
       instrument_slot:
