@@ -34,13 +34,13 @@ public sealed partial class CargoTelepadComponent : Component
     ///     The base amount of time it takes to teleport from the telepad
     /// </summary>
     [DataField]
-    public TimeSpan BaseDelay = TimeSpan.FromSeconds(10);
+    public TimeSpan BaseDelay = TimeSpan.FromSeconds(5);
 
     /// <summary>
     ///     The actual amount of time it takes to teleport from the telepad
     /// </summary>
     [DataField]
-    public TimeSpan Delay = TimeSpan.FromSeconds(10);
+    public TimeSpan Delay = TimeSpan.FromSeconds(5);
 
     /// <summary>
     ///     The machine part that affects <see cref="Delay"/>
