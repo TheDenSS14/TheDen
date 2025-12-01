@@ -68,11 +68,20 @@ marking-UndershirtButtonUpPartialFemGrayscale-undershirt = Shirt
 marking-UndershirtButtonUpPartialFemGrayscale-undershirt-buttons = Button
 marking-UndershirtButtonUpPartialFemGrayscale-undershirt-collar = Collar
 
-marking-UndershirtGarterbelt = Garterbelt
-marking-UndershirtGarterbelt-garterbelt = Garterbelt
-marking-UndershirtGarterbelt-garterbelt_clips = Garterbelt Clips
+marking-UndershirtGarterbeltMale = Garterbelt (male)
+marking-UndershirtGarterbeltMale-garterbelt_m = Garterbelt
+marking-UndershirtGarterbeltMale-garterbelt_clips = Clips
 
-marking-UndershirtFrilledGarterbelt = Frilled Garterbelt
-marking-UndershirtFrilledGarterbelt-garterbelt = Garterbelt
-marking-UndershirtFrilledGarterbelt-garterbelt_frills = Garterbelt
-marking-UndershirtFrilledGarterbelt-garterbelt_clips = Garterbelt Clips
+marking-UndershirtGarterbeltFemale = Garterbelt (female)
+marking-UndershirtGarterbeltFemale-garterbelt_f = Garterbelt
+marking-UndershirtGarterbeltFemale-garterbelt_clips = Clips
+
+marking-UndershirtFrilledGarterbeltMale = Frilled Garterbelt (male)
+marking-UndershirtFrilledGarterbeltMale-garterbelt_m = Garterbelt
+marking-UndershirtFrilledGarterbeltMale-garterbelt_frills_m = Frills
+marking-UndershirtFrilledGarterbeltMale-garterbelt_clips = Clips
+
+marking-UndershirtFrilledGarterbeltFemale = Frilled Garterbelt (female)
+marking-UndershirtFrilledGarterbeltFemale-garterbelt_f = Garterbelt
+marking-UndershirtFrilledGarterbeltFemale-garterbelt_frills_f = Frills
+marking-UndershirtFrilledGarterbeltFemale-garterbelt_clips = Clips

@@ -182,7 +182,7 @@
     state: undershirt-collar
 
 - type: marking
-  id: UndershirtGarterbelt
+  id: UndershirtGarterbeltMale
   bodyPart: Undershirt
   markingCategory: Undershirt
   coloring:
@@ -190,20 +190,35 @@
       type: !type:SimpleColoring
           color: "#FFFFFF"
     layers:
-      garterbelt:
+      garterbelt_m:
         type: !type:SimpleColoring
-            color: "#AAAAAA"
+            color: "#FFFFFF"
       garterbelt_clips:
         type: !type:SimpleColoring
-            color: "#AAAAAA"
+            color: "#999999"
   sprites:
   - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
-    state: garterbelt
+    state: garterbelt_m
   - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
     state: garterbelt_clips
 
 - type: marking
-  id: UndershirtFrilledGarterbelt
+  id: UndershirtFrilledGarterbeltMale
+  parent: UndershirtGarterbeltMale
+  coloring:
+      garterbelt_frills_m:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_m
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_clips
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_frills_m
+
+- type: marking
+  id: UndershirtGarterbeltFemale
   bodyPart: Undershirt
   markingCategory: Undershirt
   coloring:
@@ -211,19 +226,29 @@
       type: !type:SimpleColoring
           color: "#FFFFFF"
     layers:
-      garterbelt:
+      garterbelt_f:
         type: !type:SimpleColoring
-            color: "#AAAAAA"
+            color: "#FFFFFF"
       garterbelt_clips:
         type: !type:SimpleColoring
-            color: "#808080"
-      garterbelt_frills:
-        type: !type:SimpleColoring
-            color: "#ffffff"
+            color: "#999999"
   sprites:
   - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
-    state: garterbelt
+    state: garterbelt_f
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_clips
+
+- type: marking
+  id: UndershirtFrilledGarterbeltFemale
+  parent: UndershirtGarterbeltFemale
+  coloring:
+      garterbelt_frills_f:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_f
   - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
     state: garterbelt_clips
   - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
-    state: garterbelt_frills
+    state: garterbelt_frills_f
