@@ -19,12 +19,16 @@
   components:
   - type: Sprite
     sprite: _DEN/Objects/Fun/Instruments/microphone_stand.rsi
-    layers:
-    - state: stand
-      map: ["stand"]
-    - state: microphone
-      map: ["microphone"]
-      visible: false
+    state: stand
+  - type: ItemMapper
+    sprite: _DEN/Objects/Fun/Instruments/microphone_stand.rsi
+    containerWhitelist: [instrument_slot]
+    mapLayers:
+      microphone:
+        whitelist:
+          tags:
+          - Microphone
+  - type: Appearance
   - type: Fixtures
     fixtures:
       fix1:
