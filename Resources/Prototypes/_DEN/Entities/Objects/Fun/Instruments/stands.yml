@@ -17,6 +17,8 @@
     requiresComplex: true
     verbText: verb-instrument-openui
     key: enum.InstrumentUiKey.Key
+    requiredItems:
+      tags: []
   - type: UserInterface
     interfaces:
       enum.InstrumentUiKey.Key:
@@ -98,3 +100,5 @@
         whitelist:
           tags:
           - Microphone
+  - type: ActivatableUI
+    requiredItems: null
