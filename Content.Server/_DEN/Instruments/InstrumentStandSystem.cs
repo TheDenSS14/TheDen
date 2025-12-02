@@ -47,9 +47,6 @@ public sealed partial class InstrumentStandSystem : EntitySystem
         if (!_itemSlots.TryGetSlot(ent, ent.Comp.SlotId, out var itemSlot))
             return;
 
-        if (TryComp<InstrumentComponent>(ent, out var instrument) && ent.Comp.Instrument != instrument)
-            RemComp(ent, instrument);
-
         var hasInstrument = itemSlot.Item != null;
 
         if (hasInstrument && ent.Comp.Instrument == null)

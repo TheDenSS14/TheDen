@@ -1,15 +1,41 @@
 - type: entity
   abstract: true
-  parent: BasePlaceableInstrumentRotatable
+  parent: BaseStructureDynamic
   id: BaseInstrumentStand
   components:
+  - type: Sprite
+    noRot: true
   - type: InstrumentStand
     slotId: instrument_slot
   - type: ContainerContainer
     containers:
       instrument_slot: !type:ContainerSlot
-  - type: Sprite
-    noRot: true
+  - type: ActivatableUI
+    blockSpectators: true # otherwise they can play client-side music
+    inHandsOnly: false
+    singleUser: true
+    requiresComplex: true
+    verbText: verb-instrument-openui
+    key: enum.InstrumentUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: StaticPrice
+    price: 300
+  - type: RequireProjectileTarget
 
 - type: entity
   parent: BaseInstrumentStand
@@ -32,6 +58,8 @@
           tags:
           - Microphone
   - type: Appearance
+  - type: Rotatable
+    rotateWhileAnchored: true
   - type: Construction
     graph: MicrophoneStandGraph
     node: microphoneStand
