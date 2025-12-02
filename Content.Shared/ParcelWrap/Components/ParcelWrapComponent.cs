@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Decals;
 using Content.Shared.Item;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
@@ -68,4 +69,16 @@ public sealed partial class ParcelWrapComponent : Component
     /// </summary>
     [DataField]
     public EntityWhitelist? Blacklist;
+
+    [DataField]
+    public ProtoId<ColorPalettePrototype>? ColorPalette;
+
+    [DataField]
+    public float RibbonChance = 0.5f;
+
+    [DataField]
+    public float PatternChance = 0.5f;
+
+    [DataField]
+    public string SpritePrefix = "gift";
 }

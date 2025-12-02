@@ -6,7 +6,9 @@ using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Item;
 using Content.Shared.ParcelWrap.Components;
+using Content.Shared.Sprite;
 using Content.Shared.Verbs;
+using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.ParcelWrap.Systems;
@@ -104,6 +106,12 @@ public sealed partial class ParcelWrappingSystem
             _item.SetSize(spawned, size, item);
             _appearance.SetData(spawned, WrappedParcelVisuals.Size, size.Id);
 
+            if (wrapper.Comp.ColorPalette is not null &&
+                TryComp<RandomSpriteComponent>(spawned, out var randomSprite))
+            {
+                SetupGiftDecorations(spawned, randomSprite, wrapper.Comp, size.Id);
+            }
+
             // If this wrap maintains the shape when wrapping and the item has a shape override, copy the shape override to
             // the parcel.
             if (wrapper.Comp.WrappedItemsMaintainShape && targetItemComp is { Shape: { } shape })
@@ -135,5 +143,52 @@ public sealed partial class ParcelWrappingSystem
 
         // Play a wrapping sound.
         _audio.PlayPredicted(wrapper.Comp.WrapSound, target, user);
+    }
+
+    private void SetupGiftDecorations(EntityUid uid, RandomSpriteComponent randomSprite, ParcelWrapComponent wrapComp, string sizeId)
+    {
+        if (wrapComp.ColorPalette is not { } paletteId)
+            return;
+
+        var palette = _prototype.Index(paletteId);
+        var prefix = wrapComp.SpritePrefix;
+
+        var sizeSuffix = sizeId.ToLowerInvariant() switch
+        {
+            "tiny" => "tiny",
+            "small" => "small",
+            "medium" => "medium",
+            "large" => "large",
+            "huge" => "locker",
+            "ginormous" => "crate",
+            _ => "medium"
+        };
+
+        var boxColour = _random.Pick(palette.Colors.Values);
+
+        randomSprite.Selected.Clear();
+        randomSprite.Selected["box"] = ($"{prefix}-{sizeSuffix}", boxColour);
+        randomSprite.Selected["bow"] = ($"{prefix}-{sizeSuffix}-bow", null);
+
+        if (_random.Prob(wrapComp.RibbonChance))
+        {
+            randomSprite.Selected["ribbon"] = ($"{prefix}-{sizeSuffix}-ribbon", null);
+        }
+        else
+        {
+            randomSprite.Selected["ribbon"] = ($"{prefix}-transparent", null);
+        }
+        
+        if (_random.Prob(wrapComp.PatternChance))
+        {
+            var patternType = _random.Prob(0.5f) ? "pattern-1" : "pattern-2";
+            randomSprite.Selected["pattern"] = ($"{prefix}-{sizeSuffix}-{patternType}", null);
+        }
+        else
+        {
+            randomSprite.Selected["pattern"] = ($"{prefix}-transparent", null);
+        }
+
+        Dirty(uid, randomSprite);
     }
 }
