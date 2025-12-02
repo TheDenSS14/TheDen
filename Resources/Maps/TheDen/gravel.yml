@@ -34947,16 +34947,6 @@ entities:
     - type: Transform
       pos: 33.85034,65.55456
       parent: 2
-- proto: ClothingEyesPrescriptionMedHud
-  entities:
-  - uid: 1885
-    components:
-    - type: MetaData
-      desc: "A well worn prescription medical hud with the engraving: 'if lost, return to Dr. Tabitha Polaris\""
-      name: used prescription medhud
-    - type: Transform
-      pos: -23.599916,32.91547
-      parent: 2
 - proto: ClothingHeadCourier
   entities:
   - uid: 9680
@@ -63096,13 +63086,6 @@ entities:
     components:
     - type: Transform
       pos: -35.540424,33.503937
-      parent: 2
-- proto: PlushieTabi
-  entities:
-  - uid: 6689
-    components:
-    - type: Transform
-      pos: -23.518536,33.46705
       parent: 2
 - proto: PlushieTeddyBearRecolorableRandom
   entities:
