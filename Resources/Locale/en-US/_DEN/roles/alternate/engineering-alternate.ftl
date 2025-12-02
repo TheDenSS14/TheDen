@@ -41,4 +41,4 @@ job-name-alternate-senior-plasma-specialist = Senior Plasma Specialist
 
 # Chief Engineer
 job-name-alternate-chief-architect = Chief Architect
-job-name-alternate-senior-director-of-engineering = Senior Director of Engineering
+job-name-alternate-senior-director-of-engineering = Director of Engineering

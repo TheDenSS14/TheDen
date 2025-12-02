@@ -60,3 +60,17 @@
   components:
     - type: StealTarget
       stealGroup: HoSAntiqueWeapon
+
+- type: entity
+  parent: WeaponShotgunKammerer
+  id: WeaponShotgunKammererEmpty # DEN
+  description: When an old Remington design meets modern materials, this is the result. A favourite weapon of militia forces throughout many worlds. Uses 12 gauge shells.
+  suffix: Beanbag
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Weapons/Guns/Shotguns/pump.rsi # Delta-V
+  - type: Clothing
+    sprite: _DV/Objects/Weapons/Guns/Shotguns/pump.rsi # Delta-V
+  - type: BallisticAmmoProvider
+    capacity: 4
+    proto: null

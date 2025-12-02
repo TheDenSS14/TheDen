@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Using the chef apron for this one, because the sprite is already white.
 - type: loadout
@@ -108,6 +108,16 @@
   customColorTint: true
   items:
   - ClothingOuterCoatSweaterVest
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterVestValetUnrolled
+  category: Outer
+  cost: 1
+  items:
+  - ClothingOuterVestValet
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutOuter

@@ -162,6 +162,10 @@ public sealed partial class InstrumentSystem : SharedInstrumentSystem
         if (args.SenderSession.AttachedEntity != instrument.InstrumentPlayer)
             return;
 
+        // TEMP FIX: Ignore redundant stop events from engine bug (RobustToolbox#6113)
+        if (!instrument.Playing)
+            return;
+
         Clean(uid, instrument);
     }
 

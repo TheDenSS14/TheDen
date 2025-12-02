@@ -14933,3 +14933,148 @@ Entries:
   id: 1455
   time: '2025-11-29T01:29:32.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2094
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        The Vulcan, Drozd, and Lecter are now in the sec techfab behind the Tier
+        2 weapons research. The Kammerer is also in the lathe behind a Tier 1
+        weapons research.
+  id: 1456
+  time: '2025-11-29T01:40:08.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2093
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: >-
+        Replaced the Borg L6 Module with a Syndicate Weapon Module on the
+        Expedition Mines tileset
+  id: 1457
+  time: '2025-11-29T01:40:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2086
+- author: Jakumba
+  changes:
+    - type: Add
+      message: New admin smite that stops bodies rotting
+    - type: Tweak
+      message: Some behind the scenes work for Blood Cult
+  id: 1458
+  time: '2025-11-29T01:41:14.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2063
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        The WSPR was buffed to be a faster firing auto rifle instead of a burst
+        weapon. It now does 99 DPS.
+  id: 1459
+  time: '2025-11-29T02:18:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2097
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: >-
+        The bellhop cap and valet vest have new sprites, and the valet vest is
+        now a jacket.
+    - type: Add
+      message: >-
+        The valet jacket's sleeves can now be rolled or unrolled, to replicate
+        the "vest" appearance of its old iteration.
+    - type: Add
+      message: Both the valet vest and jacket are selectable as loadouts.
+  id: 1460
+  time: '2025-11-29T19:47:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2098
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: You can no longer blood pack reagent slimes for easy infinite chemical.
+  id: 1461
+  time: '2025-11-30T00:43:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2100
+- author: MajorMoth
+  changes:
+    - type: Tweak
+      message: >-
+        The syndicate bag of holding production lines and syndicate bundle bag
+        production lines have stopped creating bluespace pocket dimensions in
+        the wrong bags. In order to prevent any riots due to employee
+        dissatisfaction, the syndicate has started sewing in two additional
+        pockets into their duffel bags.
+    - type: Tweak
+      message: >-
+        Due to pressure from union protests that happened anyway, syndicate
+        backpack capacity has been expanded too. 
+  id: 1462
+  time: '2025-11-30T02:27:18.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2099
+- author: sleepyyapril
+  changes:
+    - type: Remove
+      message: Removed the RPG and minigun from all maps
+  id: 1463
+  time: '2025-11-30T02:29:58.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2104
+- author: Swiss_Fox
+  changes:
+    - type: Tweak
+      message: >-
+        [DINGO] The armory has been re-tooled, better make a new inventory
+        Warden!
+  id: 1464
+  time: '2025-11-30T03:57:40.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2101
+- author: MajorMoth
+  changes:
+    - type: Fix
+      message: 'Fixed overlapping sound cues for the vent critter event. '
+  id: 1465
+  time: '2025-11-30T17:31:14.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2109
+- author: Zilanthros
+  changes:
+    - type: Add
+      message: observer spawns points near arrivals & park
+    - type: Add
+      message: steam control room, steam valves, and vents to spa areas
+    - type: Tweak
+      message: modified park and plaza to better fit theme and style of the map
+    - type: Tweak
+      message: corrected several APC Arrays as well as misnamed APC/Air Alarm Units
+  id: 1466
+  time: '2025-12-01T01:06:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2110
+- author: Camdot
+  changes:
+    - type: Fix
+      message: >-
+        Call UpdateChemicals() after evaporation, and change UpdateEvaporation()
+        to actually remove the component when there's no evaporatables left.
+    - type: Fix
+      message: Pesky puddle persistence problem probably properly patched
+  id: 1467
+  time: '2025-12-01T01:57:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2112
+- author: GreggTheFather
+  changes:
+    - type: Remove
+      message: Removed a plushie from two maps.
+  id: 1468
+  time: '2025-12-01T19:48:53.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2115
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: The digiboard can now be connected to a cargo telepad for orders.
+    - type: Tweak
+      message: Cargo telepads now only take 5 seconds to receive an order.
+  id: 1469
+  time: '2025-12-01T22:45:13.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2116
+- author: Dirius77
+  changes:
+    - type: Fix
+      message: Fixed height sliders sometimes breaking when switching profiles.
+  id: 1470
+  time: '2025-12-01T22:45:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2113

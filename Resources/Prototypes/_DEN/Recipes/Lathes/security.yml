@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 ASaltySeabass
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -66,3 +67,52 @@
     Silver: 100
     Uranium: 200
     Plasma: 100
+
+- type: latheRecipe
+  id: WeaponShotgunKammererEmpty
+  result: WeaponShotgunKammererEmpty
+  category: Weapons
+  completetime: 10
+  materials: # it's dogshit
+    Steel: 1500
+    Plastic: 600
+    Silver: 200
+
+- type: latheRecipe
+  id: WeaponSubMachineGunDrozdEmpty
+  result: WeaponSubMachineGunDrozdEmpty
+  category: Weapons
+  completetime: 25
+  materials: # it's not dogshit
+    Steel: 2500
+    Aluminum: 1500
+    Plastic: 600
+    Silver: 350
+    Gold: 650
+    Tungsten: 1500
+
+- type: latheRecipe
+  id: WeaponRifleLecterEmpty
+  result: WeaponRifleLecterEmpty
+  category: Weapons
+  completetime: 15
+  materials: # it's meh
+    Steel: 2500
+    Aluminum: 250
+    Plastic: 200
+    Silver: 200
+    Gold: 100
+    Tungsten: 300
+
+- type: latheRecipe
+  id: WeaponRifleVulcanEmpty
+  result: WeaponRifleVulcanEmpty
+  category: Weapons
+  completetime: 15
+  materials: # it's meh
+    Steel: 2500
+    Aluminum: 250
+    Plastic: 200
+    Silver: 200
+    Gold: 100
+    Tungsten: 500
