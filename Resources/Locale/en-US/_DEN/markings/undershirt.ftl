@@ -133,11 +133,11 @@ marking-UndershirtClipChokerMale-choker_m = Choker
 marking-UndershirtClipChokerMale-choker_clip = Clip
 
 marking-UndershirtWristCuffs = Wrist Cuffs
-marking-UndershirtWristCuffs-wristcuffs = Cuffs
+marking-UndershirtWristCuffs-wristcuff = Cuffs
 
 marking-UndershirtWristCuffsFrilled = Frilly Wrist Cuffs
-marking-UndershirtWristCuffsFrilled-wristcuffs = Cuffs
-marking-UndershirtWristCuffsFrilled-wristcuffs_frills = Frills
+marking-UndershirtWristCuffsFrilled-wristcuff = Cuffs
+marking-UndershirtWristCuffsFrilled-wristcuff_frills = Frills
 
 marking-UndershirtWristCuffsThick = Thick Wrist Cuffs
-marking-UndershirtWristCuffsThick-wristcuffs_thick = Cuffs
+marking-UndershirtWristCuffsThick-wristcuff_thick = Cuffs
