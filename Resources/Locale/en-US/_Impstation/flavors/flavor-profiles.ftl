@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Jadrek
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 hivehum
+# SPDX-FileCopyrightText: 2025 LandsharkRAWR
 # SPDX-FileCopyrightText: 2025 oberonics
 # SPDX-FileCopyrightText: 2025 pocl v
 #
