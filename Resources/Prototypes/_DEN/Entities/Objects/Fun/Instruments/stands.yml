@@ -16,6 +16,8 @@
   id: InstrumentStandMicrophone
   name: microphone stand
   description: This handy dandy microphone stand keeps your hands open so you can pluck at a guitar while you sing.
+  placement:
+    mode: PlaceFree
   components:
   - type: Sprite
     sprite: _DEN/Objects/Fun/Instruments/microphone_stand.rsi
@@ -30,6 +32,9 @@
           tags:
           - Microphone
   - type: Appearance
+  - type: Construction
+    graph: MicrophoneStandGraph
+    node: microphoneStand
   - type: Fixtures
     fixtures:
       fix1:
