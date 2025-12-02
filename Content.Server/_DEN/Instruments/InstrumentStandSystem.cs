@@ -65,7 +65,11 @@ public sealed partial class InstrumentStandSystem : EntitySystem
         if (slot.Item == null || !TryComp<InstrumentComponent>(slot.Item, out var instrument))
             return;
 
-        ent.Comp.Instrument = CopyComp(slot.Item.Value, ent.Owner, instrument);
+        var item = slot.Item.Value;
+        ent.Comp.Instrument = CopyComp(item, ent.Owner, instrument);
+
+        if (TryComp<SwappableInstrumentComponent>(item, out var swappable))
+            CopyComp(item, ent.Owner, swappable);
     }
 
     private void RemoveInstrumentComponent(Entity<InstrumentStandComponent> ent)
@@ -75,6 +79,9 @@ public sealed partial class InstrumentStandSystem : EntitySystem
 
         RemComp(ent, ent.Comp.Instrument);
         ent.Comp.Instrument = null;
+
+        if (TryComp<SwappableInstrumentComponent>(ent, out var swappable))
+            RemComp(ent, swappable);
     }
 
     private void UpdateInstrumentStandInterface(Entity<InstrumentStandComponent> ent)
