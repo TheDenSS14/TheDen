@@ -67,3 +67,77 @@ marking-UndershirtButtonUpPartialFemGrayscale = Button-up Shirt (grayscale, part
 marking-UndershirtButtonUpPartialFemGrayscale-undershirt = Shirt
 marking-UndershirtButtonUpPartialFemGrayscale-undershirt-buttons = Button
 marking-UndershirtButtonUpPartialFemGrayscale-undershirt-collar = Collar
+
+marking-UndershirtGarterbeltFemale = Garterbelt (female)
+marking-UndershirtGarterbeltFemale-garterbelt_f = Garterbelt
+marking-UndershirtGarterbeltFemale-garterbelt_clips = Clips
+
+marking-UndershirtFrilledGarterbeltFemale = Frilled Garterbelt (female)
+marking-UndershirtFrilledGarterbeltFemale-garterbelt_f = Garterbelt
+marking-UndershirtFrilledGarterbeltFemale-garterbelt_frills_f = Frills
+marking-UndershirtFrilledGarterbeltFemale-garterbelt_clips = Clips
+
+marking-UndershirtGarterbeltMale = Garterbelt (male)
+marking-UndershirtGarterbeltMale-garterbelt_m = Garterbelt
+marking-UndershirtGarterbeltMale-garterbelt_clips = Clips
+
+marking-UndershirtFrilledGarterbeltMale = Frilled Garterbelt (male)
+marking-UndershirtFrilledGarterbeltMale-garterbelt_m = Garterbelt
+marking-UndershirtFrilledGarterbeltMale-garterbelt_frills_m = Frills
+marking-UndershirtFrilledGarterbeltMale-garterbelt_clips = Clips
+
+marking-UndershirtKindaStrappyFemale = Kinda Strappy Lingerie (female)
+marking-UndershirtKindaStrappyFemale-kinda-strappy_f = Straps
+
+marking-UndershirtStrappyFemale = Strappy Lingerie (female)
+marking-UndershirtStrappyFemale-strappy_f = Straps
+
+marking-UndershirtSuperStrappyFemale = Super Strappy Lingerie (female)
+marking-UndershirtSuperStrappyFemale-super-strappy_f = Straps
+
+marking-UndershirtKindaStrappyMale = Kinda Strappy Lingerie (male)
+marking-UndershirtKindaStrappyMale-kinda-strappy_m = Straps
+
+marking-UndershirtStrappyMale = Strappy Lingerie (male)
+marking-UndershirtStrappyMale-strappy_m = Straps
+
+marking-UndershirtSuperStrappyMale = Super Strappy Lingerie (male)
+marking-UndershirtSuperStrappyMale-super-strappy_m = Straps
+
+marking-UndershirtLowCoverageBraFemale = Low Coverage Bra (female)
+marking-UndershirtLowCoverageBraFemale-bra_f = Bra
+
+marking-UndershirtLowCoverageFrilledBraFemale = Low Coverage Frilled Bra
+marking-UndershirtLowCoverageFrilledBraFemale-bra_f = Bra
+marking-UndershirtLowCoverageFrilledBraFemale-frills_f = Frills
+
+marking-UndershirtLowCoverageBraMale = Low Coverage Bra (male)
+marking-UndershirtLowCoverageBraMale-bra_m = Bra
+
+marking-UndershirtLowCoverageFrilledBraMale = Low Coverage Frilled Bra (male)
+marking-UndershirtLowCoverageFrilledBraMale-bra_m = Bra
+marking-UndershirtLowCoverageFrilledBraMale-frills_m = Frills
+
+marking-UndershirtChokerFemale = Choker
+marking-UndershirtChokerFemale-choker_f = Choker
+
+marking-UndershirtClipChokerFemale = Clipped Choker
+marking-UndershirtClipChokerFemale-choker_f = Choker
+marking-UndershirtClipChokerFemale-choker_clip = Clip
+
+marking-UndershirtChokerMale = Choker
+marking-UndershirtChokerMale-choker_m = Choker
+
+marking-UndershirtClipChokerMale = Clipped Choker
+marking-UndershirtClipChokerMale-choker_m = Choker
+marking-UndershirtClipChokerMale-choker_clip = Clip
+
+marking-UndershirtWristCuffs = Wrist Cuffs
+marking-UndershirtWristCuffs-wristcuff = Cuffs
+
+marking-UndershirtWristCuffsFrilled = Frilly Wrist Cuffs
+marking-UndershirtWristCuffsFrilled-wristcuff = Cuffs
+marking-UndershirtWristCuffsFrilled-wristcuff_frills = Frills
+
+marking-UndershirtWristCuffsThick = Thick Wrist Cuffs
+marking-UndershirtWristCuffsThick-wristcuff_thick = Cuffs

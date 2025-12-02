@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 oberonics
+# SPDX-FileCopyrightText: 2025 pocl v
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: reagent
   id: Genderfluid
   name: reagent-name-genderfluid
@@ -6,7 +11,7 @@
   physicalDesc: reagent-physical-desc-gender
   flavor: genderfluid
   metamorphicSprite:
-    sprite: _Impstation/Objects/Consumable/Drinks/genderfluid.rsi
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/genderfluid.rsi
     state: icon_empty
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-

@@ -65,7 +65,7 @@
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Client._DEN.Customization.Systems;
 using Content.Client._DEN.Lobby.UI.Controls;
@@ -2404,14 +2404,16 @@ namespace Content.Client.Lobby.UI
                 return;
 
             var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
+            var height = Profile?.Height ?? species.DefaultHeight;
+            var width = Profile?.Width ?? species.DefaultWidth;
 
             HeightSlider.MinValue = species.MinHeight;
             HeightSlider.MaxValue = species.MaxHeight;
-            HeightSlider.SetValueWithoutEvent(Profile?.Height ?? species.DefaultHeight);
+            HeightSlider.SetValueWithoutEvent(height);
 
             WidthSlider.MinValue = species.MinWidth;
             WidthSlider.MaxValue = species.MaxWidth;
-            WidthSlider.SetValueWithoutEvent(Profile?.Width ?? species.DefaultWidth);
+            WidthSlider.SetValueWithoutEvent(width);
 
             UpdateHeightWidthSliderLabels(species);
             UpdateDimensions(SliderUpdate.Both);

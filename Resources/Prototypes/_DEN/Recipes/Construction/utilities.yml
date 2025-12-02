@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: construction
+  name: microphone stand
+  description: This handy dandy microphone stand keeps your hands open so you can pluck at a guitar while you sing.
+  id: MicrophoneStand
+  graph: MicrophoneStandGraph
+  startNode: start
+  targetNode: microphoneStand
+  category: construction-category-utilities
+  icon:
+    sprite: _DEN/Objects/Fun/Instruments/microphone_stand.rsi
+    state: stand
+  objectType: Structure
+  canBuildInImpassable: false
