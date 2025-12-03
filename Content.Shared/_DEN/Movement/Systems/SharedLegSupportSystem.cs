@@ -73,8 +73,8 @@ public abstract class SharedLegSupportSystem : EntitySystem
         var effectiveWalkLegRatio = legRatio + (1 - legRatio) * walkPenaltyReduction;
         var effectiveSprintLegRatio = legRatio + (1 - legRatio) * sprintPenaltyReduction;
 
-        var walkMultiplier = effectiveWalkLegRatio / legRatio;
-        var runMultiplier = effectiveSprintLegRatio / legRatio;
+        var walkMultiplier = effectiveWalkLegRatio;
+        var runMultiplier = effectiveSprintLegRatio;
 
         args.ModifySpeed(walkMultiplier, runMultiplier);
     }
