@@ -18,6 +18,7 @@
   - Biological
   - Others
   - Exotic # funky
+  - Lewd
   filterEnabled: True
 
 - type: guideEntry
@@ -75,3 +76,11 @@
   text: "/ServerInfo/_Funkystation/Guidebook/ChemicalTabs/Exotic.xml"
   filterEnabled: True
   # end funky
+
+  # DEN - Lewd Stuff
+- type: guideEntry
+  id: Lewd
+  name: guide-entry-lewd-chems
+  text: "/ServerInfo/Guidebook/ChemicalTabs/Lewd.xml"
+  filterEnabled: True
+  # END DEN

@@ -17,3 +17,5 @@ guide-entry-species-lore-tajaran = Tajaran Lore
 guide-entry-cooking-food-sequence = Sequence Cooking
 
 guide-entry-rules-eternity = Eternity Rules
+
+guide-entry-lewd-chems = Lewd
