@@ -211,11 +211,12 @@
 # sprites must be provided by the requester somehow.
 # these are liable to be removed at any time.
 
+# @ sheepmera; approved by portfiend (head maintainer)
 - type: entity
   parent: BasePlushie
   id: PlushieAzalea
   name: azalea plushie
-  description: call me keysmash the way i make that bottom text
+  description: A plushie of a fennec fox with ram horns and honey eyes. It's rumored that every single one of these is personalized.
   components:
   - type: Sprite
     sprite: _DEN/Objects/Fun/azaleaplushie.rsi
