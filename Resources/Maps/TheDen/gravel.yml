@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/03/2025 20:34:58
+  time: 12/03/2025 20:45:58
   entityCount: 14280
 maps:
 - 1
@@ -63657,11 +63657,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -8.5,45.5
       parent: 2
-  - uid: 7484
-    components:
-    - type: Transform
-      pos: -7.5,50.5
-      parent: 2
   - uid: 7485
     components:
     - type: Transform
@@ -72328,17 +72323,23 @@ entities:
       parent: 2
 - proto: SomberHangingBrazier
   entities:
-  - uid: 6689
+  - uid: 4785
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -8,51.5
+      rot: -1.5707963267948966 rad
+      pos: -9,48.5
+      parent: 2
+  - uid: 7484
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -8.5,51
       parent: 2
   - uid: 10840
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -6,51.5
+      rot: 3.141592653589793 rad
+      pos: -5.5,51
       parent: 2
 - proto: SophicScribeSpawner
   entities:
@@ -77220,7 +77221,7 @@ entities:
       parent: 2
 - proto: VendingMachineSomberMantis
   entities:
-  - uid: 4785
+  - uid: 6689
     components:
     - type: Transform
       pos: -5.5,50.5
