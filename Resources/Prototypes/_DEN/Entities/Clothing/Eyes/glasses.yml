@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
@@ -91,6 +93,56 @@
     - Medical
 
 - type: entity
+  parent: ClothingEyesGlassesEpistemics
+  id: ClothingEyesGlassesEpistemicsVisor
+  name: epi psionics visor
+  description: An upgraded visor that provides flash immunity and an epistemics psionics HUD.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_alt.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_alt.rsi
+
+- type: entity
+  parent: [ClothingEyesGlassesEpistemics, BaseMantisContraband]
+  id: ClothingEyesGlassesEpistemicsMantis
+  name: mantis psionics pince-nez
+  description: "A pince-nez that provides flash immunity and a psionics HUD. Comes with prescription eidolite lenses, if requested."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis.rsi
+  - type: VisionCorrection
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
+
+- type: entity
+  parent: [ClothingEyesGlassesEpistemicsMantis, BaseMantisContraband]
+  id: ClothingEyesGlassesEpistemicsMantisTinted
+  name: mantis psionics pince-nez (tinted)
+  description: "A pince-nez that provides flash immunity and a psionics HUD. Comes with prescription eidolite lenses, if requested."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis_dark.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis_dark.rsi
+  - type: VisionCorrection
+
+- type: entity
+  parent: [ClothingEyesGlassesEpistemicsMantis, BaseMantisContraband]
+  id: ClothingEyesGlassesEpistemicsMantisVeil
+  name: mantis psionics blindfold
+  description: "A sheer blindfold decorated with an electrum eye that provides flash immunity and psionics vision."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis_alt.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis_alt.rsi
+
+- type: entity
   parent: [ClothingEyesGlassesMedSec]
   id: ClothingEyesGlassesBSOAviator
   name: blueshield aviators
@@ -122,4 +174,3 @@
     sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_visor.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_visor.rsi
-

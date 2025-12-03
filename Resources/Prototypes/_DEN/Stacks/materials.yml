@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: stack
+  id: Mnemolith
+  name: mnemolith
+  icon: { sprite: /Textures/_DEN/Objects/Materials/materials.rsi, state: mnemolith }
+  spawn: MaterialMnemolith1
+  maxCount: 30
+  itemSize: 1
+
+- type: stack
+  id: Eidolite
+  name: eidolite
+  icon: { sprite: /Textures/_DEN/Objects/Materials/materials.rsi, state: eidolite }
+  spawn: MaterialEidolite1
+  maxCount: 30
+  itemSize: 1

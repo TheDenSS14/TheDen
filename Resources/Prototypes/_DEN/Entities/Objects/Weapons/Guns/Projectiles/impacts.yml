@@ -1,0 +1,81 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Mantis impacts start
+- type: entity
+  parent: BulletImpactEffect
+  id: BulletImpactEffectMantisCapgun
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.18
+  - type: Sprite
+    layers:
+    - sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+      state: impact_capgun
+      map: ["enum.EffectLayers.Unshaded"]
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 1.5
+    energy: 1.0
+    color: "#ffb869"
+
+- type: entity
+  parent: BulletImpactEffect
+  id: BulletImpactEffectMantisCrypto
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.18
+  - type: Sprite
+    layers:
+    - sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+      state: impact_crypto
+      map: ["enum.EffectLayers.Unshaded"]
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 1.5
+    energy: 1.0
+    color: "#6279f9"
+
+- type: entity
+  parent: BulletImpactEffect
+  id: BulletImpactEffectMantisHoly
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.18
+  - type: Sprite
+    layers:
+    - sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+      state: impact_holy
+      map: ["enum.EffectLayers.Unshaded"]
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 1.5
+    energy: 1.0
+    color: "#88b0d0"
+
+- type: entity
+  parent: BulletImpactEffect
+  id: BulletImpactEffectMantisLethal
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.18
+  - type: Sprite
+    layers:
+    - sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+      state: impact_lethal
+      map: ["enum.EffectLayers.Unshaded"]
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 1.5
+    energy: 1.0
+    color: "#44fbf7"
+# Mantis impacts end

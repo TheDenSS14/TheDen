@@ -8,7 +8,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: viper
@@ -157,9 +157,10 @@
 
 - type: entity
   name: psi-breaker
-  parent: BaseWeaponPistol
+  parent: [BaseWeaponPistol, BaseMantisContraband]
   id: WeaponPistolPsiBreaker
-  description: A small, flashy pistol with a marble style grip. Provides no tactical advantage. Uses .38 special ammo.
+  suffix: DO NOT MAP # Mantes shouldn't get free lethals
+  description: "A gloomy pistol with an amaranth grip. Provides no tactical advantage. Uses .38 special ammo." # TheDen
   components:
   - type: Sprite
     sprite: _DV/Objects/Weapons/Guns/Pistols/psibreaker.rsi
@@ -191,6 +192,16 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+  - type: Clothing # TheDen
+    sprite: _DV/Objects/Weapons/Guns/Pistols/psibreaker.rsi
+    quickEquip: false
+    slots:
+    - Belt
+    - suitStorage
+  - type: Tag # TheDen
+    tags:
+    - Sidearm
+    - MantisBeltStorable
 
 - type: entity
   name: flintlock

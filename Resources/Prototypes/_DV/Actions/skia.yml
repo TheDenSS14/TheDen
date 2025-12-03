@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 William Lemon
+# SPDX-FileCopyrightText: 2025 eightballll
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ActionShatterLights
+  name: Shatter Lights
+  description: Emit a blood-curdling scream that shatters all lights in the area.
+  components:
+  - type: InstantAction
+    icon:
+      sprite: _DV/Actions/shatterlights.rsi
+      state: shatter-lights
+    useDelay: 20
+    priority: 3
+    event: !type:ShatterLightsActionEvent
+
+- type: entity
+  id: ActionTechnokineticPulse
+  name: Technokinetic Pulse
+  description: Unleash a burst of Technokinetic energy, disabling and destroying nearby electronics.
+  components:
+  - type: InstantAction
+    icon:
+      sprite: _DV/Actions/technokineticpulse.rsi
+      state: technokinetic-pulse
+    useDelay: 40
+    priority: 4
+    event: !type:TechnokineticPulseActionEvent

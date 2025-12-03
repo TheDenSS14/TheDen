@@ -20,6 +20,7 @@
 # SPDX-FileCopyrightText: 2023 themias
 # SPDX-FileCopyrightText: 2024 SimpleStation14
 # SPDX-FileCopyrightText: 2025 Jadrek
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -79,6 +80,9 @@
         cell_slot:
           name: power-cell-slot-component-slot-name-default
           startingItem: PowerCellMedium
+          blacklist: # TheDen
+            tags:
+            - MantisCaster
     - type: ContainerContainer
       containers:
         cell_slot: !type:ContainerSlot {}
@@ -103,6 +107,9 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
+        blacklist: # TheDen
+          tags:
+          - MantisCaster
 
 - type: entity
   parent: Lantern
@@ -142,3 +149,6 @@
           enum.FlashVisuals.LightLayer:
             True: {visible: true}
             False: {visible: false}
+    - type: Tag # TheDen
+      tags:
+      - Flash

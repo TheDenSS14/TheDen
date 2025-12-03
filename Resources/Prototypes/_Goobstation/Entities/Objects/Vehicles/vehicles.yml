@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2024 Aviu00
 # SPDX-FileCopyrightText: 2024 Piras314
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Will Oliver
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -226,7 +227,7 @@
   - type: Vehicle
     requiredHands: 0
     engineRunning: true
-    renderOver: South, SouthEast, SouthWest
+    renderOver: North, NorthEast, NorthWest # TheDen - These were backwards and I'm surprised nobody noticed
   - type: MovementSpeedModifier
     acceleration: 10
     friction: 10

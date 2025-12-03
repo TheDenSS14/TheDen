@@ -16,11 +16,13 @@
 # SPDX-FileCopyrightText: 2024 liltenhead
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   abstract: true
@@ -394,6 +396,7 @@
         - ReagentSlimechlorinetriflouride
         - ReagentSlimePotassium
         - ReagentSlimeLotophagoiOil
+        - ReagentSlimeMnemolith # TheDen
       chance: 1
 
 - type: entity
@@ -621,7 +624,31 @@
     layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: alive
-        color: "#3e901c"
+        color: "#FFBF00"
+  - type: GhostRole
+    prob: 1 #it's significantly more psionic than the others
+    description: ghost-role-information-angry-slimes-description
+
+- type: entity # TheDen
+  id: ReagentSlimeMnemolith
+  parent: ReagentSlime
+  suffix: Mnemolith
+  components:
+  - type: Bloodstream
+    bloodReagent: MnemolithReagent
+    chemicalMaxVolume: 75
+  - type: MeleeChemicalInjector
+    solution: bloodstream
+    transferAmount: 3
+  - type: PointLight
+    color: "#313b4a"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#313b4a"
   - type: GhostRole
     prob: 1 #it's significantly more psionic than the others
     description: ghost-role-information-angry-slimes-description

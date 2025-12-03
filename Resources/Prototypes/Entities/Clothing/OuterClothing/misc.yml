@@ -30,9 +30,10 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 William Lemon
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -135,6 +136,10 @@
     sprite: Clothing/OuterClothing/Misc/black_hoodie.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/black_hoodie.rsi
+  - type: Tag # DeltaV - It's a hoodie
+    tags:
+    - WhitelistChameleon
+    - Hoodie
 
 - type: entity
   parent: ClothingOuterBase
@@ -146,6 +151,10 @@
     sprite: Clothing/OuterClothing/Misc/grey_hoodie.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/grey_hoodie.rsi
+  - type: Tag # DeltaV - It's a hoodie
+    tags:
+    - WhitelistChameleon
+    - Hoodie
 
 - type: entity
   parent: ClothingOuterBase
@@ -178,6 +187,10 @@
   - type: TemperatureProtection
     heatingCoefficient: 1.1
     coolingCoefficient: 0.1
+  - type: Tag # DeltaV - It's a hoodie
+    tags:
+    - WhitelistChameleon
+    - Hoodie
 
 - type: entity
   parent: ClothingOuterBase

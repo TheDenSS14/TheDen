@@ -1,10 +1,10 @@
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2023 Kit0vras <123590995+Kit0vras@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 Kit0vras
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: SalvageHumanCorpse
@@ -70,7 +70,9 @@
     - ResearchAssistantGear
     - ScientistGear
     - ChaplainGear # DeltaV - Move Chaplain into Epistemics
-    - ForensicMantisGear # Nyanotrasen - Forensic Mantis
+    - MantisGearAiry # TheDen
+    - MantisGearDark # TheDen
+    - MantisGearOrnate # TheDen
 
 - type: entity
   parent: SalvageHumanCorpse

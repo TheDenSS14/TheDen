@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 pocl v
 # SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -200,3 +201,18 @@
           Quantity: 150
   - type: Label
     currentLabel: watermelon juice
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkJuiceRoseJug
+  suffix: rose water
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: JuiceRose
+          Quantity: 150
+  - type: Label
+    currentLabel: rose water

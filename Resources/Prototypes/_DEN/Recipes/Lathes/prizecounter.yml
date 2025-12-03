@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: latheRecipe
   id: PlushieFelinid
@@ -91,6 +92,14 @@
   completetime: 0.1
   materials:
     PrizeTicket: 50
+
+- type: latheRecipe
+  id: PlushieDollMantis
+  result: PlushieDollMantis
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 60 # Slightly more expensive because it's also a tiny stupid little knife
 
 # squeaky toys are discounted because they're not plushies (no stash, not edible, etc)
 

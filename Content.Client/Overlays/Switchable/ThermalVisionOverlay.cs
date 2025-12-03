@@ -1,8 +1,8 @@
-// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 Piras314
+// SPDX-FileCopyrightText: 2025 Spatison
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 William Lemon
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -82,6 +82,7 @@ public sealed class ThermalVisionOverlay : Overlay
             _lightEntity ??= _entity.SpawnAttachedTo(null, playerXform.Coordinates);
             _transform.SetParent(_lightEntity.Value, player.Value);
             var light = _entity.EnsureComponent<PointLightComponent>(_lightEntity.Value);
+            light.NetSyncEnabled = false; // DeltaV - Desync this component
             _light.SetRadius(_lightEntity.Value, LightRadius, light);
             _light.SetEnergy(_lightEntity.Value, alpha, light);
             _light.SetColor(_lightEntity.Value, Comp.Color, light);

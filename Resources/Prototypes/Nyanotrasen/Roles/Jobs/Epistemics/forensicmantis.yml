@@ -10,11 +10,12 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 SixplyDev
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: job
   id: ForensicMantis
@@ -40,7 +41,7 @@
           inverted: true
           traits:
             - ShadowkinBlackeye
-  startingGear: ForensicMantisGear
+  startingGear: MantisGearStarter # TheDen
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd
   canBeAntag: true # DeltaV - Mantis is no longer a Detective
@@ -53,39 +54,39 @@
   - !type:AddComponentSpecial
     components:
     - type: Psionic
-      powerSlots: 1 # TheDen - This only means that they don't start generating glimmer until they gain a second slot-taking power (they have one no-glimmer slot like all psychics)
+      powerSlots: 1 # TheDen - This only means that they don't start generating glimmer until they gain a second slot-taking power (they have one no-glimmer slot like all psions)
     - type: InnatePsionicPowers
       powersToAdd: # TheDen - They have no innate slot-taking powers, so they need 100 Potentia to gain a new power
         - MetapsionicPower # Doesn't take a power slot
         - TelepathyPower # Doesn't take a power slot
-        - PsychognomyPower # TheDen - Doesn't take a power slot (and the psychic monitor should get a little extra information for roleplay)
+        - PsychognomyPower # TheDen - Doesn't take a power slot (and the psionic monitor should get a little extra information for roleplay)
         - AssayPower # Doesn't take a power slot
 
-
 - type: startingGear
-  id: ForensicMantisGear
+  id: MantisGearStarter # TheDen
   subGear:
-  - ForensicMantisPlasmamanGear
+  - MantisPlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitMantis
-    back: ClothingBackpackMantisFilled
-    shoes: ClothingShoesBootsMantis
-    head: ClothingHeadHatFezMantis
+    jumpsuit: ClothingUniformJumpsuitMantisDark # TheDen
+    back: ClothingBackpackMantis # TheDen - Nothing to fill it with anymore
+    shoes: ClothingShoesSandalsMantisDark # TheDen
+    head: ClothingHeadHoodMantisDark # TheDen
     id: ForensicMantisPDA
-    eyes: ClothingEyesGlassesSunglasses
-    ears: ClothingHeadsetScience
-    gloves: ClothingHandsGlovesColorWhite
-    outerClothing: ClothingOuterCoatMantis
-    belt: ClothingBeltMantis
-    pocket1: BookPsionicsGuidebook
-  innerClothingSkirt: ClothingUniformSkirtMantis
-  satchel: ClothingBackpackSatchelMantisFilled
-  duffelbag: ClothingBackpackDuffelMantisFilled
+    # eyes: ClothingEyesGlassesSunglasses # TheDen
+    ears: ClothingHeadsetMantis # TheDen
+    gloves: ClothingHandsGlovesMantisDark # TheDen
+    outerClothing: ClothingOuterWinterCoatMantisDarkFolded # TheDen
+    belt: ClothingBeltMantisDark # TheDen
+    # pocket1: BookPsionicsGuidebook # TheDen - Throwing this in their locker because it sucks
+    pocket1: HandheldPsionicsRegistry # TheDen
+  innerClothingSkirt: ClothingUniformSkirtMantisAiry # TheDen
+  satchel: ClothingBackpackSatchelMantis # TheDen - Nothing to fill it with anymore
+  duffelbag: ClothingBackpackDuffelMantis # TheDen - Nothing to fill it with anymore
 
 - type: startingGear
-  id: ForensicMantisPlasmamanGear
+  id: MantisPlasmamanGear
   parent: BasePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitMantis
     head: ClothingHeadEnvirohelmMantis
-    gloves: ClothingHandsGlovesEnviroglovesWhite
+    gloves: ClothingHandsGlovesEnviroglovesBlack # TheDen

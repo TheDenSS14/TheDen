@@ -338,10 +338,10 @@
 - type: entity
   parent: ClothingHandsBase
   id: ClothingHandsMantisEpiWarmers
-  name: psionic mantis arm-warmers
-  description: A pair of rather nice arm-warmers, styled for a Psionic Mantis.
+  name: mantis arm-warmers
+  description: A pair of rather nice arm-warmers, styled for a mantis.
   components:
-  - type: Sprite
+  - type: Sprite # TheDen - Redid the mantis uniforms without removing the old items
     sprite: _Floof/Clothing/Departmental/Epistemics/mantisepiwarmer.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Epistemics/mantisepiwarmer.rsi
@@ -353,10 +353,10 @@
 - type: entity
   parent: [ClothingShoesBaseSocks, ClothingShoesMilitaryBase] #TheDen
   id: ClothingUnderSocksMantisEpi
-  name: psionic mantis thigh-high socks
-  description: A pair of thigh-high socks, styled for a Psionic Mantis.
+  name: mantis thigh-high socks
+  description: A pair of thigh-high socks, styled for a mantis
   components:
-  - type: Sprite
+  - type: Sprite # TheDen - Redid the mantis uniforms without removing the old items
     sprite: _Floof/Clothing/Departmental/Epistemics/mantisepisocks.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Epistemics/mantisepisocks.rsi
@@ -364,10 +364,10 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformMantisEpiThong
-  name: psionic mantis thong
-  description: Styled for a Psionic Mantis, but is this even considered a piece of clothing?
+  name: mantis thong
+  description: Styled for a mantis, but is this even considered a piece of clothing?
   components:
-  - type: Sprite
+  - type: Sprite # TheDen - Redid the mantis uniforms without removing the old items
     sprite: _Floof/Clothing/Departmental/Epistemics/mantisepithong.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Epistemics/mantisepithong.rsi
