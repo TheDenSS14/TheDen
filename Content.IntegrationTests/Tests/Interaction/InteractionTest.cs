@@ -223,14 +223,14 @@ public abstract partial class InteractionTest
         ServerSession = sPlayerMan.GetSessionById(ClientSession.UserId);
 
         // Spawn player entity & attach
-        EntityUid? old = default;
+        NetEntity? old = default;
         await Server.WaitPost(() =>
         {
             // Fuck you mind system I want an hour of my life back
             // Mind system is a time vampire
             SEntMan.System<SharedMindSystem>().WipeMind(ServerSession.ContentData()?.Mind);
 
-            old = cPlayerMan.LocalEntity;
+            CEntMan.TryGetNetEntity(cPlayerMan.LocalEntity, out old);
             SPlayer = SEntMan.SpawnEntity(PlayerPrototype, SEntMan.GetCoordinates(PlayerCoords));
             Player = SEntMan.GetNetEntity(SPlayer);
             Server.PlayerMan.SetAttachedEntity(ServerSession, SPlayer);
@@ -246,8 +246,8 @@ public abstract partial class InteractionTest
         // Delete old player entity.
         await Server.WaitPost(() =>
         {
-            if (old != null)
-                SEntMan.DeleteEntity(old.Value);
+            if (SEntMan.TryGetEntity(old, out var uid))
+                SEntMan.DeleteEntity(uid);
         });
 
         // Ensure that the player only has one hand, so that they do not accidentally pick up deconstruction products
