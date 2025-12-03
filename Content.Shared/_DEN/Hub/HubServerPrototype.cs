@@ -19,7 +19,10 @@ public sealed partial class HubServerPrototype : IPrototype
     public string ID { get; } = default!;
 
     [DataField(required: true)]
-    public string ConnectionString { get; } = string.Empty;
+    public string StatusUrl { get; } = string.Empty;
+
+    [DataField(required: true)]
+    public string ConnectAddress { get; } = string.Empty;
 
     [DataField(required: true)]
     public LocId DisplayName { get; }

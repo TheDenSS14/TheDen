@@ -20,8 +20,6 @@ public sealed class HubManager
 
     public event Action? OnServersRefreshed;
 
-    private const string StatusRoute = "/status";
-
     private Dictionary<string, HubServer> _servers = new();
     private ISawmill _sawmill = null!;
 
@@ -53,14 +51,12 @@ public sealed class HubManager
 
     private async Task RefreshServer(HubServer server)
     {
-        var connectionString = server.ConnectAddress;
-
-        if (string.IsNullOrWhiteSpace(connectionString))
+        if (string.IsNullOrWhiteSpace(server.StatusUrl))
             return;
 
         try
         {
-            var response = await _holder.Client.GetAsync($"{connectionString}{StatusRoute}");
+            var response = await _holder.Client.GetAsync(server.StatusUrl);
             var statusJson = await response.Content.ReadAsStringAsync();
 
             if (statusJson.Length == 0)
@@ -123,17 +119,6 @@ public sealed class HubManager
         };
     }
 
-    private string SanitizeConnectAddress(string address)
-    {
-        if (address.EndsWith('/'))
-            address = address.Substring(0, address.Length - 1);
-
-        if (!address.StartsWith("http://") && !address.StartsWith("https://"))
-            throw new InvalidOperationException("Connect address must start with an HTTP protocol!");
-
-        return address;
-    }
-
     private void PopulateServers()
     {
         _servers.Clear();
@@ -141,10 +126,10 @@ public sealed class HubManager
         foreach (var server in _protoManager.EnumeratePrototypes<HubServerPrototype>())
         {
             var displayName = Loc.GetString(server.DisplayName);
-            var connectAddress = SanitizeConnectAddress(server.ConnectionString);
             var entry = new HubServer(
                 server.ID,
-                connectAddress,
+                server.StatusUrl,
+                server.ConnectAddress,
                 displayName,
                 0,
                 0,

@@ -10,6 +10,7 @@ namespace Content.Shared._DEN.Hub;
 [Serializable, NetSerializable]
 public sealed record HubServer(
     string ServerId,
+    string StatusUrl,
     string ConnectAddress,
     string? DisplayName,
     int? Players,

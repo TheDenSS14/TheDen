@@ -5,20 +5,24 @@
 
 - type: hubServer
   id: salvation
-  connectionString: "http://51.222.244.125:1212"
+  statusUrl: "http://51.222.244.125:1212/status"
+  connectAddress: "ss14://51.222.244.125:1212"
   displayName: hub-server-salvation-name
 
 - type: hubServer
   id: eternity
-  connectionString: "http://51.222.244.125:1215"
+  statusUrl: "http://51.222.244.125:1215/status"
+  connectAddress: "ss14://51.222.244.125:1215"
   displayName: hub-server-eternity-name
 
 - type: hubServer
   id: damnation
-  connectionString: "http://51.222.244.125:1213"
+  statusUrl: "http://51.222.244.125:1213/status"
+  connectAddress: "ss14://51.222.244.125:1213"
   displayName: hub-server-damnation-name
 
 - type: hubServer
   id: mapping
-  connectionString: "http://51.222.244.125:1214"
+  statusUrl: "http://51.222.244.125:1214/status"
+  connectAddress: "ss14://51.222.244.125:1214"
   displayName: hub-server-mapping-name
