@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/03/2025 20:26:35
-  entityCount: 14278
+  time: 12/03/2025 20:34:58
+  entityCount: 14280
 maps:
 - 1
 grids:
@@ -56629,13 +56629,6 @@ entities:
     - type: Transform
       pos: 8.5,55.5
       parent: 2
-- proto: GloomyHolopadEpistemicsMantis
-  entities:
-  - uid: 4785
-    components:
-    - type: Transform
-      pos: -5.5,49.5
-      parent: 2
 - proto: GoldOre1
   entities:
   - uid: 6877
@@ -72326,6 +72319,27 @@ entities:
     - type: Transform
       pos: -24.5,68.5
       parent: 2
+- proto: SomberCounter
+  entities:
+  - uid: 4777
+    components:
+    - type: Transform
+      pos: -7.5,50.5
+      parent: 2
+- proto: SomberHangingBrazier
+  entities:
+  - uid: 6689
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -8,51.5
+      parent: 2
+  - uid: 10840
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -6,51.5
+      parent: 2
 - proto: SophicScribeSpawner
   entities:
   - uid: 485
@@ -75348,13 +75362,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 8.473738,24.67347
       parent: 2
-- proto: TableBrass
-  entities:
-  - uid: 4777
-    components:
-    - type: Transform
-      pos: -7.5,50.5
-      parent: 2
 - proto: TableCarpet
   entities:
   - uid: 6599
@@ -77210,6 +77217,13 @@ entities:
     components:
     - type: Transform
       pos: 21.5,-17.5
+      parent: 2
+- proto: VendingMachineSomberMantis
+  entities:
+  - uid: 4785
+    components:
+    - type: Transform
+      pos: -5.5,50.5
       parent: 2
 - proto: VendingMachineSustenance
   entities:
