@@ -2,16 +2,28 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Psionic Mantis
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisBackpacks
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutPsionicMantisBackpacks
+  maxItems: 1
+  items:
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisBackpackMantis
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisBackpackDuffelMantis
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisBackpackSatchelMantisPurse
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisBackpackMessengerMantis
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisBackpackSatchelMantis
 
 - type: characterItemGroup
   id: LoadoutPsionicMantisBelt
@@ -19,24 +31,57 @@
   items:
     - type: loadout
       id: LoadoutPsionicMantisBeltMantis
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisBeltMantisAiry
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisBeltMantisDark
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisBeltMantisOrnate
 
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisEars
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutPsionicMantisEars
+  maxItems: 1
+  items:
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisHeadsetMantis
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisHeadsetAltMantis
 
 - type: characterItemGroup
   id: LoadoutPsionicMantisEquipment
-  maxItems: 3
+  maxItems: 6
   items:
-    - type: loadout
-      id: LoadoutPsionicMantisEquipmentCandles
-    - type: loadout
-      id: LoadoutPsionicMantisEquipmentCandlesSmall
-    - type: loadout
-      id: LoadoutPsionicMantisPillCanisterSpaceDrugs
-    - type: loadout
-      id: LoadoutPsionicMantisPillCanisterCryptobiolin
+    # - type: loadout # TheDen - They have their own candles now, see below
+    #   id: LoadoutPsionicMantisEquipmentCandles
+    # - type: loadout
+    #   id: LoadoutPsionicMantisEquipmentCandlesSmall
+    # - type: loadout # TheDen - All pills moved to MantisCaseChemicals in their locker
+    #   id: LoadoutPsionicMantisPillCanisterSpaceDrugs
+    # - type: loadout
+    #   id: LoadoutPsionicMantisPillCanisterCryptobiolin
+    # - type: loadout
+    #   id: LoadoutPsionicMantisPillCanisterMnemolith
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisEquipmentCigPackMnemolith
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisEquipmentFlippoLighterMantis
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisEquipmentMantisCaseCandles
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisEquipmentTailorsKnife
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisEquipmentDollMantis
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisEquipmentWheelchair
+
+- type: characterItemGroup
+  id: LoadoutPsionicMantisRestraints
+  maxItems: 1
+  items:
+    - type: loadout # TheDen - This contains the restraints case
+      id: LoadoutPsionicMantisRestraintsCoffinMantisFilled
+    - type: loadout # TheDen - This is for people who don't want the ClothingBackpackCoffinMantis too
+      id: LoadoutPsionicMantisRestraintsMantisCaseRestraints
 
 - type: characterItemGroup
   id: LoadoutPsionicMantisEyes
@@ -46,6 +91,12 @@
       id: LoadoutPsionicMantisEyesEpiHUD
     - type: loadout
       id: LoadoutPsionicMantisEyesEpiGlasses
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisEyesEpiGlassesMantis
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisEyesEpiGlassesMantisTinted
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisEyesEpiGlassesMantisVeil
 
 - type: characterItemGroup
   id: LoadoutPsionicMantisGloves
@@ -53,6 +104,14 @@
   items:
     - type: loadout
       id: LoadoutClothingHandsMantisEpiWarmers
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisGlovesDated
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisGlovesAiry
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisGlovesDark
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisGlovesOrnate
 
 - type: characterItemGroup
   id: LoadoutPsionicMantisHead
@@ -60,21 +119,35 @@
   items:
     - type: loadout
       id: LoadoutPsionicMantisHeadMantisFez
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisHeadMantisFezAiry
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisHeadHoodMantisDark
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisHeadMantisFezOrnate
 
 #- type: characterItemGroup
 #  id: LoadoutPsionicMantisId
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisNeck
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisMask
-#  maxItems: 1
-#  items:
+
+- type: characterItemGroup
+  id: LoadoutPsionicMantisNeck
+  maxItems: 1
+  items:
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisNeckCloakMantisDark
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisNeckMantleMantisOrnate
+
+- type: characterItemGroup
+  id: LoadoutPsionicMantisMask
+  maxItems: 1
+  items:
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisMaskMantisVeil
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisMaskMantisRitual
 
 - type: characterItemGroup
   id: LoadoutPsionicMantisOuter
@@ -84,19 +157,29 @@
       id: LoadoutScienceOuterWinterCoatMantis
     - type: loadout
       id: LoadoutScienceOuterJacketMantis
+    - type: loadout # TheDen
+      id: LoadoutScienceOuterJacketMantisAiry
+    - type: loadout # TheDen
+      id: LoadoutScienceOuterWinterCoatMantisDark
+    - type: loadout # TheDen
+      id: LoadoutScienceOuterJacketMantisOrnate
+    - type: loadout # TheDen
+      id: LoadoutScienceOuterWinterCoatMantisMu
 
 - type: characterItemGroup
   id: LoadoutPsionicMantisShoes
   maxItems: 1
   items:
     - type: loadout
-      id: LoadoutPsionicMantisShoesMantisBoots
+      id: LoadoutPsionicMantisShoes
     - type: loadout
       id: LoadoutClothingUnderSocksMantisEpi
-    # DEN start: Fixing tests
-    - type: loadout
-      id: LoadoutPsionicMantisShoes
-    # End DEN
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisShoesAiry
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisShoesDark
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisShoesOrnate
 
 - type: characterItemGroup
   id: LoadoutPsionicMantisUniforms
@@ -107,4 +190,43 @@
     - type: loadout
       id: LoadoutPsionicMantisUniformSkirt
     - type: loadout
-      id: LoadoutClothingUniformMantisEpiThong # DEN: Fix tests
+      id: LoadoutClothingUniformMantisEpiThong
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisUniformSkirtAiry
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisUniformSuitDark
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisUniformSkirtOrnate
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisUniformSuitLoincloth
+
+# TheDen - Everything below is our code
+- type: characterItemGroup
+  id: LoadoutPsionicMantisRanged
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPsionicMantisRangedPistol
+    - type: loadout
+      id: LoadoutPsionicMantisRangedRevolver
+    - type: loadout
+      id: LoadoutPsionicMantisRangedSubMachineGun
+    - type: loadout
+      id: LoadoutPsionicMantisRangedShotgun
+    - type: loadout
+      id: LoadoutPsionicMantisMeleeGreatsword # Faust - Choosing the risk/reward sword prevents you from taking a gun, you have to commit
+
+- type: characterItemGroup
+  id: LoadoutPsionicMantisMelee
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPsionicMantisMeleeKnife # Athame
+    - type: loadout
+      id: LoadoutPsionicMantisMeleeSickle # Boline
+    - type: loadout
+      id: LoadoutPsionicMantisMeleeFist # Manifold
+    - type: loadout
+      id: LoadoutPsionicMantisMeleeCane # Gnomon
+    - type: loadout
+      id: LoadoutPsionicMantisMeleeGreatsword # Faust

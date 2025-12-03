@@ -1,17 +1,18 @@
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2023 Tim Falken <timfalken@hotmail.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
-# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Rane <60792108+Elijahrane@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 Tim Falken
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Milon
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 Rane
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: BasePDA
@@ -119,17 +120,51 @@
     sprite: _DV/Objects/Devices/pda.rsi
     state: pda-martialartist
 
-- type: entity
+- type: entity # TheDen - Changed pretty much everything
   parent: BasePDA
   id: ForensicMantisPDA
   name: mantis PDA
-  description: Smells like illegal substances.
+  description: "This PDA marks its bearer as a member of the Outer Chamber--a mantis, the Greek word for \"seer.\" The eye on its display seems to track whoever dares to look back. Carried in a pocket, because you couldn't bear to hang this hunk of plastic on your belt."
   components:
+  - type: Item
+    sprite: _DEN/Objects/Devices/pda.rsi
+    heldPrefix: mantis
+  - type: Clothing
+    sprite: _DEN/Objects/Devices/pda.rsi
+    equippedPrefix: mantis
+  - type: Sprite
+    sprite: _DEN/Objects/Devices/pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+    - state: "mantis-light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "mantis-id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: PointLight
+    enabled: false
+    radius: 1.75
+    energy: 2
+    color: "#d9418d"
   - type: Pda
     id: ForensicMantisIDCard
-    state: pda-science
+    state: pda-mantis
+    penSlot:
+      startingItem: PenMantis
+      priority: -2
+      whitelist:
+        tags:
+        - Write
+  - type: PdaBorderColor
+    borderColor: "#3b3640"
+    accentVColor: "#431b57"
+    accentHColor: "#8c1c54"
   - type: Icon
-    state: pda-science
+    sprite: _DEN/Objects/Devices/pda.rsi
+    state: pda-mantis
   - type: CartridgeLoader
     preinstalled:
      - CrewManifestCartridge
@@ -138,3 +173,5 @@
      - GlimmerMonitorCartridge
      - NanoChatCartridge
      - PsiWatchCartridge
+  - type: GuideHelp
+    guides: [ MantisGuide ]

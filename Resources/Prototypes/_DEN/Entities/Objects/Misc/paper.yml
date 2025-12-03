@@ -1,8 +1,10 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: ce's fountain pen
@@ -101,12 +103,14 @@
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
-        ents: [ ]
-      pen_slot: !type:ContainerSlot { }
+        ents: []
+      pen_slot: !type:ContainerSlot {}
   - type: ItemSlots
     slots:
       pen_slot:
-        name: folder-slot-component-slot-name-pen
+        name: clipboard-slot-component-slot-name-pen
+        insertVerbText: pen-insert-verb
+        ejectVerbText: pen-eject-verb
         whitelist:
           tags:
           - Write
@@ -128,3 +132,221 @@
   components:
   - type: Paper
     content: doc-text-stolen
+
+- type: entity
+  parent: [BoxFolderFireproof, BaseMantisContraband] # Contraband so the mystagogue doesn't steal it
+  id: BoxFolderMantis
+  name: mantis ledger
+  description: "A foreboding folder designed to document the station's psions. Fireproof, immune to scrying, and carrying a special pen."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: folder-mantis
+    - state: folder-base-mantis
+  - type: Item
+    sprite: _DEN/Objects/Misc/bureaucracy.rsi
+    heldPrefix: folder-mantis
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      pen_slot: !type:ContainerSlot {}
+  - type: ItemSlots
+    slots:
+      pen_slot:
+        name: clipboard-slot-component-slot-name-pen
+        insertVerbText: pen-insert-verb
+        ejectVerbText: pen-eject-verb
+        whitelist:
+          tags:
+          - Write
+  - type: ItemMapper
+    mapLayers:
+      folder-overlay-paper-mantis:
+        whitelist:
+          tags:
+          - Document
+      folder-mantis-overlay-pen:
+        whitelist:
+          tags:
+          - Write
+  - type: Storage
+    maxItemSize: Small
+    whitelist:
+      tags:
+        - Document
+        - MantisBoxFolderStorable # Only the mantis pen, stamp, and papers should have this
+    grid: # It's a 5x5 square with an isolated slot in the middle for the stamp
+    - 0,0,4,0
+    - 0,4,4,4
+    - 0,1,1,1
+    - 3,1,4,1
+    - 0,3,1,3
+    - 3,3,4,3
+    - 0,2,0,2
+    - 2,2,2,2
+    - 4,2,4,2
+  - type: StorageFill
+    contents: # Contains 20 mantis papers you can use to write down names of psions, or warnings, or psionic therapy notes or whatever, with the stamp in the center
+      - id: PaperMantis
+        amount: 10
+      - id: RubberStampMantis
+      - id: PaperMantis
+        amount: 10
+  - type: ContainerFill
+    containers:
+      pen_slot:
+      - PenMantis
+  - type: Tag
+    tags:
+    - Folder
+    - MantisBeltStorable
+  - type: GuideHelp
+    guides: [ MantisGuide ]
+
+- type: entity
+  parent: [PenEmbeddable, BaseAntiPsionicWeapon, BaseMantisContraband] # Contraband so the mystagogue doesn't steal it
+  id: PenMantis # The most mechanically complex pen in the world, all just for style
+  name: mantis stylus
+  description: "A writing tool chiseled from a spike of mnemolith. Do not accidentally poke yourself with it."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/bureaucracy.rsi
+    state: pen_mantis
+  - type: Item
+    sprite: _DEN/Objects/Misc/bureaucracy.rsi
+    heldPrefix: pen_mantis
+  - type: DamageOtherOnHit
+    damage:
+      types: # Thrown damage (but you'll get it thrown back at you, and you're psionic)
+        Piercing: 6.4 # 8 damage against psions (same as PenCap)
+        Holy: 3.2 # 12 total damage against supernaturals
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    removalTime: 0 # No doafter to pull it out so people can throw it back fast, because you probably deserve it
+  - type: MeleeWeapon # You can swing it like a weapon
+    attackRate: .6666
+    angle: 40
+    wideAnimationRotation: -45
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    damage:
+      types: # Melee damage
+        Piercing: 3.2 # 4.8 DPS, or 6 DPS against psions (same as Shiv)
+        Holy: 1.6 # 9 total DPS against psionic supernaturals
+  - type: ThrowingAngle
+    angle: -45
+  - type: PhysicalComposition
+    materialComposition:
+      Mnemolith: 100
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_DEN/Effects/crystalbell1.ogg
+      params:
+        volume: -6
+        variation: 0.05
+        maxDistance: 10 # Longer range than a standard pen click to be spooky
+  - type: UseDelay
+    delay: 2 # Its sound effect is 2s long, no overlapping allowed
+  - type: Tag
+    tags:
+      - Write
+      - Pen
+      - MantisBeltStorable
+      - MantisBoxFolderStorable # Only the mantis pen, stamp, and papers should have this
+
+- type: entity
+  parent: [Paper, ClothingMaskBase, BaseAntiPsionicObject]
+  id: PaperMantis
+  name: ledgerstone # It's a spooky pun - it comes from the mantis ledger and is made with stone powder, but a ledgerstone is a gravestone
+  description: "A sharp, durable page taken from the mantis ledger. Mnemolith powder sparkles within its surface. You feel watched."
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/bureaucracy.rsi
+      layers:
+      - state: paper_mantis
+      - state: paper_mantis_words
+        map: ["enum.PaperVisualLayers.Writing"]
+        visible: false
+      - state: paper_stamp-generic
+        map: ["enum.PaperVisualLayers.Stamp"]
+        visible: false
+    - type: Item
+      sprite: Objects/Misc/bureaucracy.rsi
+      heldPrefix: paper_mantis
+    - type: Clothing # I tried putting these sprites in their own folder but the Clothing component doesn't actually read the sprite line below... Forgive me...
+      sprite: Objects/Misc/bureaucracy.rsi # And if the papers were in their own folder, they either couldn't be stamped, or they'd have to replicate most of the folder...
+      quickEquip: false
+      slots: [ mask ] # You can wear it over your face like a paper talisman and the eye on it will pulse every few seconds, but this isn't noted anywhere
+      clothingVisuals:
+        mask:
+        - state: paper_mantis-equipped-MASK
+        - state: paper_mantis-equipped-glow
+          shader: unshaded
+    - type: HideLayerClothing
+      slots:
+      - Snout
+    - type: BreathMask
+    - type: TypingIndicatorClothing # It gives you a new typing indicator if you wear it
+      proto: mantis
+    - type: PaperLabelType # So it can label containers with a unique sprite
+      paperType: MantisPaper
+    - type: Food
+      transferAmount: 15
+    - type: FlavorProfile
+      flavors:
+        - mantispaper
+        - mnemolith
+    - type: SolutionContainerManager
+      solutions:
+        food: # The mnemolith powder in the paper itself (if it's eaten)
+          maxVol: 15
+          reagents:
+          - ReagentId: MnemolithReagent
+            Quantity: 15
+        injector: # The mnemolith powder in the edges (if it's thrown into you)
+          maxVol: 300
+          reagents: # Notably, grinding it only produces the "food" reagent volume above, so this is just for thrown hits and not otherwise accessible
+          - ReagentId: MnemolithReagent # And it lacks the RefillableSolution component, so you can't empty it and then fill it with poison or something
+            Quantity: 300
+    - type: SolutionInjectOnEmbed # You get a brief extrasensory experience when it gives you a paper cut
+      transferAmount: 3
+      solution: injector
+    - type: Extractable
+      grindableSolutionName: food
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 30 # Burns three times longer than a normal paper just to be spooky
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+              MnemolithPowder: # Not just ash
+                min: 1
+                max: 1
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - type: Flammable
+      fireSpread: false # Psionic fire doesn't work like that
+    - type: FireVisuals
+      sprite: _DEN/Effects/fire.rsi
+      normalState: mantispagefire # Has its own fire animation that shows the paper's eye
+      lightColor: "#4dc4ff" # Psionic fire color
+    - type: EmbeddableProjectile
+      sound: /Audio/Weapons/pierce.ogg # Just a dull thunk since it does almost no damage
+      removalTime: 2
+    - type: PaperVisuals
+      backgroundImagePath: "/Textures/_DEN/Interface/Paper/mantispaper.png"
+      contentMargin: 60.0, 37.0, 50.0, 63.0
+      fontAccentColor: "#767d82"
+      maxWritableArea: 400.0, 400.0
+    - type: Tag
+      tags:
+        - Document
+        - Trash
+        - Paper
+        - MantisBeltStorable
+        - MantisBoxFolderStorable # Only the mantis pen, stamp, and papers should have this
+        - IPCMaskWearable # Who designed this

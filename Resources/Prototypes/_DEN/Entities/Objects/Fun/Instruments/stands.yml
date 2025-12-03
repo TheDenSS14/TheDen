@@ -1,0 +1,106 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: BaseStructureDynamic
+  id: BaseInstrumentStand
+  components:
+  - type: Sprite
+    noRot: true
+  - type: InstrumentStand
+    slotId: instrument_slot
+  - type: ContainerContainer
+    containers:
+      instrument_slot: !type:ContainerSlot
+  - type: ActivatableUI
+    blockSpectators: true # otherwise they can play client-side music
+    inHandsOnly: false
+    singleUser: true
+    requiresComplex: true
+    verbText: verb-instrument-openui
+    key: enum.InstrumentUiKey.Key
+    requiredItems:
+      tags: []
+  - type: UserInterface
+    interfaces:
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: StaticPrice
+    price: 300
+  - type: RequireProjectileTarget
+
+- type: entity
+  parent: BaseInstrumentStand
+  id: InstrumentStandMicrophone
+  name: microphone stand
+  description: This handy dandy microphone stand keeps your hands open so you can pluck at a guitar while you sing.
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/Instruments/microphone_stand.rsi
+    state: stand
+    drawdepth: Mobs
+  - type: ItemMapper
+    sprite: _DEN/Objects/Fun/Instruments/microphone_stand.rsi
+    containerWhitelist: [instrument_slot]
+    mapLayers:
+      microphone:
+        whitelist:
+          tags:
+          - Microphone
+  - type: Appearance
+  - type: Rotatable
+    rotateWhileAnchored: true
+  - type: Construction
+    graph: MicrophoneStandGraph
+    node: microphoneStand
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 80
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        hard: false
+  - type: ItemSlots
+    slots:
+      instrument_slot:
+        ejectOnInteract: false
+        name: instrument-stand-component-slot-name-microphone
+        whitelist:
+          tags:
+          - Microphone
+
+- type: entity
+  parent: InstrumentStandMicrophone
+  id: InstrumentStandMicrophoneFilled
+  suffix: Filled, Microphone
+  components:
+  - type: ItemSlots
+    slots:
+      instrument_slot:
+        ejectOnInteract: false
+        startingItem: MicrophoneInstrument
+        name: instrument-stand-component-slot-name-microphone
+        whitelist:
+          tags:
+          - Microphone

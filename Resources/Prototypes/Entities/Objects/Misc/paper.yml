@@ -563,6 +563,8 @@
     slots:
       pen_slot:
         name: clipboard-slot-component-slot-name-pen
+        insertVerbText: pen-insert-verb # TheDen
+        ejectVerbText: pen-eject-verb # TheDen
         whitelist:
           tags:
             - Write
@@ -640,6 +642,8 @@
     slots:
       pen_slot:
         name: clipboard-slot-component-slot-name-pen
+        insertVerbText: pen-insert-verb # TheDen
+        ejectVerbText: pen-eject-verb # TheDen
         whitelist:
           tags:
             - Write

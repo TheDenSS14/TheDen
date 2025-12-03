@@ -1,17 +1,20 @@
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2023 PHCodes <47927305+PHCodes@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 dge21 <129136517+dge21@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 PHCodes
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  parent: CombatKnife
+  parent: [CombatKnife, BaseAntiPsionicWeapon, BaseMantisContraband] # TheDen
   id: AntiPsychicKnife
-  name: anti-psychic knife
-  description: A special knife designed for killing psychics.
+  name: anti-psionic knife
+  suffix: DEPRECATED, SEE ATHAME
+  description: "A mnemolith knife made to counter psionic and otherworldly threats, but its archaic design lacks any feedback protection for the wielder. You'd better not miss." # TheDen
   components:
   - type: MeleeWeapon
     attackRate: .6666
@@ -22,11 +25,7 @@
   - type: StaminaDamageOnHit
     damage: 0
   - type: AntiPsionicWeapon
-    punish: false
-    modifiers:
-      coefficients:
-        Slash: 1.25
-        Holy: 1.2
+    punish: true # TheDen - Since I remade the knife entirely (see MantisMeleeKnife) this one gets punish again since it shouldn't even be findable
   - type: Sprite
     sprite: Nyanotrasen/Objects/Weapons/Melee/anti_psychic_knife.rsi
     state: icon
@@ -37,7 +36,9 @@
       sprite: Nyanotrasen/Objects/Weapons/Melee/anti_psychic_knife.rsi
   - type: Tag
     tags:
-    - ForensicBeltEquip
-    - HighRiskItem
-  - type: StealTarget
-    stealGroup: AntiPsychicKnife
+#    - ForensicBeltEquip
+    - MantisBeltStorable # TheDen - New tag for clarity
+    - Knife # Theden
+#    - HighRiskItem
+#  - type: StealTarget # TheDen - Non-mindshielded roles don't need steal targets
+#    stealGroup: AntiPsychicKnife

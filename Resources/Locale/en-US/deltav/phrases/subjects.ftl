@@ -1,9 +1,10 @@
 # SPDX-FileCopyrightText: 2024 portfiend
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 keekee38
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 phrase-pen = pen
 phrase-paper = paper
@@ -78,7 +79,7 @@ phrase-research = research
 phrase-research-console = R&D computer
 phrase-oracle = Oracle
 phrase-sophie = Sophie
-phrase-glimmer = glimmer
+phrase-glimmer = Glimmer
 phrase-psionic = psionic
 phrase-lotophagol-oil = lotophagol oil
 phrase-mindbreak-phase = mindbreak

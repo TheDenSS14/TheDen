@@ -25,7 +25,7 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: job
   id: Librarian
@@ -60,7 +60,7 @@
   - !type:AddComponentSpecial
     components:
     - type: Psionic
-      powerSlots: 1 # TheDen - This only means that they don't start generating glimmer until they gain a second slot-taking power (they have one no-glimmer slot like all psychics)
+      powerSlots: 1 # TheDen - This only means that they don't start generating glimmer until they gain a second slot-taking power (they have one no-glimmer slot like all psions)
     - type: InnatePsionicPowers
       powersToAdd: # TheDen - They have no innate slot-taking powers, so they need 100 Potentia to gain a new power
         - XenoglossyPower # Doesn't take a power slot

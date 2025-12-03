@@ -1,13 +1,16 @@
-// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 William Lemon
+// SPDX-FileCopyrightText: 2025 mjarduk
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Stacks;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Light.Components;
@@ -17,34 +20,48 @@ public abstract partial class SharedExpendableLightComponent : Component
 {
 
     [ViewVariables(VVAccess.ReadOnly)]
-    public ExpendableLightState CurrentState { get; set; }
+    public ExpendableLightState CurrentState;
 
-    [DataField("turnOnBehaviourID")]
-    public string TurnOnBehaviourID { get; set; } = string.Empty;
+    [DataField]
+    public string TurnOnBehaviourID = string.Empty;
 
-    [DataField("fadeOutBehaviourID")]
-    public string FadeOutBehaviourID { get; set; } = string.Empty;
+    [DataField]
+    public string FadeOutBehaviourID = string.Empty;
 
-    [DataField("glowDuration")]
-    public float GlowDuration { get; set; } = 60 * 15f;
+    [DataField]
+    public TimeSpan GlowDuration = TimeSpan.FromSeconds(60 * 15f);
 
-    [DataField("fadeOutDuration")]
-    public float FadeOutDuration { get; set; } = 60 * 5f;
+    [DataField]
+    public TimeSpan FadeOutDuration = TimeSpan.FromSeconds(60 * 5f);
 
-    [DataField("spentDesc")]
-    public string SpentDesc { get; set; } = string.Empty;
+    [DataField]
+    public ProtoId<StackPrototype>? RefuelMaterialID;
 
-    [DataField("spentName")]
-    public string SpentName { get; set; } = string.Empty;
+    [DataField]
+    public TimeSpan RefuelMaterialTime = TimeSpan.FromSeconds(15f);
+
+    [DataField]
+    public TimeSpan RefuelMaximumDuration = TimeSpan.FromSeconds(60 * 15f * 2);
 
     [DataField("litSound")]
     public SoundSpecifier? LitSound { get; set; }
+    
+    [DataField]
+    public SoundSpecifier? LoopedSound;
 
-    [DataField("loopedSound")]
-    public SoundSpecifier? LoopedSound { get; set; }
+    [DataField]
+    public SoundSpecifier? DieSound;
 
-    [DataField("dieSound")]
-    public SoundSpecifier? DieSound { get; set; } = null;
+    // Begin DeltaV additions
+    [DataField(required: true)]
+    public float LitRadius = 0.0f;
+
+    [DataField(required: true)]
+    public float LitEnergy = 0.0f;
+
+    [DataField]
+    public float FadeInDuration = 0.0f;
+    // End DeltaV additions
 }
 
 [Serializable, NetSerializable]

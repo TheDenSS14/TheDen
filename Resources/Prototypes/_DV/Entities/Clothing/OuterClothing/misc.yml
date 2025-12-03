@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -20,3 +20,20 @@
     modifiers:
       coefficients:
         Caustic: 0.25
+
+- type: entity
+  parent: ClothingOuterBaseToggleable
+  id: ClothingOuterHoodieSkia
+  name: skia hoodie
+  description: The robes worn by a shade.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/Misc/skia_hoodie.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/Misc/skia_hoodie.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodSkiaHood
+  - type: Tag
+    tags:
+    - Hoodie
+    - WhitelistChameleon

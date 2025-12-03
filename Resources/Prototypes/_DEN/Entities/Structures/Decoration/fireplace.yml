@@ -1,0 +1,147 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: Fireplace
+  id: SomberFireplace
+  name: somber electrum fireplace
+  description: "An avant-garde fireplace shaped like an eye, its smokeless psionic flame rippling like liquid."
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _DEN/Structures/Decoration/somberfireplace.rsi
+    layers:
+      - state: fireplace
+      - state: fireplacefestive
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire4
+        shader: unshaded
+      - state: fireplace_glow
+        shader: unshaded
+  - type: Appearance
+  - type: HolidayVisuals
+    holidays:
+      festive:
+      - FestiveSeason
+  - type: GenericVisualizer
+    visuals:
+      enum.HolidayVisuals.Holiday:
+        christmas:
+          festive: { visible: true }
+  - type: AmbientSound
+    volume: -6
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: PointLight
+    radius: 4
+    energy: 6
+    color: "#4dc4ff"
+  - type: AlwaysHot
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ScrapElectrum:
+            min: 3
+            max: 5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.05,0.1,0.05,0.35"
+        hard: true
+        density: 200
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: BaseSignDirectional # So it's technically wall decor, but whatever
+  id: SomberHangingBrazier
+  name: somber hanging brazier
+  description: "An electrum brazier, its smokeless psionic flame rippling like liquid."
+  placement:
+    mode: WallmountLight
+  components:
+  - type: Sprite
+    drawdepth: SmallObjects
+    noRot: true
+    sprite: _DEN/Structures/Decoration/somberhangingbrazier.rsi
+    layers:
+      - state: fireplace
+      - state: fireplacefestive # It still gets a ribbon when it's Christmas
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire4
+        shader: unshaded
+      - state: fireplace_glow
+        shader: unshaded
+  - type: Appearance
+  - type: HolidayVisuals
+    holidays:
+      festive:
+      - FestiveSeason
+  - type: GenericVisualizer
+    visuals:
+      enum.HolidayVisuals.Holiday:
+        christmas:
+          festive: { visible: true }
+  - type: PointLight
+    radius: 3
+    energy: 4
+    softness: 1.1
+    color: "#4dc4ff"
+  - type: StaticPrice
+    price: 125
+  - type: AlwaysHot
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ScrapElectrum:
+            min: 1
+            max: 3

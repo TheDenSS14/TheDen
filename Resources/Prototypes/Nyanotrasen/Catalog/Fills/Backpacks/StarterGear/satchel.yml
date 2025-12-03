@@ -1,19 +1,21 @@
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Shaman
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
-- type: entity
-  categories: [ HideSpawnMenu ]
-  parent: ClothingBackpackSatchelScience
-  id: ClothingBackpackSatchelMantisFilled
-  components:
-    - type: StorageFill
-      contents:
-      # - id: BoxForensicPad # DeltaV - Mantis is no longer a Detective
-      - id: HandLabeler
-      - id: PillMindbreakerToxin
-      - id: BoxFolderGrey
-      - id: RubberStampMantis
+#- type: entity
+#  categories: [ HideSpawnMenu ]
+#  parent: ClothingBackpackSatchelMantis # TheDen - Added custom sprites
+#  id: ClothingBackpackSatchelMantisFilled
+#  components:
+#    - type: StorageFill
+#      contents:
+#       - id: BoxForensicPad # DeltaV - Mantis is no longer a Detective
+#       - id: HandLabeler # TheDen - They have their own bureaucracy tools now
+#       - id: PillMindbreakerToxin # TheDen - Just get it from the loadout, we don't need extra mindbreaker around
+#       - id: BoxFolderGrey # TheDen - Their folder is in their locker now
+#       - id: RubberStampMantis # TheDen - It's in the folder now
+
+# TheDen - Okay, well nothing's left. Consider this to be deprecated due to our loadout system and locker contents. Leaving it for posterity.

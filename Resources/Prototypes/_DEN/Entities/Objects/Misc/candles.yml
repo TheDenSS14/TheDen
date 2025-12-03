@@ -1,0 +1,90 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: Candle
+  id: CandleSomberMantis
+  name: mnemolith candle
+  suffix: Magic
+  description: "A candle made with mnemolith powder. It doesn't want to go out."
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Misc/candlesmantis.rsi
+      layers:
+        - state: candle-big
+          color: "#ffffff" # The sprite's multicolor, so this stays white
+    - type: Item
+      sprite: _DEN/Objects/Misc/candlesmantis.rsi
+      size: Tiny # So they fit nicely in their box
+      inhandVisuals:
+        left:
+        - state: inhand-left
+          color: "#ffffff"
+        right:
+        - state: inhand-right
+          color: "#ffffff"
+    - type: Flammable
+      firestackFade: 0.0 # They burn until you put them out
+      damage:
+        types:
+          Heat: 0.0
+    - type: FireVisuals
+      sprite: _DEN/Objects/Misc/candlesmantis.rsi
+      normalState: fire-big
+      lightColor: "#4dc4ff"
+    - type: Damageable
+      damageModifierSet: Wood
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 5
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+              MnemolithPowder: # Not just ash
+                min: 1
+                max: 1
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/drop.ogg
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - type: Tag
+      tags:
+      - MantisBeltStorable
+      - MantisBoxCandlesStorable
+
+- type: entity
+  parent: CandleSomberMantis
+  id: CandleSomberMantisSmall
+  name: mnemolith candle (small)
+  description: "A small candle made with mnemolith powder. It doesn't want to go out."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-small
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-small
+
+- type: entity
+  parent: CandleSomberMantis
+  id: CandleSomberMantisCluster
+  name: mnemolith candle (cluster)
+  description: "A cluster of candles made with mnemolith powder. Not a birthday cake."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-cluster
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-cluster

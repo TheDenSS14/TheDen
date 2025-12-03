@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: MIT
@@ -46,3 +47,4 @@ food-sequence-cotton-burger-content-plushie-tabi = tabi
 food-sequence-cotton-burger-content-plushie-teddy-bear = teddy
 food-sequence-cotton-burger-content-plushie-vega = vega
 food-sequence-cotton-burger-content-plushie-vulp = vulp
+food-sequence-cotton-burger-content-plushie-mantisdoll = doll

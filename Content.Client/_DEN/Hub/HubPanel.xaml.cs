@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: 2025 Cami
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
@@ -25,8 +26,6 @@ public sealed partial class HubPanel : PanelContainer
     [Dependency] private readonly IEntitySystemManager _systemManager = default!;
     [Dependency] private readonly IGameController _gameController = null!;
     [Dependency] private readonly ILogManager _logManager = null!;
-
-    private const string HttpsString = "https://";
 
     private readonly ISawmill _sawmill;
     private HubSystem _hubSystem = null!;
@@ -89,40 +88,17 @@ public sealed partial class HubPanel : PanelContainer
 
         foreach (var server in servers)
         {
-            var connectFriendly = GetConnectFriendlyAddress(server.ConnectAddress);
-
             var titleLabel = HubPanelUtils.SetupTitleLabel(server);
             var statusLabel = HubPanelUtils.SetupStatusLabel(server);
             var playersLabel = HubPanelUtils.SetupPlayersLabel(server);
-            var connectButton = HubPanelUtils.SetupConnectButton(server, _serverId, connectFriendly);
-            connectButton.OnPressed += _ => TryConnect(connectFriendly);
+            var connectButton = HubPanelUtils.SetupConnectButton(server, _serverId, server.ConnectAddress);
+            connectButton.OnPressed += _ => TryConnect(server.ConnectAddress);
 
             ServersGrid.AddChild(titleLabel);
             ServersGrid.AddChild(statusLabel);
             ServersGrid.AddChild(playersLabel);
             ServersGrid.AddChild(connectButton);
         }
-    }
-
-    private string GetConnectFriendlyAddress(string formerAddress)
-    {
-        int startPos;
-
-        // it's either https:// or http://. this is enforced.
-        // ReSharper disable once ConvertIfStatementToConditionalTernaryExpression ugly
-        if (formerAddress.StartsWith(HttpsString))
-            startPos = HttpsString.Length;
-        else
-            startPos = HttpsString.Length - 1;
-
-        var newAddress = formerAddress.Substring(startPos);
-
-        if (!newAddress.Contains("://"))
-        {
-            newAddress = "udp://" + newAddress;
-        }
-        
-        return newAddress;
     }
 
     private void TryConnect(string connectAddress)

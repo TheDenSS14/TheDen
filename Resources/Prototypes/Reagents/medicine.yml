@@ -71,13 +71,14 @@
 # SPDX-FileCopyrightText: 2025 Kellaris
 # SPDX-FileCopyrightText: 2025 Nemanja
 # SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 SleepyScarecrow
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: reagent
   id: Cryptobiolin
@@ -89,7 +90,7 @@
   color: "#081a80"
   metabolisms:
     Medicine:
-      metabolismRate: 0.1
+      metabolismRate: 0.5 # TheDen - Updated so that 1u crypto is 20 seconds of insulation/suppression, before every tick just reset the timer to 5 minutes
       effects:
       - !type:GenericStatusEffect
         key: PsionicallyInsulated

@@ -362,27 +362,27 @@ trait-description-WeaponsGeneralist =
 
 trait-name-Mystic = Mystic
 trait-description-Mystic =
-    You are trained in Mysticism instead of melee combat, reducing your melee capabilities but drastically increasing your psionic potential.
+    You are trained in mysticism instead of melee combat, reducing your melee capabilities but drastically increasing your psionic potential.
     Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 10%, but your Potentia gain is drastically increased.
 
 trait-name-Singer = Singer
 trait-description-Singer = You are naturally capable of singing simple melodies with your voice.
 
-trait-name-LatentPsychic = Latent Psychic
+trait-name-LatentPsychic = Latent Psion
 trait-description-LatentPsychic =
     Your mind and soul are open to the noosphere, allowing you to hear telepathy.
-    Thus, you are eligible for potentially receiving psychic powers.
+    Thus, you are eligible for potentially receiving psionic powers.
     It is possible that you may be hunted by otherworldly forces, so consider keeping your powers a secret.
 
 trait-name-PsionicInsulation = χ Waveform Misalignment
 trait-description-PsionicInsulation =
     Whether through implants or by way of innate psionic insulation, your consciousness is isolated from the noosphere.
-    The good news is that you are immune to most positive and negative effects of psychic powers.
+    The good news is that you are immune to most positive and negative effects of psionic powers.
     There may be other consequences to this malady.
 
 trait-name-NaturalTelepath = Natural Telepath
 trait-description-NaturalTelepath =
-    As a telepath, you are capable of fluent telepathic communication. While all psychics can hear telepathy, you will be able to speak with it.
+    As a telepath, you are capable of fluent telepathic communication. While all psions can hear telepathy, you will be able to speak with it.
     This power does not reduce your ability to gain new powers.
 
 trait-name-TrapAvoider = Trap Avoider
@@ -394,7 +394,7 @@ trait-name-AnomalousPositronics = Anomalous Positronics
 trait-description-AnomalousPositronics =
     Whether by intentional design from the manufacturer, black market modifications, or accidental omission,
     your positronic brain lacks its standard psionic insulation. As a being that can be argued to have a soul,
-    this by extension means that it is possible for you to be influenced by the Noosphere.
+    this by extension means that it is possible for you to be influenced by the noosphere.
 
 trait-name-Photophobia = Photophobia
 trait-description-Photophobia =
@@ -541,8 +541,8 @@ trait-description-HighAmplification =
 
 trait-name-PowerOverwhelming = Power Overwhelming
 trait-description-PowerOverwhelming =
-    "WITNESS MY HATE, MORTALS - COWER BEFORE MY PSIONIC MIGHT! REALITY IS AS I DEEM IT."
-    Your psionic abilities are twice as strong as those of other psions, and you cannot be psionically insulated.  You will not be stopped.
+    "WITNESS MY HATE, MORTALS--COWER BEFORE MY PSIONIC MIGHT! REALITY IS AS I DEEM IT."
+    Your psionic abilities are twice as strong as those of other psions, and you cannot be psionically suppressed. You will not be stopped.
 
 trait-name-LowDampening = kδ Defect
 trait-description-LowDampening =
@@ -612,7 +612,7 @@ trait-name-DispelPower = Normality Projection
 trait-description-DispelPower =
     Your mentalic abilities include the power to enforce normality upon noospheric phenomena.
     This power, commonly known as "Dispel", allows the user to destroy otherworldly entities with their mind,
-    or to immediately end psychic effects.
+    or to immediately end psionic effects.
 
 trait-name-MetapsionicPower = Metapsion
 trait-description-MetapsionicPower =

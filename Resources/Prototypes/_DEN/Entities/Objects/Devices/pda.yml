@@ -1,9 +1,11 @@
 # SPDX-FileCopyrightText: 2025 RosySaturniidae
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: ChiefJusticePDA 
+  parent: ChiefJusticePDA
   id: MagistratePDA
   name: magistrate PDA
   description: This is proof that you are THE LAW, regardless of what those security bozos think.
@@ -26,7 +28,7 @@
     borderColor: "#00842e"
 
 - type: entity
-  parent: CentcomPDA 
+  parent: CentcomPDA
   id: NanorepPDA
   name: nanotrasen representative PDA
   description: This PDA contains the fanciest pen on the station, which will write words no one will ever read.

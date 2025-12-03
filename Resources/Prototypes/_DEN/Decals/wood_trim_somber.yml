@@ -1,0 +1,144 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: decal
+  id: WoodTrimThinSomber
+  abstract: true
+
+- type: decal
+  id: WoodTrimThinSomberBox
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_box
+
+- type: decal
+  id: WoodTrimThinSomberCornerNe
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_corner_ne
+
+- type: decal
+  id: WoodTrimThinSomberCornerSe
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_corner_se
+
+- type: decal
+  id: WoodTrimThinSomberCornerNw
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_corner_nw
+
+- type: decal
+  id: WoodTrimThinSomberCornerSw
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_corner_sw
+
+- type: decal
+  id: WoodTrimThinSomberInnerNe
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_inner_ne
+
+- type: decal
+  id: WoodTrimThinSomberInnerSe
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_inner_se
+
+- type: decal
+  id: WoodTrimThinSomberInnerNw
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_inner_nw
+
+- type: decal
+  id: WoodTrimThinSomberInnerSw
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_inner_sw
+
+- type: decal
+  id: WoodTrimThinSomberEndN
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_end_n
+
+- type: decal
+  id: WoodTrimThinSomberEndE
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_end_e
+
+- type: decal
+  id: WoodTrimThinSomberEndS
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_end_s
+
+- type: decal
+  id: WoodTrimThinSomberEndW
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_end_w
+
+- type: decal
+  id: WoodTrimThinSomberLineN
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_line_n
+
+- type: decal
+  id: WoodTrimThinSomberLineE
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_line_e
+
+- type: decal
+  id: WoodTrimThinSomberLineS
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_line_s
+
+- type: decal
+  id: WoodTrimThinSomberLineW
+  parent: WoodTrimThinSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/wood_trim_somber.rsi
+    state: thin_line_w
+

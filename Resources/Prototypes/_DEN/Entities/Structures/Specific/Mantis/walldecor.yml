@@ -1,0 +1,58 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseSignDirectional
+  id: WallDecorSomberPsi
+  name: electrum psi
+  description: "A Greek psi, symbolizing the noosphere and the mantis who watches over it."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Specific/Mantis/walldecor.rsi
+    state: psi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+
+- type: entity
+  parent: WallDecorSomberPsi
+  id: WallDecorSomberEye
+  name: electrum eye
+  description: "An electrum eye, symbolizing the mind, decorated with magenta tassles."
+  components:
+  - type: Sprite
+    state: eye
+
+- type: entity
+  parent: WallDecorSomberPsi
+  id: WallDecorSomberHereticTrophy
+  name: mantis's trophy
+  description: "Fragments of a shattered, otherworldly blade, mounted as a trophy. The plaque reads, \"Thus end all who seek the place beyond.\""
+  components:
+  - type: Sprite
+    layers:
+      - state: heretictrophy
+      - state: heretictrophy-subtleglow # 2% opacity layer for faint glow in the dark
+        shader: unshaded
+      - state: heretictrophy-glow
+        shader: unshaded
+  - type: PointLight
+    radius: 1.5 # Ideally so dark you only barely see it
+    energy: 3
+    color: "#ffd069" # Same color the cosmos heretic sickle glows, but these are just broken fragments
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: GuideHelp
+    guides: [ MantisGuide ] # If someone wonders why they have a broken space warlock sword on their wall lol

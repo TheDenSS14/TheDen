@@ -50,7 +50,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entityTable
   id: AllPlushiesTable
@@ -179,6 +179,8 @@
         id: PlushieAlienGerm
       - !type:EntSelector
         id: PlushieAlienGermMini
+    - id: PlushieDollMantis # TheDen
+      weight: 0.5
 
 - type: entity
   id: CrateFunPlushie

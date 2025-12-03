@@ -250,8 +250,6 @@
         id: Basketball
       - !type:EntSelector
         id: Football
-      - !type:EntSelector # TheDen
-        id: SkimmerDiscus
       - !type:EntSelector
         id: BalloonNT
       - !type:EntSelector
@@ -260,6 +258,10 @@
         id: MysteryFigureBox
       - !type:EntSelector
         id: MysterySpaceBladeBox
+      - !type:EntSelector # TheDen
+        id: SkimmerDiscus
+      - !type:EntSelector # TheDen
+        id: PersonalAISomber
       # Cult
       - !type:AllSelector
         children:
@@ -362,6 +364,8 @@
         id: MysteryLighterBox
       - !type:EntSelector
         id: WeaponLaserTagGun # DeltaV - Add small chance of it spawning in maints locker.
+      - !type:EntSelector # TheDen
+        id: LanternSomber
 
 - type: entity
   name: Maint Loot Spawner

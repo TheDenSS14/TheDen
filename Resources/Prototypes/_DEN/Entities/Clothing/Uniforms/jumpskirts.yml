@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sheepie
 #
@@ -13,6 +15,40 @@
     sprite: _DEN/Clothing/Uniforms/Jumpskirt/whiteturtleskirt.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Uniforms/Jumpskirt/whiteturtleskirt.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtMantis
+  id: ClothingUniformSkirtMantisAiry
+  name: airy mantis robe
+  description: "A light, low-cut robe with an eye emblazoned on the back."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/mantis_airy.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/mantis_airy.rsi
+
+- type: entity
+  parent: [ClothingUniformSkirtMantis, BaseFoldable]
+  id: ClothingUniformSkirtMantisOrnate
+  name: ornate mantis robe
+  description: "A swept, low-cut robe accented with an electrum necklace. You can wear it on either side, as your outfit demands."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/mantis_ornate.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-flipped
+      map: ["foldedLayer"]
+      visible: false
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/mantis_ornate.rsi
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
 
 - type: entity
   parent: ClothingUniformBase

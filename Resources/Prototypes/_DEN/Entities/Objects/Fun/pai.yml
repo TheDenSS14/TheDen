@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: PersonalAI
+  id: PersonalAISomber
+  name: amaranth personal ai device
+  description: "This personal AI is made from exotic materials, but it functions like all the others. If you stare at the antique screen for too long, you'll go blind."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/pai.rsi
+    layers:
+    - state: mantis-pai-base
+    - state: mantis-pai-off-overlay
+      shader: unshaded
+      map: ["screen"]
+  - type: TypingIndicator
+    proto: mantis
+  - type: Speech
+    speechVerb: Electricity
+    speechSounds: Pai
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableGhostRoleVisuals.Status:
+        screen:
+          Off: { state: mantis-pai-off-overlay }
+          Searching: { state: mantis-pai-searching-overlay }
+          On: { state: mantis-pai-on-overlay }
+  - type: Tag
+    tags:
+    - SiliconEmotes
+    - MantisBeltStorable

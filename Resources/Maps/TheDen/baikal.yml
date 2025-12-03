@@ -130161,12 +130161,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 54.711296,11.479181
       parent: 13
-- proto: HandheldCrewMonitor
+- proto: HandheldCrewMonitorMantis
   entities:
   - uid: 2666
     components:
     - type: MetaData
-      desc: Finally you can find those pesky psychics
+      desc: Ostensibly used to monitor the health and safety of registered psions aboard the station, although a system update seems to have incorrectly increased its access to see all crew. Oh well.
       name: Mantiss handheld crew monitor
     - type: Transform
       pos: 24.5,-6.5
