@@ -204,3 +204,19 @@
     - Payload
     - ClothMade
     - MantisBeltStorable
+
+# SELF-INSERT PLUSHIES
+# note: these MUST be approved by Direction - either an Owner or the Head Maintainer.
+# at this time, only maintainers and admins can ask to have self-insert items added.
+# sprites must be provided by the requester somehow.
+# these are liable to be removed at any time.
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieAzalea
+  name: azalea plushie
+  description: call me keysmash the way i make that bottom text
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/azaleaplushie.rsi
+    state: icon
