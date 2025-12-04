@@ -75,7 +75,7 @@ public sealed class ClientClothingSystem : ClothingSystem
     };
 
     [Dependency] private readonly IResourceCache _cache = default!;
-    [Dependency] private readonly ISerializationManager _serialization = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
     [Dependency] private readonly DisplacementMapSystem _displacement = default!;
 
@@ -104,11 +104,11 @@ public sealed class ClientClothingSystem : ClothingSystem
         }
 
         // No clothing equipped -> make sure the layer is hidden, though this should already be handled by on-unequip.
-        if (args.Sprite.LayerMapTryGet(HumanoidVisualLayers.StencilMask, out var layer))
-        {
-            DebugTools.Assert(!args.Sprite[layer].Visible);
-            args.Sprite.LayerSetVisible(layer, false);
-        }
+        if (!_sprite.LayerMapTryGet((uid, args.Sprite), HumanoidVisualLayers.StencilMask, out var layer, false))
+            return;
+
+        DebugTools.Assert(!args.Sprite[layer].Visible);
+        _sprite.LayerSetVisible((uid, args.Sprite), layer, true);
     }
 
     private void OnInventoryTemplateUpdated(Entity<ClothingComponent> ent, ref InventoryTemplateUpdated args)
@@ -181,7 +181,10 @@ public sealed class ClientClothingSystem : ClothingSystem
     /// <remarks>
     ///     Useful for lazily adding clothing sprites without modifying yaml. And for backwards compatibility.
     /// </remarks>
-    private bool TryGetDefaultVisuals(EntityUid uid, ClothingComponent clothing, string slot, string? speciesId,
+    private bool TryGetDefaultVisuals(EntityUid uid,
+        ClothingComponent clothing,
+        string slot,
+        string? speciesId,
         [NotNullWhen(true)] out List<PrototypeLayerData>? layers)
     {
         layers = null;
@@ -219,10 +222,12 @@ public sealed class ClientClothingSystem : ClothingSystem
             return false;
         }
 
-        var layer = new PrototypeLayerData();
-        layer.RsiPath = rsi.Path.ToString();
-        layer.State = state;
-        layers = new() { layer };
+        var layer = new PrototypeLayerData
+        {
+            RsiPath = rsi.Path.ToString(),
+            State = state
+        };
+        layers = [layer];
 
         return true;
     }
@@ -254,7 +259,7 @@ public sealed class ClientClothingSystem : ClothingSystem
                     continue;
 
                 foreach (var layerToShow in revealedLayersToShow)
-                    component.LayerSetVisible(layerToShow, true);
+                    _sprite.LayerSetVisible((uid, component), layerToShow, true);
             }
             inventorySlots.HiddenSlots.ExceptWith(hideLayer.ClothingSlots);
         }
@@ -263,7 +268,7 @@ public sealed class ClientClothingSystem : ClothingSystem
         // may eventually bloat the player with lots of invisible layers.
         foreach (var layer in revealedLayers)
         {
-            component.RemoveLayer(layer);
+            _sprite.RemoveLayer((uid, component), layer);
         }
         revealedLayers.Clear();
     }
@@ -287,12 +292,17 @@ public sealed class ClientClothingSystem : ClothingSystem
         RenderEquipment(args.Equipee, uid, args.Slot, clothingComponent: component);
     }
 
-    private void RenderEquipment(EntityUid equipee, EntityUid equipment, string slot,
-        InventoryComponent? inventory = null, SpriteComponent? sprite = null, ClothingComponent? clothingComponent = null,
+    private void RenderEquipment(
+        EntityUid equipee,
+        EntityUid equipment,
+        string slot,
+        InventoryComponent? inventory = null,
+        SpriteComponent? sprite = null,
+        ClothingComponent? clothingComponent = null,
         InventorySlotsComponent? inventorySlots = null)
     {
-        if (!Resolve(equipee, ref inventory, ref sprite, ref inventorySlots) ||
-           !Resolve(equipment, ref clothingComponent, false))
+        if (!Resolve(equipee, ref inventory, ref sprite, ref inventorySlots)
+            || !Resolve(equipment, ref clothingComponent, false))
         {
             return;
         }
@@ -306,7 +316,7 @@ public sealed class ClientClothingSystem : ClothingSystem
         {
             foreach (var key in revealedLayers)
             {
-                sprite.RemoveLayer(key);
+                _sprite.RemoveLayer((equipee, sprite), key);
             }
             revealedLayers.Clear();
         }
@@ -334,7 +344,7 @@ public sealed class ClientClothingSystem : ClothingSystem
                     continue;
 
                 foreach (var layerToHide in revealedLayersToHide)
-                    sprite.LayerSetVisible(layerToHide, false);
+                    _sprite.LayerSetVisible((equipee, sprite), layerToHide, false);
             }
             inventorySlots.HiddenSlots.UnionWith(hideLayer.ClothingSlots);
         }
@@ -344,7 +354,7 @@ public sealed class ClientClothingSystem : ClothingSystem
 
         // temporary, until layer draw depths get added. Basically: a layer with the key "slot" is being used as a
         // bookmark to determine where in the list of layers we should insert the clothing layers.
-        bool slotLayerExists = sprite.LayerMapTryGet(slot, out var index);
+        var slotLayerExists = _sprite.LayerMapTryGet((equipee, sprite), slot, out var index, false);
 
         // Select displacement maps
         var displacementData = inventory.Displacements.GetValueOrDefault(slot); //Default unsexed map
@@ -378,14 +388,18 @@ public sealed class ClientClothingSystem : ClothingSystem
             {
                 index++;
                 // note that every insertion requires reshuffling & remapping all the existing layers.
-                sprite.AddBlankLayer(index);
-                sprite.LayerMapSet(key, index);
+                _sprite.AddBlankLayer((equipee, sprite), index);
+                _sprite.LayerMapSet((equipee, sprite), key, index);
 
                 if (layerData.Color != null)
-                    sprite.LayerSetColor(key, layerData.Color.Value);
+                {
+                    _sprite.LayerSetColor((equipee, sprite), key, layerData.Color.Value);
+                }
             }
             else
-                index = sprite.LayerMapReserveBlank(key);
+            {
+                index = _sprite.LayerMapReserve((equipee, sprite), key);
+            }
 
             if (sprite[index] is not Layer layer)
                 continue;
@@ -396,11 +410,11 @@ public sealed class ClientClothingSystem : ClothingSystem
                 && layer.RSI == null
                 && TryComp(equipment, out SpriteComponent? clothingSprite))
             {
-                layer.SetRsi(clothingSprite.BaseRSI);
+                _sprite.LayerSetRsi(layer, clothingSprite.BaseRSI);
             }
 
-            sprite.LayerSetData(index, layerData);
-            layer.Offset += slotDef.Offset;
+            _sprite.LayerSetData((equipee, sprite), index, layerData);
+            _sprite.LayerSetOffset(layer, slotDef.Offset);
 
             if (displacementData is not null)
             {
