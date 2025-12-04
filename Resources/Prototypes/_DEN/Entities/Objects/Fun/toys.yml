@@ -204,3 +204,23 @@
     - Payload
     - ClothMade
     - MantisBeltStorable
+
+# SELF-INSERT PLUSHIES
+# note: these MUST be approved by Direction - either an Owner or the Head Maintainer.
+# at this time, only maintainers and admins can ask to have self-insert items added.
+# sprites must be provided by the requester somehow.
+# these are liable to be removed at any time.
+
+# @ sheepmera; approved by portfiend (head maintainer)
+- type: entity
+  parent: BasePlushie
+  id: PlushieAzalea
+  name: azalea plushie
+  description: A plushie of a fennec fox with ram horns and honey eyes. It's rumored that every single one of these is personalized.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/azaleaplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: AzaleaPlushie
