@@ -124,16 +124,16 @@
     drawOverlay: false
   - type: Targeting
   # DEN
-  - type: Revenant
   - type: UserInterface
     interfaces:
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface
+        requireInputValidation: false
   - type: Store
     categories:
-    - RevenantAbilities
+    - SkiaAbilities
     currencyWhitelist:
-    - StolenEssence
+    - SoulSilk
   - type: UniversalLanguageSpeaker
   - type: LanguageKnowledge
     speaks:
@@ -172,7 +172,7 @@
     radius: 10
   - type: Spectral
   - type: GlimmerSource
-    glimmerPerSecond: 2
+    glimmerPerSecond: 1.5
     glimmerExponentOffset: -5
   - type: Stealth
     minVisibility: -1
@@ -181,10 +181,15 @@
   - type: StealthOnMove
     passiveVisibilityRate: -0.65
     movementVisibilityRate: 0.575
-  - type: StatusEffects # Overwriting basesimplemob to remove flash, getting flashed as dragon just feelsbad
+  - type: StatusEffects
     allowed:
     - SlowedDown
     - Pacified
+  - type: Body
+    prototype: Skeleton
+  - type: ThermalVision
+    pulseTime: 0
+    color: "#9370DB"
   # DEN
   - type: EmbedImmune
     immuneTo:
