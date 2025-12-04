@@ -372,7 +372,7 @@ ghost-role-information-artifact-name = Sentient Artifact
 ghost-role-information-artifact-description =
       Enact your eldritch whims.
       Forcibly activate your nodes for good or for evil.
-      Important![color=red] Read before playing:[/color] Antagonistic actions should be kept to the level of a nuisance, not a major threat.
+      Important! Read before playing: Antagonistic actions should be kept to the level of a nuisance, not a major threat.
       Hostility in an isolated area is acceptable but do not roam around the station causing mass casualties.
 
 ghost-role-information-silicon-rules = Obey your laws. You are a {role-type-free-agent-name} if you are not currently bound by any laws.
