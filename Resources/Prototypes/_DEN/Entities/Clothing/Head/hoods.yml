@@ -8,17 +8,57 @@
   parent: ClothingHeadHatFezMantis
   id: ClothingHeadHoodMantisDark
   name: dark mantis hood
-  description: "A gloomy hood that sits low on the head, ornamented with magenta tassles. It matches your cloak nicely, though it can be worn on its own."
+  description: "A gloomy hood that sits low on the head, ornamented with magenta tassles. Can be pushed back onto the shoulders without falling off."
   components:
-  - type: Sprite
-    sprite: _DEN/Clothing/Head/Hoods/mantis_hood_dark.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Head/Hoods/mantis_hood_dark.rsi
-  - type: HideLayerClothing
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hoods/mantis_hood_dark.rsi
+    layers:
+    - state: icon
+      map: ["icon"]
+    - state: icon-folded
+      map: ["icon-folded"]
+      visible: false
+  - type: Appearance
+  - type: ToggleableVisuals # I had to do all this instead of use the Foldable component so it would only hide hair when worn up... Just folding something doesn't "toggle" it...
+    replaceMode: true
+    spriteLayer: icon-folded
+    clothingVisuals:
+      head:
+      - state: folded-equipped-HELMET
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        icon:
+          True: { visible: false }
+          False: { visible: true }
+        icon-folded:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ItemToggle
+    onUse: false
+    onAltUse: true
+    verbToggleOn: item-toggle-lower
+    verbToggleOff: item-toggle-raise
+    predictable: false
+    soundActivate:
+      path: /Audio/Items/Handling/cloth_drop.ogg
+      params:
+        volume: -6
+    soundDeactivate:
+      path: /Audio/Items/Handling/cloth_pickup.ogg
+      params:
+        volume: -6
+  - type: HideLayerClothing # TODO: APRIL HELP
+    hideOnToggle: true
+    #force: true
     slots:
     - Hair
     - HeadTop
     - HeadSide
+    clothingSlots:
+    - ears
 
 - type: entity
   parent: ClothingHeadHatHoodWinterBase
