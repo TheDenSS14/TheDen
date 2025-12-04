@@ -75,17 +75,29 @@
     - MantisBeltStorable
 
 - type: entity
-  parent: ClothingHandsGlovesMantis
+  parent: [ClothingHandsGlovesMantis, BaseFoldable]
   id: ClothingHandsGlovesMantisAiry
   name: airy mantis sleeves
-  description: "Wide-cuffed sleeves over finger-loop gloves."
+  description: "Wide-cuffed sleeves over finger-loop gloves. The left cuff can be fastened tighter, if it's in the way of your mantle. But...only the left cuff, for some reason..."
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_airy.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-folded
+      map: ["foldedLayer"]
+      visible: false
   - type: Clothing
     sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_airy.rsi
   - type: Fiber
     fiberColor: fibers-black
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-verb
+    unfoldVerbText: unfold-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded
 
 - type: entity
   parent: ClothingHandsGlovesMantis
