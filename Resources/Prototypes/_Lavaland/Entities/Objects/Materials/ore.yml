@@ -40,7 +40,7 @@
   - type: Stack
     stackType: DiamondOreUnprocessed
   - type: UnclaimedOre
-    miningPoints: 100
+    miningPoints: 50
 
 - type: entity
   parent: DiamondOreUnprocessed
@@ -160,7 +160,7 @@
   - type: Stack
     stackType: BananiumOreUnprocessed
   - type: UnclaimedOre
-    miningPoints: 30 # We might as well give bananium a purpose no?
+    miningPoints: 15 # We might as well give bananium a purpose no?
 
 - type: entity
   parent: BananiumOreUnprocessed
