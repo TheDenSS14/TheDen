@@ -1,7 +1,7 @@
-# SPDX-FileCopyrightText: 2024 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 keekee38 <iamabanana372456@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 portfiend
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 keekee38
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -127,3 +127,13 @@ phrase-speak = speak
 phrase-understand = understand
 phrase-mix = mix
 phrase-is = is
+phrase-make = make
+phrase-to = to
+phrase-for = for
+phrase-look = look
+phrase-sleep = sleep
+phrase-open = open
+phrase-close = close
+phrase-steal = steal
+phrase-move = move
+phrase-lie = lie

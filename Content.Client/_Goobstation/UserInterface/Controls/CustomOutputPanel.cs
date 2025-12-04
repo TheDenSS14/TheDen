@@ -1,6 +1,5 @@
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -20,7 +19,19 @@ public sealed class CustomOutputPanel : Control
     [Dependency] private readonly IEntityManager _entManager = default!;
 
     public const string StylePropertyStyleBox = "stylebox";
+    public const string StyleClassOutputPanelScrollDownButton = "outputPanelScrollDownButton";
 
+    public bool ShowScrollDownButton
+    {
+        get => _showScrollDownButton;
+        set
+        {
+            _showScrollDownButton = value;
+            _updateScrollButtonVisibility();
+        }
+    }
+
+    private bool _showScrollDownButton;
     private readonly CustomRingBufferList<CustomRichTextEntry> _entries = new();
     private bool _isAtBottom = true;
 
@@ -28,6 +39,7 @@ public sealed class CustomOutputPanel : Control
     private bool _firstLine = true;
     private StyleBox? _styleBoxOverride;
     private VScrollBar _scrollBar;
+    private Button _scrollDownButton;
 
     public bool ScrollFollowing { get; set; } = true;
 
@@ -45,7 +57,24 @@ public sealed class CustomOutputPanel : Control
             HorizontalAlignment = Control.HAlignment.Right
         };
         AddChild(_scrollBar);
-        _scrollBar.OnValueChanged += _ => _isAtBottom = _scrollBar.IsAtEnd;
+        AddChild(_scrollDownButton = new Button()
+        {
+            Name = "scrollLiveBtn",
+            StyleClasses = { StyleClassOutputPanelScrollDownButton },
+            VerticalAlignment = VAlignment.Bottom,
+            HorizontalAlignment = HAlignment.Center,
+            Text = String.Format("⬇    {0}    ⬇", Loc.GetString("output-panel-scroll-down-button-text")),
+            MaxWidth = 300,
+            Visible = false,
+        });
+
+        _scrollDownButton.OnPressed += _ => ScrollToBottom();
+
+        _scrollBar.OnValueChanged += _ =>
+        {
+            _isAtBottom = _scrollBar.IsAtEnd;
+            _updateScrollButtonVisibility();
+        };
     }
 
     public int EntryCount => _entries.Count;
@@ -292,5 +321,10 @@ public sealed class CustomOutputPanel : Control
             _invalidateEntries();
             _invalidOnVisible = false;
         }
+    }
+
+    private void _updateScrollButtonVisibility()
+    {
+        _scrollDownButton.Visible = ShowScrollDownButton && !_isAtBottom;
     }
 }

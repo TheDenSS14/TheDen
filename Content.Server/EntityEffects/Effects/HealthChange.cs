@@ -1,23 +1,21 @@
-// SPDX-FileCopyrightText: 2021 Fortune117 <fortune11709@gmail.com>
-// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Silver <silvertorch5@gmail.com>
-// SPDX-FileCopyrightText: 2021 Ygg01 <y.laughing.man.y@gmail.com>
-// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Sam Weaver <weaversam8@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <temporaloroboros@gmail.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 gluesniffler <linebarrelerenthusiast@gmail.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Fortune117
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández
+// SPDX-FileCopyrightText: 2021 Leon Friedrich
+// SPDX-FileCopyrightText: 2021 Silver
+// SPDX-FileCopyrightText: 2021 Ygg01
+// SPDX-FileCopyrightText: 2022 Moony
+// SPDX-FileCopyrightText: 2022 Rane
+// SPDX-FileCopyrightText: 2022 Sam Weaver
+// SPDX-FileCopyrightText: 2022 ShadowCommander
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 SlamBamActionman
+// SPDX-FileCopyrightText: 2024 gluesniffler
+// SPDX-FileCopyrightText: 2024 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -67,6 +65,26 @@ namespace Content.Server.EntityEffects.Effects
             var deals = false;
 
             var damageSpec = new DamageSpecifier(Damage);
+
+            var universalReagentDamageModifier = entSys.GetEntitySystem<DamageableSystem>().UniversalReagentDamageModifier;
+            var universalReagentHealModifier = entSys.GetEntitySystem<DamageableSystem>().UniversalReagentHealModifier;
+
+            if (universalReagentDamageModifier != 1 || universalReagentHealModifier != 1)
+            {
+                foreach (var (type, val) in damageSpec.DamageDict)
+                {
+                    if (val < 0f)
+                    {
+                        damageSpec.DamageDict[type] = val * universalReagentHealModifier;
+                    }
+                    if (val > 0f)
+                    {
+                        damageSpec.DamageDict[type] = val * universalReagentDamageModifier;
+                    }
+                }
+            }
+
+            damageSpec = entSys.GetEntitySystem<DamageableSystem>().ApplyUniversalAllModifiers(damageSpec);
 
             foreach (var group in prototype.EnumeratePrototypes<DamageGroupPrototype>())
             {
@@ -138,22 +156,42 @@ namespace Content.Server.EntityEffects.Effects
         public override void Effect(EntityEffectBaseArgs args)
         {
             var scale = FixedPoint2.New(1);
+            var damageSpec = new DamageSpecifier(Damage);
 
             if (args is EntityEffectReagentArgs reagentArgs)
             {
                 scale = ScaleByQuantity ? reagentArgs.Quantity * reagentArgs.Scale : reagentArgs.Scale;
             }
 
-            args.EntityManager.System<DamageableSystem>().TryChangeDamage(
-                args.TargetEntity,
-                Damage * scale,
-                IgnoreResistances,
-                interruptsDoAfters: false,
-                // Shitmed Change Start
-                targetPart: TargetBodyPart.All,
-                partMultiplier: 0.5f,
-                canSever: false);
-                // Shitmed Change End
+            var universalReagentDamageModifier = args.EntityManager.System<DamageableSystem>().UniversalReagentDamageModifier;
+            var universalReagentHealModifier = args.EntityManager.System<DamageableSystem>().UniversalReagentHealModifier;
+
+            if (universalReagentDamageModifier != 1 || universalReagentHealModifier != 1)
+            {
+                foreach (var (type, val) in damageSpec.DamageDict)
+                {
+                    if (val < 0f)
+                    {
+                        damageSpec.DamageDict[type] = val * universalReagentHealModifier;
+                    }
+                    if (val > 0f)
+                    {
+                        damageSpec.DamageDict[type] = val * universalReagentDamageModifier;
+                    }
+                }
+            }
+
+            args.EntityManager.System<DamageableSystem>()
+                .TryChangeDamage(
+                    args.TargetEntity,
+                    damageSpec * scale,
+                    IgnoreResistances,
+                    interruptsDoAfters: false,
+                    // Shitmed Change Start
+                    targetPart: TargetBodyPart.All,
+                    partMultiplier: 0.5f,
+                    canSever: false);
+                    // Shitmed Change End
         }
     }
 }

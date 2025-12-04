@@ -4,7 +4,9 @@
 // SPDX-FileCopyrightText: 2023 metalgearsloth
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2025 Eightballll
 // SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 MajorMoth
 // SPDX-FileCopyrightText: 2025 empty0set
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -13,16 +15,16 @@
 
 using Content.Server.StationEvents.Components;
 using Content.Server.Antag;
-using Content.Server.Pinpointer;
 using Content.Shared.EntityTable;
 using Content.Shared.GameTicking.Components;
-using Content.Server.Station.Components;
-using Content.Server.Announcements.Systems;
+using Content.Shared.Station.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Audio;
 using Content.Server.Chat.Systems;
+using Content.Shared.Pinpointer;
+using System.Linq;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -33,6 +35,7 @@ namespace Content.Server.StationEvents.Events;
 /// <remarks>
 /// This entire file is rewritten, ignore upstream changes.
 /// </remarks>
+///
 public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleComponent>
 {
     /*
@@ -43,102 +46,127 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly EntityTableSystem _entityTable = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
-    [Dependency] private readonly NavMapSystem _navMap = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly AnnouncerSystem _announcer = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!; // DEN
 
-    private List<Tuple<EntityUid, VentCritterSpawnLocationComponent, EntityCoordinates>> _locations = new();
-    private Tuple<EntityUid, VentCritterSpawnLocationComponent, EntityCoordinates>? _location;
+    private List<VentCritterLocationData> _locations = new();
+    private Entity<TransformComponent> _selectedBeacon = new();
 
     protected override void Added(EntityUid uid, VentCrittersRuleComponent comp, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
-        PickLocation(comp);
-        if (_location == null)
+        PickSpawnLocations();
+
+        if (_locations.Count == 0)
         {
             ForceEndSelf(uid, gameRule);
             return;
         }
 
-        if (comp.Location is not { } coords)
+        foreach (var location in _locations)
         {
-            ForceEndSelf(uid, gameRule);
-            return;
+            _chatSystem.TrySendInGameICMessage(location.LocationUid, "emits an ominous rumbling sound...", Shared.Chat.InGameICChatType.Emote, Shared.Chat.ChatTransmitRange.Normal, false, null, null, "nearby vent", false, true);
         }
 
-        var mapCoords = _transform.ToMapCoordinates(coords);
-        if (!_navMap.TryGetNearestBeacon(mapCoords, out var beacon, out _))
-            return;
+        var audio = AudioParams.Default;
+        audio.Volume = 200;
+        audio.RolloffFactor = 0.01f;
+        audio.ReferenceDistance = 400;
 
-        Audio.PlayPvs(comp.Sound, _location.Item1, AudioParams.Default.AddVolume(250));
+        Audio.PlayPvs(comp.Sound, _selectedBeacon.Comp.Coordinates, audio);
+
         base.Added(uid, comp, gameRule, args);
-
-        _chatSystem.TrySendInGameICMessage(_location.Item1, "emits an ominous rumbling sound...", Shared.Chat.InGameICChatType.Emote, Shared.Chat.ChatTransmitRange.Normal, false, null, null, "nearby vent", false, true);
-
     }
 
     protected override void Ended(EntityUid uid, VentCrittersRuleComponent comp, GameRuleComponent gameRule, GameRuleEndedEvent args)
     {
-        if (_location == null)
+        if (_locations.Count == 0)
             return;
 
-        base.Ended(uid, comp, gameRule, args);
-
-        if (comp.Location is not { } coords)
-            return;
-
-        _chatSystem.TrySendInGameICMessage(_location.Item1, "screeches as something bursts free in a cloud of dust!", Shared.Chat.InGameICChatType.Emote, Shared.Chat.ChatTransmitRange.Normal, false, null, null, "nearby vent", false, true);
-
-        Spawn("AdminInstantEffectSmoke10", _location.Item3);
-
-        SpawnCritters(comp, coords);
-    }
-
-    private void SpawnCritters(VentCrittersRuleComponent comp, EntityCoordinates coords)
-    {
         var players = _antag.GetTotalPlayerCount(_player.Sessions);
         var min = comp.Min * players / comp.PlayerRatio;
         var max = comp.Max * players / comp.PlayerRatio;
-        var count = Math.Max(RobustRandom.Next(min, max), 1);
+        var maxSpawns = Math.Max(RobustRandom.Next(min, max), 1);
 
-        for (int i = 0; i < count; i++)
+        var spawnsPerVent = Math.Max((maxSpawns / _locations.Count), 1);
+
+        foreach (var location in _locations)
+        {
+            _chatSystem.TrySendInGameICMessage(location.LocationUid, "screeches as something bursts free in a cloud of dust!", Shared.Chat.InGameICChatType.Emote, Shared.Chat.ChatTransmitRange.Normal, false, null, null, "nearby vent", false, true);
+
+            Spawn("AdminInstantEffectSmoke10", location.Coordinates); // Dust effect
+
+            SpawnCritters(comp, location, spawnsPerVent);
+        }
+
+        base.Ended(uid, comp, gameRule, args);
+    }
+
+    private void SpawnCritters(VentCrittersRuleComponent comp, VentCritterLocationData vent, int spawnCount)
+    {
+        for (int i = 0; i < spawnCount; i++)
         {
             foreach (var spawn in _entityTable.GetSpawns(comp.Table))
             {
-                Spawn(spawn, coords);
+                Spawn(spawn, vent.Coordinates);
             }
         }
 
-        if (comp.SpecialEntries.Count == 0)
-            return;
-
         // guaranteed spawn
-        var specialEntry = RobustRandom.Pick(comp.SpecialEntries);
-        Spawn(specialEntry.PrototypeId, coords);
+        if (comp.SpecialEntries.Count > 0)
+        {
+            var specialEntry = RobustRandom.Pick(comp.SpecialEntries);
+            Spawn(specialEntry.PrototypeId, vent.Coordinates);
+        }
     }
 
-
-    private void PickLocation(VentCrittersRuleComponent comp)
+    private void PickSpawnLocations()
     {
         if (!TryGetRandomStation(out var station))
             return;
 
-        var locations = EntityQueryEnumerator<VentCritterSpawnLocationComponent, TransformComponent>();
         _locations.Clear();
-        while (locations.MoveNext(out var uid, out var spawnLocation, out var transform))
+
+        // Get all beacons on station
+        var beacons = EntityQueryEnumerator<NavMapBeaconComponent, TransformComponent>();
+        var beaconList = new List<Entity<TransformComponent>>();
+
+        while (beacons.MoveNext(out var beaconUid, out var navMapBeacon, out var beaconPosition))
         {
-            if (CompOrNull<StationMemberComponent>(transform.GridUid)?.Station == station && spawnLocation.CanSpawn)
+            // Check that the beacon is actually on the station, if so add to the list
+            if (CompOrNull<StationMemberComponent>(beaconPosition.GridUid)?.Station == station)
             {
-                _locations.Add(new Tuple<EntityUid, VentCritterSpawnLocationComponent, EntityCoordinates>(uid, spawnLocation, transform.Coordinates));
+                beaconList.Add((beaconUid, beaconPosition));
             }
         }
-
-        if (_locations.Count == 0)
+        // Grab a random beacon from our list
+        if (!beaconList.Any())
             return;
 
-        _location = RobustRandom.Pick(_locations);
+        _selectedBeacon = RobustRandom.Pick(beaconList);
 
-        comp.Location = _location.Item3;
+        // 10 tile range is purely arbitrary, it would be better to pick vents up to a maximum value instead but
+        var ventsInRange = _lookup.GetEntitiesInRange<VentCritterSpawnLocationComponent>(_selectedBeacon.Comp.Coordinates, 10).Where(x => x.Comp.CanSpawn);
+
+        foreach (var vent in ventsInRange)
+        {
+            _locations.Add(new VentCritterLocationData(vent.Owner, vent.Comp, Transform(vent.Owner).Coordinates));
+        }
+    }
+}
+
+/// <summary>
+/// Contains location data for the vents that have been selected to spawn critters
+/// </summary>
+public sealed class VentCritterLocationData
+{
+    public EntityUid LocationUid;
+    public VentCritterSpawnLocationComponent SpawnLocationComponent;
+    public EntityCoordinates Coordinates;
+
+    public VentCritterLocationData(EntityUid uid, VentCritterSpawnLocationComponent spawnComp, EntityCoordinates coords)
+    {
+        LocationUid = uid;
+        SpawnLocationComponent = spawnComp;
+        Coordinates = coords;
     }
 }

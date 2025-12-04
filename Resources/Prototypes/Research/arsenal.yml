@@ -18,6 +18,7 @@
 # SPDX-FileCopyrightText: 2024 John Space
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2024 takemysoult
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Blu
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 MajorMoth
@@ -54,7 +55,7 @@
   - WeaponEnergyGunPistol
   - WeaponDisablerSMG
   - Truncheon
-  - WeaponDisabler
+  #- WeaponDisabler #TheDen, Made roundstart tech
   # - WeaponCivilianDisabler # Den
   - WeaponMechCombatDisabler # Goobstation
   - WeaponMechCombatFlashbangLauncher
@@ -63,6 +64,7 @@
   - WeaponPistolMk58
   - CrossbowModern
   - PlasteelArmingSword # DEN
+  - WeaponShotgunKammererEmpty
   # These are roundstart but not replenishable for salvage
 
 - type: technology
@@ -98,6 +100,7 @@
   - CartridgeMagnumIncendiary
   - CartridgePistolIncendiary
   - CartridgeRifleIncendiary
+  - MagazineBRDIP15Incendiary #TheDen
 
 - type: technology
   id: UraniumMunitions
@@ -131,6 +134,7 @@
   - CartridgePistolUranium
   - CartridgeRifleUranium
   - MagazineBoxShotgunUraniumHighCaliber # Goobstation
+  - MagazineBRDIP15Uranium #TheDen
 
 - type: technology
   id: AdvancedTacsuits
@@ -213,6 +217,9 @@
   # - WeaponPistolN1984 # DEN
   # - WeaponPistolViper # DEN
   - Terminus
+  - WeaponSubMachineGunDrozdEmpty # DEN
+  - WeaponRifleLecterEmpty # DEN
+  - WeaponRifleVulcanEmpty # DEN
   technologyPrerequisites:
   - BasicWeapons
 
@@ -275,4 +282,6 @@
   # - EnergyCutlass # DEN
   - WeaponSubMachineGunFPA90
   - WeaponSubMachineGunBRDIR25
+  - WeaponPistolBRDIP15Standard #TheDen
+  - WeaponPistolEnergyRevolver #TheDen
   softCapContribution: 1.5

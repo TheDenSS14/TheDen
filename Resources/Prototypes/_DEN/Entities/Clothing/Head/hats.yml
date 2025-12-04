@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingHeadBase
@@ -44,6 +44,91 @@
   name: patrol cap
 
 - type: entity
+  parent: [ClothingHeadHatFezMantis, ClothingHeadTinfoil, BaseFoldable]
+  id: ClothingHeadHatFezMantisInsulative
+  name: insulative mantis fez
+  description: "Someone wrapped your old mantis fez in mu-metal foil... Oh well. At least it'll protect you from psionic attacks. The slouch can be folded to either side."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/mantis_fez_insulative.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-flipped
+      map: ["foldedLayer"]
+      visible: false
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/mantis_fez_insulative.rsi
+  - type: GuideHelp
+    guides: [ PsionicInsulation ]
+  - type: Tag
+    tags:
+    - MantisBeltStorable
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+
+- type: entity
+  parent: [ClothingHeadHatFezMantis, BaseFoldable]
+  id: ClothingHeadHatFezMantisAiry
+  name: airy mantis fez
+  description: "A modest cap decorated with a thick tassle that can be worn over either eye. But it must be worn over an eye, as tradition dictates."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/mantis_fez_airy.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-flipped
+      map: ["foldedLayer"]
+      visible: false
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/mantis_fez_airy.rsi
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+
+- type: entity
+  parent: [ClothingHeadHatFezMantis, BaseFoldable]
+  id: ClothingHeadHatFezMantisOrnate
+  name: ornate mantis fez
+  description: "A structured cap with a chained veil that can be folded up and out of the way, if you have no taste. Or perhaps there's something else covering your eyes already? You're sure it's fine."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/mantis_fez_ornate.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-folded
+      map: ["foldedLayer"]
+      visible: false
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/mantis_fez_ornate.rsi
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-verb
+    unfoldVerbText: unfold-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded
+
+- type: entity
+  parent: [ClothingHeadCage, BaseMantisContraband]
+  id: ClothingHeadCageMantis # This version has a chain on the front to match the other ClothingBackpackCoffinMantis items
+  name: graven headcage
+  description: "A durable mu-metal cage with a heavy chain, designed to insulate the mind of whoever wears it. Removal takes time and attention."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/cagemantis.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/cagemantis.rsi
+
+- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatAdminAssistant
   name: administrative assistant cap
@@ -53,3 +138,120 @@
     sprite: _DEN/Clothing/Head/Hats/aacap.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Head/Hats/aacap.rsi
+
+- type: entity
+  parent: ClothingHeadHatBeret
+  id: ClothingHeadHatBeretWhite
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/beret_colorable.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/beret_colorable.rsi
+
+- type: entity
+  parent: ClothingHeadHatBeret
+  id: ClothingHeadHatParamedicBeret
+  name: paramedic beret
+  description: "A beret worn by emergency medical technicians and the like, adorned with a white cross."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/beret_paramedic.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/beret_paramedic.rsi
+
+# siren beret start
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatParamedicSirenBeret
+  name: salvation shako
+  description: "A noisy beret used to indicate a medical emergency response. Requires batteries. Not actually a shako."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/beret_paramedic_siren.rsi
+    layers:
+      - state: icon
+      - state: icon-light
+        visible: false
+        shader: unshaded
+        map: [ "light" ]
+  - type: Appearance
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/beret_paramedic_siren.rsi
+    equippedPrefix: off
+  - type: ItemToggle
+    predictable: false
+    onUse: false
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
+    soundFailToActivate:
+      path: /Audio/Machines/button.ogg
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_Impstation/Effects/Vehicle/ambulancesiren.ogg
+      params:
+        volume: -3
+  - type: UseDelay
+    delay: 1.0
+  - type: ToggleClothing
+    action: ActionToggleSalvationShako
+  - type: ItemTogglePointLight
+  - type: ToggleableVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+  - type: PointLight
+    enabled: false
+    radius: 1.4
+    energy: 2
+    color: deepskyblue
+    netsync: false
+    mask: /Textures/Effects/LightMasks/double_cone.png
+  - type: RotatingLight
+    speed: 360
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmall
+  - type: PowerCellDraw
+    drawRate: 1
+  - type: ToggleCellDraw
+
+- type: entity
+  parent: ClothingHeadHatParamedicSirenBeret
+  id: ClothingHeadHatParamedicSirenBeretEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+
+- type: entity
+  id: ActionToggleSalvationShako
+  name: Toggle Salvation Shako
+  description: Turn the siren on or off.
+  components:
+  - type: InstantAction
+    itemIconStyle: BigItem
+    event: !type:ToggleActionEvent
+# siren beret end
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBellhop
+  name: bellhop cap
+  description: A red cap with gold accents and a chin strap. It's a little impressive that they still make hats this tacky.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/bellhop.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/bellhop.rsi

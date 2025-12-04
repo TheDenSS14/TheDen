@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Rosycup
@@ -7,7 +8,7 @@
 
 - type: entity
   name: BRDI R-25
-  parent: [WeaponSubMachineGunBRDIR25, BaseCentcommContraband]
+  parent: [WeaponSubMachineGunBRDIR25, BaseBlueshieldOfficerContraband]
   id: WeaponSubMachineGunBRDIR25BSO
   description: An iconic weapon used by members of the Biesel Republic Foreign Legion. Repainted for Blueshield Officers.
   suffix: BSO # TheDen
@@ -25,3 +26,39 @@
   components:
     - type: StealTarget
       stealGroup: HoSAntiqueWeapon
+
+- type: entity
+  name: WT550
+  parent: [WeaponSubMachineGunWt550, BaseBlueshieldOfficerContraband]
+  id: WeaponSubMachineGunWt550BSO
+  description: An excellent SMG, produced by NanoTrasen's Small Arms Division. This one has been manufactured in the BSO's colors. Uses .35 auto ammo.
+  suffix: BSO
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Guns/SMGs/wt550_BSO.rsi
+  - type: Clothing
+    sprite: _DEN/Objects/Weapons/Guns/SMGs/wt550_BSO.rsi
+
+- type: entity
+  parent: WeaponSubMachineGunDrozd
+  id: WeaponSubMachineGunDrozdEmpty
+  suffix: Empty
+  components:
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: null
+          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - MagazinePistolSubMachineGun
+        gun_chamber:
+          name: Chamber
+          startingItem: null
+          priority: 1
+          whitelist:
+            tags:
+              - CartridgePistol

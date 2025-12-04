@@ -1,4 +1,5 @@
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 beck
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -12,7 +13,7 @@
     Heat: 0.8
     Structural: 0.8
   flatReductions:
-    Structural: 9
+    Structural: 5
 
 - type: damageModifierSet
   id: Replicator2
@@ -24,7 +25,7 @@
     Heat: 1
     Structural: 0.4
   flatReductions:
-    Structural: 9
+    Structural: 5
 
 - type: damageModifierSet
   id: Replicator3
@@ -36,7 +37,7 @@
     Heat: 0.35
     Structural: 0.3
   flatReductions:
-    Structural: 10
+    Structural: 5
 
 - type: damageModifierSet # ideally the nest should be able to be destroyed relatively easily with a couple grenades or a brave soul with a pickaxe.
   id: ReplicatorNest

@@ -26,7 +26,7 @@
   - type: VentCrittersRule
     sound: /Audio/_DEN/VentCritters/vent_xeno.ogg #Den
     specialEntries:
-      - id: MobXenoPraetorian
+      - id: MobXenoDrone
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobXeno
@@ -58,8 +58,6 @@
     minimumPlayers: 1
     duration: 30
   - type: VentCrittersRule
-    specialEntries:
-      - id: MobXenoDrone
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobXeno
@@ -85,5 +83,28 @@
     minimumPlayers: 10
     maxOccurrences: 1
     duration: 1
-  - type: PirateRadioSpawnRule
-    debrisCount: 6
+
+- type: entity
+  parent: BaseGameRule
+  id: SkiaSpawn
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    weight: 6
+    earliestStart: 30 # Den
+    reoccurrenceDelay: 30 # Den
+    minimumPlayers: 20
+    duration: null # Den
+  - type: GlimmerEvent
+    minimumGlimmer: 250
+    maximumGlimmer: 1000
+  # - type: PrecognitionResult
+  #   message: psionic-power-precognition-skia-result-message
+  - type: RandomSpawnRule
+    prototype: SpawnPointGhostSkia
+    stationExclusive: true
+  - type: AntagObjectives
+    objectives:
+    - SkiaReapObjective
+    - SkiaSurviveObjective
+  - type: SkiaRule

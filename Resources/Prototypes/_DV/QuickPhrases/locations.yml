@@ -1,9 +1,8 @@
-# SPDX-FileCopyrightText: 2024 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 keekee38 <iamabanana372456@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 portfiend
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 keekee38
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -103,6 +102,16 @@
   parent: BaseLocationPhrase
   id: LocationBottomPhrase
   text: phrase-location-bottom
+
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationUpPhrase
+  text: phrase-location-up
+
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationDownPhrase
+  text: phrase-location-down
 
 ## Compass directions
 

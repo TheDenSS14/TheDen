@@ -164,7 +164,6 @@ public enum LogType
     /// An atmos networked device (such as a vent or pump) has had its settings changed, usually through an air alarm
     /// </summary>
     AtmosDeviceSetting = 97,
-
     /// <summary>
     /// Commands related to admemes. Stuff like config changes, etc.
     /// </summary>
@@ -179,6 +178,7 @@ public enum LogType
     /// Logs related to botany, such as planting and harvesting crops
     /// </summary>
     Botany = 100,
+    
     /// <summary>
     /// Artifact node got activated.
     /// </summary>

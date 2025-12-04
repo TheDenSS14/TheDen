@@ -1,6 +1,5 @@
 # SPDX-FileCopyrightText: 2024 Memeji
-# SPDX-FileCopyrightText: 2024 Sushiburger <***>
-# SPDX-FileCopyrightText: 2024 Sushiburger <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>
+# SPDX-FileCopyrightText: 2024 Sushiburger
 # SPDX-FileCopyrightText: 2025 Erol509
 # SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 Rosycup
@@ -8,17 +7,51 @@
 # SPDX-FileCopyrightText: 2025 kc the sheep
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+
+# Aurora Song: Base markings.
+
+- type: marking
+  abstract: true
+  parent: BaseSpeciesRodentia
+  id: BaseSpeciesRodentiaDefault
+  speciesRestriction: [] # Not supposed to be selectable.
+
+- type: marking
+  abstract: true
+  parent: BaseSpeciesRodentia
+  id: BaseSpeciesRodentiaHybrid
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human, Oni] # IPCs and Human-hybrids included!
+
+- type: marking
+  abstract: true
+  parent: BaseSpeciesRodentia
+  id: BaseSpeciesRodentiaBody
+  speciesRestriction: [Rodentia, SlimePerson, Human, Oni] # IPCs are excluded, I suppose...
+
+# I'm doing it this way because species can be arbitrary about what is HeadTop and what is HeadSide,
+# and this at least makes it more flexible to change the "rules" if needed.
+- type: marking
+  abstract: true
+  parent: BaseHeadTop
+  id: BaseRodentiaEars
+
+- type: marking
+  abstract: true
+  parent: BaseHeadSide
+  id: BaseRodentiaCheeks
+
+# End Aurora Song
 
 # HEAD
 
 ## DEFAULTS
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions / preferences.
+  - BaseSpeciesRodentiaDefault
+  - BaseRodentiaEars
   id: RodentiaHeadTopEarDefault
-  markingCategory: HeadTop
-  bodyPart: HeadTop
-  speciesRestriction: [IPC]
   coloring:
     default:
       type: !type:TattooColoring
@@ -29,10 +62,10 @@
       state: mouse_overlay
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions / preferences.
+  - BaseSpeciesRodentiaDefault
+  - BaseTail
   id: RodentiaTailDefault
-  markingCategory: Tail
-  bodyPart: Tail
-  speciesRestriction: [IPC]
   coloring:
     default:
       type: !type:TattooColoring
@@ -43,28 +76,28 @@
 ## EARS
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaEars
   id: RodentiaHeadTopEarBat
-  markingCategory: HeadTop
-  bodyPart: HeadTop
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: bat
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaEars
   id: RodentiaHeadTopEarBatLarge
-  markingCategory: HeadTop
-  bodyPart: HeadTop
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: bat_large
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaEars
   id: RodentiaHeadTopEarHamster
-  markingCategory: HeadTop
-  bodyPart: HeadTop
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: hamster
@@ -72,10 +105,10 @@
       state: hamster_overlay
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaEars
   id: RodentiaHeadTopEarLong
-  markingCategory: HeadTop
-  bodyPart: HeadTop
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: long
@@ -83,10 +116,10 @@
       state: long_overlay
 
 - type: marking
+  parent: # DEN: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaEars
   id: RodentiaHeadTopEarBunnyLarge
-  markingCategory: HeadTop
-  bodyPart: HeadTop
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tall_ear_markings.rsi
       state: ears_bunny_large_primary
@@ -96,10 +129,10 @@
       state: ears_bunny_large_tertiary
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaEars
   id: RodentiaHeadTopEarMouse
-  markingCategory: HeadTop
-  bodyPart: HeadTop
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: mouse
@@ -107,10 +140,10 @@
       state: mouse_overlay
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaEars
   id: RodentiaHeadTopEarMouseLarge
-  markingCategory: HeadTop
-  bodyPart: HeadTop
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: mouse_large
@@ -118,28 +151,28 @@
       state: mouse_large_overlay
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaEars
   id: RodentiaHeadTopEarNone
-  markingCategory: HeadTop
-  bodyPart: HeadTop
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: none
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaEars
   id: RodentiaHeadTopEarPointy
-  markingCategory: HeadTop
-  bodyPart: HeadTop
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: pointy
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaEars
   id: RodentiaHeadTopEarRabbit
-  markingCategory: HeadTop
-  bodyPart: HeadTop
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: rabbit
@@ -147,10 +180,10 @@
       state: rabbit_overlay
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaEars
   id: RodentiaHeadTopEarSmall
-  markingCategory: HeadTop
-  bodyPart: HeadTop
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: small
@@ -158,10 +191,10 @@
 ## SNOUTS
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseSnout
   id: RodentiaSnoutBat
-  markingCategory: Snout
-  bodyPart: Snout
-  speciesRestriction: [Rodentia, IPC]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: bat
@@ -169,10 +202,10 @@
       state: bat_nose
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseSnout
   id: RodentiaSnoutBatCounter
-  markingCategory: Snout
-  bodyPart: Snout
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: bat
@@ -182,10 +215,10 @@
       state: bat_overlay
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseSnout
   id: RodentiaSnoutFlat
-  markingCategory: Snout
-  bodyPart: Snout
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: flat
@@ -193,10 +226,10 @@
       state: flat_nose
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseSnout
   id: RodentiaSnoutFlatCounter
-  markingCategory: Snout
-  bodyPart: Snout
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: flat
@@ -206,10 +239,10 @@
       state: flat_overlay
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseSnout
   id: RodentiaSnoutRound
-  markingCategory: Snout
-  bodyPart: Snout
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: round
@@ -217,10 +250,10 @@
       state: round_nose
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseSnout
   id: RodentiaSnoutRoundCounter
-  markingCategory: Snout
-  bodyPart: Snout
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: round
@@ -232,19 +265,19 @@
 ## CHEEKS
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaCheeks
   id: RodentiaCheeksRound
-  markingCategory: HeadSide
-  bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: cheeks
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaCheeks
   id: RodentiaCheeksRoundCounter
-  markingCategory: HeadSide
-  bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: cheeks
@@ -252,19 +285,19 @@
       state: cheeks_overlay
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaCheeks
   id: RodentiaCheeksFluff
-  markingCategory: HeadSide
-  bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaCheeks
   id: RodentiaCheeksFluffCounter
-  markingCategory: HeadSide
-  bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff
@@ -272,19 +305,19 @@
       state: fluff_overlay
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaCheeks
   id: RodentiaCheeksFluffAlt
-  markingCategory: HeadSide
-  bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff_alt
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseRodentiaCheeks
   id: RodentiaCheeksFluffAltCounter
-  markingCategory: HeadSide
-  bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff_alt
@@ -305,37 +338,37 @@
 ## TAIL
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseTail
   id: RodentiaTailBeaver
-  markingCategory: Tail
-  bodyPart: Tail
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: beaver
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseTail
   id: RodentiaTailHamster
-  markingCategory: Tail
-  bodyPart: Tail
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: hamster
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseTail
   id: RodentiaTailLong
-  markingCategory: Tail
-  bodyPart: Tail
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: long
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseTail
   id: RodentiaTailLongCounter
-  markingCategory: Tail
-  bodyPart: Tail
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: long
@@ -343,10 +376,10 @@
       state: long_overlay
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseTail
   id: RodentiaTailLongCounterTip
-  markingCategory: Tail
-  bodyPart: Tail
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: long
@@ -356,28 +389,28 @@
       state: long_tip
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseTail
   id: RodentiaTailMouse
-  markingCategory: Tail
-  bodyPart: Tail
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: mouse
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseTail
   id: RodentiaTailRabbit
-  markingCategory: Tail
-  bodyPart: Tail
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: rabbit
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseTail
   id: RodentiaTailRabbitCounter
-  markingCategory: Tail
-  bodyPart: Tail
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: rabbit
@@ -385,28 +418,28 @@
       state: rabbit_overlay
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseTail
   id: RodentiaTailShort
-  markingCategory: Tail
-  bodyPart: Tail
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: short
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseTail
   id: RodentiaTailSquirrel
-  markingCategory: Tail
-  bodyPart: Tail
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: squirrel
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaHybrid
+  - BaseTail
   id: RodentiaTailSquirrelBicolor
-  markingCategory: Tail
-  bodyPart: Tail
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: squirrel
@@ -416,30 +449,31 @@
 ## PATTERNS
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaBody
+  - BaseChest
   id: RodentiaChestCountershade
-  markingCategory: Chest
-  bodyPart: Chest
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sexRestriction: Male
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/body_markings.rsi
       state: countershade
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaBody
+  - BaseChest
   id: RodentiaChestCountershadeF
-  markingCategory: Chest
-  bodyPart: Chest
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sexRestriction: Female
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/body_markings.rsi
       state: countershade_f
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions.
+  - BaseSpeciesRodentiaBody
   id: RodentiaLegLeftCountershade
   markingCategory: LeftLeg
   bodyPart: LLeg
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: l_leg
@@ -447,10 +481,11 @@
       state: countershade_lleg
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions.
+  - BaseSpeciesRodentiaBody
   id: RodentiaLegRightCountershade
   markingCategory: RightLeg
   bodyPart: RLeg
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: r_leg
@@ -458,29 +493,29 @@
       state: countershade_rleg
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaBody
+  - BaseChest
   id: RodentiaChestFawn
-  markingCategory: Chest
-  bodyPart: Chest
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/body_markings.rsi
       state: fawn
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaBody
+  - BaseChest
   id: RodentiaChestHooded
-  markingCategory: Chest
-  bodyPart: Chest
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sexRestriction: Male
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/body_markings.rsi
       state: hooded
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaBody
+  - BaseChest
   id: RodentiaChestHoodedF
-  markingCategory: Chest
-  bodyPart: Chest
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sexRestriction: Female
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/body_markings.rsi
@@ -489,10 +524,10 @@
 ### HEAD PATTERNS
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaBody
+  - BaseHead
   id: RodentiaHeadBlaze
-  markingCategory: Head
-  bodyPart: Head
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: head_m
@@ -500,10 +535,10 @@
       state: blaze
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaBody
+  - BaseHead
   id: RodentiaHeadRound
-  markingCategory: Head
-  bodyPart: Head
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: head_m
@@ -515,10 +550,10 @@
 ## HEAD
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions and part categories.
+  - BaseSpeciesRodentiaBody
+  - BaseHead
   id: RodentiaHeadBasic
-  markingCategory: Head
-  bodyPart: Head
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: head_m
@@ -526,19 +561,21 @@
 ## ARMS
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions.
+  - BaseSpeciesRodentiaBody
   id: RodentiaArmLeftBasic
   markingCategory: LeftArm
   bodyPart: LArm
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: l_arm
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions.
+  - BaseSpeciesRodentiaBody
   id: RodentiaArmRightBasic
   markingCategory: RightArm
   bodyPart: RArm
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: r_arm
@@ -546,19 +583,21 @@
 ## LEGS
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions.
+  - BaseSpeciesRodentiaBody
   id: RodentiaLegLeftBasic
   markingCategory: LeftLeg
   bodyPart: LLeg
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: l_leg
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions.
+  - BaseSpeciesRodentiaBody
   id: RodentiaLegRightBasic
   markingCategory: RightLeg
   bodyPart: RLeg
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: r_leg
@@ -566,19 +605,21 @@
 ## HANDS
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions.
+  - BaseSpeciesRodentiaBody
   id: RodentiaHandLeftBasic
   markingCategory: LeftHand
   bodyPart: LHand
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: l_hand
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions.
+  - BaseSpeciesRodentiaBody
   id: RodentiaHandRightBasic
   markingCategory: RightHand
   bodyPart: RHand
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: r_hand
@@ -586,19 +627,21 @@
 ## FEET
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions.
+  - BaseSpeciesRodentiaBody
   id: RodentiaFootLeftBasic
   markingCategory: LeftFoot
   bodyPart: LFoot
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: l_foot
 
 - type: marking
+  parent: # Aurora Song: Inherit species restrictions.
+  - BaseSpeciesRodentiaBody
   id: RodentiaFootRightBasic
   markingCategory: RightFoot
   bodyPart: RFoot
-  speciesRestriction: [Rodentia, SlimePerson, Human]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: r_foot

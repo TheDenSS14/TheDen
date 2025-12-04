@@ -1,7 +1,9 @@
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: announcer
   id: NEIL
@@ -115,16 +117,16 @@
     # - id: spiderClownSpawn
     #   path: events/aliens.ogg
     ## NyanoTrasen
-    - id: noosphericStorm # A large amount of glimmer has joined the station and made people psionic
+    - id: noosphericStorm # A large amount of Glimmer has joined the station and made people psionic
       path: events/noospheric_storm.ogg
 
     # Shuttle
     - id: shuttleCalled # The shuttle is on its way
-      path: shuttle/called.ogg
+      path: shuttle/shuttlecalled.ogg
     - id: shuttleRecalled # The shuttle is going back to Central Command
-      path: shuttle/recalled.ogg
+      path: shuttle/shuttlerecalled.ogg
     - id: shuttleDock # The shuttle has arrived at the station
-      path: shuttle/dock.ogg
+      path: shuttle/shuttledock.ogg
     # - id: shuttleNearby # The shuttle couldn't dock, it's at a specified location
     #   path: shuttle/nearby.ogg
     # - id: shuttleGoodLuck # The shuttle could not find its way to the station, good luck crew

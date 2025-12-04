@@ -1,22 +1,22 @@
 <!--
-SPDX-FileCopyrightText: 2022 Eoin Mcloughlin <helloworld@eoinrul.es>
-SPDX-FileCopyrightText: 2022 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
-SPDX-FileCopyrightText: 2023 Thom <119594676+ItsMeThom@users.noreply.github.com>
-SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Nemanja <98561806+emogarbage404@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
-SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+SPDX-FileCopyrightText: 2022 Eoin Mcloughlin
+SPDX-FileCopyrightText: 2022 eoineoineoin
+SPDX-FileCopyrightText: 2023 Thom
+SPDX-FileCopyrightText: 2023 Visne
+SPDX-FileCopyrightText: 2023 chromiumboy
+SPDX-FileCopyrightText: 2024 Nemanja
+SPDX-FileCopyrightText: 2024 Plykiya
+SPDX-FileCopyrightText: 2024 deltanedas
+SPDX-FileCopyrightText: 2025 Whatstone
+SPDX-FileCopyrightText: 2025 sleepyyapril
 
-SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 -->
 
 <DefaultWindow
     xmlns="https://spacestation14.io"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
     xmlns:ui="clr-namespace:Content.Client.Materials.UI"
     Title="{Loc 'lathe-menu-title'}"
     MinSize="550 450"
@@ -125,6 +125,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                             HorizontalAlignment="Left"
                             Margin="130 0 0 0">
                         </Label>
+                        <Button
+                            Name="DeleteFabricating"
+                            Margin="0"
+                            Text="✖"
+                            SetSize="38 32"
+                            HorizontalAlignment="Right"
+                            ToolTip="{Loc 'lathe-menu-delete-fabricating-tooltip'}">
+                            <Button.StyleClasses>
+                                <system:String>Caution</system:String>
+                                <system:String>OpenLeft</system:String>
+                            </Button.StyleClasses>
+                        </Button>
                     </PanelContainer>
                 </BoxContainer>
                 <ScrollContainer VerticalExpand="True" HScrollEnabled="False">

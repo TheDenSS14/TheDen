@@ -17,7 +17,7 @@
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: job
   id: Brigmedic
@@ -27,10 +27,12 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Medical
-      min: 21600 # 6 hrs
+      min: 25200 # The Den - 7 hours
     - !type:CharacterDepartmentTimeRequirement
       department: Security
-      min: 18000 # 4 hrs
+      min: 54000 # The Den - 15 hours
+    - !type:CharacterOverallTimeRequirement
+      min: 72000 # The Den - 20 hours
   startingGear: CorpsmanGear
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos
@@ -42,6 +44,9 @@
   - Maintenance
   - External
   - Corpsman
+  - Cryogenics
+  - GenpopEnter
+  - GenpopLeave
   extendedAccess:
   - Chemistry
   special:

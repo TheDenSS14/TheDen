@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ActionSkiaRerollObjectives
+  name: Reroll Objectives
+  description: Some targets may be easier than others.
+  components:
+  - type: InstantAction
+    icon:
+      sprite: Objects/Fun/dice.rsi
+      state: d6_1
+    useDelay: 300
+    priority: 5
+    event: !type:RerollSkiaObjectivesActionEvent

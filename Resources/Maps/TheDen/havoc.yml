@@ -48,6 +48,7 @@
 # SPDX-FileCopyrightText: 2025 Ian Hanley
 # SPDX-FileCopyrightText: 2025 Kiara
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 therealDLondon
 #
@@ -14334,7 +14335,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 15.5,-14.5
       parent: 2
-- proto: Bible
+- proto: HolyBookBible
   entities:
   - uid: 17464
     components:
@@ -104912,7 +104913,7 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: PlushieCatSiames
+- proto: PlushieCatSiamese
   entities:
   - uid: 13265
     components:

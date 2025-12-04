@@ -1,0 +1,176 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: decal
+  id: BrickTileSomberDark
+  parent: BrickTile
+  abstract: true
+
+- type: decal
+  id: BrickTileSomberDarkBox
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_box
+
+- type: decal
+  id: BrickTileSomberDarkCornerNe
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_corner_ne
+
+- type: decal
+  id: BrickTileSomberDarkCornerSe
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_corner_se
+
+- type: decal
+  id: BrickTileSomberDarkCornerNw
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_corner_nw
+
+- type: decal
+  id: BrickTileSomberDarkCornerSw
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_corner_sw
+
+- type: decal
+  id: BrickTileSomberDarkInnerNe
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_inner_ne
+
+- type: decal
+  id: BrickTileSomberDarkInnerSe
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_inner_se
+
+- type: decal
+  id: BrickTileSomberDarkInnerNw
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_inner_nw
+
+- type: decal
+  id: BrickTileSomberDarkInnerSw
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_inner_sw
+
+- type: decal
+  id: BrickTileSomberDarkEndN
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_end_n
+
+- type: decal
+  id: BrickTileSomberDarkEndE
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_end_e
+
+- type: decal
+  id: BrickTileSomberDarkEndS
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_end_s
+
+- type: decal
+  id: BrickTileSomberDarkEndW
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_end_w
+
+- type: decal
+  id: BrickTileSomberDarkLineN
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_line_n
+
+- type: decal
+  id: BrickTileSomberDarkLineE
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_line_e
+
+- type: decal
+  id: BrickTileSomberDarkLineS
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_line_s
+
+- type: decal
+  id: BrickTileSomberDarkLineW
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_line_w
+
+- type: decal
+  id: BrickTileSomberDarkNe
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_tile_ne
+
+- type: decal
+  id: BrickTileSomberDarkSe
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_tile_se
+
+- type: decal
+  id: BrickTileSomberDarkNw
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_tile_nw
+
+- type: decal
+  id: BrickTileSomberDarkSw
+  parent: BrickTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber_dark.rsi
+    state: steel_tile_sw

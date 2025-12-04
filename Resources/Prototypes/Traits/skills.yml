@@ -8,14 +8,19 @@
 # SPDX-FileCopyrightText: 2024 Timemaster99
 # SPDX-FileCopyrightText: 2024 WarMechanic
 # SPDX-FileCopyrightText: 2024 foxfoxthepirate
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
+# SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 GNUtopia
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 SX-7
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 Will Oliver
+# SPDX-FileCopyrightText: 2025 bigsantino1
+# SPDX-FileCopyrightText: 2025 crekulon
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -43,6 +48,7 @@
         - ChiefMedicalOfficer
         - Brigmedic
         - SeniorPhysician
+        - BlueshieldOfficer
 
 - type: trait
   id: SelfAware
@@ -247,6 +253,11 @@
         - Harpy
     - !type:CharacterItemGroupRequirement
       group: TraitsMuted
+    - !type:CharacterTraitRequirement # Den - prevent IPCs from taking more than one singing trait
+      inverted: true
+      traits:
+        - MusicMachine
+        - IPCSinger
   functions:
     - !type:TraitAddComponent
       components:
@@ -375,15 +386,13 @@
         - MedicalBorg
         - ResearchDirector
         - ForensicMantis
+        - Chaplain
+        - Librarian
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
-        - !type:CharacterJobRequirement
-          jobs:
-            - Chaplain
-            - Librarian
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement

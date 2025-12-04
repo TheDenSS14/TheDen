@@ -37,9 +37,10 @@
 # SPDX-FileCopyrightText: 2025 KyuPolaris
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # If you've arrived here after a failed NoCargoOrderArbitrage test, it's likely
 # because the product in question contains a restock box which links to a
@@ -76,7 +77,7 @@
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
   product: CrateVendingMachineRestockClothesFilled
-  cost: 2000
+  cost: 2200 # DEN - Raised from 2000 to 2200 due to arbitrage
   category: cargoproduct-category-name-service
   group: market
 
@@ -160,6 +161,7 @@
   cost: 3820
   category: cargoproduct-category-name-medical
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: CrateVendingMachineRestockNutriMax
@@ -210,6 +212,7 @@
   cost: 2200
   category: cargoproduct-category-name-security
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: CrateVendingMachineRestockSeeds

@@ -1,11 +1,13 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 DoctorJado
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Spoken by Unathi.
 - type: language
   id: Draconic
+  isVisibleLanguage: true
   speech:
     color: "#2aca2add"
   obfuscation:
@@ -102,6 +104,7 @@
 # !Do Not Make A Translator For This Language.
 - type: language
   id: Azaziba
+  isVisibleLanguage: true
   speech:
     color: "#2aca2add"
   obfuscation:

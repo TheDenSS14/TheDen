@@ -1,0 +1,51 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# For admin Debug > Set Outfit use or possibly salvage bodies
+
+## Mantis
+
+- type: startingGear
+  id: MantisGearAiry
+  equipment:
+    jumpsuit: ClothingUniformSkirtMantisAiry
+    back: ClothingBackpackSatchelMantis
+    shoes: ClothingShoesSandalsMantisAiry
+    head: ClothingHeadHatFezMantisAiry
+    eyes: ClothingEyesHudEpistemicsMantis
+    mask: ClothingMaskMantisVeil
+    id: ForensicMantisPDA
+    ears: ClothingHeadsetMantis
+    gloves: ClothingHandsGlovesMantisAiry
+    outerClothing: ClothingOuterCoatMantisAiry
+    belt: ClothingBeltMantisAiryLoot
+
+- type: startingGear
+  id: MantisGearDark
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMantisDark
+    back: ClothingBackpackSatchelMantis
+    shoes: ClothingShoesSandalsMantisDark
+    head: ClothingHeadHoodMantisDark
+    eyes: ClothingEyesHudEpistemicsMantis
+    mask: ClothingMaskMantisRitual
+    id: ForensicMantisPDA
+    ears: ClothingHeadsetMantis
+    gloves: ClothingHandsGlovesMantisDark
+    outerClothing: ClothingOuterWinterCoatMantisDark
+    belt: ClothingBeltMantisDarkLoot
+
+- type: startingGear
+  id: MantisGearOrnate
+  equipment:
+    jumpsuit: ClothingUniformSkirtMantisOrnate
+    back: ClothingBackpackSatchelMantis
+    shoes: ClothingShoesSandalsMantisOrnate
+    head: ClothingHeadHatFezMantisOrnate
+    eyes: ClothingEyesHudEpistemicsMantis
+    id: ForensicMantisPDA
+    ears: ClothingHeadsetMantis
+    gloves: ClothingHandsGlovesMantisOrnate
+    outerClothing: ClothingOuterCoatMantisOrnate
+    belt: ClothingBeltMantisOrnateLoot

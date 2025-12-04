@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 Tabitha
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -10,7 +11,7 @@
   description: A sterile satchel used by emergency responders.
   components:
   - type: Sprite
-    sprite: _DEN/Clothing/Back/para-satchel.rsi
+    sprite: _DEN/Clothing/Back/Satchels/para-satchel.rsi
 
 - type: entity
   parent: ClothingBackpackDuffel
@@ -19,7 +20,7 @@
   description: A large duffel bag for holding extra lifesaving equipment.
   components:
     - type: Sprite
-      sprite: _DEN/Clothing/Back/para-duffel.rsi
+      sprite: _DEN/Clothing/Back/Duffels/para-duffel.rsi
 
 - type: entity
   parent: ClothingBackpack
@@ -28,16 +29,18 @@
   description: It's a backpack especially designed for use in any rescue.
   components:
   - type: Sprite
-    sprite: _DEN/Clothing/Back/para-backpack.rsi
+    sprite: _DEN/Clothing/Back/Backpacks/para-backpack.rsi
 
 - type: entity
-  parent: ClothingBackpack
+  parent: [ClothingBackpack, BaseObjectVerbsCuteness]
   id: ClothingBackpackNapsack
   name: napsack
   description: A large, padded sack with breathable mesh sides. Sold as a sleeping bag for felinids, so why does it have a carrying handle?
   components:
+  - type: Item
+    size: Ginormous # This doesn't need to go inside anything else, ever
   - type: Sprite
-    sprite: _DEN/Clothing/Back/napsack.rsi
+    sprite: _DEN/Clothing/Back/Misc/napsack.rsi
   - type: Clothing
     quickEquip: false
     slots:
@@ -49,3 +52,188 @@
     whitelist:
       tags:
         - CanPilot # ONLY carries player characters, nothing else!
+
+- type: entity # The mantis backpacks are a bit smaller visually to show off their clothes
+  parent: [ClothingBackpack, BaseFoldable]
+  id: ClothingBackpackMantis
+  name: mantis backpack
+  description: "A low-profile backpack for the mantis, signified by the Greek psi in electrum. The strap can be flipped to the other side."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Back/Backpacks/mantis.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-flipped
+      map: ["foldedLayer"]
+      visible: false
+  - type: Appearance
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+
+- type: entity
+  parent: [ClothingBackpackDuffel, BaseFoldable]
+  id: ClothingBackpackDuffelMantis
+  name: mantis duffel bag
+  description: "A relatively low-profile duffel bag with a braided handle for the mantis. The strap can be flipped to the other side."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Back/Duffels/mantis.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-flipped
+      map: ["foldedLayer"]
+      visible: false
+  - type: Appearance
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelMantis
+  name: mantis satchel
+  description: "A low-profile satchel for the mantis that hooks onto the back of your belt, bearing a Greek psi on the flap. Perhaps the only bag that won't get caught on the sleeves of your robes."
+  components: # Intentionally only visible when facing north, since multiple mantis gloves have big detached sleeves
+  - type: Sprite # Backpacks layer over gloves when facing east or west, so this is the only option that will never do that
+    sprite: _DEN/Clothing/Back/Satchels/mantis.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchelPurse
+  id: ClothingBackpackSatchelMantisPurse
+  name: mantis handbag
+  description: "A low-profile handbag for the mantis with a polished clasp. It can be worn on either shoulder, and it's easily hidden beneath a cloak."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Back/Satchels/mantispurse.rsi
+
+- type: entity
+  parent: [ClothingBackpackMessengerBase, BaseFoldable]
+  id: ClothingBackpackMessengerMantis
+  name: mantis messenger bag
+  description: "A low-profile messenger bag for the mantis, within an electrum shell shaped like a watchful eye. The strap can be flipped to the other side."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Back/Messenger/mantis.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-flipped
+      map: ["foldedLayer"]
+      visible: false
+  - type: Appearance
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+
+- type: entity
+  parent: [ClothingBackpackNapsack, BaseFoldable, BaseObjectVerbsCutenessWall, BaseMantisContraband] # A roleplay toy that can carry people
+  id: ClothingBackpackCoffinMantis
+  suffix: DO NOT MAP # Use the Basic version instead
+  name: sarcophagus
+  description: "An ornate coffin, heavy and gilded, its surface adorned with staring eyes and draped cloths. Used to haul psions away for study, therapy, or questioning. Includes a case of restraints for the stubborn ones. The straps can be flipped to the other side, but it's so heavy you can only wear it over outerwear."
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Effects/metal_slam2.ogg # Please imagine a mantis dragging this thing down a hallway pursuing someone like Pyramid Head
+      params:
+        volume: -6
+        variation: 0.05
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    staminaCost: 80 # You just threw a fucking coffin
+    maxHitQuantity: 4 # This is really three hits for some reason
+  - type: EmbeddableProjectile
+    embedOnThrow: false # It'll fly through people
+  - type: ThrowingAngle
+    angle: -180
+    angularVelocity: true # Spins when thrown, it's not graceful
+  - type: MeleeWeapon # You can smash people with it, but it's not a good weapon, more just dramatic
+    wideAnimationRotation: 180
+    attackRate: 2
+    range: 1.5
+    angle: 120
+    maxTargets: 5
+    disableClick: true # You can't just smash someone with it directly, it's so big you have to swing the whole thing clumsily
+    heavyStaminaCost: 20 # And every time costs you a chunk of stamina
+    damage:
+      types:
+        Blunt: 15 # 7.5 DPS (same as Crowbar)
+        Structural: 15 # 7.5 structural DPS (though you'll run out of stamina after two or three swings)
+    soundHit:
+      path: /Audio/Effects/metal_slam2.ogg
+      params:
+        volume: -6
+        variation: 0.05
+    soundSwing:
+      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg
+      params:
+        volume: -3
+        variation: 0.05
+    soundNoDamage:
+      path: /Audio/Effects/metal_slam2.ogg
+      params:
+        volume: -6
+        variation: 0.05
+  - type: MeleeThrowOnHit # So heavy it knocks targets back a little
+    speed: 5
+    lifetime: 0.05
+  - type: Wieldable
+  - type: MeleeRequiresWield # Not one-handed ever
+  - type: Sprite
+    sprite: _DEN/Clothing/Back/Misc/mantis-sarcophagus.rsi
+  - type: Item
+    sprite: _DEN/Clothing/Back/Misc/mantis-sarcophagus-inhands-64x.rsi
+  - type: Clothing
+    slots:
+    - suitStorage # Not really a backpack
+  - type: Storage
+    grid:
+    - 0,0,0,1 # A small storage space for its StorageFill contents below
+    - 1,0,2,1
+    - 0,2,20,7 # 1 wider than ClothingBackpackDuffelHolding, capable of fitting the StorableSpecies pseudoitem
+    whitelist:
+      tags:
+        - CanPilot # ONLY player characters have this
+        - MantisBoxRestraintsStorable # Only mantis restraints fit, besides player characters
+  - type: GuideHelp
+    guides: [ MantisGuide ]
+
+- type: entity
+  parent: ClothingBackpackCoffinMantis
+  id: ClothingBackpackCoffinMantisFilled
+  suffix: Filled, DO NOT MAP # Use the Basic version instead
+  name: sarcophagus
+  description: "An ornate coffin, heavy and gilded, its surface adorned with staring eyes and draped cloths. Used to haul psions away for study, therapy, or questioning. The straps can be flipped to the other side, but it's so heavy you can only wear it over outerwear."
+  components:
+  - type: StorageFill
+    contents:
+    - id: MantisCaseRestraints
+
+- type: entity
+  parent: ClothingBackpackCoffinMantis
+  id: ClothingBackpackCoffinMantisBasic # A version of the sarcophagus without the space for the extra items, if you want to map it
+  suffix: Mappable
+  name: sarcophagus
+  description: "An ornate coffin, heavy and gilded, its surface adorned with staring eyes and draped cloths. Used to haul psions away for study, therapy, or questioning."
+  components:
+  - type: Storage
+    grid:
+      - 0,0,20,5 # 1 wider than ClothingBackpackDuffelHolding, capable of fitting the StorableSpecies pseudoitem

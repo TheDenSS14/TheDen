@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2025 Aikakakah <145503852+Aikakakah@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aikakakah
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -62,7 +63,8 @@ public sealed class ModifyUndiesSystem : EntitySystem
             if (!_markingManager.TryGetMarking(marking, out var mProt))
                 continue;
             // check if the Bodypart is in the component's BodyPartTargets
-            if (!component.BodyPartTargets.Contains(mProt.BodyPart))
+            if (!component.BodyPartTargets.Contains(mProt.BodyPart)
+                && !component.CategoryTargets.Contains(mProt.MarkingCategory)) // DEN: Include the categories too
                 continue;
             var localizedName = Loc.GetString($"marking-{mProt.ID}");
             var partSlot = mProt.BodyPart;

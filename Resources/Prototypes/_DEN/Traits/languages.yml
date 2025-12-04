@@ -4,7 +4,7 @@
 # SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: trait
   id: Nekomimetic
@@ -15,7 +15,6 @@
       inverted: true
       species:
         - Felinid
-        - Oni
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -248,3 +247,66 @@
         - Aural
       languagesUnderstood:
         - Aural
+
+- type: trait
+  id: Chittin
+  category: TraitsSpeechLanguages
+  points: -2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - Chitinid
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Chittin
+      languagesUnderstood:
+        - Chittin
+
+- type: trait
+  id: RemoveSpeciesLanguage
+  category: TraitsSpeechLanguages
+  priority: -10 # come before all species language traits
+  points: 2
+  requirements:
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - RemoveSpeciesLanguageLight
+    - Foreigner
+    - ForeignerLight
+    - XenoglossyPower
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    # NO FREE POINTS FOR YOU
+    - Oni
+    - Resomi
+  functions:
+  - !type:TraitModifyLanguages
+    keepLanguagesSpoken: [TauCetiBasic]
+    keepLanguagesUnderstood: [TauCetiBasic]
+
+- type: trait
+  id: RemoveSpeciesLanguageLight
+  category: TraitsSpeechLanguages
+  priority: -10 # come before all species language traits
+  points: 1
+  requirements:
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - RemoveSpeciesLanguage
+    - Foreigner
+    - ForeignerLight
+    - XenoglossyPower
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    # NO FREE POINTS FOR YOU
+    - Oni
+    - Resomi
+  functions:
+  - !type:TraitModifyLanguages
+    keepLanguagesSpoken: [TauCetiBasic] # Can't speak anything else, but can understand them

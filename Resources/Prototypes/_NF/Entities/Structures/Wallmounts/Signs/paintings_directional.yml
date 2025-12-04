@@ -1,0 +1,51 @@
+# SPDX-FileCopyrightText: 2024 dustylens
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseSignDirectional
+  id: PaintingDirectionalBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/paintings_directional.rsi
+
+- type: entity
+  parent: PaintingDirectionalBase
+  id: PaintingGhostHanging
+  name: festive ghost streamers
+  description: "Decorative wall streamers! They look like the people you've lost to the void!"
+  components:
+  - type: Sprite
+    drawdepth: Overdoors
+    state: painting_ghost
+  - type: Construction
+    graph: PaintingGhostHangingGraph
+    node: PaintingGhostHangingNode
+
+- type: entity
+  parent: PaintingDirectionalBase
+  id: PaintingBatHanging
+  name: festive bat streamers
+  description: "Decorative wall streamers! Bats are scary and also important pollinators!"
+  components:
+  - type: Sprite
+    drawdepth: Overdoors
+    state: painting_bat
+  - type: Construction
+    graph: PaintingBatHangingGraph
+    node: PaintingBatHangingNode
+
+- type: entity
+  parent: PaintingDirectionalBase
+  id: PaintingPumpkinHanging
+  name: festive pumpkin streamers
+  description: "Decorative wall streamers! It's decorative gourd season!"
+  components:
+  - type: Sprite
+    drawdepth: Overdoors
+    state: painting_pumpkin
+  - type: Construction
+    graph: PaintingPumpkinHangingGraph
+    node: PaintingPumpkinHangingNode

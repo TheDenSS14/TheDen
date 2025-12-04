@@ -1,13 +1,13 @@
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Rondalph Diggs <107864742+africalimedrop@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson <120885811+TadJohnson00@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Tryded <139474617+Tryded@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Blu <79374236+BlueHNT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 AeraAulin <133451603+AeraAuling@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Rondalph Diggs
+# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2023 Tryded
+# SPDX-FileCopyrightText: 2024 Blu
+# SPDX-FileCopyrightText: 2025 AeraAulin
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: cargoProduct
   id: ArmoryGrand
@@ -18,6 +18,7 @@
   cost: 5500
   category: Armory
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: ArmoryUniversal
@@ -28,6 +29,7 @@
   cost: 22500
   category: Armory
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: ArmoryShotgunAdjutant
@@ -38,6 +40,7 @@
   cost: 10000
   category: Armory
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: ArmoryEnergyGun
@@ -48,6 +51,7 @@
   cost: 5500
   category: Armory
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: ArmoryEnergyGunMini
@@ -58,6 +62,7 @@
   cost: 3500
   category: Armory
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: ArmoryArmingSword
@@ -70,3 +75,4 @@
   cost: 2500
   category: Armory
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity

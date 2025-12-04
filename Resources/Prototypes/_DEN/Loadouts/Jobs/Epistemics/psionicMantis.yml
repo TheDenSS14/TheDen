@@ -1,0 +1,796 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Backpacks
+
+- type: loadout
+  id: LoadoutPsionicMantisBackpackMantis
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingBackpackMantis
+
+- type: loadout
+  id: LoadoutPsionicMantisBackpackDuffelMantis
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingBackpackDuffelMantis
+
+- type: loadout
+  id: LoadoutPsionicMantisBackpackSatchelMantisPurse
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingBackpackSatchelMantisPurse
+
+- type: loadout
+  id: LoadoutPsionicMantisBackpackMessengerMantis
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingBackpackMessengerMantis
+
+- type: loadout
+  id: LoadoutPsionicMantisBackpackSatchelMantis
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingBackpackSatchelMantis
+
+# Belt
+
+- type: loadout
+  id: LoadoutPsionicMantisBeltMantisAiry
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingBeltMantisAiry
+
+- type: loadout
+  id: LoadoutPsionicMantisBeltMantisDark
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingBeltMantisDark
+
+- type: loadout
+  id: LoadoutPsionicMantisBeltMantisOrnate
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingBeltMantisOrnate
+
+# Ears
+
+- type: loadout
+  id: LoadoutPsionicMantisHeadsetMantis
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEars
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingHeadsetMantis
+
+- type: loadout
+  id: LoadoutPsionicMantisHeadsetAltMantis
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEars
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingHeadsetAltMantis
+
+# Equipment
+
+#- type: loadout # Currently found in MantisCaseChemicals in their locker
+#  id: LoadoutPsionicMantisPillCanisterMnemolith
+#  category: JobsEpistemicsPsionicMantis
+#  cost: 0
+#  guideEntry: Psionics
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutPsionicMantisEquipment
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - ForensicMantis
+#  items:
+#    - PillCanisterMnemolithMantis
+
+- type: loadout
+  id: LoadoutPsionicMantisEquipmentCigPackMnemolith
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - CigPackMnemolith
+
+- type: loadout
+  id: LoadoutPsionicMantisEquipmentMantisCaseCandles
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - MantisCaseCandles
+
+- type: loadout
+  id: LoadoutPsionicMantisEquipmentFlippoLighterMantis
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - FlippoLighterMantis
+
+- type: loadout
+  id: LoadoutPsionicMantisEquipmentTailorsKnife
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - MantisTailorsKnife
+
+- type: loadout
+  id: LoadoutPsionicMantisEquipmentDollMantis
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - PlushieDollMantis
+
+- type: loadout
+  id: LoadoutPsionicMantisEquipmentWheelchair
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - SomberChairLeatherMantisWheelchairFolded
+
+# Restraints - So they can't get duplicates
+
+- type: loadout
+  id: LoadoutPsionicMantisRestraintsCoffinMantisFilled # This contains the restraints case
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisRestraints
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingBackpackCoffinMantisFilled
+
+- type: loadout
+  id: LoadoutPsionicMantisRestraintsMantisCaseRestraints # This is for people who don't want the ClothingBackpackCoffinMantis too
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisRestraints
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - MantisCaseRestraints
+
+# Eyes
+
+- type: loadout
+  id: LoadoutPsionicMantisEyesEpiGlassesMantis
+  category: JobsEpistemicsPsionicMantis
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingEyesGlassesEpistemicsMantis
+
+- type: loadout
+  id: LoadoutPsionicMantisEyesEpiGlassesMantisTinted
+  category: JobsEpistemicsPsionicMantis
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingEyesGlassesEpistemicsMantisTinted
+
+- type: loadout
+  id: LoadoutPsionicMantisEyesEpiGlassesMantisMirrored
+  category: JobsEpistemicsPsionicMantis
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingEyesGlassesEpistemicsMantisMirrored
+
+- type: loadout
+  id: LoadoutPsionicMantisEyesEpiGlassesMantisVeil
+  category: JobsEpistemicsPsionicMantis
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingEyesGlassesEpistemicsMantisVeil
+
+- type: loadout
+  id: LoadoutPsionicMantisEyesEpiHUDMantis
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingEyesHudEpistemicsMantis
+
+# Gloves
+
+- type: loadout
+  id: LoadoutPsionicMantisGlovesDated
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingHandsGlovesMantis
+
+- type: loadout
+  id: LoadoutPsionicMantisGlovesAiry
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingHandsGlovesMantisAiry
+
+- type: loadout
+  id: LoadoutPsionicMantisGlovesDark
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingHandsGlovesMantisDark
+
+- type: loadout
+  id: LoadoutPsionicMantisGlovesOrnate
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingHandsGlovesMantisOrnate
+
+# Head
+
+- type: loadout
+  id: LoadoutPsionicMantisHeadMantisFezAiry
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingHeadHatFezMantisAiry
+
+- type: loadout
+  id: LoadoutPsionicMantisHeadHoodMantisDark
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingHeadHoodMantisDark
+
+- type: loadout
+  id: LoadoutPsionicMantisHeadMantisFezOrnate
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingHeadHatFezMantisOrnate
+
+# Id
+
+# Neck
+
+- type: loadout
+  id: LoadoutPsionicMantisNeckCloakMantisDark
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingNeckCloakMantisDark
+
+- type: loadout
+  id: LoadoutPsionicMantisNeckMantleMantisOrnate
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingNeckMantleMantisOrnate
+
+# Mask
+
+- type: loadout
+  id: LoadoutPsionicMantisMaskMantisVeil
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingMaskMantisVeil
+
+- type: loadout
+  id: LoadoutPsionicMantisMaskMantisRitual
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingMaskMantisRitual
+
+# Outer
+
+- type: loadout
+  id: LoadoutScienceOuterJacketMantisAiry
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingOuterCoatMantisAiry
+
+- type: loadout
+  id: LoadoutScienceOuterJacketMantisOrnate
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingOuterCoatMantisOrnate
+
+- type: loadout
+  id: LoadoutScienceOuterWinterCoatMantisDark
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingOuterWinterCoatMantisDark
+
+- type: loadout
+  id: LoadoutScienceOuterWinterCoatMantisMu
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingOuterWinterCoatMantisMu
+
+# Shoes
+
+- type: loadout
+  id: LoadoutPsionicMantisShoesAiry
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingShoesSandalsMantisAiry
+
+- type: loadout
+  id: LoadoutPsionicMantisShoesDark
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingShoesSandalsMantisDark
+
+- type: loadout
+  id: LoadoutPsionicMantisShoesOrnate
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingShoesSandalsMantisOrnate
+
+# Uniforms
+
+- type: loadout
+  id: LoadoutPsionicMantisUniformSkirtAiry
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingUniformSkirtMantisAiry
+
+- type: loadout
+  id: LoadoutPsionicMantisUniformSuitDark
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingUniformJumpsuitMantisDark
+
+- type: loadout
+  id: LoadoutPsionicMantisUniformSkirtOrnate
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingUniformSkirtMantisOrnate
+
+- type: loadout
+  id: LoadoutPsionicMantisUniformSuitLoincloth
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingUniformJumpsuitMantisLoincloth
+
+# Ranged
+
+- type: loadout
+  id: LoadoutPsionicMantisRangedPistol
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisRanged
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - MantisRangedPistol
+    - MantisCasterPistolCrypto
+
+- type: loadout
+  id: LoadoutPsionicMantisRangedRevolver
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisRanged
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - MantisRangedRevolver
+    - MantisCasterRevolverCrypto
+
+- type: loadout
+  id: LoadoutPsionicMantisRangedShotgun
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisRanged
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - MantisRangedShotgun
+    - MantisCasterShotgunCrypto
+
+- type: loadout
+  id: LoadoutPsionicMantisRangedSubMachineGun
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisRanged
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - MantisRangedSubMachineGun
+    - MantisCasterSubMachineGunCrypto
+
+# Melee
+
+- type: loadout
+  id: LoadoutPsionicMantisMeleeKnife
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisMelee
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - MantisMeleeKnife # Athame
+
+- type: loadout
+  id: LoadoutPsionicMantisMeleeSickle
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisMelee
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - MantisMeleeSickle # Boline
+
+- type: loadout
+  id: LoadoutPsionicMantisMeleeFist
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisMelee
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - MantisMeleeFist # Manifold
+
+- type: loadout
+  id: LoadoutPsionicMantisMeleeCane
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisMelee
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - MantisMeleeCane # Gnomon
+
+- type: loadout
+  id: LoadoutPsionicMantisMeleeGreatsword
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisRanged # Choosing the risk/reward greatsword prevents you from taking a gun, you have to commit
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisMelee
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - MantisMeleeGreatswordSheathFilled # Faust

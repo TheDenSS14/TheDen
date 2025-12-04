@@ -26,3 +26,9 @@ character-requirement-job-ban = You must{$inverted ->
     *[other]{" "}not
     [true]{""}
 } be banned from the following jobs: {$roles}
+
+character-requirement-server-selective = You must{$inverted ->
+    [true]{" "}not
+    *[other]{""}
+} be playing on the [color={$color}]{$serverName}[/color] server
+

@@ -17,7 +17,7 @@
 # SPDX-FileCopyrightText: 2025 neuPanda
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # All Security
 - type: characterItemGroup
@@ -105,23 +105,37 @@
       id: LoadoutMagazineShotgunBeanbag
     - type: loadout
       id: LoadoutSDeviceSirenSecurity
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutMagazineWT550
+    - type: loadout
+      id: LoadoutMagazineRifleBSOAk
+    - type: loadout
+      id: LoadoutMagazineBRDIP15
+    - type: loadout
+      id: LoadoutMagazineRifleBRDIR25
+    - type: loadout
+      id: LoadoutSecurityDisabler
+    - type: loadout
+      id: LoadoutMagazineShotgunLeverRifle
+    # End DEN
 
 - type: characterItemGroup
   maxItems: 1
   id: LoadoutSecurityWeapons
   items:
     - type: loadout
-      id: LoadoutSecurityMk58NonLethal
+      id: LoadoutSecurityMk58 #TheDen
     - type: loadout
-      id: LoadoutSecurityRevolverNonLethal
+      id: LoadoutSecurityRevolver #TheDen
     - type: loadout
-      id: LoadoutSecurityRevolverDeckardNonLethal
+      id: LoadoutSecurityRevolverDeckard #TheDen
     - type: loadout
-      id: LoadoutSecurityPistolN1984NonLethal
+      id: LoadoutSecurityPistolN1984 #TheDen
     - type: loadout
-      id: LoadoutSecurityPistolViperNonLethal
+      id: LoadoutSecurityPistolViper #TheDen
     - type: loadout
-      id: LoadoutSecurityPistolViperWoodNonlethal
+      id: LoadoutSecurityPistolViperWood #TheDen
     - type: loadout
       id: LoadoutSecurityEquipmentTruncheon
     - type: loadout
@@ -129,21 +143,23 @@
     - type: loadout
     #   id: LoadoutSecurityEquipmentEnergySword # DEN
     # - type: loadout
-      id: LoadoutSecurityPistolPollockNonlethal
+      id: LoadoutSecurityPistolPollock #TheDen
     - type: loadout
-      id: LoadoutSecurityRevolverSnubNonlethal
+      id: LoadoutSecurityRevolverSnub #TheDen
     - type: loadout
-      id: LoadoutSecurityRevolverK38MasterNonlethal
+      id: LoadoutSecurityRevolverK38Master #TheDen
     - type: loadout
-      id: LoadoutSecurityRevolverFitzNonlethal
+      id: LoadoutSecurityRevolverFitz #TheDen
     - type: loadout
-      id: LoadoutSecurityRevolverPythonNonlethal
+      id: LoadoutSecurityRevolverPython #TheDen
     - type: loadout
-      id: LoadoutSecurityArgentiNonLethal
+      id: LoadoutSecurityArgenti #TheDen
     - type: loadout
       id: LoadoutSecurityShotgunSawn
     - type: loadout
       id: LoadoutSecurityPlasteelArmingSword
+    - type: loadout #TheDen
+      id: LoadoutSecurityPistolEnergyRevolver
 
 - type: characterItemGroup
   id: LoadoutSecurityEyes
@@ -165,8 +181,6 @@
       id: LoadoutClothingEyesGlassesSecurityBig
     - type: loadout
       id: LoadoutClothingEyesGlassesSecurityVisor
-    - type: loadout
-      id: LoadoutClothingEyesGlassesCorpsman
 
 - type: characterItemGroup
   id: LoadoutSecurityGloves

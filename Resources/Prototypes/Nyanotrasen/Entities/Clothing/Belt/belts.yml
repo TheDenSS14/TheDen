@@ -11,28 +11,99 @@
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: [ClothingBeltStorageBase, BaseMantisContraband] # If Epistemics needs their own belts, it should be a different item, really
   id: ClothingBeltMantis
-  name: mantis belt
-  description: Perfect for storing all of your equipment.
+  name: dated mantis belt # TheDen
+  description: "A structured, layered sash designed to carry mantis equipment. All the company would pay for prior to the mantis equipment refresh, but it does have sheaths for certain weapons." # TheDen
   components:
   - type: Sprite
     sprite: Nyanotrasen/Clothing/Belt/mantis_belt.rsi
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Belt/mantis_belt.rsi
-  - type: Storage
+  - type: Storage # TheDen
+    maxItemSize: Large
+    grid:
+    - 0,0,9,1
     whitelist:
       tags:
-        - Document
-        - Flashlight
-        - ForensicBeltEquip
-        - HandLabeler
-        - Sidearm
         - Folder
-      components:
-        - AnomalyScanner
-        - NodeScanner
-        - Flash
+        - Document
+        - Write
+        - HandLabeler
+        - Flashlight
+        - Syringe # TheDen
+        - Bottle # TheDen
+        - PillCanister # TheDen
+        - Pill # TheDen
+        - Flash # TheDen
+        - ScienceTool # TheDen
+        - MantisBeltStorable # TheDen - Only to be used for mantis-specific items
+        # - ForensicBeltEquip # TheDen - The old name of the mantis belt's whitelist tag, now made more clear
+        # - Sidearm # TheDen - Only tagged mantis weapons will fit inside
+      # components: # TheDen - Doing it this way makes these items fit only if you click them onto the belt sprite itself...
+        # - AnomalyScanner
+        # - NodeScanner
+        # - Flash
+  - type: Appearance # TheDen - It has a sheath for MantisMeleeKnife or MantisMeleeCane (MantisMeleeFist is worn like a glove, and MantisMeleeGreatsword is intentionally excluded)
+  - type: ContainerContainer # TheDen - The rest of this item is our code
+    containers:
+      storagebase: !type:Container
+        ents: []
+      mantisknife: !type:ContainerSlot {}
+      mantissickle: !type:ContainerSlot {}
+      mantiscane: !type:ContainerSlot {}
+  - type: ItemSlots
+    slots:
+      mantisknife:
+        name: clothing-belt-mantisknife
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - MantisKnife
+        priority: 3
+      mantissickle:
+        name: clothing-belt-mantissickle
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - MantisSickle
+        priority: 3
+      mantiscane:
+        name: clothing-belt-mantiscane
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - MantisCane
+        priority: 3
+  - type: ItemMapper
+    mapLayers:
+      mantisknife:
+        whitelist:
+          tags:
+          - MantisKnife
+      mantissickle:
+        whitelist:
+          tags:
+          - MantisSickle
+      mantiscane:
+        whitelist:
+          tags:
+          - MantisCane
+    sprite: _DEN/Clothing/Belt/belt_overlay.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: GuideHelp
+    guides: [ MantisGuide ]
 
 - type: entity
   parent: ClothingBeltBase
@@ -136,6 +207,7 @@
           tags:
           - Medkit
           - Portafib
+          - Compactdefib #Den change
           - Rollerbed
         insertOnInteract: true
   - type: ItemMapper # DeltaV - add stowed medkit sprite

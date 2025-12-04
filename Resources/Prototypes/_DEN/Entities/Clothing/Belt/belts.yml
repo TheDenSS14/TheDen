@@ -1,7 +1,10 @@
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase]
@@ -37,3 +40,196 @@
   - type: Tag
     tags:
       - BeltSlotNotBelt
+
+# Mantis belts start
+- type: entity
+  parent: [ClothingBeltMantis, BaseFoldable]
+  id: ClothingBeltMantisAiry
+  name: airy mantis belt
+  description: "A finely-woven rope belt with loops to carry mantis equipment. The loose end can be tucked in, if you prefer clean lines. It has sheaths for certain weapons."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Belt/mantis_belt_airy.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-folded
+      map: ["foldedLayer"]
+      visible: false
+  - type: Clothing
+    sprite: _DEN/Clothing/Belt/mantis_belt_airy.rsi
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-verb
+    unfoldVerbText: unfold-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded
+
+- type: entity
+  parent: [ClothingBeltMantis, BaseFoldable]
+  id: ClothingBeltMantisDark
+  name: dark mantis belt
+  description: "A structured, layered sash designed to carry mantis equipment. The loose end can be tucked in, if you prefer clean lines. It has sheaths for certain weapons."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Belt/mantis_belt_dark.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-folded
+      map: ["foldedLayer"]
+      visible: false
+  - type: Clothing
+    sprite: _DEN/Clothing/Belt/mantis_belt_dark.rsi
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-verb
+    unfoldVerbText: unfold-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded
+
+- type: entity
+  parent: ClothingBeltMantis
+  id: ClothingBeltMantisOrnate
+  name: ornate mantis belt
+  description: "A thick band fastened by an electrum chain, with inner pockets designed to carry mantis equipment. It has sheaths for certain weapons."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Belt/mantis_belt_ornate.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Belt/mantis_belt_ornate.rsi
+
+- type: entity # These belts contain some mantis loot if salvagers find dead mantes in space
+  parent: ClothingBeltMantisAiry
+  id: ClothingBeltMantisAiryLoot
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+    - id: MantisMeleeKnife
+    - id: CigPackMnemolith
+    - id: FlippoLighterMantis
+    - id: SomberChairLeatherMantisWheelchairFolded
+
+- type: entity
+  parent: ClothingBeltMantisDark
+  id: ClothingBeltMantisDarkLoot
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+    - id: MantisMeleeSickle
+    - id: ClothingUniformJumpsuitMantisLoincloth
+    - id: ClothingNeckMantisShackles
+    - id: LeashMantis
+    - id: FlippoLighterMantis
+    - id: CandleSomberMantisCluster
+
+- type: entity
+  parent: ClothingBeltMantisOrnate
+  id: ClothingBeltMantisOrnateLoot
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+    - id: MantisMeleeCane
+    - id: PillCanisterMnemolithMantis
+    - id: PillCanisterSpaceDrugsMantis
+    - id: PlushieDollMantis
+    - id: PersonalAISomber
+    - id: MantisTailorsKnife
+# Mantis belts end
+
+- type: entity
+  parent: [ BaseBlueshieldOfficerContraband, ClothingBeltStorageBase ]
+  id: ClothingBeltBSOWebbing
+  name: blueshield webbing
+  description: A robust chest rig made to fit the needs of a blueshield officer.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Belt/blueshieldwebbing.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Belt/blueshieldwebbing.rsi
+  - type: ItemSlots
+    slots:
+      medkit:
+        name: clothing-belt-medkit
+        priority: -1
+        whitelist:
+          tags:
+          - Medkit
+          - Portafib
+          - Compactdefib
+          - Rollerbed
+        insertOnInteract: true
+      holster:
+        name: clothing-belt-sidearm
+        whitelist:
+          tags:
+          - Sidearm
+        ejectSound: #Den edit
+          path: /Audio/_DEN/Weapons/pistol_unholster.ogg
+        insertOnInteract: true
+        insertSound: #Den edit
+          path: /Audio/_DEN/Weapons/pistol_holster.ogg
+      radio:
+        name: clothing-belt-radio
+        priority: -2
+        whitelist:
+          tags:
+            - Radio
+        insertOnInteract: true
+  - type: ItemMapper # For item overlays
+    mapLayers:
+      medkit:
+        whitelist:
+          tags:
+          - Medkit
+      baton:
+        whitelist:
+          components:
+          - Stunbaton
+      gasgrenade:
+        whitelist:
+          tags:
+            - Grenade
+      slp:
+        whitelist:
+          tags:
+          - Sidearm
+      BRDIP_15:
+        whitelist:
+          tags:
+            - BRDIP_15
+      pulsepdw:
+        whitelist:
+          tags:
+            - PulsePDW
+    sprite: _DEN/Clothing/Belt/BSO_belt_overlay.rsi
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      holster: !type:ContainerSlot {}
+      medkit: !type:ContainerSlot {}
+      radio: !type:ContainerSlot {}
+  - type: Appearance
+
+- type: entity
+  parent: ClothingBeltBSOWebbing
+  id: ClothingBeltBSOWebbingFilled
+  name: blueshield webbing
+  description: A robust chest rig made to fit the needs of a blueshield officer.
+  suffix: Filled # TheDen
+  components:
+  - type: StorageFill
+    contents:
+      - id: Stunbaton
+      - id: Flash
+      - id: Handcuffs
+      - id: FlashlightSeclite
+      - id: HandheldCrewMonitorBSO
+  - type: ContainerFill
+    containers:
+      radio:
+      - RadioHandheldSecurity

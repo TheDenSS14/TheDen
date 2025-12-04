@@ -1,0 +1,64 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: vendingMachineInventory
+  id: MantisReliquaryInventory
+  startingInventory:
+    # Spare locker items, just the basics in case a second mantis is hired
+    ClothingNeckMantisPendulum: 1
+    BoxFolderMantis: 1
+    # Extra loadout items, maybe the chaplain wants some candles
+    FlippoLighterMantis: 1
+    CigPackMnemolith: 3
+    CandleSomberMantisSmall: 3
+    CandleSomberMantis: 3
+    CandleSomberMantisCluster: 2
+    # Cute gift boxes, not mechanically special, but otherwise unobtainable
+    MantisCaseSmall: 1
+    MantisCase: 1
+    MantisCaseLarge: 1
+    MantisCaseExtraLarge: 1
+    # Extra loadout clothing, so people can experiment with looks
+    ClothingHeadsetMantis: 1
+    ClothingHeadsetAltMantis: 1
+    ClothingBackpackMantis: 1
+    ClothingBackpackDuffelMantis: 1
+    ClothingBackpackSatchelMantis: 1
+    ClothingBackpackSatchelMantisPurse: 1
+    ClothingBackpackMessengerMantis: 1
+    ClothingBeltMantisAiry: 1
+    ClothingBeltMantisDark: 1
+    ClothingBeltMantisOrnate: 1
+    ClothingHeadHatFezMantisAiry: 1
+    ClothingHeadHoodMantisDark: 1
+    ClothingHeadHatFezMantisOrnate: 1
+    ClothingHeadHatFezMantisInsulative: 1 # A locker item, but maybe a coworker really wants it
+    ClothingMaskMantisVeil: 1
+    ClothingMaskMantisRitual: 1
+    ClothingNeckCloakMantisDark: 1
+    ClothingNeckMantleMantisOrnate: 1
+    ClothingOuterCoatMantisAiry: 1
+    ClothingOuterWinterCoatMantisDark: 1
+    ClothingOuterCoatMantisOrnate: 1
+    ClothingOuterWinterCoatMantisMu: 1
+    ClothingUniformSkirtMantisAiry: 1
+    ClothingUniformJumpsuitMantisDark: 1
+    ClothingUniformSkirtMantisOrnate: 1
+    ClothingHandsGlovesMantisAiry: 1
+    ClothingHandsGlovesMantisDark: 1
+    ClothingHandsGlovesMantisOrnate: 1
+    ClothingShoesSandalsMantisAiry: 1
+    ClothingShoesSandalsMantisDark: 1
+    ClothingShoesSandalsMantisOrnate: 1
+    ClothingUniformJumpsuitMantisLoincloth: 1 # It stays.
+  contrabandInventory:
+    # Hack the conduit to summon some toys from the Reliquary
+    MantisTailorsKnife: 1
+    PlushieDollMantis: 1
+    PersonalAISomber: 1
+    MantisCasterPistolCapgun: 1
+    MantisCasterRevolverCapgun: 1
+    MantisCasterShotgunCapgun: 1
+    MantisCasterSubMachineGunCapgun: 1
+    LanternSomber: 1

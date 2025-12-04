@@ -1,26 +1,37 @@
-// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Jakumba <jkmcbennett@hotmail.com>
-// SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2022 Flipp Syder
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Morb
+// SPDX-FileCopyrightText: 2023 csqrb
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 Rosycup
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array; // AuroraSong
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Humanoid.Markings
 {
+    // AuroraSong: Make markings inheriting (IInheritingPrototype)
     [Prototype("marking")]
-    public sealed partial class MarkingPrototype : IPrototype
+    public sealed partial class MarkingPrototype : IPrototype, IInheritingPrototype
     {
         [IdDataField]
         public string ID { get; private set; } = "uwu";
+
+        // AuroraSong: Make markings inheriting
+        [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<MarkingPrototype>))]
+        public string[]? Parents { get; }
+
+        [NeverPushInheritance]
+        [AbstractDataField]
+        public bool Abstract { get; }
+        // End AuroraSong
 
         public string Name { get; private set; } = default!;
 
@@ -87,6 +98,26 @@ namespace Content.Shared.Humanoid.Markings
         /// </summary>
         [DataField("colorLinks")]
         public Dictionary<string, string>? ColorLinks { get; private set; }
+
+
+        // Aurora Song: Sort markings to the top for preferred species.
+
+        /// <summary>
+        /// A list of species IDs that will prefer to use this marking above others.
+        /// Species in this list will have this marking sorted to the top, making them more accessible.
+        /// In the future, if marking randomization is added, those will probably use this list too for cohesion.
+        /// </summary>
+        /// <remarks>
+        /// For example: Imagine humans have various ear markings, ranging from regular humanoid ears, to
+        /// pointy elf/imp-like ears, to kemonomimi traits that may overlap with other species such as
+        /// vulpkanin or tajaran. The humanoid and elf ears may be preferred by humans, but their kemonomimi
+        /// ears will be preferred by vulpkanin or tajaran respectively. This floats the elf/humanoid ears to the
+        /// top of humans' ear marking lists.
+        /// </remarks>
+        [DataField]
+        public HashSet<ProtoId<SpeciesPrototype>>? PreferredSpecies = null;
+
+        // End Aurora Song
 
         public Marking AsMarking()
         {

@@ -1,0 +1,506 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: marking
+  id: UndershirtCropped
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/cropped.rsi
+    state: croppedundershirt
+
+# Note - the masc ones aren't sex-restricted because some people might prefer that look
+
+- type: marking
+  abstract: true
+  parent: BaseUndershirt
+  id: BaseUndershirtButtonUp
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      undershirt-buttons:
+        type: !type:SimpleColoring
+            color: "#AAAAAA"
+      undershirt-collar:
+        type: !type:SimpleColoring
+            color: "#AAAAAA"
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUp
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpFem
+  sexRestriction: [Male]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_fem.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_fem.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_fem.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpPartial
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpPartialFem
+  sexRestriction: [Male]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_fem.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_fem.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_fem.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpOpen
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpOpenFem
+  sexRestriction: [Male]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpGrayscale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_grayscale.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_grayscale.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_grayscale.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpFemGrayscale
+  sexRestriction: [Male]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_fem_grayscale.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_fem_grayscale.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_fem_grayscale.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpPartialGrayscale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_grayscale.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_grayscale.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_grayscale.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpPartialFemGrayscale
+  sexRestriction: [Male]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_fem_grayscale.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_fem_grayscale.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_fem_grayscale.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpOpenGrayscale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_grayscale.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_grayscale.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_grayscale.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpOpenFemGrayscale
+  sexRestriction: [Male]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem_grayscale.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem_grayscale.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem_grayscale.rsi
+    state: undershirt-collar
+
+- type: marking
+  id: UndershirtGarterbeltFemale
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      garterbelt_f:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      garterbelt_clips:
+        type: !type:SimpleColoring
+            color: "#999999"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_f
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_clips
+
+- type: marking
+  id: UndershirtFrilledGarterbeltFemale
+  parent: UndershirtGarterbeltFemale
+  coloring:
+    layers:
+      garterbelt_f:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      garterbelt_clips:
+        type: !type:SimpleColoring
+            color: "#999999"
+      garterbelt_frills_f:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_f
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_clips
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_frills_f
+
+- type: marking
+  id: UndershirtGarterbeltMale
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      garterbelt_m:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      garterbelt_clips:
+        type: !type:SimpleColoring
+            color: "#999999"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_m
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_clips
+
+- type: marking
+  id: UndershirtFrilledGarterbeltMale
+  parent: UndershirtGarterbeltMale
+  coloring:
+    layers:
+      garterbelt_m:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      garterbelt_clips:
+        type: !type:SimpleColoring
+            color: "#999999"
+      garterbelt_frills_m:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_m
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_clips
+  - sprite: _DEN/Mobs/Customization/Undershirt/garterbelt.rsi
+    state: garterbelt_frills_m
+
+- type: marking
+  id: UndershirtKindaStrappyFemale
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/strappy_lingere.rsi
+    state: kinda-strappy_f
+
+- type: marking
+  id: UndershirtStrappyFemale
+  parent: UndershirtKindaStrappyFemale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/strappy_lingere.rsi
+    state: strappy_f
+
+- type: marking
+  id: UndershirtSuperStrappyFemale
+  parent: UndershirtKindaStrappyFemale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/strappy_lingere.rsi
+    state: super-strappy_f
+
+- type: marking
+  id: UndershirtKindaStrappyMale
+  parent: UndershirtKindaStrappyFemale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/strappy_lingere.rsi
+    state: kinda-strappy_m
+
+- type: marking
+  id: UndershirtStrappyMale
+  parent: UndershirtKindaStrappyFemale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/strappy_lingere.rsi
+    state: strappy_m
+
+- type: marking
+  id: UndershirtSuperStrappyMale
+  parent: UndershirtKindaStrappyFemale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/strappy_lingere.rsi
+    state: super-strappy_m
+
+- type: marking
+  id: UndershirtLowCoverageBraFemale
+  sexRestriction: [Female]
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      bra_f:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/low-coverage_bra.rsi
+    state: bra_f
+
+- type: marking
+  id: UndershirtLowCoverageFrilledBraFemale
+  parent: UndershirtLowCoverageBraFemale
+  coloring:
+    layers:
+      bra_f:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      frills_f:
+        type: !type:SimpleColoring
+            color: "#999999"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/low-coverage_bra.rsi
+    state: bra_f
+  - sprite: _DEN/Mobs/Customization/Undershirt/low-coverage_bra.rsi
+    state: frills_f
+
+
+- type: marking
+  id: UndershirtLowCoverageBraMale
+  sexRestriction: [Male]
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      bra_m:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/low-coverage_bra.rsi
+    state: bra_m
+
+- type: marking
+  id: UndershirtLowCoverageFrilledBraMale
+  parent: UndershirtLowCoverageBraMale
+  coloring:
+    layers:
+      bra_m:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      frills_m:
+        type: !type:SimpleColoring
+            color: "#999999"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/low-coverage_bra.rsi
+    state: bra_m
+  - sprite: _DEN/Mobs/Customization/Undershirt/low-coverage_bra.rsi
+    state: frills_m
+
+- type: marking
+  id: UndershirtChokerFemale
+  sexRestriction: [Female]
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      choker_f:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/choker.rsi
+    state: choker_f
+
+- type: marking
+  id: UndershirtClipChokerFemale
+  parent: UndershirtChokerFemale
+  coloring:
+    layers:
+      choker_f:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      choker_clip:
+        type: !type:SimpleColoring
+            color: "#999999"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/choker.rsi
+    state: choker_f
+  - sprite: _DEN/Mobs/Customization/Undershirt/choker.rsi
+    state: choker_clip
+
+- type: marking
+  id: UndershirtChokerMale
+  sexRestriction: [Male]
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      choker_m:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/choker.rsi
+    state: choker_m
+
+- type: marking
+  id: UndershirtClipChokerMale
+  parent: UndershirtChokerMale
+  coloring:
+    layers:
+      choker_m:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      choker_clip:
+        type: !type:SimpleColoring
+            color: "#999999"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/choker.rsi
+    state: choker_m
+  - sprite: _DEN/Mobs/Customization/Undershirt/choker.rsi
+    state: choker_clip
+
+
+- type: marking
+  id: UndershirtWristCuffs
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      wristcuff:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/cuffs.rsi
+    state: wristcuff
+
+- type: marking
+  id: UndershirtWristCuffsFrilled
+  parent: UndershirtWristCuffs
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      wristcuff:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+      wristcuff_frills:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/cuffs.rsi
+    state: wristcuff
+  - sprite: _DEN/Mobs/Customization/Undershirt/cuffs.rsi
+    state: wristcuff_frills
+
+- type: marking
+  id: UndershirtWristCuffsThick
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      wristcuff_thick:
+        type: !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/cuffs.rsi
+    state: wristcuff_thick
+

@@ -1,0 +1,33 @@
+// SPDX-FileCopyrightText: 2025 portfiend
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace Content.Server.Database.Migrations.Postgres
+{
+    /// <inheritdoc />
+    public partial class AddSelfDetailFlavorText : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AddColumn<string>(
+                name: "self_examine_flavor_text",
+                table: "profile",
+                type: "text",
+                nullable: false,
+                defaultValue: "");
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropColumn(
+                name: "self_examine_flavor_text",
+                table: "profile");
+        }
+    }
+}

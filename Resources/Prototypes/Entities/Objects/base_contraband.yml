@@ -1,4 +1,7 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -177,6 +180,25 @@
   - type: Contraband
     allowedDepartments: [ CentralCommand, Command, Dignitary ]
 
+#Stuff that only CC + Dignitaries should have
+- type: entity
+  id: BaseCentcommDignitaryContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ CentralCommand, Dignitary ]
+
+#Stuff that primarily CC officials, ERT teams, and Blueshield officers get issued
+- type: entity
+  id: BaseCentcommBlueshieldContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ CentralCommand ]
+    allowedJobs: [ BlueshieldOfficer ]
+
 - type: entity
   id: BaseSecurityCommandContraband
   parent: BaseRestrictedContraband
@@ -297,7 +319,7 @@
   - type: Contraband
     allowedJobs: [ Warden ]
 
-# warden only stuff like krav maga gloves, greatsword
+# mantis only stuff like psionic chemicals and mnemolith weapons
 - type: entity
   id: BaseMantisContraband
   parent: BaseRestrictedContraband

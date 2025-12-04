@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -83,6 +83,7 @@
           tags:
           - Medkit
           - Portafib
+          - Compactdefib #Den change
           - Rollerbed
         insertOnInteract: true
       holster:
@@ -90,7 +91,11 @@
         whitelist:
           tags:
           - Sidearm
+        ejectSound: #Den edit
+          path: /Audio/_DEN/Weapons/pistol_unholster.ogg
         insertOnInteract: true
+        insertSound: #Den edit
+          path: /Audio/_DEN/Weapons/pistol_holster.ogg
       radio:
         name: clothing-belt-radio
         priority: -2

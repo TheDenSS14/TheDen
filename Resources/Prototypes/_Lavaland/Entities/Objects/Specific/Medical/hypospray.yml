@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2025 CyberLanos <cyber.lanos00@gmail.com>
-# SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 CyberLanos
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 oberonics
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: survival medipen
@@ -25,8 +26,6 @@
     transferAmount: 40
     onlyAffectsMobs: false
     injectOnly: true
-    maxPressure: 50 
-    injectTime: 5
   - type: SolutionContainerManager
     solutions:
       pen:

@@ -91,11 +91,15 @@
     node: tinfoilhat
   - type: GuideHelp
     guides: [ PsionicInsulation ]
+  - type: Tag # TheDen - If you really want to...
+    tags:
+    - MantisBeltStorable
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatBellhop
+  id: ClothingHeadHatBellhopNyano # DEN: ID change for migration to DEN prototype
   name: bellhop cap
+  suffix: Old # DEN
   description: All the inconvinience and humiliation of a fez with none of the style!
   components:
   - type: Sprite
@@ -104,11 +108,14 @@
     sprite: Nyanotrasen/Clothing/Head/Hats/bellhop.rsi
 
 - type: entity
-  parent: ClothingHeadTinfoil
+  parent: ClothingHeadTinfoil # Specifically not contraband despite being armored so the mystagogue can be silly
   id: ClothingHeadCage
   name: insulative headcage
-  description: Psionically insulates whoevers head is inside it. It takes time to resist out of.
+  description: "A durable mu-metal cage designed to insulate the mind of whoever wears it. Removal takes time and attention." # TheDen
   components:
+  - type: Item # TheDen
+    sprite: Nyanotrasen/Clothing/Head/Hats/cage.rsi
+    storedRotation: 0
   - type: Sprite
     sprite: Nyanotrasen/Clothing/Head/Hats/cage.rsi
   - type: Clothing
@@ -117,10 +124,19 @@
     unequipDelay: 10
   - type: TinfoilHat
     destroyOnFry: false
+  - type: Armor # TheDen - It's funny, okay? And it would work as as helmet. The cost is looking like an idiot
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.95
+        Radiation: 0.95
   - type: HeadCage
   - type: Tag
     tags:
-    - ForensicBeltEquip
+    # - ForensicBeltEquip # TheDen
+    - MantisBeltStorable # TheDen - New tag for clarity
+    - MantisBoxRestraintsStorable
   - type: GuideHelp
     guides: [ PsionicInsulation ]
 
@@ -128,7 +144,7 @@
   parent: ClothingHeadTinfoil
   id: ClothingHeadHelmetInsulated
   name: insulative skullcap
-  description: Psionically insulates whoevers head is inside it. It has some protection from physical damage.
+  description:  A durable mu-metal helmet that psionically insulates whoevers head is inside it. It has some protection from physical damage, too. # TheDen
   components:
   - type: Sprite
     sprite: Nyanotrasen/Clothing/Head/Helmets/insulative_skullcap.rsi
@@ -145,18 +161,26 @@
         Radiation: 0.95
   - type: GuideHelp
     guides: [ PsionicInsulation ]
+  - type: Tag
+    tags:
+    - MantisBeltStorable
 
 
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatFezMantis
-  name: mantis fez
-  description: A fine red fez with a gold tassel.
+  name: dated mantis fez
+  description: "A fine red fez with a gold tassel. All the company would pay for prior to the mantis equipment refresh." # TheDen
   components:
+  - type: Appearance
   - type: Sprite
     sprite: Nyanotrasen/Clothing/Head/Hats/mantis_fez.rsi
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Head/Hats/mantis_fez.rsi
+  - type: Tag # TheDen
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
 
 - type: entity
   parent: ClothingHeadBase

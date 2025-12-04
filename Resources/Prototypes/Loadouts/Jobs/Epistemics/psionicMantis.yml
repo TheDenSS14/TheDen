@@ -1,6 +1,10 @@
-# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -25,88 +29,88 @@
 # Ears
 
 # Equipment
-- type: loadout
-  id: LoadoutPsionicMantisEquipmentCandles
-  category: JobsEpistemicsPsionicMantis
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPsionicMantisEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - ForensicMantis
-  items:
-    - BoxCandle
+#- type: loadout # TheDen - They have their own candles now, see MantisCaseCandles
+#  id: LoadoutPsionicMantisEquipmentCandles
+#  category: JobsEpistemicsPsionicMantis
+#  cost: 0
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutPsionicMantisEquipment
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - ForensicMantis
+#  items:
+#    - BoxCandle
 
-- type: loadout
-  id: LoadoutPsionicMantisEquipmentCandlesSmall
-  category: JobsEpistemicsPsionicMantis
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPsionicMantisEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - ForensicMantis
-  items:
-    - BoxCandleSmall
+#- type: loadout
+#  id: LoadoutPsionicMantisEquipmentCandlesSmall
+#  category: JobsEpistemicsPsionicMantis
+#  cost: 0
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutPsionicMantisEquipment
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - ForensicMantis
+#  items:
+#    - BoxCandleSmall
 
-- type: loadout
-  id: LoadoutPsionicMantisPillCanisterSpaceDrugs
-  category: JobsEpistemicsPsionicMantis
-  cost: 0
-  guideEntry: Psionics
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPsionicMantisEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - ForensicMantis
-  items:
-    - PillCanisterSpaceDrugs
+#- type: loadout # TheDen - All pills moved to MantisCaseChemicals in their locker
+#  id: LoadoutPsionicMantisPillCanisterSpaceDrugs
+#  category: JobsEpistemicsPsionicMantis
+#  cost: 0
+#  guideEntry: Psionics
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutPsionicMantisEquipment
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - ForensicMantis
+#  items:
+#    - PillCanisterMindbreakerToxinMantis #TheDen
 
-- type: loadout
-  id: LoadoutPsionicMantisPillCanisterCryptobiolin
-  category: JobsEpistemicsPsionicMantis
-  cost: 0
-  guideEntry: PsionicInsulation
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPsionicMantisEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - ForensicMantis
-  items:
-    - PillCanisterCryptobiolin
+#- type: loadout
+#  id: LoadoutPsionicMantisPillCanisterCryptobiolin
+#  category: JobsEpistemicsPsionicMantis
+#  cost: 0
+#  guideEntry: PsionicInsulation
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutPsionicMantisEquipment
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - ForensicMantis
+#  items:
+#    - PillCanisterCryptobiolinMantis #TheDen
 
 # Eyes
-- type: loadout
-  id: LoadoutPsionicMantisEyesEpiHUD
-  category: JobsEpistemicsPsionicMantis
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPsionicMantisEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - ForensicMantis
-  items:
-    - ClothingEyesHudEpistemics
+#- type: loadout # TheDen - They have their own HUD now
+#  id: LoadoutPsionicMantisEyesEpiHUD
+#  category: JobsEpistemicsPsionicMantis
+#  cost: 0
+#  exclusive: true
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutPsionicMantisEyes
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - ForensicMantis
+#  items:
+#    - ClothingEyesHudEpistemics
 
-- type: loadout
-  id: LoadoutPsionicMantisEyesEpiGlasses
-  category: JobsEpistemicsPsionicMantis
-  cost: 3
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPsionicMantisEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - ForensicMantis
-  items:
-    - ClothingEyesGlassesEpistemics
+#- type: loadout # TheDen - They have their own glasses now
+#  id: LoadoutPsionicMantisEyesEpiGlasses
+#  category: JobsEpistemicsPsionicMantis
+#  cost: 3
+#  exclusive: true
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutPsionicMantisEyes
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - ForensicMantis
+#  items:
+#    - ClothingEyesGlassesEpistemics
 
 
 # Gloves

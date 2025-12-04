@@ -1,20 +1,21 @@
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2023 PHCodes <47927305+PHCodes@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 leo <136020119+leonardo-dabepis@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 PHCodes
+# SPDX-FileCopyrightText: 2023 leo
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: BaseResearchAndDevelopmentPointSource
   id: GlimmerProber
   name: glimmer prober
-  description: Probes the noösphere to generate research points. Might be worth turning off if glimmer is a problem.
+  description: Probes the noosphere to generate research points. Might be worth turning off if Glimmer is a problem.
   components:
   - type: Psionic
     removable: false
@@ -107,7 +108,7 @@
   parent: BaseMachinePowered
   id: GlimmerDrain
   name: glimmer drain
-  description: Uses electricity to try and sort out the noösphere, reducing its level of entropy.
+  description: Uses electricity to try and sort out the noosphere, reducing its level of entropy.
   components:
   - type: Psionic
     removable: false
@@ -146,7 +147,7 @@
 - type: entity
   id: GlimmerDeviceFrame
   name: glimmer device frame
-  description: A frame for a glimmer drain or glimmer prober.
+  description: A frame for a Glimmer drain or Glimmer prober.
   placement:
     mode: SnapgridCenter
   components:

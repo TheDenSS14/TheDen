@@ -1,18 +1,20 @@
-// SPDX-FileCopyrightText: 2021 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 0x6273 <0x40@keemail.me>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Fildrance <fildrance@gmail.com>
-// SPDX-FileCopyrightText: 2024 chavonadelal <156101927+chavonadelal@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2021 Leon Friedrich
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 0x6273
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Fildrance
+// SPDX-FileCopyrightText: 2024 chavonadelal
+// SPDX-FileCopyrightText: 2024 slarticodefast
+// SPDX-FileCopyrightText: 2025 Dirius77
+// SPDX-FileCopyrightText: 2025 MajorMoth
+// SPDX-FileCopyrightText: 2025 Nemanja
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Globalization;
 using Content.Shared.Access.Components;
@@ -25,12 +27,15 @@ using Content.Shared.PDA;
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.Access.Systems;
 
 public abstract class SharedIdCardSystem : EntitySystem
 {
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedAccessSystem _access = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -73,7 +78,7 @@ public abstract class SharedIdCardSystem : EntitySystem
     {
         // check held item?
         if (TryComp(uid, out HandsComponent? hands) &&
-            hands.ActiveHandEntity is EntityUid heldItem &&
+            hands.ActiveHandEntity is { } heldItem &&
             TryGetIdCard(heldItem, out idCard))
         {
             return true;
@@ -257,5 +262,50 @@ public abstract class SharedIdCardSystem : EntitySystem
     {
         return $"{idCardComponent.FullName} ({CultureInfo.CurrentCulture.TextInfo.ToTitleCase(idCardComponent.LocalizedJobTitle ?? string.Empty)})"
             .Trim();
+    }
+
+    public void SetExpireTime(Entity<ExpireIdCardComponent?> ent, TimeSpan time)
+    {
+        if (!Resolve(ent, ref ent.Comp))
+            return;
+        ent.Comp.ExpireTime = time;
+        Dirty(ent);
+    }
+
+    public void SetPermanent(Entity<ExpireIdCardComponent?> ent, bool val)
+    {
+        if (!Resolve(ent, ref ent.Comp))
+            return;
+        ent.Comp.Permanent = val;
+        Dirty(ent);
+    }
+
+    /// <summary>
+    /// Marks an <see cref="ExpireIdCardComponent"/> as expired, setting the accesses.
+    /// </summary>
+    public virtual void ExpireId(Entity<ExpireIdCardComponent> ent)
+    {
+        if (ent.Comp.Expired)
+            return;
+
+        _access.TrySetTags(ent, ent.Comp.ExpiredAccess);
+        ent.Comp.Expired = true;
+        Dirty(ent);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+        var query = EntityQueryEnumerator<ExpireIdCardComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (comp.Expired || comp.Permanent)
+                continue;
+
+            if (_timing.CurTime < comp.ExpireTime)
+                continue;
+
+            ExpireId((uid, comp));
+        }
     }
 }

@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -11,3 +12,76 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMasks
+
+# Mime masks
+- type: loadout
+  id: LoadoutMimeMask
+  category: Mask
+  cost: 2
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
+  items:
+    - ClothingMaskMime
+
+- type: loadout
+  id: LoadoutMimeMaskSad
+  category: Mask
+  cost: 2
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
+  items:
+    - ClothingMaskSadMime
+
+- type: loadout
+  id: LoadoutMimeMaskScared
+  category: Mask
+  cost: 2
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
+  items:
+    - ClothingMaskScaredMime
+
+- type: loadout
+  id: LoadoutMimeMaskSexy
+  category: Mask
+  cost: 2
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
+  items:
+    - ClothingMaskSexyMime
+
+# Oni masks
+
+- type: loadout
+  id: LoadoutItemOniMaskRed
+  category: Mask
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
+  items:
+    - ClothingMaskOniRed
+
+- type: loadout
+  id: LoadoutItemOniMaskBlue
+  category: Mask
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
+  items:
+    - ClothingMaskOniBlue

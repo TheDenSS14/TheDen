@@ -41,7 +41,7 @@
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: damageModifierSet
   id: Metallic
@@ -427,7 +427,7 @@
   coefficients:
     Slash: 1.2
     Piercing: 1.1
-    Asphyxiation: 0.5
+    Asphyxiation: 0.0 #Anaerobic in nature.
     Cold: 0.8
     Heat: 1.2
 

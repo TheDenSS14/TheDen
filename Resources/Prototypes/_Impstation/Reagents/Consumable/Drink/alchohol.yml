@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2025 Jadrek
+# SPDX-FileCopyrightText: 2025 LandsharkRAWR
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: reagent
   id: ThavenBad
   name: reagent-name-thavenbad
@@ -8,7 +16,7 @@
   color: "#68430b"
   recognizable: true
   metamorphicSprite:
-    sprite: _Impstation/Objects/Consumable/Drinks/thavenbadglass.rsi
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/thavenbadglass.rsi
     state: icon_empty
   metamorphicMaxFillLevels: 6
   metamorphicFillBaseName: fill-
@@ -19,3 +27,204 @@
       - !type:SatiateThirst
         factor: 2
   fizziness: .1
+
+- type: reagent
+  id: FeverDream
+  name: reagent-name-feverdream
+  parent: BaseDrink
+  desc: reagent-desc-feverdream
+  physicalDesc: reagent-physical-desc-shimmering-blood
+  flavor: feverdream
+  color: "#DD793E"
+  metamorphicChangeColor: false
+  metamorphicSprite:
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/feverdream.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.3
+    Narcotic:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 5
+        refresh: false
+  plantMetabolism:
+    - !type:PlantAdjustNutrition
+      amount: 0.5
+    - !type:PlantAdjustWater
+      amount: 0.5
+    - !type:PlantAdjustToxins
+      amount: 1
+    - !type:PlantAdjustWeeds
+      amount: -1
+    - !type:PlantAdjustPests
+      amount: -1
+  fizziness: 0.1
+
+
+- type: reagent
+  id: CottonBool
+  name: reagent-name-cottonbool
+  parent: BaseAlcohol
+  desc: reagent-desc-cottonbool
+  physicalDesc: reagent-physical-desc-fibrous
+  flavor: cottonbool
+  color: "#fff0e3"
+  recognizable: true
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/thin_glass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 4
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: Moth
+          shouldHave: true
+        factor: 4
+      - !type:Emote
+        conditions:
+        - !type:OrganType
+          type: Moth
+          shouldHave: true
+        emote: Squeak
+        showInChat: true
+        force: true
+        probability: 0.35
+    Medicine:
+      effects:
+      - !type:ModifyBleedAmount
+        amount: -0.75
+  fizziness: .1
+
+- type: reagent
+  id: PinkRose
+  name: reagent-name-pink-rose
+  parent: BaseAlcohol
+  desc: reagent-desc-pink-rose
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: gin
+  color: "#ff1c60"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/pinkrose.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.07
+
+- type: reagent
+  id: LaFleurette
+  name: reagent-name-la-fleurette
+  parent: BaseAlcohol
+  desc: reagent-desc-la-fleurette
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: champagne
+  color: "#ff9ebb"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/lafleurette.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.04
+
+- type: reagent
+  id: RomanceDead
+  name: reagent-name-romance-dead
+  parent: BaseAlcohol
+  desc: reagent-desc-romance-dead
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: metallic
+  color: "#ff1139"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/romancedead.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.07
+
+- type: reagent
+  id: RomanceDeadNot
+  name: reagent-name-romance-deadnot
+  parent: BaseAlcohol
+  desc: reagent-desc-romance-deadnot
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: metallic
+  color: "#ff1139"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/romancedeadnot.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+
+- type: reagent
+  id: RoseMilk
+  name: reagent-name-rose-milk
+  parent: BaseAlcohol
+  desc: reagent-desc-rose-milk
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: rose
+  color: "#ff7c92"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/rosemilk.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2

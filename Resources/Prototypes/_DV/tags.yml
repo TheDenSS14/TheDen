@@ -14,7 +14,7 @@
 # SPDX-FileCopyrightText: 2025 VividPups
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 ## This is for Nyano and Delta V tags
 - type: Tag
@@ -42,7 +42,7 @@
   id: DockShipyard
 
 - type: Tag
-  id: ForensicBeltEquip
+  id: ForensicBeltEquip # TheDen - Replaced by MantisBeltStorable for clarity
 
 - type: Tag
   id: Gavel
@@ -97,3 +97,9 @@
 
 - type: Tag
   id: Skirt
+
+- type: Tag
+  id: CleaningGrenade
+
+- type: Tag
+  id: Hoodie

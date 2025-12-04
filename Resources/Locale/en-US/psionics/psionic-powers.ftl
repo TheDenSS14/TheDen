@@ -1,13 +1,13 @@
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-# SPDX-FileCopyrightText: 2024 Rane <60792108+Elijahrane@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 dootythefrooty <137359445+dootythefrooty@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Rane
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 dootythefrooty
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 generic-power-initialization-feedback = I Awaken.
 already-casting = I cannot channel more than one power at a time.
@@ -23,7 +23,7 @@ mass-sleep-initialization-feedback = Reaching out to the minds around me, I have
 mass-sleep-power-metapsionic-feedback = {CAPITALIZE($entity)} bears the indelible mark of a dream thief.
 
 # Mind Swap
-mind-swap-power-description = Swap minds with the target. Either can change back after 20 seconds.
+mind-swap-power-description = Swap minds with the target. Either of you can reverse the effects after twenty seconds.
 mind-swap-power-initialization-feedback = I can feel the bonds of soul and body wither at my whim, my vessel may be replaced with that of another.
 mind-swap-power-metapsionic-feedback = {CAPITALIZE($entity)} lacks a strong bond with their vessel, as if their connection with spirit is malleable.
 
@@ -48,7 +48,7 @@ pyrokinesis-power-initialization-feedback =
 pyrokinesis-power-metapsionic-feedback = The Secret of Fire dwells within {CAPITALIZE($entity)}
 
 # Metapsionic Pulse
-metapsionic-power-description = Send a mental pulse through the area to see if there are any psychics nearby.
+metapsionic-power-description = Send a mental pulse through the area to see if there are any psions nearby.
 metapsionic-power-initialization-feedback =
     The world around me awakens with dreamlight. For a transcendent moment, I can see all that is, all that will ever be.
     I find myself staggering, my lips parched not for want of water, but to drink of the cup of knowledge. I. Must. Find. It.
@@ -95,7 +95,7 @@ telegnosis-power-initialization-feedback =
 telegnosis-power-metapsionic-feedback = {CAPITALIZE($entity)}'s soul travels across bridges composed of dreamlight
 
 # Psionic Invisibility
-psionic-invisibility-power-description = Render yourself invisible to any entity that could potentially be psychic. Borgs, animals, and so on are not affected.
+psionic-invisibility-power-description = Render yourself invisible to any entity that could potentially be psionic. Borgs, animals, and so on are not affected.
 psionic-invisibility-power-initialization-feedback =
     I suddenly find myself plunged into a world utterly without light, yet I can feel the rays of warmth cast upon me.
     Pondering this, I arrive at a realization that sight itself is an illusion. I reject it, I deny that light itself is real.
@@ -107,21 +107,21 @@ xenoglossy-power-description = You understand all languages.
 xenoglossy-power-initialization-feedback =
     I feel an empathy with all creation, so that I may understand them and be understood.
     The barrier between thought and expressions is permeable to me.
-psionic-language-power-metapsionic-feedback = The noösphere flows freely through {CAPITALIZE($entity)}, who seems to digest it and pass it back out undisturbed.
+psionic-language-power-metapsionic-feedback = The noosphere flows freely through {CAPITALIZE($entity)}, who seems to digest it and pass it back out undisturbed.
 
 # Psychognomy
 psychognomy-power-description = You have some vague sense of the form of the source of telepathic messages.
 psychognomy-power-initialization-feedback =
     I have pierced the veil, and I know I'm not alone. More concerning, the piercing I made seems to be still indefinitely permeable.
-    When energy passes through the perforations in the noösphere, I get a faint glimpse of the material origin.
-psychognomy-power-metapsionic-feedback = {CAPITALIZE($entity)} senses aspects of the source of the thoughts they receive from the noösphere.
+    When energy passes through the perforations in the noosphere, I get a faint glimpse of the material origin.
+psychognomy-power-metapsionic-feedback = {CAPITALIZE($entity)} senses aspects of the source of the thoughts they receive from the noosphere.
 
 # Telepathy
 telepathy-power-description = You are capable of both sending and receiving telepathic messages.
 telepathy-power-initialization-feedback =
     The voices I've heard all my life begin to clear, yet they do not leave me. Before, they were as incoherent whispers,
     now my senses broaden, I come to a realization that they are part of a communal shared hallucination. Behind every voice is a glimmering sentience.
-telepathy-power-metapsionic-feedback = {CAPITALIZE($entity)} can project their thoughts into the noösphere, passing it along to other minds that are connected.
+telepathy-power-metapsionic-feedback = {CAPITALIZE($entity)} can project their thoughts into the noosphere, passing it along to other minds that are connected.
 
 # Shadeskip
 action-name-shadeskip = Shadeskip
@@ -159,7 +159,7 @@ pyrokinetic-flare-power-metapsionic-feedback = {CAPITALIZE($entity)} can draw ou
 # Summon Imp
 action-name-summon-imp = Summon Imp
 action-description-summon-imp =
-    Summon and bind an Imp from Gehenna to serve as your Familiar.
+    Summon and bind an imp from Gehenna to serve as your familiar.
 summon-imp-power-description = { action-description-summon-imp }
 summon-imp-power-initialization-feedback =
     For a brief time, I find myself wandering the blackened fields of Gehenna. I sift between the ashes, finding a smoldering coal in the shape of an eye.
@@ -179,7 +179,7 @@ examine-mindbroken-message =
     There is nothing behind its gaze, no evidence there can be found of the divine light of creation.
 psionic-roll-failed = For a moment, my consciousness expands, yet I feel that it is not enough.
 entity-anomaly-no-grid = There is nowhere for me to conjure beings.
-power-overwhelming-power-feedback = {CAPITALIZE($entity)} wields a vast connection to the noösphere
+power-overwhelming-power-feedback = {CAPITALIZE($entity)} wields a vast connection to the noosphere
 
 # DarkSwap
 action-name-darkswap = DarkSwap
@@ -189,12 +189,12 @@ darkswap-power-initialization-feedback =
 ethereal-pickup-fail = My hand sizzles as it passes through...
 
 # Psionic Familiar System
-psionic-familiar-cant-attack-master = I am bound by my Master, I cannot harm them.
+psionic-familiar-cant-attack-master = I am bound by my master, I cannot harm them.
 psionic-familiar-despawn-text = {CAPITALIZE($entity)} returns from whence it came!
 ghost-role-information-familiar-name = Psionic Familiar
-ghost-role-information-familiar-description = An interdimensional creature bound to the will of a Psion.
+ghost-role-information-familiar-description = An interdimensional creature bound to the will of a psion.
 ghost-role-information-familiar-rules =
-    Obey the one who summoned you. Do not act against the interests of your Master. You will die for your Master if it is necessary.
+    Obey the one who summoned you. Do not act against the interests of your master. You will die for your master if it is necessary.
 
 # Assay Power
 assay-begin = The air around {CAPITALIZE($entity)} begins to shimmer faintly
@@ -215,7 +215,7 @@ anoigo-power-initialization-feedback=
 anoigo-power-metapsionic-feedback = {CAPITALIZE($entity)} possesses the Gatekeeper's tongue.
 
 # Entity Specific Feedback Messages
-ifrit-feedback = A spirit of Gehenna, bound by the will of a powerful psychic
+ifrit-feedback = A spirit of Gehenna, bound by the will of a powerful psion
 prober-feedback = A mirror into the end of time, the screaming of dead stars emanates from this machine
 drain-feedback = A mirror into a realm where the stars sit still forever, a cold and distant malevolence stares back
 sophic-grammateus-feedback = SEEKER, YOU NEED ONLY ASK FOR MY WISDOM.

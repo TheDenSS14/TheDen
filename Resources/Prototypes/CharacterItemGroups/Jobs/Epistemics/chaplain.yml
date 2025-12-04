@@ -1,10 +1,13 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Chaplain
 #- type: characterItemGroup
@@ -38,6 +41,12 @@
       id: LoadoutChaplainEquipmentCandlesSmall
     - type: loadout
       id: LoadoutChaplainPillCanisterSpaceDrugs
+    # DEN start: Additions below
+    - type: loadout
+      id: LoadoutChaplainTanakh
+    - type: loadout
+      id: LoadoutChaplainQuran
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutChaplainEyes
@@ -47,6 +56,8 @@
       id: LoadoutChaplainEyesEpiHUD
     - type: loadout
       id: LoadoutChaplainEyesEpiGlasses
+    - type: loadout # TheDen
+      id: LoadoutChaplainEyesEpiGlassesVisor
 
 - type: characterItemGroup
   id: LoadoutChaplainGloves

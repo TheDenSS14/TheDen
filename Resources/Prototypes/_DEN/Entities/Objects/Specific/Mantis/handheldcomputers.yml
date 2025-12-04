@@ -1,0 +1,120 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [BaseHandheldComputer, BaseMantisContraband] # Spawns in the mantis's pocket, contraband so they can't really give it away
+  id: HandheldPsionicsRegistry
+  name: handheld psion registry
+  description: "Grants access to the psion registry without having to return to your office."
+  components:
+  - type: Item
+    sprite: _DEN/Objects/Specific/Mantis/handheldpsionicsregistry.rsi
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Mantis/handheldpsionicsregistry.rsi
+    layers:
+    - state: icon
+    - state: screen
+      shader: unshaded
+  - type: Tag
+    tags:
+    - MantisBeltStorable
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+  - type: ActivatableUI
+    key: enum.PsionicsRecordsConsoleKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.PsionicsRecordsConsoleKey.Key:
+        type: PsionicsRecordsConsoleBoundUserInterface
+  - type: PsionicsRecordsConsole
+  - type: AccessReader # Same as the psion registry computer
+    access:
+      - [ Chapel ]
+#      - [ Library ]
+      - [ Mantis ]
+      - [ ResearchDirector ]
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmall
+        blacklist:
+          tags:
+          - MantisCaster
+  - type: GuideHelp
+    guides: [ MantisGuide ]
+
+- type: entity
+  parent: HandheldPsionicsRegistry
+  id: HandheldPsionicsRegistryEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        blacklist:
+          tags:
+          - MantisCaster
+
+- type: entity # Sometimes mapped in mantis offices, but not otherwise part of the mantis's kit
+  parent: [BaseHandheldComputer, BaseMantisContraband] # Not parented to the handheld crew monitor because it should never fulfill a steal objective
+  id: HandheldCrewMonitorMantis
+  name: handheld crew monitor # If this is ever updated to only track registered psions, rename it the "handheld psion monitor" or something
+  description: "Ostensibly used to monitor the health and safety of registered psions aboard the station, although a system update seems to have incorrectly increased its access to see all crew. Oh well." # Like above, if functionality changes, update this description
+  components:
+  - type: Item
+    sprite: _DEN/Objects/Specific/Medical/handheldcrewmonitormantis.rsi
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Medical/handheldcrewmonitormantis.rsi
+    layers:
+    - state: icon
+    - state: screen
+      shader: unshaded
+  - type: Tag
+    tags:
+    - MantisBeltStorable
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+  - type: ActivatableUI
+    key: enum.CrewMonitoringUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CrewMonitoringUIKey.Key:
+        type: CrewMonitoringBoundUserInterface
+  - type: CrewMonitoringConsole
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: CrewMonitor
+  - type: WirelessNetworkConnection
+    range: 500
+  - type: StationLimitedNetwork
+  - type: PsionicsRecordsConsole
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmall
+        blacklist:
+          tags:
+          - MantisCaster
+  - type: GuideHelp
+    guides: [ MantisGuide ]
+
+- type: entity
+  parent: HandheldCrewMonitorMantis
+  id: HandheldCrewMonitorMantisEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        blacklist:
+          tags:
+          - MantisCaster

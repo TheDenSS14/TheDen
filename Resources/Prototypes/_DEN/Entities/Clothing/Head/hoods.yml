@@ -1,6 +1,24 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 sheepie
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingHeadHatFezMantis
+  id: ClothingHeadHoodMantisDark
+  name: dark mantis hood
+  description: "A gloomy hood that sits low on the head, ornamented with magenta tassles. It matches your cloak nicely, though it can be worn on its own."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hoods/mantis_hood_dark.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hoods/mantis_hood_dark.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
 
 - type: entity
   parent: ClothingHeadHatHoodWinterBase

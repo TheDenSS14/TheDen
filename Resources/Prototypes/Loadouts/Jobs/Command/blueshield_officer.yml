@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Alice
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
@@ -91,6 +92,7 @@
 # Ears
 
 # Equipment
+
 - type: loadout
   id: LoadoutBSOEnergyRevolver
   category: JobsCommandBlueshieldOfficer
@@ -277,7 +279,7 @@
       jobs:
         - BlueshieldOfficer
   items:
-    - MedkitCombatFilled
+    - MedkitCombatFilledBSO #TheDen, changed the contents slightly.
 
 # - type: loadout
 #   id: LoadoutBSOCQCManual

@@ -22,6 +22,8 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Text;
+using Content.Shared.Paper;
+
 
 namespace Content.Server.CartridgeLoader.Cartridges;
 
@@ -138,7 +140,7 @@ public sealed partial class LogProbeCartridgeSystem : EntitySystem // DeltaV - M
         }
 
         var paperComp = Comp<PaperComponent>(paper);
-        _paper.SetContent(paper, builder.ToString(), paperComp);
+        _paper.SetContent((paper, paperComp), builder.ToString());
 
         _adminLogger.Add(LogType.EntitySpawn, LogImpact.Low, $"{ToPrettyString(user):user} printed out LogProbe logs ({paper}) of {ent.Comp.EntityName}");
     }

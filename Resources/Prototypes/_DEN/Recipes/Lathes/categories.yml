@@ -1,8 +1,11 @@
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 DoctorJado
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: latheCategory
   id: Towels
@@ -13,5 +16,17 @@
   name: lathe-category-assistance-devices
 
 - type: latheCategory
+  id: Carpet
+  name: lathe-category-carpet
+
+- type: latheCategory
   id: HygieneProducts
   name: lathe-category-hygiene-products
+
+- type: latheCategory
+  id: AirTanks
+  name: lathe-category-air-tanks
+
+- type: latheCategory
+  id: Bureaucracy
+  name: lathe-category-bureaucracy

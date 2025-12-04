@@ -1,24 +1,25 @@
-# SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Mono <182929384+Monotheonist@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Timemaster99
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Mono
+# SPDX-FileCopyrightText: 2025 assignedgod
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
+  - BaseHead
   id: CyberLimbsMarkingWardtakahashiHead
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_monitor.rsi
     state: head
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
+  - BaseHead
   id: CyberLimbsMarkingWardtakahashiHeadAlt
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: head
@@ -26,96 +27,99 @@
     state: head-2
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
+  - BaseHead
   id: CyberLimbsMarkingWardtakahashiHeadAlt1
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_alt1.rsi
     state: head
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
+  - BaseChest
   id: CyberLimbsMarkingWardtakahashiChest
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: torso
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingWardtakahashiLArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: l_arm
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingWardtakahashiLHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: l_hand
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingWardtakahashiLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: l_leg
 
-
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingWardtakahashiLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: l_foot
 
-
-
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingWardtakahashiRArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: r_arm
 
-
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingWardtakahashiRHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: r_hand
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingWardtakahashiRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: r_leg
 
-
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingWardtakahashiRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: r_foot

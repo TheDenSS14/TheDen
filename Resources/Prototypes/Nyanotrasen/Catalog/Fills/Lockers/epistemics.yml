@@ -1,36 +1,40 @@
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
+  parent: LockerForensicMantis
   id: LockerForensicMantisFilled
   suffix: Filled
-  parent: LockerForensicMantis
   components:
   - type: StorageFill
-    contents:
-      # Tools
+    contents: # TheDen - REWORKED ENTIRELY
       # - id: FlashlightSeclite # Deltav - Detective is in charge of investigating crimes.
       # - id: ForensicScanner
       # - id: BoxForensicPad
-      - id: AntiPsychicKnife
-      - id: FlashlightLantern # DeltaV - To replace their lost flashlight
-      - id: BoxZiptie # DeltaV - Give the mantis some zipties
-      - id: WeaponPistolPsiBreaker # DeltaV - Mantis mindbreaker pistol, see Resources/Prototypes/_DV/Entities?Objects/Weapons/Guns/Pistols/pistols.yml
-      - id: WeaponShotgunSoulshatter # TheDen - Mantis emergency soulbreaker shotgun
-      # Spare change of clothes
+      # - id: FlashlightLantern # DeltaV - To replace their lost flashlight
+      # - id: BoxZiptie # DeltaV - Give the mantis some zipties # TheDen - No!
       # - id: ClothingUniformJumpsuitMantis
       # - id: ClothingUniformSkirtMantis
       # - id: ClothingBeltMantis
       # - id: ClothingShoesBootsMantis
       # - id: ClothingHandsGlovesForensic # Deltav - Detective is in charge of investigating crimes.
-      - id: ClothingHeadHatFezMantis
       # - id: ClothingOuterCoatMantis
-      - id: ClothingOuterWinterCoatMantis
       # - id: ClothingEyesGlassesSunglasses
+      # - id: WeaponPistolPsiBreaker # DeltaV - Mantis mindbreaker pistol (similar weapon in loadout now instead)
+      # - id: WeaponShotgunSoulshatter # TheDen - Mantis emergency soulbreaker shotgun (similar weapon in loadout now instead)
+      # - id: AntiPsychicKnife # TheDen - In loadout now
+      # Tools
+      - id: MaterialEidolite1 # TheDen - Glowy jewel for the mystic for fun
+      - id: ClothingNeckMantisPendulum # TheDen - Bonk people with this to tell if they're psionic
+      - id: ClothingOuterCoatMantisOrnate # TheDen - In case you transfer to this job
+      - id: MantisCaseTools # TheDen - Contains their lantern, folder, and hand labeler
+      - id: MantisCaseChemicals # TheDen - Contains their syringe, chemistry bottle, and pill canisters
+      - id: BookPsionicsGuidebook # TheDen - This thing sucks right now but it's gotta go somewhere
       # Insulative headgear
-      - id: ClothingHeadTinfoil
-      - id: ClothingHeadCage
-        amount: 2
+      - id: ClothingHeadHatFezMantisInsulative # TheDen - Functionally identical to the tinfoil hat
+      - id: ClothingHeadCage # TheDen - A second one is in the restraints case in loadout

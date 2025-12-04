@@ -1,0 +1,34 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: Wrench
+  id: WrenchMantis
+  name: electrum spanner
+  description: "An unusual wrench made of exotic materials, given to mantes to anchor the graven chains of unruly psionic subjects."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Mantis/wrenchmantis.rsi
+    state: icon
+  - type: Item
+    sprite: _DEN/Objects/Specific/Mantis/wrenchmantis.rsi
+    storedSprite:
+      sprite: _DEN/Objects/Specific/Mantis/wrenchmantis.rsi
+      state: icon
+    storedRotation: 45
+    storedOffset: 0,9
+  - type: PhysicalComposition
+    materialComposition:
+      Eidolite: 100
+  - type: StaticPrice
+    price:  500
+  - type: Tag
+    tags:
+    - Wrench
+    - MantisBeltStorable
+    - MantisBoxRestraintsStorable
+  - type: GuideHelp
+    guides: [ MantisGuide ]

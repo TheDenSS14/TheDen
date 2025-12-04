@@ -1,36 +1,31 @@
-// SPDX-FileCopyrightText: 2022 Chris V <HoofedEar@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Fishfish458 <47410468+Fishfish458@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 Marat Gadzhiev <15rinkashikachi15@gmail.com>
-// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
-// SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
-// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Checkraze <71046427+Cheackraze@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Eoin Mcloughlin <helloworld@eoinrul.es>
-// SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
-// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2023 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
-// SPDX-FileCopyrightText: 2023 eoineoineoin <github@eoinrul.es>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+emogarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Chris V
+// SPDX-FileCopyrightText: 2022 Fishfish458
+// SPDX-FileCopyrightText: 2022 Kara
+// SPDX-FileCopyrightText: 2022 Marat Gadzhiev
+// SPDX-FileCopyrightText: 2022 Moony
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 fishfish458
+// SPDX-FileCopyrightText: 2022 keronshb
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 AJCM-git
+// SPDX-FileCopyrightText: 2023 Checkraze
+// SPDX-FileCopyrightText: 2023 Eoin Mcloughlin
+// SPDX-FileCopyrightText: 2023 Julian Giebel
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2023 eoineoineoin
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Cargo.Components;
 using Content.Server.Construction;
-using Content.Server.Paper;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Station.Components;
@@ -73,20 +68,35 @@ public sealed partial class CargoSystem
                 continue;
 
             // todo cannot be fucking asked to figure out device linking rn but this shouldn't just default to the first port.
-            if (!TryComp<DeviceLinkSinkComponent>(uid, out var sinkComponent) ||
-                sinkComponent.LinkedSources.FirstOrNull() is not { } console ||
-                console != args.OrderConsole.Owner)
+            if (!TryGetLinkedConsole((uid, tele), out var maybeConsole)
+                || maybeConsole is not { } console
+                || console != args.OrderConsole)
                 continue;
 
             for (var i = 0; i < args.Order.OrderQuantity; i++)
             {
                 tele.CurrentOrders.Add(args.Order);
             }
-            tele.Accumulator = tele.Delay;
+
+            tele.NextTeleport = _gameTiming.CurTime + tele.Delay;
             args.Handled = true;
             args.FulfillmentEntity = uid;
-            return;
         }
+    }
+
+    private bool TryGetLinkedConsole(Entity<CargoTelepadComponent> ent,
+        [NotNullWhen(true)] out Entity<CargoOrderConsoleComponent>? console)
+    {
+        console = null;
+        if (!TryComp<DeviceLinkSinkComponent>(ent, out var sinkComponent) ||
+            sinkComponent.LinkedSources.FirstOrNull() is not { } linked)
+            return false;
+
+        if (!TryComp<CargoOrderConsoleComponent>(linked, out var consoleComp))
+            return false;
+
+        console = (linked, consoleComp);
+        return true;
     }
 
     private void UpdateTelepad(float frameTime)
@@ -100,32 +110,24 @@ public sealed partial class CargoSystem
             if (comp.CurrentState == CargoTelepadState.Unpowered)
             {
                 comp.CurrentState = CargoTelepadState.Idle;
-                _appearance.SetData(uid, CargoTelepadVisuals.State, CargoTelepadState.Idle, appearance);
-                comp.Accumulator = comp.Delay;
-                continue;
-            }
-
-            comp.Accumulator -= frameTime;
-
-            // Uhh listen teleporting takes time and I just want the 1 float.
-            if (comp.Accumulator > 0f)
-            {
-                comp.CurrentState = CargoTelepadState.Idle;
+                comp.NextTeleport = _gameTiming.CurTime + comp.Delay;
                 _appearance.SetData(uid, CargoTelepadVisuals.State, CargoTelepadState.Idle, appearance);
                 continue;
             }
 
             if (comp.CurrentOrders.Count == 0)
             {
-                comp.Accumulator += comp.Delay;
+                comp.CurrentState = CargoTelepadState.Idle;
+                _appearance.SetData(uid, CargoTelepadVisuals.State, CargoTelepadState.Idle, appearance);
                 continue;
             }
 
             var xform = Transform(uid);
             var currentOrder = comp.CurrentOrders.First();
+
             if (FulfillOrder(currentOrder, xform.Coordinates, comp.PrinterOutput))
             {
-                _audio.PlayPvs(_audio.GetSound(comp.TeleportSound), uid, AudioParams.Default.WithVolume(-8f));
+                _audio.PlayPvs(_audio.ResolveSound(comp.TeleportSound), uid, AudioParams.Default.WithVolume(-8f));
 
                 if (_station.GetOwningStation(uid) is { } station)
                     UpdateOrders(station);
@@ -134,8 +136,6 @@ public sealed partial class CargoSystem
                 comp.CurrentState = CargoTelepadState.Teleporting;
                 _appearance.SetData(uid, CargoTelepadVisuals.State, CargoTelepadState.Teleporting, appearance);
             }
-
-            comp.Accumulator += comp.Delay;
         }
     }
 
@@ -152,7 +152,7 @@ public sealed partial class CargoSystem
 
     private void OnUpgradeExamine(EntityUid uid, CargoTelepadComponent component, UpgradeExamineEvent args)
     {
-        args.AddPercentageUpgrade("cargo-telepad-delay-upgrade", component.Delay / component.BaseDelay);
+        args.AddPercentageUpgrade("cargo-telepad-delay-upgrade", (float) (component.Delay / component.BaseDelay));
     }
 
     private void OnShutdown(Entity<CargoTelepadComponent> ent, ref ComponentShutdown args)

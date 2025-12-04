@@ -1,8 +1,11 @@
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+
+# meals
 
 - type: microwaveMealRecipe
   id: RecipeLasagne
@@ -16,6 +19,88 @@
     FoodMeat: 1
 
 - type: microwaveMealRecipe
+  id: RecipePigBlanket
+  name: pig in a blanket recipe
+  result: FoodMealPigblanket
+  time: 10
+  solids:
+    FoodCroissantRaw: 1
+    FoodMeatSausage: 1
+
+- type: microwaveMealRecipe
+  id: RecipeBloodCustardPie
+  name: blood custard pie recipe
+  result: FoodPieBloodCustard
+  time: 15
+  solids:
+    FoodDoughPie: 1
+    FoodPlateTin: 1
+  reagents:
+    Blood: 15
+    Cream: 10
+    Egg: 6
+
+- type: microwaveMealRecipe
+  id: RecipeDinuguanSoup
+  name: dinuguan recipe
+  result: FoodSoupDinuguan
+  time: 10
+  reagents:
+    Blood: 15
+    Vinegar: 5
+  solids:
+    FoodBowlBig: 1
+    FoodChiliPepper: 1
+    FoodMeat: 1
+
+# sorry but im not adding a recipe for every kind of liver
+
+- type: microwaveMealRecipe
+  id: RecipeLiverSausageAnimal
+  name: liverwurst recipe
+  result: FoodMeatLiverSausage
+  time: 10
+  reagents:
+    TableSalt: 5
+  solids:
+    FoodSausageCasing: 1
+    OrganAnimalLiver: 1
+
+- type: microwaveMealRecipe
+  id: RecipeLiverSausageHuman
+  name: liverwurst recipe
+  result: FoodMeatLiverSausage
+  time: 10
+  reagents:
+    TableSalt: 5
+  solids:
+    FoodSausageCasing: 1
+    OrganHumanLiver: 1
+
+- type: microwaveMealRecipe
+  id: RecipeBlackPudding
+  name: black pudding recipe
+  result: FoodMeatBlackPudding
+  time: 10
+  reagents:
+    Blood: 10
+    Oats: 5
+  solids:
+    FoodSausageCasing: 1
+
+# snacks
+
+- type: microwaveMealRecipe
+  id: RecipeFriedEgg
+  name: fried egg recipe
+  result: FoodMealFriedegg
+  time: 10
+  reagents:
+    Egg: 6
+    TableSalt: 5
+    Blackpepper: 5
+
+- type: microwaveMealRecipe
   id: RecipeTirggel
   name: tirggel recipe
   result: FoodBakedTirggel
@@ -25,12 +110,3 @@
     Sugar: 5
     Water: 5
     Flour: 5
-
-- type: microwaveMealRecipe
-  id: RecipePigBlanket
-  name: pig in a blanket recipe
-  result: FoodMealPigblanket
-  time: 10
-  solids:
-    FoodCroissantRaw: 1
-    FoodMeatSausage: 1

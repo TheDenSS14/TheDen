@@ -7,13 +7,14 @@
 # SPDX-FileCopyrightText: 2024 Skubman
 # SPDX-FileCopyrightText: 2024 dge21
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: sledgehammer
-  parent: [ BaseEngineeringContraband, BaseItem ]
+  parent: [ BaseObjectVerbsCommon, BaseEngineeringContraband, BaseItem ] # DEN: Add interaction verb parent
   id: Sledgehammer
   description: The perfect tool for wanton carnage.
   components:
@@ -46,8 +47,3 @@
         Structural: 10
   - type: Item
     size: Large
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject

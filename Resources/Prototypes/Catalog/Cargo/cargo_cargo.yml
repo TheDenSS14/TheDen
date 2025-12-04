@@ -5,6 +5,7 @@
 # SPDX-FileCopyrightText: 2024 SimpleStation14
 # SPDX-FileCopyrightText: 2024 Tmanzxd
 # SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
@@ -18,6 +19,7 @@
   cost: 500
   category: cargoproduct-category-name-cargo
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: CargoLuxuryHardsuit
@@ -28,6 +30,7 @@
   cost: 15000
   category: cargoproduct-category-name-cargo
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: CargoParcelWrap

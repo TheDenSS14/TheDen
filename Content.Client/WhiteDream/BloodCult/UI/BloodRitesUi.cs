@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Remuchi
+// SPDX-FileCopyrightText: 2025 slarticodefast
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -80,7 +81,7 @@ public sealed class BloodRitesUi : BoundUserInterface
         var container = new RadialContainer
         {
             Name = "Blood Rites",
-            Radius = 64f + 32f * MathF.Log(crafts.Count),
+            InitialRadius = 64f + 32f * MathF.Log(crafts.Count),
         };
 
         _menu.AddChild(container);
@@ -101,9 +102,9 @@ public sealed class BloodRitesUi : BoundUserInterface
         }
     }
 
-    private RadialMenuTextureButton CreateButton(string name, Texture icon)
+    private RadialMenuButton CreateButton(string name, Texture icon)
     {
-        var button = new RadialMenuTextureButton
+        var button = new RadialMenuButton
         {
             ToolTip = Loc.GetString(name),
             StyleClasses = { "RadialMenuButton" },

@@ -1,8 +1,10 @@
 // SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2025 Dirius77
 // SPDX-FileCopyrightText: 2025 Skubman
 // SPDX-FileCopyrightText: 2025 Timfa
 // SPDX-FileCopyrightText: 2025 VMSolidus
 // SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sev7ves
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
@@ -52,7 +54,7 @@ public sealed class LoadoutSystem : EntitySystem
     {
         _sawmill = _log.GetSawmill("loadouts");
 
-        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete, before: [typeof(SharedLoadoutSystem)]);
     }
 
 

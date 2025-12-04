@@ -1,0 +1,33 @@
+<!--
+SPDX-FileCopyrightText: 2025 DoctorJado
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<ui:FancyWindow xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    SetSize="400 600"
+    Title="{Loc 'loadout-job-actions-window-title'}">
+    <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Vertical">
+        <BoxContainer Name="LoadoutLabelContainer" SetHeight="5" HorizontalExpand="True" Orientation="Horizontal" Visible="False" Margin="10 2 10 30">
+            <RichTextLabel Text="{Loc 'loadout-job-actions-window-loadout-disclaimer-start'}" SetSize="150 10"/>
+            <Control HorizontalExpand="True" />
+            <Label Name="LoadoutLabel" SetHeight="10" HorizontalExpand="True" />
+        </BoxContainer>
+        <BoxContainer Name="EditingLabelContainer" SetHeight="5" HorizontalExpand="True" Orientation="Horizontal" Visible="False" Margin="10 0 10 20">
+            <RichTextLabel Text="{Loc 'loadout-job-actions-window-disclaimer-start'}" SetSize="150 10"/>
+            <Control HorizontalExpand="True" />
+            <Label Name="EditingLabel" SetHeight="10" HorizontalExpand="True" />
+        </BoxContainer>
+        <ui:HLine HorizontalExpand="True" SetHeight="2" Color="#414145" Margin="0 0 0 10"/>
+        <Button Name="CopyTraitsAction" Text="{Loc 'loadout-job-action-copy-traits'}" HorizontalExpand="True" SetHeight="30" Margin="3" />
+        <Button Name="CopyLoadoutAction" Text="{Loc 'loadout-job-action-copy-loadout'}" HorizontalExpand="True" SetHeight="30" Margin="3" />
+        <Button Name="CopyBothAction" Text="{Loc 'loadout-job-action-copy-both'}" HorizontalExpand="True" SetHeight="30" Margin="3" />
+        <Button Name="DeleteSavedLoadoutAction" Disabled="True" Text="{Loc 'loadout-job-action-delete-saved-loadout'}" HorizontalExpand="True" SetHeight="30" Margin="3" />
+        <Control VerticalExpand="True"/>
+        <Button Name="CopyTraitsAllAction" Disabled="True" Text="{Loc 'loadout-job-action-copy-traits-all'}" HorizontalExpand="True" SetHeight="30" Margin="3" />
+        <Button Name="CopyLoadoutsAllAction" Disabled="True" Text="{Loc 'loadout-job-action-copy-loadout-all'}" HorizontalExpand="True" SetHeight="30" Margin="3" />
+        <Button Name="CopyBothAllAction" Disabled="True" Text="{Loc 'loadout-job-action-copy-both-all'}" HorizontalExpand="True" SetHeight="30" Margin="3" />
+    </BoxContainer>
+</ui:FancyWindow>

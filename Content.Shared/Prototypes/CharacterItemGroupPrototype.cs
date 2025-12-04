@@ -1,8 +1,9 @@
 // SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 // SPDX-FileCopyrightText: 2025 Raikyr0
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Clothing.Loadouts.Prototypes;
@@ -48,11 +49,31 @@ public sealed partial class CharacterItemGroupItem
         switch (Type)
         {
             case "trait":
-                return profile.TraitPreferences.TryFirstOrDefault(
-                    p => protoMan.Index<TraitPrototype>((string) p).ID == ID, out value);
+                {
+                    foreach (var preference in profile.TraitPreferences)
+                    {
+                        if (protoMan.TryIndex<TraitPrototype>(preference, out var prototype)
+                            && prototype.ID == ID)
+                        {
+                            value = preference;
+                            return true;
+                        }
+                    }
+                    return false;
+                }
             case "loadout":
-                return profile.LoadoutPreferences.TryFirstOrDefault(
-                    p => protoMan.Index<LoadoutPrototype>(((Loadout) p).LoadoutName).ID == ID, out value);
+                {
+                    foreach (var preference in profile.LoadoutPreferences)
+                    {
+                        if (protoMan.TryIndex<LoadoutPrototype>(preference.LoadoutName, out var prototype)
+                            && prototype.ID == ID)
+                        {
+                            value = preference;
+                            return true;
+                        }
+                    }
+                    return false;
+                }
             default:
                 DebugTools.Assert($"Invalid CharacterItemGroupItem Type: {Type}");
                 return false;

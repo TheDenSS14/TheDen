@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 crekulon
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: trait
   id: ThavenMoods
   category: AASpecies
@@ -17,3 +22,57 @@
   - !type:TraitAddComponent
     components:
       - type: ThavenMoods
+
+- type: trait
+  id: IPCSinger
+  category: AASpecies
+  points: -1 # cheap since Singer is free, but this is a special version with a more broadly usable sound
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMuted
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Singer
+        - MusicMachine
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Singer
+          proto: IPCSingerBasic
+
+- type: trait
+  id: MusicMachine
+  category: AASpecies
+  points: -8 # very expensive since it's a character-defining trait, as useful as thievery at least
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMuted
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Singer
+        - IPCSinger
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Singer
+          proto: IPCSinger

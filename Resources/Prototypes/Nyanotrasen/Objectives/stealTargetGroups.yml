@@ -1,11 +1,14 @@
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
-- type: stealTargetGroup
-  id: AntiPsychicKnife
-  name: anti-psychic knife
-  sprite:
-    sprite: Nyanotrasen/Objects/Weapons/Melee/anti_psychic_knife.rsi
-    state: icon
+#- type: stealTargetGroup
+#  id: AntiPsychicKnife
+#  name: anti-psychic knife
+#  sprite:
+#    sprite: Nyanotrasen/Objects/Weapons/Melee/anti_psychic_knife.rsi
+#    state: icon
+
+# TheDen - A job that isn't command and isn't mindshielded doesn't need to own a steal target

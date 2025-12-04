@@ -1,17 +1,21 @@
 <!--
-SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
-SPDX-FileCopyrightText: 2024 Aexxie <codyfox.077@gmail.com>
-SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Sk1tch <ben.peter.smith@gmail.com>
-SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+slambamactionman@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Spatison <137375981+Spatison@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 DocNITE <docnite0530@gmail.com>
-SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Nemanja
+SPDX-FileCopyrightText: 2023 Vasilis
+SPDX-FileCopyrightText: 2024 Aexxie
+SPDX-FileCopyrightText: 2024 FoxxoTrystan
+SPDX-FileCopyrightText: 2024 Psychpsyo
+SPDX-FileCopyrightText: 2024 SimpleStation14
+SPDX-FileCopyrightText: 2024 Sk1tch
+SPDX-FileCopyrightText: 2024 SlamBamActionman
+SPDX-FileCopyrightText: 2024 Spatison
+SPDX-FileCopyrightText: 2024 deathride58
+SPDX-FileCopyrightText: 2025 Dirius77
+SPDX-FileCopyrightText: 2025 DocNITE
+SPDX-FileCopyrightText: 2025 Falcon
+SPDX-FileCopyrightText: 2025 RedFoxIV
+SPDX-FileCopyrightText: 2025 portfiend
+SPDX-FileCopyrightText: 2025 sev7ves
+SPDX-FileCopyrightText: 2025 sleepyyapril
 
 SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 -->
@@ -50,6 +54,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                 <CheckBox Name="EnableColorNameCheckBox" Text="{Loc 'ui-options-enable-color-name'}" />
                 <CheckBox Name="ColorblindFriendlyCheckBox" Text="{Loc 'ui-options-colorblind-friendly'}" />
                 <CheckBox Name="DisableFiltersCheckBox" Text="{Loc 'ui-options-no-filters'}" />
+
+                <!-- Den: Examine tooltip width -->
+                <BoxContainer Orientation="Vertical" Margin="10">
+                    <Label Name="ExamineTooltipWidthLabel" />
+                    <Slider Name="ExamineTooltipWidthSlider"
+                        MinValue="24"
+                        MaxValue="72"
+                        MinWidth="200" />
+                    <!-- Note: These values are multiplied by 10 when converted to/from the CCVar to the slider. -->
+                    <!-- This is so that we can move the slider in increments of 10. -->
+                </BoxContainer>
+
                 <BoxContainer Orientation="Horizontal">
                     <Label Text="{Loc 'ui-options-chatstack'}" />
                     <Control MinSize="4 0" />
@@ -72,6 +88,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                             MinWidth="200" />
                     <Label Name="ScreenShakeIntensityLabel" Margin="8 0" />
                 </BoxContainer>
+
                 <!-- Chat Highlighting - Den -->
                 <CheckBox Name="AutoFillHighlightsCheckBox" Text="{Loc 'ui-options-auto-fill-highlights'}" />
                 <Label Text="{Loc 'ui-options-highlights-color'}" Margin="0 5 0 0" />
@@ -111,6 +128,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                        StyleClasses="LabelKeyText"/>
                 <CheckBox Name="ModernProgressBar" Text="{Loc 'ui-options-modern-progress-bar'}" />
                 <CheckBox Name="ChatExtraInfo" Text="{Loc 'ui-options-no-chat-status'}" />
+                <CheckBox Name="IgnoreCryoMessages" Text="{Loc 'ui-options-ignore-cryo-message'}" />
                 <!-- <CheckBox Name="ToggleWalk" Text="{Loc 'ui-options-hotkey-toggle-walk'}" /> -->
             </BoxContainer>
         </ScrollContainer>

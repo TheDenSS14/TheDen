@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2024 Kara
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 XavierSomething
+// SPDX-FileCopyrightText: 2025 Jakumba
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
@@ -147,7 +148,7 @@ public abstract class SharedRottingSystem : EntitySystem
         if (TryComp<MobStateComponent>(uid, out var mobState) && !_mobState.IsDead(uid, mobState))
             return false;
 
-        if (HasComp<DragonUnrottingComponent>(uid))
+        if (HasComp<RottingImmuneComponent>(uid))
             return false;
 
         if (_container.TryGetOuterContainer(uid, Transform(uid), out var container) &&

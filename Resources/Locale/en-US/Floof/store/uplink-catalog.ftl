@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2024 Shiro69420 <123057216+Shiro69420@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VividPups <68whiskty@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Shiro69420
+# SPDX-FileCopyrightText: 2024 VividPups
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Pointless
 uplink-coder-socks-valid-name = Blood-red Coder Socks
@@ -10,4 +11,4 @@ uplink-coder-socks-valid-desc = These socks add onto your robustness by making y
 
 # Floof station
 uplink-Cryptobiolininjector-name = Cryptobiolin injector
-uplink-Cryptobiolininjector-desc = Made by SESWC. This item is prefilled with 20u of Cryptobiolin to help you get rid of those pesky psionic weirdo's.
+uplink-Cryptobiolininjector-desc = This item is prefilled with 20u of cryptobiolin, which will temporarily disable psionic abilities.

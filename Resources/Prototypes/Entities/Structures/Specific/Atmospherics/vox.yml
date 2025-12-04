@@ -1,7 +1,9 @@
-# SPDX-FileCopyrightText: 2024 Partmedia <kevinz5000@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Partmedia
+# SPDX-FileCopyrightText: 2024 marc-pelletier
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   abstract: true
@@ -23,6 +25,14 @@
       BZ: danger # Assmos - /tg/ gases
       Healium: stationNO # Assmos - /tg/ gases
       Nitrium: danger # Assmos - /tg/ gases
+      Pluoxium: ignore # Assmos - /tg/ gases
+      Hydrogen: danger # Assmos - /tg/ gases
+      HyperNoblium: stationAmmonia # Assmos - /tg/ gases
+      ProtoNitrate: danger # Assmos - /tg/ gases
+      Zauker: danger # Assmos - /tg/ gases
+      Halon: danger # Assmos - /tg/ gases
+      Helium: stationAmmonia # Assmos - /tg/ gases
+      AntiNoblium: danger # Assmos - /tg/ gases
 
 - type: entity
   parent: [AirSensorVoxBase, AirSensor]

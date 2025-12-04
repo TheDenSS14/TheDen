@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2025 LandsharkRAWR
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: listing
+  id: UplinkBloodRedRoseBox
+  name: uplink-bloodredrosekit-name
+  description: uplink-bloodredrosekit-desc
+  icon: { sprite: /Textures/_Impstation/Objects/Storage/boxes.rsi, state: syndicaterosebox }
+  productEntity: BloodRedRoseBox
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 5
+  cost:
+    Telecrystal: 15
+  categories:
+    - UplinkWeaponry

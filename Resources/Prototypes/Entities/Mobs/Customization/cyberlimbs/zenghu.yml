@@ -1,15 +1,16 @@
-# SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Mono <182929384+Monotheonist@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Timemaster99
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Mono
+# SPDX-FileCopyrightText: 2025 assignedgod
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
+  - BaseHead
   id: CyberLimbsMarkingZenghuHead
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/zenghu/zenghu_main.rsi
     state: head-1
@@ -19,10 +20,10 @@
     state: head-3
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
+  - BaseChest
   id: CyberLimbsMarkingZenghuChest
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/zenghu/zenghu_main.rsi
     state: torso-1
@@ -30,10 +31,11 @@
     state: torso-2
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingZenghuLArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/zenghu/zenghu_main.rsi
     state: l_arm-1
@@ -41,10 +43,11 @@
     state: l_arm-2
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingZenghuLHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/zenghu/zenghu_main.rsi
     state: l_hand-1
@@ -52,48 +55,47 @@
     state: l_hand-2
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingZenghuLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/zenghu/zenghu_main.rsi
     state: l_leg-1
   - sprite: Mobs/Customization/cyberlimbs/zenghu/zenghu_main.rsi
     state: l_leg-2
 
-
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingZenghuLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/zenghu/zenghu_main.rsi
     state: l_foot-1
   - sprite: Mobs/Customization/cyberlimbs/zenghu/zenghu_main.rsi
     state: l_foot-2
 
-
-
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingZenghuRArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/zenghu/zenghu_main.rsi
     state: r_arm-1
   - sprite: Mobs/Customization/cyberlimbs/zenghu/zenghu_main.rsi
     state: r_arm-2
 
-
-
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingZenghuRHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/zenghu/zenghu_main.rsi
     state: r_hand-1
@@ -101,22 +103,23 @@
     state: r_hand-2
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingZenghuRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/zenghu/zenghu_main.rsi
     state: r_leg-1
   - sprite: Mobs/Customization/cyberlimbs/zenghu/zenghu_main.rsi
     state: r_leg-2
 
-
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
   id: CyberLimbsMarkingZenghuRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/zenghu/zenghu_main.rsi
     state: r_foot-1

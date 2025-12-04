@@ -13,6 +13,7 @@
 // SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 // SPDX-FileCopyrightText: 2024 Errant
 // SPDX-FileCopyrightText: 2024 Kara
+// SPDX-FileCopyrightText: 2024 Plykiya
 // SPDX-FileCopyrightText: 2024 Tayrtahn
 // SPDX-FileCopyrightText: 2024 Verm
 // SPDX-FileCopyrightText: 2024 sleepyyapril
@@ -20,7 +21,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Server.Labels.Components;
-using Content.Server.Paper;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Examine;
 using Content.Shared.Labels;
@@ -28,6 +28,7 @@ using Content.Shared.Labels.Components;
 using Content.Shared.Labels.EntitySystems;
 using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Tag;
+using Content.Shared.Paper;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
 using Robust.Shared.Utility;

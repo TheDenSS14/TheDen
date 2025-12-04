@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sheepie
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseBarSign
   id: BarSignTheBahr
@@ -6,3 +11,11 @@
   components:
   - type: BarSign
     current: TheBahr
+
+- type: entity
+  parent: BarSign
+  id: BarSignUnlocked
+  suffix: Random, Unlocked
+  components:
+  - type: AccessReader
+    access: []

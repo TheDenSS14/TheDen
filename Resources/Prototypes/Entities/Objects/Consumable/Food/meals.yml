@@ -178,7 +178,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 15
+        maxVol: 25 # DEN: 15 -> 25
         reagents:
         - ReagentId: Nutriment
           Quantity: 7
@@ -457,10 +457,10 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 10
+        maxVol: 12 # DEN: 10 -> 15
         reagents:
-        - ReagentId: Nutriment
-          Quantity: 2
+        - ReagentId: Protein # DEN: 2 nutriment -> 6 protein
+          Quantity: 6
         - ReagentId: TableSalt
           Quantity: 1
         - ReagentId: Blackpepper
@@ -468,6 +468,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement # DEN - Make fried eggs burger ingredients
+    entries:
+      Burger: FriedEgg
 # Tastes like egg, salt, pepper.
 
 - type: entity
@@ -504,6 +507,9 @@
           Quantity: 10
         - ReagentId: Allicin
           Quantity: 5
+  - type: Tag # DEN: Allow item to be inserted in costume bundles
+    tags:
+    - CostumeItem
 # Tastes like pain.
 
 - type: entity
@@ -580,7 +586,7 @@
     - type: SolutionContainerManager
       solutions:
         food:
-          maxVol: 10
+          maxVol: 20 # DEN: 10 -> 20
           reagents:
           - ReagentId: Nutriment
             Quantity: 8

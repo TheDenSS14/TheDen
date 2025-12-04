@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 KekaniCreates
 # SPDX-FileCopyrightText: 2025 LilNutters
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Shaman
@@ -56,6 +57,9 @@
   cost: 1
   items:
   - BoxReamClassic
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutWritables
 
 - type: loadout
   id: BoxReamBright
@@ -63,3 +67,6 @@
   cost: 1
   items:
   - BoxReamBright
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutWritables

@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: 2025 Cam
 // SPDX-FileCopyrightText: 2025 Winter
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -31,4 +32,10 @@ public sealed partial class ToggleableVisualsComponent : Component
     /// </summary>
     [DataField]
     public Dictionary<string, List<PrototypeLayerData>> ClothingVisuals = new();
+
+    /// <summary>
+    /// When true, toggle visuals will replace the base visuals instead of being added on top.
+    /// </summary>
+    [DataField]
+    public bool ReplaceMode = false;
 }

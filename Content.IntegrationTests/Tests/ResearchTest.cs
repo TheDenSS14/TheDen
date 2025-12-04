@@ -4,10 +4,11 @@
 // SPDX-FileCopyrightText: 2023 Visne
 // SPDX-FileCopyrightText: 2023 metalgearsloth
 // SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2025 creku
 // SPDX-FileCopyrightText: 2025 deltanedas
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Collections.Generic;
 using System.Linq;
@@ -103,11 +104,15 @@ public sealed class ResearchTest
                     }
                 }
 
+                /* Den - disable this test to allow for reverse-engineered dynamic technology
+
                 // now check that every dynamic recipe a lathe lists can be unlocked
                 foreach (var recipe in latheTechs)
                 {
                     Assert.That(unlockedTechs, Does.Contain(recipe), $"Recipe '{recipe}' is dynamic on a lathe but cannot be unlocked by research.");
                 }
+
+                */
             });
         });
 

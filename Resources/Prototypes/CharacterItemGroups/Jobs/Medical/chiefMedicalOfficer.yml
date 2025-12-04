@@ -4,9 +4,11 @@
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 KyuPolaris
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 phantasai
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Chief Medical Officer
 - type: characterItemGroup
@@ -36,10 +38,12 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutChiefMedicalOfficerEquipment
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutChiefMedicalOfficerEquipment
+  maxItems: 1
+  items:
+  - type: loadout
+    id: LoadoutChiefMedicalOfficerDefibrillatorCompact # DEN: Fix tests
 #
 #- type: characterItemGroup
 #  id: LoadoutChiefMedicalOfficerEyes
@@ -59,6 +63,8 @@
   items:
     - type: loadout
       id: LoadoutCommandCMOHatBeret
+    - type: loadout
+      id: LoadoutClothingHeadMirror
 
 - type: characterItemGroup
   id: LoadoutChiefMedicalOfficerId
@@ -66,8 +72,6 @@
   items:
     - type: loadout
       id: LoadoutChiefMedicalOfficerNTPDA
-    - type: loadout
-      id: LoadoutClothingHeadMirror
 
 - type: characterItemGroup
   id: LoadoutChiefMedicalOfficerNeck

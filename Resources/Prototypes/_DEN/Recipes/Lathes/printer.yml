@@ -1,0 +1,782 @@
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Will-Oliver-Br
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: latheRecipe
+  id: PrintedDocumentReportStationRecipe
+  result: PrintedDocumentReportStation
+  icon:
+    sprite: Structures/Wallmounts/signs.rsi
+    state: secure
+  category: Security
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentReportDepartmentRecipe
+  result: PrintedDocumentReportDepartment
+  icon:
+    sprite: Clothing/Shoes/Boots/speedboots.rsi
+    state: icon
+  category: HumanResources
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentReportEmployeePerformanceRecipe
+  result: PrintedDocumentReportEmployeePerformance
+  icon:
+    sprite: Objects/Storage/Briefcases/briefcase_brown.rsi
+    state: icon
+  category: HumanResources
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentReportOnTheChaptersMeetingRecipe
+  result: PrintedDocumentReportOnTheChaptersMeeting
+  icon:
+    sprite: Clothing/Neck/Ties/redtie.rsi
+    state: icon
+  category: Command
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentConditionReportRecipe
+  result: PrintedDocumentConditionReport
+  icon:
+    sprite: Structures/Machines/computers.rsi
+    state: broken
+  category: Engineering
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentRepairBillRecipe
+  result: PrintedDocumentRepairBill
+  icon:
+    sprite: Objects/Misc/books.rsi
+    state: icon_wrench
+  category: Engineering
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentMechReportRecipe
+  result: PrintedDocumentMechReport
+  icon:
+    sprite: Objects/Specific/Mech/hamtr_construction.rsi
+    state: hamtr_chassis
+  category: Epistemics
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentReportStudyObjectRecipe
+  result: PrintedDocumentReportStudyObject
+  category: Epistemics
+  icon:
+    sprite: Objects/Specific/Xenoarchaeology/xeno_artifacts.rsi
+    state: ano31
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentApplicationAppointmentInterimRecipe
+  result: PrintedDocumentApplicationAppointmentInterim
+  icon:
+    sprite: _DV/Structures/Wallmounts/idcard_cabinet.rsi
+    state: cabinet-filled-closed
+  category: HumanResources
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentApplicationEmploymentRecipe
+  result: PrintedDocumentApplicationEmployment
+  icon:
+    sprite: _NF/Objects/Economy/cash.rsi
+    state: cash_1000
+  category: HumanResources
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentLetterResignationRecipe
+  result: PrintedDocumentLetterResignation
+  icon:
+    sprite: Clothing/Eyes/Glasses/sunglasses_big.rsi
+    state: icon
+  category: HumanResources
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentApplicationAccessRecipe
+  result: PrintedDocumentApplicationAccess
+  icon:
+    sprite: Objects/Vehicles/atv.rsi
+    state: keys
+  category: HumanResources
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentApplicationEquipmentRecipe
+  result: PrintedDocumentApplicationEquipment
+  category: Cargo
+  icon:
+    sprite: Objects/Tools/multitool.rsi
+    state: icon
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentEvacuationShuttleRequestRecipe
+  result: PrintedDocumentEvacuationShuttleRequest
+  icon:
+    sprite: Structures/Wallmounts/signs.rsi
+    state: dock
+  category: Command
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentShuttleRegistrationRequestRecipe
+  result: PrintedDocumentShuttleRegistrationRequest
+  category: Engineering
+  icon:
+    sprite: Structures/Shuttles/thruster.rsi
+    state: base
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentRequestForNonlistedEmploymentRecipe
+  result: PrintedDocumentRequestForNonlistedEmployment
+  icon:
+    sprite: Mobs/Aliens/Guardians/guardians.rsi
+    state: holoclown_base
+  category: HumanResources
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentRequestForPromotionRecipe
+  result: PrintedDocumentRequestForPromotion
+  icon:
+    sprite: Objects/Fun/Tabletop/checker_pieces.rsi
+    state: b_checker_crown
+  category: HumanResources
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentRequestDocumentsRecipe
+  result: PrintedDocumentRequestDocuments
+  icon:
+    sprite: Objects/Misc/clipboard.rsi
+    state: clipboard
+  category: Law
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentRequestEuthanasiaRecipe
+  result: PrintedDocumentRequestEuthanasia
+  icon:
+    sprite: _DEN/Objects/Weapons/Melee/blueshieldaxe.rsi
+    state: icon
+  category: Security
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentRequestConstructionWorkRecipe
+  result: PrintedDocumentRequestConstructionWork
+  icon:
+    sprite: Objects/Tools/rcd.rsi
+    state: icon
+  category: Engineering
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentRequestModernizationRecipe
+  result: PrintedDocumentRequestModernization
+  icon:
+    sprite: Structures/Machines/autolathe_hypercon.rsi
+    state: icon
+  category: Epistemics
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentComplaintOffenseRecipe
+  result: PrintedDocumentComplaintOffense
+  icon:
+    sprite: Objects/Misc/Lights/lamp.rsi
+    state: lamp
+  category: Security
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentPermissionEquipmentRecipe
+  result: PrintedDocumentPermissionEquipment
+  icon:
+    sprite: Clothing/Hands/Gloves/Color/yellow.rsi
+    state: icon
+  category: Security
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSearchPermissionRecipe
+  result: PrintedDocumentSearchPermission
+  icon:
+    sprite: _DV/Objects/Storage/lunchbox.rsi
+    state: generic-open
+  category: Security
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentPermissionToCarryWeaponsRecipe
+  result: PrintedDocumentPermissionToCarryWeapons
+  icon:
+    sprite: _DV/Structures/Wallmounts/shotgun_cabinet.rsi
+    state: shotgun
+  category: Security
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentPrescriptionDrugAuthorizationRecipe
+  result: PrintedDocumentPrescriptionDrugAuthorization
+  icon:
+    sprite: Objects/Specific/Chemistry/pills_canister.rsi
+    state: pill_canister
+  category: Medical
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentPermissionDisposeBodyRecipe
+  result: PrintedDocumentPermissionDisposeBody
+  icon:
+    sprite: Structures/Machines/Medical/biomass_reclaimer.rsi
+    state: icon
+  category: Security
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentConstructionPermitRecipe
+  result: PrintedDocumentConstructionPermit
+  category: Engineering
+  icon:
+    sprite: Objects/Weapons/Melee/sledgehammer.rsi
+    state: icon
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentOrderDismissalRecipe
+  result: PrintedDocumentOrderDismissal
+  icon:
+    sprite: Clothing/Mask/sadmime.rsi
+    state: icon
+  category: HumanResources
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentOrderDeprivationAccessRecipe
+  result: PrintedDocumentOrderDeprivationAccess
+  icon:
+    # Strangely, directly linking to the original Blocked icon doesn't seem to work, so just copied it and put it in a proper .rsi
+    sprite: _DEN/Interface/Misc/printer_icons.rsi
+    state: blocked
+  category: HumanResources
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentOrderEncouragementRecipe
+  result: PrintedDocumentOrderEncouragement
+  icon:
+    sprite: Objects/Consumable/Drinks/golden_cup.rsi
+    state: icon
+  category: Command
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentOrderParolePrisonerRecipe
+  result: PrintedDocumentOrderParolePrisoner
+  icon:
+    sprite: Actions/Implants/implants.rsi
+    state: freedom
+  category: Security
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentOrderRecognizingSentienceCreatureRecipe
+  result: PrintedDocumentOrderRecognizingSentienceCreature
+  icon:
+    sprite: Mobs/Animals/mothroach.rsi
+    state: icon
+  category: Epistemics
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentOrderMedicalInterventionRecipe
+  result: PrintedDocumentOrderMedicalIntervention
+  icon:
+    sprite: Objects/Specific/Chemistry/syringe.rsi
+    state: syringe_base0
+  category: Medical
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentProductManufacturingOrderRecipe
+  result: PrintedDocumentProductManufacturingOrder
+  category: Cargo
+  icon:
+    sprite: Structures/Storage/Crates/generic.rsi
+    state: icon
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentCertificateAdvancedTrainingRecipe
+  result: PrintedDocumentCertificateAdvancedTraining
+  icon:
+    sprite: Clothing/Neck/Medals/gold.rsi
+    state: icon
+  category: Command
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentCertificateOffenseRecipe
+  result: PrintedDocumentCertificateOffense
+  icon:
+    sprite: Objects/Fun/Instruments/microphone.rsi
+    state: icon
+  category: Security
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentDeathCertificateRecipe
+  result: PrintedDocumentDeathCertificate
+  icon:
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: skull_icon
+  category: Medical
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentMarriageCertificateRecipe
+  result: PrintedDocumentMarriageCertificate
+  icon:
+    sprite: _DEN/Clothing/Hands/goldenring.rsi
+    state: icon
+  category: Law
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentDivorceCertificateRecipe
+  result: PrintedDocumentDivorceCertificate
+  icon:
+    sprite: Objects/Materials/materials.rsi
+    state: ash
+  category: Law
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentClosingIndictmentRecipe
+  result: PrintedDocumentClosingIndictment
+  icon:
+    sprite: Objects/Misc/handcuffs.rsi
+    state: handcuff
+  category: Security
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSentenceRecipe
+  result: PrintedDocumentSentence
+  icon:
+    sprite: _DV/Objects/Specific/Justice/gavelblock.rsi
+    state: icon
+  category: Law
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentStatementHealtheRecipe
+  result: PrintedDocumentStatementHealth
+  icon:
+    sprite: Structures/Wallmounts/signs.rsi
+    state: medbay
+  category: Medical
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentDecisionToStartTrialRecipe
+  result: PrintedDocumentDecisionToStartTrial
+  icon:
+    sprite: _DV/Objects/Specific/Justice/gavel.rsi
+    state: icon
+  category: Law
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentErrorLoadingFormHeaderRecipe
+  result: PrintedDocumentErrorLoadingFormHeader
+  category: ErrorDocument
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentNoticeOfLiquidationRecipe
+  result: PrintedDocumentNoticeOfLiquidation
+  icon:
+    sprite: Mobs/Species/Terminator/parts.rsi
+    state: skull_icon
+  category: ErrorDocument
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentBusinessDealRecipe
+  result: PrintedDocumentBusinessDeal
+  icon:
+    sprite: Objects/Storage/Briefcases/briefcase_brown.rsi
+    state: icon
+  category: ErrorDocument
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentNoteBeginningMilitaryActionsRecipe
+  result: PrintedDocumentNoteBeginningMilitaryActions
+  category: ErrorDocument
+  icon:
+    sprite: Objects/Weapons/Guns/LMGs/l6.rsi
+    state: icon
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentReportAccomplishmentGoalsRecipe
+  result: PrintedDocumentReportAccomplishmentGoals
+  icon:
+    sprite: Objects/Misc/stamps.rsi
+    state: stamp-deny
+  category: ErrorDocument
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentPassengerApplicationRecipe
+  result: PrintedDocumentPassengerApplication
+  icon:
+    sprite: Objects/Fun/figurines.rsi
+    state: passenger
+  category: HumanResources
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSurgeryFormRecipe
+  result: PrintedDocumentSurgeryForm
+  icon:
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: scalpel
+  category: Medical
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentLetterRecipe
+  result: PrintedDocumentLetter
+  icon:
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: envelope_closed
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentReceiptofDeliveryRecipe
+  result: PrintedDocumentReceiptofDelivery
+  category: Cargo
+  icon:
+    sprite: Objects/Specific/Mail/mail_large.rsi
+    state: icon
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentDNRRecipe
+  result: PrintedDocumentDNR
+  category: Medical
+  icon:
+    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    state: bag
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentMedicalReceiptRecipe
+  result: PrintedDocumentMedicalReceipt
+  category: Medical
+  icon:
+    sprite: Objects/Specific/Medical/medical.rsi
+    state: brutepack
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentChemicalRequestFormRecipe
+  result: PrintedDocumentChemicalRequestForm
+  category: Medical
+  icon:
+    sprite: Objects/Specific/Chemistry/beaker.rsi
+    state: beaker
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentJanitorialComplaintFormRecipe
+  result: PrintedDocumentJanitorialComplaintForm
+  category: Service
+  icon:
+    sprite: Objects/Specific/Janitorial/janitorial_cart.rsi
+    state: icon-cart
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentJanitorialReportRecipe
+  result: PrintedDocumentJanitorialReport
+  category: Service
+  icon:
+    sprite: Objects/Specific/Janitorial/mop.rsi
+    state: mop
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentPrankConsentFormRecipe
+  result: PrintedDocumentPrankConsentForm
+  category: Service
+  icon:
+    sprite: Objects/Fun/Instruments/otherinstruments.rsi
+    state: bike_horn
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentBotanyRequestFormRecipe
+  result: PrintedDocumentBotanyRequestForm
+  category: Service
+  icon:
+    sprite: Objects/Specific/Hydroponics/tobacco.rsi
+    state: produce
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentFoodAndBeveragesMenuRecipe
+  result: PrintedDocumentFoodAndBeveragesMenu
+  category: Service
+  icon:
+    sprite: Objects/Consumable/Food/bay_food.rsi
+    state: bigbiteburger
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentCloningReceiptRecipe
+  result: PrintedDocumentCloningReceipt
+  category: Medical
+  icon:
+    sprite: Structures/Machines/metempsychotic.rsi
+    state: cloning_idle
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentOracleRequestRecipe
+  result: PrintedDocumentOracleRequest
+  category: Epistemics
+  icon:
+    sprite: Objects/Materials/materials.rsi
+    state: bluespace_2
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentDrinksMenuRecipe
+  result: PrintedDocumentDrinksMenu
+  category: Service
+  icon:
+    sprite: Objects/Consumable/Food/bay_food.rsi
+    state: shrimp-cocktail
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentDessertMenuRecipe
+  result: PrintedDocumentDessertMenu
+  category: Service
+  icon:
+    sprite: Objects/Consumable/Food/bay_food_custom.rsi
+    state: cakecustom_slice
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
