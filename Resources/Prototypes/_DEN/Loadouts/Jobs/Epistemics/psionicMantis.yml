@@ -344,6 +344,20 @@
   items:
     - ClothingEyesHudEpistemicsMantis
 
+- type: loadout
+  id: LoadoutPsionicMantisEyesEpiHUDMantisFolded
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingEyesHudEpistemicsMantisFolded
+
 # Gloves
 
 - type: loadout
