@@ -22,7 +22,7 @@ public sealed partial class StationCargoBountyDatabaseComponent : Component
     /// Maximum amount of bounties a station can have.
     /// </summary>
     [DataField]
-    public int MaxBounties = 6;
+    public int MaxBounties = 3;
 
     /// <summary>
     /// A list of all the bounties currently active for a station.
@@ -60,5 +60,5 @@ public sealed partial class StationCargoBountyDatabaseComponent : Component
     /// The time between skipping bounties.
     /// </summary>
     [DataField]
-    public TimeSpan SkipDelay = TimeSpan.FromMinutes(15);
+    public TimeSpan SkipDelay = TimeSpan.FromSeconds(5);
 }
