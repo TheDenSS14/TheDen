@@ -120,10 +120,10 @@
     - MantisBeltStorable
 
 - type: entity
-  parent: [ClothingEyesGlassesEpistemicsMantis, BaseMantisContraband]
+  parent: ClothingEyesGlassesEpistemicsMantis
   id: ClothingEyesGlassesEpistemicsMantisTinted
   name: mantis psionics pince-nez (tinted)
-  description: "A pince-nez that provides flash immunity and a psionics HUD. Comes with prescription eidolite lenses, if requested."
+  description: "A tinted pince-nez that provides flash immunity and a psionics HUD. Comes with prescription eidolite lenses, if requested."
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis_dark.rsi
@@ -132,7 +132,19 @@
   - type: VisionCorrection
 
 - type: entity
-  parent: [ClothingEyesGlassesEpistemicsMantis, BaseMantisContraband]
+  parent: ClothingEyesGlassesEpistemicsMantis
+  id: ClothingEyesGlassesEpistemicsMantisMirrored
+  name: mantis psionics pince-nez (mirrored)
+  description: "A mirrored pince-nez that provides flash immunity and a psionics HUD. Comes with prescription eidolite lenses, if requested."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis_mirrored.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis_mirrored.rsi
+  - type: VisionCorrection
+
+- type: entity
+  parent: ClothingEyesGlassesEpistemicsMantis
   id: ClothingEyesGlassesEpistemicsMantisVeil
   name: mantis psionics blindfold
   description: "A sheer blindfold decorated with an electrum eye that provides flash immunity and psionics vision."

@@ -118,6 +118,7 @@
     proto: spider
   - type: Inventory
     templateId: arachnid
+    speciesId: arachnid # TheDen - So they can have -arachnid clothing sprites
 
 
 - type: entity
@@ -125,6 +126,8 @@
   id: MobArachnidDummy
   categories: [ HideSpawnMenu ]
   components:
+  - type: Inventory
+    speciesId: arachnid # TheDen - So they can have -arachnid clothing sprites
   - type: HumanoidAppearance
     species: Arachnid
 

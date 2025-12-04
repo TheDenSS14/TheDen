@@ -303,6 +303,20 @@
     - ClothingEyesGlassesEpistemicsMantisTinted
 
 - type: loadout
+  id: LoadoutPsionicMantisEyesEpiGlassesMantisMirrored
+  category: JobsEpistemicsPsionicMantis
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingEyesGlassesEpistemicsMantisMirrored
+
+- type: loadout
   id: LoadoutPsionicMantisEyesEpiGlassesMantisVeil
   category: JobsEpistemicsPsionicMantis
   cost: 3
@@ -315,6 +329,20 @@
         - ForensicMantis
   items:
     - ClothingEyesGlassesEpistemicsMantisVeil
+
+- type: loadout
+  id: LoadoutPsionicMantisEyesEpiHUDMantis
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingEyesHudEpistemicsMantis
 
 # Gloves
 

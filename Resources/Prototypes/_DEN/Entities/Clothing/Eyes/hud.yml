@@ -34,3 +34,31 @@
   - type: ShowHealthBars
     damageContainers:
     - Inorganic
+
+- type: entity
+  parent: [ClothingEyesHudEpistemics, BaseFoldable]
+  id: ClothingEyesHudEpistemicsMantis
+  name: mantis psionics lens # This would have an unshaded lens if foldable clothing could move multiple layers...
+  description:  "An eidolite lens that displays registered psions, if there are any. Wearable over either eye."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Hud/epi_mantis.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-folded
+      map: ["foldedLayer"]
+      visible: false
+  - type: Appearance
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Hud/epi_mantis.rsi
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
