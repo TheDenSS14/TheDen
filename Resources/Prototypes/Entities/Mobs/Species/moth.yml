@@ -119,6 +119,7 @@
   - type: FootPrints
   - type: CanMoveInAir
   - type: Inventory
+    speciesId: moth # TheDen - So they can have -moth clothing sprites
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -140,6 +141,7 @@
   - type: HumanoidAppearance
     species: Moth
   - type: Inventory
+    speciesId: moth # TheDen - So they can have -moth clothing sprites
     femaleDisplacements:
       jumpsuit:
         sizeMaps:

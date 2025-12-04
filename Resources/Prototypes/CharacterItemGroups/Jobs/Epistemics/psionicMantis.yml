@@ -87,16 +87,20 @@
   id: LoadoutPsionicMantisEyes
   maxItems: 1
   items:
-    - type: loadout
-      id: LoadoutPsionicMantisEyesEpiHUD
-    - type: loadout
-      id: LoadoutPsionicMantisEyesEpiGlasses
+    # - type: loadout # They have their own HUD now, see below
+    #   id: LoadoutPsionicMantisEyesEpiHUD
+    #- type: loadout # They have their own glasses now, see below
+    #  id: LoadoutPsionicMantisEyesEpiGlasses
     - type: loadout # TheDen
       id: LoadoutPsionicMantisEyesEpiGlassesMantis
     - type: loadout # TheDen
       id: LoadoutPsionicMantisEyesEpiGlassesMantisTinted
     - type: loadout # TheDen
+      id: LoadoutPsionicMantisEyesEpiGlassesMantisMirrored
+    - type: loadout # TheDen
       id: LoadoutPsionicMantisEyesEpiGlassesMantisVeil
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisEyesEpiHUDMantis
 
 - type: characterItemGroup
   id: LoadoutPsionicMantisGloves
