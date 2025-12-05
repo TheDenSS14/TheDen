@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: BasePlushie
@@ -255,31 +255,3 @@
   - type: FoodSequenceElement
     entries:
       CottonBurger: ChillHumanPlushie
-
-- type: entity
-  parent: PlushieHuman
-  id: PlushieSlimeTider
-  name: slime tider plushie
-  description: A generic tider, this one seems to be particularly slimy. The label reads 'Product not insulated'
-  components:
-  - type: Sprite
-    sprite: _Floof/Objects/Fun/floof_plush.rsi
-    state: slime
-  - type: UseDelay
-    delay: 3.0
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Voice/Slime/slime_squish.ogg
-      params:
-        volume: 1
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Voice/Slime/slime_squish.ogg
-  - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Voice/Slime/slime_squish.ogg
-      params:
-        volume: 1
-  - type: FoodSequenceElement
-    entries:
-      CottonBurger: SlimeTiderPlushie

@@ -10,9 +10,11 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 SixplyDev
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: CrateCargoLuxuryHardsuit
@@ -355,10 +357,13 @@
     - id: PlushieThrongler #hehe
       prob: 0.0005
       orGroup: Plushies
-    - id: PlushieTabi # TheDen
+    - id: PlushieJenn # TheDen
       prob: 0.01
       orGroup: Plushies
-    - id: PlushieJenn # TheDen
+    - id: PlushieAzalea # TheDen
+      prob: 0.01
+      orGroup: Plushies
+    - id: PlushieWhistler # TheDen
       prob: 0.01
       orGroup: Plushies
     #useful

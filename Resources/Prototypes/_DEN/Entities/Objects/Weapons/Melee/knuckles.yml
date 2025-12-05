@@ -55,6 +55,10 @@
   - type: Fiber
     fiberColor: fibers-bluish
     fiberMaterial: fibers-stony
+  - type: Prying
+    speedModifier: 1
+    useSound:
+      path: /Audio/Items/crowbar.ogg
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -83,3 +87,7 @@
     speed: 20
     lifetime: 5
   - type: FingerprintMask # Both hands are covered, so they hide fingerprints
+  - type: Prying
+    speedModifier: 1.5
+    useSound:
+      path: /Audio/Items/crowbar.ogg

@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -204,3 +205,43 @@
     - Payload
     - ClothMade
     - MantisBeltStorable
+
+# SELF-INSERT PLUSHIES
+# note: these MUST be approved by Direction - either an Owner or the Head Maintainer.
+# at this time, only maintainers and admins can ask to have self-insert items added.
+# sprites must be provided by the requester somehow.
+# these are liable to be removed at any time.
+
+# @ sheepmera; approved by portfiend (head maintainer)
+- type: entity
+  parent: BasePlushie
+  id: PlushieAzalea
+  name: azalea plushie
+  description: A plushie of a fennec fox with ram horns and honey eyes. It's rumored that every single one of these is personalized.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/azaleaplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: AzaleaPlushie
+
+# @ daggeran, approved by Jenn
+- type: entity
+  parent: PlushieShadowkin
+  id: PlushieWhistler
+  name: whistler plushie
+  description: A plushie of a certain green shadowkin. Very soft and plush. You swear you hear it wurble when you turn your back.
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Fun/whistlerplushie.rsi
+      state: icon
+    - type: Item
+      inhandVisuals:
+        left:
+          - state: inhand-left
+        right:
+          - state: inhand-right
+    - type: FoodSequenceElement
+      entries:
+        CottonBurger: WhistlerPlushie

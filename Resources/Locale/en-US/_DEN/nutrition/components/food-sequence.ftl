@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: MIT
@@ -14,6 +15,7 @@ food-sequence-cotton-burger-content-plushie-abductor = abductor
 food-sequence-cotton-burger-content-plushie-alice = alice
 food-sequence-cotton-burger-content-plushie-alien-germ = germ
 food-sequence-cotton-burger-content-plushie-arachne = arachne
+food-sequence-cotton-burger-content-plushie-azalea = aza
 food-sequence-cotton-burger-content-plushie-cat = cat
 food-sequence-cotton-burger-content-plushie-chitinid = chitini
 food-sequence-cotton-burger-content-plushie-chill-human = chill
@@ -48,3 +50,4 @@ food-sequence-cotton-burger-content-plushie-teddy-bear = teddy
 food-sequence-cotton-burger-content-plushie-vega = vega
 food-sequence-cotton-burger-content-plushie-vulp = vulp
 food-sequence-cotton-burger-content-plushie-mantisdoll = doll
+food-sequence-cotton-burger-content-plushie-whistler = whistler

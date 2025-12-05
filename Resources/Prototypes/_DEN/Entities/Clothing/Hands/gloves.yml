@@ -6,7 +6,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   parent: ClothingHandsBase
@@ -75,17 +75,29 @@
     - MantisBeltStorable
 
 - type: entity
-  parent: ClothingHandsGlovesMantis
+  parent: [ClothingHandsGlovesMantis, BaseFoldable]
   id: ClothingHandsGlovesMantisAiry
   name: airy mantis sleeves
-  description: "Wide-cuffed sleeves over finger-loop gloves."
+  description: "Wide-cuffed sleeves over finger-loop gloves. The left cuff can be fastened tighter, if it's in the way of your mantle. But...only the left cuff, for some reason..."
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_airy.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-folded
+      map: ["foldedLayer"]
+      visible: false
   - type: Clothing
     sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_airy.rsi
   - type: Fiber
     fiberColor: fibers-black
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-verb
+    unfoldVerbText: unfold-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded
 
 - type: entity
   parent: ClothingHandsGlovesMantis
@@ -124,6 +136,19 @@
     unfoldVerbText: fold-flip-verb
   - type: FoldableClothing
     foldedEquippedPrefix: flipped
+
+- type: entity
+  parent: ClothingHandsGlovesMantis
+  id: ClothingHandsGlovesMantisChains
+  name: mantis arm chains
+  description: "Electrum chains to adorn your arms. Maybe you work out."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_chains.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_chains.rsi
+  - type: Fiber
+    fiberColor: fibers-gold
 
 - type: entity
   parent: ClothingHandsGlovesNitrile

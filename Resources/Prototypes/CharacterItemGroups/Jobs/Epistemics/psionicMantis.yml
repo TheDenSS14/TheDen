@@ -7,7 +7,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Psionic Mantis
 - type: characterItemGroup
@@ -87,16 +87,22 @@
   id: LoadoutPsionicMantisEyes
   maxItems: 1
   items:
-    - type: loadout
-      id: LoadoutPsionicMantisEyesEpiHUD
-    - type: loadout
-      id: LoadoutPsionicMantisEyesEpiGlasses
+    # - type: loadout # They have their own HUD now, see below
+    #   id: LoadoutPsionicMantisEyesEpiHUD
+    #- type: loadout # They have their own glasses now, see below
+    #  id: LoadoutPsionicMantisEyesEpiGlasses
     - type: loadout # TheDen
       id: LoadoutPsionicMantisEyesEpiGlassesMantis
     - type: loadout # TheDen
       id: LoadoutPsionicMantisEyesEpiGlassesMantisTinted
     - type: loadout # TheDen
+      id: LoadoutPsionicMantisEyesEpiGlassesMantisMirrored
+    - type: loadout # TheDen
       id: LoadoutPsionicMantisEyesEpiGlassesMantisVeil
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisEyesEpiHUDMantis
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisEyesEpiHUDMantisFolded
 
 - type: characterItemGroup
   id: LoadoutPsionicMantisGloves
@@ -112,6 +118,8 @@
       id: LoadoutPsionicMantisGlovesDark
     - type: loadout # TheDen
       id: LoadoutPsionicMantisGlovesOrnate
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisGlovesChains
 
 - type: characterItemGroup
   id: LoadoutPsionicMantisHead

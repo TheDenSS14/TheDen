@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: 2025 Cami
 // SPDX-FileCopyrightText: 2025 Eightballll
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -35,6 +36,12 @@ public sealed partial class ParcelWrappingSystem
     {
         if (args.Handled)
             return;
+
+        if (TryEjectGiftTag(args.User, entity))
+        {
+            args.Handled = true;
+            return;
+        }
 
         args.Handled = TryStartUnwrapDoAfter(args.User, entity);
     }
@@ -77,6 +84,21 @@ public sealed partial class ParcelWrappingSystem
                 null,
                 PopupType.MediumCaution);
         }
+    }
+
+    private bool TryEjectGiftTag(EntityUid user, Entity<WrappedParcelComponent> parcel)
+    {
+        if (!_itemSlots.TryGetSlot(parcel, "paper_label", out var labelSlot))
+            return false;
+
+        if (!labelSlot.HasItem)
+            return false;
+
+        if (_net.IsServer)
+            _itemSlots.TryEject(parcel, labelSlot, user, out _, excludeUserAudio: false);
+
+        _popup.PopupPredicted(Loc.GetString("gift-wrap-tag-removed"), parcel, user);
+        return true;
     }
 
     private bool TryStartUnwrapDoAfter(EntityUid user, Entity<WrappedParcelComponent> parcel)

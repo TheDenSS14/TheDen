@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Kellaris
 # SPDX-FileCopyrightText: 2025 Memeji Dankiri
+# SPDX-FileCopyrightText: 2025 oberonics
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -31,7 +32,7 @@
 - type: trait
   id: TraitorKillTarget
   category: Marked
-  points: 0
+  points: 1
   slots: 0
   requirements:
     - !type:CharacterTraitRequirement

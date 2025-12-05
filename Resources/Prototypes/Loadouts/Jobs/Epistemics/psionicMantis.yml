@@ -6,7 +6,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Psionic Mantis
 # Backpacks
@@ -84,33 +84,33 @@
 #    - PillCanisterCryptobiolinMantis #TheDen
 
 # Eyes
-- type: loadout
-  id: LoadoutPsionicMantisEyesEpiHUD
-  category: JobsEpistemicsPsionicMantis
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPsionicMantisEyes
-    - !type:CharacterJobRequirement
-      jobs:
-        - ForensicMantis
-  items:
-    - ClothingEyesHudEpistemics
+#- type: loadout # TheDen - They have their own HUD now
+#  id: LoadoutPsionicMantisEyesEpiHUD
+#  category: JobsEpistemicsPsionicMantis
+#  cost: 0
+#  exclusive: true
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutPsionicMantisEyes
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - ForensicMantis
+#  items:
+#    - ClothingEyesHudEpistemics
 
-- type: loadout
-  id: LoadoutPsionicMantisEyesEpiGlasses
-  category: JobsEpistemicsPsionicMantis
-  cost: 3
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPsionicMantisEyes
-    - !type:CharacterJobRequirement
-      jobs:
-        - ForensicMantis
-  items:
-    - ClothingEyesGlassesEpistemics
+#- type: loadout # TheDen - They have their own glasses now
+#  id: LoadoutPsionicMantisEyesEpiGlasses
+#  category: JobsEpistemicsPsionicMantis
+#  cost: 3
+#  exclusive: true
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutPsionicMantisEyes
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - ForensicMantis
+#  items:
+#    - ClothingEyesGlassesEpistemics
 
 
 # Gloves

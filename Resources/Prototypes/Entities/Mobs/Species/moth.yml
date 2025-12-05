@@ -20,6 +20,7 @@
 # SPDX-FileCopyrightText: 2025 GNUtopia
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 VMSolidus
@@ -119,6 +120,7 @@
   - type: FootPrints
   - type: CanMoveInAir
   - type: Inventory
+    speciesId: moth # TheDen - So they can have -moth clothing sprites
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -140,6 +142,7 @@
   - type: HumanoidAppearance
     species: Moth
   - type: Inventory
+    speciesId: moth # TheDen - So they can have -moth clothing sprites
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
