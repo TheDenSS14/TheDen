@@ -42,7 +42,6 @@ public sealed class SkiaSystem : SharedSkiaSystem
         SubscribeLocalEvent<SkiaComponent, SkiaReapingEvent>(OnReaping);
     }
 
-
     private void OnShop(EntityUid uid, SkiaComponent comp, SkiaShopActionEvent args)
     {
         if (!TryComp<StoreComponent>(uid, out var store))
