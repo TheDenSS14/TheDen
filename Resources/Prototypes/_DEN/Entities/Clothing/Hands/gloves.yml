@@ -138,6 +138,19 @@
     foldedEquippedPrefix: flipped
 
 - type: entity
+  parent: ClothingHandsGlovesMantis
+  id: ClothingHandsGlovesMantisChains
+  name: mantis arm chains
+  description: "Electrum chains to adorn your arms. Maybe you work out."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_chains.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_chains.rsi
+  - type: Fiber
+    fiberColor: fibers-gold
+
+- type: entity
   parent: ClothingHandsGlovesNitrile
   id: ClothingHandsGlovesNitrileBlack
   name: black nitrile gloves

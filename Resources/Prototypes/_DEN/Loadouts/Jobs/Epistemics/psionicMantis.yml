@@ -416,6 +416,20 @@
   items:
     - ClothingHandsGlovesMantisOrnate
 
+- type: loadout
+  id: LoadoutPsionicMantisGlovesChains
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingHandsGlovesMantisChains
+
 # Head
 
 - type: loadout
