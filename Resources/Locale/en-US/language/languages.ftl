@@ -24,7 +24,7 @@ language-Universal-name = Universal
 language-Universal-description = What are you?
 
 language-Psychomantic-name = Psychomantic
-language-Psychomantic-description = Pure meaning, free from the tyranny of primative words and gestures.
+language-Psychomantic-description = Pure meaning, free from the tyranny of primitive words and gestures.
 
 language-Bubblish-name = Bubblish
 language-Bubblish-description = The language of Slimes. Being a mixture of bubbling noises and pops it's very difficult to speak for humans without the use of mechanical aids.
@@ -113,8 +113,8 @@ language-Rodentian-name = Rodentian
 language-Rodentian-description =  A language mostly consisting of squeaks spoken by Rodentia if all shapes and sizes.
 
 language-Kagebun-name = Kagebun
-language-Kagebun-description = 
-    An ancient language primarily used by the yōkai, originating from their supernatural roots. 
+language-Kagebun-description =
+    An ancient language primarily used by the yōkai, originating from their supernatural roots.
     To the uninitiated, it is a chorus of sounds ranging from eerie whispers to ritualistic chanting.
     To those who speak it, it is a living tongue that links them to the spirit world and their ancient pacts.
 
