@@ -22,6 +22,7 @@ using Content.Server.Objectives.Systems;
 using Content.Server.Objectives.Components;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Mind.Components;
 
 namespace Contnet.Server._DEN.Skia;
 
@@ -75,7 +76,7 @@ public sealed class SkiaSystem : SharedSkiaSystem
             return;
 
         // If our target isn't a mob, doesn't look like a person, has been reaped before or doesn't have a mind, bail out
-        if (!HasComp<MobStateComponent>(args.Target) || !HasComp<HumanoidAppearanceComponent>(args.Target) || HasComp<SoulReapedComponent>(args.Target) || !HasComp<MindComponent>(args.Target))
+        if (!HasComp<MobStateComponent>(args.Target) || !HasComp<HumanoidAppearanceComponent>(args.Target) || HasComp<SoulReapedComponent>(args.Target) || !HasComp<MindContainerComponent>(args.Target))
             return;
 
         BeginReapingDoAfter(uid, args.Target, comp);
