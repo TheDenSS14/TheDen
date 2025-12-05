@@ -19,7 +19,7 @@ public abstract class SharedRMCEmoteSystem : EntitySystem
     {
     }
 
-    public bool CanEmote(Entity<EmoteCooldownComponent?> cooldown)
+    public bool CanEmote(Entity<RecentlyEmotedComponent?> cooldown)
     {
         if (!Resolve(cooldown, ref cooldown.Comp, false))
             return true;
