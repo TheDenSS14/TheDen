@@ -19,7 +19,19 @@ public sealed partial class SkiaComponent : Component
     /// How long the Skia takes to "reap" it's target after they are incapacitated, completing this event kills the target
     /// </summary>
     [DataField("reapDuration")]
-    public float ReapDuration = 1.5f;
+    public float ReapDuration = 3f;
+
+    /// <summary>
+    /// How much glimmer is generated after a reaping
+    /// </summary>
+    [DataField("reapGlimmerValue")]
+    public float ReapGlimmerValue = 50f;
+
+    /// <summary>
+    /// How much currency is gained after a reaping
+    /// </summary>
+    [DataField("silkGained")]
+    public float SilkGained = 1f;
 
     [DataField("shopActionId")]
     public EntProtoId ShopActionId = "ActionSkiaShop";
