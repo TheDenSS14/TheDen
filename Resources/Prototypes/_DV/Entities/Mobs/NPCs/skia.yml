@@ -102,6 +102,7 @@
     resurrectDesc: skia-resurrecting-desc
   - type: Bloodstream
     maxBleedAmount: 0
+    bloodReagent: BlackBlood # DEN
   - type: ShatterLightsAbility
     lineOfSight: true
     radius: 7.0
@@ -124,6 +125,7 @@
     drawOverlay: false
   - type: Targeting
   # DEN
+  - type: Skia
   - type: UserInterface
     interfaces:
       enum.StoreUiKey.Key:
@@ -187,7 +189,7 @@
     - SlowedDown
     - Pacified
   - type: Body
-    prototype: Skeleton
+    prototype: Skia
   - type: ThermalVision
     pulseTime: 0
     color: "#9370DB"
