@@ -27,7 +27,7 @@ public abstract class SharedRMCEmoteSystem : EntitySystem
         return _timing.CurTime >= cooldown.Comp.NextEmote;
     }
 
-    public void ResetCooldown(Entity<EmoteCooldownComponent?> cooldown)
+    public void ResetCooldown(Entity<RecentlyEmotedComponent?> cooldown)
     {
         if (!Resolve(cooldown, ref cooldown.Comp, false))
             return;
