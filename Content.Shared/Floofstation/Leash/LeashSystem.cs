@@ -13,6 +13,7 @@ using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Floofstation.Leash.Components;
+using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Input;
 using Content.Shared.Inventory.Events;
@@ -123,8 +124,8 @@ public sealed class LeashSystem : EntitySystem
 
         // Server: update leash lengths if necessary/possible
         // The length can be increased freely, but can only be decreased if the pulled entity is close enough
-        if (joint is not null && (leash.Length >= joint.MaxLength || leash.Length >= joint.Length))
-            joint.MaxLength = leash.Length;
+        // if (joint is not null && (leash.Length >= joint.MaxLength || leash.Length >= joint.Length))
+        //     joint.MaxLength = leash.Length;
     }
 
     #endregion
@@ -133,7 +134,12 @@ public sealed class LeashSystem : EntitySystem
 
     private void OnAnchorInserted(Entity<LeashAnchorComponent> ent, ref EntGotInsertedIntoContainerMessage args)
     {
-        if (!_net.IsClient && TryGetLeashTarget(ent!, out var leashTarget)
+        // need to remove the joints on the clientside until it can be verified that the joint is still valid
+        if (_net.IsClient)
+            _joints.RecursiveClearJoints(ent.Owner);
+
+
+        if (TryGetLeashTarget(ent!, out var leashTarget)
             && TryComp<LeashedComponent>(leashTarget, out var leashed)
             && TryComp<LeashComponent>(leashed.Puller , out var leashComponent))
         {
@@ -144,7 +150,7 @@ public sealed class LeashSystem : EntitySystem
 
     private void OnAnchorRemoved(Entity<LeashAnchorComponent> ent, ref EntGotRemovedFromContainerMessage args)
     {
-        if (!_net.IsClient && TryGetLeashTarget(ent!, out var leashTarget)
+        if (TryGetLeashTarget(ent!, out var leashTarget)
             && TryComp<LeashedComponent>(leashTarget, out var leashed)
             && TryComp<LeashComponent>(leashed.Puller , out var leashComponent))
         {
@@ -260,21 +266,18 @@ public sealed class LeashSystem : EntitySystem
 
     private void OnLeashInserted(Entity<LeashComponent> ent, ref EntGotInsertedIntoContainerMessage args)
     {
-        if (!_net.IsClient)
-        {
-            Log.Debug("Leash Inserted");
-            RefreshJoints(ent);
-        }
+        // need to remove the joints on the clientside until it can be verified that the joint is still valid
+        if (_net.IsClient)
+            _joints.RecursiveClearJoints(ent.Owner);
+
+        Log.Debug("Leash Inserted");
+        RefreshJoints(ent);
     }
 
     private void OnLeashRemoved(Entity<LeashComponent> ent, ref EntGotRemovedFromContainerMessage args)
     {
-        if (!_net.IsClient)
-        {
-            Log.Debug("Leash Removed");
-            RefreshJoints(ent);
-        }
-
+        Log.Debug("Leash Removed");
+        RefreshJoints(ent);
     }
 
     private void OnAttachDoAfter(Entity<LeashAnchorComponent> ent, ref LeashAttachDoAfterEvent args)
@@ -364,10 +367,13 @@ public sealed class LeashSystem : EntitySystem
     public bool CanCreateJoint(EntityUid a, EntityUid b)
     {
         // Since a joint can't be made between two entities at the same position we can use this simple check instead
-        if (_xform.GetWorldPosition(a) == _xform.GetWorldPosition(b))
+        if (_container.IsEntityInContainer(a) && _container.IsEntityInContainer(b))
         {
-            Log.Debug("Joint Check Failed");
-            return false;
+            if (_xform.GetWorldPosition(a) == _xform.GetWorldPosition(b))
+            {
+                Log.Debug($"Joint Check Failed A: {_xform.GetWorldPosition(a)}, B: {_xform.GetWorldPosition(b)}");
+                return false;
+            }
         }
 
         return true;
@@ -559,30 +565,34 @@ public sealed class LeashSystem : EntitySystem
     /// </summary>
     public void RefreshJoints(Entity<LeashComponent> leash)
     {
-        foreach (var data in leash.Comp.Leashed)
+        if (_net.IsServer)
         {
-            if (!TryGetEntity(data.Pulled, out var pulled) || !TryComp<LeashedComponent>(pulled, out var leashed))
-                continue;
-
-            var shouldExist = CanCreateJoint(pulled.Value, leash);
-            var exists = data.JointId != null;
-
-            if (exists && !shouldExist && TryComp<JointComponent>(pulled, out var jointComp) && jointComp.GetJoints.TryGetValue(data.JointId!, out var joint))
+            foreach (var data in leash.Comp.Leashed)
             {
-                data.JointId = leashed.JointId = null;
-                _joints.RemoveJoint(joint);
+                if (!TryGetEntity(data.Pulled, out var pulled) || !TryComp<LeashedComponent>(pulled, out var leashed))
+                    continue;
 
-                Log.Debug($"Removed obsolete leash joint between {leash.Owner} and {pulled.Value}");
-            }
-            else if (!exists && shouldExist)
-            {
-                var jointId = $"leash-joint-{data.Pulled}";
-                joint = CreateLeashJoint(jointId, leash, pulled.Value);
-                data.JointId = leashed.JointId = jointId;
+                var shouldExist = CanCreateJoint(pulled.Value, leash);
+                var exists = data.JointId != null;
 
-                Log.Debug($"Added new leash joint between {leash.Owner} and {pulled.Value}");
+                if (exists && !shouldExist && TryComp<JointComponent>(pulled, out var jointComp) && jointComp.GetJoints.TryGetValue(data.JointId!, out var joint))
+                {
+                    data.JointId = leashed.JointId = null;
+                    _joints.RemoveJoint(joint);
+
+                    Log.Debug($"Removed obsolete leash joint between {leash.Owner} and {pulled.Value}");
+                }
+                else if (!exists && shouldExist)
+                {
+                    var jointId = $"leash-joint-{data.Pulled}";
+                    joint = CreateLeashJoint(jointId, leash, pulled.Value);
+                    data.JointId = leashed.JointId = jointId;
+
+                    Log.Debug($"Added new leash joint between {leash.Owner} and {pulled.Value}");
+                }
             }
         }
+
     }
 
     #endregion
