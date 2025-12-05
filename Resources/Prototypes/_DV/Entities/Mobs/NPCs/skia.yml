@@ -24,7 +24,7 @@
         Base: dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      100: 0.9
+      120: 0.9
   - type: MobState
     allowedStates:
     - Alive
@@ -32,7 +32,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      300: Dead
+      240: Dead
   - type: Damageable
     damageContainer: ManifestedSpirit # Den - Let the Mantis get involved with these guys
     damageModifierSet: ManifestedSpirit # Den - keep extreme weakness to heat and bible
@@ -183,6 +183,7 @@
     movementVisibilityRate: 0.575
   - type: StatusEffects
     allowed:
+    - Flashed
     - SlowedDown
     - Pacified
   - type: Body
