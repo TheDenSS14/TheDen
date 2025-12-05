@@ -17,6 +17,11 @@ using Content.Shared.Popups;
 using Content.Shared.Psionics.Glimmer;
 using Content.Shared.Stealth.Components;
 using Content.Shared.Store.Components;
+using Content.Shared.Pinpointer;
+using Content.Server.Objectives.Systems;
+using Content.Server.Objectives.Components;
+using Content.Shared.Objectives.Components;
+using Content.Shared.Inventory;
 
 namespace Contnet.Server._DEN.Skia;
 
@@ -30,7 +35,9 @@ public sealed class SkiaSystem : SharedSkiaSystem
     [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
     [Dependency] private readonly DamageableSystem _damage = default!;
     [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
-
+    [Dependency] private readonly SharedPinpointerSystem _pinpointerSystem = default!;
+    [Dependency] private readonly TargetObjectiveSystem _targetObjectiveSystem = default!;
+    [Dependency] private readonly EntityLookupSystem _lookupSystem = default!;
 
     public override void Initialize()
     {
@@ -38,6 +45,7 @@ public sealed class SkiaSystem : SharedSkiaSystem
 
         SubscribeLocalEvent<SkiaComponent, MobStateChangedEvent>(OnMobStageChanged);
         SubscribeLocalEvent<SkiaComponent, SkiaShopActionEvent>(OnShop);
+        SubscribeLocalEvent<SkiaComponent, ObjectiveAfterAssignEvent>(OnAfterAssign);
         SubscribeLocalEvent<SkiaComponent, UserActivateInWorldEvent>(OnInteract);
         SubscribeLocalEvent<SkiaComponent, SkiaReapingEvent>(OnReaping);
     }
@@ -58,6 +66,18 @@ public sealed class SkiaSystem : SharedSkiaSystem
         if (args.NewMobState == MobState.Alive && !TryComp<StealthComponent>(uid, out var stealthComp))
         {
             AddComp<StealthComponent>(uid);
+        }
+    }
+
+    public void OnAfterAssign(EntityUid uid, SkiaComponent comp, ObjectiveAfterAssignEvent args)
+    {
+        if (!TryComp<TransformComponent>(uid, out var coords))
+            return;
+
+        // There has to be a better way to do this... Gets the Skias pinpointer hopefully...
+        foreach (var pinpointer in _lookupSystem.GetEntitiesInRange<PinpointerComponent>(coords.Coordinates, 0))
+        {
+            _pinpointerSystem.SetTarget(pinpointer.Owner, args.MindId, pinpointer);
         }
     }
 
