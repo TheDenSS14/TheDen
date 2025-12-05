@@ -1,4 +1,3 @@
-using Content.Server._RMC14.Emote;
 using Content.Shared.Chat.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
