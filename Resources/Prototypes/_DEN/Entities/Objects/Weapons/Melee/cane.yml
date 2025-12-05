@@ -84,7 +84,7 @@
       params:
         variation: 0.05
   - type: UseDelay
-    delay: 1
+    delay: 0.5 # Just a small one so you don't hit it twice accidentally
   - type: MeleeWeapon
     attackRate: .6666
     wideAnimationRotation: -135
