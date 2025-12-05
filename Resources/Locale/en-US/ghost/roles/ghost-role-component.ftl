@@ -209,7 +209,7 @@ ghost-role-information-ifrit-wizard-description = Listen to your owner. Don't ta
 
 ghost-role-information-space-dragon-name = Space dragon
 ghost-role-information-space-dragon-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with all your summoned carp.
-ghost-role-information-space-dragon-description = Call in 3 carp rifts and take over this quadrant! You have only 5 minutes in between each rift before you will disappear.
+ghost-role-information-space-dragon-description = Call in 3 carp rifts and take over this quadrant!
 ghost-role-information-space-dragon-summoned-carp-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with your dragon and its allies.
 ghost-role-information-space-dragon-dungeon-description = Defend the expedition dungeon with your fishy comrades!
 
@@ -372,7 +372,7 @@ ghost-role-information-artifact-name = Sentient Artifact
 ghost-role-information-artifact-description =
       Enact your eldritch whims.
       Forcibly activate your nodes for good or for evil.
-      Important![color=red] Read before playing:[/color] Antagonistic actions should be kept to the level of a nuisance, not a major threat.
+      Important! Read before playing: Antagonistic actions should be kept to the level of a nuisance, not a major threat.
       Hostility in an isolated area is acceptable but do not roam around the station causing mass casualties.
 
 ghost-role-information-silicon-rules = Obey your laws. You are a {role-type-free-agent-name} if you are not currently bound by any laws.
