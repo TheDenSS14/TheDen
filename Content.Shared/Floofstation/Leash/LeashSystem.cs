@@ -9,14 +9,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
-using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Floofstation.Leash.Components;
-using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Input;
-using Content.Shared.Inventory.Events;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Throwing;
@@ -31,6 +28,7 @@ using Robust.Shared.Physics.Dynamics.Joints;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Floofstation.Leash;
 
@@ -47,6 +45,9 @@ public sealed class LeashSystem : EntitySystem
 
     public static VerbCategory LeashLengthConfigurationCategory =
         new("verb-categories-leash-config", "/Textures/_Floof/Interface/VerbIcons/resize.svg.192dpi.png");
+
+    public static VerbCategory LeashTypeConfigurationCategory =
+        new("verb-leash-type-config", "/Textures/_Floof/Interface/VerbIcons/resize.svg.192dpi.png");
 
     #region Lifecycle
 
@@ -143,7 +144,6 @@ public sealed class LeashSystem : EntitySystem
             && TryComp<LeashedComponent>(leashTarget, out var leashed)
             && TryComp<LeashComponent>(leashed.Puller , out var leashComponent))
         {
-            Log.Debug("Anchor Inserted");
             RefreshJoints((leashed.Puller.Value, leashComponent));
         }
     }
@@ -154,7 +154,6 @@ public sealed class LeashSystem : EntitySystem
             && TryComp<LeashedComponent>(leashTarget, out var leashed)
             && TryComp<LeashComponent>(leashed.Puller , out var leashComponent))
         {
-            Log.Debug("Anchor Removed");
             RefreshJoints((leashed.Puller.Value, leashComponent));
         }
     }
@@ -214,19 +213,38 @@ public sealed class LeashSystem : EntitySystem
 
     private void OnGetLeashVerbs(Entity<LeashComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
-        if (!args.CanAccess || !args.CanInteract || ent.Comp.LengthConfigs is not { } configurations)
+        if (!args.CanAccess || !args.CanInteract)
             return;
 
         // Add a menu listing each length configuration
-        foreach (var length in configurations)
+        var configurations = ent.Comp.LengthConfigs;
+        if (configurations != null)
         {
-            args.Verbs.Add(new AlternativeVerb
+            foreach (var length in configurations)
             {
-                Text = Loc.GetString("verb-leash-set-length-text", ("length", length)),
-                Act = () => SetLeashLength(ent, length),
-                Category = LeashLengthConfigurationCategory
-            });
+                args.Verbs.Add(new AlternativeVerb
+                {
+                    Text = Loc.GetString("verb-leash-set-length-text", ("length", length)),
+                    Act = () => SetLeashLength(ent, length),
+                    Category = LeashLengthConfigurationCategory
+                });
+            }
         }
+
+        var leashSprites = ent.Comp.LeashSpriteConfigs;
+        if (leashSprites != null)
+        {
+            foreach (var sprite in leashSprites)
+            {
+                args.Verbs.Add(new AlternativeVerb
+                {
+                    Text = Loc.GetString("verb-leash-set-leash-type", ("sprite", sprite.RsiState)),
+                    Act = () => SetLeashType(ent, sprite),
+                    Category = LeashTypeConfigurationCategory
+                });
+            }
+        }
+
     }
 
     private void OnJointRemoved(Entity<LeashedComponent> ent, ref JointRemovedEvent args)
@@ -270,13 +288,11 @@ public sealed class LeashSystem : EntitySystem
         if (_net.IsClient)
             _joints.RecursiveClearJoints(ent.Owner);
 
-        Log.Debug("Leash Inserted");
         RefreshJoints(ent);
     }
 
     private void OnLeashRemoved(Entity<LeashComponent> ent, ref EntGotRemovedFromContainerMessage args)
     {
-        Log.Debug("Leash Removed");
         RefreshJoints(ent);
     }
 
@@ -345,18 +361,6 @@ public sealed class LeashSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp, false))
             return false;
 
-        // if (TryComp<ClothingComponent>(ent, out var clothing))
-        // {
-        //     if (clothing.InSlot == null || !_container.TryGetContainingContainer(ent.Owner, out var container))
-        //     {
-        //         leashTarget = ent.Owner;
-        //         return true;
-        //     }
-        //
-        //     leashTarget = container.Owner;
-        //     return true;
-        // }
-
         leashTarget = ent.Owner;
         return true;
     }
@@ -377,14 +381,6 @@ public sealed class LeashSystem : EntitySystem
         }
 
         return true;
-
-        // BaseContainer? aOuter = null, bOuter = null;
-        //
-        // if (_container.TryGetOuterContainer(a, Transform(a), out aOuter)
-        //     && _container.TryGetOuterContainer(b, Transform(b), out bOuter) && aOuter.Owner == bOuter.Owner)
-        //     return false;
-        //
-        // return a != bOuter?.Owner && b != aOuter?.Owner;
     }
 
     private DistanceJoint CreateLeashJoint(string jointId, Entity<LeashComponent> leash, EntityUid leashTarget)
@@ -398,10 +394,9 @@ public sealed class LeashSystem : EntitySystem
         //     : leash.Comp.Length;
 
         joint.CollideConnected = false;
-        joint.MinLength = 0f;
-        joint.MaxLength = leash.Comp.Length + 0.15f;
-        joint.Stiffness = 0f;
-        //joint.Damping = 1f;
+        joint.MaxLength = leash.Comp.Length + 0.2f;
+        joint.Stiffness = 1f;
+
         return joint;
     }
 
@@ -494,11 +489,8 @@ public sealed class LeashSystem : EntitySystem
         if (CanCreateJoint(leashTarget, leash))
         {
             var jointId = $"leash-joint-{netLeashTarget}";
-            //var jointComp = EnsureComp<JointComponent>(leashTarget);
             var joint = CreateLeashJoint(jointId, leash, leashTarget);
             data.JointId = leashedComp.JointId = jointId;
-
-            //Dirty(leashTarget, jointComp);
         }
         else
         {
@@ -556,6 +548,13 @@ public sealed class LeashSystem : EntitySystem
         leash.Comp.Length = length;
         RefreshJoints(leash);
         _popups.PopupPredicted(Loc.GetString("leash-set-length-popup", ("length", length)), leash.Owner, null);
+    }
+
+    public void SetLeashType(Entity<LeashComponent> leash, SpriteSpecifier.Rsi sprite)
+    {
+        leash.Comp.LeashSprite = sprite;
+        RefreshJoints(leash);
+        _popups.PopupPredicted(Loc.GetString("leash-set-type-popup", ("sprite", sprite.RsiState)), leash.Owner, null);
     }
 
     /// <summary>
