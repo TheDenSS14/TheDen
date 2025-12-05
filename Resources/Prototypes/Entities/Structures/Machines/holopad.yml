@@ -23,6 +23,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.25
+        hard: false # TheDen
         mask:
         - SubfloorMask
         layer:
