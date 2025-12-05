@@ -224,3 +224,23 @@
   - type: FoodSequenceElement
     entries:
       CottonBurger: AzaleaPlushie
+
+# @ daggeran, approved by Jenn
+- type: entity
+  parent: PlushieShadowkin
+  id: PlushieWhistler
+  name: whistler plushie
+  description: A plushie of a certain green shadowkin. Very soft and plush. You swear you hear it wurble when you turn your back.
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Fun/whistlerplushie.rsi
+      state: icon
+    - type: Item
+      inhandVisuals:
+        left:
+          - state: inhand-left
+        right:
+          - state: inhand-right
+    - type: FoodSequenceElement
+      entries:
+        CottonBurger: WhistlerPlushie
