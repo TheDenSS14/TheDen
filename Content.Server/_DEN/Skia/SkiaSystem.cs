@@ -45,7 +45,6 @@ public sealed class SkiaSystem : SharedSkiaSystem
 
         SubscribeLocalEvent<SkiaComponent, MobStateChangedEvent>(OnMobStageChanged);
         SubscribeLocalEvent<SkiaComponent, SkiaShopActionEvent>(OnShop);
-        SubscribeLocalEvent<SkiaComponent, ObjectiveAfterAssignEvent>(OnAfterAssign);
         SubscribeLocalEvent<SkiaComponent, UserActivateInWorldEvent>(OnInteract);
         SubscribeLocalEvent<SkiaComponent, SkiaReapingEvent>(OnReaping);
     }
@@ -66,18 +65,6 @@ public sealed class SkiaSystem : SharedSkiaSystem
         if (args.NewMobState == MobState.Alive && !TryComp<StealthComponent>(uid, out var stealthComp))
         {
             AddComp<StealthComponent>(uid);
-        }
-    }
-
-    public void OnAfterAssign(EntityUid uid, SkiaComponent comp, ObjectiveAfterAssignEvent args)
-    {
-        if (!TryComp<TransformComponent>(uid, out var coords))
-            return;
-
-        // There has to be a better way to do this... Gets the Skias pinpointer hopefully...
-        foreach (var pinpointer in _lookupSystem.GetEntitiesInRange<PinpointerComponent>(coords.Coordinates, 0))
-        {
-            _pinpointerSystem.SetTarget(pinpointer.Owner, args.MindId, pinpointer);
         }
     }
 
