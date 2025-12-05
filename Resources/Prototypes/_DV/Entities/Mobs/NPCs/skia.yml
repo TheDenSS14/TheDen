@@ -174,7 +174,7 @@
     radius: 10
   - type: Spectral
   - type: GlimmerSource
-    glimmerPerSecond: 1.5
+    glimmerPerSecond: 1
     glimmerExponentOffset: -5
   - type: Stealth
     minVisibility: -1
@@ -193,6 +193,7 @@
   - type: ThermalVision
     pulseTime: 0
     color: "#9370DB"
+  - type: ComplexInteraction
   # DEN
   - type: EmbedImmune
     immuneTo:

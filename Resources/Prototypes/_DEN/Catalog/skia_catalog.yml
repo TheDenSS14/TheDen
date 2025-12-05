@@ -1,12 +1,25 @@
-# - type: listing
-#   id: RevenantOverloadLights
-#   name: Overload Lights
-#   description: Overloads all nearby lights, causing lights to pulse and sending out dangerous lightning. Using it leaves you vulnerable to attacks for a long period of time.
-#   productAction: ActionRevenantOverloadLights
-#   cost:
-#     StolenEssence: 25
-#   categories:
-#   - RevenantAbilities
-#   conditions:
-#   - !type:ListingLimitedStockCondition
-#     stock: 1
+- type: listing
+  id: SkiaMassSleep
+  name: mass-sleep-power-description
+  description: mass-sleep-initialization-feedback
+  productAction: ActionMassSleep
+  cost:
+    SoulSilk: 4
+  categories:
+  - SkiaAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: SkiaShadeskip
+  name: action-name-shadeskip
+  description: action-description-shadeskip
+  productAction: ActionShadeskip
+  cost:
+    SoulSilk: 2
+  categories:
+  - SkiaAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
