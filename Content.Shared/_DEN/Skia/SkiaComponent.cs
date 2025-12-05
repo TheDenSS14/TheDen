@@ -1,9 +1,12 @@
 using Content.Shared.FixedPoint;
 using Content.Shared.Store;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-[RegisterComponent, NetworkedComponent]
+namespace Content.Shared._DEN.Skia;
+
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SkiaComponent : Component
 {
     /// <summary>
@@ -17,4 +20,10 @@ public sealed partial class SkiaComponent : Component
     /// </summary>
     [DataField("reapDuration")]
     public float ReapDuration = 1.5f;
+
+    [DataField("shopActionId")]
+    public EntProtoId ShopActionId = "ActionSkiaShop";
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? ShopAction;
 }
