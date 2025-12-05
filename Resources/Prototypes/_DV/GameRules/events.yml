@@ -9,7 +9,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   id: XenoVents
@@ -18,7 +18,7 @@
   components:
   - type: StationEvent
     startAnnouncement: true
-    earliestStart: 15
+    earliestStart: 30
     reoccurrenceDelay: 12
     minimumPlayers: 10
     weight: 8 # Really weak compared to other critters
@@ -55,6 +55,7 @@
   - type: StationEvent
     startAnnouncement: true
     reoccurrenceDelay: 12
+    earliestStart: 30
     minimumPlayers: 1
     duration: 30
   - type: VentCrittersRule
