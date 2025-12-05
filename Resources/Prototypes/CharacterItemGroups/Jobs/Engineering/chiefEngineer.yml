@@ -107,10 +107,12 @@
     - type: loadout
       id: LoadoutClothingHandsChiefEngiWarmers
 
-#- type: characterItemGroup
-#  id: LoadoutChiefEngineerHead
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutChiefEngineerHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChiefEngineerHeadClothingHeadHatHardhatArmored
 
 - type: characterItemGroup
   id: LoadoutChiefEngineerId
@@ -130,10 +132,14 @@
     - type: loadout
       id: LoadoutEngineeringChiefEngineerNeckEngineerMedal
 
-#- type: characterItemGroup
-#  id: LoadoutChiefEngineerMask
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutChiefEngineerMask
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChiefEngineerMaskClothingMaskGasAtmos
+    - type: loadout
+      id: LoadoutChiefEngineerMaskClothingMaskWeldingGas
 
 - type: characterItemGroup
   id: LoadoutChiefEngineerOuter
