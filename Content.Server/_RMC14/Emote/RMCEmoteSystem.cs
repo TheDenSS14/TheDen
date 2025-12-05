@@ -65,5 +65,7 @@ public sealed class RMCEmoteSystem : SharedRMCEmoteSystem
             ignoreActionBlocker,
             forceEmote
         );
+
+        Dirty(source, recently);
     }
 }

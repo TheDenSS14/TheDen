@@ -1,15 +1,13 @@
-using Content.Shared.Chat.Prototypes;
-using Robust.Shared.Prototypes;
-
+using Robust.Shared.GameStates;
 
 namespace Content.Shared._RMC14.Emote;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class RecentlyEmotedComponent : Component
 {
-    [DataField]
+    [DataField, AutoNetworkedField]
     public TimeSpan Cooldown = TimeSpan.FromSeconds(0.8);
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public TimeSpan NextEmote = TimeSpan.Zero;
 }
