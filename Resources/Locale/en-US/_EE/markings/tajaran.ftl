@@ -79,3 +79,16 @@ marking-TajaranEarsTorn-torn_inner = Inner ear
 marking-TajaranEarsWide = Wide Ears
 marking-TajaranEarsWide-wide_outer = Outer ear
 marking-TajaranEarsWide-wide_inner = Inner ear
+
+
+marking-TajaranTailRetroAnimated = Classic Tail (Waggable)
+marking-TajaranTailRetroAnimated-tail_anim = Tail
+marking-TajaranTailRetroRingsAnimated = Classic Tail (Waggable, Rings)
+marking-TajaranTailRetroRingsAnimated-tail_anim = Tail
+marking-TajaranTailRetroRingsAnimated-tail_anim_rings = Rings
+marking-TajaranLeoTail = Leopard Tail (Waggable)
+marking-TajaranLeoTail-leopard_primary = Primary
+marking-TajaranLeoTail-leopard_tertiary = Secondary
+marking-TajaranLeoTailAnimated = Leopard Tail (Waggable)
+marking-TajaranLeoTailAnimated-leotailanim_primary = Primary
+marking-TajaranLeoTailAnimated-leotailanim_secondary = Secondary

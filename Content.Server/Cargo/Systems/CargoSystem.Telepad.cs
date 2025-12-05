@@ -81,6 +81,7 @@ public sealed partial class CargoSystem
             tele.NextTeleport = _gameTiming.CurTime + tele.Delay;
             args.Handled = true;
             args.FulfillmentEntity = uid;
+            return; // okay the return is important. noted.
         }
     }
 

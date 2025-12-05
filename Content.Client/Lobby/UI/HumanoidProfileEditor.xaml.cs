@@ -332,7 +332,7 @@ namespace Content.Client.Lobby.UI
                 PronounsButton.SelectId(args.Id);
                 SetGender((Gender) args.Id);
 
-                if (Profile?.DisplayPronouns == null)
+                if (string.IsNullOrWhiteSpace(Profile?.DisplayPronouns))
                     UpdateDisplayPronounsControls();
             };
 
@@ -1906,7 +1906,8 @@ namespace Content.Client.Lobby.UI
 
         private void SetDisplayPronouns(string? displayPronouns)
         {
-            if (displayPronouns == GetFormattedPronounsFromGender())
+            if (displayPronouns == GetFormattedPronounsFromGender()
+                || string.IsNullOrWhiteSpace(displayPronouns))
                 displayPronouns = null;
 
             Profile = Profile?.WithDisplayPronouns(displayPronouns);

@@ -153,7 +153,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));
 
-        if (component.DisplayPronouns != null)
+        if (!string.IsNullOrWhiteSpace(component.DisplayPronouns))
             args.PushText(Loc.GetString("humanoid-appearance-component-examine-pronouns", ("user", identity), ("pronouns", component.DisplayPronouns)));
     }
 
