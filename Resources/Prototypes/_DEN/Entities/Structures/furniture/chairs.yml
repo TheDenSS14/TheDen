@@ -138,7 +138,7 @@
   parent: SomberChairLeatherMantisWheelchair
   id: SomberChairLeatherMantisWheelchairFolded
   name: bound mantis chair
-  suffix: Folded
+  suffix: Folded, Not Tabletop
   description: "An electrum orb concealing strange bluespace mechanisms that let it unfold into a plush leather office chair. Useful for mantes with mobility restrictions, or simply as versatile office furniture."
   placement:
     mode: PlaceFree
@@ -148,18 +148,6 @@
     state: vehicle_folded
   - type: Item
     size: Small
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.1
-        density: 1
-        mask:
-          - ItemMask
-        layer:
-          - HighImpassable
-        hard: false # Otherwise it jumps off of tabletops...
   - type: Foldable
     folded: true
   - type: Tag

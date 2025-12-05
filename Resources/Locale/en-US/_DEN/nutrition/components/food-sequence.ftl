@@ -14,6 +14,7 @@ food-sequence-cotton-burger-content-plushie-abductor = abductor
 food-sequence-cotton-burger-content-plushie-alice = alice
 food-sequence-cotton-burger-content-plushie-alien-germ = germ
 food-sequence-cotton-burger-content-plushie-arachne = arachne
+food-sequence-cotton-burger-content-plushie-azalea = aza
 food-sequence-cotton-burger-content-plushie-cat = cat
 food-sequence-cotton-burger-content-plushie-chitinid = chitini
 food-sequence-cotton-burger-content-plushie-chill-human = chill
