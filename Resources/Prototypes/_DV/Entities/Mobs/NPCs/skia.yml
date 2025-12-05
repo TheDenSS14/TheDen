@@ -105,7 +105,7 @@
     bloodReagent: BlackBlood # DEN
   - type: ShatterLightsAbility
     lineOfSight: true
-    radius: 7.0
+    radius: 9.0
     penetratingRadius: 2.0
   - type: TechnokineticPulseAbility
     range: 5.0
@@ -113,6 +113,8 @@
     disableDuration: 20.0
   - type: Butcherable
     spawned:
+    - id: AnomalyCoreShadow # DEN
+      amount: 1 # DEN
     - id: Ectoplasm
       amount: 5 # DEN
   - type: Prying
