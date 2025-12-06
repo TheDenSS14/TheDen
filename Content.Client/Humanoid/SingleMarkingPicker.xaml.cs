@@ -200,7 +200,9 @@ public sealed partial class SingleMarkingPicker : BoxContainer
 
         foreach (var (id, marking) in sortedMarkings)
         {
-            var item = MarkingList.AddItem(Loc.GetString($"marking-{id}"), marking.Sprites[0].Frame0());
+            var item = MarkingList.AddItem(Loc.GetString($"marking-{id}"),
+                icon: marking.Sprites[0].Frame0(),
+                iconScale: 2); // DEN
             item.Metadata = marking.ID;
 
             if (_markings[Slot].MarkingId == id)
