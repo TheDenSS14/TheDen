@@ -15331,3 +15331,44 @@ Entries:
   id: 1494
   time: '2025-12-05T08:29:53.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2144
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed blank pronouns in examine.
+    - type: Tweak
+      message: >-
+        Made leopard, retro, and retro rings tails waggable for Tajarans. This
+        is a separate marking for backwards compatibility as to not ruin
+        character profiles.
+  id: 1495
+  time: '2025-12-05T08:30:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2156
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        Decreased maximum traitor count to 4 on normal traitor gamemode and 6 on
+        MoreTraitor.
+    - type: Tweak
+      message: Sleeper agents can only roll 2 at a time now.
+    - type: Tweak
+      message: Mechanically enforced the grace period of antagonists to 30 minutes in
+  id: 1496
+  time: '2025-12-05T10:34:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2158
+- author: Deathninja5551
+  changes:
+    - type: Add
+      message: >-
+        Added an Emote Cooldown to prevent sound spam. It is currently at 5
+        seconds.
+  id: 1497
+  time: '2025-12-05T12:00:21.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2159
+- author: Sha-Seng
+  changes:
+    - type: Tweak
+      message: You can now walk over holopads
+  id: 1498
+  time: '2025-12-05T23:11:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2161

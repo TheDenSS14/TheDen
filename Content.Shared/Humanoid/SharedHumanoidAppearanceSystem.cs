@@ -19,6 +19,7 @@
 // SPDX-FileCopyrightText: 2025 Aikakakah
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
+// SPDX-FileCopyrightText: 2025 Shaman
 // SPDX-FileCopyrightText: 2025 Tabitha
 // SPDX-FileCopyrightText: 2025 Timfa
 // SPDX-FileCopyrightText: 2025 sleepyyapril

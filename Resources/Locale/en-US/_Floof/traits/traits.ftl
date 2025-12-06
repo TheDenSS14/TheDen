@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 oberonics
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Target Consent Traits: Start
 trait-name-TraitorKillTarget = Marked for Removal
 trait-description-TraitorKillTarget = Someone or something has a bounty on your head. Traitors can recieve orders to kill you and keep you dead.
