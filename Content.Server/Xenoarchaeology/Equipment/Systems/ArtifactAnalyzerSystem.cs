@@ -417,10 +417,10 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
         _artifact.AdjustConsumedPoints(artifact.Value, pointValue);
 
         // Nyano - Summary - Begin modified code block: tie artifacts to glimmer.
-        if (TryComp<ArtifactAnalyzerComponent>(component.AnalyzerEntity.Value, out var analyzer) &&
-            analyzer != null)
+        if (TryComp<ArtifactAnalyzerComponent>(component.AnalyzerEntity.Value, out var analyzer))
         {
-            _glimmerSystem.DeltaGlimmerInput(pointValue / analyzer.ExtractRatio);
+            // ReSharper disable once PossibleLossOfFraction
+            _glimmerSystem.Glimmer += (pointValue / analyzer.ExtractRatio);
         }
         // Nyano - End modified code block.
 

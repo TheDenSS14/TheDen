@@ -33,6 +33,6 @@ public sealed partial class ChangeGlimmerReactionEffect : EntityEffect
 
         var glimmerSystem = args.EntityManager.EntitySysManager.GetEntitySystem<GlimmerSystem>();
 
-        glimmerSystem.DeltaGlimmerInput(Count);
+        glimmerSystem.Glimmer += Count;
     }
 }

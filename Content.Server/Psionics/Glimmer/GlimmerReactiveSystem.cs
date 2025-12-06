@@ -33,6 +33,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Psionics.Glimmer;
@@ -53,21 +54,24 @@ public sealed class GlimmerReactiveSystem : EntitySystem
     [Dependency] private readonly RevenantSystem _revenantSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly SharedPointLightSystem _pointLightSystem = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+
     private ISawmill _sawmill = default!;
 
-    public float Accumulator = 0;
-    public const float UpdateFrequency = 15f;
-    public float BeamCooldown = 3;
-    public GlimmerTier LastGlimmerTier = GlimmerTier.Minimal;
+    private TimeSpan? _nextBeam;
+    private readonly TimeSpan _beamCooldown = TimeSpan.FromSeconds(3);
+    private GlimmerTier? _lastGlimmerTier;
+
     public bool GhostsVisible = false;
+
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<RoundRestartCleanupEvent>(Reset);
 
         SubscribeLocalEvent<SharedGlimmerReactiveComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<SharedGlimmerReactiveComponent, ComponentRemove>(OnComponentRemove);
         SubscribeLocalEvent<SharedGlimmerReactiveComponent, PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<SharedGlimmerReactiveComponent, GlimmerChangedEvent>(OnGlimmerChanged);
         SubscribeLocalEvent<SharedGlimmerReactiveComponent, GlimmerTierChangedEvent>(OnTierChanged);
         SubscribeLocalEvent<SharedGlimmerReactiveComponent, GetVerbsEvent<AlternativeVerb>>(AddShockVerb);
         SubscribeLocalEvent<SharedGlimmerReactiveComponent, DamageChangedEvent>(OnDamageChanged);
@@ -76,12 +80,6 @@ public sealed class GlimmerReactiveSystem : EntitySystem
         SubscribeLocalEvent<SharedGlimmerReactiveComponent, AttemptMeleeThrowOnHitEvent>(OnMeleeThrowOnHitAttempt);
     }
 
-    /// <summary>
-    /// Update relevant state on an Entity.
-    /// </summary>
-    /// <param name="glimmerTierDelta">The number of steps in tier
-    /// difference since last update. This can be zero for the sake of
-    /// toggling the enabled states.</param>
     private void UpdateEntityState(EntityUid uid, SharedGlimmerReactiveComponent component, GlimmerTier currentGlimmerTier, int glimmerTierDelta)
     {
         var isEnabled = true;
@@ -103,11 +101,10 @@ public sealed class GlimmerReactiveSystem : EntitySystem
         if (component.ModulatesPointLight
             && _pointLightSystem.TryGetLight(uid, out var pointLight))
         {
-            _pointLightSystem.SetEnabled(uid, isEnabled ? currentGlimmerTier != GlimmerTier.Minimal : false, pointLight);
+            _pointLightSystem.SetEnabled(uid, isEnabled && currentGlimmerTier != GlimmerTier.Minimal, pointLight);
             _pointLightSystem.SetEnergy(uid, pointLight.Energy + glimmerTierDelta * component.GlimmerToLightEnergyFactor, pointLight);
             _pointLightSystem.SetRadius(uid, pointLight.Radius + glimmerTierDelta * component.GlimmerToLightRadiusFactor, pointLight);
         }
-
     }
 
     /// <summary>
@@ -120,7 +117,8 @@ public sealed class GlimmerReactiveSystem : EntitySystem
         if (component.RequiresApcPower && !HasComp<ApcPowerReceiverComponent>(uid))
             _sawmill.Warning($"{ToPrettyString(uid)} had RequiresApcPower set to true but no ApcPowerReceiverComponent was found on init.");
 
-        UpdateEntityState(uid, component, LastGlimmerTier, (int) LastGlimmerTier);
+        var lastGlimmerTier = _glimmerSystem.GetGlimmerTier();
+        UpdateEntityState(uid, component, lastGlimmerTier, (int) lastGlimmerTier);
     }
 
     /// <summary>
@@ -130,7 +128,8 @@ public sealed class GlimmerReactiveSystem : EntitySystem
     /// </summary>
     private void OnComponentRemove(EntityUid uid, SharedGlimmerReactiveComponent component, ComponentRemove args)
     {
-        UpdateEntityState(uid, component, GlimmerTier.Minimal, -1 * (int) LastGlimmerTier);
+        var lastGlimmerTier = _glimmerSystem.GetGlimmerTier();
+        UpdateEntityState(uid, component, GlimmerTier.Minimal, -1 * (int) lastGlimmerTier);
     }
 
     /// <summary>
@@ -139,30 +138,61 @@ public sealed class GlimmerReactiveSystem : EntitySystem
     /// </summary>
     private void OnPowerChanged(EntityUid uid, SharedGlimmerReactiveComponent component, ref PowerChangedEvent args)
     {
+        var lastGlimmerTier = _glimmerSystem.GetGlimmerTier();
         if (component.RequiresApcPower)
-            UpdateEntityState(uid, component, LastGlimmerTier, 0);
+            UpdateEntityState(uid, component, lastGlimmerTier, 0);
+    }
+
+    private void OnGlimmerChanged(Entity<SharedGlimmerReactiveComponent> ent, ref GlimmerChangedEvent args)
+    {
+        var glimmerTier = _glimmerSystem.GetGlimmerTier();
+
+        if (_lastGlimmerTier == glimmerTier)
+            return;
+
+        _lastGlimmerTier ??= glimmerTier;
+        HandleGhostVisibility(ent, glimmerTier);
+
+        var ev = new GlimmerTierChangedEvent(_lastGlimmerTier.Value, glimmerTier);
+        RaiseLocalEvent(ev);
     }
 
     /// <summary>
     ///     Enable / disable special effects from higher tiers.
     /// </summary>
-    private void OnTierChanged(EntityUid uid, SharedGlimmerReactiveComponent component, GlimmerTierChangedEvent args)
+    private void OnTierChanged(Entity<SharedGlimmerReactiveComponent> ent, ref GlimmerTierChangedEvent args)
     {
-        if (!TryComp<ApcPowerReceiverComponent>(uid, out var receiver))
+        if (!TryComp<ApcPowerReceiverComponent>(ent, out var receiver))
             return;
 
-        if (args.CurrentTier >= GlimmerTier.Dangerous)
-        {
-            if (!Transform(uid).Anchored)
-                AnchorOrExplode(uid);
-
-            receiver.PowerDisabled = false;
-            receiver.NeedsPower = false;
-        }
-        else
-        {
+        if (args.CurrentTier < GlimmerTier.Dangerous)
             receiver.NeedsPower = true;
+
+        if (!Transform(ent).Anchored)
+            AnchorOrExplode(ent);
+
+        receiver.PowerDisabled = false;
+        receiver.NeedsPower = false;
+    }
+    private void HandleGhostVisibility(Entity<SharedGlimmerReactiveComponent> ent, GlimmerTier currentTier)
+    {
+        if (currentTier == GlimmerTier.Critical)
+        {
+            _ghostSystem.MakeVisible(true);
+            _revenantSystem.MakeVisible(true);
+
+            GhostsVisible = true;
+            BeamRandomNearProber(ent, 1, 12);
+
+            return;
         }
+
+        if (!GhostsVisible)
+            return;
+
+        _ghostSystem.MakeVisible(false);
+        _revenantSystem.MakeVisible(false);
+        GhostsVisible = false;
     }
 
     private void AddShockVerb(EntityUid uid, SharedGlimmerReactiveComponent component, GetVerbsEvent<AlternativeVerb> args)
@@ -178,7 +208,12 @@ public sealed class GlimmerReactiveSystem : EntitySystem
             Act = () =>
             {
                 _sharedAudioSystem.PlayPvs(component.ShockNoises, args.User);
-                _electrocutionSystem.TryDoElectrocution(args.User, null, (int) _glimmerSystem.GlimmerOutput / 200, TimeSpan.FromSeconds(_glimmerSystem.GlimmerOutput / 100), false);
+                _electrocutionSystem.TryDoElectrocution(
+                    args.User,
+                    null,
+                    (int) _glimmerSystem.Glimmer / 200,
+                    TimeSpan.FromSeconds(_glimmerSystem.Glimmer / 100),
+                    false);
             },
             Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png")),
             Text = Loc.GetString("power-switch-component-toggle-verb"),
@@ -190,12 +225,13 @@ public sealed class GlimmerReactiveSystem : EntitySystem
     private void OnDamageChanged(EntityUid uid, SharedGlimmerReactiveComponent component, DamageChangedEvent args)
     {
         if (args.Origin == null
-            || !_random.Prob((float) _glimmerSystem.GetGlimmerEquilibriumRatio() / 10))
+            || !_random.Prob((float) _glimmerSystem.Glimmer / 1000))
             return;
 
         var tier = _glimmerSystem.GetGlimmerTier();
         if (tier < GlimmerTier.High)
             return;
+
         Beam(uid, args.Origin.Value, tier);
     }
 
@@ -207,13 +243,13 @@ public sealed class GlimmerReactiveSystem : EntitySystem
         if (tier < GlimmerTier.High)
             return;
 
-        var glimmer = (float) _glimmerSystem.GlimmerOutput;
-        var totalIntensity = glimmer * 2;
-        var slope = 11 - glimmer / 100;
-        var maxIntensity = 20;
+        var glimmer = (float) _glimmerSystem.Glimmer;
+        // var totalIntensity = glimmer * 2;
+        // var slope = 11 - glimmer / 100;
+        // var maxIntensity = 20;
 
         var removed = glimmer * _random.NextFloat(0.1f, 0.15f);
-        _glimmerSystem.DeltaGlimmerInput(-removed);
+        _glimmerSystem.Glimmer -= removed;
         BeamRandomNearProber(uid, (int) glimmer / 350, glimmer / 50);
         // _explosionSystem.QueueExplosion(uid, "Default", totalIntensity, slope, maxIntensity);
     }
@@ -224,7 +260,13 @@ public sealed class GlimmerReactiveSystem : EntitySystem
             return;
 
         _sharedAudioSystem.PlayPvs(component.ShockNoises, args.User);
-        _electrocutionSystem.TryDoElectrocution(args.User, null, (int) _glimmerSystem.GlimmerOutput / 200, TimeSpan.FromSeconds(_glimmerSystem.GlimmerOutput / 100), false);
+        _electrocutionSystem.TryDoElectrocution(
+            args.User,
+            null,
+            (int) _glimmerSystem.Glimmer / 200,
+            TimeSpan.FromSeconds(_glimmerSystem.Glimmer / 100),
+            false);
+
         args.Cancel();
     }
 
@@ -249,39 +291,32 @@ public sealed class GlimmerReactiveSystem : EntitySystem
         }
     }
 
-    private void Beam(EntityUid prober, EntityUid target, GlimmerTier tier, bool obeyCD = true)
+    private void Beam(EntityUid prober, EntityUid target, GlimmerTier tier, bool obeyCooldown = true)
     {
-        if (obeyCD && BeamCooldown != 0
+        if (obeyCooldown &&
+            _nextBeam != null && _nextBeam > _timing.CurTime
             || Deleted(prober)
             || Deleted(target))
             return;
 
-        var lxform = Transform(prober);
-        var txform = Transform(target);
+        var proberTransform = Transform(prober);
+        var targetTransform = Transform(target);
 
-        if (!lxform.Coordinates.TryDistance(EntityManager, txform.Coordinates, out var distance))
-            return;
-        if (distance > _glimmerSystem.GlimmerOutput / 100)
+        if (!proberTransform.Coordinates.TryDistance(EntityManager, targetTransform.Coordinates, out var distance))
             return;
 
-        string beamproto;
+        if (distance > _glimmerSystem.Glimmer / 100)
+            return;
 
-        switch (tier)
+        var beamPrototype = tier switch
         {
-            case GlimmerTier.Dangerous:
-                beamproto = "SuperchargedLightning";
-                break;
-            case GlimmerTier.Critical:
-                beamproto = "HyperchargedLightning";
-                break;
-            default:
-                beamproto = "ChargedLightning";
-                break;
-        }
+            GlimmerTier.Dangerous => "SuperchargedLightning",
+            GlimmerTier.Critical => "HyperchargedLightning",
+            _ => "ChargedLightning"
+        };
 
-
-        _lightning.ShootLightning(prober, target, beamproto);
-        BeamCooldown += 3f;
+        _lightning.ShootLightning(prober, target, beamPrototype);
+        _nextBeam = _timing.CurTime + _beamCooldown;
     }
 
     private void AnchorOrExplode(EntityUid uid)
@@ -305,62 +340,16 @@ public sealed class GlimmerReactiveSystem : EntitySystem
 
         // Check if the parent of the user is alive, which will be the case if the user is an item and is being held.
         var zapTarget = _transformSystem.GetParentUid(args.User);
+
         if (TryComp<MindContainerComponent>(zapTarget, out _))
-            _electrocutionSystem.TryDoElectrocution(zapTarget, ent, 5, TimeSpan.FromSeconds(3), true,
-                ignoreInsulation: true);
-    }
-
-    private void Reset(RoundRestartCleanupEvent args)
-    {
-        Accumulator = 0;
-
-        // It is necessary that the GlimmerTier is reset to the default
-        // tier on round restart. This system will persist through
-        // restarts, and an undesired event will fire as a result after the
-        // start of the new round, causing modulatable PointLights to have
-        // negative Energy if the tier was higher than Minimal on restart.
-        LastGlimmerTier = GlimmerTier.Minimal;
-    }
-
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-        Accumulator += frameTime;
-        BeamCooldown = Math.Max(0, BeamCooldown - frameTime);
-
-        if (Accumulator > UpdateFrequency)
         {
-            var currentGlimmerTier = _glimmerSystem.GetGlimmerTier();
-
-            var reactives = EntityQuery<SharedGlimmerReactiveComponent>();
-            if (currentGlimmerTier != LastGlimmerTier)
-            {
-                var glimmerTierDelta = (int) currentGlimmerTier - (int) LastGlimmerTier;
-                var ev = new GlimmerTierChangedEvent(LastGlimmerTier, currentGlimmerTier, glimmerTierDelta);
-
-                foreach (var reactive in reactives)
-                {
-                    UpdateEntityState(reactive.Owner, reactive, currentGlimmerTier, glimmerTierDelta);
-                    RaiseLocalEvent(reactive.Owner, ev);
-                }
-
-                LastGlimmerTier = currentGlimmerTier;
-            }
-            if (currentGlimmerTier == GlimmerTier.Critical)
-            {
-                _ghostSystem.MakeVisible(true);
-                _revenantSystem.MakeVisible(true);
-                GhostsVisible = true;
-                foreach (var reactive in reactives)
-                    BeamRandomNearProber(reactive.Owner, 1, 12);
-            }
-            else if (GhostsVisible == true)
-            {
-                _ghostSystem.MakeVisible(false);
-                _revenantSystem.MakeVisible(false);
-                GhostsVisible = false;
-            }
-            Accumulator = 0;
+            _electrocutionSystem.TryDoElectrocution(
+                zapTarget,
+                ent,
+                5,
+                TimeSpan.FromSeconds(3),
+                true,
+                ignoreInsulation: true);
         }
     }
 }
@@ -372,7 +361,7 @@ public sealed class GlimmerReactiveSystem : EntitySystem
 /// <see cref="GlimmerSystem.GetGlimmerTier"/> has the exact
 /// values corresponding to tiers.
 /// </summary>
-public class GlimmerTierChangedEvent : EntityEventArgs
+public sealed class GlimmerTierChangedEvent : EntityEventArgs
 {
     /// <summary>
     /// What was the last glimmer tier before this event fired?
@@ -384,15 +373,9 @@ public class GlimmerTierChangedEvent : EntityEventArgs
     /// </summary>
     public readonly GlimmerTier CurrentTier;
 
-    /// <summary>
-    /// What is the change in tiers between the last and current tier?
-    /// </summary>
-    public readonly int TierDelta;
-
-    public GlimmerTierChangedEvent(GlimmerTier lastTier, GlimmerTier currentTier, int tierDelta)
+    public GlimmerTierChangedEvent(GlimmerTier lastTier, GlimmerTier currentTier)
     {
         LastTier = lastTier;
         CurrentTier = currentTier;
-        TierDelta = tierDelta;
     }
 }

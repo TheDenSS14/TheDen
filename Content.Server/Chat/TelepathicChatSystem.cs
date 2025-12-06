@@ -83,14 +83,12 @@ public sealed partial class TelepathicChatSystem : EntitySystem
         return filteredList;
     }
 
-    private bool IsEligibleForTelepathy(EntityUid entity)
-    {
-        return HasComp<TelepathyComponent>(entity)
-            && !HasComp<PsionicsDisabledComponent>(entity)
-            && !HasComp<PsionicInsulationComponent>(entity)
-            && !HasComp<SleepingComponent>(entity)
-            && (!TryComp<MobStateComponent>(entity, out var mobstate) || mobstate.CurrentState == MobState.Alive);
-    }
+    private bool IsEligibleForTelepathy(EntityUid entity) =>
+        HasComp<TelepathyComponent>(entity)
+        && !HasComp<PsionicsDisabledComponent>(entity)
+        && !HasComp<PsionicInsulationComponent>(entity)
+        && !HasComp<SleepingComponent>(entity)
+        && (!TryComp<MobStateComponent>(entity, out var mobstate) || mobstate.CurrentState == MobState.Alive);
 
     public void SendTelepathicChat(EntityUid source, string message, bool hideChat)
     {
@@ -114,7 +112,7 @@ public sealed partial class TelepathicChatSystem : EntitySystem
 
         _chatManager.ChatMessageToMany(ChatChannel.Telepathic, message, adminMessageWrap, source, hideChat, true, admins, Color.PaleVioletRed);
 
-        if (clients.psychog.Count() > 0)
+        if (clients.psychog.Any())
         {
             var descriptor = SourceToDescriptor(source);
             string psychogMessageWrap;
@@ -126,17 +124,19 @@ public sealed partial class TelepathicChatSystem : EntitySystem
         }
 
         if (_random.Prob(0.1f))
-            _glimmerSystem.DeltaGlimmerInput(1);
+            _glimmerSystem.Glimmer += 1;
 
-        if (_random.Prob(Math.Min(0.33f + (float) _glimmerSystem.GlimmerOutput / 1500, 1)))
+        if (_random.Prob(Math.Min(0.33f + (float) _glimmerSystem.Glimmer / 1500, 1)))
         {
-            float obfuscation = 0.25f + (float) _glimmerSystem.GlimmerOutput / 2000;
+            var obfuscation = 0.25f + (float) _glimmerSystem.Glimmer / 2000;
             var obfuscated = ObfuscateMessageReadability(message, obfuscation);
             _chatManager.ChatMessageToMany(ChatChannel.Telepathic, obfuscated, messageWrap, source, hideChat, false, GetDreamers(clients.normal.Concat(clients.psychog)), Color.PaleVioletRed);
         }
 
-        foreach (var repeater in EntityQuery<TelepathicRepeaterComponent>())
-            _chatSystem.TrySendInGameICMessage(repeater.Owner, message, InGameICChatType.Speak, false);
+        var query = EntityQueryEnumerator<TelepathicRepeaterComponent>();
+
+        while (query.MoveNext(out var uid, out _))
+            _chatSystem.TrySendInGameICMessage(uid, message, InGameICChatType.Speak, false);
     }
 
     private string ObfuscateMessageReadability(string message, float chance)

@@ -20,7 +20,7 @@ public sealed class GlimmerEventSystem : StationEventSystem<GlimmerEventComponen
         base.Ended(uid, component, gameRule, args);
 
         var glimmerBurned = RobustRandom.Next(component.GlimmerBurnLower, component.GlimmerBurnUpper);
-        _glimmerSystem.DeltaGlimmerInput(-glimmerBurned);
+        _glimmerSystem.Glimmer -= glimmerBurned;
 
         var reportEv = new GlimmerEventEndedEvent(component.SophicReport, glimmerBurned);
         RaiseLocalEvent(reportEv);

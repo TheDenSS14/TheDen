@@ -42,13 +42,14 @@ public sealed class PassiveGlimmerReductionSystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
         if (!_enabled)
             return;
 
         var glimmerDecay = _glimmerLinearDecay * frameTime;
+        _glimmerSystem.Glimmer -= glimmerDecay;
 
-        _glimmerSystem.DeltaGlimmerOutput(-glimmerDecay);
-        GlimmerValues.Add((int) Math.Round(_glimmerSystem.GlimmerOutput));
+        GlimmerValues.Add((int) Math.Round(_glimmerSystem.Glimmer));
     }
 
     private void UpdatePassiveGlimmer(float value) => _glimmerLinearDecay = value;

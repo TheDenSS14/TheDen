@@ -9,9 +9,6 @@
 namespace Content.Server.Psionics.Glimmer;
 
 [RegisterComponent]
-/// <summary>
-/// Adds to glimmer at regular intervals. We'll use it for glimmer drains too when we get there.
-/// </summary>
 public sealed partial class GlimmerSourceComponent : Component
 {
     [DataField]
@@ -28,7 +25,6 @@ public sealed partial class GlimmerSourceComponent : Component
 
     /// <summary>
     ///     If not null, this entity generates this value as a baseline number of research points per second, eg: Probers.
-    ///     Actual glimmer research sources will scale with GlimmerEquilibriumRatio
     /// </summary>
     [DataField]
     public int? ResearchPointGeneration = null;
@@ -38,11 +34,4 @@ public sealed partial class GlimmerSourceComponent : Component
     /// </summary>
     [DataField]
     public bool RequiresPower = true;
-
-    /// <summary>
-    ///     Above GlimmerEquilibrium, glimmer generation is increased exponentially, but has an offset to prevent things from spiralling out of control.
-    ///     Increasing the offset will make this entity's exponential growth weaker, while decreasing it makes it stronger. Negative numbers are valid by the way :)
-    /// </summary>
-    [DataField]
-    public int GlimmerExponentOffset = 0;
 }

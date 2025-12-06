@@ -465,7 +465,7 @@ public sealed partial class PsionicModifyGlimmer : PsionicPowerFunction
         PsionicPowerPrototype proto)
     {
         var glimmerSystem = entityManager.System<GlimmerSystem>();
-        glimmerSystem.DeltaGlimmerInput(GlimmerModifier);
+        glimmerSystem.Glimmer += GlimmerModifier;
     }
 }
 

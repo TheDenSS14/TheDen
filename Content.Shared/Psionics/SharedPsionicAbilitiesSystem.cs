@@ -82,9 +82,10 @@ namespace Content.Shared.Abilities.Psionics
 
             _adminLogger.Add(Database.LogType.Psionics, Database.LogImpact.Medium, $"{ToPrettyString(uid):player} used {power}, producing min glimmer:{minGlimmer} and max glimmer: {maxGlimmer}");
             var ev = new PsionicPowerUsedEvent(uid, power);
-            RaiseLocalEvent(uid, ev, false);
+            RaiseLocalEvent(uid, ev);
 
-            _glimmerSystem.DeltaGlimmerInput(_robustRandom.NextFloat(minGlimmer, maxGlimmer));
+            var glimmer = _robustRandom.NextFloat(minGlimmer, maxGlimmer);
+            _glimmerSystem.Glimmer += glimmer;
         }
 
         /// <summary>

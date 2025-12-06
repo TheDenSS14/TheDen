@@ -68,12 +68,12 @@ public sealed class GlimmerStructuresSystem : EntitySystem
         // component.
 
         if (TryComp<AnomalyComponent>(uid, out var anomaly))
-            _glimmerSystem.DeltaGlimmerOutput(5f * anomaly.Severity);
+            _glimmerSystem.Glimmer += 5f * anomaly.Severity;
     }
 
     private void OnAnomalySupercritical(EntityUid uid, GlimmerSourceComponent component, ref AnomalySupercriticalEvent args)
     {
-        _glimmerSystem.DeltaGlimmerOutput(100);
+        _glimmerSystem.Glimmer += 100;
     }
 
     private void OnMobStateChanged(EntityUid uid, GlimmerSourceComponent component, ref MobStateChangedEvent args)
@@ -97,14 +97,17 @@ public sealed class GlimmerStructuresSystem : EntitySystem
                 || component.RequiresPower && !_powerReceiverSystem.IsPowered(uid))
                 continue;
 
+            // TODO: simplify. this is unnecessary.
             if (component.ResearchPointGeneration != null
             && TryComp(uid, out ResearchPointSourceComponent? research))
+            {
                 research.PointsPerSecond = (int) Math.Round(
                     component.ResearchPointGeneration.Value
                     / (MathF.Log(totalSources, 4) + 1)
-                    * _glimmerSystem.GetGlimmerEquilibriumRatio());
+                    * (_glimmerSystem.Glimmer / 1000));
+            }
 
-            _glimmerSystem.DeltaGlimmerInput(component.GlimmerPerSecond * frameTime);
+            _glimmerSystem.Glimmer += component.GlimmerPerSecond * frameTime;
         }
     }
 }
