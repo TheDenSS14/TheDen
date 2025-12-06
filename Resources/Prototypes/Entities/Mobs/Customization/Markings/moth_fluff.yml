@@ -3,263 +3,214 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# Start DEN: Abstract prototype for inheritance
 - type: marking
+  abstract: true
+  parent: BaseNeckFluff
+  id: BaseNeckFluffMoth
+  preferredSpecies: [Moth]
+  speciesRestriction: [Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune]
+# End DEN
+
+- type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffBurntOff
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_burnt_off
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffDeathhead
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_deathhead
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffFirewatch
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_firewatch
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffGothic
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_gothic
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffInsectF
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_insectf
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffInsectM
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_insectm
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffJungle
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_jungle
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffLovers
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_lovers
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffMoonfly
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_moonfly
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffOakworm
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_oakworm
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffPlain
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_plain
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffPoison
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_poison
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffRedish
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_redish
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffRoyal
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_royal
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffSnow
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_snow
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffWhitefly
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_whitefly
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffWitchwing
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_witchwing
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffDeathheadGreyscale
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_deathhead_greyscale
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffFirewatchGreyscale
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_firewatch_greyscale
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffJungleGreyscale
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_jungle_greyscale
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffLoversGreyscale
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_lovers_greyscale
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffMoonflyGreyscale
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_moonfly_greyscale
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffOakwormGreyscale
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_oakworm_greyscale
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffPlainGreyscale
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_plain_greyscale
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffPoisonGreyscale
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_poison_greyscale
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffRedishGreyscale
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_redish_greyscale
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffRoyalGreyscale
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_royal_greyscale
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffWhiteflyGreyscale
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_whitefly_greyscale
 
 - type: marking
+  parent: BaseNeckFluffMoth # DEN: Add inheritance
   id: MothNeckfluffWitchwingGreyscale
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: Mobs/Customization/moth_fluff.rsi
     state: m_fluff_witchwing_greyscale
