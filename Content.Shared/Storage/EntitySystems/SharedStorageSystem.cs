@@ -1499,6 +1499,18 @@ public abstract class SharedStorageSystem : EntitySystem
         return _nextSmallest[item.Size];
     }
 
+    // DEN: Allow setting this after the component is created.
+    /// <summary>
+    ///     Sets the maximum item size of this entity.
+    /// </summary>
+    public void SetMaxItemSize(Entity<StorageComponent?> uid, ItemSizePrototype size)
+    {
+        if (!Resolve(uid, ref uid.Comp))
+            return;
+
+        uid.Comp.MaxItemSize = size;
+    }
+
     /// <summary>
     /// Checks if a storage's UI is open by anyone when locked, and closes it.
     /// </summary>
