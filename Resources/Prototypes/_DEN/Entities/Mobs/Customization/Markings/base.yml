@@ -84,6 +84,18 @@
 
 - type: marking
   abstract: true
+  id: BaseNeckFluff
+  bodyPart: NeckFluff
+  markingCategory: NeckFluff
+
+- type: marking
+  abstract: true
+  id: BaseChest
+  bodyPart: Chest
+  markingCategory: Chest
+
+- type: marking
+  abstract: true
   id: BaseTail
   markingCategory: Tail
   bodyPart: Tail
