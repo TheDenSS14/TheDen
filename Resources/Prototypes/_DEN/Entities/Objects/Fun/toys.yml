@@ -245,3 +245,16 @@
     - type: FoodSequenceElement
       entries:
         CottonBurger: WhistlerPlushie
+
+- type: entity
+  parent: BaseItem
+  id: BluespacePlushiePatch
+  name: bluespace plushie patch
+  description: "A tiny bluespace pocket in the form of a fabric patch, try adding it to a plushie."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/bluespaceplushiepatch.rsi
+    state: icon
+  - type: Item
+    size: Small
+  - type: BluespacePlushiePatch
