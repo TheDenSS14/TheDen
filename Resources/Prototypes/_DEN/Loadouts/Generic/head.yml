@@ -51,3 +51,36 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadFlowerRose
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+  - RoseSeedless
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadFlowerRoseBlack
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+  - RoseBlackSeedless
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadFlowerLily
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+  - FoodLilySeedless
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
