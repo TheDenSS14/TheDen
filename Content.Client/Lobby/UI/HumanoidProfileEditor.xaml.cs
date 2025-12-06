@@ -65,7 +65,7 @@
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Client._DEN.Customization.Systems;
 using Content.Client._DEN.Lobby.UI.Controls;
@@ -332,7 +332,7 @@ namespace Content.Client.Lobby.UI
                 PronounsButton.SelectId(args.Id);
                 SetGender((Gender) args.Id);
 
-                if (Profile?.DisplayPronouns == null)
+                if (string.IsNullOrWhiteSpace(Profile?.DisplayPronouns))
                     UpdateDisplayPronounsControls();
             };
 
@@ -1906,7 +1906,8 @@ namespace Content.Client.Lobby.UI
 
         private void SetDisplayPronouns(string? displayPronouns)
         {
-            if (displayPronouns == GetFormattedPronounsFromGender())
+            if (displayPronouns == GetFormattedPronounsFromGender()
+                || string.IsNullOrWhiteSpace(displayPronouns))
                 displayPronouns = null;
 
             Profile = Profile?.WithDisplayPronouns(displayPronouns);

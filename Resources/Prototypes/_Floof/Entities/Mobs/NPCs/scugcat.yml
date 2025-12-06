@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 cynical
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   name: ScugCat
@@ -90,7 +90,7 @@
     makeSentient: true
     name: ghost-role-information-scugcat-name
     description: ghost-role-information-scugcat-description
-    rules: deltav-ghost-role-information-softantag-rules
+    rules: ghost-role-component-default-rules
   - type: GhostTakeoverAvailable
   - type: Food
   - type: Hunger

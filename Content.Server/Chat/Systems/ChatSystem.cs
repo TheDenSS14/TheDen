@@ -53,11 +53,12 @@
 // SPDX-FileCopyrightText: 2025 ash lea
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using Content.Server._RMC14.Emote;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
@@ -148,6 +149,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly HandsSystem _hands = default!; // Floof
     [Dependency] private readonly LastMessageBeforeDeathSystem _lastMessageBeforeDeathSystem = default!; // Imp Edit LastMessageBeforeDeath Webhook
     [Dependency] private readonly ConsentSystem _consent = default!;
+    [Dependency] private readonly RMCEmoteSystem _rmcEmote = default!;
 
     private readonly string LastMessageConsent = "LastMessage";
 

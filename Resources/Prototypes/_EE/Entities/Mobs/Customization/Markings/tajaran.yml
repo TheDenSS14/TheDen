@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Adrian16199
 # SPDX-FileCopyrightText: 2025 Erol509
+# SPDX-FileCopyrightText: 2025 KekaniCreates
 # SPDX-FileCopyrightText: 2025 SX-7
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -316,3 +317,46 @@
     state: wide_outer
   - sprite: _EE/Mobs/Customization/Tajaran/felinid_ears.rsi
     state: wide_inner
+
+# compatibility
+- type: marking
+  id: TajaranTailRetroAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Tajaran, Felinid]
+  sprites:
+  - sprite: _EE/Mobs/Customization/Tajaran/tails.rsi
+    state: tail_anim
+
+- type: marking
+  id: TajaranTailRetroRingsAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Tajaran, Felinid]
+  sprites:
+  - sprite: _EE/Mobs/Customization/Tajaran/tails.rsi
+    state: tail_anim
+  - sprite: _EE/Mobs/Customization/Tajaran/tail_markings.rsi
+    state: tail_anim_rings
+
+- type: marking
+  id: TajaranLeoTail # Den Addition - Leopard Tail No Animation
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Tajaran, Felinid]
+  sprites:
+  - sprite: _EE/Mobs/Customization/Tajaran/leotail.rsi
+    state: leopard_primary
+  - sprite: _EE/Mobs/Customization/Tajaran/leotail.rsi
+    state: leopard_tertiary
+
+- type: marking
+  id: TajaranLeoTailAnimated # Den Addition - Leopard Tail Animation
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Tajaran, Felinid]
+  sprites:
+  - sprite: _EE/Mobs/Customization/Tajaran/leotail.rsi
+    state: leotailanim_primary
+  - sprite: _EE/Mobs/Customization/Tajaran/leotail.rsi
+    state: leotailanim_secondary
