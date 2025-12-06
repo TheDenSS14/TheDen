@@ -39,6 +39,11 @@
     attachDelay: 4
     detachDelay: 4
     selfDetachDelay: 10
+    leashSpriteConfigs:
+    - sprite: _Floof/Objects/Tools/leash-rope.rsi
+      state: rope
+    - sprite: _DEN/Objects/Specific/Mantis/leashmantis-chain.rsi
+      state: chain
 
 - type: entity
   id: LeashAdvanced
