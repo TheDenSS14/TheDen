@@ -55,6 +55,16 @@
     scanDelay: 1
     scanningEndSound:
       path: "/Audio/Items/Medical/healthscanner.ogg"
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#A32D26"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#A32D26"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -84,7 +94,7 @@
         tags:
         - Write
   - type: PdaBorderColor
-    borderColor: "#470823"
+    borderColor: "#6f6192" # TheDen - It wasn't that color
   - type: Icon
     sprite: _DV/Objects/Devices/pda.rsi
     state: pda-chiefjustice
@@ -95,6 +105,16 @@
       - NewsReaderCartridge
       - CrimeAssistCartridge
       - NanoChatCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#6f6192"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#6f6192"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -124,7 +144,7 @@
         tags:
         - Write
   - type: PdaBorderColor
-    borderColor: "#611528"
+    borderColor: "#6f6192"
   - type: Icon
     sprite: _DV/Objects/Devices/pda.rsi
     state: pda-clerk
@@ -135,6 +155,16 @@
       - NewsReaderCartridge
       - CrimeAssistCartridge
       - NanoChatCartridge # DeltaV
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#6f6192"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#6f6192"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -164,7 +194,7 @@
         tags:
         - Write
   - type: PdaBorderColor
-    borderColor: "#6f6192"
+    borderColor: "#7c1345" # TheDen - It wasn't that color
   - type: Icon
     sprite: _DV/Objects/Devices/pda.rsi
     state: pda-prosecutor
@@ -175,6 +205,16 @@
       - NewsReaderCartridge
       - CrimeAssistCartridge
       - NanoChatCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#7c1345"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#7c1345"
+      - state: inhand-right-screen
 
 - type: entity
   parent: SyndiPDA
@@ -226,3 +266,13 @@
       - NotekeeperCartridge
       - NewsReaderCartridge
       - NanoChatCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#6f6192"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#6f6192"
+      - state: inhand-right-screen

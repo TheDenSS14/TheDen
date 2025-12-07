@@ -261,6 +261,16 @@
     state: pda
   - type: PdaBorderColor
     borderColor: "#717059"
+  - type: Item # TheDen # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#717059"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#717059"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -276,6 +286,16 @@
     accentVColor: "#949137"
   - type: Icon
     state: pda-interntech
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#717059"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#717059"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BaseMedicalPDA
@@ -300,6 +320,16 @@
   - type: GuideHelp
     guides:
     - MedicalDoctor
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#717059"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#717059"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -323,6 +353,16 @@
       - CrimeAssistCartridge
       - SecWatchCartridge
       - NanoChatCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#717059"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#717059"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -338,6 +378,16 @@
     accentVColor: "#8900c9"
   - type: Icon
     state: pda-internsci
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#717059"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#717059"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -353,6 +403,16 @@
     accentVColor: "#00cc35"
   - type: Icon
     state: pda-internservice
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#717059"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#717059"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -369,6 +429,16 @@
     state: pda-cook
   - type: ReplacementAccent # for random sentience event
     accent: italian
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d7d7d0"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#d7d7d0"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -384,6 +454,16 @@
     accentVColor: "#00cc35"
   - type: Icon
     state: pda-hydro
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#44843c"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#44843c"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -403,7 +483,7 @@
         tags:
         - Write
   - type: PdaBorderColor
-    borderColor: "#C18199"
+    borderColor: "#ffc0ff"
   - type: Icon
     state: pda-clown
   - type: Slippery
@@ -433,6 +513,16 @@
         density: 5
         mask:
         - ItemMask
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C18199"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#C18199"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -478,6 +568,16 @@
   - type: Icon
     state: pda-mime
   - type: Muted # for random sentience event
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d7d7d0"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#d7d7d0"
+      - state: inhand-right-screen
 
 - type: entity
   name: chaplain PDA
@@ -514,6 +614,16 @@
       - GlimmerMonitorCartridge
       - NanoChatCartridge # DeltaV
       - PsiWatchCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#333333"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#333333"
+      - state: inhand-right-screen
 
 - type: entity
   name: logistics officer PDA # DeltaV - Logistics Department replacing Cargo
@@ -543,6 +653,16 @@
       - MailMetricsCartridge
       - NanoChatCartridge
       - StockTradingCartridge # DeltaV - StockTrading
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#e39751"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#e39751"
+      - state: inhand-right-screen
 
 - type: entity
   name: LO special PDA unit # DeltaV - Logistics Department replacing Cargo
@@ -560,7 +680,7 @@
         tags:
         - Write
   - type: PdaBorderColor
-    borderColor: "#e39751"
+    borderColor: "#003466" # TheDen - It wasn't that color
     accentVColor: "#a23e3e"
   - type: Icon
     state: pda-qmnano
@@ -572,6 +692,16 @@
       - MailMetricsCartridge # DeltaV - MailMetrics courier tracker
       - StockTradingCartridge # DeltaV - StockTrading
       - NanoChatCartridge # DeltaV
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#003466"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#003466"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -593,6 +723,16 @@
     - NewsReaderCartridge
     - StockTradingCartridge # DeltaV - StockTrading
     - NanoChatCartridge # DeltaV
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#e39751"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#e39751"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -616,6 +756,16 @@
       - NewsReaderCartridge
       - AstroNavCartridge
       - NanoChatCartridge # DeltaV
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#af9366"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#af9366"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -630,6 +780,16 @@
     borderColor: "#333333"
   - type: Icon
     state: pda-bartender
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#333333"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#333333"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -658,6 +818,16 @@
       - GlimmerMonitorCartridge
       - NanoChatCartridge
       - PsiWatchCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#858585"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#858585"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -686,6 +856,16 @@
       - CrimeAssistCartridge
       - SecWatchCartridge
       - NanoChatCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#6f6192"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#6f6192"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -700,6 +880,16 @@
     borderColor: "#5D2D56"
   - type: Icon
     state: pda-janitor
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#5D2D56"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#5D2D56"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -727,6 +917,16 @@
     staminaCost: 5
     soundHit:
       collection: MetalThud
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#7C5D00"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#7C5D00"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -744,9 +944,19 @@
         tags:
         - Write
   - type: PdaBorderColor
-    borderColor: "#7C5D00"
+    borderColor: "#003466" # TheDen - It wasn't that color
   - type: Icon
     state: pda-captainnano
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#003466"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#003466"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -768,6 +978,16 @@
     accentHColor: "#447987"
   - type: Icon
     state: pda-hop
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#789876"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#789876"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -785,10 +1005,20 @@
         tags:
         - Write
   - type: PdaBorderColor
-    borderColor: "#789876"
+    borderColor: "#003466" # TheDen - It wasn't that color
     accentHColor: "#447987"
   - type: Icon
     state: pda-hopnano
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#003466"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#003466"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -806,10 +1036,20 @@
           tags:
           - Write
   - type: PdaBorderColor
-    borderColor: "#949137"
+    borderColor: "#ceca2b" # TheDen - It wasn't that color
     accentHColor: "#447987"
   - type: Icon
     state: pda-ce
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ceca2b"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#ceca2b"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -827,10 +1067,20 @@
         tags:
         - Write
   - type: PdaBorderColor
-    borderColor: "#949137"
+    borderColor: "#003466" # TheDen - It wasn't that color
     accentHColor: "#447987"
   - type: Icon
     state: pda-cenano
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#003466"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#003466"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -842,10 +1092,20 @@
     id: EngineeringIDCard
     state: pda-engineer
   - type: PdaBorderColor
-    borderColor: "#949137"
-    accentVColor: "#A32D26"
+    borderColor: "#ceca2b" # TheDen - It wasn't that color
+    accentVColor: "#cc4242" # TheDen - It wasn't that color
   - type: Icon
     state: pda-engineer
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ceca2b"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#ceca2b"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BaseMedicalPDA
@@ -868,6 +1128,16 @@
     accentVColor: "#447987"
   - type: Icon
     state: pda-cmo
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d7d7d0"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#d7d7d0"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BaseMedicalPDA
@@ -885,11 +1155,21 @@
         tags:
         - Write
   - type: PdaBorderColor
-    borderColor: "#d7d7d0"
+    borderColor: "#003466" # TheDen - It wasn't that color
     accentHColor: "#447987"
     accentVColor: "#447987"
   - type: Icon
     state: pda-cmonano
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#003466"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#003466"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BaseMedicalPDA
@@ -914,6 +1194,16 @@
   - type: GuideHelp
     guides:
     - MedicalDoctor
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d7d7d0"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#d7d7d0"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BaseMedicalPDA
@@ -943,6 +1233,16 @@
       - NewsReaderCartridge
       - MedTekCartridge
       - NanoChatCartridge # DeltaV
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#2c3450"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#2c3450"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BaseMedicalPDA
@@ -964,6 +1264,16 @@
     accentVColor: "#B34200"
   - type: Icon
     state: pda-chemistry
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d7d7d0"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#d7d7d0"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -994,6 +1304,16 @@
       - GlimmerMonitorCartridge
       - NanoChatCartridge # DeltaV
       - PsiWatchCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d7d7d0"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#d7d7d0"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1011,7 +1331,7 @@
         tags:
         - Write
   - type: PdaBorderColor
-    borderColor: "#d7d7d0"
+    borderColor: "#003466" # TheDen - It wasn't that color
     accentHColor: "#447987"
     accentVColor: "#8900c9"
   - type: Icon
@@ -1024,6 +1344,16 @@
       - GlimmerMonitorCartridge
       - NanoChatCartridge
       - PsiWatchCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#003466"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#003466"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1046,6 +1376,16 @@
       - NewsReaderCartridge
       - GlimmerMonitorCartridge
       - NanoChatCartridge # DeltaV
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d7d7d0"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#d7d7d0"
+      - state: inhand-right-screen
 
 - type: entity
   parent: SciencePDA
@@ -1057,10 +1397,20 @@
     id: RoboticsIDCard
     state: pda-robotics
   - type: PdaBorderColor
-    borderColor: "#d7d7d0"
+    borderColor: "#484848" # TheDen - It wasn't that color
     accentVColor: "#952004"
   - type: Icon
     state: pda-robotics
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#484848"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#484848"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1091,6 +1441,16 @@
     - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
     - LogProbeCartridge
     - NanoChatCartridge # DeltaV
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#A32D26"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#A32D26"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1108,7 +1468,7 @@
         tags:
         - Write
   - type: PdaBorderColor
-    borderColor: "#A32D26"
+    borderColor: "#003466" # TheDen - It wasn't that color
     accentHColor: "#447987"
   - type: Icon
     state: pda-hosnano
@@ -1120,6 +1480,16 @@
       - CrimeAssistCartridge
       - SecWatchCartridge
       - NanoChatCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#003466"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#003466"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1143,6 +1513,16 @@
       - CrimeAssistCartridge
       - SecWatchCartridge
       - NanoChatCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#A32D26"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#A32D26"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1165,6 +1545,16 @@
       - CrimeAssistCartridge
       - SecWatchCartridge
       - NanoChatCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#A32D26"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#A32D26"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1193,6 +1583,16 @@
       - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
       - LogProbeCartridge
       - NanoChatCartridge # DeltaV
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#00842e"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#00842e"
+      - state: inhand-right-screen
 
 - type: entity
   parent: CentcomPDA
@@ -1258,6 +1658,16 @@
     handheld: true
     bank: 1
     program: 2
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#333333"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#333333"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1269,10 +1679,20 @@
     id: AtmosIDCard
     state: pda-atmos
   - type: PdaBorderColor
-    borderColor: "#949137"
+    borderColor: "#ceca2b" # TheDen - It wasn't that color
     accentVColor: "#447987"
   - type: Icon
     state: pda-atmos
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ceca2b"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#ceca2b"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1287,6 +1707,16 @@
     borderColor: "#288e4d"
   - type: Icon
     state: pda-clear
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#288e4d"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#288e4d"
+      - state: inhand-right-screen
 
 - type: entity
   parent: [ BasePDA, BaseRivalCompanyContraband ]
@@ -1316,6 +1746,16 @@
           - Cartridge
   - type: ClothingAddFaction
     faction: Syndicate
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#891417"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#891417"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1344,6 +1784,16 @@
       - NanoChatCartridge # DeltaV
       - MedTekCartridge
       - AstroNavCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#A32D26"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#A32D26"
+      - state: inhand-right-screen
 
 - type: entity
   parent: ERTLeaderPDA
@@ -1416,6 +1866,16 @@
     borderColor: "#A32D26"
     accentHColor: "#447987"
     accentVColor: "#447987"
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#A32D26"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#A32D26"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BaseMedicalPDA
@@ -1437,6 +1897,16 @@
     accentVColor: "#447987"
   - type: Icon
     state: pda-medical
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d7d7d0"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#d7d7d0"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1464,6 +1934,16 @@
     - NewsReaderCartridge
     - StockTradingCartridge # DeltaV - StockTrading
     - NanoChatCartridge # DeltaV
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3f3f74"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#3f3f74"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1478,6 +1958,16 @@
     borderColor: "#ffe685"
   - type: Icon
     state: pda-zookeeper
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffe685"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#ffe685"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1493,6 +1983,16 @@
     accentVColor: "#390504"
   - type: Icon
     state: pda-boxer
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#333333"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#333333"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1516,6 +2016,16 @@
     - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
     - LogProbeCartridge
     - NanoChatCartridge # DeltaV
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#774705"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#774705"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BaseMedicalPDA
@@ -1547,6 +2057,16 @@
     - CrimeAssistCartridge # DeltaV
     - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
     - NanoChatCartridge # DeltaV
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#A32D26"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#A32D26"
+      - state: inhand-right-screen
 
 - type: entity
   parent: ClownPDA
@@ -1570,6 +2090,16 @@
         tags:
         - Write
   - type: Unremoveable
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#1c8f4d"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#1c8f4d"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1581,10 +2111,20 @@
     id: SeniorEngineerIDCard
     state: pda-seniorengineer
   - type: PdaBorderColor
-    borderColor: "#949137"
+    borderColor: "#ceca2b" # TheDen - It wasn't that color
     accentVColor: "#CD6900"
   - type: Icon
     state: pda-seniorengineer
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ceca2b"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#ceca2b"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1608,6 +2148,16 @@
     - NewsReaderCartridge
     - NanoChatCartridge
     - PsiWatchCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d7d7d0"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#d7d7d0"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BaseMedicalPDA
@@ -1630,6 +2180,16 @@
     accentVColor: "#B34200"
   - type: Icon
     state: pda-seniorphysician
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d7d7d0"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#d7d7d0"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -1653,6 +2213,16 @@
       - CrimeAssistCartridge
       - SecWatchCartridge
       - NanoChatCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#A32D26"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#A32D26"
+      - state: inhand-right-screen
 
 - type: entity
   parent: SyndiPDA
@@ -1665,6 +2235,16 @@
     state: pda-pirate
   - type: Icon
     state: pda-pirate
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#333333"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#333333"
+      - state: inhand-right-screen
 
 - type: entity
   parent: [ BaseMedicalPDA, BaseRivalCompanyContraband ]
@@ -1701,3 +2281,13 @@
           - Cartridge
   - type: ClothingAddFaction
     faction: Syndicate
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#891417"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#891417"
+      - state: inhand-right-screen

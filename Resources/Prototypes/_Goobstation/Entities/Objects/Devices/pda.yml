@@ -27,3 +27,13 @@
     state: pda-blueshield
   - type: PdaBorderColor
     borderColor: "#3c94c5"
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3c94c5"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#3c94c5"
+      - state: inhand-right-screen
