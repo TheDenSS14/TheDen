@@ -37,7 +37,9 @@
 // SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
 // SPDX-FileCopyrightText: 2024 Łukasz Mędrek <lukasz@lukaszm.xyz>
 // SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
 // SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 tetkala <appleorange64@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -80,33 +82,40 @@ using Content.Shared.Weapons.Melee;
 using Content.Shared.Zombies;
 using Content.Shared.Prying.Components;
 using Robust.Shared.Audio.Systems;
-using Content.Shared.Traits.Assorted.Components;
-using Content.Server.Abilities.Psionics;
+using Content.Shared.Ghost.Roles.Components;
+using Content.Shared.NPC.Components;
+using Content.Shared.Tag;
+using Content.Shared.Standing;
+using Content.Shared.Bed.Sleep;
+using Content.Shared.Stunnable;
+using Content.Shared._EinsteinEngines.Silicon.Components;
+using Robust.Shared.Prototypes;
 
-namespace Content.Server.Zombies
+namespace Content.Server.Zombies;
+
+/// <summary>
+///     Handles zombie propagation and inherent zombie traits
+/// </summary>
+/// <remarks>
+///     Don't Shitcode Open Inside
+/// </remarks>
+public sealed partial class ZombieSystem
 {
-    /// <summary>
-    ///     Handles zombie propagation and inherent zombie traits
-    /// </summary>
-    /// <remarks>
-    ///     Don't Shitcode Open Inside
-    /// </remarks>
-    public sealed partial class ZombieSystem
-    {
-        [Dependency] private readonly SharedHandsSystem _hands = default!;
-        [Dependency] private readonly ServerInventorySystem _inventory = default!;
-        [Dependency] private readonly NpcFactionSystem _faction = default!;
-        [Dependency] private readonly NPCSystem _npc = default!;
-        [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearance = default!;
-        [Dependency] private readonly IdentitySystem _identity = default!;
-        [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
-        [Dependency] private readonly SharedCombatModeSystem _combat = default!;
-        [Dependency] private readonly IChatManager _chatMan = default!;
-        [Dependency] private readonly MindSystem _mind = default!;
-        [Dependency] private readonly SharedRoleSystem _roles = default!;
-        [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
-        [Dependency] private readonly SharedAudioSystem _audio = default!;
-        [Dependency] private readonly PsionicAbilitiesSystem _psionic = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly IChatManager _chatMan = default!;
+    [Dependency] private readonly SharedCombatModeSystem _combat = default!;
+    [Dependency] private readonly NpcFactionSystem _faction = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearance = default!;
+    [Dependency] private readonly IdentitySystem _identity = default!;
+    [Dependency] private readonly ServerInventorySystem _inventory = default!;
+    [Dependency] private readonly MindSystem _mind = default!;
+    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
+    [Dependency] private readonly NPCSystem _npc = default!;
+    [Dependency] private readonly SharedRoleSystem _roles = default!;
+    [Dependency] private readonly StandingStateSystem _standing = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly ZombieTumorOrganSystem _zombieTumor = default!;
 
         /// <summary>
         /// Handles an entity turning into a zombie when they die or go into crit
@@ -243,11 +252,15 @@ namespace Content.Server.Zombies
             //The zombie gets the assigned damage weaknesses and strengths
             _damageable.SetDamageModifierSetId(target, "Zombie");
 
-            //This makes it so the zombie doesn't take bloodloss damage.
-            //NOTE: they are supposed to bleed, just not take damage
-            _bloodstream.SetBloodLossThreshold(target, 0f);
-            //Give them zombie blood
+        //This makes it so the zombie doesn't take bloodloss damage.
+        //NOTE: they are supposed to bleed, just not take damage
+        _bloodstream.SetBloodLossThreshold(target, 0f);
+        //Give them zombie blood (but IPCs keep their Oil)
+        // Only change blood if NOT an IPC (doesn't have Silicon component)
+        if (!HasComp<SiliconComponent>(target) && TryComp<BloodstreamComponent>(target, out var bloodstreamComp))
+        {
             _bloodstream.ChangeBloodReagent(target, zombiecomp.NewBloodReagent);
+        }
 
             //This is specifically here to combat insuls, because frying zombies on grilles is funny as shit.
             _inventory.TryUnequip(target, "gloves", true, true);
@@ -264,10 +277,16 @@ namespace Content.Server.Zombies
             if (TryComp<TemperatureComponent>(target, out var tempComp))
                 tempComp.ColdDamage.ClampMax(0);
 
-            //Heals the zombie from all the damage it took while human
-            if (TryComp<DamageableComponent>(target, out var damageablecomp))
-                _damageable.SetAllDamage(target, damageablecomp, 0);
-            _mobState.ChangeMobState(target, MobState.Alive);
+        //Heals the zombie from all the damage it took while human
+        if (TryComp<DamageableComponent>(target, out var damageablecomp))
+            _damageable.SetAllDamage(target, damageablecomp, 0);
+        _mobState.ChangeMobState(target, MobState.Alive);
+
+        // Force zombie to wake up and stand - remove sleep/knockdown status
+        RemComp<SleepingComponent>(target);
+        RemComp<ForcedSleepingComponent>(target);
+        RemComp<KnockedDownComponent>(target);
+        _standing.Stand(target, force: true);
 
             _faction.ClearFactions(target, dirty: false);
             _faction.AddFaction(target, "Zombie");
@@ -324,11 +343,22 @@ namespace Content.Server.Zombies
             // Requires deferral because this is (probably) the event which called ZombifyEntity in the first place.
             RemCompDeferred<PendingZombieComponent>(target);
 
-            //zombie gamemode stuff
-            var ev = new EntityZombifiedEvent(target);
-            RaiseLocalEvent(target, ref ev, true);
-            //zombies get slowdown once they convert
-            _movementSpeedModifier.RefreshMovementSpeedModifiers(target);
+        //zombie gamemode stuff
+        var ev = new EntityZombifiedEvent(target);
+        RaiseLocalEvent(target, ref ev, true);
+        //zombies get slowdown once they convert
+        _movementSpeedModifier.RefreshMovementSpeedModifiers(target);
+
+        // If this zombie doesn't already have a tumor organ (e.g., from romerol infection),
+        // spawn one immediately so they can spread the infection
+        if (!_zombieTumor.HasTumorOrgan(target))
+        {
+            _zombieTumor.SpawnTumorOrgan(target);
         }
+
+        //Need to prevent them from getting an item, they have no hands.
+        // Also prevents them from becoming a Survivor. They're undead.
+        _tag.AddTag(target, InvalidForGlobalSpawnSpellTag);
+        _tag.AddTag(target, CannotSuicideTag);
     }
 }

@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
 # SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -20,3 +21,4 @@ metabolizer-type-vampiric = Vampiric
 metabolizer-type-liquorlifeline = Liquor Lifeline
 metabolizer-type-shadowkin = Shadowkin
 metabolizer-type-plasmaman = Plasmaman
+metabolizer-type-zombie-tumor = Zombie Tumor

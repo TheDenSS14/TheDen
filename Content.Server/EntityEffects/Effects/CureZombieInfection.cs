@@ -3,8 +3,8 @@
 // SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 TemporalOroboros <temporaloroboros@gmail.com>
 // SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
+// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -37,9 +37,23 @@ public sealed partial class CureZombieInfection : EntityEffect
         entityManager.RemoveComponent<ZombifyOnDeathComponent>(args.TargetEntity);
         entityManager.RemoveComponent<PendingZombieComponent>(args.TargetEntity);
 
+        // Cure tumor infection if in early stages (before tumor fully forms)
+        if (entityManager.TryGetComponent<ZombieTumorInfectionComponent>(args.TargetEntity, out var infection))
+        {
+            // Only cure if no tumor has formed yet (Incubation or Early stage)
+            // Once the tumor is formed (TumorFormed or Advanced), it requires surgery
+            if (infection.Stage == ZombieTumorInfectionStage.Incubation ||
+                infection.Stage == ZombieTumorInfectionStage.Early)
+            {
+                entityManager.RemoveComponent<ZombieTumorInfectionComponent>(args.TargetEntity);
+            }
+        }
+
         if (Innoculate)
         {
             entityManager.EnsureComponent<ZombieImmuneComponent>(args.TargetEntity);
+            // Also make immune to tumor infections
+            entityManager.EnsureComponent<ZombieTumorImmuneComponent>(args.TargetEntity);
         }
     }
 }
