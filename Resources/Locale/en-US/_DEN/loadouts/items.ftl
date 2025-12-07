@@ -61,6 +61,9 @@ loadout-name-LoadoutItemCaneWalkingQuad = quad cane (colorable)
 loadout-name-LoadoutServiceItemGoldenPlunger = golden plunger
 loadout-name-LoadoutSpaceCash1000 = spesos [1000]
 
+# tools
+loadout-name-LoadoutTailorsKnife = tailor's knife (colorable)
+
 character-item-group-LoadoutPrescriptions = Prescription Medications
 character-item-group-LoadoutPrescriptionPainkiller = Painkillers
 character-item-group-LoadoutPrescriptionAnxiolytic = Anxiolytics

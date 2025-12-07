@@ -5,28 +5,65 @@
 
 - type: entity
   parent: BaseKnife
+  id: BaseKnifeSpinnable # Don't use this for items that actually do something mechanical when you press Z, and you have to make the animated sprites yourself
+  abstract: true
+  components:
+  - type: Sprite
+    state: icon
+  - type: ItemToggle # You can toggle spinning it around your finger, though it's just cosmetic
+    verbToggleOn: item-toggle-spin
+    verbToggleOff: item-toggle-catch
+    predictable: false
+    soundActivate:
+      path: /Audio/Effects/toss.ogg
+      params:
+        volume: -6
+        pitch: 1.1 # I'm using 1.1 for normal knives, 0.9 for large knives, and 1.3 for tiny knives
+        variation: 0.05
+    soundDeactivate:
+      path: /Audio/Effects/weak_hit2.ogg
+      params:
+        volume: -9
+        pitch: 1.1 # Same as above
+        variation: 0.05
+  - type: UseDelay
+    delay: 0.5 # This is just under one spin animation, presuming it has 8 frames that are 0.07 delay each, so you can spam Z to spin it exactly one time
+  - type: Appearance
+  - type: ToggleableVisuals
+    spriteLayer: null # Spinning it only changes the inhand sprites
+    replaceMode: true # The original inhand sprites won't remain visible when toggled
+    inhandVisuals:
+      left:
+      - state: spinning-inhand-left
+      right:
+      - state: spinning-inhand-right
+
+- type: entity
+  parent: [BaseKnifeSpinnable, BaseKnife]
   id: TailorsKnife
   name: tailor's knife
-  description: A simple, wedge-shaped knife designed to cut fabric. Short, narrow, and lacking a grip entirely.
+  description: A simple, wedge-shaped knife designed to cut fabric.
   components:
-  - type: Tag
-    tags:
-    - Knife
-  - type: MeleeWeapon
-    attackRate: 1
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/tailorsknife.rsi
+  - type: Item
+    sprite: _DEN/Objects/Weapons/Melee/tailorsknife.rsi
+  - type: MeleeWeapon # Shiv stats
     wideAnimationRotation: 180
+    attackRate: .9
+    heavyRateModifier: 1.5
+    heavyDamageBaseModifier: 1.1
+    range: 1.4
     damage:
       types:
-        Slash: 4
+        Slash: 5.5
+  - type: EmbeddableProjectile
+    removalTime: 2
+  - type: LandAtCursor
   - type: DisarmMalus
     malus: 0.225
   - type: ThrowingAngle
     angle: 180
-  - type: Sprite
-    sprite: _DEN/Objects/Weapons/Melee/tailorsknife.rsi
-    state: icon
-  - type: Item
-    sprite: _DEN/Objects/Weapons/Melee/tailorsknife.rsi
 
 - type: entity
   parent: [TailorsKnife, BaseAntiPsionicWeapon]
@@ -36,82 +73,38 @@
   components:
   - type: Sprite
     sprite: _DEN/Objects/Weapons/Melee/Mantis/mantistailorsknife.rsi
-    state: icon
   - type: Item
     sprite: _DEN/Objects/Weapons/Melee/Mantis/mantistailorsknife.rsi
   - type: MeleeWeapon
-    attackRate: .6666
-    wideAnimationRotation: -180
     damage:
       types:
-        Slash: 4 # 6 DPS (same as Shiv), or 7.5 DPS against psions
-        Holy: 1.6 # 11.25 total DPS against psionic supernaturals
-  - type: EmbeddableProjectile
-    sound: /Audio/Weapons/pierce.ogg # Just a dull thunk since it does almost no damage
+        Slash: 5.5 # 6.11 DPS (same as Shiv), or 7.64 DPS against psions (same as Crowbar)
+        Holy: 2.75 # 11.25 total DPS against psionic supernaturals
   - type: Tag
     tags:
-    - MantisBeltStorable
     - Knife
+    - MantisBeltStorable
 
 - type: entity
-  parent: [CombatKnife, BaseAntiPsionicWeapon, BaseMantisContraband]
+  parent: [BaseKnifeSpinnable, CombatKnife, BaseAntiPsionicWeapon, BaseMantisContraband]
   id: MantisMeleeKnife
   name: athame
   description: "A mnemolith knife shaped like a claw, its back lined with swordbreaker teeth--though it remains unclear who, exactly, is drawing blades against mantes. The finger ring improves grip and allows for idle spinning tricks, though they serve no tactical purpose. Deadly when wielded against psionic and otherworldly threats."
   components:
-  - type: ItemToggle # You can toggle spinning it around your finger, though it's just cosmetic
-    verbToggleOn: item-toggle-spin
-    verbToggleOff: item-toggle-catch
-    predictable: false
-    soundActivate:
-      path: /Audio/Effects/toss.ogg
-      params:
-        volume: -6
-        pitch: 1.1
-        variation: 0.05
-    soundDeactivate:
-      path: /Audio/Effects/weak_hit2.ogg
-      params:
-        volume: -9
-        pitch: 1.1
-        variation: 0.05
-  - type: UseDelay
-    delay: 0.5 # One spin
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisknife.rsi
+  - type: Item
+    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisknife.rsi
+    storedSprite: null # To override CombatKnife
   - type: MeleeWeapon
     attackRate: .6666
-    range: 1.5
-    angle: 40
-    wideAnimationRotation: -135
+    angle: 40 # Standard knife swing, here for reference
     damage:
       types:
         Slash: 10 # 15 DPS (same as CombatKnife), or 18.75 DPS against psions
         Holy: 5 # 28.13 total DPS against psionic supernaturals
-  - type: EmbeddableProjectile
-    sound: /Audio/Weapons/star_hit.ogg
-    removalTime: 2
-  - type: EmbedPassiveDamage
-  - type: Item
-    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisknife.rsi
-    storedSprite:
-      sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisknife.rsi
-      state: icon
-  - type: Sprite
-    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisknife.rsi
-  - type: Appearance
-  - type: ToggleableVisuals
-    replaceMode: true
-    spriteLayer: null
-    inhandVisuals:
-      left:
-      - state: spinning-inhand-left
-        map: ["left-spinning"]
-      right:
-      - state: spinning-inhand-right
-        map: ["right-spinning"]
-  - type: ThrowingAngle
-    angle: -135
   - type: DisarmMalus
-    malus: 0.3
+    malus: 0.3 # A third harder to disarm than CombatKnife due to the finger ring
   - type: Tag
     tags:
     - Knife
@@ -119,68 +112,29 @@
     - MantisBeltStorable
 
 - type: entity
-  parent: [CombatKnife, BaseAntiPsionicWeapon, BaseMantisContraband]
+  parent: [BaseKnifeSpinnable, CombatKnife, BaseAntiPsionicWeapon, BaseMantisContraband]
   id: MantisMeleeSickle
   name: boline
   description: "A heavy mnemolith sickle set with an eidolite eye, crafted as the athame's more savage counterpart, suited for sweeping, methodical strikes. The finger ring allows for idle spinning tricks, though they serve no tactical purpose. Deadly when wielded against psionic and otherworldly threats."
   components:
-  - type: ItemToggle # You can toggle spinning it around your finger, though it's just cosmetic
-    verbToggleOn: item-toggle-spin
-    verbToggleOff: item-toggle-catch
-    predictable: false
-    soundActivate:
-      path: /Audio/Effects/toss.ogg
-      params:
-        volume: -6
-        pitch: 0.9
-        variation: 0.05
-    soundDeactivate:
-      path: /Audio/Effects/weak_hit2.ogg
-      params:
-        volume: -9
-        pitch: 0.9
-        variation: 0.05
-  - type: UseDelay
-    delay: 0.5 # One spin
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantissickle.rsi
+  - type: Item
+    size: Normal
+    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantissickle-inhands-64x.rsi
+    storedSprite: null # To override CombatKnife
   - type: MeleeWeapon
     attackRate: 1.3333 # Twice as slow as the athame, but twice the damage, so same DPS
-    range: 1.5 # Same range as the athame
     angle: 60 # Swings a little wider wider than the athame, but easier to disarm
-    wideAnimationRotation: -135
     damage:
       types:
         Slash: 20 # 15 DPS (same as CombatKnife), or 18.75 DPS against psions
         Holy: 10 # 28.13 total DPS against psionic supernaturals
-  - type: EmbeddableProjectile
-    sound: /Audio/Weapons/star_hit.ogg
-    removalTime: 2
-  - type: EmbedPassiveDamage
-  - type: Item
-    size: Normal
-    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantissickle-inhands-64x.rsi
-    storedSprite:
-      sprite: _DEN/Objects/Weapons/Melee/Mantis/mantissickle.rsi
-      state: icon
-  - type: Sprite
-    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantissickle.rsi
-  - type: Appearance
-  - type: ToggleableVisuals
-    replaceMode: true
-    spriteLayer: null
-    inhandVisuals:
-      left:
-      - state: spinning-inhand-left
-        map: ["left-spinning"]
-      right:
-      - state: spinning-inhand-right
-        map: ["right-spinning"]
-  - type: ThrowingAngle
-    angle: -135
+  - type: DisarmMalus
+    malus: 0.1125 # Half as hard to disarm as CombatKnife, too big for the finger ring to help
   - type: MeleeThrowOnHit # Just a tiny knockback to look cool, barely moves anything
     speed: 3
     lifetime: 0.025
-  - type: DisarmMalus
-    malus: 0
   - type: Tag
     tags:
     - Knife
