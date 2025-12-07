@@ -153,7 +153,7 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 unknown
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   id: BaseStationEvent
@@ -861,7 +861,7 @@
   id: SleeperAgents
   components:
   - type: StationEvent
-    earliestStart: 25
+    earliestStart: 30
     weight: 9 # Den
     minimumPlayers: 15
     reoccurrenceDelay: 30
@@ -872,7 +872,7 @@
     - prefRoles: [ TraitorSleeper ]
       fallbackRoles: [ Traitor ]
       min: 1
-      max: 5
+      max: 2
       playerRatio: 5
       blacklist:
         components:
@@ -1075,7 +1075,7 @@
   components:
   - type: StationEvent
     weight: 2.5
-    earliestStart: 25
+    earliestStart: 30
     reoccurrenceDelay: 20
     minimumPlayers: 15
     duration: null

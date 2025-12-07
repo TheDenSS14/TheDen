@@ -60,19 +60,23 @@
   description: "A mnemolith knife shaped like a claw, its back lined with swordbreaker teeth--though it remains unclear who, exactly, is drawing blades against mantes. The finger ring improves grip and allows for idle spinning tricks, though they serve no tactical purpose. Deadly when wielded against psionic and otherworldly threats."
   components:
   - type: ItemToggle # You can toggle spinning it around your finger, though it's just cosmetic
+    verbToggleOn: item-toggle-spin
+    verbToggleOff: item-toggle-catch
     predictable: false
     soundActivate:
       path: /Audio/Effects/toss.ogg
       params:
-        volume: -4
+        volume: -6
+        pitch: 1.1
         variation: 0.05
     soundDeactivate:
       path: /Audio/Effects/weak_hit2.ogg
       params:
-        volume: -4
+        volume: -9
+        pitch: 1.1
         variation: 0.05
   - type: UseDelay
-    delay: 1
+    delay: 0.5 # One spin
   - type: MeleeWeapon
     attackRate: .6666
     range: 1.5
@@ -121,19 +125,23 @@
   description: "A heavy mnemolith sickle set with an eidolite eye, crafted as the athame's more savage counterpart, suited for sweeping, methodical strikes. The finger ring allows for idle spinning tricks, though they serve no tactical purpose. Deadly when wielded against psionic and otherworldly threats."
   components:
   - type: ItemToggle # You can toggle spinning it around your finger, though it's just cosmetic
+    verbToggleOn: item-toggle-spin
+    verbToggleOff: item-toggle-catch
     predictable: false
     soundActivate:
       path: /Audio/Effects/toss.ogg
       params:
-        volume: -4
+        volume: -6
+        pitch: 0.9
         variation: 0.05
     soundDeactivate:
       path: /Audio/Effects/weak_hit2.ogg
       params:
-        volume: -4
+        volume: -9
+        pitch: 0.9
         variation: 0.05
   - type: UseDelay
-    delay: 1
+    delay: 0.5 # One spin
   - type: MeleeWeapon
     attackRate: 1.3333 # Twice as slow as the athame, but twice the damage, so same DPS
     range: 1.5 # Same range as the athame

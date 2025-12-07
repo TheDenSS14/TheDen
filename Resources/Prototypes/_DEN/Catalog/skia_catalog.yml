@@ -1,0 +1,29 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: listing
+  id: SkiaMassSleep
+  name: mass-sleep-power-description
+  description: mass-sleep-initialization-feedback
+  productAction: ActionMassSleep
+  cost:
+    SoulSilk: 4
+  categories:
+  - SkiaAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: SkiaShadeskip
+  name: action-name-shadeskip
+  description: action-description-shadeskip
+  productAction: ActionShadeskip
+  cost:
+    SoulSilk: 2
+  categories:
+  - SkiaAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1

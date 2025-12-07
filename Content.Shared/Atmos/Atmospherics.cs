@@ -83,7 +83,7 @@ namespace Content.Shared.Atmos
         ///     75ºC in K
         ///     This is used to initialize roundstart sauna rooms.
         /// </summary>
-        public const float SaunaTemp = 348.15f;
+        public const float SaunaTemp = 315.15f;
 
         /// <summary>
         ///     Do not allow any gas mixture temperatures to exceed this number. It is occasionally possible

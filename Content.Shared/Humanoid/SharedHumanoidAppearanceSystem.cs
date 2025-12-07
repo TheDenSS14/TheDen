@@ -19,6 +19,7 @@
 // SPDX-FileCopyrightText: 2025 Aikakakah
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
+// SPDX-FileCopyrightText: 2025 Shaman
 // SPDX-FileCopyrightText: 2025 Tabitha
 // SPDX-FileCopyrightText: 2025 Timfa
 // SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -153,7 +154,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));
 
-        if (component.DisplayPronouns != null)
+        if (!string.IsNullOrWhiteSpace(component.DisplayPronouns))
             args.PushText(Loc.GetString("humanoid-appearance-component-examine-pronouns", ("user", identity), ("pronouns", component.DisplayPronouns)));
     }
 

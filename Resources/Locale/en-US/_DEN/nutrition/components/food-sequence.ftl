@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: MIT
@@ -49,3 +50,4 @@ food-sequence-cotton-burger-content-plushie-teddy-bear = teddy
 food-sequence-cotton-burger-content-plushie-vega = vega
 food-sequence-cotton-burger-content-plushie-vulp = vulp
 food-sequence-cotton-burger-content-plushie-mantisdoll = doll
+food-sequence-cotton-burger-content-plushie-whistler = whistler

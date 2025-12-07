@@ -67,3 +67,14 @@
     tags:
     - WhitelistChameleon
     - MantisBeltStorable
+
+- type: entity
+  parent: ClothingEyesHudEpistemicsMantis
+  id: ClothingEyesHudEpistemicsMantisFolded
+  suffix: Folded
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: folded
