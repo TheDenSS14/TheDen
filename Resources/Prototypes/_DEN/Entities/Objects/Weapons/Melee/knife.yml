@@ -42,7 +42,7 @@
   parent: [BaseKnifeSpinnable, BaseKnife]
   id: TailorsKnife
   name: tailor's knife
-  description: A simple, wedge-shaped knife designed to cut fabric.
+  description: "A simple, wedge-shaped knife designed to cut fabric. The hole in the handle is just big enough to spin it around your finger, though this serves no purpose."
   components:
   - type: ItemToggle
     soundActivate:
@@ -82,7 +82,7 @@
   parent: [TailorsKnife, BaseAntiPsionicWeapon]
   id: MantisTailorsKnife
   name: ravel
-  description: "A mnemolith tailor's knife, presumably stolen from whoever designed these new uniforms. You rat."
+  description: "A mnemolith tailor's knife, presumably stolen from whoever designed these new uniforms. You rat. The hole in the handle is just big enough to spin it around your finger, though this serves no purpose."
   components:
   - type: Sprite
     sprite: _DEN/Objects/Weapons/Melee/Mantis/mantistailorsknife.rsi
