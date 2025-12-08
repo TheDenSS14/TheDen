@@ -34,6 +34,10 @@ public sealed class BluespacePlushiePatchSystem : EntitySystem
     [Dependency] private readonly SharedUserInterfaceSystem _interfaceSystem = default!;
     [Dependency] private readonly SharedStorageSystem _storageSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
+    [Dependency] private readonly SharedItemSystem _itemSystem = default!;
+
+    private ProtoId<ItemSizePrototype> hugeItemSize = "Huge";
+    private ProtoId<ItemSizePrototype> ginormousItemSize = "Ginormous";
 
     public override void Initialize()
     {
@@ -106,13 +110,18 @@ public sealed class BluespacePlushiePatchSystem : EntitySystem
         EnsureComp<AllowsSleepInsideComponent>(target);
 
         storage.Container = container;
-        storage.Grid = new() { new(0, 0, 5, 4) };
-        _storageSystem.SetMaxItemSize(target, _proto.Index<ItemSizePrototype>("Huge"));
+        storage.Grid = patchComp.InventorySize;
+        _storageSystem.SetMaxItemSize(target, _proto.Index(patchComp.MaxItemSize));
 
         _interfaceSystem.SetUi(
             target,
             StorageComponent.StorageUiKey.Key,
             new InterfaceData("StorageBoundUserInterface"));
+
+        _itemSystem.SetSize(target, _proto.Index(patchComp.PlushieItemSize));
+        _itemSystem.SetShape(target, patchComp.ItemShape);
+
+        _containerSystem.TryRemoveFromContainer(target, true);
 
         _popupSystem.PopupEntity(Loc.GetString("bluespace-plushie-patch-applied", ("target", target)), user);
         _metaDataSystem.SetEntityName(target, "bluespace " + Identity.Name(target, EntityManager));
