@@ -140,9 +140,17 @@
   category: TraitsSpeechLanguages
   points: -2
   requirements:
-    - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterTraitRequirement
+        traits:
+        - LatentPsychic
+      - !type:CharacterJobRequirement
+        jobs:
+        - Chaplain
+        - Librarian
+        - ResearchDirector
+        - ForensicMantis
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
