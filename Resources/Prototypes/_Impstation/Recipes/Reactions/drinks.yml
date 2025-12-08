@@ -3,14 +3,237 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 oberonics
 # SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 pocl.v
 # SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: reaction
+  id: LoveTap
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    Rum:
+      amount: 1
+    RootBeer:
+      amount: 9
+  products:
+    LoveTap: 10
+
+- type: reaction
+  id: Reaganomics
+  requiredMixerCategories:
+    - Shake
+  reactants:
+    THC:
+      amount: 1
+    Nicotine:
+      amount: 1
+    Lemonade:
+      amount: 1
+    Vodka:
+      amount: 2
+  products:
+    Reaganomics: 5
+
+- type: reaction
+  id: GatorWine
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    LemonLimeBitters: # lemon asterade replaced with lemon lime bitters
+      amount: 1
+    Wine:
+      amount: 1
+  products:
+    GatorWine: 2
+
+- type: reaction #if this recipe ever causes test fail again you should just kill her
+  id: Rotgut
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    Water:
+      amount: 1
+    Sugar:
+      amount: 4
+    Nicotine:
+      amount: 5
+  products:
+    Rotgut: 10
+
+- type: reaction
+  id: BumWine
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    Wine:
+      amount: 2
+    Sugar:
+      amount: 1
+    Water:
+      amount: 3
+  products:
+    BumWine: 5
+
+- type: reaction
+  id: VoxRocks
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    Dylovene:
+      amount: 5
+    IcedBeer:
+      amount: 5
+  products:
+    VoxRocks: 10
+
+- type: reaction
+  id: KingSoda
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    CoconutWater:
+      amount: 1
+    IcedCoffee:
+      amount: 1.5
+    Cola:
+      amount: 0.5
+    JuiceWatermelon:
+      amount: 1
+    DrGibb:
+      amount: 1
+    IcedGreenTea:
+      amount: 1.5
+    LemonLime:
+      amount: 1
+    JuiceLime:
+      amount: 1
+    Starkist:
+      amount: 1
+    EnergyDrink:
+      amount: 1
+    IceCream:
+      amount: 2.5
+    SodaWater:
+      amount: 1
+    SpaceMountainWind:
+      amount: 1
+    SpaceUp:
+      amount: 1
+    TonicWater:
+      amount: 1
+    Tea:
+      amount: 1
+    RootBeerFloat:
+      amount: 1.5
+  products:
+    KingSoda: 20
+
+- type: reaction
+  id: JungleJuice
+  requiredMixerCategories:
+    - Shake
+  reactants:
+    Beer:
+      amount: 0.5
+    ManlyDorf:
+      amount: 1.5
+    Vermouth:
+      amount: 1
+    Cognac:
+      amount: 1
+    Gin:
+      amount: 1
+    Mead:
+      amount: 1
+    Rum:
+      amount: 1
+    BraveBull:
+      amount: 1.5
+    BlackRussian:
+      amount: 1.5
+    Whiskey:
+      amount: 1
+    Wine:
+      amount: 1
+  products:
+    JungleJuice: 10
+
+- type: reaction
+  id: TheDrink
+  reactants:
+    KingSoda:
+      amount: 1
+    JungleJuice:
+      amount: 1
+  products:
+    TheDrink: 2
+
+- type: reaction
+  id: BloodierMary
+  reactants:
+    BloodyMary:
+      amount: 2
+    Blood:
+      amount: 1
+  products:
+    BloodierMary: 3
+
+- type: reaction
+  id: SalvagersSoothe
+  reactants:
+    Bicaridine:
+      amount: 1
+    Dexalin:
+      amount: 1
+    Dylovene:
+      amount: 1
+    Moonshine:
+      amount: 2
+  products:
+    SalvagersSoothe: 3
+
+- type: reaction
+  id: HummingBird
+  requiredMixerCategories:
+    - Shake
+  reactants:
+    Water:
+      amount: 4
+    Sugar:
+      amount: 1
+  products:
+    HummingBird: 5
+
+- type: reaction
+  id: DontTell
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    Hooch:
+      amount: 1
+    Moonshine:
+      amount: 1
+  products:
+    DontTell: 2
+
+- type: reaction
+  id: CottonBool
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    Fiber:
+      amount: 1
+    EnergyDrink:
+      amount: 1
+  products:
+    CottonBool: 2
+
+- type: reaction
   id: Genderfluid
   requiredMixerCategories:
-  - Shake
+    - Shake
   reactants:
     Testosterone:
       amount: 1
@@ -32,31 +255,304 @@
     ThavenBad: 2
 
 - type: reaction
+  id: StarryNight
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    BlueCuracao:
+      amount: 1
+    Vodka:
+      amount: 1
+    Plasma:
+      amount: 1
+  products:
+    StarryNight: 3
+
+- type: reaction
+  id: ZombieSlushie
+  requiredMixerCategories:
+    - Shake
+  reactants:
+    UncookedAnimalProteins:
+      amount: 1
+    Cream:
+      amount: 1
+    Ice:
+      amount: 1
+  products:
+    ZombieSlushie: 3
+
+- type: reaction
+  id: Raktaccino
+  requiredMixerCategories:
+    - Stir
+  minTemp: 370
+  reactants:
+    Coffee:
+      amount: 1
+  products:
+    Raktaccino: 1
+
+- type: reaction
+  id: ThumperDrink
+  requiredMixerCategories:
+    - Shake
+  reactants:
+    JuiceBerry:
+      amount: 1
+    JuiceApple:
+      amount: 1
+    MelonLiquor:
+      amount: 1
+  products:
+    ThumperDrink: 3
+
+- type: reaction
+  id: TheGrease
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    DontTell:
+      amount: 3
+    Slime:
+      amount: 2
+    Plasma:
+      amount: 1
+  products:
+    TheGrease: 6
+
+- type: reaction
+  id: LovePotion
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    SodaWater:
+      amount: 1
+    Sugar:
+      amount: 1
+    JuiceLemon:
+      amount: 1
+    JuiceBerry:
+      amount: 1
+  products:
+    LovePotion: 4
+
+- type: reaction
+  id: OrangeCoffee
+  requiredMixerCategories:
+    - Shake
+  reactants:
+    JuiceOrange:
+      amount: 1
+    Coffee:
+      amount: 1
+  products:
+    OrangeCoffee: 2
+
+- type: reaction
   id: FeverDream
   requiredMixerCategories:
     - Stir
   reactants:
     ShimmeringBlood:
       amount: 2
-    Absinthe:
-      amount: 1
-    Champagne:
-      amount: 1
+    DeathInTheAfternoon:
+      amount: 2
     Egg:
       amount: 1
   products:
     FeverDream: 5
 
 - type: reaction
-  id: CottonBool
+  id: LungClogger
   requiredMixerCategories:
     - Stir
   reactants:
-    Fiber:
+    SpaceUp:
       amount: 1
-    EnergyDrink:
+    Gin:
+      amount: 1
+    JuiceLime:
+      amount: 1
+    Nothing:
       amount: 1
   products:
+    LungClogger: 4
+
+- type: reaction
+  id: SleepytimeJunction
+  requiredMixerCategories:
+    - Shake
+  reactants:
+    Wine:
+      amount: 1
+    Cream:
+      amount: 1
+    JuiceBluePumpkin:
+      amount: 1
+  products:
+    SleepytimeJunction: 3
+
+- type: reaction
+  id: BreathofFreshAir
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    Dexalin:
+      amount: 1
+    SpaceMountainWind:
+      amount: 1
+    Vermouth:
+      amount: 1
+  products:
+    BreathofFreshAir: 3
+
+- type: reaction
+  id: MinotaursLament
+  reactants:
+    XenoBasher:
+      amount: 1
+    Absinthe:
+      amount: 1
+  products:
+    MinotaursLament: 2
+
+- type: reaction
+  id: Burnchamber
+  minTemp: 370
+  reactants:
+    CapsaicinOil:
+      amount: 2
+    Plasma:
+      amount: 1
+    Whiskey:
+      amount: 3
+  products:
+    Burnchamber: 6
+
+- type: reaction
+  id: WeldingCoils
+  reactants:
+    WeldingFuel:
+      amount: 1
+    Vodka:
+      amount: 2
+    LemonLimeBitters: # lemon asterade replaced with lemon lime bitters
+      amount: 3
+  products:
+    WeldingCoils: 6
+
+- type: reaction
+  id: Supermixer
+  requiredMixerCategories:
+    - Shake
+  reactants:
+    Sugar:
+      amount: 1
+    SodaWater:
+      amount: 1
+    JuiceLemon:
+      amount: 1
+  products:
+    Supermixer: 3
+
+- type: reaction
+  id: Supermixerpsych
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    Supermixer:
+      amount: 2
+    Psicodine:
+      amount: 1
+  products:
+    Supermixerpsych: 3
+
+- type: reaction
+  id: Moonrise
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    HummingBird:
+      amount: 1
+    JuiceWatermelon:
+      amount: 1
+    Cream:
+      amount: 1
+  products:
+    Moonrise: 3
+
+- type: reaction
+  id: PoorMansFrezon
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    Ice:
+      amount: 1
+    SpaceDrugs:
+      amount: 2
+    Ethanol:
+      amount: 3
+  products:
+    PoorMansFrezon: 6
+
+- type: reaction
+  id: DoubleGreen
+  requiredMixerCategories:
+    - Shake
+  reactants:
+    InsectBlood:
+      amount: 2
+    MindbreakerToxin: # uh oh!
+      amount: 2
+    Moonshine:
+      amount: 1
+  products:
+    DoubleGreen: 5
+
+- type: reaction
+  id: LiquidLunch
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    Blood:
+      amount: 3
+    Fiber:
+      amount: 1
+    UncookedAnimalProteins:
+      amount: 2
+  products:
+    LiquidLunch: 6
+
+- type: reaction
+  id: BatteryAcid
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    Rum:
+      amount: 1
+    SynthBlood:
+      amount: 1
+    DrGibb:
+      amount: 1
+    SpaceMountainWind:
+      amount: 1
+  products:
+    BatteryAcid: 4
+
+- type: reaction
+  id: AngelsKiss
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Rum:
+      amount: 1
+    SynthBlood:
+      amount: 1
+    CoffeeLiqueur:
+      amount: 1
+  products:
+    AngelsKiss: 3
     CottonBool: 2
 
 - type: reaction
