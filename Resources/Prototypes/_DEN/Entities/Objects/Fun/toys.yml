@@ -206,6 +206,19 @@
     - ClothMade
     - MantisBeltStorable
 
+- type: entity
+  parent: BaseItem
+  id: BluespacePlushiePatch
+  name: bluespace plushie patch
+  description: "A tiny bluespace pocket in the form of a fabric patch, try adding it to a plushie."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/bluespaceplushiepatch.rsi
+    state: icon
+  - type: Item
+    size: Small
+  - type: BluespacePlushiePatch
+
 # SELF-INSERT PLUSHIES
 # note: these MUST be approved by Direction - either an Owner or the Head Maintainer.
 # at this time, only maintainers and admins can ask to have self-insert items added.
@@ -246,15 +259,3 @@
       entries:
         CottonBurger: WhistlerPlushie
 
-- type: entity
-  parent: BaseItem
-  id: BluespacePlushiePatch
-  name: bluespace plushie patch
-  description: "A tiny bluespace pocket in the form of a fabric patch, try adding it to a plushie."
-  components:
-  - type: Sprite
-    sprite: _DEN/Objects/Fun/bluespaceplushiepatch.rsi
-    state: icon
-  - type: Item
-    size: Small
-  - type: BluespacePlushiePatch
