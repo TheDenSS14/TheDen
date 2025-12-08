@@ -74,7 +74,7 @@
           max: 29 # So taking 30u will give you 10 seconds of possibly scarier messages
       - !type:PopupMessage
         type: Local
-        visualType: LargeCaution
+        visualType: MediumPsionic
         messages:
           - "reagent-effect-mnemolith-megadose1"
           - "reagent-effect-mnemolith-megadose2"
@@ -101,3 +101,31 @@
         - !type:ReagentThreshold
           min: 29
           max: 44 # So taking 45u will give you 10 seconds of possibly scarier messages
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumPsionic
+        messages:
+          - "reagent-effect-mnemolith-heroicdose1"
+          - "reagent-effect-mnemolith-heroicdose2"
+          - "reagent-effect-mnemolith-heroicdose3"
+          - "reagent-effect-mnemolith-heroicdose4"
+          - "reagent-effect-mnemolith-heroicdose5"
+          - "reagent-effect-mnemolith-heroicdose6"
+          - "reagent-effect-mnemolith-heroicdose7"
+          - "reagent-effect-mnemolith-heroicdose8"
+          - "reagent-effect-mnemolith-heroicdose9"
+          - "reagent-effect-mnemolith-heroicdose10"
+          - "reagent-effect-mnemolith-heroicdose11"
+          - "reagent-effect-mnemolith-heroicdose12"
+          - "reagent-effect-mnemolith-heroicdose13"
+          - "reagent-effect-mnemolith-heroicdose14"
+          - "reagent-effect-mnemolith-heroicdose15"
+          - "reagent-effect-mnemolith-heroicdose16"
+          - "reagent-effect-mnemolith-heroicdose17"
+          - "reagent-effect-mnemolith-heroicdose18"
+          - "reagent-effect-mnemolith-heroicdose19"
+          - "reagent-effect-mnemolith-heroicdose20"
+        probability: 0.1
+        conditions:
+        - !type:ReagentThreshold
+          min: 44

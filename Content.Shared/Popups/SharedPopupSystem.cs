@@ -213,6 +213,11 @@ namespace Content.Shared.Popups
         ///     but is not life-threatening.
         /// </summary>
         Large,
-        LargeCaution
+        LargeCaution,
+
+        // TheDen - Added psychomantic popup types
+        SmallPsionic,
+        MediumPsionic,
+        LargePsionic
     }
 }

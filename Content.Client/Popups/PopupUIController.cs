@@ -23,7 +23,8 @@ public sealed class PopupUIController : UIController, IOnStateEntered<GameplaySt
     private Font _smallFont = default!;
     private Font _mediumFont = default!;
     private Font _largeFont = default!;
-    // TheDen - Added the next three
+
+    // TheDen - Added psychomantic popup types
     private Font _smallPsionicFont = default!;
     private Font _mediumPsionicFont = default!;
     private Font _largePsionicFont = default!;
@@ -38,7 +39,8 @@ public sealed class PopupUIController : UIController, IOnStateEntered<GameplaySt
         _smallFont = new VectorFont(cache.GetResource<FontResource>("/Fonts/NotoSans/NotoSans-Italic.ttf"), 10);
         _mediumFont = new VectorFont(cache.GetResource<FontResource>("/Fonts/NotoSans/NotoSans-Italic.ttf"), 12);
         _largeFont = new VectorFont(cache.GetResource<FontResource>("/Fonts/NotoSans/NotoSans-BoldItalic.ttf"), 14);
-        // TheDen - Added the next three
+
+        // TheDen - Added psychomantic popup types
         _smallPsionicFont = new VectorFont(cache.GetResource<FontResource>("/Fonts/opendyslexic/OpenDyslexic-Regular.otf"), 9);
         _mediumPsionicFont = new VectorFont(cache.GetResource<FontResource>("/Fonts/opendyslexic/OpenDyslexic-Regular.otf"), 11);
         _largePsionicFont = new VectorFont(cache.GetResource<FontResource>("/Fonts/opendyslexic/OpenDyslexic-Regular.otf"), 13);
@@ -92,7 +94,8 @@ public sealed class PopupUIController : UIController, IOnStateEntered<GameplaySt
                 font = _largeFont;
                 color = Color.Red;
                 break;
-            // TheDen - Added the next three
+
+            // TheDen - Added psychomantic popup types
             case PopupType.SmallPsionic:
                 font = _smallPsionicFont;
                 color = Color.FromHex("#C29EFF");

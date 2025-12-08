@@ -99,17 +99,23 @@
   - type: Clothing
     sprite: _DEN/Clothing/Belt/mantis_belt_ornate.rsi
 
-- type: entity # These belts contain some mantis loot if salvagers find dead mantes in space
+# These belts contain some mantis loot if salvagers find dead mantes in space
+- type: entity
   parent: ClothingBeltMantisAiry
   id: ClothingBeltMantisAiryLoot
   categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
-    - id: MantisMeleeKnife
+    - id: MantisMeleeSickle
+    - id: BoxFolderMantis
     - id: CigPackMnemolith
     - id: FlippoLighterMantis
     - id: SomberChairLeatherMantisWheelchairFolded
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: rolled
 
 - type: entity
   parent: ClothingBeltMantisDark
@@ -118,7 +124,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: MantisMeleeSickle
+    - id: MantisMeleeKnife
     - id: ClothingUniformJumpsuitMantisLoincloth
     - id: ClothingNeckMantisShackles
     - id: LeashMantis

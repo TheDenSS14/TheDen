@@ -108,9 +108,9 @@ public sealed class AssayPowerSystem : EntitySystem
         var target = args.Target;
 
         var assaySelf = Loc.GetString("assay-self", ("entity", target!.Value));
-        _popups.PopupEntity(assaySelf, user, user, PopupType.LargeCaution);
+        _popups.PopupEntity(assaySelf, user, user, PopupType.LargePsionic); // TheDen - Changed from LargeCaution to LargePsionic
 
-        var assaySelfFeedback = $"[font size=20][color=#ff0000]{assaySelf}[/color][/font]";
+        var assaySelfFeedback = $"[font=\"OpenDyslexic\" size=20][color=#C29EFF]{assaySelf}[/color][/font]"; // TheDen - Changed to resemble psychomantic
         SendDescToChat(assaySelfFeedback, session);
         return true;
     }
