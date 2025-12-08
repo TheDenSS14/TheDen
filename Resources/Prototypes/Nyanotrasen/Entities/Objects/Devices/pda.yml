@@ -12,7 +12,7 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Steven Higginbotham
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   parent: BasePDA
@@ -25,6 +25,16 @@
     state: pda-clear
   - type: Icon
     state: pda-clear
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#288e4d"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#288e4d"
+      - state: inhand-right-screen
 
 - type: entity
   parent: PrisonerPDA
@@ -56,6 +66,16 @@
       - CrimeAssistCartridge
       - SecWatchCartridge
       - NanoChatCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#A32D26"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#A32D26"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -91,6 +111,16 @@
     - NewsReaderCartridge
     - MailMetricsCartridge
     - NanoChatCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#e39751"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#e39751"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -119,6 +149,16 @@
   - type: Icon
     sprite: _DV/Objects/Devices/pda.rsi
     state: pda-martialartist
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d7d7d0"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#d7d7d0"
+      - state: inhand-right-screen
 
 - type: entity # TheDen - Changed pretty much everything
   parent: BasePDA
@@ -126,7 +166,7 @@
   name: mantis PDA
   description: "This PDA marks its bearer as a member of the Outer Chamber--a mantis, the Greek word for \"seer.\" The eye on its display seems to track whoever dares to look back. Carried in a pocket, because you couldn't bear to hang this hunk of plastic on your belt."
   components:
-  - type: Item
+  - type: Item # I gave them custom sprites so they don't need the color codes that I added later
     sprite: _DEN/Objects/Devices/pda.rsi
     heldPrefix: mantis
   - type: Clothing

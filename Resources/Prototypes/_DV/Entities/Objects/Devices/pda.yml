@@ -1,18 +1,17 @@
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2023 Tim Falken <timfalken@hotmail.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
-# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Radezolid <snappednexus@gmail.com>
-# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 Tim Falken
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Danger Revolution!
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 Milon
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 Radezolid
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Rosycup
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -55,6 +54,16 @@
     scanDelay: 1
     scanningEndSound:
       path: "/Audio/Items/Medical/healthscanner.ogg"
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#A32D26"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#A32D26"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -84,7 +93,7 @@
         tags:
         - Write
   - type: PdaBorderColor
-    borderColor: "#470823"
+    borderColor: "#6f6192" # TheDen - It wasn't that color
   - type: Icon
     sprite: _DV/Objects/Devices/pda.rsi
     state: pda-chiefjustice
@@ -95,6 +104,16 @@
       - NewsReaderCartridge
       - CrimeAssistCartridge
       - NanoChatCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#6f6192"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#6f6192"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -124,7 +143,7 @@
         tags:
         - Write
   - type: PdaBorderColor
-    borderColor: "#611528"
+    borderColor: "#6f6192"
   - type: Icon
     sprite: _DV/Objects/Devices/pda.rsi
     state: pda-clerk
@@ -135,6 +154,16 @@
       - NewsReaderCartridge
       - CrimeAssistCartridge
       - NanoChatCartridge # DeltaV
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#6f6192"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#6f6192"
+      - state: inhand-right-screen
 
 - type: entity
   parent: BasePDA
@@ -164,7 +193,7 @@
         tags:
         - Write
   - type: PdaBorderColor
-    borderColor: "#6f6192"
+    borderColor: "#7c1345" # TheDen - It wasn't that color
   - type: Icon
     sprite: _DV/Objects/Devices/pda.rsi
     state: pda-prosecutor
@@ -175,6 +204,16 @@
       - NewsReaderCartridge
       - CrimeAssistCartridge
       - NanoChatCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#7c1345"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#7c1345"
+      - state: inhand-right-screen
 
 - type: entity
   parent: SyndiPDA
@@ -226,3 +265,13 @@
       - NotekeeperCartridge
       - NewsReaderCartridge
       - NanoChatCartridge
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#6f6192"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#6f6192"
+      - state: inhand-right-screen

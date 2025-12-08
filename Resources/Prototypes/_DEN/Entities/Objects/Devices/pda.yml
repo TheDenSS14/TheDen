@@ -26,6 +26,16 @@
     state: pda-centcom
   - type: PdaBorderColor
     borderColor: "#00842e"
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#00842e"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#00842e"
+      - state: inhand-right-screen
 
 - type: entity
   parent: CentcomPDA
@@ -49,3 +59,13 @@
     state: pda-centcom
   - type: PdaBorderColor
     borderColor: "#00842e"
+  - type: Item # TheDen
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#00842e"
+      - state: inhand-left-screen
+      right:
+      - state: inhand-right
+        color: "#00842e"
+      - state: inhand-right-screen
