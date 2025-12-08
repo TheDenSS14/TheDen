@@ -69,7 +69,7 @@ reagent-effect-mnemolith-megadose18 = See me.
 reagent-effect-mnemolith-megadose19 = I remember you.
 reagent-effect-mnemolith-megadose20 = Your eyes roll back.
 
-# 44+ units (large psychomantic messages)
+# 44+ units (medium psychomantic messages)
 reagent-effect-mnemolith-heroicdose1 = DO NOT BE FRIGHTENED.
 reagent-effect-mnemolith-heroicdose2 = WE ARE THE SAME THING.
 reagent-effect-mnemolith-heroicdose3 = YOU WERE NEVER SEPARATE.
