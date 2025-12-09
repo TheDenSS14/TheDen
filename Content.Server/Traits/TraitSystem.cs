@@ -91,10 +91,9 @@ public sealed class TraitSystem : EntitySystem
 
         // load traits from correct jobloadout
         var jobTraits = new HashSet<string>(profile.TraitPreferences);
-        if (profile.JobTraits.TryGetValue(jobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID, out var l))
-        {
-            jobTraits = l;
-        }
+        if (profile.JobTraits.TryGetValue(jobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID, out var currentJobTraits))
+            jobTraits = currentJobTraits;
+
 
         foreach (var traitId in jobTraits)
         {

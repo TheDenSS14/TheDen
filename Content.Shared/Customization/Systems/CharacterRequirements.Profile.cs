@@ -372,8 +372,12 @@ public sealed partial class CharacterTraitRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager)
     {
+        // Job Loadout System:
+        if (!context.Profile!.JobTraits.TryGetValue(context.SelectedJob!.ID, out var currentJobTraits))
+            return false;
+
         return context.Profile != null
-            && Traits.Any(t => context.Profile.TraitPreferences.Contains(t.ToString()));
+            && Traits.Any(t => currentJobTraits.Contains(t.ToString()));
     }
 }
 
