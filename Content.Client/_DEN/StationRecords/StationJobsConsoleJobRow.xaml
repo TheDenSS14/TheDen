@@ -3,6 +3,10 @@
                 HorizontalExpand="True">
     <BoxContainer Orientation="Horizontal"
                   HorizontalExpand="True">
+        <TextureRect Name="JobIcon"
+                     Access="Public"
+                     TextureScale="2 2"
+                     VerticalAlignment="Center"/>
         <Label Name="JobName"
                Access="Public"
                MinWidth="210" />
@@ -14,8 +18,13 @@
         <Label Name="JobAmount"
                Margin="6 0 0 0"
                Access="Public"
-               MinWidth="22"/>
+               MinWidth="12"/>
+        <Label Name="JobSlots"
+               Margin="6 0 0 0"
+               Access="Public"
+               MinWidth="12"/>
         <Button Name="IncreaseJobSlot"
+                Margin="6 0 0 0"
                 Access="Public"
                 ToolTip=""
                 Text="+"

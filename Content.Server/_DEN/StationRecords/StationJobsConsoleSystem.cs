@@ -2,6 +2,7 @@
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Server.StationRecords;
+using Content.Server.StationRecords.Systems;
 using Content.Shared._DEN.StationRecords;
 using Content.Shared.Access.Systems;
 using Content.Shared.Roles;
@@ -20,6 +21,7 @@ public sealed class StationJobsConsoleSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly StationJobsSystem _stationJobsSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private readonly StationRecordsSystem _recordsSystem = default!;
 
     public override void Initialize()
     {
@@ -32,7 +34,6 @@ public sealed class StationJobsConsoleSystem : EntitySystem
 
     private void OnAdjustJob(Entity<StationJobsConsoleComponent> ent, ref AdjustStationJobMsg msg)
     {
-        Logger.Debug(msg.JobProto + msg.Amount);
         var stationUid = _station.GetOwningStation(ent);
         if (stationUid is EntityUid station)
         {
@@ -48,7 +49,6 @@ public sealed class StationJobsConsoleSystem : EntitySystem
                         UpdateUserInterface(ent);
                         return;
                     }
-
                 }
             }
             _stationJobsSystem.TryAdjustJobSlot(station, msg.JobProto, msg.Amount, false, true);
@@ -66,10 +66,11 @@ public sealed class StationJobsConsoleSystem : EntitySystem
 
         IReadOnlyDictionary<string, uint?>? jobList = null;
         IReadOnlyDictionary<string, uint?>? jobSlots = null;
-        if (owningStation != null)
+
+        if (owningStation is not null)
         {
             jobList = _stationJobsSystem.GetJobs(owningStation.Value);
-            jobSlots = _stationJobsSystem.GetRoundStartJobs(owningStation.Value);
+            jobSlots = GetTotalJobSlots(owningStation.Value);
         }
 
         if (jobList is null || jobSlots is null)
@@ -77,5 +78,34 @@ public sealed class StationJobsConsoleSystem : EntitySystem
 
         StationJobsConsoleState newState = new(jobList, jobSlots);
         _ui.SetUiState(uid, StationJobsConsoleKey.Key, newState);
+    }
+
+    private IReadOnlyDictionary<string, uint?>? GetTotalJobSlots(EntityUid station)
+    {
+        var iter = _recordsSystem.GetRecordsOfType<GeneralStationRecord>(station);
+        var jobSlots = _stationJobsSystem.GetJobs(station);
+
+        var jobList = new List<(string, uint?)>();
+
+        foreach (var record in iter)
+        {
+            if (!jobList.Select(a => a.Item1).Contains(record.Item2.JobPrototype))
+                jobList.Add((record.Item2.JobPrototype, 1));
+            else
+            {
+                var row = jobList.FirstOrDefault(a => a.Item1 == record.Item2.JobPrototype);
+                row.Item2++;
+            }
+        }
+
+        var slotsOut = new Dictionary<string, uint?>();
+
+        foreach (var (k, v) in jobList)
+            slotsOut[k] = v ?? 0;
+
+        foreach (var (k, v) in jobSlots)
+            slotsOut[k] = (slotsOut.TryGetValue(k, out var cur) ? cur : 0) + (v ?? 0);
+
+        return slotsOut;
     }
 }
