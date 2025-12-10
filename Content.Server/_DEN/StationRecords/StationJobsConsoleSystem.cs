@@ -1,0 +1,81 @@
+﻿using System.Linq;
+using Content.Server.Station.Components;
+using Content.Server.Station.Systems;
+using Content.Server.StationRecords;
+using Content.Shared._DEN.StationRecords;
+using Content.Shared.Access.Systems;
+using Content.Shared.Roles;
+using Content.Shared.StationRecords;
+using Robust.Server.GameObjects;
+using Robust.Shared.Prototypes;
+
+
+namespace Content.Server._DEN.StationRecords;
+
+
+public sealed class StationJobsConsoleSystem : EntitySystem
+{
+    [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly AccessReaderSystem _access = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly StationJobsSystem _stationJobsSystem = default!;
+    [Dependency] private readonly UserInterfaceSystem _ui = default!;
+
+    public override void Initialize()
+    {
+        Subs.BuiEvents<StationJobsConsoleComponent>(StationJobsConsoleKey.Key, subs =>
+        {
+            subs.Event<BoundUIOpenedEvent>(UpdateUserInterface);
+            subs.Event<AdjustStationJobMsg>(OnAdjustJob);
+        });
+    }
+
+    private void OnAdjustJob(Entity<StationJobsConsoleComponent> ent, ref AdjustStationJobMsg msg)
+    {
+        Logger.Debug(msg.JobProto + msg.Amount);
+        var stationUid = _station.GetOwningStation(ent);
+        if (stationUid is EntityUid station)
+        {
+            if (TryComp(stationUid, out StationJobsComponent? stationJobs))
+            {
+                foreach (var job in stationJobs.JobList)
+                {
+                    if (!_proto.TryIndex<JobPrototype>(job.Key, out var jobproto))
+                        continue;
+
+                    if (!jobproto.AdjustableCount && job.Key == msg.JobProto)
+                    {
+                        UpdateUserInterface(ent);
+                        return;
+                    }
+
+                }
+            }
+            _stationJobsSystem.TryAdjustJobSlot(station, msg.JobProto, msg.Amount, false, true);
+            UpdateUserInterface(ent);
+        }
+    }
+    private void UpdateUserInterface<T>(Entity<StationJobsConsoleComponent> ent, ref T args)
+    {
+        UpdateUserInterface(ent);
+    }
+    private void UpdateUserInterface(Entity<StationJobsConsoleComponent> ent)
+    {
+        var (uid, console) = ent;
+        var owningStation = _station.GetOwningStation(uid);
+
+        IReadOnlyDictionary<string, uint?>? jobList = null;
+        IReadOnlyDictionary<string, uint?>? jobSlots = null;
+        if (owningStation != null)
+        {
+            jobList = _stationJobsSystem.GetJobs(owningStation.Value);
+            jobSlots = _stationJobsSystem.GetRoundStartJobs(owningStation.Value);
+        }
+
+        if (jobList is null || jobSlots is null)
+            return;
+
+        StationJobsConsoleState newState = new(jobList, jobSlots);
+        _ui.SetUiState(uid, StationJobsConsoleKey.Key, newState);
+    }
+}

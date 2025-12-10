@@ -198,6 +198,13 @@ namespace Content.Shared.Roles
         [DataField]
         public List<ProtoId<GuideEntryPrototype>>? Guides;
 
+        /// <summary>
+        /// To specify if the number of job slots for a specific job can be altered mid-round
+        /// by the job console
+        /// </summary>
+        [DataField]
+        public bool AdjustableCount = true;
+
     }
 
     /// <summary>

@@ -1,0 +1,20 @@
+﻿<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+               Title="erm, what the sigma"
+               MinSize="800 500"> <!-- Frontier: width 750<800, add graphics namespace -->
+    <BoxContainer Orientation="Vertical">
+        <BoxContainer VerticalExpand="True">
+            <!-- Record listing -->
+            <BoxContainer Orientation="Vertical" Margin="5" MinWidth="328" MaxWidth="360">
+                <Label Name="RecordListingStatus" Visible="False" />
+                <ScrollContainer VerticalExpand="True">
+                    <BoxContainer Name="JobListing"
+                                  Orientation="Vertical"
+                                  HorizontalExpand="True"
+                                  VerticalExpand="True">
+                    </BoxContainer>
+                </ScrollContainer>
+            </BoxContainer>
+        </BoxContainer>
+    </BoxContainer>
+</DefaultWindow>
