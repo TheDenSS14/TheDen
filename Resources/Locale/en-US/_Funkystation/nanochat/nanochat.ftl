@@ -33,3 +33,6 @@ nano-chat-admin-suffix = (Admin)
 # Emoji picker
 nano-chat-emoji-picker = Emoji Picker
 nano-chat-emoji-search = Search emojis...
+
+# Toggle mute chat
+nano-chat-toggle-mute-chat = Mute this specific chat.
