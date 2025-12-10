@@ -149,6 +149,9 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
             case NanoChatUiMessageType.ToggleMute:
                 HandleToggleMute(card);
                 break;
+            case NanoChatUiMessageType.ToggleMuteChat:
+                HandleToggleMuteChat(card, msg);
+                break;
             case NanoChatUiMessageType.DeleteChat:
                 HandleDeleteChat(card, msg);
                 break;
@@ -389,6 +392,19 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
         UpdateUIForCard(card);
     }
 
+    /// <summary>
+    /// Handles toggling mute status for a specific chat.
+    /// </summary>
+    /// <param name="card">The card that is trying to mute a chat/</param>
+    /// <param name="msg">The UI message event parameters.</param>
+    private void HandleToggleMuteChat(Entity<NanoChatCardComponent> card, NanoChatUiMessageEvent msg)
+    {
+        if (msg.RecipientNumber is not { } chat)
+            return;
+        _nanoChat.ToggleChatMuted((card, card.Comp), chat);
+        UpdateUIForCard(card);
+    }
+
     private void HandleToggleListNumber(Entity<NanoChatCardComponent> card)
     {
         _nanoChat.SetListNumber((card, card.Comp), !_nanoChat.GetListNumber((card, card.Comp)));
@@ -596,7 +612,10 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
             return;
 
         // For group chats, use the group number. For regular chats, use the sender's number
-        var recipientNumber = (groupRecipient != null && groupRecipient.Value.IsGroup) ? chatNumber : senderNumber;
+        var maybeNumber = (groupRecipient != null && groupRecipient.Value.IsGroup) ? chatNumber : senderNumber;
+
+        if (maybeNumber is not { } recipientNumber)
+            return;
 
         if (groupRecipient != null && groupRecipient.Value.IsGroup)
         {
@@ -630,9 +649,7 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
         }
 
         _nanoChat.AddMessage((recipient, recipient.Comp), recipientNumber, message with { DeliveryFailed = false });
-
-        if (recipient.Comp.IsClosed || _nanoChat.GetCurrentChat((recipient, recipient.Comp)) != recipientNumber)
-            HandleUnreadNotification(recipient, message, recipientNumber);
+        HandleUnreadNotification(recipient, message, recipientNumber);
 
         var msgEv = new NanoChatMessageReceivedEvent(recipient);
         RaiseLocalEvent(ref msgEv);
@@ -686,6 +703,9 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
             _nanoChat.SetRecipient((recipient, recipient.Comp),
                 senderNumber, // Funky Station - senderNumber is used now in order to support group chats.
                 senderRecipient with { HasUnread = true });
+
+        // Temporary local to avoid trouble with read-only access; Contains doesn't modify the collection
+        var mutedChats = recipient.Comp.MutedChats;
 
         if (recipient.Comp.NotificationsMuted ||
             mutedChats.Contains(senderNumber) || // Funky Station - senderNumber is used now in order to support group chats.
@@ -810,6 +830,7 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
 
         var recipients = new Dictionary<uint, NanoChatRecipient>();
         var messages = new Dictionary<uint, List<NanoChatMessage>>();
+        var mutedChats = new HashSet<uint>();
         uint? currentChat = null;
         uint ownNumber = 0;
         var maxRecipients = 50;
@@ -820,6 +841,7 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
         {
             recipients = card.Recipients;
             messages = card.Messages;
+            mutedChats = card.MutedChats;
             currentChat = card.CurrentChat;
             ownNumber = card.Number ?? 0;
             maxRecipients = card.MaxRecipients;
@@ -829,6 +851,7 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
 
         var state = new NanoChatUiState(recipients,
             messages,
+            mutedChats,
             contacts,
             currentChat,
             ownNumber,

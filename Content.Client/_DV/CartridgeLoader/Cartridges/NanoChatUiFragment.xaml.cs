@@ -83,7 +83,7 @@ public sealed partial class NanoChatUiFragment : BoxContainer
         // Funky Station Start - Group Chat Handlers
         _createGroupChatPopup.OnGroupCreated += (name) =>
         {
-            OnMessageSent?.Invoke(NanoChatUiMessageType.CreateGroupChat, null, name, null);
+            ActionSendUiMessage?.Invoke(NanoChatUiMessageType.CreateGroupChat, null, name, null);
         };
 
         _inviteToGroupPopup.OnInvite += (number) =>
@@ -91,7 +91,7 @@ public sealed partial class NanoChatUiFragment : BoxContainer
             if (_currentChat is not uint currentChat)
                 return;
 
-            OnMessageSent?.Invoke(NanoChatUiMessageType.InviteToGroup, currentChat, number.ToString(), null);
+            ActionSendUiMessage?.Invoke(NanoChatUiMessageType.InviteToGroup, currentChat, number.ToString(), null);
         };
 
         _groupMembersPopup.OnKick += (number) =>
@@ -99,7 +99,7 @@ public sealed partial class NanoChatUiFragment : BoxContainer
             if (_currentChat is not uint currentChat)
                 return;
 
-            OnMessageSent?.Invoke(NanoChatUiMessageType.KickFromGroup, currentChat, number.ToString(), null);
+            ActionSendUiMessage?.Invoke(NanoChatUiMessageType.KickFromGroup, currentChat, number.ToString(), null);
         };
 
         _groupMembersPopup.OnAdmin += (number) =>
@@ -107,7 +107,7 @@ public sealed partial class NanoChatUiFragment : BoxContainer
             if (_currentChat is not uint currentChat)
                 return;
 
-            OnMessageSent?.Invoke(NanoChatUiMessageType.AdminUser, currentChat, number.ToString(), null);
+            ActionSendUiMessage?.Invoke(NanoChatUiMessageType.AdminUser, currentChat, number.ToString(), null);
         };
 
         _groupMembersPopup.OnDeadmin += (number) =>
@@ -115,7 +115,7 @@ public sealed partial class NanoChatUiFragment : BoxContainer
             if (_currentChat is not uint currentChat)
                 return;
 
-            OnMessageSent?.Invoke(NanoChatUiMessageType.DeadminUser, currentChat, number.ToString(), null);
+            ActionSendUiMessage?.Invoke(NanoChatUiMessageType.DeadminUser, currentChat, number.ToString(), null);
         };
 
         // Funky Station End - Group Chat Handlers
@@ -137,7 +137,7 @@ public sealed partial class NanoChatUiFragment : BoxContainer
 
         MuteChatButton.OnPressed += _ =>
         {
-            if (_currentChat is not uint currentChat)
+            if (_currentChat is not { } currentChat)
                 return;
 
             // Remove if muted, otherwise add
@@ -145,7 +145,7 @@ public sealed partial class NanoChatUiFragment : BoxContainer
                 _mutedChats.Add(currentChat);
 
             UpdateMuteChatButton();
-            OnMessageSent?.Invoke(NanoChatUiMessageType.ToggleMuteChat, currentChat, null, null);
+            ActionSendUiMessage?.Invoke(NanoChatUiMessageType.ToggleMuteChat, currentChat, null, null);
         };
 
         MuteButton.OnPressed += _ =>
@@ -536,6 +536,11 @@ public sealed partial class NanoChatUiFragment : BoxContainer
             BellMutedIcon.Visible = _notificationsMuted;
     }
 
+    private void UpdateMuteChatButton()
+    {
+        if (BellMutedIconContact != null)
+            BellMutedIconContact.Visible = _currentChat is { } currentChat && _mutedChats.Contains(currentChat);
+    }
     private void UpdateListNumber()
     {
         if (ListNumberButton != null)

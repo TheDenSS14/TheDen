@@ -78,6 +78,7 @@ public enum NanoChatUiMessageType : byte
     ViewGroupMembers, // Funky Station - Group Chats
     AdminUser, // Funky Station - Group Chats
     DeadminUser, // Funky Station - Group Chats
+    ToggleMuteChat // DeltaV - Mute specific chats
 }
 
 // putting this here because i can
