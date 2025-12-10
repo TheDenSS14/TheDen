@@ -1,5 +1,7 @@
 using Content.Shared.Item;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Generic;
 
 
 namespace Content.Server._DEN.BluespacePlushiePatch.Components;
@@ -40,4 +42,10 @@ public sealed partial class BluespacePlushiePatchComponent : Component
     /// </summary>
     [DataField]
     public ProtoId<ItemSizePrototype> PlushieItemSize = "Ginormous";
+
+    /// <summary>
+    /// Components to remove from the target when transforming it.
+    /// </summary>
+    [DataField(customTypeSerializer:typeof(CustomHashSetSerializer<string, ComponentNameSerializer>))]
+    public HashSet<string>? RemoveComps;
 }

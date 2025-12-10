@@ -218,6 +218,13 @@
   - type: Item
     size: Small
   - type: BluespacePlushiePatch
+    removeComps:
+      - ContainerContainer
+      - SecretStash
+      - SolutionContainerManager
+      - Food
+      - FoodSequenceElement
+      - ToolOpenable
 
 # SELF-INSERT PLUSHIES
 # note: these MUST be approved by Direction - either an Owner or the Head Maintainer.
