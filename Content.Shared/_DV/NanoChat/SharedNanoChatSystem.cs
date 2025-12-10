@@ -1,9 +1,15 @@
-// SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Tobias Berger <toby@tobot.dev>
-// SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Milon
+// SPDX-FileCopyrightText: 2024 Skubman
+// SPDX-FileCopyrightText: 2024 Tadeo
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 Evaisa
+// SPDX-FileCopyrightText: 2025 EvaisaDev
+// SPDX-FileCopyrightText: 2025 Icepick
+// SPDX-FileCopyrightText: 2025 Tobias Berger
+// SPDX-FileCopyrightText: 2025 Will-Oliver-Br
+// SPDX-FileCopyrightText: 2025 corresp0nd
+// SPDX-FileCopyrightText: 2025 taydeo
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -40,6 +46,19 @@ public abstract class SharedNanoChatSystem : EntitySystem
         }
 
         args.PushMarkup(Loc.GetString("nanochat-card-examine-number", ("number", $"{ent.Comp.Number:D4}")));
+    }
+
+    /// <summary>
+    ///     Helper Method for truncating a string to maximum length
+    /// </summary>
+    public static string Truncate(string? text, int maxLength, string overflowText = "...") // Funky station - made text nullable because weird shit was happening that I could not bother to debug.
+    {
+        if (string.IsNullOrEmpty(text))
+            return string.Empty;
+
+        return text.Length > maxLength
+            ? text[..(maxLength - overflowText.Length)] + overflowText
+            : text;
     }
 
     #region Public API Methods
@@ -185,6 +204,19 @@ public abstract class SharedNanoChatSystem : EntitySystem
             return;
 
         card.Comp.NotificationsMuted = muted;
+        Dirty(card);
+    }
+
+    /// <summary>
+    ///     Sets whether notifications are muted for a specific chat.
+    /// </summary>
+    public void ToggleChatMuted(Entity<NanoChatCardComponent?> card, uint chat)
+    {
+        if (!Resolve(card, ref card.Comp))
+            return;
+
+        if (!card.Comp.MutedChats.Remove(chat))
+            card.Comp.MutedChats.Add(chat);
         Dirty(card);
     }
 

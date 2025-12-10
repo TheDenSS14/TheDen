@@ -1,12 +1,15 @@
 <!--
-SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
-SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-SPDX-FileCopyrightText: 2025 Tobias Berger <toby@tobot.dev>
-SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+SPDX-FileCopyrightText: 2024 Milon
+SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+SPDX-FileCopyrightText: 2025 EvaisaDev
+SPDX-FileCopyrightText: 2025 Icepick
+SPDX-FileCopyrightText: 2025 Rosycup
+SPDX-FileCopyrightText: 2025 Skubman
+SPDX-FileCopyrightText: 2025 Tobias Berger
+SPDX-FileCopyrightText: 2025 Will-Oliver-Br
+SPDX-FileCopyrightText: 2025 corresp0nd
+SPDX-FileCopyrightText: 2025 sleepyyapril
+SPDX-FileCopyrightText: 2025 taydeo
 
 SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 -->
@@ -95,6 +98,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                         Margin="0 0 4 0"
                         StyleClasses="OpenBoth"
                         ToolTip="{Loc nano-chat-new-chat}" />
+                <!-- Funky Station - Group Chats -->
+                <Button Name="CreateGroupChatButton"
+                        MinSize="32 32"
+                        MaxSize="32 32"
+                        Margin="0 0 4 0"
+                        StyleClasses="OpenBoth"
+                        ToolTip="{Loc nano-chat-create-group}">
+                    <TextureRect StyleClasses="ButtonSquare"
+                                 TexturePath="/Textures/_Funkystation/Interface/NanoChat/members.png"
+                                 Stretch="KeepAspectCentered"
+                                 MinSize="18 18" />
+                </Button>
                 <Button Name="LookupButton"
                         MaxSize="32 32"
                         StyleClasses="OpenBoth"
@@ -191,11 +206,66 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                StyleClasses="LabelSubText"
                                Margin="0 0 4 2"
                                Visible="False" />
+                        <Button Name="MuteChatButton"
+                                MaxSize="32 32"
+                                StyleClasses="OpenBoth"
+                                Margin="0 0 4 0"
+                                ToolTip="{Loc nano-chat-toggle-mute-chat}">
+                            <Control HorizontalExpand="True" VerticalExpand="True">
+                                <TextureRect Name="BellIconContact"
+                                             StyleClasses="ButtonSquare"
+                                             TexturePath="/Textures/_DV/Interface/VerbIcons/bell.svg.png"
+                                             Stretch="KeepAspectCentered"
+                                             MinSize="18 18" />
+                                <TextureRect Name="BellMutedIconContact"
+                                             StyleClasses="ButtonSquare"
+                                             TexturePath="/Textures/_DV/Interface/VerbIcons/bell_muted.png"
+                                             Stretch="KeepAspectCentered"
+                                             Visible="False"
+                                             MinSize="18 18" />
+                            </Control>
+                        </Button>
+                        <!-- Funky Station - Group Chats (Invite button) -->
+                        <Button Name="InviteToGroupButton"
+                                MaxSize="32 32"
+                                Visible="False"
+                                StyleClasses="OpenBoth"
+                                Margin="0 0 4 0"
+                                ToolTip="{Loc nano-chat-invite-to-group}">
+                            <TextureRect StyleClasses="ButtonSquare"
+                                        TexturePath="/Textures/_Funkystation/Interface/NanoChat/invite.png"
+                                        Stretch="KeepAspectCentered"
+                                        MinSize="18 18" />
+                        </Button>
+                        <!-- Funky Station - Group Chats (Member List button) -->
+                        <Button Name="ViewMembersButton"
+                                MaxSize="32 32"
+                                Visible="False"
+                                StyleClasses="OpenBoth"
+                                Margin="0 0 4 0"
+                                ToolTip="{Loc nano-chat-view-members}">
+                            <TextureRect StyleClasses="ButtonSquare"
+                                        TexturePath="/Textures/_Funkystation/Interface/NanoChat/members.png"
+                                        Stretch="KeepAspectCentered"
+                                        MinSize="18 18" />
+                        </Button>
                         <!-- Input row -->
                         <LineEdit Name="MessageInput"
                                   PlaceHolder="{Loc nano-chat-message-placeholder}"
                                   HorizontalExpand="True"
                                   StyleClasses="OpenRight" />
+                        <!-- Funky Station - Emoji Picker -->
+                        <Button Name="EmojiButton"
+                                MinSize="32 32"
+                                MaxSize="32 32"
+                                StyleClasses="OpenBoth"
+                                Margin="4 0 0 0"
+                                ToolTip="{Loc nano-chat-emoji-picker}">
+                            <TextureRect StyleClasses="ButtonSquare"
+                                         TexturePath="/Textures/Interface/Emotes/laugh.png"
+                                         Stretch="KeepAspectCentered"
+                                         MinSize="24 24" />
+                        </Button>
                         <Button Name="SendButton"
                                 MinSize="32 32"
                                 Disabled="True"

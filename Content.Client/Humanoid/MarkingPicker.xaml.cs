@@ -12,7 +12,7 @@
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Shared.Humanoid;
@@ -231,7 +231,9 @@ public sealed partial class MarkingPicker : Control
                 continue;
             }
 
-            var item = CMarkingsUnused.AddItem($"{GetMarkingName(marking)}", marking.Sprites[0].Frame0());
+            var item = CMarkingsUnused.AddItem(GetMarkingName(marking),
+                icon: marking.Sprites[0].Frame0(),
+                iconScale: 2); // DEN
             item.Metadata = marking;
         }
 
@@ -278,6 +280,7 @@ public sealed partial class MarkingPicker : Control
             {
                 Text = text,
                 Icon = newMarking.Sprites[0].Frame0(),
+                IconScale = 2, // DEN
                 Selectable = true,
                 Metadata = newMarking,
                 IconModulate = marking.MarkingColors[0]
@@ -560,6 +563,7 @@ public sealed partial class MarkingPicker : Control
         {
             Text = Loc.GetString("marking-used", ("marking-name", $"{GetMarkingName(marking)}"), ("marking-category", Loc.GetString($"markings-category-{marking.MarkingCategory}"))),
             Icon = marking.Sprites[0].Frame0(),
+            IconScale = 2, // DEN
             Selectable = true,
             Metadata = marking,
         };
@@ -583,7 +587,9 @@ public sealed partial class MarkingPicker : Control
 
         if (marking.MarkingCategory == _selectedMarkingCategory)
         {
-            var item = CMarkingsUnused.AddItem($"{GetMarkingName(marking)}", marking.Sprites[0].Frame0());
+            var item = CMarkingsUnused.AddItem(GetMarkingName(marking),
+                icon: marking.Sprites[0].Frame0(),
+                iconScale: 2); // DEN
             item.Metadata = marking;
         }
         _selectedMarking = null;

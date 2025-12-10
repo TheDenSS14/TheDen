@@ -1,7 +1,10 @@
 <!--
-SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
-SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Skubman
+SPDX-FileCopyrightText: 2024 Tadeo
+SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+SPDX-FileCopyrightText: 2025 EvaisaDev
+SPDX-FileCopyrightText: 2025 corresp0nd
+SPDX-FileCopyrightText: 2025 taydeo
 
 SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 -->
@@ -33,6 +36,16 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                         BorderColor="#0f7a15" />
                 </PanelContainer.PanelOverride>
             </PanelContainer>
+
+            <!-- Funky Station - Group chat icon -->
+            <TextureRect Name="GroupIcon"
+                         TexturePath="/Textures/_Funkystation/Interface/NanoChat/members.png"
+                         MinSize="16 16"
+                         MaxSize="16 16"
+                         Stretch="KeepAspectCentered"
+                         VerticalAlignment="Center"
+                         Margin="4 0 6 0"
+                         Visible="False" />
 
             <!-- Text container -->
             <BoxContainer Orientation="Vertical"
