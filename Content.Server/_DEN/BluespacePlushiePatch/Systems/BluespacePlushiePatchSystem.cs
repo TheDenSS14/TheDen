@@ -35,9 +35,7 @@ public sealed class BluespacePlushiePatchSystem : EntitySystem
     [Dependency] private readonly SharedStorageSystem _storageSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
     [Dependency] private readonly SharedItemSystem _itemSystem = default!;
-
-    private ProtoId<ItemSizePrototype> hugeItemSize = "Huge";
-    private ProtoId<ItemSizePrototype> ginormousItemSize = "Ginormous";
+    [Dependency] private readonly IComponentFactory _componentFactory = default!;
 
     public override void Initialize()
     {
@@ -94,13 +92,10 @@ public sealed class BluespacePlushiePatchSystem : EntitySystem
             _containerSystem.EmptyContainer(cont, true);
         }
 
-        // This is bad and terrible and makes this system only apply to plushies and I'm sorry
-        RemComp<ContainerManagerComponent>(target);
-        RemComp<SecretStashComponent>(target);
-        RemComp<SolutionContainerManagerComponent>(target);
-        RemComp<FoodComponent>(target);
-        RemComp<FoodSequenceElementComponent>(target); // No putting people in burgers.
-        RemComp<ToolOpenableComponent>(target);
+        if(patchComp.RemoveComps is not null)
+            foreach (var comp in patchComp.RemoveComps)
+                RemComp(target, _componentFactory.GetComponent(comp).GetType());
+
 
         EnsureComp<ContainerManagerComponent>(target);
         var container = _containerSystem.EnsureContainer<Container>(target, "storagebase");
