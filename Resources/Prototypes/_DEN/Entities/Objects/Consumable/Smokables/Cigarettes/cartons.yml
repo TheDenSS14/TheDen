@@ -1,0 +1,14 @@
+- type: entity
+  parent: CigCartonGreen
+  id: CigCartonMnemolith
+  name: mnemolith cigarettes carton
+  description: "A carton containing six packs of mnemolith cigarettes, devoid of any brand markings. For ritual use only."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Smokeables/Cigarettes/Cartons/mantis.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Smokeables/Cigarettes/Cartons/mantis.rsi
+  - type: StorageFill
+    contents:
+      - id: CigPackMnemolith
+        amount: 6

@@ -1,0 +1,60 @@
+- type: entity
+  parent: MobElementalBase
+  id: MobEidoliteHermit
+  name: eidolite hermit
+  description: "A small, skittish creature from somewhere beyond the noosphere that occasionally slips into our world. Extensive study shows it poses no threat. It only wants to tuck itself beneath eidolite crystals and bask in the energy they channel."
+  components:
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Psionic
+    removable: false
+    roller: false
+    assayFeedback:
+      - eidolitehermit-feedback
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-mothroach-name
+    description: ghost-role-information-mothroach-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+  - type: GhostTakeoverAvailable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.1
+          position: -0.0156,-0.0156 # Half a pixel left and down from center
+        density: 0.01
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: Speech
+    speechVerb: Crystalline
+    speechSounds: Crystalline
+    allowedEmotes: ['Chitter', 'Squeak']
+  - type: TypingIndicator
+    proto: mantis # TODO ?
+
+- type: entity
+  parent: MobEidoliteHermit
+  id: MobEidoliteHermitPet
+  suffix: Pet
+  components:
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0

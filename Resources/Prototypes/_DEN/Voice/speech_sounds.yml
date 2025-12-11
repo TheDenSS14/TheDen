@@ -20,3 +20,20 @@
   exclaimSound:
     path: /Audio/_DEN/Voice/Shadowkin/Talk/shadowkin_speak_exclaim.ogg
 
+- type: speechSounds
+  id: Crystalline
+  saySound:
+    path: /Audio/_DEN/Effects/crystaltap1.ogg
+      params:
+        volume: -6
+        variation: 0.1
+  askSound:
+    path: /Audio/_DEN/Effects/crystaltap2.ogg
+      params:
+        volume: -6
+        variation: 0.1
+  exclaimSound:
+    path: /Audio/_DEN/Effects/crystaltap3.ogg
+      params:
+        volume: -6
+        variation: 0.1
