@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Will-Oliver-Br
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Base Paper
 - type: entity
@@ -326,6 +326,14 @@
   components:
   - type: Paper
     content: doc-text-mech-report
+
+- type: entity
+  parent: PaperDyedEpi
+  id: PrintedDocumentOracleRequest
+  name: ORACLE REQUEST FORM
+  components:
+  - type: Paper
+    content: doc-text-oracle-request
 
 # Engineering Papers
 - type: entity
@@ -763,3 +771,19 @@
   components:
   - type: Paper
     content: doc-text-printer-food-and-beverages-menu
+
+- type: entity
+  parent: PaperDyedService
+  id: PrintedDocumentDrinksMenu
+  name: Drinks Menu
+  components:
+  - type: Paper
+    content: doc-text-printer-drinks-menu
+
+- type: entity
+  parent: PaperDyedService
+  id: PrintedDocumentDessertMenu
+  name: Dessert Menu
+  components:
+  - type: Paper
+    content: doc-text-printer-dessert-menu

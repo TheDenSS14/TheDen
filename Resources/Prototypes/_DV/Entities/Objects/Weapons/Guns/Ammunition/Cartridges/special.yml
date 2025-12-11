@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2024 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: BaseCartridgeSpecial
@@ -112,6 +112,7 @@
 - type: entity
   id: CartridgeSpecialMindbreaker
   name: cartridge (.38 special mindbreaker)
+  description: "Three shots will mindbreak your target. Make sure you mean it." # TheDen - Ammo doesn't usually have descriptions, but it's important here
   parent: BaseCartridgeSpecial
   components:
   - type: CartridgeAmmo
@@ -122,7 +123,7 @@
         map: [ "enum.AmmoVisualLayers.Base" ]
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#950ea9"
+        color: "#53b598" # TheDen - Mindbreaker colored
   - type: ChemicalAmmo
   - type: SolutionContainerManager
     solutions:

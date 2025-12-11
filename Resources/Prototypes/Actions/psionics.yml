@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2023 PHCodes
 # SPDX-FileCopyrightText: 2024 FoxxoTrystan
 # SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 GNUtopia
 # SPDX-FileCopyrightText: 2025 Quanteey
@@ -11,7 +12,7 @@
 # SPDX-FileCopyrightText: 2025 dootythefrooty
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: ActionDispel
@@ -174,7 +175,7 @@
       checkCanAccess: false
       range: 6
       itemIconStyle: BigAction
-      canTargetSelf: false # Healing Word made Regeneration irrelevent (other than the greater glimmer cost)
+      canTargetSelf: false # Healing Word made Regeneration irrelevent (other than the greater Glimmer cost)
       blacklist:
         components:
           - PsionicInsulation
@@ -234,7 +235,7 @@
         popupText: revivify-begin
         playSound: true
         minGlimmer: 10 # These also get multiplied by caster stats. So,
-        maxGlimmer: 15 # keeping in mind the ~3.5x multiplier, this spikes glimmer by as much as 60 points.
+        maxGlimmer: 15 # keeping in mind the ~3.5x multiplier, this spikes Glimmer by as much as 60 points.
         glimmerSoundThreshold: 50
         glimmerPopupThreshold: 100
         glimmerDoAfterVisibilityThreshold: 35
@@ -402,15 +403,3 @@
           - PsionicInsulation
           - Mindbroken
       event: !type:AssayPowerActionEvent
-
-- type: entity
-  id: ActionAnoigo
-  name: action-name-anoigo
-  description: action-description-anoigo
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: EntityTargetAction
-    icon: { sprite: Interface/Actions/psionics.rsi, state: anoigo }
-    useDelay: 40
-    itemIconStyle: BigAction
-    event: !type:AnoigoPowerActionEvent

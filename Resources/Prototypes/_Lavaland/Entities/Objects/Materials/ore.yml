@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -40,7 +40,7 @@
   - type: Stack
     stackType: DiamondOreUnprocessed
   - type: UnclaimedOre
-    miningPoints: 100
+    miningPoints: 50
 
 - type: entity
   parent: DiamondOreUnprocessed
@@ -160,7 +160,7 @@
   - type: Stack
     stackType: BananiumOreUnprocessed
   - type: UnclaimedOre
-    miningPoints: 30 # We might as well give bananium a purpose no?
+    miningPoints: 15 # We might as well give bananium a purpose no?
 
 - type: entity
   parent: BananiumOreUnprocessed

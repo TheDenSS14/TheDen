@@ -1,0 +1,35 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [HandLabeler, BaseAntiPsionicWeapon, BaseMantisContraband] # Contraband so the mystagogue doesn't steal it
+  id: HandLabelerMantis
+  name: sigillator
+  description: "An ancient and mystical hand labeler wrought from slabs of mnemolith, used by turning the wheels and giving something a good smack. You wouldn't be caught dead with that blue plastic monstrosity."
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Specific/Mantis/handlabelermantis.rsi
+    - type: Item
+      sprite: _DEN/Objects/Specific/Mantis/handlabelermantis.rsi
+      storedSprite:
+      storedRotation: -90
+    - type: MeleeWeapon # You can swing it like a weapon
+      attackRate: 0.6666
+      wideAnimationRotation: -90
+      soundHit:
+        path: /Audio/Weapons/block_metal1.ogg
+        params:
+          volume: -60 # Why is it so loud...
+          variation: 0.05
+      damage:
+        types:
+          Blunt: 5 # 7.5 DPS (same as Crowbar), or 9.38 DPS against psions
+          Holy: 2.5 # 14.1 total DPS against psionic supernaturals
+    - type: ThrowingAngle
+      angle: -90
+    - type: Tag
+      tags:
+      - HandLabeler
+      - MantisBeltStorable

@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2025 TheLuggage05
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: MapText
+  parent: MarkerBase
+  name: map text
+  categories: [ Debug ]
+  placement:
+    mode: PlaceFree
+  components:
+  - type: MapText
+  - type: Sprite
+    state: pink
+

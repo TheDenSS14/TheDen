@@ -1,0 +1,89 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Wing markings
+- type: marking
+  id: WingsSeraphPositionUpper
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Resomi, Shadowkin ]
+  invertSpeciesRestriction: true
+  layering:
+    seraphtop: Wings
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Body/seraphwings.rsi
+      state: seraphtop
+
+- type: marking
+  id: WingsSeraphPositionMiddle
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Resomi, Shadowkin ]
+  invertSpeciesRestriction: true
+  layering:
+    seraphmid: Wings
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Body/seraphwings.rsi
+      state: seraphmid
+
+- type: marking
+  id: WingsSeraphPositionLower
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Resomi, Shadowkin ]
+  invertSpeciesRestriction: true
+  layering:
+    seraphbutt: Wings
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Body/seraphwings.rsi
+      state: seraphbutt
+
+- type: marking
+  id: WingsSeraphFull
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Resomi, Shadowkin ]
+  invertSpeciesRestriction: true
+  layering:
+    seraphfull: Wings
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Body/seraphwings.rsi
+      state: seraphfull
+
+- type: marking
+  id: WingsChicken
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Resomi, Shadowkin ]
+  invertSpeciesRestriction: true
+  layering:
+    chickenwings: Wings
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Body/chickenwings.rsi
+      state: chickenwings

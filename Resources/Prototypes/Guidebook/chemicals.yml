@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2024 f0x-n3rd <150924715+f0x-n3rd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 f0x-n3rd
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -18,6 +19,7 @@
   - Biological
   - Others
   - Exotic # funky
+  - Lewd
   filterEnabled: True
 
 - type: guideEntry
@@ -75,3 +77,11 @@
   text: "/ServerInfo/_Funkystation/Guidebook/ChemicalTabs/Exotic.xml"
   filterEnabled: True
   # end funky
+
+  # DEN - Lewd Stuff
+- type: guideEntry
+  id: Lewd
+  name: guide-entry-lewd-chems
+  text: "/ServerInfo/Guidebook/ChemicalTabs/Lewd.xml"
+  filterEnabled: True
+  # END DEN

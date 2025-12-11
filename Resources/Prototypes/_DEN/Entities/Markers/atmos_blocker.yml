@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: Atmos Fix Sauna Marker
+  id: AtmosFixSaunaMarker
+  description: "Sets the temperature to... sauna levels!"
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - sprite: Markers/atmos.rsi
+          state: base-hot
+          shader: unshaded
+        - sprite: Markers/atmos.rsi
+          shader: unshaded
+          state: sauna
+    - type: AtmosFixMarker
+      mode: 9

@@ -1,24 +1,35 @@
 # SPDX-FileCopyrightText: 2023 Fluffiest Floofers
 # SPDX-FileCopyrightText: 2024 Rane
 # SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: mantis seal
-  parent: RubberStampBase
+  parent: [RubberStampBase, BaseMantisContraband] # TheDen
   id: RubberStampMantis
-  suffix: DO NOT MAP
-  description: An old-fashioned seal for marking important documents, made of polished bronze.
+  description: "A heavy seal belonging to the mantis, made of polished electrum with an eidolite tip." # TheDen
   components:
+  - type: Item
+    sprite: Nyanotrasen/Objects/Misc/bureaucracy.rsi
+    heldPrefix: stamp-mantis
   - type: Stamp
     stampedName: stamp-component-stamped-name-mantis
-    stampedColor: "#777777"
+    stampedColor: "#b32d70" # TheDen
     stampState: "paper_stamp-mantis"
+    sound: # TheDen
+      path: /Audio/_DEN/Effects/crystalbell2.ogg
+      params:
+        volume: -6
+        variation: 0.05
+        maxDistance: 10 # Longer range to be spooky
   - type: Sprite
     sprite: Nyanotrasen/Objects/Misc/bureaucracy.rsi
     state: stamp-mantis
   - type: Tag
     tags:
-      - ForensicBeltEquip
+      # - ForensicBeltEquip # TheDen
+      - MantisBeltStorable # TheDen - New tag for clarity
+      - MantisBoxFolderStorable # Only the mantis pen, stamp, and papers should have this

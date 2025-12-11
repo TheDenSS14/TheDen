@@ -1,0 +1,84 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [FlippoLighter, BaseAntiPsionicWeapon]
+  id: FlippoLighterMantis
+  name: mantis lighter
+  description: "A glossy lighter sculpted from chips of mnemolith, housing an eidolite pyramid that draws energy from the noosphere. The flame gutters strangely, as if aware of what it burns."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Mantis/lightermantis.rsi
+    layers:
+    - state: mantis_icon_base
+      map: ["base"]
+    - state: mantis_top
+      map: ["top"]
+      visible: false
+    - state: mantis_open
+      map: ["open"]
+      visible: false
+    - state: mantis_lighter_flame
+      map: ["flame"]
+      visible: false
+      shader: unshaded
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      path: /Audio/_DEN/Effects/crystaltap1.ogg
+      params:
+        volume: -6
+        variation: 0.05
+    soundDeactivate:
+      path: /Audio/_DEN/Effects/crystaltap2.ogg
+      params:
+        volume: -6
+        variation: 0.05
+  - type: Item
+    sprite: _DEN/Objects/Specific/Mantis/lightermantis.rsi
+    heldPrefix: mantis
+  - type: Welder
+    fuelConsumption: 0 # Powered by the noosphere
+    fuelLitCost: 0 # Powered by the noosphere
+    tankSafe: true
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 1
+        maxVol: 1
+  - type: ToggleableVisuals
+    spriteLayer: mantis_lighter_flame
+    inhandVisuals:
+      left:
+      - state: mantis-inhand-left-flame
+        shader: unshaded
+      right:
+      - state: mantis-inhand-right-flame
+        shader: unshaded
+  - type: PointLight
+    radius: 1.75
+    energy: 2
+    color: "#4dc4ff"
+  - type: MeleeWeapon
+    attackRate: .6666
+    wideAnimationRotation: 180
+    damage:
+      types:
+        Blunt: 2 # 3 DPS, or 3.75 DPS against psions
+        Holy: 1 # 5 total DPS against psionic supernaturals
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+      types:
+        Heat: 2 # 3 DPS, or 3.75 DPS against psions
+        Holy: 1 # 5 total DPS against psionic supernaturals
+  - type: ItemToggleDamageOtherOnHit
+  - type: ThrowingAngle
+    angle: 180
+  - type: Tag
+    tags:
+    - MantisBoxCandlesStorable # Why not
+    - MantisBeltStorable

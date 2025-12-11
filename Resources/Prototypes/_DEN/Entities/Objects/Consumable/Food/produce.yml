@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: Rose
+  id: RoseSeedless
+  suffix: seedless
+  components:
+  - type: Produce
+    seed:
+      seedless: true
+      plantRsi: _Impstation/Objects/Specific/Hydroponics/rose.rsi
+
+- type: entity
+  parent: RoseBlack
+  id: RoseBlackSeedless
+  suffix: seedless
+  components:
+  - type: Produce
+    seed:
+      seedless: true
+      plantRsi: _Impstation/Objects/Specific/Hydroponics/blackRose.rsi
+
+- type: entity
+  parent: FoodLily
+  id: FoodLilySeedless
+  suffix: seedless
+  components:
+  - type: Produce
+    seed:
+      seedless: true
+      plantRsi: Objects/Specific/Hydroponics/lily.rsi

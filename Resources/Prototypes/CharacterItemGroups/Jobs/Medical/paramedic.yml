@@ -2,12 +2,13 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 RosySaturniidae
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Paramedic
 - type: characterItemGroup
@@ -62,6 +63,10 @@
       id: LoadoutMedicalHeadHatParamedicsoft
     - type: loadout # Imp
       id: LoadoutMedicalHeadHatParamedicSiren
+    - type: loadout
+      id: LoadoutMedicalHeadHatParamedicBeret
+    - type: loadout
+      id: LoadoutMedicalHeadHatParamedicSirenBeret
 
 #- type: characterItemGroup
 #  id: LoadoutParamedicId
@@ -86,6 +91,8 @@
       id: LoadoutMedicalOuterWinterPara
     - type: loadout # TheDen
       id: LoadoutMedicalOuterCybersunWindbreaker
+    - type: loadout #den
+      id: LoadoutMedicalOuterParamedicWB
 
 - type: characterItemGroup
   id: LoadoutParamedicShoes

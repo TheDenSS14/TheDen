@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: material
+  id: Mnemolith
+  stackEntity: MaterialMnemolith1
+  name: materials-mnemolith
+  unit: materials-unit-piece
+  icon: { sprite: _DEN/Objects/Materials/materials.rsi, state: mnemolith }
+  color: "#ffffff"
+  price: 0.2 # A stone is worth 20, a full stack is worth 600, rare but not that special
+
+- type: material
+  id: Eidolite
+  stackEntity: MaterialEidolite1
+  name: materials-eidolite
+  unit: materials-unit-piece
+  icon: { sprite: _DEN/Objects/Materials/materials.rsi, state: mnemolith }
+  color: "#ffffff"
+  price: 5 # A crystal is worth 500, a full stack is worth 15000, balanced as salvager treasure

@@ -1,6 +1,6 @@
-// SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Remuchi
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2025 Jakumba
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -129,16 +129,17 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
             cult.WinCondition = CultWinCondition.Win;
             _roundEnd.EndRound();
 
-            foreach (var ent in cult.Cultists)
-            {
-                if (Deleted(ent.Owner) || !TryComp(ent.Owner, out MindContainerComponent? mindContainer) ||
-                    !mindContainer.Mind.HasValue)
-                    continue;
+            // DEN - remove cultists exploding into gibs at round end
+            // foreach (var ent in cult.Cultists)
+            // {
+            //     if (Deleted(ent.Owner) || !TryComp(ent.Owner, out MindContainerComponent? mindContainer) ||
+            //         !mindContainer.Mind.HasValue)
+            //         continue;
 
-                var harvester = Spawn(cult.HarvesterPrototype, Transform(ent.Owner).Coordinates);
-                _mind.TransferTo(mindContainer.Mind.Value, harvester);
-                _body.GibBody(ent);
-            }
+            //     var harvester = Spawn(cult.HarvesterPrototype, Transform(ent.Owner).Coordinates);
+            //     _mind.TransferTo(mindContainer.Mind.Value, harvester);
+            //     _body.GibBody(ent);
+            // }
 
             return;
         }

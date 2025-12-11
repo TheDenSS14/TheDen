@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
+# SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 pocl.v
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -366,6 +368,7 @@
   name: reagent-name-atlantic-ocean
   parent: BaseAlcohol
   desc: reagent-desc-atlantic-ocean
+  group: AphrodisiacDrinks # DEN
   physicalDesc: reagent-physical-desc-pulpy
   flavor: atlantic-ocean
   color: "#31917d"
@@ -672,7 +675,7 @@
           reagent: Songbird
           min: 2
   fizziness: 0.25
-  
+
 - type: reagent
   id: TohokuBlaze
   name: reagent-name-tohokublaze
@@ -812,6 +815,7 @@
   id: CoconutDoubleCreamPie
   name: reagent-name-coconutdoublecreampie
   parent: BaseAlcohol
+  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-coconutdoublecreampie
   physicalDesc: reagent-physical-desc-creamy
   flavor: coconutdoublecreampie
@@ -927,12 +931,11 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.1
-# commented out until gasp is an emote.
-#      - !type:Emote
-#        emote: Gasp
-#        showInChat: true
-#        force: true
-#        probability: 0.35
+      - !type:Emote
+        emote: Gasp
+        showInChat: true
+        force: true
+        probability: 0.35
   fizziness: 0.5
 
 - type: reagent
@@ -954,12 +957,11 @@
       effects:
         - !type:SatiateThirst
           factor: 2
-  # commented out until gasp is an emote.
-  #      - !type:Emote
-  #        emote: Gasp
-  #        showInChat: true
-  #        force: true
-  #        probability: 0.35
+        - !type:Emote
+          emote: Gasp
+          showInChat: true
+          force: true
+          probability: 0.35
   fizziness: 0.5
 
 - type: reagent
@@ -984,10 +986,9 @@
         - !type:AdjustReagent
           reagent: Ethanol
           amount: 0.1
-  # commented out until gasp is an emote.
-  #      - !type:Emote
-  #        emote: Gasp
-  #        showInChat: true
-  #        force: true
-  #        probability: 0.35
+        - !type:Emote
+          emote: Gasp
+          showInChat: true
+          force: true
+          probability: 0.35
   fizziness: 0.5

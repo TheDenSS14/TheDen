@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -74,3 +75,15 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutClothingNeckFoldedCollar
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingNeckFoldedCollar
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck

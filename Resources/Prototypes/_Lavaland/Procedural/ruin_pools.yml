@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Lavaland ruins are loaded as separate grids.
 # HugeRuins should contain the biggest and most valuable ruins,
@@ -10,13 +11,13 @@
 - type: lavalandRuinPool
   id: Lavaland
   hugeRuins:
-    SyndicateBase: 1
+    # SyndicateBase: 1 # DEN - Disabiled to prevent lavaland syndicate base griefing
     HierophantArena: 1
     RougeAI: 1
     BiodomeBeach: 2
     BiodomeSnow: 2
     GolemShuttle: 2
-    ToyShop: 1    
+    ToyShop: 1
     Chemistry: 2
     LavaLake: 3
     Graveyard: 1

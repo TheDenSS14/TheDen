@@ -332,7 +332,7 @@ namespace Content.Client.Lobby.UI
                 PronounsButton.SelectId(args.Id);
                 SetGender((Gender) args.Id);
 
-                if (Profile?.DisplayPronouns == null)
+                if (string.IsNullOrWhiteSpace(Profile?.DisplayPronouns))
                     UpdateDisplayPronounsControls();
             };
 
@@ -1906,7 +1906,8 @@ namespace Content.Client.Lobby.UI
 
         private void SetDisplayPronouns(string? displayPronouns)
         {
-            if (displayPronouns == GetFormattedPronounsFromGender())
+            if (displayPronouns == GetFormattedPronounsFromGender()
+                || string.IsNullOrWhiteSpace(displayPronouns))
                 displayPronouns = null;
 
             Profile = Profile?.WithDisplayPronouns(displayPronouns);
@@ -2404,14 +2405,16 @@ namespace Content.Client.Lobby.UI
                 return;
 
             var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
+            var height = Profile?.Height ?? species.DefaultHeight;
+            var width = Profile?.Width ?? species.DefaultWidth;
 
             HeightSlider.MinValue = species.MinHeight;
             HeightSlider.MaxValue = species.MaxHeight;
-            HeightSlider.SetValueWithoutEvent(Profile?.Height ?? species.DefaultHeight);
+            HeightSlider.SetValueWithoutEvent(height);
 
             WidthSlider.MinValue = species.MinWidth;
             WidthSlider.MaxValue = species.MaxWidth;
-            WidthSlider.SetValueWithoutEvent(Profile?.Width ?? species.DefaultWidth);
+            WidthSlider.SetValueWithoutEvent(width);
 
             UpdateHeightWidthSliderLabels(species);
             UpdateDimensions(SliderUpdate.Both);

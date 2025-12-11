@@ -108,15 +108,13 @@
       - !type:EntSelector
         id: PlushiePenguin
       - !type:EntSelector
-        id: PlushieGrim
-      - !type:EntSelector
         id: PlushieVega
       - !type:EntSelector
         id: PlushieAlice
       - !type:EntSelector
-        id: PlushieTabi
-      - !type:EntSelector
         id: PlushieJenn
+      - !type:EntSelector
+        id: PlushieAzalea
       - !type:EntSelector
         id: PlushieSharkBlue
       - !type:EntSelector
@@ -158,6 +156,8 @@
       - !type:EntSelector # TheDen
         id: PlushieThavenWeird
         weight: 0.3
+      - !type:EntSelector # TheDen
+        id: PlushieWhistler
     - !type:GroupSelector
       children:
       - !type:EntSelector
@@ -181,6 +181,8 @@
         id: PlushieAlienGerm
       - !type:EntSelector
         id: PlushieAlienGermMini
+    - id: PlushieDollMantis # TheDen
+      weight: 0.5
 
 - type: entity
   id: CrateFunPlushie

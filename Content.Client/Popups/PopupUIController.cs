@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Shaman
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
@@ -24,6 +25,11 @@ public sealed class PopupUIController : UIController, IOnStateEntered<GameplaySt
     private Font _mediumFont = default!;
     private Font _largeFont = default!;
 
+    // TheDen - Added psychomantic popup types
+    private Font _smallPsionicFont = default!;
+    private Font _mediumPsionicFont = default!;
+    private Font _largePsionicFont = default!;
+
     private PopupRootControl? _popupControl;
 
     public override void Initialize()
@@ -34,6 +40,11 @@ public sealed class PopupUIController : UIController, IOnStateEntered<GameplaySt
         _smallFont = new VectorFont(cache.GetResource<FontResource>("/Fonts/NotoSans/NotoSans-Italic.ttf"), 10);
         _mediumFont = new VectorFont(cache.GetResource<FontResource>("/Fonts/NotoSans/NotoSans-Italic.ttf"), 12);
         _largeFont = new VectorFont(cache.GetResource<FontResource>("/Fonts/NotoSans/NotoSans-BoldItalic.ttf"), 14);
+
+        // TheDen - Added psychomantic popup types
+        _smallPsionicFont = new VectorFont(cache.GetResource<FontResource>("/Fonts/opendyslexic/OpenDyslexic-Regular.otf"), 9);
+        _mediumPsionicFont = new VectorFont(cache.GetResource<FontResource>("/Fonts/opendyslexic/OpenDyslexic-Regular.otf"), 11);
+        _largePsionicFont = new VectorFont(cache.GetResource<FontResource>("/Fonts/opendyslexic/OpenDyslexic-Regular.otf"), 13);
     }
 
     public void OnStateEntered(GameplayState state)
@@ -83,6 +94,20 @@ public sealed class PopupUIController : UIController, IOnStateEntered<GameplaySt
             case PopupType.LargeCaution:
                 font = _largeFont;
                 color = Color.Red;
+                break;
+
+            // TheDen - Added psychomantic popup types
+            case PopupType.SmallPsionic:
+                font = _smallPsionicFont;
+                color = Color.FromHex("#C29EFF");
+                break;
+            case PopupType.MediumPsionic:
+                font = _mediumPsionicFont;
+                color = Color.FromHex("#C29EFF");
+                break;
+            case PopupType.LargePsionic:
+                font = _largePsionicFont;
+                color = Color.FromHex("#C29EFF");
                 break;
         }
 

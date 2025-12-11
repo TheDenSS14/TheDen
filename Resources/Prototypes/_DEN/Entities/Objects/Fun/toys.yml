@@ -1,5 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MPL-2.0
 
@@ -165,3 +167,81 @@
     color: "#FF5588"
   - type: TileFrictionModifier
     modifier: 0.01
+
+- type: entity
+  parent: [BaseAntiPsionicWeapon, BasePlushie, BaseKnife] # It has a tiny ritual knife...
+  id: PlushieDollMantis
+  name: sentimental mantis doll
+  description: "A cute little doll with a mantis fez and a toy ritual knife. Wait--why is it sharp!?"
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/toys.rsi
+    state: doll_mantis
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: doll_mantis-inhand-left
+      right:
+      - state: doll_mantis-inhand-right
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: MantisDollPlushie
+  - type: MeleeWeapon
+    wideAnimationRotation: -150
+  - type: ThrowingAngle
+    angle: -150
+  - type: DamageOtherOnHit
+    maxHitQuantity: 50 # SLASH DASH. This is so stupid. Each hit is only 1 damage and there will never be this many entities together
+  - type: EmbeddableProjectile
+    embedOnThrow: false # She'll swipe through people instead of bounce off of them
+  - type: StaticPrice
+    price: 25
+  - type: PhysicalComposition
+    materialComposition:
+      Mnemolith: 100
+      Cloth: 100
+  - type: Tag
+    tags:
+    - Payload
+    - ClothMade
+    - MantisBeltStorable
+
+# SELF-INSERT PLUSHIES
+# note: these MUST be approved by Direction - either an Owner or the Head Maintainer.
+# at this time, only maintainers and admins can ask to have self-insert items added.
+# sprites must be provided by the requester somehow.
+# these are liable to be removed at any time.
+
+# @ sheepmera; approved by portfiend (head maintainer)
+- type: entity
+  parent: BasePlushie
+  id: PlushieAzalea
+  name: azalea plushie
+  description: A plushie of a fennec fox with ram horns and honey eyes. It's rumored that every single one of these is personalized.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/azaleaplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: AzaleaPlushie
+
+# @ daggeran, approved by Jenn
+- type: entity
+  parent: PlushieShadowkin
+  id: PlushieWhistler
+  name: whistler plushie
+  description: A plushie of a certain green shadowkin. Very soft and plush. You swear you hear it wurble when you turn your back.
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Fun/whistlerplushie.rsi
+      state: icon
+    - type: Item
+      inhandVisuals:
+        left:
+          - state: inhand-left
+        right:
+          - state: inhand-right
+    - type: FoodSequenceElement
+      entries:
+        CottonBurger: WhistlerPlushie

@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Remuchi
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -11,6 +12,7 @@ using Content.Server.Mind;
 using Content.Server.Stunnable;
 using Content.Server.WhiteDream.BloodCult.Gamerule;
 using Content.Server.WhiteDream.BloodCult.Runes.Revive;
+using Content.Shared._DEN.Unrotting;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage;
 using Content.Shared.Mindshield.Components;
@@ -60,17 +62,20 @@ public sealed class CultRuneOfferingSystem : EntitySystem
     private bool TryOffer(Entity<CultRuneOfferingComponent> rune, EntityUid target, EntityUid user, int invokersTotal)
     {
         // if the target is dead we should always sacrifice it.
-        if (_mobState.IsDead(target))
-        {
-            Sacrifice(rune, target);
-            return true;
-        }
+        // if (_mobState.IsDead(target))
+        // {
+        //     Sacrifice(rune, target);
+        //     return true;
+        // }
 
-        if (!_mind.TryGetMind(target, out _, out _) || _bloodCultRule.IsTarget(target) ||
-            HasComp<BibleUserComponent>(target) || HasComp<MindShieldComponent>(target))
-            return TrySacrifice(rune, target, invokersTotal);
+        // if (!_mind.TryGetMind(target, out _, out _) || _bloodCultRule.IsTarget(target) ||
+        //     HasComp<BibleUserComponent>(target) || HasComp<MindShieldComponent>(target))
+        //     return TrySacrifice(rune, target, invokersTotal);
 
-        return TryConvert(rune, target, user, invokersTotal);
+        // return TryConvert(rune, target, user, invokersTotal);
+
+        // DEN - We don't do conversion antags, always skip to sacrificing
+        return TrySacrifice(rune, target, invokersTotal);
     }
 
     private bool TrySacrifice(Entity<CultRuneOfferingComponent> rune, EntityUid target, int invokersAmount)
@@ -82,44 +87,58 @@ public sealed class CultRuneOfferingSystem : EntitySystem
         return true;
     }
 
-    private bool TryConvert(Entity<CultRuneOfferingComponent> rune, EntityUid target, EntityUid user, int invokersTotal)
-    {
-        if (invokersTotal < rune.Comp.ConvertInvokersAmount)
-            return false;
+    // DEN - Conversion is disabled
+    // private bool TryConvert(Entity<CultRuneOfferingComponent> rune, EntityUid target, EntityUid user, int invokersTotal)
+    // {
+    //     if (invokersTotal < rune.Comp.ConvertInvokersAmount)
+    //         return false;
 
-        _cultRuneRevive.AddCharges(rune, rune.Comp.ReviveChargesPerOffering);
-        Convert(rune, target, user);
-        return true;
-    }
+    //     _cultRuneRevive.AddCharges(rune, rune.Comp.ReviveChargesPerOffering);
+    //     Convert(rune, target, user);
+    //     return true;
+    // }
 
     private void Sacrifice(Entity<CultRuneOfferingComponent> rune, EntityUid target)
     {
+        if (TryComp(target, out RottingImmuneComponent? rotComp))
+        {
+            // presumably they've already been sacrificed, you can't sacrifice them again lol
+            return;
+        }
         _cultRuneRevive.AddCharges(rune, rune.Comp.ReviveChargesPerOffering);
         var transform = Transform(target);
 
-        if (!_mind.TryGetMind(target, out var mindId, out _))
-            Spawn(rune.Comp.SoulShardGhostProto, transform.Coordinates);
-        else
-        {
-            var shard = Spawn(rune.Comp.SoulShardProto, transform.Coordinates);
-            _mind.TransferTo(mindId, shard);
-            _mind.UnVisit(mindId);
-        }
+        // DEN - Prevent forced conversion, just spawn the ghost role soul shard always
+        // if (!_mind.TryGetMind(target, out var mindId, out _))
+        //     Spawn(rune.Comp.SoulShardGhostProto, transform.Coordinates);
+        // else
+        // {
+        //     var shard = Spawn(rune.Comp.SoulShardProto, transform.Coordinates);
+        //     _mind.TransferTo(mindId, shard);
+        //     _mind.UnVisit(mindId);
+        // }
 
-        _body.GibBody(target);
+        // DEN - remove sacrifical gibbing
+        // _body.GibBody(target);
+
+        // Create ghost shard with a ghost role, the sacrifical victim can opt in, or another ghost can
+        // Make the body rotting immune so it can be recovered
+        Spawn(rune.Comp.SoulShardGhostProto, transform.Coordinates);
+        EnsureComp<RottingImmuneComponent>(target);
     }
 
-    private void Convert(Entity<CultRuneOfferingComponent> rune, EntityUid target, EntityUid user)
-    {
-        _bloodCultRule.Convert(target);
-        _stun.TryStun(target, TimeSpan.FromSeconds(2f), false);
-        if (TryComp(target, out CuffableComponent? cuffs) && cuffs.Container.ContainedEntities.Count >= 1)
-        {
-            var lastAddedCuffs = cuffs.LastAddedCuffs;
-            _cuffable.Uncuff(target, user, lastAddedCuffs);
-        }
+    // DEN - Conversion is disabled
+    // private void Convert(Entity<CultRuneOfferingComponent> rune, EntityUid target, EntityUid user)
+    // {
+    //     _bloodCultRule.Convert(target);
+    //     _stun.TryStun(target, TimeSpan.FromSeconds(2f), false);
+    //     if (TryComp(target, out CuffableComponent? cuffs) && cuffs.Container.ContainedEntities.Count >= 1)
+    //     {
+    //         var lastAddedCuffs = cuffs.LastAddedCuffs;
+    //         _cuffable.Uncuff(target, user, lastAddedCuffs);
+    //     }
 
-        _statusEffects.TryRemoveStatusEffect(target, "Muted");
-        _damageable.TryChangeDamage(target, rune.Comp.ConvertHealing);
-    }
+    //     _statusEffects.TryRemoveStatusEffect(target, "Muted");
+    //     _damageable.TryChangeDamage(target, rune.Comp.ConvertHealing);
+    // }
 }

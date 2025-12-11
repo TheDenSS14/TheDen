@@ -1,0 +1,115 @@
+# SPDX-FileCopyrightText: 2025 Cami
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseItem
+  id: GiftWrap
+  name: magic gift wrap
+  description: Unroll the tube, wrap up the gift, and just like magic, the colours change!
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/ParcelGiftWrap/gift_wrap.rsi
+    state: magic
+  - type: ParcelWrap
+    parcelPrototype: WrappedParcelGift
+    wrapDelay: 0.5
+    colorPalette: GiftWrapping
+    ribbonChance: 0.5
+    patternChance: 0.5
+    spritePrefix: gift
+    wrapSound:
+      path: /Audio/Items/Handcuffs/rope_start.ogg
+      params:
+        volume: -5
+        variation: 0.05
+    whitelist:
+      components:
+      - Item
+    blacklist:
+      components:
+      - NukeDisk
+      - WrappedParcel
+      tags:
+      - ParcelWrapBlacklist
+      - FakeNukeDisk
+  - type: LimitedCharges
+    maxCharges: 30
+    charges: 30
+
+- type: entity
+  parent: BaseItem
+  id: WrappedParcelGift
+  categories: [ HideSpawnMenu ]
+  name: wrapped gift
+  description: A gift, a gift! What's inside? Is it for you?
+  components:
+  - type: ContainerContainer
+    containers:
+      contents: !type:ContainerSlot
+      paper_label: !type:ContainerSlot
+  - type: Appearance
+  - type: Sprite
+    sprite: Objects/Misc/ParcelGiftWrap/wrapped_gift.rsi
+    layers:
+    - state: gift-medium
+      map: [ "box" ]
+    - state: gift-medium-bow
+      map: [ "bow" ]
+    - state: gift-transparent
+      map: [ "ribbon" ]
+    - state: gift-transparent
+      map: [ "pattern" ]
+  - type: RandomSprite
+    getAllGroups: true
+    available: []
+  - type: WrappedParcel
+    unwrapDelay: 0.5
+    unwrapSound:
+      path: /Audio/Effects/poster_broken.ogg
+      params:
+        volume: -4
+    unwrapTrash: GiftWrapTrash
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Slash
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/poster_broken.ogg
+          params:
+            volume: -4
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Recyclable
+  - type: PaperLabel
+    labelSlot:
+      name: gift-tag
+      whitelist:
+        components:
+        - Paper
+  - type: ItemSlots
+
+- type: entity
+  parent: BaseItem
+  id: GiftWrapTrash
+  categories: [ HideSpawnMenu ]
+  name: gift wrap
+  description: The joy this wrapping once had can be found somewhere else now.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/ParcelGiftWrap/gift_wrap_trash.rsi
+    state: trash
+  - type: Tag
+    tags:
+    - Trash
+    - ParcelWrapBlacklist
+    - Recyclable
+  - type: SpaceGarbage

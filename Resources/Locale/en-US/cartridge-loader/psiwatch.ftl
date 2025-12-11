@@ -1,10 +1,11 @@
-# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 psi-watch-program-name = PsiWatch
-psi-watch-title = PsiWatch 1.3
-psi-watch-no-entries = Nobody is registered. Why not enjoy a nice, cold brew?
+psi-watch-title = PsiWatch 1.4
+psi-watch-no-entries = Nobody is registered. Do your job.
 psi-watch-entry = {$name}, {$job}
 psi-watch-no-reason = [ERROR] No reason given?

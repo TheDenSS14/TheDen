@@ -19,11 +19,12 @@
 # SPDX-FileCopyrightText: 2023 liltenhead
 # SPDX-FileCopyrightText: 2023 lzk
 # SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingHeadBase
@@ -85,6 +86,9 @@
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellMedium
+        blacklist: # TheDen
+          tags:
+          - MantisCaster
   - type: Item
     heldPrefix: off
   - type: ContainerContainer

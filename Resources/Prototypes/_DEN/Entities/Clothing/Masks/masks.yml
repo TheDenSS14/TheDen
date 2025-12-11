@@ -99,6 +99,67 @@
     hideOnToggle: true
 
 - type: entity
+  parent: ClothingMaskPullableBase
+  id: ClothingMaskMantisVeil
+  name: mantis veil
+  description: "A sheer veil ornamented with electrum hoops. Pairs well with your blindfold."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Mask/mantis_mask_veil.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Mask/mantis_mask_veil.rsi
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    hideOnToggle: true
+  - type: BreathMask
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskMantisRitual
+  name: mask of the unburdened
+  description: "A gilded funerary mask reminiscent of ancient rulers, its features smoothed into an expression of serene finality."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Mask/mantis_mask_ritual.rsi
+    layers:
+    - state: icon
+    - state: icon-glow
+      shader: unshaded
+  - type: Item
+    sprite: _DEN/Clothing/Mask/mantis_mask_ritual.rsi
+    inhandVisuals:
+      left:
+        - state: inhand-left
+        - state: inhand-left-glow
+          shader: unshaded
+      right:
+        - state: inhand-right
+        - state: inhand-right-glow
+          shader: unshaded
+  - type: Clothing
+    sprite: _DEN/Clothing/Mask/mantis_mask_ritual.rsi
+    clothingVisuals:
+      mask:
+      - state: equipped-MASK
+      - state: equipped-glow
+        shader: unshaded
+  - type: HideLayerClothing
+    slots:
+    - Snout
+  - type: BreathMask
+  - type: IdentityBlocker
+    enabled: true
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
+
+- type: entity
   parent: ClothingMaskBase
   id: ClothingMaskKitsune
   name: kitsune mask

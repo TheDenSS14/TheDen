@@ -1,14 +1,15 @@
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 VMSolidus
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: ShellSoulbreaker
   name: shell (12 gauge soulbreaker)
+  description: "Just one shot will mindbreak your target. Make sure you really mean it." # TheDen - Ammo doesn't usually have descriptions, but it's important here
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -23,9 +24,9 @@
       ammo:
         reagents:
         - ReagentId: SoulbreakerToxin
-          Quantity: 15
+          Quantity: 5
   - type: SolutionTransfer
-    maxTransferAmount: 15
+    maxTransferAmount: 5
   - type: SpentAmmoVisuals
     state: "practice"
   - type: GuideHelp

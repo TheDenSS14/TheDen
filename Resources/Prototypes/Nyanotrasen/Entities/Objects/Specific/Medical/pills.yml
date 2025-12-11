@@ -1,17 +1,30 @@
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2023 PHCodes <47927305+PHCodes@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 NeLepus <l3pusp3pus@gmail.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 PHCodes
+# SPDX-FileCopyrightText: 2025 NeLepus
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  name: mindbreaker toxin
+  name: pill
+  suffix: mindbreaker toxin 20u
   parent: Pill
   id: PillMindbreakerToxin
-  description: Removes psionics when ingested. Mildly poisonous.
+  description: "Not to be taken lightly." # TheDen
   components:
+  - type: Label # TheDen
+    currentLabel: mindbreaker toxin 20u
+  - type: Sprite # TheDen - Mindbreaker Toxin colored pill
+    sprite: _DEN/Objects/Specific/Chemistry/pills.rsi
+    state: mindbreakerpill
+  - type: Pill
+    state: mindbreakerpill
+  - type: Item
+    size: Tiny
+    sprite: _DEN/Objects/Specific/Chemistry/pills.rsi
+    heldPrefix: mindbreaker
   - type: SolutionContainerManager
     solutions:
       food:
@@ -23,32 +36,44 @@
     guides: [ Mindbreaking ]
 
 - type: entity
-  name: cryptobiolin
+  name: pill
+  suffix: cryptobiolin 15u # TheDen
   parent: Pill
   id: PillCryptobiolin
-  description: A long-lasting drug which causes mild confusion, but renders you psionically insulated.
+  description: "A temporary anti-psionic." # TheDen
   components:
+  - type: Label # TheDen
+    currentLabel: cryptobiolin 15u # TheDen
+  - type: Sprite # TheDen - Cryptobiolin colored pill
+    sprite: _DEN/Objects/Specific/Chemistry/pills.rsi
+    state: cryptopill
+  - type: Pill
+    state: cryptopill
+  - type: Item
+    size: Tiny
+    sprite: _DEN/Objects/Specific/Chemistry/pills.rsi
+    heldPrefix: crypto
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 15 # TheDen
         reagents:
         - ReagentId: Cryptobiolin
-          Quantity: 20
+          Quantity: 15 # TheDen
   - type: GuideHelp
     guides: [ PsionicInsulation ]
 
 - type: entity
   parent: PillCanister
   id: PillCanisterCryptobiolin
-  suffix: Cryptobiolin, 5
+  suffix: cryptobiolin, 10 # TheDen
   components:
   - type: Label
-    currentLabel: Cryptobiolin 20u
+    currentLabel: cryptobiolin 15u # TheDen
   - type: StorageFill
     contents:
     - id: PillCryptobiolin
-      amount: 5
+      amount: 10 # TheDen
   - type: GuideHelp
     guides: [ PsionicInsulation ]
 

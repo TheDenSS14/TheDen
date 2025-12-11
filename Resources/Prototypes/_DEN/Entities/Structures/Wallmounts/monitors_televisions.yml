@@ -1,0 +1,61 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ComputerTelevision
+  id: ComputerSomberTelevision
+  name: somber television
+  description: "A striped amaranth television. It looks like an expensive antique, but the screen is so small and square that it's hard to appreciate. For some reason, it has a channel zero that only displays grainy images of rotating fruit."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Machines/computers.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: sombertelevision
+    - map: ["computerLayerScreen"]
+      state: sombertelevision-on
+  - type: EtherealLight # Dims around ethereal entities
+  - type: PointLight
+    radius: 2
+    energy: 4
+    color: "#4dc4ff"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.28125,-0.15625,0.28125,0.3125"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+        density: 200
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 3

@@ -7,7 +7,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 ## Moldy Bread
 #- type: microwaveMealRecipe
@@ -328,7 +328,7 @@
   time: 10
   solids:
     FoodRiceBoiled: 1
-    FoodEgg: 2 #FoodMealFriedegg when we can actually fry eggs buh
+    FoodMealFriedegg: 1 #DEN - Use fried eggs
     FoodMeatBacon: 1 # DEN - Use bacon
 
 - type: microwaveMealRecipe

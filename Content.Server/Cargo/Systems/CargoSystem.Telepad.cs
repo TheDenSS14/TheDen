@@ -20,8 +20,9 @@
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Cargo.Components;
 using Content.Server.Construction;
@@ -67,20 +68,36 @@ public sealed partial class CargoSystem
                 continue;
 
             // todo cannot be fucking asked to figure out device linking rn but this shouldn't just default to the first port.
-            if (!TryComp<DeviceLinkSinkComponent>(uid, out var sinkComponent) ||
-                sinkComponent.LinkedSources.FirstOrNull() is not { } console ||
-                console != args.OrderConsole.Owner)
+            if (!TryGetLinkedConsole((uid, tele), out var maybeConsole)
+                || maybeConsole is not { } console
+                || console != args.OrderConsole)
                 continue;
 
             for (var i = 0; i < args.Order.OrderQuantity; i++)
             {
                 tele.CurrentOrders.Add(args.Order);
             }
-            tele.Accumulator = tele.Delay;
+
+            tele.NextTeleport = _gameTiming.CurTime + tele.Delay;
             args.Handled = true;
             args.FulfillmentEntity = uid;
-            return;
+            return; // okay the return is important. noted.
         }
+    }
+
+    private bool TryGetLinkedConsole(Entity<CargoTelepadComponent> ent,
+        [NotNullWhen(true)] out Entity<CargoOrderConsoleComponent>? console)
+    {
+        console = null;
+        if (!TryComp<DeviceLinkSinkComponent>(ent, out var sinkComponent) ||
+            sinkComponent.LinkedSources.FirstOrNull() is not { } linked)
+            return false;
+
+        if (!TryComp<CargoOrderConsoleComponent>(linked, out var consoleComp))
+            return false;
+
+        console = (linked, consoleComp);
+        return true;
     }
 
     private void UpdateTelepad(float frameTime)
@@ -94,32 +111,24 @@ public sealed partial class CargoSystem
             if (comp.CurrentState == CargoTelepadState.Unpowered)
             {
                 comp.CurrentState = CargoTelepadState.Idle;
-                _appearance.SetData(uid, CargoTelepadVisuals.State, CargoTelepadState.Idle, appearance);
-                comp.Accumulator = comp.Delay;
-                continue;
-            }
-
-            comp.Accumulator -= frameTime;
-
-            // Uhh listen teleporting takes time and I just want the 1 float.
-            if (comp.Accumulator > 0f)
-            {
-                comp.CurrentState = CargoTelepadState.Idle;
+                comp.NextTeleport = _gameTiming.CurTime + comp.Delay;
                 _appearance.SetData(uid, CargoTelepadVisuals.State, CargoTelepadState.Idle, appearance);
                 continue;
             }
 
             if (comp.CurrentOrders.Count == 0)
             {
-                comp.Accumulator += comp.Delay;
+                comp.CurrentState = CargoTelepadState.Idle;
+                _appearance.SetData(uid, CargoTelepadVisuals.State, CargoTelepadState.Idle, appearance);
                 continue;
             }
 
             var xform = Transform(uid);
             var currentOrder = comp.CurrentOrders.First();
+
             if (FulfillOrder(currentOrder, xform.Coordinates, comp.PrinterOutput))
             {
-                _audio.PlayPvs(_audio.GetSound(comp.TeleportSound), uid, AudioParams.Default.WithVolume(-8f));
+                _audio.PlayPvs(_audio.ResolveSound(comp.TeleportSound), uid, AudioParams.Default.WithVolume(-8f));
 
                 if (_station.GetOwningStation(uid) is { } station)
                     UpdateOrders(station);
@@ -128,8 +137,6 @@ public sealed partial class CargoSystem
                 comp.CurrentState = CargoTelepadState.Teleporting;
                 _appearance.SetData(uid, CargoTelepadVisuals.State, CargoTelepadState.Teleporting, appearance);
             }
-
-            comp.Accumulator += comp.Delay;
         }
     }
 
@@ -146,7 +153,7 @@ public sealed partial class CargoSystem
 
     private void OnUpgradeExamine(EntityUid uid, CargoTelepadComponent component, UpgradeExamineEvent args)
     {
-        args.AddPercentageUpgrade("cargo-telepad-delay-upgrade", component.Delay / component.BaseDelay);
+        args.AddPercentageUpgrade("cargo-telepad-delay-upgrade", (float) (component.Delay / component.BaseDelay));
     }
 
     private void OnShutdown(Entity<CargoTelepadComponent> ent, ref ComponentShutdown args)

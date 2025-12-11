@@ -28,6 +28,7 @@
 # SPDX-FileCopyrightText: 2024 Justin Pfeifler
 # SPDX-FileCopyrightText: 2024 Kara
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 onesch
 # SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -67,6 +68,9 @@
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellSmall
+        blacklist: # TheDen
+          tags:
+          - MantisCaster
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
@@ -220,6 +224,9 @@
         enum.FlashVisuals.LightLayer:
           True: {visible: true}
           False: {visible: false}
+  - type: Tag # TheDen
+    tags:
+    - Flash
 
 - type: entity
   name: floodlight
