@@ -199,11 +199,10 @@ namespace Content.Shared.Roles
         public List<ProtoId<GuideEntryPrototype>>? Guides;
 
         /// <summary>
-        /// To specify if the number of job slots for a specific job can be altered mid-round
-        /// by the job console
+        /// To specify if the number of job slots for a specific job can be altered mid-round by the job console
         /// </summary>
         [DataField]
-        public bool AdjustableCount = true;
+        public bool AdjustableCount = false;
 
     }
 

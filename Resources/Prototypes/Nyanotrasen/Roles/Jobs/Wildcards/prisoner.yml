@@ -27,6 +27,7 @@
   canBeAntag: false
   icon: "JobIconPrisoner"
   supervisors: job-supervisors-security
+  adjustableCount: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security

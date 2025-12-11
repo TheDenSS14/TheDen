@@ -1,20 +1,43 @@
-﻿<DefaultWindow xmlns="https://spacestation14.io"
-               xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-               Title="erm, what the sigma"
-               MinSize="800 500">
-    <BoxContainer Orientation="Vertical">
-        <BoxContainer VerticalExpand="True">
-            <!-- Record listing -->
-            <BoxContainer Orientation="Vertical" Margin="5" MinWidth="368" MaxWidth="400">
-                <Label Name="RecordListingStatus" Visible="False" />
-                <ScrollContainer VerticalExpand="True">
-                    <BoxContainer Name="JobListing"
+﻿<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      Title="{Loc jobs-console-title}"
+                      MinSize="670 400">
+    <BoxContainer Orientation="Horizontal">
+        <BoxContainer Orientation="Vertical">
+            <BoxContainer VerticalExpand="True">
+                <!-- General Station Info -->
+                <BoxContainer Orientation="Vertical" Margin="5" MinWidth="368" MaxWidth="400">
+                    <Label Name="StationInfoLabel" Text="{Loc jobs-console-station-info-title}" StyleClasses="LabelKeyText"/>
+                    <PanelContainer HorizontalExpand="True" StyleClasses="LowDivider" MinHeight="2"/>
+                    <BoxContainer Name="StationInfo"
                                   Orientation="Vertical"
                                   HorizontalExpand="True"
-                                  VerticalExpand="True">
+                                  VerticalExpand="True"
+                                  Margin="3">
+                        <Label Name="TotalCrewLabel" Margin="6"/>
+                        <Label Name="TotalSlotsLabel" Margin="6"/>
+                        <Label Name="TotalOpenSlotsLabel" Margin="6"/>
                     </BoxContainer>
-                </ScrollContainer>
+                </BoxContainer>
+            </BoxContainer>
+        </BoxContainer>
+        <BoxContainer Orientation="Vertical">
+            <BoxContainer VerticalExpand="True">
+                <!-- Job Slots Listing -->
+                <BoxContainer Orientation="Vertical" Margin="5" MinWidth="368" MaxWidth="400">
+                    <Label Name="StationJobsLabel" Text="{Loc jobs-console-jobs-allocation-title}" StyleClasses="LabelKeyText"/>
+                    <PanelContainer HorizontalExpand="True" StyleClasses="LowDivider" MinHeight="2"/>
+                    <ScrollContainer VerticalExpand="True">
+                        <PanelContainer StyleClasses="PanelBackgroundBaseDark">
+                            <BoxContainer Name="JobListing"
+                                          Orientation="Vertical"
+                                          HorizontalExpand="True"
+                                          VerticalExpand="True">
+                            </BoxContainer>
+                        </PanelContainer>
+                    </ScrollContainer>
+                </BoxContainer>
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>
-</DefaultWindow>
+</controls:FancyWindow>

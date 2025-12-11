@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Content.Client.UserInterface.Controls;
 using Content.Shared._DEN.StationRecords;
 using Content.Shared.Roles;
 using Content.Shared.StationRecords;
@@ -12,17 +13,17 @@ using Robust.Shared.Utility;
 namespace Content.Client._DEN.StationRecords;
 
 [GenerateTypedNameReferences]
-public sealed partial class StationJobsConsoleWindow : DefaultWindow
+public sealed partial class StationJobsConsoleWindow : FancyWindow
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
-    public event Action<string>? OnJobAdd; // Frontier
-    public event Action<string>? OnJobSubtract; // Frontier
+    public event Action<string>? OnJobAdd;
+    public event Action<string>? OnJobSubtract;
 
     public StationJobsConsoleWindow()
     {
         RobustXamlLoader.Load(this);
-        IoCManager.InjectDependencies(this); // Frontier
+        IoCManager.InjectDependencies(this);
     }
 
     public void UpdateState(StationJobsConsoleState state)
@@ -30,8 +31,8 @@ public sealed partial class StationJobsConsoleWindow : DefaultWindow
         if (state.JobList is null || state.JobSlots is null)
             return;
 
-        JobListing.Visible = true;
         PopulateJobsContainer(state.JobList, state.JobSlots);
+        PopulateStationInfoContainer(state.JobList, state.JobSlots);
     }
 
     private void PopulateJobsContainer(IReadOnlyDictionary<string, uint?> jobList, IReadOnlyDictionary<string, uint?> jobSlots)
@@ -45,18 +46,40 @@ public sealed partial class StationJobsConsoleWindow : DefaultWindow
             if (!_prototype.TryIndex<JobPrototype>(job, out var jobProto))
                 continue;
 
-            string jobName = jobProto.LocalizedName;
-
             var jobEntry = new StationJobsConsoleJobRow(jobProto)
             {
-                JobName = { Text = jobName },
+                JobName = { Text = jobProto.LocalizedName },
                 JobAmount = { Text = amount.ToString() },
-                JobSlots = { Text = "(" + jobSlots.FirstOrDefault(a => a.Key == job).Value + ")" }
+                JobSlots = { Text = $"({jobSlots.FirstOrDefault(a => a.Key == job).Value})" }
             };
+
+            if (!jobProto.AdjustableCount)
+            {
+                jobEntry = new StationJobsConsoleJobRow(jobProto)
+                {
+                    JobName = { Text = jobProto.LocalizedName },
+                    JobAmount = { Text = amount.ToString() },
+                    JobSlots = { Text = $"({jobSlots.FirstOrDefault(a => a.Key == job).Value})" },
+                    IncreaseJobSlot = { Disabled = true},
+                    DecreaseJobSlot = { Disabled = true}
+                };
+            }
 
             jobEntry.DecreaseJobSlot.OnPressed += (args) => { OnJobSubtract?.Invoke(job); };
             jobEntry.IncreaseJobSlot.OnPressed += (args) => { OnJobAdd?.Invoke(job); };
             JobListing.AddChild(jobEntry);
         }
+    }
+
+    private void PopulateStationInfoContainer(IReadOnlyDictionary<string, uint?> jobList, IReadOnlyDictionary<string, uint?> jobSlots)
+    {
+
+        var totalSlots = jobSlots.Values.Sum(u => u ?? 0);
+        var openSlots = jobList.Values.Sum(u => u ?? 0);
+        var totalCrew =  totalSlots - openSlots;
+
+        TotalSlotsLabel.Text = Loc.GetString("jobs-console-job-capacity", ("num", totalSlots));
+        TotalCrewLabel.Text = Loc.GetString("jobs-console-current-crew", (("num", totalCrew)));
+        TotalOpenSlotsLabel.Text = Loc.GetString("jobs-console-open-jobs", ("num", openSlots));
     }
 }

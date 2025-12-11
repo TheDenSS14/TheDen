@@ -25,6 +25,7 @@ public sealed partial class StationJobsConsoleJobRow : PanelContainer
     private void Initialize(JobPrototype jobProto)
     {
         IoCManager.InjectDependencies(this);
+
         JobIcon.Texture = _prototypeManager.Index(jobProto.Icon).Icon.Frame0();
     }
 }
