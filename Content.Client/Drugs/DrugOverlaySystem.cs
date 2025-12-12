@@ -27,6 +27,10 @@ public sealed class DrugOverlaySystem : EntitySystem
 
     public static string RainbowKey = "SeeingRainbows";
 
+    private MnemolithOverlay _mnemolithOverlay = default!;
+
+    public static string MnemolithKey = "SeeingMnemolith";
+
     public override void Initialize()
     {
         base.Initialize();
@@ -38,6 +42,15 @@ public sealed class DrugOverlaySystem : EntitySystem
         SubscribeLocalEvent<SeeingRainbowsComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
 
         _overlay = new();
+
+        // TheDen - Added mnemolith overlay, did whoever made SeeingRainbows not think we'd ever need another kind of OnInit in this file? Excuse the ugly names...
+        SubscribeLocalEvent<SeeingMnemolithComponent, ComponentInit>(OnMnemolithInit);
+        SubscribeLocalEvent<SeeingMnemolithComponent, ComponentShutdown>(OnMnemolithShutdown);
+
+        SubscribeLocalEvent<SeeingMnemolithComponent, LocalPlayerAttachedEvent>(OnPlayerMnemolithAttached);
+        SubscribeLocalEvent<SeeingMnemolithComponent, LocalPlayerDetachedEvent>(OnPlayerMnemolithDetached);
+
+        _mnemolithOverlay = new();
     }
 
     private void OnPlayerAttached(EntityUid uid, SeeingRainbowsComponent component, LocalPlayerAttachedEvent args)
@@ -68,6 +81,38 @@ public sealed class DrugOverlaySystem : EntitySystem
             _overlay.Intoxication = 0;
             _overlay.TimeTicker = 0;
             _overlayMan.RemoveOverlay(_overlay);
+        }
+    }
+
+    // TheDen - Added mnemolith overlay
+    private void OnPlayerMnemolithAttached(EntityUid uid, SeeingMnemolithComponent component, LocalPlayerAttachedEvent args)
+    {
+        _overlayMan.AddOverlay(_mnemolithOverlay);
+    }
+
+    private void OnPlayerMnemolithDetached(EntityUid uid, SeeingMnemolithComponent component, LocalPlayerDetachedEvent args)
+    {
+        _mnemolithOverlay.Intoxication = 0;
+        _mnemolithOverlay.TimeTicker = 0;
+        _overlayMan.RemoveOverlay(_mnemolithOverlay);
+    }
+
+    private void OnMnemolithInit(EntityUid uid, SeeingMnemolithComponent component, ComponentInit args)
+    {
+        if (_player.LocalEntity == uid)
+        {
+            _mnemolithOverlay.Phase = _random.NextFloat(MathF.Tau);
+            _overlayMan.AddOverlay(_mnemolithOverlay);
+        }
+    }
+
+    private void OnMnemolithShutdown(EntityUid uid, SeeingMnemolithComponent component, ComponentShutdown args)
+    {
+        if (_player.LocalEntity == uid)
+        {
+            _mnemolithOverlay.Intoxication = 0;
+            _mnemolithOverlay.TimeTicker = 0;
+            _overlayMan.RemoveOverlay(_mnemolithOverlay);
         }
     }
 }
