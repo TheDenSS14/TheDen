@@ -43,6 +43,7 @@ namespace Content.Shared.Humanoid
         Nipples, // Things for specifically nipples.
         TailBehind, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
         TailOversuit, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
+        BackWings, // DEN - Reptilian visual tweaks
         Eyes,
         RArm,
         LArm,
