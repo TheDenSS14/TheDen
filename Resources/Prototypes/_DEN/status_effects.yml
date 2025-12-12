@@ -4,4 +4,7 @@
 - type: statusEffect
   id: SeeingMnemolith
   alwaysAllowed: true # It's this or fuck up five or six mob files, and it's just cosmetic...
-  allowed: []
+
+- type: statusEffect
+  id: SeeingMnemolithHighlight
+  alwaysAllowed: true

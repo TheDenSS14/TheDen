@@ -1,4 +1,5 @@
 using Content.Shared._DV.CCVars;
+using Content.Shared.CCVar;
 using Content.Shared.Drugs;
 using Content.Shared.StatusEffect;
 using Robust.Client.Graphics;
@@ -22,20 +23,23 @@ public sealed class MnemolithOverlay : Overlay
     public override bool RequestScreenTexture => true;
     private readonly ShaderInstance _mnemolithShader;
 
-    public float Intoxication = 0.0f;
-    public float TimeTicker = 0.0f;
+    // Ramp timer
+    public float Elapsed = 0.0f;
     public float Phase = 0.0f;
 
-    private const float VisualThreshold = 10.0f;
-    private const float PowerDivisor = 250.0f;
-    private float _timeScale = 0.0f;
-    private float _warpScale = 0.0f;
+    private float _timeScale = 1.0f;
+    private float _warpScale = 1.0f;
 
-    private float EffectScale => Math.Clamp((Intoxication - VisualThreshold) / PowerDivisor, 0.0f, 1.0f);
+    // Ramp duration in seconds
+    private const float RampDuration = 1.0f; // TODO: Adjust ramp time
+
+    // Effect strength goes from 0 → 1 over RampDuration
+    private float EffectScale => Math.Clamp(Elapsed / RampDuration, 0.0f, 1.0f);
 
     public MnemolithOverlay()
     {
         IoCManager.InjectDependencies(this);
+
         _mnemolithShader = _prototypeManager.Index<ShaderPrototype>("Mnemolith").InstanceUnique();
         _config.OnValueChanged(DCCVars.DisableDrugWarping, OnDisableDrugWarpingChanged, invokeImmediately: true);
     }
@@ -49,10 +53,10 @@ public sealed class MnemolithOverlay : Overlay
     protected override void FrameUpdate(FrameEventArgs args)
     {
         var playerEntity = _playerManager.LocalEntity;
-
         if (playerEntity == null)
             return;
 
+        // FIX: correct component name
         if (!_entityManager.HasComponent<SeeingMnemolithComponent>(playerEntity)
             || !_entityManager.TryGetComponent<StatusEffectsComponent>(playerEntity, out var status))
             return;
@@ -61,18 +65,8 @@ public sealed class MnemolithOverlay : Overlay
         if (!statusSys.TryGetTime(playerEntity.Value, DrugOverlaySystem.MnemolithKey, out var time, status))
             return;
 
-        var timeLeft = (float)(time.Value.Item2 - time.Value.Item1).TotalSeconds;
-
-        TimeTicker += args.DeltaSeconds;
-
-        if (timeLeft - TimeTicker > timeLeft / 16f)
-        {
-            Intoxication += (timeLeft - Intoxication) * args.DeltaSeconds / 16f;
-        }
-        else
-        {
-            Intoxication -= Intoxication / (timeLeft - TimeTicker) * args.DeltaSeconds;
-        }
+        // Ramp elapsed time up linearly
+        Elapsed = Math.Min(Elapsed + args.DeltaSeconds, RampDuration);
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
@@ -83,7 +77,8 @@ public sealed class MnemolithOverlay : Overlay
         if (args.Viewport.Eye != eyeComp.Eye)
             return false;
 
-        return EffectScale > 0;
+        // Draw immediately once effect starts
+        return Elapsed > 0f;
     }
 
     protected override void Draw(in OverlayDrawArgs args)

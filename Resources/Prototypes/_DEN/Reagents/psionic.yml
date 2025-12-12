@@ -79,8 +79,16 @@
         key: SeeingMnemolith
         component: SeeingMnemolith
         type: Add
-        time: 3
+        time: 10
         refresh: false
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          min: 29 # Living things start glowing, but not through walls
+        key: SeeingMnemolithHighlight
+        component: SeeingMnemolithHighlight
+        type: Add
+        time: 10
       - !type:PopupMessage
         type: Local
         visualType: MediumPsionic
