@@ -179,6 +179,7 @@
     openToolQualityNeeded: Slicing
     closeToolQualityNeeded: Slicing # Should probably be stitching or something if that gets added
     name: secret-stash-plushie
+  - type: BluespacePlushiePatchable # DEN: Allow applying bluespace patches.
 
 - type: entity
   parent: BasePlushie
