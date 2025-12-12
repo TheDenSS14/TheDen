@@ -103,3 +103,58 @@
     sprite: Markers/environment.rsi
     state: weather
   - type: BlockWeather
+  
+# Invisible Lights
+- type: entity
+  parent: MarkerBase
+  id: MarkerLight1
+  name: Marker Light Source
+  suffix: day
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Markers/environment.rsi
+        state: base-light-day
+  - type: PointLight
+    energy: 2
+    falloff: 0
+    radius: 8
+    softness: 0
+    color: "#ffeecfff"
+    castshadows: false
+    
+- type: entity
+  parent: MarkerBase
+  id: MarkerLight2
+  name: Marker Light Source
+  suffix: evening
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Markers/environment.rsi
+        state: base-light-evening
+  - type: PointLight
+    energy: 2
+    falloff: 0
+    radius: 8
+    softness: 0
+    color: "#EDA14Cff"
+    castshadows: false
+
+- type: entity
+  parent: MarkerBase
+  id: MarkerLight3
+  name: Marker Light Source
+  suffix: night
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Markers/environment.rsi
+        state: base-light-night
+  - type: PointLight
+    energy: 1
+    falloff: 0
+    radius: 8
+    softness: 0
+    color: "#AC8FE7ff"
+    castshadows: false
