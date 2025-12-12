@@ -21,11 +21,10 @@ public sealed class StationJobsConsoleBoundUserInterface : BoundUserInterface
         base.Open();
 
         _window = this.CreateWindow<StationJobsConsoleWindow>();
-        _window.OnJobAdd += OnJobsAdd; // Frontier: job modification buttons
-        _window.OnJobSubtract += OnJobsSubtract; // Frontier: job modification buttons
+        _window.OnJobAdd += OnJobsAdd;
+        _window.OnJobSubtract += OnJobsSubtract;
     }
 
-    // Frontier: job modification buttons, ship advertisements
     private void OnJobsAdd(string job)
     {
         SendMessage(new AdjustStationJobMsg(job, 1));
@@ -34,7 +33,7 @@ public sealed class StationJobsConsoleBoundUserInterface : BoundUserInterface
     {
         SendMessage(new AdjustStationJobMsg(job, -1));
     }
-    // End Frontier
+
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);

@@ -5,6 +5,7 @@ using Content.Server.StationRecords;
 using Content.Server.StationRecords.Systems;
 using Content.Shared._DEN.StationRecords;
 using Content.Shared.Access.Systems;
+using Content.Shared.Popups;
 using Content.Shared.Roles;
 using Content.Shared.StationRecords;
 using Robust.Server.GameObjects;
@@ -22,6 +23,7 @@ public sealed class StationJobsConsoleSystem : EntitySystem
     [Dependency] private readonly StationJobsSystem _stationJobsSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly StationRecordsSystem _recordsSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -34,6 +36,12 @@ public sealed class StationJobsConsoleSystem : EntitySystem
 
     private void OnAdjustJob(Entity<StationJobsConsoleComponent> ent, ref AdjustStationJobMsg msg)
     {
+        if (!_access.IsAllowed(msg.Actor, ent))
+        {
+            _popup.PopupEntity(Loc.GetString("jobs-console-access-denied"), ent, msg.Actor);
+            return;
+        }
+
         var stationUid = _station.GetOwningStation(ent);
         if (stationUid is EntityUid station)
         {

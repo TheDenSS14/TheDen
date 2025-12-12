@@ -46,11 +46,12 @@ public sealed partial class StationJobsConsoleWindow : FancyWindow
             if (!_prototype.TryIndex<JobPrototype>(job, out var jobProto))
                 continue;
 
+            var totalSlots = jobSlots.FirstOrDefault(a => a.Key == job).Value;
             var jobEntry = new StationJobsConsoleJobRow(jobProto)
             {
                 JobName = { Text = jobProto.LocalizedName },
                 JobAmount = { Text = amount.ToString() },
-                JobSlots = { Text = $"({jobSlots.FirstOrDefault(a => a.Key == job).Value})" }
+                JobSlots = { Text = $"({totalSlots})" }
             };
 
             if (!jobProto.AdjustableCount)
@@ -59,7 +60,7 @@ public sealed partial class StationJobsConsoleWindow : FancyWindow
                 {
                     JobName = { Text = jobProto.LocalizedName },
                     JobAmount = { Text = amount.ToString() },
-                    JobSlots = { Text = $"({jobSlots.FirstOrDefault(a => a.Key == job).Value})" },
+                    JobSlots = { Text = $"({totalSlots})" },
                     IncreaseJobSlot = { Disabled = true},
                     DecreaseJobSlot = { Disabled = true}
                 };
@@ -79,7 +80,7 @@ public sealed partial class StationJobsConsoleWindow : FancyWindow
         var totalCrew =  totalSlots - openSlots;
 
         TotalSlotsLabel.Text = Loc.GetString("jobs-console-job-capacity", ("num", totalSlots));
-        TotalCrewLabel.Text = Loc.GetString("jobs-console-current-crew", (("num", totalCrew)));
+        TotalCrewLabel.Text = Loc.GetString("jobs-console-current-crew", ("num", totalCrew));
         TotalOpenSlotsLabel.Text = Loc.GetString("jobs-console-open-jobs", ("num", openSlots));
     }
 }
