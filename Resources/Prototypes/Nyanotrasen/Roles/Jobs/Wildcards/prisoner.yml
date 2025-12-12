@@ -36,6 +36,7 @@
     charges: 3 # Poor prisoners with not a lot of self-extinguishes.
   - !type:ModifyEnvirohelmSpecial
     powerCell: PowerCellPotato
+  adjustableCount: true
 
 - type: startingGear
   id: PrisonerGear
