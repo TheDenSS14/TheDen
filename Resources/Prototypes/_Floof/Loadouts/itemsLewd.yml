@@ -294,6 +294,13 @@
     group: LoadoutVASH
 
 - type: loadout
+  id: LoadoutVASHToys
+  category: ItemsLewd
+  cost: 0 #No cost because it doesn't come with any toys, just a storage method.
+  items:
+  - ToysBox
+
+- type: loadout
   id: LoadoutTampon
   category: ItemsLewd
   cost: 0
