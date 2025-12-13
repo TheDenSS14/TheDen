@@ -78,7 +78,7 @@
   parent: [ClothingHandsGlovesMantis, BaseFoldable]
   id: ClothingHandsGlovesMantisAiry
   name: airy mantis sleeves
-  description: "Wide-cuffed sleeves over finger-loop gloves. The left cuff can be fastened tighter, if it's in the way of your mantle. But...only the left cuff, for some reason..."
+  description: "Wide-cuffed sleeves over finger-loop gloves. The left cuff can be fastened tighter, if it's in the way of your mantle. But...only the left cuff, for some reason... If you have a knife, you could probably tailor that button onto the other sleeve instead."
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_airy.rsi
@@ -98,6 +98,28 @@
     unfoldVerbText: unfold-verb
   - type: FoldableClothing
     foldedEquippedPrefix: folded
+  - type: Butcherable # Butchering it makes the right sleeve foldable instead
+    butcheringType: Knife
+    spawned:
+    - id: ClothingHandsGlovesMantisAiryTailored
+      amount: 1
+
+- type: entity
+  parent: ClothingHandsGlovesMantisAiry
+  id: ClothingHandsGlovesMantisAiryTailored # The only way to fold the right sleeve under the mantle, since folding is only a toggle
+  name: airy mantis sleeves (tailored)
+  description: "Wide-cuffed sleeves over finger-loop gloves. The right cuff can be fastened tighter, if it's in the way of your mantle. But...only the right cuff, for some reason... If you have a knife, you could probably tailor that button onto the other sleeve instead."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_airy_tailored.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_airy_tailored.rsi
+  - type: Butcherable # Butchering it makes the left sleeve foldable again
+    butcheringType: Knife
+    spawned:
+    - id: ClothingHandsGlovesMantisAiry
+      amount: 1
 
 - type: entity
   parent: ClothingHandsGlovesMantis

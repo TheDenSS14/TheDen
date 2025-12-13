@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 oberonics
+# SPDX-FileCopyrightText: 2025 pocl.v
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 reagent-name-kingsoda = king soda
 reagent-desc-kingsoda = A drink fit for a king. Or a seven year old.
 

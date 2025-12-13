@@ -15397,3 +15397,148 @@ Entries:
   id: 1499
   time: '2025-12-06T10:56:51.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2160
+- author: Pinkbat5
+  changes:
+    - type: Add
+      message: >-
+        Added 34 new mixed drinks for your sipping pleasure, courtesy of the IMP
+        sector! Check them out in the guidebook to learn how to make them!
+    - type: Tweak
+      message: >-
+        Cherry soda, vodka cheers and the plasma flood cocktail all make you
+        gasp when drank, as originally intended.
+  id: 1500
+  time: '2025-12-08T00:07:05.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2169
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Changed Smiles melee attack sound. Squish.
+  id: 1501
+  time: '2025-12-08T00:59:42.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2170
+- author: Shaman
+  changes:
+    - type: Remove
+      message: >-
+        Removed the PDA belt/ID sprites that ruin every single outfit (press E
+        if you want to see if someone has a PDA!)
+    - type: Add
+      message: Added inhands colored for every PDA (based on their UI border color)
+    - type: Fix
+      message: Fixed a lot of UI border colors to actually match the PDA they represent
+  id: 1502
+  time: '2025-12-08T01:57:53.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2168
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: >-
+        The Airy Mantis Sleeves can now be tailored (read: butchered) to make
+        the right sleeve foldable instead of the left (and back again), useful
+        if you wear those with the mantle on the right shoulder (I hate clipping
+        so much!!)
+    - type: Tweak
+      message: >-
+        Metabolizing mnemolith above 44 units now leads to a "fourth layer" of
+        popup messages
+    - type: Add
+      message: >-
+        Popup messages can now appear as psychomantic font/color, which
+        mnemolith uses
+    - type: Tweak
+      message: >-
+        You can now spin Ravel (the mantis tailor's knife) around your finger
+        too
+    - type: Tweak
+      message: >-
+        As a bonus, the basic tailor's knife from loadout can also be spun by
+        pressing Z, and now it can be recolored!
+  id: 1503
+  time: '2025-12-08T09:11:16.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2167
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Reduced the damage of the ursa massive plushie
+  id: 1504
+  time: '2025-12-08T09:12:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2164
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Roses, black roses, and lilies can now be selected as head loadout
+        items. Don't even think about it - they're seedless.
+    - type: Tweak
+      message: >-
+        Generic belts (from loadouts) are now small (2x1) instead of normal size
+        (2x2).
+    - type: Tweak
+      message: >-
+        Technicolor jackets now resist the cold, making them (somewhat) viable
+        as winter coats! Sweater vests also have a bit of insulation, but not as
+        much.
+    - type: Remove
+      message: >-
+        NOTE: This PR has a breaking change - if you had the poppy (head)
+        loadout item equipped before, you will need to re-equip it, as the ID of
+        the loadout has been changed for better sorting in the loadout menu.
+  id: 1505
+  time: '2025-12-08T09:13:48.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2165
+- author: portfiend
+  changes:
+    - type: Fix
+      message: Ovinia tails can now be taken by human and oni characters again. Sorry
+  id: 1506
+  time: '2025-12-09T05:22:01.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2175
+- author: Oberonics
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a issue where depending on how your job was rolled your traits
+        wouldn't apply properly.
+  id: 1507
+  time: '2025-12-09T09:02:16.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2174
+- author: Oberonics
+  changes:
+    - type: Fix
+      message: >-
+        Epi can Mar (Marish now takes into account epi jobs that get latent
+        psionic inherently).
+  id: 1508
+  time: '2025-12-09T11:49:02.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2173
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Added a new ship to the shipyard for security!
+  id: 1509
+  time: '2025-12-09T22:32:33.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2176
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: >-
+        Hair / facial hair / marking icons have doubled in size in marking
+        selection UIs.
+  id: 1510
+  time: '2025-12-10T01:06:07.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2162
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: NanoChat max message length was changed from 256 to 2048.
+  id: 1511
+  time: '2025-12-10T03:18:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2180
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Group chats, emojis, and specific chat muting is here.
+  id: 1512
+  time: '2025-12-10T04:09:54.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2181

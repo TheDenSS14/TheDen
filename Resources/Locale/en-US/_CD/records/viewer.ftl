@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 AvianMaiden
 # SPDX-FileCopyrightText: 2025 Lyndomen
+# SPDX-FileCopyrightText: 2025 SheepIzMutton
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
@@ -13,7 +14,7 @@ cd-record-viewer-no-record-selected = Please select record.
 
 cd-character-records-viewer-record-age = Age:
 cd-character-records-viewer-record-job = Job:
-#Den edit from gender to pronouns
+# Den edit from gender to pronouns
 cd-character-records-viewer-record-gender = Pronouns:
 cd-character-records-viewer-record-species = Species:
 
@@ -32,6 +33,6 @@ cd-character-records-entry-view-involved = Author(s):
 
 cd-character-records-viewer-setwanted-placeholder = Reason
 
-#Imp edit ported to Den
+# Imp edit ported to Den
 cd-imp-records-viewer-flavor-left = Nanotrasen employee database. Keep records confidential!
 cd-imp-records-viewer-flavor-right = v3.4
