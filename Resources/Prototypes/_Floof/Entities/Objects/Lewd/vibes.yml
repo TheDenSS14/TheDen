@@ -31,6 +31,9 @@
         base:
           True: { visible: false }
           False: { visible: true }
+  - type: Tag
+    tags:
+    - AdultToy
 
 - type: entity
   parent: BaseVibe
