@@ -935,7 +935,7 @@
         emote: Gasp
         showInChat: true
         force: true
-        probability: 0.35
+        probability: 0.02
   fizziness: 0.5
 
 - type: reagent
@@ -957,11 +957,6 @@
       effects:
         - !type:SatiateThirst
           factor: 2
-        - !type:Emote
-          emote: Gasp
-          showInChat: true
-          force: true
-          probability: 0.35
   fizziness: 0.5
 
 - type: reagent
@@ -986,9 +981,4 @@
         - !type:AdjustReagent
           reagent: Ethanol
           amount: 0.1
-        - !type:Emote
-          emote: Gasp
-          showInChat: true
-          force: true
-          probability: 0.35
   fizziness: 0.5
