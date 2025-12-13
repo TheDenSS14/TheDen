@@ -6,7 +6,7 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tonk-GCR
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: characterItemGroup
   id: LoadoutHead
@@ -46,7 +46,7 @@
     - type: loadout
       id: LoadoutHeadBellhop
     - type: loadout
-      id: LoadoutHeadPoppy
+      id: LoadoutHeadFlowerPoppy # DEN
     - type: loadout
       id: LoadoutHeadHatCorpsoft
     - type: loadout
@@ -246,3 +246,9 @@
       id: LoadoutHeadHatBeanieBlackAbsurd
     - type: loadout
       id: LoadoutHeadHatBeanieNavyBlueWithPinAbsurd
+    - type: loadout
+      id: LoadoutHeadFlowerRose
+    - type: loadout
+      id: LoadoutHeadFlowerRoseBlack
+    - type: loadout
+      id: LoadoutHeadFlowerLily

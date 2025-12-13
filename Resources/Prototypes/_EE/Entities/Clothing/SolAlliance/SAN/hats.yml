@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Kellaris
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Headgear other than armor
 - type: entity
@@ -46,7 +47,7 @@
   id: ClothingHeadHatSANArmyCapSenior
   name: Solarian army senior officer cap
   suffix: SAN
-  description: A pristine hat worn for the purpose of casting a larger shadow when looking down on aliens.
+  description: A pristine hat worn for the purpose of casting a larger shadow.
   components:
     - type: Sprite
       sprite: _EE/Clothing/SolAlliance/Helmet/SAN_army_cap_senior.rsi
@@ -154,7 +155,7 @@
   id: ClothingHeadHatSANNavyCapAdmiral
   name: Solarian navy admiral cap
   suffix: SAN
-  description: When ordering the glassing of Xenos cities, accept no substitute but this hat upon thy head.
+  description: When ordering the glassing of a battlefield, accept no substitute but this hat upon thy head.
   components:
     - type: Sprite
       sprite: _EE/Clothing/SolAlliance/Helmet/SAN_navy_cap_admiral.rsi

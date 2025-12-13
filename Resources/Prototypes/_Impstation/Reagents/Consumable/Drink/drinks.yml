@@ -1,0 +1,82 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 pocl.v
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: reagent
+  id: Raktaccino
+  name: reagent-name-raktaccino
+  parent: BaseDrink
+  desc: reagent-desc-raktaccino
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: raktaccino
+  color: "#4f2900"
+  metamorphicSprite:
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/raktaccino.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 1
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:GenericStatusEffect
+        key: Drowsiness
+        time: 2.0
+        type: Remove
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: 0.1
+  fizziness: 0.1
+
+- type: reagent
+  id: OrangeCoffee
+  name: reagent-name-orangecoffee
+  parent: BaseDrink
+  desc: reagent-desc-orangecoffee
+  physicalDesc: reagent-physical-desc-citric
+  flavor: orangecoffee
+  color: "#f8af41"
+  metamorphicSprite:
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/orangecoffee.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:GenericStatusEffect
+        key: Drowsiness
+        time: 2.0
+        type: Remove
+  fizziness: 0.1
+
+- type: reagent
+  id: LiquidLunch
+  name: reagent-name-liquidlunch
+  parent: BaseDrink
+  slippery: false
+  desc: reagent-desc-liquidlunch
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: liquidlunch
+  color: "#521414"
+  metamorphicSprite:
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/liquidlunch.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 0.5
+      - !type:AdjustReagent
+        reagent: UncookedAnimalProteins
+        amount: 0.5
