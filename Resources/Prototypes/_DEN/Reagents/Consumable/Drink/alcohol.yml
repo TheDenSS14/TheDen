@@ -857,7 +857,7 @@
         factor: 0.667
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.18
+        amount: 0.15
   fizziness: 0.25
 
 - type: reagent
@@ -881,7 +881,7 @@
         factor: 0.667
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.03
+        amount: 0.02
   fizziness: 0.25
 
 - type: reagent
@@ -905,7 +905,7 @@
         factor: 0.667
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.08
+        amount: 0.15
   fizziness: 0.25
 
 - type: reagent
@@ -929,12 +929,12 @@
         factor: 0.667
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.1
+        amount: 0.08
       - !type:Emote
         emote: Gasp
         showInChat: true
         force: true
-        probability: 0.35
+        probability: 0.02
   fizziness: 0.5
 
 - type: reagent
@@ -956,11 +956,6 @@
       effects:
         - !type:SatiateThirst
           factor: 2
-        - !type:Emote
-          emote: Gasp
-          showInChat: true
-          force: true
-          probability: 0.35
   fizziness: 0.5
 
 - type: reagent
@@ -984,10 +979,5 @@
           factor: 1
         - !type:AdjustReagent
           reagent: Ethanol
-          amount: 0.1
-        - !type:Emote
-          emote: Gasp
-          showInChat: true
-          force: true
-          probability: 0.35
+          amount: 0.08
   fizziness: 0.5
