@@ -27,7 +27,7 @@ public sealed class DrugOverlaySystem : EntitySystem
 
     public static string RainbowKey = "SeeingRainbows";
 
-    // TheDEn - Added mnemolith overlays
+    // TheDen - Added mnemolith overlays
     private MnemolithOverlay _mnemolithOverlay = default!;
 
     public static string MnemolithKey = "SeeingMnemolith";
@@ -44,7 +44,7 @@ public sealed class DrugOverlaySystem : EntitySystem
 
         _overlay = new();
 
-        // TheDen - Added mnemolith overlay, but did whoever made SeeingRainbows not think we'd ever need another kind of OnInit in this file? Excuse the ugly names...
+        // TheDen - Added mnemolith overlays, but did whoever made SeeingRainbows not think we'd ever need another kind of OnInit in this file? Excuse the ugly names...
         SubscribeLocalEvent<SeeingMnemolithComponent, ComponentInit>(OnMnemolithInit);
         SubscribeLocalEvent<SeeingMnemolithComponent, ComponentShutdown>(OnMnemolithShutdown);
 
@@ -85,7 +85,7 @@ public sealed class DrugOverlaySystem : EntitySystem
         }
     }
 
-    // TheDen - Added mnemolith overlay
+    // TheDen - Added mnemolith overlays
     private void OnPlayerMnemolithAttached(EntityUid uid, SeeingMnemolithComponent component, LocalPlayerAttachedEvent args)
     {
         _overlayMan.AddOverlay(_mnemolithOverlay);
