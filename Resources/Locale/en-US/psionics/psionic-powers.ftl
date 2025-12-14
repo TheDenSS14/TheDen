@@ -172,11 +172,9 @@ action-description-summon-remilia =
 summon-remilia-power-description = { action-description-summon-remilia }
 
 # Psionic System Messages
-mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience
-hard-mindbreaking-feedback = Your character's personhood has been obliterated. If you wish to continue playing, consider respawning as a new character.
-examine-mindbroken-message =
-    Eyes unblinking, staring deep into the horizon. {CAPITALIZE($entity)} is a sack of meat pretending it has a soul.
-    There is nothing behind its gaze, no evidence there can be found of the divine light of creation.
+mindbreaking-feedback = The threads of the noosphere recede from {CAPITALIZE($entity)}'s mind, leaving behind a scar in the song of potential.
+hard-mindbreaking-feedback = Your character's connection to the noosphere has been severed, you might be able to restore the link, but successful cases are few and far between.
+examine-mindbroken-message = No more power sparks from this once-strong current. Full of life, but the lights are dimmed.
 psionic-roll-failed = For a moment, my consciousness expands, yet I feel that it is not enough.
 entity-anomaly-no-grid = There is nowhere for me to conjure beings.
 power-overwhelming-power-feedback = {CAPITALIZE($entity)} wields a vast connection to the noosphere
