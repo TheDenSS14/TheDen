@@ -1099,32 +1099,34 @@
       components:
         - type: NightVision
 
-- type: trait
-  id: ThermographicVision
-  category: TraitsPhysicalAugmentations
-  points: -4
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - StationAi
-        - Borg
-        - MedicalBorg
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterTraitRequirement
-      traits:
-        - CyberEyes
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: ThermalVision
-          pulseTime: 2
-          toggleAction: PulseThermalVision
-    - !type:TraitPushDescription
-      descriptionExtensions:
-        - description: examine-thermal-vision-message
-          fontSize: 12
-          requireDetailRange: true
+# DEN - Removed for balance reasons
+# - type: trait
+#   id: ThermographicVision
+#   category: TraitsPhysicalAugmentations
+#   points: -4
+#   requirements:
+#     - !type:CharacterJobRequirement
+#       inverted: true
+#       jobs:
+#         - StationAi
+#         - Borg
+#         - MedicalBorg
+#         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+#     - !type:CharacterTraitRequirement
+#       traits:
+#         - CyberEyes
+#   functions:
+#     - !type:TraitAddComponent
+#       components:
+#         - type: ThermalVision
+#           pulseTime: 2
+#           toggleAction: PulseThermalVision
+#     - !type:TraitPushDescription
+#       descriptionExtensions:
+#         - description: examine-thermal-vision-message
+#           fontSize: 12
+#           requireDetailRange: true
+# DEN - End
 
 - type: trait
   id: NaniteAutoRepairBots
