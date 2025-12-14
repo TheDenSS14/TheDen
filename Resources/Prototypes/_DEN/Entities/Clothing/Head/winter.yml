@@ -1,0 +1,86 @@
+- type: entity
+  abstract: true
+  parent: ClothingHeadWinterHatBase
+  id: BaseClothingHeadHatTrapper
+  name: trapper hat
+  description: A fashionable and comfortable fur-lined hat with extended flaps on the sides - this hat will keep your ears warm.
+
+- type: entity
+  parent: BaseClothingHeadHatTrapper
+  id: ClothingHeadHatTrapperBeige
+  name: beige trapper hat
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/trapper_beige.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/trapper_beige.rsi
+
+- type: entity
+  parent: BaseClothingHeadHatTrapper
+  id: ClothingHeadHatTrapperBlack
+  name: black trapper hat
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/trapper_black.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/trapper_black.rsi
+
+- type: entity
+  parent: BaseClothingHeadHatTrapper
+  id: ClothingHeadHatTrapperBlue
+  name: blue trapper hat
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/trapper_blue.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/trapper_blue.rsi
+
+- type: entity
+  parent: BaseClothingHeadHatTrapper
+  id: ClothingHeadHatTrapperGray
+  name: gray trapper hat
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/trapper_gray.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/trapper_gray.rsi
+
+- type: entity
+  parent: BaseClothingHeadHatTrapper
+  id: ClothingHeadHatTrapperGreen
+  name: green trapper hat
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/trapper_green.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/trapper_green.rsi
+
+- type: entity
+  parent: BaseClothingHeadHatTrapper
+  id: ClothingHeadHatTrapperPink
+  name: pink trapper hat
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/trapper_pink.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/trapper_pink.rsi
+
+- type: entity
+  parent: BaseClothingHeadHatTrapper
+  id: ClothingHeadHatTrapperPurple
+  name: purple trapper hat
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/trapper_purple.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/trapper_purple.rsi
+
+- type: entity
+  parent: BaseClothingHeadHatTrapper
+  id: ClothingHeadHatTrapperRed
+  name: red trapper hat
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/trapper_red.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/trapper_red.rsi
