@@ -153,6 +153,12 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - CalciumEmotes
 
 - type: entity
   parent: BaseSpeciesDummy

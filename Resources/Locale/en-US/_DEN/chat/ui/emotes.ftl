@@ -12,3 +12,6 @@ chat-emote-name-baa = Baa
 
 # Unathi
 chat-emote-name-trill = Trill
+
+# Skeleton-based
+chat-emote-name-rattle = Rattle

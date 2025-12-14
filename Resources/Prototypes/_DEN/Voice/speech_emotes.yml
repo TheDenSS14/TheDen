@@ -134,3 +134,22 @@
     - thumps
     - thumping
     - thumped
+
+- type: emote
+  id: Rattle
+  name: chat-emote-name-rattle
+  icon:
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: "skull_icon"
+  whitelist:
+    tags:
+    - CalciumEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-rattle"]
+  chatTriggers:
+    - rattle
+    - rattles
+    - rattling
+    - rattled

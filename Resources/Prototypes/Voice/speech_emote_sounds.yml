@@ -1105,13 +1105,6 @@
       variation: 0.125
 
 - type: emoteSounds
-  id: Skeleton
-  sound:
-    path: /Audio/Voice/Skeleton/skeleton_scream.ogg
-    params:
-      variation: 0.125
-
-- type: emoteSounds
   id: MouseSounds #TheDen changes
   sounds:
     Squeak:
@@ -1171,7 +1164,57 @@
   params:
     variation: 0.125
   sounds:
+    Rattle:
+      path: /Audio/Voice/Skeleton/skeleton_scream.ogg
     Scream:
       collection: PlasmamanUnisexScreams
-  sound:
-    path: /Audio/Voice/Skeleton/skeleton_scream.ogg
+    Laugh:
+      collection: SlimeMaleLaughs
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+
+- type: emoteSounds
+  id: Skeleton
+  params:
+    variation: 0.125
+  sounds:
+    Rattle:
+      path: /Audio/Voice/Skeleton/skeleton_scream.ogg
+    Scream:
+      path: /Audio/Voice/Skeleton/skeleton_scream.ogg
+    Laugh:
+      path: /Audio/Voice/Skeleton/skeleton_scream.ogg
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
