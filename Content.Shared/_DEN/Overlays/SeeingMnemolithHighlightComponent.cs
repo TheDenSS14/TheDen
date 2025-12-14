@@ -10,7 +10,7 @@ public sealed partial class SeeingMnemolithHighlightComponent : SwitchableOverla
 {
     public override string? ToggleAction { get; set; } = "ToggleMnemolithHighlight";
 
-    public override Color Color { get; set; } = Color.FromHex("#7A42F8"); // blue-purple tint
+    public override Color Color { get; set; } = Color.FromHex("#7A42F8");
 
     [DataField]
     public override float PulseTime { get; set; } = 2f;
