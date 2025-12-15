@@ -151,6 +151,13 @@ namespace Content.Server.Flash
                 _tag.AddTag(uid, "Trash");
                 _popup.PopupEntity(Loc.GetString("flash-component-becomes-empty"), uid);
             }
+
+            uid.SpawnTimer(400, () =>
+            {
+                _appearance.SetData(uid, FlashVisuals.Flashing, false);
+                comp.Flashing = false;
+            });
+
             return true;
         }
 
