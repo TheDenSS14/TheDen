@@ -174,3 +174,15 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatFuzzyEarmuffs
+  category: Head
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingHeadHatFuzzyEarmuffs
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead

@@ -84,3 +84,14 @@
     sprite: _DEN/Clothing/Head/Hats/trapper_red.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Head/Hats/trapper_red.rsi
+
+- type: entity
+  parent: ClothingHeadWinterHatLightBase
+  id: ClothingHeadHatFuzzyEarmuffs
+  name: fuzzy earmuffs
+  description: A headband with faux-fur cushions on each end, designed to protect the ears.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/fuzzy_earmuff.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/fuzzy_earmuff.rsi

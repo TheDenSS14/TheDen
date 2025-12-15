@@ -9,6 +9,7 @@
 
 # head
 loadout-name-LoadoutHeadHatPatrolCap = patrol cap (colorable)
+loadout-name-LoadoutHeadHatFuzzyEarmuffs = fuzzy earmuffs (colorable)
 
 # mask
 loadout-name-LoadoutClothingMaskBreathFashion = fashion breath mask (colorable)
