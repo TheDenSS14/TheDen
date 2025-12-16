@@ -16,3 +16,4 @@ job-name-alternate-adjudicator = Adjudicator
 
 # Nanotrasen Representative
 job-name-alternate-corporate-liaison = Corporate Liaison
+job-name-alternate-station-inspector = Station Inspector
