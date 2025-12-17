@@ -223,3 +223,45 @@
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Leg
       partSymmetry: Right
+
+# unrevivability traits
+
+- type: trait
+  id: Unrevivable
+  category: TraitsPhysicalBiological
+  points: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - RandomUnrevivable
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Unrevivable
+
+- type: trait
+  id: RandomUnrevivable
+  category: TraitsPhysicalBiological
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Unrevivable
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: RandomUnrevivable
