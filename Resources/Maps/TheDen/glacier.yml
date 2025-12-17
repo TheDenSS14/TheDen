@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/17/2025 06:18:34
+  time: 12/17/2025 18:29:24
   entityCount: 19416
 maps:
 - 1
@@ -12628,7 +12628,7 @@ entities:
       pos: -34.5,32.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -42858.977
+      secondsUntilStateChange: -45039.35
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12995,7 +12995,7 @@ entities:
       pos: -22.5,5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -5817.245
+      secondsUntilStateChange: -7997.618
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -54431,7 +54431,7 @@ entities:
       pos: 24.5,-33.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -95509.99
+      secondsUntilStateChange: -97690.37
       state: Closing
   - uid: 5575
     components:
@@ -83241,9 +83241,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 12.5,-27.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
 - proto: GasVentPumpVox
@@ -84484,9 +84481,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 1.5,-27.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 19396
