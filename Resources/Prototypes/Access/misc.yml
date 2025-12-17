@@ -15,9 +15,10 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Solaris
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: accessGroup
   id: AllAccess
@@ -84,7 +85,7 @@
   - Command
   - Cryogenics
   - Security
-  - Armory
+  #- Armory #Den Dignitaries should NOT have armory access
   #- Brig #Delta V Removed
   - Lawyer
   - Engineering

@@ -1,5 +1,8 @@
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 wheelwrightt <174839295+wheelwrightt@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 sheepie
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wallflowerghost
+# SPDX-FileCopyrightText: 2025 wheelwrightt
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -101,3 +104,7 @@ marking-halfshave_messy = Halfshave Messy
 marking-halfshave_messylong = Halfshave Messy Long
 marking-inari = Inari
 marking-mera = Mera
+marking-combo_tail_1 = Combo Tail
+marking-combo_tail_2 = Combo Tail (Mirror)
+marking-combo_tail_3 = Combo Tail Long
+marking-combo_tail_4 = Combo Tail Long (Mirror)
