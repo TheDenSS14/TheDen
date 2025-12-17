@@ -27,6 +27,7 @@
 # SPDX-FileCopyrightText: 2025 bigsantino1
 # SPDX-FileCopyrightText: 2025 foxcurl
 # SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -1052,7 +1053,7 @@
     - !type:TraitReplaceComponent
       components:
         - type: DeadModifier
-          deadThresholdModifier: -100
+          deadThresholdModifier: -99
 
 - type: trait
   id: BrittleBoneDisease
