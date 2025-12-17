@@ -83257,19 +83257,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 19415
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 12.5,-27.5
-      parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 11088
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
 - proto: GasVentPumpVox
   entities:
   - uid: 6227
@@ -84500,19 +84487,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 11
-    - type: AtmosPipeColor
-      color: '#990000FF'
-  - uid: 19361
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 1.5,-27.5
-      parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 11088
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 19396
