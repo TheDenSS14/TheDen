@@ -27,7 +27,7 @@ public sealed class StationJobsConsoleSystem : EntitySystem
 
     public override void Initialize()
     {
-        Subs.BuiEvents<StationJobsConsoleComponent>(StationJobsConsoleKey.Key, subs =>
+        Subs.BuiEvents<StationJobsConsoleComponent>(StationJobsConsoleUiKey.Key, subs =>
         {
             subs.Event<BoundUIOpenedEvent>(UpdateUserInterface);
             subs.Event<AdjustStationJobMsg>(OnAdjustJob);
@@ -85,7 +85,7 @@ public sealed class StationJobsConsoleSystem : EntitySystem
             return;
 
         StationJobsConsoleState newState = new(jobList, jobSlots);
-        _ui.SetUiState(uid, StationJobsConsoleKey.Key, newState);
+        _ui.SetUiState(uid, StationJobsConsoleUiKey.Key, newState);
     }
 
     private IReadOnlyDictionary<string, uint?>? GetTotalJobSlots(EntityUid station)
@@ -108,11 +108,11 @@ public sealed class StationJobsConsoleSystem : EntitySystem
 
         var slotsOut = new Dictionary<string, uint?>();
 
-        foreach (var (k, v) in jobList)
-            slotsOut[k] = v ?? 0;
+        foreach (var (jobProto, num) in jobList)
+            slotsOut[jobProto] = num ?? 0;
 
-        foreach (var (k, v) in jobSlots)
-            slotsOut[k] = (slotsOut.TryGetValue(k, out var cur) ? cur : 0) + (v ?? 0);
+        foreach (var (jobProto, slots) in jobSlots)
+            slotsOut[jobProto] = (slotsOut.TryGetValue(jobProto, out var cur) ? cur : 0) + (slots ?? 0);
 
         return slotsOut;
     }

@@ -43,28 +43,20 @@ public sealed partial class StationJobsConsoleWindow : FancyWindow
             if (amount < 0 || amount is null)
                 continue;
 
-            if (!_prototype.TryIndex<JobPrototype>(job, out var jobProto))
+            if (!_prototype.TryIndex<JobPrototype>(job, out var jobProto) && jobProto is null
+                || !jobProto.OverrideConsoleVisibility.GetValueOrDefault(jobProto.SetPreference))
                 continue;
 
             var totalSlots = jobSlots.FirstOrDefault(a => a.Key == job).Value;
+
             var jobEntry = new StationJobsConsoleJobRow(jobProto)
             {
                 JobName = { Text = jobProto.LocalizedName },
                 JobAmount = { Text = amount.ToString() },
-                JobSlots = { Text = $"({totalSlots})" }
+                JobSlots = { Text = $"({totalSlots})" },
+                IncreaseJobSlot = { Disabled = !jobProto.AdjustableCount},
+                DecreaseJobSlot = { Disabled = !jobProto.AdjustableCount}
             };
-
-            if (!jobProto.AdjustableCount)
-            {
-                jobEntry = new StationJobsConsoleJobRow(jobProto)
-                {
-                    JobName = { Text = jobProto.LocalizedName },
-                    JobAmount = { Text = amount.ToString() },
-                    JobSlots = { Text = $"({totalSlots})" },
-                    IncreaseJobSlot = { Disabled = true},
-                    DecreaseJobSlot = { Disabled = true}
-                };
-            }
 
             jobEntry.DecreaseJobSlot.OnPressed += (args) => { OnJobSubtract?.Invoke(job); };
             jobEntry.IncreaseJobSlot.OnPressed += (args) => { OnJobAdd?.Invoke(job); };

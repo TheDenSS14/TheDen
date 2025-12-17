@@ -25,12 +25,12 @@
   - type: StationJobsConsole
   - type: UserInterface
     interfaces:
-      enum.StationJobsConsoleKey.Key:
+      enum.StationJobsConsoleUiKey.Key:
         type: StationJobsConsoleBoundUserInterface
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
   - type: ActivatableUI
-    key: enum.StationJobsConsoleKey.Key
+    key: enum.StationJobsConsoleUiKey.Key
   - type: PointLight
     radius: 1.5
     energy: 1.6

@@ -6,7 +6,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._DEN.StationRecords;
 
 [Serializable, NetSerializable]
-public enum StationJobsConsoleKey : byte
+public enum StationJobsConsoleUiKey : byte
 {
     Key
 }

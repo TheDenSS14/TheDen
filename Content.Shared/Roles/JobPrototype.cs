@@ -95,7 +95,7 @@ namespace Content.Shared.Roles
         public bool SetPreference { get; private set; } = true;
 
         /// <summary>
-        ///     Whether this job should show in the ID Card Console.
+        ///     Whether this job should show in the ID Card Console and Job Slots Console.
         ///     If set to null, it will default to SetPreference's value.
         /// </summary>
         [DataField]
@@ -199,11 +199,10 @@ namespace Content.Shared.Roles
         public List<ProtoId<GuideEntryPrototype>>? Guides;
 
         /// <summary>
-        /// To specify if the number of job slots for a specific job can be altered mid-round by the job console
+        /// To specify if the number of job slots can be altered mid-round by the job console
         /// </summary>
         [DataField]
         public bool AdjustableCount = false;
-
     }
 
     /// <summary>
