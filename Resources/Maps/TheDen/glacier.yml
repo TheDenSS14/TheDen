@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/17/2025 04:21:39
+  time: 12/17/2025 06:18:34
   entityCount: 19416
 maps:
 - 1
@@ -12628,7 +12628,7 @@ entities:
       pos: -34.5,32.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -42815.88
+      secondsUntilStateChange: -42858.977
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12995,7 +12995,7 @@ entities:
       pos: -22.5,5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -5774.147
+      secondsUntilStateChange: -5817.245
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -54431,7 +54431,7 @@ entities:
       pos: 24.5,-33.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -95466.89
+      secondsUntilStateChange: -95509.99
       state: Closing
   - uid: 5575
     components:
@@ -64680,6 +64680,8 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#990000FF'
+    missingComponents:
+    - AtmosMonitoringConsoleDevice
   - uid: 4639
     components:
     - type: Transform
