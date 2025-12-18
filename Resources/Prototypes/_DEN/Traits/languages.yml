@@ -272,6 +272,8 @@
       languagesUnderstood:
         - Chittin
 
+# TODO: "Remove species language" trait is broken; there's a bug where having it causes you to randomly acquire a number of languages that your character should not have. I have spent over an hour trying to replicate this, and I cannot do so consistently enough to fix it. If you look in the C# code for how languages are refreshed, it looks like the way languages work would need a decently-sized partial rewrite in order to support removing the species language properly. Good luck.
+
 # - type: trait
 #   id: RemoveSpeciesLanguage
 #   category: TraitsSpeechLanguages
