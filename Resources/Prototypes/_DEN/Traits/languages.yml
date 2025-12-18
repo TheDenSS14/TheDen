@@ -272,49 +272,49 @@
       languagesUnderstood:
         - Chittin
 
-- type: trait
-  id: RemoveSpeciesLanguage
-  category: TraitsSpeechLanguages
-  priority: -10 # come before all species language traits
-  points: 2
-  requirements:
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - RemoveSpeciesLanguageLight
-    - Foreigner
-    - ForeignerLight
-    - XenoglossyPower
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    # NO FREE POINTS FOR YOU
-    - Oni
-    - Resomi
-  functions:
-  - !type:TraitModifyLanguages
-    keepLanguagesSpoken: [TauCetiBasic]
-    keepLanguagesUnderstood: [TauCetiBasic]
+# - type: trait
+#   id: RemoveSpeciesLanguage
+#   category: TraitsSpeechLanguages
+#   priority: -10 # come before all species language traits
+#   points: 2
+#   requirements:
+#   - !type:CharacterTraitRequirement
+#     inverted: true
+#     traits:
+#     - RemoveSpeciesLanguageLight
+#     - Foreigner
+#     - ForeignerLight
+#     - XenoglossyPower
+#   - !type:CharacterSpeciesRequirement
+#     inverted: true
+#     species:
+#     # NO FREE POINTS FOR YOU
+#     - Oni
+#     - Resomi
+#   functions:
+#   - !type:TraitModifyLanguages
+#     keepLanguagesSpoken: [TauCetiBasic]
+#     keepLanguagesUnderstood: [TauCetiBasic]
 
-- type: trait
-  id: RemoveSpeciesLanguageLight
-  category: TraitsSpeechLanguages
-  priority: -10 # come before all species language traits
-  points: 1
-  requirements:
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - RemoveSpeciesLanguage
-    - Foreigner
-    - ForeignerLight
-    - XenoglossyPower
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    # NO FREE POINTS FOR YOU
-    - Oni
-    - Resomi
-  functions:
-  - !type:TraitModifyLanguages
-    keepLanguagesSpoken: [TauCetiBasic] # Can't speak anything else, but can understand them
+# - type: trait
+#   id: RemoveSpeciesLanguageLight
+#   category: TraitsSpeechLanguages
+#   priority: -10 # come before all species language traits
+#   points: 1
+#   requirements:
+#   - !type:CharacterTraitRequirement
+#     inverted: true
+#     traits:
+#     - RemoveSpeciesLanguage
+#     - Foreigner
+#     - ForeignerLight
+#     - XenoglossyPower
+#   - !type:CharacterSpeciesRequirement
+#     inverted: true
+#     species:
+#     # NO FREE POINTS FOR YOU
+#     - Oni
+#     - Resomi
+#   functions:
+#   - !type:TraitModifyLanguages
+#     keepLanguagesSpoken: [TauCetiBasic] # Can't speak anything else, but can understand them
