@@ -73,8 +73,8 @@ trait-description-AmputeeBothLegs =
 
 trait-name-Unrevivable = Unrevivable
 trait-description-Unrevivable =
-    Something about your body's composition is off, and you are unable to revived by defibrillators!
+    Something about your body's composition is off, and you are unable to revived by defibrillators.
 
 trait-name-RandomUnrevivable = Random Unrevivable
 trait-description-RandomUnrevivable =
-    Every time you are revived, there's a chance that instead you become permanently unrevivable!
+    Every time you are revived, there's a chance that instead you become permanently unrevivable.

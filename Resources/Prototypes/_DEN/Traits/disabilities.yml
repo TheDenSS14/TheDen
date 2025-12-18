@@ -229,7 +229,7 @@
 - type: trait
   id: Unrevivable
   category: TraitsPhysicalBiological
-  points: 2
+  points: 1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -241,6 +241,10 @@
       inverted: true
       traits:
         - RandomUnrevivable
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
   functions:
     - !type:TraitAddComponent
       components:
@@ -261,6 +265,10 @@
       inverted: true
       traits:
         - Unrevivable
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
   functions:
     - !type:TraitAddComponent
       components:
