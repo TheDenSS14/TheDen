@@ -15673,3 +15673,163 @@ Entries:
   id: 1527
   time: '2025-12-15T21:22:21.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2203
+- author: mart33no
+  changes:
+    - type: Tweak
+      message: >-
+        Redshirt -100 death threshold > -99 death threshold (not really a buff,
+        just a fix for correct adrenaline damage bonus)
+  id: 1528
+  time: '2025-12-17T04:17:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2205
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: >-
+        Cum and natural lubricant now evaporate if spilled on the ground. I
+        almost wrote "body fluids" instead here but if I did that someone would
+        ask me about blood. This is not a blood-related PR. I did not do
+        anything to blood
+  id: 1529
+  time: '2025-12-17T05:06:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2210
+- author: GreggTheFather
+  changes:
+    - type: Tweak
+      message: (GLACIER) Minor fixes
+    - type: Tweak
+      message: (MANTA) Set sauna heater to better temp
+  id: 1530
+  time: '2025-12-17T20:12:21.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2190
+- author: LilNutters
+  changes:
+    - type: Add
+      message: >-
+        Added a new VASHBox (Toys) under the lewd category, this box can only
+        hold adult toys. Toys not included!
+  id: 1531
+  time: '2025-12-18T00:31:50.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2187
+- author: portfiend
+  changes:
+    - type: Remove
+      message: >-
+        The "no species language" traits have been removed because they're
+        broken, the issue is incredibly hard to debug, cannot be replicated 95%
+        of the time in my debug environment, and it would (and already has!)
+        take a lot of effort on my part to spend several hours diagnosing,
+        debugging, fixing, and testing the issue. Sorry!
+  id: 1532
+  time: '2025-12-18T21:32:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2215
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        The birth year on your character's passport is now accurate to the
+        current year in Den's lore, with a like, one-year margin of error I
+        guess, because you can't really set your character's birth month/day
+        anyway and it just uses the current year plus 630. At least it doesn't
+        say your character is 200 years older than they actually are anymore
+        though
+  id: 1533
+  time: '2025-12-18T21:33:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2214
+- author: TheLuggage05
+  changes:
+    - type: Add
+      message: >-
+        Added unrevivable and random unrevivable traits, for those who love
+        dying badly!
+  id: 1534
+  time: '2025-12-18T21:35:12.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2211
+- author: juniwoofs
+  changes:
+    - type: Fix
+      message: >-
+        Fixed captains getting two antiques with the free ones mapped in their
+        office. (why was this not fixed???)
+  id: 1535
+  time: '2025-12-18T21:35:55.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2209
+- author: FuyuMochiru
+  changes:
+    - type: Add
+      message: Mayonnaise packets can now be found at condiment stations.
+  id: 1536
+  time: '2025-12-18T22:19:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2213
+- author: Pinkbat5
+  changes:
+    - type: Fix
+      message: Plasma flood no longer makes you spam the chat with gasping.
+    - type: Remove
+      message: >-
+        Actually, maybe the cherry drinks weren't supposed to make you gasp.
+        They no longer have that effect.
+    - type: Tweak
+      message: Weldin' coils and gatorwine are now slightly easier to make.
+  id: 1537
+  time: '2025-12-20T05:36:35.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2188
+- author: msTheowo
+  changes:
+    - type: Tweak
+      message: Thaven clothing offsets have been slightly changed.
+  id: 1538
+  time: '2025-12-20T07:02:02.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2212
+- author: IAmNotGray
+  changes:
+    - type: Tweak
+      message: (ANVIL) The Mantis is no longer old.
+  id: 1539
+  time: '2025-12-20T21:20:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2219
+- author: maninbucket917
+  changes:
+    - type: Add
+      message: Resomi are now able to chirp!
+  id: 1540
+  time: '2025-12-21T20:31:56.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2218
+- author: crekulon
+  changes:
+    - type: Tweak
+      message: you can now (noisily) lock/unlock secure containers from the inside!
+  id: 1541
+  time: '2025-12-22T01:06:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2222
+- author: crekulon
+  changes:
+    - type: Tweak
+      message: >-
+        Harpies have forgotten some of their really loud noises, but learned
+        some new ones for the chitter, hiss, growl, rings, and bangs emotes.
+  id: 1542
+  time: '2025-12-22T01:07:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2223
+- author: DoctorJado
+  changes:
+    - type: Add
+      message: >-
+        Added a Job Slot Management Console, for changing the number of job
+        slots mid-round.
+    - type: Tweak
+      message: >-
+        Made it so the number of prisoner slots can be changed via the Job
+        Management Console.
+  id: 1543
+  time: '2025-12-22T10:39:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2185
+- author: Toby222
+  changes:
+    - type: Fix
+      message: Intercoms and handheld radios work as you'd hope again
+    - type: Fix
+      message: Voice masks allow you to pick your speaking style again
+  id: 1544
+  time: '2025-12-22T10:49:49.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2217

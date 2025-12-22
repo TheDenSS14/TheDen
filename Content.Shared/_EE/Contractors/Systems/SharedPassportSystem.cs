@@ -2,9 +2,10 @@
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Globalization;
+using Content.Shared._DV.CCVars;
 using Content.Shared._EE.Contractors.Components;
 using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.Administration.Logs;
@@ -19,6 +20,7 @@ using Content.Shared.Item;
 using Content.Shared.Preferences;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -27,7 +29,6 @@ namespace Content.Shared._EE.Contractors.Systems;
 
 public class SharedPassportSystem : EntitySystem
 {
-    public const int CurrentYear = 2450;
     const string PIDChars = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789";
 
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -37,6 +38,7 @@ public class SharedPassportSystem : EntitySystem
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _sharedTransformSystem = default!;
     [Dependency] private readonly SharedChatSystem _chat = default!; // DEN
+    [Dependency] private readonly IConfigurationManager _config = default!;
 
     public override void Initialize()
     {
@@ -61,11 +63,15 @@ public class SharedPassportSystem : EntitySystem
             : Loc.GetString(species.Name);
         // End DEN
 
+        // DEN: Fix the year on the passport
+        var yearOffset = _config.GetCVar(DCCVars.YearOffset);
+        var currentYear = DateTime.Today.AddYears(yearOffset).Year;
+
         args.PushMarkup($"Registered to: {component.OwnerProfile.Name}", 50);
         args.PushMarkup($"Species: {speciesName}", 49); // DEN - Use custom species name
         args.PushMarkup($"Sex: {component.OwnerProfile.Gender}", 48);
         args.PushMarkup($"Height: {MathF.Round(component.OwnerProfile.Height * species.AverageHeight)} cm", 47);
-        args.PushMarkup($"Year of Birth: {CurrentYear - component.OwnerProfile.Age}", 46);
+        args.PushMarkup($"Year of Birth: {currentYear - component.OwnerProfile.Age}", 46); // DEN - Fix year
 
         args.PushMarkup(
             $"PID: {GenerateIdentityString(component.OwnerProfile.Name
