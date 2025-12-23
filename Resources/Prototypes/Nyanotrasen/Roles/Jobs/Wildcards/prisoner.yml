@@ -26,6 +26,10 @@
   canBeAntag: false
   icon: "JobIconPrisoner"
   supervisors: job-supervisors-security
+  # DEN START - adding the access directly to the ID does not work, you have to append it to the job preset
+  access:
+    - GenpopEnter
+  # DEN END
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
