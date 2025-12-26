@@ -781,3 +781,8 @@ trait-name-PainNumbness = Pain Numbness
 trait-description-PainNumbness =
     Whether due to a rare mutation, freak medical accident, or some other reason, you're not able to feel pain
     making it much eaiser to miss possibly life threatening injuries.
+
+trait-name-BlackBlood = Black Blood
+trait-description-BlackBlood =
+    Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
+    Your body produces Black Blood instead of whatever blood your species normally generates.

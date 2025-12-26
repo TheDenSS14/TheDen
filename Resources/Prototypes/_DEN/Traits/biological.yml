@@ -23,3 +23,11 @@
   - !type:TraitAddComponent
     components:
       - type: BloodExaminer
+
+- type: trait
+  id: BlackBlood
+  category: TraitsPhysicalBiological
+  points: 0
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: BlackBlood
