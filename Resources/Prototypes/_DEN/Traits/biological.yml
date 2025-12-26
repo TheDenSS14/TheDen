@@ -29,6 +29,12 @@
   category: TraitsPhysicalBiological
   points: 0
   requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -37,6 +43,7 @@
     inverted: true
     species:
     - IPC
+    - Shadowkin
   functions:
   - !type:TraitModifyBloodstream
     bloodReagent: BlackBlood
