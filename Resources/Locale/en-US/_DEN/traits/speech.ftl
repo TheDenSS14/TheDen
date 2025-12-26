@@ -59,6 +59,10 @@ trait-name-MothSounds = Extra Emotes (Moth)
 trait-description-MothSounds = Adds on to your existing emotes, giving your character access to the emotes that Moths have.
     Such as: squeak, chitter
 
+trait-name-ArachneSounds = Extra Emotes (Arachne)
+trait-description-ArachneSounds = Adds on to your existing emotes, giving your character access to the emotes that Arachne have.
+    Such as: hiss, chitter, click
+
 trait-name-VoxSounds = Extra Emotes (Vox)
 trait-description-VoxSounds = Adds on to your existing emotes, giving your character access to the emotes that Vox have.
     Such as: coo, chitter, hiss, caw, hoot
@@ -116,6 +120,11 @@ trait-name-MothSoundsReplace = Replace Emotes (Moth)
 trait-description-MothSoundsReplace =
     Replace any existing emote sounds, giving your character access to the emotes that Moths have instead.
     Such as: squeak, chitter
+
+trait-name-ArachneSoundsReplace = Replace Emotes (Arachne)
+trait-description-ArachneSoundsReplace =
+    Replace any existing emote sounds, giving your character access to the emotes that Arachne have instead.
+    Such as: hiss, chitter, click
 
 trait-name-VoxSoundsReplace = Replace Emotes (Vox)
 trait-description-VoxSoundsReplace =
