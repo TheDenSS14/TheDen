@@ -28,6 +28,15 @@
   id: BlackBlood
   category: TraitsPhysicalBiological
   points: 0
+  requirements:
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
   functions:
   - !type:TraitModifyBloodstream
     bloodReagent: BlackBlood
