@@ -690,6 +690,18 @@ public sealed class PullingSystem : EntitySystem
             return false;
         }
 
+        // DEN: Delay on pulling after a grab break.
+        if (_timing.CurTime < pullerComp.CanNextPull)
+        {
+            _popup.PopupEntity(
+                Loc.GetString("popup-pull-cant-grip",
+                    ("target", Identity.Entity(pullableUid, EntityManager))),
+                puller,
+                puller,
+                PopupType.MediumCaution);
+            return false;
+        }
+
         var getPulled = new BeingPulledAttemptEvent(puller, pullableUid);
         RaiseLocalEvent(pullableUid, getPulled, true);
         var startPull = new StartPullAttemptEvent(puller, pullableUid);
@@ -894,6 +906,10 @@ public sealed class PullingSystem : EntitySystem
                     pullerUidNull.Value,
                     pullerUidNull.Value,
                     PopupType.MediumCaution);
+
+                // DEN: Having someone break free prevents you from grabbing for a few seconds.
+                if (TryComp<PullerComponent>(pullerUidNull.Value, out var pullerComp))
+                    pullerComp.CanNextPull = _timing.CurTime + TimeSpan.FromSeconds(3f);
             }
         }
         // Goobstation

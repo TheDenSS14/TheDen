@@ -170,4 +170,8 @@ public sealed partial class PullerComponent : Component
     [DataField]
     public float ChokeGrabSpeedModifier = 0.4f;
     // Goobstation end
+
+    // DEN: The next time the entity can try to pull.
+    [DataField]
+    public TimeSpan CanNextPull = TimeSpan.Zero;
 }

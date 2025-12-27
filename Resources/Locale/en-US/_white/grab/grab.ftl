@@ -26,3 +26,6 @@ popup-grab-retake-success-puller = {CAPITALIZE($puller)} released {CAPITALIZE($p
 popup-grabbed-cant-speak = You can't breathe!
 popup-grab-need-hand = You need a free hand!
 popup-grab-throw-fail-cooldown = You need more time to secure your grip before you can throw {CAPITALIZE($pulled)}!
+
+# Den pull cooldown after break.
+popup-pull-cant-grip = You can't get a grip on {CAPITALIZE($target)}!
