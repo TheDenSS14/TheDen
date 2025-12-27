@@ -1,0 +1,81 @@
+# SPDX-FileCopyrightText: 2025 superjeepboy
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: trait
+  id: BlackBlood
+  category: TraitsBloods
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+    - InsectBlood
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Shadowkin
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: BlackBlood
+
+- type: trait
+  id: InsectBlood
+  category: TraitsBloods
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+    - BlackBlood
+    - BlueBlood
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Moth
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: InsectBlood
+
+- type: trait
+  id: BlueBlood
+  category: TraitsBloods
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+    - BlackBlood
+    - InsectBlood
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Arachnid
+    - Arachne
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: BlueBlood

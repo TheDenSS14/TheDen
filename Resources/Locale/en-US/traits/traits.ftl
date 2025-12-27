@@ -786,3 +786,8 @@ trait-name-BlackBlood = Black Blood
 trait-description-BlackBlood =
     Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
     Your body produces Black Blood instead of whatever blood your species normally generates.
+
+trait-name-InsectBlood = Insect Blood
+trait-description-BlackBlood =
+    Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
+    Your body produces Insect Blood instead of whatever blood your species normally generates.

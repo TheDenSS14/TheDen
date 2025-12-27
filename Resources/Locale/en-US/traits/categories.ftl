@@ -24,3 +24,4 @@ trait-category-TraitsPhysicalFeats = Feats
 trait-category-TraitsPhysicalDisabilities = Disabilities
 trait-category-TraitsPhysicalBiological = Biological
 trait-category-TraitsPhysicalAugmentations = Augmentations
+trait-category-TraitsBloods = Blood Type
