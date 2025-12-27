@@ -1,10 +1,41 @@
-# SPDX-FileCopyrightText: 2025 superjeepboy
+# SPDX-FileCopyrightText: 2025 somekindofbox
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 ## These get sorted alphabetically within the menu.
 ## If you do add more blood reagents in the future, be *absolutely* sure to include the exclusions for the other bloods.
 ## It's boilerplatey as hell, but we do not have trait group requirements. A future refactor might help with this.
+
+- type: trait
+  id: AmmoniaBlood
+  category: TraitsBloods
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+    - BlackBlood
+    - InsectBlood
+    - BlueBlood
+    - SlimeBlood
+    - ShimmeringBlood
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Plasmaman
+    - Vox
+    - Resomi
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: AmmoniaBlood
 
 - type: trait
   id: BlackBlood
@@ -25,43 +56,17 @@
     - BlueBlood
     - SlimeBlood
     - RedBlood
+    - AmmoniaBlood
+    - ShimmeringBlood
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
     - IPC
     - Shadowkin
+    - Plasmaman
   functions:
   - !type:TraitModifyBloodstream
     bloodReagent: BlackBlood
-
-- type: trait
-  id: InsectBlood
-  category: TraitsBloods
-  points: 0
-  requirements:
-  - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - StationAi
-        - Borg
-        - MedicalBorg
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - Synthetic
-    - BlackBlood
-    - BlueBlood
-    - RedBlood
-    - SlimeBlood
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    - IPC
-    - Moth
-    - Chitinid
-  functions:
-  - !type:TraitModifyBloodstream
-    bloodReagent: InsectBlood
 
 - type: trait
   id: BlueBlood
@@ -82,15 +87,50 @@
     - InsectBlood
     - RedBlood
     - SlimeBlood
+    - AmmoniaBlood
+    - ShimmeringBlood
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
     - IPC
     - Arachnid
     - Arachne
+    - Plasmaman
   functions:
   - !type:TraitModifyBloodstream
     bloodReagent: BlueBlood
+
+- type: trait
+  id: InsectBlood
+  category: TraitsBloods
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+    - BlackBlood
+    - BlueBlood
+    - RedBlood
+    - SlimeBlood
+    - AmmoniaBlood
+    - ShimmeringBlood
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Moth
+    - Chitinid
+    - Plasmaman
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: InsectBlood
 
 - type: trait
   id: SlimeBlood
@@ -111,11 +151,14 @@
     - InsectBlood
     - BlueBlood
     - RedBlood
+    - AmmoniaBlood
+    - ShimmeringBlood
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
     - IPC
     - SlimePerson
+    - Plasmaman
   functions:
   - !type:TraitModifyBloodstream
     bloodReagent: Slime
@@ -139,6 +182,8 @@
     - InsectBlood
     - BlueBlood
     - SlimeBlood
+    - AmmoniaBlood
+    - ShimmeringBlood
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
@@ -154,14 +199,17 @@
     - Felinid
     - Tajaran
     - Oni
+    - Plasmaman
   functions:
   - !type:TraitModifyBloodstream
     bloodReagent: Blood
 
+
+# Thaven blood is hallucinogenic, which can grant psionics. For this reason, they cost points.
 - type: trait
-  id: AmmoniaBlood
+  id: ShimmeringBlood
   category: TraitsBloods
-  points: 0
+  points: -2
   requirements:
   - !type:CharacterJobRequirement
       inverted: true
@@ -177,12 +225,13 @@
     - InsectBlood
     - BlueBlood
     - SlimeBlood
+    - AmmoniaBlood
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
     - IPC
-    - Vox
-    - Resomi
+    - Thaven
+    - Plasmaman
   functions:
   - !type:TraitModifyBloodstream
-    bloodReagent: AmmoniaBlood
+    bloodReagent: ShimmeringBlood
