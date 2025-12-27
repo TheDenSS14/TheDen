@@ -50,6 +50,7 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.CombatMode;
+using Content.Shared.Climbing.Components;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
 using Content.Shared._Goobstation.Interaction;
@@ -844,6 +845,19 @@ namespace Content.Shared.Interaction
             if (inRange)
             {
                 var rayPredicate = GetPredicate(originPos, other, targetPos, targetRot, collisionMask, combinedPredicate);
+                // Different logic for wallmounts 
+                if (_wallMountQuery.HasComp(other))
+                {
+                    var oldPredicate = rayPredicate;
+
+                    rayPredicate = fixture =>
+                    {
+                        if (HasComp<ClimbableComponent>(fixture))
+                            return false;
+                            // If the entity is climbable, just let them use it rather than have to climb over it
+                        return oldPredicate(fixture);
+                    };
+                }
                 inRange = InRangeUnobstructed(originPos, targetPos, range, collisionMask, rayPredicate, ShouldCheckAccess(origin));
             }
 
