@@ -93,12 +93,11 @@
     inverted: true
     species:
     - IPC
-    - Arachnid
     - Arachne
     - Plasmaman
   functions:
   - !type:TraitModifyBloodstream
-    bloodReagent: BlueBlood
+    bloodReagent: CopperBlood
 
 - type: trait
   id: InsectBlood
