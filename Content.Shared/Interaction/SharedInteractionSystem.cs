@@ -57,7 +57,6 @@ using Content.Shared._Goobstation.Interaction;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Input;
-using Content.Shared.Interaction.Components;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
@@ -91,6 +90,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using ClimbableComponent = Content.Shared.Climbing.Components.ClimbableComponent; // #den
 
 namespace Content.Shared.Interaction
 {
@@ -845,11 +845,11 @@ namespace Content.Shared.Interaction
             if (inRange)
             {
                 var rayPredicate = GetPredicate(originPos, other, targetPos, targetRot, collisionMask, combinedPredicate);
-                // Different logic for wallmounts 
+                // den changes start                
+                // Different logic for wallmounts
                 if (_wallMountQuery.HasComp(other))
                 {
                     var oldPredicate = rayPredicate;
-
                     rayPredicate = fixture =>
                     {
                         if (HasComp<ClimbableComponent>(fixture))
@@ -858,6 +858,7 @@ namespace Content.Shared.Interaction
                         return oldPredicate(fixture);
                     };
                 }
+                // den changes end
                 inRange = InRangeUnobstructed(originPos, targetPos, range, collisionMask, rayPredicate, ShouldCheckAccess(origin));
             }
 
