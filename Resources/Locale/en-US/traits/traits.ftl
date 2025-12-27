@@ -788,6 +788,26 @@ trait-description-BlackBlood =
     Your body produces Black Blood instead of whatever blood your species normally generates.
 
 trait-name-InsectBlood = Insect Blood
-trait-description-BlackBlood =
+trait-description-InsectBlood =
     Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
     Your body produces Insect Blood instead of whatever blood your species normally generates.
+
+trait-name-BlueBlood = Blue Blood
+trait-description-BlueBlood =
+    Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
+    Your body produces Blue Blood instead of whatever blood your species normally generates.
+
+trait-name-SlimeBlood = Slime Blood
+trait-description-SlimeBlood =
+    Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
+    Your body produces slime instead of whatever blood your species normally generates.
+
+trait-name-RedBlood = Red Blood
+trait-description-RedBlood =
+    Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
+    Your body produces regular blood instead of whatever blood your species normally generates.
+
+trait-name-AmmoniaBlood = Ammonia Blood
+trait-description-AmmoniaBlood =
+    Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
+    Your body produces Ammonia Blood instead of whatever blood your species normally generates.

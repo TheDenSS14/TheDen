@@ -2,6 +2,10 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+## These get sorted alphabetically within the menu.
+## If you do add more blood reagents in the future, be *absolutely* sure to include the exclusions for the other bloods.
+## It's boilerplatey as hell, but we do not have trait group requirements. A future refactor might help with this.
+
 - type: trait
   id: BlackBlood
   category: TraitsBloods
@@ -18,6 +22,9 @@
     traits:
     - Synthetic
     - InsectBlood
+    - BlueBlood
+    - SlimeBlood
+    - RedBlood
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
@@ -44,11 +51,14 @@
     - Synthetic
     - BlackBlood
     - BlueBlood
+    - RedBlood
+    - SlimeBlood
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
     - IPC
     - Moth
+    - Chitinid
   functions:
   - !type:TraitModifyBloodstream
     bloodReagent: InsectBlood
@@ -70,6 +80,8 @@
     - Synthetic
     - BlackBlood
     - InsectBlood
+    - RedBlood
+    - SlimeBlood
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
@@ -79,3 +91,98 @@
   functions:
   - !type:TraitModifyBloodstream
     bloodReagent: BlueBlood
+
+- type: trait
+  id: SlimeBlood
+  category: TraitsBloods
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+    - BlackBlood
+    - InsectBlood
+    - BlueBlood
+    - RedBlood
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - SlimePerson
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: Slime
+
+- type: trait
+  id: RedBlood
+  category: TraitsBloods
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+    - BlackBlood
+    - InsectBlood
+    - BlueBlood
+    - SlimeBlood
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Feroxi
+    - Human
+    - Reptilian
+    - Dwarf
+    - Harpy
+    - Vulpkanin
+    - Ovinia
+    - Rodentia
+    - Felinid
+    - Tajaran
+    - Oni
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: Blood
+
+- type: trait
+  id: AmmoniaBlood
+  category: TraitsBloods
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+    - BlackBlood
+    - InsectBlood
+    - BlueBlood
+    - SlimeBlood
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Vox
+    - Resomi
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: AmmoniaBlood
