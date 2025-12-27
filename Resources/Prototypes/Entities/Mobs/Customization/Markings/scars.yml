@@ -17,8 +17,8 @@
 
 - type: marking
   id: ScarEyeRight
-  bodyPart: Head
-  markingCategory: Head
+  bodyPart: Face
+  markingCategory: Face #TheDen: Marking fixes
   speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Arachne, Rodentia, Feroxi, SlimePerson, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi; The Den - Canid
   followSkinColor: true
   sprites:
@@ -27,8 +27,8 @@
 
 - type: marking
   id: ScarEyeLeft
-  bodyPart: Head
-  markingCategory: Head
+  bodyPart: Face
+  markingCategory: Face #TheDen: Marking fixes
   speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Arachne, Rodentia, Feroxi, SlimePerson, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi; The Den - Canid
   followSkinColor: true
   sprites:
