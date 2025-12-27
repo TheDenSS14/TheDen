@@ -124,3 +124,9 @@ trait-description-MusicMachine =
 trait-name-IPCSinger = Singer (Synth)
 trait-description-IPCSinger =
     Your electronic voice can be repurposed to sing simple melodies. Gives you a built in Synth Lead singing option.
+
+trait-name-FireResistance = Fire Resistance
+trait-description-FireResistance =
+    Whether through a mutation, a round of body modification, a special coating or otherwise, you are unable to be [color=orange]ignited.[/color]
+    Additionally, you are uniquely suited for survival in [color=orange]high temperature[/color] environments thanks to multiple thermal insulation and regulation mechanisms.
+    This [color=red]does not[/color] protect you from [color=yellow]high pressure[/color] or the [color=green]toxicity[/color] of combustive gasses and their products.
