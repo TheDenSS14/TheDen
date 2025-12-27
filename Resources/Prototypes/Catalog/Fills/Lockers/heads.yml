@@ -116,6 +116,7 @@
       - id: ShelterCapsule
       - id: LavalandJaunter
       - id: Multitool # DEN
+      - id: ClothingNeckCargomedal # DEN
 
 - type: entity
   id: LockerCaptainFilledHardsuit
@@ -217,6 +218,8 @@
       - id: ServiceTechFabCircuitboard # Floof - port to ee if possible
       - id: PrinterDocFlatpack  # Corvax-Printer
       - id: Multitool # DEN
+      - id: ClothingNeckGoldmedal # DEN
+      - id: ClothingNeckClownmedal # DEN
 
 - type: entity
   id: LockerChiefEngineerFilledHardsuit
@@ -254,6 +257,7 @@
       - id: PrinterDocFlatpack  # Corvax-Printer
       - id: ConstructionBag # DEN
       - id: Multitool # DEN
+      - id: ClothingNeckEngineermedal # DEN
 
 - type: entity
   id: LockerChiefEngineerFilled
@@ -285,6 +289,7 @@
       - id: PrinterDocFlatpack  # Corvax-Printer
       - id: ConstructionBag # DEN
       - id: Multitool # DEN
+      - id: ClothingNeckEngineermedal # DEN
 
 - type: entity
   id: LockerChiefMedicalOfficerFilledHardsuit
@@ -319,6 +324,7 @@
       - id: MedicalBiofabMachineBoard # Shitmed Change
       - id: PrinterDocFlatpack  # Corvax-Printer
       - id: Multitool # DEN
+      - id: ClothingNeckMedicalmedal # DEN
 
 - type: entity
   id: LockerChiefMedicalOfficerFilled
@@ -348,6 +354,7 @@
       - id: MedicalBiofabMachineBoard # Shitmed Change
       - id: PrinterDocFlatpack  # Corvax-Printer
       - id: Multitool # DEN
+      - id: ClothingNeckMedicalmedal # DEN
 
 - type: entity
   id: LockerResearchDirectorFilledHardsuit
@@ -383,6 +390,7 @@
       - id: AntimovCircuitBoard
       - id: PrinterDocFlatpack  # Corvax-Printer
       - id: Multitool # DEN
+      - id: ClothingNeckSciencemedal # DEN
 
 - type: entity
   id: LockerResearchDirectorFilled
@@ -415,6 +423,7 @@
       - id: AntimovCircuitBoard
       - id: PrinterDocFlatpack  # Corvax-Printer
       - id: Multitool # DEN
+      - id: ClothingNeckSciencemedal # DEN
 
 - type: entity
   id: LockerHeadOfSecurityFilledHardsuit
@@ -449,6 +458,8 @@
         prob: 0.3
       - id: PrinterDocFlatpack  # Corvax-Printer
       - id: Multitool # DEN
+      - id: ClothingNeckSecuritymedal # DEN
+      - id: ClothingNeckBronzeheart # DEN
 
 - type: entity
   id: LockerHeadOfSecurityFilled
@@ -479,6 +490,8 @@
         prob: 0.3
       - id: PrinterDocFlatpack  # Corvax-Printer
       - id: Multitool # DEN
+      - id: ClothingNeckSecuritymedal # DEN
+      - id: ClothingNeckBronzeheart # DEN
 
 - type: entity
   id: LockerFreezerVaultFilled
