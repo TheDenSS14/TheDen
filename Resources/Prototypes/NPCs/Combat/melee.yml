@@ -34,6 +34,8 @@
     - preconditions:
         - !type:PulledPrecondition
           isPulled: true
+        - !type:PullEscapeCooldownPrecondition # DEN Do other things if we already tried to pull free.
+          onCooldown: false
       tasks:
         - !type:HTNPrimitiveTask
           operator: !type:UnPullOperator

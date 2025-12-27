@@ -1091,6 +1091,15 @@ public sealed class PullingSystem : EntitySystem
         return true;
     }
 
+    // DEN: Make this accessible to HTN systems.
+    public bool EscapeOnCooldown(Entity<PullableComponent?> pullable)
+    {
+        if (!Resolve(pullable.Owner, ref pullable.Comp))
+            return false;
+
+        return _timing.CurTime < pullable.Comp.NextEscapeAttempt;
+    }
+
     /// <summary>
     /// Attempts to release entity from grab
     /// </summary>
@@ -1101,7 +1110,7 @@ public sealed class PullingSystem : EntitySystem
         if (!Resolve(pullable.Owner, ref pullable.Comp))
             return false;
 
-        if (_timing.CurTime < pullable.Comp.NextEscapeAttempt)  // No autoclickers! Mwa-ha-ha
+        if (EscapeOnCooldown(pullable))  // No autoclickers! Mwa-ha-ha | DEN use the new function.
             return false;
 
         if (_random.Prob(pullable.Comp.GrabEscapeChance))

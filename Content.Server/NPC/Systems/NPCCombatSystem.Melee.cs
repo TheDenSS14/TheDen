@@ -102,18 +102,20 @@ public sealed partial class NPCCombatSystem
             return;
         }
 
-        if (TryComp<NPCSteeringComponent>(uid, out var steering) &&
-            steering.Status == SteeringStatus.NoPath)
-        {
-            component.Status = CombatStatus.TargetUnreachable;
-            return;
-        }
-
-        // TODO: When I get parallel operators move this as NPC combat shouldn't be handling this.
-        _steering.Register(uid, new EntityCoordinates(component.Target, Vector2.Zero), steering);
-
         if (distance > weapon.Range)
         {
+            // DEN start: Put this inside here, there is no point trying to steer to our target if we can already hit them.
+            if (TryComp<NPCSteeringComponent>(uid, out var steering) &&
+                steering.Status == SteeringStatus.NoPath)
+            {
+                component.Status = CombatStatus.TargetUnreachable;
+                return;
+            }
+
+            // TODO: When I get parallel operators move this as NPC combat shouldn't be handling this.
+            _steering.Register(uid, new EntityCoordinates(component.Target, Vector2.Zero), steering);
+            // DEN end
+
             component.Status = CombatStatus.TargetOutOfRange;
             return;
         }
