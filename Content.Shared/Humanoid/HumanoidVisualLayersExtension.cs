@@ -86,11 +86,13 @@ namespace Content.Shared.Humanoid
                     break;
                 case HumanoidVisualLayers.Chest:
                     yield return HumanoidVisualLayers.Chest;
-                    yield return HumanoidVisualLayers.Tail;
+                    // There was a yield return HumanoidVisualLayers.Tail; here. Possibly a duplicate?
+                    // Removed possible for those reasons.
                     yield return HumanoidVisualLayers.TailBehind;
                     yield return HumanoidVisualLayers.TailOversuit;
-                    yield return HumanoidVisualLayers.Wings;
                     yield return HumanoidVisualLayers.Tail;
+                    yield return HumanoidVisualLayers.Wings;
+                    yield return HumanoidVisualLayers.BackWings;
                     break;
                 default:
                     yield break;
