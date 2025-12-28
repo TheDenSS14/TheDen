@@ -11,6 +11,7 @@
 // SPDX-FileCopyrightText: 2024 metalgearsloth
 // SPDX-FileCopyrightText: 2024 sleepyyapril
 // SPDX-FileCopyrightText: 2025 BramvanZijp
+// SPDX-FileCopyrightText: 2025 Dirius77
 // SPDX-FileCopyrightText: 2025 Eagle-0
 // SPDX-FileCopyrightText: 2025 Jakumba
 // SPDX-FileCopyrightText: 2025 Rosycup
@@ -690,6 +691,18 @@ public sealed class PullingSystem : EntitySystem
             return false;
         }
 
+        // DEN: Delay on pulling after a grab break.
+        if (_timing.CurTime < pullerComp.CanNextPull)
+        {
+            _popup.PopupEntity(
+                Loc.GetString("popup-pull-cant-grip",
+                    ("target", Identity.Entity(pullableUid, EntityManager))),
+                puller,
+                puller,
+                PopupType.MediumCaution);
+            return false;
+        }
+
         var getPulled = new BeingPulledAttemptEvent(puller, pullableUid);
         RaiseLocalEvent(pullableUid, getPulled, true);
         var startPull = new StartPullAttemptEvent(puller, pullableUid);
@@ -894,6 +907,10 @@ public sealed class PullingSystem : EntitySystem
                     pullerUidNull.Value,
                     pullerUidNull.Value,
                     PopupType.MediumCaution);
+
+                // DEN: Having someone break free prevents you from grabbing for a few seconds.
+                if (TryComp<PullerComponent>(pullerUidNull.Value, out var pullerComp))
+                    pullerComp.CanNextPull = _timing.CurTime + TimeSpan.FromSeconds(3f);
             }
         }
         // Goobstation
@@ -1091,6 +1108,15 @@ public sealed class PullingSystem : EntitySystem
         return true;
     }
 
+    // DEN: Make this accessible to HTN systems.
+    public bool EscapeOnCooldown(Entity<PullableComponent?> pullable)
+    {
+        if (!Resolve(pullable.Owner, ref pullable.Comp))
+            return false;
+
+        return _timing.CurTime < pullable.Comp.NextEscapeAttempt;
+    }
+
     /// <summary>
     /// Attempts to release entity from grab
     /// </summary>
@@ -1101,7 +1127,7 @@ public sealed class PullingSystem : EntitySystem
         if (!Resolve(pullable.Owner, ref pullable.Comp))
             return false;
 
-        if (_timing.CurTime < pullable.Comp.NextEscapeAttempt)  // No autoclickers! Mwa-ha-ha
+        if (EscapeOnCooldown(pullable))  // No autoclickers! Mwa-ha-ha | DEN use the new function.
             return false;
 
         if (_random.Prob(pullable.Comp.GrabEscapeChance))

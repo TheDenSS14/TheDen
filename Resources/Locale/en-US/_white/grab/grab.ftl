@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2025 BramvanZijp <BramvanZijp@gmail.com>
-# SPDX-FileCopyrightText: 2025 Eagle-0 <114363363+Eagle-0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BramvanZijp
+# SPDX-FileCopyrightText: 2025 Dirius77
+# SPDX-FileCopyrightText: 2025 Eagle-0
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 popup-grab-soft-target = {CAPITALIZE($puller)} grabbed you softly.
 popup-grab-hard-target = {CAPITALIZE($puller)} grabbed you firmly.
@@ -26,3 +27,6 @@ popup-grab-retake-success-puller = {CAPITALIZE($puller)} released {CAPITALIZE($p
 popup-grabbed-cant-speak = You can't breathe!
 popup-grab-need-hand = You need a free hand!
 popup-grab-throw-fail-cooldown = You need more time to secure your grip before you can throw {CAPITALIZE($pulled)}!
+
+# Den pull cooldown after break.
+popup-pull-cant-grip = You can't get a grip on {CAPITALIZE($target)}!
