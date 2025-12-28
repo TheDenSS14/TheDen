@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Aikakakah
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Shaman
@@ -68,6 +69,8 @@ marking-DwarfTattooShootingStar = Shooting Star Tattoo
 marking-DwarfTattooShootingStar-dwarftattooshootingstar = Shooting Star Tattoo
 marking-DwarfMarkBear = Mark of the Bear
 marking-DwarfMarkBear-dwarfmarkbear = Mark of the Bear
+marking-DwarfMarkBearFemale = Mark of the Bear
+marking-DwarfMarkBearFemale-dwarfmarkbear_female = Mark of the Bear
 marking-DwarfMarkKangarooLHand = Mark of the Kangaroo (Left)
 marking-DwarfMarkKangarooLHand-dwarfmarkkangaroolhand = Mark of the Kangaroo (Left)
 marking-DwarfMarkKangarooRHand = Mark of the Kangaroo (Right)

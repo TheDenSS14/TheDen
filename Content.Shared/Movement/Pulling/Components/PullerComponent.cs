@@ -4,11 +4,12 @@
 // SPDX-FileCopyrightText: 2024 SimpleStation14
 // SPDX-FileCopyrightText: 2024 metalgearsloth
 // SPDX-FileCopyrightText: 2025 BramvanZijp
+// SPDX-FileCopyrightText: 2025 Dirius77
 // SPDX-FileCopyrightText: 2025 Eagle-0
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared._Goobstation.MartialArts;
 using Content.Shared._Goobstation.TableSlam; // Goobstation - Table Slam
@@ -170,4 +171,8 @@ public sealed partial class PullerComponent : Component
     [DataField]
     public float ChokeGrabSpeedModifier = 0.4f;
     // Goobstation end
+
+    // DEN: The next time the entity can try to pull.
+    [DataField]
+    public TimeSpan CanNextPull = TimeSpan.Zero;
 }

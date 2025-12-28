@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Aikakakah
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator
 # SPDX-FileCopyrightText: 2025 Jakumba
@@ -388,6 +389,7 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  sexRestriction: [Male] #TheDen - Splitting the scars and tattoos
   coloring:
     default:
       type:
@@ -396,6 +398,22 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
     state: dwarfmarkbear
+  shader: unshaded
+
+- type: marking
+  id: DwarfMarkBearFemale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  sexRestriction: [Female] #TheDen - Splitting the scars and tattoos
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
+    state: dwarfmarkbear_female
   shader: unshaded
 
 - type: marking

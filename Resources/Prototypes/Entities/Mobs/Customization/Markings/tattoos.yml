@@ -6,6 +6,7 @@
 # SPDX-FileCopyrightText: 2023 csqrb
 # SPDX-FileCopyrightText: 2024 FoxxoTrystan
 # SPDX-FileCopyrightText: 2024 Memeji
+# SPDX-FileCopyrightText: 2025 Aikakakah
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BudaLope
 # SPDX-FileCopyrightText: 2025 Citrus
@@ -18,13 +19,19 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   parent: [BaseTattoo, BaseSpeciesChestStandardOrganic] # AuroraSong: Marking inheritance
   id: TattooHiveChest
   bodyPart: Chest
   markingCategory: Chest
+  sexRestriction: [Male] #DeltaV: Splitting the scars and tattoos
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_hive_chest
@@ -34,8 +41,14 @@
   id: TattooNightlingChest
   bodyPart: Chest
   markingCategory: Chest
+  sexRestriction: [Male] #DeltaV: Splitting the scars and tattoos
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
   sprites:
-  - sprite: Mobs/Customization/tattoos.rsi
+  - sprite: DeltaV/Mobs/Customization/tattoos.rsi #DeltaV: Splitting the scars and tattoos
     state: tattoo_nightling
 
 - type: marking
