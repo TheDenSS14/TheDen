@@ -8,7 +8,7 @@
 # SPDX-FileCopyrightText: 2025 maelines
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 ##i did markings for a lot of different species so for now theyre are all here##
 ##if no one else does it ill do a cleanup of all marking coding in a few months##
@@ -79,7 +79,7 @@
 - type: marking
   id: Shadow
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: Face #TheDen: Marking fixes
   speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune, SlimePerson ]
   forcedColoring: true
   coloring:
@@ -217,7 +217,7 @@
 - type: marking
   id: DwarfConstellationLArm
   bodyPart: LArm
-  markingCategory: Overlay
+  markingCategory: LeftArm #TheDen: Marking fixes
   speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
@@ -233,7 +233,7 @@
 - type: marking
   id: DwarfConstellationLHand
   bodyPart: LHand
-  markingCategory: Overlay
+  markingCategory: LeftHand #TheDen: Marking fixes
   speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
@@ -249,7 +249,7 @@
 - type: marking
   id: DwarfConstellationRArm
   bodyPart: RArm
-  markingCategory: Overlay
+  markingCategory: RightArm #TheDen: Marking fixes
   speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
@@ -265,7 +265,7 @@
 - type: marking
   id: DwarfConstellationRHand
   bodyPart: RHand
-  markingCategory: Overlay
+  markingCategory: RightHand #TheDen: Marking fixes
   speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
@@ -281,7 +281,7 @@
 - type: marking
   id: DwarfConstellationLLeg
   bodyPart: LLeg
-  markingCategory: Overlay
+  markingCategory: LeftLeg #TheDen: Marking fixes
   speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
@@ -297,7 +297,7 @@
 - type: marking
   id: DwarfConstellationLFoot
   bodyPart: LFoot
-  markingCategory: Overlay
+  markingCategory: LeftFoot #TheDen: Marking fixes
   speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
@@ -313,7 +313,7 @@
 - type: marking
   id: DwarfConstellationRLeg
   bodyPart: RLeg
-  markingCategory: Overlay
+  markingCategory: RightLeg #TheDen: Marking fixes
   speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
@@ -329,7 +329,7 @@
 - type: marking
   id: DwarfConstellationRFoot
   bodyPart: RFoot
-  markingCategory: Overlay
+  markingCategory: RightFoot #TheDen: Marking fixes
   speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
@@ -1057,12 +1057,10 @@
   bodyPart: Head
   markingCategory: Head
   speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
-  forcedColoring: true
-  coloring:
+  coloring: #TheDen: Colorable Vitiligo
     default:
       type:
-        !type:SimpleColoring
-        color: "#FFE5D6"
+        !type:SkinColoring
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: vitiligoheadl
@@ -1072,12 +1070,10 @@
   bodyPart: Head
   markingCategory: Head
   speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
-  forcedColoring: true
-  coloring:
+  coloring: #TheDen: Colorable Vitiligo
     default:
       type:
-        !type:SimpleColoring
-        color: "#FFE5D6"
+        !type:SkinColoring
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: vitiligoheadr
@@ -1087,12 +1083,10 @@
   bodyPart: Head
   markingCategory: Head
   speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
-  forcedColoring: true
-  coloring:
+  coloring: #TheDen: Colorable Vitiligo
     default:
       type:
-        !type:SimpleColoring
-        color: "#FFE5D6"
+        !type:SkinColoring
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: vitiligoheadjaw
@@ -1102,12 +1096,10 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [ Human, Dwarf, Oni, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
-  forcedColoring: true
-  coloring:
+  coloring: #TheDen: Colorable Vitiligo
     default:
       type:
-        !type:SimpleColoring
-        color: "#FFE5D6"
+        !type:SkinColoring
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: vitiligochestf
@@ -1117,12 +1109,10 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
-  forcedColoring: true
-  coloring:
+  coloring: #TheDen: Colorable Vitiligo
     default:
       type:
-        !type:SimpleColoring
-        color: "#FFE5D6"
+        !type:SkinColoring
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: vitiligochestspots
@@ -1132,12 +1122,10 @@
   bodyPart: RArm
   markingCategory: RightArm
   speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
-  forcedColoring: true
-  coloring:
+  coloring: #TheDen: Colorable Vitiligo
     default:
       type:
-        !type:SimpleColoring
-        color: "#FFE5D6"
+        !type:SkinColoring
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: vitiligoarmr
@@ -1147,12 +1135,10 @@
   bodyPart: LArm
   markingCategory: LeftArm
   speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
-  forcedColoring: true
-  coloring:
+  coloring: #TheDen: Colorable Vitiligo
     default:
       type:
-        !type:SimpleColoring
-        color: "#FFE5D6"
+        !type:SkinColoring
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: vitiligoarml
@@ -1162,12 +1148,10 @@
   bodyPart: RHand
   markingCategory: RightHand
   speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
-  forcedColoring: true
-  coloring:
+  coloring: #TheDen: Colorable Vitiligo
     default:
       type:
-        !type:SimpleColoring
-        color: "#FFE5D6"
+        !type:SkinColoring
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: vitiligohandr
@@ -1177,12 +1161,10 @@
   bodyPart: LHand
   markingCategory: LeftHand
   speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
-  forcedColoring: true
-  coloring:
+  coloring: #TheDen: Colorable Vitiligo
     default:
       type:
-        !type:SimpleColoring
-        color: "#FFE5D6"
+        !type:SkinColoring
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: vitiligohandl
@@ -1192,12 +1174,10 @@
   bodyPart: RFoot
   markingCategory: RightLeg
   speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
-  forcedColoring: true
-  coloring:
+  coloring: #TheDen: Colorable Vitiligo
     default:
       type:
-        !type:SimpleColoring
-        color: "#FFE5D6"
+        !type:SkinColoring
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: vitiligolegr
@@ -1207,12 +1187,10 @@
   bodyPart: LLeg
   markingCategory: LeftLeg
   speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
-  forcedColoring: true
-  coloring:
+  coloring: #TheDen: Colorable Vitiligo
     default:
       type:
-        !type:SimpleColoring
-        color: "#FFE5D6"
+        !type:SkinColoring
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: vitiligolegl

@@ -12,12 +12,12 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
   id: ScarEyeRight
-  bodyPart: Head
-  markingCategory: Head
+  bodyPart: Face
+  markingCategory: Face #TheDen: Marking fixes
   speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Arachne, Rodentia, Feroxi, SlimePerson, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi; The Den - Canid
   followSkinColor: true
   sprites:
@@ -26,8 +26,8 @@
 
 - type: marking
   id: ScarEyeLeft
-  bodyPart: Head
-  markingCategory: Head
+  bodyPart: Face
+  markingCategory: Face #TheDen: Marking fixes
   speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Arachne, Rodentia, Feroxi, SlimePerson, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi; The Den - Canid
   followSkinColor: true
   sprites:

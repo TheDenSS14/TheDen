@@ -13,6 +13,7 @@
 # SPDX-FileCopyrightText: 2025 SixplyDev
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 somekindofbox
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -26,6 +27,10 @@
   canBeAntag: false
   icon: "JobIconPrisoner"
   supervisors: job-supervisors-security
+  # DEN START - adding the access directly to the ID does not work, you have to append it to the job preset
+  access:
+    - GenpopEnter
+  # DEN END
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security

@@ -1,11 +1,13 @@
 # SPDX-FileCopyrightText: 2025 ElusiveCoin
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
 # SPDX-FileCopyrightText: 2025 foxcurl
 # SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -212,3 +214,54 @@
       components:
         - type: Puller
           needsHands: false
+
+- type: trait
+  id: FireResistance
+  category: TraitsPhysicalAugmentations
+  points: -6
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - TemperatureTolerance
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
+        - IPC
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: TemperatureProtection
+          heatingCoefficient: 0.1 # slower heating rate
+        - type: Flammable
+          firestacksOnIgnite: 0 # cannot be ignited
+          maximumFireStacks: 0 # cannot gain fire stacks
+          damage:
+            types:
+              Heat: 0 # does not take damage from being on fire. this is not redundant. this field needs to be mapped.
+        - type: Temperature
+          heatDamageThreshold: 600 # higher threshold for actually taking damage. this would allow someone to confortably sit in a standard oven cranked to the highest temp.
+          coldDamageThreshold: 0
+          currentTemperature: 310.15
+          coldDamage:
+            types:
+              Cold : 0.1 # unaffected
+          specificHeat: 42
+          heatDamage:
+            types:
+              Heat : 0.1 # much less damage from overheating
+        - type: ThermalRegulator
+          metabolismHeat: 800
+          radiatedHeat: 100
+          implicitHeatRegulation: 500
+          sweatHeatRegulation: 20000 # increased max sweat amount which speeds up temperature regulation at high temps
+          shiveringHeatRegulation: 2000
+          normalBodyTemperature: 310.15
+          thermalRegulationTemperatureThreshold: 25
