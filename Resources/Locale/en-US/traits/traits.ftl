@@ -813,7 +813,7 @@ trait-description-AmmoniaBlood =
     Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
     Your body produces Ammonia Blood instead of whatever blood your species normally generates.
 
-trait-name-ShimmeringBlood = Thaven Blood
+trait-name-ShimmeringBlood = Psychedelic Blood
 trait-description-ShimmeringBlood =
     Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
     Your body produces Psychedelic Blood instead of whatever blood your species normally generates. [color=red]Note:[/color] Due to Psychedelic Blood being hallucinogenic, this comes with additional trait cost.
