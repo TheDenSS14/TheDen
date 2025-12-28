@@ -125,7 +125,7 @@ public sealed partial class TraitModifyBloodstream : TraitFunction
     /// <summary>
     ///  What reagent the entity's bloodstream should be replaced with.
     /// </summary>
-    [DataField]
+    [DataField(required: true)]
     public ProtoId<ReagentPrototype>? BloodReagent = null;
 
     public override void OnPlayerSpawn(EntityUid uid,
