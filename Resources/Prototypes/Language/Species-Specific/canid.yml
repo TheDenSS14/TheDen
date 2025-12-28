@@ -12,7 +12,7 @@
     color: "#64FFD0"
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 2
+    minSyllables: 1 # DEN - 2 -> 1
     maxSyllables: 3
     replacement:
     - wuff
@@ -27,3 +27,14 @@
     - yhi
     - yip
     - bau
+    # DEN: more short syllables, doubled for weight
+    - wf
+    - gr
+    - af
+    - rr
+    - wa
+    - wf
+    - gr
+    - af
+    - rr
+    - wa

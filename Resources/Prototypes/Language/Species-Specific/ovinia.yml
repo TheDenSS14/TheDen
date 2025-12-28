@@ -12,46 +12,45 @@
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
-    maxSyllables: 4
+    maxSyllables: 3
     replacement:
-    - baa
-    - maa
-    - waa
-    - gwa
+    # repeated 3x for weight
     - ba
     - ma
     - wa
     - ga
+
+    - ba
+    - ma
+    - wa
+    - ga
+
+    - ba
+    - ma
+    - wa
+    - ga
+
+    # 1x
+    - baa
+    - maa
+    - waa
+    - gwa
     - gah
     - bah
     - mah
     - wah
     - mau
+    - vah
+    - meh
     - bahh
     - maah
-    - waah
-    - gwah
     - mrah
-    - vah
-    - vahh
-    - mraw
-    - mrawh
-    - awaah
     - baah
-    - meh
     - meeh
     - mehh
     - bweh
     - baar
     - bahr
-    - bahl
-    - mahwl
     - mehl
-    - mwehl
-    - behhl
-    - bwehl
-    - bwarh
     - wehh
-    - mreh
     - bleh
-    - blegh

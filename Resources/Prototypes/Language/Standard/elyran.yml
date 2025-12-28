@@ -12,7 +12,7 @@
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
-    maxSyllables: 4
+    maxSyllables: 3 # DEN: 4 -> 3
     replacement:
     - af
     - if

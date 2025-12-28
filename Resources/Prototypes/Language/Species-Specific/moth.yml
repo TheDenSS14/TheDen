@@ -12,10 +12,11 @@
   speech:
     color: "#c7df2edd"
     fontId: Copperplate
+    fontSize: 10
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 2 # Replacements are really short
-    maxSyllables: 4
+    minSyllables: 1 # DEN: 2 -> 1
+    maxSyllables: 3 # DEN: 4 -> 3
     replacement:
     - år
     - i

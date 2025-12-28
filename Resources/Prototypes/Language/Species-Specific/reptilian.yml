@@ -109,8 +109,8 @@
     color: "#2aca2add"
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 2
-    maxSyllables: 4
+    minSyllables: 1 # DEN - 2 -> 1
+    maxSyllables: 3 # DEN - 4 -> 3
     replacement:
     - azs
     - zis

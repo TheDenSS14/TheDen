@@ -12,8 +12,8 @@
     color: "#008ecc"
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 2
-    maxSyllables: 5
+    minSyllables: 1 # DEN: 2 -> 1
+    maxSyllables: 3 # DEN: 5 -> 3
     replacement:
     - š
     - ž

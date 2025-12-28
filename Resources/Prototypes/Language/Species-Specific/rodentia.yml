@@ -10,7 +10,7 @@
     color: "#E9E9E9"
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 2
+    minSyllables: 1 # DEN: 2 -> 1
     maxSyllables: 3
     replacement:
     - squ

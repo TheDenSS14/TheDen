@@ -10,8 +10,8 @@
     color: "#dc143c"
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 2 # Replacements are really short
-    maxSyllables: 7
+    minSyllables: 1 # DEN: 2 -> 1 # Replacements are really short
+    maxSyllables: 3 # DEN: 7 -> 3
     replacement:
     - "'ra"
     - so

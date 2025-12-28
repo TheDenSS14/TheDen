@@ -25,9 +25,11 @@
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
-    maxSyllables: 10 # Crazy
+    maxSyllables: 6 # DEN: 10 -> 6
     replacement:
     - 0
+    - 0
+    - 1
     - 1
 
 # Example of a sign language. Used by the Sign Language trait.

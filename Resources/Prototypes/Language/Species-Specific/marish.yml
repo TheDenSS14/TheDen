@@ -19,29 +19,43 @@
     - chat-speech-verb-marish
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 2
-    maxSyllables: 5
+    minSyllables: 1 # DEN: 2 -> 1
+    maxSyllables: 2 # DEN: 5 -> 2
     replacement:
+    # DEN: nuked some longer syllables
     - mar
-    - mwrrr
-    - maaAr
-    - aarrr
-    - wrurrl
     - mmar
     - mwar
     - mlar
+    - mwrrr
+    - maaAr
+    - aarrr
     - mlwar
-    - mwaarr
     - mAaAr
     - lmwar
+    - mwaarr
     - wlurrl
     - wlmwar
     - arrmaw
-    - mwAlwar
-    - wrlurll
-    - wlarrul
+    - wrurrl
     - wlAmur
     - AlwuRm
     - mrrrAw
-    - wurlMur
-    - uuRlmmr
+    # DEN: shorter syllables
+    - ma
+    - mr
+    - wr
+    - la
+    - wa
+    - ar
+    - rl
+    - mur
+    - mrr
+    - wur
+    - wrr
+    - mra
+    - awl
+    - url
+    - war
+    - mar
+    - mwa

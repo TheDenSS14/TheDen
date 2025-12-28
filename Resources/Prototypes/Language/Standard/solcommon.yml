@@ -12,254 +12,223 @@
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
-    maxSyllables: 4
+    maxSyllables: 3 # DEN: 4 -> 3
     replacement:
+    # DEN: Order by length, nuke long syllables.
     - a
-    - abe
-    - ade
+    - i
+    - o
     - ai
     - an
-    - ana
     - ba
+    - bi
+    - bo
+    - bu
+    - da
+    - de
+    - fu
+    - ga
+    - ge
+    - go
+    - gu
+    - ha
+    - he
+    - hu
+    - ji
+    - ju
+    - ka
+    - ke
+    - ki
+    - ko
+    - ku
+    - li
+    - lu
+    - ma
+    - me
+    - mi
+    - mo
+    - mu
+    - na
+    - ne
+    - ni
+    - nu
+    - op
+    - pa
+    - pu
+    - qi
+    - ra
+    - ri
+    - ru
+    - sa
+    - se
+    - si
+    - su
+    - ta
+    - te
+    - ti
+    - to
+    - ul
+    - wa
+    - wo
+    - xi
+    - xu
+    - ya
+    - yi
+    - yu
+    - zi
+    - zo
+    - zu
+    - abe
+    - ade
+    - ana
     - bae
     - bai
-    - bang
     - bao
     - bei
     - ben
     - beo
-    - bi
-    - bian
-    - bing
-    - bo
-    - bu
-    - bugu
     - bun
     - cai
     - can
     - cao
     - cau
-    - chan
-    - chen
-    - cheong
-    - chiu
-    - chong
-    - chyo
-    - da
     - dan
     - dao
-    - de
-    - deun
     - duo
     - eon
     - eun
-    - eusi
-    - feng
-    - fu
-    - ga
     - gak
     - gan
-    - gang
     - gao
-    - ge
     - gei
     - gen
     - geo
     - gil
-    - go
     - gou
-    - gu
     - gua
     - gui
     - gul
     - gun
     - guo
     - gwi
-    - ha
     - hai
     - hal
     - han
     - hap
-    - hara
-    - he
-    - hego
     - hen
     - hon
     - hoo
-    - hu
     - hua
     - hun
-    - hyeong
-    - i
     - jae
     - jeo
-    - jeon
-    - ji
     - jia
-    - jian
-    - jiang
     - jie
-    - jong
-    - ju
     - jue
-    - juede
-    - jung
-    - juzi
-    - ka
-    - kang
-    - kawa
-    - ke
-    - keun
-    - ki
     - kin
-    - ko
-    - kore
     - kou
-    - ku
-    - kuda
     - kun
     - kyu
-    - lang
     - lao
-    - leng
-    - leung
-    - li
-    - lian
-    - liang
     - lie
-    - ling
-    - lizi
-    - lleo
-    - long
-    -	lu
-    - ma
     - mah
-    - me
     - mei
-    - meinu
     - men
-    - meng
-    - meog
-    - meoni
-    - mi
-    - mian
     - min
-    - mo
     - mot
-    - mu
     - mun
-    - na
     - nae
     - nai
-    - nari
-    - ne
-    - ni
     - nii
     - nim
     - nin
     - nop
-    - nu
-    - o
     - oba
     - oga
     - oji
     - oka
     - ong
-    - op
     - oto
-    - pa
     - pai
-    - pang
     - pin
-    - ping
-    - pong
-    - pu
     - pum
     - pye
-    - qi
     - qie
-    - qing
-    - ra
     - rei
     - ren
-    - ri
-    - ru
-    - ruan
-    - sa
     - sai
-    - sama
     - san
-    - sang
-    - se
     - sei
     - sen
     - seo
-    - seon
-    - seong
-    - shang
-    - shen
-    - sheng
     - shi
     - sho
-    - shui
-    - si
-    - su
     - sui
     - sum
     - sun
     - swi
-    - ta
     - tae
     - tai
-    - tame
-    - tamen
     - tan
-    - te
     - tei
-    - ti
-    - tian
-    - to
     - ton
     - tsu
-    - ul
-    - wa
     - wan
-    - wang
     - wei
-    - wo
-    - xi
-    - xian
-    - xiao
-    - xing
-    - xiong
     - xiu
-    - xu
-    - xuan
     - xue
-    - ya
     - yan
-    - yang
-    - yeong
-    - yi
-    - yige
     - yin
-    - ying
-    - yiqi
-    - yong
     - you
-    - yu
-    - yuli
-    - yuyi
     - zai
     - zao
-    - zhan
-    - zhang
     - zhe
-    - zhen
-    - zheng
-    - zhuo
-    - zi
-    - zo
-    - zu
     - zun
     - zuo
+    - bang
+    - bian
+    - bing
+    - bugu
+    - chen
+    - chyo
+    - deun
+    - feng
+    - hara
+    - jeon
+    - jong
+    - juzi
+    - kang
+    - kawa
+    - keun
+    - kore
+    - kuda
+    - lian
+    - ling
+    - lizi
+    - lleo
+    - long
+    - meog
+    - mian
+    - nari
+    - pang
+    - ping
+    - qing
+    - ruan
+    - sama
+    - sang
+    - seon
+    - shen
+    - shui
+    - tame
+    - tian
+    - wang
+    - xiao
+    - xing
+    - xuan
+    - yang
+    - yige
+    - yiqi
+    - yong
+    - yuyi
+    - zhen
+    - zhuo
