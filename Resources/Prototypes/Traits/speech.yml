@@ -222,6 +222,25 @@
       useSex: true
 
 - type: trait
+  id: ArachneSounds
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Arachne
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - ArachneEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Arachne
+      useSex: true
+
+- type: trait
   id: KitsuneSounds
   category: TraitsSpeechSounds
   points: -2
@@ -544,6 +563,26 @@
     - !type:TraitSetAdditionalEmoteSound
       emoteSound: UnisexMoth
       useSex: false
+      replace: true
+
+- type: trait
+  id: ArachneSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Arachne
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - ArachneEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Arachne
+      useSex: true
       replace: true
 
 - type: trait
