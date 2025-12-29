@@ -1,0 +1,192 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClosetBase
+  id: SomberCloset
+  name: somber cabinet
+  description: "An expensive cabinet made of gloomy, patterned wood."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Storage/sombercloset.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: door-closed
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: base
+    stateDoorOpen: door-open
+    stateDoorClosed: door-closed
+  - type: StaticPrice
+    price: 125
+  - type: EntityStorage
+    closeSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        volume: -4
+    openSound:
+      path: /Audio/Effects/woodenclosetopen.ogg
+      params:
+        volume: -4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.40625,0.21875,0.40625"
+        density: 150
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 3
+      - !type:EmptyAllContainersBehaviour
+  - type: PaperLabel
+    labelSlot:
+      insertVerbText: Attach Label
+      ejectVerbText: Remove Label
+      whitelist:
+        components:
+        - Paper
+
+- type: entity
+  parent: SomberCloset
+  id: SomberClosetLocker
+  name: somber cabinet
+  suffix: Locking
+  description: "An expensive, locking cabinet made of gloomy, patterned wood."
+  components:
+  - type: AccessReader
+  - type: Lock
+  - type: LockVisuals
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: door-closed
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+      shader: unshaded
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+
+- type: entity
+  parent: BaseWallCloset
+  id: SomberWallCloset # If we ever fix shelves, replace this with SomberWallShelf
+  name: somber wall cabinet
+  description: "An expensive wall cabinet made of gloomy, patterned wood. Unfortunately, the shelves are unstable, and it's likely to dump your things in the floor..."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Storage/somberwallcloset.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: door-closed
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: Appearance
+  - type: StaticPrice
+    price: 125
+  - type: EntityStorageVisuals
+    stateBaseClosed: base
+    stateDoorOpen: door-open
+    stateDoorClosed: door-closed
+  - type: EntityStorage
+    closeSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        volume: -4
+    openSound:
+      path: /Audio/Effects/woodenclosetopen.ogg
+      params:
+        volume: -4
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 3
+      - !type:EmptyAllContainersBehaviour
+
+- type: entity
+  parent: SomberWallCloset
+  id: SomberWallClosetLocker # If we ever fix shelves, replace this with SomberWallShelfLocking
+  name: somber wall cabinet
+  suffix: Locking
+  description: "An expensive, locking wall cabinet made of gloomy, patterned wood. Unfortunately, the shelves are unstable, and it's likely to dump your things in the floor..."
+  components:
+  - type: AccessReader
+  - type: Lock
+  - type: LockVisuals
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: door-closed
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+      shader: unshaded
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]

@@ -1,11 +1,12 @@
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <temporaloroboros@gmail.com>
-// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Psychpsyo
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2023 Vordenburg
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2024 lzk
+// SPDX-FileCopyrightText: 2025 Cami
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
@@ -26,19 +27,18 @@ public sealed partial class PuddleSystem
 
     private void UpdateEvaporation(EntityUid uid, Solution solution)
     {
-        if (HasComp<EvaporationComponent>(uid))
-        {
-            return;
-        }
-
         if (solution.GetTotalPrototypeQuantity(EvaporationReagents) > FixedPoint2.Zero)
         {
-            var evaporation = AddComp<EvaporationComponent>(uid);
-            evaporation.NextTick = _timing.CurTime + EvaporationCooldown;
-            return;
+            if (!HasComp<EvaporationComponent>(uid))
+            {
+                var evaporation = AddComp<EvaporationComponent>(uid);
+                evaporation.NextTick = _timing.CurTime + EvaporationCooldown;
+            }
         }
-
-        RemComp<EvaporationComponent>(uid);
+        else
+        {
+            RemComp<EvaporationComponent>(uid);
+        }
     }
 
     private void TickEvaporation()
@@ -58,6 +58,7 @@ public sealed partial class PuddleSystem
 
             var reagentTick = evaporation.EvaporationAmount * EvaporationCooldown.TotalSeconds;
             puddleSolution.SplitSolutionWithOnly(reagentTick, EvaporationReagents);
+            _solutionContainerSystem.UpdateChemicals(puddle.Solution!.Value);
 
             // Despawn if we're done
             if (puddleSolution.Volume == FixedPoint2.Zero)

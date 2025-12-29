@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingOuterFoldableBase
+  id: ClothingOuterVestValet
+  name: valet jacket
+  description: A tacky red vest with gold accents. Expect people to make you carry their bags for them.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/OuterClothing/Vests/valet.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/OuterClothing/Vests/valet.rsi
+  - type: Foldable
+    unfoldVerbText: fold-unrollsleeves-verb
+    foldVerbText: fold-rollsleeves-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: rolled
+    foldedHeldPrefix: rolled
+
+- type: entity
+  parent: ClothingOuterVestValet
+  id: ClothingOuterVestValetRolled
+  suffix: rolled
+  components:
+  - type: Foldable
+    folded: true

@@ -30,6 +30,7 @@
 # SPDX-FileCopyrightText: 2024 lapatison
 # SPDX-FileCopyrightText: 2025 Blahaj-the-Shonk
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Kellaris
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
@@ -46,6 +47,7 @@ ghost-role-component-default-rules = All normal rules apply unless an administra
                                      You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                      You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 ghost-role-information-freeagent-rules = You are a [color=yellow][bold]Free Agent[/bold][/color]. You are free to act as either an antagonist or a non-antagonist.
+                                         Important! [color=red]Read before playing:[/color] Antagonistic actions should be kept to the level of a nuisance, not a major threat.
                                          You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
                                          You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                          You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
@@ -207,7 +209,7 @@ ghost-role-information-ifrit-wizard-description = Listen to your owner. Don't ta
 
 ghost-role-information-space-dragon-name = Space dragon
 ghost-role-information-space-dragon-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with all your summoned carp.
-ghost-role-information-space-dragon-description = Call in 3 carp rifts and take over this quadrant! You have only 5 minutes in between each rift before you will disappear.
+ghost-role-information-space-dragon-description = Call in 3 carp rifts and take over this quadrant!
 ghost-role-information-space-dragon-summoned-carp-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with your dragon and its allies.
 ghost-role-information-space-dragon-dungeon-description = Defend the expedition dungeon with your fishy comrades!
 
@@ -221,7 +223,7 @@ ghost-role-information-skeleton-biker-name = Skeleton Biker
 ghost-role-information-skeleton-biker-description = Ride around on your sweet ride.
 
 ghost-role-information-closet-skeleton-name = Closet Skeleton
-ghost-role-information-closet-skeleton-description = Wreak havoc! You are a primordial force with no allegiance. Live happily with the crew or wage sweet skeletal war.
+ghost-role-information-closet-skeleton-description = You are a primordial force with no allegiance. Live happily with the crew or be a skeletal problem. Antagonistic actions should be kept to the level of a nuisance, not a major threat.
 
 ghost-role-information-onestar-mecha-name = Onestar Mecha
 ghost-role-information-onestar-mecha-description = You are an experimental mecha created by who-knows-what, all you know is that you have weapons and you detect fleshy moving targets nearby...
@@ -370,8 +372,11 @@ ghost-role-information-artifact-name = Sentient Artifact
 ghost-role-information-artifact-description =
       Enact your eldritch whims.
       Forcibly activate your nodes for good or for evil.
+      Important! Read before playing: Antagonistic actions should be kept to the level of a nuisance, not a major threat.
+      Hostility in an isolated area is acceptable but do not roam around the station causing mass casualties.
 
 ghost-role-information-silicon-rules = Obey your laws. You are a {role-type-free-agent-name} if you are not currently bound by any laws.
+                                       Important![color=red] Read before playing:[/color] Antagonistic actions should be kept to the level of a nuisance, not a major threat, unless laws explicitly state otherwise.
                                        You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
                                        You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                        You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.

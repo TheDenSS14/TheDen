@@ -1,6 +1,6 @@
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
@@ -15,7 +15,12 @@ public sealed partial class PillComponent : Component
     /// The pill id. Used for networking & serializing pill visuals.
     /// </summary>
     [AutoNetworkedField]
-    [DataField("pillType")]
+    [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
     public uint PillType;
+
+    [AutoNetworkedField]
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public string? State;
 }

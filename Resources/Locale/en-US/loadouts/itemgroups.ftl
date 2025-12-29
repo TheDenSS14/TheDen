@@ -9,7 +9,9 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 RadsammyT
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 Tonk-GCR
@@ -394,6 +396,10 @@ character-item-group-LoadoutPsionicMantisMask = Mantis Masks
 character-item-group-LoadoutPsionicMantisOuter = Mantis Outerwear
 character-item-group-LoadoutPsionicMantisShoes = Mantis Shoes
 character-item-group-LoadoutPsionicMantisUniforms = Mantis Uniforms
+character-item-group-LoadoutPsionicMantisRestraints = Mantis Restraints
+character-item-group-LoadoutPsionicMantisRanged = Mantis Ranged Weapon
+character-item-group-LoadoutPsionicMantisMelee = Mantis Melee Weapon
+# TheDen - Added mantis restraints, ranged, and melee
 
 # Logistics
 character-item-group-LoadoutLogisticsBackpacks = Logistics Backpacks

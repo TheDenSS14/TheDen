@@ -12,6 +12,15 @@
   tags:
   - Tofu
 
+- type: foodSequenceElement
+  id: FriedEgg
+  name: food-sequence-content-fried-egg
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: friedegg
+  tags:
+  - Meat
+
 # Meat
 
 # NOTE: Fish does not have the "meat" tag as I do not consider it very interchangeable with regular meat.
@@ -36,6 +45,28 @@
   - Cooked
   - Cutlet
   - Fish
+
+- type: foodSequenceElement
+  id: Liverwurst
+  name: food-sequence-content-liverwurst
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/sausage.rsi
+    state: liverwurst-slice
+  tags:
+  - Meat
+  - Slice
+
+- type: foodSequenceElement
+  id: BlackPudding
+  name: food-sequence-content-black-pudding
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/sausage.rsi
+    state: blackpudding-slice
+  tags:
+  # not adding the vampirefood tag to this  because then it would make burgers vampire-edible
+  # regardless of contents as long as it has 1 slice of black pudding
+  - Meat
+  - Slice
 
 # Burger patty sprites
 
@@ -176,3 +207,11 @@
   tags:
   - Fruit
   - Vegetable
+
+# Cotton
+- type: foodSequenceElement
+  id: MantisDollPlushie
+  name: food-sequence-cotton-burger-content-plushie-mantisdoll
+  sprites:
+  - sprite: _DEN/Objects/Fun/toys.rsi
+    state: doll_mantis

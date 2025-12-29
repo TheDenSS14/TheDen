@@ -36,6 +36,10 @@
       id: LoadoutItemBlunt
     - type: loadout
       id: LoadoutItemJoint
+    # DEN start: New additions
+    - type: loadout
+      id: LoadoutItemCigsStinky
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutLighters
@@ -103,6 +107,16 @@
       id: LoadoutSpeciesExtendedEmergencyNitrogenTank
     - type: loadout
       id: LoadoutSpeciesDoubleEmergencyNitrogenTank
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutSpeciesEmergencyWaterVaporTank
+    - type: loadout
+      id: LoadoutSpeciesDoubleEmergencyWaterVaporTank
+    - type: loadout
+      id: LoadoutSpeciesDoubleEmergencyPlasmaTank
+    - type: loadout
+      id: LoadoutSpeciesExtendedEmergencyWaterVaporTank
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutBoxKits
@@ -138,6 +152,16 @@
       id: LoadoutPen
     - type: loadout
       id: LuxuryPen
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutItemPaperPackage
+    - type: loadout
+      id: BoxReamBright
+    - type: loadout
+      id: BoxReamClassic
+    - type: loadout
+      id: LoadoutItemBoxFolderClipboard
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutPets
@@ -151,6 +175,12 @@
       id: LoadoutItemPetMothroach
     - type: loadout
       id: LoadoutItemPetCockroach
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutItemPetRoingus
+    - type: loadout
+      id: LoadoutItemPetRosy
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutCards

@@ -1,8 +1,10 @@
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Jakumba <jkmcbennett@hotmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aikakakah
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 marking-ArmProstheticLeft = Prosthetic (Left Arm)
 marking-ArmProstheticLeft-arm_l_prosthetic = Prosthetic (Left Arm)
@@ -20,6 +22,8 @@ marking-ChestTwistingRight = Twisted Scar (Right)
 marking-ChestTwistingRight-chest_r_twisting = Twisted Scar (Right)
 marking-ChestStar = Star Scar
 marking-ChestStar-chest_star = Star Scar
+marking-ChestStarFemale = Star Scar
+marking-ChestStarFemale-chest_star_female = Star Scar
 marking-FootProstheticLeft = Prosthetic (Left Foot)
 marking-FootProstheticLeft-foot_l_prosthetic = Prosthetic (Left Foot)
 marking-FootProstheticRight = Prosthetic (Right Foot)
@@ -46,3 +50,5 @@ marking-LegTwistingRight = Twisted Scar (Right Leg)
 marking-LegTwistingRight-leg_r_twisting = Twisted Scar (Right Leg)
 marking-TorsoIncision = Torso Incision
 marking-TorsoIncision-torso_incision = Torso Incision
+marking-TorsoIncisionFemale = Torso Incision
+marking-TorsoIncisionFemale-torso_incision_female = Torso Incision

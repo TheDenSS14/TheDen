@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2025 eightballll
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+#- type: entity
+#  parent: BasePsionicAction
+#  id: ActionPrecognition
+#  name: Precognition
+#  description: See into the future to get a hint about the next random event.
+#  components:
+#  - type: Action
+#    icon:
+#      sprite: _DV/Interface/Actions/actions_psionics.rsi
+#      state: precognition
+#    useDelay: 240
+#    checkCanInteract: false
+#    checkConsciousness: false
+#  - type: InstantAction
+#    event: !type:PrecognitionPowerActionEvent

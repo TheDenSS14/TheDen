@@ -1144,6 +1144,28 @@
     state: thinline
 
 - type: decal
+  id: tinydot
+  parent: Symbols
+  tags: ["crayon", "crayon-3-symbols"]
+  defaultCleanable: true
+  defaultCustomColor: true
+  defaultSnap: false
+  sprite:
+    sprite: Effects/crayondecals.rsi
+    state: tinydot
+
+- type: decal
+  id: tinyline
+  parent: Symbols
+  tags: ["crayon", "crayon-3-symbols"]
+  defaultCleanable: true
+  defaultCustomColor: true
+  defaultSnap: false
+  sprite:
+    sprite: Effects/crayondecals.rsi
+    state: tinyline
+
+- type: decal
   id: toilet
   parent: Crayons
   tags: ["crayon"]

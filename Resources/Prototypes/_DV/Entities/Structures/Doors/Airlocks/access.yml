@@ -1,14 +1,13 @@
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Fansana <fansana95@googlemail.com>
-# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 Timemaster99
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # shuttles from the shipyard will try to dock here
 - type: entity
@@ -28,6 +27,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMantis ]
+  - type: Sprite # TheDen
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/mantis.rsi
 
 
 - type: entity
@@ -38,6 +39,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMantis ]
+  - type: Sprite # TheDen
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/mantis.rsi
 
 - type: entity
   parent: AirlockChiefJustice # The Den - airlocks resprite

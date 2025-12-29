@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2025 LandsharkRAWR
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [BoxCardboard, BaseRivalCompanyContraband]
+  id: BloodRedRoseBox
+  name: blood red roses box
+  description: A set of 4 Blood Red Roses, perfect to create a stunning display of violence.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,3,1
+  - type: StorageFill
+    contents:
+      - id: RoseSyndicate
+        amount: 4
+  - type: Sprite
+    sprite: /Textures/_Impstation/Objects/Storage/boxes.rsi
+    layers:
+      - state: syndicaterosebox

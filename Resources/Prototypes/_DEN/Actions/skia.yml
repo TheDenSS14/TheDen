@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ActionSkiaRerollObjectives
+  name: Reroll Objectives
+  description: Some targets may be easier than others.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    icon:
+      sprite: Objects/Fun/dice.rsi
+      state: d6_1
+    useDelay: 300
+    priority: 5
+    event: !type:RerollSkiaObjectivesActionEvent
+
+- type: entity
+  id: ActionSkiaShop
+  name: Shop
+  description: Opens the ability shop.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    icon: Interface/Actions/shop.png
+    event: !type:SkiaShopActionEvent

@@ -51,3 +51,138 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadFlowerRose
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+  - RoseSeedless
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadFlowerRoseBlack
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+  - RoseBlackSeedless
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadFlowerLily
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+  - FoodLilySeedless
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+# Winter hats
+
+- type: loadout
+  id: LoadoutHeadHatTrapperBlack
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingHeadHatTrapperBlack
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatTrapperGray
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingHeadHatTrapperGray
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatTrapperBeige
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingHeadHatTrapperBeige
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatTrapperRed
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingHeadHatTrapperRed
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatTrapperGreen
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingHeadHatTrapperGreen
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatTrapperBlue
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingHeadHatTrapperBlue
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatTrapperPurple
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingHeadHatTrapperPurple
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatTrapperPink
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingHeadHatTrapperPink
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatFuzzyEarmuffs
+  category: Head
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingHeadHatFuzzyEarmuffs
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead

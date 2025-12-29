@@ -1,0 +1,145 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: decal
+  id: MiniTileSomberDark
+  parent: MiniTile
+  abstract: true
+
+- type: decal
+  id: MiniTileSomberDarkBox
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_box
+
+- type: decal
+  id: MiniTileSomberDarkCornerNe
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_corner_ne
+
+- type: decal
+  id: MiniTileSomberDarkCornerSe
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_corner_se
+
+- type: decal
+  id: MiniTileSomberDarkCornerNw
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_corner_nw
+
+- type: decal
+  id: MiniTileSomberDarkCornerSw
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_corner_sw
+
+- type: decal
+  id: MiniTileSomberDarkInnerNe
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_inner_ne
+
+- type: decal
+  id: MiniTileSomberDarkInnerSe
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_inner_se
+
+- type: decal
+  id: MiniTileSomberDarkInnerNw
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_inner_nw
+
+- type: decal
+  id: MiniTileSomberDarkInnerSw
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_inner_sw
+
+- type: decal
+  id: MiniTileSomberDarkEndN
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_end_n
+
+- type: decal
+  id: MiniTileSomberDarkEndE
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_end_e
+
+- type: decal
+  id: MiniTileSomberDarkEndS
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_end_s
+
+- type: decal
+  id: MiniTileSomberDarkEndW
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_end_w
+
+- type: decal
+  id: MiniTileSomberDarkLineN
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_line_n
+
+- type: decal
+  id: MiniTileSomberDarkLineE
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_line_e
+
+- type: decal
+  id: MiniTileSomberDarkLineS
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_line_s
+
+- type: decal
+  id: MiniTileSomberDarkLineW
+  parent: MiniTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/minitile_somber_dark.rsi
+    state: steel_line_w
+

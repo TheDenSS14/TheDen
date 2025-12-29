@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: reagent
   id: PsionicRegenerationEssence
@@ -52,7 +52,7 @@
   group: Toxins
   desc: reagent-desc-soulbreaker-toxin
   flavor: bitter
-  color: "#FFFFF0"
+  color: "#dbfff4" # TheDen - Same hue as mindbreaker
   physicalDesc: reagent-physical-desc-cloudy
   plantMetabolism:
   - !type:PlantAdjustToxins

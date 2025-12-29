@@ -100,7 +100,7 @@
     - type: CommandStaff
     - type: BibleUser # Nyano - Lets them heal with bibles
     - type: Psionic
-      powerSlots: 2 # TheDen - This only means that they don't start generating glimmer until they gain a third slot-taking power (they start with Dispel, which takes a slot, and have one no-glimmer slot like all psychics)
+      powerSlots: 2 # TheDen - This only means that they don't start generating glimmer until they gain a third slot-taking power (they start with Dispel, which takes a slot, and have one no-glimmer slot like all psions)
     - type: InnatePsionicPowers
       powersToAdd: # TheDen - They have one innate slot-taking power, so they need 200 Potentia to gain a new power
         - DispelPower # Takes 1 power slot

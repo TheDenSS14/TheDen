@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/bd6873fd4dd6a61d7e46f1d75cd4d90f64c40894. comm_syndie made by Veritius, based on comm. generic_panel_open made by Errant, commit https://github.com/space-wizards/space-station-14/pull/32273. registry made by CerberusWolfie, based on explosive., Departmental Modified comm_(department).png boards by icepicked on discord",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/bd6873fd4dd6a61d7e46f1d75cd4d90f64c40894. comm_syndie made by Veritius, based on comm. generic_panel_open made by Errant, commit https://github.com/space-wizards/space-station-14/pull/32273. registry made by CerberusWolfie, based on explosive., Departmental Modified comm_(department).png boards by icepicked on discord, registry updated by Rosy and Sha-Seng (GitHub)",
   "size": {
     "x": 32,
     "y": 32
@@ -1058,14 +1058,6 @@
                     0.1,
                     1,
                     0.1,
-                    0.1
-                ],
-                [
-                    1,
-                    0.1,
-                    0.1,
-                    1,
-                    0.1,
                     0.1,
                     1,
                     0.1,
@@ -1080,9 +1072,29 @@
                     0.1,
                     1,
                     0.1,
+                    0.1,
+                    1,
+                    0.1,
                     0.1
                 ],
                 [
+                    1,
+                    0.1,
+                    0.1,
+                    1,
+                    0.1,
+                    0.1,
+                    1,
+                    0.1,
+                    0.1,
+                    1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    1,
+                    0.1,
+                    0.1,
                     1,
                     0.1,
                     0.1,
@@ -1873,6 +1885,18 @@
         },
         {
             "name": "service_keys",
+            "directions": 4
+        },
+        {
+            "name": "mantis_key",
+            "directions": 4
+        },
+        {
+            "name": "mantis_key_off",
+            "directions": 4
+        },
+        {
+            "name": "mantis_keyboard",
             "directions": 4
         }
     ]

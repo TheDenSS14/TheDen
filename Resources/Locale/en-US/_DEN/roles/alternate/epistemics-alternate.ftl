@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 XenoOutlier
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -33,6 +34,9 @@ job-name-alternate-research-coordinator = Research Coordinator
 job-name-alternate-research-director = Research Director
 
 # Forensic Mantis
+job-name-alternate-spiritualist = Mantis Spiritualist
+job-name-alternate-exorcist = Mantis Exorcist
+job-name-alternate-occultist = Mantis Occultist
 
 # Chaplain
 job-name-alternate-cleric = Cleric

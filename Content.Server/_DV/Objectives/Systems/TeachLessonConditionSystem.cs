@@ -1,12 +1,13 @@
-// SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server._DV.Objectives.Components;
 using Content.Server.Objectives.Components;
 using Content.Server.Objectives.Systems;
+using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 
@@ -29,38 +30,42 @@ public sealed class TeachLessonConditionSystem : EntitySystem
 
     private void OnMobStateChanged(MobStateChangedEvent args)
     {
-        if (args.NewMobState != MobState.Critical || args.OldMobState >= args.NewMobState
-            || !TryComp<MindContainerComponent>(args.Target, out var mc) || mc.OriginalMind is not { } mindId)
+        if (args.NewMobState != MobState.Dead)
             return;
 
-        // If the attacker actually has the objective, we can just skip any enumeration outright.
-        if (args.Origin is not null
-            && HasComp<TeachLessonConditionComponent>(args.Origin)
-            && TryComp<TargetObjectiveComponent>(args.Origin, out var targetComp)
-            && targetComp.Target == mindId)
-        {
-            _codeCondition.SetCompleted(args.Origin!.Value);
+        if (!TryComp<MindContainerComponent>(args.Target, out var mc) || mc.OriginalMind is not {} victimMindId)
             return;
-        }
 
-        // Get all TeachLessonConditionComponent entities
-        var query = EntityQueryEnumerator<TeachLessonConditionComponent, TargetObjectiveComponent>();
+        var victimPos = _transform.GetWorldPosition(args.Target);
+        var victimMapId = Transform(args.Target).MapID;
 
-        while (query.MoveNext(out var ent, out var conditionComp, out var targetObjective))
+        var mindQuery = EntityQueryEnumerator<MindComponent>();
+        while (mindQuery.MoveNext(out _, out var mind))
         {
-            // Check if this objective's target matches the entity that died
-            if (targetObjective.Target != mindId)
+            if (mind.OwnedEntity is not {} ownerBody)
                 continue;
 
-            var userWorldPos = _transform.GetWorldPosition(ent);
-            var targetWorldPos = _transform.GetWorldPosition(args.Target);
-
-            var distance = (userWorldPos - targetWorldPos).Length();
-            if (distance > conditionComp.MaxDistance
-                || Transform(ent).MapID != Transform(args.Target).MapID)
+            if (Transform(ownerBody).MapID != victimMapId)
                 continue;
 
-            _codeCondition.SetCompleted(ent);
+            var ownerPos = _transform.GetWorldPosition(ownerBody);
+
+            foreach (var objective in mind.Objectives)
+            {
+                if (!TryComp<TeachLessonConditionComponent>(objective, out var condition))
+                    continue;
+
+                if (!TryComp<TargetObjectiveComponent>(objective, out var target))
+                    continue;
+
+                if (target.Target != victimMindId)
+                    continue;
+
+                if ((ownerPos - victimPos).Length() > condition.MaxDistance)
+                    continue;
+
+                _codeCondition.SetCompleted(objective);
+            }
         }
     }
 }

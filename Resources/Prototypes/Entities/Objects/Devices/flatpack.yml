@@ -1,17 +1,18 @@
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Nairod <110078045+nairodian@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 SpeltIncorrectyl <66873282+SpeltIncorrectyl@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 icekot8 <93311212+icekot8@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 zelezniciar1 <39102800+zelezniciar1@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Your Name <EctoplasmIsGood@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Nairod
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2024 SpeltIncorrectyl
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 icekot8
+# SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2024 zelezniciar1
+# SPDX-FileCopyrightText: 2025 Jadrek
+# SPDX-FileCopyrightText: 2025 Your Name
+# SPDX-FileCopyrightText: 2025 fishbait
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: BaseItem
@@ -245,3 +246,13 @@
     - state: overlay
       color: "#cec8ac"
     - state: icon-default
+
+# DEN  this is in Wizdens files but blame gives me no source -Cutinup99
+- type: entity
+  parent: BaseFlatpack
+  id: SpaceHeaterFlatpack
+  name: space heater flatpack
+  description: A flatpack used for constructing a space heater.
+  components:
+  - type: Flatpack
+    entity: SpaceHeaterAnchored

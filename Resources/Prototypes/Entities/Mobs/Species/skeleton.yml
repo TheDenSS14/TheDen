@@ -21,8 +21,11 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -153,6 +156,12 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - CalciumEmotes
 
 - type: entity
   parent: BaseSpeciesDummy

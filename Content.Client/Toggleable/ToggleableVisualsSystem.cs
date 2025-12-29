@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: 2025 Cam
 // SPDX-FileCopyrightText: 2025 Winter
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -53,6 +54,11 @@ public sealed class ToggleableVisualsSystem : VisualizerSystem<ToggleableVisuals
             SpriteSystem.LayerSetVisible((uid, args.Sprite), layer, enabled);
             if (modulateColor)
                 SpriteSystem.LayerSetColor((uid, args.Sprite), component.SpriteLayer, color);
+
+            if (component.ReplaceMode && args.Sprite.AllLayers.Any())
+            {
+                SpriteSystem.LayerSetVisible((uid, args.Sprite), 0, !enabled);
+            }
         }
 
         // If there's a `ItemTogglePointLightComponent` that says to apply the color to attached lights, do so.
@@ -93,6 +99,18 @@ public sealed class ToggleableVisualsSystem : VisualizerSystem<ToggleableVisuals
         if (layers == null && !component.ClothingVisuals.TryGetValue(args.Slot, out layers))
             return;
 
+        if (component.ReplaceMode)
+        {
+            for (var layerIdx = args.Layers.Count - 1; layerIdx >= 0; layerIdx--)
+            {
+                var (layerKey, _) = args.Layers[layerIdx];
+                if (layerKey.StartsWith($"{args.Slot}-") && !layerKey.Contains("-toggle"))
+                {
+                    args.Layers.RemoveAt(layerIdx);
+                }
+            }
+        }
+
         var modulateColor = AppearanceSystem.TryGetData<Color>(uid, ToggleableVisuals.Color, out var color, appearance);
 
         var i = 0;
@@ -121,6 +139,19 @@ public sealed class ToggleableVisualsSystem : VisualizerSystem<ToggleableVisuals
 
         if (!component.InhandVisuals.TryGetValue(args.Location, out var layers))
             return;
+
+        if (component.ReplaceMode)
+        {
+            var baseKey = $"inhand-{args.Location.ToString().ToLowerInvariant()}";
+            for (var j = args.Layers.Count - 1; j >= 0; j--)
+            {
+                var (layerKey, _) = args.Layers[j];
+                if (layerKey.StartsWith(baseKey) && !layerKey.Contains("-toggle"))
+                {
+                    args.Layers.RemoveAt(j);
+                }
+            }
+        }
 
         var modulateColor = AppearanceSystem.TryGetData<Color>(uid, ToggleableVisuals.Color, out var color, appearance);
 

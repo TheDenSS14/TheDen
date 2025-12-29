@@ -1,9 +1,10 @@
-# SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
-# SPDX-FileCopyrightText: 2025 Fansana <116083121+Fansana@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 Pierson Arnold
+# SPDX-FileCopyrightText: 2025 Fansana
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # UI
 game-hud-open-consent-window-button-tooltip = Open consent window.
@@ -48,7 +49,7 @@ consent-MindSwap-desc = Should mind swap work on you?
 consent-MindSwap-no-consent = { CAPITALIZE(POSS-ADJ($target)) } mind rejects your advances.
 
 consent-MassMindSwap-name = Mass Mind Swap
-consent-MassMindSwap-desc = Should a mass mind swap from glimmer work on you?
+consent-MassMindSwap-desc = Should a mass mind swap from Glimmer work on you?
 
 consent-ChangelingTarget-name = Changeling Target
 consent-ChangelingTarget-desc = Should your body be allowed to be stolen by changelings?

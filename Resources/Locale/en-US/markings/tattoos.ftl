@@ -1,17 +1,18 @@
-# SPDX-FileCopyrightText: 2022 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
-# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Scribbles0
+# SPDX-FileCopyrightText: 2022 T-Stalker
+# SPDX-FileCopyrightText: 2022 metalgearsloth
+# SPDX-FileCopyrightText: 2023 Nairod
+# SPDX-FileCopyrightText: 2024 Skubman
+# SPDX-FileCopyrightText: 2025 Aikakakah
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 marking-TattooHiveChest-tattoo_hive_chest = Back Tattoo (Hive)
 marking-TattooHiveChest = Back Tattoo (Hive)
 
-marking-TattooNightlingChest-tattoo_nightling = Chest Tattoo (nightling)
+marking-TattooNightlingChest-tattoo_nightling = Chest Tattoo (Nightling)
 marking-TattooNightlingChest = Chest Tattoo (Nightling)
 
 marking-TattooNanotrasenChest-tattoo_nanotrasen_chest = Chest Tattoo (Nanotrasen)

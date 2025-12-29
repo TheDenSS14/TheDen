@@ -32,6 +32,22 @@
   items:
     - ClothingUniformJumpskirtChef
 
+# Gloves
+
+- type: loadout
+  id: LoadoutServiceHandsGlovesNitrileBlack
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChefGloves
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chef
+  items:
+  - ClothingHandsGlovesNitrileBlack
+
 # Masks
 
 - type: loadout

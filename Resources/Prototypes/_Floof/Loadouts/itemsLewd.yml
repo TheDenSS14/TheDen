@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
-# SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 fox
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -292,6 +292,13 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutVASH
+
+- type: loadout
+  id: LoadoutVASHToys
+  category: ItemsLewd
+  cost: 0 #No cost because it doesn't come with any toys, just a storage method.
+  items:
+  - ToysBox
 
 - type: loadout
   id: LoadoutTampon

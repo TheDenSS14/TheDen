@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 FuyuMochiru
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 
 - type: entity
@@ -51,3 +52,32 @@
   - type: Tag
     tags:
       - Syrup
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketMayo
+  name: mayonnaise
+  description: A creamy sauce that usually contains egg.
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          reagents:
+            - ReagentId: Mayo
+              Quantity: 10
+    - type: Sprite
+      layers:
+        - state: packet-solid-2
+          map: ["enum.SolutionContainerLayers.Fill"]
+          visible: true
+        - state: packet-layer
+          map: ["enum.OpenableVisuals.Layer"]
+        - state: packet-label
+          color: blue
+    - type: Icon
+      sprite: _DEN/Objects/Consumable/Food/mayo_packet.rsi
+      state: packet-mayo
+    - type: Appearance
+    - type: SolutionContainerVisuals
+      maxFillLevels: 2
+      fillBaseName: packet-solid-

@@ -563,6 +563,8 @@
     slots:
       pen_slot:
         name: clipboard-slot-component-slot-name-pen
+        insertVerbText: pen-insert-verb # TheDen
+        ejectVerbText: pen-eject-verb # TheDen
         whitelist:
           tags:
             - Write
@@ -640,6 +642,8 @@
     slots:
       pen_slot:
         name: clipboard-slot-component-slot-name-pen
+        insertVerbText: pen-insert-verb # TheDen
+        ejectVerbText: pen-eject-verb # TheDen
         whitelist:
           tags:
             - Write
@@ -688,6 +692,10 @@
         Blunt: 10
   - type: StealTarget
     stealGroup: BoxFolderQmClipboard
+  - type: DeviceLinkSource
+    range: 200
+    ports:
+      - OrderSender
 
 - type: entity
   parent: Paper

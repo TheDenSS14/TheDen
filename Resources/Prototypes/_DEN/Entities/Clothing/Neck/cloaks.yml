@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -10,3 +12,32 @@
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Cloaks/colorable.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseFoldable]
+  id: ClothingNeckCloakMantisDark
+  name: dark mantis cloak
+  description: "A billowing cloak that you can bundle around yourself, if you feel your traditional uniforms are too revealing. The brooch is a Greek psi."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Cloaks/mantis_cloak_dark.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-folded
+      map: ["foldedLayer"]
+      visible: false
+  - type: Appearance
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Cloaks/mantis_cloak_dark.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-verb-clothing-cloak
+    unfoldVerbText: unfold-verb-clothing-cloak
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded
+

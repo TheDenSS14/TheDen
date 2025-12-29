@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Will-Oliver-Br
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 ent-PrintedDocument = { ent-Paper }
     .desc = A document printed on a printer.
@@ -34,6 +34,12 @@ ent-PrintedDocumentFoodAndBeveragesMenu = Food and Beverages Menu
     .desc = A menu for use at a restaurant or bar.
 ent-PrintedDocumentCloningReceipt = Cloning Receipt
     .desc = A receipt to be given to the cloned subject once they awaken.
+ent-PrintedDocumentOracleRequest = Oracle Request Form
+    .desc = A form to be handed to another department to request an item for the Oracle.
+ent-PrintedDocumentDrinksMenu = Drinks Menu
+    .desc = A menu for drinks at a bar.
+ent-PrintedDocumentDessertMenu = Dessert Menu
+    .desc = A menu for use at a restaurant or bar.
 ent-PrintedDocumentReportStudyObject = Anomalous Research Report
     .desc = A report focusing on an artifact, anomaly, or unknown device.
 ent-PrintedDocumentApplicationAppointmentInterim = Temporary Promotion Request

@@ -1,35 +1,35 @@
-// SPDX-FileCopyrightText: 2020 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 Metal Gear Sloth <metalgearsloth@gmail.com>
-// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <zddm@outlook.es>
-// SPDX-FileCopyrightText: 2020 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
-// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 py01 <60152240+collinlunn@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Errant <35878406+dmnct@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Ilya246 <57039557+Ilya246@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
-// SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2023 username <113782077+whateverusername0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 whateverusername0 <whateveremail>
-// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Tmanzxd <164098915+Tmanzxd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 router <messagebus@vk.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 DrSmugleaf
+// SPDX-FileCopyrightText: 2020 Metal Gear Sloth
+// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto
+// SPDX-FileCopyrightText: 2020 metalgearsloth
+// SPDX-FileCopyrightText: 2021 20kdc
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2021 Visne
+// SPDX-FileCopyrightText: 2021 py01
+// SPDX-FileCopyrightText: 2022 Leon Friedrich
+// SPDX-FileCopyrightText: 2022 Rane
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Errant
+// SPDX-FileCopyrightText: 2023 Ilya246
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 Kevin Zheng
+// SPDX-FileCopyrightText: 2023 Tom Leys
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2023 username
+// SPDX-FileCopyrightText: 2023 whateverusername0
+// SPDX-FileCopyrightText: 2024 Debug
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 Tmanzxd
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 chromiumboy
+// SPDX-FileCopyrightText: 2024 marc-pelletier
+// SPDX-FileCopyrightText: 2024 router
+// SPDX-FileCopyrightText: 2025 MajorMoth
+// SPDX-FileCopyrightText: 2025 ReconPangolin
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Robust.Shared.Serialization;
 // ReSharper disable InconsistentNaming
@@ -74,6 +74,18 @@ namespace Content.Shared.Atmos
         public const float T20C = 293.15f;
 
         /// <summary>
+        ///     -38.15ºC in K.
+        ///     This is used to initialize roundstart freezer rooms.
+        /// </summary>
+        public const float FreezerTemp = 235f;
+
+        /// <summary>
+        ///     75ºC in K
+        ///     This is used to initialize roundstart sauna rooms.
+        /// </summary>
+        public const float SaunaTemp = 315.15f;
+
+        /// <summary>
         ///     Do not allow any gas mixture temperatures to exceed this number. It is occasionally possible
         ///     to have very small heat capacity (e.g. room that was just unspaced) and for large amounts of
         ///     energy to be transferred to it, even for a brief moment. However, this messes up subsequent
@@ -99,6 +111,18 @@ namespace Content.Shared.Atmos
         public const float MolesCellStandard = (OneAtmosphere * CellVolume / (T20C * R));
 
         /// <summary>
+        ///     Moles in a 2.5 m^3 cell at 101.325 kPa and -38.15ºC.
+        ///     This is used in fix atmos freezer markers to ensure the air is at the correct atmospheric pressure while still being cold.
+        /// </summary>
+        public const float MolesCellFreezer = (OneAtmosphere * CellVolume / (FreezerTemp * R));
+
+        /// <summary>
+        ///     Moles in a 2.5 m^3 cell at 101.325 kPa and -38.15ºC.
+        ///     This is used in fix atmos sauna markers to ensure the air is at the correct atmospheric pressure while still being hot.
+        /// </summary>
+        public const float MolesCellSauna = (OneAtmosphere * CellVolume / (SaunaTemp * R));
+
+        /// <summary>
         ///     Moles in a 2.5 m^3 cell at GasMinerDefaultMaxExternalPressure kPa and 20ºC
         /// </summary>
         public const float MolesCellGasMiner = (GasMinerDefaultMaxExternalPressure * CellVolume / (T20C * R));
@@ -111,8 +135,22 @@ namespace Content.Shared.Atmos
         public const float OxygenStandard = 0.21f;
         public const float NitrogenStandard = 0.79f;
 
+        public const float OxygenSaunaStandard = 0.21f;
+        public const float NitrogenSaunaStandard = 0.77f;
+        public const float WaterVaporSaunaStandard = 0.02f;
+
         public const float OxygenMolesStandard = MolesCellStandard * OxygenStandard;
         public const float NitrogenMolesStandard = MolesCellStandard * NitrogenStandard;
+
+        public const float OxygenMolesFreezer = MolesCellFreezer * OxygenStandard;
+        public const float NitrogenMolesFreezer = MolesCellFreezer * NitrogenStandard;
+
+        public const float OxygenMolesGasMiner = MolesCellGasMiner * OxygenStandard;
+        public const float NitrogenMolesGasMiner = MolesCellGasMiner * NitrogenStandard;
+
+        public const float OxygenMolesSaunaStandard = MolesCellSauna * OxygenSaunaStandard;
+        public const float NitrogenMolesSaunaStandard = MolesCellSauna * NitrogenSaunaStandard;
+        public const float WaterVaporMolesSaunaStandard = MolesCellSauna * WaterVaporSaunaStandard;
 
         #endregion
 

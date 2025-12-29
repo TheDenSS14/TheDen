@@ -1,0 +1,50 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [BaseItem, BaseMantisContraband]
+  id: HandcuffsMantis
+  suffix: DO NOT MAP # We don't want to give mantes the idea that selfsec is a part of their job's function...
+  name: graven shackles
+  description: "Heavy mu-metal shackles to bind unruly psionic subjects, inscribed for both record and suppression. Never to be used for security matters. In fact, that locking bar seems to be damaged... Perhaps they won't notice."
+  components:
+  - type: Item
+    size: Small
+  - type: Handcuff
+    breakoutTime: 1 # Is this low enough? These cuffs are just for roleplay
+    cuffTime: 5 # Long enough for a player to interrupt the doafter if they don't want to roleplay that
+    stunBonus: -5 # You shouldn't be able to force these onto someone who's stunned
+    uncuffTime: 1
+    cuffedRSI: _DEN/Objects/Misc/handcuffsmantis.rsi
+    bodyIconState: body-overlay
+    breakOnRemove: false
+    startCuffSound:
+      path: /Audio/_DEN/Items/Handcuffs/chain_start.ogg
+    endCuffSound:
+      path: /Audio/_DEN/Items/Handcuffs/chain_end.ogg
+    startUncuffSound:
+      path: /Audio/_DEN/Items/Handcuffs/chain_start.ogg
+    endUncuffSound:
+      path: /Audio/_DEN/Items/Handcuffs/chain_end.ogg
+    startBreakoutSound:
+      path: /Audio/_DEN/Items/Handcuffs/chain_takeoff.ogg
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/handcuffsmantis.rsi
+    state: icon
+  - type: Tag
+    tags:
+    - MantisBoxRestraintsStorable
+    - MantisBeltStorable
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    resetOnHandSelected: false
+    animation: WeaponArcDisarm
+    damage:
+      types:
+        Blunt: 0
+  - type: UseDelay
+    delay: 1
+  - type: GuideHelp
+    guides: [ MantisGuide ] # Remind them this is really just for roleplay...

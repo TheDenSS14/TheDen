@@ -22,7 +22,6 @@
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2025 Aiden
 # SPDX-FileCopyrightText: 2025 Dinner
-# SPDX-FileCopyrightText: 2025 GoobBot
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Southbridge
@@ -31,7 +30,7 @@
 # SPDX-FileCopyrightText: 2025 marc-pelletier
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: CrateEngineeringGear
@@ -229,6 +228,18 @@
     contents:
     - id: WeaponParticleDecelerator
       amount: 3
+
+- type: entity # DEN  imported from upstream
+  id: CrateEngineeringSpaceHeater
+  parent: CrateEngineering
+  name: space heater crate
+  description: Contains a space heater for climate control.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: SpaceHeaterFlatpack
 
 - type: entityTable
   id: RandomTechBoardTable

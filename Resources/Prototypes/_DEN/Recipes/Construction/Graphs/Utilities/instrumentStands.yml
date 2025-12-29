@@ -1,0 +1,36 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: constructionGraph
+  id: MicrophoneStandGraph
+  start: start
+  graph:
+  - node: start
+    actions:
+    - !type:DestroyEntity {}
+    edges:
+    - to: microphoneStand
+      steps:
+      - material: MetalRod
+        amount: 2
+        doAfter: 2
+      - material: Steel
+        amount: 1
+        doAfter: 2
+  - node: microphoneStand
+    entity: InstrumentStandMicrophone
+    edges:
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+          prototype: PartRodMetal1
+          amount: 2
+      - !type:SpawnPrototype
+          prototype: SheetSteel1
+          amount: 1
+      - !type:EmptyContainer
+        container: instrument_slot
+      steps:
+      - tool: Screwing
+        doAfter: 2

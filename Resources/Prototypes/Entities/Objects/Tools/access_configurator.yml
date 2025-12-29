@@ -9,6 +9,8 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2024 metalgearsloth
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Kowlin
+# SPDX-FileCopyrightText: 2025 Nemanja
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Solaris
 # SPDX-FileCopyrightText: 2025 portfiend
@@ -89,6 +91,8 @@
       - EventSecurity
       - EventService
       - EventVIP
+      - GenpopEnter
+      - GenpopLeave
       privilegedIdSlot:
         name: id-card-console-privileged-id
         ejectSound: /Audio/Machines/id_swipe.ogg
@@ -208,6 +212,8 @@
     - EventSecurity
     - EventService
     - EventVIP
+    - GenpopEnter
+    - GenpopLeave
     privilegedIdSlot:
       name: id-card-console-privileged-id
       ejectSound: /Audio/Machines/id_swipe.ogg

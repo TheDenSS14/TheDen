@@ -1,0 +1,92 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# One day when interactable wall structures actually rotate their WallMount arc to match their sprite, replace SomberWallCloset and SomberWallLocker with these
+# The rebase cannot come soon enough, I am so sick of EE
+
+#- type: entity
+#  parent: ShelfBase
+#  id: SomberWallShelf
+#  name: somber wall cabinet
+#  description: "An expensive wall cabinet made of gloomy, patterned wood."
+#  components:
+#  - type: Sprite
+#    sprite: _DEN/Structures/Storage/somberwallcloset.rsi
+#    layers:
+#    - state: base
+#      map: ["enum.StorageVisualLayers.Base"]
+#    - state: door-closed
+#      map: ["enum.StorageVisualLayers.Door"]
+#    - state: welded
+#      visible: false
+#      map: ["enum.WeldableLayers.BaseWelded"]
+#  - type: Appearance
+#  - type: EntityStorageVisuals
+#    stateBaseClosed: base
+#    stateDoorOpen: door-open
+#    stateDoorClosed: door-closed
+#  - type: Storage
+#    clickInsert: false
+#    storageOpenSound:
+#      path: /Audio/Effects/woodenclosetopen.ogg
+#      params:
+#        volume: -4
+#    storageCloseSound:
+#      path: /Audio/Effects/woodenclosetclose.ogg
+#      params:
+#        volume: -4
+#  - type: WallMount
+#    arc: 360
+#  - type: Damageable
+#    damageContainer: Inorganic
+#    damageModifierSet: Wood
+#  - type: Destructible
+#    thresholds:
+#    - trigger:
+#        !type:DamageTrigger
+#        damage: 300
+#      behaviors:
+#      - !type:DoActsBehavior
+#        acts: [ "Destruction" ]
+#    - trigger:
+#        !type:DamageTrigger
+#        damage: 50
+#      behaviors:
+#      - !type:DoActsBehavior
+#        acts: ["Destruction"]
+#      - !type:PlaySoundBehavior
+#        sound:
+#          collection: MetalGlassBreak
+#      - !type:SpawnEntitiesBehavior
+#        spawn:
+#          MaterialWoodPlank1:
+#            min: 3
+#            max: 3
+#          ScrapElectrum:
+#            min: 1
+#            max: 3
+#      - !type:EmptyAllContainersBehaviour
+
+#- type: entity
+#  parent: SomberWallShelf
+#  id: SomberWallShelfLocking
+#  name: somber wall cabinet
+#  suffix: Locking
+#  description: "An expensive, locking wall cabinet made of gloomy, patterned wood."
+#  components:
+#  - type: AccessReader
+#  - type: Lock
+#  - type: LockVisuals
+#  - type: Sprite
+#    layers:
+#    - state: base
+#      map: ["enum.StorageVisualLayers.Base"]
+#    - state: door-closed
+#      map: ["enum.StorageVisualLayers.Door"]
+#    - state: locked
+#      map: ["enum.LockVisualLayers.Lock"]
+#      shader: unshaded
+#    - state: welded
+#      visible: false
+#      map: ["enum.WeldableLayers.BaseWelded"]

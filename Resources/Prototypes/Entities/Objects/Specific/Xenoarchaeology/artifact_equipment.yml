@@ -13,6 +13,7 @@
 # SPDX-FileCopyrightText: 2024 Verm
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
@@ -106,6 +107,7 @@
             Bounty: { state: bounty }
             CaptainsPaper: { state: captains_paper }
             Invoice: { state: invoice }
+            MantisPaper: { state: mantis_paper } # TheDen
         enum.StorageVisuals.Open:
           enum.PaperLabelVisuals.Layer:
             True: { offset: "0.0,0.3125" }

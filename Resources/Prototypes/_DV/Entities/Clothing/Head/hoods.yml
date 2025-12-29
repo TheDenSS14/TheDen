@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2025 William Lemon
+# SPDX-FileCopyrightText: 2025 eightballll
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHoodSkiaHood
+  categories: [ HideSpawnMenu ]
+  name: skia hood
+  description: Smells like Tartarus in here.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hoods/skia_hoodie.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hoods/skia_hoodie.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair

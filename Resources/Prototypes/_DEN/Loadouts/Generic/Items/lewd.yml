@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 #Masks
 - type: loadout
@@ -60,3 +60,13 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutLewdPills
+
+- type: loadout
+  id: LoadoutSexLube
+  category: ItemsLewd
+  cost: 2
+  items:
+  - SexLube
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutVASH

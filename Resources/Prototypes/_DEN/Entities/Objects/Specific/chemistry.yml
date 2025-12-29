@@ -1,0 +1,97 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseSyringe
+  id: SyringeMantis
+  name: electrum syringe
+  description: "An electrum syringe with an eidolite barrel. Naturally antimicrobial."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Mantis/syringemantis.rsi
+  - type: Item
+    sprite: _DEN/Objects/Specific/Mantis/syringemantis.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic # Metal shell
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak # There's still a crystal interior
+          params:
+            volume: -4
+      - !type:SpillBehavior { }
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialEidolite1:
+            min: 1
+            max: 1
+          ScrapElectrum:
+            min: 1
+            max: 1
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      Eidolite: 100
+  - type: Tag
+    tags:
+    - Syringe
+    - MantisBeltStorable
+    - MantisBoxChemicalsStorable
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterMantis
+  name: electrum pill canister
+  description: "A electrum pill canister with an eidolite window. Expensive for no reason."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Mantis/pillcanistermantis.rsi
+    state: pill_canister
+  - type: Item
+    sprite: _DEN/Objects/Specific/Mantis/pillcanistermantis.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic # Metal shell
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak # There's still a crystal interior
+          params:
+            volume: -4
+      - !type:SpillBehavior { }
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialEidolite1:
+            min: 1
+            max: 1
+          ScrapElectrum:
+            min: 1
+            max: 1
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      Eidolite: 100
+  - type: Tag
+    tags:
+      - PillCanister
+      - MantisBeltStorable
+      - MantisBoxChemicalsStorable

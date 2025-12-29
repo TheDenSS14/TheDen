@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -6,8 +7,10 @@
 using System.Runtime.InteropServices;
 using Content.Server._DEN.Body.Systems;
 using Content.Server.Body.Components;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Body.Systems;
@@ -15,6 +18,14 @@ namespace Content.Server.Body.Systems;
 public sealed partial class BloodstreamSystem
 {
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
+
+    public ProtoId<ReagentPrototype>? GetCurrentBloodReagent(EntityUid uid)
+    {
+        if (!TryComp(uid, out BloodstreamComponent? bloodstream))
+            return null;
+
+        return bloodstream.BloodReagent;
+    }
 
     private void OnExamined(Entity<BloodstreamComponent> target, ref ExaminedEvent args)
     {

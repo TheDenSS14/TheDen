@@ -2,16 +2,44 @@
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Mono
 # SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+
+- type: marking
+  abstract: true
+  parent: [BaseSpeciesOvinia, BaseHeadTop]
+  id: BaseOviniaHorns
+  speciesRestriction: [Ovinia, Human, Oni]
+
+- type: marking
+  abstract: true
+  parent: [BaseSpeciesOvinia, BaseHeadTop]
+  id: BaseOviniaEars
+  speciesRestriction: [Ovinia, Human, Oni]
+
+- type: marking
+  abstract: true
+  parent: [BaseSpeciesOvinia, BaseSnout]
+  id: BaseOviniaSnout
+
+- type: marking
+  abstract: true
+  parent: [BaseSpeciesOvinia, BaseTail]
+  id: BaseOviniaTail
+  speciesRestriction: [Ovinia, Human, Oni]
+
+- type: marking
+  abstract: true
+  parent: [BaseSpeciesOvinia, BaseChest]
+  id: BaseOviniaChest
 
 # Default
 - type: marking
+  parent: BaseOviniaEars
   id: OviniaEars
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Ovinia, Human ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/ear_markings.rsi
     state: ovinia-ears
@@ -19,20 +47,16 @@
     state: ovinia-ears-inner
 
 - type: marking
+  parent: BaseOviniaTail
   id: OviniaTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Ovinia, Human ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/tail_markings.rsi
     state: ovinia-tail
 
 # Ears Markings
 - type: marking
+  parent: BaseOviniaEars
   id: OviniaEarsCow
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Ovinia, Human ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/ear_markings.rsi
     state: cow-ears
@@ -40,10 +64,8 @@
     state: cow-ears-inner
 
 - type: marking
+  parent: BaseOviniaEars
   id: OviniaEarsDeer
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Ovinia, Human ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/ear_markings.rsi
     state: deer-ears
@@ -51,10 +73,8 @@
     state: deer-ears-inner
 
 - type: marking
+  parent: BaseOviniaEars
   id: OviniaEarsHorse
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Ovinia, Human ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/ear_markings.rsi
     state: horse-ears
@@ -63,102 +83,81 @@
 
 # Head Markings
 - type: marking
+  parent: [BaseSpeciesOvinia, BaseNeckFluff]
   id: OviniaNeckfluff
-  bodyPart: NeckFluff
-  markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
+  speciesRestriction: [Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/head_markings.rsi
     state: ovinia-neck-fluff
 
 # Horns Markings
 - type: marking
+  parent: BaseOviniaHorns
   id: OviniaLambHorns
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Ovinia, Human ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
     state: lamb-horns
 
 - type: marking
+  parent: BaseOviniaHorns
   id: OviniaRamHorns
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Ovinia, Human ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
     state: ovinia-ram-horns
 
 - type: marking
+  parent: BaseOviniaHorns
   id: OviniaPointyHorns
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Ovinia, Human ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
     state: ovinia-pointy-horns
 
 - type: marking
+  parent: BaseOviniaHorns
   id: OviniaCurvedHorns
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Ovinia, Human ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
     state: ovinia-curved-horns
 
 - type: marking
+  parent: BaseOviniaHorns
   id: OviniaDeerHorns
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Ovinia, Human ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
     state: ovinia-deer-horns
 
 - type: marking
+  parent: BaseOviniaHorns
   id: OviniaDevilHorns
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Ovinia, Human ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
     state: ovinia-devil-horns
 
 - type: marking
+  parent: BaseOviniaHorns
   id: OviniaBaphometHorns
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Ovinia, Human ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
     state: ovinia-baphomet-horns
 
 - type: marking
+  parent: BaseOviniaHorns
   id: OviniaIbexHorns
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Ovinia, Human ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
     state: ovinia-ibex-horns
 
 - type: marking
+  parent: BaseOviniaHorns
   id: OviniaJacobHorns
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Ovinia, Human ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
     state: jacob-horns
 
 # Snout Markings
 - type: marking
+  parent: BaseOviniaSnout
   id: OviniaFace
-  bodyPart: Snout
-  markingCategory: Snout
-  speciesRestriction: [ Ovinia ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/snout_markings.rsi
     state: ovinia-face
@@ -166,10 +165,8 @@
     state: ovinia-nose
 
 - type: marking
+  parent: BaseOviniaSnout
   id: OviniaBlaze
-  bodyPart: Snout
-  markingCategory: Snout
-  speciesRestriction: [ Ovinia ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/snout_markings.rsi
     state: ovinia-blaze
@@ -177,10 +174,8 @@
     state: ovinia-nose
 
 - type: marking
+  parent: BaseOviniaSnout
   id: OviniaSnout
-  bodyPart: Snout
-  markingCategory: Snout
-  speciesRestriction: [ Ovinia ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/snout_markings.rsi
     state: ovinia-snout
@@ -191,19 +186,15 @@
 
 # Body Markings
 - type: marking
+  parent: BaseOviniaChest
   id: OviniaTummy
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Ovinia ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
     state: ovinia-tummy
 
 - type: marking
+  parent: BaseOviniaChest
   id: OviniaChestFullMasc
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Ovinia ]
   sexRestriction: [ Female ]
   invertSexRestriction: true
   sprites:
@@ -211,10 +202,8 @@
     state: full-m
 
 - type: marking
+  parent: BaseOviniaChest
   id: OviniaChestFullFem
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Ovinia ]
   sexRestriction: [ Male ]
   invertSexRestriction: true
   sprites:
@@ -222,10 +211,8 @@
     state: full-f
 
 - type: marking
+  parent: BaseOviniaChest
   id: OviniaPatternFawn
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Ovinia ]
   coloring:
     default:
       type: !type:SimpleColoring
@@ -235,10 +222,8 @@
     state: torso-fawn
 
 - type: marking
+  parent: BaseOviniaChest
   id: OviniaPatternCattleMasc
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Ovinia ]
   sexRestriction: [ Female ]
   invertSexRestriction: true
   coloring:
@@ -249,10 +234,8 @@
     state: torso-cow-m
 
 - type: marking
+  parent: BaseOviniaChest
   id: OviniaPatternCattleFem
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Ovinia ]
   sexRestriction: [ Male ]
   invertSexRestriction: true
   coloring:
@@ -264,67 +247,67 @@
 
 # Leg Markings
 - type: marking
+  parent: BaseSpeciesOvinia
   id: OviniaLeftLegValais
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [ Ovinia ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
     state: ovinia-leg-valais-left
 
 - type: marking
+  parent: BaseSpeciesOvinia
   id: OviniaRightLegValais
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [ Ovinia ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
     state: ovinia-leg-valais-right
 
 #Foot Markings
 - type: marking
+  parent: BaseSpeciesOvinia
   id: OviniaLeftHoof
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [ Ovinia ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/feet_markings.rsi
     state: ovinia-hoof-left
 
 - type: marking
+  parent: BaseSpeciesOvinia
   id: OviniaRightHoof
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [ Ovinia ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/feet_markings.rsi
     state: ovinia-hoof-right
 
 # Arm Markings
 - type: marking
+  parent: BaseSpeciesOvinia
   id: OviniaLeftArmValais
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [ Ovinia ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
     state: ovinia-arm-valais-left
 
 - type: marking
+  parent: BaseSpeciesOvinia
   id: OviniaRightArmValais
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [ Ovinia ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
     state: ovinia-arm-valais-right
 
 # Hand Markings
 - type: marking
+  parent: BaseSpeciesOvinia
   id: OviniaLeftHandHoof
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [ Ovinia ]
   coloring:
     default:
       type: !type:SimpleColoring
@@ -334,10 +317,10 @@
     state: hand-hoof-left
 
 - type: marking
+  parent: BaseSpeciesOvinia
   id: OviniaRightHandHoof
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [ Ovinia ]
   coloring:
     default:
       type: !type:SimpleColoring

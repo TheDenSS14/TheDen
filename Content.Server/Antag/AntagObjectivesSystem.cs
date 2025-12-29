@@ -1,12 +1,14 @@
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server.Antag.Components;
 using Content.Server.Objectives;
 using Content.Shared.Mind;
 using Content.Shared.Objectives.Systems;
+using Content.Shared.Roles;
+
 
 namespace Content.Server.Antag;
 
@@ -22,7 +24,9 @@ public sealed class AntagObjectivesSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<AntagObjectivesComponent, AfterAntagEntitySelectedEvent>(OnAntagSelected);
+        SubscribeLocalEvent<RoleAddedEvent>(OnRoleAdded);
     }
+
 
     private void OnAntagSelected(Entity<AntagObjectivesComponent> ent, ref AfterAntagEntitySelectedEvent args)
     {
@@ -35,6 +39,28 @@ public sealed class AntagObjectivesSystem : EntitySystem
         foreach (var id in ent.Comp.Objectives)
         {
             _mind.TryAddObjective(mindId, mind, id);
+        }
+    }
+
+    private void OnRoleAdded(RoleAddedEvent args)
+    {
+        foreach (var roleId in args.Mind.MindRoles)
+        {
+            if (!TryComp<AntagObjectivesComponent>(roleId, out var objectivesComp))
+                continue;
+
+            if (!TryComp<MindRoleComponent>(roleId, out var mindRoleComp))
+                continue;
+
+            if (mindRoleComp.Mind.Owner != args.MindId)
+                continue;
+
+            foreach (var id in objectivesComp.Objectives)
+            {
+                if (_mind.TryFindObjective((args.MindId, args.Mind), id, out _))
+                    continue;
+                _mind.TryAddObjective(args.MindId, args.Mind, id);
+            }
         }
     }
 }

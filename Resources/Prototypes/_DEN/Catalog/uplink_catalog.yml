@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: listing
   id: UplinkSpaceBladeContra
   name: uplink-spaceblade-syndicate-name
@@ -6,5 +12,110 @@
   discountCategory: rareDiscounts
   cost:
     Telecrystal: 3
+  categories:
+  - UplinkPointless
+
+- type: listing
+  id: MantisMeleeFistDouble
+  name: uplink-mantis-fist-double-name
+  description: uplink-mantis-fist-double-desc
+  productEntity: MantisMeleeFistDouble
+  icon:
+    entity: MantisMeleeFistDouble
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 30
+  cost:
+    Telecrystal: 80 # Same price as BaseBallBatHomeRun even if it has lower DPS because it's wearable
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - ForensicMantis
+
+- type: listing
+  id: MantisCasterPistolLethal
+  name: uplink-mantis-caster-pistol-lethal-name
+  description: uplink-mantis-caster-pistol-lethal-desc
+  productEntity: MantisCasterPistolLethal
+  icon:
+    entity: MantisCasterPistolLethal
+  discountCategory: usualDiscounts # Since rarer discounts have limited slots and this is job-specific
+  discountDownTo:
+    Telecrystal: 25
+  cost: # Price based on its concealed nature (when inside its gun) and its ability to be recharged
+    Telecrystal: 40
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - ForensicMantis
+
+- type: listing
+  id: MantisCasterRevolverLethal
+  name: uplink-mantis-caster-revolver-lethal-name
+  description: uplink-mantis-caster-revolver-lethal-desc
+  productEntity: MantisCasterRevolverLethal
+  icon:
+    entity: MantisCasterRevolverLethal
+  discountCategory: usualDiscounts # Since rarer discounts have limited slots and this is job-specific
+  discountDownTo:
+    Telecrystal: 25
+  cost: # Price based on its concealed nature (when inside its gun) and its ability to be recharged
+    Telecrystal: 40
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - ForensicMantis
+
+- type: listing
+  id: MantisCasterShotgunLethal
+  name: uplink-mantis-caster-shotgun-lethal-name
+  description: uplink-mantis-caster-shotgun-lethal-desc
+  productEntity: MantisCasterShotgunLethal
+  icon:
+    entity: MantisCasterShotgunLethal
+  discountCategory: usualDiscounts # Since rarer discounts have limited slots and this is job-specific
+  discountDownTo:
+    Telecrystal: 25
+  cost: # Price based on its concealed nature (when inside its gun) and its ability to be recharged
+    Telecrystal: 40
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - ForensicMantis
+
+- type: listing
+  id: MantisCasterSubMachineGunLethal
+  name: uplink-mantis-caster-submachinegun-lethal-name
+  description: uplink-mantis-caster-submachinegun-lethal-desc
+  productEntity: MantisCasterSubMachineGunLethal
+  icon:
+    entity: MantisCasterSubMachineGunLethal
+  discountCategory: usualDiscounts # Since rarer discounts have limited slots and this is job-specific
+  discountDownTo:
+    Telecrystal: 25
+  cost: # Price based on its concealed nature (when inside its gun) and its ability to be recharged
+    Telecrystal: 40
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - ForensicMantis
+
+- type: listing
+  id: UplinkDrinkSyndicateEggnogBottle
+  name: uplink-syndicate-eggnog-name
+  description: uplink-syndicate-eggnog-desc
+  productEntity: DrinkSyndicateEggnogBottleFull
+  cost:
+    Telecrystal: 5
   categories:
   - UplinkPointless

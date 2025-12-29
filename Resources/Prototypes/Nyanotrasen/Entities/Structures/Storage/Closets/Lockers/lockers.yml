@@ -2,40 +2,64 @@
 # SPDX-FileCopyrightText: 2024 Debug
 # SPDX-FileCopyrightText: 2024 Rane
 # SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
+  parent: SomberClosetLocker
   id: LockerForensicMantis
-  parent: LockerDetective
-  suffix: Empty
   name: mantis cabinet
-  description: You'll never know what's inside until you collapse the quantum superposition of all possible mysteries.
+  suffix: Empty
+  description: "Concealed knowledge stirs within, revealed only to those who can pierce the veil." # TheDen
   components:
-  # Because it holds a traitor objective, StrongMetallic,
-  # but not as much HP as LockerBaseSecure, because it's not a Head's locker.
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: StrongMetallic
   - type: AccessReader
     access: [["Mantis"]]
+  - type: Sprite # TheDen - Edited everything below this point wow
+    sprite: _DEN/Structures/Specific/Mantis/closetmantis.rsi
+  - type: Appearance
+  - type: StaticPrice
+    price: 125
+  - type: EntityStorageVisuals
+    stateBaseClosed: base
+    stateDoorOpen: door-open
+    stateDoorClosed: door-closed
+  - type: EntityStorage
+    closeSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        volume: -4
+    openSound:
+      path: /Audio/Effects/woodenclosetopen.ogg
+      params:
+        volume: -4
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic # Metal structure instead of wood like the other somber closets
   - type: Destructible
     thresholds:
+    - trigger: # In case it gets nuked it doesn't cause lag by dumping its contents
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 100
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
       - !type:PlaySoundBehavior
         sound:
-          collection: MetalBreak
+          collection: MetalGlassBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          SheetSteel1:
-            min: 1
-            max: 2
           MaterialWoodPlank1:
+            min: 3
+            max: 3
+          ScrapElectrum:
             min: 1
-            max: 2
+            max: 3
+      - !type:EmptyAllContainersBehaviour

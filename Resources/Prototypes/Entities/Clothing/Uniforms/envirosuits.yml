@@ -934,69 +934,69 @@
   parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitMantis
   name: mantis envirosuit
-  description: Hunting down psionics in the safety of this envirosuit.
+  description: Monitor the psions from the safety of this envirosuit.
   components:
-  - type: Sprite
+  - type: Sprite # TheDen - Colors updated to match the new mantis uniforms
     layers:
     - state: icon
-      color: "#46566d"
+      color: "#2f2e31"
     - state: pants-icon
-      color: "#7d2322"
+      color: "#211d26"
     - state: belt-icon
-      color: "#51321a"
+      color: "#a349a4"
     - state: beltbuckle-icon
-      color: "#dcbb60"
+      color: "#ffd069"
     - state: accent-icon
-      color: "#d4af48"
+      color: "#660f3b"
     - state: buttons-icon
-      color: "#997d30"
+      color: "#ffd069"
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#46566d"
+        color: "#2f2e31"
       - state: pants-inhand-left
-        color: "#7d2322"
+        color: "#211d26"
       - state: belt-inhand-left
-        color: "#51321a"
+        color: "#a349a4"
       - state: beltbuckle-inhand-left
-        color: "#dcbb60"
+        color: "#ffd069"
       - state: accent-inhand-left
-        color: "#d4af48"
+        color: "#660f3b"
       - state: buttons-inhand-left
-        color: "#997d30"
+        color: "#ffd069"
       right:
       - state: inhand-right
-        color: "#46566d"
+        color: "#2f2e31"
       - state: pants-inhand-right
-        color: "#7d2322"
+        color: "#211d26"
       - state: belt-inhand-right
-        color: "#51321a"
+        color: "#a349a4"
       - state: beltbuckle-inhand-right
-        color: "#dcbb60"
+        color: "#ffd069"
       - state: accent-inhand-right
-        color: "#d4af48"
+        color: "#660f3b"
       - state: buttons-inhand-right
-        color: "#997d30"
+        color: "#ffd069"
   - type: Clothing
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
-        color: "#46566d"
+        color: "#2f2e31"
       - state: pants-equipped-INNERCLOTHING
-        color: "#7d2322"
+        color: "#211d26"
       - state: belt-equipped-INNERCLOTHING
-        color: "#51321a"
+        color: "#a349a4"
       - state: beltbuckle-equipped-INNERCLOTHING
-        color: "#dcbb60"
+        color: "#ffd069"
       - state: accentalt-equipped-INNERCLOTHING
-        color: "#d4af48"
+        color: "#660f3b"
       - state: loweraccent-equipped-INNERCLOTHING
-        color: "#d4af48"
+        color: "#211d26"
       - state: buttons-equipped-INNERCLOTHING
-        color: "#997d30"
+        color: "#ffd069"
       - state: soles-equipped-INNERCLOTHING
-        color: "#d4af48"
+        color: "#a349a4"
 
 - type: entity
   parent: ClothingUniformEnvirosuitCustomBase
