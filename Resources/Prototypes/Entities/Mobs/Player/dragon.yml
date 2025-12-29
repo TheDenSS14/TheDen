@@ -122,6 +122,7 @@
 # SPDX-FileCopyrightText: 2025 Theodore Lukin
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 gus
+# SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 slarticodefast
 # SPDX-FileCopyrightText: 2025 thebiggestbruh
 #
@@ -143,7 +144,7 @@
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
   - type: Bloodstream
-    maxBleedAmount: 150
+    maxBleedAmount: 15
     bloodMaxVolume: 650
     bloodReagent: ShimmeringBlood # Imp - Gives dragon drug blood.
   - type: GhostRole

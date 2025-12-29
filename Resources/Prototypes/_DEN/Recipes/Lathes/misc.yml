@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Dirius77
 # SPDX-FileCopyrightText: 2025 DoctorJado
 # SPDX-FileCopyrightText: 2025 Jadrek
 # SPDX-FileCopyrightText: 2025 Sir Warock
@@ -202,3 +203,14 @@
   materials:
     Wood: 200
     Plastic: 100
+
+# Bluespace Plushie Patch
+- type: latheRecipe
+  id: BluespacePlushiePatch
+  result: BluespacePlushiePatch
+  completetime: 4
+  materials:
+    Cloth: 800
+    Silver: 200
+    Plasma: 500
+    Bluespace: 150

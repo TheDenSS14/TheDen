@@ -8,12 +8,13 @@
 # SPDX-FileCopyrightText: 2024 Emisse
 # SPDX-FileCopyrightText: 2024 SimpleStation14
 # SPDX-FileCopyrightText: 2024 Ubaser
-# SPDX-FileCopyrightText: 2024 blazlovich <***>
-# SPDX-FileCopyrightText: 2024 blazlovich <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>
+# SPDX-FileCopyrightText: 2024 blazlovich
 # SPDX-FileCopyrightText: 2024 Арт
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wallflowerghost
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -1620,3 +1621,35 @@
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: upwards
+
+- type: marking
+  id: combo_tail_1
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: Mobs/Customization/human_hair.rsi
+      state: combo_tail_1
+
+- type: marking
+  id: combo_tail_2
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: Mobs/Customization/human_hair.rsi
+      state: combo_tail_2
+
+- type: marking
+  id: combo_tail_3
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: Mobs/Customization/human_hair.rsi
+      state: combo_tail_3
+
+- type: marking
+  id: combo_tail_4
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: Mobs/Customization/human_hair.rsi
+      state: combo_tail_4

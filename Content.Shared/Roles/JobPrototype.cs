@@ -1,39 +1,36 @@
-// SPDX-FileCopyrightText: 2019 ZelteHonor <gabrieldionbouchard@gmail.com>
-// SPDX-FileCopyrightText: 2020 ike709 <ike709@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 scuffedjays <yetanotherscuffed@gmail.com>
-// SPDX-FileCopyrightText: 2021 Pancake <Pangogie@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 CommieFlowers <rasmus.cedergren@hotmail.com>
-// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Morber <14136326+Morb0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 rolfero <45628623+rolfero@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Bakke <luringens@protonmail.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 PrPleGoo <PrPleGoo@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+electrojr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+slambamactionman@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 c4llv07e <38111072+c4llv07e@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 dootythefrooty <awhunter8@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2019 ZelteHonor
+// SPDX-FileCopyrightText: 2020 ike709
+// SPDX-FileCopyrightText: 2020 scuffedjays
+// SPDX-FileCopyrightText: 2021 Pancake
+// SPDX-FileCopyrightText: 2021 Paul
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2021 metalgearsloth
+// SPDX-FileCopyrightText: 2022 CommieFlowers
+// SPDX-FileCopyrightText: 2022 Moony
+// SPDX-FileCopyrightText: 2022 Morber
+// SPDX-FileCopyrightText: 2022 Paul Ritter
+// SPDX-FileCopyrightText: 2022 Rane
+// SPDX-FileCopyrightText: 2022 Veritius
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 rolfero
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Bakke
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 PrPleGoo
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 SlamBamActionman
+// SPDX-FileCopyrightText: 2024 c4llv07e
+// SPDX-FileCopyrightText: 2024 slarticodefast
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 dootythefrooty
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.Access;
 using Content.Shared.Guidebook;
@@ -95,7 +92,7 @@ namespace Content.Shared.Roles
         public bool SetPreference { get; private set; } = true;
 
         /// <summary>
-        ///     Whether this job should show in the ID Card Console.
+        ///     Whether this job should show in the ID Card Console and Job Slots Console.
         ///     If set to null, it will default to SetPreference's value.
         /// </summary>
         [DataField]
@@ -198,6 +195,11 @@ namespace Content.Shared.Roles
         [DataField]
         public List<ProtoId<GuideEntryPrototype>>? Guides;
 
+        /// <summary>
+        /// To specify if the number of job slots can be altered mid-round by the job console
+        /// </summary>
+        [DataField]
+        public bool AdjustableCount = false;
     }
 
     /// <summary>

@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Aikakakah
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator
 # SPDX-FileCopyrightText: 2025 Jakumba
@@ -5,7 +6,7 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: ArmProstheticLeft
@@ -92,10 +93,22 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  sexRestriction: [Male] #TheDen - Splitting the scars and tattoos
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
     state: chest_star
+
+- type: marking
+  id: ChestStarFemale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  sexRestriction: [Female] #TheDen - Splitting the scars and tattoos
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/scars.rsi
+    state: chest_star_female
 
 - type: marking
   id: FootProstheticLeft
@@ -252,7 +265,19 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  sexRestriction: [Male] #TheDen - Splitting the scars and tattoos
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
     state: torso_incision
+
+- type: marking
+  id: TorsoIncisionFemale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  sexRestriction: [Female] #TheDen - Splitting the scars and tattoos
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/scars.rsi
+    state: torso_incision_female

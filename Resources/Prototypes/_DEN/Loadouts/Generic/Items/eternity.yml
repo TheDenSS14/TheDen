@@ -11,3 +11,13 @@
     serverId: eternity
   items:
   - SpaceCash1000
+
+- type: loadout
+  id: LoadoutPowerCellMicroreactor
+  category: GeneralItems
+  cost: 4
+  requirements:
+  - !type:CharacterServerSelectiveRequirement
+    serverId: eternity
+  items:
+  - PowerCellMicroreactor

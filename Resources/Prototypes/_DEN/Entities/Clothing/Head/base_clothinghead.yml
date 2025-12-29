@@ -10,3 +10,12 @@
   - type: TemperatureProtection
     heatingCoefficient: 1.15 # that shit traps heat like crazy
     coolingCoefficient: 0.6
+
+- type: entity
+  abstract: true
+  parent: ClothingHeadBase
+  id: ClothingHeadWinterHatLightBase
+  components:
+  # no heat insulation, but less cold insulation
+  - type: TemperatureProtection
+    coolingCoefficient: 0.8

@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 LilNutters
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -50,3 +51,24 @@
     sprite: _DEN/VASH/Objects/boxes.rsi
     state: sex
 # No toys, as that seems like it would undercut the VASHVend.
+
+- type: entity #Copied from above.
+  name: VASHBox (Toys)
+  parent: BoxCardboard
+  id: ToysBox
+  description: A box containing adult toys and only adult toys. You've been warned! Toys not included.
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
+  - type: Storage
+    maxItemSize: Normal
+    whitelist:
+      tags:
+      - AdultToy
+    grid:
+    - 0,0,5,1
+  - type: Sprite
+    sprite: _DEN/VASH/Objects/boxes.rsi
+    state: hygiene
