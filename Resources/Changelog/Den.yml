@@ -15004,7 +15004,7 @@ Entries:
     - type: Tweak
       message: >-
         Due to pressure from union protests that happened anyway, syndicate
-        backpack capacity has been expanded too. 
+        backpack capacity has been expanded too.
   id: 1462
   time: '2025-11-30T02:27:18.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2099
@@ -15095,7 +15095,7 @@ Entries:
       message: >-
         You can now find rose seeds in the exotic seed crate! They can be juiced
         to make cocktails, worn in the hair or mouth, or mutated into dangerous
-        black roses. 
+        black roses.
     - type: Add
       message: >-
         Traitors can now buy evil blood-red roses in the uplink. Throw them at
@@ -15597,7 +15597,7 @@ Entries:
     - type: Fix
       message: >-
         Fixed plasmamen and skeletons not emitting sounds for common emotes like
-        coughing, whistling sighing, etc. 
+        coughing, whistling sighing, etc.
   id: 1519
   time: '2025-12-15T02:04:46.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2194
@@ -15878,7 +15878,7 @@ Entries:
     - type: Add
       message: >-
         Both eggnog and syndicate eggnog have new sprites for their
-        bottles/glasses. 
+        bottles/glasses.
     - type: Fix
       message: >-
         Various locales for eggnog / syndicate eggnog have been cleaned up and
@@ -15947,20 +15947,11 @@ Entries:
   id: 1555
   time: '2025-12-28T07:02:18.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2237
-- author: MajorMoth
-  changes:
-    - type: Add
-      message: >-
-        Added a new "Fire Resistance" trait. You can find it in the physical
-        augmentations tab. You can make your dragon blorbo sit in an oven now. 
-  id: 1556
-  time: '2025-12-28T07:03:45.0000000+00:00'
-  url: https://github.com/TheDenSS14/TheDen/pull/2230
 - author: selvamoonbell
   changes:
     - type: Add
       message: Arachne sound traits
-  id: 1557
+  id: 1556
   time: '2025-12-28T07:05:08.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2229
 - author: superjeepboy
@@ -15970,6 +15961,29 @@ Entries:
         Genpop IDs and permanent prisoner IDs should now be able to enter Genpop
         at their own will. You shouldn't have to chase them around to drag them
         in now.
-  id: 1558
+  id: 1557
   time: '2025-12-28T07:08:23.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2225
+- author: Dirius77
+  changes:
+    - type: Fix
+      message: Fire damage healing you if your resist was over 100%
+  id: 1558
+  time: '2025-12-28T18:56:27.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2243
+- author: WallflowerGhost
+  changes:
+    - type: Tweak
+      message: >-
+        First of many patches for the map Alamode, PR lists out the changes in
+        detail
+  id: 1559
+  time: '2025-12-29T05:15:03.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2246
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: (EDGE) Atmos, Engineer and Voxbox overhaul, PA is now to the left!
+  id: 1560
+  time: '2025-12-30T09:24:29.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2245
