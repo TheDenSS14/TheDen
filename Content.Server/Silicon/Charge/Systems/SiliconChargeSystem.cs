@@ -130,6 +130,11 @@ public sealed class SiliconChargeSystem : EntitySystem
                 drainRateFinalAddi += SiliconHeatEffects(silicon, siliconComp, frameTime) - 1; // This will need to be changed at some point if we allow external batteries, since the heat of the Silicon might not be applicable.
                 drainRateFinalAddi -= SiliconMovementEffects(silicon, siliconComp);
             }
+
+            // Sanity check for NaN
+            if (float.IsNaN(drainRateFinalAddi))
+                drainRateFinalAddi = 0f;
+
             // Ensures that the drain rate is at least 10% of normal,
             // and would allow at least 4 minutes of life with a max charge, to prevent cheese.
             drainRate += Math.Clamp(drainRateFinalAddi, drainRate * -0.9f, batteryComp.MaxCharge / 240);
