@@ -68,6 +68,14 @@
     stateDoorClosed: n2_door # Den edit
   - type: Sprite # Den addition
     sprite: _Wizden/Structures/Storage/closet.rsi
+    layers:
+    - state: n2
+      map: [ "enum.StorageVisualLayers.Base" ]
+    - state: n2_door
+      map: [ "enum.StorageVisualLayers.Door" ]
+    - state: welded
+      visible: false
+      map: [ "enum.WeldableLayers.BaseWelded" ]
 
 # Fire safety closet
 - type: entity
