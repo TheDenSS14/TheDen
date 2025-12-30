@@ -10,6 +10,7 @@
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 entings (GitHub)
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -18,8 +19,8 @@
   parent: BaseItem
   abstract: true
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Arachnid/organs.rsi
+  - type: Sprite #imp
+    sprite: _Impstation/Mobs/Species/Arachnid/organs.rsi
   - type: Organ
   - type: Food
   - type: Extractable
@@ -43,17 +44,20 @@
 - type: entity
   id: OrganArachnidStomach
   parent: OrganAnimalStomach
-  name: stomach
+  name: arachnid stomach #imp
   description: "Gross. This is hard to stomach."
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Arachnid/organs.rsi
+  - type: Sprite #imp
     state: stomach
   - type: Organ # Shitmed
     slotId: stomach
   - type: Stomach
     updateInterval: 1.5
+    specialDigestible:  #imp
+      tags:
+      - SpiderFood
+    isSpecialDigestibleExclusive: false  #imp
   - type: SolutionContainerManager
     solutions:
       stomach:
@@ -69,14 +73,14 @@
 - type: entity
   id: OrganArachnidLungs
   parent: BaseArachnidOrgan
-  name: lungs
+  name: book lungs #imp
   description: "Filters oxygen from an atmosphere... just more greedily."
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     layers:
-      - state: lung-l
-      - state: lung-r
+      - state: lung_l
+      - state: lung_r
   - type: Organ # Shitmed
     slotId: lungs
   - type: Lung
@@ -116,7 +120,7 @@
   - type: Metabolizer
     updateInterval: 1.5
     maxReagents: 2
-    metabolizerTypes: [Arachnid]
+    metabolizerTypes: [Arachnid, Animal] #imp - adds animal
     groups:
     - id: Medicine
     - id: Poison
@@ -128,7 +132,7 @@
 - type: entity
   id: OrganArachnidLiver
   parent: BaseHumanOrgan
-  name: liver
+  name: hepatic caecum #imp
   description: "Pairing suggestion: chianti and fava beans."
   categories: [ HideSpawnMenu ]
   components:
@@ -148,7 +152,7 @@
 - type: entity
   id: OrganArachnidKidneys
   parent: BaseHumanOrgan
-  name: kidneys
+  name: malpighian tubules #imp
   description: "Filters toxins from the bloodstream."
   categories: [ HideSpawnMenu ]
   components:
@@ -156,8 +160,8 @@
     slotId: kidneys
   - type: Sprite
     layers:
-      - state: kidney-l
-      - state: kidney-r
+      - state: kidney_l
+      - state: kidney_r
   # The kidneys just remove anything that doesn't currently have any metabolisms, as a stopgap.
   - type: Metabolizer
     updateInterval: 1.5

@@ -16,13 +16,13 @@
       connections:
       - torso
       organs:
-        brain: OrganHumanBrain
+        brain: OrganArachnidBrain
         eyes: OrganArachnidEyes
     torso:
       part: TorsoArachnid
       organs:
         heart: OrganArachnidHeart
-        lungs: OrganAnimalLungs
+        lungs: OrganArachnidLungs
         stomach: OrganArachnidStomach
         liver: OrganArachnidLiver
         kidneys: OrganArachnidKidneys

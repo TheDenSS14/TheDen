@@ -1,0 +1,12 @@
+- type: entity
+  id: OrganArachnidBrain
+  parent: OrganHumanBrain
+  name: cerebral ganglia
+  description: "The source of incredible, unending intelligence. Hiss."
+  components:
+  - type: Sprite
+    sprite: _Impstation/Mobs/Species/Arachnid/organs.rsi
+    state: brain
+  - type: Item
+    size: Small
+    heldPrefix: brain
