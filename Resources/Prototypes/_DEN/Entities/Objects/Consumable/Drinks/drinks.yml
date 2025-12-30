@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -594,3 +595,16 @@
     - type: Icon
       sprite: _DEN/Objects/Consumable/Drinks/vodkacheers.rsi
       state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkHolidayCheerGlass
+  suffix: holiday cheer
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: HolidayCheer
+          Quantity: 30

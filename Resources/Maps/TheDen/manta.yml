@@ -9,7 +9,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/11/2025 15:52:14
+  time: 12/14/2025 01:33:44
   entityCount: 27943
 maps:
 - 1
@@ -11499,7 +11499,7 @@ entities:
       pos: 76.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -95542.95
+      secondsUntilStateChange: -95560.25
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -12954,7 +12954,7 @@ entities:
       pos: 2.5,27.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -100532.07
+      secondsUntilStateChange: -100549.37
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -65480,7 +65480,7 @@ entities:
       pos: 65.5,-16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -112856.55
+      secondsUntilStateChange: -112873.84
       state: Closing
   - uid: 23609
     components:
@@ -65488,7 +65488,7 @@ entities:
       pos: 65.5,-17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -112855.61
+      secondsUntilStateChange: -112872.91
       state: Closing
   - uid: 23610
     components:
@@ -65496,7 +65496,7 @@ entities:
       pos: 65.5,-18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -112855.01
+      secondsUntilStateChange: -112872.305
       state: Closing
 - proto: CurtainsWhiteOpen
   entities:
@@ -111126,7 +111126,7 @@ entities:
       pos: -8.5,41.5
       parent: 2
     - type: GasThermoMachine
-      targetTemperature: 400
+      targetTemperature: 315
 - proto: GasValve
   entities:
   - uid: 5192
@@ -175494,7 +175494,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -81555.195
+      secondsUntilStateChange: -81572.49
       state: Opening
 - proto: WindoorKitchenLocked
   entities:

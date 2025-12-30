@@ -91,7 +91,7 @@
 # SPDX-FileCopyrightText: 2025 slarticodefast
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # A "squeaky toy" is just a toy that squeaks. They lack stashes as well. Plushies are made of fabric and all.
 
@@ -179,6 +179,7 @@
     openToolQualityNeeded: Slicing
     closeToolQualityNeeded: Slicing # Should probably be stitching or something if that gets added
     name: secret-stash-plushie
+  - type: BluespacePlushiePatchable # DEN: Allow applying bluespace patches.
 
 - type: entity
   parent: BasePlushie

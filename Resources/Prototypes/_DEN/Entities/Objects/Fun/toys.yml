@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Dirius77
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
@@ -206,6 +207,26 @@
     - ClothMade
     - MantisBeltStorable
 
+- type: entity
+  parent: BaseItem
+  id: BluespacePlushiePatch
+  name: bluespace plushie patch
+  description: "A tiny bluespace pocket in the form of a fabric patch, try adding it to a plushie."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/bluespaceplushiepatch.rsi
+    state: icon
+  - type: Item
+    size: Small
+  - type: BluespacePlushiePatch
+    removeComps:
+      - ContainerContainer
+      - SecretStash
+      - SolutionContainerManager
+      - Food
+      - FoodSequenceElement
+      - ToolOpenable
+
 # SELF-INSERT PLUSHIES
 # note: these MUST be approved by Direction - either an Owner or the Head Maintainer.
 # at this time, only maintainers and admins can ask to have self-insert items added.
@@ -245,3 +266,4 @@
     - type: FoodSequenceElement
       entries:
         CottonBurger: WhistlerPlushie
+

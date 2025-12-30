@@ -33,7 +33,7 @@
 # SPDX-FileCopyrightText: 2025 eightballll
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: vendingMachineInventory
   id: BoozeOMatInventory
@@ -88,8 +88,10 @@
     DrinkBeerCan: 5
     DrinkWineCan: 5
     DrinkAngobittersBottleFull: 3 # DeltaV - Angostura Bitters Bottle
+    DrinkEggnogBottleFull: 2 # DEN - Eggnog bottle, for the holidays
   contrabandInventory:
     EthanolChemistryBottle: 3
     DrinkBottleOfNothingFull: 1
   emaggedInventory:
     DrinkPoisonWinebottleFull: 2
+    DrinkSyndicateEggnogBottleFull: 2 # DEN - Eggnog bottle, for the holidays

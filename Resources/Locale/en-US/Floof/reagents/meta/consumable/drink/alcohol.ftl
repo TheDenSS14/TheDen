@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2024 neuPanda
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
@@ -199,8 +200,8 @@ reagent-desc-jenn-tonic = Light golden and bubbly, what could go wrong?
 reagent-name-hallelujah = Hallelujah
 reagent-desc-hallelujah = Exactly what you need.
 
-reagent-name-eggnog = Eggnog
-reagent-desc-eggnog = creamy, pale yellow and topped with a sprinkle of cinnamon.
+reagent-name-eggnog = eggnog
+reagent-desc-eggnog = Creamy, pale yellow, topped with a sprinkle of cinnamon, and mildly alcoholic.
 
-reagent-name-syndicate-eggnog = Syndicate Eggnog
-reagent-desc-syndicate-eggnog = creamy, pale yellow and topped with a sprinkle of cinnamon and strongly alcoholic.
+reagent-name-syndicate-eggnog = syndicate eggnog
+reagent-desc-syndicate-eggnog = Creamy, pale yellow, topped with a sprinkle of cinnamon, and strongly alcoholic.

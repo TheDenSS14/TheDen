@@ -1,24 +1,23 @@
-# SPDX-FileCopyrightText: 2023 Adrian16199 <144424013+Adrian16199@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Ubaser <134914314+UbaserB@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2024 Memeji <greyalphawolf7@gmail.com>
-# SPDX-FileCopyrightText: 2024 Ubaser <134914314+ubaserb@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2023 Adrian16199
+# SPDX-FileCopyrightText: 2023 RiceMar1244
+# SPDX-FileCopyrightText: 2023 Ubaser
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 Memeji
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Aikakakah
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SX-7
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
   id: ScarEyeRight
-  bodyPart: Head
-  markingCategory: Head
+  bodyPart: Face
+  markingCategory: Face #TheDen: Marking fixes
   speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Arachne, Rodentia, Feroxi, SlimePerson, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi; The Den - Canid
   followSkinColor: true
   sprites:
@@ -27,8 +26,8 @@
 
 - type: marking
   id: ScarEyeLeft
-  bodyPart: Head
-  markingCategory: Head
+  bodyPart: Face
+  markingCategory: Face #TheDen: Marking fixes
   speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Arachne, Rodentia, Feroxi, SlimePerson, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi; The Den - Canid
   followSkinColor: true
   sprites:
@@ -62,7 +61,9 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Tajaran, Feroxi, Canid, Kitsune] # Einstein Engines - Tajaran - DeltaV - Feroxi; The Den - Canid
+  sexRestriction: [Male] #DeltaV: Splitting the scars and tattoos
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
     state: scar_chest
+

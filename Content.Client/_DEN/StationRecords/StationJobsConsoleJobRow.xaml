@@ -1,0 +1,38 @@
+<!--
+SPDX-FileCopyrightText: 2025 DoctorJado
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<PanelContainer xmlns="https://spacestation14.io"
+                HorizontalExpand="True">
+    <BoxContainer Orientation="Horizontal"
+                  HorizontalExpand="True">
+        <TextureRect Name="JobIcon"
+                     Access="Public"
+                     TextureScale="2 2"
+                     VerticalAlignment="Center"/>
+        <Label Name="JobName"
+               Access="Public"
+               MinWidth="210" />
+        <Button Name="DecreaseJobSlot"
+                Access="Public"
+                ToolTip=""
+                Text="-"
+                StyleClasses="OptionLeft" />
+        <Label Name="JobAmount"
+               Margin="6 0 0 0"
+               Access="Public"
+               MinWidth="12"/>
+        <Label Name="JobSlots"
+               Margin="6 0 0 0"
+               Access="Public"
+               MinWidth="12"/>
+        <Button Name="IncreaseJobSlot"
+                Margin="6 0 0 0"
+                Access="Public"
+                ToolTip=""
+                Text="+"
+                StyleClasses="OptionRight" />
+    </BoxContainer>
+</PanelContainer>

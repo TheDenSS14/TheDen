@@ -10,6 +10,7 @@
 // SPDX-FileCopyrightText: 2024 Timemaster99
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 Verm
+// SPDX-FileCopyrightText: 2025 Tobias Berger
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -95,7 +96,7 @@ public sealed partial class EncryptionKeySystem : EntitySystem
         foreach (var ent in component.KeyContainer.ContainedEntities)
         {
             if (!TryComp<EncryptionKeyComponent>(ent, out var key))
-                return;
+                continue;
 
             var channels = GetChannels(key.Channels); // DEN: no longer need an encryption key for a new radio channel
 
@@ -119,7 +120,7 @@ public sealed partial class EncryptionKeySystem : EntitySystem
         return result;
     }
    // End DEN
-   
+
     private void OnContainerModified(EntityUid uid, EncryptionKeyHolderComponent component, ContainerModifiedMessage args)
     {
         if (args.Container.ID == EncryptionKeyHolderComponent.KeyContainerName)
