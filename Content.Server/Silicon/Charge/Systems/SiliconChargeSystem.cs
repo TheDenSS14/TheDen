@@ -221,6 +221,10 @@ public sealed class SiliconChargeSystem : EntitySystem
             return siliconComp.DrainPerSecond * siliconComp.IdleDrainReduction; // Reduces draw by idle drain reduction
         }
 
+        // Prevent divide by zero
+        if (movement.CurrentSprintSpeed == 0)
+            return 0;
+
         // LinearVelocity is relative to the parent
         return Math.Clamp(
             siliconComp.DrainPerSecond * (1 - (physics.LinearVelocity.Length() / movement.CurrentSprintSpeed)), // Power draw changes as a percentage of the movement
