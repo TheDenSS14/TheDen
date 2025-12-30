@@ -63,9 +63,11 @@
   components:
   - type: Appearance
   - type: EntityStorageVisuals
-    stateBaseClosed: fire
-    stateDoorOpen: fire_open
-    stateDoorClosed: n2_door
+    stateBaseClosed: n2 # Den edit
+    stateDoorOpen: n2_open # Den edit
+    stateDoorClosed: n2_door # Den edit
+  - type: Sprite # Den addition
+    sprite: _Wizden/Structures/Storage/closet.rsi
 
 # Fire safety closet
 - type: entity
