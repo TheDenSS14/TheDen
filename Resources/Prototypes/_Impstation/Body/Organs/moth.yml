@@ -57,6 +57,9 @@
   - type: Item
     size: Small
     heldPrefix: lungs
+  - type: Organ # Shitmed
+    slotId: lungs
+  - type: Lung
 
 - type: entity
   id: OrganMothHeart
@@ -70,6 +73,9 @@
   - type: Item
     size: Small
     heldPrefix: heart
+  - type: Organ # Shitmed
+    slotId: heart
+  - type: Heart # Shitmed
 
 - type: entity
   id: OrganMothLiver
@@ -83,6 +89,9 @@
   - type: Sprite
     sprite: _Impstation/Mobs/Species/Moth/organs.rsi
     state: liver
+  - type: Organ # Shitmed
+    slotId: liver
+  - type: Liver # Shitmed
 
 - type: entity
   id: OrganMothKidneys
@@ -99,6 +108,8 @@
   - type: Item
     size: Small
     heldPrefix: kidneys
+  - type: Organ # Shitmed
+    slotId: kidneys
 
 - type: entity
   id: OrganMothEyes
@@ -114,3 +125,6 @@
   - type: Item
     size: Small
     heldPrefix: eyeballs
+  - type: Organ # Shitmed
+    slotId: eyes
+  - type: Eyes # Shitmed

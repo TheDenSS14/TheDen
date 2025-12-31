@@ -32,6 +32,7 @@
 # SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Entings (GitHub)
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -209,12 +210,15 @@
   components:
   - type: Sprite
     state: bun-hotcross
+  - type: FlavorProfile # Frontier
+    flavors:
+      - bread
 
 - type: entity
   name: meat bun
   parent: FoodBakedBase
   id: FoodBakedBunMeat
-  description: Has the potential to not be dog.
+  description: Flaky pastry around a meaty core. Might have been better fresh... #imp edit from 'Has the potential to not be dog.'
   components:
   - type: Sprite
     state: bun-meat
@@ -301,6 +305,7 @@
   - type: Tag
     tags:
       - Nugget
+      - Meat
   - type: Sprite
     sprite: Objects/Consumable/Food/Baked/nuggets.rsi
     layers:
