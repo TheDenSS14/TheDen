@@ -5,6 +5,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Shared.Guidebook;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Power.Generator;
@@ -37,6 +38,7 @@ public sealed partial class FuelGeneratorComponent : Component
     /// The maximum target power.
     /// </summary>
     [DataField("maxTargetPower"), ViewVariables(VVAccess.ReadWrite)]
+    [GuidebookData]
     public float MaxTargetPower = 30_000.0f;
 
     /// <summary>
