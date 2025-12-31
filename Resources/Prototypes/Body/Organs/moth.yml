@@ -16,6 +16,9 @@
   parent: [OrganAnimalStomach, OrganHumanStomach]
   categories: [ HideSpawnMenu ]
   components:
+  - type: Sprite
+    sprite: _Impstation/Mobs/Species/Moth/organs.rsi
+    state: stomach
   - type: Stomach
     specialDigestible:
       tags:
