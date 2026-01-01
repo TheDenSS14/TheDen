@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 avery <51971268+graevy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ScarKy0
+# SPDX-FileCopyrightText: 2024 avery
+# SPDX-FileCopyrightText: 2025 Southbridge
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: Screen
@@ -48,6 +49,8 @@
   id: ArrivalsShuttleTimer
   parent: Screen
   name: arrivals screen
+  description: Displays time of arrivals shuttle ETA.
   components:
   - type: DeviceNetwork
+    deviceNetId: Private
     receiveFrequencyId: ArrivalsShuttleTimer

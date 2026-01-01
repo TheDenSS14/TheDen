@@ -1,10 +1,10 @@
-// SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Timemaster99
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 Vanessa
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Robust.Shared.Random;
 using Content.Shared.Silicon.Components;
@@ -130,6 +130,11 @@ public sealed class SiliconChargeSystem : EntitySystem
                 drainRateFinalAddi += SiliconHeatEffects(silicon, siliconComp, frameTime) - 1; // This will need to be changed at some point if we allow external batteries, since the heat of the Silicon might not be applicable.
                 drainRateFinalAddi -= SiliconMovementEffects(silicon, siliconComp);
             }
+
+            // Sanity check for NaN
+            if (float.IsNaN(drainRateFinalAddi))
+                drainRateFinalAddi = 0f;
+
             // Ensures that the drain rate is at least 10% of normal,
             // and would allow at least 4 minutes of life with a max charge, to prevent cheese.
             drainRate += Math.Clamp(drainRateFinalAddi, drainRate * -0.9f, batteryComp.MaxCharge / 240);
@@ -220,6 +225,10 @@ public sealed class SiliconChargeSystem : EntitySystem
         {
             return siliconComp.DrainPerSecond * siliconComp.IdleDrainReduction; // Reduces draw by idle drain reduction
         }
+
+        // Prevent divide by zero
+        if (movement.CurrentSprintSpeed == 0)
+            return 0;
 
         // LinearVelocity is relative to the parent
         return Math.Clamp(

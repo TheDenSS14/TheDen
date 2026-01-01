@@ -39,6 +39,7 @@
 # SPDX-FileCopyrightText: 2025 pocl.v
 # SPDX-FileCopyrightText: 2025 skyr0cket01
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Tomce795
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -433,7 +434,7 @@
     Sneeze:
       collection: MaleSneezes
     Cough:
-      collection: MaleCoughs
+      path: /Audio/Voice/Vox/vox_cough.ogg #Imp
     CatMeow:
       collection: CatMeows
     CatHisses:
@@ -449,7 +450,7 @@
     Honk:
       collection: BikeHorn
     Sigh:
-      collection: MaleSigh
+      path: /Audio/Voice/Vox/vox_sigh.ogg #Imp
     Crying:
       collection: VoxCry #Imp
       params:

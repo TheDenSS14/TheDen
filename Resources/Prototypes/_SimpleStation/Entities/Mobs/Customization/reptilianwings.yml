@@ -1,27 +1,64 @@
-# SPDX-FileCopyrightText: 2025 LaconiumDragona <riascazadofelra@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 LaconiumDragona
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
   id: WingsDragon
-  bodyPart: Wings
+  bodyPart: Chest
   markingCategory: Wings
   speciesRestriction: [Reptilian]
+  layering:
+    # This actually helps. Thanks Floof
+    dragon-front: Tail
+    dragon-front-side: Tail
+    dragon-back: BackWings
+#    `dragon-back: Wings`
+#    The dragon-back is originally rendered on wings(moth) layer. If you want to have bags seen: TailOversuit.
+#    This is done for balancing purposes (Cannot hide bags for Unathi.)
+  colorLinks:
+#    Another unused prototype part for markings, this one hooks up to dragon-back as coloration.
+    dragon-front: dragon-back
+    dragon-front-side: dragon-back
   sprites:
   - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
-    state: dragon
+    state: dragon-front
+  - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
+    state: dragon-front-side
+  - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
+    state: dragon-back
 
 - type: marking
   id: WingsDragonTwotone
-  bodyPart: Wings
+  bodyPart: Chest
   markingCategory: Wings
   speciesRestriction: [Reptilian]
+  layering:
+    dragon-front: Chest
+    dragon-front-side: Tail
+    dragon-back: BackWings
+    dragon-inner-front: Chest
+    dragon-inner-frontsides: Tail
+    dragon-inner-back: BackWings
+  colorLinks:
+      #    Another unused prototype part for markings, this one hooks up to dragon-back as coloration.
+      dragon-front: dragon-back
+      dragon-front-side: dragon-back
+      dragon-inner-front: dragon-inner-back
+      dragon-inner-frontsides: dragon-inner-back
   sprites:
   - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
-    state: dragon
+    state: dragon-front
   - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
-    state: dragon-inner
+    state: dragon-inner-front
+  - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
+    state: dragon-front-side
+  - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
+    state: dragon-inner-frontsides
+  - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
+    state: dragon-back
+  - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
+    state: dragon-inner-back
 
 - type: marking
   id: WingsBigArmWings
