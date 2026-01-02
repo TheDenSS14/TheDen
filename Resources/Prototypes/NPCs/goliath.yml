@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2025 Dirius77
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: htnCompound
   id: GoliathCompound
@@ -34,6 +35,8 @@
     - preconditions:
         - !type:PulledPrecondition
           isPulled: true
+        - !type:PullEscapeCooldownPrecondition # DEN Do other things if we already tried to pull free.
+          onCooldown: false
       tasks:
         - !type:HTNPrimitiveTask
           operator: !type:UnPullOperator

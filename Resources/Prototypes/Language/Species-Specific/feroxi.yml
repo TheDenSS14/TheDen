@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 portfiend
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Feroxi Language
 - type: language
@@ -11,8 +12,8 @@
     color: "#8DB9D6"
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 2
-    maxSyllables: 5
+    minSyllables: 1
+    maxSyllables: 3
     replacement:
     - ka
     - pa

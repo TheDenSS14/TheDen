@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 ASaltySeabass
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 XenoOutlier
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -16,3 +17,4 @@ job-name-alternate-adjudicator = Adjudicator
 
 # Nanotrasen Representative
 job-name-alternate-corporate-liaison = Corporate Liaison
+job-name-alternate-station-inspector = Station Inspector

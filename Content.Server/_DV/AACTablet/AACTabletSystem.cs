@@ -6,7 +6,7 @@
 // SPDX-FileCopyrightText: 2025 little-meow-meow
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server.Abilities.Mime;
 using Content.Server.Chat.Systems;
@@ -20,12 +20,15 @@ using Content.Shared.IdentityManagement;
 using Robust.Server.GameObjects; // starcup
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using Content.Server.Popups; // den
+using Content.Server.Popups;
+using Content.Server.Administration.Logs;
+using Content.Shared.Database; // den
 
 namespace Content.Server._DV.AACTablet;
 
 public sealed partial class AACTabletSystem : EntitySystem // starcup: made partial
 {
+    [Dependency] private readonly IAdminLogManager _adminLogManager = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
@@ -86,11 +89,21 @@ public sealed partial class AACTabletSystem : EntitySystem // starcup: made part
         transmitter.Channels = GetAvailableChannels(message.Actor);
         // end starcup
 
+        // starcup: prefix
+        // DEN: need this for logging
+        var messageContents = message.Prefix + _chat.SanitizeMessageCapital(string.Join(" ", _localisedPhrases));
         _chat.TrySendInGameICMessage(ent,
-            message.Prefix + _chat.SanitizeMessageCapital(string.Join(" ", _localisedPhrases)), // starcup: prefix
+            messageContents,
             InGameICChatType.Speak,
             hideChat: false,
             nameOverride: speakerName);
+
+        // DEN: logging
+        var sender = ToPrettyString(message.Actor);
+        var tablet = ToPrettyString(ent);
+        _adminLogManager.Add(LogType.Chat,
+            LogImpact.Low,
+            $"AAC message from {sender:user} using {tablet:tablet}: {messageContents}");
 
         var curTime = _timing.CurTime;
         ent.Comp.NextPhrase = curTime + ent.Comp.Cooldown;

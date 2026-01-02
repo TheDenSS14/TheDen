@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 portfiend
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # One of 5 languages that Tajara could speak, lore-wise best choice since others (lore wise) rely on gesticulation too
 # Short name is Maas
@@ -14,8 +15,8 @@
     fontId: Noganas # Rugged, like the people and the land
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 2 # this is mostly based on the name generator, 2-4 is there so it goes here too
-    maxSyllables: 4
+    minSyllables: 1 # DEN: 2 -> 1
+    maxSyllables: 3 # DEN: 4 -> 3
     replacement:
     - mrr
     - rr
@@ -141,7 +142,7 @@
     - chat-speech-verb-sign-siiktajr-10
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 2 
+    minSyllables: 1 # DEN: 2 -> 1
     maxSyllables: 3 # shorter cuz dual lingo i suppose
     replacement:
     - mrr
@@ -219,8 +220,8 @@
     fontId: GrenzeGotisch # Old and distinguished, but not unreadable
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 3 
-    maxSyllables: 5 # since it's for nobility, we can make it a lil longer
+    minSyllables: 1 # DEN: 3 -> 1
+    maxSyllables: 3 # DEN: 5 -> 3
     replacement:
     - hrr
     - rhr
@@ -298,8 +299,8 @@
     fontId: RubikDirt # Aptly named
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 2 
-    maxSyllables: 4 # again, normal length
+    minSyllables: 1 # DEN: 2 -> 1
+    maxSyllables: 3 # DEN: 4 -> 3
     replacement:
     - mrr
     - rr

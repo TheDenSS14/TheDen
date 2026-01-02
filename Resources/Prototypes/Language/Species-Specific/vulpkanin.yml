@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 portfiend
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Spoken by the Vulpkanin race.
 # TODO: Replace this with a much better language.
@@ -14,62 +14,70 @@
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
-    maxSyllables: 4
+    maxSyllables: 3 # DEN: 4 -> 3
     replacement:
-    - rur
+    # DEN: Add more short syllables, order list by length, remove longer syllables
     - ya
+    - uk
+    - wu
+    - wo
+    - es
+    - wa
+    - or
+    - ag
+    - gr
+    - rr
+    - ch
+    - ei
+    - rur
     - cen
-    - rawr
     - bar
     - kuk
     - tek
     - qat
-    - uk
-    - wu
     - vuh
     - tah
     - tch
-    - schz
-    - auch
     - ist
     - ein
-    - entch
-    - zwichs
     - tut
     - mir
-    - wo
     - bis
-    - es
     - vor
     - nic
     - gro
-    - enem
-    - zandt
-    - tzch
-    - noch
     - hel
-    - ischt
     - far
-    - wa
-    - baram
-    - iereng
-    - tech
-    - lach
     - sam
     - mak
-    - lich
     - gen
-    - or
-    - ag
     - eck
     - gec
-    - stag
     - onn
     - bin
     - ket
+    - ein
+    - ech
+    - ier
+    - eng
+    - cres
+    - thz
+    - azu
+    - nein
+    - rawr
+    - schz
+    - auch
+    - enem
+    - tzch
+    - noch
+    - tech
+    - lach
+    - lich
+    - stag
     - jarl
     - vulf
-    - einech
-    - cresthz
-    - azunein
+    - entch
+    - zandt
+    - ischt
+    - baram
     - ghzth

@@ -62,3 +62,4 @@ flavor-complex-vodkacheers = like spicy cherry
 ## Chemicals
 flavor-complex-mantispaper = like a name set in stone
 flavor-complex-mnemolith = like the bedrock of thought itself
+flavor-complex-holiday-cheer = like holiday cheer

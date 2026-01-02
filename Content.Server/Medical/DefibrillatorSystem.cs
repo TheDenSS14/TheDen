@@ -43,9 +43,12 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.PowerCell;
 using Content.Shared.Timing;
 using Content.Shared.Toggleable;
+using Content.Shared.Traits.Assorted;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Robust.Shared.Random; // imp rdnr
+using Content.Server._Impstation.Traits; // imp rdnr
 
 namespace Content.Server.Medical;
 
@@ -70,6 +73,7 @@ public sealed class DefibrillatorSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly IRobustRandom _random = default!; // imp rdnr
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -216,42 +220,66 @@ public sealed class DefibrillatorSystem : EntitySystem
         {
             _chatManager.TrySendInGameICMessage(uid, Loc.GetString("defibrillator-rotten"),
                 InGameICChatType.Speak, true);
+            return; // imp rdnr return
         }
-        else
+        // wizden start
+        else if (TryComp<UnrevivableComponent>(target, out var unrevivable))
         {
-            if (_mobState.IsDead(target, mob))
-                _damageable.TryChangeDamage(target, component.ZapHeal, true, origin: uid);
+            _chatManager.TrySendInGameICMessage(uid, Loc.GetString(unrevivable.ReasonMessage),
+                InGameICChatType.Speak, true);
+            return; // imp rdnr return
+        }
+        // wizden end
+        // imp rdnr begin
+        if (HasComp<RandomUnrevivableComponent>(target))
+        {
+            var dnrComponent = Comp<RandomUnrevivableComponent>(target);
 
-            if (_mobThreshold.TryGetThresholdForState(target, MobState.Dead, out var threshold) &&
-                TryComp<DamageableComponent>(target, out var damageableComponent) &&
-                damageableComponent.TotalDamage < threshold)
+            if (dnrComponent.Chance < _random.NextDouble())
             {
-                _mobState.ChangeMobState(target, MobState.Critical, mob, uid);
-
-                // DEN - Remove rotting immunity if they have it
-                if (TryComp<RottingImmuneComponent>(target, out var rottingImmunity) && rottingImmunity.RemoveOnRevive)
-                {
-                    RemComp<RottingImmuneComponent>(target);
-                }
-
-                dead = false;
-            }
-
-            if (_mind.TryGetMind(target, out _, out var mind) &&
-                mind.Session is { } playerSession)
-            {
-                session = playerSession;
-                // notify them they're being revived.
-                if (mind.CurrentEntity != target)
-                {
-                    _euiManager.OpenEui(new ReturnToBodyEui(mind, _mind), session);
-                }
+                _chatManager.TrySendInGameICMessage(uid, Loc.GetString("defibrillator-unrevivable"), InGameICChatType.Speak, true);
+                dnrComponent.Chance = 0f;
+                AddComp<UnrevivableComponent>(target);
+                RemComp<RandomUnrevivableComponent>(target);
+                return;
             }
             else
             {
-                _chatManager.TrySendInGameICMessage(uid, Loc.GetString("defibrillator-no-mind"),
-                    InGameICChatType.Speak, true);
+                dnrComponent.Chance -= 0.1f;
             }
+        }
+        if (_mobState.IsDead(target, mob))
+            _damageable.TryChangeDamage(target, component.ZapHeal, true, origin: uid);
+
+        if (_mobThreshold.TryGetThresholdForState(target, MobState.Dead, out var threshold) &&
+            TryComp<DamageableComponent>(target, out var damageableComponent) &&
+            damageableComponent.TotalDamage < threshold)
+        {
+            _mobState.ChangeMobState(target, MobState.Critical, mob, uid);
+
+            // DEN - Remove rotting immunity if they have it
+            if (TryComp<RottingImmuneComponent>(target, out var rottingImmunity) && rottingImmunity.RemoveOnRevive)
+            {
+                RemComp<RottingImmuneComponent>(target);
+            }
+
+            dead = false;
+        }
+
+        if (_mind.TryGetMind(target, out _, out var mind) &&
+            mind.Session is { } playerSession)
+        {
+            session = playerSession;
+            // notify them they're being revived.
+            if (mind.CurrentEntity != target)
+            {
+                _euiManager.OpenEui(new ReturnToBodyEui(mind, _mind), session);
+            }
+        }
+        else
+        {
+            _chatManager.TrySendInGameICMessage(uid, Loc.GetString("defibrillator-no-mind"),
+                InGameICChatType.Speak, true);
         }
 
         var sound = dead || session == null
