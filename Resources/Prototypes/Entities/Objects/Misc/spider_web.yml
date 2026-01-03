@@ -19,6 +19,7 @@
 # SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
 # SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
 # SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 entings (GitHub)
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -100,9 +101,22 @@
       ignoreWhitelist:
         components:
             - IgnoreSpiderWeb
+    - type: FlavorProfile #imp
+      flavors:
+        - cobwebs
+    - type: Food #imp
+      delay: 2
+      requiresSpecialDigestion: true
+    - type: SolutionContainerManager #imp
+      solutions:
+        food:
+          reagents:
+          - ReagentId: Protein
+            Quantity: 2
     - type: Tag
       tags:
         - ArachneWeb
+        - SpiderFood #imp
 
 - type: entity
   id: SpiderWebClown
