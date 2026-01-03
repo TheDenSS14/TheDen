@@ -21,13 +21,13 @@
   abstract: true
   parent: BaseSpeciesRodentia
   id: BaseSpeciesRodentiaHybrid
-  speciesRestriction: [Rodentia, SlimePerson, IPC, Human, Oni] # IPCs and Human-hybrids included!
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human, Oni, Vulpkanin] # IPCs and Human-hybrids included!
 
 - type: marking
   abstract: true
   parent: BaseSpeciesRodentia
   id: BaseSpeciesRodentiaBody
-  speciesRestriction: [Rodentia, SlimePerson, Human, Oni] # IPCs are excluded, I suppose...
+  speciesRestriction: [Rodentia, SlimePerson, Human, Oni, Vulpkanin] # IPCs are excluded, I suppose...
 
 # I'm doing it this way because species can be arbitrary about what is HeadTop and what is HeadSide,
 # and this at least makes it more flexible to change the "rules" if needed.
