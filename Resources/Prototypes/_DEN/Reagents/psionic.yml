@@ -72,6 +72,23 @@
         - !type:ReagentThreshold
           min: 14
           max: 29 # So taking 30u will give you 10 seconds of possibly scarier messages
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          min: 29 # This is when it starts getting weird
+        key: SeeingMnemolith
+        component: SeeingMnemolith
+        type: Add
+        time: 10
+        refresh: false
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          min: 29 # Living things start glowing, but not through walls
+        key: SeeingMnemolithHighlight
+        component: SeeingMnemolithHighlight
+        type: Add
+        time: 10
       - !type:PopupMessage
         type: Local
         visualType: MediumPsionic
