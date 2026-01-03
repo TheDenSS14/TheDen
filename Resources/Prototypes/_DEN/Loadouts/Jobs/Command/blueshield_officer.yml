@@ -119,41 +119,41 @@
     - ClothingBeltBSOWebbingFilled
 
 #Primary
-- type: loadout
-  id: LoadoutBSOSMGWT550
-  category: JobsCommandBlueshieldOfficer
-  cost: 6
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerPrimary
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 18000 # 5 hours
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - WeaponSubMachineGunWt550BSO
+#- type: loadout
+#  id: LoadoutBSOSMGWT550
+#  category: JobsCommandBlueshieldOfficer
+#  cost: 6
+#  canBeHeirloom: true
+#  guideEntry: SecurityWeapons
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutBlueshieldOfficerPrimary
+#    - !type:CharacterDepartmentTimeRequirement
+#      department: Security
+#      min: 18000 # 5 hours
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - BlueshieldOfficer
+#  items:
+#    - WeaponSubMachineGunWt550BSO
 
-- type: loadout
-  id: LoadoutBSOPulsePDW
-  category: JobsCommandBlueshieldOfficer
-  cost: 6
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerPrimary
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 18000 # 5 hours
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - WeaponPulsePDW
+#- type: loadout
+#  id: LoadoutBSOPulsePDW
+#  category: JobsCommandBlueshieldOfficer
+#  cost: 6
+#  canBeHeirloom: true
+#  guideEntry: SecurityWeapons
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutBlueshieldOfficerPrimary
+#    - !type:CharacterDepartmentTimeRequirement
+#      department: Security
+#      min: 18000 # 5 hours
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - BlueshieldOfficer
+#  items:
+#    - WeaponPulsePDW
 
 # Secondary
 - type: loadout
@@ -175,34 +175,34 @@
     - WeaponPistolBRDIP15
 
 #Spare Mags
-- type: loadout
-  id: LoadoutMagazineBRDIP15
-  category: JobsCommandBlueshieldOfficer
-  cost: 2
-  requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - MagazineBRDIP15
+#- type: loadout
+#  id: LoadoutMagazineBRDIP15
+#  category: JobsCommandBlueshieldOfficer
+#  cost: 2
+#  requirements:
+#    - !type:CharacterDepartmentTimeRequirement
+#      department: Security
+#      min: 3600 # 1 hours
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutSecurityEquipment
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - BlueshieldOfficer
+#  items:
+#    - MagazineBRDIP15
 
-- type: loadout
-  id: LoadoutMagazineWT550
-  category: JobsCommandBlueshieldOfficer
-  cost: 2
-  requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - MagazinePistolSubMachineGunTopMounted
+#- type: loadout
+#  id: LoadoutMagazineWT550
+#  category: JobsCommandBlueshieldOfficer
+#  cost: 2
+#  requirements:
+#    - !type:CharacterDepartmentTimeRequirement
+#      department: Security
+#      min: 3600 # 1 hours
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutSecurityEquipment
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - BlueshieldOfficer
+#  items:
+#    - MagazinePistolSubMachineGunTopMounted
