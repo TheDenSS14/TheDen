@@ -58,6 +58,7 @@ namespace Content.Server.Explosion.EntitySystems
                 return;
             }
 
+            message = message.ToLowerInvariant(); // DEN - so it's not case sensitive
             if (!string.IsNullOrWhiteSpace(component.KeyPhrase) && message.Contains(component.KeyPhrase, StringComparison.InvariantCultureIgnoreCase))
             {
                 _adminLogger.Add(LogType.Trigger, LogImpact.High,
@@ -128,6 +129,14 @@ namespace Content.Server.Explosion.EntitySystems
         {
             var component = ent.Comp;
             component.KeyPhrase = message;
+            
+            // DEN - we remove any trailing . and convert it to lowercase. allows words/phrases to appear in regular dialogue
+            // other punctuation (?, !, ...) is still recorded, since it implies specific enunciation
+            if (component.KeyPhrase.EndsWith('.') && !component.KeyPhrase.EndsWith("...")) 
+                component.KeyPhrase = component.KeyPhrase[..^1];
+            component.KeyPhrase = component.KeyPhrase.ToLowerInvariant();
+            // END DEN
+
             component.IsRecording = false;
 
             _adminLogger.Add(LogType.Trigger, LogImpact.Low,
