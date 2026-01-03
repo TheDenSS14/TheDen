@@ -30,24 +30,33 @@
   components:
   - type: StorageFill
     contents:
+      # DEN - partly port https://github.com/space-wizards/space-station-14/pull/29202 from WizDen to make these not suck shit
       - id: CrowbarRed
-      - id: ClothingMaskBreath
-      - id: ClothingMaskBreath
-        prob: 0.5
-      - id: EmergencyOxygenTankFilled
-      - id: EmergencyOxygenTankFilled
-        prob: 0.5
-      - id: FoodTinMRE
-      - id: FoodTinMRE
-        prob: 0.5
-      - id: DrinkWaterBottleFull
-      - id: DrinkWaterBottleFull
-        prob: 0.5
+      - id: Screwdriver
+      - id: RadioHandheld
+      - id: WelderMini
+      - id: FireExtinguisherMini
       - id: FlashlightLantern
-      - id: FlashlightLantern
-        prob: 0.5
+      # Random lighting item orGroup
+      - id: Flare
+        maxAmount: 2
+        orGroup: LightingItem
+      - id: GlowstickBase
+        maxAmount: 2
+        orGroup: LightingItem
+      # Low-chance items
       - id: HarmonicaInstrument
         prob: 0.15
+      - id: PillCanisterPotassiumIodide
+        prob: 0.3
+      - id: FoodTinMRE
+        prob: 0.35
+        maxAmount: 2
+      - id: EmergencyMedipen
+        prob: 0.1
+      - id: SpaceMedipen
+        prob: 0.1
+      # DEN - end
 
 - type: entity
   id: ToolboxElectricalFilled
@@ -110,7 +119,7 @@
     - id: MysterySpaceBladeBox
       prob: 0.25
     - id: BookRandom
-      amount: 2 
+      amount: 2
     - id: CrayonMime
     - id: CrayonRainbow
     - id: CrayonMagic # Delta V - A construction graph was made, but still can find in the wild
