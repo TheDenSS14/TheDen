@@ -142,3 +142,14 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutMagicMirrors
+
+- type: loadout
+  id: DesignerPen
+  category: GeneralItems
+  cost: 4
+  canBeHeirloom: true
+  items:
+  - DesignerPen
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutWritables

@@ -202,7 +202,7 @@
     - type: DisarmMalus
       malus: 0.4
   - type: Sprite
-    sprite: Objects/Weapons/Melee/e_dagger.rsi
+    sprite: _DEN/Objects/Weapons/Melee/e_dagger.rsi # den edit
     layers:
       - state: e_sword
       - state: e_sword_blade
@@ -232,7 +232,7 @@
         Blunt: 0
   - type: Item
     size: Tiny
-    sprite: Objects/Weapons/Melee/e_dagger.rsi
+    sprite: _DEN/Objects/Weapons/Melee/e_dagger.rsi # den edit
   - type: UseDelay
     delay: 1.0
   - type: PointLight

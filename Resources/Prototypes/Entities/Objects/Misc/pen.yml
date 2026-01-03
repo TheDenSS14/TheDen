@@ -9,11 +9,11 @@
     - Write
     - Pen
   - type: Sprite
-    sprite: Objects/Misc/pens.rsi
-    state: pen
+    sprite: _DEN/Objects/Misc/Pens/black.rsi # den edit
+    state: icon # den edit, pen -> icon
   - type: Item
-    sprite: Objects/Misc/pens.rsi
-    heldPrefix: pen
+    sprite: _DEN/Objects/Misc/Pens/black.rsi # den edit
+    # heldPrefix: pen # den edit
     size: Tiny
   - type: PhysicalComposition
     materialComposition:
@@ -64,9 +64,11 @@
   description: A fancy and expensive pen that you only deserve to own if you're qualified to handle vast amounts of paperwork.
   components:
   - type: Sprite
-    state: luxury_pen
+    sprite: _DEN/Objects/Misc/Pens/luxury.rsi # den add
+    state: icon # den edit, luxury_pen -> icon
   - type: Item
-    heldPrefix: luxury_pen
+    sprite: _DEN/Objects/Misc/Pens/luxury.rsi # den add
+    # heldPrefix: luxury_pen # den edit
 
 - type: entity
   name: Cybersun pen
@@ -80,9 +82,11 @@
     - WriteIgnoreStamps
     - Pickaxe
   - type: Sprite
-    state: overpriced_pen
+    sprite: _DEN/Objects/Misc/Pens/cybersun.rsi # den add
+    state: icon # den edit, overpriced_pen -> icon
   - type: Item
-    heldPrefix: overpriced_pen
+    sprite: _DEN/Objects/Misc/Pens/cybersun.rsi # den add
+    # heldPrefix: overpriced_pen # den edit
   - type: MeleeWeapon
     wideAnimationRotation: -45
     damage:
@@ -110,7 +114,10 @@
   description: A luxurious fountain pen for the captain of the station.
   components:
   - type: Sprite
-    state: pen_cap
+    sprite: _DEN/Objects/Misc/Pens/captain.rsi # den add
+    state: icon # den edit, pen_cap -> icon
+  - type: Item # den add
+    sprite: _DEN/Objects/Misc/Pens/captain.rsi
   - type: DamageOtherOnHit
     damage:
       types:
@@ -123,9 +130,11 @@
   description: In an attempt to keep up with the "power" of the cybersun bureaucracy, NT made a replica of cyber pen, in their corporate style.
   components:
   - type: Sprite
-    state: pen_centcom
+    sprite: _DEN/Objects/Misc/Pens/centcomm.rsi # den add
+    state: icon # den edit, pen_centcom -> icon
   - type: Item
-    heldPrefix: pen_centcom
+    sprite: _DEN/Objects/Misc/Pens/centcomm.rsi # den add
+    #heldPrefix: pen_centcom # den edit
 
 - type: entity
   name: hop's fountain pen
@@ -134,4 +143,5 @@
   description: A luxurious fountain pen for the hop of the station.
   components:
   - type: Sprite
-    state: pen_hop
+    sprite: _DEN/Objects/Misc/Pens/hop.rsi # den add
+    state: icon # den edit, pen_hop -> icon

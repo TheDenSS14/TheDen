@@ -13,8 +13,10 @@
   description: 'A luxurious fountain pen for the chief engineer of the station. Has anti-static grips.'
   components:
   - type: Sprite
-    sprite: _DEN/Objects/Misc/bureaucracy.rsi
-    state: pen_ce
+    sprite: _DEN/Objects/Misc/Pens/ce.rsi
+    state: icon
+  - type: Item
+    sprite: _DEN/Objects/Misc/Pens/ce.rsi
 
 - type: entity
   name: hos' fountain pen
@@ -23,8 +25,10 @@
   description: 'A luxurious fountain pen for the head of security of the station. Sharper than normal pens.'
   components:
   - type: Sprite
-    sprite: _DEN/Objects/Misc/bureaucracy.rsi
-    state: pen_hos
+    sprite: _DEN/Objects/Misc/Pens/hos.rsi
+    state: icon
+  - type: Item
+    sprite: _DEN/Objects/Misc/Pens/hos.rsi
   - type: DamageOtherOnHit
     damage:
       types:
@@ -37,8 +41,10 @@
   description: 'A luxurious fountain pen for the logistics officer of the station. Smells like bounties to be written.'
   components:
   - type: Sprite
-    sprite: _DEN/Objects/Misc/bureaucracy.rsi
-    state: pen_lo
+    sprite: _DEN/Objects/Misc/Pens/qm.rsi
+    state: icon
+  - type: Item
+    sprite: _DEN/Objects/Misc/Pens/qm.rsi
 
 - type: entity
   name: mystagogue's fountain pen
@@ -47,8 +53,10 @@
   description: 'A luxurious fountain pen for the mystagogue of the station. More explosive resistant than normal pens.'
   components:
   - type: Sprite
-    sprite: _DEN/Objects/Misc/bureaucracy.rsi
-    state: pen_rd
+    sprite: _DEN/Objects/Misc/Pens/rd.rsi
+    state: icon
+  - type: Item
+    sprite: _DEN/Objects/Misc/Pens/rd.rsi
 
 - type: entity
   name: blueshield's fountain pen
@@ -57,8 +65,10 @@
   description: 'A luxurious fountain pen for the blueshield officer of the station. It has scuff marks and battle damage but still does its duty.'
   components:
   - type: Sprite
-    sprite: _DEN/Objects/Misc/bureaucracy.rsi
-    state: pen_bso
+    sprite: _DEN/Objects/Misc/Pens/blueshield.rsi
+    state: icon
+  - type: Item
+    sprite: _DEN/Objects/Misc/Pens/blueshield.rsi
   - type: DamageOtherOnHit
     damage:
       types:

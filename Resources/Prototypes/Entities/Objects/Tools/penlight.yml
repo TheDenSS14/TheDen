@@ -65,16 +65,16 @@
     - type: HandheldLight
       addPrefix: false
     - type: Sprite
-      sprite: Objects/Tools/cmopenlight.rsi
+      sprite: _DEN/Objects/Misc/Pens/cmo.rsi # den edit
       layers:
-        - state: world
-        - state: world-on
+        - state: icon # den edit
+        - state: icon_on # den edit
           shader: unshaded
           visible: false
           map: [ "light" ]
     - type: Item
-      sprite: Objects/Tools/cmopenlight.rsi
-      heldPrefix: off
+      sprite: _DEN/Objects/Misc/Pens/cmo.rsi # den edit
+      #heldPrefix: off # den edit
     - type: PointLight
       enabled: false
       mask: /Textures/Effects/LightMasks/cone.png
