@@ -331,7 +331,7 @@
   id: NehinaTranslator
   parent: [ TranslatorPoweredBase ]
   name: nēhina translator
-  description: Translates speech between Nēhina and Galactic Common, helping communicate with slimes and slime people.
+  description: Translates speech between Nēhina and Galactic Common, helping communicate with Feroxi in their native tongue. # Den edit for clarity/correct desc
   components:
   - type: HandheldTranslator
     spoken:
@@ -348,7 +348,7 @@
   id: AlasetaTranslator
   parent: [ TranslatorPoweredBase ]
   name: alaseta translator
-  description: Translates speech between Alaseta and Galactic Common, helping communicate with slimes and slime people.
+  description: Translates speech between Alaseta and Galactic Common; speak the Sol-Common of Vulpkanin! # Den edit for clarity/correct desc
   components:
   - type: HandheldTranslator
     spoken:
@@ -365,7 +365,7 @@
   id: RodentianTranslator
   parent: [ TranslatorPoweredBase ]
   name: rodentian translator
-  description: Translates speech between Rodentian and Galactic Common, helping communicate with slimes and slime people.
+  description: Translates speech between Rodentian and Galactic Common. Squeak! # Den edit for clarity/correct desc
   components:
   - type: HandheldTranslator
     spoken:
@@ -382,7 +382,7 @@
   id: CaprineTranslator
   parent: [ TranslatorPoweredBase ]
   name: caprine translator
-  description: Translates speech between Caprine and Galactic Common, helping communicate with slimes and slime people.
+  description: Translates speech between Caprine and Galactic Common, helping communicate with Ovinia. Baa! # Den edit for clarity/correct desc
   components:
   - type: HandheldTranslator
     spoken:
