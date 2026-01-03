@@ -335,6 +335,10 @@ public sealed partial class AbsorbentSystem : SharedAbsorbentSystem
         _solutionContainerSystem.AddSolution(puddle.Solution.Value, absorberSplit);
         _solutionContainerSystem.AddSolution(absorberSoln, puddleSplit);
 
+        // begin den: ensure update chemicals is called if we end up with a 0 volume puddle to prevent empty footprints
+        if (puddleSolution.Volume <= 0)
+            _solutionContainerSystem.UpdateChemicals(puddle.Solution.Value);
+        // end den
         _audio.PlayPvs(absorber.PickupSound, target);
         if (useDelay != null)
             _useDelay.TryResetDelay((used, useDelay));
