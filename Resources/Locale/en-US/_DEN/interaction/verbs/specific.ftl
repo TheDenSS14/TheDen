@@ -1,5 +1,5 @@
-interaction-WashHands-name = Wash hands
-interaction-WashHands-description = Wash your hands in the water.
+interaction-WashHands-name = Wash hands / item
+interaction-WashHands-description = Wash your hands (or the item you're holding) in the water.
 
 interaction-WashHands-success-self-popup = You wash {$hasUsed ->
     [false] your hands in {THE($target)}.
