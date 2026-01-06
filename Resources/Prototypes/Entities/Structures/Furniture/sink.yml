@@ -82,6 +82,8 @@
     range: 8
     sound:
       path: /Audio/Ambience/Objects/drain.ogg
+  - type: InteractionVerbs # DEN: add hand washing
+    allowedVerbs: [WashHands]
 
 
 - type: entity

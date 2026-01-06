@@ -1,0 +1,11 @@
+- type: Interaction
+  id: WashHands
+  parent: BaseHands
+  delay: 0.6
+  effectSuccess:
+    popup: Obvious
+    sound:
+      path: /Audio/Effects/Fluids/slosh.ogg
+    soundPerceivedByOthers: true
+  action:
+    !type:NoOpAction
