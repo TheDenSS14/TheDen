@@ -1,15 +1,10 @@
-# SPDX-FileCopyrightText: 2025 Gregg
-# SPDX-FileCopyrightText: 2025 Zilanthros
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 meta:
   format: 7
   category: Map
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/04/2025 02:00:37
+  time: 01/07/2026 06:45:37
   entityCount: 12180
 maps:
 - 1
@@ -11192,10 +11187,10 @@ entities:
       parent: 2
 - proto: BlackKing
   entities:
-  - uid: 11746
+  - uid: 12118
     components:
     - type: Transform
-      pos: 3.511227,-54.501766
+      pos: 4.5,-54.5
       parent: 2
 - proto: BlackKnight
   entities:
@@ -11253,10 +11248,10 @@ entities:
       parent: 2
 - proto: BlackQueen
   entities:
-  - uid: 12118
+  - uid: 11746
     components:
     - type: Transform
-      pos: 4.486227,-54.501766
+      pos: 3.5,-54.5
       parent: 2
 - proto: BlackRook
   entities:
@@ -73509,10 +73504,10 @@ entities:
       parent: 2
 - proto: WhiteKing
   entities:
-  - uid: 12123
+  - uid: 12134
     components:
     - type: Transform
-      pos: 3.5055718,-61.529987
+      pos: 4.5,-61.5
       parent: 2
 - proto: WhiteKnight
   entities:
@@ -73570,10 +73565,10 @@ entities:
       parent: 2
 - proto: WhiteQueen
   entities:
-  - uid: 12134
+  - uid: 12123
     components:
     - type: Transform
-      pos: 4.480572,-61.49249
+      pos: 3.4801314,-61.48002
       parent: 2
 - proto: WhiteRook
   entities:
