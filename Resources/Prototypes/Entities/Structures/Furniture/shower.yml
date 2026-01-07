@@ -49,4 +49,6 @@
           ShowerVisualState.Off:
             On: { state: shower_on }
             Off: { state: shower }
+    - type: InteractionVerbs # DEN: add hand washing
+      allowedVerbs: [WashHands]
 

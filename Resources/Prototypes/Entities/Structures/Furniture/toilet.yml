@@ -145,6 +145,8 @@
         ToolOpenableVisualState.StashOpen:
           Open: { state: disposal-open }
           Closed: { state: disposal-closed }
+  - type: InteractionVerbs # DEN: add hand washing
+    allowedVerbs: [WashHands]
 
 - type: entity
   id: ToiletDirtyWater

@@ -74,6 +74,8 @@
     fishDefaultTimer: 25.0
     fishTimerVariety: 15.0
   # Goobstation - fishing
+  - type: InteractionVerbs # DEN: add hand washing
+    allowedVerbs: [WashHands]
 
 - type: entity
   parent: N14FloorWaterDirtyEntity
