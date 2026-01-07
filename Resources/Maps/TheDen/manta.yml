@@ -1,16 +1,11 @@
-# SPDX-FileCopyrightText: 2025 metalgearsloth
-# SPDX-FileCopyrightText: 2025 sheepie
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 meta:
   format: 7
   category: Map
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/14/2025 01:33:44
-  entityCount: 27943
+  time: 01/07/2026 06:02:11
+  entityCount: 27942
 maps:
 - 1
 grids:
@@ -8018,9 +8013,10 @@ entities:
           -10,-1:
             0: 8191
           -16,8:
-            0: 48048
+            5: 13104
+            0: 34944
           -17,8:
-            0: 14
+            5: 14
             1: 52416
           -16,10:
             1: 3838
@@ -8072,7 +8068,7 @@ entities:
             0: 32904
           -17,7:
             1: 4360
-            0: 61152
+            5: 61152
           -16,6:
             0: 140
             1: 16384
@@ -9542,11 +9538,11 @@ entities:
             Oxygen: 27.225372
             Nitrogen: 102.419266
         - volume: 2500
-          temperature: 348.15
+          temperature: 315.15
           moles:
-            Oxygen: 18.37703
-            Nitrogen: 67.38244
-            WaterVapor: 1.7501932
+            Oxygen: 20.301325
+            Nitrogen: 74.438194
+            WaterVapor: 1.9334596
         - volume: 2500
           temperature: 293.15
           moles:
@@ -10697,6 +10693,11 @@ entities:
     - type: Transform
       pos: -50.5,37.5
       parent: 2
+  - uid: 13779
+    components:
+    - type: Transform
+      pos: -9.5,42.5
+      parent: 2
   - uid: 22463
     components:
     - type: Transform
@@ -10754,11 +10755,6 @@ entities:
     components:
     - type: Transform
       pos: 73.5,-39.5
-      parent: 2
-  - uid: 27335
-    components:
-    - type: Transform
-      pos: -9.5,42.5
       parent: 2
 - proto: AirlockArmoryLocked
   entities:
@@ -11499,7 +11495,7 @@ entities:
       pos: 76.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -95560.25
+      secondsUntilStateChange: -95808.92
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -12954,7 +12950,7 @@ entities:
       pos: 2.5,27.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -100549.37
+      secondsUntilStateChange: -100798.04
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -63776,6 +63772,14 @@ entities:
     - type: Transform
       pos: 47.5,-15.5
       parent: 2
+- proto: ComputerStationJobsConsole
+  entities:
+  - uid: 16895
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -27.5,32.5
+      parent: 2
 - proto: ComputerStationRecords
   entities:
   - uid: 60
@@ -65480,7 +65484,7 @@ entities:
       pos: 65.5,-16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -112873.84
+      secondsUntilStateChange: -113122.516
       state: Closing
   - uid: 23609
     components:
@@ -65488,7 +65492,7 @@ entities:
       pos: 65.5,-17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -112872.91
+      secondsUntilStateChange: -113121.58
       state: Closing
   - uid: 23610
     components:
@@ -65496,7 +65500,7 @@ entities:
       pos: 65.5,-18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -112872.305
+      secondsUntilStateChange: -113120.98
       state: Closing
 - proto: CurtainsWhiteOpen
   entities:
@@ -115141,7 +115145,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 87.5,-1.5
       parent: 2
-- proto: GlassBoxLaserFilled
+- proto: GlassBoxLaser
   entities:
   - uid: 9828
     components:
@@ -132261,11 +132265,6 @@ entities:
     - type: Transform
       pos: 18.5,-25.5
       parent: 2
-  - uid: 13779
-    components:
-    - type: Transform
-      pos: 11.5,52.5
-      parent: 2
   - uid: 16884
     components:
     - type: Transform
@@ -146056,6 +146055,11 @@ entities:
     - type: Transform
       pos: -39.5,-39.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        11670:
+        - - Pressed
+          - DoorBolt
   - uid: 12150
     components:
     - type: Transform
@@ -156559,11 +156563,6 @@ entities:
     components:
     - type: Transform
       pos: 13.5,44.5
-      parent: 2
-  - uid: 16895
-    components:
-    - type: Transform
-      pos: -27.5,32.5
       parent: 2
   - uid: 22167
     components:
@@ -175494,7 +175493,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -81572.49
+      secondsUntilStateChange: -81821.164
       state: Opening
 - proto: WindoorKitchenLocked
   entities:
