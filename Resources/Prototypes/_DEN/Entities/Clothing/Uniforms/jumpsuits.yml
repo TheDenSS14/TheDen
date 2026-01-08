@@ -227,3 +227,101 @@
   parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitBlackTurtleneckShorts ]
   id: ClothingUniformJumpsuitBlackTurtleneckShortsFlipped
   name: black turtleneck shorts
+
+## DINER
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDinerTeal
+  name: teal diner uniform
+  suffix: jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_teal.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_teal.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtDinerTeal
+  name: teal diner uniform
+  suffix: jumpskirt
+  description:
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/diner_teal.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/diner_teal.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDinerPink
+  name: pink diner uniform
+  suffix: jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_pink.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_pink.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtDinerPink
+  name: pink diner uniform
+  suffix: jumpskirt
+  description:
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/diner_pink.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/diner_pink.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDinerPinkDark
+  name: pink diner uniform
+  suffix: dark jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_pink_dark.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_pink_dark.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtDinerPinkDark
+  name: pink diner uniform
+  suffix: dark jumpskirt
+  description:
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/diner_pink_dark.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/diner_pink_dark.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDinerFastFood
+  name: red diner uniform
+  suffix: jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_fastfood.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_fastfood.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtDinerFastFood
+  name: red diner uniform
+  suffix: jumpskirt
+  description:
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/diner_fastfood.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/diner_fastfood.rsi

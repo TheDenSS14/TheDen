@@ -255,3 +255,38 @@
     sprite: _DEN/Clothing/Head/Hats/bellhop.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Head/Hats/bellhop.rsi
+
+## DINER
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatDinerTeal
+  name: teal diner cap
+  description:
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/diner_teal.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/diner_teal.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatDinerPink
+  name: pink diner cap
+  description:
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/diner_pink.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/diner_pink.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatDinerFastFood
+  name: red diner cap
+  description:
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/diner_fastfood.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/diner_fastfood.rsi
