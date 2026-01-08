@@ -119,6 +119,7 @@ namespace Content.Client.Options.UI.Tabs
             DisableSinguloWarpingCheckBox.OnToggled += OnCheckBoxToggled;
             DisableDrugWarpingCheckBox.OnToggled += OnCheckBoxToggled;
             DisableDrunkWarpingCheckBox.OnToggled += OnCheckBoxToggled;
+            BlackFlashEffectCheckBox.OnToggled += OnCheckBoxToggled; // DEN: Black flash effect
             ChatWindowOpacitySlider.OnValueChanged += OnChatWindowOpacitySliderChanged;
             ScreenShakeIntensitySlider.OnValueChanged += OnScreenShakeIntensitySliderChanged;
             ExamineTooltipWidthSlider.OnValueChanged += OnExamineTooltipWidthSliderChanged; // DEN: Examine tooltip width
@@ -148,6 +149,7 @@ namespace Content.Client.Options.UI.Tabs
             DisableSinguloWarpingCheckBox.Pressed = _cfg.GetCVar(ImpCCVars.DisableSinguloWarping);
             DisableDrugWarpingCheckBox.Pressed = _cfg.GetCVar(DCCVars.DisableDrugWarping);//den edit
             DisableDrunkWarpingCheckBox.Pressed = _cfg.GetCVar(DCCVars.DisableDrunkWarping);//den edit
+            BlackFlashEffectCheckBox.Pressed = _cfg.GetCVar(DCCVars.BlackFlashEffect); // DEN: Black Flash
             ChatWindowOpacitySlider.Value = _cfg.GetCVar(CCVars.ChatWindowOpacity);
             ScreenShakeIntensitySlider.Value = _cfg.GetCVar(CCVars.ScreenShakeIntensity) * 100f;
 
@@ -248,6 +250,7 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(ImpCCVars.DisableSinguloWarping, DisableSinguloWarpingCheckBox.Pressed);
             _cfg.SetCVar(DCCVars.DisableDrugWarping, DisableDrugWarpingCheckBox.Pressed);//den edit
             _cfg.SetCVar(DCCVars.DisableDrunkWarping, DisableDrunkWarpingCheckBox.Pressed);//den edit
+            _cfg.SetCVar(DCCVars.BlackFlashEffect, BlackFlashEffectCheckBox.Pressed);// DEN
             _cfg.SetCVar(CCVars.ChatWindowOpacity, ChatWindowOpacitySlider.Value);
             _cfg.SetCVar(CCVars.ScreenShakeIntensity, ScreenShakeIntensitySlider.Value / 100f);
 
@@ -293,6 +296,7 @@ namespace Content.Client.Options.UI.Tabs
             var isDisableSinguloWarpingSame = DisableSinguloWarpingCheckBox.Pressed == _cfg.GetCVar(ImpCCVars.DisableSinguloWarping);
             var isDisableDrugWarpingSame = DisableDrugWarpingCheckBox.Pressed == _cfg.GetCVar(DCCVars.DisableDrugWarping);//den edit
             var isDisableDrunkWarpingSame = DisableDrunkWarpingCheckBox.Pressed == _cfg.GetCVar(DCCVars.DisableDrunkWarping);//den edit
+            var isBlackFlashEffectSame = BlackFlashEffectCheckBox.Pressed == _cfg.GetCVar(DCCVars.BlackFlashEffect);// DEN: Black Flash effect
             var isChatWindowOpacitySame = Math.Abs(ChatWindowOpacitySlider.Value - _cfg.GetCVar(CCVars.ChatWindowOpacity)) < 0.01f;
             var isScreenShakeIntensitySame = Math.Abs(ScreenShakeIntensitySlider.Value / 100f - _cfg.GetCVar(CCVars.ScreenShakeIntensity)) < 0.01f;
 
@@ -327,6 +331,7 @@ namespace Content.Client.Options.UI.Tabs
                                    isDisableSinguloWarpingSame &&
                                    isDisableDrugWarpingSame && //den edit
                                    isDisableDrunkWarpingSame && //den edit
+                                   isBlackFlashEffectSame && // DEN: Black flash effect
                                    isChatWindowOpacitySame &&
                                    isScreenShakeIntensitySame &&
                                    isExamineTooltipWidthSame && // DEN: Examine tooltip maximum width

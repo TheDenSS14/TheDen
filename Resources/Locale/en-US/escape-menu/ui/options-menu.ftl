@@ -123,6 +123,7 @@ ui-options-reduced-motion = Reduce motion of visual effects
 ui-options-disable-singulo-warp = Disable the singularity's screen warping effect
 ui-options-disable-drug-warp = Disable the drug screen warping effect
 ui-options-disable-drunk-warp = Disable the drunkenness screen effect
+ui-options-black-flash = Make flash effects black instead of white
 ui-options-chat-window-opacity = Chat window opacity
 ui-options-chat-window-opacity-percent = { TOSTRING($opacity, "P0") }
 ui-options-screen-shake-intensity = Screen shake intensity

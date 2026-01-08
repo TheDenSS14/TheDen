@@ -14,9 +14,11 @@
 
 using System.Numerics;
 using Content.Client.Viewport;
+using Content.Shared._DV.CCVars;
 using Robust.Client.Graphics;
 using Robust.Client.State;
 using Robust.Client.Player;
+using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Graphics;
 using Robust.Shared.IoC;
@@ -35,11 +37,13 @@ namespace Content.Client.Flash
         [Dependency] private readonly IStateManager _stateManager = default!;
         [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly IConfigurationManager _cfg = default!; // DEN: Black flash effect
 
         public override OverlaySpace Space => OverlaySpace.WorldSpace;
         private readonly ShaderInstance _shader;
         private double _startTime = -1;
         private double _lastsFor = 1;
+        private Color _fadeColor = Color.White;
         private Texture? _screenshotTexture;
 
         public FlashOverlay()
@@ -61,6 +65,7 @@ namespace Content.Client.Flash
 
             _startTime = _gameTiming.CurTime.TotalSeconds;
             _lastsFor = duration;
+            _fadeColor = _cfg.GetCVar(DCCVars.BlackFlashEffect) ? Color.Black : Color.White; // DEN: Black Flash.
         }
 
         protected override void Draw(in OverlayDrawArgs args)
@@ -78,6 +83,7 @@ namespace Content.Client.Flash
             var worldHandle = args.WorldHandle;
             worldHandle.UseShader(_shader);
             _shader.SetParameter("percentComplete", percentComplete);
+            _shader.SetParameter("fadeColor", _fadeColor); // DEN: Black Flash.
 
             if (_screenshotTexture != null)
             {
