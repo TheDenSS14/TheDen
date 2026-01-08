@@ -619,7 +619,7 @@ namespace Content.Shared.Cuffs
                 return;
 
             // imp. prevent escape attempts if the target is being actively pulled.
-            if (TryComp<PullableComponent>(target, out var pullable) && pullable.BeingPulled)
+            if (TryComp<PullableComponent>(target, out var pullable) && pullable.GrabStage == GrabStage.Hard)
                 return;
 
             var isOwner = user == target;
