@@ -44,6 +44,8 @@ SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
                                 <Control HorizontalExpand="True" />
                                 <Label Name="RecordContainerAge" Align="Right" />
                             </BoxContainer>
+                            <!-- TheDen Birthday -->
+                            <records:RecordLongItemDisplay Name="RecordContainerBirthday" Title="{Loc 'humanoid-profile-editor-cd-records-birthday'}"/>
                             <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
                                 <Label Text="{Loc 'cd-character-records-viewer-record-job'}"/>
                                 <Control HorizontalExpand="True" />

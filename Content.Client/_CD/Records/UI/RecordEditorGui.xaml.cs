@@ -34,6 +34,11 @@ public sealed partial class RecordEditorGui : Control
 
         #region General
 
+        BirthdayEdit.OnTextChanged += args => // TheDen
+        {
+            UpdateRecords(_records.WithBirthday(args.Text));
+        };
+
         ContactNameEdit.OnTextChanged += args =>
         {
             UpdateRecords(_records.WithContactName(args.Text));
@@ -134,6 +139,7 @@ public sealed partial class RecordEditorGui : Control
 
     private void UpdateWidgets()
     {
+        BirthdayEdit.SetText(_records.Birthday); // TheDen
         ContactNameEdit.SetText(_records.EmergencyContactName);
         ResidencyEdit.SetText(_records.Residency); // TheDen
 

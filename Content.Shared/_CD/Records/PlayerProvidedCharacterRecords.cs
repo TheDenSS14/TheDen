@@ -27,6 +27,9 @@ public sealed partial class PlayerProvidedCharacterRecords
     // Additional data is fetched from the Profile
 
     // All
+    [DataField] // TheDen
+    public string Birthday { get; private set; }
+
     [DataField]
     public string EmergencyContactName { get; private set; }
 
@@ -98,6 +101,7 @@ public sealed partial class PlayerProvidedCharacterRecords
 
     public PlayerProvidedCharacterRecords(
         bool hasWorkAuthorization,
+        string birthday, // TheDen
         string emergencyContactName,
         string residency, // TheDen
         string identifyingFeatures,
@@ -106,6 +110,7 @@ public sealed partial class PlayerProvidedCharacterRecords
         List<RecordEntry> medicalEntries, List<RecordEntry> securityEntries, List<RecordEntry> employmentEntries)
     {
         HasWorkAuthorization = hasWorkAuthorization;
+        Birthday = birthday; // TheDen
         EmergencyContactName = emergencyContactName;
         Residency = residency; // TheDen
         IdentifyingFeatures = identifyingFeatures;
@@ -119,6 +124,7 @@ public sealed partial class PlayerProvidedCharacterRecords
 
     public PlayerProvidedCharacterRecords(PlayerProvidedCharacterRecords other)
     {
+        Birthday = other.Birthday; // TheDen
         EmergencyContactName = other.EmergencyContactName;
         Residency = other.Residency; // TheDen
         HasWorkAuthorization = other.HasWorkAuthorization;
@@ -135,6 +141,7 @@ public sealed partial class PlayerProvidedCharacterRecords
     {
         return new PlayerProvidedCharacterRecords(
             hasWorkAuthorization: true,
+            birthday: "", // TheDen
             emergencyContactName: "",
             residency: "", // TheDen
             identifyingFeatures: "",
@@ -151,6 +158,7 @@ public sealed partial class PlayerProvidedCharacterRecords
     {
         // This is ugly but is only used for integration tests.
         var test = EmergencyContactName == other.EmergencyContactName
+                   && Birthday == other.Birthday // TheDen
                    && Residency == other.Residency // TheDen
                    && HasWorkAuthorization == other.HasWorkAuthorization
                    && IdentifyingFeatures == other.IdentifyingFeatures
@@ -205,6 +213,7 @@ public sealed partial class PlayerProvidedCharacterRecords
     /// </summary>
     public void EnsureValid()
     {
+        Birthday = ClampString(Birthday, TextMedLen); // TheDen
         EmergencyContactName =
             ClampString(EmergencyContactName, TextMedLen);
         Residency = ClampString(Residency, TextMedLen); // TheDen
@@ -220,6 +229,11 @@ public sealed partial class PlayerProvidedCharacterRecords
     public PlayerProvidedCharacterRecords WithWorkAuth(bool auth)
     {
         return new(this) { HasWorkAuthorization = auth };
+    }
+
+    public PlayerProvidedCharacterRecords WithBirthday(string birthday) // TheDen
+    {
+        return new(this) { Birthday = birthday};
     }
     public PlayerProvidedCharacterRecords WithContactName(string name)
     {

@@ -340,6 +340,7 @@ public sealed partial class CharacterRecordViewer : FancyWindow
             _spriteSystem.Frame0(_prototypeManager.Index(record.JobIcon).Icon); //imp/den edit - display the icon
         RecordContainerGender.Text = Loc.GetString("records-computer-pronouns", ("gender", record.Gender.ToString().ToLowerInvariant())); //Den edit based on Imp edit; uses pronouns over gender/sex for inclusion. This shit is woke, sorry
         RecordContainerSpecies.Text = record.Species;
+        RecordContainerBirthday.SetValue(cr.Birthday); // TheDen
         RecordContainerContactName.SetValue(cr.EmergencyContactName);
         RecordContainerResidency.SetValue(cr.Residency); // TheDen
 

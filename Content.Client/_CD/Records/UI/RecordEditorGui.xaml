@@ -11,6 +11,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
     <BoxContainer Orientation="Vertical">
          <ScrollContainer VerticalExpand="True">
              <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="10">
+                <!-- DEN Birthday -->
+                 <BoxContainer Orientation="Horizontal">
+                     <Label Text="{Loc 'humanoid-profile-editor-cd-records-birthday'}" />
+                     <Control HorizontalExpand="True" />
+                     <LineEdit Name="BirthdayEdit" HorizontalAlignment="Right" MinSize="350 0"/>
+                 </BoxContainer>
                  <!-- Emergency Contact -->
                  <BoxContainer Orientation="Horizontal">
                      <Label Text="{Loc 'humanoid-profile-editor-cd-records-contact-name'}" />
