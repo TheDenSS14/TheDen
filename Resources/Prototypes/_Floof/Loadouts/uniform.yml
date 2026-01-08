@@ -32,11 +32,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian # TheDen
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtJanimaid
@@ -48,11 +43,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian # TheDen
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtJanimaidmini
@@ -64,11 +54,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian # TheDen
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-         - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtTacticool
@@ -80,11 +65,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian # TheDen
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-         - Command
 
 - type: loadout
   id: LoadoutUniformJumpsuitTacticool
@@ -96,11 +76,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian # TheDen
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-         - Command
 
 #Floofstation - Sock ect Uniform add ins
 - type: loadout
@@ -249,11 +224,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-         - Command
 
 - type: loadout
   id: LoadoutUniformBandedDancersGarb
@@ -265,11 +235,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-         - Command
 
 - type: loadout
   id: LoadoutUniformRedSidelessDress
@@ -281,11 +246,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-         - Command
 
 - type: loadout
   id: LoadoutUniformPurpleNightclubDress
@@ -297,11 +257,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-         - Command
 
 - type: loadout
   id: LoadoutUniformBlackPetticoatDress
@@ -313,11 +268,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-         - Command
 
 - type: loadout
   id: LoadoutUniformBlueFancyLad
@@ -329,8 +279,3 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-         - Command
