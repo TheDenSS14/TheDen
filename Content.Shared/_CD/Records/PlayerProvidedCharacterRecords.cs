@@ -141,7 +141,7 @@ public sealed partial class PlayerProvidedCharacterRecords
     {
         return new PlayerProvidedCharacterRecords(
             hasWorkAuthorization: true,
-            birthday: "", // TheDen
+            birthday: "N/A", // TheDen
             emergencyContactName: "",
             residency: "", // TheDen
             identifyingFeatures: "",
