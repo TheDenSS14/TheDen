@@ -1,0 +1,38 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entityTable
+  id: FillLockerEmergencyUniversalStandard
+  table: !type:AllSelector
+    children:
+    - id: ClothingMaskBreath
+    - id: ClothingMaskBreath
+    - id: ClothingOuterSuitEmergency
+    - id: ClothingOuterSuitEmergency
+    - id: EmergencyInternalsSetSelector
+    - id: EmergencyInternalsSetSelector
+    - id: ToolboxEmergencyFilled
+    - !type:GroupSelector
+      children:
+      - id: BoxMRE
+      - id: WeaponFlareGun
+      - id: EnvirosuitExtinguisherRefill
+      - id: EmergencyComfortDeploymentUnitWrapped
+      - id: MedkitOxygenFilled
+      - id: TowelColorRed
+        prob: 0.1
+      - id: TowelColorBlue
+        prob: 0.1
+      - id: TowelColorNT
+        prob: 0.1
+
+- type: entity
+  id: ClosetEmergencyUniversalFilled
+  parent: ClosetEmergencyUniversal
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillLockerEmergencyUniversalStandard

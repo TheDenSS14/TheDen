@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2026 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: Interaction
+  id: WashHands
+  parent: BaseHands
+  delay: 1.4
+  effectSuccess:
+    popup: Obvious
+    sound:
+      path: /Audio/_DEN/Effects/Fluids/faucet.ogg
+    soundParams:
+      volume: -4
+    soundPerceivedByOthers: true
+  action:
+    !type:NoOpAction
