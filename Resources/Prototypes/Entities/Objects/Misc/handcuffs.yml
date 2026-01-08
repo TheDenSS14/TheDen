@@ -82,6 +82,7 @@
     startBreakoutSound:
       path: /Audio/Items/Handcuffs/rope_takeoff.ogg
     uncuffEasierWhenLarge: true
+    uncuffDuringHardGrab: true #Den Edit
   - type: Construction
     graph: makeshifthandcuffs
     node: cuffscable
@@ -124,6 +125,7 @@
     startBreakoutSound:
       path: /Audio/Items/Handcuffs/rope_takeoff.ogg
     uncuffEasierWhenLarge: true
+    uncuffDuringHardGrab: true #Den Edit
   - type: Sprite
     sprite: Objects/Misc/zipties.rsi
     state: cuff

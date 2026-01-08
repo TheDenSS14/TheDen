@@ -618,10 +618,6 @@ namespace Content.Shared.Cuffs
             if (!Resolve(target, ref cuffable))
                 return;
 
-            // imp. prevent escape attempts if the target is being actively pulled.
-            if (TryComp<PullableComponent>(target, out var pullable) && pullable.GrabStage == GrabStage.Hard)
-                return;
-
             var isOwner = user == target;
 
             if (cuffsToRemove == null)
@@ -642,6 +638,10 @@ namespace Content.Shared.Cuffs
             }
 
             if (!Resolve(cuffsToRemove.Value, ref cuff))
+                return;
+
+            // Den edit, checks if target is being hardgrabbed and if they the cuffs can be broken out of during a hard grab.
+            if (TryComp<PullableComponent>(target, out var pullable) && pullable.GrabStage == GrabStage.Hard && !cuff.UncuffDuringHardGrab)
                 return;
 
             var attempt = new UncuffAttemptEvent(user, target);

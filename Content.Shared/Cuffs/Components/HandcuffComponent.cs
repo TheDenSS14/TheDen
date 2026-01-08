@@ -92,6 +92,14 @@ public sealed partial class HandcuffComponent : Component
     [DataField, AutoNetworkedField]
     public string? BodyIconState = "body-overlay";
 
+    /// Den Edit
+    /// <summary>
+    ///     Whenever or not the person cuffed can perform the uncuff do after while being Hard Grabbed.
+    ///     By default, no.
+    /// </summary>
+    [DataField]
+    public bool UncuffDuringHardGrab = false;
+
     /// <summary>
     /// An opptional color specification for <see cref="BodyIconState"/>
     /// </summary>
