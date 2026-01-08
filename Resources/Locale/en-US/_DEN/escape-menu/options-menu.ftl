@@ -17,3 +17,5 @@ ui-options-highlights-color = Highlights color:
 ui-options-highlights-color-example = This is a highlighted text.
 
 ui-options-examine-tooltip-width-label = Examine tooltip width: {$width}
+
+ui-options-black-flash = Make flash effects black instead of white

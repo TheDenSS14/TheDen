@@ -14,7 +14,7 @@
 
 using System.Numerics;
 using Content.Client.Viewport;
-using Content.Shared._DV.CCVars;
+using Content.Shared._DEN.CCVars;
 using Robust.Client.Graphics;
 using Robust.Client.State;
 using Robust.Client.Player;
@@ -43,13 +43,15 @@ namespace Content.Client.Flash
         private readonly ShaderInstance _shader;
         private double _startTime = -1;
         private double _lastsFor = 1;
-        private Color _fadeColor = Color.White;
+        private Color _fadeColor = Color.White; // DEN: Black Flash
         private Texture? _screenshotTexture;
 
         public FlashOverlay()
         {
             IoCManager.InjectDependencies(this);
             _shader = _prototypeManager.Index<ShaderPrototype>("FlashedEffect").Instance().Duplicate();
+            _cfg.OnValueChanged(DenCCVars.BlackFlashEffect, b => _fadeColor = b ? Color.Black : Color.White); // DEN: Black Flash
+            _fadeColor = _cfg.GetCVar(DenCCVars.BlackFlashEffect) ? Color.Black : Color.White; // DEN: Black Flash
         }
 
         public void ReceiveFlash(double duration)
@@ -65,7 +67,6 @@ namespace Content.Client.Flash
 
             _startTime = _gameTiming.CurTime.TotalSeconds;
             _lastsFor = duration;
-            _fadeColor = _cfg.GetCVar(DCCVars.BlackFlashEffect) ? Color.Black : Color.White; // DEN: Black Flash.
         }
 
         protected override void Draw(in OverlayDrawArgs args)

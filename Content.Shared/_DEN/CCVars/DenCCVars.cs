@@ -30,4 +30,10 @@ public sealed class DenCCVars
     /// </summary>
     public static readonly CVarDef<int> LobbyRefreshServersInterval =
         CVarDef.Create("lobby.refresh_servers_interval", 30, CVar.REPLICATED | CVar.SERVER);
+
+    /// <summary>
+    ///    Makes the flash effect in the shader a black fade instead of a white one.
+    /// </summary>
+    public static readonly CVarDef<bool> BlackFlashEffect =
+        CVarDef.Create("accessibility.black_flash_effect", false,  CVar.CLIENTONLY | CVar.ARCHIVE); // DEN: Black flash instead of white.
 }
