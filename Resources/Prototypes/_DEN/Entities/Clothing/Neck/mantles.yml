@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 crekulon
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -40,3 +41,21 @@
     unfoldVerbText: fold-flip-verb
   - type: FoldableClothing
     foldedEquippedPrefix: flipped
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckMantleMoon
+  name: moonmantle
+  description: An anti-gravity cloak speckled with a speciality blend of lunar rock gel. Shipped from the Netherlands.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Mantles/moonmantle.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Mantles/moonmantle.rsi
+  - type: AntiGravityClothing
+  - type: StaticPrice
+    price: 75
+  - type: Tag
+    tags: [ ]
