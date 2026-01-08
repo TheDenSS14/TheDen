@@ -32,6 +32,118 @@
   items:
     - ClothingUniformJumpskirtChef
 
+- type: loadout
+  id: LoadoutServiceJumpsuitDinerTeal
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChefUniforms
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chef
+  items:
+  - ClothingUniformJumpsuitDinerTeal
+
+- type: loadout
+  id: LoadoutServiceJumpskirtDinerTeal
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChefUniforms
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chef
+  items:
+  - ClothingUniformJumpskirtDinerTeal
+
+- type: loadout
+  id: LoadoutServiceJumpsuitDinerPink
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChefUniforms
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chef
+  items:
+  - ClothingUniformJumpsuitDinerPink
+
+- type: loadout
+  id: LoadoutServiceJumpskirtDinerPink
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChefUniforms
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chef
+  items:
+  - ClothingUniformJumpskirtDinerPink
+
+- type: loadout
+  id: LoadoutServiceJumpsuitDinerPinkDark
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChefUniforms
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chef
+  items:
+  - ClothingUniformJumpsuitDinerPinkDark
+
+- type: loadout
+  id: LoadoutServiceJumpskirtDinerPinkDark
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChefUniforms
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chef
+  items:
+  - ClothingUniformJumpskirtDinerPinkDark
+
+- type: loadout
+  id: LoadoutServiceJumpsuitDinerFastFood
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChefUniforms
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chef
+  items:
+  - ClothingUniformJumpsuitDinerFastFood
+
+- type: loadout
+  id: LoadoutServiceJumpskirtDinerFastFood
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChefUniforms
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chef
+  items:
+  - ClothingUniformJumpskirtDinerFastFood
+
 # Gloves
 
 - type: loadout
@@ -47,6 +159,50 @@
     - Chef
   items:
   - ClothingHandsGlovesNitrileBlack
+
+# Head
+
+- type: loadout
+  id: LoadoutServiceHeadDinerTeal
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChefHead
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chef
+  items:
+  - ClothingHeadHatDinerTeal
+
+- type: loadout
+  id: LoadoutServiceHeadDinerPink
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChefHead
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chef
+  items:
+  - ClothingHeadHatDinerPink
+
+- type: loadout
+  id: LoadoutServiceHeadDinerFastFood
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChefHead
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chef
+  items:
+  - ClothingHeadHatDinerFastFood
 
 # Masks
 
