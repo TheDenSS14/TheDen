@@ -5,3 +5,4 @@
 
 reagent-physical-desc-alluring = alluring
 reagent-physical-desc-mnemolith = noetic
+reagent-physical-desc-festive = festive

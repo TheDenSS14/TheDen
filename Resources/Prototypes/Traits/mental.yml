@@ -444,8 +444,8 @@
       traits:
         - Foreigner
         - ForeignerLight
-        - RemoveSpeciesLanguage # DEN - Remove species language traits
-        - RemoveSpeciesLanguageLight # DEN - Remove species language traits
+        # - RemoveSpeciesLanguage # DEN - Remove species language traits
+        # - RemoveSpeciesLanguageLight # DEN - Remove species language traits
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement

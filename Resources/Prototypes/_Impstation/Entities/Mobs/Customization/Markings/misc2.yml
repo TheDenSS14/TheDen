@@ -1,15 +1,16 @@
+# SPDX-FileCopyrightText: 2025 Aikakakah
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
   id: HumanoidEyebags
-  bodyPart: Head
-  markingCategory: Head
+  bodyPart: Face
+  markingCategory: Face #TheDen: Marking fixes
   speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, IPC, Canid, Kitsune] # The Den - Add Canid
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi

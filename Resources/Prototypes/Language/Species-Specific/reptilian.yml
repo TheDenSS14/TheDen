@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2025 DoctorJado
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 portfiend
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -109,8 +110,8 @@
     color: "#2aca2add"
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 2
-    maxSyllables: 4
+    minSyllables: 1 # DEN - 2 -> 1
+    maxSyllables: 3 # DEN - 4 -> 3
     replacement:
     - azs
     - zis

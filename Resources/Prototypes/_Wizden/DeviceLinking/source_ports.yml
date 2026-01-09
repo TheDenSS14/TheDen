@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2025 creku
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: sourcePort
+  id: Trigger
+  name: signal-port-name-trigger
+  description: signal-port-description-trigger
+  defaultLinks: [ Toggle, Trigger ]

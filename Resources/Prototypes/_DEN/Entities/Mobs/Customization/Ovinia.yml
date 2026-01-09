@@ -29,6 +29,7 @@
   abstract: true
   parent: [BaseSpeciesOvinia, BaseTail]
   id: BaseOviniaTail
+  speciesRestriction: [Ovinia, Human, Oni]
 
 - type: marking
   abstract: true

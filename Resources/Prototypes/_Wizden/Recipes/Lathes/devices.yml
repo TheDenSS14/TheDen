@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2025 creku
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipe
+  parent: BasePartRecipe
+  id: VoiceSensor
+  result: voicesensor
+  materials:
+    Steel: 100
+    Plastic: 200
+    Glass: 100

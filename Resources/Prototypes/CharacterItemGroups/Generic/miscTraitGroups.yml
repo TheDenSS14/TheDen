@@ -1,9 +1,10 @@
 # SPDX-FileCopyrightText: 2025 DESKTOP-0V0K4HQ\Rosy
 # SPDX-FileCopyrightText: 2025 RosySaturniidae
+# SPDX-FileCopyrightText: 2025 Selva
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: characterItemGroup
   id: TraitsRaceSounds
@@ -36,6 +37,8 @@
     - type: trait
       id: MothSounds
     - type: trait
+      id: ArachneSounds
+    - type: trait
       id: VoxSounds
     - type: trait
       id: VulpkaninSoundsReplace
@@ -63,6 +66,8 @@
       id: KitsuneSoundsReplace
     - type: trait
       id: MothSoundsReplace
+    - type: trait
+      id: ArachneSoundsReplace
     - type: trait
       id: VoxSoundsReplace
 

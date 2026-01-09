@@ -1,10 +1,11 @@
-// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 themias <89101928+themias@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich
+// SPDX-FileCopyrightText: 2022 Nemanja
+// SPDX-FileCopyrightText: 2022 themias
+// SPDX-FileCopyrightText: 2023 Chief-Engineer
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2024 Krunklehorn
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 crekulon
 //
 // SPDX-License-Identifier: MIT
 
@@ -58,6 +59,7 @@ namespace Content.Server.Explosion.EntitySystems
                 return;
             }
 
+            message = message.ToLowerInvariant(); // DEN - so it's not case sensitive
             if (!string.IsNullOrWhiteSpace(component.KeyPhrase) && message.Contains(component.KeyPhrase, StringComparison.InvariantCultureIgnoreCase))
             {
                 _adminLogger.Add(LogType.Trigger, LogImpact.High,
@@ -128,6 +130,14 @@ namespace Content.Server.Explosion.EntitySystems
         {
             var component = ent.Comp;
             component.KeyPhrase = message;
+            
+            // DEN - we remove any trailing . and convert it to lowercase. allows words/phrases to appear in regular dialogue
+            // other punctuation (?, !, ...) is still recorded, since it implies specific enunciation
+            if (component.KeyPhrase.EndsWith('.') && !component.KeyPhrase.EndsWith("...")) 
+                component.KeyPhrase = component.KeyPhrase[..^1];
+            component.KeyPhrase = component.KeyPhrase.ToLowerInvariant();
+            // END DEN
+
             component.IsRecording = false;
 
             _adminLogger.Add(LogType.Trigger, LogImpact.Low,

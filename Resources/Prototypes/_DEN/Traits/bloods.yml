@@ -1,0 +1,236 @@
+# SPDX-FileCopyrightText: 2025 somekindofbox
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+## These get sorted alphabetically within the menu.
+## If you do add more blood reagents in the future, be *absolutely* sure to include the exclusions for the other bloods.
+## It's boilerplatey as hell, but we do not have trait group requirements. A future refactor might help with this.
+
+- type: trait
+  id: AmmoniaBlood
+  category: TraitsBloods
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+    - BlackBlood
+    - InsectBlood
+    - BlueBlood
+    - SlimeBlood
+    - ShimmeringBlood
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Plasmaman
+    - Vox
+    - Resomi
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: AmmoniaBlood
+
+- type: trait
+  id: BlackBlood
+  category: TraitsBloods
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+    - InsectBlood
+    - BlueBlood
+    - SlimeBlood
+    - RedBlood
+    - AmmoniaBlood
+    - ShimmeringBlood
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Shadowkin
+    - Plasmaman
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: BlackBlood
+
+- type: trait
+  id: BlueBlood
+  category: TraitsBloods
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+    - BlackBlood
+    - InsectBlood
+    - RedBlood
+    - SlimeBlood
+    - AmmoniaBlood
+    - ShimmeringBlood
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Arachne
+    - Plasmaman
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: CopperBlood
+
+- type: trait
+  id: InsectBlood
+  category: TraitsBloods
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+    - BlackBlood
+    - BlueBlood
+    - RedBlood
+    - SlimeBlood
+    - AmmoniaBlood
+    - ShimmeringBlood
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Moth
+    - Chitinid
+    - Plasmaman
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: InsectBlood
+
+- type: trait
+  id: SlimeBlood
+  category: TraitsBloods
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+    - BlackBlood
+    - InsectBlood
+    - BlueBlood
+    - RedBlood
+    - AmmoniaBlood
+    - ShimmeringBlood
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - SlimePerson
+    - Plasmaman
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: Slime
+
+- type: trait
+  id: RedBlood
+  category: TraitsBloods
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+    - BlackBlood
+    - InsectBlood
+    - BlueBlood
+    - SlimeBlood
+    - AmmoniaBlood
+    - ShimmeringBlood
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Feroxi
+    - Human
+    - Reptilian
+    - Dwarf
+    - Harpy
+    - Vulpkanin
+    - Ovinia
+    - Rodentia
+    - Felinid
+    - Tajaran
+    - Oni
+    - Plasmaman
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: Blood
+
+
+# Thaven blood is hallucinogenic, which can grant psionics. For this reason, they cost points.
+- type: trait
+  id: ShimmeringBlood
+  category: TraitsBloods
+  points: -2
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Synthetic
+    - BlackBlood
+    - InsectBlood
+    - BlueBlood
+    - SlimeBlood
+    - AmmoniaBlood
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Thaven
+    - Plasmaman
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: ShimmeringBlood

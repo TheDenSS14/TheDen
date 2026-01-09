@@ -21,6 +21,7 @@
 # SPDX-FileCopyrightText: 2023 SpaceCat
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 Firewatch
+# SPDX-FileCopyrightText: 2024 Floofi
 # SPDX-FileCopyrightText: 2024 Hanz
 # SPDX-FileCopyrightText: 2024 Jackal298
 # SPDX-FileCopyrightText: 2024 RiceMar1244
@@ -32,7 +33,7 @@
 # SPDX-FileCopyrightText: 2025 eightballll
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: vendingMachineInventory
   id: BoozeOMatInventory
@@ -63,6 +64,7 @@
     DrinkGildlagerBottleFull: 2 #if champagne gets less because its premium, then gildlager should match this and have two
     DrinkGrenadineBottleFull: 2
     DrinkJuiceLimeCartonXL: 2
+    DrinkJuiceLemonCarton: 3 # wizden edit
     DrinkJuiceOrangeCartonXL: 2
     DrinkJuiceTomatoCarton: 3
     DrinkCoffeeLiqueurBottleFull: 3
@@ -86,8 +88,10 @@
     DrinkBeerCan: 5
     DrinkWineCan: 5
     DrinkAngobittersBottleFull: 3 # DeltaV - Angostura Bitters Bottle
+    DrinkEggnogBottleFull: 2 # DEN - Eggnog bottle, for the holidays
   contrabandInventory:
     EthanolChemistryBottle: 3
     DrinkBottleOfNothingFull: 1
   emaggedInventory:
     DrinkPoisonWinebottleFull: 2
+    DrinkSyndicateEggnogBottleFull: 2 # DEN - Eggnog bottle, for the holidays

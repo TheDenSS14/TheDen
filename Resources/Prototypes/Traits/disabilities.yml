@@ -25,6 +25,7 @@
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 GNUtopia
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 Tirochora
@@ -35,7 +36,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: trait
   id: Blindness
@@ -60,7 +61,6 @@
         - DiagnosticEyesModule
         - OmniEyesModule
         - LightAmplificationModule
-        - ThermographicVisionModule
   functions:
     - !type:TraitAddComponent
       components:
@@ -88,7 +88,6 @@
         - DiagnosticEyesModule
         - OmniEyesModule
         - LightAmplificationModule
-        - ThermographicVisionModule
   functions:
     - !type:TraitAddComponent
       components:
@@ -403,7 +402,6 @@
         - DiagnosticEyesModule
         - OmniEyesModule
         - LightAmplificationModule
-        - ThermographicVisionModule
   functions:
     - !type:TraitReplaceComponent
       components:

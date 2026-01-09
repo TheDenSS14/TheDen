@@ -1,11 +1,14 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Aikakakah
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 marking-BunnyTail = Bunny Tail
 marking-BunnyTail-bunnytail = Tail
+marking-BunnyTailAnimated = Bunny Tail (animated)
+marking-BunnyTailAnimated-bunnytail_wag = Tail
 
 marking-BunnyTailAlt = Bunny Tail, Alternative
 marking-BunnyTailAlt-bunnytailalt = Bunny Tail, Alternative

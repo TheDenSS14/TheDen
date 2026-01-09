@@ -6,7 +6,7 @@
 # SPDX-FileCopyrightText: 2025 SleepyScarecrow
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: reagent
   id: 7DeadlySins
@@ -1551,26 +1551,29 @@
   id: Eggnog
   name: reagent-name-eggnog
   parent: BaseAlcohol
-  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-eggnog
   physicalDesc: reagent-physical-desc-creamy
   flavor: eggnog
   color: "#F1E0A1"
   metamorphicSprite:
-    sprite: _Floof/Objects/Consumable/Drinks/eggnog.rsi
+    sprite: _DEN/Objects/Consumable/Drinks/eggnog.rsi # DEN - resprite
     state: icon_empty
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
+  metamorphicChangeColor: true
   metabolisms:
     Drink:
       effects:
       - !type:SatiateThirst
         factor: 1
       - !type:AdjustReagent
-        reagent: Pomelustine
+        reagent: HolidayCheer # DEN: holiday cheer :)
         amount: 0.05
+      - !type:AdjustReagent # DEN: make it alcoholic
+        reagent: Ethanol
+        amount: 0.08
   noRandom: true # The Den
+  # PORT note: I'm keeping it this way even though it's not actuallly aphrodisiac because it feels irresponsible not to
 
 - type: reagent
   id: SyndicateEggnog
@@ -1581,11 +1584,11 @@
   flavor: syndicate-eggnog
   color: "#d8c990"
   metamorphicSprite:
-    sprite: _Floof/Objects/Consumable/Drinks/syndicate_eggnog.rsi
+    sprite: _DEN/Objects/Consumable/Drinks/syndicate_eggnog.rsi # DEN - resprite
     state: icon_empty
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
+  metamorphicChangeColor: true
   metabolisms:
     Drink:
       effects:
@@ -1593,7 +1596,7 @@
         factor: 1
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.04
+        amount: 0.18 # DEN: make it more alcoholic
 
 - type: entity
   parent: DrinkGlass
@@ -1608,13 +1611,13 @@
         - ReagentId: Eggnog
           Quantity: 30
   - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/eggnog.rsi
+    sprite: _DEN/Objects/Consumable/Drinks/eggnog.rsi # DEN - resprite
     state: icon
 
 - type: entity
   parent: DrinkGlass
   id: DrinkSyndicateEggnogGlass
-  suffix: eggnog
+  suffix: syndicate eggnog # DEN: fix
   components:
   - type: SolutionContainerManager
     solutions:
@@ -1624,5 +1627,5 @@
         - ReagentId: SyndicateEggnog
           Quantity: 30
   - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/syndicate_eggnog.rsi
+    sprite: _DEN/Objects/Consumable/Drinks/syndicate_eggnog.rsi # DEN - resprite
     state: icon
