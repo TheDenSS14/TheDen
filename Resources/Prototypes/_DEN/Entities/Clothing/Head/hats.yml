@@ -262,7 +262,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatDinerTeal
   name: teal diner cap
-  description:
+  description: A hat that lets waiting customers know that you're not just dressed up nice, but instead, you're actually here to take their order.
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Head/Hats/diner_teal.rsi
@@ -270,10 +270,9 @@
     sprite: _DEN/Clothing/Head/Hats/diner_teal.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: ClothingHeadHatDinerTeal
   id: ClothingHeadHatDinerPink
   name: pink diner cap
-  description:
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Head/Hats/diner_pink.rsi
@@ -281,10 +280,9 @@
     sprite: _DEN/Clothing/Head/Hats/diner_pink.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: ClothingHeadHatDinerTeal
   id: ClothingHeadHatDinerFastFood
   name: red diner cap
-  description:
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Head/Hats/diner_fastfood.rsi

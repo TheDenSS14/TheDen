@@ -235,7 +235,7 @@
   id: ClothingUniformJumpsuitDinerTeal
   name: teal diner uniform
   suffix: jumpsuit
-  description:
+  description: A colorful uniform inspired by the ones worn at classic-style dining establishments. Evocative of a certain kind of atmospheric comfort.
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_teal.rsi
@@ -243,11 +243,10 @@
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_teal.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitDinerTeal
   id: ClothingUniformJumpskirtDinerTeal
   name: teal diner uniform
   suffix: jumpskirt
-  description:
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Uniforms/Jumpskirt/diner_teal.rsi
@@ -255,11 +254,10 @@
     sprite: _DEN/Clothing/Uniforms/Jumpskirt/diner_teal.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitDinerTeal
   id: ClothingUniformJumpsuitDinerPink
   name: pink diner uniform
   suffix: jumpsuit
-  description:
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_pink.rsi
@@ -267,11 +265,10 @@
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_pink.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpskirtDinerTeal
   id: ClothingUniformJumpskirtDinerPink
   name: pink diner uniform
   suffix: jumpskirt
-  description:
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Uniforms/Jumpskirt/diner_pink.rsi
@@ -279,11 +276,10 @@
     sprite: _DEN/Clothing/Uniforms/Jumpskirt/diner_pink.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitDinerTeal
   id: ClothingUniformJumpsuitDinerPinkDark
   name: pink diner uniform
   suffix: dark jumpsuit
-  description:
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_pink_dark.rsi
@@ -291,11 +287,10 @@
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_pink_dark.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpskirtDinerTeal
   id: ClothingUniformJumpskirtDinerPinkDark
   name: pink diner uniform
   suffix: dark jumpskirt
-  description:
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Uniforms/Jumpskirt/diner_pink_dark.rsi
@@ -303,11 +298,9 @@
     sprite: _DEN/Clothing/Uniforms/Jumpskirt/diner_pink_dark.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitDinerTeal
   id: ClothingUniformJumpsuitDinerFastFood
   name: red diner uniform
-  suffix: jumpsuit
-  description:
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_fastfood.rsi
@@ -315,11 +308,9 @@
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/diner_fastfood.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpskirtDinerTeal
   id: ClothingUniformJumpskirtDinerFastFood
   name: red diner uniform
-  suffix: jumpskirt
-  description:
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Uniforms/Jumpskirt/diner_fastfood.rsi
