@@ -1,9 +1,10 @@
 <!--
-SPDX-FileCopyrightText: 2024 Ben Velie <veliebm@gmail.com>
-SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Ben Velie
+SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+SPDX-FileCopyrightText: 2025 sleepyyapril
+SPDX-FileCopyrightText: 2026 Tobias Berger
 
-SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 -->
 
 <Document>
@@ -14,7 +15,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
   </Box>
 
   Making power using a Radioisotope Thermoelectric Generator (RTG) is similar to making power using solars.
-  RTGs only provide [color=#a4885c]10kW[/color] of power, but they provide it for free and for the entire round.
+  RTGs only provide [color=orange][protodata="GeneratorRTG" comp="PowerSupplier" member="MaxSupply" format="N0"/] W[/color] of power, but they provide it for free and for the entire round.
   Basically, if you connect an RTG to your power grid, it'll give you [color=#a4885c]free power[/color].
   However, they're only accessible through salvage finding one on an expedition. Should they bring some in, make sure to thank them!
 
