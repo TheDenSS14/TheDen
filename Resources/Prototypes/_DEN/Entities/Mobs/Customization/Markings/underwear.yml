@@ -3,10 +3,17 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# For any sock marking that doesn't go above the thighs
 - type: marking
   abstract: true
   parent: [BaseSpeciesLegsStandard, BaseUnderpants]
   id: BaseUnderwearSocks
+
+# For any sock marking that goes up to the butt
+- type: marking
+  abstract: true
+  parent: [BaseSpeciesChestLegsStandard, BaseUnderpants]
+  id: BaseUnderwearLeggings
 
 - type: marking
   parent: BaseUnderwearSocks
@@ -245,14 +252,14 @@
     state: tips-right
 
 - type: marking
-  parent: [BaseSpeciesLegsStandard, BaseUnderpants]
+  parent: BaseUnderwearLeggings
   id: UnderwearLeggings
   sprites:
   - sprite: _DEN/Mobs/Customization/Underwear/leggings.rsi
     state: base
 
 - type: marking
-  parent: BaseUnderwearSocks
+  parent: BaseUnderwearLeggings
   id: UnderwearSocksStockings
   layering:
     stockings-base-left: LFoot
