@@ -87,3 +87,15 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutClothingNeckColorableCollar
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingNeckColorableCollar
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck

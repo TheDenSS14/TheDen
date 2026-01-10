@@ -16,9 +16,9 @@
   description: A way to inform others about the presence of livestock, or just to annoy everyone around you!
   components:
   - type: Sprite
-    sprite: _DEN/Clothing/Neck/Misc/cowbellcollar.rsi
+    sprite: _DEN/Clothing/Neck/Collars/collar_cowbell.rsi
   - type: Clothing
-    sprite: _DEN/Clothing/Neck/Misc/cowbellcollar.rsi
+    sprite: _DEN/Clothing/Neck/Collars/collar_cowbell.rsi
   - type: EmitsSoundOnMove
     soundCollection:
       collection: CowbellRings
@@ -137,9 +137,20 @@
   description: An ornate white leather collar with a command blue tag. Etched into the leather inside of the collar is, "Command Pet".
   components:
   - type: Sprite
-    sprite: _DEN/Clothing/Neck/Misc/aacollar.rsi
+    sprite: _DEN/Clothing/Neck/Collars/collar_aa.rsi
   - type: Clothing
-    sprite: _DEN/Clothing/Neck/Misc/aacollar.rsi
+    sprite: _DEN/Clothing/Neck/Collars/collar_aa.rsi
+
+- type: entity
+  parent: ClothingNeckCollarBase
+  id: ClothingNeckColorableCollar
+  name: simple collar
+  description: A simplistic leather collar.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Collars/colorable_collar.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Collars/colorable_collar.rsi
 
 - type: entity
   parent: ClothingNeckBase # I'M NOT MAKING IT AN ACTUAL COLLAR.

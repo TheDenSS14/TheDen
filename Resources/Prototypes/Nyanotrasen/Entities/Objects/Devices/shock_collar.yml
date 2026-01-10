@@ -16,9 +16,9 @@
   description: Shocking. # DeltaV: sprite is fine
   components:
   - type: Sprite
-    sprite: Nyanotrasen/Clothing/Neck/Misc/shock.rsi
+    sprite: _DEN/Clothing/Neck/Collars/collar_shock.rsi # Den edit
   - type: Clothing
-    sprite: Nyanotrasen/Clothing/Neck/Misc/shock.rsi
+    sprite: _DEN/Clothing/Neck/Collars/collar_shock.rsi # Den edit
     equipDelay: 1
     unequipDelay: 10 # It's a collar meant to be used on prisoners (or not), so it probably has some sort of safety.
   - type: ShockCollar

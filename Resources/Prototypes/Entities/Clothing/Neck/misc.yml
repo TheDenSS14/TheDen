@@ -114,9 +114,9 @@
   description: A way to inform others about your presence, or just to annoy everyone around you!
   components:
   - type: Sprite
-    sprite: Clothing/Neck/Misc/bellcollar.rsi
+    sprite: _DEN/Clothing/Neck/Collars/collar_bell.rsi # Den edit
   - type: Clothing
-    sprite: Clothing/Neck/Misc/bellcollar.rsi
+    sprite: _DEN/Clothing/Neck/Collars/collar_bell.rsi # Den edit
   - type: EmitsSoundOnMove
     soundCollection:
       collection: FootstepJester
