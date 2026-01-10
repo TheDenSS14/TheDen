@@ -1,0 +1,7 @@
+- type: entity
+  parent: WallCobblebrick
+  id: WallCobblebrickConstructable
+  components:
+  - type: Construction
+    graph: CobblestoneWall
+    node: wall

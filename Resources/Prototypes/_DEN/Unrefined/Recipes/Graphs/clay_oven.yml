@@ -1,0 +1,42 @@
+- type: constructionGraph
+  id: ClayOven
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: oven
+          steps:
+            - material: HardStone
+              amount: 2
+              icon:
+                sprite: _Den/Unrefined/Objects/Materials/materials.rsi
+                state: stone
+              name: stone
+            - material: ClayLump
+              amount: 4
+              icon:
+                sprite: _Den/Unrefined/Objects/Materials/materials.rsi
+                state: clay_lump
+              name: clay lump
+            - material: WoodPlank
+              amount: 4
+              doAfter: 20
+                
+    - node: oven
+      entity: ClayOven
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: HardStone1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: ClayLump1
+              amount: 4
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 4
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 4

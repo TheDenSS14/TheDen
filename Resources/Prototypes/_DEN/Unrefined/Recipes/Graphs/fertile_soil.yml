@@ -1,0 +1,17 @@
+- type: constructionGraph
+  id: FertileSoil
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: soil
+          steps:
+            - material: DirtLump
+              amount: 2
+              icon:
+                sprite: _Den/Unrefined/Objects/Materials/materials.rsi
+                state: dirt_lump
+              name: dirt lump
+                
+    - node: soil
+      entity: FertileSoil

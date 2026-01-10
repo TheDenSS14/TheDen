@@ -1,0 +1,33 @@
+- type: constructionGraph
+  id: CobblestoneWall
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: wall
+          steps:
+            - material: WoodPlank
+              amount: 2
+            - material: HardStone
+              amount: 2
+              icon:
+                sprite: _Den/Unrefined/Objects/Materials/stone.rsi
+                state: stone
+              name: stone
+              doAfter: 8
+                
+    - node: wall
+      entity: WallCobblebrickConstructable
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: HardStone1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 16

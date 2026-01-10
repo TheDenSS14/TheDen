@@ -1,0 +1,15 @@
+- type: constructionGraph
+  id: PackingStone
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: stone
+          completed:
+            - !type:SetStackCount
+              amount: 4
+          steps:
+            - material: HardStone
+              amount: 1
+    - node: stone
+      entity: FloorTileItemPackedDirt

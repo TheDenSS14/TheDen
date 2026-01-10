@@ -1,0 +1,18 @@
+- type: constructionGraph
+  id: VellumMap
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: map
+          steps:
+            - material: Leather
+              amount: 1
+              icon:
+                sprite: Objects/Materials/materials.rsi
+                state: leather
+              name: leather
+              doAfter: 3
+                
+    - node: map
+      entity: VellumMap

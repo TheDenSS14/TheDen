@@ -1,0 +1,292 @@
+- type: Tag
+  id: Wildlife
+
+- type: entity
+  name: wild cow
+  parent: MobCow
+  id: MobCowWild
+  description: Moo?
+  components:
+  - type: Tag
+    tags:
+    - Wildlife    
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 5
+    - id: MaterialLeather1
+      amount: 3
+    - id: OfferingAnimal
+      amount: 1
+  - type: Fauna
+      
+- type: entity
+  name: wild pig
+  parent: MobPig
+  id: MobPigWild
+  description: Oink?
+  components:
+  - type: Tag
+    tags:
+    - Wildlife   
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 3
+    - id: FoodMeatBacon
+      amount: 3
+    - id: MaterialLeather1
+      amount: 2
+    - id: OfferingAnimal
+      amount: 1
+  - type: Fauna
+
+- type: entity
+  name: wild mouse
+  parent: MobMouse
+  id: MobMouseWild
+  description: Squeak?
+  components:
+  - type: Tag
+    tags:
+    - Wildlife   
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatRat
+      amount: 1
+    - id: OfferingAnimal
+      amount: 1
+  - type: Fauna
+  
+- type: entity
+  name: wild fox
+  parent: MobFox
+  id: MobFoxWild
+  description: Squeak?
+  components:
+  - type: Tag
+    tags:
+    - Wildlife   
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 3
+    - id: MaterialLeather1
+      amount: 1
+    - id: OfferingAnimal
+      amount: 1
+  - type: Fauna
+
+- type: entity
+  name: phorvect
+  parent: SimpleMobBase
+  id: MobPhorvect
+  description: Scientists call them Phorusracidae Vectatius. Others call them riding raptors. Let's just agree to call them useful.
+  suffix: Color # TheDen
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: phorvect
+      sprite: _DEN/Unrefined/Mobs/phorvect.rsi
+#    - map: ["enum.DamageStateVisualLayers.Plumage", "movement-plumage"]
+#      state: phorvect-plumage
+#      sprite: _DEN/Unrefined/Mobs/phorvect.rsi    
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: phorvect-moving
+#      movement-plumage:
+#        state: phorvect-plumage
+    noMovementLayers:
+      movement:
+        state: phorvect
+#      movement-plumage:
+#        state: phorvect-plumage
+  - type: Carriable
+    freeHandsRequired: 2
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.5
+        density: 32
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - Phorvect
+    - Wildlife
+  - type: Reproductive # Doing breeding for new colors would be fun
+    breedChance: 0.05
+    birthPopup: reproductive-laid-egg-popup
+    makeOffspringInfant: false
+    partnerWhitelist:
+      tags:
+      - Phorvect
+    offspring:
+    - id: FoodEgg
+      maxAmount: 3
+  - type: ReproductivePartner
+  - type: Appearance
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: phorvect
+#        Plumage: phorvect-plumage
+      Critical:
+        Base: phorvect-dead
+#        Plumage: phorvect-dead-plumage
+      Dead:
+        Base: phorvect-dead
+#        Plumage: phorvect-dead-plumage
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatChicken
+      amount: 3
+    - id: OfferingAnimal
+      amount: 1
+  - type: InteractionPopup
+    successChance: 0.8
+    interactSuccessString: petting-success-bird
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/chicken_cluck_happy.ogg
+  - type: Bloodstream
+    bloodMaxVolume: 200
+  - type: EggLayer
+    eggSpawn:
+    - id: FoodEgg
+  - type: LanguageKnowledge
+    speaks:
+    - Chicken
+    understands:
+    - Chicken
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-organic
+  - type: NpcFactionMember
+    factions:
+    - Passive
+  - type: RandomBark
+    barkType: chicken
+  - type: LeashAnchor
+  - type: Strap
+  - type: Vehicle
+    engineRunning: true
+    renderOver: North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest
+  - type: MovementSpeedModifier
+    acceleration: 12
+    friction: 5
+    baseSprintSpeed: 8
+    baseWalkSpeed: 6.5
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          phorvect: Rainbow
+#      - enum.DamageStateVisualLayers.Plumage:
+#          phorvect-plumage: Rainbow
+  - type: Fauna
+          
+- type: Tag
+  id: Phorvect
+
+- type: entity
+  name: campguard fox
+  parent: [MobFox, MobCombat]
+  id: MobFoxCampguard
+  description: Helps keep the base safe from interlopers. Try not to distract them.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: HTN
+    rootTask:
+      task: MeleePsionicFamiliarCompound
+  - type: Fauna
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+    retaliateFriendlies: true
+
+- type: entity
+  name: Campguard Fox Spawner
+  id: SpawnMobFoxCampguard
+  parent: MarkerBase
+  components:
+  - type: Tag
+    tags:
+    - Wildlife   
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+      - MobFoxCampguard
+
+- type: entity
+  name: wild snake
+  parent: MobSnake
+  id: MobSnakeWild
+  description: Hiss?
+  components:
+  - type: Tag
+    tags:
+    - Wildlife   
+
+- type: entity
+  name: wild butterfly
+  parent: MobButterfly
+  id: MobButterflyWild
+  description: Flip flap?
+  components:
+  - type: Tag
+    tags:
+    - Wildlife 
+
+# Tables & Spawners
+
+- type: entityTable
+  id: GrasslandsWildAnimals
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      weight: 100
+      children:
+      - id: MobPigWild
+      - id: MobCowWild
+      - id: MobMouseWild
+      - id: MobFoxWild
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: MobButterflyWild
+      - id: MobSnakeWild
+    - !type:GroupSelector
+      weight: 4
+      children:
+      - id: MobPhorvect
+    - !type:GroupSelector
+      weight: 1
+      children:
+      - id: MobFoxCampguard
+      
+- type: entity
+  name: wild animal spawner
+  id: SpawnerRandomWildAnimal
+  parent: MarkerBase
+  suffix: Grasslands
+  components:
+  - type: Sprite
+    sprite: Mobs/Animals/cow.rsi
+    state: cow
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: GrasslandsWildAnimals
+  placement:
+    mode: AlignTileAny

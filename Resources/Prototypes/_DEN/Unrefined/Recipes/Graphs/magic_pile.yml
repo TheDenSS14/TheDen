@@ -1,0 +1,18 @@
+- type: constructionGraph
+  id: DigUpPileMagic
+  start: pile
+  graph:
+    - node: pile
+      entity: MagicPile
+      edges:
+        - to: dug_up
+          completed:
+            - !type:SpawnPrototype
+              prototype: PuddleOleoSpill
+              amount: 1
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Digging
+              doAfter: 2
+                
+    - node: dug_up

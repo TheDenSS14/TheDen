@@ -1,0 +1,42 @@
+- type: constructionGraph
+  id: MagicRune
+  start: start
+  graph:
+    - node: start
+      entity: HardStone1
+      edges:
+        - to: stone
+          steps:
+            - material: HardStone
+              amount: 1
+              doAfter: 4
+                
+    - node: stone
+      entity: StoneRune
+      edges:
+        - to: magic
+          steps:
+            - tag: BluespaceCrystal
+              name: something supernatural
+              doAfter: 4
+        - to: magic
+          steps:
+            - tag: Ectoplasm
+              name: something supernatural
+              doAfter: 4
+        - to: magic
+          steps:
+            - tag: MagicEssence
+              name: something supernatural
+              doAfter: 4
+              
+    - node: magic
+      entity: MagicRune
+      edges:
+        - to: colorful
+          steps:
+            - tag: Crayon
+              doAfter: 4
+
+    - node: colorful
+      entity: MagicRuneColor

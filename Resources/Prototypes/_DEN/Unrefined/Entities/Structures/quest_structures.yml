@@ -1,0 +1,262 @@
+- type: entity
+  parent: StoneFurnace
+  id: StoneFurnaceGreatBroken
+  name: broken great furnace
+  description: This was clearly once a place of wonderous smeltings, but numerous cracks have diminished its function. Perhaps it could be repaired?
+  placementMode: SnapgridBorder
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Structures/Misc/Quest/great_furnace.rsi
+    state: icon
+  - type: Lathe
+    producingSound: /Audio/Effects/burning.ogg
+    idleState: icon
+    runningState: icon
+  - type: Construction
+    graph: StoneFurnaceGreat
+    node: broken
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 999
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak  
+    
+- type: entity
+  parent: StoneFurnace # StoneFurnaceGreatBroken
+  id: StoneFurnaceGreat
+  name: great furnace
+  description: The tremendous invisible heat billowing from within makes it feel alive.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Structures/Misc/Quest/great_furnace.rsi
+    layers:
+      - state: icon
+      - state: glow
+        shader: unshaded
+  - type: PointLight
+    radius: 5.5
+  - type: Lathe
+    producingSound: /Audio/Effects/burning.ogg
+    idleState: icon
+    runningState: icon
+    defaultProductionAmount: 1
+    staticPacks:
+    - OreProcessorStaticAwfulDen
+    - GreatStoneFurnaceStatic
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+      - Ore
+      - Wooden
+      - MythicOre
+  - type: Construction
+    graph: StoneFurnaceGreat
+    node: repaired
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 999
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak  
+    
+- type: entity
+  parent: CastAnvil
+  id: MysticAnvil
+  name: mystic anvil
+  description: The gleaming adamant surface is as brilliant as the day it was cast.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Structures/Misc/Quest/mystic_anvil.rsi
+    state: icon
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+      - Wooden
+      - ClothMade
+      - Gauze
+      - Metal
+      - Dragonscale
+  - type: Lathe
+    producingSound: /Audio/Effects/clang.ogg
+    idleState: icon
+    runningState: icon
+    defaultProductionAmount: 1
+    staticPacks:
+    - CastAnvilStatic
+    - MysticAnvilStatic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 999
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+    
+- type: entity
+  id: TreeMoonlightWood
+  parent: BaseStructure
+  name: moonlightwood tree
+  description: This sparse arborling gleams with the pale light of the night-sun.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Structures/Misc/Quest/moonlightwood_tree.rsi
+    noRot: true
+    layers:
+      - state: icon
+        shader: unshaded
+  - type: PointLight
+    radius: 1.6
+    energy: 1.2
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 75
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              BranchMoonlightWood:
+                min: 1
+                max: 1
+  - type: Megafauna
+
+# Rebuild this from scratch to be less machine and more statue. Invincible and immovable.              
+- type: entity
+  parent: BaseHandPoweredLathe # BaseLathe
+  id: OracleHunter
+  name: Hunter
+  description: It's best not to try to catch their gaze directly.
+  components:
+  - type: ApcPowerReceiver
+    needsPower: false
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    offset: "0.0,0.5"
+    sprite: _DEN/Unrefined/Structures/Misc/Quest/hunter_statue.rsi
+    layers:
+      - state: hunter_statue-0
+      - map: ["enum.SolutionContainerLayers.Fill"]
+        state: hunter_statue-0
+  - type: Speech
+    speechSounds: Tenor
+  - type: Actions
+  - type: Psionic
+    removable: false
+    roller: false
+    assayFeedback:
+      - hunterstatue-feedback
+    psychognomicDescriptors:
+      - p-descriptor-old
+      - p-descriptor-demiurgic
+      - p-descriptor-mysterious
+      - p-descriptor-emanative
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - XenoglossyPower
+      - TelepathyPower
+      - NoosphericZapPower
+  - type: SolutionContainerManager
+    solutions:
+      fountain:
+        maxVol: 200
+  - type: Drink
+    solution: fountain
+  - type: DrawableSolution
+    solution: fountain
+  - type: DrainableSolution
+    solution: fountain
+  - type: ExaminableSolution
+    solution: fountain
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 8
+    fillBaseName: hunter_statue-
+  - type: Grammar
+    attributes:
+      gender: female
+      proper: true
+  - type: Prayable
+  - type: SpriteFade
+  - type: Tag
+    tags: []
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+      - OfferingBox
+      - ClothMade
+      - Wooden
+  - type: Lathe
+    producingSound: /Audio/Effects/rustle1.ogg
+    idleState: hunter_statue-0
+    runningState: hunter_statue-0
+    defaultProductionAmount: 1
+    staticPacks:
+    - OracleHunterStatic
+  - type: RandomBark
+    barkType: hunterstatue
+    minTime: 80
+    maxTime: 120
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 9999
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: VulpkaninHowls
+
+- type: entity
+  name: Hunter Statue Spawner
+  id: HunterStatueSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+  - type: ConditionalSpawner
+    prototypes:
+      - OracleHunter

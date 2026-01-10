@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "license": "CC0-1.0",
+  "copyright": "Original base by deltanedas (github) for SS14. Resprited by (DISCORD)@ps3moira#9488",
+  "note": "Stolen from bonfire.rsi. Should be replaced when convenient.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "low",
+      "delays": [[0.4, 0.4, 0.4]]
+    },
+    {
+      "name": "medium",
+      "delays": [[0.3, 0.3, 0.3]]
+    },
+    {
+      "name": "high",
+      "delays": [[0.2, 0.2, 0.2]]
+    }
+  ]
+}

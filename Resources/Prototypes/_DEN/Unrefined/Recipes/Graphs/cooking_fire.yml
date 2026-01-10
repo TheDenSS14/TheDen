@@ -1,0 +1,33 @@
+- type: constructionGraph
+  id: CookingFire
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: fire
+          steps:
+            - material: HardStone
+              amount: 2
+              icon:
+                sprite: _Den/Unrefined/Objects/Materials/stone.rsi
+                state: stone
+              name: stone
+            - material: WoodPlank
+              amount: 6
+              doAfter: 20
+                
+    - node: fire
+      entity: CookingFire
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: HardStone1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 6
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Digging
+              doAfter: 4

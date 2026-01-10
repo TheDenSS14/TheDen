@@ -1,0 +1,45 @@
+- type: entity
+  parent: Torch2
+  id: SurvivalFloorTorch
+  name: torch
+  suffix: floor/survival
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Flammable
+    firestackFade: -0.0001
+    damage:
+      types:
+        Heat: 0
+  - type: PointLight
+    color: "#e39c40"
+    radius: 0.25
+    power: 0.5
+  - type: FireVisuals
+    maxLightRadius: 6
+  - type: Construction
+    graph: StandingTorch
+    node: torch
+    
+- type: entity
+  parent: TorchWall
+  id: SurvivalWallTorch
+  name: torch
+  suffix: wall/survival
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Flammable
+    firestackFade: -0.0001
+    damage:
+      types:
+        Heat: 0
+  - type: PointLight
+    color: "#e39c40"
+    radius: 0.25
+    power: 0.5
+  - type: FireVisuals
+    maxLightRadius: 6
+  - type: Construction
+    graph: WallmountTorch
+    node: torch

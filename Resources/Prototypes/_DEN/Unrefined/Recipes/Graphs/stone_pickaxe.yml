@@ -1,0 +1,20 @@
+- type: constructionGraph
+  id: HardStonePickaxe
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: pickaxe
+          steps:
+            - material: HardStone
+              amount: 4
+              icon:
+                sprite: _Den/Unrefined/Objects/Materials/stone.rsi
+                state: stone
+              name: stone
+            - material: WoodPlank
+              amount: 8
+              doAfter: 20
+                
+    - node: pickaxe
+      entity: HardStonePickaxe

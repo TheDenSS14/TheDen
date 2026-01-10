@@ -1,0 +1,51 @@
+- type: construction
+  name: stone knife
+  id: stone_knife
+  graph: HardStoneKnife
+  startNode: start
+  targetNode: knife
+  category: construction-category-weapons
+  description: A stone-knapped barely-a-knife.
+  icon:
+    sprite: _Den/Unrefined/Objects/Tools/stone_knife.rsi
+    state: icon
+  objectType: Item
+
+- type: construction
+  name: stone pickaxe
+  id: stone_pickaxe
+  graph: HardStonePickaxe
+  startNode: start
+  targetNode: pickaxe
+  category: construction-category-tools
+  description: A rough-hewn wall-chopper.
+  icon:
+    sprite: _Den/Unrefined/Objects/Tools/stone_pickaxe.rsi
+    state: stone_pickaxe
+  objectType: Item
+
+- type: construction
+  name: stone shovel
+  id: stone_shovel
+  graph: HardStoneShovel
+  startNode: start
+  targetNode: shovel
+  category: construction-category-tools
+  description: A hefty soil-plower.
+  icon:
+    sprite: _Den/Unrefined/Objects/Tools/stone_shovel.rsi
+    state: stone_shovel
+  objectType: Item
+  
+- type: construction
+  name: vellum map
+  id: VellumMap
+  graph: VellumMap
+  startNode: start
+  targetNode: map
+  category: construction-category-tools
+  description: The map is not the terrain. Still good for grounding yourself, though.
+  icon:
+    sprite: _DEN/Unrefined/Objects/Tools/vellum_map.rsi
+    state: icon
+  objectType: Item

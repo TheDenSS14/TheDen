@@ -1,0 +1,53 @@
+- type: constructionGraph
+  id: CraftingTable
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: table
+          steps:
+            - material: HardStone
+              amount: 2
+              icon:
+                sprite: _Den/Unrefined/Objects/Materials/stone.rsi
+                state: stone
+              name: stone
+            - material: WoodPlank
+              amount: 8
+            - material: Leather
+              amount: 1       
+              name: "cloth or leather"             
+              doAfter: 15
+        - to: table
+          steps:
+            - material: HardStone
+              amount: 2
+              icon:
+                sprite: _Den/Unrefined/Objects/Materials/stone.rsi
+                state: stone
+              name: stone
+            - material: WoodPlank
+              amount: 8
+            - material: Cloth
+              amount: 1         
+              name: "cloth or leather"
+              doAfter: 15
+            
+    - node: table
+      entity: CraftingTable
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: HardStone1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: MaterialLeather1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 8
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 4

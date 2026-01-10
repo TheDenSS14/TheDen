@@ -1,0 +1,32 @@
+- type: constructionGraph
+  id: AdamantineGlaive
+  start: start
+  graph:
+    - node: start
+      entity: BranchMoonlightWood
+      edges:
+        - to: staff
+          steps:
+            - tool: Slicing
+              doAfter: 5
+                
+    - node: staff
+      entity: StaffMoonlightWood
+      edges:
+        - to: glaive
+          steps:
+            - tag: GlaiveBinding
+              doAfter: 3
+            - tag: GlaiveEdge
+              doAfter: 3
+              
+    - node: glaive
+      entity: AdamantineGlaive
+      edges:
+        - to: talon
+          steps:
+            - tag: BlessingHunter
+              doAfter: 3
+              
+    - node: talon
+      entity: AdamantineGlaiveBlessed

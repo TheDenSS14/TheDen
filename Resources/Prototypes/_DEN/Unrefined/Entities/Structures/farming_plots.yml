@@ -1,0 +1,8 @@
+- type: entity
+  parent: hydroponicsSoil
+  id: FertileSoil
+  name: fertile soil
+  components:
+  - type: Construction
+    graph: FertileSoil
+    node: soil

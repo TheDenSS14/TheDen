@@ -1,0 +1,155 @@
+- type: entity
+  id: LeatherTentWallStack
+  parent: BaseItem
+  name: leather tent package
+  description: A folded wall of leather which can be quickly constructed.
+  suffix: Full
+  components:
+    - type: Stack
+      stackType: LeatherTentWall
+      count: 10
+    - type: Sprite
+      sprite: _DEN/Unrefined/Objects/Tools/tent_package.rsi
+      state: leather_tent_package
+    - type: Item
+      sprite: _DEN/Unrefined/Objects/Tools/tent_package.rsi
+      state: leather_tent_package
+      size: Small
+    - type: SpawnAfterInteract
+      prototype: TentWallLeather
+      doAfter: 1
+      removeOnInteract: true
+    - type: Clickable
+
+- type: entity
+  parent: LeatherTentWallStack
+  id: LeatherTentWallStack1
+  suffix: 1
+  components:
+    - type: Stack
+      count: 1
+
+- type: stack
+  id: LeatherTentWall
+  name: leather tent wall
+  icon: { sprite: _DEN/Unrefined/Objects/Tools/tent_package.rsi, state: leather_tent_package }
+  spawn: LeatherTentWallStack1
+  maxCount: 10
+  itemSize: 1 
+
+- type: entity
+  id: ClothTentWallStack
+  parent: BaseItem
+  name: cloth tent package
+  description: A folded wall of thick cloth which can be quickly constructed.
+  suffix: Full
+  components:
+    - type: Stack
+      stackType: ClothTentWall
+      count: 10
+    - type: Sprite
+      sprite: _DEN/Unrefined/Objects/Tools/tent_package.rsi
+      state: cloth_tent_package
+    - type: Item
+      sprite: _DEN/Unrefined/Objects/Tools/tent_package.rsi
+      state: cloth_tent_package
+      size: Small
+    - type: SpawnAfterInteract
+      prototype: TentWallCloth
+      doAfter: 1
+      removeOnInteract: true
+    - type: Clickable
+    
+- type: entity
+  parent: ClothTentWallStack
+  id: ClothTentWallStack1
+  suffix: 1
+  components:
+    - type: Stack
+      count: 1
+
+- type: stack
+  id: ClothTentWall
+  name: cloth tent wall
+  icon: { sprite: _DEN/Unrefined/Objects/Tools/tent_package.rsi, state: cloth_tent_package }
+  spawn: ClothTentWallStack1
+  maxCount: 10
+  itemSize: 1
+
+- type: entity
+  id: LeatherTentFlapStack
+  parent: BaseItem
+  name: leather tent flap package
+  description: A folded wall of leather which can be quickly constructed. This one can be lashed open and closed.
+  suffix: Full
+  components:
+    - type: Stack
+      stackType: LeatherTentFlap
+      count: 4
+    - type: Sprite
+      sprite: _DEN/Unrefined/Objects/Tools/tent_package.rsi
+      state: leather_tent_package
+    - type: Item
+      sprite: _DEN/Unrefined/Objects/Tools/tent_package.rsi
+      state: leather_tent_package
+      size: Small
+    - type: SpawnAfterInteract
+      prototype: TentFlapLeather
+      doAfter: 1
+      removeOnInteract: true
+    - type: Clickable
+    
+- type: entity
+  parent: LeatherTentFlapStack
+  id: LeatherTentFlapStack1
+  suffix: 1
+  components:
+    - type: Stack
+      count: 1
+
+- type: stack
+  id: LeatherTentFlap
+  name: leather tent flap
+  icon: { sprite: _DEN/Unrefined/Objects/Tools/tent_package.rsi, state: leather_tent_package }
+  spawn: LeatherTentFlapStack1
+  maxCount: 4
+  itemSize: 1
+      
+- type: entity
+  id: ClothTentFlapStack
+  parent: BaseItem
+  name: cloth tent flap package
+  description: A folded wall of thick cloth which can be quickly constructed. This one can be lashed open and closed.
+  suffix: Full
+  components:
+    - type: Stack
+      stackType: ClothTentFlap
+      count: 4
+    - type: Sprite
+      sprite: _DEN/Unrefined/Objects/Tools/tent_package.rsi
+      state: cloth_tent_package
+    - type: Item
+      sprite: _DEN/Unrefined/Objects/Tools/tent_package.rsi
+      state: cloth_tent_package
+      size: Small
+    - type: SpawnAfterInteract
+      prototype: TentFlapCloth
+      doAfter: 1
+      removeOnInteract: true
+    - type: Clickable
+    
+- type: entity
+  parent: ClothTentFlapStack
+  id: ClothTentFlapStack1
+  suffix: 1
+  components:
+    - type: Stack
+      count: 1
+
+- type: stack
+  id: ClothTentFlap
+  name: cloth tent flap
+  icon: { sprite: _DEN/Unrefined/Objects/Tools/tent_package.rsi, state: cloth_tent_package }
+  spawn: ClothTentFlapStack1
+  maxCount: 4
+  itemSize: 1

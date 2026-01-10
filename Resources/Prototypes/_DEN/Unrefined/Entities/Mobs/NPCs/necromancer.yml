@@ -1,0 +1,443 @@
+- type: entity
+  id: GrasslandsBossNecromancer
+  name: necromancer
+  description: One of the Ten Destructions of the old Grasslands.
+  components:
+  # Basic stuff
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.6,0.35,0.6"
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Clickable
+  - type: InteractionOutline
+  - type: InputMover
+  - type: Input
+    context: "human"
+  - type: LagCompensation
+  - type: MobMover
+  - type: Actions
+  - type: Appearance
+  - type: RotationVisuals
+    defaultRotation: 0
+    horizontalRotation: 0
+  - type: DoAfter
+  - type: Examiner
+  - type: Eye
+  - type: ContentEye
+  - type: RequireProjectileTarget
+    active: False
+  - type: CombatMode
+  - type: MobState
+  # Actual boss from here
+  - type: Damageable
+    damageContainer: ManifestedSpirit
+    damageModifierSet: Necromancer
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _DEN/Unrefined/Mobs/necromancer.rsi
+    layers:
+      - state: necromancer
+      - state: eyes
+        shader: unshaded
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.5
+    baseSprintSpeed: 1.5
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1750: Dead
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - BossNecromancer
+    - Wildlife
+  - type: NoSlip
+  - type: DamageSquareImmunity
+    isImmune: true
+  - type: Aggressive # also required component for aggro checking
+  - type: BossMusic # Please fix this
+    soundId: NecromancerTheme
+  #- type: Fauna  # No crushering, thank you very much
+  - type: NpcFactionMember
+    factions:
+      - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: NecromancerCompound
+  - type: Gun
+    fireRate: 1
+    soundGunshot: /Audio/Effects/sparks1.ogg
+    useKey: false
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    projectileSpeed: 15
+    minAngle: 1
+    maxAngle: 10
+  - type: BasicEntityAmmoProvider
+    proto: BulletNecromancerSpell
+    capacity: 1
+    count: 1
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 10
+    rechargeSound:
+      path: /Audio/Effects/ominous.ogg
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1750
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          #- !type:PlaySoundBehavior
+          #  sound:
+          #    collection: VulpkaninHowls
+          #- !type:SpawnEntitiesBehavior
+          #  spawn:
+          #    BossNecromancerFading:
+          #      min: 1
+          #      max: 1
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: VulpkaninBarks
+          - !type:TriggerBehavior
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              SkeletonWildAngry:
+                min: 2
+                max: 2
+      - trigger:
+          !type:DamageTrigger
+          damage: 650
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: VulpkaninBarks
+          - !type:TriggerBehavior
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              SkeletonWildAngry:
+                min: 2
+                max: 2
+              SkeletonWildArcher:
+                min: 1
+                max: 1                
+      - trigger:
+          !type:DamageTrigger
+          damage: 900
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: VulpkaninBarks
+          - !type:TriggerBehavior
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              SkeletonWildAngry:
+                min: 2
+                max: 2
+              SkeletonWildArcher:
+                min: 2
+                max: 2 
+      - trigger:
+          !type:DamageTrigger
+          damage: 1150
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: VulpkaninGrowls
+          - !type:TriggerBehavior
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              SkeletonWildWarrior:
+                min: 2
+                max: 2
+              SkeletonWildArcher:
+                min: 2
+                max: 2 
+      - trigger:
+          !type:DamageTrigger
+          damage: 1400
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: VulpkaninSnarls
+          - !type:TriggerBehavior
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              MobDragonNecromancer:
+                min: 1
+                max: 1
+  - type: SmokeOnTrigger
+    duration: 6.5
+    spreadAmount: 40
+    smokePrototype: Smoke
+    solution:
+      reagents:
+      - ReagentId: Toxin
+        Quantity: 3
+      - ReagentId: Mold
+        Quantity: 10
+      - ReagentId: BlackBlood
+        Quantity: 10
+      #- ReagentId: Blood
+      #  Quantity: 10
+  - type: Megafauna
+    loot: BossNecromancerFading
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      500: 1.3
+      750: 1.6
+      1000: 2
+      1250: 2.25
+      1500: 2.5
+  #- type: Reflect
+  #  reflects:
+  #  - NonEnergy
+  #  reflectProb: 0.5
+  #  spread: 90
+      
+- type: entity
+  id: BulletNecromancerSpell
+  name: necromancer spell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Weapons/wand.rsi
+    layers:
+      - state: bullet
+        shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#33f048"
+    radius: 2.0
+    energy: 7.0
+  - type: Projectile
+    damage:
+      types:
+        Poison: 2
+        Cold: 2
+        Slash: 1
+        Pierce: 1
+        Blunt: 1
+  - type: StaminaDamageOnCollide
+    damage: 15
+  - type: SmokeOnTrigger
+    duration: 4.5
+    spreadAmount: 5
+    smokePrototype: Smoke
+    solution:
+      reagents:
+      - ReagentId: Toxin
+        Quantity: 2
+      - ReagentId: Mold
+        Quantity: 10
+      - ReagentId: BlackBlood
+        Quantity: 10
+      #- ReagentId: Blood
+      #  Quantity: 10
+  - type: SpawnOnTrigger
+    proto: ThornVine
+  - type: DeleteOnTrigger
+
+- type: Tag
+  id: BossNecromancer
+
+# Please fix the code for BossMusic...
+- type: bossMusic
+  id: NecromancerTheme
+  fade: true
+  fadeInTime: 6
+  fadeOutTime: 6
+  positionOnEnd: 0
+  sound:
+    path: /Audio/_DEN/Unrefined/necromancer_theme.ogg
+  
+- type: damageModifierSet
+  id: Necromancer
+  coefficients:
+    Holy: 1.4
+    Piercing: 1.1
+    Heat: 0.7
+    Cold: 0.7
+    Shock: 0.7
+    
+- type: htnCompound
+  id: NecromancerCompound
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: RangedCombatCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: EscapeCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompound  
+
+# Make sure that this vanishes after death. It's a ghost, after all.
+- type: entity
+  parent: MobDragonDungeon
+  id: MobDragonNecromancer
+  name: phantasmal dragon
+  suffix: Necromancer
+  description: The final trump card of the Necromancer. This half-real shadow is as deadly as a real one.
+  components:
+  - type: Sprite
+    color: "#FFFFFF66"
+  - type: Tag
+    tags:
+    - Wildlife
+  - type: Damageable
+    damageContainer: ManifestedSpirit
+    damageModifierSet: Necromancer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 150
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Animals/space_dragon_roar.ogg
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  #- type: EmitSoundOnSpawn
+  #  sound: 
+  #    path: /Audio/Animals/space_dragon_roar.ogg
+  
+
+- type: entity
+  name: fading necromancer
+  id: BossNecromancerFading
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _DEN/Unrefined/Mobs/necromancer.rsi
+    state: disappearing
+  - type: EmitSoundOnSpawn
+    sound: 
+      collection: VulpkaninHowls
+  - type: TimedDespawn
+    lifetime: 5.9
+  - type: SpawnOnDespawn
+    prototype: ClothingSackSurvivalBoss
+    
+- type: entity
+  name: necromancer
+  id: BossNecromancerSpawning
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _DEN/Unrefined/Mobs/necromancer.rsi
+    state: appearing
+  - type: EmitSoundOnSpawn
+    sound: 
+      path: /Audio/Magic/Eldritch/voidblink.ogg
+  - type: TimedDespawn
+    lifetime: 5.9
+  - type: SpawnOnDespawn
+    prototype: GrasslandsBossNecromancer
+
+- type: entity
+  name: evil root
+  id: EvilRootNecromancer
+  description: The source of all the death and decay remaining in the Grasslands. Smashing it would be good, but you have a feeling of being watched.
+  #categories: [ HideSpawnMenu ]
+  components:
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.5,0.35,0.5"
+        density: 2000
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    shader: unshaded
+    sprite: _DEN/Unrefined/Structures/Misc/Quest/evil_root.rsi
+    state: icon
+  - type: Icon
+    sprite: _DEN/Unrefined/Structures/Misc/Quest/evil_root.rsi
+    state: icon
+  - type: InteractionOutline
+  - type: PointLight
+    enabled: true
+    color: "#33f048"
+    radius: 4.0
+    energy: 1.0
+  - type: Damageable
+    damageContainer: ManifestedSpirit
+    damageModifierSet: Necromancer    
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 20
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              BossNecromancerSpawning:
+                min: 1
+                max: 1
+  - type: Megafauna
+  - type: Tag
+    tags:
+    - Wildlife
+
+- type: entity
+  name: Necromancer Spawner
+  id: SpawnBossNecromancer
+  parent: MarkerBase
+  components:
+  - type: Icon
+    sprite: _DEN/Unrefined/Structures/Misc/Quest/evil_root.rsi
+    state: icon
+  - type: Sprite
+    sprite: _DEN/Unrefined/Structures/Misc/Quest/evil_root.rsi
+    state: icon
+    shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#33f048"
+    radius: 3.0
+    energy: 7.0
+  - type: Tag
+    tags:
+    - Wildlife
+  - type: ConditionalSpawner
+    prototypes:
+    - EvilRootNecromancer

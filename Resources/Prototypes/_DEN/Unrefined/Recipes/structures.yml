@@ -1,0 +1,165 @@
+- type: construction
+  name: stone furnace
+  id: StoneFurnace
+  graph: StoneFurnace
+  startNode: start
+  targetNode: furnace
+  category: construction-category-machines
+  description: A rudimentary place to turn rocks into metal.
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  icon:
+    sprite: _DEN\Unrefined\Structures\Machines\stone_furnace.rsi
+    state: stone_furnace
+    
+- type: construction
+  name: cast anvil
+  id: CastAnvil
+  graph: CastAnvil
+  startNode: start
+  targetNode: anvil
+  category: construction-category-machines
+  description: A roughly-shaped place to turn metal into bent metal.
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  icon:
+    sprite: _DEN\Unrefined\Structures\Machines\cast_anvil.rsi
+    state: cast_anvil
+    
+- type: construction
+  name: crafting table
+  id: CraftingTable
+  graph: CraftingTable
+  startNode: start
+  targetNode: table
+  category: construction-category-machines
+  description: A flat place to make things more cleanly.
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  icon:
+    sprite: _DEN\Unrefined\Structures\Machines\crafting_table.rsi
+    state: crafting_table
+    
+- type: construction
+  name: clay oven
+  id: ClayOven
+  graph: ClayOven
+  startNode: start
+  targetNode: oven
+  category: construction-category-machines
+  description: A place to put in cold food and get out hot food.
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  icon:
+    sprite: _DEN/Unrefined/Structures/Machines/clay_oven.rsi
+    state: mw0
+    
+- type: construction
+  name: grinding mortar
+  id: GrindingMortar
+  graph: GrindingMortar
+  startNode: start
+  targetNode: mortar
+  category: construction-category-machines
+  description: Turns hard things into juice and dust through armpower.
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  icon:
+    sprite: _DEN/Unrefined/Structures/Machines/grinding_mortar.rsi
+    state: mortar0
+    
+- type: construction
+  name: cooking fire
+  id: CookingFire
+  graph: CookingFire
+  startNode: start
+  targetNode: fire
+  category: construction-category-machines
+  description: Finally, we can roast.
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  icon:
+    sprite: _DEN/Unrefined/Structures/Machines/cooking_fire.rsi
+    state: low
+    
+- type: construction
+  name: drainage sump
+  id: DrainageSump
+  graph: DrainageSump
+  startNode: start
+  targetNode: sump
+  category: construction-category-utilities
+  description: For pre-emptively cleaning up messes.
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  icon:
+    sprite: _DEN/Unrefined/Structures/Misc/sump.rsi
+    state: icon
+    
+- type: construction
+  name: wooden barrel
+  id: WoodenBarrel
+  graph: WoodenBarrel
+  startNode: start
+  targetNode: barrel
+  category: construction-category-storage
+  description: For holding many buckets of juice.
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  icon:
+    sprite: _DEN/Unrefined/Structures/Storage/wood_barrel.rsi
+    state: closed
+    
+- type: construction
+  name: magic octogram
+  id: MagicOctogram
+  graph: MagicOctogram
+  startNode: start
+  targetNode: octogram
+  category: construction-category-machines
+  description: A place to warp the materium into chaotic form.
+  placementMode: SnapgridBorder
+  canBuildInImpassable: false
+  icon:
+    sprite: _DEN\Unrefined\Structures\Misc\magic_octogram.rsi
+    state: pastel
+    
+- type: construction
+  name: rough standing torch
+  id: StandingTorch
+  graph: StandingTorch
+  startNode: start
+  targetNode: torch
+  category: construction-category-structures
+  description: A meagre method of regaining sight after nightfall.
+  placementMode: PlaceFree
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Decoration/torches.rsi
+    state: torch_unlit
+
+- type: construction
+  name: rough wall torch
+  id: WallmountTorch
+  graph: WallmountTorch
+  startNode: start
+  targetNode: torch
+  category: construction-category-structures
+  description: A meagre method of regaining sight after nightfall.
+  placementMode: SnapgridCenter
+  icon:
+    sprite: Structures/Decoration/torches.rsi
+    state: wall_torch_unlit
+    
+- type: construction
+  name: cobblestone wall
+  id: CobblestoneWall
+  graph: CobblestoneWall
+  startNode: start
+  targetNode: wall
+  category: construction-category-structures
+  description: A nice sturdy wall made of carefully piled stones.
+  placementMode: SnapgridCenter
+  icon:
+    sprite: Structures/Walls/cobblebrick.rsi
+    state: full

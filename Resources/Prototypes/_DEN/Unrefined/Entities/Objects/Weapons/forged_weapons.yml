@@ -1,0 +1,120 @@
+- type: entity
+  name: copper knife
+  parent: CombatKnife
+  id: CopperKnife
+  description: A copper-forged sharp edge with a wooden handle.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Weapons/copper_knife.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 0.8
+    damage:
+      types:
+        Slash: 9
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 7
+  - type: Item
+    sprite: _DEN/Unrefined/Objects/Weapons/copper_knife.rsi
+    storedSprite:
+      state: storage
+      sprite: _DEN/Unrefined/Objects/Weapons/copper_knife.rsi # Add storage sprite
+    
+- type: entity
+  name: steel knife
+  parent: CombatKnife
+  id: SteelKnife
+  description: A steel-forged sharp edge with a wooden handle.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Weapons/steel_knife.rsi
+    state: icon
+  - type: Item
+    sprite: _DEN/Unrefined/Objects/Weapons/steel_knife.rsi
+    storedSprite:
+      state: storage
+      sprite: _DEN/Unrefined/Objects/Weapons/steel_knife.rsi # Add storage sprite
+    
+- type: entity
+  name: forged claymore
+  parent: Claymore
+  id: SteelClaymore
+  description: An ancient war blade, freshly made.
+  
+- type: entity
+  parent: BaseItem
+  id: SteelMace
+  name: steel mace
+  description: The spikes somehow make it even more crushing.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Weapons/steel_mace.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    sprite: _DEN/Unrefined/Objects/Weapons/steel_mace.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: 45
+    attackRate: 1.0
+    range: 1.75
+    damage:
+      types:
+        Blunt: 15
+    bluntStaminaDamageFactor: 3
+    heavyRateModifier: 2
+    heavyRangeModifier: 1.75
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 7
+    maxTargets: 3
+    angle: 20
+  - type: DamageOtherOnHit
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
+    
+- type: entity
+  name: steel spear
+  parent: Spear
+  id: SteelSpear
+  description: A spear with a forged steel blade as a tip.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Weapons/steel_spear.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Piercing: 13
+        Slash: 1
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 20
+        
+- type: entity
+  name: steel handaxe
+  parent: HydroponicsToolHatchet
+  id: SteelHandaxe
+  description: Good for chopping many things, wood being most common.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Weapons/steel_handaxe.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 135
+    swingLeft: true
+    attackRate: .9
+    range: 1.4
+    damage:
+      types:
+        Slash: 14
+    heavyRateModifier: 1.25
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 5
+  - type: Item
+    sprite: _DEN/Unrefined/Objects/Weapons/steel_handaxe.rsi

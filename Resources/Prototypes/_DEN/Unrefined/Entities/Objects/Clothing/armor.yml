@@ -1,0 +1,251 @@
+# Body armor
+
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: LeatherArmor
+  name: leather jerkin
+  description: A shirt of treated hide that is only marginally thicker than your own.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/leather_jerkin.rsi
+  - type: Clothing
+    sprite: _DEN/Unrefined/Objects/Clothing/leather_jerkin.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+  - type: StaminaDamageResistance
+    coefficient: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.95
+    
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: ChainmailArmor
+  name: chainmail shirt
+  description: A coat of knitted steel rings. In the past, it would've taken a week to make.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/chainmail_shirt.rsi
+  - type: Clothing
+    sprite: _DEN/Unrefined/Objects/Clothing/chainmail_shirt.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.8
+        Heat: 0.85
+  - type: StaminaDamageResistance
+    coefficient: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+    
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: CarpscaleArmor
+  name: carp scalemail
+  description: A set of armor crafted from the scales of those bitey spacefish. It feels room-temperature while you wear it.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/carp_scale_mail.rsi
+  - type: Clothing
+    sprite: _DEN/Unrefined/Objects/Clothing/carp_scale_mail.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.7
+        Cold: 0.7
+      flatReductions:
+        Heat: 2
+        Cold: 2
+  - type: FireProtection
+    reduction: 0.4
+  - type: TemperatureProtection
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.1
+  - type: StaminaDamageResistance
+    coefficient: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+    
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: DragonscaleArmorGold
+  name: dragonscale mail
+  description: A set of armor crafted from the scales of a great fire-breathing terror. You feel invincible while you wear it.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/gold_dragonscale.rsi
+  - type: Clothing
+    sprite: _DEN/Unrefined/Objects/Clothing/gold_dragonscale.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.3
+        Cold: 0.3
+        Shock: 0.5
+        Caustic: 0.9
+        Radiation: 0.9
+      flatReductions:
+        Heat: 5
+        Cold: 5
+  - type: FireProtection
+    reduction: 0.75
+  - type: TemperatureProtection
+    heatingCoefficient: 0.005
+    coolingCoefficient: 0.05
+  - type: StaminaDamageResistance
+    coefficient: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+    
+- type: entity
+  parent: DragonscaleArmorGold
+  id: DragonscaleArmorDark
+  name: dragonscale mail
+  description: A set of armor crafted from the scales of a fire-breathing terror. You feel invincible while you wear it.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/dark_dragonscale.rsi
+  - type: Clothing
+    sprite: _DEN/Unrefined/Objects/Clothing/dark_dragonscale.rsi
+    
+# Bikinis
+## Might make them normal clothing instead    
+    
+- type: entity
+  parent: ClothingOuterBase
+  id: LeatherBikini
+  name: leather bikini
+  description: The leatherworker ran out of material.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/leather_bikini.rsi
+  - type: Clothing
+    sprite: _DEN/Unrefined/Objects/Clothing/leather_bikini.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.96
+        Slash: 0.96
+        Piercing: 0.96
+    
+- type: entity
+  parent: ClothingOuterBase
+  id: ChainmailBikini
+  name: chainmail bikini
+  description: The blacksmith ran out of material.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/chainmail_bikini.rsi
+  - type: Clothing
+    sprite: _DEN/Unrefined/Objects/Clothing/chainmail_bikini.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.92
+        Slash: 0.92
+        Piercing: 0.92
+    
+- type: entity
+  parent: ClothingOuterBase
+  id: ChainmailBikiniGold
+  name: golden chainmail bikini
+  description: There's no way the goldsmith ran out of material. They did this on purpose.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/gold_chainmail_bikini.rsi
+  - type: Clothing
+    sprite: _DEN/Unrefined/Objects/Clothing/gold_chainmail_bikini.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.94
+        Slash: 0.94
+        Piercing: 0.94
+        Holy: 0.9
+
+- type: entity
+  parent: ClothingOuterBase
+  id: DragonscaleBikiniGold
+  name: dragonscale bikini
+  description: There are few greater ways to show how much you don't need armor than to wear this.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/dragonscale_bikini_gold.rsi
+  - type: Clothing
+    sprite: _DEN/Unrefined/Objects/Clothing/dragonscale_bikini_gold.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Cold: 0.9
+
+- type: entity
+  parent: DragonscaleBikiniGold
+  id: DragonscaleBikiniDark
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/dragonscale_bikini_dark.rsi
+  - type: Clothing
+    sprite: _DEN/Unrefined/Objects/Clothing/dragonscale_bikini_dark.rsi
+
+# Helmets
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetCrafted
+  abstract: true
+  name: helmet
+  description: Standard security gear. Protects the head from impacts.
+  components:
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothingHeadHelmetBasic
+    
+- type: entity
+  parent: ClothingHeadHelmetCrafted
+  id: HelmetCraftedLeather
+  name: leather helmet
+  description: For several centuries, this was the standard for the majority of civilian levies.
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/leather_helmet.rsi
+  - type: Clothing
+    sprite: _DEN/Unrefined/Objects/Clothing/leather_helmet.rsi
+    
+- type: entity
+  parent: ClothingHeadHelmetCrafted
+  id: HelmetCraftedSteel
+  name: steel helmet
+  description: Back in the day, this was the sign that a lord cared about their army.
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/steel_helmet.rsi
+  - type: Clothing
+    sprite: _DEN/Unrefined/Objects/Clothing/steel_helmet.rsi

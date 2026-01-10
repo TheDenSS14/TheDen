@@ -1,0 +1,21 @@
+- type: constructionGraph
+  id: DigUpPileUndead
+  start: pile
+  graph:
+    - node: pile
+      entity: OldSoilPile
+      edges:
+        - to: dug_up
+          completed:
+            - !type:SpawnPrototype
+              prototype: SpawnerRandomWildUndead
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: DirtLump1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Digging
+              doAfter: 2
+                
+    - node: dug_up

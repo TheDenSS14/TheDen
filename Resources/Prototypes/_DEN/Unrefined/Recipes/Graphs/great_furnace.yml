@@ -1,0 +1,24 @@
+- type: constructionGraph
+  id: StoneFurnaceGreat
+  start: broken
+  graph:
+    - node: broken
+      entity: StoneFurnaceGreatBroken
+      edges:
+        - to: fixed
+          steps:
+            - material: HardStone
+              amount: 20
+              icon:
+                sprite: _Den/Unrefined/Objects/Materials/stone.rsi
+                state: stone
+              name: stone
+            - material: ClayLump
+              amount: 10
+              icon:
+                sprite: _Den/Unrefined/Objects/Materials/materials.rsi
+                state: clay_lump
+              name: clay lump
+                
+    - node: fixed
+      entity: StoneFurnaceGreat

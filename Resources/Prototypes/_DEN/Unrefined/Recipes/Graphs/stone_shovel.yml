@@ -1,0 +1,20 @@
+- type: constructionGraph
+  id: HardStoneShovel
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: shovel
+          steps:
+            - material: HardStone
+              amount: 3
+              icon:
+                sprite: _Den/Unrefined/Objects/Materials/stone.rsi
+                state: stone
+              name: stone
+            - material: WoodPlank
+              amount: 6
+              doAfter: 15
+                
+    - node: shovel
+      entity: HardStoneShovel

@@ -1,0 +1,53 @@
+- type: constructionGraph
+  id: StandingTorch
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: torch
+          steps:
+            - tag: Torch
+              name: torch
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+                
+    - node: torch
+      entity: SurvivalFloorTorch
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 4
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Slicing
+              doAfter: 3
+              
+- type: constructionGraph
+  id: WallmountTorch
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: torch
+          steps:
+            - tag: Torch
+              name: torch
+            - material: WoodPlank
+              amount: 1
+              doAfter: 2
+                
+    - node: torch
+      entity: SurvivalWallTorch
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 3
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Slicing
+              doAfter: 3

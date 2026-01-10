@@ -1,0 +1,270 @@
+- type: latheRecipePack
+  id: CraftingTableStatic
+  recipes:
+    - Gauze
+    - Matchbox
+    - RandomBedsheet
+    - LeatherTentWall
+    - LeatherTentFlap
+    - ClothTentWall
+    - ClothTentFlap
+    - LeatherHelmet
+    - LeatherJerkin
+    - LeatherBikini #Move this to a secret later
+    - ClayBowl
+    - ClayPlate
+    - ClayPlateSmall
+    - ClayMug
+    - ChopSticks
+    - WoodenCane
+    - BadSkimmer
+    - BadSyringe
+    - BadGlassCup
+    - BadBeaker
+    - Firesteel
+    - PlanetFlooringWood
+    - ClothSack
+    - LeatherSack
+    - PaperFromWood
+    - PaperFromCloth
+    - FishingRod
+    - WoodenRollingPin
+    - SmokingPipe
+    - InstrumentWoodBlock
+    - InstrumentAcousticGuitar
+    - InstrumentPanFlute    
+    - InstrumentBagPipe
+    - ClothingBeltQuiverCrossbow
+    
+- type: entity
+  parent: BedsheetSpawner
+  id: BedsheetSpawnerCrafted
+  name: random bedsheet
+  components:
+  - type: Icon
+    sprite: Objects/Misc/bedsheets.rsi
+    state: sheetrainbow
+
+- type: latheRecipe
+  id: RandomBedsheet
+  result: BedsheetSpawner
+  completetime: 10
+  materials:
+    Cloth: 400
+    
+- type: latheRecipe
+  id: LeatherTentWall
+  result: LeatherTentWallStack1
+  completetime: 10
+  materials:
+    Leather: 200
+    
+- type: latheRecipe
+  id: ClothTentWall
+  result: ClothTentWallStack1
+  completetime: 10
+  materials:
+    Cloth: 200
+        
+- type: latheRecipe
+  id: LeatherTentFlap
+  result: LeatherTentFlapStack1
+  completetime: 10
+  materials:
+    Leather: 200
+        
+- type: latheRecipe
+  id: ClothTentFlap
+  result: ClothTentFlapStack1
+  completetime: 10
+  materials:
+    Cloth: 200
+    
+- type: latheRecipe
+  id: LeatherHelmet
+  result: HelmetCraftedLeather
+  completetime: 10
+  materials:
+    Leather: 300
+    
+- type: latheRecipe
+  id: LeatherJerkin
+  result: LeatherArmor
+  completetime: 10
+  materials:
+    Leather: 500
+
+- type: latheRecipe
+  id: LeatherBikini
+  result: LeatherBikini
+  completetime: 10
+  materials:
+    Leather: 200
+    
+- type: latheRecipe
+  id: ClayBowl
+  result: FoodBowlBig
+  completetime: 4
+  materials:
+    Clay: 250
+    
+- type: latheRecipe
+  id: ClayPlate
+  result: FoodPlate
+  completetime: 4
+  materials:
+    Clay: 250
+
+- type: latheRecipe
+  id: ClayPlateSmall
+  result: FoodPlateSmall
+  completetime: 4
+  materials:
+    Clay: 125
+    
+- type: latheRecipe
+  id: ClayMug
+  result: DrinkMug
+  completetime: 4
+  materials:
+    Clay: 200
+    
+- type: latheRecipe
+  id: ChopSticks
+  result: ChopSticks
+  completetime: 4
+  materials:
+    Wood: 50
+    
+- type: latheRecipe
+  id: WoodenCane
+  result: Cane
+  completetime: 4
+  materials:
+    Wood: 300
+    
+- type: latheRecipe
+  id: BadSkimmer
+  result: Skimmer
+  completetime: 4
+  materials:
+    Glass: 200
+    
+- type: latheRecipe
+  id: BadSyringe
+  result: Syringe
+  completetime: 4
+  materials:
+    Steel: 50
+    Copper: 50
+    Glass: 300
+
+- type: latheRecipe
+  id: BadGlassCup
+  result: DrinkGlass
+  completetime: 4
+  materials:
+    Glass: 200
+
+- type: latheRecipe
+  id: BadBeaker
+  result: Beaker
+  completetime: 4
+  materials:
+    Glass: 200
+    
+- type: latheRecipe
+  id: Firesteel
+  result: Firesteel
+  completetime: 4
+  materials:
+    Stone: 100
+    Steel: 100
+    
+- type: latheRecipe
+  id: PlanetFlooringWood
+  result: FloorTileItemPlanetWood
+  completetime: 1
+  materials:
+    Wood: 25
+    
+- type: latheRecipe
+  id: ClothSack
+  result: ClothingSackSurvival
+  completetime: 8
+  materials:
+    Cloth: 300
+    
+- type: latheRecipe
+  id: LeatherSack
+  result: ClothingSackSurvivalLeather
+  completetime: 8
+  materials:
+    Leather: 300
+    
+- type: latheRecipe
+  id: PaperFromWood
+  result: Paper
+  completetime: 3
+  materials:
+    Wood: 50
+    
+- type: latheRecipe
+  id: PaperFromCloth
+  result: Paper
+  completetime: 3
+  materials:
+    Cloth: 50
+    
+- type: latheRecipe
+  id: FishingRod
+  result: FishingRod
+  completetime: 10
+  materials:
+    Wood: 250
+    Steel: 50
+    Cloth: 100
+    
+- type: latheRecipe
+  id: WoodenRollingPin
+  result: RollingPin
+  completetime: 10
+  materials:
+    Wood: 400
+    
+- type: latheRecipe
+  id: SmokingPipe
+  result: SmokingPipe
+  completetime: 10
+  materials:
+    Wood: 150
+    
+- type: latheRecipe
+  id: InstrumentWoodBlock
+  result: WoodblockInstrument
+  completetime: 10
+  materials:
+    Wood: 250
+    
+- type: latheRecipe
+  id: InstrumentAcousticGuitar
+  result: AcousticGuitarInstrument
+  completetime: 15
+  materials:
+    Wood: 350
+    Cloth: 100
+
+- type: latheRecipe
+  id: InstrumentPanFlute
+  result: PanFluteInstrument
+  completetime: 10
+  materials:
+    Wood: 250
+    
+- type: latheRecipe
+  id: InstrumentBagPipe
+  result: BagpipeInstrument
+  completetime: 10
+  materials:
+    Leather: 300
+    Wood: 100
