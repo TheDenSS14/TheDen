@@ -1,0 +1,55 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseAmphora
+  id: SomberElectrumAmphora
+  name: electrum amphora
+  description: "An electrum amphora with carved alabaster handles."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Mantis/amphorae.rsi
+    state: electrumamphora
+  - type: Item
+    sprite: _DEN/Objects/Specific/Mantis/amphorae.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:SpillBehavior
+        solution: jar
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ScrapElectrum:
+            min: 2
+            max: 4
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 0 # Metal
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 0 # Metal
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 2
+    damage:
+      types:
+        Blunt: 0 # Metal

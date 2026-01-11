@@ -1,7 +1,9 @@
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aikakakah
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 marking-HumanTattooArmImheartmomL = "I Love Mom" Tattoo (Left Arm)
 marking-HumanTattooArmImheartmomL-tattoo_arm_imheartmom_l = Tattoo
@@ -9,12 +11,16 @@ marking-HumanTattooArmImheartmomR = "I Love Mom" Tattoo (Right Arm)
 marking-HumanTattooArmImheartmomR-tattoo_arm_imheartmom_r = Tattoo
 marking-HumanTattooChurchdomes = Church Dome Tattoo
 marking-HumanTattooChurchdomes-tattoo_churchdomes = Tattoo
+marking-HumanTattooChurchdomesFemale = Church Dome Tattoo
+marking-HumanTattooChurchdomesFemale-tattoo_churchdomes_female = Tattoo
 marking-HumanTattooElysiumPatriotism = Elysium Tattoo
 marking-HumanTattooElysiumPatriotism-tattoo_elysium_patriotism = Tattoo
 marking-HumanTattooFullskelet = Full Skeleton Tattoo
 marking-HumanTattooFullskelet-tattoo_fullskelet = Tattoo
 marking-HumanTattooKarabel = Karabel Tattoo
 marking-HumanTattooKarabel-tattoo_karabel = Tattoo
+marking-HumanTattooKarabelFemale = Karabel Tattoo
+marking-HumanTattooKarabelFemale-tattoo_karabel_female = Tattoo
 marking-HumanTattooKrenelMercenary = Mercenary's Teeth Tattoo
 marking-HumanTattooKrenelMercenary-tattoo_KrenelMercenary = Tattoo
 marking-HumanTattooLineArmL = Line Tattoo (Left Arm)
@@ -23,8 +29,12 @@ marking-HumanTattooLineArmR = Line Tattoo (Right Arm)
 marking-HumanTattooLineArmR-tattoo_line_arm_r = Tattoo
 marking-HumanTattooRose = Rose Tattoo
 marking-HumanTattooRose-tattoo_Rose = Tattoo
+marking-HumanTattooRoseFemale = Rose Tattoo
+marking-HumanTattooRoseFemale-tattoo_Rose_female = Tattoo
 marking-HumanTattooSerpentTemptation = Serpent of Temptation Tattoo
 marking-HumanTattooSerpentTemptation-tattoo_serpenttemptation = Tattoo
+marking-HumanTattooSerpentTemptationFemale = Serpent of Temptation Tattoo
+marking-HumanTattooSerpentTemptationFemale-tattoo_serpenttemptation_female = Tattoo
 marking-HumanTattooSkull = Skull Tattoo
 marking-HumanTattooSkull-tattoo_skull = Tattoo
 marking-HumanTattooSkeletarmL = Skeleton Arm Tattoo (Left)

@@ -1,21 +1,37 @@
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 PHCodes <47927305+PHCodes@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 PHCodes
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingOuterHardsuitRd
   id: ClothingOuterHardsuitMystagogue
   name: mystagogue's hardsuit
-  description: Lightweight hardsuit that has a helmet with a galaxy-first psionic passthrough system.
-  suffix: Mystagogue # TheDen
+  description: A heavy-duty hardsuit specialized for research that includes a built-in psionic nullification and detection system in the helmet. Modified bluespace embedded into the plating allows it to be folded into a smaller space then one would expect.
   components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/Hardsuits/rd.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/Hardsuits/rd.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMystagogue
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterHardsuitMystagogue]
+  id: ClothingOuterHardsuitMystagogueLabcoat
+  name: mystagogue's hardsuit
+  components:
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:Container {}
+      storagebase: !type:Container
+        showEnts: false
+        occludes: true
+        ents: []
 
 - type: entity
   parent: ClothingOuterHardsuitSyndie

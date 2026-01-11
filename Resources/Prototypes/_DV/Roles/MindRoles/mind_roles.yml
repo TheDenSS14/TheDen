@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 William Lemon
+# SPDX-FileCopyrightText: 2025 eightballll
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleSkia
+  name: Skia Role
+  components:
+  - type: MindRole
+    roleType: SoloAntagonist
+    antagPrototype: Skia
+    exclusiveAntag: true
+  - type: SkiaRole
+  - type: AntagObjectives
+    objectives:
+    - SkiaReapObjective
+    - SkiaSurviveObjective
+  - type: SkiaRule
+  - type: RoleBriefing #TODO: put here, because it doesn't pull from skia.ftl. fun! Fix later.
+    briefing: "You are a Skia, a Shade of the Noösphere. You are bound to darkness and shadows, use the darkness to your advantage. Find your prey and reap their soul (kill them). Avoid ending the lives of innocents."

@@ -1,0 +1,203 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 William Lemon
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [ SimpleSpaceMobBase, FlyingMobBase, MobCombat ]
+  id: MobSkia
+  name: skia
+  description: A shadow given form, lashing out at anything that comes too close.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _DV/Mobs/Animals/skia.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: skia
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: skia
+      Dead:
+        Base: dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      120: 0.9
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      240: Dead
+  - type: Damageable
+    damageContainer: ManifestedSpirit # Den - Let the Mantis get involved with these guys
+    damageModifierSet: ManifestedSpirit # Den - keep extreme weakness to heat and bible
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 160
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.25
+    baseSprintSpeed: 3.75
+  - type: CombatMode
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 90
+    animation: WeaponArcSkiaLunge
+    wideAnimation: WeaponArcSkiaSwipe
+    wideAnimationRotation: -90
+    swingLeft: true
+    attackRate: 1.0
+    range: 2.0
+    altDisarm: false
+    damage:
+      types:
+        Slash: 20
+        Pierce: 10
+        Cold: 10
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: Tag
+    tags: [ ]
+  - type: Speech
+    speechVerb: Ghost
+  - type: Insulated
+  - type: LightReactive
+    manual: true
+  - type: LightLevelHealth
+    darkThreshold: 0.3
+    lightThreshold: 0.7
+    darkDamage:
+      groups:
+        Brute: -5
+        Burn: -5
+        Toxin: -5
+        Airloss: -5
+        Genetic: -5
+        Metaphysical: -1
+    lightDamage:
+      groups:
+        Brute: 5
+    healWhenDead: true
+    darkMovementSpeedMultiplier: 1.25
+    lightMovementSpeedMultiplier: 1.0
+  - type: LightLevelDamageMult
+    lightReceivedMultiplier: 2.0
+    lightDealtMultiplier: 0.5
+  - type: ResurrectWhenAble
+    timeToResurrect: 30.0
+    resurrectDesc: skia-resurrecting-desc
+  - type: Bloodstream
+    maxBleedAmount: 0
+    bloodReagent: BlackBlood # DEN
+  - type: ShatterLightsAbility
+    lineOfSight: true
+    radius: 9.0
+    penetratingRadius: 2.0
+  - type: TechnokineticPulseAbility
+    range: 5.0
+    energyConsumption: 20000
+    disableDuration: 20.0
+  - type: Butcherable
+    spawned:
+    - id: AnomalyCoreShadow # DEN
+      amount: 1 # DEN
+    - id: Ectoplasm
+      amount: 5 # DEN
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 8.5 # needs to be fast because they'll get ganked otherwise
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: NightVision
+    drawOverlay: false
+  - type: Targeting
+  # DEN
+  - type: Skia
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+        requireInputValidation: false
+  - type: Store
+    categories:
+    - SkiaAbilities
+    currencyWhitelist:
+    - SoulSilk
+  - type: UniversalLanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
+  - type: Puller
+    needsHands: false
+  - type: NoSlip
+  - type: Psionic
+    removable: false
+    roller: false
+    psychognomicDescriptors:
+      - p-descriptor-vampiric
+  - type: ActionGrant
+    actions:
+      - ActionSkiaRerollObjectives
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - XenoglossyPower
+      - TelepathyPower
+      - TelekineticPulsePower
+      - NoosphericZapPower
+  - type: RandomMetadata
+    nameSegments:
+    - NamesRevenantType
+    - NamesRevenantAdjective
+    - NamesRevenantTheme
+    nameFormat: name-format-revenant
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: GhostTakeoverAvailable
+  - type: EmitSoundOnSpawn
+    sound: /Audio/_DV/Effects/creepyshriek.ogg
+  - type: BreakLightsOnSpawn
+    radius: 10
+  - type: Spectral
+  - type: GlimmerSource
+    glimmerPerSecond: 1
+    glimmerExponentOffset: -5
+  - type: Stealth
+    minVisibility: -1
+    lastVisibility: 0.1
+# - type: BreakStealthOnAttack
+  - type: StealthOnMove
+    passiveVisibilityRate: -0.65
+    movementVisibilityRate: 0.575
+  - type: StatusEffects
+    allowed:
+    - Flashed
+    - SlowedDown
+    - Pacified
+  - type: Body
+    prototype: Skia
+  - type: ThermalVision
+    pulseTime: 0
+    color: "#9370DB"
+  - type: ComplexInteraction
+  # DEN
+  - type: EmbedImmune
+    immuneTo:
+      components:
+      - FlareGunPellet

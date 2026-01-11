@@ -1,12 +1,11 @@
-# SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Fansana <fansana95@googlemail.com>
-# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
-# SPDX-FileCopyrightText: 2024 neuPanda <chriseparton@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow
+# SPDX-FileCopyrightText: 2024 neuPanda
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 flavor-complex-7deadlysins = like liquid sin
 flavor-complex-ablustine = fruity and treacly
@@ -81,5 +80,5 @@ flavor-complex-blue-pumpkin = like a mouthful of pool water
 flavor-base-strange = strange
 flavor-complex-walnut = like walnuts
 flavor-complex-despair = despair
-flavor-complex-eggnog = eggnog
+flavor-complex-eggnog = like eggnog
 flavor-complex-syndicate-eggnog = like eggnog, and war profiteering

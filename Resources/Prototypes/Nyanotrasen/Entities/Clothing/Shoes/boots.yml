@@ -6,12 +6,17 @@
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoesBase
   id: ClothingShoesBootsMantis
-  name: mantis boots
-  description: Soft, comfortable, and good for rough terrain.
+  name: dated mantis boots
+  description: "Soft, comfortable, and good for rough terrain. All the company would pay for prior to the mantis equipment refresh." # TheDen
   components:
+  - type: Appearance
   - type: Sprite
     sprite: Nyanotrasen/Clothing/Shoes/Boots/mantis_boots.rsi
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Shoes/Boots/mantis_boots.rsi
+  - type: Tag # TheDen
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable

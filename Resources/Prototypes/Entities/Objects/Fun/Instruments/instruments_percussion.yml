@@ -5,6 +5,7 @@
 # SPDX-FileCopyrightText: 2024 SimpleStation14
 # SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -72,6 +73,9 @@
     size: Small
   - type: ActivatableUI
     inHandsOnly: false
+  - type: Tag # DEN: Add microphone tag
+    tags:
+    - Microphone
 
 - type: entity
   parent: BasePercussionInstrument

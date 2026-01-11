@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 XenoOutlier
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -107,7 +108,6 @@ job-name-alternate-warrior-monk = Warrior Monk
 # Head of Personnel
 job-name-alternate-bureaucratic-ambassador = Bureaucratic Ambassador
 job-name-alternate-paperwork-enthusiast = Paperwork Enthusiast
-job-name-alternate-station-inspector = Station Inspector
 job-name-alternate-recruiter = Station Recruiter
 job-name-alternate-head-of-service = Head of Service
 job-name-alternate-service-director = Service Director

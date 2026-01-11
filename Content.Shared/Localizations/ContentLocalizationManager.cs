@@ -14,7 +14,7 @@
 // SPDX-FileCopyrightText: 2025 Pieter-Jan Briers
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Globalization;
 using System.Linq;
@@ -108,6 +108,17 @@ namespace Content.Shared.Localizations
             var text = ((LocValueString) args.Args[0]).Value;
             var split = text.Split(" ", 1);
             var firstWord = split[0];
+
+            // TheDen - The plural of mantis is mantes
+            if (string.Equals(firstWord, "mantis", StringComparison.OrdinalIgnoreCase))
+            {
+                var plural = "Mantes";
+                if (split.Length == 1)
+                    return new LocValueString(plural);
+                else
+                    return new LocValueString($"{plural} {split[1]}");
+            }
+
             if (PluralEsRule.IsMatch(firstWord))
             {
                 if (split.Length == 1)

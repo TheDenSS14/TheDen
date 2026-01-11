@@ -2,10 +2,11 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: loadout
   id: LoadoutToyBasketball
@@ -56,20 +57,28 @@
     - PlushieAlice
 
 - type: loadout
-  id: LoadoutPlushieTabi
-  category: GeneralToys
-  cost: 0
-  canBeHeirloom: true
-  items:
-    - PlushieTabi
-
-- type: loadout
   id: LoadoutPlushieJenn
   category: GeneralToys
   cost: 0
   canBeHeirloom: true
   items:
     - PlushieJenn
+
+- type: loadout
+  id: LoadoutPlushieAzalea
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items:
+  - PlushieAzalea
+
+- type: loadout
+  id: PlushieWhistler
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieWhistler
 
 - type: loadout
   id: PlushieFelinid

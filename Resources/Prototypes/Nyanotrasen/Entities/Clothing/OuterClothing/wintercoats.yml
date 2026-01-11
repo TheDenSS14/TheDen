@@ -64,15 +64,21 @@
       sprite: Nyanotrasen/Clothing/OuterClothing/WinterCoats/mail_winter_coat.rsi
 
 - type: entity
-  parent: ClothingOuterWinterCoat
+  parent: ClothingOuterCoatMantis # TheDen - All mantis outerwear inherits these armor values
   id: ClothingOuterWinterCoatMantis
-  name: mantis winter coat
-  description: Solve cold cases in style.
+  name: dated mantis winter coat
+  description: "Solve cold cases in style, or something. All the company would pay for prior to the mantis equipment refresh." # TheDen - They're not detectives, but the pun should stay...
   components:
     - type: Sprite
       sprite: Nyanotrasen/Clothing/OuterClothing/WinterCoats/mantis_winter_coat.rsi
     - type: Clothing
       sprite: Nyanotrasen/Clothing/OuterClothing/WinterCoats/mantis_winter_coat.rsi
+    - type: Tag
+      tags:
+      - WhitelistChameleon
+    - type: TemperatureProtection # TheDen - Still warm though
+      heatingCoefficient: 1.1
+      coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterWinterRD

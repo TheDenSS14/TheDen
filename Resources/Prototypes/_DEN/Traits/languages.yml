@@ -140,9 +140,17 @@
   category: TraitsSpeechLanguages
   points: -2
   requirements:
-    - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterTraitRequirement
+        traits:
+        - LatentPsychic
+      - !type:CharacterJobRequirement
+        jobs:
+        - Chaplain
+        - Librarian
+        - ResearchDirector
+        - ForensicMantis
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -264,49 +272,51 @@
       languagesUnderstood:
         - Chittin
 
-- type: trait
-  id: RemoveSpeciesLanguage
-  category: TraitsSpeechLanguages
-  priority: -10 # come before all species language traits
-  points: 2
-  requirements:
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - RemoveSpeciesLanguageLight
-    - Foreigner
-    - ForeignerLight
-    - XenoglossyPower
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    # NO FREE POINTS FOR YOU
-    - Oni
-    - Resomi
-  functions:
-  - !type:TraitModifyLanguages
-    keepLanguagesSpoken: [TauCetiBasic]
-    keepLanguagesUnderstood: [TauCetiBasic]
+# TODO: "Remove species language" trait is broken; there's a bug where having it causes you to randomly acquire a number of languages that your character should not have. I have spent over an hour trying to replicate this, and I cannot do so consistently enough to fix it. If you look in the C# code for how languages are refreshed, it looks like the way languages work would need a decently-sized partial rewrite in order to support removing the species language properly. Good luck.
 
-- type: trait
-  id: RemoveSpeciesLanguageLight
-  category: TraitsSpeechLanguages
-  priority: -10 # come before all species language traits
-  points: 1
-  requirements:
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - RemoveSpeciesLanguage
-    - Foreigner
-    - ForeignerLight
-    - XenoglossyPower
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    # NO FREE POINTS FOR YOU
-    - Oni
-    - Resomi
-  functions:
-  - !type:TraitModifyLanguages
-    keepLanguagesSpoken: [TauCetiBasic] # Can't speak anything else, but can understand them
+# - type: trait
+#   id: RemoveSpeciesLanguage
+#   category: TraitsSpeechLanguages
+#   priority: -10 # come before all species language traits
+#   points: 2
+#   requirements:
+#   - !type:CharacterTraitRequirement
+#     inverted: true
+#     traits:
+#     - RemoveSpeciesLanguageLight
+#     - Foreigner
+#     - ForeignerLight
+#     - XenoglossyPower
+#   - !type:CharacterSpeciesRequirement
+#     inverted: true
+#     species:
+#     # NO FREE POINTS FOR YOU
+#     - Oni
+#     - Resomi
+#   functions:
+#   - !type:TraitModifyLanguages
+#     keepLanguagesSpoken: [TauCetiBasic]
+#     keepLanguagesUnderstood: [TauCetiBasic]
+
+# - type: trait
+#   id: RemoveSpeciesLanguageLight
+#   category: TraitsSpeechLanguages
+#   priority: -10 # come before all species language traits
+#   points: 1
+#   requirements:
+#   - !type:CharacterTraitRequirement
+#     inverted: true
+#     traits:
+#     - RemoveSpeciesLanguage
+#     - Foreigner
+#     - ForeignerLight
+#     - XenoglossyPower
+#   - !type:CharacterSpeciesRequirement
+#     inverted: true
+#     species:
+#     # NO FREE POINTS FOR YOU
+#     - Oni
+#     - Resomi
+#   functions:
+#   - !type:TraitModifyLanguages
+#     keepLanguagesSpoken: [TauCetiBasic] # Can't speak anything else, but can understand them

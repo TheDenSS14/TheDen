@@ -1,0 +1,35 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [BaseLeash, BaseMantisContraband]
+  id: LeashMantis
+  name: graven chain
+  description: "A heavy mu-metal chain leading to a round, anchorable base. The links are barely functional... Perhaps the Crucible will send you a new set some day."
+  components: # If we ever get leash mechanics patched, update this description and redo the values below if necessary
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Mantis/leashmantis.rsi
+    state: icon
+  - type: Leash
+    leashSprite:
+      sprite: _DEN/Objects/Specific/Mantis/leashmantis-chain.rsi
+      state: chain
+    pullInterval: 0.75
+    length: 3
+    lengthConfigs: [1.5, 2.25, 3]
+    maxDistance: 6
+    attachDelay: 1 # If it becomes possible to leash other characters, increase this for consent purposes
+    detachDelay: 1
+    selfDetachDelay: 10
+  - type: Anchorable
+    delay: 1 # You have a wrench specifically made for this
+    snap: false # I don't think this even works
+  - type: Tag
+    tags:
+    - MantisBoxRestraintsStorable
+    - MantisBeltStorable
+  - type: GuideHelp
+    guides: [ MantisGuide ]

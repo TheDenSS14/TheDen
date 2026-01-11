@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 sheepie
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -18,6 +19,51 @@
       coolingCoefficient: 0.1
 
 - type: entity
+  parent: [ClothingOuterWinterCoatMantis, BaseFoldable]
+  id: ClothingOuterWinterCoatMantisDark
+  name: dark mantis coat
+  description: "A grand, warm coat with a high collar. You can roll the sleeves up into the shoulders to show off your gloves."
+  components:
+    - type: Sprite
+      sprite: _DEN/Clothing/OuterClothing/WinterCoats/mantis_winter_coat_dark.rsi
+      layers:
+      - state: icon
+        map: ["unfoldedLayer"]
+      - state: icon-rolled
+        map: ["foldedLayer"]
+        visible: false
+    - type: Clothing
+      sprite: _DEN/Clothing/OuterClothing/WinterCoats/mantis_winter_coat_dark.rsi
+    - type: Foldable
+      canFoldInsideContainer: true
+      foldVerbText: fold-rollsleeves-verb
+      unfoldVerbText: fold-unrollsleeves-verb
+    - type: FoldableClothing
+      foldedEquippedPrefix: rolled
+
+- type: entity
+  parent: ClothingOuterWinterCoatMantisDark
+  id: ClothingOuterWinterCoatMantisDarkFolded
+  suffix: Folded
+  description: "A grand, warm coat with a high collar. You can unroll the sleeves, if they won't get in the way of your gloves."
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: rolled
+
+- type: entity
+  parent: ClothingOuterWinterCoatMantis
+  id: ClothingOuterWinterCoatMantisMu
+  name: mantis mu-metal tabard
+  description: "A warm tabard with an eye motif on its split collar. Mu-metal discs adorn the fabric, said to help the mantis regulate their powers, at least in theory."
+  components:
+    - type: Sprite
+      sprite: _DEN/Clothing/OuterClothing/WinterCoats/mantis_winter_coat_mu.rsi
+    - type: Clothing
+      sprite: _DEN/Clothing/OuterClothing/WinterCoats/mantis_winter_coat_mu.rsi
+
+- type: entity
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterAdminAssistant
   name: administrative assistant winter coat
@@ -28,3 +74,4 @@
       sprite: _DEN/Clothing/OuterClothing/WinterCoats/coataa.rsi
     - type: ToggleableClothing
       clothingPrototype: ClothingHeadHatHoodWinterAdminAssistant
+

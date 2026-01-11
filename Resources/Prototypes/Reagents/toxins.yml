@@ -42,7 +42,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: reagent
   id: Toxin
@@ -438,7 +438,7 @@
   desc: reagent-desc-mindbreaker-toxin
   physicalDesc: reagent-physical-desc-opaque
   flavor: bitter
-  color: "#77b58e"
+  color: "#53b598" # TheDen - Slightly cooler color to differentiate it from space drugs
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: 10

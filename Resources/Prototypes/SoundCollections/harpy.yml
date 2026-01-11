@@ -114,6 +114,10 @@
     - /Audio/_DV/Voice/Vulpkanin/dog_growl4.ogg
     - /Audio/_DV/Voice/Vulpkanin/dog_growl5.ogg
     - /Audio/_DV/Voice/Vulpkanin/dog_growl6.ogg
+    # DEN - these are great scary growl sounds
+    - /Audio/_RMC14/Voice/Xeno/alien_talk1.ogg 
+    - /Audio/_RMC14/Voice/Xeno/alien_talk2.ogg 
+    - /Audio/_RMC14/Voice/Xeno/alien_talk3.ogg
 
 - type: soundCollection
   id: HarpyPurrs
@@ -128,6 +132,9 @@
     - /Audio/Items/ring.ogg
     - /Audio/Machines/ding.ogg
     - /Audio/Machines/warning_buzzer.ogg
+    - /Audio/Machines/double_ring.ogg # DEN
+    - /Audio/Effects/kaching.ogg # DEN
+    - /Audio/_Funkystation/Hypertorus/terminal_alert.ogg # DEN
 
 - type: soundCollection
   id: HarpyHonks
@@ -168,11 +175,14 @@
     - /Audio/Magic/fireball.ogg
     - /Audio/Magic/forcewall.ogg
     - /Audio/Magic/knock.ogg
+    # DEN
+    - /Audio/Nyanotrasen/Weapons/club.ogg
+    - /Audio/Nyanotrasen/Weapons/guitarhit.ogg
 
 - type: soundCollection
   id: HarpyBeeps
   files:
-    - /Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg
+    # - /Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg # DEN - this one is so so loud
     - /Audio/Items/beep.ogg
     - /Audio/Items/flashlight_pda.ogg
     - /Audio/Items/locator_beep.ogg
@@ -211,9 +221,9 @@
   id: HarpyRevs
   files:
     - /Audio/Weapons/chainsawwield.ogg
-    - /Audio/Machines/blender.ogg
-    - /Audio/Machines/juicer.ogg
-    - /Audio/Machines/reclaimer_startup.ogg
+    # - /Audio/Machines/blender.ogg ## DEN - crossing these out so you can just use the nice rev
+    # - /Audio/Machines/juicer.ogg ### instead of getting jumpscared or not wanting to use this because it's so loud
+    # - /Audio/Machines/reclaimer_startup.ogg
 
 - type: soundCollection
   id: HarpyClicks
@@ -224,7 +234,6 @@
     - /Audio/Items/pistol_cock.ogg
     - /Audio/Items/pistol_magin.ogg
     - /Audio/Items/pistol_magout.ogg
-    - /Audio/Items/rped.ogg
     - /Audio/Machines/door_lock_off.ogg
     - /Audio/Machines/door_lock_on.ogg
     - /Audio/Machines/id_swipe.ogg
@@ -238,7 +247,10 @@
     - /Audio/Machines/circuitprinter.ogg
     - /Audio/Machines/diagnoser_printing.ogg
     - /Audio/Machines/uniformprinter.ogg
-    - /Audio/Machines/vaccinator_running.ogg
+    - /Audio/Items/rped.ogg # DEN - moved from Clicks since it's more of a chitter
+    # - /Audio/Machines/vaccinator_running.ogg # DEN - this shit is so loud
+    - /Audio/_Impstation/Misc/replicator_sfx1.ogg # DEN - good chitter
+    - /Audio/_Impstation/Misc/replicator_sfx2.ogg # DEN
 
 - type: soundCollection
   id: HarpySqueak

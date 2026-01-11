@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 portfiend
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: language
   id: NovuNederic
@@ -11,234 +12,30 @@
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
-    maxSyllables: 4
+    maxSyllables: 3 # DEN: 4 -> 3
     replacement:
+    # DEN: order by length, nuke the longer syllables
+    - i
     - ba
-    - balg
-    - brem
-    - brij
-    - brok
-    - brul
-    - bruun
-    - daam
-    - daub
-    - deuf
-    - deuk
-    - doem
-    - doep
-    - dolm
-    - drax
-    - dreuf
-    - druim
-    - druul
-    - faal
-    - feub
-    - flim
-    - floe
-    - frax
-    - frim
-    - gaal
-    - geb
-    - glif
-    - glof
-    - glom
-    - gnoe
-    - grom
-    - gruim
-    - grulp
-    - guil
-    - guuf
-    - haab
-    - hak
-    - heuf
-    - holm
-    - huib
-    - huif
-    - huul
-    - ijm
-    - ijp
-    - ijt
-    - kaab
-    - kail
-    - keul
-    - klem
-    - klib
-    - klom
-    - klon
-    - kluim
-    - knip
-    - knor
-    - knub
-    - kroef
-    - kruim
-    - kruul
-    - kulm
-    - laab
-    - laap
-    - laux
-    - leum
-    - loef
-    - loek
-    - loib
-    - luib
-    - maab
-    - meuf
-    - moek
-    - molf
-    - moul
-    - muik
-    - naab
-    - naem
-    - neub
-    - neuk
-    - noef
-    - noom
-    - paam
-    - poef
-    - praub
-    - prilm
-    - pruik
-    - puil
-    - raag
-    - reul
-    - rijp
-    - rilk
-    - rom
-    - rooib
-    - scheb
-    - schelf
-    - schimp
-    - schlub
-    - schroef
-    - schrul
-    - slib
-    - slub
-    - smeeg
-    - smelk
-    - smilk
-    - snaar
-    - snaub
-    - spraux
-    - sprok
-    - spuul
-    - staem
-    - stib
-    - stilm
-    - stuil
-    - strik
-    - struim
-    - struul
-    - taam
-    - taub
-    - thaaf
-    - thram
-    - treek
-    - treib
-    - trulk
-    - truim
-    - truul
-    - tuik
-    - vaal
-    - veum
-    - vlek
-    - vluif
-    - voeb
-    - voem
-    - vuik
-    - weub
-    - woep
-    - zuik
-    - zuim
-    - zwem
-    - zwib
-    - zwilk
-    - zwuif
-    - blaub
-    - blijk
-    - blomp
-    - bruif
-    - daaf
-    - doeg
-    - doik
-    - dralb
-    - drijk
-    - drulk
-    - duib
-    - duik
-    - duul
-    - fleub
-    - floib
-    - fraub
-    - froep
-    - frulk
-    - gaub
-    - grauf
-    - grel
-    - grim
-    - grok
-    - haef
-    - heik
-    - hreib
-    - krulp
-    - kwoef
-    - maub
-    - naef
-    - neup
-    - ploem
-    - ploik
-    - preuf
-    - pruil
-    - ruib
-    - schulp
-    - slauf
-    - smeib
-    - smob
-    - spoeg
-    - sprauf
-    - struib
-    - truib
-    - vrob
-    - wruif
-    - zwaub
-    - baf
-    - bau
     - be
-    - ben
-    - bif
-    - bil
-    - bla
     - bo
-    - bol
-    - bom
-    - bra
-    - bre
-    - bro
     - bu
-    - bum
     - da
-    - dal
     - de
-    - del
     - di
     - do
-    - dul
-    - dux
     - fa
     - fe
     - fi
-    - fla
     - fo
-    - ful
     - ga
     - ge
     - gi
-    - gla
     - go
     - gu
     - ha
     - he
     - ho
-    - i
     - ja
     - je
     - ji
@@ -246,9 +43,6 @@
     - ka
     - ke
     - ki
-    - kla
-    - klo
-    - kru
     - la
     - le
     - li
@@ -267,11 +61,7 @@
     - pa
     - pe
     - pi
-    - pla
     - po
-    - pra
-    - pre
-    - pro
     - pu
     - ra
     - re
@@ -282,18 +72,11 @@
     - se
     - si
     - so
-    - sta
-    - ste
-    - sto
     - su
     - ta
     - te
     - ti
     - to
-    - tra
-    - tri
-    - tro
-    - tru
     - tu
     - va
     - ve
@@ -310,3 +93,80 @@
     - zi
     - zo
     - zu
+    - geb
+    - hak
+    - ijm
+    - ijp
+    - ijt
+    - rom
+    - baf
+    - bau
+    - ben
+    - bif
+    - bil
+    - bla
+    - bol
+    - bom
+    - bra
+    - bre
+    - bro
+    - bum
+    - dal
+    - del
+    - dul
+    - dux
+    - fla
+    - ful
+    - gla
+    - kla
+    - klo
+    - kru
+    - pla
+    - pra
+    - pre
+    - pro
+    - sta
+    - ste
+    - sto
+    - tra
+    - tri
+    - tro
+    - tru
+    - balg
+    - brem
+    - brok
+    - deuf
+    - doem
+    - faal
+    - frax
+    - gaal
+    - glof
+    - guil
+    - haab
+    - huif
+    - kaab
+    - klib
+    - knor
+    - kulm
+    - loek
+    - luib
+    - meuf
+    - muik
+    - naem
+    - neuk
+    - paam
+    - reul
+    - rijp
+    - taub
+    - vaal
+    - voem
+    - weub
+    - zuik
+    - zwem
+    - daaf
+    - doik
+    - gaub
+    - grim
+    - haef
+    - maub
+    - smob

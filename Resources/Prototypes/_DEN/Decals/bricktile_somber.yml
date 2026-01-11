@@ -1,0 +1,176 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: decal
+  id: BrickTileSomber
+  parent: BrickTile
+  abstract: true
+
+- type: decal
+  id: BrickTileSomberBox
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_box
+
+- type: decal
+  id: BrickTileSomberCornerNe
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_corner_ne
+
+- type: decal
+  id: BrickTileSomberCornerSe
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_corner_se
+
+- type: decal
+  id: BrickTileSomberCornerNw
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_corner_nw
+
+- type: decal
+  id: BrickTileSomberCornerSw
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_corner_sw
+
+- type: decal
+  id: BrickTileSomberInnerNe
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_inner_ne
+
+- type: decal
+  id: BrickTileSomberInnerSe
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_inner_se
+
+- type: decal
+  id: BrickTileSomberInnerNw
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_inner_nw
+
+- type: decal
+  id: BrickTileSomberInnerSw
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_inner_sw
+
+- type: decal
+  id: BrickTileSomberEndN
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_end_n
+
+- type: decal
+  id: BrickTileSomberEndE
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_end_e
+
+- type: decal
+  id: BrickTileSomberEndS
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_end_s
+
+- type: decal
+  id: BrickTileSomberEndW
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_end_w
+
+- type: decal
+  id: BrickTileSomberLineN
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_line_n
+
+- type: decal
+  id: BrickTileSomberLineE
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_line_e
+
+- type: decal
+  id: BrickTileSomberLineS
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_line_s
+
+- type: decal
+  id: BrickTileSomberLineW
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_line_w
+
+- type: decal
+  id: BrickTileSomberNe
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_tile_ne
+
+- type: decal
+  id: BrickTileSomberSe
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_tile_se
+
+- type: decal
+  id: BrickTileSomberNw
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_tile_nw
+
+- type: decal
+  id: BrickTileSomberSw
+  parent: BrickTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/bricktile_somber.rsi
+    state: steel_tile_sw

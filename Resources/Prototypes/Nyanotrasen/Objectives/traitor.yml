@@ -1,24 +1,24 @@
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2023 JJ <47927305+PHCodes@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 flyingkarii <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 JJ
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 flyingkarii
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Shaman
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
-- type: entity
-  categories: [ HideSpawnMenu ]
-  parent: BaseTraitorStealObjective
-  id: MantisKnifeStealObjective
-  components:
-  - type: NotJobRequirement
-    job: ForensicMantis
-  - type: StealCondition
-    stealGroup: AntiPsychicKnife
-    owner: job-name-mantis
+#- type: entity
+# categories: [ HideSpawnMenu ]
+# parent: BaseTraitorStealObjective
+# id: MantisKnifeStealObjective
+# components:
+# - type: NotJobRequirement
+#   job: ForensicMantis
+# - type: StealCondition
+#   stealGroup: AntiPsychicKnife
+#   owner: job-name-mantis
 
 #- type: entity
 #  id: BecomeGolemObjective
@@ -46,7 +46,7 @@
 #  parent: BaseTraitorObjective
 #  categories: [ HideSpawnMenu ]
 #  name: Raise Glimmer.
-#  description: Get the glimmer above the specified amount.
+#  description: Get the Glimmer above the specified amount.
 #  components:
 #  - type: Objective
 #    difficulty: 2.5

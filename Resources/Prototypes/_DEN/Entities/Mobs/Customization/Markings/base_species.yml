@@ -344,6 +344,12 @@
 
 - type: marking
   abstract: true
+  id: BaseSpeciesOvinia
+  speciesRestriction: [Ovinia]
+  preferredSpecies: [Ovinia]
+
+- type: marking
+  abstract: true
   id: BaseSpeciesRodentia
   speciesRestriction: [Rodentia]
   preferredSpecies: [Rodentia]

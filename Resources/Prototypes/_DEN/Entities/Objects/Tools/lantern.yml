@@ -1,0 +1,123 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [BaseItem, BaseAntiPsionicWeapon, BaseMantisContraband] # If I parented it to Lantern, it would have a battery slot...
+  id: LanternMantis
+  name: mantis lantern
+  description: "An ornate lantern housing an eidolite pyramid that draws power from the noosphere. Instead of merely casting light, it seems to declare it--an austere radiance that etches itself into whatever it touches. Stare too long and the gleam resolves into shapes you almost recognize, then promptly forget. For all its theatrics, the handle still hangs comfortably on your back."
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Specific/Mantis/lanternmantis.rsi
+      layers:
+        - state: lantern
+        - state: crystal
+          shader: unshaded
+    - type: Item
+      sprite: _DEN/Objects/Specific/Mantis/lanternmantis.rsi
+      heldPrefix: off
+    - type: EtherealLight # Dims around ethereal entities
+    - type: PointLight
+      enabled: false
+      radius: 3
+      energy: 4
+      color: "#d9418d"
+      netsync: false
+    - type: Appearance
+    - type: ToggleableVisuals
+      spriteLayer: light
+    - type: ItemTogglePointLight
+    - type: ItemToggle
+      predictable: false
+      soundActivate:
+        path: /Audio/_DEN/Effects/crystalshimmer1.ogg
+        params:
+          volume: -2
+          variation: 0.05
+      soundDeactivate:
+        path: /Audio/_DEN/Effects/crystalshimmer2.ogg
+        params:
+          volume: -2
+          variation: 0.05
+    - type: StealTarget
+      stealGroup: LAMP # The moths are coming the moths are coming
+    - type: Clothing
+      sprite: _DEN/Objects/Specific/Mantis/lanternmantis.rsi
+      equippedPrefix: off
+      quickEquip: false
+      slots:
+        - Belt
+        - suitStorage
+    - type: MeleeWeapon # You can swing it like a weapon
+      attackRate: 0.6666
+      soundHit:
+        path: /Audio/Weapons/block_metal1.ogg
+        params:
+          volume: -60 # Why is it so loud...
+          variation: 0.05
+      damage:
+        types:
+          Blunt: 5 # 7.5 DPS (same as Crowbar), or 9.38 DPS against psions
+          Holy: 2.5 # 14.1 total DPS against psionic supernaturals
+    - type: Tag
+      tags:
+      - Flashlight
+      - MantisBeltStorable
+
+- type: entity
+  parent: BaseItem # And if I parented LanternMantis to this, the sprite layers would freak out...
+  id: LanternSomber
+  name: somber orb
+  description: "A palm-sized electrum sphere studded with shards of eidolite, each humming with faint noospheric charge. Its glow lingers in your vision, imprinting shapes you can't quite name."
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Tools/somberlamp.rsi
+      layers:
+        - state: lantern
+        - state: crystal
+          shader: unshaded
+    - type: Item
+      sprite: _DEN/Objects/Tools/somberlamp.rsi
+      inhandVisuals:
+        left:
+          - state: inhand-left
+          - state: inhand-left-glow
+            shader: unshaded
+        right:
+          - state: inhand-right
+          - state: inhand-right-glow
+            shader: unshaded
+    - type: EtherealLight # Dims around ethereal entities
+    - type: PointLight
+      enabled: false
+      radius: 3
+      energy: 4
+      color: "#d9418d"
+      netsync: false
+    - type: Appearance
+    - type: ToggleableVisuals
+      spriteLayer: light
+    - type: ItemTogglePointLight
+    - type: ItemToggle
+      predictable: false
+      soundActivate:
+        path: /Audio/_DEN/Effects/crystalshimmer1.ogg
+        params:
+          volume: -2
+          variation: 0.05
+      soundDeactivate:
+        path: /Audio/_DEN/Effects/crystalshimmer2.ogg
+        params:
+          volume: -2
+          variation: 0.05
+    - type: StealTarget
+      stealGroup: LAMP # The moths are coming the moths are coming
+    - type: LandAtCursor
+    - type: ThrowingAngle
+      angularVelocity: true
+    - type: Tag
+      tags:
+      - Flashlight
+      - MantisBeltStorable

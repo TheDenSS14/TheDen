@@ -1,10 +1,12 @@
-# SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
-# SPDX-FileCopyrightText: 2024 neuPanda <chriseparton@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow
+# SPDX-FileCopyrightText: 2024 neuPanda
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 reagent-name-7deadlysins = 7 deadly sins
 reagent-desc-7deadlysins = A vile concoction of liqour and various other ingredients, all coming together into something that has the stench of death.
@@ -181,7 +183,7 @@ reagent-name-thewaterslide = the waterslide
 reagent-desc-thewaterslide = Charcoal not included for you, o naughty one.
 
 reagent-name-whiskeysour = whiskey sour
-reagent-desc-whiskeysour = Shelter from the Noöspheric Storm.
+reagent-desc-whiskeysour = Shelter from the noospheric storm.
 
 reagent-name-yeolhandy = ye ol handy
 reagent-desc-yeolhandy = The loner's choice, cold as their bed.
@@ -198,8 +200,8 @@ reagent-desc-jenn-tonic = Light golden and bubbly, what could go wrong?
 reagent-name-hallelujah = Hallelujah
 reagent-desc-hallelujah = Exactly what you need.
 
-reagent-name-eggnog = Eggnog
-reagent-desc-eggnog = creamy, pale yellow and topped with a sprinkle of cinnamon.
+reagent-name-eggnog = eggnog
+reagent-desc-eggnog = Creamy, pale yellow, topped with a sprinkle of cinnamon, and mildly alcoholic.
 
-reagent-name-syndicate-eggnog = Syndicate Eggnog
-reagent-desc-syndicate-eggnog = creamy, pale yellow and topped with a sprinkle of cinnamon and strongly alcoholic.
+reagent-name-syndicate-eggnog = syndicate eggnog
+reagent-desc-syndicate-eggnog = Creamy, pale yellow, topped with a sprinkle of cinnamon, and strongly alcoholic.

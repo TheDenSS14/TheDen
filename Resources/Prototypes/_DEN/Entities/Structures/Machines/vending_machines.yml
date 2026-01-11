@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -82,3 +83,181 @@
   components:
   - type: AccessReader
     access: []
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSomberMantis
+  name: mantis reliquary conduit
+  description: "An occult-machine interface through which mantes summon equipment from the Reliquary by thought alone."
+  components:
+  - type: VendingMachine
+    pack: MantisReliquaryInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
+    soundVend: /Audio/_DEN/Effects/crystalshimmer4.ogg
+    soundDeny: /Audio/_DEN/Effects/crystalshimmer5.ogg
+    ejectDelay: 1.5 # Synced with animation and sound effect duration
+    denyDelay: 1.5
+  - type: Sprite
+    noRot: true
+    sprite: _DEN/Structures/Machines/VendingMachines/mantis.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Mantis"]]
+  - type: GuideHelp
+    guides: [ MantisGuide ]
+  - type: PointLight # As bright as a candle
+    radius: 2.4
+    energy: 2.4
+    color: "#4dc4ff"
+    mask: null
+  - type: AmbientSound
+    volume: 0
+    range: 0
+    enabled: false
+    sound:
+      path: /Audio/Effects/silence.ogg # It has some wires inside, but it doesn't hum
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-mechanical
+    weight: 0.25 # It's plugged into the noosphere, come on
+  - type: TypingIndicator
+    proto: mantis
+  - type: Speech
+    speechVerb: Electricity
+    speechSounds: Tenor
+  - type: Psionic
+    removable: false
+    roller: false
+    assayFeedback:
+      - reliquary-feedback # I SEE YOU, INTERLOPER. YOUR THOUGHTS TRESPASS UPON SACRED MATRICES.
+    psychognomicDescriptors: # Not "old" or "demiurgic" like the Oracle or Sophia, it has a younger, smaller soul
+      - p-descriptor-mysterious
+      - p-descriptor-emanative
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - XenoglossyPower
+      - TelepathyPower
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Science
+  - type: ActiveRadio
+    channels:
+    - Science
+    - Common # They can at least listen
+  - type: LanguageKnowledge
+    speaks:
+    - Psychomantic
+    understands:
+    - Psychomantic
+  - type: Actions
+  - type: ThermalVision # Weird psionic senses
+    pulseTime: 0 # Toggled, not timed
+    lightRadius: 7
+    color: "#4dc4ff"
+  - type: Examiner # So they can at least inspect what they dispensed
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1875,-0.28125,0.15625,0.25"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 500
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger: # If it gets nuked, it just disappears
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger: # If you destroy it, it drops scrap materials
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ScrapElectrum:
+            min: 3
+            max: 5
+          MaterialMnemolith1:
+            min: 3
+            max: 5
+    - trigger: # If you break it, it shoots out items
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:DoActsBehavior
+        acts: ["Breakage"]
+      - !type:EjectVendorItems
+
+- type: entity
+  parent: VendingMachineSomberMantis
+  id: VendingMachineSomberMantisWall
+  name: mantis reliquary wall conduit
+  description: "A wall-mounted, occult-machine interface through which mantes summon equipment from the Reliquary by thought alone."
+  suffix: DO NOT MAP # Wall vending machines can only be used from the south side and then they throw the item through the north wall
+  placement: # Just leaving this prototype here for if we ever fix that... Also I have to change all the sprites and must preserve these
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: WallMount
+    arc: 175
+  - type: Sprite
+    drawdepth: WallMountedItems
+    snapCardinals: false
+    noRot: true
+    sprite: _DEN/Structures/Machines/VendingMachines/mantiswall.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight # As bright as a candle
+    radius: 2.4
+    energy: 2.4
+    color: "#4dc4ff"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1875,-0.28125,0.15625,0.25"
+        hard: false
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 500
+  - type: BlockMovement

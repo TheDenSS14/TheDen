@@ -10,7 +10,7 @@
 // SPDX-FileCopyrightText: 2025 VMSolidus
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.StatusEffect;
@@ -189,7 +189,13 @@ public sealed class PsionicsSystem : EntitySystem
             || !_random.Prob(component.PunishChances))
             return;
 
-        _electrocutionSystem.TryDoElectrocution(args.User, null, component.PunishSelfDamage, TimeSpan.FromSeconds(component.PunishStunDuration), false);
+        _electrocutionSystem.TryDoElectrocution(
+            args.User,
+            null,
+            component.PunishSelfDamage,
+            TimeSpan.FromSeconds(component.PunishStunDuration),
+            false,
+            ignoreInsulation: true);
     }
 
     private void OnInit(EntityUid uid, PsionicComponent component, ComponentStartup args)

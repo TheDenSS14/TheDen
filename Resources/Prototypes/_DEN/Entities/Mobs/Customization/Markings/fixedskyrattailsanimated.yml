@@ -1,0 +1,111 @@
+# SPDX-FileCopyrightText: 2025 LaconiumDragona
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: marking
+  id: TailSnakeDualAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  layering:
+    m_waggingtail_snakedual_BEHIND_primary: TailBehind
+    m_waggingtail_snakedual_BEHIND_secondary: TailBehind
+    m_waggingtail_snakedual_FRONT_primary: Tail
+    m_waggingtail_snakedual_FRONT_secondary: Tail
+  colorLinks:
+    m_waggingtail_snakedual_BEHIND_primary: m_waggingtail_snakedual_FRONT_primary
+    m_waggingtail_snakedual_BEHIND_secondary: m_waggingtail_snakedual_FRONT_secondary
+  sprites:
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakedual_FRONT_primary
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakedual_FRONT_secondary
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakedual_BEHIND_primary
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakedual_BEHIND_secondary
+
+- type: marking
+  id: TailSnakeStripeAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  layering:
+    m_waggingtail_snakestripe_BEHIND_primary: TailBehind
+    m_waggingtail_snakestripe_BEHIND_secondary: TailBehind
+    m_waggingtail_snakestripe_FRONT_primary: Tail
+    m_waggingtail_snakestripe_FRONT_secondary: Tail
+  colorLinks:
+    m_waggingtail_snakestripe_BEHIND_primary: m_waggingtail_snakestripe_FRONT_primary
+    m_waggingtail_snakestripe_BEHIND_secondary: m_waggingtail_snakestripe_FRONT_secondary
+  sprites:
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakestripe_FRONT_primary
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakestripe_FRONT_secondary
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakestripe_BEHIND_primary
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakestripe_BEHIND_secondary
+
+- type: marking
+  id: TailSnakeStripeAltAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  layering:
+    m_waggingtail_snakestripealt_BEHIND_primary: TailBehind
+    m_waggingtail_snakestripealt_BEHIND_secondary: TailBehind
+    m_waggingtail_snakestripealt_FRONT_primary: Tail
+    m_waggingtail_snakestripealt_FRONT_secondary: Tail
+  colorLinks:
+    m_waggingtail_snakestripealt_BEHIND_primary: m_waggingtail_snakestripealt_FRONT_primary
+    m_waggingtail_snakestripealt_BEHIND_secondary: m_waggingtail_snakestripealt_FRONT_secondary
+  sprites:
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakestripealt_FRONT_primary
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakestripealt_FRONT_secondary
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakestripealt_BEHIND_primary
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakestripealt_BEHIND_secondary
+
+- type: marking
+  id: TailSnakeTailAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  layering:
+    m_waggingtail_snaketail_BEHIND: TailBehind
+    m_waggingtail_snaketail_FRONT: Tail
+  colorLinks:
+    m_waggingtail_snaketail_BEHIND: m_waggingtail_snaketail_FRONT
+  sprites:
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snaketail_FRONT
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snaketail_BEHIND
+
+- type: marking
+  id: TailSnakeUnderAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  layering:
+    m_waggingtail_snakeunder_BEHIND_primary: TailBehind
+    m_waggingtail_snakeunder_BEHIND_secondary: TailBehind
+    m_waggingtail_snakeunder_FRONT_primary: Tail
+    m_waggingtail_snakeunder_FRONT_secondary: Tail
+  colorLinks:
+    m_waggingtail_snakeunder_BEHIND_primary: m_waggingtail_snakeunder_FRONT_primary
+    m_waggingtail_snakeunder_BEHIND_secondary: m_waggingtail_snakeunder_FRONT_secondary
+  sprites:
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakeunder_FRONT_primary
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakeunder_FRONT_secondary
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakeunder_BEHIND_primary
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_waggingtail_snakeunder_BEHIND_secondary

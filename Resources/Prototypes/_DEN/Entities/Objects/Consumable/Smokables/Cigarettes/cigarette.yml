@@ -1,0 +1,34 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: CigaretteMnemolith
+  parent: Cigarette
+  name: mnemolith cigarette
+  description: "The smoke clings to your thoughts, enhancing your awareness of the noosphere."
+  components:
+  - type: Smokable
+    inhaleAmount: 0.05 # The default value, included here for reference if mnemolith is rebalanced
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Smokeables/Cigarettes/cigarettemantis.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Smokeables/Cigarettes/cigarettemantis.rsi
+  - type: Clothing
+    sprite: _DEN/Objects/Consumable/Smokeables/Cigarettes/cigarettemantis.rsi
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 30
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: MnemolithReagent
+            Quantity: 20
+  - type: Extractable
+    grindableSolutionName: smokable
+  - type: Tag
+    tags:
+      - Cigarette
+      - Trash
+      - MantisBeltStorable

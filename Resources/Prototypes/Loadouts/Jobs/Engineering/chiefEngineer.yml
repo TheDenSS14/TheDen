@@ -3,10 +3,11 @@
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SheepIzMutton
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Chief Engineer
 # Backpacks
@@ -469,6 +470,18 @@
 # Gloves
 
 # Head
+- type: loadout
+  id: LoadoutChiefEngineerHeadClothingHeadHatHardhatArmored
+  category: JobsEngineeringChiefEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingHeadHatHardhatArmored
 
 # Id
 - type: loadout
@@ -532,6 +545,33 @@
     - ClothingNeckEngineermedal
 
 # Mask
+- type: loadout
+  id: LoadoutChiefEngineerMaskClothingMaskWeldingGas
+  category: JobsEngineeringChiefEngineer
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingMaskWeldingGas
+
+- type: loadout
+  id: LoadoutChiefEngineerMaskClothingMaskGasAtmos
+  category: JobsEngineeringChiefEngineer
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingMaskGasAtmos
 
 # Outer
 - type: loadout

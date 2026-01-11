@@ -1,5 +1,7 @@
 # SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -38,6 +40,111 @@
   - type: Tag
     tags:
       - BeltSlotNotBelt
+
+# Mantis belts start
+- type: entity
+  parent: [ClothingBeltMantis, BaseFoldable]
+  id: ClothingBeltMantisAiry
+  name: airy mantis belt
+  description: "A finely-woven rope belt with loops to carry mantis equipment. The loose end can be tucked in, if you prefer clean lines. It has sheaths for certain weapons."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Belt/mantis_belt_airy.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-folded
+      map: ["foldedLayer"]
+      visible: false
+  - type: Clothing
+    sprite: _DEN/Clothing/Belt/mantis_belt_airy.rsi
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-verb
+    unfoldVerbText: unfold-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded
+
+- type: entity
+  parent: [ClothingBeltMantis, BaseFoldable]
+  id: ClothingBeltMantisDark
+  name: dark mantis belt
+  description: "A structured, layered sash designed to carry mantis equipment. The loose end can be tucked in, if you prefer clean lines. It has sheaths for certain weapons."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Belt/mantis_belt_dark.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-folded
+      map: ["foldedLayer"]
+      visible: false
+  - type: Clothing
+    sprite: _DEN/Clothing/Belt/mantis_belt_dark.rsi
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-verb
+    unfoldVerbText: unfold-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded
+
+- type: entity
+  parent: ClothingBeltMantis
+  id: ClothingBeltMantisOrnate
+  name: ornate mantis belt
+  description: "A thick band fastened by an electrum chain, with inner pockets designed to carry mantis equipment. It has sheaths for certain weapons."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Belt/mantis_belt_ornate.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Belt/mantis_belt_ornate.rsi
+
+# These belts contain some mantis loot if salvagers find dead mantes in space
+- type: entity
+  parent: ClothingBeltMantisAiry
+  id: ClothingBeltMantisAiryLoot
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+    - id: MantisMeleeSickle
+    - id: BoxFolderMantis
+    - id: CigPackMnemolith
+    - id: FlippoLighterMantis
+    - id: SomberChairLeatherMantisWheelchairFolded
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: rolled
+
+- type: entity
+  parent: ClothingBeltMantisDark
+  id: ClothingBeltMantisDarkLoot
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+    - id: MantisMeleeKnife
+    - id: ClothingUniformJumpsuitMantisLoincloth
+    - id: ClothingNeckMantisShackles
+    - id: LeashMantis
+    - id: FlippoLighterMantis
+    - id: CandleSomberMantisCluster
+
+- type: entity
+  parent: ClothingBeltMantisOrnate
+  id: ClothingBeltMantisOrnateLoot
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+    - id: MantisMeleeCane
+    - id: PillCanisterMnemolithMantis
+    - id: PillCanisterSpaceDrugsMantis
+    - id: PlushieDollMantis
+    - id: PersonalAISomber
+    - id: MantisTailorsKnife
+# Mantis belts end
 
 - type: entity
   parent: [ BaseBlueshieldOfficerContraband, ClothingBeltStorageBase ]
@@ -129,6 +236,6 @@
       - id: FlashlightSeclite
       - id: HandheldCrewMonitorBSO
   - type: ContainerFill
-    containers: 
+    containers:
       radio:
       - RadioHandheldSecurity

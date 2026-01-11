@@ -18,8 +18,8 @@
   id: Submarine
   mapName: 'Submarine'
   mapPath: /Maps/TheDen/submarine.yml
-  minPlayers: 70
-  maxPlayers: 100 # The Den: we hit 80 and had no maps lmao
+  minPlayers: 150 # The Den: figure out lag
+  maxPlayers: 150
   stations:
     Submarine:
       stationProto: StandardNanotrasenStation

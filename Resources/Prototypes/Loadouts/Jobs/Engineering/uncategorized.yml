@@ -5,10 +5,11 @@
 # SPDX-FileCopyrightText: 2025 Lonofera
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SheepIzMutton
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # All Engineering Department Jobs
 # Backpacks
@@ -131,6 +132,63 @@
     - ClothingHandsMercGlovesCombat
 
 # Head
+
+- type: loadout
+  id: LoadoutEngineeringHeadWelding
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingHeadHatWelding
+
+- type: loadout
+  id: LoadoutEngineeringHeadWeldingPainted
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingHeadHatWeldingMaskPainted
+
+- type: loadout
+  id: LoadoutEngineeringHeadWeldingFlameBlue
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingHeadHatWeldingMaskFlameBlue
+
+- type: loadout
+  id: LoadoutEngineeringHeadWeldingFlame
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingHeadHatWeldingMaskFlame
+
 - type: loadout
   id: LoadoutEngineeringHeadBeret
   category: JobsEngineeringAAUncategorized

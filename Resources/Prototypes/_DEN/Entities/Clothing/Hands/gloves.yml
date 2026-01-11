@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -54,6 +55,122 @@
     slots:
     - GLOVES
     - NECK
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesMantis
+  name: dated mantis gloves
+  description: "Made of tough cloth, and fingerless for dexterity. All the company would pay for prior to the mantis equipment refresh."
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves.rsi
+  - type: Fiber
+    fiberColor: fibers-white
+  - type: Tag # TheDen
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
+
+- type: entity
+  parent: [ClothingHandsGlovesMantis, BaseFoldable]
+  id: ClothingHandsGlovesMantisAiry
+  name: airy mantis sleeves
+  description: "Wide-cuffed sleeves over finger-loop gloves. The left cuff can be fastened tighter, if it's in the way of your mantle. But...only the left cuff, for some reason... If you have a knife, you could probably tailor that button onto the other sleeve instead."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_airy.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-folded
+      map: ["foldedLayer"]
+      visible: false
+  - type: Clothing
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_airy.rsi
+  - type: Fiber
+    fiberColor: fibers-black
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-verb
+    unfoldVerbText: unfold-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded
+  - type: Butcherable # Butchering it makes the right sleeve foldable instead
+    butcheringType: Knife
+    spawned:
+    - id: ClothingHandsGlovesMantisAiryTailored
+      amount: 1
+
+- type: entity
+  parent: ClothingHandsGlovesMantisAiry
+  id: ClothingHandsGlovesMantisAiryTailored # The only way to fold the right sleeve under the mantle, since folding is only a toggle
+  name: airy mantis sleeves (tailored)
+  description: "Wide-cuffed sleeves over finger-loop gloves. The right cuff can be fastened tighter, if it's in the way of your mantle. But...only the right cuff, for some reason... If you have a knife, you could probably tailor that button onto the other sleeve instead."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_airy_tailored.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_airy_tailored.rsi
+  - type: Butcherable # Butchering it makes the left sleeve foldable again
+    butcheringType: Knife
+    spawned:
+    - id: ClothingHandsGlovesMantisAiry
+      amount: 1
+
+- type: entity
+  parent: ClothingHandsGlovesMantis
+  id: ClothingHandsGlovesMantisDark
+  name: dark mantis gloves
+  description: "Long, fingerless gloves made of durable fabric."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_dark.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_dark.rsi
+  - type: Fiber
+    fiberColor: fibers-black
+
+- type: entity
+  parent: [ClothingHandsGlovesMantis, BaseFoldable]
+  id: ClothingHandsGlovesMantisOrnate
+  name: ornate mantis sleeve
+  description: "A flowing sleeve large enough to conceal your hand, with electrum chains to decorate your other arm. Can be worn on either side, possibly to hide the chains under your mantle, if you so choose."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_ornate.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-flipped
+      map: ["foldedLayer"]
+      visible: false
+  - type: Clothing
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_ornate.rsi
+  - type: Fiber
+    fiberColor: fibers-black
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+
+- type: entity
+  parent: ClothingHandsGlovesMantis
+  id: ClothingHandsGlovesMantisChains
+  name: mantis arm chains
+  description: "Electrum chains to adorn your arms. Maybe you work out."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_chains.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_chains.rsi
+  - type: Fiber
+    fiberColor: fibers-gold
 
 - type: entity
   parent: ClothingHandsGlovesNitrile

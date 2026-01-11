@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 pocl v
 # SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -20,6 +21,65 @@
   - type: Sprite
     sprite: _DEN/Objects/Consumable/Drinks/jaegermisterbottle.rsi
   - type: Sealable
+
+- type: entity
+  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  id: DrinkEggnogBottleFull
+  name: eggnog bottle
+  description: A fancy-looking bottle of eggnog, with a festive label and sealed cap.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/eggnog_bottle.rsi
+    layers:
+    - state: icon_empty
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+    - state: label
+    - state: ribbon
+    - state: cap
+      map: ["enum.OpenableVisuals.Layer"]
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/eggnog_bottle.rsi
+    state: icon
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: { visible: false }
+          False: { visible: true }
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Eggnog
+          Quantity: 100
+  - type: Sealable
+  - type: SolutionContainerVisuals
+    maxFillLevels: 8
+    fillBaseName: fill-
+    inHandsMaxFillLevels: 3
+    inHandsFillBaseName: -fill-
+
+- type: entity
+  parent: DrinkEggnogBottleFull
+  id: DrinkSyndicateEggnogBottleFull
+  name: syndicate eggnog bottle
+  description: A fancy-looking bottle of syndicate eggnog, with a festive label and sealed cap.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/syndicate_eggnog_bottle.rsi
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/syndicate_eggnog_bottle.rsi
+    state: icon
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: SyndicateEggnog
+          Quantity: 100
+
+## JUGS
 
 - type: entity
   parent: CustomDrinkJug
@@ -200,3 +260,18 @@
           Quantity: 150
   - type: Label
     currentLabel: watermelon juice
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkJuiceRoseJug
+  suffix: rose water
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: JuiceRose
+          Quantity: 150
+  - type: Label
+    currentLabel: rose water

@@ -37,8 +37,10 @@
 # SPDX-FileCopyrightText: 2025 Fansana
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 Kellaris
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Piras314
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Spatison
@@ -293,7 +295,7 @@
   parent: [ClothingEyesBase, ShowPsionicsIcons]
   id: ClothingEyesGlassesEpistemics
   name: epi psionics glasses
-  description: Upgraded sunglasses that provide flash immunity and a epistemics psionics HUD.
+  description: Upgraded sunglasses that provide flash immunity and an epistemics psionics HUD.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/epiglasses.rsi
@@ -534,7 +536,7 @@
   parent: ClothingEyesBase
   id: ClothingEyesGlassesEthereal
   name: ethereal goggles
-  description: An unusual pair of goggles developed during a time of inhumane experimentation involving Shadowkin. They are designed to allow the wearer to peer into The Dark.
+  description: An unusual pair of goggles developed during a time of dimensional experimentation. They are designed to allow the wearer to peer into The Dark.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/etherealgoogles.rsi
