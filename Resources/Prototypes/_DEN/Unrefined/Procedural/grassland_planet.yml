@@ -25,10 +25,6 @@
   - Rain
   markers:
   - ThornVines
-  - HardStoneQuarry
-  - HardStoneQuarryBig
-  - DebrisPile
-  - DebrisPileBig
   - WildCrops
   - WildCropsBig
   - WildAnimal
@@ -66,34 +62,6 @@
   radius: 64
   minGroupSize: 6
   maxGroupSize: 12
-
-- type: biomeMarkerLayer
-  id: HardStoneQuarry
-  prototype: HardStone1
-  radius: 16
-  minGroupSize: 4
-  maxGroupSize: 8
-
-- type: biomeMarkerLayer
-  id: HardStoneQuarryBig
-  prototype: HardStone1
-  radius: 64
-  minGroupSize: 10
-  maxGroupSize: 30
-
-- type: biomeMarkerLayer
-  id: DebrisPile
-  prototype: SpawnerGrasslandsPiles
-  radius: 32
-  minGroupSize: 1
-  maxGroupSize: 4
-
-- type: biomeMarkerLayer
-  id: DebrisPileBig
-  prototype: SpawnerGrasslandsPiles
-  radius: 84
-  minGroupSize: 4
-  maxGroupSize: 10
 
 - type: biomeMarkerLayer
   id: WildAnimal

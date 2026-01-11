@@ -73,7 +73,7 @@
         acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialLeather1:
+          MaterialCloth1:
             min: 2
             max: 2
   - type: DisassembleOnAltVerb
@@ -154,7 +154,7 @@
         acts: ["Destruction"]
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialLeather1:
+          MaterialCloth1:
             min: 2
             max: 2
   - type: DisassembleOnAltVerb

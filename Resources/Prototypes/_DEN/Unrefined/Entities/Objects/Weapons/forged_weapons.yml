@@ -1,29 +1,4 @@
 - type: entity
-  name: copper knife
-  parent: CombatKnife
-  id: CopperKnife
-  description: A copper-forged sharp edge with a wooden handle.
-  components:
-  - type: Sprite
-    sprite: _DEN/Unrefined/Objects/Weapons/copper_knife.rsi
-    state: icon
-  - type: MeleeWeapon
-    wideAnimationRotation: -135
-    attackRate: 0.8
-    damage:
-      types:
-        Slash: 9
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Slash: 7
-  - type: Item
-    sprite: _DEN/Unrefined/Objects/Weapons/copper_knife.rsi
-    storedSprite:
-      state: icon # Add storage sprite
-      sprite: _DEN/Unrefined/Objects/Weapons/copper_knife.rsi
-    
-- type: entity
   name: steel knife
   parent: CombatKnife
   id: SteelKnife
@@ -37,12 +12,6 @@
     storedSprite:
       state: icon # Add storage sprite
       sprite: _DEN/Unrefined/Objects/Weapons/steel_knife.rsi
-    
-- type: entity
-  name: forged claymore
-  parent: Claymore
-  id: SteelClaymore
-  description: An ancient war blade, freshly made.
   
 - type: entity
   parent: BaseItem

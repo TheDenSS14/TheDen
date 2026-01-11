@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/13/2025 16:49:55
-  entityCount: 46
+  time: 01/11/2026 16:32:05
+  entityCount: 49
 maps: []
 grids:
 - 1
@@ -245,76 +245,107 @@ entities:
     - type: Transform
       pos: -0.5,2.5
       parent: 1
-- proto: RandomFloraTree
+- proto: FloraTree01
+  entities:
+  - uid: 36
+    components:
+    - type: Transform
+      pos: 3.444119,1.6858957
+      parent: 1
+- proto: FloraTree03
   entities:
   - uid: 33
     components:
     - type: Transform
-      pos: 0.5,3.5
-      parent: 1
-  - uid: 34
-    components:
-    - type: Transform
-      pos: -1.5,2.5
-      parent: 1
-  - uid: 35
-    components:
-    - type: Transform
-      pos: -2.5,0.5
-      parent: 1
-  - uid: 36
-    components:
-    - type: Transform
-      pos: -2.5,-1.5
-      parent: 1
-  - uid: 37
-    components:
-    - type: Transform
-      pos: -0.5,-3.5
+      pos: 2.647244,-2.7359793
       parent: 1
   - uid: 38
     components:
     - type: Transform
-      pos: 1.5,-3.5
-      parent: 1
-  - uid: 39
-    components:
-    - type: Transform
-      pos: 2.5,-2.5
+      pos: 4.647244,-1.6109796
       parent: 1
   - uid: 40
     components:
     - type: Transform
-      pos: 3.5,-2.5
+      pos: 3.5378695,2.5921457
       parent: 1
-  - uid: 41
+  - uid: 47
     components:
     - type: Transform
-      pos: 3.5,-1.5
+      pos: 1.334744,-3.6109793
       parent: 1
-  - uid: 42
+- proto: FloraTree04
+  entities:
+  - uid: 37
     components:
     - type: Transform
-      pos: 4.5,-0.5
-      parent: 1
-  - uid: 43
-    components:
-    - type: Transform
-      pos: 4.5,0.5
-      parent: 1
-  - uid: 44
-    components:
-    - type: Transform
-      pos: 3.5,1.5
-      parent: 1
-  - uid: 45
-    components:
-    - type: Transform
-      pos: 3.5,2.5
+      pos: 4.694119,-0.54847944
       parent: 1
   - uid: 46
     components:
     - type: Transform
-      pos: -1.5,-2.5
+      pos: -1.618381,1.5296459
+      parent: 1
+- proto: FloraTree05
+  entities:
+  - uid: 34
+    components:
+    - type: Transform
+      pos: -1.509006,-2.7672293
+      parent: 1
+  - uid: 35
+    components:
+    - type: Transform
+      pos: 3.647244,-1.4547294
+      parent: 1
+  - uid: 48
+    components:
+    - type: Transform
+      pos: 2.569119,-3.5172293
+      parent: 1
+- proto: FloraTree06
+  entities:
+  - uid: 49
+    components:
+    - type: Transform
+      pos: 3.600369,-2.4859793
+      parent: 1
+- proto: FloraTreeLarge01
+  entities:
+  - uid: 39
+    components:
+    - type: Transform
+      pos: -1.6652558,2.592146
+      parent: 1
+- proto: FloraTreeLarge02
+  entities:
+  - uid: 41
+    components:
+    - type: Transform
+      pos: -2.602756,-1.7672293
+      parent: 1
+  - uid: 45
+    components:
+    - type: Transform
+      pos: 0.35036898,3.4671457
+      parent: 1
+- proto: FloraTreeLarge04
+  entities:
+  - uid: 42
+    components:
+    - type: Transform
+      pos: -2.649631,0.4515208
+      parent: 1
+  - uid: 44
+    components:
+    - type: Transform
+      pos: -0.43088102,-3.6891043
+      parent: 1
+- proto: FloraTreeLarge05
+  entities:
+  - uid: 43
+    components:
+    - type: Transform
+      pos: 4.772244,0.48277068
       parent: 1
 ...

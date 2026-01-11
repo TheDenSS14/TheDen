@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/13/2025 16:25:00
+  time: 01/11/2026 16:29:48
   entityCount: 15
 maps: []
 grids:
@@ -87,7 +87,7 @@ entities:
     - type: RadiationGridResistance
 - proto: CrateWooden
   entities:
-  - uid: 13
+  - uid: 2
     components:
     - type: Transform
       pos: 1.5,-0.5
@@ -98,100 +98,117 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 15
-          - 14
+          - 3
+          - 4
+          - 5
+          - 6
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
 - proto: DrinkBottleAlcoClear
   entities:
-  - uid: 14
+  - uid: 4
     components:
     - type: Transform
-      parent: 13
+      parent: 2
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: FoodPlateSmall
-  entities:
-  - uid: 15
-    components:
-    - type: Transform
-      parent: 13
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: MaterialLeather1
+- proto: FloraTree03
   entities:
   - uid: 8
     components:
     - type: Transform
-      pos: 2.4523487,1.4019662
+      rot: -1.5707963267948966 rad
+      pos: 0.702929,-2.7551403
       parent: 1
+- proto: FloraTree05
+  entities:
+  - uid: 7
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 3.796679,-1.4738903
+      parent: 1
+- proto: FloraTree06
+  entities:
   - uid: 9
     components:
     - type: Transform
-      pos: 3.541914,1.4140774
+      rot: -1.5707963267948966 rad
+      pos: -0.578321,0.5417347
       parent: 1
+- proto: FoodPlateSmall
+  entities:
+  - uid: 5
+    components:
+    - type: Transform
+      parent: 2
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-- proto: RandomFloraTree
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: Fork
+  entities:
+  - uid: 6
+    components:
+    - type: Transform
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: Spoon
+  entities:
+  - uid: 3
+    components:
+    - type: Transform
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: TentFlapLeather
   entities:
   - uid: 10
     components:
     - type: Transform
-      pos: 3.5,-0.5
-      parent: 1
-  - uid: 11
-    components:
-    - type: Transform
-      pos: 0.5,-1.5
-      parent: 1
-  - uid: 12
-    components:
-    - type: Transform
-      pos: -0.5,1.5
-      parent: 1
-- proto: TentFlapLeather
-  entities:
-  - uid: 2
-    components:
-    - type: Transform
+      rot: -1.5707963267948966 rad
       pos: 2.5,-0.5
       parent: 1
     - type: Airtight
       airBlocked: True
 - proto: TentWallLeather
   entities:
-  - uid: 3
+  - uid: 11
     components:
     - type: Transform
       pos: 1.5,0.5
       parent: 1
-  - uid: 4
+  - uid: 12
     components:
     - type: Transform
       pos: 1.5,1.5
       parent: 1
-  - uid: 5
+  - uid: 13
     components:
     - type: Transform
       pos: 3.5,-0.5
       parent: 1
-  - uid: 6
+  - uid: 14
     components:
     - type: Transform
       pos: 3.5,0.5
       parent: 1
 - proto: ToySpawner
   entities:
-  - uid: 7
+  - uid: 15
     components:
     - type: Transform
       pos: 2.5,0.5

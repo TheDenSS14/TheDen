@@ -41,8 +41,6 @@
       spawned:
       - id: MaterialBones1
         amount: 3
-      - id: OfferingSkull
-        amount: 1
     - type: LayingDown
     - type: Fauna
     - type: Destructible
@@ -58,9 +56,6 @@
               MaterialBones1:
                 min: 2
                 max: 3
-              OfferingSkull:
-                min: 1
-                max: 1
 
 - type: damageModifierSet
   id: Undead
@@ -90,7 +85,7 @@
           Blunt: 5
     - type: Loadout
       prototypes:
-        - AngrySkeleton
+        - AngrySkeletonKnife
     - type: Destructible
       thresholds:
       - trigger:
@@ -104,12 +99,6 @@
               MaterialBones1:
                 min: 2
                 max: 3
-              OfferingSkull:
-                min: 1
-                max: 1
-              ClothingSackSurvivalLootSack:
-                min: 0
-                max: 1
  
 - type: htnCompound
   id: AngrySkeletonCompound
@@ -125,11 +114,37 @@
           task: IdleCompound
 
 - type: startingGear
-  id: AngrySkeleton
+  id: AngrySkeletonKnife
   inhand:
     - HardStoneKnife
-  equipment:
-    belt: ClothingSackSurvivalLootSack
+ 
+- type: entity
+  name: angry skeleton
+  parent: SkeletonWildAngry
+  id: SkeletonWildAngryPick
+  components:
+    - type: Loadout
+      prototypes:
+        - AngrySkeletonPick  
+
+- type: startingGear
+  id: AngrySkeletonPick
+  inhand:
+    - HardStonePickaxe
+
+- type: entity
+  name: angry skeleton
+  parent: SkeletonWildAngry
+  id: SkeletonWildAngryShovel
+  components:
+    - type: Loadout
+      prototypes:
+        - AngrySkeletonShovel  
+
+- type: startingGear
+  id: AngrySkeletonShovel
+  inhand:
+    - HardStoneShovel
  
 - type: entity
   name: angry skeleton archer
@@ -173,12 +188,6 @@
               MaterialBones1:
                 min: 2
                 max: 3
-              OfferingSkull:
-                min: 1
-                max: 1
-              ClothingSackSurvivalLootSack:
-                min: 0
-                max: 1
 
 - type: htnCompound
   id: AngrySkeletonArcherCompound
@@ -198,8 +207,6 @@
   inhand:
     - ArrowSkeleton
     - BowImprovised 
-  equipment:
-    belt: ClothingSackSurvivalLootSack
 
 - type: entity
   parent: BaseArrow
@@ -227,9 +234,14 @@
   table: !type:GroupSelector
     children:
     - !type:GroupSelector
-      weight: 80
+      weight: 60
       children:
       - id: SkeletonWildAngry
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: SkeletonWildAngryPick
+      - id: SkeletonWildAngryShovel
     - !type:GroupSelector
       weight: 20
       children:
@@ -269,7 +281,7 @@
           Blunt: 5
     - type: Loadout
       prototypes:
-        - AngrySkeletonWarrior
+        - AngrySkeletonWarriorKnife
     - type: Destructible
       thresholds:
       - trigger:
@@ -283,22 +295,51 @@
               MaterialBones1:
                 min: 2
                 max: 3
-              OfferingSkull:
-                min: 1
-                max: 1
-              ClothingSackSurvivalLootSackLeather:
-                min: 0
-                max: 1
         
 - type: startingGear
-  id: AngrySkeletonWarrior
+  id: AngrySkeletonWarriorKnife
   inhand:
     - SteelKnife
     - WoodenBuckler
   equipment:
     head: HelmetCraftedSteel
     outerClothing: ChainmailArmor
-    belt: ClothingSackSurvivalLootSackLeather
+
+- type: entity
+  name: angry skeleton warrior
+  parent: SkeletonWildWarrior
+  id: SkeletonWildWarriorMace
+  components:
+    - type: Loadout
+      prototypes:
+        - AngrySkeletonWarriorMace
+    
+- type: startingGear
+  id: AngrySkeletonWarriorMace
+  inhand:
+    - SteelMace
+    - WoodenBuckler
+  equipment:
+    head: HelmetCraftedSteel
+    outerClothing: ChainmailArmor
+
+- type: entity
+  name: angry skeleton warrior
+  parent: SkeletonWildWarrior
+  id: SkeletonWildWarriorSpear
+  components:
+    - type: Loadout
+      prototypes:
+        - AngrySkeletonWarriorSpear
+
+- type: startingGear
+  id: AngrySkeletonWarriorSpear
+  inhand:
+    - SteelSpear
+    - WoodenBuckler
+  equipment:
+    head: HelmetCraftedSteel
+    outerClothing: ChainmailArmor
 
 - type: entityTable
   id: GrasslandsUndeadGreater
@@ -308,6 +349,11 @@
       weight: 80
       children:
       - id: SkeletonWildWarrior
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: SkeletonWildWarriorMace
+      - id: SkeletonWildWarriorSpear
       
 - type: entity
   name: wild greater undead spawner
@@ -335,12 +381,6 @@
   - type: Tag
     tags:
     - Wildlife
-  - type: Butcherable
-    spawned:
-    - id: FoodMeatSpider
-      amount: 2
-    - id: OfferingSkull
-      amount: 1      
 
 - type: entityTable
   id: GrasslandsSpiders
@@ -387,12 +427,6 @@
   - type: Tag
     tags:
     - Wildlife
-  - type: Butcherable
-    spawned:
-    - id: FoodMeatSlime
-      amount: 2
-    - id: OfferingSkull
-      amount: 1
 
 - type: entityTable
   id: GrasslandsSlimes
@@ -565,7 +599,7 @@
 - type: entity
   parent: CrateWoodenMimic
   id: CrateGoldMimic
-  name: pirate chest?
+  name: treasure chest?
   suffix: mimic
   description: Looks a bit strange...
   components:
@@ -596,7 +630,7 @@
             MaterialWoodPlank1:
               min: 1
               max: 1
-            SheetPlasma1:
+            MaterialDiamond1:
               min: 2
               max: 5
         - !type:PlaySoundBehavior

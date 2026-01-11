@@ -10,14 +10,6 @@
   - type: Tag
     tags:
     - Wildlife    
-  - type: Butcherable
-    spawned:
-    - id: FoodMeat
-      amount: 5
-    - id: MaterialLeather1
-      amount: 3
-    - id: OfferingAnimal
-      amount: 1
   - type: Fauna
       
 - type: entity
@@ -29,16 +21,6 @@
   - type: Tag
     tags:
     - Wildlife   
-  - type: Butcherable
-    spawned:
-    - id: FoodMeat
-      amount: 3
-    - id: FoodMeatBacon
-      amount: 3
-    - id: MaterialLeather1
-      amount: 2
-    - id: OfferingAnimal
-      amount: 1
   - type: Fauna
 
 - type: entity
@@ -50,12 +32,6 @@
   - type: Tag
     tags:
     - Wildlife   
-  - type: Butcherable
-    spawned:
-    - id: FoodMeatRat
-      amount: 1
-    - id: OfferingAnimal
-      amount: 1
   - type: Fauna
   
 - type: entity
@@ -67,14 +43,6 @@
   - type: Tag
     tags:
     - Wildlife   
-  - type: Butcherable
-    spawned:
-    - id: FoodMeat
-      amount: 3
-    - id: MaterialLeather1
-      amount: 1
-    - id: OfferingAnimal
-      amount: 1
   - type: Fauna
 
 - type: entity
@@ -149,8 +117,6 @@
     spawned:
     - id: FoodMeatChicken
       amount: 3
-    - id: OfferingAnimal
-      amount: 1
   - type: InteractionPopup
     successChance: 0.8
     interactSuccessString: petting-success-bird
@@ -197,39 +163,6 @@
   id: Phorvect
 
 - type: entity
-  name: campguard fox
-  parent: [MobFox, MobCombat]
-  id: MobFoxCampguard
-  description: Helps keep the base safe from interlopers. Try not to distract them.
-  components:
-  - type: NpcFactionMember
-    factions:
-    - NanoTrasen
-  - type: HTN
-    rootTask:
-      task: MeleePsionicFamiliarCompound
-  - type: Fauna
-  - type: NPCRetaliation
-    attackMemoryLength: 10
-    retaliateFriendlies: true
-
-- type: entity
-  name: Campguard Fox Spawner
-  id: SpawnMobFoxCampguard
-  parent: MarkerBase
-  components:
-  - type: Tag
-    tags:
-    - Wildlife   
-  - type: Sprite
-    layers:
-      - state: green
-      - state: ai
-  - type: ConditionalSpawner
-    prototypes:
-      - MobFoxCampguard
-
-- type: entity
   name: wild snake
   parent: MobSnake
   id: MobSnakeWild
@@ -271,10 +204,6 @@
       weight: 4
       children:
       - id: MobPhorvect
-    - !type:GroupSelector
-      weight: 1
-      children:
-      - id: MobFoxCampguard
       
 - type: entity
   name: wild animal spawner

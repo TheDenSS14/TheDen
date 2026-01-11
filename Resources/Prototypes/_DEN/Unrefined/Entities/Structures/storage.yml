@@ -108,17 +108,9 @@
   - type: ContainerContainer
     containers:
       paper_label: !type:ContainerSlot
-        
-- type: entity
-  parent: WoodenBarrel
-  id: WoodenBarrelConstructed
-  components:
-  - type: Construction
-    graph: WoodenBarrel
-    node: barrel
       
 - type: entity
-  parent: WoodenBarrelConstructed
+  parent: WoodenBarrel
   id: WoodenBarrelWater
   suffix: water
   components:
@@ -130,7 +122,7 @@
           Quantity: 500
 
 - type: entity
-  parent: WoodenBarrelConstructed
+  parent: WoodenBarrel
   id: WoodenBarrelWine
   suffix: wine
   components:
@@ -142,7 +134,7 @@
           Quantity: 500
             
 - type: entity
-  parent: WoodenBarrelConstructed
+  parent: WoodenBarrel
   id: WoodenBarrelSalt
   suffix: salt
   components:
@@ -154,7 +146,7 @@
           Quantity: 500
             
 - type: entity
-  parent: WoodenBarrelConstructed
+  parent: WoodenBarrel
   id: WoodenBarrelFlour
   suffix: flour
   components:

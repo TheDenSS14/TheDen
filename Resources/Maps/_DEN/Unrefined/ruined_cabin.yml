@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/13/2025 16:44:59
-  entityCount: 60
+  time: 01/11/2026 15:58:15
+  entityCount: 56
 maps: []
 grids:
 - 1
@@ -99,39 +99,26 @@ entities:
     - type: RadiationGridResistance
 - proto: BookshelfFilled
   entities:
-  - uid: 23
+  - uid: 2
     components:
     - type: Transform
       pos: 0.5,2.5
       parent: 1
 - proto: CarpetGreen
   entities:
-  - uid: 59
+  - uid: 3
     components:
     - type: Transform
       pos: 4.5,2.5
       parent: 1
-  - uid: 60
+  - uid: 4
     components:
     - type: Transform
       pos: 3.5,1.5
       parent: 1
-- proto: ClayLump1
-  entities:
-  - uid: 45
-    components:
-    - type: Transform
-      parent: 43
-    - type: Stack
-      count: 10
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: CrateWooden
   entities:
-  - uid: 26
+  - uid: 5
     components:
     - type: Transform
       pos: 0.5,0.5
@@ -142,27 +129,27 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 27
-          - 28
-          - 29
-          - 30
-          - 31
-          - 32
-          - 33
-          - 34
-          - 35
-          - 36
-          - 37
-          - 38
-          - 39
-          - 40
-          - 41
-          - 42
+          - 9
+          - 21
+          - 20
+          - 19
+          - 18
+          - 17
+          - 16
+          - 15
+          - 14
+          - 13
+          - 12
+          - 11
+          - 10
+          - 8
+          - 7
+          - 6
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-  - uid: 43
+  - uid: 22
     components:
     - type: Transform
       pos: 0.5,1.5
@@ -173,55 +160,54 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 47
-          - 45
-          - 44
-          - 46
-          - 48
+          - 23
+          - 25
+          - 24
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
 - proto: DresserFilled
   entities:
-  - uid: 54
+  - uid: 26
     components:
     - type: Transform
       pos: 4.5,1.5
       parent: 1
+- proto: FloraTree03
+  entities:
+  - uid: 32
+    components:
+    - type: Transform
+      pos: 6.625875,2.350243
+      parent: 1
+- proto: FloraTree06
+  entities:
+  - uid: 31
+    components:
+    - type: Transform
+      pos: 2.4550714,-3.5091314
+      parent: 1
+- proto: FloraTreeLarge02
+  entities:
+  - uid: 33
+    components:
+    - type: Transform
+      pos: -1.5770473,2.3554447
+      parent: 1
 - proto: FoodBowlBig
   entities:
-  - uid: 52
+  - uid: 27
     components:
     - type: Transform
       pos: 4.4785514,0.3793193
       parent: 1
-- proto: GrindingMortar
-  entities:
-  - uid: 58
-    components:
-    - type: Transform
-      pos: 3.5,0.5
-      parent: 1
-- proto: HardStone1
-  entities:
-  - uid: 47
-    components:
-    - type: Transform
-      parent: 43
-    - type: Stack
-      count: 8
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: MaterialCloth10
   entities:
-  - uid: 48
+  - uid: 25
     components:
     - type: Transform
-      parent: 43
+      parent: 22
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -229,19 +215,19 @@ entities:
     - type: InsideEntityStorage
 - proto: MaterialWoodPlank
   entities:
-  - uid: 44
+  - uid: 23
     components:
     - type: Transform
-      parent: 43
+      parent: 22
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 46
+  - uid: 24
     components:
     - type: Transform
-      parent: 43
+      parent: 22
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -249,301 +235,264 @@ entities:
     - type: InsideEntityStorage
 - proto: N14BedWood
   entities:
-  - uid: 22
+  - uid: 28
     components:
     - type: Transform
       pos: 4.5,2.5
       parent: 1
 - proto: N14TableWoodSettler
   entities:
-  - uid: 24
+  - uid: 29
     components:
     - type: Transform
       pos: 3.5,0.5
       parent: 1
-  - uid: 25
+  - uid: 30
     components:
     - type: Transform
       pos: 4.5,0.5
       parent: 1
 - proto: OatBushel
   entities:
-  - uid: 27
+  - uid: 6
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 28
+  - uid: 7
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 29
+  - uid: 9
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 42
+  - uid: 21
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: RandomFloraTree
-  entities:
-  - uid: 51
-    components:
-    - type: Transform
-      pos: 0.5,-1.5
-      parent: 1
-  - uid: 53
-    components:
-    - type: Transform
-      pos: 4.5,-2.5
-      parent: 1
-  - uid: 55
-    components:
-    - type: Transform
-      pos: -1.5,2.5
-      parent: 1
-  - uid: 57
-    components:
-    - type: Transform
-      pos: 6.5,1.5
-      parent: 1
 - proto: RandomWoodenStructure
   entities:
-  - uid: 15
-    components:
-    - type: Transform
-      pos: -0.5,2.5
-      parent: 1
-  - uid: 16
-    components:
-    - type: Transform
-      pos: -0.5,1.5
-      parent: 1
-  - uid: 17
+  - uid: 36
     components:
     - type: Transform
       pos: 5.5,0.5
       parent: 1
-  - uid: 18
+  - uid: 37
     components:
     - type: Transform
       pos: 4.5,-0.5
       parent: 1
-  - uid: 19
-    components:
-    - type: Transform
-      pos: 4.5,3.5
-      parent: 1
 - proto: SalvageSeedSpawnerLow
   entities:
-  - uid: 50
+  - uid: 39
     components:
     - type: Transform
       pos: 4.5,0.5
       parent: 1
 - proto: SpawnerRandomWildUndead
   entities:
-  - uid: 49
+  - uid: 40
     components:
     - type: Transform
       pos: 3.5,1.5
       parent: 1
-  - uid: 56
+  - uid: 41
     components:
     - type: Transform
-      pos: 3.5,1.5
+      pos: 1.5,1.5
       parent: 1
 - proto: WallWood
   entities:
-  - uid: 2
+  - uid: 42
     components:
     - type: Transform
       pos: 0.5,-0.5
       parent: 1
-  - uid: 3
+  - uid: 43
     components:
     - type: Transform
       pos: -0.5,-0.5
       parent: 1
-  - uid: 4
+  - uid: 44
     components:
     - type: Transform
       pos: -0.5,0.5
       parent: 1
-  - uid: 5
+  - uid: 45
     components:
     - type: Transform
       pos: -0.5,3.5
       parent: 1
-  - uid: 6
+  - uid: 46
     components:
     - type: Transform
       pos: 5.5,3.5
       parent: 1
-  - uid: 7
+  - uid: 47
     components:
     - type: Transform
       pos: 5.5,-0.5
       parent: 1
-  - uid: 8
+  - uid: 48
     components:
     - type: Transform
       pos: 3.5,-0.5
       parent: 1
-  - uid: 9
+  - uid: 49
     components:
     - type: Transform
       pos: 2.5,-0.5
       parent: 1
-  - uid: 10
+  - uid: 50
     components:
     - type: Transform
       pos: 5.5,1.5
       parent: 1
-  - uid: 11
+  - uid: 51
     components:
     - type: Transform
       pos: 3.5,3.5
       parent: 1
-  - uid: 12
+  - uid: 52
     components:
     - type: Transform
       pos: 1.5,3.5
       parent: 1
-  - uid: 13
+  - uid: 53
     components:
     - type: Transform
       pos: 0.5,3.5
       parent: 1
-  - uid: 14
+  - uid: 54
     components:
     - type: Transform
       pos: 5.5,2.5
       parent: 1
 - proto: WheatBushel
   entities:
-  - uid: 30
+  - uid: 8
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 31
+  - uid: 10
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 32
+  - uid: 11
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 33
+  - uid: 12
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 34
+  - uid: 13
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 35
+  - uid: 14
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 36
+  - uid: 15
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 37
+  - uid: 16
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 38
+  - uid: 17
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 39
+  - uid: 18
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 40
+  - uid: 19
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 41
+  - uid: 20
     components:
     - type: Transform
-      parent: 26
+      parent: 5
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -551,14 +500,33 @@ entities:
     - type: InsideEntityStorage
 - proto: WoodDoor
   entities:
-  - uid: 20
+  - uid: 55
     components:
     - type: Transform
       pos: 1.5,-0.5
       parent: 1
-  - uid: 21
+  - uid: 56
     components:
     - type: Transform
       pos: 2.5,3.5
+      parent: 1
+- proto: WoodenSupportWall
+  entities:
+  - uid: 35
+    components:
+    - type: Transform
+      pos: 4.5,3.5
+      parent: 1
+  - uid: 38
+    components:
+    - type: Transform
+      pos: -0.5,1.5
+      parent: 1
+- proto: WoodenSupportWallBroken
+  entities:
+  - uid: 34
+    components:
+    - type: Transform
+      pos: -0.5,2.5
       parent: 1
 ...

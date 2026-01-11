@@ -163,7 +163,7 @@
           - !type:TriggerBehavior
           - !type:SpawnEntitiesBehavior
             spawn:
-              SkeletonWildWarrior:
+              SpawnerRandomWildUndeadGreater:
                 min: 2
                 max: 2
               SkeletonWildArcher:
@@ -218,9 +218,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _DEN/Unrefined/Objects/Weapons/wand.rsi
+    sprite: _DEN/Unrefined/Objects/Misc/quest_materials.rsi
     layers:
-      - state: bullet
+      - state: spell
         shader: unshaded
   - type: PointLight
     enabled: true
@@ -342,7 +342,7 @@
   - type: TimedDespawn
     lifetime: 5.9
   - type: SpawnOnDespawn
-    prototype: ClothingSackSurvivalBoss
+    prototype: SpawnerRandomNecromancerLoot
     
 - type: entity
   name: necromancer
@@ -441,3 +441,28 @@
   - type: ConditionalSpawner
     prototypes:
     - EvilRootNecromancer
+    
+- type: entityTable
+  id: NecromancerLoot
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      weight: 100
+      children:
+      - id: DragonscaleArmorGold
+      - id: DragonscaleArmorDark
+      
+- type: entity
+  name: necromancer loot spawner
+  id: SpawnerRandomNecromancerLoot
+  parent: MarkerBase
+  suffix: Grasslands
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/gold_dragonscale.rsi
+    state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: NecromancerLoot
+  placement:
+    mode: AlignTileAny
