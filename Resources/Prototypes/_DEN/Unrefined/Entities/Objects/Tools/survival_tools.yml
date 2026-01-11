@@ -10,7 +10,6 @@
   - type: ThrowingAngle
     angle: 135
   - type: Item
-    sprite: _Den/Unrefined/Objects/Tools/stone_knife.rsi
   - type: MeleeWeapon
     attackRate: 1.0
     heavyRateModifier: 1.5
@@ -105,7 +104,6 @@
       state: fill-1
       visible: false
   - type: Item
-    sprite: _DEN/Unrefined/Objects/Tools/copper_bucket.rsi
   - type: Clothing
     sprite: Objects/Tools/bucket.rsi # Add new sprites
     slots:
@@ -130,7 +128,6 @@
       state: fill-1
       visible: false
   - type: Item
-    sprite: _DEN/Unrefined/Objects/Tools/paint_bucket.rsi
   - type: SolutionContainerManager
     solutions:
       bucket:
@@ -206,7 +203,6 @@
     - state: icon
     - state: active
   - type: Item
-    sprite: _DEN/Unrefined/Objects/Tools/vellum_map.rsi
   - type: HandheldGPS
   - type: PhysicalComposition
     materialComposition:
@@ -249,7 +245,6 @@
           False: { visible: false }
   - type: Item
     size: Small
-    sprite: _DEN/Unrefined/Objects/Tools/soldering_iron.rsi
   - type: ItemToggle
     predictable: false
     soundActivate:
@@ -374,7 +369,6 @@
   - type: Appearance
   - type: Item
     size: Tiny
-    sprite: _DEN/Unrefined/Objects/Tools/firesteel.rsi
   - type: UseDelay
   - type: SolutionContainerManager
     solutions:
