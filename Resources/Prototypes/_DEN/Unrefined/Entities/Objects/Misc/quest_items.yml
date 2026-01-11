@@ -30,7 +30,7 @@
   stackEntity: AdamantineOre
   name: materials-adamant-raw
   unit: materials-unit-adamant-raw
-  icon: { sprite: _DEN/Unrefined/Objects/Misc/quest_materials.rsi, state: adamant_ore }
+  icon: { sprite: /Textures/_DEN/Unrefined/Objects/Misc/quest_materials.rsi, state: adamant_ore }
   price: 50
   
 - type: entity
@@ -51,7 +51,7 @@
   stackEntity: IngotAdamantium
   name: materials-adamant
   unit: materials-unit-adamant
-  icon: { sprite: Objects/Materials/ingots.rsi, state: adamantine }
+  icon: { sprite: /Textures/Objects/Materials/ingots.rsi, state: adamantine }
   price: 125
   
 - type: entity
@@ -407,7 +407,7 @@
   stackEntity: OfferingBoxFilled
   name: materials-offering
   unit: materials-unit-offering
-  icon: { sprite: _DEN/Unrefined/Objects/Misc/quest_materials.rsi, state: offering_box }
+  icon: { sprite: /Textures/_DEN/Unrefined/Objects/Misc/quest_materials.rsi, state: offering_box }
   price: 1.5
 
 - type: entity
@@ -448,7 +448,7 @@
   stackEntity: DragonhideScales
   name: materials-dragonscales
   unit: materials-unit-dragonscales
-  icon: { sprite: _DEN/Unrefined/Objects/Misc/quest_materials.rsi, state: dragonscales }
+  icon: { sprite: /Textures/_DEN/Unrefined/Objects/Misc/quest_materials.rsi, state: dragonscales }
   price: 15
   
 - type: entity

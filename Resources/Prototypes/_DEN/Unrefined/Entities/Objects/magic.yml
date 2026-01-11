@@ -1241,7 +1241,7 @@
   stackEntity: EssenceEarth
   name: materials-essence-earth
   unit: materials-unit-essence
-  icon: { sprite: _Den/Unrefined/Objects/Misc/magic_essence.rsi, state: earth }
+  icon: { sprite: /Textures/_Den/Unrefined/Objects/Misc/magic_essence.rsi, state: earth }
   price: 10
 
 - type: reaction
@@ -1289,7 +1289,7 @@
   stackEntity: EssenceBlood
   name: materials-essence-blood
   unit: materials-unit-essence
-  icon: { sprite: _Den/Unrefined/Objects/Misc/magic_essence.rsi, state: blood }
+  icon: { sprite: /Textures/_Den/Unrefined/Objects/Misc/magic_essence.rsi, state: blood }
   price: 10
       
 - type: reaction
@@ -1337,7 +1337,7 @@
   stackEntity: EssenceFire
   name: materials-essence-fire
   unit: materials-unit-essence
-  icon: { sprite: _Den/Unrefined/Objects/Misc/magic_essence.rsi, state: fire }
+  icon: { sprite: /Textures/_Den/Unrefined/Objects/Misc/magic_essence.rsi, state: fire }
   price: 10
   
 - type: reaction
@@ -1385,7 +1385,7 @@
   stackEntity: EssenceWater
   name: materials-essence-water
   unit: materials-unit-essence
-  icon: { sprite: _Den/Unrefined/Objects/Misc/magic_essence.rsi, state: water }
+  icon: { sprite: /Textures/_Den/Unrefined/Objects/Misc/magic_essence.rsi, state: water }
   price: 10
   
 - type: reaction
