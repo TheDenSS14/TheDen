@@ -1091,6 +1091,8 @@
   - type: Clothing
     sprite: Clothing/Belt/generic.rsi
     renderLayer: innerBelt
+  - type: Item # DEN: Reduce size of generic belts
+    size: Small
 
 - type: entity
   parent: ClothingBeltBase
@@ -1104,6 +1106,8 @@
   - type: Clothing
     sprite: Clothing/Belt/generic_thin.rsi
     renderLayer: innerBelt
+  - type: Item # DEN: Reduce size of generic belts
+    size: Small
 
 - type: entity
   parent: ClothingBeltBase
@@ -1117,6 +1121,8 @@
   - type: Clothing
     sprite: Clothing/Belt/generic_thick.rsi
     renderLayer: innerBelt
+  - type: Item # DEN: Reduce size of generic belts
+    size: Small
 
 - type: entity
   parent: ClothingBeltBase
@@ -1130,6 +1136,8 @@
   - type: Clothing
     sprite: Clothing/Belt/waist.rsi
     renderLayer: innerBelt
+  - type: Item # DEN: Reduce size of generic belts
+    size: Small
 
 - type: entity
   parent: ClothingBeltBase
@@ -1143,3 +1151,5 @@
   - type: Clothing
     sprite: Clothing/Belt/waist_thin.rsi
     renderLayer: innerBelt
+  - type: Item # DEN: Reduce size of generic belts
+    size: Small

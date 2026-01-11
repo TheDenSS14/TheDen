@@ -2,6 +2,8 @@
 # SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
 # SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 pocl.v
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -674,7 +676,7 @@
           reagent: Songbird
           min: 2
   fizziness: 0.25
-  
+
 - type: reagent
   id: TohokuBlaze
   name: reagent-name-tohokublaze
@@ -930,12 +932,11 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.1
-# commented out until gasp is an emote.
-#      - !type:Emote
-#        emote: Gasp
-#        showInChat: true
-#        force: true
-#        probability: 0.35
+      - !type:Emote
+        emote: Gasp
+        showInChat: true
+        force: true
+        probability: 0.02
   fizziness: 0.5
 
 - type: reagent
@@ -957,12 +958,6 @@
       effects:
         - !type:SatiateThirst
           factor: 2
-  # commented out until gasp is an emote.
-  #      - !type:Emote
-  #        emote: Gasp
-  #        showInChat: true
-  #        force: true
-  #        probability: 0.35
   fizziness: 0.5
 
 - type: reagent
@@ -987,10 +982,4 @@
         - !type:AdjustReagent
           reagent: Ethanol
           amount: 0.1
-  # commented out until gasp is an emote.
-  #      - !type:Emote
-  #        emote: Gasp
-  #        showInChat: true
-  #        force: true
-  #        probability: 0.35
   fizziness: 0.5

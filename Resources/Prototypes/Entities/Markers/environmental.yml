@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2024 Peptide90 <78795277+Peptide90@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Peptide90
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wallflowerghost
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -103,3 +104,58 @@
     sprite: Markers/environment.rsi
     state: weather
   - type: BlockWeather
+  
+# Invisible Lights
+- type: entity
+  parent: MarkerBase
+  id: MarkerLight1
+  name: Marker Light Source
+  suffix: day
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Markers/environment.rsi
+        state: base-light-day
+  - type: PointLight
+    energy: 2
+    falloff: 0
+    radius: 8
+    softness: 0
+    color: "#ffeecfff"
+    castShadows: false
+    
+- type: entity
+  parent: MarkerBase
+  id: MarkerLight2
+  name: Marker Light Source
+  suffix: evening
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Markers/environment.rsi
+        state: base-light-evening
+  - type: PointLight
+    energy: 2
+    falloff: 0
+    radius: 8
+    softness: 0
+    color: "#EDA14Cff"
+    castShadows: false
+
+- type: entity
+  parent: MarkerBase
+  id: MarkerLight3
+  name: Marker Light Source
+  suffix: night
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Markers/environment.rsi
+        state: base-light-night
+  - type: PointLight
+    energy: 1
+    falloff: 0
+    radius: 8
+    softness: 0
+    color: "#AC8FE7ff"
+    castShadows: false

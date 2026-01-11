@@ -7,7 +7,7 @@
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   parent: ClothingNeckCollarBase # Floof - reparented
@@ -97,7 +97,7 @@
   parent: [ClothingNeckBase, BaseAntiPsionicWeapon, BaseMantisContraband]
   id: ClothingNeckMantisPendulum
   name: mantis pendulum
-  description: "A mnemolith eye hanging from a sturdy electrum chain, used to test psionic ability. Its strike rebounds on the wielder if its target lacks the gift. Mostly harmless, but mind your aim. You can fasten the chain around your neck, if you like."
+  description: "A mnemolith eye on a sturdy electrum chain, used to test psionic ability. It grows uncomfortably hot in the wielder's hand if the subject lacks the gift. Basically harmless, though its use tends to annoy the crew, so do consider asking first. The chain is long enough to clasp around your neck, should you feel inclined."
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Misc/mantispendulum.rsi

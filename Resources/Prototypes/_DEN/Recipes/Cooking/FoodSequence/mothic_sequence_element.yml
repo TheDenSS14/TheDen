@@ -1,5 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 leo
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
@@ -91,6 +93,14 @@
   sprites:
   - sprite: _DEN/Objects/Fun/azaleaplushie.rsi
     state: icon
+
+- type: foodSequenceElement
+  id: WhistlerPlushie
+  scale: 0.8, 0.8
+  name: food-sequence-cotton-burger-content-plushie-whistler
+  sprites:
+    - sprite: _DEN/Objects/Fun/whistlerplushie.rsi
+      state: icon
 
 # DeltaV Plushies
 
@@ -200,14 +210,6 @@
   - sprite: _Floof/Objects/Fun/floof_plush.rsi
     state: dragon
     color: "#ff0000"
-
-- type: foodSequenceElement
-  id: SlimeTiderPlushie
-  scale: 0.8, 0.8
-  name: food-sequence-cotton-burger-content-plushie-slime-tider
-  sprites:
-  - sprite: _Floof/Objects/Fun/floof_plush.rsi
-    state: slime
 
 # Einstein Engines Plushies (i guess?)
 

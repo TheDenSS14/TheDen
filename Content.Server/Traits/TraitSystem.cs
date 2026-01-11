@@ -10,10 +10,11 @@
 // SPDX-FileCopyrightText: 2025 DoctorJado
 // SPDX-FileCopyrightText: 2025 Skubman
 // SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 oberonics
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Server.Administration.Logs;
@@ -91,10 +92,9 @@ public sealed class TraitSystem : EntitySystem
 
         // load traits from correct jobloadout
         var jobTraits = new HashSet<string>(profile.TraitPreferences);
-        if (profile.JobTraits.TryGetValue(jobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID, out var l))
-        {
-            jobTraits = l;
-        }
+        if (profile.JobTraits.TryGetValue(jobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID, out var currentJobTraits))
+            jobTraits = currentJobTraits;
+
 
         foreach (var traitId in jobTraits)
         {

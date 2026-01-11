@@ -43,6 +43,8 @@
           True: { visible: true }
           False: { visible: false }
   - type: ItemToggle
+    verbToggleOn: item-toggle-raise
+    verbToggleOff: item-toggle-lower
     predictable: false
     soundActivate:
       path: /Audio/_DEN/Weapons/Melee/rapiermiss.ogg
@@ -81,6 +83,8 @@
       collection: WeakHit
       params:
         variation: 0.05
+  - type: UseDelay
+    delay: 0.5 # Just a small one so you don't hit it twice accidentally
   - type: MeleeWeapon
     attackRate: .6666
     wideAnimationRotation: -135

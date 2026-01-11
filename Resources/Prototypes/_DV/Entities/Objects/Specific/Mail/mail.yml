@@ -302,6 +302,8 @@
       orGroup: Drink
     - id: DrinkWineBottleFull
       orGroup: Drink
+    - id: DrinkEggnogBottleFull # DEN: eggnog
+      orGroup: Drink
     - id: DrinkChampagneBottleFull
       orGroup: Drink
       prob: 0.5
@@ -309,6 +311,9 @@
       orGroup: Drink
       prob: 0.5
     - id: DrinkPatronBottleFull
+      orGroup: Drink
+      prob: 0.5
+    - id: DrinkSyndicateEggnogBottleFull # DEN: eggnog
       orGroup: Drink
       prob: 0.5
     - id: DrinkGlass

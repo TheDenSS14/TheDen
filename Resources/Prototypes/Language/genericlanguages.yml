@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 portfiend
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -25,9 +26,11 @@
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
-    maxSyllables: 10 # Crazy
+    maxSyllables: 6 # DEN: 10 -> 6
     replacement:
     - 0
+    - 0
+    - 1
     - 1
 
 # Example of a sign language. Used by the Sign Language trait.

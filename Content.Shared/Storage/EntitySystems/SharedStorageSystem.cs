@@ -15,10 +15,11 @@
 // SPDX-FileCopyrightText: 2024 slarticodefast
 // SPDX-FileCopyrightText: 2024 sleepyyapril
 // SPDX-FileCopyrightText: 2025 Carlen White
+// SPDX-FileCopyrightText: 2025 Dirius77
 // SPDX-FileCopyrightText: 2025 MajorMoth
 // SPDX-FileCopyrightText: 2025 RadsammyT
 //
-// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Collections.Frozen;
 using System.Diagnostics.CodeAnalysis;
@@ -1497,6 +1498,18 @@ public abstract class SharedStorageSystem : EntitySystem
         // if there is no max item size specified, the value used
         // is one below the item size of the storage entity.
         return _nextSmallest[item.Size];
+    }
+
+    // DEN: Allow setting this after the component is created.
+    /// <summary>
+    ///     Sets the maximum item size of this entity.
+    /// </summary>
+    public void SetMaxItemSize(Entity<StorageComponent?> uid, ItemSizePrototype size)
+    {
+        if (!Resolve(uid, ref uid.Comp))
+            return;
+
+        uid.Comp.MaxItemSize = size;
     }
 
     /// <summary>

@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2025 Aikakakah
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: marking
+  id: ScarChestFemale #DeltaV: Splitting the scars and tattoos
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Dwarf, Felinid, Oni] #Einstein Engines - Felinid, Oni
+  sexRestriction: [Female] #DeltaV: Splitting the scars and tattoos
+  followSkinColor: true
+  sprites:
+  - sprite: DeltaV/Mobs/Customization/scars.rsi
+    state: scar_chest_female

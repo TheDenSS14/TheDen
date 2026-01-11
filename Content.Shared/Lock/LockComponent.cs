@@ -6,6 +6,7 @@
 // SPDX-FileCopyrightText: 2024 Timemaster99
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2025 creku
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -96,6 +97,27 @@ public sealed partial class LockComponent : Component
     [DataField]
     [AutoNetworkedField]
     public TimeSpan UnlockTime;
+
+    /// <summary>
+    /// DEN
+    /// How long it takes to toggle a lock from the inside. Defaults to 4 seconds.
+    /// </summary>
+    [DataField("insideToggleTime")]
+    public TimeSpan InsideToggleTime = TimeSpan.FromSeconds(4);
+
+    /// <summary>
+    /// DEN
+    /// The sound played when toggling a lock from the inside.
+    /// </summary>
+    [DataField("insideToggleSound"), ViewVariables(VVAccess.ReadWrite)]
+    public SoundSpecifier InsideToggleSound = new SoundPathSpecifier("/Audio/Machines/vending_restock_start.ogg")
+    {
+        Params = new AudioParams
+        {
+            Volume = -5f,
+            Pitch = 1.272f
+        }
+    };
 }
 
 /// <summary>
@@ -103,7 +125,7 @@ public sealed partial class LockComponent : Component
 /// Can be cancelled to prevent it.
 /// </summary>
 [ByRefEvent]
-public record struct LockToggleAttemptEvent(EntityUid User, bool Silent = false, bool Cancelled = false);
+public record struct LockToggleAttemptEvent(EntityUid User, bool Silent = false, bool Cancelled = false, bool FromInside = false); // DEN - added FromInside for when trying to toggle from inside something
 
 /// <summary>
 /// Event raised on the user when a toggle is attempted.

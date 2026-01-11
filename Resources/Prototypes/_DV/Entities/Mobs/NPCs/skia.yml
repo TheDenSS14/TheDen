@@ -24,7 +24,7 @@
         Base: dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      100: 0.9
+      120: 0.9
   - type: MobState
     allowedStates:
     - Alive
@@ -32,7 +32,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      300: Dead
+      240: Dead
   - type: Damageable
     damageContainer: ManifestedSpirit # Den - Let the Mantis get involved with these guys
     damageModifierSet: ManifestedSpirit # Den - keep extreme weakness to heat and bible
@@ -64,9 +64,9 @@
     altDisarm: false
     damage:
       types:
-        Slash: 19
-        Pierce: 8
-        Cold: 8
+        Slash: 20
+        Pierce: 10
+        Cold: 10
   - type: NpcFactionMember
     factions:
     - SimpleHostile
@@ -102,9 +102,10 @@
     resurrectDesc: skia-resurrecting-desc
   - type: Bloodstream
     maxBleedAmount: 0
+    bloodReagent: BlackBlood # DEN
   - type: ShatterLightsAbility
     lineOfSight: true
-    radius: 7.0
+    radius: 9.0
     penetratingRadius: 2.0
   - type: TechnokineticPulseAbility
     range: 5.0
@@ -112,6 +113,8 @@
     disableDuration: 20.0
   - type: Butcherable
     spawned:
+    - id: AnomalyCoreShadow # DEN
+      amount: 1 # DEN
     - id: Ectoplasm
       amount: 5 # DEN
   - type: Prying
@@ -124,6 +127,17 @@
     drawOverlay: false
   - type: Targeting
   # DEN
+  - type: Skia
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+        requireInputValidation: false
+  - type: Store
+    categories:
+    - SkiaAbilities
+    currencyWhitelist:
+    - SoulSilk
   - type: UniversalLanguageSpeaker
   - type: LanguageKnowledge
     speaks:
@@ -152,6 +166,7 @@
     - NamesRevenantType
     - NamesRevenantAdjective
     - NamesRevenantTheme
+    nameFormat: name-format-revenant
   - type: NameIdentifier
     group: GenericNumber
   - type: GhostTakeoverAvailable
@@ -161,7 +176,7 @@
     radius: 10
   - type: Spectral
   - type: GlimmerSource
-    glimmerPerSecond: 2
+    glimmerPerSecond: 1
     glimmerExponentOffset: -5
   - type: Stealth
     minVisibility: -1
@@ -170,6 +185,17 @@
   - type: StealthOnMove
     passiveVisibilityRate: -0.65
     movementVisibilityRate: 0.575
+  - type: StatusEffects
+    allowed:
+    - Flashed
+    - SlowedDown
+    - Pacified
+  - type: Body
+    prototype: Skia
+  - type: ThermalVision
+    pulseTime: 0
+    color: "#9370DB"
+  - type: ComplexInteraction
   # DEN
   - type: EmbedImmune
     immuneTo:

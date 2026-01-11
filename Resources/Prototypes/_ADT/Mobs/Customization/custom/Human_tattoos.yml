@@ -1,8 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Aikakakah
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: HumanTattooArmImheartmomL
@@ -27,9 +28,20 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  sexRestriction: [Male] #TheDen - Splitting the scars and tattoos
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_churchdomes
+
+- type: marking
+  id: HumanTattooChurchdomesFemale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  sexRestriction: [Female] #TheDen - Splitting the scars and tattoos
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_churchdomes_female
 
 - type: marking
   id: HumanTattooElysiumPatriotism
@@ -54,9 +66,20 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  sexRestriction: [Male] #TheDen - Splitting the scars and tattoos
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_karabel
+
+- type: marking
+  id: HumanTattooKarabelFemale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  sexRestriction: [Female] #TheDen - Splitting the scars and tattoos
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_karabel_female
 
 - type: marking
   id: HumanTattooKrenelMercenary
@@ -90,18 +113,40 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  sexRestriction: [Male] #TheDen - Splitting the scars and tattoos
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_Rose
+
+- type: marking
+  id: HumanTattooRoseFemale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  sexRestriction: [Female] #TheDen - Splitting the scars and tattoos
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_Rose_female
 
 - type: marking
   id: HumanTattooSerpentTemptation
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  sexRestriction: [Male] #TheDen - Splitting the scars and tattoos
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_serpenttemptation
+
+- type: marking
+  id: HumanTattooSerpentTemptationFemale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  sexRestriction: [Female] #TheDen - Splitting the scars and tattoos
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_serpenttemptation_female
 
 - type: marking
   id: HumanTattooSkull
