@@ -10,17 +10,21 @@
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: fella
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: fella-unshaded
-      shader: unshaded
   - type: DamageStateVisuals
     states:
       Alive:
         Base: fella
-        BaseUnshaded: fella-unshaded
       Dead:
         Base: fella-dead
-        BaseUnshaded: fella-dead-unshaded
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: fella-moving
+    noMovementLayers:
+      movement:
+        state: fella
+  - type: Carriable
+    freeHandsRequired: 1
   - type: Damageable
     damageContainer: StructuralInorganic
   - type: MobState
@@ -57,12 +61,17 @@
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower
+  - type: PointLight # As bright as a crystal
+    radius: 2
+    energy: 2.5
+    castShadows: false
+    color: "#d9418d"
   - type: GhostRole
     makeSentient: true
     allowSpeech: true
     allowMovement: true
-    name: ghost-role-information-mothroach-name
-    description: ghost-role-information-mothroach-description
+    name: ghost-role-information-eidolitehermit-name
+    description: ghost-role-information-eidolitehermit-description
     rules: ghost-role-information-freeagent-rules
     mindRoles:
     - MindRoleGhostRoleFreeAgent
@@ -91,6 +100,15 @@
   id: MobEidoliteHermitPet
   suffix: Pet
   components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-eidolitehermitpet-name
+    description: ghost-role-information-eidolitehermitpet-description
+    rules: ghost-role-information-eidolitehermitpet-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
   - type: HTN
     rootTask:
       task: FollowCompound
