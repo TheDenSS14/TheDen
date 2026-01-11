@@ -124,7 +124,7 @@
     delay: 2
   - type: Pullable
   - type: Sprite
-    sprite: _DEN\Unrefined\Structures\Machines\crafting_table.rsi
+    sprite: _DEN/Unrefined/Structures/Machines/crafting_table.rsi
     state: crafting_table
   - type: MaterialStorage
     ignoreColor: true
@@ -157,7 +157,7 @@
   description: It produces sheets and ingots using ores.
   components:
   - type: Sprite
-    sprite: _DEN\Unrefined\Structures\Machines\stone_furnace.rsi
+    sprite: _DEN/Unrefined/Structures/Machines/stone_furnace.rsi
     state: stone_furnace_glow
   - type: PointLight
     radius: 1.5
@@ -193,7 +193,7 @@
   - type: ApcPowerReceiver
     needsPower: false
   - type: Sprite
-    sprite: _DEN\Unrefined\Structures\Machines\cast_anvil.rsi
+    sprite: _DEN/Unrefined/Structures/Machines/cast_anvil.rsi
     state: cast_anvil
   - type: MaterialStorage
     ignoreColor: true

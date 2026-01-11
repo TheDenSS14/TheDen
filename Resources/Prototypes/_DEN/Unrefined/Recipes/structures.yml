@@ -10,7 +10,7 @@
   canBuildInImpassable: false
   objectType: Structure
   icon:
-    sprite: _DEN\Unrefined\Structures\Machines\stone_furnace.rsi
+    sprite: _DEN/Unrefined/Structures/Machines/stone_furnace.rsi
     state: stone_furnace
   conditions:
     - !type:TileNotBlocked
@@ -27,7 +27,7 @@
   canBuildInImpassable: false
   objectType: Structure
   icon:
-    sprite: _DEN\Unrefined\Structures\Machines\cast_anvil.rsi
+    sprite: _DEN/Unrefined/Structures/Machines/cast_anvil.rsi
     state: cast_anvil
   conditions:
     - !type:TileNotBlocked
@@ -44,7 +44,7 @@
   canBuildInImpassable: false
   objectType: Structure
   icon:
-    sprite: _DEN\Unrefined\Structures\Machines\crafting_table.rsi
+    sprite: _DEN/Unrefined/Structures/Machines/crafting_table.rsi
     state: crafting_table
   conditions:
     - !type:TileNotBlocked
@@ -146,7 +146,7 @@
   canBuildInImpassable: false
   objectType: Structure
   icon:
-    sprite: _DEN\Unrefined\Structures\Misc\magic_octogram.rsi
+    sprite: _DEN/Unrefined/Structures/Misc/magic_octogram.rsi
     state: pastel
   conditions:
     - !type:TileNotBlocked
