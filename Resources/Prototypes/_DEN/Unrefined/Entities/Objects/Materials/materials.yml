@@ -4,7 +4,7 @@
   id: StoneBase
   components:
   - type: Sprite
-    sprite: _Den/Unrefined/Objects/Materials/materials.rsi
+    sprite: _DEN/Unrefined/Objects/Materials/materials.rsi
   - type: Item
     size: Normal
   - type: Tag
@@ -69,7 +69,7 @@
 - type: stack
   id: HardStone
   name: stone
-  icon: { sprite: /Textures/_Den/Unrefined/Objects/Materials/materials.rsi, state: stone }
+  icon: { sprite: /Textures/_DEN/Unrefined/Objects/Materials/materials.rsi, state: stone }
   spawn: HardStone1
   maxCount: 30
   itemSize: 1
@@ -78,7 +78,7 @@
   id: Stone
   stackEntity: HardStone1
   name: materials-stone
-  icon: { sprite: /Textures/_Den/Unrefined/Objects/Materials/materials.rsi, state: stone }
+  icon: { sprite: /Textures/_DEN/Unrefined/Objects/Materials/materials.rsi, state: stone }
   price: 0.01
   
 - type: entity
@@ -110,7 +110,7 @@
 - type: stack
   id: ClayLump
   name: clay lump
-  icon: { sprite: /Textures/_Den/Unrefined/Objects/Materials/materials.rsi, state: clay_lump }
+  icon: { sprite: /Textures/_DEN/Unrefined/Objects/Materials/materials.rsi, state: clay_lump }
   spawn: ClayLump1
   maxCount: 30
   itemSize: 1
@@ -119,7 +119,7 @@
   id: Clay
   stackEntity: ClayLump1
   name: materials-clay
-  icon: { sprite: /Textures/_Den/Unrefined/Objects/Materials/materials.rsi, state: clay_lump }
+  icon: { sprite: /Textures/_DEN/Unrefined/Objects/Materials/materials.rsi, state: clay_lump }
   price: 0.01
 
 - type: entity
@@ -151,7 +151,7 @@
 - type: stack
   id: DirtLump
   name: dirt lump
-  icon: { sprite: /Textures/_Den/Unrefined/Objects/Materials/materials.rsi, state: soil_lump }
+  icon: { sprite: /Textures/_DEN/Unrefined/Objects/Materials/materials.rsi, state: soil_lump }
   spawn: DirtLump1
   maxCount: 30
   itemSize: 1
@@ -160,7 +160,7 @@
   id: Dirt
   stackEntity: DirtLump1
   name: materials-dirt
-  icon: { sprite: /Textures/_Den/Unrefined/Objects/Materials/materials.rsi, state: soil_lump }
+  icon: { sprite: /Textures/_DEN/Unrefined/Objects/Materials/materials.rsi, state: soil_lump }
   price: 0.01
 
 - type: entity
