@@ -8,10 +8,6 @@
           steps:
             - material: HardStone
               amount: 2
-              icon:
-                sprite: _Den/Unrefined/Objects/Materials/materials.rsi
-                state: stone
-              name: stone
               doAfter: 10
                 
     - node: knife

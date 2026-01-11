@@ -20,8 +20,8 @@
   - type: Item
     sprite: _DEN/Unrefined/Objects/Weapons/copper_knife.rsi
     storedSprite:
-      state: storage
-      sprite: _DEN/Unrefined/Objects/Weapons/copper_knife.rsi # Add storage sprite
+      state: icon # Add storage sprite
+      sprite: _DEN/Unrefined/Objects/Weapons/copper_knife.rsi
     
 - type: entity
   name: steel knife
@@ -35,8 +35,8 @@
   - type: Item
     sprite: _DEN/Unrefined/Objects/Weapons/steel_knife.rsi
     storedSprite:
-      state: storage
-      sprite: _DEN/Unrefined/Objects/Weapons/steel_knife.rsi # Add storage sprite
+      state: icon # Add storage sprite
+      sprite: _DEN/Unrefined/Objects/Weapons/steel_knife.rsi
     
 - type: entity
   name: forged claymore

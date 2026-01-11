@@ -8,29 +8,19 @@
           steps:
             - material: HardStone
               amount: 2
-              icon:
-                sprite: _Den/Unrefined/Objects/Materials/stone.rsi
-                state: stone
-              name: stone
             - material: WoodPlank
               amount: 8
             - material: Leather
-              amount: 1       
-              name: "cloth or leather"             
+              amount: 1             
               doAfter: 15
         - to: table
           steps:
             - material: HardStone
               amount: 2
-              icon:
-                sprite: _Den/Unrefined/Objects/Materials/stone.rsi
-                state: stone
-              name: stone
             - material: WoodPlank
               amount: 8
             - material: Cloth
               amount: 1         
-              name: "cloth or leather"
               doAfter: 15
             
     - node: table

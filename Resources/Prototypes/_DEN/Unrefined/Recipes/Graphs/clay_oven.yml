@@ -8,16 +8,8 @@
           steps:
             - material: HardStone
               amount: 2
-              icon:
-                sprite: _Den/Unrefined/Objects/Materials/materials.rsi
-                state: stone
-              name: stone
             - material: ClayLump
               amount: 4
-              icon:
-                sprite: _Den/Unrefined/Objects/Materials/materials.rsi
-                state: clay_lump
-              name: clay lump
             - material: WoodPlank
               amount: 4
               doAfter: 20

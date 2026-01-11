@@ -228,8 +228,8 @@
     layers:
     - state: bone
       shader: unshaded
-  - type: Physics
-    angularVelocity: 2000
+#  - type: Physics
+#    angularVelocity: 2000
 
 - type: entity
   id: BaseActionWand
@@ -1074,7 +1074,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: PolymorphOnCollide
-    polymorph: SelfPlushie
+    polymorph: SelfPlushieFelinid
     whitelist:
       components:
       - Body
@@ -1162,7 +1162,7 @@
   name: reagent-name-oleomagium
   group: Exotic
   desc: reagent-desc-oleomagium
-  flavor: chaotic
+  flavor: enthralling
   color: "#FFFFFF"
   physicalDesc: reagent-physical-desc-overpowering
   metabolisms:
@@ -1231,7 +1231,6 @@
   - type: Sprite
     state: earth
   - type: Item
-    state: earth
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -1280,7 +1279,6 @@
   - type: Sprite
     state: blood
   - type: Item
-    state: blood
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -1329,7 +1327,6 @@
   - type: Sprite
     state: fire
   - type: Item
-    state: fire
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -1378,7 +1375,6 @@
   - type: Sprite
     state: water
   - type: Item
-    state: water
   - type: Material
   - type: PhysicalComposition
     materialComposition:

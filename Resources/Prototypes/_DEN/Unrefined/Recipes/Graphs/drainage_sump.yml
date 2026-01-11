@@ -8,16 +8,8 @@
           steps:
             - material: DirtLump
               amount: 2
-              icon:
-                sprite: _Den/Unrefined/Objects/Materials/materials.rsi
-                state: dirt_lump
-              name: dirt lump
             - material: ClayLump
               amount: 6
-              icon:
-                sprite: _Den/Unrefined/Objects/Materials/materials.rsi
-                state: clay_lump
-              name: clay lump
               doAfter: 12              
                 
     - node: sump

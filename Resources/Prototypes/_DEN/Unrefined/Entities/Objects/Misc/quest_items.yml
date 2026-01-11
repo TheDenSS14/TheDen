@@ -94,8 +94,6 @@
     sprite: _DEN/Unrefined/Objects/Misc/quest_materials.rsi
     state: moonlightwood_branch
   - type: Item
-    sprite: _DEN/Unrefined/Objects/Misc/quest_materials.rsi
-    state: moonlightwood_branch
     size: Large
   - type: StaticPrice
     price: 590
@@ -132,8 +130,6 @@
     state: icon
   - type: Item
     size: Huge
-    sprite: _DEN/Unrefined/Objects/Weapons/moonlightwood_staff.rsi
-    state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 45
     attackRate: 1.0
@@ -170,8 +166,6 @@
     sprite: _DEN/Unrefined/Objects/Misc/quest_materials.rsi
     state: deepearth_emerald
   - type: Item
-    sprite: _DEN/Unrefined/Objects/Misc/quest_materials.rsi
-    state: deepearth_emerald
     size: Small
   - type: StaticPrice
     price: 25000
@@ -211,8 +205,6 @@
     state: icon
   - type: Item
     size: Ginormous
-    sprite: _DEN/Unrefined/Objects/Weapons/adamantine_glaive.rsi
-    state: icon
   - type: Execution
     doAfterDuration: 4.0
   - type: Sharp
@@ -328,8 +320,6 @@
     sprite: _DEN/Unrefined/Objects/Misc/quest_materials.rsi
     state: hunter_blessing
   - type: Item
-    sprite: _DEN/Unrefined/Objects/Misc/quest_materials.rsi
-    state: hunter_blessing
     size: Normal
   - type: Tag
     tags:
@@ -349,8 +339,6 @@
     sprite: _DEN/Unrefined/Objects/Misc/quest_materials.rsi
     state: offering_box_open
   - type: Item
-    sprite: _DEN/Unrefined/Objects/Misc/quest_materials.rsi
-    state: offering_box_open
     size: Normal
   - type: Construction
     graph: OfferingBox
@@ -364,9 +352,6 @@
   components:
   - type: Sprite
     state: offering_box
-  - type: Item
-    state: offering_box
-    size: Normal
   - type: Tag
     tags:
     - OfferingBox
@@ -395,10 +380,7 @@
     state: skull_icon
     scale: 0.5, 0.5
   - type: Item
-    sprite: Mobs/Species/Skeleton/parts.rsi
-    state: skull_icon
     size: Normal
-    scale: 0.5, 0.5
   - type: Tag
     tags:
     - Offering
@@ -414,8 +396,6 @@
     sprite: Objects/Materials/materials.rsi
     state: hide
   - type: Item
-    sprite: Objects/Materials/materials.rsi
-    state: hide
     size: Normal
   - type: Tag
     tags:
@@ -440,8 +420,6 @@
     sprite: _DEN/Unrefined/Objects/Misc/quest_materials.rsi
     state: dragonscales
   - type: Item
-    sprite: _DEN/Unrefined/Objects/Misc/quest_materials.rsi
-    state: dragonscales
     size: Small
   - type: Material
   - type: Tag
