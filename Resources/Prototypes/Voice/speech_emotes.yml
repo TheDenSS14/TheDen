@@ -118,16 +118,21 @@
   id: Squish
   name: chat-emote-name-squish
   category: Vocal
+  available: false
   icon: Interface/Emotes/squish.png
   whitelist:
-    tags:
-    - HarpyEmotes
+    components:
+    - Vocal
+    - Slime
   blacklist:
     components:
     - BorgChassis
   chatMessages: ["chat-emote-msg-squish"]
   chatTriggers:
     - squishes
+    - squish
+    - squelch
+    - squelches
 
 - type: emote
   id: Chitter

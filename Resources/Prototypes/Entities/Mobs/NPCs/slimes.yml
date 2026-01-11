@@ -223,6 +223,17 @@
         slime_geras: "#0000FF"
       eyesMap:
         slime_geras_eyes: "#0000FF"
+  - type: Speech
+    speechVerb: Slime
+    speechSounds: Slime
+    allowedEmotes: ['Squish', 'Bubble', 'Pop'] # Imp: add Bubble, Pop
+  - type: TypingIndicator
+    proto: slime
+  - type: Vocal # Imp
+    sounds: # Imp
+      Male: AnimalSlime # Imp
+      Female: AnimalSlime # Imp
+      Unsexed: AnimalSlime # Imp
   - type: MeleeWeapon
     attackRate: 2
     damage:
