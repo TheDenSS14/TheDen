@@ -5,7 +5,7 @@
   description: It's a lot harder to get a nice edge than you'd thing. Our ancestors must have had a lot of patience.
   components:
   - type: Sprite
-    sprite: _Den/Unrefined/Objects/Tools/stone_knife.rsi
+    sprite: _DEN/Unrefined/Objects/Tools/stone_knife.rsi
     state: icon
   - type: ThrowingAngle
     angle: 135
@@ -32,7 +32,7 @@
   description: If you swing too hard, the tip might break off.
   components:
     - type: Sprite
-      sprite: _Den/Unrefined/Objects/Tools/stone_pickaxe.rsi
+      sprite: _DEN/Unrefined/Objects/Tools/stone_pickaxe.rsi
       state: stone_pickaxe
     - type: MeleeWeapon
       attackRate: 1.5
@@ -58,7 +58,7 @@
   description: It's impressive that the handle can support the rock on top.
   components:
     - type: Sprite
-      sprite: _Den/Unrefined/Objects/Tools/stone_shovel.rsi
+      sprite: _DEN/Unrefined/Objects/Tools/stone_shovel.rsi
       state: stone_shovel
     - type: MeleeWeapon
       attackRate: 1.4
