@@ -10,10 +10,22 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  parent: ClothingNeckCollarBase # Floof - reparented
+  parent: [ClothingNeckCollarBase, BaseFoldable]
+  id: ClothingNeckCollarBaseFoldable
+  abstract: true
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: unfold-verb
+    unfoldVerbText: fold-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded
+
+- type: entity
+  parent: ClothingNeckCollarBaseFoldable
   id: ClothingNeckCowBellCollar
   name: cowbell collar
-  description: A way to inform others about the presence of livestock, or just to annoy everyone around you!
+  description: A way to inform others about the presence of livestock, or just to annoy everyone around you! Can be unfolded to appear thicker.
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Collars/collar_cowbell.rsi
@@ -131,10 +143,10 @@
     guides: [ MantisGuide ]
 
 - type: entity
-  parent: ClothingNeckCollarBase
+  parent: ClothingNeckCollarBaseFoldable
   id: ClothingNeckAdminAssitantCollar
   name: administrative assistant collar
-  description: An ornate white leather collar with a command blue tag. Etched into the leather inside of the collar is, "Command Pet".
+  description: An ornate white leather collar with a command blue tag. Etched into the leather inside of the collar is, "Command Pet".  Can be unfolded to appear thicker.
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Collars/collar_aa.rsi
@@ -142,10 +154,10 @@
     sprite: _DEN/Clothing/Neck/Collars/collar_aa.rsi
 
 - type: entity
-  parent: ClothingNeckCollarBase
+  parent: ClothingNeckCollarBaseFoldable
   id: ClothingNeckColorableCollar
   name: simple collar
-  description: A simplistic leather collar.
+  description: A simplistic leather collar. Can be unfolded to appear thicker.
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Collars/colorable_collar.rsi

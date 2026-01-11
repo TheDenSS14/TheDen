@@ -16,10 +16,10 @@
     offset: 0, 0.22
 
 - type: entity
-  parent: ClothingNeckCollarBase
+  parent: ClothingNeckCollarBaseFoldable # Den, Reparent
   id: ClothingNeckCollarBlue
   name: blue collar
-  description: A cute blue collar.
+  description: A cute blue collar. Can be unfolded to appear thicker. # Den edit
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Collars/collar_blue.rsi # Den edit
@@ -27,10 +27,10 @@
     sprite: _DEN/Clothing/Neck/Collars/collar_blue.rsi # Den edit
 
 - type: entity
-  parent: ClothingNeckCollarBase
+  parent: ClothingNeckCollarBaseFoldable # Den, Reparent
   id: ClothingNeckCollarBlack
   name: black collar
-  description: A cute black collar.
+  description: A cute black collar. Can be unfolded to appear thicker. # Den edit
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Collars/collar_black.rsi # Den edit
@@ -38,10 +38,10 @@
     sprite: _DEN/Clothing/Neck/Collars/collar_black.rsi # Den edit
 
 - type: entity
-  parent: ClothingNeckCollarBase
+  parent: ClothingNeckCollarBaseFoldable # Den, Reparent
   id: ClothingNeckCollarPink
   name: pink collar
-  description: A cute pink collar.
+  description: A cute pink collar. Can be unfolded to appear thicker. # Den edit
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Collars/collar_pink.rsi # Den edit
@@ -49,10 +49,10 @@
     sprite: _DEN/Clothing/Neck/Collars/collar_pink.rsi # Den edit
 
 - type: entity
-  parent: ClothingNeckCollarBase
+  parent: ClothingNeckCollarBaseFoldable # Den, Reparent
   id: ClothingNeckCollarEpi
   name: epistemics collar
-  description: A collar showing how loyal you are to science!
+  description: A collar showing how loyal you are to science! Can be unfolded to appear thicker. # Den edit
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Collars/collar_epi.rsi # Den edit
@@ -60,10 +60,10 @@
     sprite: _DEN/Clothing/Neck/Collars/collar_epi.rsi # Den edit
 
 - type: entity
-  parent: ClothingNeckCollarBase
+  parent: ClothingNeckCollarBaseFoldable # Den, Reparent
   id: ClothingNeckCollarEngi
   name: engineering collar
-  description: A collar showing your deft skill utilizing your hands!
+  description: A collar showing your deft skill utilizing your hands! Can be unfolded to appear thicker. # Den edit
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Collars/collar_engi.rsi # Den edit
@@ -71,10 +71,10 @@
     sprite: _DEN/Clothing/Neck/Collars/collar_engi.rsi # Den edit
 
 - type: entity
-  parent: ClothingNeckCollarBase
+  parent: ClothingNeckCollarBaseFoldable # Den, Reparent
   id: ClothingNeckCollarLogi
   name: logistics collar
-  description: Who's a good courier?
+  description: Who's a good courier? Can be unfolded to appear thicker. # Den edit
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Collars/collar_logi.rsi # Den edit
@@ -82,10 +82,10 @@
     sprite: _DEN/Clothing/Neck/Collars/collar_logi.rsi # Den edit
 
 - type: entity
-  parent: ClothingNeckCollarBase
+  parent: ClothingNeckCollarBaseFoldable # Den, Reparent
   id: ClothingNeckCollarMed
   name: medical collar
-  description: Put your patients at ease by letting them know you're here to help.
+  description: Put your patients at ease by letting them know you're here to help. Can be unfolded to appear thicker. # Den edit
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Collars/collar_med.rsi # Den edit
@@ -93,10 +93,10 @@
     sprite: _DEN/Clothing/Neck/Collars/collar_med.rsi # Den edit
 
 - type: entity
-  parent: ClothingNeckCollarBase
+  parent: ClothingNeckCollarBaseFoldable # Den, Reparent
   id: ClothingNeckCollarSec
   name: security collar
-  description: Be the best guard dog on the station!
+  description: Be the best guard dog on the station! Can be unfolded to appear thicker. # Den edit
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Collars/collar_sec.rsi # Den edit
@@ -104,10 +104,10 @@
     sprite: _DEN/Clothing/Neck/Collars/collar_sec.rsi # Den edit
 
 - type: entity
-  parent: ClothingNeckCollarBase
+  parent: ClothingNeckCollarBaseFoldable # Den, Reparent
   id: ClothingNeckCollarCmd
   name: Captain's collar
-  description: The top dog (or cat) around.
+  description: The top dog (or cat) around. Can be unfolded to appear thicker. # Den edit
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Collars/collar_cmd.rsi # Den edit
@@ -115,10 +115,10 @@
     sprite: _DEN/Clothing/Neck/Collars/collar_cmd.rsi # Den edit
 
 - type: entity
-  parent: ClothingNeckCollarBase
+  parent: ClothingNeckCollarBaseFoldable # Den, Reparent
   id: ClothingNeckCollarCC
   name: CentComm collar
-  description: All bark with a whole lotta bite.
+  description: All bark with a whole lotta bite. Can be unfolded to appear thicker. # Den edit
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Collars/collar_cc.rsi # Den edit
@@ -126,10 +126,10 @@
     sprite: _DEN/Clothing/Neck/Collars/collar_cc.rsi # Den edit
 
 - type: entity
-  parent: ClothingNeckCollarBase
+  parent: ClothingNeckCollarBaseFoldable # Den, Reparent
   id: ClothingNeckCollarSyndi
   name: Blood-Red collar
-  description: Sometimes you gotta be naughty.
+  description: Sometimes you gotta be naughty. Can be unfolded to appear thicker. # Den edit
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Collars/collar_syndi.rsi # Den edit
