@@ -10,12 +10,6 @@
   parent: [BaseSpeciesLegsStandard, BaseUnderpants]
   id: BaseUnderwearSocks
 
-# For any sock marking that goes up to the butt
-- type: marking
-  abstract: true
-  parent: [BaseSpeciesChestLegsStandard, BaseUnderpants]
-  id: BaseUnderwearLeggings
-
 - type: marking
   parent: BaseUnderwearSocks
   id: UnderwearSocksAnkle
@@ -253,15 +247,19 @@
     state: tips-right
 
 - type: marking
-  parent: BaseUnderwearLeggings
+  parent: BaseUnderwearSocks
   id: UnderwearLeggings
+  invertSpeciesRestriction: true
+  speciesRestriction: [ Thaven ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Underwear/leggings.rsi
     state: base
 
 - type: marking
-  parent: BaseUnderwearLeggings
+  parent: BaseUnderwearSocks
   id: UnderwearSocksStockings
+  invertSpeciesRestriction: true
+  speciesRestriction: [ Thaven ]
   layering:
     stockings-base-left: LFoot
     stockings-base-right: RFoot

@@ -559,6 +559,8 @@
 - type: marking
   parent: UnderwearLeggingsT
   id: UnderwearLeggingsTF
+  invertSpeciesRestriction: false
+  speciesRestriction: [ Thaven ]
   sexRestriction: [ Female ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Thaven/underwear.rsi
@@ -593,6 +595,8 @@
 - type: marking
   parent: UnderwearSocksStockingsT
   id: UnderwearSocksStockingsTF
+  invertSpeciesRestriction: false
+  speciesRestriction: [ Thaven ]
   sexRestriction: [ Female ]
   colorLinks:
     stockings-left: stockings-right
