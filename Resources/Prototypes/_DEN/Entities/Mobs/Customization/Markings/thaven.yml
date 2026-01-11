@@ -137,6 +137,17 @@
   - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
     state: chest_heavy3
 
+- type: marking
+  id: ThavenTopSurgeryF
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Female ]
+  followSkinColor: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
+    state: nonaturals_f
+
 # Head
 
 - type: marking
@@ -504,6 +515,101 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Thaven/underwear.rsi
     state: lowriders_f
+
+- type: marking
+  id: UnderwearSatinTF
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Female ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/underwear.rsi
+    state: satin_f
+
+- type: marking
+  id: UnderwearTangaTF
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Female ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/underwear.rsi
+    state: tanga_f
+
+- type: marking
+  parent: BaseUnderpants
+  id: UnderwearLeggingsT
+  invertSpeciesRestriction: false
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Male ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/underwear.rsi
+    state: leggings
+
+- type: marking
+  parent: UnderwearLeggingsT
+  id: UnderwearLeggingsTF
+  sexRestriction: [ Female ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/underwear.rsi
+    state: leggings_f
+
+- type: marking
+  parent: BaseUnderpants
+  id: UnderwearSocksStockingsT
+  invertSpeciesRestriction: false
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Male ]
+  layering:
+    stockings-base-left: LFoot
+    stockings-base-right: RFoot
+  colorLinks:
+    stockings-left: stockings-right
+    stockings-base-right: stockings-right
+    stockings-base-left: stockings-right
+    stockings-base-torso: stockings-right
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stockings-base-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stockings-base-right
+  - sprite: _DEN/Mobs/Customization/Thaven/underwear.rsi
+    state: stockings-base-torso
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stockings-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stockings-right
+
+- type: marking
+  parent: UnderwearSocksStockingsT
+  id: UnderwearSocksStockingsTF
+  sexRestriction: [ Female ]
+  colorLinks:
+    stockings-left: stockings-right
+    stockings-base-right: stockings-right
+    stockings-base-left: stockings-right
+    stockings-base-torso_f: stockings-right
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stockings-base-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stockings-base-right
+  - sprite: _DEN/Mobs/Customization/Thaven/underwear.rsi
+    state: stockings-base-torso_f
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stockings-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stockings-right
 
 # Undershirt
 

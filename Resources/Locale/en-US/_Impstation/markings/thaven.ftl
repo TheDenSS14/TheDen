@@ -36,6 +36,9 @@ marking-ThavenTiger = Tiger Stripes
 marking-ThavenTiger-tiger1 = Tiger Belly
 marking-ThavenTiger-tiger2 = Tiger Stripes
 
+marking-ThavenTopSurgery = Smooth Chest
+marking-ThavenTopSurgery-nonaturals = Smooth Chest
+
 # Head
 
 marking-ThavenHeadCap = Dappled Crown

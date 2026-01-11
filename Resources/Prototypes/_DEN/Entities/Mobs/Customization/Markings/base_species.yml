@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 Shaman
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -90,6 +91,26 @@
     - Resomi
     - Shadowkin
     - Vox
+
+# Excluded species: Anything that doesn't have standard chest AND standard legs
+# Generally for markings that are full pants, since touching the hips means we have to consider the chest too
+- type: marking
+  abstract: true
+  id: BaseSpeciesChestLegsStandard
+  bodyPart: Chest
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    - Arachne
+    - Chitinid
+    - Diona
+    - Harpy
+    - Moth
+    - Ovinia
+    - Plasmaman
+    - Resomi
+    - Shadowkin
+    - Vox
+    - Thaven
 
 # Excluded species: Anything in the other "standard body" restrictions.
 - type: marking
