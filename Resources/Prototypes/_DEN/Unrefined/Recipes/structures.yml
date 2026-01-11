@@ -8,9 +8,12 @@
   description: A rudimentary place to turn rocks into metal.
   placementMode: SnapgridCenter
   canBuildInImpassable: false
+  objectType: Structure
   icon:
     sprite: _DEN\Unrefined\Structures\Machines\stone_furnace.rsi
     state: stone_furnace
+  conditions:
+    - !type:TileNotBlocked
     
 - type: construction
   name: cast anvil
@@ -22,9 +25,12 @@
   description: A roughly-shaped place to turn metal into bent metal.
   placementMode: SnapgridCenter
   canBuildInImpassable: false
+  objectType: Structure
   icon:
     sprite: _DEN\Unrefined\Structures\Machines\cast_anvil.rsi
     state: cast_anvil
+  conditions:
+    - !type:TileNotBlocked
     
 - type: construction
   name: crafting table
@@ -36,9 +42,12 @@
   description: A flat place to make things more cleanly.
   placementMode: SnapgridCenter
   canBuildInImpassable: false
+  objectType: Structure
   icon:
     sprite: _DEN\Unrefined\Structures\Machines\crafting_table.rsi
     state: crafting_table
+  conditions:
+    - !type:TileNotBlocked
     
 - type: construction
   name: clay oven
@@ -50,9 +59,12 @@
   description: A place to put in cold food and get out hot food.
   placementMode: SnapgridCenter
   canBuildInImpassable: false
+  objectType: Structure
   icon:
     sprite: _DEN/Unrefined/Structures/Machines/clay_oven.rsi
     state: mw0
+  conditions:
+    - !type:TileNotBlocked
     
 - type: construction
   name: grinding mortar
@@ -64,9 +76,12 @@
   description: Turns hard things into juice and dust through armpower.
   placementMode: SnapgridCenter
   canBuildInImpassable: false
+  objectType: Structure
   icon:
     sprite: _DEN/Unrefined/Structures/Machines/grinding_mortar.rsi
     state: mortar0
+  conditions:
+    - !type:TileNotBlocked
     
 - type: construction
   name: cooking fire
@@ -78,9 +93,12 @@
   description: Finally, we can roast.
   placementMode: SnapgridCenter
   canBuildInImpassable: false
+  objectType: Structure
   icon:
     sprite: _DEN/Unrefined/Structures/Machines/cooking_fire.rsi
     state: low
+  conditions:
+    - !type:TileNotBlocked
     
 - type: construction
   name: drainage sump
@@ -92,9 +110,12 @@
   description: For pre-emptively cleaning up messes.
   placementMode: SnapgridCenter
   canBuildInImpassable: false
+  objectType: Structure
   icon:
     sprite: _DEN/Unrefined/Structures/Misc/sump.rsi
     state: icon
+  conditions:
+    - !type:TileNotBlocked
     
 - type: construction
   name: wooden barrel
@@ -106,9 +127,12 @@
   description: For holding many buckets of juice.
   placementMode: SnapgridCenter
   canBuildInImpassable: false
+  objectType: Structure
   icon:
     sprite: _DEN/Unrefined/Structures/Storage/wood_barrel.rsi
     state: closed
+  conditions:
+    - !type:TileNotBlocked
     
 - type: construction
   name: magic octogram
@@ -120,9 +144,12 @@
   description: A place to warp the materium into chaotic form.
   placementMode: SnapgridBorder
   canBuildInImpassable: false
+  objectType: Structure
   icon:
     sprite: _DEN\Unrefined\Structures\Misc\magic_octogram.rsi
     state: pastel
+  conditions:
+    - !type:TileNotBlocked
     
 - type: construction
   name: rough standing torch
@@ -134,9 +161,12 @@
   description: A meagre method of regaining sight after nightfall.
   placementMode: PlaceFree
   canBuildInImpassable: false
+  objectType: Structure
   icon:
     sprite: Structures/Decoration/torches.rsi
     state: torch_unlit
+  conditions:
+    - !type:TileNotBlocked
 
 - type: construction
   name: rough wall torch
@@ -147,6 +177,7 @@
   category: construction-category-structures
   description: A meagre method of regaining sight after nightfall.
   placementMode: SnapgridCenter
+  objectType: Structure
   icon:
     sprite: Structures/Decoration/torches.rsi
     state: wall_torch_unlit
@@ -160,6 +191,9 @@
   category: construction-category-structures
   description: A nice sturdy wall made of carefully piled stones.
   placementMode: SnapgridCenter
+  objectType: Structure
   icon:
     sprite: Structures/Walls/cobblebrick.rsi
     state: full
+  conditions:
+    - !type:TileNotBlocked

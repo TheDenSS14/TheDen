@@ -8,6 +8,9 @@
   description: Having dup up a mound of dirt, we put it back in the ground.
   placementMode: SnapgridCenter
   canBuildInImpassable: false
+  objectType: Structure
   icon:
     sprite: Structures/Hydroponics/misc.rsi
     state: soil
+  conditions:
+    - !type:TileNotBlocked
