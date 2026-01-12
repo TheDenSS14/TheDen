@@ -1,0 +1,21 @@
+- type: entity
+  parent: BaseItem
+  id: InsulativeFilling
+  name: insulative filling
+  description: "An insulative filling you can stuff into headwear in order to make it psionically insulative"
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Misc/insulative_filling.rsi
+      state: base
+    - type: ModifyOnApply
+      whitelistTags:
+        - Headwear
+      whitelistComps:
+        - Clothing
+      blacklistComps:
+        - Armor
+        - TinfoilHat
+      applyComps:
+        - type: TinfoilHat
+          destroyOnFry: false
+      modifyName: "insulative-filling-name-modifier"
