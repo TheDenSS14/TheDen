@@ -6,7 +6,7 @@
   id: WoodenBarrel
   name: wooden barrel
   description: This wooden barrel was designed to hold fluids.
-  abstract: true
+#  abstract: true
   components:
   - type: Sprite
     sprite: _DEN/Unrefined/Structures/Storage/wood_barrel.rsi
@@ -108,6 +108,7 @@
   - type: ContainerContainer
     containers:
       paper_label: !type:ContainerSlot
+  - type: ItemSlots
       
 - type: entity
   parent: WoodenBarrel
