@@ -52,7 +52,7 @@
   id: WildCrops
   prototype: SpawnerRandomWildCrops
   radius: 24
-  size: 24
+  maxCount: 64
   minGroupSize: 1
   maxGroupSize: 3
   
@@ -60,13 +60,15 @@
   id: WildCropsBig
   prototype: SpawnerRandomWildCrops
   radius: 64
+  maxCount: 32
   minGroupSize: 6
   maxGroupSize: 12
 
 - type: biomeMarkerLayer
   id: WildAnimal
   prototype: SpawnerRandomWildAnimal
-  radius: 32
+  radius: 64
+  maxCount: 32
   minGroupSize: 2
   maxGroupSize: 8
 
@@ -74,6 +76,7 @@
   id: WildSpider
   prototype: SpawnerRandomWildSpider
   radius: 64
+  maxCount: 32
   minGroupSize: 1
   maxGroupSize: 3
 
@@ -81,6 +84,7 @@
   id: WildSlime
   prototype: SpawnerRandomWildSlime
   radius: 64
+  maxCount: 32
   minGroupSize: 2
   maxGroupSize: 5
   
@@ -89,7 +93,7 @@
   prototype: SpawnThornVine
   radius: 24
   minGroupSize: 24
-  maxGroupSize: 64
+  maxGroupSize: 128
 
 # Weather
 
