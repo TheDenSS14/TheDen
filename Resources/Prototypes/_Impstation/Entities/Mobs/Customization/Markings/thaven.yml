@@ -124,6 +124,17 @@
   - sprite: _Impstation/Mobs/Customization/Thaven/chest.rsi
     state: tiger2
 
+- type: marking
+  id: ThavenTopSurgery
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Male ] # TheDen - Added sexual dimorphism to thaven
+  followSkinColor: true
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/chest.rsi
+    state: nonaturals
+
 # Head
 
 - type: marking
@@ -434,6 +445,7 @@
   bodyPart: Underwear
   markingCategory: Underwear
   speciesRestriction: [ Thaven ]
+  sexRestriction: [ Male ] # TheDen - Added sexual dimorphism to thaven
   coloring:
     default:
       type:
@@ -448,6 +460,7 @@
   bodyPart: Underwear
   markingCategory: Underwear
   speciesRestriction: [ Thaven ]
+  sexRestriction: [ Male ] # TheDen - Added sexual dimorphism to thaven
   coloring:
     default:
       type:
