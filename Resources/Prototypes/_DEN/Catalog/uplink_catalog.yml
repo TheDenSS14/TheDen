@@ -26,7 +26,7 @@
   discountDownTo:
     Telecrystal: 30
   cost:
-    Telecrystal: 80 # Same price as BaseBallBatHomeRun even if it has lower DPS because it's wearable
+    Telecrystal: 60 # Same price as BaseBallBatHomeRun even if it has lower DPS because it's wearable
   categories:
   - UplinkJob
   conditions:
@@ -41,11 +41,11 @@
   productEntity: MantisCasterPistolLethal
   icon:
     entity: MantisCasterPistolLethal
-  discountCategory: usualDiscounts # Since rarer discounts have limited slots and this is job-specific
+  discountCategory: usualDiscounts # Since rarer discounts have limited slots and this is job-specific (and you'd be very lucky to get the caster you can use anyway)
   discountDownTo:
-    Telecrystal: 25
-  cost: # Price based on its concealed nature (when inside its gun) and its ability to be recharged
-    Telecrystal: 40
+    Telecrystal: 10
+  cost:
+    Telecrystal: 20
   categories:
   - UplinkJob
   conditions:
@@ -60,11 +60,11 @@
   productEntity: MantisCasterRevolverLethal
   icon:
     entity: MantisCasterRevolverLethal
-  discountCategory: usualDiscounts # Since rarer discounts have limited slots and this is job-specific
+  discountCategory: usualDiscounts # Since rarer discounts have limited slots and this is job-specific (and you'd be very lucky to get the caster you can use anyway)
   discountDownTo:
+    Telecrystal: 15
+  cost:
     Telecrystal: 25
-  cost: # Price based on its concealed nature (when inside its gun) and its ability to be recharged
-    Telecrystal: 40
   categories:
   - UplinkJob
   conditions:
@@ -79,11 +79,11 @@
   productEntity: MantisCasterShotgunLethal
   icon:
     entity: MantisCasterShotgunLethal
-  discountCategory: usualDiscounts # Since rarer discounts have limited slots and this is job-specific
+  discountCategory: usualDiscounts # Since rarer discounts have limited slots and this is job-specific (and you'd be very lucky to get the caster you can use anyway)
   discountDownTo:
-    Telecrystal: 25
-  cost: # Price based on its concealed nature (when inside its gun) and its ability to be recharged
-    Telecrystal: 40
+    Telecrystal: 20
+  cost:
+    Telecrystal: 30
   categories:
   - UplinkJob
   conditions:
@@ -98,11 +98,11 @@
   productEntity: MantisCasterSubMachineGunLethal
   icon:
     entity: MantisCasterSubMachineGunLethal
-  discountCategory: usualDiscounts # Since rarer discounts have limited slots and this is job-specific
+  discountCategory: usualDiscounts # Since rarer discounts have limited slots and this is job-specific (and you'd be very lucky to get the caster you can use anyway)
   discountDownTo:
+    Telecrystal: 15
+  cost:
     Telecrystal: 25
-  cost: # Price based on its concealed nature (when inside its gun) and its ability to be recharged
-    Telecrystal: 40
   categories:
   - UplinkJob
   conditions:
