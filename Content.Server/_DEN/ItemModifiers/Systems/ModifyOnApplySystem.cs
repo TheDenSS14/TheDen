@@ -66,7 +66,10 @@ public sealed class ModifyOnApplySystem : EntitySystem
         _popupSystem.PopupEntity(Loc.GetString(modifyOnApplyComp.PostApplyMessage, ("target", target), ("source", uid)), user);
 
         if(modifyOnApplyComp.ModifyName is not null)
-            _metaDataSystem.SetEntityName(target, Loc.GetString(modifyOnApplyComp.ModifyName, ("target", Identity.Name(target, EntityManager))));
+            _metaDataSystem.SetEntityName(target, Loc.GetString(modifyOnApplyComp.ModifyName, ("target", Name(target))));
+
+        if(modifyOnApplyComp.ModifyDescription is not null)
+            _metaDataSystem.SetEntityDescription(target, Description(target) + "\n" + Loc.GetString(modifyOnApplyComp.ModifyDescription));
 
         DirtyEntity(target);
 

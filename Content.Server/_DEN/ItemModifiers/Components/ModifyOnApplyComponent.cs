@@ -78,4 +78,10 @@ public sealed partial class ModifyOnApplyComponent : Component
     /// </summary>
     [DataField]
     public LocId? ModifyName;
+
+    /// <summary>
+    /// A string that is appended to the description of the modified item.
+    /// </summary>
+    [DataField]
+    public LocId? ModifyDescription;
 }
