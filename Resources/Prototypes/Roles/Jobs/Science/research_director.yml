@@ -67,17 +67,23 @@
       min: 28800 # The Den - 8 hour
     - !type:CharacterLogicOrRequirement
       requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-        - !type:CharacterTraitRequirement
-          inverted: true
-          traits:
-            - ShadowkinBlackeye
+      - !type:CharacterSpeciesRequirement
+        inverted: true
+        species:
+        - IPC
+      - !type:CharacterTraitRequirement
+        traits:
+        - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        inverted: true
+        species:
+        - Shadowkin
+      - !type:CharacterTraitRequirement
+        inverted: true
+        traits:
+        - ShadowkinBlackeye
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"

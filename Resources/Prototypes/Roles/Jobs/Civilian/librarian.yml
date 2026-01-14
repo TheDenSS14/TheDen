@@ -38,17 +38,23 @@
       min: 3600
     - !type:CharacterLogicOrRequirement
       requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-        - !type:CharacterTraitRequirement
-          inverted: true
-          traits:
-            - ShadowkinBlackeye
+      - !type:CharacterSpeciesRequirement
+        inverted: true
+        species:
+        - IPC
+      - !type:CharacterTraitRequirement
+        traits:
+        - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        inverted: true
+        species:
+        - Shadowkin
+      - !type:CharacterTraitRequirement
+        inverted: true
+        traits:
+        - ShadowkinBlackeye
   startingGear: LibrarianGear
   icon: "JobIconLibrarian"
   supervisors: job-supervisors-rd

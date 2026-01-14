@@ -49,6 +49,7 @@
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
+          inverted: true
           species:
             - Shadowkin
         - !type:CharacterTraitRequirement
