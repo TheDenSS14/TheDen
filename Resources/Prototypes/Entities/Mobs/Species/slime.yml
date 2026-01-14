@@ -41,7 +41,7 @@
 
 - type: entity
   name: Urist McSlime
-  parent: BaseMobSpeciesOrganic
+  parent: [BaseMobSpeciesOrganic, StorableSpecies] # TheDen
   id: BaseMobSlimePerson
   abstract: true
   components:

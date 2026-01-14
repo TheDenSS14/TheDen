@@ -59,7 +59,7 @@
       state: creampie_vox
 
 - type: entity
-  parent: [BaseVoxAppearance, BaseMobSpeciesOrganic]
+  parent: [BaseVoxAppearance, BaseMobSpeciesOrganic, StorableSpecies] # TheDen
   id: BaseMobVox
   abstract: true
   components:
