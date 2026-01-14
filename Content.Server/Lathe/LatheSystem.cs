@@ -66,6 +66,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Server.Chat.Systems;
+using Content.Server.Construction;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Station.Systems;
 using Content.Shared.Chat;
@@ -119,6 +120,9 @@ namespace Content.Server.Lathe
             SubscribeLocalEvent<TechnologyDatabaseComponent, LatheGetRecipesEvent>(OnGetRecipes);
             SubscribeLocalEvent<EmagLatheRecipesComponent, LatheGetRecipesEvent>(GetEmagLatheRecipes);
             SubscribeLocalEvent<LatheHeatProducingComponent, LatheStartPrintingEvent>(OnHeatStartPrinting);
+
+            SubscribeLocalEvent<LatheComponent, RefreshPartsEvent>(OnPartsRefresh); // DEN: Part upgrades
+            SubscribeLocalEvent<LatheComponent, UpgradeExamineEvent>(OnUpgradeExamine); // DEN: Part upgrades
         }
         public override void Update(float frameTime)
         {
@@ -224,7 +228,7 @@ namespace Content.Server.Lathe
             foreach (var (mat, amount) in recipe.Materials)
             {
                 var adjustedAmount = recipe.ApplyMaterialDiscount
-                    ? (int)(-amount * component.MaterialUseMultiplier)
+                    ? (int)(-amount * component.FinalMaterialUseMultiplier) // DEN: Part upgrades
                     : -amount;
                 adjustedAmount *= quantity;
 
@@ -252,7 +256,7 @@ namespace Content.Server.Lathe
                 component.Queue.RemoveFirst();
             var recipe = _proto.Index(batch.Recipe);
 
-            var time = _reagentSpeed.ApplySpeed(uid, recipe.CompleteTime) * component.TimeMultiplier;
+            var time = _reagentSpeed.ApplySpeed(uid, recipe.CompleteTime) * component.FinalTimeMultiplier; // DEN: Part upgrades
 
             var lathe = EnsureComp<LatheProducingComponent>(uid);
             lathe.StartTime = _timing.CurTime;
@@ -284,6 +288,13 @@ namespace Content.Server.Lathe
                 if (currentRecipe.Result is { } resultProto)
                 {
                     var result = Spawn(resultProto, Transform(uid).Coordinates);
+                    // DEN: Part upgrades, prevent surplus materials.
+                    // We used less materials to make the item, it physically contains less materials.
+                    if (TryComp<PhysicalCompositionComponent>(result, out var physicalComposition))
+                    {
+                        foreach(var (mat, amount) in physicalComposition.MaterialComposition)
+                            physicalComposition.MaterialComposition[mat] = (int) Math.Floor(amount * comp.FinalMaterialUseMultiplier);
+                    }
                     _stack.TryMergeToContacts(result);
                 }
 
@@ -388,6 +399,9 @@ namespace Content.Server.Lathe
             _appearance.SetData(uid, LatheVisuals.IsRunning, false);
 
             _materialStorage.UpdateMaterialWhitelist(uid);
+
+            component.FinalTimeMultiplier = component.TimeMultiplier;
+            component.FinalMaterialUseMultiplier = component.MaterialUseMultiplier;
         }
 
         /// <summary>
@@ -491,6 +505,24 @@ namespace Content.Server.Lathe
         private void OnResearchRegistrationChanged(EntityUid uid, LatheComponent component, ref ResearchRegistrationChangedEvent args)
         {
             UpdateUserInterfaceState(uid, component);
+        }
+
+        // DEN: Move part upgrades from Damnation
+        private void OnPartsRefresh(EntityUid uid, LatheComponent component, RefreshPartsEvent args)
+        {
+            var printTimeRating = args.PartRatings[component.MachinePartPrintSpeed];
+            var materialUseRating = args.PartRatings[component.MachinePartMaterialUse];
+
+            component.FinalTimeMultiplier = component.TimeMultiplier * MathF.Pow(component.PartRatingPrintTimeMultiplier, printTimeRating - 1);
+            component.FinalMaterialUseMultiplier = component.MaterialUseMultiplier * MathF.Pow(component.PartRatingMaterialUseMultiplier, materialUseRating - 1);
+            Dirty(uid, component);
+        }
+
+        // DEN: Part upgrades from damnation.
+        private void OnUpgradeExamine(EntityUid uid, LatheComponent component, UpgradeExamineEvent args)
+        {
+            args.AddPercentageUpgrade("lathe-component-upgrade-speed", 1 / component.FinalTimeMultiplier);
+            args.AddPercentageUpgrade("lathe-component-upgrade-material-use", component.FinalMaterialUseMultiplier);
         }
 
         protected override bool HasRecipe(EntityUid uid, LatheRecipePrototype recipe, LatheComponent component)
