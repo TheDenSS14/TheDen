@@ -19,6 +19,7 @@ public sealed partial class LabelableHolosignProjectorComponent : Component
     [DataField]
     public EntityWhitelist SignWhitelist;
 
+    [DataField]
     public bool UsesCharges = false;
 
     [ViewVariables(VVAccess.ReadWrite), Access(Other = AccessPermissions.ReadWriteExecute)]
