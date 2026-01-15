@@ -8,21 +8,11 @@
   components:
   - type: Physics
     bodyType: Static
-    canCollide: true
+    canCollide: false
   - type: Sprite
     sprite: _DEN/Structures/Holo/adult.rsi
     state: icon
     drawdepth: Overdoors
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
-        mask:
-        - TableMask
-        layer:
-        - TableLayer
   - type: Holobarrier
   - type: PointLight
     enabled: true
@@ -34,8 +24,8 @@
   - type: Destructible
     thresholds:
     - trigger:
-      - !type:DamageTrigger
+        !type:DamageTrigger
         damage: 500
-        behaviors:
+      behaviors:
         - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+          acts: [ "Destruction" ]
