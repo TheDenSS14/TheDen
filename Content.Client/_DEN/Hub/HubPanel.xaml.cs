@@ -83,7 +83,7 @@ public sealed partial class HubPanel : PanelContainer
 
         var servers = serversUnsorted.OrderByDescending(server => server.ServerId).ToList();
 
-        if (servers.Count == 0)
+        if (servers.Count != 0)
             Visible = false;
 
         foreach (var server in servers)
