@@ -1,0 +1,33 @@
+- type: entity
+  id: HolosignNSFW
+  parent: BaseHolosign
+  name: nsfw holographic barrier
+  description: A barrier of hard light that indicates an area where adult activities are occurring.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Sprite
+    sprite: _DEN/Structures/Holo/adult.rsi
+    state: icon
+    drawdepth: Overdoors
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+  - type: Holobarrier
+  - type: PointLight
+    enabled: true
+    radius: 3
+    color: pink
+  - type: Climbable
+  - type: Clickable
+  - type: Occluder

@@ -1,0 +1,38 @@
+- type: entity
+  parent: BaseItem
+  id: HoloprojectorNSFW
+  name: nsfw holobarrier projector
+  description: Creates a holographic barrier indicating an NSFW area.
+  components:
+  - type: LabelableHolosignProjector
+    signProto: HolosignNSFW
+    isNSFW: true
+    usesCharges: true
+    signWhitelist:
+      components:
+      - Holobarrier
+      - LabeledHolosign
+  - type: Sprite
+    sprite: _DEN/Objects/Devices/Holoprojectors/adult.rsi
+    state: icon
+  - type: Item
+    storedRotation: -90
+  - type: UseDelay
+    delay: 2.0
+  - type: ActivatableUI
+    key: enum.LabelableHolosignUIKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.LabelableHolosignUIKey.Key:
+        type: LabelableHolosignProjectorBoundUserInterface
+  - type: LimitedCharges
+    maxCharges: 2
+    charges: 2
+  - type: AutoRecharge
+    rechargeDuration: 60
+  - type: Tag
+    tags:
+    - HolofanProjector
+  - type: StaticPrice
+    price: 80
