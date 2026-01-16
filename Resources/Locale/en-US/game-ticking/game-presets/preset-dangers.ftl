@@ -13,3 +13,9 @@ roundstart-antags-description = Irregular Extended, but more guaranteed antags.
 
 eternity-title = Eternity Preset
 eternity-description = Greenshift, but no lavaland.
+
+breakhome-title = Home
+breakhome-description = Shelter, high above the noise. You're safe here, for now.
+
+breakhideout-title = Hideout
+breakhideout-description = Hidden within seaside cliffs. Where the dead return whole.

@@ -38,3 +38,14 @@ tiles-somber-steel-floor-diagonal-purple = somber steel tile (diagonal, purple)
 tiles-somber-steel-floor-diagonal-mini-purple = somber steel tile (mini diagonal, purple)
 tiles-somber-wood-chess = somber wood floor (chess)
 tiles-somber-wood-parquet = somber wood floor (parquet)
+
+tiles-break-circuit = break's circuit floor
+tiles-break-glass = break's glass floor
+tiles-break-invisible = break's invisible floor
+tiles-break-lattice-horizontal = break's lattice (horizontal)
+tiles-break-lattice-vertical = break's lattice (vertical)
+tiles-break-underlay = break's window underlay
+tiles-break-somber-dark-NE = break's somber corner (dark, NE)
+tiles-break-somber-dark-NW = break's somber corner (dark, NW)
+tiles-break-somber-dark-SE = break's somber corner (dark, SE)
+tiles-break-somber-dark-SW = break's somber corner (dark, SW)

@@ -2,7 +2,7 @@
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
-/*
+
 using System.Linq;
 using Content.Client.Message;
 using Content.Shared._DEN.Hub;
