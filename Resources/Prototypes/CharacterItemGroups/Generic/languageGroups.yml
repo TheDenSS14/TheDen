@@ -6,6 +6,7 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Entings (github)
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -100,6 +101,8 @@
       id: GoblinAccent
     - type: trait
       id: ItalianAccent
+    - type: trait
+      id: ScrambledAccent
     # DEN start: fixing tests
     - type: trait
       id: FrenchAccentBasic

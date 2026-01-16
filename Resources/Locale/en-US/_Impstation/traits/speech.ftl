@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 TheLuggage05
 # SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2026 Entings (github)
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -19,3 +20,6 @@ trait-description-ProperCapitalizationAccent =
 trait-name-FrenchAccentBasic = French accent (Basic)
 trait-description-FrenchAccentBasic =
     You speak with a French accent, but with a lot less word replacements.
+
+trait-name-ScrambledAccent = Scrambled Speech
+trait-description-ScrambledAccent = There was an accident with a tesla engine, now others have trouble understanding you.
