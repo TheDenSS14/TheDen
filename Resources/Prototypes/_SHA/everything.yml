@@ -178,6 +178,7 @@
 - type: entity
   parent: BaseItem
   id: FloorTileItemBreakCircuit
+  name: break's circuit floor
   description: The floor was meant to hold this, not you.
   components:
   - type: Sprite
@@ -215,6 +216,7 @@
 - type: entity
   parent: FloorTileItemBreakCircuit
   id: FloorTileItemBreakInvisible
+  name: break's invisible floor
   components:
   - type: Sprite
     state: break-invisible
@@ -226,6 +228,7 @@
 - type: entity
   parent: FloorTileItemBreakCircuit
   id: FloorTileItemBreakLatticeHorizontal
+  name: break's lattice (horizontal)
   components:
   - type: Sprite
     state: break-lattice-horizontal
@@ -237,6 +240,7 @@
 - type: entity
   parent: FloorTileItemBreakCircuit
   id: FloorTileItemBreakLatticeVertical
+  name: break's lattice (vertical)
   components:
   - type: Sprite
     state: break-lattice-vertical
@@ -248,6 +252,7 @@
 - type: entity
   parent: FloorTileItemBreakCircuit
   id: FloorTileItemBreakSomberDarkNE
+  name: break's somber corner (dark, NE)
   components:
   - type: Sprite
     state: break-somber-dark-NE
@@ -259,6 +264,7 @@
 - type: entity
   parent: FloorTileItemBreakCircuit
   id: FloorTileItemBreakSomberDarkNW
+  name: break's somber corner (dark, NW)
   components:
   - type: Sprite
     state: break-somber-dark-NW
@@ -270,6 +276,7 @@
 - type: entity
   parent: FloorTileItemBreakCircuit
   id: FloorTileItemBreakSomberDarkSE
+  name: break's somber corner (dark, SE)
   components:
   - type: Sprite
     state: break-somber-dark-SE
@@ -281,6 +288,7 @@
 - type: entity
   parent: FloorTileItemBreakCircuit
   id: FloorTileItemBreakSomberDarkSW
+  name: break's somber corner (dark, SW)
   components:
   - type: Sprite
     state: break-somber-dark-SW
@@ -292,6 +300,7 @@
 - type: entity
   parent: FloorTileItemBreakCircuit
   id: FloorTileItemBreakSomberNE
+  name: break's somber corner (NE)
   components:
   - type: Sprite
     state: break-somber-NE
@@ -303,6 +312,7 @@
 - type: entity
   parent: FloorTileItemBreakCircuit
   id: FloorTileItemBreakSomberNW
+  name: break's somber corner (NW)
   components:
   - type: Sprite
     state: break-somber-NW
@@ -314,6 +324,7 @@
 - type: entity
   parent: FloorTileItemBreakCircuit
   id: FloorTileItemBreakSomberSE
+  name: break's somber corner (SE)
   components:
   - type: Sprite
     state: break-somber-SE
@@ -325,6 +336,7 @@
 - type: entity
   parent: FloorTileItemBreakCircuit
   id: FloorTileItemBreakSomberSW
+  name: break's somber corner (SW)
   components:
   - type: Sprite
     state: break-somber-SW
