@@ -5,8 +5,9 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 msTheowo
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Other
 
@@ -142,3 +143,25 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutMagicMirrors
+
+- type: loadout
+  id: DesignerPen
+  category: GeneralItems
+  cost: 4
+  canBeHeirloom: true
+  items:
+  - DesignerPen
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutWritables
+
+# Intentionally non-exclusive and not restricted by the shoes item group
+# Because actually spawning with JUST rollerskates is hell and this is for fun
+- type: loadout
+  id: LoadoutItemShoesSkates
+  category: GeneralItems
+  cost: 4
+  exclusive: false
+  customColorTint: true # Fuck it. Why not
+  items:
+  - ClothingShoesSkates
