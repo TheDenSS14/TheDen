@@ -1,0 +1,501 @@
+# Game Presets
+
+- type: gamePreset
+  id: BreakHome
+  alias:
+  - breakhome
+  - home
+  name: breakhome-title
+  description: breakhome-description
+  supportedMaps: HomeMapPool
+  rules: []
+
+- type: gamePreset
+  id: BreakHideout
+  alias:
+  - breakhideout
+  - hideout
+  name: breakhideout-title
+  description: breakhideout-description
+  supportedMaps: HideoutMapPool
+  rules: []
+
+# Game Map Pools
+
+- type: gameMapPool
+  id: HomeMapPool
+  maps:
+  - Infinity # TODO
+
+- type: gameMapPool
+  id: HideoutMapPool
+  maps:
+  - Infinity # TODO
+
+# Sound Collections
+
+- type: soundCollection
+  id: FootstepSilent
+  files:
+  - /Audio/Effects/silence.ogg
+
+# Floors
+
+- type: tile
+  id: FloorBreakCircuit
+  name: tiles-break-circuit
+  sprite: /Textures/_SHA/Tiles/break-circuit.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 1000000
+
+- type: tile
+  id: FloorBreakGlass
+  name: tiles-break-glass
+  sprite: /Textures/_SHA/Tiles/break-glass.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 1000000
+
+- type: tile
+  id: FloorBreakInvisible
+  name: tiles-break-invisible
+  sprite: /Textures/_SHA/Tiles/break-invisible.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepSilent
+  barestepSounds:
+    collection: FootstepSilent
+  heatCapacity: 1000000
+
+- type: tile
+  id: FloorBreakLatticeHorizontal
+  name: tiles-break-lattice-horizontal
+  sprite: /Textures/_SHA/Tiles/break-lattice-horizontal.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 1000000
+
+- type: tile
+  id: FloorBreakLatticeVertical
+  name: tiles-break-lattice-vertical
+  sprite: /Textures/_SHA/Tiles/break-lattice-vertical.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 1000000
+
+- type: tile
+  id: FloorBreakSomberDarkNE
+  name: tiles-break-somber-dark-NE
+  sprite: /Textures/_SHA/Tiles/break-somber-dark-NE.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 1000000
+
+- type: tile
+  id: FloorBreakSomberDarkNW
+  name: tiles-break-somber-dark-NW
+  sprite: /Textures/_SHA/Tiles/break-somber-dark-NW.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 1000000
+
+- type: tile
+  id: FloorBreakSomberDarkSE
+  name: tiles-break-somber-dark-SE
+  sprite: /Textures/_SHA/Tiles/break-somber-dark-SE.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 1000000
+
+- type: tile
+  id: FloorBreakSomberDarkSW
+  name: tiles-break-somber-dark-SW
+  sprite: /Textures/_SHA/Tiles/break-somber-dark-SW.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 1000000
+
+- type: tile
+  id: FloorBreakSomberNE
+  name: tiles-break-somber-NE
+  sprite: /Textures/_SHA/Tiles/break-somber-NE.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 1000000
+
+- type: tile
+  id: FloorBreakSomberNW
+  name: tiles-break-somber-NW
+  sprite: /Textures/_SHA/Tiles/break-somber-NW.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 1000000
+
+- type: tile
+  id: FloorBreakSomberSE
+  name: tiles-break-somber-SE
+  sprite: /Textures/_SHA/Tiles/break-somber-SE.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 1000000
+
+- type: tile
+  id: FloorBreakSomberSW
+  name: tiles-break-somber-SW
+  sprite: /Textures/_SHA/Tiles/break-somber-SW.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 1000000
+
+# Tiles
+
+- type: entity
+  parent: BaseItem
+  id: FloorTileItemBreakCircuit
+  description: The floor was meant to hold this, not you.
+  components:
+  - type: Sprite
+    sprite: _SHA/Objects/Tiles/tile.rsi
+    state: break-circuit
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakCircuit
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+      - NoPaint
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakGlass
+  components:
+  - type: Sprite
+    state: break-glass
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakGlass
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakInvisible
+  components:
+  - type: Sprite
+    state: break-invisible
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakInvisible
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakLatticeHorizontal
+  components:
+  - type: Sprite
+    state: break-lattice-horizontal
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakLatticeHorizontal
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakLatticeVertical
+  components:
+  - type: Sprite
+    state: break-lattice-vertical
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakLatticeVertical
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakSomberDarkNE
+  components:
+  - type: Sprite
+    state: break-somber-dark-NE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakSomberDarkNE
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakSomberDarkNW
+  components:
+  - type: Sprite
+    state: break-somber-dark-NW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakSomberDarkNW
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakSomberDarkSE
+  components:
+  - type: Sprite
+    state: break-somber-dark-SE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakSomberDarkSE
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakSomberDarkSW
+  components:
+  - type: Sprite
+    state: break-somber-dark-SW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakSomberDarkSW
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakSomberNE
+  components:
+  - type: Sprite
+    state: break-somber-NE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakSomberNE
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakSomberNW
+  components:
+  - type: Sprite
+    state: break-somber-NW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakSomberNW
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakSomberSE
+  components:
+  - type: Sprite
+    state: break-somber-SE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakSomberSE
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakSomberSW
+  components:
+  - type: Sprite
+    state: break-somber-SW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakSomberSW
+
+# Railings
+- type: entity
+  parent: Railing
+  id: RailingStrong
+  name: strong railing
+  description: Durable railing meant to protect idiots like you from falling.
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+
+- type: entity
+  parent: RailingStrong
+  id: RailingSomber
+  name: somber railing
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _SHA/Structures/Walls/railing.rsi
+    state: side
+  - type: Icon
+    sprite: _SHA/Structures/Walls/railing.rsi
+    state: side
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.375"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+
+- type: entity
+  parent: RailingStrong
+  id: RailingSomberCorner
+  name: somber railing
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _SHA/Structures/Walls/railing.rsi
+    state: corner
+  - type: Icon
+    sprite: _SHA/Structures/Walls/railing.rsi
+    state: corner
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.375"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.49,0.49,0.375,-0.49"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+
+- type: entity
+  parent: RailingStrong
+  id: RailingSomberCornerSmall
+  name: somber railing
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _SHA/Structures/Walls/railing.rsi
+    state: corner_small
+  - type: Icon
+    sprite: _SHA/Structures/Walls/railing.rsi
+    state: corner_small
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,0.49,-0.375,0.375"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+
+- type: entity
+  parent: RailingStrong
+  id: RailingSomberRound
+  name: somber railing
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _SHA/Structures/Walls/railing.rsi
+    state: round
+  - type: Icon
+    sprite: _SHA/Structures/Walls/railing.rsi
+    state: round
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.375"
+        density: 1000
+        mask:
+          - TableMask
+        layer:
+          - TableLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,-0.375,0.49"
+        density: 1000
+        mask:
+          - TableMask
+        layer:
+          - TableLayer
+      fix3:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.375,-0.49,0.49,0.49"
+        density: 1000
+        mask:
+          - TableMask
+        layer:
+          - TableLayer
+
+- type: entity
+  parent: RailingStrong
+  id: RailingInvisible
+  name: invisible railing
+  description: You're an idiot. You'll fall. Get back.
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _SHA/Structures/Walls/railing.rsi
+    state: invisible
+  - type: Icon
+    sprite: _SHA/Structures/Walls/railing.rsi
+    state: invisible
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.375"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
