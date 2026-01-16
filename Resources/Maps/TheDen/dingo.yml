@@ -75,6 +75,8 @@ entities:
     - type: GridTree
     - type: Broadphase
     - type: OccluderTree
+    - type: Parallax
+      parallax: LighthouseStation
   - uid: 2
     components:
     - type: MetaData
@@ -5769,7 +5771,7 @@ entities:
     - type: BecomesStation
       id: Dingo
     - type: Parallax
-      parallax: TortugaStation
+      parallax: LighthouseStation
     - type: NavMap
 - proto: AcousticGuitarInstrument
   entities:
