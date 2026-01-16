@@ -27,5 +27,5 @@ public sealed partial class CCVars
     ///     False: Crit player LOOC gets redirected to dead chat
     /// </summary>
     public static readonly CVarDef<bool> CritLoocEnabled =
-        CVarDef.Create("looc.enabled_crit", false, CVar.NOTIFY | CVar.REPLICATED);
+        CVarDef.Create("looc.enabled_crit", true, CVar.NOTIFY | CVar.REPLICATED);
 }
