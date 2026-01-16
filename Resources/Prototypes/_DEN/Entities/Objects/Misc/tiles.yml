@@ -680,3 +680,47 @@
     outputs:
     - Plating
     - FloorBreakSomberDarkSW
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakSomberNE
+  components:
+  - type: Sprite
+    state: break-somber-NE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakSomberNE
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakSomberNW
+  components:
+  - type: Sprite
+    state: break-somber-NW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakSomberNW
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakSomberSE
+  components:
+  - type: Sprite
+    state: break-somber-SE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakSomberSE
+
+- type: entity
+  parent: FloorTileItemBreakCircuit
+  id: FloorTileItemBreakSomberSW
+  components:
+  - type: Sprite
+    state: break-somber-SW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBreakSomberSW

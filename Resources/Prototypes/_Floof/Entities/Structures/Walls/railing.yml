@@ -20,13 +20,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 1000
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 20
+        damage: 1000
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -183,3 +183,155 @@
   - type: Construction
     graph: RailingWood
     node: railingWoodRound
+
+- type: entity
+  parent: BaseRailing
+  id: RailingSomber
+  name: somber railing
+  description: A somber railing.
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Floof/Structures/Walls/railing.rsi
+    state: side
+  - type: Icon
+    sprite: _Floof/Structures/Walls/railing.rsi
+    state: side
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.375"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+
+- type: entity
+  parent: BaseRailing
+  id: RailingSomberCorner
+  name: somber railing
+  description: A somber railing.
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Floof/Structures/Walls/railing.rsi
+    state: corner
+  - type: Icon
+    sprite: _Floof/Structures/Walls/railing.rsi
+    state: corner
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.375"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.49,0.49,0.375,-0.49"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+
+- type: entity
+  parent: BaseRailing
+  id: RailingSomberCornerSmall
+  name: somber railing
+  description: A somber railing.
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Floof/Structures/Walls/railing.rsi
+    state: corner_small
+  - type: Icon
+    sprite: _Floof/Structures/Walls/railing.rsi
+    state: corner_small
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,0.49,-0.375,0.375"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+
+- type: entity
+  parent: BaseRailing
+  id: RailingSomberRound
+  name: somber railing
+  description: A somber railing.
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Floof/Structures/Walls/railing.rsi
+    state: round
+  - type: Icon
+    sprite: _Floof/Structures/Walls/railing.rsi
+    state: round
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.375"
+        density: 1000
+        mask:
+          - TableMask
+        layer:
+          - TableLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,-0.375,0.49"
+        density: 1000
+        mask:
+          - TableMask
+        layer:
+          - TableLayer
+      fix3:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.375,-0.49,0.49,0.49"
+        density: 1000
+        mask:
+          - TableMask
+        layer:
+          - TableLayer
+
+- type: entity
+  parent: BaseRailing
+  id: RailingInvisible
+  name: invisible railing
+  description: An invisible railing.
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Floof/Structures/Walls/railing.rsi
+    state: invisible
+  - type: Icon
+    sprite: _Floof/Structures/Walls/railing.rsi
+    state: invisible
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.375"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
