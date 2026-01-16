@@ -6,3 +6,4 @@
 
 examine-hypnotist-message = {CAPITALIZE(POSS-ADJ($entity))} eyes hold the secrets of your mind.
 examine-psionic-insulation-message = {CAPITALIZE(POSS-ADJ($entity))} eyes carry the hallmarks of psionic insulation.
+examine-dispel-vulnerability-message = {CAPITALIZE(SUBJECT($entity))} exudes an ethereal aura.
