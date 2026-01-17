@@ -99,12 +99,12 @@
   - type: Sharp
   - type: MeleeRequiresWield
     fumbleOnAttempt: true
+    # Den Change Start - commenting out backstab for clarity, not using this system
   - type: DamageBoostOnMarker
     boost:
       types: # Totals to 60 damage when hitting marked targets
-        Blunt: 30
-        Slash: 15
-    # Den Change Start - commenting out for clarity, not using this system
+        Blunt: 35
+        Slash: 25
     # backstabBoost: # And 20 extra for a backstab. Adding up to 80
     #   types:
     #     Blunt: 11
@@ -128,7 +128,7 @@
   - type: UseDelay
     delay: 1
   - type: MeleeWeapon
-    attackRate: 1
+    attackRate: 1.25 #Den change
     wideAnimationRotation: -135
     damage:
       types:
@@ -171,7 +171,7 @@
     fiberMaterial: fibers-kinetic
     fiberColor: fibers-purple
   - type: MeleeWeapon
-    attackRate: 0.8
+    attackRate: 0.33 #Den Change
     wideAnimationRotation: -135
     damage:
       types:
@@ -186,11 +186,12 @@
     size: Normal
     sprite: _Lavaland/Objects/Weapons/Crushers/crusher_claws-inhands.rsi
   - type: Sharp
+    # Den Change Start - commenting out backstab for clarity, not using this system
   - type: DamageBoostOnMarker
     boost:
-      types: # Totals to 45 damage when hitting marked targets
-        Slash: 25
-        Blunt: 15
+      types: # Totals to 55 damage when hitting marked targets
+        Slash: 30
+        Blunt: 20
     # Den Change Start - commenting out for clarity, not using this system
     # backstabBoost: # And 120 extra for a backstab. Adding up to 165!!!
     #   types:
@@ -226,11 +227,11 @@
   # too lazy to port parrying and risk a [redacted] lmao
   - type: Sharp
   - type: DamageBoostOnMarker
+  # Den Change Start - commenting out backstab for clarity, not using this system
     boost:
-      types: # Totals to 50 damage when hitting marked targets
-        Slash: 27.5
-        Blunt: 10
-    # Den Change Start - commenting out for clarity, not using this system
+      types: # Totals to 75 damage when hitting marked targets
+        Slash: 42.5
+        Blunt: 20
     # backstabBoost: # And 20 extra for a backstab
     #   types:
     #     Slash: 15
