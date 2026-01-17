@@ -172,7 +172,7 @@
     fiberColor: fibers-purple
   - type: MeleeWeapon
     attackRate: 0.33 #Den Change
-    wideAnimationRotation: -135
+    wideAnimationRotation: -315 #Den Change
     damage:
       types:
         Slash: 5
@@ -182,6 +182,14 @@
     animation: WeaponArcThrust
     range: 1.6
     # mustBeEquippedToUse: true | Den Change: Fix kinetic claw
+    # Den Change, changes it to burst fire
+  - type: Gun
+    availableModes: 2
+    selectedMode: 2
+  - type: BasicEntityAmmoProvider
+    capacity: 3
+    count: 3
+    # Den Change End
   - type: Item
     size: Normal
     sprite: _Lavaland/Objects/Weapons/Crushers/crusher_claws-inhands.rsi
