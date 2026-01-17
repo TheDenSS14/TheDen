@@ -133,6 +133,7 @@
     damage:
       types:
         Blunt: 25
+        Structural: 30 #Den Change
     soundHit:
       collection: MetalThud
     angle: 0
@@ -153,6 +154,13 @@
     boost:
       types: # BLOOD FOR THE BLOOD GOD ITS A FUCKING HAMMER
         Blunt: 75
+    # Den changes start - hammer go BONK
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 40
+    staminaCost: 60
+    #Dne Changes stop
 
 - type: entity
   parent: [LavalandWeaponKineticBase, ClothingHandsBase]
