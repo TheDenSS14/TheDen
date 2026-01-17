@@ -80,7 +80,7 @@
     count: 1
   - type: MeleeWeapon
     attackRate: 0.8
-    range: 2 # insane reach
+    range: 2.1 # Den Change insanner reach
     wideAnimationRotation: -135
     damage:
       types:
@@ -99,7 +99,11 @@
   - type: Sharp
   - type: MeleeRequiresWield
     fumbleOnAttempt: true
-    # Den Change Start - commenting out backstab for clarity, not using this system
+    # Den Change Start - commenting out backstab for clarity, not using this system. Oh and now you can embed the spear
+  - type: DamageOtherOnHit
+    staminaCost: 6
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: DamageBoostOnMarker
     boost:
       types: # Totals to 60 damage when hitting marked targets
@@ -242,8 +246,12 @@
     sprite: _Lavaland/Objects/Weapons/Crushers/crusher_machete-inhands.rsi
   # too lazy to port parrying and risk a [redacted] lmao
   - type: Sharp
-  - type: DamageBoostOnMarker
   # Den Change Start - commenting out backstab for clarity, not using this system
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: DamageBoostOnMarker
     boost:
       types: # Totals to 75 damage when hitting marked targets
         Slash: 42.5
