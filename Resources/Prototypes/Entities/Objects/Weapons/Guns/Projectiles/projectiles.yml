@@ -619,8 +619,8 @@
         - MobState
     damage:
       types:
-        Blunt: 25
-        Slash: 10
+        Blunt: 0 #Den Change
+        Slash: 0 #Den Change
   - type: Projectile
     impactEffect: BulletImpactEffectKinetic
     damage:
