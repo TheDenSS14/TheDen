@@ -231,10 +231,11 @@
       types: # Totals to 70 damage when hitting marked targets
         Blunt: 34
         Slash: 16
-    backstabBoost: # And 30 extra for a backstab. Adding up to 100
-      types:
-        Blunt: 19
-        Slash: 11
+    # Den Change Start - commenting out for clarity, not using this system
+    # backstabBoost: # And 30 extra for a backstab. Adding up to 100
+    #   types:
+    #     Blunt: 19
+    #     Slash: 11
 
 - type: entity
   parent: BaseWeaponCrusher
