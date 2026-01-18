@@ -24,22 +24,27 @@
 
 - type: loadoutCategory
   id: Backpacks
+  slot: [BACK] # DEN - Forced slots
   root: true
 
 - type: loadoutCategory
   id: Eyes
+  slot: [EYES] # DEN - Forced slots
   root: true
 
 - type: loadoutCategory
   id: Hands
+  slot: [GLOVES] # DEN - Forced slots
   root: true
 
 - type: loadoutCategory
   id: Head
+  slot: [HEAD] # DEN - Forced slots
   root: true
 
 - type: loadoutCategory
   id: Items
+  slot: [POCKET] # DEN - Forced slots
   root: true
   order: 4
   subCategories:
@@ -53,12 +58,15 @@
 
 - type: loadoutCategory
   id: GeneralItems
+  slot: [POCKET] # DEN - Forced slots
 
 - type: loadoutCategory
   id: GeneralToys
+  slot: [POCKET] # DEN - Forced slots
 
 - type: loadoutCategory
   id: GeneralInstruments
+  slot: [POCKET] # DEN - Forced slots
 
 - type: loadoutCategory
   id: Jobs
@@ -364,28 +372,35 @@
 
 - type: loadoutCategory
   id: Mask
+  slot: [MASK] # DEN - Forced slots
   root: true
 
 - type: loadoutCategory
   id: Neck
+  slot: [NECK] # DEN - Forced slots
   root: true
 
 - type: loadoutCategory
   id: Outer
+  slot: [OUTERCLOTHING] # DEN - Forced slots
   root: true
 
 - type: loadoutCategory
   id: Belt
+  slot: [BELT] # DEN - Forced slots
   root: true
 
 - type: loadoutCategory
   id: Shoes
+  slot: [FEET] # DEN - Forced slots
   root: true
 
 - type: loadoutCategory
   id: Species
+  slot: [POCKET] # DEN - Forced slots
   root: true
 
 - type: loadoutCategory
   id: Uniform
+  slot: [INNERCLOTHING] # DEN - Forced slots
   root: true

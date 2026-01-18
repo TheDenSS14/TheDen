@@ -1,0 +1,40 @@
+# SPDX-FileCopyrightText: 2026 crekulon
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+- type: trait
+  id: DispelVulnerability
+  category: Mental
+  # mainly for RP purposes, but it is an extreme weakness to have.
+  # anyone can just take Dispel and suddenly have a built-in heat gun to use on you!
+  points: 2
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - StationAi
+    - Borg
+    - MedicalBorg
+  - !type:CharacterLogicOrRequirement
+    requirements:
+      - !type:CharacterSpeciesRequirement
+        inverted: true
+        species:
+          - IPC
+      - !type:CharacterTraitRequirement
+        traits:
+          - AnomalousPositronics
+  functions:
+  - !type:TraitPushDescription
+    descriptionExtensions:
+      - description: examine-dispel-vulnerability-message
+        fontSize: 12
+        requireDetailRange: true
+  - !type:TraitAddComponent
+    components:
+      - type: DamageOnDispel
+        damage:
+          types:
+            # this 50% less or 50% more according to default variance, 20-60 damage
+            Heat: 40 # 20 more than mites take to make it real scary

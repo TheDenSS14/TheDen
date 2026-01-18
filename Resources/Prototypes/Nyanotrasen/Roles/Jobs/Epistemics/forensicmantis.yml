@@ -14,6 +14,7 @@
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Dirius77
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -37,6 +38,12 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+          - Shadowkin
         - !type:CharacterTraitRequirement
           inverted: true
           traits:

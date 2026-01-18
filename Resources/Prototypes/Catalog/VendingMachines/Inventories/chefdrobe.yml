@@ -9,7 +9,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: vendingMachineInventory
   id: ChefDrobeInventory
@@ -24,6 +24,19 @@
     ClothingUniformJumpskirtChef:  2
     ClothingUniformJumpsuitWaiter: 2 # DEN
     ClothingUniformJumpskirtWaitress: 2 # DEN
+    # DEN start: diner uniforms
+    ClothingUniformJumpsuitDinerTeal:  2
+    ClothingUniformJumpskirtDinerTeal:  2
+    ClothingHeadHatDinerTeal:  3
+    ClothingUniformJumpsuitDinerPink:  2
+    ClothingUniformJumpskirtDinerPink:  2
+    ClothingUniformJumpsuitDinerPinkDark:  2
+    ClothingUniformJumpskirtDinerPinkDark:  2
+    ClothingHeadHatDinerPink:  3
+    ClothingUniformJumpsuitDinerFastFood:  2
+    ClothingUniformJumpskirtDinerFastFood:  2
+    ClothingHeadHatDinerFastFood:  3
+    # end DEN
     ClothingHeadHatChef: 2
     ClothingHandsGlovesNitrileBlack: 2 # DEN
     ClothingShoesColorBlack: 2

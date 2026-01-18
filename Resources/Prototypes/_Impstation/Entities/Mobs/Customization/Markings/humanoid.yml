@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2025 mhachimagus
+# SPDX-FileCopyrightText: 2026 tycutiovevo
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# markings intended for multiple species go here
+
+- type: marking
+  id: HumanHairSpikyPonytailLong
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [ Human, Dwarf, SlimePerson ]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/human_hair.rsi
+    state: spikyponytaillong
+

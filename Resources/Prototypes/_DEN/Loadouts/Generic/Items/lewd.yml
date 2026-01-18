@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 #Masks
 - type: loadout
@@ -70,3 +70,11 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutVASH
+
+- type: loadout
+  id: LoadoutNSFWHoloprojector
+  category: ItemsLewd
+  cost: 0
+  items:
+  - HoloprojectorNSFW
+

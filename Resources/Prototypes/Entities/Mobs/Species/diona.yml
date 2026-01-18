@@ -22,19 +22,23 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2024 fox
 # SPDX-FileCopyrightText: 2025 88tv
+# SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 Forzii
 # SPDX-FileCopyrightText: 2025 YoungThug
+# SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 lzk
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 skyr0cket01
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Shaman
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   save: false
   name: Urist McPlants
-  parent: BaseMobSpeciesOrganic
+  parent: [BaseMobSpeciesOrganic, StorableSpecies] # TheDen
   id: BaseMobDiona
   abstract: true
   components:

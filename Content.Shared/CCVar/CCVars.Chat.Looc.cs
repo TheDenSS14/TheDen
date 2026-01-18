@@ -1,7 +1,8 @@
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 MajorMoth
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Robust.Shared.Configuration;
 
@@ -27,5 +28,5 @@ public sealed partial class CCVars
     ///     False: Crit player LOOC gets redirected to dead chat
     /// </summary>
     public static readonly CVarDef<bool> CritLoocEnabled =
-        CVarDef.Create("looc.enabled_crit", false, CVar.NOTIFY | CVar.REPLICATED);
+        CVarDef.Create("looc.enabled_crit", true, CVar.NOTIFY | CVar.REPLICATED);
 }

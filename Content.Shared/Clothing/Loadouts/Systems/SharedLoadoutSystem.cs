@@ -113,7 +113,8 @@ public sealed class SharedLoadoutSystem : EntitySystem
             var slot = "";
 
             // Ignore loadouts that don't exist
-            if (!_prototype.TryIndex<LoadoutPrototype>(loadout.LoadoutName, out var loadoutProto))
+            if (!_prototype.TryIndex<LoadoutPrototype>(loadout.LoadoutName, out var loadoutProto)
+                || !_prototype.TryIndex(loadoutProto.Category, out var loadoutCategory)) // DEN: Forced slot
                 continue;
 
             var context = new CharacterRequirementContext(selectedJob: job,
@@ -148,16 +149,19 @@ public sealed class SharedLoadoutSystem : EntitySystem
                 if (loadout.CustomHeirloom == true) // DEN - Any number of heirlooms
                     heirlooms.Add((item, loadout));
 
-                // Equip it
-                if (EntityManager.TryGetComponent<ClothingComponent>(item, out var clothingComp)
+                // Equip it, if it is a clothing item
+                if ((loadoutCategory.Slot == null || (loadoutCategory.Slot & SlotFlags.POCKET) == 0) // DEN: Ignore pocket slot
+                    && EntityManager.TryGetComponent<ClothingComponent>(item, out var clothingComp)
                     && _characterRequirements.CanEntityWearItem(uid, item, true)
                     && _inventory.TryGetSlots(uid, out var slotDefinitions))
                 {
                     var deleted = false;
+                    var slotsToUse = loadoutCategory.Slot ?? clothingComp.Slots; // DEN: Use forced slot for category
+
                     foreach (var curSlot in slotDefinitions)
                     {
                         // If the loadout can't equip here or we've already deleted an item from this slot, skip it
-                        if (!clothingComp.Slots.HasFlag(curSlot.SlotFlags) || deleted)
+                        if (!slotsToUse.HasFlag(curSlot.SlotFlags) || deleted) // DEN: Use forced slot for category
                             continue;
 
                         slot = curSlot.Name;
