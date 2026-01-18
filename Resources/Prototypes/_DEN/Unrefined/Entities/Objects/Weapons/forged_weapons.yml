@@ -27,16 +27,15 @@
     sprite: _DEN/Unrefined/Objects/Weapons/steel_mace.rsi
   - type: MeleeWeapon
     wideAnimationRotation: 45
-    attackRate: 1.0
-    range: 1.75
+    attackRate: 1.25
+    range: 1.4
     damage:
       types:
-        Blunt: 15
+        Blunt: 14
     bluntStaminaDamageFactor: 3
     heavyRateModifier: 2
-    heavyRangeModifier: 1.75
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 7
+    heavyDamageBaseModifier: 1.5
+    heavyStaminaCost: 10
     maxTargets: 3
     angle: 20
   - type: DamageOtherOnHit
@@ -58,12 +57,11 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Piercing: 13
-        Slash: 1
+        Piercing: 12
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 20
+        Piercing: 12
         
 - type: entity
   name: steel handaxe
@@ -77,13 +75,13 @@
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
-    attackRate: .9
+    attackRate: 1.25
     range: 1.4
     damage:
       types:
-        Slash: 14
-    heavyRateModifier: 1.25
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
+        Slash: 15
+    heavyRateModifier: 1.8
+    heavyDamageBaseModifier: 1.5
+    heavyStaminaCost: 8
   - type: Item
     sprite: _DEN/Unrefined/Objects/Weapons/steel_handaxe.rsi

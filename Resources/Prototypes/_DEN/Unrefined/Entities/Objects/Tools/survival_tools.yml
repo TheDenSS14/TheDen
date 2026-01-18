@@ -2,7 +2,7 @@
   name: stone knife
   parent: BaseKnife
   id: HardStoneKnife
-  description: It's a lot harder to get a nice edge than you'd thing. Our ancestors must have had a lot of patience.
+  description: It's a lot harder to get a nice edge than you'd think. Our ancestors must have had a lot of patience.
   components:
   - type: Sprite
     sprite: _DEN/Unrefined/Objects/Tools/stone_knife.rsi
@@ -36,14 +36,14 @@
       wideAnimationRotation: -45
       damage:
         types:
-          Blunt: 6
-          Piercing: 2
+          Blunt: 5
+          Piercing: 3
     - type: IncreaseDamageOnWield
       damage:
         groups:
-          Brute: 4
+          Piercing: 2
         types:
-          Structural: 15
+          Structural: 10
 
 - type: entity
   name: stone shovel
@@ -174,3 +174,5 @@
   - type: Pinpointer
     component: SaturationScaleOverlay
     targetName: damaged body
+    mediumRange: 48
+    closeRange: 16
