@@ -40,10 +40,9 @@
           Piercing: 3
     - type: IncreaseDamageOnWield
       damage:
-        groups:
-          Piercing: 2
         types:
           Structural: 10
+          Piercing: 2
 
 - type: entity
   name: stone shovel
