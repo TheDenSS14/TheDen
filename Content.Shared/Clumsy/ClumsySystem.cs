@@ -144,6 +144,10 @@ public sealed class ClumsySystem : EntitySystem
 
     private void OnBeforeClimbEvent(Entity<ClumsyComponent> ent, ref SelfBeforeClimbEvent args)
     {
+        // DEN: Bypass Clumsy
+        if (TryComp<ClimbableComponent>(args.BeingClimbedOn, out var climbable) && climbable.BypassClumsy)
+            return;
+
         // TODO: Replace with RandomPredicted once the engine PR is merged
         var seed = SharedRandomExtensions.HashCodeCombine(new() { (int)_timing.CurTick.Value, GetNetEntity(ent).Id });
         var rand = new System.Random(seed);
