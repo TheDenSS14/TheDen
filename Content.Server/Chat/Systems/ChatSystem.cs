@@ -523,7 +523,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     {
         var isDetailed = originalMessage.StartsWith("!");
 
-        if (isDetailed)
+        if (isDetailed && originalMessage.Length > 1)
             originalMessage = originalMessage.Substring(1);
 
         // Floof: allow languages that don't require speech
@@ -615,7 +615,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     {
         var isDetailed = originalMessage.StartsWith("!");
 
-        if (isDetailed)
+        if (isDetailed && originalMessage.Length > 1)
             originalMessage = originalMessage.Substring(1);
 
         // Floof: allow languages that don't require speech
