@@ -8,6 +8,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Text;
+using Content.Shared._DEN.StringBounds;
 using Content.Shared.GameTicking;
 using Robust.Shared.Prototypes;
 
@@ -18,20 +19,17 @@ public abstract class SharedLanguageSystem : EntitySystem
     /// <summary>
     ///     The language used as a fallback in cases where an entity suddenly becomes a language speaker (e.g. the usage of make-sentient)
     /// </summary>
-    [ValidatePrototypeId<LanguagePrototype>]
-    public static readonly string FallbackLanguagePrototype = "TauCetiBasic";
+    public static readonly ProtoId<LanguagePrototype> FallbackLanguagePrototype = "TauCetiBasic";
 
     /// <summary>
     ///     The language whose speakers are assumed to understand and speak every language. Should never be added directly.
     /// </summary>
-    [ValidatePrototypeId<LanguagePrototype>]
-    public static readonly string UniversalPrototype = "Universal";
+    public static readonly ProtoId<LanguagePrototype> UniversalPrototype = "Universal";
 
     /// <summary>
     ///     Language used for Xenoglossy, should have same effects as Universal but with different Language prototype
     /// </summary>
-    [ValidatePrototypeId<LanguagePrototype>]
-    public static readonly string PsychomanticPrototype = "Psychomantic";
+    public static readonly ProtoId<LanguagePrototype> PsychomanticPrototype = "Psychomantic";
 
     /// <summary>
     /// A cached instance of <see cref="PsychomanticPrototype"/>
@@ -46,11 +44,13 @@ public abstract class SharedLanguageSystem : EntitySystem
     [Dependency] protected readonly IPrototypeManager _prototype = default!;
     [Dependency] protected readonly SharedGameTicker _ticker = default!;
 
+    private readonly StringBounds _dialogueStringBounds = new("\"");
+
     public override void Initialize()
     {
-        Universal = _prototype.Index<LanguagePrototype>("Universal");
+        Universal = _prototype.Index(UniversalPrototype);
          // Initialize the Psychomantic prototype
-        Psychomantic = _prototype.Index<LanguagePrototype>(PsychomanticPrototype);
+        Psychomantic = _prototype.Index(PsychomanticPrototype);
     }
 
     public LanguagePrototype? GetLanguagePrototype(ProtoId<LanguagePrototype> id)
@@ -66,6 +66,67 @@ public abstract class SharedLanguageSystem : EntitySystem
     {
         var builder = new StringBuilder();
         language.Obfuscation.Obfuscate(builder, message, this);
+
+        return builder.ToString();
+    }
+
+    /// <summary>
+    ///     Gets all text within dialogue.
+    /// </summary>
+    /// <param name="text">The text to find the keys that are within dialogue.</param>
+    /// <returns>A list of <see cref="StringBoundsResult"/> containing all keys and the relevant ranges.</returns>
+    public List<StringBoundsResult> GetKeysWithinDialogue(string text)
+    {
+        var keysWithinDialogue = _dialogueStringBounds.FindWithin(text);
+        return keysWithinDialogue;
+    }
+
+    public string ReplaceRange(string text, int start, int end, string replacement)
+    {
+        var builder = new StringBuilder();
+        var upToStart = text.Substring(0, start - 1);
+        var fromLast = "";
+
+        if (text.Length >= end)
+            fromLast = text.Substring(end + 1);
+
+        builder.Append(upToStart);
+        builder.Append(replacement);
+        builder.Append(fromLast);
+
+        return builder.ToString();
+    }
+
+    /// <summary>
+    ///     Returns the obfuscated version of text only within the dialogue constraints.
+    /// </summary>
+    public string ObfuscateOnlyText(string text, LanguagePrototype language, List<StringBoundsResult> keysWithinDialogue)
+    {
+        var builder = new StringBuilder();
+        var lastIndex = 0;
+
+        foreach (var key in keysWithinDialogue)
+        {
+            var obfuscated = language.Obfuscation.Obfuscate(key.Result);
+            var upToStart = text.Substring(lastIndex, key.StartIndex - lastIndex);
+
+            builder.Append(upToStart);
+            builder.Append(obfuscated);
+            builder.Append(_dialogueStringBounds.Key);
+
+            if (key.EndIndex + _dialogueStringBounds.KeyLength + 1 >= text.Length)
+                break;
+
+            lastIndex = key.EndIndex + _dialogueStringBounds.KeyLength;
+        }
+
+        var fromLast = text.Substring(lastIndex + _dialogueStringBounds.KeyLength);
+        var noExtraDialogue = fromLast.IndexOf("\"", StringComparison.Ordinal) == -1;
+
+        if (noExtraDialogue)
+        {
+            builder.Append(text.Substring(lastIndex));
+        }
 
         return builder.ToString();
     }

@@ -33,7 +33,7 @@ public abstract partial class ObfuscationMethod
     public string Obfuscate(string message)
     {
         var builder = new StringBuilder();
-        Obfuscate(builder, message, IoCManager.Resolve<EntitySystemManager>().GetEntitySystem<SharedLanguageSystem>());
+        Obfuscate(builder, message, IoCManager.Resolve<IEntityManager>().System<SharedLanguageSystem>());
         return builder.ToString();
     }
 }
