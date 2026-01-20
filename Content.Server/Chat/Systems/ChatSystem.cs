@@ -524,7 +524,10 @@ public sealed partial class ChatSystem : SharedChatSystem
         var isDetailed = originalMessage.StartsWith("!");
 
         if (isDetailed && originalMessage.Length > 1)
+        {
             originalMessage = originalMessage.Substring(1);
+            keysWithinDialogue = _language.GetKeysWithinDialogue(originalMessage);
+        }
 
         // Floof: allow languages that don't require speech
         if (language.SpeechOverride.RequireSpeech && !_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
@@ -616,7 +619,10 @@ public sealed partial class ChatSystem : SharedChatSystem
         var isDetailed = originalMessage.StartsWith("!");
 
         if (isDetailed && originalMessage.Length > 1)
+        {
             originalMessage = originalMessage.Substring(1);
+            keysWithinDialogue = _language.GetKeysWithinDialogue(originalMessage);
+        }
 
         // Floof: allow languages that don't require speech
         if (language.SpeechOverride.RequireSpeech && !_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
