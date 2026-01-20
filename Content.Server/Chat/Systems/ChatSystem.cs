@@ -523,6 +523,9 @@ public sealed partial class ChatSystem : SharedChatSystem
     {
         var isDetailed = originalMessage.StartsWith("!");
 
+        if (isDetailed)
+            originalMessage = originalMessage.Substring(1);
+
         // Floof: allow languages that don't require speech
         if (language.SpeechOverride.RequireSpeech && !_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
             return;
