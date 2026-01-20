@@ -241,8 +241,8 @@ public sealed partial class ChatSystem
         {
             message = _language.ReplaceRange(
                 message,
-                key.StartIndex - 1,
-                key.EndIndex + 1,
+                key.StartIndex + 1,
+                key.EndIndex - 1,
                 $"[color={color.ToHexNoAlpha()}]{key.Result}[/color]");
         }
 
