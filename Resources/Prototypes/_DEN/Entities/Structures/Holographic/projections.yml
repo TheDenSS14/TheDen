@@ -12,17 +12,29 @@
   components:
   - type: Physics
     bodyType: Static
-    canCollide: false
+    canCollide: true
   - type: Sprite
     sprite: _DEN/Structures/Holo/adult.rsi
     state: icon
     drawdepth: Overdoors
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+        - LowImpassable
   - type: Holobarrier
   - type: PointLight
     enabled: true
     radius: 3
     color: pink
   - type: Climbable
+    bypassClumsy: true
   - type: Clickable
   - type: Occluder
   - type: Destructible
@@ -33,3 +45,4 @@
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
+  - type: IgnoreDoorCollision
