@@ -276,6 +276,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool separateNameAndMessage = false
         )
     {
+        var isDetailed = message.StartsWith("!");
+
         if (HasComp<GhostComponent>(source))
         {
             // Ghosts can only send dead chat messages, so we'll forward it to InGame OOC.
@@ -324,7 +326,16 @@ public sealed partial class ChatSystem : SharedChatSystem
         var shouldCapitalizeTheWordI = (!CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Parent.Name == "en")
             || (CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Name == "en");
         var keysWithinDialogue = _language.GetKeysWithinDialogue(message);
-        message = SanitizeInGameICMessageDepending(source, message, out var emoteStr, shouldCapitalize, shouldPunctuate, shouldCapitalizeTheWordI, desiredType, keysWithinDialogue);
+        message = SanitizeInGameICMessageDepending(
+            source,
+            message,
+            out var emoteStr,
+            shouldCapitalize,
+            shouldPunctuate,
+            shouldCapitalizeTheWordI,
+            desiredType,
+            keysWithinDialogue,
+            isDetailed);
 
         keysWithinDialogue = _language.GetKeysWithinDialogue(message);
         // Was there an emote in the message? If so, send it.
@@ -510,6 +521,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool ignoreActionBlocker = false
         )
     {
+        var isDetailed = originalMessage.StartsWith("!");
+
         // Floof: allow languages that don't require speech
         if (language.SpeechOverride.RequireSpeech && !_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
             return;
@@ -540,10 +553,10 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         name = FormattedMessage.EscapeText(name);
         // The chat message wrapped in a "x says y" string
-        var wrappedMessage = WrapPublicMessageDepending(source, name, message, keysWithinDialogue, language);
+        var wrappedMessage = WrapPublicMessageDepending(source, name, message, keysWithinDialogue, language, isDetailed);
         // The chat message obfuscated via language obfuscation
         // APRIL: Dude what the fuck.
-        var obfuscatedText = ObfuscateSpeechDepending(message, language, keysWithinDialogue);
+        var obfuscatedText = ObfuscateSpeechDepending(message, language, keysWithinDialogue, isDetailed);
         var obfuscated = SanitizeInGameICMessageDepending(
             source,
             obfuscatedText,
@@ -553,9 +566,10 @@ public sealed partial class ChatSystem : SharedChatSystem
             (!CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Parent.Name == "en")
                 || (CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Name == "en"),
             desiredType: InGameICChatType.Speak,
-            keysWithinDialogue);
+            keysWithinDialogue,
+            isDetailed);
         // The language-obfuscated message wrapped in a "x says y" string
-        var wrappedObfuscated = WrapPublicMessageDepending(source, name, obfuscated, keysWithinDialogue, language);
+        var wrappedObfuscated = WrapPublicMessageDepending(source, name, obfuscated, keysWithinDialogue, language, isDetailed);
         SendInVoiceRange(ChatChannel.Local, name, message, wrappedMessage, obfuscated, wrappedObfuscated, source, range, languageOverride: language);
 
         var ev = new EntitySpokeEvent(source, message, null, false, language);
@@ -596,6 +610,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool ignoreActionBlocker = false
     )
     {
+        var isDetailed = originalMessage.StartsWith("!");
+
+        if (isDetailed)
+            originalMessage = originalMessage.Substring(1);
+
         // Floof: allow languages that don't require speech
         if (language.SpeechOverride.RequireSpeech && !_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
             return;
@@ -605,7 +624,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             source,
             FormattedMessage.RemoveMarkupPermissive(originalMessage),
             language,
-            keysWithinDialogue);
+            keysWithinDialogue,
+            isDetailed);
 
         // Floof
         if (language.SpeechOverride.RequireHands
@@ -636,7 +656,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         name = FormattedMessage.EscapeText(name);
 
-        var obfuscatedText = ObfuscateSpeechDepending(message, language, keysWithinDialogue);
+        var obfuscatedText = ObfuscateSpeechDepending(message, language, keysWithinDialogue, isDetailed);
         var languageObfuscatedMessage = SanitizeInGameICMessage(
             source,
             obfuscatedText,
@@ -672,13 +692,13 @@ public sealed partial class ChatSystem : SharedChatSystem
             {
                 // Scenario 1: the listener can clearly understand the message
                 result = perceivedMessage;
-                wrappedMessage = WrapWhisperMessageDepending(source, false, name, result, keysWithinDialogue, language);
+                wrappedMessage = WrapWhisperMessageDepending(source, false, name, result, keysWithinDialogue, language, isDetailed);
             }
             else if (_interactionSystem.InRangeUnobstructed(source, listener, WhisperMuffledRange, _subtleWhisperMask))
             {
                 // Scenario 2: if the listener is too far, they only hear fragments of the message
-                result = ObfuscateMessageReadabilityDepending(perceivedMessage, keysWithinDialogue);
-                wrappedMessage = WrapWhisperMessageDepending(source, false, nameIdentity, result, keysWithinDialogue, language);
+                result = ObfuscateMessageReadabilityDepending(perceivedMessage, keysWithinDialogue, isDetailed: isDetailed);
+                wrappedMessage = WrapWhisperMessageDepending(source, false, nameIdentity, result, keysWithinDialogue, language, isDetailed);
             }
             else
             {
@@ -687,8 +707,8 @@ public sealed partial class ChatSystem : SharedChatSystem
                     return;
 
                 // Scenario 3: If listener is too far and has no line of sight, they can't identify the whisperer's identity
-                result = ObfuscateMessageReadabilityDepending(perceivedMessage, keysWithinDialogue);
-                wrappedMessage = WrapWhisperMessageDepending(source, true, string.Empty, result, keysWithinDialogue, language);
+                result = ObfuscateMessageReadabilityDepending(perceivedMessage, keysWithinDialogue, isDetailed: isDetailed);
+                wrappedMessage = WrapWhisperMessageDepending(source, true, string.Empty, result, keysWithinDialogue, language, isDetailed);
             }
 
             _chatManager.ChatMessageToOne(ChatChannel.Whisper, result, wrappedMessage, source, false, session.Channel);

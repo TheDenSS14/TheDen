@@ -13,10 +13,11 @@ public sealed partial class ChatSystem
     public string ObfuscateSpeechDepending(
         string text,
         LanguagePrototype language,
-        List<StringBoundsResult> keysWithinDialogue
+        List<StringBoundsResult> keysWithinDialogue,
+        bool isDetailed = false
     )
     {
-        if (text.IndexOf("\"", StringComparison.Ordinal) == -1)
+        if (text.IndexOf("\"", StringComparison.Ordinal) == -1 || !isDetailed)
             return _language.ObfuscateSpeech(text, language);
 
         return _language.ObfuscateOnlyText(text, language, keysWithinDialogue);
@@ -26,10 +27,11 @@ public sealed partial class ChatSystem
         EntityUid sender,
         string text,
         LanguagePrototype language,
-        List<StringBoundsResult> keysWithinDialogue
+        List<StringBoundsResult> keysWithinDialogue,
+        bool isDetailed = false
     )
     {
-        if (text.IndexOf("\"", StringComparison.Ordinal) == -1)
+        if (text.IndexOf("\"", StringComparison.Ordinal) == -1 || !isDetailed)
             return TransformSpeech(sender, text, language);
 
         return TransformOnlyDialogue(sender, text, language, keysWithinDialogue);
@@ -61,10 +63,11 @@ public sealed partial class ChatSystem
     public string ObfuscateMessageReadabilityDepending(
         string message,
         List<StringBoundsResult> keysWithinDialogue,
-        float chance = DefaultObfuscationFactor
+        float chance = DefaultObfuscationFactor,
+        bool isDetailed = false
     )
     {
-        if (message.IndexOf("\"", StringComparison.Ordinal) == -1)
+        if (message.IndexOf("\"", StringComparison.Ordinal) == -1 || !isDetailed)
             return ObfuscateMessageReadability(message, chance);
 
         return ObfuscateMessageReadability(message, keysWithinDialogue, chance);
@@ -140,7 +143,8 @@ public sealed partial class ChatSystem
         bool shouldPunctuate,
         bool shouldCapitalizeTheWordI,
         InGameICChatType desiredType,
-        List<StringBoundsResult> keysWithinDialogue
+        List<StringBoundsResult> keysWithinDialogue,
+        bool isDetailed = false
     )
     {
         if (desiredType == InGameICChatType.SubtleOOC)
@@ -149,7 +153,7 @@ public sealed partial class ChatSystem
             return message;
         }
 
-        if (message.IndexOf("\"", StringComparison.Ordinal) == -1)
+        if (message.IndexOf("\"", StringComparison.Ordinal) == -1 || !isDetailed)
         {
             return SanitizeInGameICMessage(
                 source,
@@ -208,10 +212,11 @@ public sealed partial class ChatSystem
         string name,
         string message,
         List<StringBoundsResult> keysWithinDialogue,
-        LanguagePrototype? language = null
+        LanguagePrototype? language = null,
+        bool isDetailed = false
     )
     {
-        if (message.IndexOf("\"", StringComparison.Ordinal) == -1)
+        if (message.IndexOf("\"", StringComparison.Ordinal) == -1 || !isDetailed)
             return WrapPublicMessage(source, name, message, language);
 
         return WrapPublicMessageDialogueOnly(source, name, message, keysWithinDialogue, language);
@@ -260,7 +265,8 @@ public sealed partial class ChatSystem
         string entityName,
         string message,
         List<StringBoundsResult> keysWithinDialogue,
-        LanguagePrototype? language = null
+        LanguagePrototype? language = null,
+        bool isDetailed = false
     )
     {
         var wrapId = "chat-manager-entity-whisper-wrap-message";
@@ -268,7 +274,7 @@ public sealed partial class ChatSystem
         if (isUnknown)
             wrapId = "chat-manager-entity-whisper-unknown-wrap-message";
 
-        if (message.IndexOf("\"", StringComparison.Ordinal) == -1)
+        if (message.IndexOf("\"", StringComparison.Ordinal) == -1 || !isDetailed)
             return WrapWhisperMessage(source, wrapId, entityName, message, language);
 
         return WrapWhisperMessageDialogueOnly(source, isUnknown, entityName, message, keysWithinDialogue, language);
