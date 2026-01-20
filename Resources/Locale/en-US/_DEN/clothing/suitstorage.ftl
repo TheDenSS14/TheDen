@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# For MantisMeleeGreatswordSheath
+clothing-suitstorage-mantisgreatsword = Faust

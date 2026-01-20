@@ -63,6 +63,7 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 RosySaturniidae
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 VMSolidus
@@ -334,7 +335,7 @@
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
   id: ClothingUniformJumpsuitVirology
   name: virology jumpsuit
-  description: It's made of a special fiber that gives special protection against biohazards. It has a virologist rank stripe on it.
+  description: It's made of a special fiber that gives special protection against biohazards. It has a virologist rank stripe on it. Do not be afraid, you are the cure.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/virology.rsi
@@ -678,9 +679,9 @@
   description: It's got a plus on it, that's a good thing right?
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/paramedic.rsi
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/paramedic.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/paramedic.rsi
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/paramedic.rsi
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformRollableBase] # Restored Rollability

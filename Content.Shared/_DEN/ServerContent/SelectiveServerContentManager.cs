@@ -29,12 +29,24 @@ public sealed partial class ServerSelectiveContentManager
     public bool IsEternity => IsServer(Eternity);
 
     /// <summary>
+    /// Gets a localized name for the given server.
+    /// </summary>
+    public static string GetServerName(string targetServer)
+    {
+        var targetServerId = targetServer.ToLower();
+
+        return Loc.GetString($"server-selective-id-{targetServerId}");
+    }
+
+    /// <summary>
     /// Checks if the current server matches a given string.
     /// </summary>
     public bool IsServer(string targetServer)
     {
         var serverId = _cfg.GetCVar(DenCCVars.ServerContentId);
-        return serverId == targetServer;
+        var targetServerId = targetServer.ToLower();
+
+        return serverId == targetServerId;
     }
 
     /// <summary>

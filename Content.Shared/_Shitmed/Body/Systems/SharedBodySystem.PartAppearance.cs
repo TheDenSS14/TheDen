@@ -1,8 +1,5 @@
-// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 gluesniffler <linebarrelerenthusiast@gmail.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <***>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 gluesniffler
+// SPDX-FileCopyrightText: 2024 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -107,6 +104,10 @@ public partial class SharedBodySystem
         string markingId,
         bool remove = false)
     {
+        // Floofstation - DO NOT TOUCH MARKINGS CLIENT-SIDE, YOU ARE DUPLICATING THEM!!!
+        if (_net.IsClient && !IsClientSide(uid))
+            return;
+
 
         if (!Resolve(partAppearance, ref partAppearance.Comp))
             return;
@@ -171,6 +172,10 @@ public partial class SharedBodySystem
     protected void UpdateAppearance(EntityUid target,
         BodyPartAppearanceComponent component)
     {
+        // Floofstation - DO NOT TOUCH MARKINGS CLIENT-SIDE, YOU ARE DUPLICATING THEM!!!
+        if (_net.IsClient && !IsClientSide(target))
+            return;
+
         if (!TryComp(target, out HumanoidAppearanceComponent? bodyAppearance))
             return;
 

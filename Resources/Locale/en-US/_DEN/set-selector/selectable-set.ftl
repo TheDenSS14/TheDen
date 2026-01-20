@@ -1,4 +1,9 @@
-﻿selectable-set-rcd-name = RCD
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 Jakumba
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+selectable-set-rcd-name = RCD
 selectable-set-rcd-desc = Literally just a RCD
 
 selectable-set-rpd-name = RPD
@@ -36,3 +41,21 @@ ert-medic-loadout-2-desc = A Disabler SMG, tear gas & stinger grenades, with ext
 
 ert-medic-loadout-3-name = Combat Medic
 ert-medic-loadout-3-desc = A Lecter assault rifle, magazines and stinger grenades
+
+ert-janitor-loadout-1-name = Hazard Response
+ert-janitor-loadout-1-desc = Trashbags, a hydra grenade launcher and plenty of cleanades
+
+# emergency-internals-selector-name = undetermined emergency internals
+# emergency-internals-selector-desc = Exactly what you need to breathe, right when you need it.
+
+emergency-internals-option-1-name = Extended Emergency Oxygen Tank
+emergency-internals-option-1-desc = An extended emergency oxygen tank for emergencies.
+
+emergency-internals-option-2-name = Extended Emergency Nitrogen Tank
+emergency-internals-option-2-desc = An extended emergency nitrogen tank for emergencies.
+
+emergency-internals-option-3-name = Extended Emergency Water Vapor Tank
+emergency-internals-option-3-desc = An extended emergency water vapor tank for emergencies.
+
+emergency-internals-option-4-name = Extended Emergency Plasma Tank
+emergency-internals-option-4-desc = An extended emergency plasma tank for emergencies.

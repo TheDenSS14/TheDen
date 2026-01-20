@@ -1,7 +1,9 @@
+// SPDX-FileCopyrightText: 2025 Tirochora
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2025 somekindofbox
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Server.Administration.Logs;
@@ -12,6 +14,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Prototypes;
 using Content.Shared.Body.Systems;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
 using Content.Shared.Traits;
 using Content.Shared.Whitelist;
@@ -112,5 +115,30 @@ public sealed partial class TraitAddComponentToBodyPart : TraitFunction
             if (bodyPart.Component.Body != null)
                 entityManager.System<BodyPartEffectSystem>().AddComponents(bodyPart.Component.Body.Value, bodyPart.Id, bodyPart.Component.OnAdd);
         }
+    }
+}
+
+/// <summary>
+/// A trait function that changes the bloodstream reagent of an entity.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitModifyBloodstream : TraitFunction
+{
+    /// <summary>
+    ///  What reagent the entity's bloodstream should be replaced with.
+    /// </summary>
+    [DataField(required: true)]
+    public ProtoId<ReagentPrototype>? BloodReagent = null;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var bloodstream = entityManager.System<BloodstreamSystem>();
+
+        if (BloodReagent is not null
+            && entityManager.TryGetComponent<BloodstreamComponent>(uid, out var blood))
+            bloodstream.ChangeBloodReagent(uid, BloodReagent, blood);
     }
 }

@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Aikakakah
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Shaman
@@ -5,7 +6,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # this file is subject to getting its shit moved to other files at a later date#
 
@@ -68,6 +69,8 @@ marking-DwarfTattooShootingStar = Shooting Star Tattoo
 marking-DwarfTattooShootingStar-dwarftattooshootingstar = Shooting Star Tattoo
 marking-DwarfMarkBear = Mark of the Bear
 marking-DwarfMarkBear-dwarfmarkbear = Mark of the Bear
+marking-DwarfMarkBearFemale = Mark of the Bear
+marking-DwarfMarkBearFemale-dwarfmarkbear_female = Mark of the Bear
 marking-DwarfMarkKangarooLHand = Mark of the Kangaroo (Left)
 marking-DwarfMarkKangarooLHand-dwarfmarkkangaroolhand = Mark of the Kangaroo (Left)
 marking-DwarfMarkKangarooRHand = Mark of the Kangaroo (Right)
@@ -79,16 +82,27 @@ marking-DwarfMarkSpider-dwarfmarkspider = Mark of the Spider
 
 # humans
 marking-VitiligoHeadL = Vitiligo (Left Eye)
+marking-VitiligoHeadL-vitiligoheadl = Vitiligo (Left Eye)
 marking-VitiligoHeadR = Vitiligo (Right Eye)
+marking-VitiligoHeadR-vitiligoheadr = Vitiligo (Right Eye)
 marking-VitiligoHeadJaw = Vitiligo (Jawline)
+marking-VitiligoHeadJaw-vitiligoheadjaw = Vitiligo (Jawline)
 marking-VitiligoHandR = Vitiligo (Right Hand)
+marking-VitiligoHandR-vitiligohandr = Vitiligo (Right Hand)
 marking-VitiligoArmR = Vitiligo (Right Arm)
+marking-VitiligoArmR-vitiligoarmr = Vitiligo (Right Arm)
 marking-VitiligoLegR = Vitiligo (Right)
+marking-VitiligoLegR-vitiligolegr = Vitiligo (Right)
 marking-VitiligoHandL = Vitiligo (Left Hand)
+marking-VitiligoHandL-vitiligohandl = Vitiligo (Left Hand)
 marking-VitiligoArmL = Vitiligo (Left Arm)
+marking-VitiligoArmL-vitiligoarml = Vitiligo (Left Arm)
 marking-VitiligoLegL = Vitiligo (Left)
+marking-VitiligoLegL-vitiligolegl = Vitiligo (Left)
 marking-VitiligoChestF = Vitiligo Spread
+marking-VitiligoChestF-vitiligochestf = Vitiligo Spread
 marking-VitiligoChestSpots = Vitiligo Spots
+marking-VitiligoChestSpots-vitiligochestspots = Vitiligo Spots
 marking-Shadow = Gloomy
 
 # moths

@@ -1,4 +1,9 @@
-﻿# Selectable Set Example
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 Jakumba
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Selectable Set Example
 - type: selectableSet
   id: RCDSelectorExample
   name: selectable-set-rcd-name
@@ -211,3 +216,60 @@
     - MagazineRifle
     - GrenadeStinger
     - GrenadeStinger
+
+# ERT Janitor
+- type: selectableSet
+  id: ERTJanitorLoadout1
+  name: ert-janitor-loadout-1-name
+  description: ert-janitor-loadout-1-desc
+  sprite:
+    sprite: Objects/Tools/bucket.rsi
+    state: icon
+  content:
+    - WeaponLauncherHydra
+    - CleanadeGrenadeBox
+    - TrashBag
+    - CleanerGrenade
+    - CleanerGrenade
+    - CleanerGrenade
+
+# Emergency internals
+- type: selectableSet
+  id: EmergencyInternalsSet1
+  name: emergency-internals-option-1-name
+  description: emergency-internals-option-1-desc
+  sprite:
+    sprite: Objects/Tanks/emergency.rsi
+    state: icon
+  content:
+    - ExtendedEmergencyOxygenTankFilled
+
+- type: selectableSet
+  id: EmergencyInternalsSet2
+  name: emergency-internals-option-2-name
+  description: emergency-internals-option-2-desc
+  sprite:
+    sprite: Objects/Tanks/emergency_red.rsi
+    state: icon
+  content:
+    - ExtendedEmergencyNitrogenTankFilled
+
+- type: selectableSet
+  id: EmergencyInternalsSet3
+  name: emergency-internals-option-3-name
+  description: emergency-internals-option-3-desc
+  sprite:
+    sprite: _DV/Objects/Tanks/emergency_water_vapor.rsi
+    state: icon
+  content:
+    - ExtendedEmergencyWaterVaporTankFilled
+
+- type: selectableSet
+  id: EmergencyInternalsSet4
+  name: emergency-internals-option-4-name
+  description: emergency-internals-option-4-desc
+  sprite:
+    sprite: Objects/Tanks/emergency_yellow.rsi
+    state: icon
+  content:
+    - ExtendedEmergencyPlasmaTankFilled

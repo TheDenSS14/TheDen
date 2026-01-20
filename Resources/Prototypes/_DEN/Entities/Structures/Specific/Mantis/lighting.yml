@@ -1,0 +1,130 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseStructure
+  id: LightSomberEidoliteWellLamp
+  name: eidolite well lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on by hand."
+  suffix: Off
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitewell.rsi
+    drawdepth: Objects
+    snapCardinals: true
+    noRot: true
+    layers:
+    - state: base
+    - state: glow
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.125
+          position: -0.0156,0.0156 # Half a pixel left and up from center
+        hard: false
+        density: 100
+        mask:
+        - MachineMask
+  - type: Anchorable
+  - type: InteractionOutline
+  - type: EtherealLight # Dims around ethereal entities
+  - type: PointLight
+    enabled: false
+    radius: 3
+    energy: 4
+    softness: 1.1
+    color: "#d9418d"
+  - type: Appearance
+  - type: ItemTogglePointLight
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      path: /Audio/_DEN/Effects/crystalshimmer1.ogg
+      params:
+        volume: -2
+        variation: 0.05
+    soundDeactivate:
+      path: /Audio/_DEN/Effects/crystalshimmer2.ogg
+      params:
+        volume: -2
+        variation: 0.05
+  - type: UnpoweredFlashlight # Powered by the noosphere
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialEidolite1:
+            min: 1
+            max: 3
+          MaterialMnemolith1:
+            min: 1
+            max: 3
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+
+- type: entity
+  parent: LightSomberEidoliteWellLamp
+  id: LightSomberEidoliteWellLampOn
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. The switch on this one takes a few tries..."
+  suffix: DO NOT MAP # If you do, it'll appear on, but they'll have to interact with it twice before it turns off again. It's more fun to manually light the office anyway
+  components:
+  - type: PointLight
+    enabled: true
+
+- type: entity
+  parent: LightSomberEidoliteWellLamp
+  id: LightSomberEidoliteFloorLamp
+  name: eidolite floor lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. You can turn it on by hand."
+  suffix: Off
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitefloor.rsi
+    drawdepth: Objects
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.01,0.1,0.01,0.35"
+        hard: true
+        density: 200
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+  - type: EtherealLight # Dims around ethereal entities
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 6
+
+- type: entity
+  parent: LightSomberEidoliteFloorLamp
+  id: LightSomberEidoliteFloorLampOn
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. The switch on this one takes a few tries..."
+  suffix: DO NOT MAP # If you do, it'll appear on, but they'll have to interact with it twice before it turns off again. It's more fun to manually light the office anyway
+  components:
+  - type: PointLight
+    enabled: true

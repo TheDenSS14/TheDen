@@ -4,11 +4,13 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
+# SPDX-FileCopyrightText: 2026 Alex C
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # head
 loadout-name-LoadoutHeadHatPatrolCap = patrol cap (colorable)
+loadout-name-LoadoutHeadHatFuzzyEarmuffs = fuzzy earmuffs (colorable)
 
 # mask
 loadout-name-LoadoutClothingMaskBreathFashion = fashion breath mask (colorable)
@@ -21,6 +23,7 @@ loadout-name-LoadoutNeckCloakColorable = cloak (colorable)
 loadout-name-LoadoutClothingNeckSentimentalCollar = sentimental collar (colorable)
 loadout-name-LoadoutNeckNeckScarfWrapped = wrapped scarf (colorable)
 loadout-name-LoadoutClothingNeckHeavyShackles = heavy shackles (colorable)
+loadout-name-LoadoutNeckCollarColorable = collar (colorable)
 
 # waist
 loadout-name-LoadoutClothingWaistApron = waist apron (colorable)
@@ -32,6 +35,7 @@ loadout-name-LoadoutClothingWaistApronStripesVertical = waist apron (vertical st
 loadout-name-LoadoutClothingOuterCoatTurtleneckHalfBlouse = turtleneck half blouse (colorable)
 loadout-name-LoadoutClothingOuterCoatBomberWhite = lightweight bomber jacket (colorable)
 loadout-name-LoadoutClothingOuterCoatBomberWhiteLoose = lightweight bomber jacket (loose, colorable)
+loadout-name-LoadoutOuterVestValet = valet vest
 
 # innerclothing
 loadout-name-LoadoutClothingUniformBootyShorts = booty shorts (colorable)
@@ -58,6 +62,10 @@ loadout-name-LoadoutItemCaneWalkingFoldable = folding cane (colorable)
 loadout-name-LoadoutItemCaneWalkingQuad = quad cane (colorable)
 
 loadout-name-LoadoutServiceItemGoldenPlunger = golden plunger
+loadout-name-LoadoutSpaceCash1000 = spesos [1000]
+
+# tools
+loadout-name-LoadoutTailorsKnife = tailor's knife (colorable)
 
 character-item-group-LoadoutPrescriptions = Prescription Medications
 character-item-group-LoadoutPrescriptionPainkiller = Painkillers

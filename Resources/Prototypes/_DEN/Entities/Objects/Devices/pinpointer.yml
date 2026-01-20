@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: PinpointerBase
+  id: PinpointerSkia
+  name: Skia Pinpointer
+  description: Follow the thread of fate to your prey.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Unremoveable
+  - type: Pinpointer
+    updateTargetName: true
+    canRetarget: true

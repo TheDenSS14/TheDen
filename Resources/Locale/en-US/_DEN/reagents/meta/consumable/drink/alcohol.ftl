@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 Winter
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -109,3 +110,9 @@ reagent-desc-witchinghour = A sweet and simple witch's concoction, straight from
 
 reagent-name-plasmaflood = plasma flood
 reagent-desc-plasmaflood = An Atmosian light cocktail, perfect for drinking on the job!
+
+reagent-name-cherrysoda = cherry soda
+reagent-desc-cherrysoda = A sweet glass of cherry soda.
+
+reagent-name-vodkacheers = vodka cheers
+reagent-desc-vodkacheers = A crisp cherry flavored cocktail.

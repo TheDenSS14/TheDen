@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 DoctorJado
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Will-Oliver-Br
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: latheCategory
   id: Reports
@@ -47,3 +48,39 @@
 - type: latheCategory
   id: Requests
   name: lathe-category-requests
+
+- type: latheCategory
+  id: Command
+  name: lathe-category-command
+
+- type: latheCategory
+  id: Security
+  name: lathe-category-security
+
+- type: latheCategory
+  id: Medical
+  name: lathe-category-medical
+
+- type: latheCategory
+  id: Engineering
+  name: lathe-category-engineering
+
+- type: latheCategory
+  id: HumanResources
+  name: lathe-category-human-resources
+
+- type: latheCategory
+  id: Cargo
+  name: lathe-category-cargo
+
+- type: latheCategory
+  id: Epistemics
+  name: lathe-category-epistemics
+
+- type: latheCategory
+  id: Law
+  name: lathe-category-law
+
+- type: latheCategory
+  id: Service
+  name: lathe-category-service

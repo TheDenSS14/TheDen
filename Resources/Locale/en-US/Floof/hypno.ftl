@@ -1,9 +1,8 @@
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Shaman
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 action-name-hypno = Psionic Control
 action-description-hypno = You are able to mentally interfere with people's thoughts, and make them do your bidding.
@@ -44,4 +43,4 @@ has-no-consent = I cannot enter {POSS-ADJ($target)} mind.
 trait-name-HypnoticGaze = Hypnotic Gaze
 trait-description-HypnoticGaze =
     Within your eyes lies the ability to place others under your control. You are capable of placing others in a trance, regardless of
-    whether or not you possess any other notable psychic powers.
+    whether or not you possess any other notable psionic powers.

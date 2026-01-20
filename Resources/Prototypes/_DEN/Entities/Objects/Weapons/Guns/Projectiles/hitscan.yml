@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: hitscan
+  id: PulsePDW
+  damage:
+    types:
+      Heat: 20
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_blue
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam_blue
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_blue

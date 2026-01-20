@@ -33,7 +33,7 @@
 
 - type: entity
   name: BaseWeaponRifle
-  parent: [BaseItem, BaseGunWieldable]
+  parent: [BaseObjectVerbsCommon, BaseItem, BaseGunWieldable] # DEN: Add interaction verb parent
   id: BaseWeaponRifle
   description: A rooty tooty point and shooty.
   abstract: true
@@ -104,11 +104,6 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 7.5
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   name: AK-104
@@ -308,7 +303,6 @@
   - type: Appearance
 
 - type: entity
-  name: Lecter
   parent: WeaponRifleLecter
   id: WeaponRifleLecterRubber
   suffix: Non-lethal

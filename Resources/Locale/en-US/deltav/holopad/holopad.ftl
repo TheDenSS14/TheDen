@@ -1,9 +1,10 @@
-# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Velcroboy
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Command
 holopad-command-lo = Command - LO
@@ -24,8 +25,8 @@ holopad-epistemics-oracle = Epistemics - Oracle
 # Logistics
 holopad-logistics-front = Logistics - Front
 holopad-logistics-cargo-bay = Logistics - Cargo Bay
-holodpad-logistics-mailroom = Logistics - Mailroom
-holodpad-logistics-mailfront = Logistics - Mail Front
+holopad-logistics-mailroom = Logistics - Mailroom
+holopad-logistics-mailfront = Logistics - Mail Front
 holopad-logistics-salvage-bay = Logistics - Salvage Bay
 holopad-logistics-breakroom  = Logistics - Breakroom
 holopad-logistics-ats = Logistics - ATS

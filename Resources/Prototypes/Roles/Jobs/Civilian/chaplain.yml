@@ -28,6 +28,7 @@
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Dirius77
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -49,6 +50,7 @@
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
+          inverted: true
           species:
             - Shadowkin
         - !type:CharacterTraitRequirement
@@ -68,7 +70,7 @@
     - type: BibleUser
     - type: Psionic
       # powerRollMultiplier: 3 # TheDen - After the psionic refactor, this only gave them 0.12 Potentia per roll instead of 0.04 (almost nothing, because every Potentia gain also rolls a d100) so we're commenting it out because it doesn't matter and is very misleading
-      powerSlots: 2 # TheDen - This only means that they don't start generating glimmer until they gain a third slot-taking power (they start with Healing Word, which takes a slot, and have one no-glimmer slot like all psychics)
+      powerSlots: 2 # TheDen - This only means that they don't start generating glimmer until they gain a third slot-taking power (they start with Healing Word, which takes a slot, and have one no-glimmer slot like all psions)
     - type: InnatePsionicPowers
       powersToAdd: # TheDen - They have one innate slot-taking power, so they need 200 Potentia to gain a new power
         - TelepathyPower # Doesn't take a power slot

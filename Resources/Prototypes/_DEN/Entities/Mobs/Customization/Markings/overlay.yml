@@ -1,0 +1,119 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: marking
+  abstract: true
+  id: BaseBodyOverlay
+  markingCategory: Overlay
+  followSkinColor: true
+  forcedColoring: true
+
+# Head
+
+- type: marking
+  parent: [BaseSpeciesHeadHuman, BaseBodyOverlay]
+  id: BodyOverlayHumanHeadMale
+  bodyPart: Head
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: head_m
+
+- type: marking
+  parent: [BaseSpeciesHeadHuman, BaseBodyOverlay]
+  id: BodyOverlayHumanHeadFemale
+  bodyPart: Head
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: head_f
+
+# Chest
+
+- type: marking
+  parent: [BaseSpeciesChestHuman, BaseBodyOverlay]
+  id: BodyOverlayHumanChestMale
+  bodyPart: Chest
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: torso_m
+
+- type: marking
+  parent: [BaseSpeciesChestHuman, BaseBodyOverlay]
+  id: BodyOverlayHumanChestFemale
+  sexRestriction: [Female] # sorry, but the body shape breaks it
+  bodyPart: Chest
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: torso_f
+
+# Arm
+
+- type: marking
+  parent: [BaseSpeciesArmsHuman, BaseBodyOverlay]
+  id: BodyOverlayHumanArmLeft
+  bodyPart: LArm
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: l_arm
+
+- type: marking
+  parent: [BaseSpeciesArmsHuman, BaseBodyOverlay]
+  id: BodyOverlayHumanArmRight
+  bodyPart: RArm
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: r_arm
+
+# Hand
+
+- type: marking
+  parent: [BaseSpeciesArmsHuman, BaseBodyOverlay]
+  id: BodyOverlayHumanHandLeft
+  bodyPart: LHand
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: l_hand
+
+- type: marking
+  parent: [BaseSpeciesArmsHuman, BaseBodyOverlay]
+  id: BodyOverlayHumanHandRight
+  bodyPart: RHand
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: r_hand
+
+# Leg
+
+- type: marking
+  parent: [BaseSpeciesLegsHuman, BaseBodyOverlay]
+  id: BodyOverlayHumanLegLeft
+  bodyPart: LLeg
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: l_leg
+
+- type: marking
+  parent: [BaseSpeciesLegsHuman, BaseBodyOverlay]
+  id: BodyOverlayHumanLegRight
+  bodyPart: RLeg
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: r_leg
+
+# Foot
+
+- type: marking
+  parent: [BaseSpeciesLegsHuman, BaseBodyOverlay]
+  id: BodyOverlayHumanFootLeft
+  bodyPart: LFoot
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: l_foot
+
+- type: marking
+  parent: [BaseSpeciesLegsHuman, BaseBodyOverlay]
+  id: BodyOverlayHumanFootRight
+  bodyPart: RFoot
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: r_foot

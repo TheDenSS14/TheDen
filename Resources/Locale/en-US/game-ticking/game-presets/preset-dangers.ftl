@@ -10,3 +10,6 @@ high-danger-description = Pick a random gamemode from a weighted list of gamemod
 
 roundstart-antags-title = Even More Antags
 roundstart-antags-description = Irregular Extended, but more guaranteed antags.
+
+eternity-title = Eternity Preset
+eternity-description = Greenshift, but no lavaland.

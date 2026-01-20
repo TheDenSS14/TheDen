@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2024 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 portfiend
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -78,3 +78,13 @@
   id: LogProbePhrase
   parent: BaseSecuritySubjectPhrase
   text: phrase-log-probe
+
+- type: quickPhrase
+  id: AmmunitionPhrase
+  parent: BaseSecuritySubjectPhrase
+  text: phrase-ammunition
+
+- type: quickPhrase
+  id: ThiefPhrase
+  parent: BaseSecuritySubjectPhrase
+  text: phrase-thief

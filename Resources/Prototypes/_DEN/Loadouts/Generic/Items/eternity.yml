@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: loadout
+  id: LoadoutSpaceCash1000
+  category: GeneralItems
+  cost: 2
+  requirements:
+  - !type:CharacterServerSelectiveRequirement
+    serverId: eternity
+  items:
+  - SpaceCash1000
+
+- type: loadout
+  id: LoadoutPowerCellMicroreactor
+  category: GeneralItems
+  cost: 4
+  requirements:
+  - !type:CharacterServerSelectiveRequirement
+    serverId: eternity
+  items:
+  - PowerCellMicroreactor

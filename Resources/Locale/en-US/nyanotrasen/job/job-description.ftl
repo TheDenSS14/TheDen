@@ -1,6 +1,7 @@
-# SPDX-FileCopyrightText: 2023 Bakke <luringens@protonmail.com>
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Bakke
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
@@ -9,4 +10,4 @@ job-description-guard = Keep track of prisoners and make sure they have their ba
 job-description-mail-carrier = Deliver mail and other packages from and to logistics. Avoid dogs.
 job-description-martialartist = Be honorable and disciplined, spar in the dojo, challenge security to CQC. Currently available on Shōkō.
 job-description-prisoner = Sit in prison. Gamble with your cellmates. Talk to the warden. Write your memoirs.
-job-description-mantis = Solve mysteries from the nature of the universe to the meaning of life. Be the main person to deal with Psionic beings.
+job-description-mantis = Guide the crew's psions, confront otherworldly threats, and keep watch for dangerous misuse of noospheric power.

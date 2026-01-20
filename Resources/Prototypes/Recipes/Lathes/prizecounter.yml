@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2024 sleepyyapril
 # SPDX-FileCopyrightText: 2025 leo
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: latheRecipe
   id: PrizeBall
@@ -612,14 +612,6 @@
   completetime: 0.1
   materials:
     PrizeTicket: 80
-
-- type: latheRecipe
-  id: PlushieGrim
-  result: PlushieGrim
-  applyMaterialDiscount: false
-  completetime: 0.1
-  materials:
-    PrizeTicket: 50
 
 # EMAG
 

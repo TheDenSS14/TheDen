@@ -24,6 +24,7 @@
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Dirius77
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -38,17 +39,23 @@
       min: 3600
     - !type:CharacterLogicOrRequirement
       requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-        - !type:CharacterTraitRequirement
-          inverted: true
-          traits:
-            - ShadowkinBlackeye
+      - !type:CharacterSpeciesRequirement
+        inverted: true
+        species:
+        - IPC
+      - !type:CharacterTraitRequirement
+        traits:
+        - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        inverted: true
+        species:
+        - Shadowkin
+      - !type:CharacterTraitRequirement
+        inverted: true
+        traits:
+        - ShadowkinBlackeye
   startingGear: LibrarianGear
   icon: "JobIconLibrarian"
   supervisors: job-supervisors-rd
@@ -60,7 +67,7 @@
   - !type:AddComponentSpecial
     components:
     - type: Psionic
-      powerSlots: 1 # TheDen - This only means that they don't start generating glimmer until they gain a second slot-taking power (they have one no-glimmer slot like all psychics)
+      powerSlots: 1 # TheDen - This only means that they don't start generating glimmer until they gain a second slot-taking power (they have one no-glimmer slot like all psions)
     - type: InnatePsionicPowers
       powersToAdd: # TheDen - They have no innate slot-taking powers, so they need 100 Potentia to gain a new power
         - XenoglossyPower # Doesn't take a power slot

@@ -1,5 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -55,3 +57,9 @@ flavor-complex-emeraldjourney = like new beginnings
 flavor-complex-coconutdoublecreampie = nutty
 flavor-complex-arkveiltemple = like a tropical adventure
 flavor-complex-plasmaflood = like fruity plasma burn
+flavor-complex-vodkacheers = like spicy cherry
+
+## Chemicals
+flavor-complex-mantispaper = like a name set in stone
+flavor-complex-mnemolith = like the bedrock of thought itself
+flavor-complex-holiday-cheer = like holiday cheer

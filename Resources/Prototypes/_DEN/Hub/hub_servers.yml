@@ -1,0 +1,29 @@
+# SPDX-FileCopyrightText: 2025 Cami
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: MIT
+
+- type: hubServer
+  id: salvation
+  statusUrl: "http://51.222.244.125:1212/status"
+  connectAddress: "ss14://51.222.244.125:1212"
+  displayName: hub-server-salvation-name
+
+- type: hubServer
+  id: eternity
+  statusUrl: "http://51.222.244.125:1215/status"
+  connectAddress: "ss14://51.222.244.125:1215"
+  displayName: hub-server-eternity-name
+
+- type: hubServer
+  id: damnation
+  statusUrl: "http://51.222.244.125:1213/status"
+  connectAddress: "ss14://51.222.244.125:1213"
+  displayName: hub-server-damnation-name
+
+- type: hubServer
+  id: mapping
+  statusUrl: "http://51.222.244.125:1214/status"
+  connectAddress: "ss14://51.222.244.125:1214"
+  displayName: hub-server-mapping-name

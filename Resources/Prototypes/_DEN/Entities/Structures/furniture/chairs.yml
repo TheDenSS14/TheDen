@@ -1,0 +1,341 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: OfficeChairBase
+  id: SomberChairCushion
+  name: somber floor cushion
+  description: "A firm pillow to sit on, useful for meditation."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/chairs.rsi
+    state: somberfloorcushion
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: StaticPrice
+    price: 100
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Items/Handling/cloth_drop.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialCloth:
+            min: 3
+            max: 5
+          ScrapElectrum:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: OfficeChairBase
+  id: SomberChairLeather
+  name: somber leather chair
+  description: "A plush leather office chair with electrum accents."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/chairs.rsi
+    state: somberleather
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: StaticPrice
+    price: 125
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: VehicleWheelchair
+  id: SomberChairLeatherMantisWheelchair
+  name: mantis chair
+  description: "A plush leather office chair concealing strange bluespace mechanisms that let it compact into an electrum orb. It hovers just above the ground and can be steered with psionic influence."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Foldable
+    canFoldInsideContainer: false
+  - type: Sprite
+    sprite: _DEN/Structures/Specific/Mantis/mantischair.rsi
+    state: vehicle
+  - type: Item
+    size: Huge
+  - type: Damageable
+    damageModifierSet: StrongMetallic
+    damageContainer: Inorganic
+  - type: StaticPrice
+    price: 125
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 3
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: SomberChairLeatherMantisWheelchair
+  id: SomberChairLeatherMantisWheelchairFolded
+  name: bound mantis chair
+  suffix: Folded, Not Tabletop
+  description: "An electrum orb concealing strange bluespace mechanisms that let it unfold into a plush leather office chair. Useful for mantes with mobility restrictions, or simply as versatile office furniture."
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Specific/Mantis/mantischair.rsi
+    state: vehicle_folded
+  - type: Item
+    size: Small
+  - type: Foldable
+    folded: true
+  - type: Tag
+    tags:
+    - MantisBeltStorable
+
+- type: entity
+  parent: UnanchoredChairBase
+  id: SomberChairWood
+  name: somber wood chair
+  description: "An expensive chair made of gloomy, patterned wood with electrum accents."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/chairs.rsi
+    state: somberwood
+  - type: StaticPrice
+    price: 125
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+# beach lounge chairs
+
+- type: entity
+  abstract: true
+  parent: ChairBase
+  id: BaseChairBeachLounge
+  name: lounge chair
+  description: For sitting back, relaxing, and soaking in the solar lamp radiation.
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/lounge_chair.rsi
+  - type: Construction
+    graph: ChairBeachLounge
+
+- type: entity
+  parent: BaseChairBeachLounge
+  id: ChairBeachLoungeBeige
+  suffix: beige
+  components:
+  - type: Sprite
+    state: beige
+  - type: Construction
+    node: beige
+
+- type: entity
+  parent: BaseChairBeachLounge
+  id: ChairBeachLoungeBlack
+  suffix: black
+  components:
+  - type: Sprite
+    state: black
+  - type: Construction
+    node: black
+
+- type: entity
+  parent: BaseChairBeachLounge
+  id: ChairBeachLoungeBlue
+  suffix: blue
+  components:
+  - type: Sprite
+    state: blue
+  - type: Construction
+    node: blue
+
+- type: entity
+  parent: BaseChairBeachLounge
+  id: ChairBeachLoungeBrown
+  suffix: brown
+  components:
+  - type: Sprite
+    state: brown
+  - type: Construction
+    node: brown
+
+- type: entity
+  parent: BaseChairBeachLounge
+  id: ChairBeachLoungeGray
+  suffix: gray
+  components:
+  - type: Sprite
+    state: gray
+  - type: Construction
+    node: gray
+
+- type: entity
+  parent: BaseChairBeachLounge
+  id: ChairBeachLoungeGreen
+  suffix: green
+  components:
+  - type: Sprite
+    state: green
+  - type: Construction
+    node: green
+
+- type: entity
+  parent: BaseChairBeachLounge
+  id: ChairBeachLoungeOrange
+  suffix: orange
+  components:
+  - type: Sprite
+    state: orange
+  - type: Construction
+    node: orange
+
+- type: entity
+  parent: BaseChairBeachLounge
+  id: ChairBeachLoungePink
+  suffix: pink
+  components:
+  - type: Sprite
+    state: pink
+  - type: Construction
+    node: pink
+
+- type: entity
+  parent: BaseChairBeachLounge
+  id: ChairBeachLoungePurple
+  suffix: purple
+  components:
+  - type: Sprite
+    state: purple
+  - type: Construction
+    node: purple
+
+- type: entity
+  parent: BaseChairBeachLounge
+  id: ChairBeachLoungeRed
+  suffix: red
+  components:
+  - type: Sprite
+    state: red
+  - type: Construction
+    node: red
+
+- type: entity
+  parent: BaseChairBeachLounge
+  id: ChairBeachLoungeTeal
+  suffix: teal
+  components:
+  - type: Sprite
+    state: teal
+  - type: Construction
+    node: teal
+
+- type: entity
+  parent: BaseChairBeachLounge
+  id: ChairBeachLoungeWhite
+  suffix: white
+  components:
+  - type: Sprite
+    state: white
+  - type: Construction
+    node: white
+
+- type: entity
+  parent: BaseChairBeachLounge
+  id: ChairBeachLoungeYellow
+  suffix: yellow
+  components:
+  - type: Sprite
+    state: yellow
+  - type: Construction
+    node: yellow

@@ -1,21 +1,21 @@
-// SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
-// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
-// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 AJCM-git
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Jezithyr
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2023 keronshb
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Kyoth25f
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 nikthechampiongr
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2024 themias
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 Whatstone
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Server.Interaction;
@@ -35,6 +35,11 @@ using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
+using Content.Shared.Whitelist; // Frontier
+using Content.Shared.Buckle.Components; // Frontier
+using Content.Shared.Buckle; // Frontier
+using Content.Shared.Mind.Components; // Frontier
+using Content.Server.Ghost.Roles.Components; // Frontier
 
 namespace Content.Server.Mech.Equipment.EntitySystems;
 
@@ -205,6 +210,35 @@ public sealed class MechGrabberSystem : EntitySystem
             return;
         if (!_mech.TryChangeEnergy(equipmentComponent.EquipmentOwner.Value, component.GrabEnergyDelta))
             return;
+
+        // Remove contained humanoids
+        // TODO: revise condition for "generic player entities"
+        if (TryComp<ContainerManagerComponent>(args.Args.Target, out var containerManager))
+        {
+            EntityCoordinates? coords = null;
+            if (TryComp(equipmentComponent.EquipmentOwner, out TransformComponent? xform))
+                coords = xform.Coordinates;
+
+            List<EntityUid> toRemove = new();
+            foreach (var container in containerManager.Containers)
+            {
+                toRemove.Clear();
+                foreach (var contained in container.Value.ContainedEntities)
+                {
+                    if (HasComp<GhostRoleComponent>(contained)
+                        || TryComp<MindContainerComponent>(contained, out var mindContainer)
+                        && mindContainer.HasMind)
+                    {
+                        toRemove.Add(contained);
+                    }
+                }
+                foreach (var removeUid in toRemove)
+                {
+                    _container.Remove(removeUid, container.Value, destination: coords);
+                }
+            }
+        }
+        // End Frontier: Remove people from chairs and containers
 
         _container.Insert(args.Args.Target.Value, component.ItemContainer);
         _mech.UpdateUserInterface(equipmentComponent.EquipmentOwner.Value);

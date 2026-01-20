@@ -12,10 +12,12 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 Velcroboy
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 #SOFTSUITS
 #Basic EVA
@@ -214,7 +216,7 @@
     contents:
         - id: OxygenTankFilled
         - id: NitrogenTankFilled #Den
-        - id: ClothingOuterHardsuitRd
+        - id: ClothingOuterHardsuitMystagogueLabcoat #Den
         - id: ClothingMaskBreath
   - type: AccessReader
     access: [ [ "ResearchDirector" ] ]

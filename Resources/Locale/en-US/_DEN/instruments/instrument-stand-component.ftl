@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+instrument-stand-component-slot-name-default = Instrument
+instrument-stand-component-slot-name-microphone = Microphone

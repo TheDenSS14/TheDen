@@ -1,4 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 crekulon
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -10,3 +13,49 @@
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Neck/Mantles/colorable.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseFoldable]
+  id: ClothingNeckMantleMantisOrnate
+  name: ornate mantis mantle
+  description: "A long, finely-woven mantle generously decorated with tassles. It can easily be worn on either shoulder."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Mantles/mantis_mantle_airy.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-flipped
+      map: ["foldedLayer"]
+      visible: false
+  - type: Appearance
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Mantles/mantis_mantle_airy.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckMantleMoon
+  name: moonmantle
+  description: An anti-gravity cloak speckled with a speciality blend of lunar rock gel. Shipped from the Netherlands.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Mantles/moonmantle.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Mantles/moonmantle.rsi
+  - type: AntiGravityClothing
+  - type: StaticPrice
+    price: 75
+  - type: Tag
+    tags: [ ]

@@ -1,22 +1,37 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 leo
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Alex C
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  parent: ClothingNeckCollarBase # Floof - reparented
+  parent: [ClothingNeckCollarBase, BaseFoldable]
+  id: ClothingNeckCollarBaseFoldable
+  abstract: true
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: unfold-verb
+    unfoldVerbText: fold-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded
+
+- type: entity
+  parent: ClothingNeckCollarBaseFoldable
   id: ClothingNeckCowBellCollar
   name: cowbell collar
-  description: A way to inform others about the presence of livestock, or just to annoy everyone around you!
+  description: A way to inform others about the presence of livestock, or just to annoy everyone around you! Can be unfolded to appear thicker.
   components:
   - type: Sprite
-    sprite: _DEN/Clothing/Neck/Misc/cowbellcollar.rsi
+    sprite: _DEN/Clothing/Neck/Collars/collar_cowbell.rsi
   - type: Clothing
-    sprite: _DEN/Clothing/Neck/Misc/cowbellcollar.rsi
+    sprite: _DEN/Clothing/Neck/Collars/collar_cowbell.rsi
   - type: EmitsSoundOnMove
     soundCollection:
       collection: CowbellRings
@@ -75,15 +90,92 @@
     sprite: _DEN/Clothing/Neck/Misc/heavyshackles.rsi
 
 - type: entity
-  parent: ClothingNeckCollarBase
-  id: ClothingNeckAdminAssitantCollar
-  name: administrative assistant collar
-  description: An ornate white leather collar with a command blue tag. Etched into the leather inside of the collar is, "Command Pet".
+  parent: [ClothingNeckCollarBase, BaseMantisContraband]
+  id: ClothingNeckMantisShackles
+  name: graven bindings
+  description: "A set of massive mu-metal bindings with hanging chains. Merely symbolic unless paired with the graven shackles."
   components:
   - type: Sprite
-    sprite: _DEN/Clothing/Neck/Misc/aacollar.rsi
+    sprite: _DEN/Clothing/Neck/Misc/mantisshackles.rsi
   - type: Clothing
-    sprite: _DEN/Clothing/Neck/Misc/aacollar.rsi
+    sprite: _DEN/Clothing/Neck/Misc/mantisshackles.rsi
+  - type: Tag
+    tags:
+    - MantisBoxRestraintsStorable
+    - MantisBeltStorable
+  - type: GuideHelp
+    guides: [ MantisGuide ]
+
+- type: entity
+  parent: [ClothingNeckBase, BaseAntiPsionicWeapon, BaseMantisContraband]
+  id: ClothingNeckMantisPendulum
+  name: mantis pendulum
+  description: "A mnemolith eye on a sturdy electrum chain, used to test psionic ability. It grows uncomfortably hot in the wielder's hand if the subject lacks the gift. Basically harmless, though its use tends to annoy the crew, so do consider asking first. The chain is long enough to clasp around your neck, should you feel inclined."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Misc/mantispendulum.rsi
+  - type: Item
+    sprite: _DEN/Clothing/Neck/Misc/mantispendulum.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Misc/mantispendulum.rsi
+  - type: AntiPsionicWeapon
+    punish: true # It'll hurt you if you bonk anything non-psionic (a mouse, a wall, etc.)
+    punishChances: 1 # Every time
+    punishSelfDamage: 1 # Bonk
+    punishStunDuration: 0 # It's just a little amulet, it won't stun you
+  - type: MeleeWeapon
+    attackRate: .6666
+    maxTargets: 1
+    angle: 90
+    soundHit:
+      path: /Audio/_DEN/Effects/crystaltap3.ogg
+      params:
+        volume: -6
+        variation: 0.05
+    damage:
+      types: # Melee damage (per the description, it's for testing psionic ability, not fighting)
+        Blunt: 1 # 1.5 DPS, or 1.88 DPS against psions
+        Holy: 0.5 # 2.81 total DPS against psionic supernaturals
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
+  - type: GuideHelp
+    guides: [ MantisGuide ]
+
+- type: entity
+  parent: ClothingNeckCollarBaseFoldable
+  id: ClothingNeckAdminAssitantCollar
+  name: administrative assistant collar
+  description: An ornate white leather collar with a command blue tag. Etched into the leather inside of the collar is, "Command Pet".  Can be unfolded to appear thicker.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Collars/collar_aa.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Collars/collar_aa.rsi
+
+- type: entity
+  parent: ClothingNeckCollarBaseFoldable
+  id: ClothingNeckColorableCollar
+  name: simple collar
+  description: A simplistic leather collar. Can be unfolded to appear thicker.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Collars/colorable_collar.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Collars/colorable_collar.rsi
+
+- type: entity
+  parent: ClothingNeckBase # I'M NOT MAKING IT AN ACTUAL COLLAR.
+  # ...BUT YOU COULD.
+  id: ClothingNeckFoldedCollar
+  name: folded collar
+  description: If you can't make folded collar at home, then store bought is fine. # [SIC]
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Misc/folded_collar.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Misc/folded_collar.rsi
 
 #tallits
 

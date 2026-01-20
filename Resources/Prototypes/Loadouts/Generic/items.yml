@@ -26,7 +26,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 #Smokes
 - type: loadout
@@ -509,6 +509,16 @@
       group: LoadoutWritables
 
 - type: loadout
+  id: LoadoutItemPaperPackage
+  category: GeneralItems
+  cost: 1
+  items:
+  - PaperPackage
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutWritables
+
+- type: loadout
   id: LoadoutItemBoxFolderGrey
   category: GeneralItems
   cost: 0
@@ -524,6 +534,9 @@
   cost: 0
   items:
     - BoxFolderClipboard
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutWritables
 
 - type: loadout
   id: LoadoutBookRandom

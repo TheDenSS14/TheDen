@@ -12,6 +12,7 @@
 # SPDX-FileCopyrightText: 2024 sleepyyapril
 # SPDX-FileCopyrightText: 2025 Ichaie
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 pathetic meowmeow
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -44,7 +45,7 @@
     - BaseStationNanotrasen
     - BaseRandomStation
     - BaseStationMail # Nyano component, required for station mail to function
-    - BaseStationCaptainState # DeltaV
+    - BaseStationAutomaticSpareId # DeltaV
     - BaseStationStockMarket # DeltaV
   categories: [ HideSpawnMenu ]
   components:

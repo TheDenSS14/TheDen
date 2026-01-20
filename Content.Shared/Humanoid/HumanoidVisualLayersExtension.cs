@@ -4,7 +4,9 @@
 // SPDX-FileCopyrightText: 2023 Leon Friedrich
 // SPDX-FileCopyrightText: 2023 Visne
 // SPDX-FileCopyrightText: 2024 gluesniffler
+// SPDX-FileCopyrightText: 2025 Blitz
 // SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 LaconiumDragona
 // SPDX-FileCopyrightText: 2025 Skubman
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
@@ -86,11 +88,13 @@ namespace Content.Shared.Humanoid
                     break;
                 case HumanoidVisualLayers.Chest:
                     yield return HumanoidVisualLayers.Chest;
-                    yield return HumanoidVisualLayers.Tail;
+                    // There was a yield return HumanoidVisualLayers.Tail; here. Possibly a duplicate?
+                    // Removed possible for those reasons.
                     yield return HumanoidVisualLayers.TailBehind;
                     yield return HumanoidVisualLayers.TailOversuit;
-                    yield return HumanoidVisualLayers.Wings;
                     yield return HumanoidVisualLayers.Tail;
+                    yield return HumanoidVisualLayers.Wings;
+                    yield return HumanoidVisualLayers.BackWings;
                     break;
                 default:
                     yield break;

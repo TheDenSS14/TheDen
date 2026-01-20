@@ -42,25 +42,12 @@ public sealed partial class AACWindow : FancyWindow
     private readonly List<ProtoId<QuickPhrasePrototype>> _phraseBuffer = [];
     private readonly List<ProtoId<QuickPhrasePrototype>> _phraseSingle = [];
 
-    public AACWindow(EntityUid owner)
+    public AACWindow()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
-        // begin imp
-        if (!_entMan.TryGetComponent<AACTabletComponent>(owner, out var comp))
-            return;
-
-        List<QuickPhrasePrototype> protosAsList = [];
-        var phraseProtos = _prototype.EnumeratePrototypes<QuickPhrasePrototype>().ToList();
-
-        foreach (var prototype in phraseProtos)
-        {
-            protosAsList.Add(prototype);
-        }
-
-        _phrases = protosAsList;
-        // end imp
+        _phrases = _prototype.EnumeratePrototypes<QuickPhrasePrototype>().ToList();
         _phrases.Sort((a, b) => string.CompareOrdinal(a.Group, b.Group));
         SearchBar.OnTextChanged += FilterSearch;
         SendButton.OnPressed += SendBuffer;

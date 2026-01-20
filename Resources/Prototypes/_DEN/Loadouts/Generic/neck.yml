@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Alex C
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -74,3 +76,27 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutClothingNeckFoldedCollar
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingNeckFoldedCollar
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutClothingNeckColorableCollar
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingNeckColorableCollar
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck

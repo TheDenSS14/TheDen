@@ -1,21 +1,19 @@
-# SPDX-FileCopyrightText: 2024 Aera Aulin <Absolis1998@gmail.com>
-# SPDX-FileCopyrightText: 2024 AeraAuling <133451603+AeraAuling@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 cynical <superpilotboy@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 ElusiveCoin <elusivecoin@gmail.com>
-# SPDX-FileCopyrightText: 2025 KekaniCreates <kekanisb@gmail.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Tonk-GCR <190437025+Tonk-GCR@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aera Aulin
+# SPDX-FileCopyrightText: 2024 AeraAuling
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Danger Revolution!
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 cynical
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 ElusiveCoin
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tonk-GCR
+# SPDX-FileCopyrightText: 2025 VMSolidus
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -230,7 +228,7 @@
       group: LoadoutHead # TheDen
 
 - type: loadout
-  id: LoadoutHeadPoppy
+  id: LoadoutHeadFlowerPoppy # DEN: Add "flower" to the ID
   category: Head
   cost: 0
   exclusive: true
@@ -610,7 +608,6 @@
   id: LoadoutHeadFishCap
   category: Head
   cost: 1
-  exclusive: true
   items:
     - ClothingHeadFishCap
   requirements:

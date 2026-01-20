@@ -1,0 +1,22 @@
+<!--
+SPDX-FileCopyrightText: 2026 Dirius77
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<DefaultWindow xmlns="https://spacestation14.io"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            Title="{Loc 'labelable-holoprojector-ui-header'}">
+    <BoxContainer
+        Orientation="Vertical"
+        HorizontalExpand="True"
+        HorizontalAlignment="Left"
+        MaxWidth="900">
+        <Label Name="CurrentTextLabel" Text="{Loc 'labelable-holoprojector-current-text-label'}" />
+        <TextEdit Name="DescriptionTextEdit"
+                  HorizontalExpand="True"
+                  VerticalExpand="True"
+                  Margin="3"
+                  MinSize="220 150"/>
+    </BoxContainer>
+</DefaultWindow>

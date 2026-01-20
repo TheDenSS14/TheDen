@@ -13,7 +13,6 @@
 
 using Content.Server.Clothing.Systems;
 using Content.Server._DV.ParadoxAnomaly.Components;
-using Content.Server.DetailExaminable;
 using Content.Server.GenericAntag;
 using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
@@ -35,6 +34,7 @@ using Content.Server._Floof.Consent;
 using Content.Server.Roles.Jobs;
 using Content.Server.StationEvents.Events;
 using Content.Shared._Floof.Consent;
+using Content.Shared.DetailExaminable;
 using Content.Shared.Traits.Assorted.Components;
 
 
@@ -240,11 +240,13 @@ public sealed class ParadoxAnomalySystem : EntitySystem
         if (TryComp<DetailExaminableComponent>(uid, out var detail))
         {
             detailCopy.Content = detail.Content;
+            Dirty(uid, detail);
         }
 
         if (TryComp<ExtendDescriptionComponent>(uid, out var descExtension))
         {
             spawnedDescExtension.DescriptionList = descExtension.DescriptionList;
+            Dirty(uid, descExtension);
         }
 
         var examineMessage = Loc.GetString(ParadoxAnomalyExamine, ("entity", spawned));

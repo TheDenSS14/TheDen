@@ -1,4 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -561,3 +563,48 @@
   - type: Icon
     sprite: _DEN/Objects/Consumable/Drinks/plasmaflood.rsi
     state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkCherrySodaGlass
+  suffix: cherry soda
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        drink:
+          maxVol: 30
+          reagents:
+            - ReagentId: CherrySoda
+              Quantity: 30
+    - type: Icon
+      sprite: _DEN/Objects/Consumable/Drinks/cherrysoda.rsi
+      state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkVodkaCheersGlass
+  suffix: vodka cheers
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        drink:
+          maxVol: 30
+          reagents:
+            - ReagentId: VodkaCheers
+              Quantity: 30
+    - type: Icon
+      sprite: _DEN/Objects/Consumable/Drinks/vodkacheers.rsi
+      state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkHolidayCheerGlass
+  suffix: holiday cheer
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: HolidayCheer
+          Quantity: 30

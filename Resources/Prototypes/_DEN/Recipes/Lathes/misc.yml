@@ -1,7 +1,10 @@
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Dirius77
+# SPDX-FileCopyrightText: 2025 DoctorJado
 # SPDX-FileCopyrightText: 2025 Jadrek
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 crekulon
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -173,3 +176,59 @@
     Steel: 100
     Glass: 100
     Plastic: 100
+
+# beautiful bureaucracy!
+- type: latheRecipe
+  id: RubberStampApproved
+  result: RubberStampApproved
+  category: Bureaucracy
+  completetime: 1
+  materials:
+    Wood: 200
+    Plastic: 100
+
+- type: latheRecipe
+  id: RubberStampDenied
+  result: RubberStampDenied
+  category: Bureaucracy
+  completetime: 1
+  materials:
+    Wood: 200
+    Plastic: 100
+
+- type: latheRecipe
+  id: RubberStampSyndicate
+  result: RubberStampSyndicate
+  category: Bureaucracy
+  completetime: 1
+  materials:
+    Wood: 200
+    Plastic: 100
+
+# Bluespace Plushie Patch
+- type: latheRecipe
+  id: BluespacePlushiePatch
+  result: BluespacePlushiePatch
+  completetime: 4
+  materials:
+    Cloth: 800
+    Silver: 200
+    Plasma: 500
+    Bluespace: 150
+
+# Moonmantle
+- type: latheRecipe
+  id: ClothingNeckMantleMoon
+  result: ClothingNeckMantleMoon
+  completetime: 2
+  materials:
+    Cloth: 800
+    Steel: 600
+
+- type: latheRecipe
+  id: HoloprojectorNSFW
+  result: HoloprojectorNSFW
+  completetime: 2
+  materials:
+    Plastic: 250
+    Glass: 200

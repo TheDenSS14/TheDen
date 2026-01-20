@@ -1,8 +1,8 @@
-// SPDX-FileCopyrightText: 2025 Remuchi <72476615+Remuchi@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 Remuchi
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 TheLuggage05
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server.Atmos.Rotting;
 using Content.Server.DoAfter;
@@ -16,6 +16,8 @@ using Content.Shared.Medical;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Traits.Assorted; // den dnr fixes
+using Content.Server._Impstation.Traits; // den rdnr fixes
 using Content.Shared.Verbs;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
@@ -36,6 +38,7 @@ public sealed class CPRSystem : EntitySystem
     [Dependency] private readonly RottingSystem _rottingSystem = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly IRobustRandom _random = default!; // den rdnr fixes
 
     public override void Initialize()
     {
@@ -119,8 +122,27 @@ public sealed class CPRSystem : EntitySystem
             && _mobThreshold.TryGetThresholdForState((EntityUid)args.Target, MobState.Dead, out var threshold)
             && TryComp<DamageableComponent>(args.Target, out var damageableComponent)
             && TryComp<MobStateComponent>(args.Target, out var state)
-            && damageableComponent.TotalDamage < threshold)
+            && damageableComponent.TotalDamage < threshold
+            && !TryComp<UnrevivableComponent>(args.Target, out var unrevivableComponent)) // den, unrevivable prevents revival via cpr
+        {
+            // den start, adding rdnr code to cpr
+            if (TryComp<RandomUnrevivableComponent>(args.Target, out var randomUnrevivableComponent))
+            {
+                if (randomUnrevivableComponent.Chance < _random.NextDouble())
+                {
+                    randomUnrevivableComponent.Chance = 0f;
+                    AddComp<UnrevivableComponent>((EntityUid)args.Target);
+                    RemComp<RandomUnrevivableComponent>((EntityUid)args.Target);
+                    return;
+                }
+                else
+                {
+                    randomUnrevivableComponent.Chance -= 0.1f;
+                }
+            }
+            // den end rdnr code
             _mobStateSystem.ChangeMobState(args.Target.Value, MobState.Critical, state, performer);
+        }
 
         var isAlive = _mobStateSystem.IsAlive(args.Target.Value);
         args.Repeat = !isAlive;

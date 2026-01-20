@@ -1,25 +1,21 @@
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2023 Raphael Bertoche <rbertoche@cpti.cetuc.puc-rio.br>
-// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+ajcm-git@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+emogarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 Raphael Bertoche
+// SPDX-FileCopyrightText: 2023 ShadowCommander
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 AJCM-git
+// SPDX-FileCopyrightText: 2024 Debug
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2024 Scribbles0
+// SPDX-FileCopyrightText: 2024 beck-thompson
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2024 nikthechampiongr
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2024 themias
+// SPDX-FileCopyrightText: 2025 Jakumba
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -31,6 +27,7 @@ using Content.Server.EUI;
 using Content.Server.Ghost;
 using Content.Server.Popups;
 using Content.Server.PowerCell;
+using Content.Shared._DEN.Unrotting;
 using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
@@ -46,9 +43,12 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.PowerCell;
 using Content.Shared.Timing;
 using Content.Shared.Toggleable;
+using Content.Shared.Traits.Assorted;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Robust.Shared.Random; // imp rdnr
+using Content.Server._Impstation.Traits; // imp rdnr
 
 namespace Content.Server.Medical;
 
@@ -73,6 +73,7 @@ public sealed class DefibrillatorSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly IRobustRandom _random = default!; // imp rdnr
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -219,35 +220,66 @@ public sealed class DefibrillatorSystem : EntitySystem
         {
             _chatManager.TrySendInGameICMessage(uid, Loc.GetString("defibrillator-rotten"),
                 InGameICChatType.Speak, true);
+            return; // imp rdnr return
         }
-        else
+        // wizden start
+        else if (TryComp<UnrevivableComponent>(target, out var unrevivable))
         {
-            if (_mobState.IsDead(target, mob))
-                _damageable.TryChangeDamage(target, component.ZapHeal, true, origin: uid);
+            _chatManager.TrySendInGameICMessage(uid, Loc.GetString(unrevivable.ReasonMessage),
+                InGameICChatType.Speak, true);
+            return; // imp rdnr return
+        }
+        // wizden end
+        // imp rdnr begin
+        if (HasComp<RandomUnrevivableComponent>(target))
+        {
+            var dnrComponent = Comp<RandomUnrevivableComponent>(target);
 
-            if (_mobThreshold.TryGetThresholdForState(target, MobState.Dead, out var threshold) &&
-                TryComp<DamageableComponent>(target, out var damageableComponent) &&
-                damageableComponent.TotalDamage < threshold)
+            if (dnrComponent.Chance < _random.NextDouble())
             {
-                _mobState.ChangeMobState(target, MobState.Critical, mob, uid);
-                dead = false;
-            }
-
-            if (_mind.TryGetMind(target, out _, out var mind) &&
-                mind.Session is { } playerSession)
-            {
-                session = playerSession;
-                // notify them they're being revived.
-                if (mind.CurrentEntity != target)
-                {
-                    _euiManager.OpenEui(new ReturnToBodyEui(mind, _mind), session);
-                }
+                _chatManager.TrySendInGameICMessage(uid, Loc.GetString("defibrillator-unrevivable"), InGameICChatType.Speak, true);
+                dnrComponent.Chance = 0f;
+                AddComp<UnrevivableComponent>(target);
+                RemComp<RandomUnrevivableComponent>(target);
+                return;
             }
             else
             {
-                _chatManager.TrySendInGameICMessage(uid, Loc.GetString("defibrillator-no-mind"),
-                    InGameICChatType.Speak, true);
+                dnrComponent.Chance -= 0.1f;
             }
+        }
+        if (_mobState.IsDead(target, mob))
+            _damageable.TryChangeDamage(target, component.ZapHeal, true, origin: uid);
+
+        if (_mobThreshold.TryGetThresholdForState(target, MobState.Dead, out var threshold) &&
+            TryComp<DamageableComponent>(target, out var damageableComponent) &&
+            damageableComponent.TotalDamage < threshold)
+        {
+            _mobState.ChangeMobState(target, MobState.Critical, mob, uid);
+
+            // DEN - Remove rotting immunity if they have it
+            if (TryComp<RottingImmuneComponent>(target, out var rottingImmunity) && rottingImmunity.RemoveOnRevive)
+            {
+                RemComp<RottingImmuneComponent>(target);
+            }
+
+            dead = false;
+        }
+
+        if (_mind.TryGetMind(target, out _, out var mind) &&
+            mind.Session is { } playerSession)
+        {
+            session = playerSession;
+            // notify them they're being revived.
+            if (mind.CurrentEntity != target)
+            {
+                _euiManager.OpenEui(new ReturnToBodyEui(mind, _mind), session);
+            }
+        }
+        else
+        {
+            _chatManager.TrySendInGameICMessage(uid, Loc.GetString("defibrillator-no-mind"),
+                InGameICChatType.Speak, true);
         }
 
         var sound = dead || session == null

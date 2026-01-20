@@ -1,9 +1,8 @@
-// SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2025 Blitz
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 VMSolidus
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -25,6 +24,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Psionics.Glimmer;
 using Content.Server.Popups;
+using Content.Shared._DEN.Unrotting;
 
 namespace Content.Server.Abilities.Psionics;
 
@@ -164,6 +164,12 @@ public sealed class RevivifyPowerSystem : EntitySystem
             return;
 
         _mobState.ChangeMobState(args.Target.Value, MobState.Critical, mob, uid);
+
+        // DEN - Remove rotting immunity if they have it
+        if (TryComp<RottingImmuneComponent>(args.Target.Value, out var rottingImmunity) && rottingImmunity.RemoveOnRevive)
+        {
+            RemComp<RottingImmuneComponent>(args.Target.Value);
+        }
     }
 
     // This would be the same thing as OnDoAfter, except that here the target isn't nullable, so I have to reuse code with different arguments.

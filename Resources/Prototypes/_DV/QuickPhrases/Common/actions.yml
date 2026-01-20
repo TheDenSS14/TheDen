@@ -1,7 +1,7 @@
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 keekee38 <iamabanana372456@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 keekee38
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -100,3 +100,28 @@
   id: MixPhrase
   parent: BaseActionPhrase
   text: phrase-mix
+
+- type: quickPhrase
+  id: SleepPhrase
+  parent: BaseActionPhrase
+  text: phrase-sleep
+
+- type: quickPhrase
+  id: OpenPhrase
+  parent: BaseActionPhrase
+  text: phrase-open
+
+- type: quickPhrase
+  id: ClosePhrase
+  parent: BaseActionPhrase
+  text: phrase-close
+
+- type: quickPhrase
+  id: StealPhrase
+  parent: BaseActionPhrase
+  text: phrase-steal
+
+- type: quickPhrase
+  id: MovePhrase
+  parent: BaseActionPhrase
+  text: phrase-move

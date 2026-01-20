@@ -5,20 +5,20 @@
 # SPDX-FileCopyrightText: 2025 cynical
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  name: ScugCat
+  name: Occat # DEN
   id: MobScugCat
   parent: MobBaseAncestor # DEN
-  description: He's just a little guy, a jumpy, poor little scug.
+  description: A fuzzy little things from the vents. Watch out! They bite. # DEN
   components:
   - type: Sprite
     drawdepth: SmallMobs
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      sprite: _Floof/Mobs/Animals/scugcat.rsi
-      state: scugcat
+      sprite: _Floof/Mobs/Animals/occat.rsi # DEN
+      state: occat # DEN
     - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
       color: "#ffffff"
       sprite: Objects/Misc/handcuffs.rsi
@@ -28,15 +28,15 @@
     getAllGroups: true
     available:
       - enum.DamageStateVisualLayers.Base:
-          scugcat: ScugCatColors
+          occat: ScugCatColors
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: scugcat
+        Base: occat # DEN
       Critical:
-        Base: scugcat_crit
+        Base: occat_crit # DEN
       Dead:
-        Base: scugcat_dead
+        Base: occat_dead # DEN
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -73,7 +73,7 @@
     animation: WeaponArcBite
     damage:
       types:
-        Piercing: 5 # NOM - Do NOT mess with skugs.
+        Piercing: 5 # NOM - Do NOT mess with occat. DEN change in comment <3
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -90,7 +90,7 @@
     makeSentient: true
     name: ghost-role-information-scugcat-name
     description: ghost-role-information-scugcat-description
-    rules: deltav-ghost-role-information-softantag-rules
+    rules: ghost-role-component-default-rules
   - type: GhostTakeoverAvailable
   - type: Food
   - type: Hunger
@@ -127,7 +127,7 @@
     Default: "#ffffff"
     Innocent: "#f6f439"
     Angry: "#dc5864"
-    Eldritch: "#dc5864"
+    Eldritch: "#d38338" # DEN
     Forgotten: "#111111"
     Fat: "#fefcab"
     WarCriminal: "#ab3430"

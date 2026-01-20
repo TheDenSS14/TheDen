@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Jadrek
 # SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -30,6 +31,49 @@
           reagents:
             - ReagentId: Cryoxadone
               Quantity: 200
+
+- type: entity
+  parent: Jug
+  id: JugTraumoxadone
+  suffix: Traumoxadone
+  components:
+    - type: Label
+      currentLabel: reagent-name-traumoxadone
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: Traumoxadone
+              Quantity: 200
+
+- type: entity
+  name: traumoxadone beaker
+  description: Filled with a reagent used in cryogenic tubes.
+  parent: LargeBeaker
+  id: TraumoxadoneBeakerLarge
+  suffix: Large
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 100
+        reagents:
+        - ReagentId: Traumoxadone
+          Quantity: 100
+
+- type: entity
+  name: traumoxadone beaker
+  description: Filled with a reagent used in cryogenic tubes.
+  parent: Beaker
+  id: TraumoxadoneBeaker
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 50
+        reagents:
+        - ReagentId: Traumoxadone
+          Quantity: 50
 
 - type: entity
   parent: Jug
@@ -93,7 +137,7 @@
   suffix: Phalanximine
   components:
     - type: Label
-      currentLabel: reagent-name-phalaximime
+      currentLabel: reagent-name-phalanximime
     - type: SolutionContainerManager
       solutions:
         beaker:

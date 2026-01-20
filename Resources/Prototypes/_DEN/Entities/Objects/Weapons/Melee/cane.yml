@@ -1,0 +1,112 @@
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [CaneBase, BaseAntiPsionicWeapon, BaseMantisContraband]
+  id: MantisMeleeCane
+  name: gnomon
+  description: "An amaranth cane crowned with an eidolite crystal. If flipped in the hand, the needle-sharp mnemolith tip serves as a thrusting weapon. A refined accessory, practical for mantes with limited mobility. Deadly when wielded against psionic and otherworldly threats."
+  components:
+  - type: Item
+    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantiscane.rsi
+    size: Normal
+    shape:
+    - 0,0,1,1 # To override the default cane size
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantiscane.rsi
+    layers:
+    - state: icon
+      map: ["icon"]
+    - state: icon-raised
+      map: ["icon-raised"]
+      visible: false
+  - type: Appearance
+  - type: ToggleableVisuals
+    replaceMode: true
+    spriteLayer: icon-raised
+    inhandVisuals:
+      left:
+      - state: raised-inhand-left
+        map: ["left-raised"]
+      right:
+      - state: raised-inhand-right
+        map: ["right-raised"]
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        icon:
+          True: { visible: false }
+          False: { visible: true }
+        icon-raised:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ItemToggle
+    verbToggleOn: item-toggle-raise
+    verbToggleOff: item-toggle-lower
+    predictable: false
+    soundActivate:
+      path: /Audio/_DEN/Weapons/Melee/rapiermiss.ogg
+      params:
+        volume: -5
+        pitch: 1.1
+        variation: 0.05
+    soundDeactivate:
+      path: /Audio/_DEN/Weapons/Melee/rapiermiss.ogg
+      params:
+        volume: -5
+        pitch: 0.9
+        variation: 0.05
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+      types: # If you flip it, you stab them with the point
+        Piercing: 10 # 15 DPS (same as CombatKnife), or 18.75 DPS against psions
+        Holy: 5 # 28.13 total DPS against psionic supernaturals
+    activatedSoundOnHit:
+      path: /Audio/Weapons/Melee/rapierhit.ogg
+      params:
+        variation: 0.05
+    activatedSoundOnHitNoDamage:
+      path: /Audio/_DEN/Weapons/Melee/rapiermiss.ogg
+      params:
+        variation: 0.05
+    activatedSoundOnSwing:
+      path: /Audio/_DEN/Weapons/Melee/rapiermiss.ogg
+      params:
+        variation: 0.05
+    deactivatedSoundOnHit:
+      collection: WeakHit
+      params:
+        variation: 0.05
+    deactivatedSoundOnHitNoDamage:
+      collection: WeakHit
+      params:
+        variation: 0.05
+  - type: UseDelay
+    delay: 0.5 # Just a small one so you don't hit it twice accidentally
+  - type: MeleeWeapon
+    attackRate: .6666
+    wideAnimationRotation: -135
+    damage:
+      types: # If you don't flip it, you just bonk them
+        Blunt: 5 # 7.5 DPS (same as Crowbar)
+  - type: AntiPsionicWeapon # To override the +25% blunt damage against psions, because the bonking part isn't made of mnemolith
+    modifiers:
+      coefficients:
+        Piercing: 1.25
+        Holy: 1.25
+  - type: ItemToggleDamageOtherOnHit
+  - type: ItemToggleEmbeddableProjectile
+    activatedEmbedOnThrow: true
+    activatedSound: /Audio/Weapons/star_hit.ogg
+    activatedRemovalTime: 2
+  - type: ItemToggleEmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: -135
+  - type: StaminaDamageOnHit
+    damage: 0
+  - type: Tag
+    tags:
+    - MantisCane
+    - MantisBeltStorable

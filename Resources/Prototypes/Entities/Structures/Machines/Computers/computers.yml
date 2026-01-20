@@ -570,8 +570,8 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerPsionicsRecords
-  name: psionics registry computer
-  description: This can be used to check psionics registry records. Only epistemics can modify them.
+  name: psion registry computer # TheDen - Standardizing "psion" to mean people, and "psionic" to be an adjective
+  description: This can be used to check psion registry records. Only Epistemics can modify them. # TheDen
   components:
   - type: PsionicsRecordsConsole
   - type: UserInterface
@@ -585,27 +585,27 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      state: mantis_keyboard # TheDen
     - map: ["computerLayerScreen"]
       state: registry
     - map: ["computerLayerKeys"]
-      state: rd_key
+      state: mantis_key # TheDen
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: PointLight
     radius: 1.5
     energy: 1.6
-    color: "#1f8c28"
+    color: "#b32d70" # TheDen
   - type: Computer
     board: PsionicsRecordsComputerCircuitboard
   - type: AccessReader
     access:
       - [ Chapel ]
-      - [ Library ]
+#      - [ Library ] # TheDen - Go read your books smelly
       - [ Mantis ]
       - [ ResearchDirector ]
-  # - type: GuideHelp
-    # guides: # TODO: Add a guide for Psionics Registry
+  - type: GuideHelp
+    guides: [ MantisGuide ]
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -876,6 +876,7 @@
   - type: CommunicationsConsole
     title: comms-console-announcement-title-station
   - type: DeviceNetwork
+    deviceNetId: Wireless    
     transmitFrequencyId: ShuttleTimer
   - type: ActivatableUI
     key: enum.CommunicationsConsoleUiKey.Key

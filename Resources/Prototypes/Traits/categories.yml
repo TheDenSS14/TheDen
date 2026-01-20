@@ -3,8 +3,9 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 somekindofbox
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Alphabetically ordered, except for Uncategorized since it is always first
 
@@ -29,6 +30,7 @@
     - TraitsPhysicalDisabilities
     - TraitsPhysicalBiological
     - TraitsPhysicalAugmentations
+    - TraitsBloods
 
 - type: traitCategory
   id: Lewd
@@ -86,3 +88,6 @@
 
 - type: traitCategory
   id: TraitsPhysicalAugmentations
+
+- type: traitCategory
+  id: TraitsBloods

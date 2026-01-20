@@ -30,10 +30,19 @@
 # SPDX-FileCopyrightText: 2024 sleepyyapril
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 eightballll
+# SPDX-FileCopyrightText: 2026 MajorMoth
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # base actions
+
+# base prototype for all action entities
+- type: entity
+  abstract: true
+  id: BaseAction
+  components:
+  - type: Actions
 
 - type: entity
   id: BaseSuicideAction
@@ -197,6 +206,8 @@
   description:  Randomly changes your name and appearance.
   categories: [ HideSpawnMenu ]
   components:
+  - type: ConfirmableAction
+    popup: dna-scramble-action-popup
   - type: InstantAction
     charges: 1
     itemIconStyle: BigAction

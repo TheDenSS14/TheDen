@@ -1,0 +1,187 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialMnemolith # Not actually useful for anything right now, but you can grind it to get a roleplay chemical
+  name: mnemolith # Hypothetically, it could be used to make psionic tools (like PenMantis and MantisMeleeKnife)
+  description: "A dark, glassy stone that forms during severe noospheric storms. It absorbs the intent of psions, allowing it to be \"taught\" new properties and repurposed for different uses. Commonly employed in the construction of esoteric tools, but you don't know how." # Edit that last bit out if it gets crafting recipes
+  suffix: Full
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Mnemolith: 100
+  - type: Sprite
+    sprite: _DEN/Objects/Materials/materials.rsi
+    state: mnemolith
+    layers:
+    - state: mnemolith
+      map: ["base"]
+  - type: Item
+    sprite: _DEN/Objects/Materials/materials.rsi
+    heldPrefix: mnemolith
+    size: Small # Can be smaller than other materials since it's almost useless
+  - type: Appearance
+  - type: Tag
+    tags:
+    - RawMaterial
+    - MantisBeltStorable # Why not, their gear is made of it
+  - type: Stack
+    stackType: Mnemolith
+    baseLayer: base
+    layerStates:
+    - mnemolith
+    - mnemolith_2
+    - mnemolith_3
+  - type: Material
+  - type: Extractable
+    grindableSolutionName: mnemolith
+  - type: SolutionContainerManager
+    solutions:
+      mnemolith:
+        reagents:
+        - ReagentId: MnemolithReagent
+          Quantity: 15
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible # No real reason to break it, but if you do it turns into powder
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5 # 8 hits with a crowbar
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+            MnemolithPowder:
+              min: 1
+              max: 1
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100 # Unless it gets nuked, then it just disappears to prevent lag
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: MaterialMnemolith
+  id: MaterialMnemolith1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: BaseItem # No longer really a material, more like ash now
+  id: MnemolithPowder
+  name: mnemolith powder
+  description: "The pulverized remains of a dark, glassy stone that forms during severe noospheric storms. It absorbs the intent of psions, allowing it to be \"taught\" new properties and repurposed for different uses, though in powder form it only serves medicinal purposes. Potential psychological impact aside, there are no known lasting effects."
+  components:
+  - type: Item
+    sprite: _DEN/Objects/Materials/materials.rsi
+    heldPrefix: mnemolithpowder
+    size: Tiny
+  - type: Sprite
+    sprite: _DEN/Objects/Materials/materials.rsi
+    state: mnemolithpowder
+  - type: Food
+    solution: food
+    transferAmount: 15
+  - type: BadFood
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: MnemolithReagent
+          Quantity: 15
+  - type: SolutionSpiker
+    sourceSolution: food
+    ignoreEmpty: true
+  - type: ScoopableSolution
+    solution: food
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Tag
+    tags:
+    - MantisBeltStorable # Why not, their gear is made of it
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialEidolite # Not actually useful for anything right now, but it's pretty and you can sell it
+  name: eidolite # Hypothetically, it could be used to power psionic tools (like LanternMantis and FlippoLighterMantis), or just as structural glass (like SyringeMantis)
+  description: "A crystal that draws energy from the noosphere, often found alongside and within the mnemolith deposits that form during severe noospheric storms. Left to itself, it gradually reshapes into a pyramid unless physically or psionically constrained. You have no idea how to use it." # Edit that last bit out if it gets crafting recipes
+  suffix: Full
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Eidolite: 100
+  - type: Sprite
+    sprite: _DEN/Objects/Materials/materials.rsi
+    state: eidolite
+    layers:
+    - state: eidolite
+      map: ["base"]
+  - type: Item
+    sprite: _DEN/Objects/Materials/materials.rsi
+    heldPrefix: eidolite
+    size: Small # Can be smaller than other materials since it's almost useless
+  - type: Appearance
+  - type: Tag
+    tags:
+    - RawMaterial
+    - MantisBeltStorable # Why not, their gear is made of it
+  - type: Stack
+    stackType: Eidolite
+    baseLayer: base
+    layerStates:
+    - eidolite
+    - eidolite_2
+    - eidolite_3
+  - type: Material
+  - type: EtherealLight # Dims around ethereal entities
+  - type: PointLight # As bright as a crystal
+    radius: 2
+    energy: 2.5
+    castShadows: false
+    color: "#d9418d"
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Glass
+  - type: Destructible # No real reason to break it, but if you do it just splits into shards like its description suggests
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5 # 1 hit with a crowbar
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+            MaterialEidolite1: # No eidolite is lost because it's like a weird metamaterial
+              min: 1
+              max: 1
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100 # Unless it gets nuked, then it just disappears to prevent lag
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: MaterialEidolite
+  id: MaterialEidolite1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1

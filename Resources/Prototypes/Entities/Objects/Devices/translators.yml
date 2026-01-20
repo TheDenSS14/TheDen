@@ -6,10 +6,12 @@
 # SPDX-FileCopyrightText: 2025 Carlen White
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 SX-7
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 AvianMaiden
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -59,6 +61,9 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
+        blacklist: # TheDen
+          tags:
+          - MantisCaster
 
 # Normal translator with medium power cell in it
 - type: entity
@@ -80,7 +85,7 @@
   id: CanilunztTranslator
   parent: [ TranslatorPoweredBase ]
   name: Canilunzt translator
-  description: Translates speech between Canilunzt and Galactic Common, allowing your local yeepers to communicate with the locals and vice versa!
+  description: Translates speech between Canilunzt and Tau-Ceti Basic, allowing your local yeepers to communicate with the locals and vice versa! # Den edit for galactic common -> tau ceti basic
   components:
   - type: HandheldTranslator
     spoken:
@@ -97,7 +102,7 @@
   id: BubblishTranslator
   parent: [ TranslatorPoweredBase ]
   name: Bubblish translator
-  description: Translates speech between Bubblish and Galactic Common, helping communicate with slimes and slime people.
+  description: Translates speech between Bubblish and Tau-Ceti Basic, helping communicate with slimes and slime people. # Den edit for galactic common -> tau ceti basic
   components:
   - type: HandheldTranslator
     spoken:
@@ -114,7 +119,7 @@
   id: NekomimeticTranslator
   parent: [ TranslatorPoweredBase ]
   name: Nekomimetic translator
-  description: Translates speech between Nekomimetic and Galactic Common, enabling you to communicate with your pet cats.
+  description: Translates speech between Nekomimetic and Tau-Ceti Basic, enabling you to communicate with your pet cats. # Den edit for galactic common -> tau ceti basic
   components:
   - type: HandheldTranslator
     spoken:
@@ -148,7 +153,7 @@
   id: SolCommonTranslator
   parent: [ TranslatorPoweredBase ]
   name: Sol Common translator
-  description: Translates speech between Sol Common and Galactic Common. Like a true Earthman!
+  description: Translates speech between Sol Common and Tau-Ceti Basic. Like a true Earthman! # Den edit for galactic common -> tau ceti basic
   components:
   - type: HandheldTranslator
     spoken:
@@ -165,7 +170,7 @@
   id: NovuNedericTranslator
   parent: [ TranslatorPoweredBase ]
   name: Novu-Nederic translator
-  description: Translates speech between Novu-Nederic and Galactic Common. Like a true Earthman!
+  description: Translates speech between Novu-Nederic and Tau-Ceti Basic. Like a true Earthman! # Den edit for galactic common -> tau ceti basic
   components:
   - type: HandheldTranslator
     spoken:
@@ -181,8 +186,8 @@
 - type: entity
   id: RootSpeakTranslator
   parent: [ TranslatorPoweredBase ]
-  name: RootSpeak translator
-  description: Translates speech between RootSpeak and Galactic Common. You may now speak for the trees.
+  name: Rootspeak translator # Den edit
+  description: Translates speech between Rootspeak and Tau-Ceti Basic. You may now speak for the trees. # Den edit for galactic common -> tau ceti basic
   components:
   - type: HandheldTranslator
     spoken:
@@ -199,7 +204,7 @@
   id: MofficTranslator
   parent: [ TranslatorPoweredBase ]
   name: Moffic translator
-  description: Translates speech between Moffic and Galactic Common, helping you understand the buzzes of your pet mothroach!
+  description: Translates speech between Moffic and Tau-Ceti Basic, helping you understand the buzzes of your pet mothroach! # Den edit for galactic common -> tau ceti basic
   components:
   - type: HandheldTranslator
     spoken:
@@ -216,7 +221,7 @@
   id: XenoTranslator
   parent: [ TranslatorPoweredBase ]
   name: Xeno translator
-  description: Translates speech between Xeno and Galactic Common. This will probably not help you survive an encounter, though.
+  description: Translates speech between Xeno and Tau-Ceti Basic. This will probably not help you survive an encounter, though. # Den edit for galactic common -> tau ceti basic
   components:
   - type: HandheldTranslator
     spoken:
@@ -327,7 +332,7 @@
   id: NehinaTranslator
   parent: [ TranslatorPoweredBase ]
   name: nēhina translator
-  description: Translates speech between Nēhina and Galactic Common, helping communicate with slimes and slime people.
+  description: Translates speech between Nēhina and Tau-Ceti Basic, helping communicate with Feroxi in their native tongue. # Den edit for clarity/correct description
   components:
   - type: HandheldTranslator
     spoken:
@@ -344,7 +349,7 @@
   id: AlasetaTranslator
   parent: [ TranslatorPoweredBase ]
   name: alaseta translator
-  description: Translates speech between Alaseta and Galactic Common, helping communicate with slimes and slime people.
+  description: Translates speech between Alaseta and Tau-Ceti Basic; speak the language of the Canids! # Den edit for clarity/correct description
   components:
   - type: HandheldTranslator
     spoken:
@@ -361,7 +366,7 @@
   id: RodentianTranslator
   parent: [ TranslatorPoweredBase ]
   name: rodentian translator
-  description: Translates speech between Rodentian and Galactic Common, helping communicate with slimes and slime people.
+  description: Translates speech between Rodentian and Tau-Ceti Basic. Squeak! # Den edit for clarity/correct description
   components:
   - type: HandheldTranslator
     spoken:
@@ -378,7 +383,7 @@
   id: CaprineTranslator
   parent: [ TranslatorPoweredBase ]
   name: caprine translator
-  description: Translates speech between Caprine and Galactic Common, helping communicate with slimes and slime people.
+  description: Translates speech between Caprine and Tau-Ceti Basic, helping communicate with Ovinia. Baa! # Den edit for clarity/correct description
   components:
   - type: HandheldTranslator
     spoken:
@@ -395,7 +400,7 @@
   id: VoxPidginTranslator
   parent: [ TranslatorPoweredBase ]
   name: Vox-Pidgin translator
-  description: Translates speech between Vox-Pidgin and Galactic Common. Helps process those loud screeches into real, legible words.
+  description: Translates speech between Vox-Pidgin and Tau-Ceti Basic. An incredible feat of technology considering how dynamic the vox vocal range is. # Den edit to remove fantasy racism feels
   components:
   - type: HandheldTranslator
     spoken:

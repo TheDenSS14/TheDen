@@ -39,6 +39,7 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 eightballll
+# SPDX-FileCopyrightText: 2025 pocl v
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -271,13 +272,14 @@ flavor-complex-milk = like milk
 flavor-complex-tea = like tea
 flavor-complex-ice = like ice
 flavor-complex-mopwata = like stagnant, dirty water
+flavor-complex-gin = like fermented grain with juniper berries
 # flavor-complex-nikkonectar = like creamy blueberries.
 
 ## Cocktails
 flavor-complex-arnold-palmer = like a hole-in-one
 flavor-complex-blue-hawaiian = like the tropics
 flavor-complex-cosmopolitan = sweet and tangy
-flavor-complex-painkiller = like spiked pineapple juice
+flavor-complex-painkiller = like a tropical vacation
 flavor-complex-pina-colada = like tropical sun
 flavor-complex-long-island = suspiciously like iced tea
 flavor-complex-three-mile-island = like tea brewed in nuclear runoff

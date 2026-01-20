@@ -1,0 +1,131 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: reagent
+  id: MnemolithReagent # The stone that anti-psionic weapons are made of, as powder in a suspension
+  name: reagent-name-mnemolith # Be careful if you give it a mechanical purpose, though, since the mantis items (cigarettes, pills, folder pages, etc.) contain a lot of it
+  group: Medicine
+  slippery: false
+  desc: reagent-desc-mnemolith
+  physicalDesc: reagent-physical-desc-mnemolith
+  flavor: mnemolith
+  color: "#313b4a"
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.1 # 1u lasts 10 seconds, so 15u lasts 2 minutes 30 seconds
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: Medium
+        messages:
+          - "reagent-effect-mnemolith-1"
+          - "reagent-effect-mnemolith-2"
+          - "reagent-effect-mnemolith-3"
+          - "reagent-effect-mnemolith-4"
+          - "reagent-effect-mnemolith-5"
+          - "reagent-effect-mnemolith-6"
+          - "reagent-effect-mnemolith-7"
+          - "reagent-effect-mnemolith-8"
+          - "reagent-effect-mnemolith-9"
+          - "reagent-effect-mnemolith-10"
+          - "reagent-effect-mnemolith-11"
+          - "reagent-effect-mnemolith-12"
+          - "reagent-effect-mnemolith-13"
+          - "reagent-effect-mnemolith-14"
+          - "reagent-effect-mnemolith-15"
+          - "reagent-effect-mnemolith-16"
+          - "reagent-effect-mnemolith-17"
+          - "reagent-effect-mnemolith-18"
+          - "reagent-effect-mnemolith-19"
+          - "reagent-effect-mnemolith-20"
+        probability: 0.05
+        conditions: # This phase will last at most 2 minutes 20 seconds
+        - !type:ReagentThreshold
+          max: 14 # So taking 15u will give you 10 seconds of possibly scarier messages
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages:
+          - "reagent-effect-mnemolith-overdose1"
+          - "reagent-effect-mnemolith-overdose2"
+          - "reagent-effect-mnemolith-overdose3"
+          - "reagent-effect-mnemolith-overdose4"
+          - "reagent-effect-mnemolith-overdose5"
+          - "reagent-effect-mnemolith-overdose6"
+          - "reagent-effect-mnemolith-overdose7"
+          - "reagent-effect-mnemolith-overdose8"
+          - "reagent-effect-mnemolith-overdose9"
+          - "reagent-effect-mnemolith-overdose10"
+          - "reagent-effect-mnemolith-overdose11"
+          - "reagent-effect-mnemolith-overdose12"
+          - "reagent-effect-mnemolith-overdose13"
+          - "reagent-effect-mnemolith-overdose14"
+          - "reagent-effect-mnemolith-overdose15"
+          - "reagent-effect-mnemolith-overdose16"
+          - "reagent-effect-mnemolith-overdose17"
+          - "reagent-effect-mnemolith-overdose18"
+          - "reagent-effect-mnemolith-overdose19"
+          - "reagent-effect-mnemolith-overdose20"
+        probability: 0.1
+        conditions: # This phase will last at most 2 minutes 30 seconds
+        - !type:ReagentThreshold
+          min: 14
+          max: 29 # So taking 30u will give you 10 seconds of possibly scarier messages
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumPsionic
+        messages:
+          - "reagent-effect-mnemolith-megadose1"
+          - "reagent-effect-mnemolith-megadose2"
+          - "reagent-effect-mnemolith-megadose3"
+          - "reagent-effect-mnemolith-megadose4"
+          - "reagent-effect-mnemolith-megadose5"
+          - "reagent-effect-mnemolith-megadose6"
+          - "reagent-effect-mnemolith-megadose7"
+          - "reagent-effect-mnemolith-megadose8"
+          - "reagent-effect-mnemolith-megadose9"
+          - "reagent-effect-mnemolith-megadose10"
+          - "reagent-effect-mnemolith-megadose11"
+          - "reagent-effect-mnemolith-megadose12"
+          - "reagent-effect-mnemolith-megadose13"
+          - "reagent-effect-mnemolith-megadose14"
+          - "reagent-effect-mnemolith-megadose15"
+          - "reagent-effect-mnemolith-megadose16"
+          - "reagent-effect-mnemolith-megadose17"
+          - "reagent-effect-mnemolith-megadose18"
+          - "reagent-effect-mnemolith-megadose19"
+          - "reagent-effect-mnemolith-megadose20"
+        probability: 0.1
+        conditions: # This phase will last at most 2 minutes 30 seconds
+        - !type:ReagentThreshold
+          min: 29
+          max: 44 # So taking 45u will give you 10 seconds of possibly scarier messages
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumPsionic
+        messages:
+          - "reagent-effect-mnemolith-heroicdose1"
+          - "reagent-effect-mnemolith-heroicdose2"
+          - "reagent-effect-mnemolith-heroicdose3"
+          - "reagent-effect-mnemolith-heroicdose4"
+          - "reagent-effect-mnemolith-heroicdose5"
+          - "reagent-effect-mnemolith-heroicdose6"
+          - "reagent-effect-mnemolith-heroicdose7"
+          - "reagent-effect-mnemolith-heroicdose8"
+          - "reagent-effect-mnemolith-heroicdose9"
+          - "reagent-effect-mnemolith-heroicdose10"
+          - "reagent-effect-mnemolith-heroicdose11"
+          - "reagent-effect-mnemolith-heroicdose12"
+          - "reagent-effect-mnemolith-heroicdose13"
+          - "reagent-effect-mnemolith-heroicdose14"
+          - "reagent-effect-mnemolith-heroicdose15"
+          - "reagent-effect-mnemolith-heroicdose16"
+          - "reagent-effect-mnemolith-heroicdose17"
+          - "reagent-effect-mnemolith-heroicdose18"
+          - "reagent-effect-mnemolith-heroicdose19"
+          - "reagent-effect-mnemolith-heroicdose20"
+        probability: 0.1
+        conditions:
+        - !type:ReagentThreshold
+          min: 44

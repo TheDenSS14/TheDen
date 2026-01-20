@@ -11,6 +11,7 @@
 # SPDX-FileCopyrightText: 2024 Plykiya
 # SPDX-FileCopyrightText: 2024 deltanedas
 # SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -43,6 +44,9 @@
     difficulty: 2
     recipes:
       - AnomalyScanner
+  - type: Tag # TheDen
+    tags:
+    - ScienceTool
 
 - type: entity
   id: AnomalyLocatorUnpowered
@@ -81,6 +85,9 @@
       params:
         maxDistance: 1
         volume: -8
+  - type: Tag # TheDen
+    tags:
+    - ScienceTool
 
 - type: entity
   id: AnomalyLocator
@@ -101,6 +108,9 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
+        blacklist: # TheDen
+          tags:
+          - MantisCaster
 
 - type: entity
   id: AnomalyLocatorWideUnpowered
@@ -135,6 +145,9 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
+        blacklist: # TheDen
+          tags:
+          - MantisCaster
 
 - type: entity
   name: G.O.R.I.L.L.A. gauntlet
@@ -178,3 +191,6 @@
         Cold: 100
         Radiation: 100
     slots: NONE
+  - type: Tag # TheDen
+    tags:
+    - ScienceTool

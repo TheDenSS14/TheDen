@@ -119,8 +119,8 @@
 - type: entity
   parent: BaseComputerCircuitboard
   id: PsionicsRecordsComputerCircuitboard
-  name: psionics registry computer board
-  description: A computer printed circuit board for a psionics registry computer.
+  name: psion registry computer board # TheDen - Standardizing "psion" to mean people, and "psionic" to be an adjective
+  description: A computer printed circuit board for a psion registry computer. # TheDen
   components:
     - type: Sprite
       state: cpu_science

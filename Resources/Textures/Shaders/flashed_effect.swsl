@@ -1,4 +1,5 @@
 ﻿uniform highp float percentComplete;
+uniform highp vec4 fadeColor;
 const highp float fadeFalloffExp = 8.0;
 
 void fragment() {
@@ -12,7 +13,7 @@ void fragment() {
     highp vec4 textureMix = mix(tex1, tex2, 0.5);
 
     // Gradually mixes between the texture mix and a full-white texture, causing the "blinding" effect
-    highp vec4 mixed = mix(vec4(1.0, 1.0, 1.0, 1.0), textureMix, percentComplete);
+    highp vec4 mixed = mix(fadeColor, textureMix, percentComplete);
 
     COLOR = vec4(mixed.rgb, remaining);
 }

@@ -8,7 +8,7 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # All Medical
 - type: characterItemGroup
@@ -69,6 +69,12 @@
       id: LoadoutMedicalEyesHudMedicalPrescription
     - type: loadout
       id: LoadoutMedicalEyesGlassesMedicalVisor
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutCommandCMOMedicalGlasses
+    - type: loadout
+      id: LoadoutMedicalEyesGlassesMedicalGlasses
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutMedicalGloves
@@ -103,6 +109,10 @@
       id: LoadoutMedicalHeadSurgcapCybersun
     - type: loadout
       id: LoadoutMedicalHeadNurse
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutMedicalHeadMirror
+    # End DEN
 
 #- type: characterItemGroup
 #  id: LoadoutMedicalId

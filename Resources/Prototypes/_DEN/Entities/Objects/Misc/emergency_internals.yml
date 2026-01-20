@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: EmergencyInternalsSetSelector
+  name: undetermined emergency internals
+  description: Exactly what you need to breathe, right when you need it.
+  parent: [ BaseItem, BaseSetSelector ]
+  components:
+  - type: Sprite
+    sprite: Objects/Tanks/generic.rsi
+    state: icon
+  - type: SetSelector
+    approveSound:
+      path: /Audio/Effects/internals.ogg
+    possibleSets:
+    - EmergencyInternalsSet1
+    - EmergencyInternalsSet2
+    - EmergencyInternalsSet3
+    - EmergencyInternalsSet4

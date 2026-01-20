@@ -1,8 +1,9 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 #- type: characterItemGroup
 #  id: LoadoutSeniorEngineerBackpacks
@@ -86,7 +87,7 @@
     - type: loadout
       id: LoadoutSeniorEngineerEquipmentSheetPlastic10
     - type: loadout
-      id: LoadoutSeniorEngineerEquipmentEquipmentConstructionBag
+      id: LoadoutSeniorEngineerEquipmentConstructionBag # DEN: Fixing tests
 
 #- type: characterItemGroup
 #  id: LoadoutSeniorEngineerEyes

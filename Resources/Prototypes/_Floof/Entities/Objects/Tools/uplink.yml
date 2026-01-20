@@ -1,14 +1,14 @@
-# SPDX-FileCopyrightText: 2024 VividPups <68whiskty@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VividPups
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: Cryptobiolin injector
   id: CryptobiolinInjector
   parent: ChemicalMedipen
-  description: Made by SESWC. This item is prefilled with 20u of Cryptobiolin to help you get rid of those pesky psionic weirdo's.
+  description: This item is prefilled with 30u of cryptobiolin, which will disable psionic abilities and insulate from psionic effects for ten minutes. # TheDen - Crypto rebalance
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
@@ -18,8 +18,8 @@
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 20
+        maxVol: 30
         reagents:
         - ReagentId: Cryptobiolin
-          Quantity: 20
+          Quantity: 30
 

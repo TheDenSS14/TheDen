@@ -1,12 +1,13 @@
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
 - type: entity
   parent: ClothingOuterBase
-  id: ClothingOuterVestValet
+  id: ClothingOuterVestValetNyano # DEN: ID change for migration to DEN prototype
   name: valet vest
+  suffix: Old # DEN
   description: A goofy red vest almost certainly designed with the sole purpose of being demeaning.
   components:
   - type: Sprite

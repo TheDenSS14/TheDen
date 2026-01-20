@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 ElusiveCoin
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Tabitha
@@ -10,7 +11,7 @@
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 trait-name-Heavyweight = Heavyweight
 trait-description-Heavyweight =
@@ -124,3 +125,8 @@ trait-description-MusicMachine =
 trait-name-IPCSinger = Singer (Synth)
 trait-description-IPCSinger =
     Your electronic voice can be repurposed to sing simple melodies. Gives you a built in Synth Lead singing option.
+
+trait-name-DispelVulnerability = Ethereal Presence
+trait-description-DispelVulnerability =
+    Some aspect of your presence is intrinsically and perilously tied to the noosphere.
+    You suffer [color=red]extreme heat damage[/color] from being the subject of a [color=purple]Dispel[/color] cast.

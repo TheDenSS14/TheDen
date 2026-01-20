@@ -4,12 +4,13 @@
 # SPDX-FileCopyrightText: 2024 Debug
 # SPDX-FileCopyrightText: 2024 Skubman
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  parent: [ BaseSecurityContraband, BaseItem ] # this makes it even funnier lolll
+  parent: [ BaseObjectVerbsCommon, BaseSecurityContraband, BaseItem ] # DEN: Add interaction verb parent
   id: WeaponMeleeNeedle
   name: official security anti-inflatable armament
   description: A specialty weapon used in the destruction of unique syndicate morale-boosting equipment.
@@ -30,8 +31,3 @@
   - type: Item
     size: Tiny
   - type: BalloonPopper
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject

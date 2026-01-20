@@ -20,6 +20,7 @@
 # SPDX-FileCopyrightText: 2025 GNUtopia
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 VMSolidus
@@ -27,13 +28,14 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 somekindofbox
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   save: false
   name: Urist McFluff
-  parent: BaseMobSpeciesOrganic
+  parent: [BaseMobSpeciesOrganic, StorableSpecies] # TheDen
   id: BaseMobMoth
   abstract: true
   components:
@@ -55,6 +57,7 @@
     accent: zombieMoth
   - type: Speech
     speechVerb: Moth
+    speechSounds: Moth #CD Addition
     allowedEmotes: ['Chitter', 'Squeak']
   - type: LanguageKnowledge
     speaks:
@@ -117,6 +120,7 @@
   - type: FootPrints
   - type: CanMoveInAir
   - type: Inventory
+    speciesId: moth # TheDen - So they can have -moth clothing sprites
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -138,6 +142,7 @@
   - type: HumanoidAppearance
     species: Moth
   - type: Inventory
+    speciesId: moth # TheDen - So they can have -moth clothing sprites
     femaleDisplacements:
       jumpsuit:
         sizeMaps:

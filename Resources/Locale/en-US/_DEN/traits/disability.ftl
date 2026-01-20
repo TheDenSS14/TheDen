@@ -68,3 +68,13 @@ trait-description-AmputeeBothLegs =
     You are missing [color=red]both of your legs.[/color]
     In addition to needing your [color=#1e90ff]mobility aid[/color] to move around, you cannot wear shoes.
     ([color=yellow]Note: Amputee traits do not appear in the character editor preview![/color])
+
+## Unrevivable traits
+
+trait-name-Unrevivable = Unrevivable
+trait-description-Unrevivable =
+    Something about your body's composition is off, and you are unable to revived by defibrillators.
+
+trait-name-RandomUnrevivable = Random Unrevivable
+trait-description-RandomUnrevivable =
+    Every time you are revived, there's a chance that instead you become permanently unrevivable.

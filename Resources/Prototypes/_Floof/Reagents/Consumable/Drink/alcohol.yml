@@ -6,12 +6,13 @@
 # SPDX-FileCopyrightText: 2025 SleepyScarecrow
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: reagent
   id: 7DeadlySins
   name: reagent-name-7deadlysins
   parent: BaseAlcohol
+  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-7deadlysins
   physicalDesc: reagent-physical-desc-sickly
   flavor: 7deadlysins
@@ -39,6 +40,7 @@
   id: ABLustine
   name: reagent-name-ablustine
   parent: BaseAlcohol
+  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-ablustine
   physicalDesc: reagent-physical-desc-syrupy
   flavor: ablustine
@@ -100,6 +102,7 @@
 #   id: BethanysCumLust
 #   name: reagent-name-bethanyscumlust
 #   parent: BaseAlcohol
+#   group: AphrodisiacDrinks # DEN
 #   desc: reagent-desc-bethanyscumlust
 #   physicalDesc: reagent-physical-desc-gloopy
 #   flavor: bethanyscumlust
@@ -123,6 +126,7 @@
 #   id: BethanysSluttyCumLust
 #   name: reagent-name-bethanyssluttycumlust
 #   parent: BaseAlcohol
+#   group: AphrodisiacDrinks # DEN
 #   desc: reagent-desc-bethanyssluttycumlust
 #   physicalDesc: reagent-physical-desc-gloopy
 #   flavor: bethanyssluttycumlust
@@ -149,6 +153,7 @@
   id: BandE
   name: reagent-name-bande
   parent: BaseAlcohol
+  group: CumDrinks # DEN
   desc: reagent-desc-bande
   physicalDesc: reagent-physical-desc-enigmatic
   flavor: bande
@@ -159,6 +164,7 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  noRandom: true # DEN - Do not randomize lewd drinks
   metabolisms:
     Drink:
       effects:
@@ -172,6 +178,7 @@
   id: BlueBaller
   name: reagent-name-blueballer
   parent: BaseAlcohol
+  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-blueballer
   physicalDesc: reagent-physical-desc-tropical
   flavor: blueballer
@@ -311,6 +318,7 @@
   id: DemonSeed
   name: reagent-name-demonseed
   parent: BaseAlcohol
+  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-demonseed
   physicalDesc: reagent-physical-desc-gloopy
   flavor: demonseed
@@ -361,6 +369,7 @@
   id: DoubleCreamBlaster
   name: reagent-name-doublecreamblaster
   parent: BaseAlcohol
+  group: CumDrinks # DEN
   desc: reagent-desc-doublecreamblaster
   physicalDesc: reagent-physical-desc-fizzy-and-creamy
   flavor: doublecreamblaster
@@ -428,6 +437,7 @@
   id: DragonsSeed
   name: reagent-name-dragonsseed
   parent: BaseAlcohol
+  group: CumDrinks # DEN
   desc: reagent-desc-dragonsseed
   physicalDesc: reagent-physical-desc-shiny
   flavor: dragonsseed
@@ -541,6 +551,7 @@
   id: HeartbreakMountain
   name: reagent-name-heartbreakmountain
   parent: BaseAlcohol
+  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-heartbreakmountain
   physicalDesc: reagent-physical-desc-fizzy-sharp-citrussy
   flavor: heartbreakmountain
@@ -588,6 +599,7 @@
   id: HornyStallion
   name: reagent-name-hornystallion
   parent: BaseAlcohol
+  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-hornystallion
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: hornystallion
@@ -633,6 +645,7 @@
   id: KoboldKorkscrew
   name: reagent-name-koboldkorkscrew
   parent: BaseAlcohol
+  group: CumDrinks # DEN
   desc: reagent-desc-koboldkorkscrew
   physicalDesc: reagent-physical-desc-fizzy-and-creamy
   flavor: koboldkorkscrew
@@ -654,6 +667,7 @@
   id: Lamplight
   name: reagent-name-lamplight
   parent: BaseAlcohol
+  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-lamplight
   physicalDesc: reagent-physical-desc-vibrant
   flavor: lamplight
@@ -713,6 +727,7 @@
   id: LoversKiss
   name: reagent-name-loverskiss
   parent: BaseAlcohol
+  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-loverskiss
   physicalDesc: reagent-physical-desc-smooth
   flavor: loverskiss
@@ -763,6 +778,7 @@
   id: MarsBar
   name: reagent-name-marsbar
   parent: BaseAlcohol
+  group: CumDrinks # DEN
   desc: reagent-desc-marsbar
   physicalDesc: reagent-physical-desc-smooth
   flavor: marsbar
@@ -773,6 +789,7 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  noRandom: true # DEN - Do not randomize lewd drinks
   metabolisms:
     Drink:
       effects:
@@ -865,6 +882,7 @@
   id: OrgasmOnTheBeach
   name: reagent-name-orgasmonthebeach
   parent: BaseAlcohol
+  group: CumDrinks # DEN
   desc: reagent-desc-orgasmonthebeach
   physicalDesc: reagent-physical-desc-tart
   flavor: orgasmonthebeach
@@ -934,6 +952,7 @@
   id: PomTwist
   name: reagent-name-pomtwist
   parent: BaseAlcohol
+  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-pomtwist
   physicalDesc: reagent-physical-desc-tart
   flavor: pomtwist
@@ -1001,6 +1020,7 @@
   id: QuadrupleCreamChalice
   name: reagent-name-quadruplecreamchalice
   parent: BaseAlcohol
+  group: CumDrinks # DEN
   desc: reagent-desc-quadruplecreamchalice
   physicalDesc: reagent-physical-desc-creamy
   flavor: quadruplecreamchalice
@@ -1022,6 +1042,7 @@
   id: RandyStallion
   name: reagent-name-randystallion
   parent: BaseAlcohol
+  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-randystallion
   physicalDesc: reagent-physical-desc-fizzy
   flavor: randystallion
@@ -1096,6 +1117,7 @@
   id: SemenBomb
   name: reagent-name-semenbomb
   parent: BaseAlcohol
+  group: CumDrinks # DEN
   desc: reagent-desc-semenbomb
   physicalDesc: reagent-physical-desc-foamy
   flavor: semenbomb
@@ -1121,6 +1143,7 @@
   id: SemenHemorrhage
   name: reagent-name-semenhemorrhage
   parent: BaseAlcohol
+  group: CumDrinks # DEN
   desc: reagent-desc-semenhemorrhage
   physicalDesc: reagent-physical-desc-heterogeneous
   flavor: semenhemorrhage
@@ -1142,6 +1165,7 @@
   id: SilverStallion
   name: reagent-name-silverstallion
   parent: BaseAlcohol
+  group: CumDrinks # DEN
   desc: reagent-desc-silverstallion
   physicalDesc: reagent-physical-desc-aromatic
   flavor: silverstallion
@@ -1199,6 +1223,7 @@
   id: Snowball
   name: reagent-name-snowball
   parent: BaseAlcohol
+  group: CumDrinks # DEN
   desc: reagent-desc-snowball
   physicalDesc: reagent-physical-desc-cold-crunchy-sticky
   flavor: snowball
@@ -1220,6 +1245,7 @@
   id: SpecialSundae
   name: reagent-name-specialsundae
   parent: BaseAlcohol
+  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-specialsundae
   physicalDesc: reagent-physical-desc-creamy
   flavor: specialsundae
@@ -1330,6 +1356,7 @@
   id: WatermelonGinJizz
   name: reagent-name-watermelonginjizz
   parent: BaseAlcohol
+  group: CumDrinks # DEN
   desc: reagent-desc-watermelonginjizz
   physicalDesc: reagent-physical-desc-fizzy
   flavor: watermelonginjizz
@@ -1354,6 +1381,7 @@
   id: TheWaterslide
   name: reagent-name-thewaterslide
   parent: BaseAlcohol
+  group: CumDrinks # DEN
   desc: reagent-desc-thewaterslide
   physicalDesc: reagent-physical-desc-putrid
   flavor: thewaterslide
@@ -1364,6 +1392,7 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  noRandom: true # DEN - Do not randomize lewd drinks
   metabolisms:
     Drink:
       effects:
@@ -1423,6 +1452,7 @@
   id: TheCuteCaptain
   name: reagent-name-the-cute-captain
   parent: BaseAlcohol
+  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-the-cute-captain
   physicalDesc: reagent-physical-desc-starry
   flavor: thecutecaptain
@@ -1447,6 +1477,7 @@
   id: AxelsAle
   name: reagent-name-axels-ale
   parent: BaseAlcohol
+  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-axels-ale
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: axelsale
@@ -1525,20 +1556,24 @@
   flavor: eggnog
   color: "#F1E0A1"
   metamorphicSprite:
-    sprite: _Floof/Objects/Consumable/Drinks/eggnog.rsi
+    sprite: _DEN/Objects/Consumable/Drinks/eggnog.rsi # DEN - resprite
     state: icon_empty
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
+  metamorphicChangeColor: true
   metabolisms:
     Drink:
       effects:
       - !type:SatiateThirst
         factor: 1
       - !type:AdjustReagent
-        reagent: Pomelustine
+        reagent: HolidayCheer # DEN: holiday cheer :)
         amount: 0.05
+      - !type:AdjustReagent # DEN: make it alcoholic
+        reagent: Ethanol
+        amount: 0.08
   noRandom: true # The Den
+  # PORT note: I'm keeping it this way even though it's not actuallly aphrodisiac because it feels irresponsible not to
 
 - type: reagent
   id: SyndicateEggnog
@@ -1549,11 +1584,11 @@
   flavor: syndicate-eggnog
   color: "#d8c990"
   metamorphicSprite:
-    sprite: _Floof/Objects/Consumable/Drinks/syndicate_eggnog.rsi
+    sprite: _DEN/Objects/Consumable/Drinks/syndicate_eggnog.rsi # DEN - resprite
     state: icon_empty
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
+  metamorphicChangeColor: true
   metabolisms:
     Drink:
       effects:
@@ -1561,7 +1596,7 @@
         factor: 1
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.04
+        amount: 0.18 # DEN: make it more alcoholic
 
 - type: entity
   parent: DrinkGlass
@@ -1576,13 +1611,13 @@
         - ReagentId: Eggnog
           Quantity: 30
   - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/eggnog.rsi
+    sprite: _DEN/Objects/Consumable/Drinks/eggnog.rsi # DEN - resprite
     state: icon
 
 - type: entity
   parent: DrinkGlass
   id: DrinkSyndicateEggnogGlass
-  suffix: eggnog
+  suffix: syndicate eggnog # DEN: fix
   components:
   - type: SolutionContainerManager
     solutions:
@@ -1592,5 +1627,5 @@
         - ReagentId: SyndicateEggnog
           Quantity: 30
   - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/syndicate_eggnog.rsi
+    sprite: _DEN/Objects/Consumable/Drinks/syndicate_eggnog.rsi # DEN - resprite
     state: icon

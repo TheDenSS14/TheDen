@@ -1,5 +1,9 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 pocl.v
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -365,6 +369,7 @@
   name: reagent-name-atlantic-ocean
   parent: BaseAlcohol
   desc: reagent-desc-atlantic-ocean
+  group: AphrodisiacDrinks # DEN
   physicalDesc: reagent-physical-desc-pulpy
   flavor: atlantic-ocean
   color: "#31917d"
@@ -671,7 +676,7 @@
           reagent: Songbird
           min: 2
   fizziness: 0.25
-  
+
 - type: reagent
   id: TohokuBlaze
   name: reagent-name-tohokublaze
@@ -811,6 +816,7 @@
   id: CoconutDoubleCreamPie
   name: reagent-name-coconutdoublecreampie
   parent: BaseAlcohol
+  group: AphrodisiacDrinks # DEN
   desc: reagent-desc-coconutdoublecreampie
   physicalDesc: reagent-physical-desc-creamy
   flavor: coconutdoublecreampie
@@ -926,10 +932,54 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.1
-# commented out until gasp is an emote.
-#      - !type:Emote
-#        emote: Gasp
-#        showInChat: true
-#        force: true
-#        probability: 0.35
+      - !type:Emote
+        emote: Gasp
+        showInChat: true
+        force: true
+        probability: 0.02
+  fizziness: 0.5
+
+- type: reagent
+  id: CherrySoda
+  name: reagent-name-cherrysoda
+  parent: BaseAlcohol
+  desc: reagent-desc-cherrysoda
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: cherry
+  color: "#a80111"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/cherrysoda.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+  fizziness: 0.5
+
+- type: reagent
+  id: VodkaCheers
+  name: reagent-name-vodkacheers
+  parent: BaseAlcohol
+  desc: reagent-desc-vodkacheers
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: vodkacheers
+  color: "#b90112"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/vodkacheers.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 1
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.1
   fizziness: 0.5

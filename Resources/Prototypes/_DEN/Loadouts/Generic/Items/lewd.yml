@@ -60,3 +60,21 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutLewdPills
+
+- type: loadout
+  id: LoadoutSexLube
+  category: ItemsLewd
+  cost: 2
+  items:
+  - SexLube
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutVASH
+
+- type: loadout
+  id: LoadoutNSFWHoloprojector
+  category: ItemsLewd
+  cost: 0
+  items:
+  - HoloprojectorNSFW
+

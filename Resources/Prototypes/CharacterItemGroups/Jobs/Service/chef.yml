@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Chef
 #- type: characterItemGroup
@@ -37,6 +37,8 @@
   items:
     - type: loadout
       id: LoadoutClothingHandsChefWarmers
+    - type: loadout # DEN
+      id: LoadoutServiceHandsGlovesNitrileBlack
 
 - type: characterItemGroup
   id: LoadoutChefHead
@@ -47,6 +49,14 @@
       id: LoadoutServiceHeadChefIdris
     - type: loadout
       id: LoadoutServiceHeadChefOrion
+    # DEN start: Diner uniforms
+    - type: loadout
+      id: LoadoutServiceHeadDinerTeal
+    - type: loadout
+      id: LoadoutServiceHeadDinerPink
+    - type: loadout
+      id: LoadoutServiceHeadDinerFastFood
+    # DEN end
 
 #- type: characterItemGroup
 #  id: LoadoutChefId
@@ -103,3 +113,21 @@
       id: LoadoutServiceJumpskirtChef
     - type: loadout
       id: LoadoutClothingUniformChefThong
+    # DEN start: Diner uniforms
+    - type: loadout
+      id: LoadoutServiceJumpsuitDinerTeal
+    - type: loadout
+      id: LoadoutServiceJumpskirtDinerTeal
+    - type: loadout
+      id: LoadoutServiceJumpsuitDinerPink
+    - type: loadout
+      id: LoadoutServiceJumpskirtDinerPink
+    - type: loadout
+      id: LoadoutServiceJumpsuitDinerPinkDark
+    - type: loadout
+      id: LoadoutServiceJumpskirtDinerPinkDark
+    - type: loadout
+      id: LoadoutServiceJumpsuitDinerFastFood
+    - type: loadout
+      id: LoadoutServiceJumpskirtDinerFastFood
+    # DEN end

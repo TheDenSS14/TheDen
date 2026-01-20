@@ -122,6 +122,7 @@
 # SPDX-FileCopyrightText: 2025 Theodore Lukin
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 gus
+# SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 slarticodefast
 # SPDX-FileCopyrightText: 2025 thebiggestbruh
 #
@@ -143,7 +144,7 @@
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
   - type: Bloodstream
-    maxBleedAmount: 150
+    maxBleedAmount: 15
     bloodMaxVolume: 650
     bloodReagent: ShimmeringBlood # Imp - Gives dragon drug blood.
   - type: GhostRole
@@ -239,7 +240,7 @@
   - type: StatusEffects # Overwriting basesimplemob to remove flash, getting flashed as dragon just feelsbad
     allowed:
     - SlowedDown
-    - Stutter
+    # - Stutter # DEN - Being able to talk is good
     - Electrocution
     - ForcedSleep
     - TemporaryBlindness
@@ -341,9 +342,19 @@
     understands:
     - TauCetiBasic
     - Aural
+  # DEN
   - type: Emoting # TheDen - Let them emote
   - type: BodyEmotes # TheDen
     soundsId: GeneralBodyEmotes
+  - type: InventorySlots
+  - type: Inventory
+    templateId: dragon
+  - type: Loadout
+    prototypes:
+    - StartingGearDragonBase
+  - type: Hands
+    showInHands: false
+  # DEN
 
 - type: entity
   parent: BaseMobDragon

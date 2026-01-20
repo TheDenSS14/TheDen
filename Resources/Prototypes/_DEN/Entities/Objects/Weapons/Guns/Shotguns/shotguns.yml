@@ -1,15 +1,18 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: soul-shatter
-  parent: BaseWeaponShotgun
+  parent: [BaseWeaponShotgun, BaseMantisContraband]
   id: WeaponShotgunSoulshatter
-  description: A flashy, pocket-sized shotgun with a marble style grip. Provides no tactical advantage. Uses 12 gauge shells.
+  suffix: DO NOT MAP # Mantes shouldn't get free lethals
+  description: "A gloomy sawn-off double barrel with an amaranth grip. Provides no tactical advantage. Uses 12 gauge shells."
   components:
   - type: Sprite
     sprite: _DEN/Objects/Weapons/Guns/Shotguns/soulshatter.rsi
@@ -25,7 +28,7 @@
     fireOnDropChance: 0.5
   - type: BallisticAmmoProvider
     capacity: 2
-    proto: null
+    proto: ShellSoulbreaker # Fine to start loaded since it's no longer mapped (mantis guns were repurposed, and this can be for admemes)
   - type: MeleeWeapon
     attackRate: 1.2
     damage:
@@ -33,6 +36,9 @@
         Blunt: 7.5
   - type: DamageOtherOnHit
     staminaCost: 6
+  - type: Tag
+    tags:
+    - MantisBeltStorable
 
 - type: entity
   name: antique energy shotgun
@@ -60,3 +66,17 @@
   components:
     - type: StealTarget
       stealGroup: HoSAntiqueWeapon
+
+- type: entity
+  parent: WeaponShotgunKammerer
+  id: WeaponShotgunKammererEmpty # DEN
+  description: When an old Remington design meets modern materials, this is the result. A favourite weapon of militia forces throughout many worlds. Uses 12 gauge shells.
+  suffix: Beanbag
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Weapons/Guns/Shotguns/pump.rsi # Delta-V
+  - type: Clothing
+    sprite: _DV/Objects/Weapons/Guns/Shotguns/pump.rsi # Delta-V
+  - type: BallisticAmmoProvider
+    capacity: 4
+    proto: null

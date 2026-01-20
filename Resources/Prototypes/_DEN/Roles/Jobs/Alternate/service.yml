@@ -1,5 +1,7 @@
 # SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 XenoOutlier
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
@@ -24,6 +26,8 @@
   - job-name-alternate-waiter
   - job-name-alternate-tapster
   - job-name-alternate-alcoholic-technician
+  - job-name-alternate-barmaid
+  - job-name-alternate-tavern-keeper
 
 - type: alternateJobTitle
   id: DefaultBotanist
@@ -32,6 +36,7 @@
   - job-name-alternate-farmer
   - job-name-alternate-gardener
   - job-name-alternate-hydroponics-technician
+  - job-name-alternate-herbalist
 
 - type: alternateJobTitle
   id: DefaultChef
@@ -54,6 +59,7 @@
   - job-name-alternate-fool
   - job-name-alternate-harlequin
   - job-name-alternate-entertainer
+  - job-name-alternate-pierrot
 
 - type: alternateJobTitle
   id: DefaultMusician
@@ -66,6 +72,7 @@
   - job-name-alternate-guitarist
   - job-name-alternate-pianist
   - job-name-alternate-drummer
+  - job-name-alternate-busker
 
 - type: alternateJobTitle
   id: DefaultGladiator
@@ -73,6 +80,16 @@
   titles:
   - job-name-alternate-combatant
   - job-name-alternate-performance-fighter
+
+- type: alternateJobTitle
+  id: DefaultPrisoner
+  jobId: Prisoner
+  titles:
+  - job-name-alternate-Inmate
+  - job-name-alternate-Convict
+  - job-name-alternate-minimum-security-prisoner
+  - job-name-alternate-medium-security-prisoner
+  - job-name-alternate-maximum-security-prisoner
 
 - type: alternateJobTitle
   id: DefaultMime
@@ -88,7 +105,6 @@
   titles:
   - job-name-alternate-bureaucratic-ambassador
   - job-name-alternate-paperwork-enthusiast
-  - job-name-alternate-station-inspector
   - job-name-alternate-recruiter
   - job-name-alternate-head-of-service
   - job-name-alternate-service-director
@@ -100,6 +116,8 @@
     - job-name-alternate-journalist
     - job-name-alternate-correspondent
     - job-name-alternate-radio-host
+    - job-name-alternate-investigative-journalist
+    - job-name-alternate-paparazzo
 
 - type: alternateJobTitle
   id: DefaultJanitor
@@ -123,9 +141,18 @@
   jobId: Boxer
   titles:
     - job-name-alternate-physical-trainer
+    - job-name-alternate-wrestler
+    - job-name-alternate-luchador
+    - job-name-alternate-heel
+    - job-name-alternate-pugilist
+    - job-name-alternate-prize-fighter
 
 - type: alternateJobTitle
   id: DefaultMartialArtist
   jobId: MartialArtist
   titles:
     - job-name-alternate-black-belt
+    - job-name-alternate-mma-fighter
+    - job-name-alternate-sensei
+    - job-name-alternate-shifu
+    - job-name-alternate-warrior-monk

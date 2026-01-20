@@ -38,14 +38,14 @@
   parent: ClothingUniformJumpsuitResearchDirector
   id: ClothingUniformJumpsuitMystagogue
   name: mystagogue's turtleneck
-  description: It's a turtleneck worn by those with the holy aura to achieve the role of Mystagogue. You can practically feel the psychic energies radiating from this thing, not to mention the actual radiation.
+  description: It's a turtleneck worn by those with the holy aura to achieve the role of Mystagogue. You can practically feel the psionic energies radiating from this thing, not to mention the actual radiation.
   suffix: Mystagogue # TheDen
 
 - type: entity
   parent: ClothingUniformJumpskirtResearchDirector
   id: ClothingUniformJumpskirtMystagogue
   name: mystagogue's turtleneck
-  description: It's a turtleneck worn by those with the holy aura to achieve the role of Mystagogue. You can practically feel the psychic energies radiating from this thing, not to mention the actual radiation.
+  description: It's a turtleneck worn by those with the holy aura to achieve the role of Mystagogue. You can practically feel the psionic energies radiating from this thing, not to mention the actual radiation.
   suffix: Mystagogue, Jumpskirt # TheDen
 
 - type: entity
@@ -84,24 +84,34 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitMantis
-  name: mantis uniform
-  description: Modeled after an ancient infantry uniform, this uniform has superior mobility for tense situations.
+  name: dated mantis uniform
+  description: "Modeled after an ancient infantry uniform, this uniform has superior mobility for tense situations. All the company would pay for prior to the mantis equipment refresh." # TheDen
   components:
+  - type: Appearance
   - type: Sprite
     sprite: Nyanotrasen/Clothing/Uniforms/Jumpsuit/mantis_uniform.rsi
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Uniforms/Jumpsuit/mantis_uniform.rsi
+  - type: Tag # TheDen
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
 
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformSkirtMantis
-  name: mantis jumpskirt
-  description: Adapted from an ancient infantry uniform, this jumpskirt has superior mobility for tense situations.
+  name: dated mantis jumpskirt
+  description: "Adapted from an ancient infantry uniform, this jumpskirt has superior mobility for tense situations. All the company would pay for prior to the mantis equipment refresh." # TheDen
   components:
+  - type: Appearance
   - type: Sprite
     sprite: Nyanotrasen/Clothing/Uniforms/Jumpskirt/mantis_jumpskirt.rsi
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Uniforms/Jumpskirt/mantis_jumpskirt.rsi
+  - type: Tag # TheDen
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
 
 - type: entity
   parent: ClothingUniformBase

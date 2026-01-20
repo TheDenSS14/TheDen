@@ -1,13 +1,13 @@
-# SPDX-FileCopyrightText: 2023 PHCodes <47927305+PHCodes@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 PHCodes
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
-command-glimmershow-description = Show the current glimmer level.
+command-glimmershow-description = Show the current Glimmer level.
 command-glimmershow-help = No arguments.
 
-command-glimmerset-description = Set glimmer to a number.
+command-glimmerset-description = Set Glimmer to a number.
 command-glimmerset-help = glimmerset (integer)
 
 cmd-lspsionics-desc = List psionics.

@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Will-Oliver-Br
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 ent-PrintedDocument = { ent-Paper }
     .desc = A document printed on a printer.
@@ -16,6 +16,30 @@ ent-PrintedDocumentReportOnTheChaptersMeeting = Head Meeting Report
     .desc = A form to report the results of a Meeting of the Heads of each Department.
 ent-PrintedDocumentConditionReport = Technical Condition Report
     .desc = A report focusing on the condition of a device or object.
+ent-PrintedDocumentRepairBill = Repair Bill
+    .desc = A bill for the repair of a department or object.
+ent-PrintedDocumentMechReport = Mech Declaration Report
+    .desc = A report describing the construction of a mech.
+ent-PrintedDocumentChemicalRequestForm = Chemical Request Form
+    .desc = A form for requesting chemicals from the ChemLab.
+ent-PrintedDocumentJanitorialComplaintForm = Janitorial Complaint Form
+    .desc = A form for notifying the janitorial department of a sanitation hazard.
+ent-PrintedDocumentJanitorialReport = Janitorial Report
+    .desc = A report to be completed by a janitor after dealing with a janitorial complaint.
+ent-PrintedDocumentPrankConsentForm = Clown Prank Consent Form
+    .desc = A form to be completed prior to performing a prank, ensuring consent from all parties.
+ent-PrintedDocumentBotanyRequestForm = Botany Request Form
+    .desc = A form for requesting produce from botany.
+ent-PrintedDocumentFoodAndBeveragesMenu = Food and Beverages Menu
+    .desc = A menu for use at a restaurant or bar.
+ent-PrintedDocumentCloningReceipt = Cloning Receipt
+    .desc = A receipt to be given to the cloned subject once they awaken.
+ent-PrintedDocumentOracleRequest = Oracle Request Form
+    .desc = A form to be handed to another department to request an item for the Oracle.
+ent-PrintedDocumentDrinksMenu = Drinks Menu
+    .desc = A menu for drinks at a bar.
+ent-PrintedDocumentDessertMenu = Dessert Menu
+    .desc = A menu for use at a restaurant or bar.
 ent-PrintedDocumentReportStudyObject = Anomalous Research Report
     .desc = A report focusing on an artifact, anomaly, or unknown device.
 ent-PrintedDocumentApplicationAppointmentInterim = Temporary Promotion Request

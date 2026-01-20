@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2026 Alex C
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -9,9 +10,9 @@
   description: A collar with an explosive attached to it.
   components:
   - type: Sprite
-    sprite: Nyanotrasen/Clothing/Neck/Misc/shock.rsi
+    sprite: _DEN/Clothing/Neck/Collars/collar_shock.rsi # Den edit
   - type: Clothing
-    sprite: Nyanotrasen/Clothing/Neck/Misc/shock.rsi
+    sprite: _DEN/Clothing/Neck/Collars/collar_shock.rsi # Den edit
     equipDelay: 2
     unequipDelay: 20
   - type: DeviceLinkSink

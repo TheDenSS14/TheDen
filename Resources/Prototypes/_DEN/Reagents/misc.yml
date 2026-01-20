@@ -1,0 +1,64 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# sorry it was too funny to pass up
+
+- type: reagent
+  id: HolidayCheer
+  group: Narcotics
+  name: reagent-name-holiday-cheer
+  desc: reagent-desc-holiday-cheer
+  physicalDesc: reagent-physical-desc-festive
+  flavor: holidaycheer
+  color: "#ffdb67"
+  noRandom: true
+  recognizable: true
+  metabolisms:
+    Medicine:
+      metabolismRate : 0.01
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: Medium
+        messages:
+        - reagent-effect-cheer-mild1
+        - reagent-effect-cheer-mild2
+        - reagent-effect-cheer-mild3
+        - reagent-effect-cheer-mild4
+        - reagent-effect-cheer-mild5
+        probability: 0.035
+        conditions:
+        - !type:ReagentThreshold
+          max: 50
+
+      - !type:PopupMessage # Overdose STILL causes nausea and vomiting
+        # Too fucking jolly...
+        type: Local
+        visualType: Medium
+        messages:
+        - reagent-effect-cheer-mildoverdose # You feel nauseous.
+        probability: 0.06
+        conditions:
+        - !type:ReagentThreshold
+          min: 50
+      - !type:Drunk
+        conditions:
+        - !type:ReagentThreshold
+          min: 50
+      - !type:ChemVomit
+        probability: 0.05
+        conditions:
+        - !type:ReagentThreshold
+          min: 60
+
+      - !type:PopupMessage
+        type: Local
+        visualType: Small
+        messages:
+        - reagent-effect-cheer-fade
+          # A decent chance to notify the player when their meds run out, but could happen silently.
+        probability: 0.35
+        conditions:
+        - !type:ReagentThreshold
+          max: 0.1

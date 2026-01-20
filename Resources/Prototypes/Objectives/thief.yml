@@ -9,11 +9,12 @@
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2024 metalgearsloth
 # SPDX-FileCopyrightText: 2024 reverie collection
+# SPDX-FileCopyrightText: 2025 Kellaris
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   abstract: true
@@ -567,8 +568,8 @@
   categories: [ HideSpawnMenu ]
   parent: [BaseThiefObjective, BaseLivingObjective]
   id: EscapeThiefShuttleObjective
-  name: Become the greatest thief of all time
-  description: Pull off the biggest heist in the galaxy, make it one for the history books.
+  name: Steal something! Don't hurt people. Avoid jail. Avoid easy targets.
+  description: Perform a dangerous heist to steal something for the thrill of it. You only want to steal one item, or a collection of unimportant but similar items.
   components:
   - type: Objective
     difficulty: 1.3

@@ -1,0 +1,35 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetMantis
+  name: mantis headset
+  description: "A dark headset with a magenta stripe, marking it as the mantis's. It has a direct line to the Epistemics Cult."
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyScience
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: _DEN/Clothing/Ears/Headsets/mantis.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Ears/Headsets/mantis.rsi
+  - type: Tag
+    tags:
+    - MantisBeltStorable
+
+- type: entity
+  parent: ClothingHeadsetMantis
+  id: ClothingHeadsetAltMantis
+  name: chained mantis headset
+  description: "An unusual, ornate headset with a chained nosering that functions as a microphone. It has a direct line to the Epistemics Cult."
+  components:
+  - type: Sprite
+    state: icon_alt
+  - type: Clothing
+    equippedPrefix: alt
+
