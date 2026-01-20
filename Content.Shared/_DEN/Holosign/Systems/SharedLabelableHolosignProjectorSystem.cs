@@ -49,9 +49,6 @@ public abstract class SharedLabelableHolosignProjectorSystem : EntitySystem
 
     private void OnExamine(EntityUid uid, LabeledHolosignComponent component, ExaminedEvent args)
     {
-        if (!args.IsInDetailsRange)
-            return;
-
         if (component.IsNSFW)
         {
             if(_consent.HasConsent(args.Examiner, _nsfwDescriptionsConsent))
