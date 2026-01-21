@@ -32,7 +32,7 @@ public sealed partial class ChameleonClothingComponent : Component
     /// <summary>
     ///     EntityPrototype id that chameleon item is trying to mimic.
     /// </summary>
-    [ViewVariables(VVAccess.ReadOnly)]
+    [ViewVariables(VVAccess.ReadWrite)] // DEN make this ReadWrite instead of ReadOnly
     [DataField(required: true), AutoNetworkedField]
     public EntProtoId? Default;
 
