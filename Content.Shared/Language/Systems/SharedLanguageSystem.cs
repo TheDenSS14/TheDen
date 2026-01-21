@@ -102,33 +102,20 @@ public abstract class SharedLanguageSystem : EntitySystem
     /// </summary>
     public string ObfuscateOnlyText(string text, LanguagePrototype language, List<StringBoundsResult> keysWithinDialogue)
     {
-        var builder = new StringBuilder();
+        var lastBuiltText = text;
         var lastIndex = 0;
 
         foreach (var key in keysWithinDialogue)
         {
             var obfuscated = language.Obfuscation.Obfuscate(key.Result);
-            var upToStart = text.Substring(lastIndex, key.StartIndex - lastIndex);
-
-            builder.Append(upToStart);
-            builder.Append(obfuscated);
-            builder.Append(_dialogueStringBounds.Key);
-
-            if (key.EndIndex + _dialogueStringBounds.KeyLength + 1 >= text.Length)
-                break;
-
-            lastIndex = key.EndIndex + _dialogueStringBounds.KeyLength;
+            lastBuiltText = _language.ReplaceRange(
+                message,
+                key.StartIndex + 1,
+                key.EndIndex - 1,
+                obfuscated);
         }
 
-        var fromLast = text.Substring(lastIndex + _dialogueStringBounds.KeyLength);
-        var noExtraDialogue = fromLast.IndexOf("\"", StringComparison.Ordinal) == -1;
-
-        if (noExtraDialogue)
-        {
-            builder.Append(text.Substring(lastIndex));
-        }
-
-        return builder.ToString();
+        return lastBuiltText;
     }
 
     /// <summary>

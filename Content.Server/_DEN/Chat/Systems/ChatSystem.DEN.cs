@@ -100,8 +100,8 @@ public sealed partial class ChatSystem
 
             lastMessage = _language.ReplaceRange(
                 lastMessage,
-                key.StartIndex - 1,
-                key.EndIndex + 1,
+                key.StartIndex + 1,
+                key.EndIndex - 1,
                 modifiedMessage.ToString());
         }
 
