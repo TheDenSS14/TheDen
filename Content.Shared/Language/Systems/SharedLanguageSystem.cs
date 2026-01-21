@@ -108,8 +108,8 @@ public abstract class SharedLanguageSystem : EntitySystem
         foreach (var key in keysWithinDialogue)
         {
             var obfuscated = language.Obfuscation.Obfuscate(key.Result);
-            lastBuiltText = _language.ReplaceRange(
-                message,
+            lastBuiltText = ReplaceRange(
+                lastBuiltText,
                 key.StartIndex + 1,
                 key.EndIndex - 1,
                 obfuscated);
