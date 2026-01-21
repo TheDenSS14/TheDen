@@ -534,7 +534,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
 
         // The original message
-        var message = TransformSpeech(source, FormattedMessage.RemoveMarkupPermissive(originalMessage), language);
+        var message = TransformSpeechDepending(source, FormattedMessage.RemoveMarkupPermissive(originalMessage), language, keysWithinDialogue, isDetailed);
 
         if (message.Length == 0)
             return;
@@ -701,7 +701,7 @@ public sealed partial class ChatSystem : SharedChatSystem
                 targetHasLanguage ? (source, languageSpeakerComponent) : null);
             // How the entity perceives the message depends on whether it can understand its language
             var perceivedMessage = canUnderstandLanguage ? message : languageObfuscatedMessage;
-            var perceivedKeys = canUnderstandLanguage ? keysWithinDialogue : obfuscatedKeys;
+            var perceivedKeys = _language.GetKeysWithinDialogue(perceivedMessage);
 
             // Result is the intermediate message derived from the perceived one via obfuscation
             // Wrapped message is the result wrapped in an "x says y" string
@@ -718,6 +718,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             {
                 // Scenario 2: if the listener is too far, they only hear fragments of the message
                 result = ObfuscateMessageReadabilityDepending(perceivedMessage, perceivedKeys, isDetailed: isDetailed);
+                perceivedKeys = _language.GetKeysWithinDialogue(result);
                 wrappedMessage = WrapWhisperMessageDepending(source, false, nameIdentity, result, perceivedKeys, language, isDetailed);
             }
             else
@@ -728,6 +729,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
                 // Scenario 3: If listener is too far and has no line of sight, they can't identify the whisperer's identity
                 result = ObfuscateMessageReadabilityDepending(perceivedMessage, perceivedKeys, isDetailed: isDetailed);
+                perceivedKeys = _language.GetKeysWithinDialogue(result);
                 wrappedMessage = WrapWhisperMessageDepending(source, true, string.Empty, result, perceivedKeys, language, isDetailed);
             }
 
