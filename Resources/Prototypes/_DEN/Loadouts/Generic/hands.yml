@@ -1,0 +1,58 @@
+# Arm-warmers
+
+- type: loadout
+  id: LoadoutHandsArmWarmersFingerless
+  category: Hands
+  cost: 0
+  customColorTint: true
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutGloves
+  items:
+  - ClothingHandsArmWarmersFingerless
+
+- type: loadout
+  id: LoadoutHandsArmWarmersFingerlessCoder
+  category: Hands
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutGloves
+  items:
+  - ClothingHandsArmWarmersFingerlessCoder
+
+- type: loadout
+  id: LoadoutHandsArmWarmersFingerlessValid
+  category: Hands
+  cost: 1
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutGloves
+  items:
+  - ClothingHandsArmWarmersFingerlessValid
+
+- type: loadout
+  id: LoadoutHandsArmWarmersFingerlessStriped
+  category: Hands
+  cost: 0
+  customColorTint: true
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutGloves
+  items:
+  - ClothingHandsArmWarmersFingerlessStriped
+
+- type: loadout
+  id: LoadoutHandsArmWarmersFingerlessPurple
+  category: Hands
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutGloves
+  items:
+  - ClothingHandsArmWarmersFingerlessPurple
