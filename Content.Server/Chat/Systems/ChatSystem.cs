@@ -560,9 +560,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
 
         name = FormattedMessage.EscapeText(name);
+        var separation = false;
 
         if (isDetailed && originalMessage.StartsWith("\""))
         {
+            separation = true;
             name = $"[color=#636161]([/color][BubbleHeader][Name]{name}[/Name][/BubbleHeader][color=#636161])[/color]";
         }
         else if (isDetailed)
@@ -570,8 +572,17 @@ public sealed partial class ChatSystem : SharedChatSystem
             name = $"[BubbleHeader][Name]{name}[/Name][/BubbleHeader]";
         }
 
+        var space = " ";
+
+        if (isDetailed && originalMessage.StartsWith("'") && !separation)
+        {
+            var shouldSpace = !(originalMessage.StartsWith("'") || originalMessage.StartsWith(',')); // DEN: remove space when starting an action with ' or ,
+
+            space = shouldSpace ? " " : "";
+        }
+
         // The chat message wrapped in a "x says y" string
-        var wrappedMessage = WrapPublicMessageDepending(source, name, message, keysWithinDialogue, language, isDetailed);
+        var wrappedMessage = WrapPublicMessageDepending(source, name, message, keysWithinDialogue, language, isDetailed, space);
 
         // The chat message obfuscated via language obfuscation
         // APRIL: Dude what the fuck.
@@ -591,7 +602,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             isDetailed);
 
         // The language-obfuscated message wrapped in a "x says y" string
-        var wrappedObfuscated = WrapPublicMessageDepending(source, name, obfuscated, obfuscatedKeys, language, isDetailed);
+        var wrappedObfuscated = WrapPublicMessageDepending(source, name, obfuscated, obfuscatedKeys, language, isDetailed, space);
         SendInVoiceRange(ChatChannel.Local, name, message, wrappedMessage, obfuscated, wrappedObfuscated, source, range, languageOverride: language);
 
         var ev = new EntitySpokeEvent(source, message, null, false, language);
@@ -681,13 +692,25 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         name = FormattedMessage.EscapeText(name);
 
+        var separation = false;
+
         if (isDetailed && originalMessage.StartsWith("\""))
         {
+            separation = true;
             name = $"[color=#636161]([/color][BubbleHeader][Name]{name}[/Name][/BubbleHeader][color=#636161])[/color]";
         }
         else if (isDetailed)
         {
             name = $"[BubbleHeader][Name]{name}[/Name][/BubbleHeader]";
+        }
+
+        var space = " ";
+
+        if (isDetailed && originalMessage.StartsWith("'") && !separation)
+        {
+            var shouldSpace = !(originalMessage.StartsWith("'") || originalMessage.StartsWith(',')); // DEN: remove space when starting an action with ' or ,
+
+            space = shouldSpace ? " " : "";
         }
 
         var obfuscatedText = ObfuscateSpeechDepending(message, language, keysWithinDialogue, isDetailed);
@@ -731,14 +754,14 @@ public sealed partial class ChatSystem : SharedChatSystem
             {
                 // Scenario 1: the listener can clearly understand the message
                 result = perceivedMessage;
-                wrappedMessage = WrapWhisperMessageDepending(source, false, name, result, perceivedKeys, language, isDetailed);
+                wrappedMessage = WrapWhisperMessageDepending(source, false, name, result, perceivedKeys, language, isDetailed, space);
             }
             else if (_interactionSystem.InRangeUnobstructed(source, listener, WhisperMuffledRange, _subtleWhisperMask))
             {
                 // Scenario 2: if the listener is too far, they only hear fragments of the message
                 result = ObfuscateMessageReadabilityDepending(perceivedMessage, perceivedKeys, isDetailed: isDetailed);
                 perceivedKeys = _language.GetKeysWithinDialogue(result);
-                wrappedMessage = WrapWhisperMessageDepending(source, false, nameIdentity, result, perceivedKeys, language, isDetailed);
+                wrappedMessage = WrapWhisperMessageDepending(source, false, nameIdentity, result, perceivedKeys, language, isDetailed, space);
             }
             else
             {
@@ -749,7 +772,7 @@ public sealed partial class ChatSystem : SharedChatSystem
                 // Scenario 3: If listener is too far and has no line of sight, they can't identify the whisperer's identity
                 result = ObfuscateMessageReadabilityDepending(perceivedMessage, perceivedKeys, isDetailed: isDetailed);
                 perceivedKeys = _language.GetKeysWithinDialogue(result);
-                wrappedMessage = WrapWhisperMessageDepending(source, true, string.Empty, result, perceivedKeys, language, isDetailed);
+                wrappedMessage = WrapWhisperMessageDepending(source, true, string.Empty, result, perceivedKeys, language, isDetailed, space);
             }
 
             _chatManager.ChatMessageToOne(ChatChannel.Whisper, result, wrappedMessage, source, false, session.Channel);
