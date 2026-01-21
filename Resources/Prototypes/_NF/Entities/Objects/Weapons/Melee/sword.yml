@@ -58,3 +58,17 @@
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
+
+- type: entity
+  parent: [ BaseSalvageSpecialistSecurityContraband, PlasteelArmingSword ]
+  id: PlasteelArmingSwordSalvage
+  name: plasteel arming sword
+  description: An ancient design manufactured with modern materials and machines for a very specific target demographic. The serial number on the hilt marks this sword as belonging to an NT Security Officer.
+  suffix: Salvage
+  components:
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
