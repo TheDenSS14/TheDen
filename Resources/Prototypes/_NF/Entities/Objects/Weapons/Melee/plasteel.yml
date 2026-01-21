@@ -10,10 +10,21 @@
   - type: MeleeWeapon
     autoAttack: true
     wideAnimationRotation: -135
-    attackRate: 2
+    attackRate: 1.2
     damage:
       types:
         Blunt: 18
+    clickPartDamageMultiplier: 1
+    heavyPartDamageMultiplier: 1.5
+    heavyRateModifier: 1.2
+    heavyRangeModifier: 1
+    heavyDamageBaseModifier: 1.5
+    heavyStaminaCost: 12
+    maxTargets: 4
+    angle: 80
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Nyanotrasen/Weapons/club.ogg
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/plasteel_mace.rsi
     slots:
@@ -22,7 +33,8 @@
     - Belt
   # Den - Add
   - type: Tag
-  - SimpleMeleeWeapon
+    tags:
+    - SimpleMeleeWeapon
 
 - type: entity
   name: plasteel epee
@@ -35,15 +47,25 @@
     state: icon
   - type: MeleeWeapon
     autoAttack: true
-    attackRate: 2
+    attackRate: 1.2
     wideAnimationRotation: -135
+    range: 1.8
     damage:
       types:
-        Piercing: 15
+        Piercing: 17
+    clickPartDamageMultiplier: 2
+    heavyPartDamageMultiplier: 1
+    heavyRateModifier: 1.8
+    heavyRangeModifier: 1.8
+    heavyDamageBaseModifier: 1.75
+    heavyStaminaCost: 8
+    maxTargets: 4
     angle: 0
     animation: WeaponArcThrust
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 8
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/plasteel_epee.rsi
     slots:
@@ -52,11 +74,12 @@
     - Belt
   # DEN - Add
   - type: Tag
-  - SimpleMeleeWeapon
+    tags:
+    - SimpleMeleeWeapon
 
 - type: entity
   name: plasteel axe
-  parent: [BaseSalvageSpecialistSecurityContraband, Truncheon]
+  parent: [BaseSalvageSpecialistSecurityContraband, BaseSword]
   id: PlasteelAxe
   description: Probably no good at doing axe things but it's a much better conversation starter than a knife.
   components:
@@ -65,11 +88,19 @@
     state: icon
   - type: MeleeWeapon
     autoAttack: true
+    attackRate: 1.5
     wideAnimationRotation: -135
-    attackRate: 2
     damage:
       types:
-        Slash: 17
+        Slash: 18
+    clickPartDamageMultiplier: 2
+    heavyPartDamageMultiplier: 4
+    heavyRateModifier: 2
+    heavyRangeModifier: 1
+    heavyDamageBaseModifier: 1.75
+    heavyStaminaCost: 25
+    maxTargets: 8
+    animation: WeaponArcThrust
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/plasteel_axe.rsi
     slots:
@@ -78,7 +109,8 @@
     - Belt
   # Den - Add
   - type: Tag
-  - SimpleMeleeWeapon
+    tags:
+    - SimpleMeleeWeapon
 
 - type: entity
   name: plasteel spear
@@ -91,8 +123,25 @@
     state: spear
   - type: MeleeWeapon
     autoAttack: true
+    attackRate: 1.2
+    wideAnimationRotation: -135
+    range: 1.8
+    damage:
+      types:
+        Piercing: 15
+        Slash: 4
+    clickPartDamageMultiplier: 1
+    heavyPartDamageMultiplier: 1.5
+    heavyRateModifier: 1.5
+    heavyRangeModifier: 1.2
+    heavyDamageBaseModifier: 1.25
+    heavyStaminaCost: 15
+    maxTargets: 3
+    angle: 20
+    animation: WeaponArcThrust
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/plasteel_spear.rsi
   # Den - Add
   - type: Tag
-  - SimpleMeleeWeapon
+    tags:
+    - SimpleMeleeWeapon
