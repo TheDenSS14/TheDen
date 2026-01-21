@@ -337,7 +337,6 @@ public sealed partial class ChatSystem : SharedChatSystem
             keysWithinDialogue,
             isDetailed);
 
-        keysWithinDialogue = _language.GetKeysWithinDialogue(message);
         // Was there an emote in the message? If so, send it.
         if (player != null
             && emoteStr != message
@@ -370,6 +369,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
 
         message = FormattedMessage.EscapeText(message);
+        keysWithinDialogue = _language.GetKeysWithinDialogue(message);
 
         // Otherwise, send whatever type.
         switch (desiredType)
@@ -566,7 +566,15 @@ public sealed partial class ChatSystem : SharedChatSystem
         // The chat message obfuscated via language obfuscation
         // APRIL: Dude what the fuck.
         var obfuscatedText = ObfuscateSpeechDepending(message, language, keysWithinDialogue, isDetailed);
+        _sawmill.Info(message);
+        _sawmill.Info(obfuscatedText);
         var obfuscatedKeys = _language.GetKeysWithinDialogue(obfuscatedText);
+
+        foreach (var obfuscatedKey in obfuscatedKeys)
+        {
+            _sawmill.Info(obfuscatedKey.Result);
+        }
+
         var obfuscated = SanitizeInGameICMessageDepending(
             source,
             obfuscatedText,
@@ -578,8 +586,11 @@ public sealed partial class ChatSystem : SharedChatSystem
             desiredType: InGameICChatType.Speak,
             obfuscatedKeys,
             isDetailed);
+
+        _sawmill.Info(obfuscated);
+
         // The language-obfuscated message wrapped in a "x says y" string
-        var wrappedObfuscated = WrapPublicMessageDepending(source, name, obfuscated, keysWithinDialogue, language, isDetailed);
+        var wrappedObfuscated = WrapPublicMessageDepending(source, name, obfuscated, obfuscatedKeys, language, isDetailed);
         SendInVoiceRange(ChatChannel.Local, name, message, wrappedMessage, obfuscated, wrappedObfuscated, source, range, languageOverride: language);
 
         var ev = new EntitySpokeEvent(source, message, null, false, language);

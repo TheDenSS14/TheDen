@@ -14,26 +14,9 @@ namespace Content.Server.Chat.Systems;
 
 public sealed partial class ChatSystem
 {
-    public string ReplaceRange(string text, int start, int end, string replacement)
-    {
-        var builder = new StringBuilder();
-        var upToStart = text.Substring(0, start - 1);
-        var fromLast = "";
-
-        if (text.Length >= end)
-            fromLast = text.Substring(end + 1);
-
-        builder.Append(upToStart);
-        builder.Append(replacement);
-        builder.Append(fromLast);
-
-        return builder.ToString();
-    }
-
     public string ReplaceRangeMultiple(
         string text,
-        List<(int StartIndex, int EndIndex, string Replacement)> replacements,
-        bool log = false
+        List<(int StartIndex, int EndIndex, string Replacement)> replacements
     )
     {
         if (replacements.Count == 0)
@@ -41,9 +24,10 @@ public sealed partial class ChatSystem
 
         var builder = new StringBuilder();
         var currentIdx = 0;
+
         foreach (var replacement in replacements)
         {
-            var before = text.Substring(currentIdx, replacement.StartIndex);
+            var before = text.Substring(currentIdx, replacement.StartIndex - currentIdx);
 
             builder.Append(before);
             builder.Append(replacement.Replacement);
@@ -52,7 +36,6 @@ public sealed partial class ChatSystem
 
         var after = text.Substring(currentIdx);
         builder.Append(after);
-        _sawmill.Info(builder.ToString());
 
         return builder.ToString();
     }
@@ -126,7 +109,7 @@ public sealed partial class ChatSystem
         float chance = DefaultObfuscationFactor
     )
     {
-        var lastMessage = message;
+        var replacements = new List<(int StartIndex, int EndIndex, string Replacement)>();
 
         foreach (var key in keysWithinDialogue)
         {
@@ -145,14 +128,10 @@ public sealed partial class ChatSystem
                 }
             }
 
-            lastMessage = ReplaceRange(
-                lastMessage,
-                key.StartIndex + 1,
-                key.EndIndex - 1,
-                modifiedMessage.ToString());
+            replacements.Add((key.StartIndex, key.EndIndex, modifiedMessage.ToString()));
         }
 
-        return lastMessage;
+        return ReplaceRangeMultiple(message, replacements);
     }
 
     public string SanitizeInGameICMessageDialogue(
@@ -347,6 +326,6 @@ public sealed partial class ChatSystem
             replacements.Add((key.StartIndex, key.EndIndex, obfuscated));
         }
 
-        return ReplaceRangeMultiple(text, replacements, log: true);
+        return ReplaceRangeMultiple(text, replacements);
     }
 }
