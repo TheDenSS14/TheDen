@@ -1,6 +1,6 @@
 - type: entity
   name: plasteel mace
-  parent: [BaseC1Contraband, Truncheon]
+  parent: [BaseSalvageSpecialistSecurityContraband, Truncheon]
   id: PlasteelMace
   description: It's a lightweight stick with a spikey bit. It would probably be better if it was a heavy stick with a spikey bit.
   components:
@@ -13,17 +13,20 @@
     attackRate: 2
     damage:
       types:
-        Blunt: 15
+        Blunt: 18
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/plasteel_mace.rsi
     slots:
     - Back
     - SuitStorage
     - Belt
+  # Den - Add
+  - type: Tag
+  - SimpleMeleeWeapon
 
 - type: entity
   name: plasteel epee
-  parent: [BaseC1Contraband, BaseSword]
+  parent: [BaseSalvageSpecialistSecurityContraband, BaseSword]
   id: PlasteelEpee
   description: You find yourself wondering if anyone else remembers Nidhogg.
   components:
@@ -47,10 +50,13 @@
     - Back
     - SuitStorage
     - Belt
+  # DEN - Add
+  - type: Tag
+  - SimpleMeleeWeapon
 
 - type: entity
   name: plasteel axe
-  parent: [BaseC1Contraband, Truncheon]
+  parent: [BaseSalvageSpecialistSecurityContraband, Truncheon]
   id: PlasteelAxe
   description: Probably no good at doing axe things but it's a much better conversation starter than a knife.
   components:
@@ -63,19 +69,22 @@
     attackRate: 2
     damage:
       types:
-        Slash: 15
+        Slash: 17
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/plasteel_axe.rsi
     slots:
     - Back
     - SuitStorage
     - Belt
+  # Den - Add
+  - type: Tag
+  - SimpleMeleeWeapon
 
 - type: entity
   name: plasteel spear
-  parent: [BaseC1Contraband, SpearReinforced]
+  parent: [BaseSalvageSpecialistSecurityContraband, SpearReinforced]
   id: PlasteelSpear
-  description: It features a blade that can be coated in deadly poison. Or coffee. Or anything really. It's very coatable. Somehow worse than glass tied to a stick.
+  description: It features a blade that can be coated in deadly poison. Or coffee. Or anything really. It's very coatable.
   components:
   - type: Sprite
     sprite: _NF/Objects/Weapons/Melee/plasteel_spear.rsi
@@ -84,3 +93,6 @@
     autoAttack: true
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/plasteel_spear.rsi
+  # Den - Add
+  - type: Tag
+  - SimpleMeleeWeapon

@@ -1,0 +1,95 @@
+- type: entity
+  parent: [ BaseSecurityContraband, PlasteelMace ]
+  id: PlasteelMaceSecurity
+  name: plasteel mace
+  description: It's a lightweight stick with a spikey bit. It would probably be better if it was a heavy stick with a spikey bit. The serial number on the hilt marks this sword as belonging to an NT Security Officer.
+  suffix: Security
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
+
+- type: entity
+  parent: [ BaseSalvageSpecialistSecurityContraband, PlasteelMace ]
+  id: PlasteelMaceSalvage
+  name: plasteel mace
+  description: It's a lightweight stick with a spikey bit. It would probably be better if it was a heavy stick with a spikey bit.
+  suffix: Salvage
+  components:
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
+
+- type: entity
+  parent: [ BaseSecurityContraband, PlasteelEpee ]
+  id: PlasteelEpeeSecurity
+  name: plasteel epee
+  description: You find yourself wondering if anyone else remembers Nidhogg. The serial number on the hilt marks this sword as belonging to an NT Security Officer.
+  suffix: Security
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
+
+- type: entity
+  parent: [ BaseSalvageSpecialistSecurityContraband, PlasteelEpee ]
+  id: PlasteelEpeeSalvage
+  name: plasteel epee
+  description: You find yourself wondering if anyone else remembers Nidhogg.
+  suffix: Salvage
+  components:
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
+
+- type: entity
+  parent: [ BaseSecurityContraband, PlasteelAxe ]
+  id: PlasteelAxeSecurity
+  name: plasteel axe
+  description: Probably no good at doing axe things but it's a much better conversation starter than a knife. The serial number on the hilt marks this sword as belonging to an NT Security Officer.
+  suffix: Security
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
+
+- type: entity
+  parent: [ BaseSalvageSpecialistSecurityContraband, PlasteelAxe ]
+  id: PlasteelAxeSalvage
+  name: plasteel axe
+  description: Probably no good at doing axe things but it's a much better conversation starter than a knife.
+  suffix: Salvage
+  components:
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
+
+- type: entity
+  parent: [ BaseSecurityContraband, PlasteelSpear ]
+  id: PlasteelSpearSecurity
+  name: plasteel spear
+  description: It features a blade that can be coated in deadly poison. Or coffee. Or anything really. It's very coatable. The serial number on the hilt marks this sword as belonging to an NT Security Officer.
+  suffix: Security
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
+
+- type: entity
+  parent: [ BaseSalvageSpecialistSecurityContraband, PlasteelSpear ]
+  id: PlasteelSpearSalvage
+  name: plasteel spear
+  description: It features a blade that can be coated in deadly poison. Or coffee. Or anything really. It's very coatable.
+  suffix: Salvage
+  components:
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
