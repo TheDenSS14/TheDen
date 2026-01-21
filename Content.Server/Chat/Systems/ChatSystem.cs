@@ -560,6 +560,16 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
 
         name = FormattedMessage.EscapeText(name);
+
+        if (isDetailed && originalMessage.StartsWith("\""))
+        {
+            name = $"[color=#636161]([/color][BubbleHeader][Name]{name}[/Name][/BubbleHeader][color=#636161])[/color]";
+        }
+        else if (isDetailed)
+        {
+            name = $"[BubbleHeader][Name]{name}[/Name][/BubbleHeader]";
+        }
+
         // The chat message wrapped in a "x says y" string
         var wrappedMessage = WrapPublicMessageDepending(source, name, message, keysWithinDialogue, language, isDetailed);
 
@@ -670,6 +680,15 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
 
         name = FormattedMessage.EscapeText(name);
+
+        if (isDetailed && originalMessage.StartsWith("\""))
+        {
+            name = $"[color=#636161]([/color][BubbleHeader][Name]{name}[/Name][/BubbleHeader][color=#636161])[/color]";
+        }
+        else if (isDetailed)
+        {
+            name = $"[BubbleHeader][Name]{name}[/Name][/BubbleHeader]";
+        }
 
         var obfuscatedText = ObfuscateSpeechDepending(message, language, keysWithinDialogue, isDetailed);
         var obfuscatedKeys = _language.GetKeysWithinDialogue(obfuscatedText);
