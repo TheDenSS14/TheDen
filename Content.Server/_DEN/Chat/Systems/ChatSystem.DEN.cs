@@ -14,6 +14,32 @@ namespace Content.Server.Chat.Systems;
 
 public sealed partial class ChatSystem
 {
+    public string ReplaceRangeMultiple(
+        string text,
+        List<(int StartIndex, int EndIndex, string Replacement)> replacements
+    )
+    {
+        if (replacements.Count == 0)
+            return text;
+
+        var builder = new StringBuilder();
+        var currentIdx = 0;
+
+        foreach (var replacement in replacements)
+        {
+            var before = text.Substring(currentIdx, replacement.StartIndex - currentIdx);
+
+            builder.Append(before);
+            builder.Append(replacement.Replacement);
+            currentIdx = replacement.EndIndex;
+        }
+
+        var after = text.Substring(currentIdx);
+        builder.Append(after);
+
+        return builder.ToString();
+    }
+
     public string ObfuscateSpeechDepending(
         string text,
         LanguagePrototype language,
@@ -24,7 +50,7 @@ public sealed partial class ChatSystem
         if (text.IndexOf("\"", StringComparison.Ordinal) == -1 || !isDetailed)
             return _language.ObfuscateSpeech(text, language);
 
-        return _language.ObfuscateOnlyText(text, language, keysWithinDialogue);
+        return ObfuscateOnlyText(text, language, keysWithinDialogue);
     }
 
     public string TransformSpeechDepending(
@@ -48,20 +74,20 @@ public sealed partial class ChatSystem
         List<StringBoundsResult> keysWithinDialogue
     )
     {
-        var lastBuiltText = text;
-
         if (!language.SpeechOverride.RequireSpeech)
             return text;
+
+        var replacements = new List<(int StartIndex, int EndIndex, string Replacement)>();
 
         foreach (var key in keysWithinDialogue)
         {
             var ev = new TransformSpeechEvent(sender, key.Result);
             RaiseLocalEvent(ev);
 
-            lastBuiltText = _language.ReplaceRange(lastBuiltText, key.StartIndex + 1, key.EndIndex - 1, ev.Message);
+            replacements.Add((key.StartIndex, key.EndIndex, ev.Message));
         }
 
-        return lastBuiltText;
+        return ReplaceRangeMultiple(text, replacements);
     }
 
     public string ObfuscateMessageReadabilityDepending(
@@ -83,7 +109,7 @@ public sealed partial class ChatSystem
         float chance = DefaultObfuscationFactor
     )
     {
-        var lastMessage = message;
+        var replacements = new List<(int StartIndex, int EndIndex, string Replacement)>();
 
         foreach (var key in keysWithinDialogue)
         {
@@ -102,14 +128,10 @@ public sealed partial class ChatSystem
                 }
             }
 
-            lastMessage = _language.ReplaceRange(
-                lastMessage,
-                key.StartIndex - 1,
-                key.EndIndex + 1,
-                modifiedMessage.ToString());
+            replacements.Add((key.StartIndex, key.EndIndex, modifiedMessage.ToString()));
         }
 
-        return lastMessage;
+        return ReplaceRangeMultiple(message, replacements);
     }
 
     public string SanitizeInGameICMessageDialogue(
@@ -120,7 +142,7 @@ public sealed partial class ChatSystem
         List<StringBoundsResult> keysWithinDialogue
     )
     {
-        var newMessage = message;
+        var replacements = new List<(int StartIndex, int EndIndex, string Replacement)>();
 
         foreach (var key in keysWithinDialogue)
         {
@@ -133,10 +155,10 @@ public sealed partial class ChatSystem
             if (shouldPunctuate)
                 newPartialMessage = SanitizeMessagePeriod(newPartialMessage);
 
-            newMessage = _language.ReplaceRange(newMessage, key.StartIndex + 1, key.EndIndex - 1, newPartialMessage);
+            replacements.Add((key.StartIndex, key.EndIndex, newPartialMessage));
         }
 
-        return newMessage;
+        return ReplaceRangeMultiple(message, replacements);
     }
 
     public string SanitizeInGameICMessageDepending(
@@ -190,18 +212,21 @@ public sealed partial class ChatSystem
         var color = DefaultSpeakColor;
         var localeId = "chat-manager-entity-say-wrap-free-message";
         var language = languageOverride ??= _language.GetLanguage(source);
+
+        if (language.SpeechOverride.Color is { } colorOverride)
+            color = Color.InterpolateBetween(color, colorOverride, colorOverride.A);
+
         var languageDisplay = language.IsVisibleLanguage
             ? Loc.GetString("chat-manager-language-prefix", ("language", language.ChatName))
             : "";
 
+        var replacements = new List<(int StartIndex, int EndIndex, string Replacement)>();
         foreach (var key in keysWithinDialogue)
         {
-            message = _language.ReplaceRange(
-                message,
-                key.StartIndex + 1,
-                key.EndIndex - 1,
-                $"[color={color.ToHexNoAlpha()}]{key.Result}[/color]");
+            replacements.Add((key.StartIndex, key.EndIndex, $"[color={color.ToHexNoAlpha()}]{key.Result}[/color]"));
         }
+
+        message = ReplaceRangeMultiple(message, replacements);
 
         return Loc.GetString(
             localeId,
@@ -242,18 +267,22 @@ public sealed partial class ChatSystem
             localeId = "chat-manager-entity-whisper-unknown-free-wrap-message";
 
         var language = languageOverride ??= _language.GetLanguage(source);
+
+        if (language.SpeechOverride.Color is { } colorOverride)
+            color = Color.InterpolateBetween(color, colorOverride, colorOverride.A);
+
         var languageDisplay = language.IsVisibleLanguage
             ? Loc.GetString("chat-manager-language-prefix", ("language", language.ChatName))
             : "";
 
+        var replacements = new List<(int StartIndex, int EndIndex, string Replacement)>();
+
         foreach (var key in keysWithinDialogue)
         {
-            message = _language.ReplaceRange(
-                message,
-                key.StartIndex + 1,
-                key.EndIndex - 1,
-                $"[color={color.ToHexNoAlpha()}]{key.Result}[/color]");
+            replacements.Add((key.StartIndex, key.EndIndex, $"[color={color.ToHexNoAlpha()}]{key.Result}[/color]"));
         }
+
+        message = ReplaceRangeMultiple(message, replacements);
 
         return Loc.GetString(
             localeId,
@@ -282,5 +311,21 @@ public sealed partial class ChatSystem
             return WrapWhisperMessage(source, wrapId, entityName, message, language);
 
         return WrapWhisperMessageDialogueOnly(source, isUnknown, entityName, message, keysWithinDialogue, language);
+    }
+
+    /// <summary>
+    ///     Returns the obfuscated version of text only within the dialogue constraints.
+    /// </summary>
+    public string ObfuscateOnlyText(string text, LanguagePrototype language, List<StringBoundsResult> keysWithinDialogue)
+    {
+        var replacements =  new List<(int StartIndex, int EndIndex, string Replacement)>();
+
+        foreach (var key in keysWithinDialogue)
+        {
+            var obfuscated = language.Obfuscation.Obfuscate(key.Result);
+            replacements.Add((key.StartIndex, key.EndIndex, obfuscated));
+        }
+
+        return ReplaceRangeMultiple(text, replacements);
     }
 }

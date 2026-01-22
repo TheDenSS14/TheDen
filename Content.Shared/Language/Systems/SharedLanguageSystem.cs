@@ -81,56 +81,6 @@ public abstract class SharedLanguageSystem : EntitySystem
         return keysWithinDialogue;
     }
 
-    public string ReplaceRange(string text, int start, int end, string replacement)
-    {
-        var builder = new StringBuilder();
-        var upToStart = text.Substring(0, start - 1);
-        var fromLast = "";
-
-        if (text.Length >= end)
-            fromLast = text.Substring(end + 1);
-
-        builder.Append(upToStart);
-        builder.Append(replacement);
-        builder.Append(fromLast);
-
-        return builder.ToString();
-    }
-
-    /// <summary>
-    ///     Returns the obfuscated version of text only within the dialogue constraints.
-    /// </summary>
-    public string ObfuscateOnlyText(string text, LanguagePrototype language, List<StringBoundsResult> keysWithinDialogue)
-    {
-        var builder = new StringBuilder();
-        var lastIndex = 0;
-
-        foreach (var key in keysWithinDialogue)
-        {
-            var obfuscated = language.Obfuscation.Obfuscate(key.Result);
-            var upToStart = text.Substring(lastIndex, key.StartIndex - lastIndex);
-
-            builder.Append(upToStart);
-            builder.Append(obfuscated);
-            builder.Append(_dialogueStringBounds.Key);
-
-            if (key.EndIndex + _dialogueStringBounds.KeyLength + 1 >= text.Length)
-                break;
-
-            lastIndex = key.EndIndex + _dialogueStringBounds.KeyLength;
-        }
-
-        var fromLast = text.Substring(lastIndex + _dialogueStringBounds.KeyLength);
-        var noExtraDialogue = fromLast.IndexOf("\"", StringComparison.Ordinal) == -1;
-
-        if (noExtraDialogue)
-        {
-            builder.Append(text.Substring(lastIndex));
-        }
-
-        return builder.ToString();
-    }
-
     /// <summary>
     ///     Generates a stable pseudo-random number in the range (min, max) (inclusively) for the given seed.
     ///     One seed always corresponds to one number, however the resulting number also depends on the current round number.
