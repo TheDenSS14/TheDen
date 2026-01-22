@@ -1,0 +1,8 @@
+- type: entity
+  parent: OrganAnimalHeart
+  id: OrganMothHeart
+  name: moth heart
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Moth ]
