@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 portfiend
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: N14FloorWaterDirtyEntity
@@ -74,6 +75,8 @@
     fishDefaultTimer: 25.0
     fishTimerVariety: 15.0
   # Goobstation - fishing
+  - type: InteractionVerbs # DEN: add hand washing
+    allowedVerbs: [WashHands]
 
 - type: entity
   parent: N14FloorWaterDirtyEntity

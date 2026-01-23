@@ -79,7 +79,7 @@
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -366,7 +366,7 @@
       - id: ResearchComputerCircuitboard
       - id: ProtolatheMachineCircuitboard
       - id: CircuitImprinterMachineCircuitboard
-      - id: ClothingOuterHardsuitRd
+      - id: ClothingOuterHardsuitMystagogueLabcoat #Den
       - id: OxygenTankFilled #Den
       - id: NitrogenTankFilled #Den
       - id: HandTeleporter
@@ -392,6 +392,16 @@
       - id: Multitool # DEN
       - id: ClothingNeckSciencemedal # DEN
 
+# Hardsuit table, used for suit storage as well
+- type: entityTable
+  id: FillResearchDirectorHardsuit
+  table: !type:AllSelector
+    children:
+    - id: ClothingMaskBreath
+    - id: ClothingOuterHardsuitMystagogueLabcoat
+    - id: OxygenTankFilled
+
+# No hardsuit locker
 - type: entity
   id: LockerResearchDirectorFilled
   suffix: Filled

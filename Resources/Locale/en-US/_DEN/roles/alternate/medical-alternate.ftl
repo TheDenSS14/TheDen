@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 LilNutters
 #
 # SPDX-License-Identifier: MIT
 
@@ -33,8 +34,6 @@ job-name-alternate-synthesizer = Synthesizer
 job-name-alternate-senior-surgeon = Senior Surgeon
 job-name-alternate-senior-nurse = Senior Nurse
 job-name-alternate-senior-cryogenics-specialist = Senior Cryogenics Specialist
-job-name-alternate-senior-chemist = Senior Chemist
-job-name-alternate-senior-pharmacist = Senior Pharmacist
 
 # Chief Medical Officer
 job-name-alternate-surgeon-general = Surgeon General

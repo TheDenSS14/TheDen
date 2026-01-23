@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -190,3 +191,25 @@
     - state: welded
       visible: false
       map: ["enum.WeldableLayers.BaseWelded"]
+
+- type: entity
+  id: ClosetEmergencyUniversal
+  name: emergency closet
+  description: It's a storage unit for emergency breathing equipment for all species.
+  parent: ClosetSteelBase
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _DEN/Structures/Storage/universalemergencycloset.rsi
+    layers:
+    - state: closet
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closet_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: EntityStorageVisuals
+    stateBaseClosed: closet
+    stateDoorOpen: closet_open
+    stateDoorClosed: closet_door

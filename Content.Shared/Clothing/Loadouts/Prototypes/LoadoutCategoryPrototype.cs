@@ -4,6 +4,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared.Inventory;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Clothing.Loadouts.Prototypes;
@@ -29,4 +30,13 @@ public sealed partial class LoadoutCategoryPrototype : IPrototype
     /// </summary>
     [DataField("order")]
     public int Ordering = 1;
+
+    // DEN: Allow force sorting items into slots per-category
+    /// <summary>
+    /// Force this loadout category to use a particular slot.
+    /// Note: Using the "POCKET" slot will be interpreted as always slotting item into the bag.
+    /// Pocket slot will always ignore exclusive!
+    /// </summary>
+    [DataField]
+    public SlotFlags? Slot = null;
 }

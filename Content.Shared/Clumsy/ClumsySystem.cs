@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2025 slarticodefast
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 // SPDX-FileCopyrightText: 2025 wheelwrightt
+// SPDX-FileCopyrightText: 2026 Dirius77
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -144,6 +145,10 @@ public sealed class ClumsySystem : EntitySystem
 
     private void OnBeforeClimbEvent(Entity<ClumsyComponent> ent, ref SelfBeforeClimbEvent args)
     {
+        // DEN: Bypass Clumsy
+        if (TryComp<ClimbableComponent>(args.BeingClimbedOn, out var climbable) && climbable.BypassClumsy)
+            return;
+
         // TODO: Replace with RandomPredicted once the engine PR is merged
         var seed = SharedRandomExtensions.HashCodeCombine(new() { (int)_timing.CurTick.Value, GetNetEntity(ent).Id });
         var rand = new System.Random(seed);
