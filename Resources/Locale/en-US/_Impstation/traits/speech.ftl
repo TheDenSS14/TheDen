@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 TheLuggage05
 # SPDX-FileCopyrightText: 2025 pocl v
-# SPDX-FileCopyrightText: 2026 Entings (github)
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
