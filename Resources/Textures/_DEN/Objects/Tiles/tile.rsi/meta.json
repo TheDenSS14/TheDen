@@ -1,12 +1,15 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-4.0",
-  "copyright": "By Sha-Seng (GitHub)",
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/blob/cf00ca220063bedbb8838277bec32ef8ce90ede7/icons/turf/floors.dmi, item icons taken from tgstation at https://github.com/tgstation/tgstation/blob/c0f9d2e7e84856063bf2dbb93b35dc5c62cfdd5c/icons/obj/tiles.dmi",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
+    {
+      "name": "invisible"
+    },
     {
       "name": "somber-amaranth"
     },
@@ -80,6 +83,9 @@
       "name": "somber-wood-pattern"
     },
     {
+      "name": "somber-tile-dark"
+    },
+    {
       "name": "somber-tile-banded-dark"
     },
     {
@@ -93,6 +99,9 @@
     },
     {
       "name": "somber-tile-mono-dark"
+    },
+    {
+      "name": "somber-tile-mono-dark-eye"
     },
     {
       "name": "somber-tile-diagonal-magenta"
@@ -111,6 +120,42 @@
     },
     {
       "name": "somber-wood-parquet"
+    },
+    {
+      "name": "somber-circuit"
+    },
+    {
+      "name": "somber-circuit-dark"
+    },
+    {
+      "name": "somber-NE"
+    },
+    {
+      "name": "somber-NW"
+    },
+    {
+      "name": "somber-SE"
+    },
+    {
+      "name": "somber-SW"
+    },
+    {
+      "name": "somber-dark-NE"
+    },
+    {
+      "name": "somber-dark-NW"
+    },
+    {
+      "name": "somber-dark-SE"
+    },
+    {
+      "name": "somber-dark-SW"
+    },
+    {
+      "name": "somber-glass-tinted"
+    },
+    {
+      "name": "somber-glass-tinted-dark"
     }
   ]
 }

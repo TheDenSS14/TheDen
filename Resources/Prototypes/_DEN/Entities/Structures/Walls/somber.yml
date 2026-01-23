@@ -1,0 +1,74 @@
+# Standard
+
+- type: entity
+  parent: WallShuttle
+  id: WallSomber
+  name: somber wall
+  description: "Layered with dark, slanted mnemolith slabs in a tight grid to prevent psionic scrying."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somber.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somber.rsi
+  - type: Tag
+    tags:
+    - Wall
+  - type: IconSmooth
+    key: walls
+    base: wall
+
+- type: entity
+  parent: WallShuttleDiagonal
+  id: WallSomberDiagonal
+  name: somber wall
+  suffix: Diagonal
+  description: "Layered with dark, slanted mnemolith slabs in a tight grid to prevent psionic scrying."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somber_diagonal.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somber_diagonal.rsi
+  - type: Tag
+    tags:
+    - Wall
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+# Dark
+
+- type: entity
+  parent: WallSomber
+  id: WallSomberDark
+  name: somber wall
+  suffix: Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberdark.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberdark.rsi
+  - type: Tag
+    tags:
+    - Wall
+  - type: IconSmooth
+    key: walls
+    base: wall
+
+- type: entity
+  parent: WallSomberDiagonal
+  id: WallSomberDarkDiagonal
+  name: somber wall
+  suffix: Dark, Diagonal
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberdark_diagonal.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberdark_diagonal.rsi
+  - type: Tag
+    tags:
+    - Wall
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state

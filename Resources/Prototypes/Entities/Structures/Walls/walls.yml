@@ -82,7 +82,7 @@
     - Wall
   components:
   - type: Anchorable
-    flags: 
+    flags:
     - Anchorable
   - type: Rotatable
   - type: RangedDamageSound
@@ -1321,7 +1321,7 @@
 - type: entity
   parent: BaseWall
   id: WallMining
-  name: wall
+  name: mining wall
   components:
   - type: Tag
     tags:
@@ -1345,7 +1345,7 @@
 - type: entity
   parent: WallShuttleDiagonal
   id: WallMiningDiagonal
-  name: wall
+  name: mining wall
   suffix: diagonal
   placement:
     mode: SnapgridCenter
@@ -1643,5 +1643,5 @@
   - type: IconSmooth
     key: cards
     base: card
-  - type: Occluder 
+  - type: Occluder
   - type: BlockWeather

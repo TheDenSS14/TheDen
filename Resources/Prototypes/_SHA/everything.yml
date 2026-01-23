@@ -32,46 +32,7 @@
   maps:
   - Infinity # TODO
 
-# Sound Collections
-
-- type: soundCollection
-  id: FootstepSilent
-  files:
-  - /Audio/Effects/silence.ogg
-
 # Floors
-
-- type: tile
-  id: FloorBreakCircuit
-  name: tiles-break-circuit
-  sprite: /Textures/_SHA/Tiles/break-circuit.png
-  baseTurf: Plating
-  isSubfloor: false
-  footstepSounds:
-    collection: FootstepTile
-  heatCapacity: 1000000
-
-- type: tile
-  id: FloorBreakGlass
-  name: tiles-break-glass
-  sprite: /Textures/_SHA/Tiles/break-glass.png
-  baseTurf: Plating
-  isSubfloor: false
-  footstepSounds:
-    collection: FootstepTile
-  heatCapacity: 1000000
-
-- type: tile
-  id: FloorBreakInvisible
-  name: tiles-break-invisible
-  sprite: /Textures/_SHA/Tiles/break-invisible.png
-  baseTurf: Plating
-  isSubfloor: false
-  footstepSounds:
-    collection: FootstepSilent
-  barestepSounds:
-    collection: FootstepSilent
-  heatCapacity: 1000000
 
 - type: tile
   id: FloorBreakLatticeHorizontal
@@ -81,7 +42,7 @@
   isSubfloor: false
   footstepSounds:
     collection: FootstepTile
-  heatCapacity: 1000000
+  heatCapacity: 10000
 
 - type: tile
   id: FloorBreakLatticeVertical
@@ -91,146 +52,27 @@
   isSubfloor: false
   footstepSounds:
     collection: FootstepTile
-  heatCapacity: 1000000
+  heatCapacity: 10000
 
 - type: tile
-  id: FloorBreakSomberDarkNE
-  name: tiles-break-somber-dark-NE
-  sprite: /Textures/_SHA/Tiles/break-somber-dark-NE.png
+  id: FloorBreakLatticeBalcony
+  name: tiles-break-lattice-balcony
+  sprite: /Textures/_SHA/Tiles/break-lattice-balcony.png
   baseTurf: Plating
   isSubfloor: false
   footstepSounds:
     collection: FootstepTile
-  heatCapacity: 1000000
-
-- type: tile
-  id: FloorBreakSomberDarkNW
-  name: tiles-break-somber-dark-NW
-  sprite: /Textures/_SHA/Tiles/break-somber-dark-NW.png
-  baseTurf: Plating
-  isSubfloor: false
-  footstepSounds:
-    collection: FootstepTile
-  heatCapacity: 1000000
-
-- type: tile
-  id: FloorBreakSomberDarkSE
-  name: tiles-break-somber-dark-SE
-  sprite: /Textures/_SHA/Tiles/break-somber-dark-SE.png
-  baseTurf: Plating
-  isSubfloor: false
-  footstepSounds:
-    collection: FootstepTile
-  heatCapacity: 1000000
-
-- type: tile
-  id: FloorBreakSomberDarkSW
-  name: tiles-break-somber-dark-SW
-  sprite: /Textures/_SHA/Tiles/break-somber-dark-SW.png
-  baseTurf: Plating
-  isSubfloor: false
-  footstepSounds:
-    collection: FootstepTile
-  heatCapacity: 1000000
-
-- type: tile
-  id: FloorBreakSomberNE
-  name: tiles-break-somber-NE
-  sprite: /Textures/_SHA/Tiles/break-somber-NE.png
-  baseTurf: Plating
-  isSubfloor: false
-  footstepSounds:
-    collection: FootstepTile
-  heatCapacity: 1000000
-
-- type: tile
-  id: FloorBreakSomberNW
-  name: tiles-break-somber-NW
-  sprite: /Textures/_SHA/Tiles/break-somber-NW.png
-  baseTurf: Plating
-  isSubfloor: false
-  footstepSounds:
-    collection: FootstepTile
-  heatCapacity: 1000000
-
-- type: tile
-  id: FloorBreakSomberSE
-  name: tiles-break-somber-SE
-  sprite: /Textures/_SHA/Tiles/break-somber-SE.png
-  baseTurf: Plating
-  isSubfloor: false
-  footstepSounds:
-    collection: FootstepTile
-  heatCapacity: 1000000
-
-- type: tile
-  id: FloorBreakSomberSW
-  name: tiles-break-somber-SW
-  sprite: /Textures/_SHA/Tiles/break-somber-SW.png
-  baseTurf: Plating
-  isSubfloor: false
-  footstepSounds:
-    collection: FootstepTile
-  heatCapacity: 1000000
+  heatCapacity: 10000
 
 # Tiles
 
 - type: entity
   parent: BaseItem
-  id: FloorTileItemBreakCircuit
-  name: break's circuit floor
-  description: The floor was meant to hold this, not you.
-  components:
-  - type: Sprite
-    sprite: _SHA/Objects/Tiles/tile.rsi
-    state: break-circuit
-  - type: FloorTile
-    outputs:
-    - Plating
-    - FloorBreakCircuit
-  - type: Item
-    size: Normal
-  - type: Tag
-    tags:
-      - NoPaint
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 1000
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-
-- type: entity
-  parent: FloorTileItemBreakCircuit
-  id: FloorTileItemBreakGlass
-  components:
-  - type: Sprite
-    state: break-glass
-  - type: FloorTile
-    outputs:
-    - Plating
-    - FloorBreakGlass
-
-- type: entity
-  parent: FloorTileItemBreakCircuit
-  id: FloorTileItemBreakInvisible
-  name: break's invisible floor
-  components:
-  - type: Sprite
-    state: break-invisible
-  - type: FloorTile
-    outputs:
-    - Plating
-    - FloorBreakInvisible
-
-- type: entity
-  parent: FloorTileItemBreakCircuit
   id: FloorTileItemBreakLatticeHorizontal
   name: break's lattice (horizontal)
   components:
   - type: Sprite
+    sprite: /Textures/_SHA/Objects/Tiles/tile.rsi
     state: break-lattice-horizontal
   - type: FloorTile
     outputs:
@@ -238,11 +80,12 @@
     - FloorBreakLatticeHorizontal
 
 - type: entity
-  parent: FloorTileItemBreakCircuit
+  parent: FloorTileItemBreakLatticeHorizontal
   id: FloorTileItemBreakLatticeVertical
   name: break's lattice (vertical)
   components:
   - type: Sprite
+    sprite: /Textures/_SHA/Objects/Tiles/tile.rsi
     state: break-lattice-vertical
   - type: FloorTile
     outputs:
@@ -250,102 +93,20 @@
     - FloorBreakLatticeVertical
 
 - type: entity
-  parent: FloorTileItemBreakCircuit
-  id: FloorTileItemBreakSomberDarkNE
-  name: break's somber corner (dark, NE)
+  parent: FloorTileItemBreakLatticeHorizontal
+  id: FloorTileItemBreakLatticeBalcony
+  name: break's lattice (Balcony)
   components:
   - type: Sprite
-    state: break-somber-dark-NE
+    sprite: /Textures/_SHA/Objects/Tiles/tile.rsi
+    state: break-lattice-balcony
   - type: FloorTile
     outputs:
     - Plating
-    - FloorBreakSomberDarkNE
-
-- type: entity
-  parent: FloorTileItemBreakCircuit
-  id: FloorTileItemBreakSomberDarkNW
-  name: break's somber corner (dark, NW)
-  components:
-  - type: Sprite
-    state: break-somber-dark-NW
-  - type: FloorTile
-    outputs:
-    - Plating
-    - FloorBreakSomberDarkNW
-
-- type: entity
-  parent: FloorTileItemBreakCircuit
-  id: FloorTileItemBreakSomberDarkSE
-  name: break's somber corner (dark, SE)
-  components:
-  - type: Sprite
-    state: break-somber-dark-SE
-  - type: FloorTile
-    outputs:
-    - Plating
-    - FloorBreakSomberDarkSE
-
-- type: entity
-  parent: FloorTileItemBreakCircuit
-  id: FloorTileItemBreakSomberDarkSW
-  name: break's somber corner (dark, SW)
-  components:
-  - type: Sprite
-    state: break-somber-dark-SW
-  - type: FloorTile
-    outputs:
-    - Plating
-    - FloorBreakSomberDarkSW
-
-- type: entity
-  parent: FloorTileItemBreakCircuit
-  id: FloorTileItemBreakSomberNE
-  name: break's somber corner (NE)
-  components:
-  - type: Sprite
-    state: break-somber-NE
-  - type: FloorTile
-    outputs:
-    - Plating
-    - FloorBreakSomberNE
-
-- type: entity
-  parent: FloorTileItemBreakCircuit
-  id: FloorTileItemBreakSomberNW
-  name: break's somber corner (NW)
-  components:
-  - type: Sprite
-    state: break-somber-NW
-  - type: FloorTile
-    outputs:
-    - Plating
-    - FloorBreakSomberNW
-
-- type: entity
-  parent: FloorTileItemBreakCircuit
-  id: FloorTileItemBreakSomberSE
-  name: break's somber corner (SE)
-  components:
-  - type: Sprite
-    state: break-somber-SE
-  - type: FloorTile
-    outputs:
-    - Plating
-    - FloorBreakSomberSE
-
-- type: entity
-  parent: FloorTileItemBreakCircuit
-  id: FloorTileItemBreakSomberSW
-  name: break's somber corner (SW)
-  components:
-  - type: Sprite
-    state: break-somber-SW
-  - type: FloorTile
-    outputs:
-    - Plating
-    - FloorBreakSomberSW
+    - FloorBreakLatticeBalcony
 
 # Railings
+
 - type: entity
   parent: Railing
   id: RailingStrong

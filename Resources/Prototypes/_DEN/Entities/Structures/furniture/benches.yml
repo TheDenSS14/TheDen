@@ -3,14 +3,18 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: PsychBed
-  id: SomberPsychBed
-  name: somber chaise lounge
-  description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it."
+  parent: BenchBaseMiddle
+  id: BenchSofaSomberMiddle
+  name: somber leather sofa
+  suffix: Middle
+  description: "A plush leather sofa with electrum accents."
+  placement:
+    mode: SnapgridCenter
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/furniture.rsi
-    state: somberpsychbed
+    sprite: _DEN/Structures/Furniture/Benches/sombersofa.rsi
+  - type: StaticPrice
+    price: 125
   - type: Damageable
     damageModifierSet: Wood
     damageContainer: Inorganic
@@ -26,16 +30,40 @@
         !type:DamageTrigger
         damage: 50
       behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroyHeavy
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialWoodPlank:
+          MaterialWoodPlank1:
             min: 3
             max: 3
           ScrapElectrum:
             min: 1
             max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: BenchSofaSomberMiddle
+  id: BenchSofaSomberLeft
+  suffix: Left
+  components:
+  - type: Sprite
+    state: left
+
+- type: entity
+  parent: BenchSofaSomberMiddle
+  id: BenchSofaSomberRight
+  suffix: Right
+  components:
+  - type: Sprite
+    state: right
+
+- type: entity
+  parent: BenchSofaSomberMiddle
+  id: BenchSofaSomberCorner
+  suffix: Corner
+  components:
+  - type: Sprite
+    state: corner

@@ -1,0 +1,69 @@
+- type: decal
+  id: SomberMisc
+  parent: Overlays
+  abstract: true
+
+- type: decal
+  id: SomberWallSpikeNE
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: wallspikeNE
+
+- type: decal
+  id: SomberWallSpikeNW
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: wallspikeNW
+
+- type: decal
+  id: SomberWallSpikeSE
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: wallspikeSE
+
+- type: decal
+  id: SomberWallSpikeSW
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: wallspikeSW
+
+- type: decal
+  id: SomberWallSpikeDarkNE
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: wallspikeNE
+
+- type: decal
+  id: SomberWallSpikeDarkNW
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: wallspikeNW
+
+- type: decal
+  id: SomberWallSpikeDarkSE
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: wallspikeSE
+
+- type: decal
+  id: SomberWallSpikeDarkSW
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: wallspikeSW
+

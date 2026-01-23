@@ -1,0 +1,210 @@
+# Standard
+
+- type: entity
+  parent: ReinforcedWindow
+  id: WindowSomber
+  name: somber window
+  description: "Your reflection shimmers faintly in the glass."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber.rsi
+  - type: IconSmooth
+    key: walls
+    base: window
+
+- type: entity
+  parent: ReinforcedWindowDiagonal
+  id: WindowSomberDiagonal
+  name: somber window
+  suffix: Diagonal
+  description: "Your reflection shimmers faintly in the glass."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDiagonalFramed
+  name: somber window
+  suffix: Diagonal, Framed
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDiagonalFramedLeft
+  name: somber window
+  suffix: Diagonal, Framed, Left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed_left.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed_left.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDiagonalFramedMiddle
+  name: somber window
+  suffix: Diagonal, Framed, Middle
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed_middle.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed_middle.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDiagonalFramedRight
+  name: somber window
+  suffix: Diagonal, Framed, Right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed_right.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed_right.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+# Dark
+
+- type: entity
+  parent: WindowSomber
+  id: WindowSomberDark
+  name: somber window
+  suffix: Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark.rsi
+  - type: IconSmooth
+    key: walls
+    base: window
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDarkDiagonal
+  name: somber window
+  suffix: Dark, Diagonal
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDarkDiagonalFramed
+  name: somber window
+  suffix: Dark, Diagonal, Framed
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDarkDiagonalFramedLeft
+  name: somber window
+  suffix: Dark, Diagonal, Framed, Left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed_left.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed_left.rsi
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDarkDiagonalFramedMiddle
+  name: somber window
+  suffix: Dark, Diagonal, Framed, Middle
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed_middle.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed_middle.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDarkDiagonalFramedRight
+  name: somber window
+  suffix: Dark, Diagonal, Framed, Right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed_right.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed_right.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+# Directional
+
+- type: entity
+  parent: WindowReinforcedDirectional
+  id: WindowSomberDirectional
+  name: somber window
+  suffix: Directional
+  description: "Your reflection shimmers faintly in the glass."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somber
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somber
+
+- type: entity
+  parent: WindowSomberDirectional
+  id: WindowSomberDarkDirectional
+  name: somber window
+  suffix: Dark, Directional
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somberdark
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somberdark

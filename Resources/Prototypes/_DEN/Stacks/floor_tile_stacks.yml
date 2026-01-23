@@ -2,10 +2,18 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# Somber tileset start
 - type: stack
   id: FloorTileSomberSteel
   name: somber steel tile
   spawn: FloorTileItemSomberSteel
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberSteelDark
+  name: somber steel tile (dark)
+  spawn: FloorTileItemSomberSteelDark
   maxCount: 30
   itemSize: 5
 
@@ -206,6 +214,13 @@
   itemSize: 5
 
 - type: stack
+  id: FloorTileSomberSteelMonoDarkEye
+  name: somber steel tile (mono, dark, eye)
+  spawn: FloorTileItemSomberSteelMonoDarkEye
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
   id: FloorTileSomberSteelDiagonalMagenta
   name: somber steel tile (diagonal, magenta)
   spawn: FloorTileItemSomberSteelDiagonalMagenta
@@ -244,5 +259,97 @@
   id: FloorTileSomberWoodParquet
   name: somber wood floor (parquet)
   spawn: FloorTileItemSomberWoodParquet
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberCircuit
+  name: somber circuit
+  spawn: FloorTileItemSomberCircuit
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberCircuitDark
+  name: somber circuit (dark)
+  spawn: FloorTileItemSomberCircuitDark
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberNE
+  name: somber steel corner (NE)
+  spawn: FloorTileItemSomberNE
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberNW
+  name: somber steel corner (NW)
+  spawn: FloorTileItemSomberNW
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberSE
+  name: somber steel corner (SE)
+  spawn: FloorTileItemSomberSE
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberSW
+  name: somber steel corner (SW)
+  spawn: FloorTileItemSomberSW
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberDarkNE
+  name: somber steel corner (dark, NE)
+  spawn: FloorTileItemSomberNE
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberDarkNW
+  name: somber steel corner (dark, NW)
+  spawn: FloorTileItemSomberNW
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberDarkSE
+  name: somber steel corner (dark, SE)
+  spawn: FloorTileItemSomberSE
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberDarkSW
+  name: somber steel corner (dark, SW)
+  spawn: FloorTileItemSomberSW
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberGlassTinted
+  name: somber glass tile (tinted)
+  spawn: FloorTileItemSomberGlassTinted
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberGlassTintedDark
+  name: somber glass tile (tinted, dark)
+  spawn: FloorTileItemSomberGlassTintedDark
+  maxCount: 30
+  itemSize: 5
+# Somber tileset end
+
+- type: stack
+  id: FloorTileInvisible
+  name: invisible floor
+  spawn: FloorTileItemInvisible
   maxCount: 30
   itemSize: 5

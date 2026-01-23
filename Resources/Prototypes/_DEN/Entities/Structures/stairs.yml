@@ -5,8 +5,8 @@
 - type: entity
   parent: Stairs
   id: StairSomberSteel
-  name: steel stairs
-  suffix: Somber
+  name: somber steel stairs
+  suffix: Standard
   components:
   - type: Sprite
     sprite: _DEN/Structures/stairs.rsi
@@ -14,9 +14,21 @@
     drawdepth: FloorTiles
 
 - type: entity
+  parent: Stairs
+  id: StairSomberSteelDark
+  name: somber dark steel stairs
+  suffix: Standard
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_somber_steel_dark
+    drawdepth: FloorTiles
+
+- type: entity
   parent: StairSomberSteel
   id: StairSomberWood
-  name: wood stairs
+  name: somber wood stairs
+  suffix: Standard
   components:
   - type: Sprite
     sprite: _DEN/Structures/stairs.rsi
@@ -51,7 +63,8 @@
 - type: entity
   parent: StairSomberWood
   id: StairSomberAmaranth
-  name: amaranth stairs
+  name: somber amaranth stairs
+  suffix: Standard
   components:
   - type: Sprite
     sprite: _DEN/Structures/stairs.rsi
@@ -86,7 +99,8 @@
 - type: entity
   parent: StairSomberSteel
   id: StairSomberMnemolith
-  name: mnemolith stairs
+  name: somber mnemolith stairs
+  suffix: Standard
   components:
   - type: Sprite
     sprite: _DEN/Structures/stairs.rsi
@@ -118,8 +132,8 @@
 - type: entity
   parent: StairSomberSteel
   id: StairStageSomberSteel
-  name: steel stairs
-  suffix: Somber, Stage
+  name: somber steel stairs
+  suffix: Stage
   components:
   - type: Sprite
     sprite: _DEN/Structures/stairs.rsi
@@ -127,10 +141,21 @@
     drawdepth: FloorTiles
 
 - type: entity
+  parent: StairSomberSteel
+  id: StairStageSomberSteelDark
+  name: somber dark steel stairs
+  suffix: Stage
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_stage_somber_steel_dark
+    drawdepth: FloorTiles
+
+- type: entity
   parent: StairSomberWood
   id: StairStageSomberWood
-  name: wood stairs
-  suffix: Somber, Stage
+  name: somber wood stairs
+  suffix: Stage
   components:
   - type: Sprite
     sprite: _DEN/Structures/stairs.rsi
@@ -141,8 +166,8 @@
 - type: entity
   parent: StairSomberAmaranth
   id: StairStageSomberAmaranth
-  name: amaranth stairs
-  suffix: Somber, Stage
+  name: somber amaranth stairs
+  suffix: Stage
   components:
   - type: Sprite
     sprite: _DEN/Structures/stairs.rsi
@@ -152,8 +177,8 @@
 - type: entity
   parent: StairSomberMnemolith
   id: StairStageSomberMnemolith
-  name: mnemolith stairs
-  suffix: Somber, Stage
+  name: somber mnemolith stairs
+  suffix: Stage
   components:
   - type: Sprite
     sprite: _DEN/Structures/stairs.rsi

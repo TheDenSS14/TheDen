@@ -1,0 +1,113 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: decal
+  id: MonoTileSomber
+  parent: MiniTile
+  abstract: true
+
+- type: decal
+  id: MonoTileSomberBox
+  parent: MonoTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber.rsi
+    state: steel_box
+
+- type: decal
+  id: MonoTileSomberCornerNe
+  parent: MonoTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber.rsi
+    state: steel_corner_ne
+
+- type: decal
+  id: MonoTileSomberCornerSe
+  parent: MonoTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber.rsi
+    state: steel_corner_se
+
+- type: decal
+  id: MonoTileSomberCornerNw
+  parent: MonoTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber.rsi
+    state: steel_corner_nw
+
+- type: decal
+  id: MonoTileSomberCornerSw
+  parent: MonoTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber.rsi
+    state: steel_corner_sw
+
+- type: decal
+  id: MonoTileSomberEndN
+  parent: MonoTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber.rsi
+    state: steel_end_n
+
+- type: decal
+  id: MonoTileSomberEndE
+  parent: MonoTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber.rsi
+    state: steel_end_e
+
+- type: decal
+  id: MonoTileSomberEndS
+  parent: MonoTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber.rsi
+    state: steel_end_s
+
+- type: decal
+  id: MonoTileSomberEndW
+  parent: MonoTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber.rsi
+    state: steel_end_w
+
+- type: decal
+  id: MonoTileSomberLineN
+  parent: MonoTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber.rsi
+    state: steel_line_n
+
+- type: decal
+  id: MonoTileSomberLineE
+  parent: MonoTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber.rsi
+    state: steel_line_e
+
+- type: decal
+  id: MonoTileSomberLineS
+  parent: MonoTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber.rsi
+    state: steel_line_s
+
+- type: decal
+  id: MonoTileSomberLineW
+  parent: MonoTileSomber
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber.rsi
+    state: steel_line_w
+
