@@ -111,7 +111,7 @@
   parent: Railing
   id: RailingStrong
   name: strong railing
-  description: Durable railing meant to protect idiots like you from falling.
+  description: "Durable railing meant to protect idiots like you from falling."
   components:
   - type: Damageable
     damageContainer: Inorganic
@@ -252,7 +252,7 @@
   parent: RailingStrong
   id: RailingInvisible
   name: invisible railing
-  description: You're an idiot. You'll fall. Get back.
+  description: "You're an idiot. You'll fall. Get back."
   components:
   - type: Sprite
     drawdepth: WallTops
@@ -272,3 +272,228 @@
         - TableMask
         layer:
         - TableLayer
+
+# Furniture
+
+- type: entity
+  parent: SomberPsychBed
+  id: SomberPsychBedFlipped
+  suffix: Flipped
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture.rsi
+    state: somberpsychbed
+  - type: Strap
+    position: Down
+    rotation: 90
+
+# Big fancy beds
+
+- type: entity
+  parent: BaseStructure
+  id: BedPenthouseLower
+  name: penthouse bed
+  description: "A huge, plush bed draped in silky sheets."
+  suffix: Fancy, Lower
+  components:
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -1
+        Cold: -1
+        Blunt: -1
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,0.0,0.45,0.5"
+        density: 190
+        mask:
+        - TableMask
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture-64x32.rsi
+    state: bedlower
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: -90
+    buckleOffset: "-.1,0.29"
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Anchorable
+  - type: Pullable
+
+- type: entity
+  parent: BedPenthouseLower
+  id: BedPenthouseUpper
+  suffix: Fancy, Upper
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,0.5,0.45,0.0"
+        density: 190
+        mask:
+        - TableMask
+  - type: Sprite
+    state: bedupper
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: -90
+    buckleOffset: "-.1,-0.08"
+
+- type: entity
+  parent: BedPenthouseLower
+  id: BedPenthouseLowerFlipped
+  suffix: Fancy, Flipped, Lower
+  components:
+  - type: Sprite
+    state: bedlowerflipped
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: ".1,0.29"
+
+- type: entity
+  parent: BedPenthouseUpper
+  id: BedPenthouseUpperFlipped
+  suffix: Fancy, Flipped, Upper
+  components:
+  - type: Sprite
+    state: bedupperflipped
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: ".1,-0.08"
+
+# Big basic beds
+
+- type: entity
+  parent: BedPenthouseLower
+  id: BedPenthouseLowerBasic
+  name: penthouse bed
+  description: "A huge, plush bed draped in warm sheets."
+  suffix: Basic, Lower
+  components:
+  - type: Sprite
+    state: bedlowerbasic
+    noRot: true
+
+- type: entity
+  parent: BedPenthouseUpper
+  id: BedPenthouseUpperBasic
+  name: penthouse bed
+  description: "A huge, plush bed draped in warm sheets."
+  suffix: Basic, Upper
+  components:
+  - type: Sprite
+    state: bedupperbasic
+    noRot: true
+
+- type: entity
+  parent: BedPenthouseLowerFlipped
+  id: BedPenthouseLowerBasicFlipped
+  name: penthouse bed
+  description: "A huge, plush bed draped in warm sheets."
+  suffix: Basic, Flipped, Lower
+  components:
+  - type: Sprite
+    state: bedlowerbasicflipped
+    noRot: true
+
+- type: entity
+  parent: BedPenthouseUpperFlipped
+  id: BedPenthouseUpperBasicFlipped
+  name: penthouse bed
+  description: "A huge, plush bed draped in warm sheets."
+  suffix: Basic, Flipped, Upper
+  components:
+  - type: Sprite
+    state: bedupperbasicflipped
+    noRot: true
+
+# Small fancy beds
+
+- type: entity
+  parent: BaseStructure
+  id: BedPenthouseSmall
+  name: penthouse bed
+  description: "A plush bed draped in silky sheets."
+  suffix: Small, Fancy
+  components:
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -1
+        Cold: -1
+        Blunt: -1
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,0.45,0.45,0.0"
+        density: 190
+        mask:
+        - TableMask
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture.rsi
+    state: bed
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: -90
+    buckleOffset: "0.02,0"
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Anchorable
+  - type: Pullable
+
+- type: entity
+  parent: BedPenthouseSmall
+  id: BedPenthouseSmallFlipped
+  suffix: Small, Fancy, Flipped
+  components:
+  - type: Sprite
+    state: bedflipped
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: "-0.02,0"
+
+# Small basic beds
+
+- type: entity
+  parent: BedPenthouseSmall
+  id: BedPenthouseSmallBasic
+  description: "A plush bed draped in warm sheets."
+  suffix: Small, Basic
+  components:
+  - type: Sprite
+    state: bedbasic
+    noRot: true
+
+- type: entity
+  parent: BedPenthouseSmallFlipped
+  id: BedPenthouseSmallBasicFlipped
+  suffix: Small, Basic, Flipped
+  components:
+  - type: Sprite
+    state: bedbasicflipped
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: 90

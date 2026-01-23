@@ -3,6 +3,8 @@
   parent: Overlays
   abstract: true
 
+# Wall spikes (snap to tile, then place on diagonal walls)
+
 - type: decal
   id: SomberWallSpikeNE
   tags: ["station", "overlay"]
@@ -67,3 +69,68 @@
     sprite: _DEN/Decals/somber_dark.rsi
     state: wallspikeSW
 
+# Rotatable wall spikes (snap to tile, then rotate 45 degrees to place on non-diagonal walls)
+
+- type: decal
+  id: SomberWallSpikeNERotatable
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: wallspikeNErotatable
+
+- type: decal
+  id: SomberWallSpikeNWRotatable
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: wallspikeNWrotatable
+
+- type: decal
+  id: SomberWallSpikeSERotatable
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: wallspikeSErotatable
+
+- type: decal
+  id: SomberWallSpikeSWRotatable
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: wallspikeSWrotatable
+
+- type: decal
+  id: SomberWallSpikeDarkNERotatable
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: wallspikeNErotatable
+
+- type: decal
+  id: SomberWallSpikeDarkNWRotatable
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: wallspikeNWrotatable
+
+- type: decal
+  id: SomberWallSpikeDarkSERotatable
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: wallspikeSErotatable
+
+- type: decal
+  id: SomberWallSpikeDarkSWRotatable
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: wallspikeSWrotatable
