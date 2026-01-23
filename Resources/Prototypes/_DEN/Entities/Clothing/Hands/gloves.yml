@@ -211,3 +211,16 @@
     sprite: _DEN/Clothing/Hands/Gloves/mittens_color.rsi
   - type: Fiber
     fiberColor: fibers-white
+
+- type: entity
+  parent: ClothingHandsGlovesFingerless
+  id: ClothingHandsGlovesFingerlessColorable
+  description: Plain gloves without fingertips for the hard working.
+  suffix: colorable
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Hands/Gloves/fingerless_gloves_color.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Hands/Gloves/fingerless_gloves_color.rsi
+  - type: Fiber
+    fiberColor: fibers-white

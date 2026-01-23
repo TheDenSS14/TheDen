@@ -43,6 +43,7 @@ loadout-name-LoadoutClothingUniformSimplePants = simple pants (colorable)
 
 # hands
 loadout-name-LoadoutClothingHandsSentimentalRing = sentimental ring (colorable)
+loadout-name-LoadoutHandsGlovesFingerlessColorable = fingerless gloves (colorable)
 
 # plush
 loadout-name-PlushieTeddyBearRecolorable = teddy bear (colorable)

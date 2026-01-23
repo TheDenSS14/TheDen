@@ -1,3 +1,17 @@
+# Gloves
+
+- type: loadout
+  id: LoadoutHandsGlovesFingerlessColorable
+  category: Hands
+  cost: 0
+  customColorTint: true
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutGloves
+  items:
+  - ClothingHandsGlovesFingerlessColorable
+
 # Arm-warmers
 
 - type: loadout
