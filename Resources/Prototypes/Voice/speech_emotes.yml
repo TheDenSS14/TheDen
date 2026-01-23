@@ -30,6 +30,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 skyr0cket01
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Aikakakah
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -118,16 +119,21 @@
   id: Squish
   name: chat-emote-name-squish
   category: Vocal
+  available: false
   icon: Interface/Emotes/squish.png
   whitelist:
-    tags:
-    - HarpyEmotes
+    components:
+    - Vocal
+    - Slime
   blacklist:
     components:
     - BorgChassis
   chatMessages: ["chat-emote-msg-squish"]
   chatTriggers:
     - squishes
+    - squish
+    - squelch
+    - squelches
 
 - type: emote
   id: Chitter

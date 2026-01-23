@@ -41,6 +41,9 @@ marking-ThavenChestHeavyTattoos-chest_heavy1 = Heavy Chest Tattoos (Upper)
 marking-ThavenChestHeavyTattoos-chest_heavy2 = Heavy Chest Tattoos (Middle)
 marking-ThavenChestHeavyTattoos-chest_heavy3 = Heavy Chest Tattoos (Lower)
 
+marking-ThavenTopSurgeryF = Smooth Chest
+marking-ThavenTopSurgeryF-nonaturals_f = Smooth Chest
+
 # Head
 
 marking-ThavenHeadHeavyTattoos = Heavy Neck Tattoos
@@ -154,6 +157,24 @@ marking-UnderwearDefaultTF-boxers_f = Underwear
 
 marking-UnderwearLowridersTF = Lowriders
 marking-UnderwearLowridersTF-lowriders_f = Underwear
+
+marking-UnderwearSatinTF = Satin
+marking-UnderwearSatinTF-satin_f = Underwear
+
+marking-UnderwearTangaTF = Tanga
+marking-UnderwearTangaTF-tanga_f = Underwear
+
+marking-UnderwearLeggingsT = Leggings
+marking-UnderwearLeggingsT-leggings = Leggings
+
+marking-UnderwearLeggingsTF = Leggings
+marking-UnderwearLeggingsTF-leggings_f = Leggings
+
+marking-UnderwearSocksStockingsT = Stockings
+marking-UnderwearSocksStockingsT-stockings-right = Stockings
+
+marking-UnderwearSocksStockingsTF = Stockings
+marking-UnderwearSocksStockingsTF-stockings-right = Stockings
 
 # Undershirt
 
