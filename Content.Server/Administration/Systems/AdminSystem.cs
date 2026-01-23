@@ -167,6 +167,10 @@ public sealed class AdminSystem : EntitySystem
         }
     }
 
+    private void OnPlayerRenamed(Entity<ActorComponent> ent, ref EntityRenamedEvent args) =>
+        UpdatePlayerList(ent.Comp.PlayerSession);
+
+
     public PlayerInfo? GetCachedPlayerInfo(NetUserId? netUserId)
     {
         if (netUserId == null)
