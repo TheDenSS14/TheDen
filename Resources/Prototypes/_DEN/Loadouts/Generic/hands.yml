@@ -56,3 +56,28 @@
     group: LoadoutGloves
   items:
   - ClothingHandsArmWarmersFingerlessPurple
+
+# Mittens
+
+- type: loadout
+  id: LoadoutHandsGlovesMittens
+  category: Hands
+  cost: 1
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutGloves
+  items:
+  - ClothingHandsGlovesMittens
+
+- type: loadout
+  id: LoadoutHandsGlovesMittensColor
+  category: Hands
+  cost: 1
+  customColorTint: true
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutGloves
+  items:
+  - ClothingHandsGlovesMittensColor
