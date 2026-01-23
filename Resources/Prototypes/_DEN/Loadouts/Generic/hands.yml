@@ -81,3 +81,28 @@
     group: LoadoutGloves
   items:
   - ClothingHandsGlovesMittensColor
+
+# Miscellaneous
+
+- type: loadout
+  id: LoadoutHandsWristCuffs
+  category: Hands
+  cost: 0
+  customColorTint: true
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutGloves
+  items:
+  - ClothingHandsWristCuffs
+
+- type: loadout
+  id: LoadoutHandsWristCuffsSpiked
+  category: Hands
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutGloves
+  items:
+  - ClothingHandsWristCuffsSpiked
