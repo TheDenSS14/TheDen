@@ -15,6 +15,10 @@ internal sealed class MarkedCompCommand : ToolshedCommand
     public IEnumerable<EntityUid> With([PipedArgument] IEnumerable<EntityUid> input, ObjectiveTypes type) =>
         input.Where(uid => TryComp(uid, out MarkedComponent? marked) && marked.TargetType == type);
 
+    [CommandImplementation("without")]
+    public IEnumerable<EntityUid> Without([PipedArgument] IEnumerable<EntityUid> input, ObjectiveTypes type) =>
+        input.Where(uid => TryComp(uid, out MarkedComponent? marked) && marked.TargetType != type);
+
     [CommandImplementation("type")]
     public IEnumerable<string> Type([PipedArgument] IEnumerable<EntityUid> input) =>
         input.Select(GetMarkedSettingsString);
