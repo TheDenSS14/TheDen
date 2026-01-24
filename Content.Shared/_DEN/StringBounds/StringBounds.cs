@@ -9,7 +9,7 @@ namespace Content.Shared._DEN.StringBounds;
 // listen. i needed to make something, okay?
 public sealed class StringBounds(string key)
 {
-    public const string EscapeCharacter = "\\";
+    public const string EscapeCharacter = "!";
     public string Key => key;
     public int KeyLength => Key.Length;
 
@@ -17,12 +17,19 @@ public sealed class StringBounds(string key)
     {
         var result = new List<StringBoundsResult>();
         var keys = new List<int>();
+        var lastSkipped = false;
 
         for (var i = 0; i < text.Length; i++)
         {
             var currentText = text[i].ToString();
             if (!currentText.Equals(key, StringComparison.CurrentCultureIgnoreCase))
                 continue;
+
+            if (lastSkipped)
+            {
+                lastSkipped = false;
+                continue;
+            }
 
             if (i == 0)
             {
@@ -33,7 +40,10 @@ public sealed class StringBounds(string key)
             var lastText = text[i - KeyLength].ToString();
 
             if (lastText.Equals(EscapeCharacter, StringComparison.CurrentCultureIgnoreCase))
+            {
+                lastSkipped = true;
                 continue;
+            }
 
             keys.Add(i);
         }
