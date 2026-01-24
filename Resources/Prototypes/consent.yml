@@ -4,6 +4,16 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# General Category
+
+- type: consentToggle
+  id: NSFWDescriptions
+
+- type: consentToggle
+  id: LastMessage
+
+# Mechanics Category
+
 - type: consentToggle
   id: Hypno
 
@@ -17,6 +27,8 @@
 - type: consentToggle
   id: MassMindSwap
 
+# Antagonists Category
+
 - type: consentToggle
   id: ChangelingTarget
 
@@ -25,10 +37,18 @@
   defaultValue: true
 
 - type: consentToggle
-  id: NSFWDescriptions
-
-- type: consentToggle
-  id: LastMessage
-
-- type: consentToggle
   id: AllowMoodEmagging
+
+# Admin Category
+
+- type: consentToggle
+  id: AdminBasedHarm
+
+- type: consentToggle
+  id: AdminGifts
+
+- type: consentToggle
+  id: AdminPettingVictim
+
+- type: consentToggle
+  id: Haunting
