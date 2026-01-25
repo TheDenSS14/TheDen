@@ -104,6 +104,9 @@
     staminaCost: 6
   - type: EmbeddableProjectile
   - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
+  - type: LandAtCursor
   - type: DamageBoostOnMarker
     boost:
       types: # Totals to 60 damage when hitting marked targets
@@ -250,7 +253,7 @@
       collection: MetalThud
     angle: 30
     wideAnimationRotation: -135
-    animation: WeaponArcSlash
+    animation: WeaponArcThrust
     range: 1.6
     # Den changes start
     heavyOnLightMiss: true
