@@ -140,9 +140,15 @@
         Structural: 30 #Den Change
     soundHit:
       collection: MetalThud
-    angle: 0
+    angle: 120 #Den Change
     animation: WeaponArcThrust
     range: 1.6
+    # Den changes start
+    heavyOnLightMiss: true
+    heavyRateModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    # Den changes end
   - type: Item
     size: Ginormous
     sprite: _Lavaland/Objects/Weapons/Crushers/crusher_hammer-inhands.rsi
@@ -190,15 +196,20 @@
         Slash: 5
     soundHit:
       collection: MetalThud
-    angle: 0
+    angle: 30
     animation: WeaponArcThrust
     range: 1.6
+    # Den changes start
+    heavyOnLightMiss: true
+    heavyRateModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 2
     # mustBeEquippedToUse: true | Den Change: Fix kinetic claw
-    # Den Change, changes it to burst fire
   - type: Gun
     availableModes: 2
     selectedMode: 2
   - type: BasicEntityAmmoProvider
+    proto: BulletCharge
     capacity: 3
     count: 3
     # Den Change End
@@ -209,9 +220,9 @@
     # Den Change Start - commenting out backstab for clarity, not using this system
   - type: DamageBoostOnMarker
     boost:
-      types: # Totals to 55 damage when hitting marked targets
-        Slash: 30
-        Blunt: 20
+      types: # Totals to 65 damage when hitting marked targets
+        Slash: 35
+        Blunt: 25
     # Den Change Start - commenting out for clarity, not using this system
     # backstabBoost: # And 120 extra for a backstab. Adding up to 165!!!
     #   types:
@@ -237,10 +248,16 @@
         Slash: 12.5
     soundHit:
       collection: MetalThud
-    angle: 0
+    angle: 30
     wideAnimationRotation: -135
     animation: WeaponArcSlash
     range: 1.6
+    # Den changes start
+    heavyOnLightMiss: true
+    heavyRateModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 5
+    # Den changes end
   - type: Item
     size: Ginormous
     sprite: _Lavaland/Objects/Weapons/Crushers/crusher_machete-inhands.rsi
