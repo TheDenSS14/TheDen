@@ -1,7 +1,7 @@
 # Standard
 
 - type: entity
-  parent: ReinforcedWindow
+  parent: ShuttleWindow
   id: WindowSomber
   name: somber window
   description: "Your reflection shimmers faintly in the glass."
@@ -15,7 +15,7 @@
     base: window
 
 - type: entity
-  parent: ReinforcedWindowDiagonal
+  parent: ShuttleWindowDiagonal
   id: WindowSomberDiagonal
   name: somber window
   suffix: Diagonal
