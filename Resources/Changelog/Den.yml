@@ -16363,3 +16363,263 @@ Entries:
   id: 1602
   time: '2026-01-16T23:43:41.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2311
+- author: heirdragonair
+  changes:
+    - type: Add
+      message: A new furry critter has been found living in the station vents
+    - type: Remove
+      message: ScugCats have been eradicated from the D-3N sectors ventilation system
+  id: 1603
+  time: '2026-01-17T10:50:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2313
+- author: Toby222
+  changes:
+    - type: Add
+      message: Janitors rejoice, lights will be randomly broken at round start again.
+  id: 1604
+  time: '2026-01-17T15:46:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2316
+- author: Sha-Seng
+  changes:
+    - type: Tweak
+      message: You can now wear the alien germ plushies on your head.
+  id: 1605
+  time: '2026-01-17T16:06:12.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2315
+- author: Dirius77
+  changes:
+    - type: Add
+      message: >-
+        Added an NSFW holoprojector for all of you who have been wanting to host
+        'public' adult events.
+  id: 1606
+  time: '2026-01-18T09:38:34.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2308
+- author: crekulon
+  changes:
+    - type: Add
+      message: >-
+        Added a new mental trait, Ethereal Presence! Makes you take a lot of
+        heat damage when Dispel is used on you.
+  id: 1607
+  time: '2026-01-18T09:39:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2310
+- author: Sha-Seng
+  changes:
+    - type: Tweak
+      message: >-
+        The Fishing Cap will no longer delete other loadout "head" items (like
+        colorful glasses) when you spawn.
+  id: 1608
+  time: '2026-01-18T10:14:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2314
+- author: Dirius77
+  changes:
+    - type: Fix
+      message: Made the psionics requirements for Mysta, Mantis, and Librarian real.
+  id: 1609
+  time: '2026-01-18T10:17:18.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2302
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        Non-job restricted loadouts will now go into the correct slots. Those
+        glasses that can be either a head item or eyes item? Always go in the
+        eyes. The roses that can fit on your head or mask slots? Always go on
+        the head. Those waist aprons that fit in either outerwear or the belt?
+        Always go on the belt.
+    - type: Tweak
+      message: >-
+        With that said, all generic "item loadouts" - that is, the non-slot
+        loadouts, like towels and whatnot, will always go in your bag now. You
+        will no longer be able to preview these when equipped. Sad, but this is
+        the cost of not being fucked over by "exclusive: true"
+  id: 1610
+  time: '2026-01-18T12:14:03.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2321
+- author: Dirius77
+  changes:
+    - type: Tweak
+      message: Made NSFW holobarriers block mice and other small creatures.
+    - type: Tweak
+      message: Made NSFW holobarriers need to be climbed.
+    - type: Tweak
+      message: Made NSFW holobarriers always climbable by clumsy characters.
+  id: 1611
+  time: '2026-01-19T09:29:18.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2323
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added the ability to put dialogue and emote separation in local and
+        whispers that properly support language translation. Put quotes around a
+        message with something random in front to experiment!
+  id: 1612
+  time: '2026-01-20T20:26:07.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2327
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: >-
+        The magic spray paint can that admins get in their bag is now infinite.
+        You, too, can ahelp for a can of infinite, recolorable spray paint!
+    - type: Add
+      message: >-
+        Hey, mappers! You can now use the infinite spray paint can. Do with this
+        information what you will.
+  id: 1613
+  time: '2026-01-20T21:47:41.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2328
+- author: MajorMoth
+  changes:
+    - type: Add
+      message: Better grab an umbrella... added new admin ghost clothing slots.
+    - type: Tweak
+      message: >-
+        Admin clothing (belt+satchel) is now chameleon clothing. You will need
+        to take them off and put them on again for the chameleon visuals to
+        apply. 
+  id: 1614
+  time: '2026-01-21T22:45:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2324
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Emotes in local will now display the language unless it's in basic.
+  id: 1615
+  time: '2026-01-22T01:18:37.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2331
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        You can now use the detailed messages with just a quote at the start and
+        it will change the format to make it separate from the name.
+    - type: Add
+      message: >-
+        You can now remove the space between name and message during a detailed
+        say by putting an apostrophe or comma after the exclamation mark.
+  id: 1616
+  time: '2026-01-22T03:21:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2332
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        Moths are no longer poisoned by mothic salad (and other moth-edible
+        foods that happen to have allicin/theobromine in them).
+  id: 1617
+  time: '2026-01-22T19:38:31.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2335
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: >-
+        The Home Run Bat and Twinned Manifold (mantis equivalent) are now 60 TC
+        instead of 80 to reflect their effectiveness
+    - type: Tweak
+      message: >-
+        Lethal mantis casters (traitor items) have had their TC costs adjusted
+        per gun and now recharge over 60 seconds
+  id: 1618
+  time: '2026-01-22T23:27:08.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2301
+- author: MajorMoth
+  changes:
+    - type: Tweak
+      message: >-
+        Senior physicians now also get emergency paramedic access just like how
+        MD's do. 
+    - type: Tweak
+      message: The service worker job now gets emergency janitorial access.
+    - type: Tweak
+      message: >-
+        Senior researchers now get emergency roboticist access just like normal
+        scientists do.
+    - type: Tweak
+      message: Senior security officers now get emergency detective access.
+  id: 1619
+  time: '2026-01-22T23:28:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2318
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Added WizDens wirebrush for the janitor!
+    - type: Tweak
+      message: Re-enabled rusted walls on round start.
+  id: 1620
+  time: '2026-01-23T02:31:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2334
+- author: KawaiiDouchebag
+  changes:
+    - type: Add
+      message: Added Hivni for playtesting.
+  id: 1621
+  time: '2026-01-23T22:57:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2297
+- author: Aikakakah
+  changes:
+    - type: Add
+      message: Added birthdays! You can view them from the record consoles.
+  id: 1622
+  time: '2026-01-24T02:00:41.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2279
+- author: entings
+  changes:
+    - type: Add
+      message: Added the "Scrambled Speech" accent to speech traits.
+  id: 1623
+  time: '2026-01-24T02:01:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2309
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        More ways of opting into admin funnies have been added via the consent
+        menu. If you'd like to be a target of various admin things, from cute
+        gifts to spooky haunting, then check the new consent category!
+  id: 1624
+  time: '2026-01-24T05:12:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2339
+- author: Tomce795
+  changes:
+    - type: Tweak
+      message: >-
+        Reduced the stamina damage of the baseball bat. You will no longer stam
+        crit people by swinging 3 times.
+  id: 1625
+  time: '2026-01-24T15:26:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2342
+- author: portfiend
+  changes:
+    - type: Add
+      message: Fingerless arm-warmers can be found in the uniform printer and loadouts.
+    - type: Add
+      message: Mittens can be found in the WinterDrobe and loadouts.
+    - type: Add
+      message: Wrist cuffs can be found in loadouts.
+    - type: Add
+      message: And yes, you can now select colorless fingerless gloves in loadouts!
+  id: 1626
+  time: '2026-01-24T16:00:16.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2336
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Markdown works with detailed say/whisper now.
+    - type: Fix
+      message: >-
+        Quotes that were not ended properly no longer break your message, but
+        instead choose to not set it as dialogue.
+  id: 1627
+  time: '2026-01-24T19:46:04.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2343
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: You can now use colors in say/whisper again.
+  id: 1628
+  time: '2026-01-24T22:19:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2344

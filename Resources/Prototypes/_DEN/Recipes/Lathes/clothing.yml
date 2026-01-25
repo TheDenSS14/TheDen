@@ -5,6 +5,13 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+- type: latheRecipe
+  abstract: true
+  id: BaseClothingHandsArmWarmers
+  completetime: 2
+  materials:
+    Cloth: 200
+
 # Towels
 - type: latheRecipe
   id: TowelColorWhite
@@ -231,3 +238,30 @@
   completetime: 5
   materials:
     Cloth: 100
+
+# Arm-warmers
+
+- type: latheRecipe
+  parent: BaseClothingHandsArmWarmers
+  id: ClothingHandsArmWarmersFingerless
+  result: ClothingHandsArmWarmersFingerless
+
+- type: latheRecipe
+  parent: BaseClothingHandsArmWarmers
+  id: ClothingHandsArmWarmersFingerlessCoder
+  result: ClothingHandsArmWarmersFingerlessCoder
+
+- type: latheRecipe
+  parent: BaseClothingHandsArmWarmers
+  id: ClothingHandsArmWarmersFingerlessValid
+  result: ClothingHandsArmWarmersFingerlessValid
+
+- type: latheRecipe
+  parent: BaseClothingHandsArmWarmers
+  id: ClothingHandsArmWarmersFingerlessStriped
+  result: ClothingHandsArmWarmersFingerlessStriped
+
+- type: latheRecipe
+  parent: BaseClothingHandsArmWarmers
+  id: ClothingHandsArmWarmersFingerlessPurple
+  result: ClothingHandsArmWarmersFingerlessPurple

@@ -13,8 +13,9 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 MajorMoth
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: job
   id: SeniorPhysician
@@ -32,6 +33,8 @@
   - Medical
   - Maintenance
   - Chemistry
+  extendedAccess:
+  - Paramedic # DEN: make accesses inline with MD
   special:
   - !type:AddComponentSpecial
     components:
