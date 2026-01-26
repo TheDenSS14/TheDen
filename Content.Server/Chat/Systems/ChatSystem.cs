@@ -53,7 +53,7 @@
 // SPDX-FileCopyrightText: 2025 ash lea
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Globalization;
 using System.Linq;
@@ -522,10 +522,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         )
     {
         var isDetailed = originalMessage.StartsWith("!");
+        originalMessage = FormattedMessage.RemoveMarkupPermissive(originalMessage);
 
         if (isDetailed && originalMessage.Length > 1)
         {
-            originalMessage = FormattedMessage.RemoveMarkupPermissive(originalMessage.Substring(1));
+            originalMessage = originalMessage.Substring(1);
             keysWithinDialogue = _language.GetKeysWithinDialogue(originalMessage);
         }
 
@@ -644,10 +645,11 @@ public sealed partial class ChatSystem : SharedChatSystem
     )
     {
         var isDetailed = originalMessage.StartsWith("!");
+        originalMessage = FormattedMessage.RemoveMarkupPermissive(originalMessage);
 
         if (isDetailed && originalMessage.Length > 1)
         {
-            originalMessage = FormattedMessage.RemoveMarkupPermissive(originalMessage.Substring(1));
+            originalMessage = originalMessage.Substring(1);
             keysWithinDialogue = _language.GetKeysWithinDialogue(originalMessage);
         }
 
