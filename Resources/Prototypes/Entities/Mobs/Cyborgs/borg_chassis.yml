@@ -21,6 +21,7 @@
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 dootythefrooty
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Kellaris
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -136,6 +137,7 @@
     moduleWhitelist:
       tags:
       - BorgModuleGeneric
+      - BorgModuleScience
     hasMindState: robot_e
     noMindState: robot_e_r
   - type: BorgTransponder
