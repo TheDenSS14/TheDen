@@ -1,0 +1,29 @@
+# SPDX-FileCopyrightText: 2026 portfiend
+#
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsWristCuffs
+  name: wrist cuffs
+  description: Fashionable leather cuffs, worn on the wrists.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Hands/Misc/wrist_cuff.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Hands/Misc/wrist_cuff.rsi
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 0 # no protection
+
+- type: entity
+  parent: ClothingHandsWristCuffs
+  id: ClothingHandsWristCuffsSpiked
+  name: spiked wrist cuffs
+  description: Fashionable leather cuffs, worn on the wrists, with decorative metal spikes around the circumference.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Hands/Misc/spiked_wrist_cuff.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Hands/Misc/spiked_wrist_cuff.rsi

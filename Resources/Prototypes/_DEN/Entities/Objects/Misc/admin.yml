@@ -46,38 +46,6 @@
     damageCoefficient: 0
 
 - type: entity
-  id: AdminToolbelt
-  parent: [ClothingBeltChiefEngineer, ContentsExplosionResistanceBase, ContentsIgnitionPreventionBase]
-  name: admin toolbelt
-  description: A magical toolbelt that is NOT a bigger chief engineer's toolbelt.
-  categories: [ AdminTools ]
-  components:
-  - type: Item
-    size: Small
-    shape: null
-  - type: StorageFill
-    contents:
-      - id: ToolDebug
-      - id: WelderExperimental
-      - id: Multitool
-      - id: HolofanProjector
-      - id: GasAnalyzer
-      - id: trayScanner
-      - id: OmnimedTool
-      - id: BaseUplinkRadioDebug
-      - id: LightReplacer
-      - id: SprayPainter
-      - id: GeigerCounter
-      - id: AccessConfiguratorUniversal
-      - id: AdminRCD
-  - type: Storage
-    grid:
-    - 0,0,6,3
-    whitelist: null
-  - type: ExplosionResistance
-    damageCoefficient: 0
-
-- type: entity
   id: AdminMaterialBox
   parent: [BoxCardboard, ContentsExplosionResistanceBase, ContentsIgnitionPreventionBase]
   name: admin material box
@@ -134,6 +102,9 @@
   id: ClothingBackpackSatchelHoldingAdmin
   categories: [ AdminTools ]
   components:
+  - type: Item
+    size: Small
+    shape: null
   - type: StorageFill
     contents:
     - id: DrinkGlass
@@ -141,6 +112,57 @@
     - id: TrashBananaPeel
     - id: PowerCellMicroreactor
       amount: 2
-    - id: SprayPaintMagic
+    - id: SprayPaintMagicInfinite
   - type: ExplosionResistance
     damageCoefficient: 0
+  - type: ChameleonClothing
+    slot: [BACK]
+    default: ClothingBackpackSatchelHolding
+  - type: UserInterface
+    interfaces:
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+
+- type: entity
+  id: AdminToolbelt
+  parent: [ClothingBeltChiefEngineer, ContentsExplosionResistanceBase, ContentsIgnitionPreventionBase]
+  name: admin toolbelt
+  description: A magical toolbelt that is NOT a bigger chief engineer's toolbelt.
+  categories: [ AdminTools ]
+  components:
+  - type: Item
+    size: Small
+    shape: null
+  - type: StorageFill
+    contents:
+      - id: ToolDebug
+      - id: WelderExperimental
+      - id: Multitool
+      - id: HolofanProjector
+      - id: GasAnalyzer
+      - id: trayScanner
+      - id: OmnimedTool
+      - id: BaseUplinkRadioDebug
+      - id: LightReplacer
+      - id: SprayPainter
+      - id: GeigerCounter
+      - id: AccessConfiguratorUniversal
+      - id: AdminRCD
+  - type: Storage
+    grid:
+    - 0,0,6,3
+    whitelist: null
+  - type: ExplosionResistance
+    damageCoefficient: 0
+  - type: ChameleonClothing
+    slot: [BELT]
+    default: ClothingBeltChiefEngineer
+  - type: UserInterface
+    interfaces:
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+

@@ -20,19 +20,19 @@
       shader: unshaded
   - type: Item
     size: Small
-  - type: Battery # All recharging casters have the same maxCharge, and the fireCost varies per gun
-    pricePerJoule: 0 # No credit value regardless of charge
-    maxCharge: 360 # Same charge as PowerCellSmall in case they accidentally plug into something
-    startingCharge: 360 # Not intended to be a particularly useful power source if so
+  - type: Battery # Nonlethal casters have the same maxCharge, and the fireCost varies per gun
+    pricePerJoule: 0
+    maxCharge: 120 # One third of PowerCellSmall in case they accidentally plug into something
+    startingCharge: 120 # Not intended to be a particularly useful power source if so
   - type: PowerCell
   - type: Appearance
   - type: PowerCellVisuals
   - type: BatterySelfRecharger
     autoRecharge: true # Takes 30 seconds to charge itself back to full, comparable to WeaponAdvancedLaser (but with special ammo that doesn't hurt player characters)
-    autoRechargeRate: 12 # If this needs balanced, consider adding autoRechargePause and autoRechargePauseTime instead of just lowering it (whatever works though)
+    autoRechargeRate: 4 # If this needs balanced, consider adding autoRechargePause and autoRechargePauseTime instead of just lowering it
   - type: ProjectileBatteryAmmoProvider
     proto: BulletMantisCapgun # Inherited by BaseMantisCasterCapgun
-    fireCost: 72 # Can fire 5 times, takes 12 seconds to recharge 1 shot (just as an example)
+    fireCost: 24 # Can fire 5 times, takes 6 seconds to recharge 1 shot (shotgun values used here as an example)
   - type: Tag
     tags:
       - MantisCaster
@@ -40,20 +40,20 @@
 
 - type: entity
   parent: BaseMantisCaster
-  id: BaseMantisCasterNoRecharge # Variant base for the lethal versions that won't recharge on their own
-  description: "A rock anomaly core harnessed as an ammo source. It forms diamond shards into lethal projectiles, each one perfectly faceted and catastrophically illegal. Unlike other casters, it must be placed in a cell recharger to replenish itself."
-  abstract: true # If they need to become disposable, add the NoRecharge tag and adjust their TC cost in _DEN's uplink_catalog.yml
+  id: BaseMantisCasterLethal # Variant base for the lethal versions - if they need to become disposable for balance, add the NoRecharge tag and adjust their TC costs
+  description: "A rock anomaly core harnessed as a self-replenishing ammo source. It forms diamond shards into lethal projectiles, each one perfectly faceted and catastrophically illegal. The caster is heavy and cold in the hand, as if it knows what it's for."
+  abstract: true
   components:
   - type: Battery
-    maxCharge: 1080 # On par with WeaponLaserCarbine's battery for a 54-second recharge in a cell recharger, per direction
-    startingCharge: 1080 # The guns still fire as many times as usual, because lethal casters also cost more to fire
-  - type: BatterySelfRecharger # 1080 instead of 1000 so the numbers divide evenly by the number of shots
-    autoRecharge: false
-    autoRechargeRate: 0 # You gotta go plug it in, buddy
+    maxCharge: 600 # These have 5x the maxCharge so that they take 30 seconds to refill in a cell recharger, and good luck doing that under fire
+    startingCharge: 600 # The guns still fire as many times as usual, because lethal casters also have 5x the fireCost
+  - type: BatterySelfRecharger
+    autoRecharge: true # Takes 60 seconds to charge itself back to full, so it's useless for prolonged standoffs (use other weapons for those!)
+    autoRechargeRate: 10 # If this needs balanced, consider adding autoRechargePause and autoRechargePauseTime instead of just lowering it
 
 - type: entity
   parent: BaseMantisCaster
-  id: BaseMantisCasterCapgun # Variant base without glowing bullets and a 5x longer recharge rate
+  id: BaseMantisCasterCapgun # Variant base without glowing bullets and a 3x longer recharge rate
   description: "An exotic anomaly core harnessed as a self-replenishing ammo source. It generates harmless percussion caps suitable for drills and training. Despite the playful construction, the device still radiates the faint, uncanny energy of all anomaly tech."
   abstract: true
   components:
@@ -65,7 +65,7 @@
       map: [ "enum.PowerCellVisualLayers.Unshaded" ]
       shader: shaded
   - type: BatterySelfRecharger
-    autoRechargeRate: 1.2 # Takes 5 minutes to charge itself back to full (so people aren't too annoying with the capguns)
+    autoRechargeRate: 1 # Takes 2 minutes to charge itself back to full, so people aren't too annoying with the capguns
 
 - type: entity
   parent: BaseMantisCaster
@@ -83,7 +83,7 @@
     levels: 7
   - type: ProjectileBatteryAmmoProvider
     proto: BulletMantisCapgun
-    fireCost: 30 # Can fire 12 times, takes 2.5 seconds to recharge 1 shot
+    fireCost: 10 # Can fire 12 times, takes 2.5 seconds to recharge 1 shot
   - type: Tag
     tags:
       - MantisCaster
@@ -106,7 +106,7 @@
     levels: 6
   - type: ProjectileBatteryAmmoProvider
     proto: BulletMantisCapgun
-    fireCost: 60 # Can fire 6 times, takes 5 seconds to recharge 1 shot
+    fireCost: 20 # Can fire 6 times, takes 5 seconds to recharge 1 shot
   - type: Item
     storedRotation: 90
   - type: Tag
@@ -131,7 +131,7 @@
     levels: 5
   - type: ProjectileBatteryAmmoProvider
     proto: BulletMantisCapgun
-    fireCost: 72 # Can fire 5 times, takes 6 seconds to recharge 1 shot
+    fireCost: 24 # Can fire 5 times, takes 6 seconds to recharge 1 shot
   - type: Item
     storedRotation: 90
   - type: Tag
@@ -156,7 +156,7 @@
     levels: 8
   - type: ProjectileBatteryAmmoProvider
     proto: BulletMantisCapgun
-    fireCost: 15 # Can fire 24 times, takes 1.25 seconds to recharge 1 shot
+    fireCost: 5 # Can fire 24 times, takes 1.25 seconds to recharge 1 shot
   - type: Tag
     tags:
       - MantisCaster
@@ -255,7 +255,7 @@
 
 # Lethal casters (traitor items)
 - type: entity
-  parent: [BaseRivalCompanyContraband, BaseMantisCasterNoRecharge]
+  parent: [BaseRivalCompanyContraband, BaseMantisCasterLethal]
   id: MantisCasterPistolLethal
   name: pistol caster (piercing)
   components:
@@ -271,7 +271,7 @@
     levels: 7
   - type: ProjectileBatteryAmmoProvider
     proto: BulletMantisLethal
-    fireCost: 90 # Can fire 12 times, takes 4.5 seconds in a cell recharger to recharge 1 shot
+    fireCost: 50 # Can fire 12 times, takes 5 seconds to recharge 1 shot
   - type: Tag
     tags:
       - MantisCaster
@@ -279,7 +279,7 @@
       - MantisBeltStorable
 
 - type: entity
-  parent: [BaseRivalCompanyContraband, BaseMantisCasterNoRecharge]
+  parent: [BaseRivalCompanyContraband, BaseMantisCasterLethal]
   id: MantisCasterRevolverLethal
   name: revolver caster (piercing)
   components:
@@ -295,7 +295,7 @@
     levels: 6
   - type: ProjectileBatteryAmmoProvider
     proto: BulletMantisLethalRevolver
-    fireCost: 180 # Can fire 6 times, takes 9 seconds in a cell recharger to recharge 1 shot
+    fireCost: 100 # Can fire 6 times, takes 10 seconds to recharge 1 shot
   - type: Item
     storedRotation: 90
   - type: Tag
@@ -305,7 +305,7 @@
       - MantisBeltStorable
 
 - type: entity
-  parent: [BaseRivalCompanyContraband, BaseMantisCasterNoRecharge]
+  parent: [BaseRivalCompanyContraband, BaseMantisCasterLethal]
   id: MantisCasterShotgunLethal
   name: shotgun caster (piercing)
   components:
@@ -321,7 +321,7 @@
     levels: 5
   - type: ProjectileBatteryAmmoProvider
     proto: BulletMantisLethalSpread
-    fireCost: 216 # Can fire 5 times, takes 10.8 seconds in a cell recharger to recharge 1 shot
+    fireCost: 120 # Can fire 5 times, takes 12 seconds to recharge 1 shot
   - type: Item
     storedRotation: 90
   - type: Tag
@@ -331,7 +331,7 @@
       - MantisBeltStorable
 
 - type: entity
-  parent: [BaseRivalCompanyContraband, BaseMantisCasterNoRecharge]
+  parent: [BaseRivalCompanyContraband, BaseMantisCasterLethal]
   id: MantisCasterSubMachineGunLethal
   name: submachine gun caster (piercing)
   components:
@@ -347,7 +347,7 @@
     levels: 8
   - type: ProjectileBatteryAmmoProvider
     proto: BulletMantisLethalSubMachineGun
-    fireCost: 42.5 # Can fire 24 times, takes 2.125 seconds in a cell recharger to recharge 1 shot
+    fireCost: 25 # Can fire 24 times, takes 2.5 seconds to recharge 1 shot
   - type: Tag
     tags:
       - MantisCaster
@@ -371,7 +371,7 @@
   - type: PowerCell
     levels: 7
   - type: ProjectileBatteryAmmoProvider
-    fireCost: 30 # Can fire 12 times
+    fireCost: 10 # Can fire 12 times, takes 10 seconds to recharge 1 shot
   - type: Tag
     tags:
       - MantisCaster
@@ -394,7 +394,7 @@
   - type: PowerCell
     levels: 6
   - type: ProjectileBatteryAmmoProvider
-    fireCost: 60 # Can fire 6 times
+    fireCost: 20 # Can fire 6 times, takes 20 seconds to recharge 1 shot
   - type: Item
     storedRotation: 90
   - type: Tag
@@ -420,7 +420,7 @@
     levels: 5
   - type: ProjectileBatteryAmmoProvider
     proto: BulletMantisCapgunSpread
-    fireCost: 72 # Can fire 5 times
+    fireCost: 24 # Can fire 5 times, takes 24 seconds to recharge 1 shot
   - type: Item
     storedRotation: 90
   - type: Tag
@@ -445,7 +445,7 @@
   - type: PowerCell
     levels: 8
   - type: ProjectileBatteryAmmoProvider
-    fireCost: 15 # Can fire 24 times
+    fireCost: 5 # Can fire 24 times, takes 5 seconds to recharge 1 shot
   - type: Tag
     tags:
       - MantisCaster

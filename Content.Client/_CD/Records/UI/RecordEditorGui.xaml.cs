@@ -1,8 +1,10 @@
-// SPDX-FileCopyrightText: 2025 Lyndomen <49795619+Lyndomen@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 Lyndomen
+// SPDX-FileCopyrightText: 2025 Shaman
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 Aikakakah
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.Preferences;
 using Content.Shared._CD.Records;
@@ -33,6 +35,11 @@ public sealed partial class RecordEditorGui : Control
         Logger.Info("meow");
 
         #region General
+
+        BirthdayEdit.OnTextChanged += args => // TheDen
+        {
+            UpdateRecords(_records.WithBirthday(args.Text));
+        };
 
         ContactNameEdit.OnTextChanged += args =>
         {
@@ -134,6 +141,7 @@ public sealed partial class RecordEditorGui : Control
 
     private void UpdateWidgets()
     {
+        BirthdayEdit.SetText(_records.Birthday); // TheDen
         ContactNameEdit.SetText(_records.EmergencyContactName);
         ResidencyEdit.SetText(_records.Residency); // TheDen
 

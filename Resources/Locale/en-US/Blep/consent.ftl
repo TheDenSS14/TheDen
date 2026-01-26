@@ -4,7 +4,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # UI
 game-hud-open-consent-window-button-tooltip = Open consent window.
@@ -38,6 +38,16 @@ consent-examine-not-set = This player has no consent preferences set. Ask for co
 consent-example1 = Example Consent Toggle
 consent-example1-desc = This is just here as an example for how to add consent toggles.
 
+# General Category
+
+consent-NSFWDescriptions-name = Show NSFW Descriptions
+consent-NSFWDescriptions-desc = Toggle this on to see dynamic player descriptions that may contain NSFW/ERP content.
+
+consent-LastMessage-name = No Last Message Entries
+consent-LastMessage-desc = Toggle this on to never appear in the "last words" discord webhook. Local chat is the only one ever sent.
+
+# Mechanics Category
+
 consent-Hypno-name = Hypnosis
 consent-Hypno-desc = Allow yourself to be hypnotized.
 
@@ -51,17 +61,27 @@ consent-MindSwap-no-consent = { CAPITALIZE(POSS-ADJ($target)) } mind rejects you
 consent-MassMindSwap-name = Mass Mind Swap
 consent-MassMindSwap-desc = Should a mass mind swap from Glimmer work on you?
 
+# Antagonists Category
+
 consent-ChangelingTarget-name = Changeling Target
 consent-ChangelingTarget-desc = Should your body be allowed to be stolen by changelings?
 
 consent-DragonDevour-name = Dragon Devour
 consent-DragonDevour-desc = Whether you should be able to be devoured by a space dragon. Your body will still not progress in rot until found.
 
-consent-NSFWDescriptions-name = Show NSFW Descriptions
-consent-NSFWDescriptions-desc = Toggle this on to see dynamic player descriptions that may contain NSFW/ERP content.
-
-consent-LastMessage-name = No Last Message Entries
-consent-LastMessage-desc = Toggle this on to never appear in the "last words" discord webhook. Local chat is the only one ever sent.
-
 consent-AllowMoodEmagging-name = Mood Emagging
 consent-AllowMoodEmagging-desc = Allow other players to use a crypotographic sequencer to add new, random, chaotic moods to your mood list, as a thaven or another mob with moods. This toggle does not apply to cyborg laws and does not prevent you from gaining moods from ion storms.
+
+# Admin Category
+
+consent-AdminBasedHarm-name = Admin-based Harm
+consent-AdminBasedHarm-desc = Whether you would be okay with an admin doing various shenanigans, such as but not limited to: dragging through walls, shooting from the abyss, dropping into space, et cetera. Always asked first, regardless. As with all of the other Admin category consents, this isn't mechanical and we use commands to get a list of people this applies to.
+
+consent-AdminGifts-name = Gifts
+consent-AdminGifts-desc = If you'd like to receive little gifts, sometimes without warning, feel free to enable this. As with all of the other Admin category consents, this isn't mechanical and we use commands to get a list of people this applies to.
+
+consent-AdminPettingVictim-name = Ghostly Petting
+consent-AdminPettingVictim-desc = This consent is a way of saying you'd be okay with admins doing various non-intimate interactions (shaking, petting) whenever. As with all of the other Admin category consents, this isn't mechanical and we use commands to get a list of people this applies to.
+
+consent-Haunting-name = Haunting
+consent-Haunting-desc = Get thrown back to Halloween whenever an admin feels like it with this consent. We'll often use commands to pick a person from those with this consent to have a bit of spooky fun. We will always ask your boundaries before doing so!
