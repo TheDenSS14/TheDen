@@ -16,6 +16,14 @@
     state: steel_box
 
 - type: decal
+  id: MonoTileSomberDarkCircle
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber_dark.rsi
+    state: steel_circle
+
+- type: decal
   id: MonoTileSomberDarkCornerNe
   parent: MonoTileSomberDark
   tags: ["station", "markings"]

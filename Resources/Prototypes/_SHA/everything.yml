@@ -43,6 +43,7 @@
   footstepSounds:
     collection: FootstepTile
   heatCapacity: 10000
+  indestructible: true
 
 - type: tile
   id: FloorBreakLatticeVertical
@@ -53,6 +54,7 @@
   footstepSounds:
     collection: FootstepTile
   heatCapacity: 10000
+  indestructible: true
 
 - type: tile
   id: FloorBreakLatticeBalcony
@@ -63,47 +65,40 @@
   footstepSounds:
     collection: FootstepTile
   heatCapacity: 10000
+  indestructible: true
 
-# Tiles
+- type: tile
+  id: FloorBreakLatticeBalconyN
+  name: tiles-break-lattice-balcony-N
+  sprite: /Textures/_SHA/Tiles/break-lattice-balcony-N.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  indestructible: true
 
-- type: entity
-  parent: BaseItem
-  id: FloorTileItemBreakLatticeHorizontal
-  name: break's lattice (horizontal)
-  components:
-  - type: Sprite
-    sprite: /Textures/_SHA/Objects/Tiles/tile.rsi
-    state: break-lattice-horizontal
-  - type: FloorTile
-    outputs:
-    - Plating
-    - FloorBreakLatticeHorizontal
+- type: tile
+  id: FloorBreakLatticeBalconyS
+  name: tiles-break-lattice-balcony-S
+  sprite: /Textures/_SHA/Tiles/break-lattice-balcony-S.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  indestructible: true
 
-- type: entity
-  parent: FloorTileItemBreakLatticeHorizontal
-  id: FloorTileItemBreakLatticeVertical
-  name: break's lattice (vertical)
-  components:
-  - type: Sprite
-    sprite: /Textures/_SHA/Objects/Tiles/tile.rsi
-    state: break-lattice-vertical
-  - type: FloorTile
-    outputs:
-    - Plating
-    - FloorBreakLatticeVertical
-
-- type: entity
-  parent: FloorTileItemBreakLatticeHorizontal
-  id: FloorTileItemBreakLatticeBalcony
-  name: break's lattice (Balcony)
-  components:
-  - type: Sprite
-    sprite: /Textures/_SHA/Objects/Tiles/tile.rsi
-    state: break-lattice-balcony
-  - type: FloorTile
-    outputs:
-    - Plating
-    - FloorBreakLatticeBalcony
+- type: tile
+  id: FloorPlanetDirtPenthouse
+  name: tiles-dirt-floor-penthouse
+  sprite: /Textures/_SHA/Tiles/Planet/dirt.rsi/dirt.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  indestructible: true
 
 # Decals
 
@@ -574,10 +569,10 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _SHA/Structures/Walls/railing.rsi
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
     state: side
   - type: Icon
-    sprite: _SHA/Structures/Walls/railing.rsi
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
     state: side
   - type: Fixtures
     fixtures:
@@ -598,10 +593,10 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _SHA/Structures/Walls/railing.rsi
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
     state: corner
   - type: Icon
-    sprite: _SHA/Structures/Walls/railing.rsi
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
     state: corner
   - type: Fixtures
     fixtures:
@@ -631,10 +626,10 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _SHA/Structures/Walls/railing.rsi
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
     state: corner_small
   - type: Icon
-    sprite: _SHA/Structures/Walls/railing.rsi
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
     state: corner_small
   - type: Fixtures
     fixtures:
@@ -655,10 +650,10 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _SHA/Structures/Walls/railing.rsi
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
     state: round
   - type: Icon
-    sprite: _SHA/Structures/Walls/railing.rsi
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
     state: round
   - type: Fixtures
     fixtures:
@@ -698,10 +693,10 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _SHA/Structures/Walls/railing.rsi
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
     state: invisible
   - type: Icon
-    sprite: _SHA/Structures/Walls/railing.rsi
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
     state: invisible
   - type: Fixtures
     fixtures:
@@ -832,7 +827,7 @@
   id: PenthouseTVSpeakerWindowLeft
   name: penthouse sound system
   description: "A sleek surround speaker in brushed metal, set into the wall. This sound system could probably blow the windows out."
-  suffix: TV, Window Speaker, Left
+  suffix: TV Window Speaker, Left
   components:
   - type: Sprite
     sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
@@ -847,7 +842,7 @@
 - type: entity
   parent: PenthouseTVSpeakerWindowLeft
   id: PenthouseTVSpeakerWindowRight
-  suffix: TV, Window Speaker, Right
+  suffix: TV Window Speaker, Right
   components:
   - type: Sprite
     sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
@@ -859,7 +854,7 @@
 - type: entity
   parent: PenthouseTVSpeakerWindowLeft
   id: PenthouseTVSpeakerWindowMiddle
-  suffix: TV, Window Speaker, Middle
+  suffix: TV Window Speaker, Middle
   components:
   - type: Sprite
     sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
@@ -871,7 +866,9 @@
 - type: entity
   parent: PenthouseTVSpeakerWindowLeft
   id: PenthouseTVSpeakerWindow
-  suffix: TV, Window
+  name: penthouse window
+  description: "Your reflection shimmers faintly in the glass."
+  suffix: TV Window
   components:
   - type: Sprite
     sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
@@ -885,7 +882,7 @@
   id: PenthouseTVSpeakerBig
   name: penthouse sound system
   description: "A sleek surround speaker in brushed metal. This sound system could probably blow the windows out."
-  suffix: TV, Window Speaker, Big
+  suffix: TV Window Speaker, Big
   placement:
     mode: SnapgridCenter
     snap:
@@ -954,7 +951,7 @@
   parent: PenthouseTVSpeakerBig
   id: PenthouseTVSpeakerSmall
   name: penthouse sound system
-  suffix: TV, Window Speaker, Small
+  suffix: TV Window Speaker, Small
   components:
   - type: Sprite
     sprite: _SHA/Structures/Windows/Somber/penthousetvspeakers.rsi
@@ -967,7 +964,7 @@
   parent: PenthouseTVSpeakerBig
   id: PenthouseTVSpeakerSteel
   name: penthouse sound system
-  suffix: TV, Steel
+  suffix: TV Speaker, Steel
   components:
   - type: Sprite
     sprite: _SHA/Structures/Windows/Somber/penthousetvspeakers.rsi
@@ -980,7 +977,7 @@
   parent: PenthouseTVSpeakerBig
   id: PenthouseTVSpeakerMnemolith
   name: penthouse sound system
-  suffix: TV, Mnemolith
+  suffix: TV Speaker, Mnemolith
   components:
   - type: Sprite
     sprite: _SHA/Structures/Windows/Somber/penthousetvspeakers.rsi
@@ -1002,6 +999,63 @@
   - type: Strap
     position: Down
     rotation: 90
+
+- type: entity
+  parent: BedPenthouseUpper
+  id: SomberPsychBedLong
+  name: somber leather chaise lounge
+  description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it."
+  suffix: Long
+  components:
+  - type: Sprite
+    state: somberpsychbedlong
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: -90
+    buckleOffset: "-.1,-0.08"
+
+- type: entity
+  parent: SomberPsychBedLong
+  id: SomberPsychBedLongFlipped
+  suffix: Long, Flipped
+  components:
+  - type: Sprite
+    state: somberpsychbedlongflipped
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: ".1,-0.08"
+
+- type: entity
+  parent: SomberPsychBedLong
+  id: SomberPsychBedLongTable
+  name: somber leather chaise lounge
+  description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it. This one has a table attached."
+  suffix: Long, Table
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
+    state: somberpsychbedlongtable
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: -90
+    buckleOffset: "-.1,-0.08"
+
+- type: entity
+  parent: SomberPsychBedLongTable
+  id: SomberPsychBedLongFlippedTable
+  description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it. This one has a table attached."
+  suffix: Long, Flipped, Table
+  components:
+  - type: Sprite
+    state: somberpsychbedlongflippedtable
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: ".1,-0.08"
 
 # Big fancy beds
 
@@ -1225,3 +1279,52 @@
   - type: Strap
     position: Down
     rotation: 90
+
+# Trees
+
+- type: entity
+  parent: ShadowTree01
+  id: PenthouseTree01
+  name: penthouse tree
+  description: "A sculptural, exotic tree rising from dark soil."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _SHA/Objects/Decoration/Flora/flora_shadow_trees.rsi
+    state: tree01
+
+- type: entity
+  parent: PenthouseTree01
+  id: PenthouseTree02
+  components:
+  - type: Sprite
+    state: tree02
+
+- type: entity
+  parent: PenthouseTree01
+  id: PenthouseTree03
+  components:
+  - type: Sprite
+    state: tree03
+
+- type: entity
+  parent: PenthouseTree01
+  id: PenthouseTree04
+  components:
+  - type: Sprite
+    state: tree04
+
+- type: entity
+  parent: PenthouseTree01
+  id: PenthouseTree05
+  components:
+  - type: Sprite
+    state: tree05
+
+- type: entity
+  parent: PenthouseTree01
+  id: PenthouseTree06
+  components:
+  - type: Sprite
+    state: tree06
