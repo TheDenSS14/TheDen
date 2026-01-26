@@ -22,6 +22,7 @@
     - Delicacy
     - Holiday
     - Circus
+    - RestDay # DEN
 
 # Fashion Is Critical: Thaven pay close attention to appearances, and regard one's fashion choices as an indication of their character.
 - type: thavenMood
@@ -153,8 +154,3 @@
   conflicts:
   - Clownfan
   - Coulrophobia
-
-- type: thavenMood
-  id: RestDay
-  moodName: thaven-mood-rest-day-name
-  moodDesc: thaven-mood-rest-day-desc
