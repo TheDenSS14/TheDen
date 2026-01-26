@@ -1,2 +1,2 @@
 thaven-mood-rest-day-name = Floor Time
-thaven-mood-rest-day-desc = Find a place for you and your other partaking thaven to engage in floor time, together or otherwise. Rest is important for morale.
+thaven-mood-rest-day-desc = Find a place for you and possibly your other partaking thaven to engage in floor time, together or otherwise. Rest is important for morale.
