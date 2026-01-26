@@ -8,7 +8,7 @@
   },
   "states": [
     {
-      "name": "pool_water",
+      "name": "poolwater",
       "delays": [
         [
           0.3,
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "name": "pool_water_left",
+      "name": "poolwaterN",
       "delays": [
         [
           0.3,
@@ -38,7 +38,97 @@
       ]
     },
     {
-      "name": "pool_water_right",
+      "name": "poolwaterS",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "poolwaterE",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "poolwaterW",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "poolwaterNE",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "poolwaterNW",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "poolwaterSE",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "poolwaterSW",
       "delays": [
         [
           0.3,

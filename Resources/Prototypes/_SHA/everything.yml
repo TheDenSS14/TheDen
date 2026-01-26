@@ -123,6 +123,54 @@
     sprite: _SHA/Decals/monotile_somber_dark.rsi
     state: steel_trim_s
 
+- type: decal
+  id: MonoTileSomberDarkTrimE
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_e
+
+- type: decal
+  id: MonoTileSomberDarkTrimW
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_w
+
+- type: decal
+  id: MonoTileSomberDarkTrimNE
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_ne
+
+- type: decal
+  id: MonoTileSomberDarkTrimNW
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_nw
+
+- type: decal
+  id: MonoTileSomberDarkTrimSE
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_se
+
+- type: decal
+  id: MonoTileSomberDarkTrimSW
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_sw
+
 # Pool water
 
 - type: entity
@@ -144,7 +192,7 @@
     sprite: _SHA/Tiles/Planet/water.rsi
     drawdepth: BelowFloor
     layers:
-      - state: pool_water
+      - state: poolwater
   - type: SpeedModifierContacts
     walkSpeedModifier: 1
     sprintSpeedModifier: 0.75
@@ -160,20 +208,129 @@
           - ItemMask
         density: 1000
         hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
   - type: InteractionVerbs
     allowedVerbs:
     - LickObject
 
 - type: entity
   parent: PenthousePoolWater
-  id: PenthousePoolWaterLeft
-  suffix: Left
+  id: PenthousePoolWaterN
+  suffix: North
   components:
   - type: Sprite
     sprite: _SHA/Tiles/Planet/water.rsi
     drawdepth: BelowFloor
     layers:
-      - state: pool_water_left
+      - state: poolwaterN
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: PenthousePoolWater
+  id: PenthousePoolWaterS
+  suffix: South
+  components:
+  - type: Sprite
+    sprite: _SHA/Tiles/Planet/water.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: poolwaterS
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.5,0.4,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.5,0.4,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: PenthousePoolWater
+  id: PenthousePoolWaterE
+  suffix: East
+  components:
+  - type: Sprite
+    sprite: _SHA/Tiles/Planet/water.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: poolwaterE
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: PenthousePoolWater
+  id: PenthousePoolWaterW
+  suffix: West
+  components:
+  - type: Sprite
+    sprite: _SHA/Tiles/Planet/water.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: poolwaterW
   - type: Fixtures
     fixtures:
       fix1:
@@ -186,27 +343,146 @@
           - ItemMask
         density: 1000
         hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0,0.1,0.4,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
 
 - type: entity
   parent: PenthousePoolWater
-  id: PenthousePoolWaterRight
-  suffix: Right
+  id: PenthousePoolWaterNE
+  suffix: Northeast
   components:
   - type: Sprite
     sprite: _SHA/Tiles/Planet/water.rsi
     drawdepth: BelowFloor
     layers:
-      - state: pool_water_right
+      - state: poolwaterNE
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.4,0.1,0,0.4"
+          bounds: "-0.4,0.1,0,0"
         layer:
           - SlipLayer
         mask:
           - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0,0"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: PenthousePoolWater
+  id: PenthousePoolWaterNW
+  suffix: Northwest
+  components:
+  - type: Sprite
+    sprite: _SHA/Tiles/Planet/water.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: poolwaterNW
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0,0.1,0.4,0"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0,0.1,0.4,0"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: PenthousePoolWater
+  id: PenthousePoolWaterSE
+  suffix: Southeast
+  components:
+  - type: Sprite
+    sprite: _SHA/Tiles/Planet/water.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: poolwaterSE
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.5,0,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.5,0,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: PenthousePoolWater
+  id: PenthousePoolWaterSW
+  suffix: Southwest
+  components:
+  - type: Sprite
+    sprite: _SHA/Tiles/Planet/water.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: poolwaterSW
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0,0.5,0.4,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0,0.5,0.4,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
         density: 1000
         hard: false
 
@@ -488,7 +764,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-1.5,-0.375,1.5,0.375"
+          bounds: "-2,-0.375,2,0.375"
         hard: false
         density: 1000
         mask:
@@ -555,8 +831,8 @@
   parent: WindowSomber
   id: PenthouseTVSpeakerWindowLeft
   name: penthouse sound system
-  description: "A sleek surround speaker in brushed metal. This sound system could probably blow the windows out."
-  suffix: TV, Window, Left
+  description: "A sleek surround speaker in brushed metal, set into the wall. This sound system could probably blow the windows out."
+  suffix: TV, Window Speaker, Left
   components:
   - type: Sprite
     sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
@@ -571,7 +847,7 @@
 - type: entity
   parent: PenthouseTVSpeakerWindowLeft
   id: PenthouseTVSpeakerWindowRight
-  suffix: TV, Window, Right
+  suffix: TV, Window Speaker, Right
   components:
   - type: Sprite
     sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
@@ -581,18 +857,62 @@
     state: right
 
 - type: entity
-  parent: WindowSomberDirectional
+  parent: PenthouseTVSpeakerWindowLeft
+  id: PenthouseTVSpeakerWindowMiddle
+  suffix: TV, Window Speaker, Middle
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
+    state: middle
+  - type: Icon
+    sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
+    state: middle
+
+- type: entity
+  parent: PenthouseTVSpeakerWindowLeft
+  id: PenthouseTVSpeakerWindow
+  suffix: TV, Window
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
+    state: base
+  - type: Icon
+    sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
+    state: base
+
+- type: entity
+  parent: BaseStructure
   id: PenthouseTVSpeakerBig
   name: penthouse sound system
   description: "A sleek surround speaker in brushed metal. This sound system could probably blow the windows out."
-  suffix: TV, Window, Attachment
+  suffix: TV, Window Speaker, Big
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
   components:
   - type: Sprite
     sprite: _SHA/Structures/Windows/Somber/penthousetvspeakers.rsi
+    drawdepth: FloorObjects
     state: wallspeakerbig
   - type: Icon
     sprite: _SHA/Structures/Windows/Somber/penthousetvspeakers.rsi
     state: wallspeakerbig
+  - type: WallMount
+    arc: 360
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.36"
+        hard: false
+        density: 1500
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
   - type: MeleeSound
     soundGroups:
       Brute:
@@ -632,9 +952,21 @@
 
 - type: entity
   parent: PenthouseTVSpeakerBig
+  id: PenthouseTVSpeakerSmall
+  name: penthouse sound system
+  suffix: TV, Window Speaker, Small
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Windows/Somber/penthousetvspeakers.rsi
+    state: wallspeakersmall
+  - type: Icon
+    sprite: _SHA/Structures/Windows/Somber/penthousetvspeakers.rsi
+    state: wallspeakersmall
+
+- type: entity
+  parent: PenthouseTVSpeakerBig
   id: PenthouseTVSpeakerSteel
   name: penthouse sound system
-  description: "A sleek surround speaker in brushed metal. This sound system could probably blow the windows out."
   suffix: TV, Steel
   components:
   - type: Sprite
@@ -648,7 +980,6 @@
   parent: PenthouseTVSpeakerBig
   id: PenthouseTVSpeakerMnemolith
   name: penthouse sound system
-  description: "A sleek surround speaker in brushed metal. This sound system could probably blow the windows out."
   suffix: TV, Mnemolith
   components:
   - type: Sprite
