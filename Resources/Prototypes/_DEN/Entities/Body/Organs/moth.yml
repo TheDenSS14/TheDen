@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2026 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: OrganAnimalHeart
+  id: OrganMothHeart
+  name: moth heart
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Moth ]

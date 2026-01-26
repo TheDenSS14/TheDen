@@ -1,8 +1,8 @@
-// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2024 fox
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Text;
 using Content.Shared.Language.Systems;
@@ -33,7 +33,7 @@ public abstract partial class ObfuscationMethod
     public string Obfuscate(string message)
     {
         var builder = new StringBuilder();
-        Obfuscate(builder, message, IoCManager.Resolve<EntitySystemManager>().GetEntitySystem<SharedLanguageSystem>());
+        Obfuscate(builder, message, IoCManager.Resolve<IEntityManager>().System<SharedLanguageSystem>());
         return builder.ToString();
     }
 }

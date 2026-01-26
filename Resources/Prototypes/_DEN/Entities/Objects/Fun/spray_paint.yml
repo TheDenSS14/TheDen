@@ -32,3 +32,11 @@
         enum.OpenableVisuals.Layer:
           True: {state: "rainbow2"}
           False: {state: "rainbow2_cap"}
+
+- type: entity
+  parent: SprayPaintMagic
+  id: SprayPaintMagicInfinite
+  suffix: infinite
+  components:
+  - type: Paint
+    consumptionUnit: 0

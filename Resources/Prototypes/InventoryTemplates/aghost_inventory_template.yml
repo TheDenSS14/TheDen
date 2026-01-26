@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Sphiral <145869023+SphiraI@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
-# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Sphiral
+# SPDX-FileCopyrightText: 2024 Vasilis
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -87,12 +87,25 @@
     - name: head
       slotTexture: head
       slotFlags: HEAD
-      uiWindowPos: 0,2
+      uiWindowPos: 1,1
       strippingWindowPos: 0,0
       displayName: Head
     - name: mask
       slotTexture: mask
       slotFlags: MASK
-      uiWindowPos: 0,1
+      uiWindowPos: 2,0
       strippingWindowPos: 1,1
       displayName: Mask
+    - name: eyes
+      slotTexture: glasses
+      slotFlags: EYES
+      stripTime: 3
+      uiWindowPos: 0,1
+      strippingWindowPos: 0,0
+      displayName: Eyes
+    - name: neck
+      slotTexture: neck
+      slotFlags: NECK
+      uiWindowPos: 1,0
+      strippingWindowPos: 0,1
+      displayName: Neck
