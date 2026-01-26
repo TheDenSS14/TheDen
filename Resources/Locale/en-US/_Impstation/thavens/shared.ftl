@@ -51,3 +51,6 @@ thaven-mood-holiday-desc = You think you remember the traditional celebrations..
 
 thaven-mood-circus-name = The circus is in town...
 thaven-mood-circus-desc = And you are part of it!
+
+thaven-mood-rest-day-name = Rest Day
+thaven-mood-rest-day-desc = Thaven must work together to enforce a thaven-wide rest day. Optionally, you may create a pillow fort for resting together.
