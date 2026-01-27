@@ -1,0 +1,408 @@
+# Standard
+
+- type: entity
+  parent: FloorWaterEntityPool
+  id: SomberPoolWater
+  name: somber pool
+  description: "Deeper than one would expect, and kept heated to a comfortable temperature."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwater
+    - state: poolwatershine
+      shader: unshaded
+  - type: Fixtures # These pools won't grab you from half a tile away
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: SomberPoolWater
+  id: SomberPoolWaterN
+  suffix: North
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterN
+    - state: poolwaterNshine
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: SomberPoolWater
+  id: SomberPoolWaterS
+  suffix: South
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterS
+    - state: poolwaterSshine
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.5,0.4,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.5,0.4,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: SomberPoolWater
+  id: SomberPoolWaterE
+  suffix: East
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterE
+    - state: poolwaterEshine
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: SomberPoolWater
+  id: SomberPoolWaterW
+  suffix: West
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterW
+    - state: poolwaterWshine
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0,0.1,0.4,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0,0.1,0.4,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: SomberPoolWater
+  id: SomberPoolWaterNE
+  suffix: Northeast
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterNE
+    - state: poolwaterNEshine
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0,0"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0,0"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: SomberPoolWater
+  id: SomberPoolWaterNW
+  suffix: Northwest
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterNW
+    - state: poolwaterNWshine
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0,0.1,0.4,0"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0,0.1,0.4,0"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: SomberPoolWater
+  id: SomberPoolWaterSE
+  suffix: Southeast
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterSE
+    - state: poolwaterSEshine
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.5,0,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.5,0,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: SomberPoolWater
+  id: SomberPoolWaterSW
+  suffix: Southwest
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterSW
+    - state: poolwaterSWshine
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0,0.5,0.4,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0,0.5,0.4,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+# Dark
+
+- type: entity
+  parent: SomberPoolWaterN
+  id: SomberPoolWaterNDark
+  suffix: Dark, North
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterNdark
+    - state: poolwaterNshine
+      shader: unshaded
+
+- type: entity
+  parent: SomberPoolWaterS
+  id: SomberPoolWaterSDark
+  suffix: Dark, South
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterSdark
+    - state: poolwaterSshine
+      shader: unshaded
+
+- type: entity
+  parent: SomberPoolWaterE
+  id: SomberPoolWaterEDark
+  suffix: Dark, East
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterEdark
+    - state: poolwaterEshine
+      shader: unshaded
+
+- type: entity
+  parent: SomberPoolWaterW
+  id: SomberPoolWaterWDark
+  suffix: Dark, West
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterWdark
+    - state: poolwaterWshine
+      shader: unshaded
+
+- type: entity
+  parent: SomberPoolWaterNE
+  id: SomberPoolWaterNEDark
+  suffix: Dark, Northeast
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterNEdark
+    - state: poolwaterNEshine
+      shader: unshaded
+
+- type: entity
+  parent: SomberPoolWaterNW
+  id: SomberPoolWaterNWDark
+  suffix: Dark, Northwest
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterNWdark
+    - state: poolwaterNWshine
+      shader: unshaded
+
+- type: entity
+  parent: SomberPoolWaterSE
+  id: SomberPoolWaterSEDark
+  suffix: Dark, Southeast
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterSEdark
+    - state: poolwaterSEshine
+      shader: unshaded
+
+- type: entity
+  parent: SomberPoolWaterSW
+  id: SomberPoolWaterSWDark
+  suffix: Dark, Southwest
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    layers:
+    - state: poolwaterSWdark
+    - state: poolwaterSWshine
+      shader: unshaded

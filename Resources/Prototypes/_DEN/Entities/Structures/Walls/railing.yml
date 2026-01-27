@@ -1,0 +1,215 @@
+- type: entity
+  parent: Railing
+  id: RailingSomber
+  name: somber railing
+  description: "A sturdy, patterned rail."
+  suffix: Straight
+  components:
+  - type: Sprite
+    drawdepth: Walls # So they won't display over diagonal walls...
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: side
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: side
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PartRodMetal1:
+            min: 0
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: RailingCorner
+  id: RailingSomberCorner
+  name: somber railing
+  description: "A sturdy, patterned rail."
+  suffix: Corner
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PartRodMetal1:
+            min: 0
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: RailingCornerSmall
+  id: RailingSomberCornerSmall
+  name: somber railing
+  description: "A sturdy, patterned rail."
+  suffix: Small Corner
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_small
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_small
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PartRodMetal1:
+            min: 0
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: RailingRound
+  id: RailingSomberRound
+  name: somber railing
+  description: "A sturdy, patterned rail."
+  suffix: Round
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: round
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: round
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PartRodMetal1:
+            min: 0
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: RailingSomber
+  id: RailingSomberDark
+  suffix: Straight, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: side_dark
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: side_dark
+
+- type: entity
+  parent: RailingSomberCorner
+  id: RailingSomberCornerDark
+  suffix: Corner, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_dark
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_dark
+
+- type: entity
+  parent: RailingSomberCornerSmall
+  id: RailingSomberCornerSmallDark
+  suffix: Small Corner, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_small_dark
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_small_dark
+
+- type: entity
+  parent: RailingSomberRound
+  id: RailingSomberRoundDark
+  suffix: Round, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: round_dark
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: round_dark

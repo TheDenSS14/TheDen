@@ -1,0 +1,43 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "By Sha-Seng (GitHub)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "side",
+            "directions": 4
+        },
+        {
+            "name": "corner",
+            "directions": 4
+        },
+        {
+            "name": "corner_small",
+            "directions": 4
+        },
+        {
+            "name": "round",
+            "directions": 4
+        },
+        {
+            "name": "side_dark",
+            "directions": 4
+        },
+        {
+            "name": "corner_dark",
+            "directions": 4
+        },
+        {
+            "name": "corner_small_dark",
+            "directions": 4
+        },
+        {
+            "name": "round_dark",
+            "directions": 4
+        }
+    ]
+}

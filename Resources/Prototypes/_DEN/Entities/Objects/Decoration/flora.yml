@@ -1,0 +1,105 @@
+- type: entity
+  parent: BaseTree
+  id: AmaranthTree01
+  name: amaranth tree
+  description: "An exotic hardwood tree with faintly luminescent leaves. Its resin is toxic, making the lumber notoriously difficult to work."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Decoration/Flora/flora_amaranth_trees.rsi
+    layers:
+    - state: tree01
+    - state: tree01glow
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.2,0.1,0.2"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: MetalThud # They're tough as hell
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Log:
+            min: 2
+            max: 8
+
+- type: entity
+  parent: AmaranthTree01
+  id: AmaranthTree02
+  components:
+  - type: Sprite
+    layers:
+    - state: tree02
+    - state: tree02glow
+      shader: unshaded
+
+- type: entity
+  parent: AmaranthTree01
+  id: AmaranthTree03
+  components:
+  - type: Sprite
+    layers:
+    - state: tree03
+    - state: tree03glow
+      shader: unshaded
+
+- type: entity
+  parent: AmaranthTree01
+  id: AmaranthTree04
+  components:
+  - type: Sprite
+    layers:
+    - state: tree04
+    - state: tree04glow
+      shader: unshaded
+
+- type: entity
+  parent: AmaranthTree01
+  id: AmaranthTree05
+  components:
+  - type: Sprite
+    layers:
+    - state: tree05
+    - state: tree05glow
+      shader: unshaded
+
+- type: entity
+  parent: AmaranthTree01
+  id: AmaranthTree06
+  components:
+  - type: Sprite
+    layers:
+    - state: tree06
+    - state: tree06glow
+      shader: unshaded
