@@ -42,6 +42,7 @@ public sealed class LeashSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
     public static VerbCategory LeashLengthConfigurationCategory =
         new("verb-categories-leash-config", "/Textures/_Floof/Interface/VerbIcons/resize.svg.192dpi.png");
@@ -231,15 +232,15 @@ public sealed class LeashSystem : EntitySystem
             }
         }
 
-        var leashSprites = ent.Comp.LeashSpriteConfigs;
-        if (leashSprites != null)
+        var leashConfigs = ent.Comp.LeashSpriteConfigs;
+        if (leashConfigs != null)
         {
-            foreach (var sprite in leashSprites)
+            foreach (var config in leashConfigs)
             {
                 args.Verbs.Add(new AlternativeVerb
                 {
-                    Text = Loc.GetString("verb-leash-set-leash-type", ("sprite", sprite.RsiState)),
-                    Act = () => SetLeashType(ent, sprite),
+                    Text = Loc.GetString("verb-leash-set-leash-type", ("sprite", config.ConfigId)),
+                    Act = () => SetLeashType(ent, config),
                     Category = LeashTypeConfigurationCategory
                 });
             }
@@ -550,11 +551,11 @@ public sealed class LeashSystem : EntitySystem
         _popups.PopupPredicted(Loc.GetString("leash-set-length-popup", ("length", length)), leash.Owner, null);
     }
 
-    public void SetLeashType(Entity<LeashComponent> leash, SpriteSpecifier.Rsi sprite)
+    public void SetLeashType(Entity<LeashComponent> leash, LeashComponent.LeashSpriteConfigData config)
     {
-        leash.Comp.LeashSprite = sprite;
+        leash.Comp.LeashSprite = config.LeashSprite;
         RefreshJoints(leash);
-        _popups.PopupPredicted(Loc.GetString("leash-set-type-popup", ("sprite", sprite.RsiState)), leash.Owner, null);
+        _popups.PopupPredicted(Loc.GetString("leash-set-type-popup", ("sprite", config.ConfigId)), leash.Owner, null);
     }
 
     /// <summary>

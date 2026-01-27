@@ -53,7 +53,7 @@ public sealed partial class LeashComponent : Component
     public SpriteSpecifier.Rsi LeashSprite;
 
     [DataField, AutoNetworkedField]
-    public SpriteSpecifier.Rsi[]? LeashSpriteConfigs;
+    public LeashSpriteConfigData[]? LeashSpriteConfigs;
 
     [DataField]
     public TimeSpan NextPull = TimeSpan.Zero;
@@ -90,6 +90,26 @@ public sealed partial class LeashComponent : Component
         {
             JointId = jointId;
             Pulled = pulled;
+        }
+    };
+
+    [DataDefinition, Serializable, NetSerializable]
+    public sealed partial class LeashSpriteConfigData
+    {
+        [DataField]
+        public string ConfigId = "";
+
+        [DataField]
+        public SpriteSpecifier.Rsi LeashSprite;
+
+        [DataField]
+        public SpriteSpecifier.Rsi LeashIconSprite;
+
+        public LeashSpriteConfigData(string configId, SpriteSpecifier.Rsi leashSprite, SpriteSpecifier.Rsi leashIcon)
+        {
+            ConfigId = configId;
+            LeashSprite = leashSprite;
+            LeashIconSprite = leashIcon;
         }
     };
 }
