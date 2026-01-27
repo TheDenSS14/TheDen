@@ -12,15 +12,6 @@
     - state: tree01
     - state: tree01glow
       shader: unshaded
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.1,-0.2,0.1,0.2"
-        density: 1000
-        layer:
-        - WallLayer
   - type: MeleeSound
     soundGroups:
       Brute:
@@ -38,7 +29,7 @@
           acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 200
+        damage: 150
       behaviors:
       - !type:PlaySoundBehavior
         sound:

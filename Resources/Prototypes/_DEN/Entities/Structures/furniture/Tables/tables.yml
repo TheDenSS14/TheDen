@@ -6,7 +6,7 @@
   parent: TableBase
   id: SomberTable
   name: somber table
-  description: "An expensive table made of gloomy, patterned wood with electrum accents."
+  description: "An expensive table made of gloomy, patterned wood."
   components:
   - type: Sprite
     sprite: _DEN/Structures/Furniture/Tables/somberwoodtable.rsi
@@ -41,6 +41,17 @@
             max: 3
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepWood
@@ -52,10 +63,118 @@
   parent: SomberTable
   id: SomberCounter
   name: somber counter
-  description: "An expensive counter made of gloomy, patterned wood with electrum accents."
+  description: "An expensive counter made of gloomy, patterned wood."
   components:
   - type: Sprite
     sprite: _DEN/Structures/Furniture/Tables/somberwoodcounter.rsi
   - type: Icon
     sprite: _DEN/Structures/Furniture/Tables/somberwoodcounter.rsi
     state: full
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+
+- type: entity
+  parent: BaseStructure # Doesn't merge with nearby tables, so I can't parent it
+  id: SomberTableCoffee
+  name: somber coffee table
+  description: "An expensive coffee table made of gloomy, patterned wood."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodtablecoffee.rsi
+    state: full
+    noRot: true
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodtablecoffee.rsi
+    state: full
+  - type: InteractionOutline
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-.8,-0.225,0.8,0.45"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: StaticPrice
+    price: 125
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepWood
+  - type: Tag
+    tags:
+    - Wooden
+  - type: PlaceableSurface
+  - type: SpriteFade
+  - type: Climbable
+  - type: Bonkable
+    bonkDamage:
+      types:
+        Blunt: 4
+  - type: Clickable
+  - type: RequireProjectileTarget
+  - type: ThrownItemImmune
+
+- type: entity
+  parent: SomberTableCoffee
+  id: SomberTableEnd
+  name: somber end table
+  description: "An expensive end table made of gloomy, patterned wood."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableend.rsi
+    state: full
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableend.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.225"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable

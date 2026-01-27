@@ -241,7 +241,7 @@
     key: walls
     base: state
 
-# Railings
+# Walls
 
 - type: entity
   parent: BaseStructure
@@ -308,295 +308,43 @@
           - WallLayer
   - type: Occluder
 
-# TV stuff
-
 - type: entity
-  parent: BaseStructure
-  id: PenthouseTV
-  name: penthouse television
-  description: "A futuristic frame television with a textured, shifting surface, set to freeze its last image in faux mnemolith--a bleeding sun breaking through clouds, this time. This thing must be ungodly expensive."
+  parent: WallSomber
+  id: WallSomberSeethrough
+  suffix: See-Through
   components:
   - type: Sprite
-    sprite: _SHA/Structures/Wallmounts/penthousetv.rsi
-    drawdepth: WallMountedItems
-    layers:
-    - state: tv
-    - state: tvglow
-      shader: unshaded
-      visible: false
-      map: [ "light" ]
-  - type: ToggleableVisuals
-    spriteLayer: light
-  - type: Appearance
-  - type: Anchorable
-  - type: InteractionOutline
-  - type: PointLight
-    enabled: false
-    radius: 4
-    energy: 6
-    softness: 1.1
-    color: "#ffa054"
-  - type: ItemTogglePointLight
-  - type: ItemToggle
-    predictable: false
-    soundActivate:
-      path: /Audio/_DEN/Effects/crystaltap1.ogg
-      params:
-        volume: -6
-        pitch: 0.35
-    soundDeactivate:
-      path: /Audio/_DEN/Effects/crystaltap2.ogg
-      params:
-        volume: -6
-        pitch: 0.35
-  - type: UnpoweredFlashlight
-  - type: WallMount
-    arc: 360
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-2,-0.375,2,0.375"
-        hard: false
-        density: 1000
-        mask:
-          - FullTileMask
-        layer:
-          - WallLayer
-  - type: Transform
-    anchored: true
-  - type: MeleeSound
-    soundGroups:
-      Brute:
-        collection: GlassSmack
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallicStrong
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 400
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: GlassSmash
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          SheetSteel1:
-            min: 3
-            max: 3
-          SheetGlass1:
-            min: 3
-            max: 3
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: DeviceNetwork
-    deviceNetId: Wireless
-    receiveFrequencyId: SmartLight
-  - type: WirelessNetworkConnection
-    range: 200
-  - type: DeviceLinkSink
-    ports:
-      - On
-      - Off
-      - Toggle
-  - type: PoweredLightVisuals
-    blinkingSound:
-      path: "/Audio/Machines/light_tube_on.ogg"
-    spriteStateMap:
-      off: tv
-      on: tv
-  - type: InteractionVerbs
-    allowedVerbs:
-    - KnockOn
-    - KissObject
-    - LickObject
-
-- type: entity
-  parent: WindowSomber
-  id: PenthouseTVSpeakerWindowLeft
-  name: penthouse sound system
-  description: "A sleek surround speaker in brushed metal, set into the wall. This sound system could probably blow the windows out."
-  suffix: TV Window Speaker, Left
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
-    state: left
+    sprite: _DEN/Structures/Walls/Somber/somber.rsi
   - type: Icon
-    sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
-    state: left
+    sprite: _DEN/Structures/Walls/Somber/somber.rsi
+  - type: Tag
+    tags:
+    - Wall
   - type: IconSmooth
     key: walls
-    mode: NoSprite
+    base: wall
+  - type: Occluder
+    enabled: false
 
 - type: entity
-  parent: PenthouseTVSpeakerWindowLeft
-  id: PenthouseTVSpeakerWindowRight
-  suffix: TV Window Speaker, Right
+  parent: WallSomberDark
+  id: WallSomberDarkSeethrough
+  suffix: See-Through, Dark
   components:
   - type: Sprite
-    sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
-    state: right
+    sprite: _DEN/Structures/Walls/Somber/somberdark.rsi
   - type: Icon
-    sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
-    state: right
+    sprite: _DEN/Structures/Walls/Somber/somberdark.rsi
+  - type: Tag
+    tags:
+    - Wall
+  - type: IconSmooth
+    key: walls
+    base: wall
+  - type: Occluder
+    enabled: false
 
-- type: entity
-  parent: PenthouseTVSpeakerWindowLeft
-  id: PenthouseTVSpeakerWindowMiddle
-  suffix: TV Window Speaker, Middle
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
-    state: middle
-  - type: Icon
-    sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
-    state: middle
-
-- type: entity
-  parent: PenthouseTVSpeakerWindowLeft
-  id: PenthouseTVSpeakerWindow
-  name: penthouse window
-  description: "Your reflection shimmers faintly in the glass."
-  suffix: TV Window
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
-    state: base
-  - type: Icon
-    sprite: _SHA/Structures/Windows/Somber/penthousetvwindows.rsi
-    state: base
-
-- type: entity
-  parent: BaseStructure
-  id: PenthouseTVSpeakerBig
-  name: penthouse sound system
-  description: "A sleek surround speaker in brushed metal. This sound system could probably blow the windows out."
-  suffix: TV Window Speaker, Big
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Window
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Windows/Somber/penthousetvspeakers.rsi
-    drawdepth: FloorObjects
-    state: wallspeakerbig
-  - type: Icon
-    sprite: _SHA/Structures/Windows/Somber/penthousetvspeakers.rsi
-    state: wallspeakerbig
-  - type: WallMount
-    arc: 360
-  - type: Physics
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,-0.36"
-        hard: false
-        density: 1500
-        mask:
-        - FullTileMask
-        layer:
-        - GlassLayer
-  - type: MeleeSound
-    soundGroups:
-      Brute:
-        collection: MetalThud
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallicStrong
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 400
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalSlam
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          SheetSteel1:
-            min: 1
-            max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: InteractionVerbs
-    allowedVerbs:
-    - KnockOn
-    - HugObject
-    - PetObject
-    - KissObject
-    - LickObject
-
-- type: entity
-  parent: PenthouseTVSpeakerBig
-  id: PenthouseTVSpeakerSmall
-  name: penthouse sound system
-  suffix: TV Window Speaker, Small
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Windows/Somber/penthousetvspeakers.rsi
-    state: wallspeakersmall
-  - type: Icon
-    sprite: _SHA/Structures/Windows/Somber/penthousetvspeakers.rsi
-    state: wallspeakersmall
-
-- type: entity
-  parent: PenthouseTVSpeakerBig
-  id: PenthouseTVSpeakerSteel
-  name: penthouse sound system
-  suffix: TV Speaker, Steel
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Windows/Somber/penthousetvspeakers.rsi
-    state: wallspeakersteel
-  - type: Icon
-    sprite: _SHA/Structures/Windows/Somber/penthousetvspeakers.rsi
-    state: wallspeakersteel
-
-- type: entity
-  parent: PenthouseTVSpeakerBig
-  id: PenthouseTVSpeakerMnemolith
-  name: penthouse sound system
-  suffix: TV Speaker, Mnemolith
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Windows/Somber/penthousetvspeakers.rsi
-    state: wallspeakermnemolith
-  - type: Icon
-    sprite: _SHA/Structures/Windows/Somber/penthousetvspeakers.rsi
-    state: wallspeakermnemolith
-
-# Furniture
-
-- type: entity
-  parent: SomberPsychBed
-  id: SomberPsychBedFlipped
-  suffix: Flipped
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Furniture/furniture.rsi
-    state: somberpsychbed
-  - type: Strap
-    position: Down
-    rotation: 90
+# Chairs
 
 - type: entity
   parent: BedPenthouseUpper
@@ -611,7 +359,7 @@
   - type: Strap
     position: Down
     rotation: -90
-    buckleOffset: "-.1,-0.08"
+    buckleOffset: "-0.275,0.025"
 
 - type: entity
   parent: SomberPsychBedLong
@@ -624,7 +372,7 @@
   - type: Strap
     position: Down
     rotation: 90
-    buckleOffset: ".1,-0.08"
+    buckleOffset: "0.275,0.06"
 
 - type: entity
   parent: SomberPsychBedLong
@@ -640,7 +388,7 @@
   - type: Strap
     position: Down
     rotation: -90
-    buckleOffset: "-.1,-0.08"
+    buckleOffset: "-0.775,0.4375"
 
 - type: entity
   parent: SomberPsychBedLongTable
@@ -653,7 +401,69 @@
   - type: Strap
     position: Down
     rotation: 90
-    buckleOffset: ".1,-0.08"
+    buckleOffset: "0.775,0.475"
+
+- type: entity
+  parent: SomberChairCushion
+  id: SomberChairCushionCentered
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/chairs.rsi
+    state: somberfloorcushioncentered
+  - type: Strap
+    buckleOffset: "0.775,0.475"
+
+# Footrests
+
+- type: entity
+  parent: BedPenthouseUpper
+  id: BenchSofaSomberFootrestRight
+  name: somber leather footrest
+  suffix: Right
+  description: "A plush leather footrest so you can stretch out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
+    state: sofafootrestright
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: "0.35,0.64"
+
+- type: entity
+  parent: BedPenthouseUpper
+  id: BenchSofaSomberFootrestMiddle
+  name: somber leather footrest
+  suffix: Middle
+  description: "A plush leather footrest so you can stretch out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
+    state: sofafootrestmiddle
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: "0.35,-0.06"
+
+- type: entity
+  parent: BedPenthouseUpper
+  id: BenchSofaSomberFootrestLeft
+  name: somber leather footrest
+  suffix: Left
+  description: "A plush leather footrest so you can stretch out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
+    state: sofafootrestleft
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: "0.35,-0.74"
 
 # Big fancy beds
 
@@ -694,6 +504,7 @@
     noRot: true
   - type: Anchorable
   - type: Pullable
+  - type: InteractionOutline
   - type: InteractionVerbs
     allowedVerbs:
     - HugObject
@@ -834,6 +645,7 @@
     noRot: true
   - type: Anchorable
   - type: Pullable
+  - type: InteractionOutline
   - type: InteractionVerbs
     allowedVerbs:
     - HugObject
@@ -881,7 +693,7 @@
 # Trees
 
 - type: entity
-  parent: BaseTree
+  parent: AmaranthTree01
   id: AmaranthTree01Penthouse
   name: amaranth tree
   description: "An exotic hardwood tree with faintly luminescent leaves. Its resin is toxic, making the lumber notoriously difficult to work."
@@ -909,33 +721,8 @@
       Brute:
         collection: MetalThud # They're tough as hell
   - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Wood
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 1000
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/tree_fell.ogg
-          params:
-            volume: 5
-            variation: 0.05
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          Log:
-            min: 2
-            max: 8
+    damageContainer: Indestructible
+    damageModifierSet: Indestructible
 
 - type: entity
   parent: AmaranthTree01

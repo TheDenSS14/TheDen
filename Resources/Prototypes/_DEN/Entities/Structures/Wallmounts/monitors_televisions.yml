@@ -59,3 +59,114 @@
           ScrapElectrum:
             min: 1
             max: 3
+
+- type: entity
+  parent: BaseStructure
+  id: SomberTV
+  name: somber television
+  description: "A futuristic frame television with a textured, shifting surface, set to freeze its last image in faux mnemolith--a bleeding sun breaking through clouds, this time. This thing must be ungodly expensive."
+  suffix: Decorative
+  components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS LIKE RemoteSignallerSomberTV
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/sombertv.rsi
+    drawdepth: WallMountedItems
+    layers:
+    - state: tv
+    - state: tvglow
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: ToggleableVisuals
+    spriteLayer: light
+  - type: Appearance
+  - type: Anchorable
+  - type: InteractionOutline
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 6
+    softness: 1.1
+    color: "#ffa054"
+  - type: ItemTogglePointLight
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      path: /Audio/_DEN/Effects/crystaltap1.ogg
+      params:
+        volume: -6
+        pitch: 0.35
+    soundDeactivate:
+      path: /Audio/_DEN/Effects/crystaltap2.ogg
+      params:
+        volume: -6
+        pitch: 0.35
+  - type: UnpoweredFlashlight
+  - type: WallMount
+    arc: 360
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-2,-0.375,2,0.375"
+        hard: false
+        density: 1000
+        mask:
+          - FullTileMask
+        layer:
+          - WallLayer
+  - type: Transform
+    anchored: true
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmack
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassSmash
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 3
+            max: 3
+          SheetGlass1:
+            min: 3
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: SmartLight
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - On
+      - Off
+      - Toggle
+  - type: PoweredLightVisuals
+    blinkingSound:
+      path: "/Audio/Machines/light_tube_on.ogg"
+    spriteStateMap:
+      off: tv
+      on: tv
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KnockOn
+    - KissObject
+    - LickObject

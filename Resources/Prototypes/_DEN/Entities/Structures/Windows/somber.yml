@@ -208,3 +208,171 @@
   - type: Icon
     sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
     state: somberdark
+
+# TV Kit
+
+- type: entity
+  parent: WindowSomber
+  id: SomberTVSpeakerWindowLeft
+  name: somber sound system
+  description: "A sleek surround speaker in brushed metal, set into the wall. This sound system could probably blow the windows out."
+  suffix: TV Window Speaker, Left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: left
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: left
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+
+- type: entity
+  parent: SomberTVSpeakerWindowLeft
+  id: SomberTVSpeakerWindowRight
+  suffix: TV Window Speaker, Right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: right
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: right
+
+- type: entity
+  parent: SomberTVSpeakerWindowLeft
+  id: SomberTVSpeakerWindowMiddle
+  suffix: TV Window Speaker, Middle
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: middle
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: middle
+
+- type: entity
+  parent: SomberTVSpeakerWindowLeft
+  id: SomberTVSpeakerWindow
+  name: somber window
+  description: "Your reflection shimmers faintly in the glass."
+  suffix: TV Backing, See-Through
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: tvback
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: tvback
+  - type: Occluder
+    enabled: false # It does have glass, but maybe it should block sight since it's meant to hold SomberTV which would block sight? Enable this if so
+
+- type: entity
+  parent: BaseStructure # Debatably, these are directional windows, and all the other somber TV stuff is here except SomberTV itself
+  id: SomberTVSpeakerBig
+  name: somber sound system
+  description: "A sleek surround speaker in brushed metal. This sound system could probably blow the windows out."
+  suffix: TV Window Attachment, Big] [Decorative
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    drawdepth: FloorObjects
+    state: wallspeakerbig
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    state: wallspeakerbig
+  - type: WallMount
+    arc: 360
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.36"
+        hard: false
+        density: 1500
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: MetalThud
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KnockOn
+    - HugObject
+    - PetObject
+    - KissObject
+    - LickObject
+
+- type: entity
+  parent: SomberTVSpeakerBig
+  id: SomberTVSpeakerSmall
+  name: somber sound system
+  suffix: TV Window Attachment, Small] [Decorative
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    state: wallspeakersmall
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    state: wallspeakersmall
+
+- type: entity
+  parent: SomberTVSpeakerBig
+  id: SomberTVSpeakerSteel
+  name: somber sound system
+  suffix: TV Speaker, Steel Wall] [Decorative
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    state: wallspeakersteel
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    state: wallspeakersteel
+
+- type: entity
+  parent: SomberTVSpeakerBig
+  id: SomberTVSpeakerMnemolith
+  name: somber sound system
+  suffix: TV Speaker, Mnemolith Wall] [Decorative
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    state: wallspeakermnemolith
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    state: wallspeakermnemolith

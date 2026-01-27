@@ -7,6 +7,10 @@
   id: SomberMirror
   name: somber electrum mirror
   description: "A glossy electrum mirror with a polished mu-metal backing that prevents psionic scrying. A calm, private moment."
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
   components:
   - type: Sprite
     sprite: _DEN/Structures/Wallmounts/mirror.rsi

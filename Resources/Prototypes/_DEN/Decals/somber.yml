@@ -134,3 +134,35 @@
   sprite:
     sprite: _DEN/Decals/somber_dark.rsi
     state: wallspikeSWrotatable
+
+- type: decal
+  id: SomberCornerStairsLeft
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: cornerstairsleft
+
+- type: decal
+  id: SomberCornerStairsRight
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: cornerstairsright
+
+- type: decal
+  id: SomberCornerStairsLeftDark
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: cornerstairsleft
+
+- type: decal
+  id: SomberCornerStairsRightDark
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: cornerstairsright

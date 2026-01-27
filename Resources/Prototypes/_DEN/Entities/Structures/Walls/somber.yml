@@ -41,7 +41,6 @@
 - type: entity
   parent: WallSomber
   id: WallSomberDark
-  name: somber wall
   suffix: Dark
   components:
   - type: Sprite
@@ -58,7 +57,6 @@
 - type: entity
   parent: WallSomberDiagonal
   id: WallSomberDarkDiagonal
-  name: somber wall
   suffix: Dark, Diagonal
   components:
   - type: Sprite
