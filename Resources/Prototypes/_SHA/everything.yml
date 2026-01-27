@@ -355,7 +355,8 @@
   components:
   - type: Sprite
     state: somberpsychbedlong
-    noRot: true
+    snapCardinals: false
+    noRot: false
   - type: Strap
     position: Down
     rotation: -90
@@ -368,7 +369,8 @@
   components:
   - type: Sprite
     state: somberpsychbedlongflipped
-    noRot: true
+    snapCardinals: false
+    noRot: false
   - type: Strap
     position: Down
     rotation: 90
@@ -384,7 +386,8 @@
   - type: Sprite
     sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
     state: somberpsychbedlongtable
-    noRot: true
+    snapCardinals: false
+    noRot: false
   - type: Strap
     position: Down
     rotation: -90
@@ -415,7 +418,48 @@
   - type: Strap
     buckleOffset: "0.775,0.475"
 
-# Footrests
+# Couches
+
+- type: entity
+  parent: BenchSofaSomberMiddle
+  id: BenchSofaSomberMiddleNoRotation
+  suffix: Middle, No Rotation
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Benches/sombersofa.rsi
+    snapCardinals: false
+    noRot: false
+
+- type: entity
+  parent: BenchSofaSomberLeft
+  id: BenchSofaSomberLeftNoRotation
+  suffix: Left, No Rotation
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Benches/sombersofa.rsi
+    snapCardinals: false
+    noRot: false
+
+- type: entity
+  parent: BenchSofaSomberRight
+  id: BenchSofaSomberRightNoRotation
+  suffix: Right, No Rotation
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Benches/sombersofa.rsi
+    snapCardinals: false
+    noRot: false
+
+- type: entity
+  parent: BenchSofaSomberCorner
+  id: BenchSofaSomberCornerNoRotation
+  suffix: Corner, No Rotation
+  components:
+  - type: Sprite
+    snapCardinals: false
+    noRot: false
 
 - type: entity
   parent: BedPenthouseUpper
@@ -427,7 +471,8 @@
   - type: Sprite
     sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
     state: sofafootrestright
-    noRot: true
+    snapCardinals: false
+    noRot: false
   - type: Strap
     position: Down
     rotation: 90
@@ -443,7 +488,8 @@
   - type: Sprite
     sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
     state: sofafootrestmiddle
-    noRot: true
+    snapCardinals: false
+    noRot: false
   - type: Strap
     position: Down
     rotation: 90
@@ -459,7 +505,8 @@
   - type: Sprite
     sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
     state: sofafootrestleft
-    noRot: true
+    snapCardinals: false
+    noRot: false
   - type: Strap
     position: Down
     rotation: 90
@@ -494,14 +541,14 @@
   - type: Sprite
     sprite: _SHA/Structures/Furniture/furniture-64x32.rsi
     state: bedlower
-    noRot: true
+    snapCardinals: false
+    noRot: false
   - type: Strap
     position: Down
     rotation: -90
     buckleOffset: "-.1,0.29"
   - type: Transform
     anchored: true
-    noRot: true
   - type: Anchorable
   - type: Pullable
   - type: InteractionOutline
@@ -528,7 +575,8 @@
         - TableMask
   - type: Sprite
     state: bedupper
-    noRot: true
+    snapCardinals: false
+    noRot: false
   - type: Strap
     position: Down
     rotation: -90
@@ -541,7 +589,8 @@
   components:
   - type: Sprite
     state: bedlowerflipped
-    noRot: true
+    snapCardinals: false
+    noRot: false
   - type: Strap
     position: Down
     rotation: 90
@@ -554,7 +603,8 @@
   components:
   - type: Sprite
     state: bedupperflipped
-    noRot: true
+    snapCardinals: false
+    noRot: false
   - type: Strap
     position: Down
     rotation: 90
@@ -571,7 +621,8 @@
   components:
   - type: Sprite
     state: bedlowerbasic
-    noRot: true
+    snapCardinals: false
+    noRot: false
 
 - type: entity
   parent: BedPenthouseUpper
@@ -582,7 +633,8 @@
   components:
   - type: Sprite
     state: bedupperbasic
-    noRot: true
+    snapCardinals: false
+    noRot: false
 
 - type: entity
   parent: BedPenthouseLowerFlipped
@@ -593,7 +645,8 @@
   components:
   - type: Sprite
     state: bedlowerbasicflipped
-    noRot: true
+    snapCardinals: false
+    noRot: false
 
 - type: entity
   parent: BedPenthouseUpperFlipped
@@ -604,7 +657,8 @@
   components:
   - type: Sprite
     state: bedupperbasicflipped
-    noRot: true
+    snapCardinals: false
+    noRot: false
 
 # Small fancy beds
 
