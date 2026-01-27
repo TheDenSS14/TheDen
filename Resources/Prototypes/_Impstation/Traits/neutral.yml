@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 TheLuggage05
 # SPDX-FileCopyrightText: 2025 pocl v
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 entings
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -54,3 +55,15 @@
     - !type:TraitAddComponent
       components:
         - type: BasicFrenchAccent
+
+- type: trait
+  id: ScrambledAccent
+  category: TraitsSpeechAccents
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ScrambledAccent
