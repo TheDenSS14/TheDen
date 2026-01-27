@@ -608,3 +608,16 @@
         reagents:
         - ReagentId: HolidayCheer
           Quantity: 30
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkChainmailGlass
+  suffix: chainmail
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Chainmail
+          Quantity: 30
