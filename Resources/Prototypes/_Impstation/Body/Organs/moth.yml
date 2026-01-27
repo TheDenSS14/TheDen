@@ -1,32 +1,4 @@
 - type: entity
-  id: BaseMothOrgan
-  parent: BaseItem
-  abstract: true
-  components:
-  - type: Sprite
-    sprite: _Impstation/Mobs/Species/Moth/organs.rsi
-  - type: Organ
-  - type: Food
-  - type: Extractable
-    grindableSolutionName: organ
-  - type: SolutionContainerManager
-    solutions:
-      organ:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
-  - type: Tag # goob edit
-    tags:
-    - Meat
-    - Organ
-
-- type: entity
   id: OrganMothBrain
   parent: OrganHumanBrain
   name: cerebral ganglia
@@ -56,22 +28,6 @@
   - type: Organ # Shitmed
     slotId: lungs
   - type: Lung
-
-- type: entity
-  id: OrganMothHeart
-  parent: OrganAnimalHeart
-  name: heart
-  description: "A persistent little biological pump made for bugs."
-  components:
-  - type: Sprite
-    sprite: _Impstation/Mobs/Species/Moth/organs.rsi
-    state: heart-on
-  - type: Item
-    size: Small
-    heldPrefix: heart
-  - type: Organ # Shitmed
-    slotId: heart
-  - type: Heart # Shitmed
 
 - type: entity
   id: OrganMothLiver
