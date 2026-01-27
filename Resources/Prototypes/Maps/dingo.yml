@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 therealDLondon
+# SPDX-FileCopyrightText: 2026 Nata F Miakova
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -7,7 +8,7 @@
   mapName: 'Dingo'
   mapPath: /Maps/TheDen/dingo.yml
   minPlayers: 0
-  maxPlayers: 50
+  maxPlayers: 60
   stations:
     Dingo:
       stationProto: StandardNanotrasenStation
@@ -25,8 +26,8 @@
           availableJobs:
           #Service
             Passenger: [ -1, -1 ]
-            ServiceWorker: [ 1, 2 ]
-            Reporter: [ 1, 1 ]
+            ServiceWorker: [ 1, 3 ]
+            Reporter: [ 1, 2 ]
             Lawyer: [ 1, 1 ]
             Bartender: [ 1, 2 ]
             Botanist: [ 1, 2 ]
@@ -64,11 +65,11 @@
             Warden: [ 1, 1 ]
             SecurityCadet: [ 1, 3 ]
             Brigmedic: [ 1, 1 ]
-            Prisoner: [ 2, 2 ]
+            Prisoner: [ 0, 0 ]
           #Science
             ResearchDirector: [ 1, 1 ]
             SeniorResearcher: [ 1, 1 ]
-            Scientist: [ 2, 3 ]
+            Scientist: [ 2, 4 ]
             ResearchAssistant: [ 2, 2 ]
             Chaplain: [ 1, 1 ]
             ForensicMantis: [ 1, 1 ]
