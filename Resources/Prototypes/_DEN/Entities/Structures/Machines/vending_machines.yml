@@ -161,10 +161,6 @@
     understands:
     - Psychomantic
   - type: Actions
-  - type: ThermalVision # Weird psionic senses
-    pulseTime: 0 # Toggled, not timed
-    lightRadius: 7
-    color: "#4dc4ff"
   - type: Examiner # So they can at least inspect what they dispensed
   - type: Fixtures
     fixtures:
@@ -261,3 +257,7 @@
         - MachineLayer
         density: 500
   - type: BlockMovement
+  - type: ThermalVision # Weird psionic senses so they can see people through the wall they're in
+    pulseTime: 0 # Toggled, not timed
+    lightRadius: 7
+    color: "#4dc4ff"
