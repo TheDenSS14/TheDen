@@ -4,3 +4,4 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 verb-categories-leash-config = Set Length
+verb-leash-type-config = Set Type

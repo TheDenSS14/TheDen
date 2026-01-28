@@ -39,6 +39,21 @@
     attachDelay: 4
     detachDelay: 4
     selfDetachDelay: 10
+    leashSpriteConfigs:
+    - configId: "Rope"
+      leashSprite:
+        sprite: _Floof/Objects/Tools/leash-rope.rsi
+        state: rope
+      leashIconSprite:
+        sprite: _Floof/Objects/Tools/leash.rsi
+        state: icon
+    - configId: "Chains"
+      leashSprite:
+        sprite: _DEN/Objects/Tools/leashnapsack-chain.rsi
+        state: chain
+      leashIconSprite:
+        sprite: _DEN/Objects/Tools/leashnapsack.rsi
+        state: icon
 
 - type: entity
   id: LeashAdvanced
