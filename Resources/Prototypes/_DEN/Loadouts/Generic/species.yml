@@ -98,3 +98,16 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Vox
+
+# Passthrough Mask
+- type: loadout
+  id: LoadoutClothingMaskBreathEatThrough
+  category: Species
+  cost: 4
+  customColorTint: true
+  items:
+    - ClothingMaskBreathEatThrough
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Vox
