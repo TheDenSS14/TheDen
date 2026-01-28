@@ -11,3 +11,12 @@
   - type: Sprite
     sprite: _DEN/Structures/Wallmounts/mirror.rsi
     state: sombermirror
+
+- type: entity
+  parent: Mirror
+  id: MirrorRectangle
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/mirror_rectangle.rsi
+  - type: Construction
+    node: MirrorRectangle
