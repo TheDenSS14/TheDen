@@ -8,6 +8,21 @@
   },
   "states": [
     {
+      "name": "water",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
       "name": "poolwater",
       "delays": [
         [
@@ -263,7 +278,7 @@
       ]
     },
     {
-      "name": "poolwatershine",
+      "name": "watershine",
       "delays": [
         [
           0.3,

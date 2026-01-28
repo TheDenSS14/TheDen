@@ -1,4 +1,41 @@
-# Standard
+
+
+- type: entity
+  parent: FloorWaterEntity
+  id: SomberWater
+  name: somber pool
+  description: "Only water."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: water
+    - state: watershine
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
 
 - type: entity
   parent: FloorWaterEntityPool
@@ -9,10 +46,10 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwater
-    - state: poolwatershine
+    - state: watershine
       shader: unshaded
   - type: Fixtures # These pools won't grab you from half a tile away
     fixtures:
@@ -37,13 +74,15 @@
         density: 1000
         hard: false
 
+# Standard
+
 - type: entity
   parent: SomberPoolWater
   id: SomberPoolWaterN
   suffix: North
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterN
     - state: poolwaterNshine
@@ -77,7 +116,7 @@
   suffix: South
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterS
     - state: poolwaterSshine
@@ -111,7 +150,7 @@
   suffix: East
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterE
     - state: poolwaterEshine
@@ -145,7 +184,7 @@
   suffix: West
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterW
     - state: poolwaterWshine
@@ -179,7 +218,7 @@
   suffix: Northeast
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterNE
     - state: poolwaterNEshine
@@ -213,7 +252,7 @@
   suffix: Northwest
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterNW
     - state: poolwaterNWshine
@@ -247,7 +286,7 @@
   suffix: Southeast
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterSE
     - state: poolwaterSEshine
@@ -281,7 +320,7 @@
   suffix: Southwest
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterSW
     - state: poolwaterSWshine
@@ -317,7 +356,7 @@
   suffix: Dark, North
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterNdark
     - state: poolwaterNshine
@@ -329,7 +368,7 @@
   suffix: Dark, South
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterSdark
     - state: poolwaterSshine
@@ -341,7 +380,7 @@
   suffix: Dark, East
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterEdark
     - state: poolwaterEshine
@@ -353,7 +392,7 @@
   suffix: Dark, West
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterWdark
     - state: poolwaterWshine
@@ -365,7 +404,7 @@
   suffix: Dark, Northeast
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterNEdark
     - state: poolwaterNEshine
@@ -377,7 +416,7 @@
   suffix: Dark, Northwest
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterNWdark
     - state: poolwaterNWshine
@@ -389,7 +428,7 @@
   suffix: Dark, Southeast
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterSEdark
     - state: poolwaterSEshine
@@ -401,7 +440,7 @@
   suffix: Dark, Southwest
   components:
   - type: Sprite
-    sprite: _DEN/Tiles/Planet/watersomber.rsi
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwaterSWdark
     - state: poolwaterSWshine

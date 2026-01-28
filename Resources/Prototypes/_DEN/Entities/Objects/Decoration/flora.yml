@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseTree
-  id: AmaranthTree01
+  id: SomberAmaranthTree01
   name: amaranth tree
   description: "An exotic hardwood tree with faintly luminescent leaves. Its resin is toxic, making the lumber notoriously difficult to work."
   placement:
@@ -46,8 +46,8 @@
             max: 8
 
 - type: entity
-  parent: AmaranthTree01
-  id: AmaranthTree02
+  parent: SomberAmaranthTree01
+  id: SomberAmaranthTree02
   components:
   - type: Sprite
     layers:
@@ -56,8 +56,8 @@
       shader: unshaded
 
 - type: entity
-  parent: AmaranthTree01
-  id: AmaranthTree03
+  parent: SomberAmaranthTree01
+  id: SomberAmaranthTree03
   components:
   - type: Sprite
     layers:
@@ -66,8 +66,8 @@
       shader: unshaded
 
 - type: entity
-  parent: AmaranthTree01
-  id: AmaranthTree04
+  parent: SomberAmaranthTree01
+  id: SomberAmaranthTree04
   components:
   - type: Sprite
     layers:
@@ -76,8 +76,8 @@
       shader: unshaded
 
 - type: entity
-  parent: AmaranthTree01
-  id: AmaranthTree05
+  parent: SomberAmaranthTree01
+  id: SomberAmaranthTree05
   components:
   - type: Sprite
     layers:
@@ -86,8 +86,8 @@
       shader: unshaded
 
 - type: entity
-  parent: AmaranthTree01
-  id: AmaranthTree06
+  parent: SomberAmaranthTree01
+  id: SomberAmaranthTree06
   components:
   - type: Sprite
     layers:

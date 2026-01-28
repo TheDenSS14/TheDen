@@ -53,6 +53,10 @@ tiles-somber-dark-SE = somber steel corner (dark, SE)
 tiles-somber-dark-SW = somber steel corner (dark, SW)
 tiles-somber-glass-floor-tinted = somber glass tile (tinted)
 tiles-somber-glass-floor-tinted-dark = somber glass tile (tinted, dark)
+tiles-somber-dirt-planet = somber dirt (indestructible subfloor)
+tiles-somber-dirt = somber dirt
+tiles-somber-grass-planet = somber grass (indestructible subfloor)
+tiles-somber-grass = somber grass
 # Somber tileset end
 
 tiles-invisible = invisible floor

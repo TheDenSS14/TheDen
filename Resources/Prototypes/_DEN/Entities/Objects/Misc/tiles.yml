@@ -719,6 +719,45 @@
     - FloorSomberGlassTintedDark
   - type: Stack
     stackType: FloorTileSomberGlassTintedDark
+
+- type: entity
+  parent: FloorTileItemBase
+  id: FloorTileItemSomberDirt
+  name: somber dirt
+  components:
+  - type: Item
+    sprite: _DEN/Objects/Tiles/tile.rsi
+  - type: Sprite
+    sprite: _DEN/Objects/Tiles/tile.rsi
+    state: somber-dirt
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberDirt
+  - type: Stack
+    stackType: FloorTileSomberDirt
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 1 # It's dirt...
+    staminaCost: 3
+    soundHit:
+      collection: MetalThud
+
+- type: entity
+  parent: FloorTileItemSomberDirt
+  id: FloorTileItemSomberGrass
+  name: somber grass
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tiles/tile.rsi
+    state: somber-grass
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberGrass
+  - type: Stack
+    stackType: FloorTileSomberGrass
 # Somber tileset end
 
 - type: entity

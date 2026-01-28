@@ -1,0 +1,9 @@
+- type: entity
+  parent: ToiletEmpty
+  id: ToiletEmptySomber
+  name: somber toilet
+  suffix: ""
+  description: "A sleek porcelain toilet fitted with an integrated bidet, offering heated water, subtle air drying, and discreet controls."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/sombertoilet.rsi

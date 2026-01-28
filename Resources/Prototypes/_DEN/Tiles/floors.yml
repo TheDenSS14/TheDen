@@ -817,16 +817,74 @@
   heatCapacity: 10000
 
 - type: tile
-  id: FloorSomberGlassTintedDark
-  name: tiles-somber-glass-floor-tinted-dark
-  sprite: /Textures/_DEN/Tiles/somber-glass-tinted-dark.png
+  id: FloorSomberDirtPlanet
+  name: tiles-somber-dirt-planet
+  sprite: /Textures/_DEN/Tiles/Planet/Somber/dirt.rsi/dirt.png
+  variants: 7
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+- type: tile
+  parent: FloorSomberDirtPlanet
+  id: FloorSomberDirt
+  name: tiles-somber-dirt
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
+  weather: false
+  indestructible: false
+  itemDrop: FloorTileItemSomberDirt
+
+- type: tile
+  id: FloorSomberGrassPlanet
+  name: tiles-somber-grass-planet
+  sprite: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/grass.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/single_edge.png
+    NorthEast: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/single_edge.png
+    NorthWest: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/single_edge.png
+    SouthWest: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/single_edge.png
+    South: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/double_edge.png
+    East: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/double_edge.png
+    North: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/double_edge.png
+    West: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/double_edge.png
+  baseTurf: FloorSomberDirtPlanet
+  isSubfloor: true
   footstepSounds:
-    collection: FootstepTile
-  itemDrop: FloorTileItemSomberGlassTintedDark
+    collection: FootstepGrass
   heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+- type: tile
+  parent: FloorSomberGrassPlanet
+  id: FloorSomberGrass
+  name: tiles-somber-grass
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  weather: false
+  indestructible: false
+  itemDrop: FloorTileItemSomberGrass
 
 # Somber tileset end
 

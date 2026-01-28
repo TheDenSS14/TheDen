@@ -103,17 +103,6 @@
   heatCapacity: 10000
   indestructible: true
 
-- type: tile
-  id: FloorPlanetDirtPenthouse
-  name: tiles-dirt-floor-penthouse
-  sprite: /Textures/_SHA/Tiles/Planet/dirt.rsi/dirt.png
-  baseTurf: Plating
-  isSubfloor: false
-  footstepSounds:
-    collection: FootstepAsteroid
-  heatCapacity: 10000
-  indestructible: true
-
 # Decals
 
 - type: decal
@@ -409,6 +398,7 @@
 - type: entity
   parent: SomberChairCushion
   id: SomberChairCushionCentered
+  suffix: Centered
   placement:
     mode: SnapgridCenter
   components:
@@ -423,7 +413,7 @@
 - type: entity
   parent: BenchSofaSomberMiddle
   id: BenchSofaSomberMiddleNoRotation
-  suffix: Middle, No Rotation
+  suffix: Rotation Disabled, Middle
   placement:
     mode: SnapgridCenter
   components:
@@ -435,7 +425,7 @@
 - type: entity
   parent: BenchSofaSomberLeft
   id: BenchSofaSomberLeftNoRotation
-  suffix: Left, No Rotation
+  suffix: Rotation Disabled, Left
   components:
   - type: Sprite
     sprite: _SHA/Structures/Furniture/Benches/sombersofa.rsi
@@ -445,7 +435,7 @@
 - type: entity
   parent: BenchSofaSomberRight
   id: BenchSofaSomberRightNoRotation
-  suffix: Right, No Rotation
+  suffix: Rotation Disabled, Right
   components:
   - type: Sprite
     sprite: _SHA/Structures/Furniture/Benches/sombersofa.rsi
@@ -455,7 +445,7 @@
 - type: entity
   parent: BenchSofaSomberCorner
   id: BenchSofaSomberCornerNoRotation
-  suffix: Corner, No Rotation
+  suffix: Rotation Disabled, Corner
   components:
   - type: Sprite
     snapCardinals: false
@@ -747,7 +737,7 @@
 # Trees
 
 - type: entity
-  parent: AmaranthTree01
+  parent: SomberAmaranthTree01
   id: AmaranthTree01Penthouse
   name: amaranth tree
   description: "An exotic hardwood tree with faintly luminescent leaves. Its resin is toxic, making the lumber notoriously difficult to work."
@@ -779,7 +769,7 @@
     damageModifierSet: Indestructible
 
 - type: entity
-  parent: AmaranthTree01
+  parent: SomberAmaranthTree01
   id: AmaranthTree02Penthouse
   components:
   - type: Sprite
@@ -789,7 +779,7 @@
       shader: unshaded
 
 - type: entity
-  parent: AmaranthTree01
+  parent: SomberAmaranthTree01
   id: AmaranthTree03Penthouse
   components:
   - type: Sprite
@@ -799,7 +789,7 @@
       shader: unshaded
 
 - type: entity
-  parent: AmaranthTree01
+  parent: SomberAmaranthTree01
   id: AmaranthTree04Penthouse
   components:
   - type: Sprite
@@ -809,7 +799,7 @@
       shader: unshaded
 
 - type: entity
-  parent: AmaranthTree01
+  parent: SomberAmaranthTree01
   id: AmaranthTree05Penthouse
   components:
   - type: Sprite
@@ -819,7 +809,7 @@
       shader: unshaded
 
 - type: entity
-  parent: AmaranthTree01
+  parent: SomberAmaranthTree01
   id: AmaranthTree06Penthouse
   components:
   - type: Sprite
