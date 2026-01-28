@@ -18,4 +18,15 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<bool> AllowDuplicatePkaModules =
         CVarDef.Create("modkit.dupes_enabled", true, CVar.REPLICATED | CVar.SERVER);
+	
+
+	/// Grasslands Update
+	
+	/// Sets the maximum number of mining planets to be loaded per shift
+    public static readonly CVarDef<int> LavalandMaxLands =
+        CVarDef.Create("lavaland.max_lands", 1, CVar.REPLICATED | CVar.SERVER);
+	
+	/// Forces only a specific map to load. Set to "" to return to random.
+    public static readonly CVarDef<string> LavalandForceMap =
+        CVarDef.Create("lavaland.force_map", "", CVar.REPLICATED | CVar.SERVER);
 }

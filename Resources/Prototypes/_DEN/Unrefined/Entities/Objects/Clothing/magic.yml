@@ -1,0 +1,50 @@
+- type: entity
+  parent: ClothingNeckCollarBase
+  id: SteelCollarMagic
+  name: steel chain-collar of pacifism
+  description: Those wearing this have a hard time thinking of hurting others.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/steel_collar.rsi
+  - type: Clothing
+    sprite: _DEN/Unrefined/Objects/Clothing/steel_collar.rsi
+  - type: ClothingGrantComponent
+    component:
+      - type: Pacified
+
+- type: entity
+  parent: SteelCollarMagic
+  id: GoldCollarMagic
+  name: gold chain-collar of pacifism
+  description: Those wearing this have a really hard time thinking of hurting others.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/gold_collar.rsi
+  - type: Clothing
+    sprite: _DEN/Unrefined/Objects/Clothing/gold_collar.rsi
+  - type: StaminaDamageResistance
+    coefficient: 2
+    
+- type: entity
+  parent: ClothingNeckBase
+  id: AmuletProtection
+  name: amulet of protection
+  description: You feel a touch luckier with the sapphire around your neck.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Clothing/protection_amulet.rsi
+  - type: Clothing
+    sprite: _DEN/Unrefined/Objects/Clothing/protection_amulet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        #Blunt: 0.95
+        #Slash: 0.95
+        #Piercing: 0.95
+        #Heat: 0.95
+        #Cold: 0.95
+        #Caustic: 0.95
+        #Radiation: 0.95
+        Poison: 0.95
+      flatReductions:
+        Poison: 0.5

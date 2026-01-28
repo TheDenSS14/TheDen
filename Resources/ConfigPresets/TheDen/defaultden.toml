@@ -44,7 +44,7 @@ maxcharacterslots = 100
 [hub]
 # Set to true to show this server on the public server list
 # Before enabling this, read: https://docs.spacestation14.io/hosts/hub-rules
-advertise = true
+# advertise = true
 # Comma-separated list of tags, useful for categorizing your server.
 tags = "18+,lang:en-US,rp:med,region:am_n_e,no_tag_infer"
 # Comma-separated list of URLs of hub servers to advertise to.
@@ -101,3 +101,6 @@ space_wind = false
 
 [reclaimer]
 allow_gibbing = false
+
+[lavaland]
+max_lands = 1
