@@ -772,28 +772,28 @@
   items:
     - WeaponPistolViperWoodSecurity #TheDen
 
-- type: loadout
-  id: LoadoutSecurityEquipmentTruncheon
-  category: JobsSecurityAUncategorized
-  cost: 3
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapons
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterDepartmentRequirement
-          departments:
-            - Security
-        - !type:CharacterJobRequirement
-          jobs:
-            - BlueshieldOfficer
-  items:
-    - Truncheon
+# - type: loadout
+#   id: LoadoutSecurityEquipmentTruncheon
+#   category: JobsSecurityAUncategorized
+#   cost: 3
+#   canBeHeirloom: true
+#   guideEntry: SecurityWeapons
+#   requirements:
+#     - !type:CharacterDepartmentTimeRequirement
+#       department: Security
+#       min: 3600 # 1 hours
+#     - !type:CharacterItemGroupRequirement
+#       group: LoadoutSecurityWeapons
+#     - !type:CharacterLogicOrRequirement
+#       requirements:
+#         - !type:CharacterDepartmentRequirement
+#           departments:
+#             - Security
+#         - !type:CharacterJobRequirement
+#           jobs:
+#             - BlueshieldOfficer
+#   items:
+#     - Truncheon
 
 - type: loadout
   id: LoadoutSecurityPistolPollock #TheDen
