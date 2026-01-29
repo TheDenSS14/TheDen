@@ -43,3 +43,6 @@ flavor-complex-sleepytimejunction = like sweet dreams and cream
 flavor-complex-supermixer = boringly sweet
 flavor-complex-supermixerpsych = like a psychiatric appointment
 flavor-complex-weldingcoils = electrifying
+
+flavor-base-fatty = fatty
+flavor-base-gooey = gooey
