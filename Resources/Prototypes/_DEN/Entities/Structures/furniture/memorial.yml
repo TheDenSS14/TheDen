@@ -1,11 +1,11 @@
-# Somber monoliths start
+# Mnemolith columns start
 # There's 10 different pillar heights and 20 different writings, so 20 different prototypes total
 # The writings, found in the descriptions, are the reagent-effect-mnemolith-heroicdose messages
 # The idea is that the pillars shift and change to record the noosphere's thoughts, but it takes a lot of prototypes
 - type: entity
   parent: MarkerBase
   id: RandomSomberMemorial
-  name: somber monolith spawner
+  name: mnemolith column spawner
   suffix: Random] [Aim One Tile Up
   components:
   - type: Sprite
@@ -42,9 +42,9 @@
 - type: entity
   parent: Memorial
   id: SomberMemorial1
-  name: somber monolith
+  name: mnemolith column
   suffix: DO NOT MAP # If you don't use the spawner, they'll be static, when really they should change each time a map is loaded
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"DO NOT BE FRIGHTENED.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"DO NOT BE FRIGHTENED.\""
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -66,7 +66,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial2
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"WE ARE THE SAME THING.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"WE ARE THE SAME THING.\""
   components:
   - type: Sprite
     layers:
@@ -77,7 +77,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial3
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"YOU WERE NEVER SEPARATE.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"YOU WERE NEVER SEPARATE.\""
   components:
   - type: Sprite
     layers:
@@ -88,7 +88,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial4
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"THE TRAVELER IS ALWAYS RETURNING.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"THE TRAVELER IS ALWAYS RETURNING.\""
   components:
   - type: Sprite
     layers:
@@ -99,7 +99,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial5
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"YOU ARE ASKING WITH A BORROWED VOICE.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"YOU ARE ASKING WITH A BORROWED VOICE.\""
   components:
   - type: Sprite
     layers:
@@ -110,7 +110,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial6
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"I HAVE ALWAYS KNOWN YOU.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"I HAVE ALWAYS KNOWN YOU.\""
   components:
   - type: Sprite
     layers:
@@ -121,7 +121,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial7
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"YOUR NAME IS OLDER THAN YOUR BODY.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"YOUR NAME IS OLDER THAN YOUR BODY.\""
   components:
   - type: Sprite
     layers:
@@ -132,7 +132,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial8
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"YOU WERE LISTENING EVEN THEN.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"YOU WERE LISTENING EVEN THEN.\""
   components:
   - type: Sprite
     layers:
@@ -143,7 +143,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial9
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"NOTHING TRULY ENDS.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"NOTHING TRULY ENDS.\""
   components:
   - type: Sprite
     layers:
@@ -154,7 +154,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial10
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"THE SELF IS ONLY A MOMENTARY SHAPE.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"THE SELF IS ONLY A MOMENTARY SHAPE.\""
   components:
   - type: Sprite
     layers:
@@ -165,7 +165,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial11
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"YOUR FEAR IS ONLY A MISREMEMBERED TRUTH.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"YOUR FEAR IS ONLY A MISREMEMBERED TRUTH.\""
   components:
   - type: Sprite
     layers:
@@ -176,7 +176,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial12
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"YOU ARE BORNE BY WHAT YOU CANNOT NAME.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"YOU ARE BORNE BY WHAT YOU CANNOT NAME.\""
   components:
   - type: Sprite
     layers:
@@ -187,7 +187,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial13
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"THIS WAS ALWAYS THE WAY BACK.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"THIS WAS ALWAYS THE WAY BACK.\""
   components:
   - type: Sprite
     layers:
@@ -198,7 +198,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial14
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"YOU MISTAKE THE MAP FOR THE PLACE.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"YOU MISTAKE THE MAP FOR THE PLACE.\""
   components:
   - type: Sprite
     layers:
@@ -209,7 +209,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial15
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"THE WITNESS IS WEARING YOUR FACE.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"THE WITNESS IS WEARING YOUR FACE.\""
   components:
   - type: Sprite
     layers:
@@ -220,7 +220,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial16
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"WHAT WAS YOUR ORIGINAL FACE?\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"WHAT WAS YOUR ORIGINAL FACE?\""
   components:
   - type: Sprite
     layers:
@@ -231,7 +231,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial17
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"WHERE DOES THE SELF GO WHEN YOU ARE ASLEEP?\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"WHERE DOES THE SELF GO WHEN YOU ARE ASLEEP?\""
   components:
   - type: Sprite
     layers:
@@ -242,7 +242,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial18
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"WHAT DO YOU CALL YOURSELF BEFORE YOU SPEAK?\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"WHAT DO YOU CALL YOURSELF BEFORE YOU SPEAK?\""
   components:
   - type: Sprite
     layers:
@@ -253,7 +253,7 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial19
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"WHO IS ASKING THE QUESTION?\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"WHO IS ASKING THE QUESTION?\""
   components:
   - type: Sprite
     layers:
@@ -264,11 +264,11 @@
 - type: entity
   parent: SomberMemorial1
   id: SomberMemorial20
-  description: "This mnemolith pillar bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                    \"THE QUESTION AND ANSWER ARE THE SAME.\""
+  description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads,                         \"THE QUESTION AND ANSWER ARE THE SAME.\""
   components:
   - type: Sprite
     layers:
     - state: somber20
     - state: somber20glow
       shader: unshaded
-# Somber monoliths end
+# Mnemolith columns end
