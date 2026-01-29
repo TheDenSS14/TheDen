@@ -817,6 +817,18 @@
   heatCapacity: 10000
 
 - type: tile
+  id: FloorSomberGlassTintedDark
+  name: tiles-somber-glass-floor-tinted-dark
+  sprite: /Textures/_DEN/Tiles/somber-glass-tinted-dark.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassTintedDark
+  heatCapacity: 10000
+
+- type: tile
   id: FloorSomberDirtPlanet
   name: tiles-somber-dirt-planet
   sprite: /Textures/_DEN/Tiles/Planet/Somber/dirt.rsi/dirt.png
@@ -885,6 +897,48 @@
   weather: false
   indestructible: false
   itemDrop: FloorTileItemSomberGrass
+
+- type: tile
+  id: FloorSomberSteelPlanter
+  name: tiles-somber-steel-floor-planter
+  sprite: /Textures/_DEN/Tiles/somber-tile-planter.png
+  variants: 7
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelPlanter
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelPlanterDark
+  name: tiles-somber-steel-floor-planter-dark
+  sprite: /Textures/_DEN/Tiles/somber-tile-planter-dark.png
+  variants: 7
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelPlanterDark
+  heatCapacity: 10000
 
 # Somber tileset end
 

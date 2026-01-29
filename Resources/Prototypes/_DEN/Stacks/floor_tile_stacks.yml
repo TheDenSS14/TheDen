@@ -359,6 +359,20 @@
   spawn: FloorTileItemSomberGrass
   maxCount: 30
   itemSize: 5
+
+- type: stack
+  id: FloorTileSomberSteelPlanter
+  name: somber steel tile (planter)
+  spawn: FloorTileItemSomberSteelPlanter
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberSteelPlanterDark
+  name: somber steel tile (planter, dark)
+  spawn: FloorTileItemSomberSteelPlanterDark
+  maxCount: 30
+  itemSize: 5
 # Somber tileset end
 
 - type: stack

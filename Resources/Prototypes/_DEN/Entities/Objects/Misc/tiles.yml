@@ -758,6 +758,34 @@
       - FloorSomberGrass
   - type: Stack
     stackType: FloorTileSomberGrass
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelPlanter
+  name: somber steel tile (planter)
+  components:
+  - type: Sprite
+    state: somber-tile-planter
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelPlanter
+  - type: Stack
+    stackType: FloorTileSomberSteelPlanter
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelPlanterDark
+  name: somber steel tile (planter, dark)
+  components:
+  - type: Sprite
+    state: somber-tile-planter-dark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelPlanterDark
+  - type: Stack
+    stackType: FloorTileSomberSteelPlanterDark
 # Somber tileset end
 
 - type: entity

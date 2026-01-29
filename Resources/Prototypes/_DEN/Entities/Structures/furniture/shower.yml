@@ -1,0 +1,35 @@
+- type: entity
+  parent: Shower
+  id: SomberShower
+  name: somber shower
+  description: "A bulky, angled showerhead with pressure tuned for full coverage."
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Furniture/sombershower.rsi
+    - type: StaticPrice
+      price: 125
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 300
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+        - trigger:
+            !type:DamageTrigger
+            damage: 100
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalBreak
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                SheetSteel1:
+                  min: 1
+                  max: 2
+                ScrapElectrum:
+                  min: 1
+                  max: 2

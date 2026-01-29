@@ -5,7 +5,7 @@
 - type: entity
   parent: Mirror
   id: SomberMirror
-  name: somber electrum mirror
+  name: somber mirror
   description: "A glossy electrum mirror with a polished mu-metal backing that prevents psionic scrying. A calm, private moment."
   placement:
     mode: SnapgridCenter
@@ -15,3 +15,18 @@
   - type: Sprite
     sprite: _DEN/Structures/Wallmounts/mirror.rsi
     state: sombermirror
+
+- type: entity
+  parent: SomberMirror
+  id: SomberMirrorWide
+  name: somber mirror
+  suffix: Wide
+  description: "A glossy electrum mirror with a polished mu-metal backing that prevents psionic scrying. A calm, private moment."
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/mirror.rsi
+    state: sombermirrorwide

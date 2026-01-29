@@ -57,6 +57,8 @@ tiles-somber-dirt-planet = somber dirt (indestructible subfloor)
 tiles-somber-dirt = somber dirt
 tiles-somber-grass-planet = somber grass (indestructible subfloor)
 tiles-somber-grass = somber grass
+tiles-somber-steel-floor-planter = somber steel tile (planter)
+tiles-somber-steel-floor-planter-dark = somber steel tile (planter, dark)
 # Somber tileset end
 
 tiles-invisible = invisible floor
