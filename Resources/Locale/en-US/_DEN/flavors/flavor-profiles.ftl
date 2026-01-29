@@ -58,6 +58,7 @@ flavor-complex-coconutdoublecreampie = nutty
 flavor-complex-arkveiltemple = like a tropical adventure
 flavor-complex-plasmaflood = like fruity plasma burn
 flavor-complex-vodkacheers = like spicy cherry
+flavor-complex-chainmail = like death in a dark, cold cellar
 
 ## Chemicals
 flavor-complex-mantispaper = like a name set in stone

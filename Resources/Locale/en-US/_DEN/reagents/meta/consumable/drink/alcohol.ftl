@@ -116,3 +116,6 @@ reagent-desc-cherrysoda = A sweet glass of cherry soda.
 
 reagent-name-vodkacheers = vodka cheers
 reagent-desc-vodkacheers = A crisp cherry flavored cocktail.
+
+reagent-name-chainmail = chainmail
+reagent-desc-chainmail = A bitter bite, served in a dark oak tankard. Only for the brave dungeon delvers.
