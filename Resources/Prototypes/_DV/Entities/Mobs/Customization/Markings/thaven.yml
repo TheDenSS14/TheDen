@@ -26,3 +26,33 @@
   sprites:
   - sprite: _DV/Mobs/Customization/thaven/thaven.rsi
     state: eyebrow_barbels
+
+- type: marking
+  id: ThavenCheekBarbelsU
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Thaven]
+  coloring: #imp
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DV/Mobs/Customization/thaven/thaven.rsi
+    state: cheek_barbels
+  shader: unshaded
+
+- type: marking
+  id: ThavenEyebrowBarbelsU
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Thaven]
+  coloring: #imp
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DV/Mobs/Customization/thaven/thaven.rsi
+    state: eyebrow_barbels
+  shader: unshaded

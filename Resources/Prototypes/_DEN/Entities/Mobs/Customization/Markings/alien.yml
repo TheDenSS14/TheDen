@@ -97,6 +97,66 @@
   - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
     state: eyes_alien_wide
 
+- type: marking
+  id: AlienEyesU
+  bodyPart: Eyes
+  markingCategory: Face
+  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox, Thaven ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
+    state: eyes_alien
+  shader: unshaded
+
+- type: marking
+  id: AlienEyesBigU
+  bodyPart: Eyes
+  markingCategory: Face
+  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox, Thaven ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
+    state: eyes_alien_big
+  shader: unshaded
+
+- type: marking
+  id: AlienEyesThreeU
+  bodyPart: Eyes
+  markingCategory: Face
+  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox, Thaven ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
+    state: eyes_alien_three
+  shader: unshaded
+
+- type: marking
+  id: AlienEyesWideU
+  bodyPart: Eyes
+  markingCategory: Face
+  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox, Thaven ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
+    state: eyes_alien_wide
+  shader: unshaded
+
 # OVERLAYS
 
 - type: marking

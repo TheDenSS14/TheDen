@@ -101,3 +101,10 @@ marking-TailSnakeUnderAnimated-m_waggingtail_snakeunder_FRONT_primary = Lizard, 
 marking-TailSnakeUnderAnimated-m_waggingtail_snakeunder_FRONT_secondary = Lizard, Snake w/ Underbelly (Secondary) (Wagging)
 marking-TailSnakeUnderAnimated = Lizard, Snake w/ Underbelly (Wagging)
 TailSnakeUnderAnimated = Snaketail (Underbelly)
+
+marking-TailSnakeUnderUAnimated-m_waggingtail_snakeunder_BEHIND_primary = Lizard, Snake w/ Underbelly (Primary) (Wagging)
+marking-TailSnakeUnderUnimated-m_waggingtail_snakeunder_BEHIND_secondary = Lizard, Snake w/ Underbelly (Secondary) (Wagging)
+marking-TailSnakeUnderUAnimated-m_waggingtail_snakeunder_FRONT_primary = Lizard, Snake w/ Underbelly (Primary) (Wagging)
+marking-TailSnakeUnderUAnimated-m_waggingtail_snakeunder_FRONT_secondary = Lizard, Snake w/ Underbelly (Secondary) (Wagging)
+marking-TailSnakeUnderUAnimated = Lizard, Snake w/ Underbelly (Wagging)
+TailSnakeUnderUAnimated = Snaketail (Underbelly)

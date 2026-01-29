@@ -39,6 +39,42 @@
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_r_hand
 
+- type: marking
+  id: GradientLArmUnshaded
+  bodyPart: LArm
+  markingCategory: LeftArm
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_l_arm
+  shader: unshaded
+
+- type: marking
+  id: GradientRArmUnshaded
+  bodyPart: RArm
+  markingCategory: RightArm
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_r_arm
+  shader: unshaded
+
+- type: marking
+  id: GradientLHandUnshaded
+  bodyPart: LHand
+  markingCategory: LeftHand
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_l_hand
+  shader: unshaded
+
+- type: marking
+  id: GradientRHandUnshaded
+  bodyPart: RHand
+  markingCategory: RightHand
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_r_hand
+  shader: unshaded
+
 # Legs
 - type: marking
   id: GradientLLeg
@@ -71,5 +107,41 @@
   sprites:
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_r_foot
+
+- type: marking
+  id: GradientLLegUnshaded
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_l_leg
+  shader: unshaded
+
+- type: marking
+  id: GradientRLegUnshaded
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_r_leg
+  shader: unshaded
+
+- type: marking
+  id: GradientLFootUnshaded
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_l_foot
+  shader: unshaded
+
+- type: marking
+  id: GradientRFootUnshaded
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_r_foot
+  shader: unshaded
 
 # Tail

@@ -90,6 +90,86 @@
     state: r_foot_doll
 
 - type: marking
+  parent: [BaseTattoo, BaseSpeciesArmsStandardOrganic] # AuroraSong: Marking inheritance
+  id: ArmDollJointsTattooLeftU
+  bodyPart: LArm
+  markingCategory: LeftArm
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_arm_doll
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesArmsStandardOrganic] # AuroraSong: Marking inheritance
+  id: ArmDollJointsTattooRightU
+  bodyPart: RArm
+  markingCategory: RightArm
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_arm_doll
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesArmsStandardOrganic] # AuroraSong: Marking inheritance
+  id: HandDollJointsTattooLeftU
+  bodyPart: LHand
+  markingCategory: LeftHand
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_hand_doll
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesArmsStandardOrganic] # AuroraSong: Marking inheritance
+  id: HandDollJointsTattooRightU
+  bodyPart: RHand
+  markingCategory: RightHand
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_hand_doll
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesLegsStandardOrganic] # AuroraSong: Marking inheritance
+  id: LegDollJointsTattooLeftU
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_leg_doll
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesLegsStandardOrganic] # AuroraSong: Marking inheritance
+  id: LegDollJointsTattooRightU
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_leg_doll
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesLegsStandardOrganic] # AuroraSong: Marking inheritance
+  id: FootDollJointsTattooLeftU
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_foot_doll
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesLegsStandardOrganic] # AuroraSong: Marking inheritance
+  id: FootDollJointsTattooRightU
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_foot_doll
+  shader: unshaded
+
+- type: marking
   parent: [BaseTattoo, BaseSpeciesHeadStandardOrganic] # DEN: Marking inheritance
   id: HeadHeavyTattoos
   bodyPart: Head
@@ -200,3 +280,125 @@
     state: l_foot_heavy1
   - sprite: _Impstation/Mobs/Customization/tattoos.rsi
     state: l_foot_heavy2
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesHeadStandardOrganic] # DEN: Marking inheritance
+  id: HeadHeavyTattoosU
+  bodyPart: Head
+  markingCategory: Head
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: head_heavy1
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: head_heavy2
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesChestStandardOrganic] # DEN: Marking inheritance
+  id: ChestHeavyTattoosU
+  bodyPart: Chest
+  markingCategory: Chest
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: chest_heavy1
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: chest_heavy2
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: chest_heavy3
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesArmsStandardOrganic] # DEN: Marking inheritance
+  id: ArmHeavyTattoosRightU
+  bodyPart: RArm
+  markingCategory: RightArm
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_arm_heavy1
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_arm_heavy2
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesArmsStandardOrganic] # DEN: Marking inheritance
+  id: ArmHeavyTattoosLeftU
+  bodyPart: LArm
+  markingCategory: LeftArm
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_arm_heavy1
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_arm_heavy2
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesArmsStandardOrganic] # DEN: Marking inheritance
+  id: HandHeavyTattoosRightU
+  bodyPart: RHand
+  markingCategory: RightHand
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_hand_heavy1
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_hand_heavy2
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesArmsStandardOrganic] # DEN: Marking inheritance
+  id: HandHeavyTattoosLeftU
+  bodyPart: LHand
+  markingCategory: LeftHand
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_hand_heavy1
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_hand_heavy2
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesLegsStandardOrganic] # DEN: Marking inheritance
+  id: LegHeavyTattoosRightU
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_leg_heavy1
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_leg_heavy2
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesLegsStandardOrganic] # DEN: Marking inheritance
+  id: LegHeavyTattoosLeftU
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_leg_heavy1
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_leg_heavy2
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesLegsStandardOrganic] # DEN: Marking inheritance
+  id: FootHeavyTattoosRightU
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_foot_heavy1
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_foot_heavy2
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesLegsStandardOrganic] # DEN: Marking inheritance
+  id: FootHeavyTattoosLeftU
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_foot_heavy1
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_foot_heavy2
+  shader: unshaded
