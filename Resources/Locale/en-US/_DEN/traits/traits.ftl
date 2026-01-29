@@ -72,6 +72,14 @@ trait-description-SharpTeeth =
     Your unarmed melee attacks deal Piercing damage instead of the standard damage type for your species.
     This has no effect on damage dealt with any form of armed melee.
 
+trait-name-HardenedClaws = Hardened Claws
+trait-description-HardenedClaws =
+    Your fingertips have been replaced with sharp claws.
+    These could come from gene modifications, vatgrown implants,
+    or even hard plastic retractable claws incorpoated into a prosthetic limb.
+    These enhancements increase your unarmed strike damage by 2 slash at base, but do not confer
+    any benefits to any form of armed melee.
+
 trait-name-HandsFreePulling = Hands Free Pulling
 trait-description-HandsFreePulling =
     You were born with or have had your tail modified to be stronger than normal or have aquired
@@ -125,8 +133,3 @@ trait-description-MusicMachine =
 trait-name-IPCSinger = Singer (Synth)
 trait-description-IPCSinger =
     Your electronic voice can be repurposed to sing simple melodies. Gives you a built in Synth Lead singing option.
-
-trait-name-DispelVulnerability = Ethereal Presence
-trait-description-DispelVulnerability =
-    Some aspect of your presence is intrinsically and perilously tied to the noosphere.
-    You suffer [color=red]extreme heat damage[/color] from being the subject of a [color=purple]Dispel[/color] cast.
