@@ -42,6 +42,9 @@ public sealed class StringBounds(string key)
         var lastIndex = 0;
         var keysCopy = new List<int>(keys);
 
+        if (keysCopy.Count == 1)
+            return result;
+
         foreach (var foundKeyIndex in keysCopy)
         {
             if (isEndToken)
@@ -62,16 +65,6 @@ public sealed class StringBounds(string key)
 
             lastIndex = foundKeyIndex;
             isEndToken = true;
-        }
-
-        // if we have an unending key
-        if (keys.Count == 1)
-        {
-            var start = keys.First();
-            var resultingText = text.Substring(start);
-            var nonEndingResult = new StringBoundsResult(keys[0], resultingText.Length - 1, resultingText);
-
-            result.Add(nonEndingResult);
         }
 
         return result;

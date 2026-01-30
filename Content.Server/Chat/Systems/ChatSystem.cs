@@ -522,6 +522,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         )
     {
         var isDetailed = originalMessage.StartsWith("!");
+        originalMessage = FormattedMessage.RemoveMarkupPermissive(originalMessage);
 
         if (isDetailed && originalMessage.Length > 1)
         {
@@ -534,7 +535,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
 
         // The original message
-        var message = TransformSpeechDepending(source, FormattedMessage.RemoveMarkupPermissive(originalMessage), language, keysWithinDialogue, isDetailed);
+        var message = TransformSpeechDepending(source, originalMessage, language, keysWithinDialogue, isDetailed);
 
         if (message.Length == 0)
             return;
@@ -644,6 +645,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     )
     {
         var isDetailed = originalMessage.StartsWith("!");
+        originalMessage = FormattedMessage.RemoveMarkupPermissive(originalMessage);
 
         if (isDetailed && originalMessage.Length > 1)
         {
@@ -658,7 +660,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         var targetHasLanguage = TryComp<LanguageSpeakerComponent>(source, out var languageSpeakerComponent);
         var message = TransformSpeechDepending(
             source,
-            FormattedMessage.RemoveMarkupPermissive(originalMessage),
+            originalMessage,
             language,
             keysWithinDialogue,
             isDetailed);

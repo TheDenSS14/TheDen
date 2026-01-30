@@ -16552,3 +16552,168 @@ Entries:
   id: 1620
   time: '2026-01-23T02:31:20.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2334
+- author: KawaiiDouchebag
+  changes:
+    - type: Add
+      message: Added Hivni for playtesting.
+  id: 1621
+  time: '2026-01-23T22:57:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2297
+- author: Aikakakah
+  changes:
+    - type: Add
+      message: Added birthdays! You can view them from the record consoles.
+  id: 1622
+  time: '2026-01-24T02:00:41.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2279
+- author: entings
+  changes:
+    - type: Add
+      message: Added the "Scrambled Speech" accent to speech traits.
+  id: 1623
+  time: '2026-01-24T02:01:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2309
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        More ways of opting into admin funnies have been added via the consent
+        menu. If you'd like to be a target of various admin things, from cute
+        gifts to spooky haunting, then check the new consent category!
+  id: 1624
+  time: '2026-01-24T05:12:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2339
+- author: Tomce795
+  changes:
+    - type: Tweak
+      message: >-
+        Reduced the stamina damage of the baseball bat. You will no longer stam
+        crit people by swinging 3 times.
+  id: 1625
+  time: '2026-01-24T15:26:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2342
+- author: portfiend
+  changes:
+    - type: Add
+      message: Fingerless arm-warmers can be found in the uniform printer and loadouts.
+    - type: Add
+      message: Mittens can be found in the WinterDrobe and loadouts.
+    - type: Add
+      message: Wrist cuffs can be found in loadouts.
+    - type: Add
+      message: And yes, you can now select colorless fingerless gloves in loadouts!
+  id: 1626
+  time: '2026-01-24T16:00:16.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2336
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Markdown works with detailed say/whisper now.
+    - type: Fix
+      message: >-
+        Quotes that were not ended properly no longer break your message, but
+        instead choose to not set it as dialogue.
+  id: 1627
+  time: '2026-01-24T19:46:04.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2343
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: You can now use colors in say/whisper again.
+  id: 1628
+  time: '2026-01-24T22:19:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2344
+- author: WallflowerGhost
+  changes:
+    - type: Tweak
+      message: A second patch for the map Alamode, PR lists out the changes in detail
+  id: 1629
+  time: '2026-01-25T13:11:02.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2322
+- author: Kelaris
+  changes:
+    - type: Add
+      message: >-
+        Added a small amount of pills, auto injectors, and (medicinal!) candy to
+        the NanoMed vending machine to help with early injuries.
+    - type: Tweak
+      message: Slightly raised cost of NanoMed Restock.
+  id: 1630
+  time: '2026-01-26T09:23:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2326
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        A new shared mood is available for all thaven to have: Floor Time, a
+        mood focused on rest, relaxation, and possibly thaven cuddles.
+  id: 1631
+  time: '2026-01-26T10:23:18.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2352
+- author: Kelaris
+  changes:
+    - type: Fix
+      message: Fixed constructed generic borgs to fit science modules.
+  id: 1632
+  time: '2026-01-26T10:23:50.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2351
+- author: Dirius77
+  changes:
+    - type: Tweak
+      message: Furry reptilian tail on vulp and human
+  id: 1633
+  time: '2026-01-28T00:19:04.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2349
+- author: KawaiiDouchebag
+  changes:
+    - type: Add
+      message: Electrical crates in solars.
+    - type: Add
+      message: Electrical lockers in engineering and in maints.
+    - type: Add
+      message: Stacks of glass at engineering and solars.
+    - type: Add
+      message: Proper atmos markers inside of atmos where some were missing
+    - type: Remove
+      message: Removed TEG construction kit from atmos
+    - type: Tweak
+      message: Replaced engineering lockers with hardsuit variant.
+    - type: Tweak
+      message: Replaced electric crate in engineering with glass sheet crate.
+    - type: Tweak
+      message: >-
+        Replaced old design of nitro room entry with a more friendly design, to
+        better integrate the nitro room with the rest of the dining area.
+    - type: Tweak
+      message: Reworked atmos chambers to better clarify which pump does what.
+    - type: Tweak
+      message: >-
+        Reworked bar to give space to bartenders, as well as to provide added
+        focus to serving the nitrogen room.
+    - type: Fix
+      message: >-
+        Fixed salvage shuttle not spawning by replacing center airlock with the
+        spawner variant.
+    - type: Fix
+      message: >-
+        Added atmos markers inside of certain atmos chambers where they were
+        missing.
+  id: 1634
+  time: '2026-01-29T01:03:46.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2353
+- author: juniwoofs
+  changes:
+    - type: Tweak
+      message: Fixed the access on the genpop freezer (MANTA)
+    - type: Tweak
+      message: Replaced paramedic doors with general medical ones due to bug (MANTA)
+  id: 1635
+  time: '2026-01-29T02:13:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2354
+- author: mart33no
+  changes:
+    - type: Tweak
+      message: Added some existing markings to Oni, see PR
+  id: 1636
+  time: '2026-01-30T00:16:21.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2348
