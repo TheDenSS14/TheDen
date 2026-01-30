@@ -137,8 +137,8 @@
     - type: loadout
       id: LoadoutSecurityPistolViperWood #TheDen
     - type: loadout
-      id: LoadoutSecurityEquipmentTruncheon
-    - type: loadout
+    #   id: LoadoutSecurityEquipmentTruncheon
+    # - type: loadout
       id: LoadoutSecurityEnergyGunMini
     - type: loadout
     #   id: LoadoutSecurityEquipmentEnergySword # DEN
@@ -160,6 +160,14 @@
       id: LoadoutSecurityPlasteelArmingSword
     - type: loadout #TheDen
       id: LoadoutSecurityPistolEnergyRevolver
+    - type: loadout #TheDen
+      id: LoadoutSecurityPlasteelEpee
+    - type: loadout #TheDen
+      id: LoadoutSecurityPlasteelMace
+    - type: loadout #TheDen
+      id: LoadoutSecurityPlasteelAxe
+    - type: loadout #TheDen
+      id: LoadoutSecurityPlasteelSpear
 
 - type: characterItemGroup
   id: LoadoutSecurityEyes

@@ -1,0 +1,37 @@
+# SPDX-FileCopyrightText: 2026 Jakumba
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Melee weapons
+- type: latheRecipe
+  id: PlasteelMaceNF
+  parent: BaseWeaponRecipe
+  result: PlasteelMace
+  materials:
+    Plasteel: 500
+    Plastic: 200
+
+- type: latheRecipe
+  id: PlasteelEpeeNF
+  parent: BaseWeaponRecipe
+  result: PlasteelEpee
+  materials:
+    Plasteel: 500
+    Plastic: 200
+
+- type: latheRecipe
+  id: PlasteelAxeNF
+  parent: BaseWeaponRecipe
+  result: PlasteelAxe
+  materials:
+    Plasteel: 500
+    Plastic: 200
+
+- type: latheRecipe
+  id: PlasteelSpearNF
+  parent: BaseWeaponRecipe
+  result: PlasteelSpear
+  materials:
+    Steel: 500
+    Plasteel: 500
+    Plastic: 200

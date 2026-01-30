@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 Marcel
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -58,6 +59,7 @@ flavor-complex-coconutdoublecreampie = nutty
 flavor-complex-arkveiltemple = like a tropical adventure
 flavor-complex-plasmaflood = like fruity plasma burn
 flavor-complex-vodkacheers = like spicy cherry
+flavor-complex-chainmail = like death in a dark, cold cellar
 
 ## Chemicals
 flavor-complex-mantispaper = like a name set in stone

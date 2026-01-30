@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2026 ivorytemple
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 marking-GradientLArm = Gradient
 marking-GradientLArm-m_gradient_l_arm = Colour
 
