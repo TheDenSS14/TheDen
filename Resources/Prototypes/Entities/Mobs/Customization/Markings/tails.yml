@@ -29,8 +29,6 @@
   speciesRestriction: [Reptilian, Human, IPC, SlimePerson]
   sprites:
   - sprite: Mobs/Customization/tails.rsi
-    state: m_tail_short
-  - sprite: Mobs/Customization/tails.rsi
     state: m_tail_short2tone
   shader: unshaded
 
@@ -61,8 +59,6 @@
   markingCategory: Tail
   speciesRestriction: []
   sprites:
-    - sprite: Mobs/Customization/tails.rsi
-      state: m_waggingtail_short
     - sprite: Mobs/Customization/tails.rsi
       state: m_waggingtail_short2tone
   shader: unshaded

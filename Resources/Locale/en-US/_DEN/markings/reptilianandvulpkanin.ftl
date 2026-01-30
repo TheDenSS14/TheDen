@@ -83,12 +83,22 @@ marking-TailSnakeStripeAnimated-m_waggingtail_snakestripe_FRONT_secondary = Liza
 marking-TailSnakeStripeAnimated = Lizard, Snake w/ Bold Stripes (Wagging)
 TailSnakeStripeAnimated = Snaketail (Striped)
 
+marking-TailSnakeStripeUAnimated-m_waggingtail_snakestripe_BEHIND_secondary = Lizard, Snake w/ Bold Stripes (Secondary) (Wagging)
+marking-TailSnakeStripeUAnimated-m_waggingtail_snakestripe_FRONT_secondary = Lizard, Snake w/ Bold Stripes (Secondary) (Wagging)
+marking-TailSnakeStripeUAnimated = Lizard, Snake w/ Bold Stripes (Wagging)
+TailSnakeStripeUAnimated = Snaketail (Striped)
+
 marking-TailSnakeStripeAltAnimated-m_waggingtail_snakestripealt_BEHIND_primary = Lizard, Snake w/ Cute Stripes (Primary) (Wagging)
 marking-TailSnakeStripeAltAnimated-m_waggingtail_snakestripealt_BEHIND_secondary = Lizard, Snake w/ Cute Stripes (Secondary) (Wagging)
 marking-TailSnakeStripeAltAnimated-m_waggingtail_snakestripealt_FRONT_primary = Lizard, Snake w/ Cute Stripes (Primary) (Wagging)
 marking-TailSnakeStripeAltAnimated-m_waggingtail_snakestripealt_FRONT_secondary = Lizard, Snake w/ Cute Stripes (Secondary) (Wagging)
 marking-TailSnakeStripeAltAnimated = Lizard, Snake w/ Cute Stripes (Wagging)
 TailSnakeStripeAltAnimated = Snaketail (StripedAlt)
+
+marking-TailSnakeStripeAltUAnimated-m_waggingtail_snakestripealt_BEHIND_secondary = Lizard, Snake w/ Cute Stripes (Secondary) (Wagging)
+marking-TailSnakeStripeAltUAnimated-m_waggingtail_snakestripealt_FRONT_secondary = Lizard, Snake w/ Cute Stripes (Secondary) (Wagging)
+marking-TailSnakeStripeAltUAnimated = Lizard, Snake w/ Cute Stripes (Wagging)
+TailSnakeStripeAltUAnimated = Snaketail (StripedAlt)
 
 marking-TailSnakeTailAnimated = Lizard, Snake (Wagging)
 marking-TailSnakeTailAnimated-m_waggingtail_snaketail_FRONT = Tail
