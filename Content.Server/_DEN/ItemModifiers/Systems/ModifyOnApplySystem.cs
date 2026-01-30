@@ -6,6 +6,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
+using Content.Shared.Whitelist;
 using ModifyOnApplyDoAfterEvent = Content.Shared._DEN.ItemModifiers.Events.ModifyOnApplyDoAfterEvent;
 
 
@@ -19,6 +20,7 @@ public sealed class ModifyOnApplySystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedDestructibleSystem _destructibleSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     public override void Initialize()
     {
@@ -34,7 +36,7 @@ public sealed class ModifyOnApplySystem : EntitySystem
         if (args.Handled || args.Target is null || !args.CanReach)
             return;
 
-        if(TryStartApplyDoafter(ent, args.Target.Value, args.User))
+        if (TryStartApplyDoafter(ent, args.Target.Value, args.User))
             args.Handled = true;
     }
 
@@ -62,19 +64,16 @@ public sealed class ModifyOnApplySystem : EntitySystem
                 RemComp(target, _componentFactory.GetComponent(comp).GetType());
 
         EntityManager.AddComponents(target, modifyOnApplyComp.ApplyComps, true);
-
         _popupSystem.PopupEntity(Loc.GetString(modifyOnApplyComp.PostApplyMessage, ("target", target), ("source", uid)), user);
 
-        if(modifyOnApplyComp.ModifyName is not null)
+        if (modifyOnApplyComp.ModifyName is not null)
             _metaDataSystem.SetEntityName(target, Loc.GetString(modifyOnApplyComp.ModifyName, ("target", Name(target))));
 
-        if(modifyOnApplyComp.ModifyDescription is not null)
+        if (modifyOnApplyComp.ModifyDescription is not null)
             _metaDataSystem.SetEntityDescription(target, Description(target) + "\n" + Loc.GetString(modifyOnApplyComp.ModifyDescription));
 
         DirtyEntity(target);
-
         _destructibleSystem.DestroyEntity(uid);
-
         args.Handled = true;
     }
 
@@ -125,16 +124,14 @@ public sealed class ModifyOnApplySystem : EntitySystem
             return false;
         }
 
-        if (modifyOnApplyComp.WhitelistComps is not null)
+        if (modifyOnApplyComp.Whitelist is not null)
         {
-            if (modifyOnApplyComp.WhitelistComps.Any(comp => !HasComp(target, _componentFactory.GetComponent(comp).GetType())))
-            {
+            if (_whitelistSystem.IsWhitelistFail(modifyOnApplyComp.Whitelist, target))
                 return false;
-            }
         }
 
-        return modifyOnApplyComp.BlacklistComps is null ||
-            modifyOnApplyComp.BlacklistComps.All(comp => !HasComp(target, _componentFactory.GetComponent(comp).GetType()));
+        return modifyOnApplyComp.Blacklist is null ||
+            _whitelistSystem.IsBlacklistFail(modifyOnApplyComp.Blacklist, target);
     }
 
     private void OnGetInteractionVerbs(Entity<ModifiableComponent> ent, ref GetVerbsEvent<InteractionVerb> args)

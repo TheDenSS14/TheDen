@@ -1,4 +1,5 @@
 using Content.Shared.Tag;
+using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Generic;
@@ -32,16 +33,16 @@ public sealed partial class ModifyOnApplyComponent : Component
     public HashSet<ProtoId<TagPrototype>>? BlacklistTags;
 
     /// <summary>
-    /// Components that are required to be on the entity this is being applied to for the application to occur.
+    /// Whitelist required for an entity to pass in order to have the application occur.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(CustomHashSetSerializer<string, ComponentNameSerializer>))]
-    public HashSet<string>? WhitelistComps;
+    [DataField]
+    public EntityWhitelist? Whitelist;
 
     /// <summary>
-    /// Components that must not be on the entity this is being applied to for the application to occur.
+    /// Blacklist required for an entity to pass in order to have the application occur.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(CustomHashSetSerializer<string, ComponentNameSerializer>))]
-    public HashSet<string>? BlacklistComps;
+    [DataField]
+    public EntityWhitelist? Blacklist;
 
     /// <summary>
     /// Components to remove from the entity when this is applied.

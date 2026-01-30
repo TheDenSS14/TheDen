@@ -10,11 +10,13 @@
     - type: ModifyOnApply
       whitelistTags:
         - Headwear
-      whitelistComps:
-        - Clothing
-      blacklistComps:
-        - Armor
-        - TinfoilHat
+      whitelist:
+        components:
+          - Clothing
+      blacklist:
+        components:
+          - Armor
+          - TinfoilHat
       applyComps:
         - type: TinfoilHat
           destroyOnFry: false
