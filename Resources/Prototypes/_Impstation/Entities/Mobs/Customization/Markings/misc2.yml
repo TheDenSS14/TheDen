@@ -4,8 +4,9 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 ivorytemple
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: HumanoidEyebags
@@ -131,4 +132,22 @@
   - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
     state: tail_snizard3
 
+- type: marking
+  id: TailGeckoU
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: tail_gecko2
+  shader: unshaded
 
+- type: marking
+  id: TailSnailLizardU
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: tail_snizard3
+  shader: unshaded

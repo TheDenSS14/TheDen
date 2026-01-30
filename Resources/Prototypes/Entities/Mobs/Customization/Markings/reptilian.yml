@@ -19,14 +19,15 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 ivorytemple
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: LizardFrillsAquatic
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia]
+  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Oni]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_aquatic
@@ -35,7 +36,7 @@
   id: LizardFrillsShort
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia]
+  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Oni]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_short
@@ -44,7 +45,7 @@
   id: LizardFrillsSimple
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia]
+  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Oni]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_simple
@@ -53,7 +54,7 @@
   id: LizardFrillsDivinity
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia]
+  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Oni]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_divinity
@@ -62,7 +63,7 @@
   id: LizardFrillsBig
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia]
+  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Oni]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_big
@@ -71,7 +72,7 @@
   id: LizardFrillsAxolotl
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia]
+  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Oni]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_axolotl
@@ -80,12 +81,22 @@
   id: LizardFrillsHood
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia]
+  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Oni]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_hood_primary
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_hood_secondary
+
+- type: marking
+  id: LizardFrillsHoodU
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: frills_hood_secondary
+  shader: unshaded
 
 - type: marking
   id: LizardFrillsNeckfull
@@ -100,7 +111,7 @@
   id: LizardHornsAngler
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Kobold] # Shitmed Change
+  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Kobold, Oni] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_angler
@@ -109,7 +120,7 @@
   id: LizardHornsCurled
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Kobold] # Shitmed Change
+  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Kobold, Oni] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_curled
@@ -118,7 +129,7 @@
   id: LizardHornsRam
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Kobold] # Shitmed Change
+  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Kobold, Oni] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_ram
@@ -127,7 +138,7 @@
   id: LizardHornsShort
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Kobold] # Shitmed Change
+  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Kobold, Oni] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_short
@@ -136,7 +147,7 @@
   id: LizardHornsSimple
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Kobold] # Shitmed Change
+  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Kobold, Oni] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_simple
@@ -145,7 +156,7 @@
   id: LizardHornsDouble
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Kobold] # Shitmed Change
+  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia, Kobold, Oni] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_double
@@ -283,6 +294,66 @@
     state: r_leg_tiger
 
 - type: marking
+  id: LizardChestTigerU
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian, Shadowkin, Lamia, IPC]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: body_tiger
+  shader: unshaded
+
+- type: marking
+  id: LizardHeadTigerU
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Reptilian, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: head_tiger
+  shader: unshaded
+
+- type: marking
+  id: LizardLArmTigerU
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Reptilian, SlimePerson, Lamia, IPC]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: l_arm_tiger
+  shader: unshaded
+
+- type: marking
+  id: LizardLLegTigerU
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [Reptilian, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: l_leg_tiger
+  shader: unshaded
+
+- type: marking
+  id: LizardRArmTigerU
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Reptilian, SlimePerson, Lamia, IPC]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: r_arm_tiger
+  shader: unshaded
+
+- type: marking
+  id: LizardRLegTigerU
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [Reptilian, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: r_leg_tiger
+  shader: unshaded
+
+- type: marking
   id: LizardHornsArgali
   bodyPart: HeadTop
   markingCategory: HeadTop
@@ -344,6 +415,16 @@
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: body_underbelly
+
+- type: marking
+  id: LizardChestUnderbellyU
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: body_underbelly
+  shader: unshaded
 
 - type: marking
   id: LizardChestBackspikes
