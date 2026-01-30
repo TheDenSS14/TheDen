@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 ivorytemple
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -45,6 +46,17 @@
     state: stripes
 
 - type: marking
+  id: ThavenBodyStripesU
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Male ] # TheDen - Added sexual dimorphism to thaven
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/chest.rsi
+    state: stripes
+  shader: unshaded
+
+- type: marking
   id: ThavenChestScales
   bodyPart: Chest
   markingCategory: Chest
@@ -66,6 +78,20 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/Thaven/chest.rsi
     state: tat1
+
+- type: marking
+  id: ThavenChestTattoo1U
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Male ] # TheDen - Added sexual dimorphism to thaven
+  coloring:
+    default:
+      type: !type:TattooColoring
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/chest.rsi
+    state: tat1
+  shader: unshaded
 
 - type: marking
   id: ThavenSpinechill
@@ -103,6 +129,17 @@
     state: tattoowave
 
 - type: marking
+  id: ThavenTattooWaveU
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Male ] # TheDen - Added sexual dimorphism to thaven
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/chest.rsi
+    state: tattoowave
+  shader: unshaded
+
+- type: marking
   id: ThavenTattooVines
   bodyPart: Chest
   markingCategory: Chest
@@ -111,6 +148,17 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/Thaven/chest.rsi
     state: tattoovines
+
+- type: marking
+  id: ThavenTattooVinesU
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Male ] # TheDen - Added sexual dimorphism to thaven
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/chest.rsi
+    state: tattoovines
+  shader: unshaded
 
 - type: marking
   id: ThavenTiger
@@ -123,6 +171,17 @@
     state: tiger1
   - sprite: _Impstation/Mobs/Customization/Thaven/chest.rsi
     state: tiger2
+
+- type: marking
+  id: ThavenTigerU
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Male ] # TheDen - Added sexual dimorphism to thaven
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/chest.rsi
+    state: tiger2
+  shader: unshaded
 
 - type: marking
   id: ThavenTopSurgery
@@ -313,6 +372,16 @@
   - sprite: _Impstation/Mobs/Customization/Thaven/rarm.rsi
     state: tiger
 
+- type: marking
+  id: ThavenTigerRArmU
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/rarm.rsi
+    state: tiger
+  shader: unshaded
+
 # RHAnd
 
 - type: marking
@@ -355,6 +424,16 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/Thaven/larm.rsi
     state: tiger
+
+- type: marking
+  id: ThavenTigerLArmU
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/larm.rsi
+    state: tiger
+  shader: unshaded
 
 # LHAnd
 
@@ -2756,6 +2835,24 @@
     state: big2_front
 
 - type: marking
+  id: ThavenBigTailUnshaded
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  followSkinColor: true
+  layering:
+    big2_front: TailOversuit
+    big2_behind: TailBehind
+  colorLinks:
+    big2_behind: big2_front
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/taillayers.rsi
+    state: big2_behind
+  - sprite: _Impstation/Mobs/Customization/Thaven/taillayers.rsi
+    state: big2_front
+  shader: unshaded
+
+- type: marking
   id: ThavenTadpoleTail
   bodyPart: Tail
   markingCategory: Tail
@@ -2778,6 +2875,24 @@
     state: tadpole2_behind
   - sprite: _Impstation/Mobs/Customization/Thaven/taillayers.rsi
     state: tadpole2_front
+
+- type: marking
+  id: ThavenTadpoleTailUnshaded
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  followSkinColor: true
+  layering:
+    tadpole2_front: TailOversuit
+    tadpole2_behind: TailBehind
+  colorLinks:
+    tadpole2_behind: tadpole2_front
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/taillayers.rsi
+    state: tadpole2_behind
+  - sprite: _Impstation/Mobs/Customization/Thaven/taillayers.rsi
+    state: tadpole2_front
+  shader: unshaded
 
 - type: marking
   id: ThavenTailEel
@@ -2850,6 +2965,24 @@
     state: nurse2_front
 
 - type: marking
+  id: ThavenTailNurseUnshaded
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  followSkinColor: true
+  layering:
+    nurse2_front: TailOversuit
+    nurse2_behind: TailBehind
+  colorLinks:
+    nurse2_behind: nurse2_front
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/taillayers.rsi
+    state: nurse2_behind
+  - sprite: _Impstation/Mobs/Customization/Thaven/taillayers.rsi
+    state: nurse2_front
+  shader: unshaded
+
+- type: marking
   id: ThavenTailStub
   bodyPart: Tail
   markingCategory: Tail
@@ -2896,6 +3029,24 @@
     state: thresher2_behind
   - sprite: _Impstation/Mobs/Customization/Thaven/taillayers.rsi
     state: thresher2_front
+
+- type: marking
+  id: ThavenTailThresherUnshaded
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  followSkinColor: true
+  layering:
+    thresher2_front: Tail # Should show over backpacks from behind
+    thresher2_behind: TailBehind
+  colorLinks:
+    thresher2_behind: thresher2_front
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/taillayers.rsi
+    state: thresher2_behind
+  - sprite: _Impstation/Mobs/Customization/Thaven/taillayers.rsi
+    state: thresher2_front
+  shader: unshaded
 
 #- type: marking
 #  id: ThavenBasicTail

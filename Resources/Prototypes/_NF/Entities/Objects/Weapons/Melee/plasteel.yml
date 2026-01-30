@@ -1,0 +1,151 @@
+# SPDX-FileCopyrightText: 2026 Jakumba
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: plasteel mace
+  parent: [BaseSalvageSpecialistSecurityContraband, Truncheon]
+  id: PlasteelMace
+  description: It's a lightweight stick with a spikey bit. It would probably be better if it was a heavy stick with a spikey bit.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Melee/plasteel_mace.rsi
+    state: icon
+  - type: MeleeWeapon
+    autoAttack: true
+    wideAnimationRotation: -135
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 18
+    clickPartDamageMultiplier: 1
+    heavyPartDamageMultiplier: 1.5
+    heavyRateModifier: 1.2
+    heavyRangeModifier: 1
+    heavyDamageBaseModifier: 1.5
+    heavyStaminaCost: 12
+    maxTargets: 4
+    angle: 80
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Nyanotrasen/Weapons/club.ogg
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Melee/plasteel_mace.rsi
+    slots:
+    - Back
+    - SuitStorage
+    - Belt
+  # Den - Add
+  - type: Tag
+    tags:
+    - SimpleMeleeWeapon
+
+- type: entity
+  name: plasteel epee
+  parent: [BaseSalvageSpecialistSecurityContraband, BaseSword]
+  id: PlasteelEpee
+  description: You find yourself wondering if anyone else remembers Nidhogg.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Melee/plasteel_epee.rsi
+    state: icon
+  - type: MeleeWeapon
+    autoAttack: true
+    attackRate: 1.2
+    wideAnimationRotation: -135
+    range: 1.8
+    damage:
+      types:
+        Piercing: 17
+    clickPartDamageMultiplier: 2
+    heavyPartDamageMultiplier: 1
+    heavyRateModifier: 1.8
+    heavyRangeModifier: 1.8
+    heavyDamageBaseModifier: 1.75
+    heavyStaminaCost: 8
+    maxTargets: 4
+    angle: 0
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 8
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Melee/plasteel_epee.rsi
+    slots:
+    - Back
+    - SuitStorage
+    - Belt
+  # DEN - Add
+  - type: Tag
+    tags:
+    - SimpleMeleeWeapon
+
+- type: entity
+  name: plasteel axe
+  parent: [BaseSalvageSpecialistSecurityContraband, BaseSword]
+  id: PlasteelAxe
+  description: Probably no good at doing axe things but it's a much better conversation starter than a knife.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Melee/plasteel_axe.rsi
+    state: icon
+  - type: MeleeWeapon
+    autoAttack: true
+    attackRate: 1.5
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Slash: 18
+    clickPartDamageMultiplier: 2
+    heavyPartDamageMultiplier: 4
+    heavyRateModifier: 2
+    heavyRangeModifier: 1
+    heavyDamageBaseModifier: 1.75
+    heavyStaminaCost: 25
+    maxTargets: 8
+    animation: WeaponArcThrust
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Melee/plasteel_axe.rsi
+    slots:
+    - Back
+    - SuitStorage
+    - Belt
+  # Den - Add
+  - type: Tag
+    tags:
+    - SimpleMeleeWeapon
+
+- type: entity
+  name: plasteel spear
+  parent: [BaseSalvageSpecialistSecurityContraband, SpearReinforced]
+  id: PlasteelSpear
+  description: It features a blade that can be coated in deadly poison. Or coffee. Or anything really. It's very coatable.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Melee/plasteel_spear.rsi
+    state: spear
+  - type: MeleeWeapon
+    autoAttack: true
+    attackRate: 1.2
+    wideAnimationRotation: -135
+    range: 1.8
+    damage:
+      types:
+        Piercing: 15
+        Slash: 4
+    clickPartDamageMultiplier: 1
+    heavyPartDamageMultiplier: 1.5
+    heavyRateModifier: 1.5
+    heavyRangeModifier: 1.2
+    heavyDamageBaseModifier: 1.25
+    heavyStaminaCost: 15
+    maxTargets: 3
+    angle: 20
+    animation: WeaponArcThrust
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Melee/plasteel_spear.rsi
+  # Den - Add
+  - type: Tag
+    tags:
+    - SimpleMeleeWeapon
