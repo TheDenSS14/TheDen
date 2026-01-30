@@ -26,6 +26,18 @@ marking-AlienEyesThree-eyes_alien_three=Eyes
 marking-AlienEyesWide=Alien Eyes (Wide)
 marking-AlienEyesWide-eyes_alien_wide=Eyes
 
+marking-AlienEyesU=Alien Eyes (Glowing)
+marking-AlienEyesU-eyes_alien=Eyes
+
+marking-AlienEyesBigU=Alien Eyes (Big, Glowing)
+marking-AlienEyesBigU-eyes_alien_big=Eyes
+
+marking-AlienEyesThreeU=Alien Eyes (Third Eye, Glowing)
+marking-AlienEyesThreeU-eyes_alien_three=Eyes
+
+marking-AlienEyesWideU=Alien Eyes (Wide, Glowing)
+marking-AlienEyesWideU-eyes_alien_wide=Eyes
+
 # Overlays
 marking-AlienOverlayHead=Alien Head Overlay
 marking-AlienOverlayHead-head=Head

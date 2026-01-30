@@ -20,6 +20,9 @@ marking-LizardHeadCobraHood = Lizard, hood with ears (Cobra)
 marking-LizardHeadCobraHood-cobra_hood_with_ears = Outer
 marking-LizardHeadCobraHood-cobra_hood_with_ears_overlay = Inner
 
+marking-LizardHeadCobraHoodU = Lizard, hood with ears (Cobra, Overlay)
+marking-LizardHeadCobraHoodU-cobra_hood_with_ears_overlay = Inner
+
 marking-LizardHornsCurled-horns_curled_l = Left horn
 marking-LizardHornsCurled-horns_curled_r = Right horn
 
@@ -54,6 +57,13 @@ marking-SnakeLargeTail-snake_large_overlay = Outer
 marking-SnakeLargeTailAnimated = Lizard, large snake tail
 marking-SnakeLargeTailAnimated-snake_large_wagging = Inner
 marking-SnakeLargeTailAnimated-snake_large_wagging_overlay = Outer
+
+marking-SnakeLargeTailU = Lizard, large snake tail (Overlay)
+marking-SnakeLargeTailU-snake_large = Inner
+marking-SnakeLargeTailU-snake_large_overlay = Outer
+marking-SnakeLargeTailUAnimated = Lizard, large snake tail
+marking-SnakeLargeTailUAnimated-snake_large_wagging = Inner
+marking-SnakeLargeTailUAnimated-snake_large_wagging_overlay = Outer
 
 # SPINES
 marking-LizardChestSpinesAquatic = Lizard, chest, spines (Aquatic)

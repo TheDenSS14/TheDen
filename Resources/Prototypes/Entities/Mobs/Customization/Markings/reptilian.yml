@@ -88,6 +88,16 @@
     state: frills_hood_secondary
 
 - type: marking
+  id: LizardFrillsHoodU
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Reptilian, Human, SlimePerson, Lamia]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: frills_hood_secondary
+  shader: unshaded
+
+- type: marking
   id: LizardFrillsNeckfull
   bodyPart: HeadSide
   markingCategory: HeadSide
@@ -283,6 +293,66 @@
     state: r_leg_tiger
 
 - type: marking
+  id: LizardChestTigerU
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian, Shadowkin, Lamia, IPC]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: body_tiger
+  shader: unshaded
+
+- type: marking
+  id: LizardHeadTigerU
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Reptilian, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: head_tiger
+  shader: unshaded
+
+- type: marking
+  id: LizardLArmTigerU
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Reptilian, SlimePerson, Lamia, IPC]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: l_arm_tiger
+  shader: unshaded
+
+- type: marking
+  id: LizardLLegTigerU
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [Reptilian, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: l_leg_tiger
+  shader: unshaded
+
+- type: marking
+  id: LizardRArmTigerU
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Reptilian, SlimePerson, Lamia, IPC]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: r_arm_tiger
+  shader: unshaded
+
+- type: marking
+  id: LizardRLegTigerU
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [Reptilian, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: r_leg_tiger
+  shader: unshaded
+
+- type: marking
   id: LizardHornsArgali
   bodyPart: HeadTop
   markingCategory: HeadTop
@@ -344,6 +414,16 @@
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: body_underbelly
+
+- type: marking
+  id: LizardChestUnderbellyU
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: body_underbelly
+  shader: unshaded
 
 - type: marking
   id: LizardChestBackspikes

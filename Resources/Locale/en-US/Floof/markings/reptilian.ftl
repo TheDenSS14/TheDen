@@ -45,5 +45,7 @@ marking-TailGecko-gecko_primary = Gecko Tail primary
 marking-TailGecko-gecko_secondary = Gecko Tail secondary
 marking-TailGecko-gecko_tertiary = Gecko Tail tertiary
 
+marking-TailGeckoU = Gecko Tail (Overlay)
+
 marking-TailSnake = Snake Tail
 marking-TailSnake-snake = Snake Tail

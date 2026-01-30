@@ -47,3 +47,15 @@ marking-TattooEyeArachneRight = Right Arachne Eye
 
 marking-TattooEyeArachneLeft-tattoo_eye_arachne_l = Left Arachne Eye
 marking-TattooEyeArachneLeft = Left Arachne Eye
+
+marking-TattooCampbellLeftArmU-tattoo_campbell_l_arm = Left Arm Tattoo (Campbelle)
+marking-TattooCampbellLeftArmU = Left Arm Tattoo (Campbelle, Glowing)
+
+marking-TattooCampbellRightArmU-tattoo_campbell_r_arm = Right Arm Tattoo (Campbelle)
+marking-TattooCampbellRightArmU = Right Arm Tattoo (Campbelle, Glowing)
+
+marking-TattooCampbellLeftLegU-tattoo_campbell_l_leg = Left Leg Tattoo (Campbelle)
+marking-TattooCampbellLeftLegU = Left Leg Tattoo (Campbelle, Glowing)
+
+marking-TattooCampbellRightLegU-tattoo_campbell_r_leg = Right Leg Tattoo (Campbelle)
+marking-TattooCampbellRightLegU = Right Leg Tattoo (Campbelle, Glowing)

@@ -57,6 +57,17 @@
     state: stripes_f
 
 - type: marking
+  id: ThavenBodyStripesFU
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Female ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
+    state: stripes_f
+  shader: unshaded
+
+- type: marking
   id: ThavenChestScalesF
   bodyPart: Chest
   markingCategory: Chest
@@ -80,6 +91,20 @@
     state: tat1_f
 
 - type: marking
+  id: ThavenChestTattoo1FU
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Female ]
+  coloring:
+    default:
+      type: !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
+    state: tat1_f
+  shader: unshaded
+
+- type: marking
   id: ThavenTattooWaveF
   bodyPart: Chest
   markingCategory: Chest
@@ -88,6 +113,18 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
     state: tattoowave_f
+
+- type: marking
+  id: ThavenTattooWaveFU
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Female ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
+    state: tattoowave_f
+  shader: unshaded
+
 
 - type: marking
   id: ThavenTattooVinesF
@@ -100,6 +137,17 @@
     state: tattoovines_f
 
 - type: marking
+  id: ThavenTattooVinesFU
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Female ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
+    state: tattoovines_f
+  shader: unshaded
+
+- type: marking
   id: ThavenTigerF
   bodyPart: Chest
   markingCategory: Chest
@@ -110,6 +158,17 @@
     state: tiger1_f
   - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
     state: tiger2_f
+
+- type: marking
+  id: ThavenTigerFU
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Female ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
+    state: tiger2_f
+  shader: unshaded
 
 - type: marking
   id: ThavenHipScales
@@ -136,6 +195,24 @@
     state: chest_heavy2
   - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
     state: chest_heavy3
+
+- type: marking
+  id: ThavenChestHeavyTattoosU
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
+    state: chest_heavy1
+  - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
+    state: chest_heavy2
+  - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
+    state: chest_heavy3
+  shader: unshaded
 
 - type: marking
   id: ThavenTopSurgeryF
@@ -165,6 +242,22 @@
   - sprite: _DEN/Mobs/Customization/Thaven/head.rsi
     state: head_heavy2
 
+- type: marking
+  id: ThavenHeadHeavyTattoosU
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/head.rsi
+    state: head_heavy1
+  - sprite: _DEN/Mobs/Customization/Thaven/head.rsi
+    state: head_heavy2
+  shader: unshaded
+
 # Snout
 
 # Eyes
@@ -181,6 +274,16 @@
     state: m_gradient_r_arm
 
 - type: marking
+  id: GradientRArmTUS
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_r_arm
+  shader: unshaded
+
+- type: marking
   id: ThavenArmDollJointsTattooRight
   bodyPart: RArm
   markingCategory: RightArm
@@ -192,6 +295,20 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Thaven/rarm.rsi
     state: r_arm_doll
+
+- type: marking
+  id: ThavenArmDollJointsTattooRightU
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/rarm.rsi
+    state: r_arm_doll
+  shader: unshaded
 
 - type: marking
   id: ThavenArmProstheticRight
@@ -233,6 +350,22 @@
   - sprite: _DEN/Mobs/Customization/Thaven/rarm.rsi
     state: r_arm_heavy2
 
+- type: marking
+  id: ThavenArmHeavyTattoosRightU
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/rarm.rsi
+    state: r_arm_heavy1
+  - sprite: _DEN/Mobs/Customization/Thaven/rarm.rsi
+    state: r_arm_heavy2
+  shader: unshaded
+
 # RHand
 
 - type: marking
@@ -243,6 +376,16 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Thaven/rhand.rsi
     state: m_gradient_r_hand
+
+- type: marking
+  id: GradientRHandTUS
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/rhand.rsi
+    state: m_gradient_r_hand
+  shader: unshaded
 
 - type: marking
   id: ThavenHandHeavyTattoosRight
@@ -260,6 +403,22 @@
     state: r_hand_heavy2
 
 - type: marking
+  id: ThavenHandHeavyTattoosRightU
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/rhand.rsi
+    state: r_hand_heavy1
+  - sprite: _DEN/Mobs/Customization/Thaven/rhand.rsi
+    state: r_hand_heavy2
+  shader: unshaded
+
+- type: marking
   id: ThavenHandDollJointsTattooRight
   bodyPart: RHand
   markingCategory: RightHand
@@ -271,6 +430,20 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Thaven/rhand.rsi
     state: r_hand_doll
+
+- type: marking
+  id: ThavenHandDollJointsTattooRightU
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/rhand.rsi
+    state: r_hand_doll
+  shader: unshaded
 
 - type: marking
   id: ThavenHandProstheticRight
@@ -309,6 +482,16 @@
     state: m_gradient_l_arm
 
 - type: marking
+  id: GradientLArmTUS
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_l_arm
+  shader: unshaded
+
+- type: marking
   id: ThavenArmDollJointsTattooLeft
   bodyPart: LArm
   markingCategory: LeftArm
@@ -320,6 +503,20 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Thaven/larm.rsi
     state: l_arm_doll
+
+- type: marking
+  id: ThavenArmDollJointsTattooLeftU
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/larm.rsi
+    state: l_arm_doll
+  shader: unshaded
 
 - type: marking
   id: ThavenArmProstheticLeft
@@ -361,6 +558,22 @@
   - sprite: _DEN/Mobs/Customization/Thaven/larm.rsi
     state: l_arm_heavy2
 
+- type: marking
+  id: ThavenArmHeavyTattoosLeftU
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/larm.rsi
+    state: l_arm_heavy1
+  - sprite: _DEN/Mobs/Customization/Thaven/larm.rsi
+    state: l_arm_heavy2
+  shader: unshaded
+
 # LHand
 
 - type: marking
@@ -371,6 +584,16 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Thaven/lhand.rsi
     state: m_gradient_l_hand
+
+- type: marking
+  id: GradientLHandTUS
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/lhand.rsi
+    state: m_gradient_l_hand
+  shader: unshaded
 
 - type: marking
   id: ThavenHandHeavyTattoosLeft
@@ -388,6 +611,22 @@
     state: l_hand_heavy2
 
 - type: marking
+  id: ThavenHandHeavyTattoosLeftU
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/lhand.rsi
+    state: l_hand_heavy1
+  - sprite: _DEN/Mobs/Customization/Thaven/lhand.rsi
+    state: l_hand_heavy2
+  shader: unshaded
+
+- type: marking
   id: ThavenHandDollJointsTattooLeft
   bodyPart: LHand
   markingCategory: LeftHand
@@ -399,6 +638,20 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Thaven/lhand.rsi
     state: l_hand_doll
+
+- type: marking
+  id: ThavenHandDollJointsTattooLeftU
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/lhand.rsi
+    state: l_hand_doll
+  shader: unshaded
 
 - type: marking
   id: ThavenHandProstheticLeft
@@ -436,6 +689,16 @@
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_r_leg
 
+- type: marking
+  id: GradientRLegTUS
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_r_leg
+  shader: unshaded
+
 # RFoot
 
 - type: marking
@@ -446,6 +709,16 @@
   sprites:
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_r_foot
+
+- type: marking
+  id: GradientRFootTUS
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_r_foot
+  shader: unshaded
 
 # LLeg
 
@@ -458,6 +731,16 @@
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_l_leg
 
+- type: marking
+  id: GradientLLegTUS
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_l_leg
+  shader: unshaded
+
 # LFoot
 
 - type: marking
@@ -468,6 +751,16 @@
   sprites:
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_l_foot
+
+- type: marking
+  id: GradientLFootTUS
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_l_foot
+  shader: unshaded
 
 # Underwear
 

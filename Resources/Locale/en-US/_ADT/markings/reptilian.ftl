@@ -47,6 +47,15 @@ marking-ReptilianDrawingWarpaint-drawing_warpaint = Drawing
 marking-ReptilianLineEyes = Stripe Eyes
 marking-ReptilianLineEyes-lineeyes = Stripes
 
+marking-ReptilianDrawingKharU = "Khar" Drawing
+marking-ReptilianDrawingKharU-drawing_khar = Drawing
+marking-ReptilianDrawingSunU = Sun Drawing
+marking-ReptilianDrawingSunU-drawing_sun = Drawing
+marking-ReptilianDrawingWarpaintU = Warpaint Drawing
+marking-ReptilianDrawingWarpaintU-drawing_warpaint = Drawing
+marking-ReptilianLineEyesU = Stripe Eyes
+marking-ReptilianLineEyesU-lineeyes = Stripes
+
 marking-EarsSylveon = Sylveon Ears
 marking-EarsSylveon-sylveon_primary = Ears primary
 marking-EarsSylveon-sylveon_secondary = Ears secondary

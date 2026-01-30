@@ -86,6 +86,24 @@ marking-LizardRArmTiger = Lizard Right Arm (Tiger)
 marking-LizardRLegTiger-r_leg_tiger = Lizard Right Leg (Tiger)
 marking-LizardRLegTiger = Lizard Right Leg (Tiger)
 
+marking-LizardChestTigerU-body_tiger = Lizard Chest (Tiger)
+marking-LizardChestTigerU = Lizard Chest (Tiger, Glowing)
+
+marking-LizardHeadTigerU-head_tiger = Lizard Head (Tiger)
+marking-LizardHeadTigerU = Lizard Head (Tiger, Glowing)
+
+marking-LizardLArmTigerU-l_arm_tiger = Lizard Left Arm (Tiger)
+marking-LizardLArmTigerU = Lizard Left Arm (Tiger, Glowing)
+
+marking-LizardLLegTigerU-l_leg_tiger = Lizard Left Leg (Tiger)
+marking-LizardLLegTigerU = Lizard Left Leg (Tiger, Glowing)
+
+marking-LizardRArmTigerU-r_arm_tiger = Lizard Right Arm (Tiger)
+marking-LizardRArmTigerU = Lizard Right Arm (Tiger, Glowing)
+
+marking-LizardRLegTigerU-r_leg_tiger = Lizard Right Leg (Tiger)
+marking-LizardRLegTigerU = Lizard Right Leg (Tiger, Glowing)
+
 marking-LizardFrillsDivinity-frills_divinity = Lizard Frills (Divinity)
 marking-LizardFrillsDivinity = Lizard Frills (Divinity)
 
@@ -104,6 +122,9 @@ marking-LizardFrillsAxolotl = Lizard Frills (Axolotl)
 marking-LizardFrillsHood-frills_hood_primary = Outer Hood
 marking-LizardFrillsHood-frills_hood_secondary = Inner Hood
 marking-LizardFrillsHood = Lizard Frills (Hood)
+
+marking-LizardFrillsHoodU-frills_hood_secondary = Inner Hood
+marking-LizardFrillsHoodU = Lizard Frills (Hood, Overlay)
 
 marking-LizardHornsArgali-horns_argali = Lizard Horns (Argali)
 marking-LizardHornsArgali = Lizard Horns (Argali)
@@ -125,6 +146,9 @@ marking-LizardHornsFloppyKoboldEars = Lizard Ears (Floppy Kobold)
 
 marking-LizardChestUnderbelly-body_underbelly = Lizard Chest (Underbelly)
 marking-LizardChestUnderbelly = Lizard Chest (Underbelly)
+
+marking-LizardChestUnderbellyU-body_underbelly = Lizard Chest (Underbelly)
+marking-LizardChestUnderbellyU = Lizard Chest (Underbelly, Glowing)
 
 marking-LizardChestBackspikes-body_backspikes = Lizard Back spikes (Four)
 marking-LizardChestBackspikes = Lizard Back spikes (Four)
