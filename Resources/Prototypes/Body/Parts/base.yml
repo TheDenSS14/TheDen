@@ -39,13 +39,13 @@
     - trigger:
         !type:DamageTypeTrigger
         damageType: Blunt
-        damage: 110
+        damage: 150
       behaviors:
       - !type:GibPartBehavior { }
     - trigger:
         !type:DamageTypeTrigger
         damageType: Slash
-        damage: 150
+        damage: 300
       behaviors:
       - !type:GibPartBehavior { }
 #    - trigger:
