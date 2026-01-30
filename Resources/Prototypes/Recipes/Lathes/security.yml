@@ -48,7 +48,7 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: latheRecipe
   id: Handcuffs
@@ -104,9 +104,8 @@
   category: Weapons
   completetime: 2
   materials:
-    Plasma: 150
-    Steel: 300
-    Plastic: 150
+    Plasteel: 500
+    Plastic: 200
 
 - type: latheRecipe
   id: CombatKnife

@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 SleepyScarecrow
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 Marcel
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -495,3 +496,16 @@
       amount: 1
   products:
     VodkaCheers: 3
+
+- type: reaction
+  id: Chainmail
+  reactants:
+    Ale:
+      amount: 4
+    Vodka:
+      amount: 1
+    Angobitters:
+      amount: 1
+  products:
+      Chainmail: 6
+      

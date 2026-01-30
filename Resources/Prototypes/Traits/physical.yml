@@ -32,7 +32,7 @@
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: trait
   id: WillToLive
@@ -481,6 +481,7 @@
         - Claws
         - StrikingCalluses
         - SharpTeeth
+        - HardenedClaws
   functions:
     - !type:TraitModifyUnarmed
       soundHit:
@@ -524,6 +525,7 @@
         - Talons
         - StrikingCalluses
         - SharpTeeth
+        - HardenedClaws
   functions:
     - !type:TraitModifyUnarmed
       soundHit:
@@ -541,8 +543,41 @@
               Blunt: 0
 
 - type: trait
+  id: HardenedClaws #TheDen
+  category: TraitsPhysicalFeats
+  points: -2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - StationAi
+      - Borg
+      - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Talons
+        - StrikingCalluses
+        - Claws
+        - SharpTeeth
+  functions:
+    - !type:TraitModifyUnarmed
+      soundHit:
+        collection: AlienClaw
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 7 #im not sure any species does 7 slash whatsoever, big Claws
+    - !type:TraitRemoveComponent
+      components:
+        - type: DamageOnHit
+          damage:
+            types:
+              Blunt: 0
+
+- type: trait
   id: SharpTeeth #TheDen
-  category: TraitsPhysicalBiological
+  category: TraitsPhysicalFeats
   points: -2
   requirements:
     - !type:CharacterJobRequirement
@@ -561,6 +596,7 @@
         - Talons
         - StrikingCalluses
         - Claws
+        - HardenedClaws
   functions:
     - !type:TraitModifyUnarmed
       soundHit:
@@ -624,7 +660,7 @@
 - type: trait
   id: StrikingCalluses
   category: TraitsPhysicalFeats
-  points: -3
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -643,16 +679,7 @@
         - Claws
         - Talons
         - SharpTeeth
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - MartialArtist
-        - !type:CharacterJobRequirement
-          jobs:
-            - Boxer
-            - MartialArtist
-            - Gladiator
+        - HardenedClaws
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -670,7 +697,6 @@
         - !type:CharacterTraitRequirement
           traits:
             - NaturalWeaponRemoval
-            - MartialArtist
   functions:
     - !type:TraitModifyUnarmed
       flatDamageIncrease:

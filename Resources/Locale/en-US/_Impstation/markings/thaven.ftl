@@ -14,11 +14,17 @@ marking-ThavenBiteMark-bitemark = Big Bite Scar
 marking-ThavenBodyStripes = Pinstripes
 marking-ThavenBodyStripes-stripes = Pinstripes
 
+marking-ThavenBodyStripesU = Pinstripes (Glowing)
+marking-ThavenBodyStripesU-stripes = Pinstripes
+
 marking-ThavenChestScales = Scales
 marking-ThavenChestScales-scales = Scales
 
 marking-ThavenChestTattoo1 = Back Tattoo
 marking-ThavenChestTattoo1-tat1 = Back Tattoo
+
+marking-ThavenChestTattoo1U = Back Tattoo (Glowing)
+marking-ThavenChestTattoo1U-tat1 = Back Tattoo
 
 marking-ThavenSpinechill = Spinechill
 marking-ThavenSpinechill-spinechill = Spinechill
@@ -29,12 +35,21 @@ marking-ThavenSpines-spines = Spines
 marking-ThavenTattooWave = Wave Tattoo
 marking-ThavenTattooWave-tattoowave = Wave Tattoo
 
+marking-ThavenTattooWaveU = Wave Tattoo (Glowing)
+marking-ThavenTattooWaveU-tattoowave = Wave Tattoo
+
 marking-ThavenTattooVines = Vine Tattoo
 marking-ThavenTattooVines-tattoovines = Vine Tattoo
+
+marking-ThavenTattooVinesU = Vine Tattoo (Glowing)
+marking-ThavenTattooVinesU-tattoovines = Vine Tattoo
 
 marking-ThavenTiger = Tiger Stripes
 marking-ThavenTiger-tiger1 = Tiger Belly
 marking-ThavenTiger-tiger2 = Tiger Stripes
+
+marking-ThavenTigerU = Tiger Stripes (Overlay)
+marking-ThavenTigerU-tiger2 = Tiger Stripes
 
 marking-ThavenTopSurgery = Smooth Chest
 marking-ThavenTopSurgery-nonaturals = Smooth Chest
@@ -89,6 +104,9 @@ marking-ThavenRArmTattoo1-tat1 = Arm Band (Right)
 marking-ThavenTigerRArm = Tiger Stripes (Right)
 marking-ThavenTigerRArm-tiger = Tiger Stripes (Right)
 
+marking-ThavenTigerRArmU = Tiger Stripes (Right, Glowing)
+marking-ThavenTigerRArmU-tiger = Tiger Stripes (Right)
+
 # RHand
 
 marking-ThavenRHandScales = Scales (Right)
@@ -104,6 +122,10 @@ marking-ThavenLArmTattoo1-tat1 = Arm Band (Left)
 
 marking-ThavenTigerLArm = Tiger Stripes (Left)
 marking-ThavenTigerLArm-tiger = Tiger Stripes (Left)
+
+marking-ThavenTigerLArmU = Tiger Stripes (Left, Glowing)
+marking-ThavenTigerLArmU-tiger = Tiger Stripes (Left, Glowing)
+
 
 # LHand
 
@@ -705,9 +727,15 @@ marking-ThavenBigTail = Big Tail
 marking-ThavenBigTail-big1_front = Tail
 marking-ThavenBigTail-big2_front = Fin
 
+marking-ThavenBigTailUnshaded = Big Tail (Overlay)
+marking-ThavenBigTailUnshaded-big2_front = Fin
+
 marking-ThavenTadpoleTail = Tadpole Tail
 marking-ThavenTadpoleTail-tadpole1_front = Tail
 marking-ThavenTadpoleTail-tadpole2_front = Fin
+
+marking-ThavenTadpoleTailUnshaded = Tadpole Tail (Overlay)
+marking-ThavenTadpoleTailUnshaded-tadpole2_front = Fin
 
 marking-ThavenTailEel = Eel Tail (Underlay)
 marking-ThavenTailEel-eel1_front = Tail
@@ -720,6 +748,9 @@ marking-ThavenTailNurse = Swept Tail
 marking-ThavenTailNurse-nurse1_front = Tail
 marking-ThavenTailNurse-nurse2_front = Stripes
 
+marking-ThavenTailNurseUnshaded = Swept Tail (Overlay)
+marking-ThavenTailNurseUnshaded-nurse2_front = Stripes
+
 marking-ThavenTailStub = Stub Tail
 marking-ThavenTailStub-stub1_front = Tail
 marking-ThavenTailStub-stub2_front = Stripes
@@ -727,3 +758,6 @@ marking-ThavenTailStub-stub2_front = Stripes
 marking-ThavenTailThresher = Thresher Tail
 marking-ThavenTailThresher-thresher1_front = Tail
 marking-ThavenTailThresher-thresher2_front = Stripes
+
+marking-ThavenTailThresherUnshaded = Thresher Tail (Overlay)
+marking-ThavenTailThresherUnshaded-thresher2_front = Stripes

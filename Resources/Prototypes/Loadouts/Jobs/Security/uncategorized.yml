@@ -18,7 +18,7 @@
 # SPDX-FileCopyrightText: 2025 neuPanda
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Uncategorized
 # Backpack
@@ -772,28 +772,28 @@
   items:
     - WeaponPistolViperWoodSecurity #TheDen
 
-- type: loadout
-  id: LoadoutSecurityEquipmentTruncheon
-  category: JobsSecurityAUncategorized
-  cost: 3
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapons
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterDepartmentRequirement
-          departments:
-            - Security
-        - !type:CharacterJobRequirement
-          jobs:
-            - BlueshieldOfficer
-  items:
-    - Truncheon
+# - type: loadout
+#   id: LoadoutSecurityEquipmentTruncheon
+#   category: JobsSecurityAUncategorized
+#   cost: 3
+#   canBeHeirloom: true
+#   guideEntry: SecurityWeapons
+#   requirements:
+#     - !type:CharacterDepartmentTimeRequirement
+#       department: Security
+#       min: 3600 # 1 hours
+#     - !type:CharacterItemGroupRequirement
+#       group: LoadoutSecurityWeapons
+#     - !type:CharacterLogicOrRequirement
+#       requirements:
+#         - !type:CharacterDepartmentRequirement
+#           departments:
+#             - Security
+#         - !type:CharacterJobRequirement
+#           jobs:
+#             - BlueshieldOfficer
+#   items:
+#     - Truncheon
 
 - type: loadout
   id: LoadoutSecurityPistolPollock #TheDen

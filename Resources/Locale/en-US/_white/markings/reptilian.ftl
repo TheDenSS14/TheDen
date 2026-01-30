@@ -1,7 +1,9 @@
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 ivorytemple
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # HEAD
 marking-LizardHeadGuilmon= Lizard, guilmon
@@ -19,6 +21,9 @@ marking-LizardShoutEasternDragonUsiki-eastern_dragon_usiki = Mustache
 marking-LizardHeadCobraHood = Lizard, hood with ears (Cobra)
 marking-LizardHeadCobraHood-cobra_hood_with_ears = Outer
 marking-LizardHeadCobraHood-cobra_hood_with_ears_overlay = Inner
+
+marking-LizardHeadCobraHoodU = Lizard, hood with ears (Cobra, Overlay)
+marking-LizardHeadCobraHoodU-cobra_hood_with_ears_overlay = Inner
 
 marking-LizardHornsCurled-horns_curled_l = Left horn
 marking-LizardHornsCurled-horns_curled_r = Right horn
@@ -54,6 +59,13 @@ marking-SnakeLargeTail-snake_large_overlay = Outer
 marking-SnakeLargeTailAnimated = Lizard, large snake tail
 marking-SnakeLargeTailAnimated-snake_large_wagging = Inner
 marking-SnakeLargeTailAnimated-snake_large_wagging_overlay = Outer
+
+marking-SnakeLargeTailU = Lizard, large snake tail (Overlay)
+marking-SnakeLargeTailU-snake_large = Inner
+marking-SnakeLargeTailU-snake_large_overlay = Outer
+marking-SnakeLargeTailUAnimated = Lizard, large snake tail
+marking-SnakeLargeTailUAnimated-snake_large_wagging = Inner
+marking-SnakeLargeTailUAnimated-snake_large_wagging_overlay = Outer
 
 # SPINES
 marking-LizardChestSpinesAquatic = Lizard, chest, spines (Aquatic)

@@ -151,7 +151,6 @@
   - JetpackBlue
   - JetpackMini
   - Truncheon
-  - PlasteelArmingSword
   - Terminus
   - CrossbowModern # Frontier
   - BoxShotgunIncendiary
@@ -288,3 +287,13 @@
   - WeaponRifleVulcanEmpty
   - WeaponRifleLecterEmpty
   - WeaponSubMachineGunDrozdEmpty
+
+# Look, this shouldn't really be in this file. But y'know, we don't really have anywhere else to put it
+- type: latheRecipePack
+  id: NFMercenaryArchetypeMeleeStatic
+  recipes:
+  - PlasteelArmingSword
+  - PlasteelMaceNF
+  - PlasteelEpeeNF
+  - PlasteelAxeNF
+  - PlasteelSpearNF
