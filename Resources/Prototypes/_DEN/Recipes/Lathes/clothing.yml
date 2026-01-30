@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: latheRecipe
   abstract: true
@@ -265,3 +265,11 @@
   parent: BaseClothingHandsArmWarmers
   id: ClothingHandsArmWarmersFingerlessPurple
   result: ClothingHandsArmWarmersFingerlessPurple
+
+# Passthrough Mask
+- type: latheRecipe
+  id: ClothingMaskBreathEatThrough
+  result: ClothingMaskBreathEatThrough
+  completetime: 5
+  materials:
+    Cloth: 100
