@@ -8,6 +8,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using System.Diagnostics.CodeAnalysis;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
@@ -60,6 +61,18 @@ namespace Content.Shared.Preferences
         public bool TryIndexOfCharacter(ICharacterProfile profile, out int index)
         {
             return (index = IndexOfCharacter(profile)) != -1;
+        }
+
+        public bool TryGetProfile(int index, [NotNullWhen(true)] out ICharacterProfile? profile)
+        {
+            var exists = _characters.ContainsKey(index);
+
+            if (exists)
+                profile = _characters[index];
+            else
+                profile = null;
+
+            return exists;
         }
     }
 }
