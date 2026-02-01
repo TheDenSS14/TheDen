@@ -5,7 +5,7 @@
 - type: entity
   parent: TableBase
   id: SomberTable
-  name: somber table
+  name: somber wood table
   description: "An expensive table made of gloomy, patterned wood."
   components:
   - type: Sprite
@@ -62,7 +62,7 @@
 - type: entity
   parent: SomberTable
   id: SomberCounter
-  name: somber counter
+  name: somber wood counter
   description: "An expensive counter made of gloomy, patterned wood."
   components:
   - type: Sprite
