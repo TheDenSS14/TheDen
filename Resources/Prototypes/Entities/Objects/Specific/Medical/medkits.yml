@@ -40,6 +40,27 @@
   - type: Tag
     tags:
     - Medkit
+  - type: Storage
+    maxItemSize: Small
+    # whitelist:
+    #   tags:
+    #     - Bottle
+    #     - Spray
+    #     - Brutepack
+    #     - Bloodpack
+    #     - Gauze
+    #     - Ointment
+    #     - PillCanister
+    #     - DiscreteHealthAnalyzer
+    #     - Dropper
+    #     - Vial
+    #   components:
+    #     - BreathMask
+    #     - Hypospray
+    #     - Injector
+    #     - Pill
+    #     - GasTank
+
 
 - type: entity
   name: burn treatment kit
@@ -118,4 +139,6 @@
   - type: Item
     heldPrefix: blackkit
     size: Normal
+  - type: ExplosionResistance # Den
+    damageCoefficient: 1
 
