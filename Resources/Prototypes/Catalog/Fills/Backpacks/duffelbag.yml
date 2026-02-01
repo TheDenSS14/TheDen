@@ -504,7 +504,7 @@
   description: "All you need to get your comrades back in the fight."
   components:
   - type: StorageFill
-    contents:
+    contents: # DEN - Change contents so that 2 medkits fit
       - id: DefibrillatorSyndicate
       - id: MedkitCombatFilled
         amount: 2
