@@ -86,7 +86,9 @@ public sealed class LavalandPlanetSystem : EntitySystem
             return;
         }
 
-        SetupLavalands();
+		// Grasslands update
+		// SetupLavalands()		
+		SetupLavalandsLimited(_config.GetCVar(CCVars.LavalandMaxLands), _config.GetCVar(CCVars.LavalandForceMap));	
     }
 
     private void OnRoundStart(RoundStartAttemptEvent ev)
@@ -163,6 +165,38 @@ public sealed class LavalandPlanetSystem : EntitySystem
             }
         }
     }
+	
+    /// <summary>
+    /// Setup a number of instances of LavalandMapPrototype, up to a certain cap, with the option to force only a specific map by name
+    /// </summary>
+    public void SetupLavalandsLimited(int maxLands = 1, string forceMap = "")
+    {
+		var counter = 0;
+		var whitelisted = !(string.IsNullOrEmpty(forceMap));
+		
+        foreach (var lavaland in _proto.EnumeratePrototypes<LavalandMapPrototype>())
+        {
+			if (counter < maxLands & !whitelisted)
+			{
+				if (!SetupLavalandPlanet(out _, lavaland))
+				{
+					Log.Error($"Failed to load lavaland planet: {lavaland.ID}");
+				}
+				
+				counter += 1;
+			}
+			else if (whitelisted)
+			{
+				if (lavaland.ID == forceMap)
+				{
+					if (!SetupLavalandPlanet(out _, lavaland))
+					{
+						Log.Error($"Failed to load lavaland planet: {lavaland.ID}");
+					}
+				}
+			}
+        }
+    }	
 
     public bool SetupLavalandPlanet(out Entity<LavalandMapComponent>? lavaland,  LavalandMapPrototype prototype, int? seed = null)
     {

@@ -1,0 +1,163 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+
+
+- type: lavalandMap
+  id: Grasslands
+  name: lavaland-planet-name-grasslands
+  outpostPath: Maps/_DEN/Unrefined/grasslands_base.yml
+  ruinPool: Grasslands
+  temperature: 295
+  planetColor: "#EEFFEE"
+  biome: Grasslands
+  shuttleWhitelist:
+    components:
+    - MiningShuttle
+  atmosphere:
+    Oxygen: 22
+    Nitrogen: 82.1
+    CarbonDioxide: 0.1
+  weather:
+  - Rain
+  markers:
+  - ThornVines
+  - WildCrops
+  - WildCropsBig
+  - WildAnimal
+  - WildSpider
+  - WildSlime
+  - OreIron # Increase vein size
+  - OreCoal # Increase vein size
+  - OreQuartz # Increase vein size
+  - OreGold
+  - OreSilver
+  - OreSalt
+  - OrePlasma # Decrease vein size
+  - OreUranium # Decrease vein size
+  - OreBananium # Decrease vein size
+  - OreArtifactFragment
+  - OreDiamond
+  - OreBluespace # Decrease vein size
+  - OreAluminium # Decrease vein size
+  - OreCopper # Increase vein size
+  - OreTungsten # Decrease vein size
+  - OreLead
+  - OreNormality
+
+- type: biomeMarkerLayer
+  id: WildCrops
+  prototype: SpawnerRandomWildCrops
+  radius: 24
+  maxCount: 64
+  minGroupSize: 1
+  maxGroupSize: 3
+  
+- type: biomeMarkerLayer
+  id: WildCropsBig
+  prototype: SpawnerRandomWildCrops
+  radius: 64
+  maxCount: 32
+  minGroupSize: 6
+  maxGroupSize: 12
+
+- type: biomeMarkerLayer
+  id: WildAnimal
+  prototype: SpawnerRandomWildAnimal
+  radius: 64
+  maxCount: 32
+  minGroupSize: 2
+  maxGroupSize: 8
+
+- type: biomeMarkerLayer
+  id: WildSpider
+  prototype: SpawnerRandomWildSpider
+  radius: 64
+  maxCount: 32
+  minGroupSize: 1
+  maxGroupSize: 3
+
+- type: biomeMarkerLayer
+  id: WildSlime
+  prototype: SpawnerRandomWildSlime
+  radius: 64
+  maxCount: 32
+  minGroupSize: 2
+  maxGroupSize: 5
+  
+- type: biomeMarkerLayer
+  id: ThornVines
+  prototype: SpawnThornVine
+  radius: 24
+  minGroupSize: 24
+  maxGroupSize: 128
+
+# Weather
+
+- type: lavalandWeather
+  id: Rain
+  weatherType: Rain
+  damage:
+    types:
+      Heat: 0
+  temperatureChange: 0
+
+# Ruins
+  
+- type: lavalandRuinPool
+  id: Grasslands
+  hugeRuins:
+    #HierophantArena: 1
+    DungeonRuinedChapel: 1
+    DungeonRuinedForge: 1
+    DungeonRuinedCastle: 1
+  smallRuins:
+    RuinedTent: 20
+    RuinedCabin: 15
+    RuinedFarm: 15
+    SmallPond: 10
+
+- type: lavalandRuin
+  id: DungeonRuinedChapel
+  name: grasslands-ruin-dungeonchapel
+  path: /Maps/_DEN/Unrefined/ruined_chapel.yml
+  priority: 1
+
+- type: lavalandRuin
+  id: DungeonRuinedForge
+  name: grasslands-ruin-dungeonforge
+  path: /Maps/_DEN/Unrefined/ruined_forge.yml
+  priority: 1
+  
+- type: lavalandRuin
+  id: DungeonRuinedCastle
+  name: grasslands-ruin-dungeoncastle
+  path: /Maps/_DEN/Unrefined/ruined_castle.yml
+  priority: 1
+
+- type: lavalandRuin
+  id: RuinedTent
+  name: grasslands-ruin-smallruin
+  path: /Maps/_DEN/Unrefined/ruined_tent.yml
+  priority: 2
+  
+- type: lavalandRuin
+  id: RuinedCabin
+  name: grasslands-ruin-smallruin
+  path: /Maps/_DEN/Unrefined/ruined_cabin.yml
+  priority: 2
+  
+- type: lavalandRuin
+  id: RuinedFarm
+  name: grasslands-ruin-smallruin
+  path: /Maps/_DEN/Unrefined/ruined_farm.yml
+  priority: 2
+  
+- type: lavalandRuin
+  id: SmallPond
+  name: grasslands-ruin-smallruin
+  path: /Maps/_DEN/Unrefined/small_pond.yml
+  priority: 3

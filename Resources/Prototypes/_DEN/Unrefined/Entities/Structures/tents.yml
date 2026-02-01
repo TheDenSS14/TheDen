@@ -1,0 +1,166 @@
+# Remove airtightness
+
+- type: entity
+  parent: BaseWall
+  id: BaseTentWall
+  abstract: true
+  components:
+  - type: Airtight
+    airBlocked: false
+  - type: BlockWeather
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Web
+  - type: RangedDamageSound
+    soundGroups:
+      Brute:
+        collection:
+          GenericHit
+
+- type: entity
+  parent: BaseTentWall
+  id: TentWallCloth
+  name: cloth tent
+  suffix: survival
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Structures/Walls/tent.rsi
+    state: cloth_tent
+  - type: Icon
+    sprite: _DEN/Unrefined/Structures/Walls/tent.rsi
+    state: cloth_tent
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialCloth1:
+            min: 2
+            max: 2
+  - type: DisassembleOnAltVerb
+    prototype: ClothTentWallStack1
+    doAfter: 3
+  - type: IconSmooth
+    key: cloth_tents
+    base: cloth_tent
+
+- type: entity
+  parent: BaseTentWall
+  id: TentWallLeather
+  name: leather tent
+  suffix: survival
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Structures/Walls/tent.rsi
+    state: leather_tent
+  - type: Icon
+    sprite: _DEN/Unrefined/Structures/Walls/tent.rsi
+    state: leather_tent
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialCloth1:
+            min: 2
+            max: 2
+  - type: DisassembleOnAltVerb
+    prototype: LeatherTentWallStack1
+    doAfter: 3
+  - type: IconSmooth
+    key: leather_tents
+    base: leather_tent
+    
+- type: entity
+  id: TentFlapCloth
+  parent: BaseMaterialDoor
+  name: cloth tent flap
+  components:
+#  - type: Airtight
+#    airBlocked: false
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    netsync: false
+    sprite: _DEN/Unrefined/Structures/Doors/cloth_tent_flaps.rsi
+    layers:
+      - state: closed
+        map: ["enum.DoorVisualLayers.Base"]
+    noRot: true
+  - type: Door
+    bumpOpen: false
+    clickOpen: true
+    canCrush: false
+    closeTimeOne: 0.2
+    closeTimeTwo: 0.2
+    openTimeOne: 0.2
+    openTimeTwo: 0.2
+    openingAnimationTime: 0.2
+    closingAnimationTime: 0.2
+    openSound:
+      path: /Audio/Effects/rustle5.ogg
+    closeSound:
+      path: /Audio/Items/zip.ogg
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Web
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialCloth1:
+            min: 2
+            max: 2
+  - type: DisassembleOnAltVerb
+    prototype: ClothTentFlapStack1
+    doAfter: 3
+  - type: IconSmooth
+    key: cloth_tents
+    #base: cloth_tent
+    mode: NoSprite
+    
+- type: entity
+  id: TentFlapLeather
+  parent: TentFlapCloth
+  name: leather tent flap
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Structures/Doors/leather_tent_flaps.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialCloth1:
+            min: 2
+            max: 2
+  - type: DisassembleOnAltVerb
+    prototype: LeatherTentFlapStack1
+    doAfter: 3
+  - type: IconSmooth
+    key: leather_tents
+    #base: leather_tent
+    mode: NoSprite
