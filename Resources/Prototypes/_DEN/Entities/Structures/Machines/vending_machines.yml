@@ -368,7 +368,7 @@
   id: VendingMachineChefvendSomber
   name: somber pantry (ingredients)
   suffix: ChefVend, Left
-  description: "A glossy, brushed-metal pantry.                              This side has ingredients in it."
+  description: "A glossy, brushed-metal pantry.                              This side has ingredients in it." # Force new line
   components:
   - type: VendingMachine
     pack: ChefvendInventory
@@ -410,7 +410,7 @@
   id: VendingMachineDinnerwareSomber
   name: somber pantry (utensils)
   suffix: Dinnerware, Right
-  description: "A glossy, brushed-metal pantry.                              This side has utensils in it."
+  description: "A glossy, brushed-metal pantry.                              This side has utensils in it." # Force new line
   components:
   - type: VendingMachine
     pack: DinnerwareInventory

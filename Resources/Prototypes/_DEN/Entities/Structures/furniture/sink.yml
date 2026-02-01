@@ -2,12 +2,17 @@
   parent: SinkEmpty
   id: SomberSinkEmpty
   name: somber sink
-  suffix: Empty, Stem
+  suffix: Empty
   description: "A sleek porcelain sink. The water controls are concealed beneath the rim, touch-sensitive and pressure-based, leaving the surface clean and uninterrupted."
   categories: [ HideSpawnMenu ] # Why are there even empty sinks?
   components:
   - type: Sprite
     sprite: _DEN/Structures/Furniture/sombersink.rsi
+    layers:
+      - state: sink
+      - map: [ "enum.SolutionContainerLayers.Fill" ]
+        state: sink-fill-1
+        visible: false
   - type: StaticPrice
     price: 125
   - type: Destructible
@@ -40,7 +45,7 @@
   parent: SomberSinkEmpty
   id: SomberSink
   name: somber sink
-  suffix: Stem
+  suffix: ""
   components:
   - type: SolutionContainerManager
     solutions:
@@ -55,22 +60,22 @@
   parent: SomberSinkEmpty
   id: SomberSinkStemless
   name: somber sink
-  suffix: Empty, Stemless
+  suffix: Empty, Countertop
   categories: [ HideSpawnMenu ] # Why are there even empty sinks?
   components:
   - type: Sprite
     sprite: _DEN/Structures/Furniture/sombersink.rsi
     layers:
-      - state: sink
+      - state: sink_countertop
       - map: [ "enum.SolutionContainerLayers.Fill" ]
-        state: sink-fill-1
+        state: sink_countertop-fill-1
         visible: false
 
 - type: entity
   parent: SomberSinkStemless
   id: SomberSinkStemlessWater
   name: somber sink
-  suffix: Stemless
+  suffix: Countertop
   components:
   - type: SolutionContainerManager
     solutions:
@@ -85,7 +90,7 @@
   parent: SomberSink
   id: SomberSinkWide
   name: wide somber sink
-  suffix: Stem
+  suffix: ""
   components:
     - type: Sprite
       sprite: _DEN/Structures/Furniture/sombersink.rsi
@@ -103,12 +108,12 @@
   parent: SomberSinkWide
   id: SomberSinkWideStemless
   name: wide somber sink
-  suffix: Stemless
+  suffix: Countertop
   components:
     - type: Sprite
       sprite: _DEN/Structures/Furniture/sombersink.rsi
       layers:
-        - state: sink_wide_stemless
+        - state: sink_wide_countertop
         - map: [ "enum.SolutionContainerLayers.Fill" ]
-          state: sink_wide-fill-1
+          state: sink_wide_countertop-fill-1
           visible: false
