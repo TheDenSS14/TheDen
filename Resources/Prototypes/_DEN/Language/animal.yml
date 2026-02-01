@@ -1,0 +1,19 @@
+- type: language
+  id: Crystalline
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 2
+    replacement: # It's doing its best
+    - ◆◇
+    - ◆◈
+    - ◆❖
+    - ◇◆
+    - ◇◈
+    - ◇❖
+    - ◈◆
+    - ◈◇
+    - ◈❖
+    - ❖◆
+    - ❖◇
+    - ❖◈

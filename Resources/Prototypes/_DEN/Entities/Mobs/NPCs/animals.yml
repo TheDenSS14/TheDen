@@ -1,0 +1,121 @@
+- type: entity
+  parent: MobElementalBase
+  id: MobEidoliteHermit
+  name: eidolite hermit
+  description: "A small, skittish creature from somewhere beyond the noosphere that occasionally slips into our world. Extensive study shows it poses no threat. It only wants to tuck itself beneath eidolite crystals and bask in the energy they channel."
+  components:
+  - type: Sprite
+    drawdepth: SmallMobs
+    sprite: _DEN/Mobs/Animals/eidolitehermit.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: fella
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: fella
+      Dead:
+        Base: fella-dead
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: fella-moving
+    noMovementLayers:
+      movement:
+        state: fella
+  - type: Carriable
+    freeHandsRequired: 1
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: MobState
+    allowedStates:
+      - Alive
+      - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Dead
+  - type: Stamina
+    critThreshold: 40
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 120
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialEidolite1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Psionic
+    removable: false
+    roller: false
+    assayFeedback:
+      - eidolitehermit-feedback
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
+  - type: PointLight # As bright as a crystal
+    radius: 2
+    energy: 2.5
+    castShadows: false
+    color: "#d9418d"
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-eidolitehermit-name
+    description: ghost-role-information-eidolitehermit-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+  - type: GhostTakeoverAvailable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.1
+          position: -0.0156,-0.0156 # Half a pixel left and down from center
+        density: 0.01
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: Speech
+    speechVerb: Crystalline
+    speechSounds: Crystalline
+    allowedEmotes: []
+  - type: TypingIndicator
+    proto: mantis # TODO ?
+
+- type: entity
+  parent: MobEidoliteHermit
+  id: MobEidoliteHermitPet
+  suffix: Pet
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-eidolitehermitpet-name
+    description: ghost-role-information-eidolitehermitpet-description
+    rules: ghost-role-information-eidolitehermitpet-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
