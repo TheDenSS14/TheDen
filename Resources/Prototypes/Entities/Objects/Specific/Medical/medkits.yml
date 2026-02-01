@@ -29,26 +29,16 @@
   - type: Storage
     maxItemSize: Small
     grid:
-    - 0,0,3,2
-  - type: Item
-    size: Large # TheDen - Just make all medkits the same size. Everyone just uses combat medkits anyways.
-    sprite: Objects/Specific/Medical/firstaidkits.rsi
-    heldPrefix: firstaid
-  - type: PhysicalComposition
-    materialComposition:
-      Plastic: 150
-  - type: Tag
-    tags:
-    - Medkit
-  - type: Storage
-    maxItemSize: Small
+    - 0,0,2,1
+    - 4,0,5,1
+    - 7,0,7,1
     # whitelist:
     #   tags:
     #     - Bottle
     #     - Spray
     #     - Brutepack
     #     - Bloodpack
-    #     - Gauze
+    #     - Gauzes
     #     - Ointment
     #     - PillCanister
     #     - DiscreteHealthAnalyzer
@@ -60,7 +50,16 @@
     #     - Injector
     #     - Pill
     #     - GasTank
-
+  - type: Item
+    size: Large # TheDen - Just make all medkits the same size. Everyone just uses combat medkits anyways.
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    heldPrefix: firstaid
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 150
+  - type: Tag
+    tags:
+    - Medkit
 
 - type: entity
   name: burn treatment kit
@@ -138,7 +137,6 @@
     state: blackkit
   - type: Item
     heldPrefix: blackkit
-    size: Normal
   - type: ExplosionResistance # Den
     damageCoefficient: 1
 
