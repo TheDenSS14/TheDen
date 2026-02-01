@@ -5,6 +5,7 @@
 
 using Content.Server.Body.Systems;
 using Content.Shared.Chat.TypingIndicator;
+using Content.Shared.Speech.Components;
 
 namespace Content.Server._CD.Traits;
 
@@ -29,5 +30,11 @@ public sealed class SynthSystem : EntitySystem
 
         // Give them synth blood. Ion storm notif is handled in that system
         _bloodstream.ChangeBloodReagent(uid, "SynthBlood");
+
+        // Gives them the DamagedSiliconAccent component
+        EnsureComp<DamagedSiliconAccentComponent>(uid, out var accent);
+        accent.EnableChargeCorruption = false; //Disables corruption on low battery. This would always be active since non-silicons don't have a battery
+        accent.DamageAtMaxCorruption = 200; //This is makes it usable for anyone not a silicon
+        Dirty(uid, accent);
     }
 }
