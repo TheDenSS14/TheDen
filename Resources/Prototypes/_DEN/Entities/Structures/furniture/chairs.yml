@@ -198,9 +198,19 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: StoolBase
-  id: SomberChairStool
+  parent: SomberChairWood
+  id: SomberStool
   name: somber stool
+  description: "An expensive stool made of gloomy, patterned wood."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/chairs.rsi
+    state: somberstool
+
+- type: entity
+  parent: StoolBase
+  id: SomberBarStool
+  name: somber bar stool
   description: "A patterned cushion atop a striped electrum pole."
   components:
   - type: Sprite

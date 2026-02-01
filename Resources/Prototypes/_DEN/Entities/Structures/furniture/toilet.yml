@@ -7,3 +7,15 @@
   components:
   - type: Sprite
     sprite: _DEN/Structures/Furniture/sombertoilet.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.ToiletVisuals.SeatVisualState:
+        SeatVisualState.SeatUp:
+          SeatUp: { state: disposal-down } # These toilet seats stay down to avoid a visual layer issue
+          SeatDown: { state: disposal-down }
+      enum.ToolOpenableVisuals.ToolOpenableVisualState:
+        ToolOpenableVisualState.StashOpen:
+          Open: { state: disposal-open }
+          Closed: { state: disposal-closed }
+  - type: Toilet
+    seatSound: /Audio/Effects/silence.ogg # Because the seats stay down, there's no seat sound

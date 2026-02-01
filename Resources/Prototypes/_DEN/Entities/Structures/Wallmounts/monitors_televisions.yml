@@ -63,11 +63,11 @@
 - type: entity
   parent: BaseStructure
   id: SomberTV
-  name: somber television
-  description: "A futuristic frame television with a textured, shifting surface, set to freeze its last image in faux mnemolith--a bleeding sun breaking through clouds, this time. This thing must be ungodly expensive."
+  name: somber widescreen television
+  description: "A futuristic frame television with a textured, shifting surface, set to freeze its last image in faux mnemolith--an eclipsed, bleeding sun breaking through clouds, this time. This thing must be ungodly expensive."
   suffix: Decorative
   components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS LIKE RemoteSignallerSomberTV
-  - type: Sprite
+  - type: Sprite # TODO: Maybe it should also function as an actual TV??  But the glowing visual is more important and idk how to tie both together...
     sprite: _DEN/Structures/Wallmounts/sombertv.rsi
     drawdepth: WallMountedItems
     layers:
@@ -91,15 +91,13 @@
   - type: ItemToggle
     predictable: false
     soundActivate:
-      path: /Audio/_DEN/Effects/crystaltap1.ogg
+      path: /Audio/Machines/lightswitch.ogg
       params:
-        volume: -6
-        pitch: 0.35
+        pitch: 1.1
     soundDeactivate:
-      path: /Audio/_DEN/Effects/crystaltap2.ogg
+      path: /Audio/Machines/lightswitch.ogg
       params:
-        volume: -6
-        pitch: 0.35
+        pitch: 0.9
   - type: UnpoweredFlashlight
   - type: WallMount
     arc: 360

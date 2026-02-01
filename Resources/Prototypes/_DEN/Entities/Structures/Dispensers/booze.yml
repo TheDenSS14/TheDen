@@ -1,0 +1,30 @@
+- type: entity
+  parent: BoozeDispenser
+  id: BoozeDispenserExtended
+  suffix: Filled, Extended
+  components:
+  - type: ReagentDispenser
+    pack: BoozeDispenserInventoryExtended
+
+- type: entity
+  parent: BoozeDispenserExtended
+  id: BoozeDispenserExtendedSomber
+  name: somber liquor taps
+  suffix: Booze Dispenser] [Extended
+  description: "An electrum pipe fitted with liquor taps, delivering perfectly chilled pours."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/smalldispensers.rsi
+    state: somberbooze
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.15,0.15,0.15"
+        hard: false # So small you can step over it
+        density: 190
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer

@@ -2,8 +2,9 @@
   parent: SinkEmpty
   id: SomberSinkEmpty
   name: somber sink
-  suffix: Empty
+  suffix: Empty, Stem
   description: "A sleek porcelain sink. The water controls are concealed beneath the rim, touch-sensitive and pressure-based, leaving the surface clean and uninterrupted."
+  categories: [ HideSpawnMenu ] # Why are there even empty sinks?
   components:
   - type: Sprite
     sprite: _DEN/Structures/Furniture/sombersink.rsi
@@ -35,12 +36,11 @@
                 min: 1
                 max: 2
 
-
 - type: entity
   parent: SomberSinkEmpty
   id: SomberSink
   name: somber sink
-  suffix: Water
+  suffix: Stem
   components:
   - type: SolutionContainerManager
     solutions:
@@ -52,32 +52,14 @@
           Quantity: 500
 
 - type: entity
-  parent: SomberSink
-  id: SomberSinkWide
-  name: wide somber sink
-  components:
-    - type: Sprite
-      sprite: Structures/Furniture/sink.rsi
-      layers:
-        - state: sink_wide
-        - map: [ "enum.SolutionContainerLayers.Fill" ]
-          state: sink_wide-fill-1
-          visible: false
-    - type: SolutionContainerVisuals
-      maxFillLevels: 1
-      fillBaseName: sink_wide-fill-
-      solutionName: drainBuffer
-
-#Stemless Sink
-
-- type: entity
   parent: SomberSinkEmpty
   id: SomberSinkStemless
   name: somber sink
   suffix: Empty, Stemless
+  categories: [ HideSpawnMenu ] # Why are there even empty sinks?
   components:
   - type: Sprite
-    sprite: Structures/Furniture/sink.rsi
+    sprite: _DEN/Structures/Furniture/sombersink.rsi
     layers:
       - state: sink
       - map: [ "enum.SolutionContainerLayers.Fill" ]
@@ -88,7 +70,7 @@
   parent: SomberSinkStemless
   id: SomberSinkStemlessWater
   name: somber sink
-  suffix: Stemless, Water
+  suffix: Stemless
   components:
   - type: SolutionContainerManager
     solutions:
@@ -98,3 +80,35 @@
         reagents:
         - ReagentId: Water
           Quantity: 500
+
+- type: entity
+  parent: SomberSink
+  id: SomberSinkWide
+  name: wide somber sink
+  suffix: Stem
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Furniture/sombersink.rsi
+      layers:
+        - state: sink_wide
+        - map: [ "enum.SolutionContainerLayers.Fill" ]
+          state: sink_wide-fill-1
+          visible: false
+    - type: SolutionContainerVisuals
+      maxFillLevels: 1
+      fillBaseName: sink_wide-fill-
+      solutionName: drainBuffer
+
+- type: entity
+  parent: SomberSinkWide
+  id: SomberSinkWideStemless
+  name: wide somber sink
+  suffix: Stemless
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Furniture/sombersink.rsi
+      layers:
+        - state: sink_wide_stemless
+        - map: [ "enum.SolutionContainerLayers.Fill" ]
+          state: sink_wide-fill-1
+          visible: false

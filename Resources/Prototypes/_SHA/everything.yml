@@ -395,19 +395,6 @@
     rotation: 90
     buckleOffset: "0.775,0.475"
 
-- type: entity
-  parent: SomberChairCushion
-  id: SomberChairCushionCentered
-  suffix: Centered
-  placement:
-    mode: SnapgridCenter
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Furniture/chairs.rsi
-    state: somberfloorcushioncentered
-  - type: Strap
-    buckleOffset: "0.775,0.475"
-
 # Couches
 
 - type: entity
@@ -511,12 +498,22 @@
   description: "A huge, plush bed draped in silky sheets."
   suffix: Fancy, Lower
   components:
+  - type: AntiRotOnBuckle
   - type: HealOnBuckle
     damage:
       types:
-        Poison: -1
-        Cold: -1
-        Blunt: -1
+        Bloodloss: -200
+        Blunt: -200
+        Cellular: -200
+        Caustic: -200
+        Cold: -200
+        Heat: -200
+        Piercing: -200
+        Poison: -200
+        Radiation: -200
+        Shock: -200
+        Slash: -200
+        Holy: -200
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -659,12 +656,22 @@
   description: "A plush bed draped in silky sheets."
   suffix: Small, Fancy
   components:
+  - type: AntiRotOnBuckle
   - type: HealOnBuckle
     damage:
       types:
-        Poison: -1
-        Cold: -1
-        Blunt: -1
+        Bloodloss: -200
+        Blunt: -200
+        Cellular: -200
+        Caustic: -200
+        Cold: -200
+        Heat: -200
+        Piercing: -200
+        Poison: -200
+        Radiation: -200
+        Shock: -200
+        Slash: -200
+        Holy: -200
   - type: Physics
     bodyType: Static
   - type: Fixtures

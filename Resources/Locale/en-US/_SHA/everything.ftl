@@ -13,4 +13,3 @@ tiles-break-lattice-vertical = penthouse somber lattice (vertical)
 tiles-break-lattice-balcony = penthouse somber lattice (balcony)
 tiles-break-lattice-balcony-N = penthouse somber lattice (balcony, north)
 tiles-break-lattice-balcony-S = penthouse somber lattice (balcony, south)
-tiles-dirt-floor-penthouse = penthouse somber planter

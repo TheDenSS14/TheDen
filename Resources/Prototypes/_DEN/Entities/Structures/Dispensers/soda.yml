@@ -9,3 +9,26 @@
   components:
   - type: ReagentDispenser
     pack: SodaDispenserInventoryExtended
+
+- type: entity
+  parent: SodaDispenserExtended
+  id: SodaDispenserExtendedSomber
+  name: somber soda taps
+  suffix: Soda Dispenser] [Extended
+  description: "An electrum pipe fitted with soda taps, delivering perfectly chilled pours."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/smalldispensers.rsi
+    state: sombersoda
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.15,0.15,0.15"
+        hard: false # So small you can step over it
+        density: 190
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer

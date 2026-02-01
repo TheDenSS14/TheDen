@@ -261,3 +261,188 @@
         - MachineLayer
         density: 500
   - type: BlockMovement
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSilent # For "vending machines" that are presented as analogue machines rather than talking, beeping computers
+  abstract: true
+  components:
+  - type: VendingMachine
+    soundVend: /Audio/Items/bottle_clunk.ogg # Pulling something out of a cabinet...
+    soundDeny: /Audio/Items/trayhit1.ogg # Clumsily failing to remove something...
+    ejectDelay: 0.5 # No animations to time around
+  - type: AmbientSound
+    volume: 0
+    range: 0
+    enabled: false
+    sound:
+      path: /Audio/Effects/silence.ogg
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 0
+    energy: 0
+    mask: null
+
+# Somber vending machines start
+- type: entity
+  parent: VendingMachineSilent # If I parent it to VendingMachineCondiments it starts talking... And if I give it an empty message list, it throws errors...
+  id: VendingMachineCondimentsSomber
+  name: somber condiment taps
+  suffix: Condiment Station
+  description: "An electrum pipe fitted with faux taps that package chilled condiments into gel capsules on demand. What control freak thought this was necessary? Still, it keeps everything clean..."
+  components:
+  - type: VendingMachine
+    offState: off
+    pack: CondimentInventoryExtended
+    soundVend: /Audio/Items/squeezebottle.ogg # It's funny ok
+  - type: Sprite
+    noRot: false
+    sprite: _DEN/Structures/Machines/VendingMachines/sombercondiments.rsi
+    drawdepth: SmallObjects
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.15,0.15,0.15"
+        hard: false # So small you can step over it
+        density: 190
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+
+- type: entity
+  parent: VendingMachineSilent
+  id: VendingMachineBoozeSomber
+  name: somber liquor cabinet
+  suffix: Booze-O-Mat
+  description: "A glossy, brushed-metal liquor cabinet."
+  components:
+  - type: VendingMachine
+    pack: BoozeOMatInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+  - type: Sprite
+    noRot: true
+    sprite: _DEN/Structures/Machines/VendingMachines/somberboozeomat.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Transform
+    noRot: true
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: false
+  - type: AccessReader
+    access: [["Bar"]]
+  - type: GuideHelp
+    guides:
+    - Bartender
+
+- type: entity
+  parent: VendingMachineBoozeSomber
+  id: VendingMachineBoozeSomberUnlocked
+  suffix: Booze-O-Mat] [Unlocked
+  components:
+  - type: AccessReader
+    access: []
+
+- type: entity
+  parent: VendingMachineSilent
+  id: VendingMachineChefvendSomber
+  name: somber pantry (ingredients)
+  suffix: ChefVend, Left
+  description: "A glossy, brushed-metal pantry.                              This side has ingredients in it."
+  components:
+  - type: VendingMachine
+    pack: ChefvendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+  - type: Sprite
+    noRot: true
+    sprite: _DEN/Structures/Machines/VendingMachines/somberchefvend.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Transform
+    noRot: true
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: false
+  - type: AccessReader
+    access: [["Service"]]
+  - type: GuideHelp
+    guides:
+    - Chef
+
+- type: entity
+  parent: VendingMachineChefvendSomber
+  id: VendingMachineChefvendSomberUnlocked
+  suffix: ChefVend, Left] [Unlocked
+  components:
+  - type: AccessReader
+    access: []
+
+- type: entity
+  parent: VendingMachineSilent
+  id: VendingMachineDinnerwareSomber
+  name: somber pantry (utensils)
+  suffix: Dinnerware, Right
+  description: "A glossy, brushed-metal pantry.                              This side has utensils in it."
+  components:
+  - type: VendingMachine
+    pack: DinnerwareInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+  - type: Sprite
+    noRot: true
+    sprite: _DEN/Structures/Machines/VendingMachines/somberdinnerware.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Transform
+    noRot: true
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: false
+  - type: AccessReader
+    access: [["Service"]]
+  - type: GuideHelp
+    guides:
+    - Chef
+
+- type: entity
+  parent: VendingMachineDinnerwareSomber
+  id: VendingMachineDinnerwareSomberUnlocked
+  suffix: Dinnerware, Right] [Unlocked
+  components:
+  - type: AccessReader
+    access: []

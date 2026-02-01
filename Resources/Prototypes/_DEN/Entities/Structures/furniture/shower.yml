@@ -3,7 +3,7 @@
   id: SomberShower
   name: somber shower
   description: "A bulky, angled showerhead with pressure tuned for full coverage."
-  components:
+  components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS LIKE RemoteSignallerSomberTV SO I CAN TOGGLE MULTIPLE SHOWERS AT ONCE...!!!
     - type: Sprite
       sprite: _DEN/Structures/Furniture/sombershower.rsi
     - type: StaticPrice
