@@ -764,6 +764,9 @@ trait-description-Caprine = A language spoken by the Ovinia, the language is com
 trait-name-Synthetic = Synthetic
 trait-description-Synthetic = You are a biomechanical construct, who bleeds coolant and is notified of ongoing Ion Storms.
 
+trait-name-SyntheticVoicebox = Synthetic Voicebox
+trait-description-SyntheticVoicebox = Your vocal apparatus is itself synthetic, and starts to glitch when you are injured.
+
 trait-name-NoContractions = No Contractions
 trait-description-NoContractions = You are (mostly) incapable of using contractions.
 
