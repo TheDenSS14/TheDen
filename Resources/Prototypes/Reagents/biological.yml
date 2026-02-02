@@ -48,6 +48,7 @@
   recognizable: true
   physicalDesc: reagent-physical-desc-ferrous
   slippery: false
+  isNourishing: true
   metabolisms:
     Drink:
       effects:
@@ -58,7 +59,6 @@
             type: Human
             shouldHave: false
       - !type:SatiateHunger
-        factor: 0.5
         conditions:
         - !type:OrganType
           type: Vampiric
