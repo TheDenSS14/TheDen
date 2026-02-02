@@ -18,10 +18,6 @@
             shouldHave: false
       - !type:SatiateThirst
         factor: 1
-        conditions: # TheDen - Vampires get their own numbers
-          - !type:OrganType
-            type: Vampiric
-            shouldHave: false
       - !type:SatiateHunger # TheDen - Vampiric additions start
         conditions:
         - !type:OrganType

@@ -96,7 +96,6 @@
       - !type:SatiateThirst
         factor: 0.5
       - !type:SatiateHunger
-        factor: 2
         conditions:
         - !type:OrganType
           type: Vampiric
