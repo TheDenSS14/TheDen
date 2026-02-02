@@ -23,7 +23,6 @@
             type: Vampiric
             shouldHave: false
       - !type:SatiateHunger # TheDen - Vampiric additions start
-        factor: 0.625
         conditions:
         - !type:OrganType
           type: Vampiric
