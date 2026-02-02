@@ -23,3 +23,6 @@ bloodsucker-blood-sucked-victim = {CAPITALIZE(THE($sucker))} sucks some of your 
 bloodsucked-health-examine = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } bite marks on { POSS-ADJ($target) } neck.[/color]
 
 bloodsucker-glands-throb = The glands behind your fangs feel a bit sore.
+
+bloodsucker-wipe-marks-verb = Hide Marks
+bloodsucker-wipe-marks-popup = {CAPITALIZE(THE($sucker))} hides the marks on { THE($target) } neck.
