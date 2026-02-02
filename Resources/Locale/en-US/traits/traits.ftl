@@ -453,8 +453,8 @@ trait-description-StrikingCalluses =
     Striking Calluses consist of bony dermal deposits grafted into a user's hands, either inside the palm
     for "Tiger Style" fighting, or just below the knuckles for those who favor traditional boxing.
     Owners of prosthetic or bionic limbs would instead have a hard plastic shell over their knuckles.
-    These enhancements increase your unarmed strike damage by 2 point base, but do not confer
-    any benefits to any form of armed melee.
+    Your unarmed melee attacks deal blunt instead of the standard damage type for your species.
+    Additionally, it increases your unarmed damage by 2 blunt at base. This does not confer any benefit to armed melee.
 
 trait-name-Spinarette = Bionic Spinarette
 trait-description-Spinarette =
