@@ -10,7 +10,6 @@
 using Content.Shared.Verbs;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
-using Content.Shared.Damage.Prototypes;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Administration.Logs;
@@ -44,9 +43,6 @@ namespace Content.Server.Vampiric
         [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
         [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
-
-        private readonly ProtoId<DamageGroupPrototype> _bruteDamageGroup = "Brute";
-        private readonly ProtoId<DamageGroupPrototype> _airlossDamageGroup = "Airloss";
 
         public override void Initialize()
         {
