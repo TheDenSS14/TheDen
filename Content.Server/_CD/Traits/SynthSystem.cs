@@ -5,7 +5,6 @@
 
 using Content.Server.Body.Systems;
 using Content.Shared.Chat.TypingIndicator;
-using Content.Shared.Speech.Components;
 
 namespace Content.Server._CD.Traits;
 
