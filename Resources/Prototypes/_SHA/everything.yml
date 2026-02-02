@@ -1,3 +1,20 @@
+#  - type: AntiRotOnBuckle
+#  - type: HealOnBuckle
+#    damage:
+#      types:
+#        Bloodloss: -200
+#        Blunt: -200
+#        Cellular: -200
+#        Caustic: -200
+#        Cold: -200
+#        Heat: -200
+#        Piercing: -200
+#        Poison: -200
+#        Radiation: -200
+#        Shock: -200
+#        Slash: -200
+#        Holy: -200
+
 # Game Presets
 
 - type: gamePreset
@@ -488,164 +505,6 @@
     position: Down
     rotation: 90
     buckleOffset: "0.35,-0.74"
-
-# Big fancy beds
-
-- type: entity
-  parent: BaseStructure
-  id: BedPenthouseLower
-  name: penthouse bed
-  description: "A huge, plush bed draped in silky sheets."
-  suffix: Fancy, Lower
-  components:
-  - type: AntiRotOnBuckle
-  - type: HealOnBuckle
-    damage:
-      types:
-        Bloodloss: -200
-        Blunt: -200
-        Cellular: -200
-        Caustic: -200
-        Cold: -200
-        Heat: -200
-        Piercing: -200
-        Poison: -200
-        Radiation: -200
-        Shock: -200
-        Slash: -200
-        Holy: -200
-  - type: Physics
-    bodyType: Static
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.45,0.0,0.45,0.5"
-        density: 190
-        mask:
-        - TableMask
-  - type: Sprite
-    sprite: _SHA/Structures/Furniture/furniture-64x32.rsi
-    state: bedlower
-    snapCardinals: false
-    noRot: false
-  - type: Strap
-    position: Down
-    rotation: -90
-    buckleOffset: "-.1,0.29"
-  - type: Transform
-    anchored: true
-  - type: Anchorable
-  - type: Pullable
-  - type: InteractionOutline
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - PetObject
-    - KissObject
-    - LickObject
-
-- type: entity
-  parent: BedPenthouseLower
-  id: BedPenthouseUpper
-  suffix: Fancy, Upper
-  components:
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.45,0.5,0.45,0.0"
-        density: 190
-        mask:
-        - TableMask
-  - type: Sprite
-    state: bedupper
-    snapCardinals: false
-    noRot: false
-  - type: Strap
-    position: Down
-    rotation: -90
-    buckleOffset: "-.1,-0.08"
-
-- type: entity
-  parent: BedPenthouseLower
-  id: BedPenthouseLowerFlipped
-  suffix: Fancy, Flipped, Lower
-  components:
-  - type: Sprite
-    state: bedlowerflipped
-    snapCardinals: false
-    noRot: false
-  - type: Strap
-    position: Down
-    rotation: 90
-    buckleOffset: ".1,0.29"
-
-- type: entity
-  parent: BedPenthouseUpper
-  id: BedPenthouseUpperFlipped
-  suffix: Fancy, Flipped, Upper
-  components:
-  - type: Sprite
-    state: bedupperflipped
-    snapCardinals: false
-    noRot: false
-  - type: Strap
-    position: Down
-    rotation: 90
-    buckleOffset: ".1,-0.08"
-
-# Big basic beds
-
-- type: entity
-  parent: BedPenthouseLower
-  id: BedPenthouseLowerBasic
-  name: penthouse bed
-  description: "A huge, plush bed draped in warm sheets."
-  suffix: Basic, Lower
-  components:
-  - type: Sprite
-    state: bedlowerbasic
-    snapCardinals: false
-    noRot: false
-
-- type: entity
-  parent: BedPenthouseUpper
-  id: BedPenthouseUpperBasic
-  name: penthouse bed
-  description: "A huge, plush bed draped in warm sheets."
-  suffix: Basic, Upper
-  components:
-  - type: Sprite
-    state: bedupperbasic
-    snapCardinals: false
-    noRot: false
-
-- type: entity
-  parent: BedPenthouseLowerFlipped
-  id: BedPenthouseLowerBasicFlipped
-  name: penthouse bed
-  description: "A huge, plush bed draped in warm sheets."
-  suffix: Basic, Flipped, Lower
-  components:
-  - type: Sprite
-    state: bedlowerbasicflipped
-    snapCardinals: false
-    noRot: false
-
-- type: entity
-  parent: BedPenthouseUpperFlipped
-  id: BedPenthouseUpperBasicFlipped
-  name: penthouse bed
-  description: "A huge, plush bed draped in warm sheets."
-  suffix: Basic, Flipped, Upper
-  components:
-  - type: Sprite
-    state: bedupperbasicflipped
-    snapCardinals: false
-    noRot: false
 
 # Small fancy beds
 

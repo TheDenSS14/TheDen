@@ -43,7 +43,7 @@
 - type: entity
   parent: SomberPsychBed
   id: SomberPsychBedFlipped
-  suffix: Flipped
+  suffix: Flipped # Characters lie to the left instead, fine since it doesn't need bedsheets
   components:
   - type: Sprite
     sprite: _DEN/Structures/Furniture/furniture.rsi

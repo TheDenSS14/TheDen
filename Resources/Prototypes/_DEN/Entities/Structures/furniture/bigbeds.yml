@@ -1,0 +1,136 @@
+# Oversized beds that come in pieces like sofas, possibly only for Eternity since their bedsheets are baked in
+# They can't rotate when the camera turns or else characters will go flying off them
+# The incorrect perspective is the cost of having big beds, but who even rotates their camera...
+# Originally made for private use, but April liked them, so it's probably fine
+
+# Fancy1 (gold stripes)
+# Parent any new ones to these four, as seen in Fancy2 below
+- type: entity
+  parent: BaseStructure # Can't be parented to Bed or they'll try to use bedsheets
+  id: BigBedLowerFancy1
+  name: huge bed
+  description: "A huge, plush bed draped in silky sheets."
+  suffix: Fancy, Lower
+  components:
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -0.1
+        Blunt: -0.1
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,0.0,0.45,0.5"
+        density: 190
+        mask:
+        - TableMask
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/furniture-64x32.rsi
+    state: bedlowerfancy1
+    snapCardinals: false
+    noRot: false
+  - type: Strap
+    position: Down
+    rotation: -90
+    buckleOffset: "-.1,0.29"
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+  - type: Pullable
+  - type: InteractionOutline
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - PetObject
+    - KissObject
+    - LickObject
+
+- type: entity
+  parent: BigBedLowerFancy1
+  id: BigBedUpperFancy1
+  suffix: Fancy, Upper
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,0.5,0.45,0.0"
+        density: 190
+        mask:
+        - TableMask
+  - type: Sprite
+    state: bedupperfancy1
+  - type: Strap
+    position: Down
+    rotation: -90
+    buckleOffset: "-.1,-0.08"
+
+- type: entity
+  parent: BigBedLowerFancy1
+  id: BigBedLowerFancy1Flipped
+  suffix: Fancy, Flipped, Lower
+  components:
+  - type: Sprite
+    state: bedlowerfancy1flipped
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: ".1,0.29"
+
+- type: entity
+  parent: BigBedUpperFancy1
+  id: BigBedUpperFancy1Flipped
+  suffix: Fancy, Flipped, Upper
+  components:
+  - type: Sprite
+    state: bedupperfancy1flipped
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: ".1,-0.08"
+
+# Fancy2 (quilted purple)
+- type: entity
+  parent: BigBedLowerFancy1
+  id: BigBedLowerFancy2
+  name: huge bed
+  description: "A huge, plush bed draped in warm sheets."
+  suffix: Basic, Lower
+  components:
+  - type: Sprite
+    state: bedlowerfancy2
+
+- type: entity
+  parent: BigBedUpperFancy1
+  id: BigBedUpperFancy2
+  name: huge bed
+  description: "A huge, plush bed draped in warm sheets."
+  suffix: Basic, Upper
+  components:
+  - type: Sprite
+    state: bedupperfancy2
+
+- type: entity
+  parent: BigBedLowerFancy1Flipped
+  id: BigBedLowerFancy2Flipped
+  name: huge bed
+  description: "A huge, plush bed draped in warm sheets."
+  suffix: Basic, Flipped, Lower
+  components:
+  - type: Sprite
+    state: bedlowerfancy2flipped
+
+- type: entity
+  parent: BigBedUpperFancy1Flipped
+  id: BigBedUpperFancy2Flipped
+  name: huge bed
+  description: "A huge, plush bed draped in warm sheets."
+  suffix: Basic, Flipped, Upper
+  components:
+  - type: Sprite
+    state: bedupperfancy2flipped

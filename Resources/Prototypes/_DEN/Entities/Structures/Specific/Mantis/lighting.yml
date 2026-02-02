@@ -8,7 +8,7 @@
   name: eidolite well lamp
   description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on by hand."
   suffix: Off
-  components:
+  components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS LIKE RemoteSignallerSomberTV
   - type: Sprite
     sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitewell.rsi
     drawdepth: Objects
@@ -87,7 +87,7 @@
   id: LightSomberEidoliteWellLampOn
   description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. The switch on this one takes a few tries..."
   suffix: DO NOT MAP # If you do, it'll appear on, but they'll have to interact with it twice before it turns off again. It's more fun to manually light the office anyway
-  components:
+  components: # TODO: APRIL HELP MAKE THIS ACTUALLY SPAWN IN THE TOGGLED STATE SO WE CAN USE THEM ON ETERNITY
   - type: PointLight
     enabled: true
 
@@ -125,6 +125,6 @@
   id: LightSomberEidoliteFloorLampOn
   description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. The switch on this one takes a few tries..."
   suffix: DO NOT MAP # If you do, it'll appear on, but they'll have to interact with it twice before it turns off again. It's more fun to manually light the office anyway
-  components:
+  components: # TODO: APRIL HELP MAKE THIS ACTUALLY SPAWN IN THE TOGGLED STATE SO WE CAN USE THEM ON ETERNITY
   - type: PointLight
     enabled: true

@@ -70,16 +70,15 @@
 
 - type: entity
   parent: BenchBaseMiddle
-  id: BenchSomber
+  id: BenchSomberMiddle
   name: somber bench
-  suffix: ""
-  description: "A steel bench with a striped electrum seat. Colorful and waterproof, but not particularly comfortable."
+  suffix: Middle
+  description: "A steel bench with an electrum seat. Uncomfortable, but pretty."
   placement:
     mode: SnapgridCenter
   components:
   - type: Sprite
     sprite: _DEN/Structures/Furniture/Benches/somberbench.rsi
-    state: full
   - type: StaticPrice
     price: 125
   - type: Damageable
@@ -110,5 +109,27 @@
             max: 3
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: Strap
-    buckleOffset: "0,-0.05"
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberLeft
+  suffix: Left
+  components:
+  - type: Sprite
+    state: left
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberRight
+  suffix: Right
+  components:
+  - type: Sprite
+    state: right
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberCorner
+  suffix: Corner
+  components:
+  - type: Sprite
+    state: corner
