@@ -14,7 +14,7 @@
       sprite: _DEN/Structures/Doors/Airlocks/Standard/salvage.rsi
     - type: Wires
       layoutId: AirlockCargo
-      
+
 
 - type: entity
   parent: AirlockGlass
@@ -80,7 +80,7 @@
   components:
     - type: Sprite
       sprite: _DEN/Structures/Doors/Airlocks/Standard/paramedic.rsi
-      
+
 - type: entity
   parent: AirlockMedicalGlass
   id: AirlockParamedicGlass
@@ -210,7 +210,7 @@
   components:
     - type: Sprite
       sprite: _DEN/Structures/Doors/Airlocks/Glass/armory.rsi
-      
+
 # Corpsman
 - type: entity
   parent: AirlockSecurity
@@ -227,8 +227,8 @@
   components:
     - type: Sprite
       sprite: _DEN/Structures/Doors/Airlocks/Glass/corpsman.rsi
-      
-# Department Maints 
+
+# Department Maints
 
 - type: entity
   parent: AirlockMaint
@@ -237,7 +237,7 @@
   components:
     - type: Sprite
       sprite: _DEN/Structures/Doors/Airlocks/Standard/maint_cargo.rsi
-      
+
 - type: entity
   parent: AirlockMaint
   id: AirlockMaintCommand
@@ -261,7 +261,7 @@
   components:
     - type: Sprite
       sprite: _DEN/Structures/Doors/Airlocks/Standard/maint_justice.rsi
-      
+
 - type: entity
   parent: AirlockMaint
   id: AirlockMaintMedical
@@ -301,7 +301,7 @@
   components:
     - type: Sprite
       sprite: _DEN/Structures/Doors/Airlocks/Standard/maint_syndicate.rsi
-      
+
 - type: entity
   parent: AirlockMaintScience
   id: AirlockMaintRnDMed
@@ -411,3 +411,81 @@
   components:
     - type: Sprite
       sprite: _DEN/Structures/Doors/Airlocks/Glass/command_cj.rsi
+
+# Somber airlocks (I'm not making one for every department. It'll clutter the spawn list, and also I'll die. They're for an Eternity map anyway...)
+
+- type: entity
+  parent: Airlock
+  id: AirlockSomber
+  name: somber airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
+
+- type: entity
+  parent: AirlockSomber
+  id: AirlockSomberDark
+  suffix: Dark
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockGlassSomber
+  name: somber glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
+
+- type: entity
+  parent: AirlockGlassSomber
+  id: AirlockGlassSomberDark
+  suffix: Dark
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
+
+- type: entity
+  parent: AirlockSomber
+  id: AirlockSomberMantisLocked
+  suffix: Mantis, Locked
+  components:
+    - type: ContainerFill
+      containers:
+        board: [ DoorElectronicsMantis ]
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermantis.rsi
+    - type: Wires
+      layoutId: AirlockScience
+
+- type: entity
+  parent: AirlockSomberMantisLocked
+  id: AirlockSomberDarkMantisLocked
+  suffix: Dark, Mantis, Locked
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdarkmantis.rsi
+
+- type: entity
+  parent: AirlockGlassSomber
+  id: AirlockGlassSomberMantisLocked
+  suffix: Mantis, Locked
+  components:
+    - type: ContainerFill
+      containers:
+        board: [ DoorElectronicsMantis ]
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermantis.rsi
+    - type: Wires
+      layoutId: AirlockScience
+
+- type: entity
+  parent: AirlockGlassSomberMantisLocked
+  id: AirlockGlassSomberDarkMantisLocked
+  suffix: Dark, Mantis, Locked
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdarkmantis.rsi

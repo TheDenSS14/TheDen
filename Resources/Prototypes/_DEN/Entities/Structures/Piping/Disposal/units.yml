@@ -1,0 +1,17 @@
+- type: entity
+  parent: DisposalUnit
+  id: DisposalUnitSomber
+  name: somber disposal unit
+  description: "A pneumatic waste disposal unit. There is no reason for it to be this ornate."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Piping/somberdisposal.rsi
+
+- type: entity
+  parent: MailingUnit
+  id: MailingUnitSomber
+  name: somber mailing unit
+  description: "A pneumatic mail delivery unit. There is no reason for it to be this ornate."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Piping/somberdisposal.rsi
