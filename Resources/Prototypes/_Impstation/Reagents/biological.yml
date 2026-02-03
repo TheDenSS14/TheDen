@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2026 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: reagent # can't parent it to blood because anybody should be able to drink it, the flesh/organs are the toxic parts (fugu moment)
   id: ShimmeringBlood
   name: reagent-name-shimmering-blood
@@ -18,12 +23,7 @@
             shouldHave: false
       - !type:SatiateThirst
         factor: 1
-        conditions: # TheDen - Vampires get their own numbers
-          - !type:OrganType
-            type: Vampiric
-            shouldHave: false
       - !type:SatiateHunger # TheDen - Vampiric additions start
-        factor: 0.625
         conditions:
         - !type:OrganType
           type: Vampiric
