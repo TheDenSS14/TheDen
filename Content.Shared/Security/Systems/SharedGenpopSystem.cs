@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Database;
@@ -34,7 +35,6 @@ public abstract class SharedGenpopSystem : EntitySystem
         SubscribeLocalEvent<GenpopLockerComponent, GenpopLockerIdConfiguredMessage>(OnIdConfigured);
         SubscribeLocalEvent<GenpopLockerComponent, StorageCloseAttemptEvent>(OnCloseAttempt);
         SubscribeLocalEvent<GenpopLockerComponent, LockToggleAttemptEvent>(OnLockToggleAttempt);
-        SubscribeLocalEvent<GenpopLockerComponent, LockToggledEvent>(OnLockToggled);
         SubscribeLocalEvent<GenpopLockerComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
         SubscribeLocalEvent<GenpopIdCardComponent, ExaminedEvent>(OnExamine);
     }
@@ -73,12 +73,18 @@ public abstract class SharedGenpopSystem : EntitySystem
             args.Cancelled = true;
         }
 
+        if (TryComp<ExpireIdCardComponent>(ent.Comp.LinkedId, out var expire) && !expire.Expired)
+        {
+            return;
+        }
+
         if (args.User is not { } user)
             return;
 
         if (!_accessReader.IsAllowed(user, ent))
         {
             _popup.PopupClient(Loc.GetString("lock-comp-has-user-access-fail"), user);
+            args.Cancelled = true;
             return;
         }
 
@@ -98,9 +104,15 @@ public abstract class SharedGenpopSystem : EntitySystem
             return;
         }
 
+        var potentialAccessItems = _accessReader.FindPotentialAccessItems(args.User);
+        var accessTags = _accessReader.FindAccessTags(args.User, potentialAccessItems);
+
+        if (ent.Comp.AlwaysAllowed.Any(allowedAccess => accessTags.Contains(allowedAccess)))
+            return;
+
         // Make sure that we both have the linked ID on our person AND the ID has actually expired.
         // That way, even if someone escapes early, they can't get ahold of their things.
-        if (!_accessReader.FindPotentialAccessItems(args.User).Contains(ent.Comp.LinkedId.Value))
+        if (!potentialAccessItems.Contains(ent.Comp.LinkedId.Value))
         {
             if (!args.Silent)
                 _popup.PopupClient(Loc.GetString("lock-comp-has-user-access-fail"), ent, args.User);
@@ -117,13 +129,12 @@ public abstract class SharedGenpopSystem : EntitySystem
         }
     }
 
-    private void OnLockToggled(Entity<GenpopLockerComponent> ent, ref LockToggledEvent args)
+    private bool CheckForAccess(Entity<GenpopLockerComponent> ent, EntityUid accessItem)
     {
-        if (args.Locked)
-            return;
+        if (!TryComp<AccessReaderComponent>(accessItem, out var accessReader))
+            return false;
 
-        // If we unlock the door, then we're gonna reset the ID.
-        CancelIdCard(ent);
+        return _accessReader.AreAccessTagsAllowed(ent.Comp.AlwaysAllowed, accessReader);
     }
 
     private void OnGetVerbs(Entity<GenpopLockerComponent> ent, ref GetVerbsEvent<Verb> args)
