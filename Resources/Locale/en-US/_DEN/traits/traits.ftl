@@ -10,8 +10,9 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Jadrek
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 trait-name-Heavyweight = Heavyweight
 trait-description-Heavyweight =
@@ -71,6 +72,14 @@ trait-description-SharpTeeth =
     or even custom made implants designed to turn teeth into tiny knives.
     Your unarmed melee attacks deal Piercing damage instead of the standard damage type for your species.
     This has no effect on damage dealt with any form of armed melee.
+
+trait-name-HardenedClaws = Hardened Claws
+trait-description-HardenedClaws =
+    Your fingertips have been replaced with sharp claws.
+    These could come from gene modifications, vatgrown implants,
+    or even hard plastic retractable claws incorpoated into a prosthetic limb.
+    These enhancements increase your unarmed strike damage by 2 slash at base, but do not confer
+    any benefits to any form of armed melee.
 
 trait-name-HandsFreePulling = Hands Free Pulling
 trait-description-HandsFreePulling =

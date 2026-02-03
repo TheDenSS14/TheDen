@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 ivorytemple
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 ### SNOUTS ####
 
@@ -594,6 +595,14 @@ marking-TailSnakeStripeAlt-m_tail_snakestripealt_FRONT_primary = Lizard, Snake w
 marking-TailSnakeStripeAlt-m_tail_snakestripealt_FRONT_secondary = Lizard, Snake w/ Cute Stripes (Secondary)
 marking-TailSnakeStripeAlt = Lizard, Snake w/ Cute Stripes
 
+marking-TailSnakeStripeU-m_tail_snakestripe_BEHIND_secondary = Lizard, Snake w/ Bold Stripes (Secondary)
+marking-TailSnakeStripeU-m_tail_snakestripe_FRONT_secondary = Lizard, Snake w/ Bold Stripes (Secondary)
+marking-TailSnakeStripeU = Lizard, Snake w/ Bold Stripes (Overlay)
+
+marking-TailSnakeStripeAltU-m_tail_snakestripealt_BEHIND_secondary = Lizard, Snake w/ Cute Stripes (Secondary)
+marking-TailSnakeStripeAltU-m_tail_snakestripealt_FRONT_secondary = Lizard, Snake w/ Cute Stripes (Secondary)
+marking-TailSnakeStripeAltU = Lizard, Snake w/ Cute Stripes (Overlay)
+
 marking-TailSnakeTail = Lizard, Snake
 marking-TailSnakeTail-m_tail_snaketail_FRONT = Tail
 
@@ -602,6 +611,10 @@ marking-TailSnakeUnder-m_tail_snakeunder_BEHIND_secondary = Lizard, Snake w/ Und
 marking-TailSnakeUnder-m_tail_snakeunder_FRONT_primary = Lizard, Snake w/ Underbelly (Primary)
 marking-TailSnakeUnder-m_tail_snakeunder_FRONT_secondary = Lizard, Snake w/ Underbelly (Secondary)
 marking-TailSnakeUnder = Lizard, Snake w/ Underbelly
+
+marking-TailSnakeUnderU-m_tail_snakeunder_BEHIND_secondary = Lizard, Snake w/ Underbelly (Secondary)
+marking-TailSnakeUnderU-m_tail_snakeunder_FRONT_secondary = Lizard, Snake w/ Underbelly (Secondary)
+marking-TailSnakeUnderU = Lizard, Snake w/ Underbelly (Overlay)
 
 marking-TailSpade-m_tail_spade_BEHIND_primary = Spade Tail
 marking-TailSpade-m_tail_spade_FRONT_primary = Spade Tail

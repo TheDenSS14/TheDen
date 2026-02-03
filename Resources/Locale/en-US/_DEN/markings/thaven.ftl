@@ -17,21 +17,36 @@ marking-ThavenBiteMarkF-bitemark_f = Big Bite Scar
 marking-ThavenBodyStripesF = Pinstripes
 marking-ThavenBodyStripesF-stripes_f = Pinstripes
 
+marking-ThavenBodyStripesFU = Pinstripes (Glowing)
+marking-ThavenBodyStripesFU-stripes_f = Pinstripes
+
 marking-ThavenChestScalesF = Scales
 marking-ThavenChestScalesF-scales_f = Scales
 
 marking-ThavenChestTattoo1F = Back Tattoo
 marking-ThavenChestTattoo1F-tat1_f = Back Tattoo
 
+marking-ThavenChestTattoo1FU = Back Tattoo (Glowing)
+marking-ThavenChestTattoo1FU-tat1_f = Back Tattoo
+
 marking-ThavenTattooWaveF = Wave Tattoo
 marking-ThavenTattooWaveF-tattoowave_f = Wave Tattoo
+
+marking-ThavenTattooWaveFU = Wave Tattoo (Glowing)
+marking-ThavenTattooWaveFU-tattoowave_f = Wave Tattoo
 
 marking-ThavenTattooVinesF = Vine Tattoo
 marking-ThavenTattooVinesF-tattoovines_f = Vine Tattoo
 
+marking-ThavenTattooVinesFU = Vine Tattoo (Glowing)
+marking-ThavenTattooVinesFU-tattoovines_f = Vine Tattoo
+
 marking-ThavenTigerF = Tiger Stripes
 marking-ThavenTigerF-tiger1_f = Tiger Belly
 marking-ThavenTigerF-tiger2_f = Tiger Stripes
+
+marking-ThavenTigerFU = Tiger Stripes (Overlay)
+marking-ThavenTigerFU-tiger2_f = Tiger Stripes
 
 marking-ThavenHipScales = Hip Scales
 marking-ThavenHipScales-hipscales = Scales
@@ -40,6 +55,11 @@ marking-ThavenChestHeavyTattoos = Heavy Chest Tattoos
 marking-ThavenChestHeavyTattoos-chest_heavy1 = Heavy Chest Tattoos (Upper)
 marking-ThavenChestHeavyTattoos-chest_heavy2 = Heavy Chest Tattoos (Middle)
 marking-ThavenChestHeavyTattoos-chest_heavy3 = Heavy Chest Tattoos (Lower)
+
+marking-ThavenChestHeavyTattoosU = Heavy Chest Tattoos (Glowing)
+marking-ThavenChestHeavyTattoosU-chest_heavy1 = Heavy Chest Tattoos (Upper)
+marking-ThavenChestHeavyTattoosU-chest_heavy2 = Heavy Chest Tattoos (Middle)
+marking-ThavenChestHeavyTattoosU-chest_heavy3 = Heavy Chest Tattoos (Lower)
 
 marking-ThavenTopSurgeryF = Smooth Chest
 marking-ThavenTopSurgeryF-nonaturals_f = Smooth Chest
@@ -50,6 +70,10 @@ marking-ThavenHeadHeavyTattoos = Heavy Neck Tattoos
 marking-ThavenHeadHeavyTattoos-head_heavy1 = Heavy Neck Tattoos (Lower)
 marking-ThavenHeadHeavyTattoos-head_heavy2 = Heavy Neck Tattoos (Upper)
 
+marking-ThavenHeadHeavyTattoosU = Heavy Neck Tattoos (Glowing)
+marking-ThavenHeadHeavyTattoosU-head_heavy1 = Heavy Neck Tattoos (Lower)
+marking-ThavenHeadHeavyTattoosU-head_heavy2 = Heavy Neck Tattoos (Upper)
+
 # Snout
 
 # Eyes
@@ -59,8 +83,14 @@ marking-ThavenHeadHeavyTattoos-head_heavy2 = Heavy Neck Tattoos (Upper)
 marking-GradientRArmT = Gradient (Right)
 marking-GradientRArmT-m_gradient_r_arm = Color
 
+marking-GradientRArmTUS = Gradient (Right, Glowing)
+marking-GradientRArmTUS-m_gradient_r_arm = Color
+
 marking-ThavenArmDollJointsTattooRight-r_arm_doll = Doll Joints Arm Tattoo (Right)
 marking-ThavenArmDollJointsTattooRight = Doll Joints Arm Tattoo (Right)
+
+marking-ThavenArmDollJointsTattooRightU-r_arm_doll = Doll Joints Arm Tattoo (Right)
+marking-ThavenArmDollJointsTattooRightU = Doll Joints Arm Tattoo (Right, Glowing)
 
 marking-ThavenArmProstheticRight = Prosthetic (Right Arm)
 marking-ThavenArmProstheticRight-arm_r_prosthetic = Prosthetic (Right Arm)
@@ -72,17 +102,31 @@ marking-ThavenArmHeavyTattoosRight = Heavy Arm Tattoos (Right)
 marking-ThavenArmHeavyTattoosRight-r_arm_heavy1 = Heavy Arm Tattoos (Upper)
 marking-ThavenArmHeavyTattoosRight-r_arm_heavy2 = Heavy Arm Tattoos (Lower)
 
+marking-ThavenArmHeavyTattoosRightU = Heavy Arm Tattoos (Right, Glowing)
+marking-ThavenArmHeavyTattoosRightU-r_arm_heavy1 = Heavy Arm Tattoos (Upper)
+marking-ThavenArmHeavyTattoosRightU-r_arm_heavy2 = Heavy Arm Tattoos (Lower)
+
 # RHand
 
 marking-GradientRHandT = Gradient (Right)
 marking-GradientRHandT-m_gradient_r_hand = Color
 
+marking-GradientRHandTUS = Gradient (Right, Glowing)
+marking-GradientRHandTUS-m_gradient_r_hand = Color
+
 marking-ThavenHandHeavyTattoosRight = Heavy Hand Tattoos (Right)
 marking-ThavenHandHeavyTattoosRight-r_hand_heavy1 = Heavy Hand Tattoos (Outer)
 marking-ThavenHandHeavyTattoosRight-r_hand_heavy2 = Heavy Hand Tattoos (Inner)
 
+marking-ThavenHandHeavyTattoosRightU = Heavy Hand Tattoos (Right, Glowing)
+marking-ThavenHandHeavyTattoosRightU-r_hand_heavy1 = Heavy Hand Tattoos (Outer)
+marking-ThavenHandHeavyTattoosRightU-r_hand_heavy2 = Heavy Hand Tattoos (Inner)
+
 marking-ThavenHandDollJointsTattooRight-r_hand_doll = Doll Joints Hand Tattoo (Right)
 marking-ThavenHandDollJointsTattooRight = Doll Joints Hand Tattoo (Right)
+
+marking-ThavenHandDollJointsTattooRightU-r_hand_doll = Doll Joints Hand Tattoo (Right)
+marking-ThavenHandDollJointsTattooRightU = Doll Joints Hand Tattoo (Right, Glowing)
 
 marking-ThavenHandProstheticRight = Prosthetic (Right Hand)
 marking-ThavenHandProstheticRight-hand_r_prosthetic = Prosthetic (Right Hand)
@@ -95,8 +139,14 @@ marking-ThavenHandTwistingRight-hand_r_twisting = Twisted Scar (Right Hand)
 marking-GradientLArmT = Gradient (Left)
 marking-GradientLArmT-m_gradient_l_arm = Gradient
 
+marking-GradientLArmTUS = Gradient (Left, Glowing)
+marking-GradientLArmTUS-m_gradient_l_arm = Gradient
+
 marking-ThavenArmDollJointsTattooLeft-l_arm_doll = Doll Joints Arm Tattoo (Left)
 marking-ThavenArmDollJointsTattooLeft = Doll Joints Arm Tattoo (Left)
+
+marking-ThavenArmDollJointsTattooLeftU-l_arm_doll = Doll Joints Arm Tattoo (Left)
+marking-ThavenArmDollJointsTattooLeftU = Doll Joints Arm Tattoo (Left, Glowing)
 
 marking-ThavenArmProstheticLeft = Prosthetic (Left Arm)
 marking-ThavenArmProstheticLeft-arm_l_prosthetic = Prosthetic (Left Arm)
@@ -108,17 +158,31 @@ marking-ThavenArmHeavyTattoosLeft = Heavy Arm Tattoos (Left)
 marking-ThavenArmHeavyTattoosLeft-l_arm_heavy1 = Heavy Arm Tattoos (Upper)
 marking-ThavenArmHeavyTattoosLeft-l_arm_heavy2 = Heavy Arm Tattoos (Lower)
 
+marking-ThavenArmHeavyTattoosLeftU = Heavy Arm Tattoos (Left, Glowing)
+marking-ThavenArmHeavyTattoosLeftU-l_arm_heavy1 = Heavy Arm Tattoos (Upper)
+marking-ThavenArmHeavyTattoosLeftU-l_arm_heavy2 = Heavy Arm Tattoos (Lower)
+
 # LHand
 
 marking-GradientLHandT = Gradient (Left)
 marking-GradientLHandT-m_gradient_l_hand = Gradient
 
+marking-GradientLHandTUS = Gradient (Left, Glowing)
+marking-GradientLHandTUS-m_gradient_l_hand = Gradient
+
 marking-ThavenHandHeavyTattoosLeft = Heavy Hand Tattoos (Left)
 marking-ThavenHandHeavyTattoosLeft-l_hand_heavy1 = Heavy Hand Tattoos (Outer)
 marking-ThavenHandHeavyTattoosLeft-l_hand_heavy2 = Heavy Hand Tattoos (Inner)
 
+marking-ThavenHandHeavyTattoosLeftU = Heavy Hand Tattoos (Left, Glowing)
+marking-ThavenHandHeavyTattoosLeftU-l_hand_heavy1 = Heavy Hand Tattoos (Outer)
+marking-ThavenHandHeavyTattoosLeftU-l_hand_heavy2 = Heavy Hand Tattoos (Inner)
+
 marking-ThavenHandDollJointsTattooLeft-l_hand_doll = Doll Joints Hand Tattoo (Left)
 marking-ThavenHandDollJointsTattooLeft = Doll Joints Hand Tattoo (Left)
+
+marking-ThavenHandDollJointsTattooLeftU-l_hand_doll = Doll Joints Hand Tattoo (Left)
+marking-ThavenHandDollJointsTattooLeftU = Doll Joints Hand Tattoo (Left, Glowing)
 
 marking-ThavenHandProstheticLeft = Prosthetic (Left Hand)
 marking-ThavenHandProstheticLeft-hand_l_prosthetic = Prosthetic (Left Hand)
@@ -131,20 +195,32 @@ marking-ThavenHandTwistingLeft-hand_l_twisting = Twisted Scar (Left Hand)
 marking-GradientRLegT = Gradient (Right)
 marking-GradientRLegT-m_gradient_r_leg = Gradient
 
+marking-GradientRLegTUS = Gradient (Right, Glowing)
+marking-GradientRLegTUS-m_gradient_r_leg = Gradient
+
 # RFoot
 
 marking-GradientRFootT = Gradient (Right)
 marking-GradientRFootT-m_gradient_r_foot = Gradient
+
+marking-GradientRFootTUS = Gradient (Right, Glowing)
+marking-GradientRFootTUS-m_gradient_r_foot = Gradient
 
 # LLeg
 
 marking-GradientLLegT = Gradient (Left)
 marking-GradientLLegT-m_gradient_l_leg = Gradient
 
+marking-GradientLLegTUS = Gradient (Left, Glowing)
+marking-GradientLLegTUS-m_gradient_l_leg = Gradient
+
 # LFoot
 
 marking-GradientLFootT = Gradient (Left)
 marking-GradientLFootT-m_gradient_l_foot = Gradient
+
+marking-GradientLFootTUS = Gradient (Left, Glowing)
+marking-GradientLFootTUS-m_gradient_l_foot = Gradient
 
 
 # Underwear

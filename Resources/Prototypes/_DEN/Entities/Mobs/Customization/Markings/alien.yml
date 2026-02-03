@@ -1,7 +1,9 @@
-# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 ivorytemple
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # EARS / ANTENNAE
 # "HeadSide" is preferred, as HeadTop is often used for "mandatory ears" markings (e.g. vulps, tajaran).
@@ -96,6 +98,66 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
     state: eyes_alien_wide
+
+- type: marking
+  id: AlienEyesU
+  bodyPart: Eyes
+  markingCategory: Face
+  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox, Thaven ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
+    state: eyes_alien
+  shader: unshaded
+
+- type: marking
+  id: AlienEyesBigU
+  bodyPart: Eyes
+  markingCategory: Face
+  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox, Thaven ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
+    state: eyes_alien_big
+  shader: unshaded
+
+- type: marking
+  id: AlienEyesThreeU
+  bodyPart: Eyes
+  markingCategory: Face
+  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox, Thaven ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
+    state: eyes_alien_three
+  shader: unshaded
+
+- type: marking
+  id: AlienEyesWideU
+  bodyPart: Eyes
+  markingCategory: Face
+  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox, Thaven ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
+    state: eyes_alien_wide
+  shader: unshaded
 
 # OVERLAYS
 
