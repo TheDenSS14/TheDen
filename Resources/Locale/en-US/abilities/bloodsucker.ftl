@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -23,3 +23,6 @@ bloodsucker-blood-sucked-victim = {CAPITALIZE(THE($sucker))} sucks some of your 
 bloodsucked-health-examine = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } bite marks on { POSS-ADJ($target) } neck.[/color]
 
 bloodsucker-glands-throb = The glands behind your fangs feel a bit sore.
+
+bloodsucker-wipe-marks-verb = Hide Marks
+bloodsucker-wipe-marks-popup = {CAPITALIZE(THE($sucker))} hides the marks on { THE($target) } neck.

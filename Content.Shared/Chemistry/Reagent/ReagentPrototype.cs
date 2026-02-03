@@ -183,11 +183,13 @@ namespace Content.Shared.Chemistry.Reagent
 
         // The Den start
         /// <summary>
-        /// This helps exclude certain reagents from systems that pick a completely random reagent. 
+        /// This helps exclude certain reagents from systems that pick a completely random reagent.
         /// </summary>
         [DataField]
+        public bool NoRandom;
 
-        public bool NoRandom = false;
+        [DataField]
+        public bool IsNourishing;
         // The Den end
 
         public FixedPoint2 ReactionTile(TileRef tile, FixedPoint2 reactVolume)
