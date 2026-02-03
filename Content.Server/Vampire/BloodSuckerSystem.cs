@@ -10,7 +10,6 @@
 using Content.Shared.Verbs;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
-using Content.Shared.Damage.Prototypes;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Administration.Logs;
@@ -27,7 +26,6 @@ using Content.Shared.HealthExaminable;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Utility;
-using Content.Server._DEN.Body.Systems;
 
 namespace Content.Server.Vampiric
 {
@@ -45,12 +43,14 @@ namespace Content.Server.Vampiric
         [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
         [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
+
         public override void Initialize()
         {
             base.Initialize();
+
             SubscribeLocalEvent<BloodSuckerComponent, GetVerbsEvent<InnateVerb>>(AddSuccVerb);
+            SubscribeLocalEvent<BloodSuckedComponent, GetVerbsEvent<InnateVerb>>(AddMarksVerb);
             SubscribeLocalEvent<BloodSuckedComponent, HealthBeingExaminedEvent>(OnHealthExamined);
-            SubscribeLocalEvent<BloodSuckedComponent, DamageChangedEvent>(OnDamageChanged);
 
             SubscribeLocalEvent<BloodSuckerComponent, ComponentStartup>(OnStartup); // DEN
             SubscribeLocalEvent<BloodSuckerComponent, ComponentShutdown>(OnShutdown); // DEN
@@ -59,7 +59,6 @@ namespace Content.Server.Vampiric
 
         private void AddSuccVerb(EntityUid uid, BloodSuckerComponent component, GetVerbsEvent<InnateVerb> args)
         {
-
             var victim = args.Target;
             var ignoreClothes = false;
 
@@ -67,13 +66,14 @@ namespace Content.Server.Vampiric
             {
                 victim = cocoon.Victim ?? args.Target;
                 ignoreClothes = cocoon.Victim != null;
-            } else if (component.WebRequired)
+            }
+            else if (component.WebRequired)
                 return;
 
             if (!TryComp<BloodstreamComponent>(victim, out var bloodstream) || args.User == victim || !args.CanAccess)
                 return;
 
-            InnateVerb verb = new()
+            InnateVerb drinkBlood = new()
             {
                 Act = () =>
                 {
@@ -83,7 +83,57 @@ namespace Content.Server.Vampiric
                 Icon = new SpriteSpecifier.Texture(new("/Textures/Nyanotrasen/Icons/verbiconfangs.png")),
                 Priority = 2
             };
-            args.Verbs.Add(verb);
+
+            InnateVerb wipeMarks = new()
+            {
+                Act = () =>
+                {
+                    DoHideMarksVerb(uid, victim);
+                },
+                Text = Loc.GetString("bloodsucker-wipe-marks-verb"),
+                Priority = 1
+            };
+
+            args.Verbs.Add(drinkBlood);
+
+            if (HasComp<BloodSuckedComponent>(victim))
+            {
+                args.Verbs.Add(wipeMarks);
+            }
+        }
+
+        private void AddMarksVerb(EntityUid uid, BloodSuckedComponent component, GetVerbsEvent<InnateVerb> args)
+        {
+            var victim = args.Target;
+
+            if (TryComp<CocoonComponent>(args.Target, out var cocoon))
+            {
+                victim = cocoon.Victim ?? args.Target;
+            }
+
+            InnateVerb wipeMarks = new()
+            {
+                Act = () =>
+                {
+                    DoHideMarksVerb(uid, victim);
+                },
+                Text = Loc.GetString("bloodsucker-wipe-marks-verb"),
+                Priority = 1
+            };
+
+            if (HasComp<BloodSuckedComponent>(victim))
+            {
+                args.Verbs.Add(wipeMarks);
+            }
+        }
+
+        private void DoHideMarksVerb(EntityUid uid, EntityUid victim)
+        {
+            if (!HasComp<BloodSuckedComponent>(victim))
+                return;
+
+            RemComp<BloodSuckedComponent>(victim);
+            _popups.PopupEntity(Loc.GetString("bloodsucker-wipe-marks-popup", ("sucker", uid), ("target", victim)), victim);
         }
 
         private void OnHealthExamined(EntityUid uid, BloodSuckedComponent component, HealthBeingExaminedEvent args)
@@ -91,18 +141,7 @@ namespace Content.Server.Vampiric
             // Floof: allow empty messages for basic examine
             if (!args.Message.IsEmpty)
                 args.Message.PushNewline();
-            args.Message.AddMarkup(Loc.GetString("bloodsucked-health-examine", ("target", uid)));
-        }
-
-        private void OnDamageChanged(EntityUid uid, BloodSuckedComponent component, DamageChangedEvent args)
-        {
-            if (args.DamageIncreased)
-                return;
-
-            if (_prototypeManager.TryIndex<DamageGroupPrototype>("Brute", out var brute) && args.Damageable.Damage.TryGetDamageInGroup(brute, out var bruteTotal)
-                && _prototypeManager.TryIndex<DamageGroupPrototype>("Airloss", out var airloss) && args.Damageable.Damage.TryGetDamageInGroup(airloss, out var airlossTotal))
-                if (bruteTotal == 0 && airlossTotal == 0)
-                    RemComp<BloodSuckedComponent>(uid);
+            args.Message.AddMarkupPermissive(Loc.GetString("bloodsucked-health-examine", ("target", uid)));
         }
 
         private void OnDoAfter(EntityUid uid, BloodSuckerComponent component, BloodSuckDoAfterEvent args)
@@ -138,7 +177,7 @@ namespace Content.Server.Vampiric
                 }
             }
 
-            if (stream.BloodReagent != "Blood")
+            if (_prototypeManager.TryIndex(stream.BloodReagent, out var bloodReagent) && !bloodReagent.IsNourishing)
                 _popups.PopupEntity(Loc.GetString("bloodsucker-not-blood", ("target", victim)), victim, bloodsucker, Shared.Popups.PopupType.Medium);
             else if (_solutionSystem.PercentFull(victim) != 0)
                 _popups.PopupEntity(Loc.GetString("bloodsucker-fail-no-blood", ("target", victim)), victim, bloodsucker, Shared.Popups.PopupType.Medium);
@@ -172,15 +211,14 @@ namespace Content.Server.Vampiric
                 return false;
 
             // Does bloodsucker have a stomach?
-            var stomachList = _bodySystem.GetBodyOrganComponents<StomachComponent>(bloodsucker);
+            var stomachList = _bodySystem.GetBodyOrganEntityComps<StomachComponent>(bloodsucker);
             if (stomachList.Count == 0)
                 return false;
 
-            if (!_solutionSystem.TryGetSolution(stomachList[0].Comp.Owner, StomachSystem.DefaultSolutionName, out var stomachSolution))
+            if (!_solutionSystem.TryGetSolution(stomachList[0].Owner, StomachSystem.DefaultSolutionName, out _))
                 return false;
 
             // Are we too full?
-
             if (_solutionSystem.PercentFull(bloodsucker) >= 1)
             {
                 _popups.PopupEntity(Loc.GetString("drink-component-try-use-drink-had-enough"), bloodsucker, bloodsucker, Shared.Popups.PopupType.MediumCaution);
@@ -190,7 +228,7 @@ namespace Content.Server.Vampiric
             _adminLogger.Add(Shared.Database.LogType.MeleeHit, Shared.Database.LogImpact.Medium, $"{ToPrettyString(bloodsucker):player} sucked blood from {ToPrettyString(victim):target}");
 
             // All good, succ time.
-            _audio.PlayPvs("/Audio/Items/drink.ogg", bloodsucker);
+            _audio.PlayPvs(bloodsuckerComp.DrinkSound, bloodsucker);
             _popups.PopupEntity(Loc.GetString("bloodsucker-blood-sucked-victim", ("sucker", bloodsucker)), victim, victim, Shared.Popups.PopupType.LargeCaution);
             _popups.PopupEntity(Loc.GetString("bloodsucker-blood-sucked", ("target", victim)), bloodsucker, bloodsucker, Shared.Popups.PopupType.Medium);
             EnsureComp<BloodSuckedComponent>(victim);
@@ -200,13 +238,13 @@ namespace Content.Server.Vampiric
                 return false;
 
             var temp = _solutionSystem.SplitSolution(bloodstream.BloodSolution.Value, bloodsuckerComp.UnitsToSucc);
-            _stomachSystem.TryTransferSolution(stomachList[0].Comp.Owner, temp, stomachList[0].Comp);
+            _stomachSystem.TryTransferSolution(stomachList[0].Owner, temp, stomachList[0].Comp1);
 
             // Add a little pierce
             DamageSpecifier damage = new();
             damage.DamageDict.Add("Piercing", 1); // Slowly accumulate enough to gib after like half an hour
 
-            _damageableSystem.TryChangeDamage(victim, damage, true, true);
+            _damageableSystem.TryChangeDamage(victim, damage, true);
 
             //I'm not porting the nocturine gland, this code is deprecated, and will be reworked at a later date.
             //if (bloodsuckerComp.InjectWhenSucc && _solutionSystem.TryGetInjectableSolution(victim, out var injectable))
