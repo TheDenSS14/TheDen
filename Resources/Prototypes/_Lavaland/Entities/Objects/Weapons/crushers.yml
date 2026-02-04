@@ -2,11 +2,13 @@
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 bigsantino1
 # SPDX-FileCopyrightText: 2025 oberonics
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
+# SPDX-FileCopyrightText: 2026 Tomce795
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   parent: [ BaseSalvageSpecialistContraband, BaseItem ]
@@ -80,7 +82,7 @@
     count: 1
   - type: MeleeWeapon
     attackRate: 0.8
-    range: 2 # insane reach
+    range: 2.1 # Den Change insanner reach
     wideAnimationRotation: -135
     damage:
       types:
@@ -99,15 +101,24 @@
   - type: Sharp
   - type: MeleeRequiresWield
     fumbleOnAttempt: true
+    # Den Change Start - commenting out backstab for clarity, not using this system. Oh and now you can embed the spear
+  - type: DamageOtherOnHit
+    staminaCost: 6
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
+  - type: LandAtCursor
   - type: DamageBoostOnMarker
     boost:
       types: # Totals to 60 damage when hitting marked targets
-        Blunt: 30
-        Slash: 15
-    backstabBoost: # And 20 extra for a backstab. Adding up to 80
-      types:
-        Blunt: 11
-        Slash: 9
+        Blunt: 35
+        Slash: 25
+    # backstabBoost: # And 20 extra for a backstab. Adding up to 80
+    #   types:
+    #     Blunt: 11
+    #     Slash: 9
+    # Den Change End
   - type: LeechOnMarker
     leech:
       groups:
@@ -126,16 +137,23 @@
   - type: UseDelay
     delay: 1
   - type: MeleeWeapon
-    attackRate: 1
+    attackRate: 1.25 #Den change
     wideAnimationRotation: -135
     damage:
       types:
         Blunt: 25
+        Structural: 30 #Den Change
     soundHit:
       collection: MetalThud
-    angle: 0
+    angle: 120 #Den Change
     animation: WeaponArcThrust
     range: 1.6
+    # Den changes start
+    heavyOnLightMiss: true
+    heavyRateModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    # Den changes end
   - type: Item
     size: Ginormous
     sprite: _Lavaland/Objects/Weapons/Crushers/crusher_hammer-inhands.rsi
@@ -151,6 +169,13 @@
     boost:
       types: # BLOOD FOR THE BLOOD GOD ITS A FUCKING HAMMER
         Blunt: 75
+    # Den changes start - hammer go BONK
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 40
+    staminaCost: 60
+    #Dne Changes stop
 
 - type: entity
   parent: [LavalandWeaponKineticBase, ClothingHandsBase]
@@ -169,30 +194,46 @@
     fiberMaterial: fibers-kinetic
     fiberColor: fibers-purple
   - type: MeleeWeapon
-    attackRate: 0.8
-    wideAnimationRotation: -135
+    attackRate: 0.33 #Den Change
+    wideAnimationRotation: -315 #Den Change
     damage:
       types:
         Slash: 5
     soundHit:
       collection: MetalThud
-    angle: 0
+    angle: 30
     animation: WeaponArcThrust
     range: 1.6
+    # Den changes start
+    heavyOnLightMiss: true
+    heavyRateModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 2
     # mustBeEquippedToUse: true | Den Change: Fix kinetic claw
+  - type: Gun
+    availableModes: 2
+    selectedMode: 2
+  - type: BasicEntityAmmoProvider
+    proto: BulletCharge
+    capacity: 3
+    count: 3
+    # Den Change End
   - type: Item
     size: Normal
     sprite: _Lavaland/Objects/Weapons/Crushers/crusher_claws-inhands.rsi
   - type: Sharp
+    # Den Change Start - commenting out backstab for clarity, not using this system
   - type: DamageBoostOnMarker
     boost:
-      types: # Totals to 45 damage when hitting marked targets
-        Slash: 25
-        Blunt: 15
-    backstabBoost: # And 120 extra for a backstab. Adding up to 165!!!
-      types:
-        Slash: 75
-        Blunt: 45
+      types: # Totals to 65 damage when hitting marked targets
+        Slash: 35
+        Blunt: 25
+    # Den Change Start - commenting out for clarity, not using this system
+    # backstabBoost: # And 120 extra for a backstab. Adding up to 165!!!
+    #   types:
+    #     Slash: 75
+    #     Blunt: 45
+    # Den Change End
 
 - type: entity
   parent: LavalandWeaponKineticBase
@@ -212,24 +253,36 @@
         Slash: 12.5
     soundHit:
       collection: MetalThud
-    angle: 0
+    angle: 30
     wideAnimationRotation: -135
-    animation: WeaponArcSlash
+    animation: WeaponArcThrust
     range: 1.6
+    # Den changes start
+    heavyOnLightMiss: true
+    heavyRateModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 5
+    # Den changes end
   - type: Item
     size: Ginormous
     sprite: _Lavaland/Objects/Weapons/Crushers/crusher_machete-inhands.rsi
   # too lazy to port parrying and risk a [redacted] lmao
   - type: Sharp
+  # Den Change Start - commenting out backstab for clarity, not using this system
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: DamageBoostOnMarker
     boost:
-      types: # Totals to 50 damage when hitting marked targets
-        Slash: 27.5
-        Blunt: 10
-    backstabBoost: # And 20 extra for a backstab
-      types:
-        Slash: 15
-        Blunt: 5
+      types: # Totals to 75 damage when hitting marked targets
+        Slash: 42.5
+        Blunt: 20
+    # backstabBoost: # And 20 extra for a backstab
+    #   types:
+    #     Slash: 15
+    #     Blunt: 5
   - type: BlockCharge
-    rechargeTime: 120
-    markerReductionTime: 40
+    rechargeTime: 60
+    markerReductionTime: 20
+  # Den Change End

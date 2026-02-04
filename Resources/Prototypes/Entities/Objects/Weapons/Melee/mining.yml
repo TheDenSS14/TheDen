@@ -20,8 +20,9 @@
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Tomce795
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   name: pickaxe
@@ -179,16 +180,16 @@
     capacity: 1
     count: 1
   - type: MeleeWeapon
-    attackRate: 0.8 # Lavaland/Eris Change
+    attackRate: 1 # Den Change
     range: 1.65
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 13 # Lavaland Change: no damage when unwielded
+        Blunt: 3 # Den Change
         Slash: 7
-    bluntStaminaDamageFactor: 2.0
+    bluntStaminaDamageFactor: 1.0 # Den Change
     heavyRateModifier: .75
-    heavyDamageBaseModifier: 1.2
+    heavyDamageBaseModifier: 0.75 # Den Change
     heavyStaminaCost: 3
     angle: 120
     soundHit:
@@ -218,23 +219,24 @@
   - type: LeechOnMarker
     leech:
       groups:
-        Brute: -10
+        Brute: -20 #Den Change
   - type: ExtendDescription
     descriptionList:
       - description: "gun-legality-salvage"
         fontSize: 12
         color: "#ff4f00"
         requireDetailRange: false
-  # Lavaland Change Start
+  # Den Change Start
   - type: DamageBoostOnMarker
     boost:
-      types: # Totals to 70 damage when hitting marked targets
-        Blunt: 34
-        Slash: 16
-    backstabBoost: # And 30 extra for a backstab. Adding up to 100
-      types:
-        Blunt: 19
-        Slash: 11
+      types: # Totals to 80 damage when hitting marked
+        Blunt: 39
+        Slash: 21
+    # backstabBoost: # And 30 extra for a backstab. Adding up to 100.
+    #   types:
+    #     Blunt: 19
+    #     Slash: 11
+    # Den Change End
 
 - type: entity
   parent: BaseWeaponCrusher
@@ -281,7 +283,7 @@
   - type: LeechOnMarker
     leech:
       groups:
-        Brute: -21
+        Brute: -10 #Den Change
   - type: MeleeWeapon
   - type: IncreaseDamageOnWield
     damage:
@@ -301,3 +303,10 @@
     slots:
     - back
     - suitStorage
+  # Den Changes Start
+  - type: DamageBoostOnMarker
+    boost:
+      types: # Totals to 90 damage when hitting marked targets
+        Blunt: 39
+        Slash: 26
+  # Den Change End

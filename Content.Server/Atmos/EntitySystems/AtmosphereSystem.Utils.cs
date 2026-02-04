@@ -1,12 +1,12 @@
-// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Runtime.CompilerServices;
 using Content.Server.Atmos.Components;
@@ -114,11 +114,11 @@ public partial class AtmosphereSystem
     /// <summary>
     ///     Pries a tile in a grid.
     /// </summary>
-    /// <param name="mapGrid">The grid in question.</param>
+    /// <param name="ent">The grid in question.</param>
     /// <param name="tile">The indices of the tile.</param>
-    private void PryTile(MapGridComponent mapGrid, Vector2i tile)
+    private void PryTile(Entity<MapGridComponent> ent, Vector2i tile)
     {
-        if (!mapGrid.TryGetTileRef(tile, out var tileRef))
+        if (!_mapSystem.TryGetTileRef(ent, ent.Comp, tile, out var tileRef))
             return;
 
         _tile.PryTile(tileRef);
