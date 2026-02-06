@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Suyo
 # SPDX-FileCopyrightText: 2025 mqole
 # SPDX-FileCopyrightText: 2025 pocl.v
+# SPDX-FileCopyrightText: 2026 entings
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -22,6 +23,17 @@
   id: Blinks
   files:
     - /Audio/_Impstation/Effects/Emotes/blink.ogg
+
+- type: soundCollection
+  id: SpiderBlinks
+  files:
+    - /Audio/_Impstation/Effects/Emotes/spiderblink.ogg
+
+- type: soundCollection
+  id: ReptilianChirp
+  files:
+    - /Audio/_Impstation/Voice/Reptilian/reptilian_chirp1.ogg
+    - /Audio/_Impstation/Voice/Reptilian/reptilian_chirp2.ogg
 
 - type: soundCollection
   id: VoxHiss

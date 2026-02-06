@@ -7,8 +7,9 @@
 # SPDX-FileCopyrightText: 2024 sleepyyapril
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2026 entings
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   id: OrganMothStomach
@@ -16,6 +17,9 @@
   parent: [OrganAnimalStomach, OrganHumanStomach]
   categories: [ HideSpawnMenu ]
   components:
+  - type: Sprite
+    sprite: _Impstation/Mobs/Species/Moth/organs.rsi
+    state: stomach
   - type: Stomach
     specialDigestible:
       tags:

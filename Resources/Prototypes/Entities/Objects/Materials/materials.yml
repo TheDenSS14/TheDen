@@ -42,6 +42,7 @@
 # SPDX-FileCopyrightText: 2025 Your Name
 # SPDX-FileCopyrightText: 2025 fishbait
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 entings
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -636,23 +637,24 @@
     flavors:
       - cobwebs
     ignoreReagents:
-      - Fiber
+      - Protein #imp
   - type: Extractable
     juiceSolution:
       reagents:
-      - ReagentId: Fiber
-        Quantity: 3
+      - ReagentId: Protein #imp
+        Quantity: 2
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 3
         reagents:
-        - ReagentId: Fiber
-          Quantity: 3
+        - ReagentId: Protein #imp
+          Quantity: 2
   - type: Tag
     tags:
       - ClothMade
       - RawMaterial
+      - SpiderFood #imp
 
 - type: entity
   parent: MaterialWebSilk
