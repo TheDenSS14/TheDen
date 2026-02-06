@@ -3,20 +3,15 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  id: HolosignNSFW
-  parent: BaseHolosign
-  name: nsfw holographic barrier
-  description: A barrier of hard light that indicates an area where adult activities are occurring.
+  id: BaseIndicatorHolosign
+  abstract: true
+  categories: [ HideSpawnMenu ]
   placement:
     mode: SnapgridCenter
   components:
   - type: Physics
     bodyType: Static
     canCollide: true
-  - type: Sprite
-    sprite: _DEN/Structures/Holo/adult.rsi
-    state: icon
-    drawdepth: Overdoors
   - type: Fixtures
     fixtures:
       fix1:
@@ -46,3 +41,30 @@
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
   - type: IgnoreDoorCollision
+
+- type: entity
+  id: HolosignNSFW
+  parent: [ BaseIndicatorHolosign, BaseHolosign ]
+  name: nsfw holographic barrier
+  description: A barrier of hard light that indicates an area where adult activities are occurring.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Holo/adult.rsi
+    state: icon
+    drawdepth: Overdoors
+  
+- type: entity
+  id: HolosignPrivate
+  parent: [ BaseIndicatorHolosign, BaseHolosign ]
+  name: private holographic barrier
+  description: A barrier of hard light that indicates an area where private activities are occurring.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Holo/private.rsi
+    state: icon
+    drawdepth: Overdoors
+  
