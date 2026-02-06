@@ -31,7 +31,7 @@
     price: 80
 
 - type: entity
-  parent: BaseItem
+  parent: BaseIndicatorHoloprojector
   id: HoloprojectorNSFW
   name: nsfw holobarrier projector
   description: Creates a holographic barrier indicating an NSFW area.
@@ -49,10 +49,10 @@
       - LabeledHolosign
 
 - type: entity
-  parent: BaseItem
+  parent: BaseIndicatorHoloprojector
   id: HoloprojectorPrivate
   name: private holobarrier projector
-  description: Creates a holographic barrier indicating an NSFW area.
+  description: Creates a holographic barrier indicating a private area.
   components:
   - type: Sprite
     sprite: _DEN/Objects/Devices/Holoprojectors/private.rsi
