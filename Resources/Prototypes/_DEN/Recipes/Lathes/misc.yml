@@ -9,6 +9,13 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: latheRecipe
+  id: BaseHoloprojector
+  completetime: 2
+  materials:
+    Plastic: 250
+    Glass: 200
+
+- type: latheRecipe
   id: BoxFolderFireproof
   result: BoxFolderFireproof
   category: Tools
@@ -226,9 +233,11 @@
     Steel: 600
 
 - type: latheRecipe
+  parent: BaseHoloprojector
   id: HoloprojectorNSFW
   result: HoloprojectorNSFW
-  completetime: 2
-  materials:
-    Plastic: 250
-    Glass: 200
+
+- type: latheRecipe
+  parent: BaseHoloprojector
+  id: HoloprojectorPrivate
+  result: HoloprojectorPrivate
