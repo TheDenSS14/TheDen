@@ -3,22 +3,11 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
+  abstract: true
   parent: BaseItem
-  id: HoloprojectorNSFW
-  name: nsfw holobarrier projector
-  description: Creates a holographic barrier indicating an NSFW area.
+  id: BaseIndicatorHoloprojector
+  categories: [ HideSpawnMenu ]
   components:
-  - type: LabelableHolosignProjector
-    signProto: HolosignNSFW
-    isNSFW: true
-    usesCharges: true
-    signWhitelist:
-      components:
-      - Holobarrier
-      - LabeledHolosign
-  - type: Sprite
-    sprite: _DEN/Objects/Devices/Holoprojectors/adult.rsi
-    state: icon
   - type: Item
     storedRotation: -90
   - type: UseDelay
@@ -40,3 +29,39 @@
     - HolofanProjector
   - type: StaticPrice
     price: 80
+
+- type: entity
+  parent: BaseItem
+  id: HoloprojectorNSFW
+  name: nsfw holobarrier projector
+  description: Creates a holographic barrier indicating an NSFW area.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Devices/Holoprojectors/adult.rsi
+    state: icon
+  - type: LabelableHolosignProjector
+    signProto: HolosignNSFW
+    isNSFW: true
+    usesCharges: true
+    signWhitelist:
+      components:
+      - Holobarrier
+      - LabeledHolosign
+
+- type: entity
+  parent: BaseItem
+  id: HoloprojectorPrivate
+  name: private holobarrier projector
+  description: Creates a holographic barrier indicating an NSFW area.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Devices/Holoprojectors/private.rsi
+    state: icon
+  - type: LabelableHolosignProjector
+    signProto: HolosignPrivate
+    isNSFW: false
+    usesCharges: true
+    signWhitelist:
+      components:
+      - Holobarrier
+      - LabeledHolosign
