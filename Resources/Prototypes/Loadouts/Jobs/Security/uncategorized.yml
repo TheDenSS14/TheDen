@@ -915,10 +915,10 @@
   items:
     - WeaponRevolverArgentiSecurity #TheDen
 
-- type: loadout #TheDen Added the EG-4 to security loadout for Senior Officers, Wardens, HoS's, and BSO's
+- type: loadout 
   id: LoadoutSecurityPistolEnergyRevolver
   category: JobsSecurityAUncategorized
-  cost: 7 # Price of a 1984 + Spare .38 mag
+  cost: 10 
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -928,10 +928,7 @@
       requirements:
         - !type:CharacterJobRequirement
           jobs:
-          - SeniorOfficer
           - Warden
-          - HeadOfSecurity
-          - BlueshieldOfficer
   items:
     - WeaponEnergyRevolverSecurity
 
