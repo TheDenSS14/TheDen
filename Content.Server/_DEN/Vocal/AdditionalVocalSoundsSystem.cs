@@ -20,10 +20,10 @@ public sealed class AdditionalVocalSoundsSystem : EntitySystem
 
     public void AddVocalSound(Entity<AdditionalVocalSoundsComponent> ent, ProtoId<EmoteSoundsPrototype> protoId)
     {
-        if (!_prototypeManager.TryIndex(protoId, out _))
+        if (!_prototypeManager.TryIndex(protoId, out _)
+            || !ent.Comp.AdditionalSounds.Add(protoId))
             return;
 
-        ent.Comp.AdditionalSounds = protoId;
         Dirty(ent);
     }
 
@@ -31,21 +31,22 @@ public sealed class AdditionalVocalSoundsSystem : EntitySystem
     {
         var result = baseSounds?.Sounds != null ? new(baseSounds.Sounds) : new Dictionary<string, SoundSpecifier>();
 
-        if (string.IsNullOrEmpty(ent.Comp.AdditionalSounds))
-            return result;
-
-        _prototypeManager.TryIndex(ent.Comp.AdditionalSounds, out var sounds);
-
-        if (sounds == null || sounds.Sounds.Count == 0)
-            return result;
-
-        foreach (var (soundId, specifier) in sounds.Sounds)
+        foreach (var sound in ent.Comp.AdditionalSounds)
         {
-            if (ent.Comp.ReplaceExistingEmotes)
-                result[soundId] = specifier;
-            else
+            if (!_prototypeManager.TryIndex(sound, out var sounds)
+                || sounds.Sounds.Count == 0)
+                return result;
+
+            foreach (var (soundId, specifier) in sounds.Sounds)
                 result.TryAdd(soundId, specifier);
         }
+
+        if (!_prototypeManager.TryIndex(ent.Comp.ReplacesDefaultSounds, out var replacesSounds)
+            || replacesSounds.Sounds.Count == 0)
+            return result;
+
+        foreach (var (soundId, specifier) in replacesSounds.Sounds)
+            result[soundId] = specifier;
 
         return result;
     }

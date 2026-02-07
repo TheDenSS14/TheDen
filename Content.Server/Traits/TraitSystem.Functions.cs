@@ -919,16 +919,13 @@ public sealed partial class TraitAddAllowedEmote : TraitFunction
 // Set the singular additional sound a player can also have.
 // </summary>
 [UsedImplicitly]
-public sealed partial class TraitSetAdditionalEmoteSound : TraitFunction
+public sealed partial class TraitAddAdditionalEmoteSound : TraitFunction
 {
-    [DataField("emoteSound"), AlwaysPushInheritance]
-    public string ExtraEmoteSoundPrototype { get; private set; } = "Vulpkanin";
+    [DataField, AlwaysPushInheritance]
+    public string EmoteSound { get; private set; } = "Vulpkanin";
 
     [DataField, AlwaysPushInheritance]
     public bool UseSex { get; private set; }
-
-    [DataField("replace"), AlwaysPushInheritance]
-    public bool ReplaceExistingEmotes { get; private set; }
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -949,12 +946,51 @@ public sealed partial class TraitSetAdditionalEmoteSound : TraitFunction
                 emotePrefix = "Male";
         }
 
-        var protoId = emotePrefix + ExtraEmoteSoundPrototype;
+        var protoId = emotePrefix + EmoteSound;
 
-        if (string.IsNullOrEmpty(protoId) || !prototypeManager.TryIndex<EmoteSoundsPrototype>(protoId, out _))
+        if (!prototypeManager.TryIndex<EmoteSoundsPrototype>(protoId, out _))
             return;
 
-        additionalVocalSounds.ReplaceExistingEmotes = ReplaceExistingEmotes;
-        additionalVocalSounds.AdditionalSounds = protoId;
+        additionalVocalSounds.AdditionalSounds.Add(protoId);
+    }
+}
+
+// <summary>
+// Set the singular additional sound a player can also have.
+// </summary>
+[UsedImplicitly]
+public sealed partial class TraitSetReplacingEmoteSound : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public string EmoteSound { get; private set; } = "Vulpkanin";
+
+    [DataField, AlwaysPushInheritance]
+    public bool UseSex { get; private set; }
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var additionalVocalSounds = entityManager.EnsureComponent<AdditionalVocalSoundsComponent>(uid);
+        var appearanceComponent = entityManager.GetComponentOrNull<HumanoidAppearanceComponent>(uid);
+        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+        var voice = appearanceComponent?.PreferredVoice ?? Sex.Unsexed;
+        var emotePrefix = string.Empty;
+
+        if (UseSex)
+        {
+            if (voice == Sex.Female)
+                emotePrefix = "Female";
+            else
+                emotePrefix = "Male";
+        }
+
+        var protoId = emotePrefix + EmoteSound;
+
+        if (!prototypeManager.TryIndex<EmoteSoundsPrototype>(protoId, out _))
+            return;
+
+        additionalVocalSounds.ReplacesDefaultSounds = EmoteSound;
     }
 }

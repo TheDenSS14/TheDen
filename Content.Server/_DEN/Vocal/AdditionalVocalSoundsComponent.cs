@@ -17,8 +17,8 @@ namespace Content.Server._DEN.Vocal;
 public sealed partial class AdditionalVocalSoundsComponent : Component
 {
     [DataField]
-    public ProtoId<EmoteSoundsPrototype> AdditionalSounds { get; set; }
+    public HashSet<ProtoId<EmoteSoundsPrototype>> AdditionalSounds { get; set; } = new();
 
     [DataField]
-    public bool ReplaceExistingEmotes { get; set; }
+    public ProtoId<EmoteSoundsPrototype>? ReplacesDefaultSounds { get; set; }
 }

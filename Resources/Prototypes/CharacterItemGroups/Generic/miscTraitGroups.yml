@@ -8,7 +8,7 @@
 
 - type: characterItemGroup
   id: TraitsRaceSounds
-  maxItems: 1
+  maxItems: 3
   items:
     - type: trait
       id: VulpkaninSounds
@@ -40,6 +40,11 @@
       id: ArachneSounds
     - type: trait
       id: VoxSounds
+
+- type: characterItemGroup
+  id: TraitsReplaceRaceSounds
+  maxItems: 1
+  items:
     - type: trait
       id: VulpkaninSoundsReplace
     - type: trait

@@ -22,7 +22,7 @@
     - !type:TraitAddTag
       tags:
       - VulpEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: Vulpkanin
       useSex: true
 
@@ -41,7 +41,7 @@
     - !type:TraitAddTag
       tags:
       - FelinidEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: Felinid
       useSex: true
 
@@ -60,7 +60,7 @@
     - !type:TraitAddTag
       tags:
       - OniEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: Oni
       useSex: true
 
@@ -79,7 +79,7 @@
     - !type:TraitAddTag
       tags:
       - ShadowkinEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: Shadowkin
       useSex: true
 
@@ -104,7 +104,7 @@
     - !type:TraitAddTag
       tags:
       - SiliconEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: UnisexIPC
       useSex: false
 
@@ -123,7 +123,7 @@
     - !type:TraitAddTag
       tags:
       - UnathiEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: Reptilian
       useSex: true
 
@@ -142,7 +142,7 @@
     - !type:TraitAddTag
       tags:
       - OviniaEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: Ovinia
       useSex: true
 
@@ -161,7 +161,7 @@
     - !type:TraitAddTag
       tags:
       - FeroxiEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: Feroxi
       useSex: true
 
@@ -180,7 +180,7 @@
     - !type:TraitAddTag
       tags:
       - HarpyEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: SoundsHarpyExclusive
       useSex: false
 
@@ -199,7 +199,7 @@
     - !type:TraitAddTag
       tags:
       - RodentiaEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: Rodentia
       useSex: true
 
@@ -218,7 +218,7 @@
     - !type:TraitAddTag
       tags:
       - ResomiEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: Avali
       useSex: true
 
@@ -237,7 +237,7 @@
     - !type:TraitAddTag
       tags:
       - ArachneEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: Arachne
       useSex: true
 
@@ -256,7 +256,7 @@
     - !type:TraitAddTag
       tags:
       - KitsuneEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: Kitsune
       useSex: true
 
@@ -275,7 +275,7 @@
     - !type:TraitAddTag
       tags:
       - MothEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: UnisexMoth
       useSex: false
 
@@ -294,7 +294,7 @@
     - !type:TraitAddTag
       tags:
       - VoxEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: UnisexVox
       useSex: false
 
@@ -306,7 +306,7 @@
   points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
+      group: TraitsReplaceRaceSounds
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -315,10 +315,9 @@
     - !type:TraitAddTag
       tags:
       - VulpEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitAddAdditionalEmoteSound
       emoteSound: Vulpkanin
       useSex: true
-      replace: true
 
 - type: trait
   id: FelinidSoundsReplace
@@ -326,7 +325,7 @@
   points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
+      group: TraitsReplaceRaceSounds
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -335,10 +334,9 @@
     - !type:TraitAddTag
       tags:
       - FelinidEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitSetReplacingEmoteSound
       emoteSound: Felinid
       useSex: true
-      replace: true
 
 - type: trait
   id: OniSoundsReplace
@@ -346,7 +344,7 @@
   points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
+      group: TraitsReplaceRaceSounds
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -355,10 +353,9 @@
     - !type:TraitAddTag
       tags:
       - OniEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitSetReplacingEmoteSound
       emoteSound: Oni
       useSex: true
-      replace: true
 
 - type: trait
   id: ShadowkinSoundsReplace
@@ -366,7 +363,7 @@
   points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
+      group: TraitsReplaceRaceSounds
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -375,10 +372,9 @@
     - !type:TraitAddTag
       tags:
       - ShadowkinEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitSetReplacingEmoteSound
       emoteSound: Shadowkin
       useSex: true
-      replace: true
 
 - type: trait
   id: SiliconSoundsReplace
@@ -392,7 +388,7 @@
         - Borg
         - MedicalBorg
     - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
+      group: TraitsReplaceRaceSounds
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -401,10 +397,9 @@
     - !type:TraitAddTag
       tags:
       - SiliconEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitSetReplacingEmoteSound
       emoteSound: UnisexIPC
       useSex: false
-      replace: true
 
 - type: trait
   id: ReptilianSoundsReplace
@@ -412,7 +407,7 @@
   points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
+      group: TraitsReplaceRaceSounds
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -421,10 +416,9 @@
     - !type:TraitAddTag
       tags:
       - UnathiEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitSetReplacingEmoteSound
       emoteSound: Reptilian
       useSex: true
-      replace: true
 
 - type: trait
   id: OviniaSoundsReplace
@@ -432,7 +426,7 @@
   points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
+      group: TraitsReplaceRaceSounds
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -441,10 +435,9 @@
     - !type:TraitAddTag
       tags:
       - OviniaEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitSetReplacingEmoteSound
       emoteSound: Ovinia
       useSex: true
-      replace: true
 
 - type: trait
   id: FeroxiSoundsReplace
@@ -452,7 +445,7 @@
   points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
+      group: TraitsReplaceRaceSounds
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -461,10 +454,9 @@
     - !type:TraitAddTag
       tags:
       - FeroxiEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitSetReplacingEmoteSound
       emoteSound: Feroxi
       useSex: true
-      replace: true
 
 - type: trait
   id: HarpySoundsReplace
@@ -472,7 +464,7 @@
   points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
+      group: TraitsReplaceRaceSounds
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -481,10 +473,9 @@
     - !type:TraitAddTag
       tags:
       - HarpyEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitSetReplacingEmoteSound
       emoteSound: SoundsHarpyExclusive
       useSex: false
-      replace: true
 
 - type: trait
   id: RodentiaSoundsReplace
@@ -492,7 +483,7 @@
   points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
+      group: TraitsReplaceRaceSounds
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -501,10 +492,9 @@
     - !type:TraitAddTag
       tags:
       - RodentiaEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitSetReplacingEmoteSound
       emoteSound: Rodentia
       useSex: true
-      replace: true
 
 - type: trait
   id: ResomiSoundsReplace
@@ -512,7 +502,7 @@
   points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
+      group: TraitsReplaceRaceSounds
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -521,10 +511,9 @@
     - !type:TraitAddTag
       tags:
       - ResomiEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitSetReplacingEmoteSound
       emoteSound: Avali
       useSex: true
-      replace: true
 
 - type: trait
   id: KitsuneSoundsReplace
@@ -532,7 +521,7 @@
   points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
+      group: TraitsReplaceRaceSounds
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -541,10 +530,9 @@
     - !type:TraitAddTag
       tags:
       - KitsuneEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitSetReplacingEmoteSound
       emoteSound: Kitsune
       useSex: true
-      replace: true
 
 - type: trait
   id: MothSoundsReplace
@@ -552,7 +540,7 @@
   points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
+      group: TraitsReplaceRaceSounds
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -561,10 +549,9 @@
     - !type:TraitAddTag
       tags:
       - MothEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitSetReplacingEmoteSound
       emoteSound: UnisexMoth
       useSex: false
-      replace: true
 
 - type: trait
   id: ArachneSoundsReplace
@@ -572,7 +559,7 @@
   points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
+      group: TraitsReplaceRaceSounds
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -581,10 +568,9 @@
     - !type:TraitAddTag
       tags:
       - ArachneEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitSetReplacingEmoteSound
       emoteSound: Arachne
       useSex: true
-      replace: true
 
 - type: trait
   id: VoxSoundsReplace
@@ -592,7 +578,7 @@
   points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
+      group: TraitsReplaceRaceSounds
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -601,7 +587,6 @@
     - !type:TraitAddTag
       tags:
       - VoxEmotes
-    - !type:TraitSetAdditionalEmoteSound
+    - !type:TraitSetReplacingEmoteSound
       emoteSound: UnisexVox
       useSex: false
-      replace: true
