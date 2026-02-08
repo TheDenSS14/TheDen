@@ -43,9 +43,7 @@ public sealed class AdditionalVocalSoundsSystem : EntitySystem
 
         if (!_prototypeManager.TryIndex(ent.Comp.ReplacesDefaultSounds, out var replacesSounds)
             || replacesSounds.Sounds.Count == 0)
-        {
             return result;
-        }
 
         foreach (var (soundId, specifier) in replacesSounds.Sounds)
             result[soundId] = specifier;
