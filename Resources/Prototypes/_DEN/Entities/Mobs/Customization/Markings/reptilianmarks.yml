@@ -62,3 +62,50 @@
     state: furred_tail_under
   - sprite: _DEN/Mobs/Customization/Reptilian/tail.rsi
     state: furred_tail_over
+
+- type: marking
+  id: LizardTailSmoothSkirtFriendly # The default lizard tail, moved here and layered, with comments for replication
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian, Human, IPC, SlimePerson]
+  followSkinColor: true # This defaults the tail to the character's skin color
+  forcedColoring: false # But it can still be edited by the player
+  layering: # Lower entries (that are assigned to the same tail layer) show on top of higher entries, useful for things like skin/fur patterns
+    tail_smooth_front: TailOversuit # "TailOversuit" layer doesn't show over backpacks, best for lowered tails, use "Tail" layer for the fronts of raised tails instead
+    tail_smooth_behind: TailBehind # "TailBehind" is for when the tail is "behind" the character, i.e. when they're facing you, and won't layer over skirts
+    tail_smooth_behind_secondary: TailBehind # This tail has a pattern, but only when viewed from the front since it runs along the underside
+  colorLinks:
+    tail_smooth_behind: tail_smooth_front # The color editor will change _behind and _front together (it's the same part of the tail viewed from different angles)
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Reptilian/tail.rsi
+    state: tail_smooth_front
+  - sprite: _DEN/Mobs/Customization/Reptilian/tail.rsi
+    state: tail_smooth_behind # We don't have to cut the secondary pattern out of the primary sprite since it just shows on top due to the "layering:" order
+  - sprite: _DEN/Mobs/Customization/Reptilian/tail.rsi
+    state: tail_smooth_behind_secondary
+
+# TODO: MAKE THIS INHERIT THE SECONDARY COLOR FROM ABOVE...?
+# TODO: Until it does, it can't wag. If we fix it, we can remove "SkirtFriendly" from its ID and comment out the vanilla LizardTailSmooth and LizardTailSmoothAnimated
+# TODO: It was meant as an improved replacement, but wagging + layers + multiple colors don't play nice together...  Be sure to update the locale files if you fix it
+#- type: marking
+#  id: LizardTailSmoothSkirtFriendlyAnimated # The animated version of the above tail, which has its own prototype
+#  bodyPart: Tail
+#  markingCategory: Tail
+#  speciesRestriction: [] # Species restrictions don't matter for animated tails because they only appear when using the wag action with the above tail selected
+#  layering:
+#    tail_smooth_wagging_front: TailOversuit
+#    tail_smooth_wagging_front_secondary: TailOversuit # This time, the pattern IS visible when the tail is in front of the character (since the tip is raised)
+#    tail_smooth_wagging_behind: TailBehind
+#    tail_smooth_wagging_behind_secondary: TailBehind
+#  colorLinks:
+#    tail_smooth_wagging_behind: tail_smooth_wagging_front
+#    tail_smooth_wagging_behind_secondary: tail_smooth_wagging_front_secondary # And because there are now two layers of the pattern, we have to link their colors
+#  sprites:
+#  - sprite: _DEN/Mobs/Customization/Reptilian/tail.rsi
+#    state: tail_smooth_wagging_front
+#  - sprite: _DEN/Mobs/Customization/Reptilian/tail.rsi
+#    state: tail_smooth_wagging_front_secondary
+#  - sprite: _DEN/Mobs/Customization/Reptilian/tail.rsi
+#    state: tail_smooth_wagging_behind
+#  - sprite: _DEN/Mobs/Customization/Reptilian/tail.rsi
+#    state: tail_smooth_wagging_behind_secondary
