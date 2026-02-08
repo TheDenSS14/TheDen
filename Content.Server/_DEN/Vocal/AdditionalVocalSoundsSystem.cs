@@ -35,7 +35,7 @@ public sealed class AdditionalVocalSoundsSystem : EntitySystem
         {
             if (!_prototypeManager.TryIndex(sound, out var sounds)
                 || sounds.Sounds.Count == 0)
-                return result;
+                continue;
 
             foreach (var (soundId, specifier) in sounds.Sounds)
                 result.TryAdd(soundId, specifier);
@@ -43,7 +43,9 @@ public sealed class AdditionalVocalSoundsSystem : EntitySystem
 
         if (!_prototypeManager.TryIndex(ent.Comp.ReplacesDefaultSounds, out var replacesSounds)
             || replacesSounds.Sounds.Count == 0)
+        {
             return result;
+        }
 
         foreach (var (soundId, specifier) in replacesSounds.Sounds)
             result[soundId] = specifier;
