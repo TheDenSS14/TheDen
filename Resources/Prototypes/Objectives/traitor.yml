@@ -250,17 +250,31 @@
 
 ## ce
 
+# DEN: Steal objectives you can just print don't make any sense.
+#- type: entity
+#  categories: [HideSpawnMenu]
+#  parent: BaseTraitorStealObjective
+#  id: MagbootsStealObjective
+#  components:
+#  - type: NotJobRequirement
+#    job: ChiefEngineer
+#  - type: StealCondition
+#    stealGroup: ClothingShoesBootsMagAdv
+#    verifyMapExistence: true
+#    owner: job-name-ce
+
 - type: entity
   categories: [HideSpawnMenu]
   parent: BaseTraitorStealObjective
-  id: MagbootsStealObjective
+  id: CEHardsuitStealObjective
   components:
-  - type: NotJobRequirement
-    job: ChiefEngineer
   - type: StealCondition
-    stealGroup: ClothingShoesBootsMagAdv
+    stealGroup: ClothingOuterHardsuitEngineeringWhite
     verifyMapExistence: true
     owner: job-name-ce
+  - type: Objective
+    # Similar to the RD suit, this is very hard to hide
+    difficulty: 3
 
 ## qm
 

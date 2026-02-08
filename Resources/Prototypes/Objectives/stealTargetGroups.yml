@@ -51,11 +51,18 @@
     sprite: Objects/Devices/hand_teleporter.rsi
     state: icon
 
+# DEN: Printable steal objective
+#- type: stealTargetGroup
+#  id: ClothingShoesBootsMagAdv
+#  name: advanced magboots
+#  sprite:
+#    sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
+#    state: icon
 - type: stealTargetGroup
-  id: ClothingShoesBootsMagAdv
-  name: advanced magboots
+  id: ClothingOuterHardsuitEngineeringWhite
+  name: daedalus hardsuit
   sprite:
-    sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/engineering-white.rsi
     state: icon
 
 - type: stealTargetGroup

@@ -569,6 +569,13 @@
     coolingCoefficient: 0.001
   - type: FireProtection
     reduction: 1
+  # Den edits
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HighRiskItem
+  - type: StealTarget
+    stealGroup: ClothingOuterHardsuitEngineeringWhite
 
 #Chief Medical Officer's Hardsuit
 - type: entity
