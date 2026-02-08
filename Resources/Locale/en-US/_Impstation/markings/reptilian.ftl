@@ -25,3 +25,12 @@ marking-LizardBeard-beard = Beard
 
 marking-LizardHeadFlat = Flat Head
 marking-LizardHeadFlat-head_flat = Flat Head
+
+marking-ReptilianEarsSoft = Kobold Ears (Soft)
+marking-ReptilianEarsSoft-koboldearssoft = Ears
+
+marking-ReptilianEarsTall = Kobold Ears (Tall)
+marking-ReptilianEarsTall-koboldearstall = Ears
+
+marking-LizardLittleHorns = Lizard Horns (Little)
+marking-LizardLittleHorns-little = Horns
