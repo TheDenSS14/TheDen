@@ -991,6 +991,6 @@ public sealed partial class TraitSetReplacingEmoteSound : TraitFunction
         if (!prototypeManager.TryIndex<EmoteSoundsPrototype>(protoId, out _))
             return;
 
-        additionalVocalSounds.ReplacesDefaultSounds = EmoteSound;
+        additionalVocalSounds.ReplacesDefaultSounds = protoId;
     }
 }
