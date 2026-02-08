@@ -100,3 +100,27 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutClothingNeckHoodedScarf
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingNeckScarfHooded
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutClothingNeckDrapedMantle
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingNeckMantleDraped
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck

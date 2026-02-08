@@ -59,3 +59,14 @@
     price: 75
   - type: Tag
     tags: [ ]
+
+- type: entity
+  parent: ClothingNeckScarfBase
+  id: ClothingNeckMantleDraped
+  name: draped mantle
+  description: A stylish mantle that drapes down over the shoulder.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Mantles/draped.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Mantles/draped.rsi

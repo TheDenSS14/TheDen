@@ -23,3 +23,14 @@
     sprite: _DEN/Clothing/Neck/Scarfs/colorable.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Neck/Scarfs/colorable.rsi
+
+- type: entity
+  parent: ClothingNeckScarfBase
+  id: ClothingNeckScarfHooded
+  name: hooded scarf
+  description: A stylish hooded scarf.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Scarfs/hooded.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Scarfs/hooded.rsi
