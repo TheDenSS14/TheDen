@@ -153,6 +153,7 @@
         - SecretStash
         tags:
         - HighRiskItem
+        - FakeNukeDisk # Woops people can test if the disk is fake otherwise
     - type: ContainerContainer
       containers:
         storagebase: !type:Container
