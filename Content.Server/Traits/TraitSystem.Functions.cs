@@ -9,7 +9,7 @@
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared.FixedPoint;
 using Content.Shared.Traits;
@@ -991,6 +991,6 @@ public sealed partial class TraitSetReplacingEmoteSound : TraitFunction
         if (!prototypeManager.TryIndex<EmoteSoundsPrototype>(protoId, out _))
             return;
 
-        additionalVocalSounds.ReplacesDefaultSounds = EmoteSound;
+        additionalVocalSounds.ReplacesDefaultSounds = protoId;
     }
 }

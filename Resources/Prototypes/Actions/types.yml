@@ -33,7 +33,7 @@
 # SPDX-FileCopyrightText: 2025 eightballll
 # SPDX-FileCopyrightText: 2026 MajorMoth
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # base actions
 
@@ -91,7 +91,7 @@
 - type: entity
   id: ActionOpenStorageImplant
   name: Open Storage Implant
-  description: Opens the storage implant embedded under your skin
+  description: Opens or closes the storage implant embedded under your skin; note that it store high value or storage based items. # DeltaV
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction

@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared.Chat.Prototypes;
 using Robust.Shared.Audio;
@@ -35,7 +35,7 @@ public sealed class AdditionalVocalSoundsSystem : EntitySystem
         {
             if (!_prototypeManager.TryIndex(sound, out var sounds)
                 || sounds.Sounds.Count == 0)
-                return result;
+                continue;
 
             foreach (var (soundId, specifier) in sounds.Sounds)
                 result.TryAdd(soundId, specifier);

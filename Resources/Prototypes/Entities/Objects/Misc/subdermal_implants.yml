@@ -23,7 +23,7 @@
 # SPDX-FileCopyrightText: 2025 Memeji Dankiri
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: BaseSubdermalImplant
@@ -147,6 +147,12 @@
     - type: Storage
       grid:
       - 0,0,2,2
+      blacklist:
+        components:
+        - Storage
+        - SecretStash
+        tags:
+        - HighRiskItem
     - type: ContainerContainer
       containers:
         storagebase: !type:Container
