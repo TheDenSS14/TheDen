@@ -17,3 +17,20 @@
   - type: Magboots
     activeWalkModifier: 0.90
     activeSprintModifier: 0.85
+
+- type: entity
+  parent: ClothingShoesBootsMagAdv
+  id: ClothingShoesBootsMagAdvCE
+  name: chief engineer's advanced magboots
+  description: State-of-the-art magnetic boots that do not slow down their wearer. This is the CE's pair.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Shoes/magboots-ce.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Shoes/magboots-ce.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HighRiskItem
+  - type: StealTarget
+    stealGroup: ClothingShoesBootsMagAdvCE
