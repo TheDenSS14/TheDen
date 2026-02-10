@@ -116,14 +116,23 @@
       - PhysicalComposition
       - MobState
       - SpaceGarbage
+      - MachinePart
+      - Organ
+      - FloorTile
+      - Log
       tags:
       - Trash
       - Recyclable
+      - PowerCell
+      - Book
+      - PillCanister
     blacklist:
       components:
       - Material
       - Pda
       - IdCard
+      - Brain
+      - BodyPart
       tags:
       - HighRiskItem
     sound:
@@ -145,3 +154,6 @@
     interactSuccessSound:
       path: /Audio/Items/drill_hit.ogg
   - type: ApcPowerReceiver
+  - type: Tag
+    tags:
+    - EmagImmune
