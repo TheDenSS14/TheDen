@@ -22,7 +22,7 @@
         - !type:Temperature
           max: 213.0
         damage:
-          Brute: -7 # The Den, same as Aloxadone for Burns
+          Brute: -14 # The Den, same as Aloxadone for Burns
 
 - type: reagent
   id : Stelloxadone
@@ -41,6 +41,6 @@
         - !type:Temperature
           max: 213.0
         damage:
-          Toxin: -7   # The Den, same as the other Cryochems
+          Toxin: -14   # The Den, same as the other Cryochems
           Genetic: 1  # The Den
           Brute: 3    # The Den
