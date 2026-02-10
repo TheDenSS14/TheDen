@@ -46,7 +46,9 @@ using Content.Shared.Access.Systems;
 using Content.Shared.Administration;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Rotting;
+using Content.Shared.Construction;
 using Content.Shared.Construction.Components;
+using Content.Shared.Coordinates;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Database;
@@ -57,6 +59,7 @@ using Content.Shared.PDA;
 using Content.Shared.Stacks;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
+using Microsoft.CodeAnalysis;
 using Robust.Server.Physics;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -84,6 +87,7 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly GunSystem _gun = default!;
     [Dependency] private readonly ThavenMoodsSystem _moods = default!;
+    [Dependency] private readonly SharedFlatpackSystem _sharedFlatpackSystem = default!;
 
     private void AddTricksVerbs(GetVerbsEvent<Verb> args)
     {
@@ -836,6 +840,33 @@ public sealed partial class AdminVerbSystem
 
             args.Verbs.Add(pauseRotting);
         }
+
+        Verb turnIntoFlatpack = new()
+        {
+            Text = Loc.GetString("admin-trick-flatpack-text"),
+            Message = Loc.GetString("admin-trick-flatpack-description"),
+            Category = VerbCategory.Tricks,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("Objects/Devices/flatpack.rsi"), "base"),
+            Impact = LogImpact.Medium,
+            Priority = (int) TricksVerbPriorities.TurnIntoFlatpack,
+            Act = () =>
+            {
+                var flatpack = EntityManager.SpawnAtPosition("BaseFlatpack", args.Target.ToCoordinates());
+                var target_meta = MetaData(args.Target);
+                var flatpack_meta = MetaData(flatpack);
+                if (target_meta is null)
+                    return;
+                if (flatpack_meta is null)
+                    return;
+                _sharedFlatpackSystem.ChangeFlatpackEntity(flatpack, target_meta.EntityPrototype);
+                _metaSystem.SetEntityName(flatpack, string.Concat(target_meta.EntityName, " flatpack"), flatpack_meta);
+                EntityManager.DeleteEntity(args.Target);
+            }
+        };
+
+        args.Verbs.Add(turnIntoFlatpack);
+
+        // Den end
     }
 
     private void RefillEquippedTanks(EntityUid target, Gas plasma)
@@ -985,5 +1016,6 @@ public sealed partial class AdminVerbSystem
         AddCustomMood = -31,
 
         PauseRotting = -32,
+        TurnIntoFlatpack = -33,
     }
 }

@@ -28,3 +28,6 @@ toolshed-verb-mark = Mark
 toolshed-verb-mark-description = Places this entity into the $marked variable, a list of entities, replacing it's prior value.
 
 export-entity-verb-get-data-text = Export sprite
+
+admin-trick-flatpack-text = Flatpack
+admin-trick-flatpack-description = Turns the entity into a flatpack of itself. Does not preserve entity data, only the prototype ID.
