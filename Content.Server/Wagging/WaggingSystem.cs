@@ -71,39 +71,25 @@ public sealed class WaggingSystem : EntitySystem
         if (markings.Count == 0)
             return false;
 
-        wagging.Wagging = !wagging.Wagging;
-        _actions.SetToggled(wagging.ActionEntity, wagging.Wagging);
-
         for (var idx = 0; idx < markings.Count; idx++) // Animate all possible tails
         {
             var currentMarkingId = markings[idx].MarkingId;
-            string newMarkingId;
+            var isAnimated = _humanoidAppearance.SetAnimatedMarkingId(
+                uid,
+                MarkingCategories.Tail,
+                idx,
+                currentMarkingId,
+                wagging.Suffix,
+                humanoid: humanoid);
 
-            if (wagging.Wagging)
+            if (isAnimated == null)
             {
-                newMarkingId = $"{currentMarkingId}{wagging.Suffix}";
-            }
-            else
-            {
-                if (currentMarkingId.EndsWith(wagging.Suffix))
-                {
-                    newMarkingId = currentMarkingId[..^wagging.Suffix.Length];
-                }
-                else
-                {
-                    newMarkingId = currentMarkingId;
-                    Log.Warning($"Unable to revert wagging for {currentMarkingId}");
-                }
-            }
-
-            if (!_prototype.HasIndex<MarkingPrototype>(newMarkingId))
-            {
-                Log.Warning($"{ToPrettyString(uid)} tried toggling wagging but {newMarkingId} marking doesn't exist");
+                Log.Warning($"{ToPrettyString(uid)} tried toggling wagging for {currentMarkingId} but something went wrong.");
                 continue;
             }
 
-            _humanoidAppearance.SetMarkingId(uid, MarkingCategories.Tail, idx, newMarkingId,
-                humanoid: humanoid);
+            wagging.Wagging = isAnimated.Value;
+            _actions.SetToggled(wagging.ActionEntity, wagging.Wagging);
         }
 
         return true;

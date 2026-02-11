@@ -3,12 +3,13 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [ Thaven ]
-  followSkinColor: true
-  layering:
-    nurse1_front: TailOversuit
-    nurse1_behind: TailBehind
+  colorIndexRedirect: # some tails have a behind/front, and i'd just rather not deal with it
+  - 0
+  - 0
+  - 1
+  - 1
   sprites:
   - sprite: _DEN/Mobs/Customization/Thaven/tailwag.rsi
-    state: nurse1_behind
+    state: nurse1
   - sprite: _DEN/Mobs/Customization/Thaven/tailwag.rsi
-    state: nurse1_front
+    state: nurse2

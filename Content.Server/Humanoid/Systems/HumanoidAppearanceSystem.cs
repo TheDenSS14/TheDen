@@ -22,12 +22,15 @@ using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
 using Content.Shared.Verbs;
 using Robust.Shared.GameObjects.Components.Localization;
+using Robust.Shared.Prototypes;
+
 
 namespace Content.Server.Humanoid;
 
 public sealed partial class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 {
-    [Dependency] private readonly MarkingManager _markingManager = default!;
+    [Dependency] private readonly MarkingManager _markingManager = null!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = null!;
 
     public override void Initialize()
     {

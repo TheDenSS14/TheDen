@@ -65,6 +65,13 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("sprites", required: true)]
         public List<SpriteSpecifier> Sprites { get; private set; } = default!;
 
+        /// <summary>
+        ///     If the indices for the animating markings are different,
+        ///     it should use these values to know what color to apply to where.
+        /// </summary>
+        [DataField]
+        public List<int> ColorIndexRedirect { get; private set; } = new();
+
         // impstation edit - allow markings to support shaders
         [DataField("shader")]
         public string? Shader { get; private set; } = null;

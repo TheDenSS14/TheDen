@@ -2954,6 +2954,9 @@
   colorLinks:
     nurse1_behind: nurse1_front
     nurse2_behind: nurse2_front
+  colorIndexRedirect: # some tails have a behind/front, and i'd just rather not deal with it
+  - 1
+  - 3
   sprites:
   - sprite: _Impstation/Mobs/Customization/Thaven/taillayers.rsi
     state: nurse1_behind
