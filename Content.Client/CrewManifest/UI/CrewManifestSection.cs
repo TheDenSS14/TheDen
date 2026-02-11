@@ -71,7 +71,7 @@ public sealed class CrewManifestSection : BoxContainer
             };
 
             var name = new RichTextLabel();
-            name.SetMessage(entry.Name.Substring(0, 32));
+            name.SetMessage(entry.Name);
 
             var gender = new RichTextLabel()
             {
