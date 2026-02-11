@@ -1,0 +1,14 @@
+- type: marking
+  id: ThavenTailNurseAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  followSkinColor: true
+  layering:
+    nurse1_front: TailOversuit
+    nurse1_behind: TailBehind
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/tailwag.rsi
+    state: nurse1_behind
+  - sprite: _DEN/Mobs/Customization/Thaven/tailwag.rsi
+    state: nurse1_front
