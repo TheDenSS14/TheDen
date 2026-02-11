@@ -58,14 +58,14 @@ public sealed partial class HumanoidAppearanceSystem
 
         for (var i = 0; i < marking.MarkingColors.Count && i < markings[index].MarkingColors.Count; i++)
         {
-            if (markingPrototype.ColorIndexRedirect.Count > i)
+            if (opposite.ColorIndexRedirect.Count > i)
             {
                 var realIndex = opposite.ColorIndexRedirect[i];
                 oppositeMarking.SetColor(realIndex, markings[index].MarkingColors[i]);
                 continue;
             }
 
-            marking.SetColor(i, markings[index].MarkingColors[i]);
+            oppositeMarking.SetColor(i, markings[index].MarkingColors[i]);
         }
 
         humanoid.MarkingSet.Replace(category, index, oppositeMarking);
