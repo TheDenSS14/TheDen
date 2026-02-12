@@ -32,11 +32,14 @@ using Content.Server.Atmos.Components;
 using Content.Server.Cargo.Components;
 using Content.Server.Doors.Systems;
 using Content.Server.Hands.Systems;
+using Content.Server.PDA.Ringer;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Server.Prayer;
 using Content.Server.Stack;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
+using Content.Server.Traitor.Uplink;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared._DEN.Unrotting;
 using Content.Shared._Impstation.Thaven.Components; // Imp
@@ -56,11 +59,13 @@ using Content.Shared.Doors.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Inventory;
 using Content.Shared.PDA;
+using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Stacks;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
 using Microsoft.CodeAnalysis;
 using Robust.Server.Physics;
+using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
@@ -88,6 +93,8 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly GunSystem _gun = default!;
     [Dependency] private readonly ThavenMoodsSystem _moods = default!;
     [Dependency] private readonly SharedFlatpackSystem _sharedFlatpackSystem = default!;
+    [Dependency] private readonly UplinkSystem _uplinkSystem = default!;
+    [Dependency] private readonly RingerSystem _ringerSystem = default!;
 
     private void AddTricksVerbs(GetVerbsEvent<Verb> args)
     {
@@ -852,20 +859,47 @@ public sealed partial class AdminVerbSystem
             Act = () =>
             {
                 var flatpack = EntityManager.SpawnAtPosition("BaseFlatpack", args.Target.ToCoordinates());
-                var target_meta = MetaData(args.Target);
-                var flatpack_meta = MetaData(flatpack);
-                if (target_meta is null)
+                var targetMeta = MetaData(args.Target);
+                var flatpackMeta = MetaData(flatpack);
+                if (targetMeta is null)
                     return;
-                if (flatpack_meta is null)
+                if (flatpackMeta is null)
                     return;
-                _sharedFlatpackSystem.ChangeFlatpackEntity(flatpack, target_meta.EntityPrototype);
-                _metaSystem.SetEntityName(flatpack, string.Concat(target_meta.EntityName, " flatpack"), flatpack_meta);
+                _sharedFlatpackSystem.ChangeFlatpackEntity(flatpack, targetMeta.EntityPrototype);
+                _metaSystem.SetEntityName(flatpack, string.Concat(targetMeta.EntityName, " flatpack"), flatpackMeta);
                 EntityManager.DeleteEntity(args.Target);
             }
         };
 
         args.Verbs.Add(turnIntoFlatpack);
 
+        if (TryComp<ContainerManagerComponent>(args.Target, out var container_comp) &&
+            container_comp.Containers.ContainsKey("id") &&
+            container_comp.Containers["id"] is ContainerSlot idSlot &&
+            idSlot.ContainedEntity is EntityUid pda &&
+            EntityManager.HasComponent<PdaComponent>(pda))
+        {
+            Verb addUplink = new()
+            {
+                Text = Loc.GetString("admin-trick-add-uplink-text"),
+                Message = Loc.GetString("admin-trick-add-uplink-description"),
+                Priority = (int) TricksVerbPriorities.AddUplink,
+                Category = VerbCategory.Tricks,
+                Impact = LogImpact.High,
+                Icon = new SpriteSpecifier.Rsi(new ResPath("Objects/Devices/pda.rsi"), "pda-syndi"),
+                Act = () =>
+                {
+                    if (!TryComp(args.Target, out ActorComponent? targetActor))
+                        return;
+                    _uplinkSystem.AddUplink(args.Target, 100, pda, true);
+                    var ringerUplink = EntityManager.EnsureComponent<RingerUplinkComponent>(pda);
+                    _ringerSystem.LockUplink(pda, ringerUplink);
+                    string message = string.Concat("[color=gold]", Loc.GetString("traitor-role-uplink-code", ("code", string.Concat("\n[color=crimson]", string.Join("-", ringerUplink.Code).Replace("sharp", "#"), "[/color]"))), "[/color]");
+                    _prayerSystem.SendSubtleMessage(targetActor.PlayerSession, player, message, Loc.GetString("prayer-popup-subtle-default"));
+                },
+            };
+            args.Verbs.Add(addUplink);
+        }
         // Den end
     }
 
@@ -1014,8 +1048,8 @@ public sealed partial class AdminVerbSystem
         SetBulletAmount = -29,
         AddRandomMood = -30,
         AddCustomMood = -31,
-
         PauseRotting = -32,
         TurnIntoFlatpack = -33,
+        AddUplink = -34,
     }
 }
