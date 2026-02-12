@@ -436,6 +436,12 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 			// impstation edit end
             sprite.LayerSetVisible(layerId, visible);
 
+            // DEN add start
+            // I can do this correctly in the rebase
+            if (markingPrototype.ID == "MothBeeGlowing" && rsi.RsiState == "bee3_lower")
+                sprite.LayerSetShader(layerId, "unshaded");
+            // DEN add end
+
             if (!visible || setting == null) // this is kinda implied
             {
                 continue;
