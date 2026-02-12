@@ -20,3 +20,18 @@
     state: nurse1
   - sprite: _DEN/Mobs/Customization/Thaven/tailwag.rsi
     state: nurse2
+
+- type: marking
+  id: ThavenTailNurseUnshadedAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  layering:
+    nurse2: Tail
+  colorIndexRedirect: 
+  - 0
+  - 0
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/tailwag.rsi
+    state: nurse2
+  shader: unshaded
