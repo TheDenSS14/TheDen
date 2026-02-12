@@ -341,6 +341,9 @@ marking-ThavenTailAngler-angler2_front = Stripe
 marking-ThavenTailAnglerOverlay = Angler Tail (Overlay)
 marking-ThavenTailAnglerOverlay-angler3_front = Lure
 
+marking-ThavenTailNurseUnshadedAnimated = Swept Tail (Overlay, Always Wagging)
+marking-ThavenTailNurseUnshadedAnimated-nurse2 = Overlay
+
 marking-ThavenTailNurseAnimated = Swept Tail (Always Wagging)
 marking-ThavenTailNurseAnimated-nurse1 = Underlay
 marking-ThavenTailNurseAnimated-nurse2 = Overlay
