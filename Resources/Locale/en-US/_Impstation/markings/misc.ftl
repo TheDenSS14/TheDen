@@ -122,6 +122,13 @@ marking-MothBee-bee1 = Outer Stripes
 marking-MothBee-bee2 = Wings
 # Frontier: stripe < Stripe
 marking-MothBee-bee3 = Inner Stripe
+# begin Den add
+marking-MothBeeGlowing = Wings (Bumblebee, Glowing)
+marking-MothBeeGlowing-bee1 = Outer Stripes
+marking-MothBeeGlowing-bee2 = Wings
+marking-MothBeeGlowing-bee3 = Neck Stripe
+marking-MothBeeGlowing-bee3_lower = Tail Stripe
+# end Den add
 marking-MothBeetleTail = Beetle Wings (Junebug)
 marking-MothBeetleTail-beetle1 = Outline
 marking-MothBeetleTail-beetle2 = Wings
