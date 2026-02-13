@@ -52,7 +52,8 @@
     state: t1weapon
   - type: Appearance
   - type: Gun
-    fireRate: 0.3
+    clumsyProof: true # Den
+    fireRate: 0.8 # Den
     soundGunshot:
       path: /Audio/_Impstation/Weapons/Guns/Gunshots/stunprojector.ogg
   - type: HitscanBatteryAmmoProvider
@@ -76,6 +77,10 @@
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: Unremoveable
+  # Den
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
 
 - type: entity
   id: ReplicatorT2AltWeapon
@@ -113,9 +118,12 @@
     animation: WeaponArcSlash
     damage:
       types:
-        Blunt: 7
-        Shock: 7
-        Structural: 15
+        Blunt: 5 # Den
+        Slash: 5 # Den
+        Shock: 10 # Den
+        Structural: 30 # Den
+  - type: StaminaDamageOnHit
+    damage: 40
 
 - type: entity
   id: ReplicatorT3Weapon
@@ -138,8 +146,8 @@
     animation: WeaponArcSlash
     damage:
       types:
-        Blunt: 22
-        Shock: 8 # split up damage groups to make them a little more effective against armored/blunt resistant targets
+        Blunt: 20
+        Shock: 10 # split up damage groups to make them a little more effective against armored/blunt resistant targets
         Structural: 45
   - type: Unremoveable
   - type: Prying
@@ -200,7 +208,7 @@
 
 - type: hitscan
   id: HitscanReplicator
-  staminaDamage: 18
+  staminaDamage: 20 # Den
   muzzleFlash:
     sprite: _Impstation/Mobs/Replicator/replicator_gun.rsi
     state: muzzle_repli
@@ -213,7 +221,7 @@
 
 - type: hitscan
   id: HitscanReplicator2
-  staminaDamage: 32
+  staminaDamage: 40 # Den
   muzzleFlash:
     sprite: _Impstation/Mobs/Replicator/replicator_gun.rsi
     state: muzzle_repli2
