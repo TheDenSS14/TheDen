@@ -28,10 +28,10 @@
     state: firstaid
   - type: Storage
     maxItemSize: Small
-    grid:
+    grid: # Den change the grid size
     - 0,0,3,1
     - 5,0,8,1
-    whitelist:
+    whitelist: # Den add a whitelist to contents
       tags:
         - Bottle
         - Spray
@@ -45,12 +45,15 @@
         - Vial
         - CableCoil
         - WeldingTool
+        - BodyBag
+        - Rollerbed
       components:
         - BreathMask
         - Hypospray
         - Injector
         - Pill
         - GasTank
+        - AACTablet
   - type: Item
     size: Large # TheDen - Just make all medkits the same size. Everyone just uses combat medkits anyways.
     sprite: Objects/Specific/Medical/firstaidkits.rsi
