@@ -31,6 +31,7 @@ using Content.Server.Atmos;
 using Content.Server.Atmos.Components;
 using Content.Server.Cargo.Components;
 using Content.Server.Doors.Systems;
+using Content.Server.Fax;
 using Content.Server.Hands.Systems;
 using Content.Server.PDA.Ringer;
 using Content.Server.Power.Components;
@@ -58,6 +59,7 @@ using Content.Shared.Database;
 using Content.Shared.Doors.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Paper;
 using Content.Shared.PDA;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Stacks;
@@ -95,6 +97,7 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly SharedFlatpackSystem _sharedFlatpackSystem = default!;
     [Dependency] private readonly UplinkSystem _uplinkSystem = default!;
     [Dependency] private readonly RingerSystem _ringerSystem = default!;
+    [Dependency] private readonly FaxSystem _faxSystem = default!;
 
     private void AddTricksVerbs(GetVerbsEvent<Verb> args)
     {
@@ -909,7 +912,7 @@ public sealed partial class AdminVerbSystem
             EntityManager.HasComponent<RingerUplinkComponent>(pdaRemoveUplink) &&
             EntityManager.HasComponent<PdaComponent>(pdaRemoveUplink))
         {
-            Verb addUplink = new()
+            Verb removeUplink = new()
             {
                 Text = Loc.GetString("admin-trick-remove-uplink-text"),
                 Message = Loc.GetString("admin-trick-remove-uplink-description"),
@@ -923,7 +926,31 @@ public sealed partial class AdminVerbSystem
                     EntityManager.RemoveComponent<UplinkComponent>(pdaRemoveUplink);
                 },
             };
-            args.Verbs.Add(addUplink);
+            args.Verbs.Add(removeUplink);
+        }
+
+        if (HasComp<PaperComponent>(args.Target))
+        {
+            Verb copyPaper = new()
+            {
+                Text = Loc.GetString("admin-trick-copy-paper-text"),
+                Message = Loc.GetString("admin-trick-copy-paper-description"),
+                Priority = (int) TricksVerbPriorities.Bolt,
+                Category = VerbCategory.Tricks,
+                Impact = LogImpact.Low,
+                Icon = new SpriteSpecifier.Rsi(new ResPath("Objects/Misc/bureaucracy.rsi"), "paper"),
+                Act = () =>
+                {
+                    _quickDialog.OpenDialog(player, "Copy Document", "Number of copies", (int nOfCopies) =>
+                    {
+                        for (; nOfCopies > 0; nOfCopies--)
+                        {
+                            _faxSystem.CopyNoMachine(args.Target);
+                        }
+                    });
+                },
+            };
+            args.Verbs.Add(copyPaper);
         }
         // Den end
     }
