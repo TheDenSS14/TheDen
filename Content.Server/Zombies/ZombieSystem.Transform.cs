@@ -261,20 +261,20 @@ public sealed partial class ZombieSystem
             _bloodstream.ChangeBloodReagent(target, zombiecomp.NewBloodReagent);
         }
 
-            //This is specifically here to combat insuls, because frying zombies on grilles is funny as shit.
-            _inventory.TryUnequip(target, "gloves", true, true);
-            //Should prevent instances of zombies using comms for information they shouldnt be able to have.
-            _inventory.TryUnequip(target, "ears", true, true);
+        //This is specifically here to combat insuls, because frying zombies on grilles is funny as shit.
+        _inventory.TryUnequip(target, "gloves", true, true);
+        //Should prevent instances of zombies using comms for information they shouldnt be able to have.
+        _inventory.TryUnequip(target, "ears", true, true);
 
-            //popup
-            _popup.PopupEntity(Loc.GetString("zombie-transform", ("target", target)), target, PopupType.LargeCaution);
+        //popup
+        _popup.PopupEntity(Loc.GetString("zombie-transform", ("target", target)), target, PopupType.LargeCaution);
 
-            //Make it sentient if it's an animal or something
-            MakeSentientCommand.MakeSentient(target, EntityManager);
+        //Make it sentient if it's an animal or something
+        MakeSentientCommand.MakeSentient(target, EntityManager);
 
-            //Make the zombie not die in the cold. Good for space zombies
-            if (TryComp<TemperatureComponent>(target, out var tempComp))
-                tempComp.ColdDamage.ClampMax(0);
+        //Make the zombie not die in the cold. Good for space zombies
+        if (TryComp<TemperatureComponent>(target, out var tempComp))
+            tempComp.ColdDamage.ClampMax(0);
 
         //Heals the zombie from all the damage it took while human
         if (TryComp<DamageableComponent>(target, out var damageablecomp))

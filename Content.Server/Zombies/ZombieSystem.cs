@@ -158,10 +158,11 @@ namespace Content.Server.Zombies
 
                 comp.NextTick = curTime;
 
-                if (_mobState.IsDead(uid, mobState))
-                    continue;
+                // if (_mobState.IsDead(uid, mobState))
+                //     continue;
 
-                var multiplier = _mobState.IsCritical(uid, mobState)
+                // Den - zombies can get up when dead
+                var multiplier = (_mobState.IsCritical(uid, mobState) || _mobState.IsDead(uid, mobState))
                     ? comp.PassiveHealingCritMultiplier
                     : 1f;
 

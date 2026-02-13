@@ -1055,11 +1055,11 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
             zombie.NextTick = curTime;
             Dirty(uid, zombie);
 
-            if (_mobState.IsDead(uid, mobState))
-                continue;
+            // if (_mobState.IsDead(uid, mobState))
+            //     continue;
 
             // Use the same healing as normal zombies
-            var multiplier = _mobState.IsCritical(uid, mobState)
+            var multiplier = (_mobState.IsCritical(uid, mobState) || _mobState.IsDead(uid, mobState))
                 ? zombie.PassiveHealingCritMultiplier
                 : 1f;
 
