@@ -240,7 +240,7 @@
       name: disable
       state: disabler
     - proto: BulletEnergyGunLaser
-      fireCost: 83
+      fireCost: 83 #Den, slightly more lethal ammo
       name: lethal
       state: lethal
   - type: MagazineVisuals
@@ -302,14 +302,14 @@
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
     selectedMode: SemiAuto
-    fireRate: 3
+    fireRate: 2.6 #Den, reduced fire rate to keep DPS the same
     availableModes:
       - SemiAuto
       - FullAuto
   - type: Wieldable
   - type: GunRequiresWield
   - type: Battery
-    maxCharge: 1500
+    maxCharge: 1500 #Den, reduced maximum battery to normalize recharge rates
     startingCharge: 1500
   - type: ProjectileBatteryAmmoProvider
     proto: BulletEnergyGunLaser

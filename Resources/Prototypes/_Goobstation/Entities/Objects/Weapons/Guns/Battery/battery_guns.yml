@@ -47,11 +47,11 @@
   - type: EnergyGun
     fireModes:
     - proto: BulletDisabler
-      fireCost: 62
+      fireCost: 62 #Den
       name: disabling
       state: disabler
     - proto: BulletEnergyGunMagnum
-      fireCost: 62
+      fireCost: 62 #Den
       name: lethal
       state: lethal
   - type: MagazineVisuals
