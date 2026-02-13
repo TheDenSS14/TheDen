@@ -10,8 +10,6 @@
 - type: entity
   id: BaseLeash
   parent: BaseItem
-  name: leash
-  description: Helps keep your animals or friends close to you. Attach to supported objects or clothing (such as collars) to use. You can pull attached entities while holding the leash.
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -31,6 +29,8 @@
 - type: entity
   id: LeashBasic
   parent: BaseLeash
+  name: rope leash
+  description: Helps keep your animals or friends close to you. Attach to supported objects or clothing (such as collars) to use. You can pull attached entities while holding the leash.
   components:
   - type: Leash
     length: 3
@@ -39,21 +39,21 @@
     attachDelay: 4
     detachDelay: 4
     selfDetachDelay: 10
-    leashSpriteConfigs:
-    - configId: "Rope"
-      leashSprite:
-        sprite: _Floof/Objects/Tools/leash-rope.rsi
-        state: rope
-      leashIconSprite:
-        sprite: _Floof/Objects/Tools/leash.rsi
-        state: icon
-    - configId: "Chains"
-      leashSprite:
-        sprite: _DEN/Objects/Tools/leashnapsack-chain.rsi
-        state: chain
-      leashIconSprite:
-        sprite: _DEN/Objects/Tools/leashnapsack.rsi
-        state: icon
+
+- type: entity
+  id: LeashChain
+  parent: LeashBasic
+  name: chain leash
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tools/leashnapsack.rsi
+    layers:
+    - state: icon
+    scale: 0.7, 0.7
+  - type: Leash
+    leashSprite:
+      sprite: _DEN/Objects/Tools/leashnapsack-chain.rsi
+      state: chain
 
 - type: entity
   id: LeashAdvanced

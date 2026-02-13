@@ -47,9 +47,6 @@ public sealed class LeashSystem : EntitySystem
     public static VerbCategory LeashLengthConfigurationCategory =
         new("verb-categories-leash-config", "/Textures/_Floof/Interface/VerbIcons/resize.svg.192dpi.png");
 
-    public static VerbCategory LeashTypeConfigurationCategory =
-        new("verb-leash-type-config", "/Textures/_Floof/Interface/VerbIcons/resize.svg.192dpi.png");
-
     #region Lifecycle
 
     public override void Initialize()
@@ -162,8 +159,7 @@ public sealed class LeashSystem : EntitySystem
 
     private void OnGetEquipmentVerbs(Entity<LeashAnchorComponent> ent, ref GetVerbsEvent<EquipmentVerb> args)
     {
-        if (!args.CanAccess
-            || !args.CanInteract
+        if (!args.CanInteract
             || args.Using is not { } leash
             || !TryComp<LeashComponent>(leash, out var leashComp))
             return;
@@ -198,8 +194,7 @@ public sealed class LeashSystem : EntitySystem
 
     private void OnGetLeashedVerbs(Entity<LeashedComponent> ent, ref GetVerbsEvent<InteractionVerb> args)
     {
-        if (!args.CanAccess
-            || !args.CanInteract
+        if (!args.CanInteract
             || ent.Comp.Puller is not { } leash
             || !TryComp<LeashComponent>(leash, out var leashComp))
             return;
@@ -231,21 +226,6 @@ public sealed class LeashSystem : EntitySystem
                 });
             }
         }
-
-        var leashConfigs = ent.Comp.LeashSpriteConfigs;
-        if (leashConfigs != null)
-        {
-            foreach (var config in leashConfigs)
-            {
-                args.Verbs.Add(new AlternativeVerb
-                {
-                    Text = Loc.GetString("verb-leash-set-leash-type", ("sprite", config.ConfigId)),
-                    Act = () => SetLeashType(ent, config),
-                    Category = LeashTypeConfigurationCategory
-                });
-            }
-        }
-
     }
 
     private void OnJointRemoved(Entity<LeashedComponent> ent, ref JointRemovedEvent args)
@@ -549,13 +529,6 @@ public sealed class LeashSystem : EntitySystem
         leash.Comp.Length = length;
         RefreshJoints(leash);
         _popups.PopupPredicted(Loc.GetString("leash-set-length-popup", ("length", length)), leash.Owner, null);
-    }
-
-    public void SetLeashType(Entity<LeashComponent> leash, LeashComponent.LeashSpriteConfigData config)
-    {
-        leash.Comp.LeashSprite = config.LeashSprite;
-        RefreshJoints(leash);
-        _popups.PopupPredicted(Loc.GetString("leash-set-type-popup", ("sprite", config.ConfigId)), leash.Owner, null);
     }
 
     /// <summary>
