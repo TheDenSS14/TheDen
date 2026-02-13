@@ -6,6 +6,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._DEN.Markings;
 using Content.Server.Actions;
 using Content.Server.Humanoid;
 using Content.Shared.Humanoid;
@@ -74,6 +75,23 @@ public sealed class WaggingSystem : EntitySystem
         for (var idx = 0; idx < markings.Count; idx++) // Animate all possible tails
         {
             var currentMarkingId = markings[idx].MarkingId;
+            var opposite = _humanoidAppearance.GetOppositeAnimatedMarking(
+                MarkingCategories.Tail,
+                markings[idx].MarkingId,
+                wagging.Suffix);
+
+
+            if (opposite.Marking != null)
+            {
+                var ev = new AnimatedToggleEvent
+                {
+                    ActionEntity = wagging.ActionEntity,
+                    OldMarkingId = currentMarkingId,
+                    NewMarkingId = opposite.Marking
+                };
+                RaiseLocalEvent(uid, ev);
+            }
+
             var isAnimated = _humanoidAppearance.SetAnimatedMarkingId(
                 uid,
                 MarkingCategories.Tail,
@@ -91,7 +109,6 @@ public sealed class WaggingSystem : EntitySystem
             wagging.Wagging = isAnimated.Value;
             _actions.SetToggled(wagging.ActionEntity, wagging.Wagging);
         }
-
         return true;
     }
 }

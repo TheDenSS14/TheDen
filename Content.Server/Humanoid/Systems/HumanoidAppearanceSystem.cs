@@ -18,10 +18,7 @@
 
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
-using Content.Shared.Humanoid.Prototypes;
-using Content.Shared.Preferences;
 using Content.Shared.Verbs;
-using Robust.Shared.GameObjects.Components.Localization;
 using Robust.Shared.Prototypes;
 
 
@@ -120,8 +117,13 @@ public sealed partial class HumanoidAppearanceSystem : SharedHumanoidAppearanceS
     /// <param name="index">Index of the marking</param>
     /// <param name="colors">The marking colors to use</param>
     /// <param name="humanoid">Humanoid component of the entity</param>
-    public void SetMarkingColor(EntityUid uid, MarkingCategories category, int index, List<Color> colors,
-        HumanoidAppearanceComponent? humanoid = null)
+    public void SetMarkingColor(
+        EntityUid uid,
+        MarkingCategories category,
+        int index,
+        List<Color> colors,
+        HumanoidAppearanceComponent? humanoid = null
+    )
     {
         if (index < 0
             || !Resolve(uid, ref humanoid)
