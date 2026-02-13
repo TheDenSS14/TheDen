@@ -34,7 +34,7 @@
     sprite: _DV/Objects/Weapons/Guns/Battery/energygun.rsi
   - type: Gun
     soundGunshot:
-      path: /Audio/_DV/Weapons/Guns/Gunshots/laser.ogg
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
   - type: Battery
@@ -49,8 +49,8 @@
       fireCost: 50
       name: disable
       state: disabler
-    - proto: BulletEnergyGunLaser
-      fireCost: 60
+    - proto: BulletEnergyGunLaserStrong
+      fireCost: 50
       name: lethal
       state: lethal
   - type: MagazineVisuals
@@ -284,7 +284,7 @@
   name: IK-60 energy carbine
   parent: BaseWeaponBattery
   id: WeaponGunLaserCarbineAutomatic
-  description: "A 30 round hybrid-fire energy carbine." # den, fix description to match capacity
+  description: "A 60 round hybrid-fire energy carbine." # den, fix description to match capacity
   components:
   - type: Sprite
     sprite: _DV/Objects/Weapons/Guns/Battery/energygun_carbine.rsi
@@ -298,11 +298,11 @@
     sprite: _DV/Objects/Weapons/Guns/Battery/energygun_carbine.rsi
   - type: Gun
     soundGunshot:
-      path: /Audio/_DV/Weapons/Guns/Gunshots/laser.ogg
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
     selectedMode: SemiAuto
-    fireRate: 2.6 #Den, reduced fire rate to keep DPS the same
+    fireRate: 4 #Den, increased fire rate to keep DPS the same
     availableModes:
       - SemiAuto
       - FullAuto
@@ -312,8 +312,8 @@
     maxCharge: 1500 #Den, reduced maximum battery to normalize recharge rates
     startingCharge: 1500
   - type: ProjectileBatteryAmmoProvider
-    proto: BulletEnergyGunLaser
-    fireCost: 50
+    proto: BulletEnergyGunLaserRapid #Den, less damage per hit
+    fireCost: 25
   - type: MagazineVisuals
     magState: mag
     steps: 5

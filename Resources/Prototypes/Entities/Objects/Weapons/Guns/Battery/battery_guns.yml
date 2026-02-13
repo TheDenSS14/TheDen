@@ -349,7 +349,7 @@
     - SemiAuto
   - type: HitscanBatteryAmmoProvider
     proto: RedLaser
-    fireCost: 33
+    fireCost: 16
 
 - type: entity
   name: practice laser rifle
@@ -495,9 +495,12 @@
     fireRate: 1.4
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: Battery #Den, increased maximum battery size so it takes longer to recharge
+    maxCharge: 1500
+    startingCharge: 1500
   - type: HitscanBatteryAmmoProvider
     proto: RedHeavyLaser
-    fireCost: 50
+    fireCost: 60
   - type: MeleeWeapon
     attackRate: 1.4
     damage:
