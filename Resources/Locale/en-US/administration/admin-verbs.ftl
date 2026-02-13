@@ -35,4 +35,7 @@ admin-trick-flatpack-description = Turns the entity into a flatpack of itself. D
 
 admin-trick-add-uplink-text = Add Uplink To PDA
 admin-trick-add-uplink-description = Adds an uplink to the target entity's PDA.
+
+admin-trick-remove-uplink-text = Remove Uplink From PDA
+admin-trick-remove-uplink-description = Removes the uplink from the target entity's PDA.
 # Den end

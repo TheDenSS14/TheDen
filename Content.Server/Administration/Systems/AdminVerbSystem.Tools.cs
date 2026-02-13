@@ -873,11 +873,12 @@ public sealed partial class AdminVerbSystem
 
         args.Verbs.Add(turnIntoFlatpack);
 
-        if (TryComp<ContainerManagerComponent>(args.Target, out var container_comp) &&
-            container_comp.Containers.ContainsKey("id") &&
-            container_comp.Containers["id"] is ContainerSlot idSlot &&
-            idSlot.ContainedEntity is EntityUid pda &&
-            EntityManager.HasComponent<PdaComponent>(pda))
+        if (TryComp<ContainerManagerComponent>(args.Target, out var containerCompAddUplink) &&
+            containerCompAddUplink.Containers.ContainsKey("id") &&
+            containerCompAddUplink.Containers["id"] is ContainerSlot idSlotAddUplink &&
+            idSlotAddUplink.ContainedEntity is EntityUid pdaAddUplink &&
+            !EntityManager.HasComponent<RingerUplinkComponent>(pdaAddUplink) &&
+            EntityManager.HasComponent<PdaComponent>(pdaAddUplink))
         {
             Verb addUplink = new()
             {
@@ -891,11 +892,35 @@ public sealed partial class AdminVerbSystem
                 {
                     if (!TryComp(args.Target, out ActorComponent? targetActor))
                         return;
-                    _uplinkSystem.AddUplink(args.Target, 100, pda, true);
-                    var ringerUplink = EntityManager.EnsureComponent<RingerUplinkComponent>(pda);
-                    _ringerSystem.LockUplink(pda, ringerUplink);
+                    _uplinkSystem.AddUplink(args.Target, 100, pdaAddUplink, true);
+                    var ringerUplink = EntityManager.EnsureComponent<RingerUplinkComponent>(pdaAddUplink);
+                    _ringerSystem.LockUplink(pdaAddUplink, ringerUplink);
                     string message = string.Concat("[color=gold]", Loc.GetString("traitor-role-uplink-code", ("code", string.Concat("\n[color=crimson]", string.Join("-", ringerUplink.Code).Replace("sharp", "#"), "[/color]"))), "[/color]");
                     _prayerSystem.SendSubtleMessage(targetActor.PlayerSession, player, message, Loc.GetString("prayer-popup-subtle-default"));
+                },
+            };
+            args.Verbs.Add(addUplink);
+        }
+
+        if (TryComp<ContainerManagerComponent>(args.Target, out var containerCompRemoveUplink) &&
+            containerCompRemoveUplink.Containers.ContainsKey("id") &&
+            containerCompRemoveUplink.Containers["id"] is ContainerSlot idSlotRemoveUplink &&
+            idSlotRemoveUplink.ContainedEntity is EntityUid pdaRemoveUplink &&
+            EntityManager.HasComponent<RingerUplinkComponent>(pdaRemoveUplink) &&
+            EntityManager.HasComponent<PdaComponent>(pdaRemoveUplink))
+        {
+            Verb addUplink = new()
+            {
+                Text = Loc.GetString("admin-trick-remove-uplink-text"),
+                Message = Loc.GetString("admin-trick-remove-uplink-description"),
+                Priority = (int) TricksVerbPriorities.AddUplink, // add uplink and remove uplink cannot exist at the same time so this is fine
+                Category = VerbCategory.Tricks,
+                Impact = LogImpact.High,
+                Icon = new SpriteSpecifier.Rsi(new ResPath("Objects/Devices/pda.rsi"), "pda-syndi"),
+                Act = () =>
+                {
+                    EntityManager.RemoveComponent<RingerUplinkComponent>(pdaRemoveUplink);
+                    EntityManager.RemoveComponent<UplinkComponent>(pdaRemoveUplink);
                 },
             };
             args.Verbs.Add(addUplink);
