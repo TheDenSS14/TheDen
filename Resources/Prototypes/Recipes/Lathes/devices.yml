@@ -201,7 +201,17 @@
     Steel: 2000
     Silver: 750
     Plasma: 1000 #DeltaV: Bluespace Exists so less plasma used, no uranium
-    Bluespace: 200 #DeltaV: Bluespace Exists
+    Bluespace: 100 #Den, reduced bluespace cost
+
+- type: latheRecipe
+  id: PlantBagOfHolding #Den
+  result: PlantBagOfHolding
+  completetime: 5
+  materials:
+    Steel: 2000
+    Silver: 750
+    Plasma: 1000 #Den, matching ore bag of holding
+    Bluespace: 100 #Den, matching ore bag of holding
 
 - type: latheRecipe
   id: ClothingMaskWeldingGas

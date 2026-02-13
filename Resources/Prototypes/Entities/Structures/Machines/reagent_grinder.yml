@@ -107,7 +107,7 @@
   - type: SolutionContainerManager
     solutions:
       output:
-        maxVol: 400 #*slaps roof of machine* This baby can fit so much omnizine in it
+        maxVol: 500 #*slaps roof of machine* This baby can fit so much omnizine in it
   - type: MaterialReclaimer
     whitelist:
       components:
@@ -122,6 +122,52 @@
       - state: grinder-b0
   - type: Machine
     board: ReagentGrinderIndustrialMachineCircuitboard
+  - type: GenericVisualizer
+    visuals:
+      enum.ConveyorVisuals.State:
+        enum.RecyclerVisualLayers.Main:
+          Forward: { state: grinder-b1 }
+          Reverse: { state: grinder-b1 }
+          Off: { state: grinder-b0 }
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
+  - type: DrainableSolution
+    solution: output
+  - type: ExaminableSolution
+    solution: output
+
+- type: entity #Den
+  parent: Recycler #too different so different parent
+  id: ReagentGrinderAdvanced
+  name: advanced reagent grinder
+  description: An advanced reagent grinder, enhanced with bluespace technology for greater efficiency and storage capacity!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      output:
+        maxVol: 5000 #*slaps roof of machine* This baby can fit so much omnizine in it
+  - type: MaterialReclaimer
+    whitelist:
+      components:
+      - Extractable #same as reagent grinder
+    blacklist:
+      tags:
+      - HighRiskItem #ian meat
+    efficiency: 1
+  - type: Sprite
+    sprite: Structures/Machines/recycling.rsi
+    layers:
+    - state: grinder-b0
+  - type: Machine
+    board: ReagentGrinderAdvancedMachineCircuitboard
   - type: GenericVisualizer
     visuals:
       enum.ConveyorVisuals.State:

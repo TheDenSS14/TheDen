@@ -1799,6 +1799,23 @@
 
 - type: entity
   parent: BaseMachineCircuitboard
+  id: ReagentGrinderAdvancedMachineCircuitboard
+  name: Advanced reagent grinder machine board
+  components:
+  - type: MachineBoard
+    prototype: ReagentGrinderAdvanced
+    requirements:
+      MatterBin: 1
+      Manipulator: 3
+    materialRequirements:
+      Glass: 1
+  - type: ReverseEngineering # Delta
+    difficulty: 2
+    recipes:
+    -  ReagentGrinderAdvancedMachineCircuitboard
+
+- type: entity
+  parent: BaseMachineCircuitboard
   id: JukeboxCircuitBoard
   name: jukebox machine board
   description: A machine printed circuit board for a jukebox.
@@ -1909,8 +1926,8 @@
       materialRequirements:
         Steel: 5
         Glass: 5
-        
-        
+
+
 # Assmos - Bluespace Gas
 - type: entity
   id: BluespaceGasSenderMachineBoard
