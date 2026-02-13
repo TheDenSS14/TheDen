@@ -255,8 +255,10 @@
       amount: 1
     ZombieBlood:
       amount: 2
+    Romerol:
+      amount: 5
   products:
-    Ambuzol: 4
+    Ambuzol: 5
 
 - type: reaction
   id: AmbuzolPlus
@@ -264,11 +266,13 @@
     Ambuzol:
       amount: 5
     Necrosol:
-      amount: 1
+      amount: 5
     Plasma:
       amount: 5
+    Romerol:
+      amount: 10
   products:
-    AmbuzolPlus: 10
+    AmbuzolPlus: 5
 
 - type: reaction
   id: Synaptizine
