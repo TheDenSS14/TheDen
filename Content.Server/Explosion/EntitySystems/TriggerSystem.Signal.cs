@@ -22,14 +22,18 @@ namespace Content.Server.Explosion.EntitySystems
     {
         [Dependency] private readonly DeviceLinkSystem _signalSystem = default!;
         private void InitializeSignal()
-        { 
+        {
             SubscribeLocalEvent<TriggerOnSignalComponent, ComponentInit>(TriggerOnSignalInit);
             SubscribeLocalEvent<TriggerOnSignalComponent, SignalReceivedEvent>(OnSignalReceived);
 
             SubscribeLocalEvent<SignalOnTriggerComponent, ComponentInit>(SignalOnTriggerInit);
             SubscribeLocalEvent<SignalOnTriggerComponent, TriggerEvent>(HandleSignalOnTrigger);
+
+            SubscribeLocalEvent<TimerStartOnSignalComponent, ComponentInit>(OnTimerSignalInit);
+            SubscribeLocalEvent<TimerStartOnSignalComponent, SignalReceivedEvent>(OnTimerSignalReceived);
         }
-        
+
+        // DENWIZ - rough import of wizden SignalOnTrigger
         private void TriggerOnSignalInit(EntityUid uid, TriggerOnSignalComponent component, ComponentInit args)
         {
             _signalSystem.EnsureSinkPorts(uid, component.Port);
@@ -42,7 +46,7 @@ namespace Content.Server.Explosion.EntitySystems
 
             Trigger(uid, args.Trigger);
         }
-        
+
         // DENWIZ - rough import of wizden SignalOnTrigger
         private void SignalOnTriggerInit(EntityUid uid, SignalOnTriggerComponent component, ComponentInit args)
         {
@@ -53,6 +57,18 @@ namespace Content.Server.Explosion.EntitySystems
         {
             _signalSystem.InvokePort(uid, component.Port);
             args.Handled = true;
+        }
+
+        private void OnTimerSignalReceived(EntityUid uid, TimerStartOnSignalComponent component, ref SignalReceivedEvent args)
+        {
+            if (args.Port != component.Port)
+                return;
+
+            StartTimer(uid, args.Trigger);
+        }
+        private void OnTimerSignalInit(EntityUid uid, TimerStartOnSignalComponent component, ComponentInit args)
+        {
+            _signalSystem.EnsureSinkPorts(uid, component.Port);
         }
     }
 }

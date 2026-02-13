@@ -10,10 +10,11 @@
 // SPDX-FileCopyrightText: 2024 SimpleStation14
 // SPDX-FileCopyrightText: 2025 ArtisticRoomba
 // SPDX-FileCopyrightText: 2025 Cam
+// SPDX-FileCopyrightText: 2025 MajorMoth
 // SPDX-FileCopyrightText: 2025 VMSolidus
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using System.Numerics;
@@ -403,7 +404,7 @@ namespace Content.Server.Atmos.EntitySystems
             const int limit = Atmospherics.MonstermosHardTileLimit;
 
             var totalMolesRemoved = 0f;
-            var (owner, gridAtmosphere, _, _, _) = ent;
+            var (owner, gridAtmosphere, _, mapGrid, _) = ent;
             var queueCycle = ++gridAtmosphere.EqualizationQueueCycleControl;
 
             var tileCount = 0;
@@ -558,6 +559,9 @@ namespace Content.Server.Atmos.EntitySystems
                     // therefore there is no more gas in the tile, therefore the tile should be as cold as space!
                     otherTile.Air.Temperature = Atmospherics.TCMB;
                 }
+
+                InvalidateVisuals(ent, otherTile);
+                HandleDecompressionFloorRip((owner, mapGrid), otherTile, otherTile.MonstermosInfo.CurrentTransferAmount);
             }
 
             if (GridImpulse && tileCount > 0)
@@ -698,7 +702,7 @@ namespace Content.Server.Atmos.EntitySystems
             adj.MonstermosInfo[idx.ToOppositeDir()] -= amount;
         }
 
-        private void HandleDecompressionFloorRip(MapGridComponent mapGrid, TileAtmosphere tile, float sum)
+        private void HandleDecompressionFloorRip(Entity<MapGridComponent> ent, TileAtmosphere tile, float sum)
         {
             if (!MonstermosRipTiles)
                 return;
@@ -706,7 +710,7 @@ namespace Content.Server.Atmos.EntitySystems
             var chance = MathHelper.Clamp(0.01f + sum / SpacingMaxWind * 0.3f, 0.003f, 0.3f);
 
             if (sum > 20 && _robustRandom.Prob(chance))
-                PryTile(mapGrid, tile.GridIndices);
+                PryTile(ent, tile.GridIndices);
         }
 
         private sealed class TileAtmosphereComparer : IComparer<TileAtmosphere?>

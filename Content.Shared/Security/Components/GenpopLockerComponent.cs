@@ -1,7 +1,9 @@
 // SPDX-FileCopyrightText: 2025 Nemanja
+// SPDX-FileCopyrightText: 2026 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Access;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -27,6 +29,9 @@ public sealed partial class GenpopLockerComponent : Component
     /// </summary>
     [DataField]
     public EntProtoId<GenpopIdCardComponent> IdCardProto = "PrisonerIDCard";
+
+    [DataField]
+    public HashSet<ProtoId<AccessLevelPrototype>> AlwaysAllowed = ["Security"];
 }
 
 [Serializable, NetSerializable]

@@ -12,6 +12,7 @@
   color: "#ff624a" # a slightly warmer color than the ichor extracted from dragon flesh
   recognizable: true
   physicalDesc: reagent-physical-desc-shimmering-blood
+  isNourishing: true
   metabolisms:
     Food:
       effects:
@@ -23,7 +24,17 @@
             shouldHave: false
       - !type:SatiateThirst
         factor: 1
+        conditions: # TheDen - Vampires get their own numbers
+          - !type:OrganType
+            type: Vampiric
+            shouldHave: false  
       - !type:SatiateHunger # TheDen - Vampiric additions start
+        factor: 3.5
+        conditions:
+        - !type:OrganType
+          type: Vampiric
+      - !type:SatiateThirst
+        factor: 1.5
         conditions:
         - !type:OrganType
           type: Vampiric

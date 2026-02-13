@@ -29,6 +29,7 @@
 # SPDX-FileCopyrightText: 2025 RocketBoss360
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 entings
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -113,7 +114,7 @@
   name: reagent-name-insect-blood
   group: Biological
   desc: reagent-desc-insect-blood
-  flavor: horrible
+  flavor: gooey #imp: changed from horrible
   color: "#808A51"
   recognizable: true
   physicalDesc: reagent-physical-desc-slimy
@@ -259,7 +260,7 @@
   name: reagent-name-fat
   group: Biological
   desc: reagent-desc-fat
-  flavor: terrible
+  flavor: fatty #imp: changed from terrible
   color: "#d8d8b0"
   physicalDesc: reagent-physical-desc-exotic-smelling
   slippery: false

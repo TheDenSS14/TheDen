@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2026 ivorytemple
+# SPDX-FileCopyrightText: 2026 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -2954,6 +2955,9 @@
   colorLinks:
     nurse1_behind: nurse1_front
     nurse2_behind: nurse2_front
+  colorIndexRedirect: # some tails have a behind/front, and i'd just rather not deal with it
+  - 1
+  - 3
   sprites:
   - sprite: _Impstation/Mobs/Customization/Thaven/taillayers.rsi
     state: nurse1_behind
@@ -2975,6 +2979,8 @@
     nurse2_behind: TailBehind
   colorLinks:
     nurse2_behind: nurse2_front
+  colorIndexRedirect: 
+  - 1
   sprites:
   - sprite: _Impstation/Mobs/Customization/Thaven/taillayers.rsi
     state: nurse2_behind

@@ -318,6 +318,10 @@ public sealed partial class ChatSystem : SharedChatSystem
             message = message[1..];
         }
 
+        if (desiredType == InGameICChatType.Subtle
+            || desiredType == InGameICChatType.SubtleOOC)
+            checkRadioPrefix = false;
+
         var language = languageOverride ?? _language.GetLanguage(source);
 
         var shouldCapitalize = (desiredType != InGameICChatType.Emote && desiredType != InGameICChatType.Subtle && desiredType != InGameICChatType.SubtleOOC);

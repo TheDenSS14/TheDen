@@ -509,22 +509,6 @@
   - UplinkExplosives
 
 - type: listing
-  id: UplinkSyndicateBomb
-  name: uplink-exploding-syndicate-bomb-name
-  description: uplink-exploding-syndicate-bomb-desc
-  productEntity: SyndicateBomb
-  cost:
-    Telecrystal: 55
-  categories:
-    - UplinkExplosives
-  restockTime: 1800
-  conditions:
-  - !type:StoreWhitelistCondition
-    blacklist:
-      tags:
-      - NukeOpsUplink
-
-- type: listing
   id: UplinkSyndicateBombNukie
   name: uplink-exploding-syndicate-bomb-name
   description: uplink-exploding-syndicate-bomb-desc
@@ -1550,9 +1534,9 @@
   productEntity: StorageImplanter
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 20
+    Telecrystal: 10
   cost:
-    Telecrystal: 40
+    Telecrystal: 20
   categories:
     - UplinkImplants
   conditions:
@@ -2348,11 +2332,8 @@
   name: uplink-smuggler-satchel-name
   description: uplink-smuggler-satchel-desc
   productEntity: ClothingBackpackSatchelSmugglerUnanchored
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 15
   cost:
-    Telecrystal: 30
+    Telecrystal: 5
   categories:
   - UplinkDeception
 

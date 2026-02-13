@@ -1,0 +1,37 @@
+# SPDX-FileCopyrightText: 2026 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: marking
+  id: ThavenTailNurseAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  layering:
+    nurse1: TailOversuit
+    nurse2: TailOversuit
+  colorIndexRedirect: # some tails have a behind/front, and i'd just rather not deal with it
+  - 0
+  - 0
+  - 1
+  - 1
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/tailwag.rsi
+    state: nurse1
+  - sprite: _DEN/Mobs/Customization/Thaven/tailwag.rsi
+    state: nurse2
+
+- type: marking
+  id: ThavenTailNurseUnshadedAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  layering:
+    nurse2: Tail
+  colorIndexRedirect: 
+  - 0
+  - 0
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/tailwag.rsi
+    state: nurse2
+  shader: unshaded

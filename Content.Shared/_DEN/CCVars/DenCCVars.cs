@@ -37,4 +37,10 @@ public sealed class DenCCVars
     /// </summary>
     public static readonly CVarDef<bool> BlackFlashEffect =
         CVarDef.Create("accessibility.black_flash_effect", false,  CVar.CLIENTONLY | CVar.ARCHIVE); // DEN: Black flash instead of white.
+
+    /// <summary>
+    /// Whether the maybe bad performance marking glow animation should be running.
+    /// </summary>
+    public static readonly CVarDef<bool> MarkingGlowAnimation =
+        CVarDef.Create("game.marking_glow_animation", false, CVar.SERVERONLY);
 }
