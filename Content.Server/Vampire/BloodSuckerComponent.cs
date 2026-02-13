@@ -5,6 +5,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Server._DEN.Body.Systems;
+using Content.Shared.Chemistry.Reagent;
+using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
+
 
 namespace Content.Server.Vampiric
 {
@@ -53,5 +57,10 @@ namespace Content.Server.Vampiric
         ///     DEN: Used to track BloodExaminer, but only if it is added by this component.
         /// </summary>
         public BloodExaminerComponent? AddedBloodExaminer;
+
+        /// <summary>
+        /// The sound made when drinking blood.
+        /// </summary>
+        public SoundSpecifier DrinkSound = new SoundPathSpecifier("/Audio/Items/drink.ogg");
     }
 }
