@@ -47,7 +47,6 @@ using Content.Shared.Administration;
 using Content.Shared.Database;
 using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
-using Content.Shared.Silicon.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -58,9 +57,7 @@ namespace Content.Server.Administration.Systems;
 public sealed partial class AdminVerbSystem
 {
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
-    [Dependency] private readonly ZombieSystem _zombie = default!;
     [Dependency] private readonly ZombieTumorOrganSystem _zombieTumor = default!;
-    [Dependency] private readonly GameTicker _gameTicker = default!;
 
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultTraitorRule = "Traitor";
@@ -128,7 +125,6 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-zombie"),
         };
         args.Verbs.Add(zombie);
-
 
         Verb nukeOp = new()
         {
