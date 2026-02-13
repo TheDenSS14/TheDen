@@ -29,27 +29,28 @@
   - type: Storage
     maxItemSize: Small
     grid:
-    - 0,0,2,1
-    - 4,0,5,1
-    - 7,0,7,1
-    # whitelist:
-    #   tags:
-    #     - Bottle
-    #     - Spray
-    #     - Brutepack
-    #     - Bloodpack
-    #     - Gauzes
-    #     - Ointment
-    #     - PillCanister
-    #     - DiscreteHealthAnalyzer
-    #     - Dropper
-    #     - Vial
-    #   components:
-    #     - BreathMask
-    #     - Hypospray
-    #     - Injector
-    #     - Pill
-    #     - GasTank
+    - 0,0,3,1
+    - 5,0,8,1
+    whitelist:
+      tags:
+        - Bottle
+        - Spray
+        - Brutepack
+        - Bloodpack
+        - Gauze
+        - Ointment
+        - PillCanister
+        - DiscreteHealthAnalyzer
+        - Dropper
+        - Vial
+        - CableCoil
+        - WeldingTool
+      components:
+        - BreathMask
+        - Hypospray
+        - Injector
+        - Pill
+        - GasTank
   - type: Item
     size: Large # TheDen - Just make all medkits the same size. Everyone just uses combat medkits anyways.
     sprite: Objects/Specific/Medical/firstaidkits.rsi
