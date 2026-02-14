@@ -861,16 +861,17 @@ public sealed partial class AdminVerbSystem
             Priority = (int) TricksVerbPriorities.TurnIntoFlatpack,
             Act = () =>
             {
-                var flatpack = EntityManager.SpawnAtPosition("BaseFlatpack", args.Target.ToCoordinates());
+                var flatpack = SpawnAtPosition("BaseFlatpack", args.Target.ToCoordinates());
                 var targetMeta = MetaData(args.Target);
                 var flatpackMeta = MetaData(flatpack);
-                if (targetMeta is null)
+
+                if (targetMeta is null || flatpackMeta is null)
                     return;
-                if (flatpackMeta is null)
-                    return;
+
                 _sharedFlatpackSystem.ChangeFlatpackEntity(flatpack, targetMeta.EntityPrototype);
                 _metaSystem.SetEntityName(flatpack, string.Concat(targetMeta.EntityName, " flatpack"), flatpackMeta);
-                EntityManager.DeleteEntity(args.Target);
+
+                Del(args.Target);
             }
         };
 
@@ -895,10 +896,16 @@ public sealed partial class AdminVerbSystem
                 {
                     if (!TryComp(args.Target, out ActorComponent? targetActor))
                         return;
+
                     _uplinkSystem.AddUplink(args.Target, 100, pdaAddUplink, true);
-                    var ringerUplink = EntityManager.EnsureComponent<RingerUplinkComponent>(pdaAddUplink);
+
+                    var ringerUplink = EnsureComp<RingerUplinkComponent>(pdaAddUplink);
+
                     _ringerSystem.LockUplink(pdaAddUplink, ringerUplink);
-                    string message = string.Concat("[color=gold]", Loc.GetString("traitor-role-uplink-code", ("code", string.Concat("\n[color=crimson]", string.Join("-", ringerUplink.Code).Replace("sharp", "#"), "[/color]"))), "[/color]");
+
+                    string code = string.Concat("\n[color=crimson]", string.Join("-", ringerUplink.Code).Replace("sharp", "#"), "[/color]");
+                    string message = string.Concat("[color=gold]", Loc.GetString("traitor-role-uplink-code", ("code", code)), "[/color]");
+
                     _prayerSystem.SendSubtleMessage(targetActor.PlayerSession, player, message, Loc.GetString("prayer-popup-subtle-default"));
                 },
             };
@@ -909,8 +916,8 @@ public sealed partial class AdminVerbSystem
             containerCompRemoveUplink.Containers.ContainsKey("id") &&
             containerCompRemoveUplink.Containers["id"] is ContainerSlot idSlotRemoveUplink &&
             idSlotRemoveUplink.ContainedEntity is EntityUid pdaRemoveUplink &&
-            EntityManager.HasComponent<RingerUplinkComponent>(pdaRemoveUplink) &&
-            EntityManager.HasComponent<PdaComponent>(pdaRemoveUplink))
+            HasComp<RingerUplinkComponent>(pdaRemoveUplink) &&
+            HasComp<PdaComponent>(pdaRemoveUplink))
         {
             Verb removeUplink = new()
             {
@@ -922,8 +929,8 @@ public sealed partial class AdminVerbSystem
                 Icon = new SpriteSpecifier.Rsi(new ResPath("Objects/Devices/pda.rsi"), "pda-syndi"),
                 Act = () =>
                 {
-                    EntityManager.RemoveComponent<RingerUplinkComponent>(pdaRemoveUplink);
-                    EntityManager.RemoveComponent<UplinkComponent>(pdaRemoveUplink);
+                    RemComp<RingerUplinkComponent>(pdaRemoveUplink);
+                    RemComp<UplinkComponent>(pdaRemoveUplink);
                 },
             };
             args.Verbs.Add(removeUplink);
