@@ -5,43 +5,42 @@ using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 
-namespace Content.Server.GameTicking.Commands
+namespace Content.Server.GameTicking.Commands;
+
+[AdminCommand(AdminFlags.Round)]
+public sealed class GoLobbyCommand : LocalizedEntityCommands
 {
-    [AdminCommand(AdminFlags.Round)]
-    public sealed class GoLobbyCommand : LocalizedEntityCommands
+    [Dependency] private readonly IConfigurationManager _configManager = default!;
+    [Dependency] private readonly GameTicker _gameTicker = default!;
+
+    public override string Command => "golobby";
+
+    public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {
-        [Dependency] private readonly IConfigurationManager _configManager = default!;
-        [Dependency] private readonly GameTicker _gameTicker = default!;
+        GamePresetPrototype? preset = null;
+        var presetName = string.Join(" ", args);
 
-        public override string Command => "golobby";
-
-        public override void Execute(IConsoleShell shell, string argStr, string[] args)
+        if (args.Length > 0)
         {
-            GamePresetPrototype? preset = null;
-            var presetName = string.Join(" ", args);
-
-            if (args.Length > 0)
+            if (!_gameTicker.TryFindGamePreset(presetName, out preset))
             {
-                if (!_gameTicker.TryFindGamePreset(presetName, out preset))
-                {
-                    shell.WriteLine(Loc.GetString($"cmd-forcepreset-no-preset-found", ("preset", presetName)));
-                    return;
-                }
-            }
-
-            if (_configManager.GetCVar(CCVars.GameLobbyEnabled))
-            {
-                shell.WriteError(Loc.GetString("cmd-golobby-error-already-enabled"));
+                shell.WriteLine(Loc.GetString($"cmd-forcepreset-no-preset-found", ("preset", presetName)));
                 return;
             }
-
-            _configManager.SetCVar(CCVars.GameLobbyEnabled, true);
-            _gameTicker.RestartRound();
-
-            if (preset != null)
-                _gameTicker.SetGamePreset(preset);
-
-            shell.WriteLine(Loc.GetString(preset == null ? "cmd-golobby-success" : "cmd-golobby-success-with-preset", ("preset", presetName)));
         }
+
+        if (_configManager.GetCVar(CCVars.GameLobbyEnabled))
+        {
+            shell.WriteError(Loc.GetString("cmd-golobby-error-already-enabled"));
+            return;
+        }
+
+        _configManager.SetCVar(CCVars.GameLobbyEnabled, true);
+        _gameTicker.RestartRound();
+
+        if (preset != null)
+            _gameTicker.SetGamePreset(preset);
+
+        shell.WriteLine(Loc.GetString(preset == null ? "cmd-golobby-success" : "cmd-golobby-success-with-preset", ("preset", presetName)));
     }
 }
