@@ -161,7 +161,8 @@ marking-fishbowl = Fishbowl
 marking-fishbowl-fishbowl1 = Fish
 # Frontier: bubbles < Bubbles
 marking-fishbowl-fishbowl2 = Fish Bubbles
-marking-FadingStars = Fading Starlight
+# TheDen: Added (Glowing) below
+marking-FadingStars = Fading Starlight (Glowing)
 marking-FadingStars-fadingstars1 = Brightest
 marking-FadingStars-fadingstars2 = Middling
 marking-FadingStars-fadingstars3 = Darkest
