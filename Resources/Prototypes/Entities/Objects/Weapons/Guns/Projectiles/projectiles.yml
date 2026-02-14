@@ -1370,9 +1370,9 @@
     soundHit:
       collection: MeatLaserImpact
 
-- type: entity #Den
+- type: entity #Den, added for a weaker hitting energy bolt
   name: energy bolt
-  id: BulletEnergyGunLaserRapid
+  id: BulletEnergyGunLaserWeak
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
@@ -1410,7 +1410,7 @@
     soundHit:
       collection: MeatLaserImpact
 
-- type: entity #Den
+- type: entity #Den, added for a harder hitting energy bolt
   name: energy bolt
   id: BulletEnergyGunLaserStrong
   parent: BaseBullet

@@ -68,6 +68,12 @@
   - type: Tag
     tags:
     - Sidearm
+#    Den, removing self recharge
+#  - type: BatterySelfRecharger # 20 seconds to fully recharge, but it does not do so if it has been fired in the last 5 seconds.
+#    autoRecharge: true
+#    autoRechargeRate: 50
+#    autoRechargePause: true
+#    autoRechargePauseTime: 5
 
 - type: entity
   name: EG-4 energy revolver
