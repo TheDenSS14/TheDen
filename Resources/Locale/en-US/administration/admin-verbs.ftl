@@ -41,4 +41,5 @@ admin-trick-remove-uplink-description = Removes the uplink from the target entit
 
 admin-trick-copy-paper-text = Copy Paper
 admin-trick-copy-paper-description = Copies this document a specified number of times, spawning the additional copies on top.
+admin-trick-copy-paper-dialog-prompt = Number of copies
 # Den end

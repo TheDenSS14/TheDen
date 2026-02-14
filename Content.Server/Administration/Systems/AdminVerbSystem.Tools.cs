@@ -941,7 +941,7 @@ public sealed partial class AdminVerbSystem
                 Icon = new SpriteSpecifier.Rsi(new ResPath("Objects/Misc/bureaucracy.rsi"), "paper"),
                 Act = () =>
                 {
-                    _quickDialog.OpenDialog(player, "Copy Document", "Number of copies", (int nOfCopies) =>
+                    _quickDialog.OpenDialog(player, Loc.GetString("admin-trick-copy-paper-text"), Loc.GetString("admin-trick-copy-paper-dialog-prompt"), (int nOfCopies) =>
                     {
                         for (; nOfCopies > 0; nOfCopies--)
                         {
