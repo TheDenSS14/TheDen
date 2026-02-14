@@ -29,8 +29,13 @@ namespace Content.Server.GameTicking.Commands
                 }
             }
 
-            _configManager.SetCVar(CCVars.GameLobbyEnabled, true);
+            if (_configManager.GetCVar(CCVars.GameLobbyEnabled))
+            {
+                shell.WriteError(Loc.GetString("cmd-golobby-error-already-enabled"));
+                return;
+            }
 
+            _configManager.SetCVar(CCVars.GameLobbyEnabled, true);
             _gameTicker.RestartRound();
 
             if (preset != null)
