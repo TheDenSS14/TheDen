@@ -20,5 +20,9 @@
       applyComps:
         - type: TinfoilHat
           destroyOnFry: false
+        - type: WearerGetsExamineText
+          examineText: obvious-desc-default-no-short
+          thingType: obvious-type-psionically-insulative
+          thing: obvious-thing-hat
       modifyName: "insulative-filling-name-modifier"
       modifyDescription: "insulative-filling-description"
