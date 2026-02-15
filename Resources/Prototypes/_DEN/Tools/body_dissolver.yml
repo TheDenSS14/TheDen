@@ -71,3 +71,20 @@
   - type: Speech
     speechSounds: Pai
 
+- type: entity
+  parent: BoxCardboard
+  id: BodyDissolverTackBox
+  name: Xeno-B-Gone body dissolver tack box
+  description: A box containing multiple Xeno-B-Gone brand body dissolver tacks.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,4,3
+  - type: StorageFill
+    contents:
+    - id: BodyDissolverTack
+      amount: 10
+  - type: Sprite
+    layers:
+    - state: box_of_doom
+    - state: vials

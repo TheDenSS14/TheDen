@@ -10,6 +10,7 @@ using Content.Shared.Projectiles;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Atmos;
+using Content.Shared.Body.Components;
 
 namespace Content.Server.BodyDissolution
 {
@@ -22,7 +23,7 @@ namespace Content.Server.BodyDissolution
         [Dependency] private readonly SharedSolutionContainerSystem _sharedSolutionContainerSystem = default!;
         [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
 
-        public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_DEN/Effects/body_dissolver_tack.ogg");
+        public SoundSpecifier DissolveSound = new SoundPathSpecifier("/Audio/_DEN/Effects/body_dissolver_tack.ogg");
 
         public override void Initialize()
         {
@@ -69,7 +70,12 @@ namespace Content.Server.BodyDissolution
             }
 
             _puddleSystem.TrySpillAt(dissolutee.ToCoordinates(), solution, out var puddle, true);
-            _sharedAudioSystem.PlayPvs(Sound, puddle);
+            _sharedAudioSystem.PlayPvs(DissolveSound, puddle);
+
+            if (TryComp<BodyComponent>(dissolutee, out var bodyComponent))
+            {
+                _sharedAudioSystem.PlayPvs(bodyComponent.GibSound, puddle);
+            }
 
             var plume = new GasMixture(1) { Temperature = 320.0f };
             var environment = _atmosphereSystem.GetContainingMixture(dissolutee, true, true);
