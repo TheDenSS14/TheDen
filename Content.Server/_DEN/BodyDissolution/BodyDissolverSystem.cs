@@ -11,6 +11,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
+using Robust.Shared.Physics.Components;
 
 namespace Content.Server.BodyDissolution
 {
@@ -22,8 +23,6 @@ namespace Content.Server.BodyDissolution
         [Dependency] private readonly SharedChatSystem _sharedChatSystem = default!;
         [Dependency] private readonly SharedSolutionContainerSystem _sharedSolutionContainerSystem = default!;
         [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
-
-        public SoundSpecifier DissolveSound = new SoundPathSpecifier("/Audio/_DEN/Effects/body_dissolver_tack.ogg");
 
         public override void Initialize()
         {
@@ -54,41 +53,47 @@ namespace Content.Server.BodyDissolution
             }
             */
 
-            DissolveBody(args.Embedded);
+            DissolveBody(tack, args.Embedded);
             EntityManager.DeleteEntity(tack);
         }
 
-        private void DissolveBody(EntityUid dissolutee)
+        private void DissolveBody(Entity<BodyDissolverComponent> dissolver, EntityUid dissolutee)
         {
+            if (!TryComp<BodyDissolvableComponent>(dissolutee, out var bodyDissolvableComponent) ||
+                !TryComp<PhysicsComponent>(dissolutee, out var physicsComponent))
+                return;
+
             _sharedSolutionContainerSystem.TryGetSolution(dissolutee, "bloodstream", out var _, out var bodyBloodstreamSolution);
 
-            var solution = new Solution("Water", 10);
+            var solution = new Solution("Water", bodyDissolvableComponent.MaximumSpillAmount);
 
             if (bodyBloodstreamSolution is not null)
             {
-                solution = bodyBloodstreamSolution.SplitSolution(10);
+                solution = bodyBloodstreamSolution.SplitSolution(Math.Min(bodyDissolvableComponent.MaximumSpillAmount, (float) bodyBloodstreamSolution.Volume));
             }
 
             _puddleSystem.TrySpillAt(dissolutee.ToCoordinates(), solution, out var puddle, true);
-            _sharedAudioSystem.PlayPvs(DissolveSound, puddle);
+            _sharedAudioSystem.PlayPvs(dissolver.Comp.Sound, puddle);
 
             if (TryComp<BodyComponent>(dissolutee, out var bodyComponent))
             {
                 _sharedAudioSystem.PlayPvs(bodyComponent.GibSound, puddle);
             }
 
-            var plume = new GasMixture(1) { Temperature = 320.0f };
+            var plume = new GasMixture(1) { Temperature = 330.0f };
             var environment = _atmosphereSystem.GetContainingMixture(dissolutee, true, true);
+
             if (environment is null)
             {
-                EntityManager.DeleteEntity(dissolutee);
+                Del(dissolutee);
                 return;
             }
 
-            plume.SetMoles(Gas.Ammonia, 100);
+            plume.SetMoles(bodyDissolvableComponent.EmittedGas, physicsComponent.Mass * bodyDissolvableComponent.EmittedGasCoefficient);
+
             _atmosphereSystem.Merge(environment, plume);
 
-            EntityManager.DeleteEntity(dissolutee);
+            Del(dissolutee);
         }
     };
 }

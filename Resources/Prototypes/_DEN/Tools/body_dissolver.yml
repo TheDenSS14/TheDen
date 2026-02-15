@@ -28,7 +28,7 @@
         restitution: 0.3
         friction: 0.2
   - type: Sprite
-    sprite: Objects/Fun/Darts/dart_red.rsi
+    sprite: _DEN/Objects/Tools/body_dissolver.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -45
@@ -41,7 +41,7 @@
       path: /Audio/Weapons/pierce.ogg
   - type: Item
     size: Tiny
-    sprite: Objects/Fun/Darts/dart_red.rsi
+    sprite: _DEN/Objects/Tools/body_dissolver.rsi
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -79,7 +79,9 @@
   components:
   - type: Storage
     grid:
-    - 0,0,4,3
+    - 0,0,4,1
+    whitelist:
+    - BodyDissolverTack
   - type: StorageFill
     contents:
     - id: BodyDissolverTack
