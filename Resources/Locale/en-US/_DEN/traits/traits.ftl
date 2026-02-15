@@ -139,12 +139,3 @@ trait-name-DispelVulnerability = Ethereal Presence
 trait-description-DispelVulnerability =
     Some aspect of your presence is intrinsically and perilously tied to the noosphere.
     You suffer [color=red]extreme heat damage[/color] from being the subject of a [color=purple]Dispel[/color] cast.
-
-
-trait-name-FireResistance = Fire Resistance
-trait-description-FireResistance =
-    Whether through a mutation, a round of body modification, a special coating or otherwise, you are resistant to being [color=orange]ignited.[/color]
-    Additionally, you are uniquely suited for survival in [color=orange]high temperature[/color] environments thanks to multiple thermal insulation and regulation mechanisms.
-    Unfortunately, your ability to survive in [color=skyblue]colder[/color] climates is [color=red]negatively impacted[/color].
-    You will feel abnormally sluggish when cold, and [color=skyblue]freezing[/color] temperatures will cause [color=skyblue]frostbite[/color] much quicker.
-    This [color=red]does not[/color] protect you from [color=yellow]high pressure[/color] or the [color=green]toxicity[/color] of combustive gasses and their products.
