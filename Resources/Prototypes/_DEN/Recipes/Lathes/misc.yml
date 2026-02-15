@@ -241,10 +241,6 @@
   parent: BaseHoloprojector
   id: HoloprojectorPrivate
   result: HoloprojectorPrivate
-  completetime: 2
-  materials:
-    Plastic: 250
-    Glass: 200
 
 - type: latheRecipe
   id: InsulativeFilling
@@ -252,4 +248,5 @@
   completetime: 3
   materials:
     Aluminum: 400 # Aluminium foil :)
-    Bluespace: 20 # The other insulatives cost this.
+    Gold: 200
+    Bluespace: 40 # The other insulatives cost this.
