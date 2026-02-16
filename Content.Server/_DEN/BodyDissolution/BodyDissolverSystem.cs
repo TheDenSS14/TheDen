@@ -119,7 +119,7 @@ namespace Content.Server.BodyDissolution
 
             if (!tack.Comp.SafetyEnabled)
             {
-                _sharedPopupSystem.PopupCursor(Loc.GetString("body-dissolution-throw")); // yes this is a hack. I just don't know how to properly embed something into someone when clicking on them
+                _sharedPopupSystem.PopupCursor(Loc.GetString("body-dissolution-throw"), args.User, PopupType.MediumCaution); // yes this is a hack. I just don't know how to properly embed something into someone when clicking on them
                 return;
             }
 
