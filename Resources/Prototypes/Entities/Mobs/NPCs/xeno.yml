@@ -62,7 +62,7 @@
 - type: entity
   name: Burrower
   id: MobXeno
-  parent: [ SimpleSpaceMobBase, MobVentCritter ]
+  parent: [ SimpleSpaceMobBase, MobVentCritter ] # Den: add MobVentCritter
   description: They mostly come at night. Mostly.
   components:
   - type: Insulated
@@ -483,7 +483,7 @@
 
 - type: entity
   name: space adder
-  parent: [ SimpleSpaceMobBase, MobVentCritter ]
+  parent: [ SimpleSpaceMobBase, MobVentCritter ] # Den: add MobVentCritter
   id: MobPurpleSnake
   description: A menacing purple snake from Kepler-283c.
   components:

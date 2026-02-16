@@ -266,7 +266,7 @@
   name: Reagent slime
   id: ReagentSlime
   suffix: Water
-  parent: [ MobAdultSlimes, MobCombat, MobVentCritter ]
+  parent: [ MobAdultSlimes, MobCombat, MobVentCritter ] # Den: add MobVentCritter
   description: It consists of a liquid, and it wants to dissolve you in itself.
   components:
   - type: GhostRole
