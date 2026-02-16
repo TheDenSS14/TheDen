@@ -102,6 +102,30 @@
     - sprite: _DEN/Objects/Fun/whistlerplushie.rsi
       state: icon
 
+- type: foodSequenceElement
+  id: PattyPlushie # got permission from uts -june
+  scale: 0.8, 0.8
+  name: food-sequence-cotton-burger-content-plushie-patty
+  sprites:
+  - sprite: _DEN/Objects/Fun/pattyplushie.rsi
+    state: icon
+
+- type: foodSequenceElement
+  id: TwiggyPlushie # got permission from twiggy -june
+  scale: 0.8, 0.8
+  name: food-sequence-cotton-burger-content-plushie-patty
+  sprites:
+  - sprite: _DEN/Objects/Fun/twiggyplushie.rsi
+    state: icon
+
+- type: foodSequenceElement
+  id: StuPlushie # got permission from horse -june
+  scale: 0.8, 0.8
+  name: food-sequence-cotton-burger-content-plushie-patty
+  sprites:
+  - sprite: _DEN/Objects/Fun/pattyplushie.rsi
+    state: icon
+
 # DeltaV Plushies
 
 - type: foodSequenceElement

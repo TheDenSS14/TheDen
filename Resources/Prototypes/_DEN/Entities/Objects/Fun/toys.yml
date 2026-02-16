@@ -272,3 +272,44 @@
       entries:
         CottonBurger: WhistlerPlushie
 
+# @ undertalesex; approved by june (owner)
+- type: entity
+  parent: BasePlushie
+  id: PlushiePatty
+  name: pitiless plushie
+  description: It doesn't look very healthy.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/pattyplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PattyPlushie
+
+# @ twiggythedragon; approved by june (owner)
+- type: entity
+  parent: BasePlushie
+  id: PlushieTwiggy
+  name: twiggy plushie
+  description: Blep!
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/twiggyplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PattyPlushie
+
+# @ lonely1400; approved by june (owner)
+- type: entity
+  parent: BasePlushie
+  id: PlushieStu
+  name: stu plushie
+  description: A blood-shaded plushie of a certain security officer.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/stuplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PattyPlushie
