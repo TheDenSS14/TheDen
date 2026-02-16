@@ -86,3 +86,14 @@
     layers:
     - state: box_of_doom
     - state: vials
+
+- type: entity
+  parent: CratePlastic
+  id: BodyDissolverTackCrate
+  name: Xeno-B-Gone body dissolver tack crate
+  description: Contains 4 boxes of Xeno-B-Gone brand body dissolver tacks.
+  components:
+  - type: StorageFill
+    contents:
+    - id: BodyDissolverTackBox
+      amount: 4
