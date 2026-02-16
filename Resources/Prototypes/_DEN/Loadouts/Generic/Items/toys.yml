@@ -5,6 +5,7 @@
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Asa
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -31,6 +32,14 @@
   canBeHeirloom: true
   items:
     - BeachBall
+
+- type: loadout
+  id: LoadoutTennisBall
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items:
+    - TennisBall
 
 - type: loadout
   id: LoadoutToySkimmerDiscus

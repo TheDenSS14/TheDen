@@ -106,8 +106,7 @@ public sealed class AnimatedMarkingsSystem : EntitySystem
             foreach (var marking in markings)
             {
                 if (!_prototypeManager.TryIndex<MarkingPrototype>(marking.MarkingId, out var markingPrototype)
-                    || markingPrototype.Shader != "unshaded"
-                    || markingPrototype.ID.EndsWith("Animated"))
+                    || markingPrototype.Shader != "unshaded")
                     continue;
 
                 var lastColor = marking.MarkingColors.LastOrDefault();

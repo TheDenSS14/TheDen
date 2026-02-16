@@ -17124,3 +17124,110 @@ Entries:
   id: 1680
   time: '2026-02-13T06:00:56.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2414
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        GoLobby will now only work when the GameLobby is turned off (on
+        development environments.)
+  id: 1681
+  time: '2026-02-14T07:29:19.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2419
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Removed hands from the Replicator Defender
+    - type: Tweak
+      message: >-
+        Made all replicators clumsy, firing a gun now has a chance to backfire
+        and stun you
+    - type: Tweak
+      message: Buffed the stamina damage and fire rate of the replicator stun projector
+    - type: Tweak
+      message: Buffed the damage of the Repliactor Defenders whip arm
+    - type: Tweak
+      message: Removed overlay colour from replicators NV/Thermal vision
+  id: 1682
+  time: '2026-02-14T08:01:42.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2413
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Changed the size of Medkits back to 2x4 from 2x2.
+    - type: Tweak
+      message: >-
+        Changed the layout of Medkits internal inventory from 16 slots, to 8,
+        and 8.
+    - type: Tweak
+      message: Combat Medkit is now blast proof.
+    - type: Tweak
+      message: Handheld Mass scanners are now Small again.
+    - type: Fix
+      message: Pill canisters can now only fit pills inside.
+  id: 1683
+  time: '2026-02-14T08:02:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2369
+- author: Kelaris
+  changes:
+    - type: Add
+      message: >-
+        Plant Bag of Holding is now craftable at the Protolathe and Service
+        Techfab after researching Basic Life Improvements.
+    - type: Tweak
+      message: >-
+        Industrial Reagent Grinder is now craftable after researching Basic Life
+        Improvements (T2), instead of Advanced Life Improvements (T3). It also
+        holds 20% more chemicals before overflowing.
+    - type: Add
+      message: >-
+        Added Advanced Reagent Grinder as an upgrade to the Industrial Reagent
+        Grinder, available after researching Advanced Life Improvements. It
+        costs bluespace but has slightly increased efficiency, and gigantic
+        chemical storage.
+    - type: Tweak
+      message: >-
+        Ore Bag of Holding bluespace cost reduced from 2 to 1, to match the
+        Plant Bag of Holding.
+  id: 1684
+  time: '2026-02-14T08:02:54.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2415
+- author: entings
+  changes:
+    - type: Add
+      message: Tennis balls now exist in Den space. Chase them to your heart's content.
+  id: 1685
+  time: '2026-02-14T20:22:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2411
+- author: MajorMoth
+  changes:
+    - type: Add
+      message: >-
+        Added a new "Fire Resistance" trait. You can find it in the physical
+        augmentations tab. Make your dragon blorbo sit in an oven now. Look at
+        the PR for exact values.
+  id: 1686
+  time: '2026-02-15T00:15:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2247
+- author: Swissed_Fox
+  changes:
+    - type: Tweak
+      message: >-
+        Alaseta has undergone a little retcon, it should now sound more like a
+        real language!
+  id: 1687
+  time: '2026-02-15T11:45:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2422
+- author: sleepyyapril
+  changes:
+    - type: Remove
+      message: The fire resistance trait was removed.
+  id: 1688
+  time: '2026-02-15T15:35:41.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2424
+- author: MajorMoth
+  changes:
+    - type: Add
+      message: 'ADMINS: Added a few new tricks. See PR for details.'
+  id: 1689
+  time: '2026-02-15T16:14:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2407

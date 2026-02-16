@@ -28,7 +28,7 @@
 # SPDX-FileCopyrightText: 2025 kosticia
 # SPDX-FileCopyrightText: 2025 portfiend
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: PresentBase
@@ -137,6 +137,8 @@
       - id: PlushieArachind
         orGroup: GiftPool
       - id: ClothingNeckCloakMoth
+        orGroup: GiftPool
+      - id: TennisBall
         orGroup: GiftPool
       - id: ToyMouse
         orGroup: GiftPool
