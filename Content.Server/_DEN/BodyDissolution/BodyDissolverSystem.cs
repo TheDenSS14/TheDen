@@ -74,9 +74,9 @@ namespace Content.Server.BodyDissolution
             {
                 if (TryComp<TransformComponent>(queued, out var transformComponent))
                 { // for some reason doing queued.ToCoordinates() makes the game stop playback immediately due to the entity being deleted.
-                    _sharedAudioSystem.PlayPvs(new SoundCollectionSpecifier("GlassBreak"), transformComponent.Coordinates);
+                    _sharedAudioSystem.PlayPvs(new SoundCollectionSpecifier("GlassBreak"), transformComponent.Coordinates); // can the sound be not hardcoded? yeah. will anyone care? probably not.
                 }
-                Del(queued);
+                QueueDel(queued);
             }
         }
 
@@ -90,19 +90,19 @@ namespace Content.Server.BodyDissolution
         /// </summary>
         private void OnEmbed(Entity<BodyDissolverComponent> tack, ref EmbedEvent args)
         {
-            if (!tack.Comp.SafetyEnabled)
+            if (!tack.Comp.SafetyEnabled) // if the safety is disabled, that means we've added EmbedPassiveDamageComponent. everything except for the message is handled by EmbedPassiveDamageSystem
             {
                 _sharedChatSystem.TrySendInGameICMessage(tack, Loc.GetString("body-dissolution-emagged"), InGameICChatType.Speak, hideChat: true);
                 return;
             }
 
-            if (!HasComp<BodyDissolvableComponent>(args.Embedded))
+            if (!HasComp<BodyDissolvableComponent>(args.Embedded)) // check if the body has the relevant component
             {
                 _sharedChatSystem.TrySendInGameICMessage(tack, Loc.GetString("body-dissolution-fail-not-dissolvable"), InGameICChatType.Speak, hideChat: true);
                 return;
             }
 
-            if (!_mobStateSystem.IsDead(args.Embedded))
+            if (!_mobStateSystem.IsDead(args.Embedded)) // we only want this to work on dead mobs, otherwise uh well. nightmare!
             {
                 _sharedChatSystem.TrySendInGameICMessage(tack, Loc.GetString("body-dissolution-fail-not-dead"), InGameICChatType.Speak, hideChat: true);
                 return;
@@ -119,7 +119,7 @@ namespace Content.Server.BodyDissolution
 
             if (!tack.Comp.SafetyEnabled)
             {
-                _sharedPopupSystem.PopupCursor(Loc.GetString("body-dissolution-throw"));
+                _sharedPopupSystem.PopupCursor(Loc.GetString("body-dissolution-throw")); // yes this is a hack. I just don't know how to properly embed something into someone when clicking on them
                 return;
             }
 
@@ -171,11 +171,11 @@ namespace Content.Server.BodyDissolution
             }
 
             _puddleSystem.TrySpillAt(dissolutee.ToCoordinates(), solution, out var puddle, true);
-            _sharedAudioSystem.PlayPvs(dissolver.Comp.DissolveSound, puddle); // maybe add GlassBreak to this?
+            _sharedAudioSystem.PlayPvs(dissolver.Comp.DissolveSound, puddle);
 
             if (TryComp<BodyComponent>(dissolutee, out var bodyComponent))
             {
-                _sharedAudioSystem.PlayPvs(bodyComponent.GibSound, puddle);
+                _sharedAudioSystem.PlayPvs(bodyComponent.GibSound, puddle); // I could play the gib sound at the dissolu-tee's coordinates but this works just as well
             }
 
             var plume = new GasMixture(1) { Temperature = 330.0f };

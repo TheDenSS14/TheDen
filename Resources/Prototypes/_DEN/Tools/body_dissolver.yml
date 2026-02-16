@@ -56,12 +56,15 @@
           collection: GlassBreak
   - type: Appearance
   - type: BodyDissolver
-    emaggedLifetime: 5
+    emaggedLifetime: 5.5
     damageWhenEmagged:
       types:
-        Caustic: 5
+        Caustic: 5 # this means it should deal 25 caustic damage in total, if it's not ripped out before then
   - type: Speech
     speechSounds: Pai
+  - type: Tag
+    tags:
+      - BodyDissolverTack
 
 - type: entity
   parent: BoxCardboard
@@ -71,10 +74,10 @@
   components:
   - type: Storage
     grid:
-    - 0,0,4,1
+    - 0,0,4,3
     whitelist:
-      components:
-      - BodyDissolver
+      tags:
+        - BodyDissolverTack
   - type: StorageFill
     contents:
     - id: BodyDissolverTack
