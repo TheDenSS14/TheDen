@@ -2688,7 +2688,7 @@
   - type: Fauna # Lavaland Change
 
 - type: entity
-  parent: MobSpiderBase
+  parent: [ MobSpiderBase, MobVentCritter ]
   id: MobSpiderAngryBase
   abstract: true
   components:
