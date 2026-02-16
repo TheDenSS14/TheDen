@@ -299,6 +299,8 @@
 
 - type: entity
   id: MobVentCritter
+  abstract: trie
+  categories: [HideSpawnMenu]
   components:
   - type: BodyDissolvable
 
