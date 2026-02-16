@@ -5,7 +5,6 @@
   id: BodyDissolverTack
   components:
   - type: EmbeddableProjectile
-    sound: null
     minimumSpeed: 3
     removalTime: 0.5
     offset: 0.0,0.0
@@ -48,26 +47,19 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 30 #excess damage avoids cost of spawning entities.
+        damage: 3 # can be broken in one hit via a melee strike for example
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 20
-      behaviors:
       - !type:PlaySoundBehavior
         sound:
           collection: GlassBreak
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          PartRodMetal1:
-            min: 1
-            max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: Appearance
   - type: BodyDissolver
+    emaggedLifetime: 5
+    damageWhenEmagged:
+      types:
+        Caustic: 5
   - type: Speech
     speechSounds: Pai
 
@@ -81,7 +73,8 @@
     grid:
     - 0,0,4,1
     whitelist:
-    - BodyDissolverTack
+      components:
+      - BodyDissolver
   - type: StorageFill
     contents:
     - id: BodyDissolverTack
