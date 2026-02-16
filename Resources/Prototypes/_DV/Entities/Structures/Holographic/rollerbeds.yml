@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2026 Jakumba
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -38,6 +39,10 @@
       visible: false
   - type: StaticPrice
     price: 200
+  # Den
+  - type: Tag
+    tags:
+    - Rollerbed
 
 
 - type: entity

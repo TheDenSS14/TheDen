@@ -19,8 +19,9 @@
 // SPDX-FileCopyrightText: 2025 Shaman
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 MajorMoth
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -31,12 +32,16 @@ using Content.Server.Atmos;
 using Content.Server.Atmos.Components;
 using Content.Server.Cargo.Components;
 using Content.Server.Doors.Systems;
+using Content.Server.Fax;
 using Content.Server.Hands.Systems;
+using Content.Server.PDA.Ringer;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Server.Prayer;
 using Content.Server.Stack;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
+using Content.Server.Traitor.Uplink;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared._DEN.Unrotting;
 using Content.Shared._Impstation.Thaven.Components; // Imp
@@ -46,18 +51,24 @@ using Content.Shared.Access.Systems;
 using Content.Shared.Administration;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Rotting;
+using Content.Shared.Construction;
 using Content.Shared.Construction.Components;
+using Content.Shared.Coordinates;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Database;
 using Content.Shared.Doors.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Paper;
 using Content.Shared.PDA;
+using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Stacks;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
+using Microsoft.CodeAnalysis;
 using Robust.Server.Physics;
+using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
@@ -84,6 +95,10 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly GunSystem _gun = default!;
     [Dependency] private readonly ThavenMoodsSystem _moods = default!;
+    [Dependency] private readonly SharedFlatpackSystem _sharedFlatpackSystem = default!;
+    [Dependency] private readonly UplinkSystem _uplinkSystem = default!;
+    [Dependency] private readonly RingerSystem _ringerSystem = default!;
+    [Dependency] private readonly FaxSystem _faxSystem = default!;
 
     private void AddTricksVerbs(GetVerbsEvent<Verb> args)
     {
@@ -836,6 +851,116 @@ public sealed partial class AdminVerbSystem
 
             args.Verbs.Add(pauseRotting);
         }
+
+        Verb turnIntoFlatpack = new()
+        {
+            Text = Loc.GetString("admin-trick-flatpack-text"),
+            Message = Loc.GetString("admin-trick-flatpack-description"),
+            Category = VerbCategory.Tricks,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("Objects/Devices/flatpack.rsi"), "base"),
+            Impact = LogImpact.Medium,
+            Priority = (int) TricksVerbPriorities.TurnIntoFlatpack,
+            Act = () =>
+            {
+                var flatpack = SpawnAtPosition("BaseFlatpack", args.Target.ToCoordinates());
+                var targetMeta = MetaData(args.Target);
+                var flatpackMeta = MetaData(flatpack);
+
+                if (targetMeta is null || flatpackMeta is null)
+                    return;
+
+                _sharedFlatpackSystem.ChangeFlatpackEntity(flatpack, targetMeta.EntityPrototype);
+                _metaSystem.SetEntityName(flatpack, string.Concat(targetMeta.EntityName, " flatpack"), flatpackMeta);
+
+                Del(args.Target);
+            }
+        };
+
+        args.Verbs.Add(turnIntoFlatpack);
+
+        if (TryComp<ContainerManagerComponent>(args.Target, out var containerCompAddUplink) &&
+            containerCompAddUplink.Containers.ContainsKey("id") &&
+            containerCompAddUplink.Containers["id"] is ContainerSlot idSlotAddUplink &&
+            idSlotAddUplink.ContainedEntity is EntityUid pdaAddUplink &&
+            !EntityManager.HasComponent<RingerUplinkComponent>(pdaAddUplink) &&
+            EntityManager.HasComponent<PdaComponent>(pdaAddUplink))
+        {
+            Verb addUplink = new()
+            {
+                Text = Loc.GetString("admin-trick-add-uplink-text"),
+                Message = Loc.GetString("admin-trick-add-uplink-description"),
+                Priority = (int) TricksVerbPriorities.AddUplink,
+                Category = VerbCategory.Tricks,
+                Impact = LogImpact.High,
+                Icon = new SpriteSpecifier.Rsi(new ResPath("Objects/Devices/pda.rsi"), "pda-syndi"),
+                Act = () =>
+                {
+                    if (!TryComp(args.Target, out ActorComponent? targetActor))
+                        return;
+
+                    _uplinkSystem.AddUplink(args.Target, 100, pdaAddUplink, true);
+
+                    var ringerUplink = EnsureComp<RingerUplinkComponent>(pdaAddUplink);
+
+                    _ringerSystem.LockUplink(pdaAddUplink, ringerUplink);
+
+                    string code = string.Concat("\n[color=crimson]", string.Join("-", ringerUplink.Code).Replace("sharp", "#"), "[/color]");
+                    string message = string.Concat("[color=gold]", Loc.GetString("traitor-role-uplink-code", ("code", code)), "[/color]");
+
+                    _prayerSystem.SendSubtleMessage(targetActor.PlayerSession, player, message, Loc.GetString("prayer-popup-subtle-default"));
+                },
+            };
+            args.Verbs.Add(addUplink);
+        }
+
+        if (TryComp<ContainerManagerComponent>(args.Target, out var containerCompRemoveUplink) &&
+            containerCompRemoveUplink.Containers.ContainsKey("id") &&
+            containerCompRemoveUplink.Containers["id"] is ContainerSlot idSlotRemoveUplink &&
+            idSlotRemoveUplink.ContainedEntity is EntityUid pdaRemoveUplink &&
+            HasComp<RingerUplinkComponent>(pdaRemoveUplink) &&
+            HasComp<PdaComponent>(pdaRemoveUplink))
+        {
+            Verb removeUplink = new()
+            {
+                Text = Loc.GetString("admin-trick-remove-uplink-text"),
+                Message = Loc.GetString("admin-trick-remove-uplink-description"),
+                Priority = (int) TricksVerbPriorities.AddUplink, // add uplink and remove uplink cannot exist at the same time so this is fine
+                Category = VerbCategory.Tricks,
+                Impact = LogImpact.High,
+                Icon = new SpriteSpecifier.Rsi(new ResPath("Objects/Devices/pda.rsi"), "pda-syndi"),
+                Act = () =>
+                {
+                    RemComp<RingerUplinkComponent>(pdaRemoveUplink);
+                    RemComp<UplinkComponent>(pdaRemoveUplink);
+                },
+            };
+            args.Verbs.Add(removeUplink);
+        }
+
+        if (HasComp<PaperComponent>(args.Target))
+        {
+            Verb copyPaper = new()
+            {
+                Text = Loc.GetString("admin-trick-copy-paper-text"),
+                Message = Loc.GetString("admin-trick-copy-paper-description"),
+                Priority = (int) TricksVerbPriorities.Bolt,
+                Category = VerbCategory.Tricks,
+                Impact = LogImpact.Low,
+                Icon = new SpriteSpecifier.Rsi(new ResPath("Objects/Misc/bureaucracy.rsi"), "paper"),
+                Act = () =>
+                {
+                    _quickDialog.OpenDialog(player, Loc.GetString("admin-trick-copy-paper-text"), Loc.GetString("admin-trick-copy-paper-dialog-prompt"), (int nOfCopies) =>
+                    {
+                        for (; nOfCopies > 0; nOfCopies--)
+                        {
+                            _faxSystem.CopyNoMachine(args.Target);
+                        }
+                    });
+                },
+            };
+            args.Verbs.Add(copyPaper);
+        }
+        // Den end
     }
 
     private void RefillEquippedTanks(EntityUid target, Gas plasma)
@@ -983,7 +1108,8 @@ public sealed partial class AdminVerbSystem
         SetBulletAmount = -29,
         AddRandomMood = -30,
         AddCustomMood = -31,
-
         PauseRotting = -32,
+        TurnIntoFlatpack = -33,
+        AddUplink = -34,
     }
 }

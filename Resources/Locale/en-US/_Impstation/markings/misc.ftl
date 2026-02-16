@@ -5,8 +5,9 @@
 # SPDX-FileCopyrightText: 2025 maelines
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 little-meow-meow
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # this file is subject to getting its shit moved to other files at a later date#
 
@@ -122,6 +123,13 @@ marking-MothBee-bee1 = Outer Stripes
 marking-MothBee-bee2 = Wings
 # Frontier: stripe < Stripe
 marking-MothBee-bee3 = Inner Stripe
+# begin Den add
+marking-MothBeeGlowing = Wings (Bumblebee, Glowing)
+marking-MothBeeGlowing-bee1 = Outer Stripes
+marking-MothBeeGlowing-bee2 = Wings
+marking-MothBeeGlowing-bee3 = Neck Stripe
+marking-MothBeeGlowing-bee3_lower = Tail Stripe
+# end Den add
 marking-MothBeetleTail = Beetle Wings (Junebug)
 marking-MothBeetleTail-beetle1 = Outline
 marking-MothBeetleTail-beetle2 = Wings
