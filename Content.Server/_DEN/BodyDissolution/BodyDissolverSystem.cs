@@ -21,6 +21,9 @@ using Robust.Shared.Spawners;
 using System.Runtime.Intrinsics.X86;
 using Npgsql.Replication.PgOutput.Messages;
 using Content.Server.Worldgen.Prototypes;
+using Content.Shared.Interaction;
+using Content.Server.Popups;
+using Content.Shared.Popups;
 
 namespace Content.Server.BodyDissolution
 {
@@ -32,6 +35,7 @@ namespace Content.Server.BodyDissolution
         [Dependency] private readonly SharedChatSystem _sharedChatSystem = default!;
         [Dependency] private readonly SharedSolutionContainerSystem _sharedSolutionContainerSystem = default!;
         [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
+        [Dependency] private readonly SharedPopupSystem _sharedPopupSystem = default!;
 
         private readonly HashSet<EntityUid> _queuedDestroyTacks = new();
 
@@ -40,6 +44,7 @@ namespace Content.Server.BodyDissolution
             base.Initialize();
             SubscribeLocalEvent<BodyDissolverComponent, EmbedEvent>(OnEmbed);
             SubscribeLocalEvent<BodyDissolverComponent, GotEmaggedEvent>(OnEmagged);
+            SubscribeLocalEvent<BodyDissolverComponent, AfterInteractEvent>(OnAfterInteract);
         }
 
         public override void Update(float frameTime)
@@ -96,15 +101,41 @@ namespace Content.Server.BodyDissolution
                 _sharedChatSystem.TrySendInGameICMessage(tack, Loc.GetString("body-dissolution-fail-not-dissolvable"), InGameICChatType.Speak, hideChat: true);
                 return;
             }
-            /* // TODO: find a way to embed projectiles into mobs that are lying down
+
             if (!_mobStateSystem.IsDead(args.Embedded))
             {
-                _sharedChatSystem.TrySendInGameICMessage(tack, Loc.GetString("body-dissolution-fail-not-dead"), InGameICChatType.Speak, true);
+                _sharedChatSystem.TrySendInGameICMessage(tack, Loc.GetString("body-dissolution-fail-not-dead"), InGameICChatType.Speak, hideChat: true);
                 return;
             }
-            */
 
             DissolveBody(tack, args.Embedded);
+            Del(tack);
+        }
+
+        private void OnAfterInteract(Entity<BodyDissolverComponent> tack, ref AfterInteractEvent args)
+        {
+            if (args.Target is null)
+                return;
+
+            if (!tack.Comp.SafetyEnabled)
+            {
+                _sharedPopupSystem.PopupCursor(Loc.GetString("body-dissolution-throw"));
+                return;
+            }
+
+            if (!HasComp<BodyDissolvableComponent>(args.Target))
+            {
+                _sharedChatSystem.TrySendInGameICMessage(tack, Loc.GetString("body-dissolution-fail-not-dissolvable"), InGameICChatType.Speak, hideChat: true);
+                return;
+            }
+
+            if (!_mobStateSystem.IsDead((EntityUid) args.Target))
+            {
+                _sharedChatSystem.TrySendInGameICMessage(tack, Loc.GetString("body-dissolution-fail-not-dead"), InGameICChatType.Speak, hideChat: true);
+                return;
+            }
+
+            DissolveBody(tack, (EntityUid) args.Target);
             Del(tack);
         }
 
@@ -124,7 +155,6 @@ namespace Content.Server.BodyDissolution
             tack.Comp.SafetyEnabled = false;
             args.Handled = true;
         }
-
         private void DissolveBody(Entity<BodyDissolverComponent> dissolver, EntityUid dissolutee)
         {
             if (!TryComp<BodyDissolvableComponent>(dissolutee, out var bodyDissolvableComponent) ||
