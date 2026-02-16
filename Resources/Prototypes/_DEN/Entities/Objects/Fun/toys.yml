@@ -313,3 +313,17 @@
   - type: FoodSequenceElement
     entries:
       CottonBurger: PattyPlushie
+
+# @ leonardo_dabepis; approved by june (owner)
+- type: entity
+  parent: BasePlushie
+  id: PlushiePhil
+  name: normal cat plushie
+  description: Why does it look like that...?!
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/philplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PhilPlushie

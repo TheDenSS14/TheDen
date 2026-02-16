@@ -51,3 +51,7 @@ food-sequence-cotton-burger-content-plushie-vega = vega
 food-sequence-cotton-burger-content-plushie-vulp = vulp
 food-sequence-cotton-burger-content-plushie-mantisdoll = doll
 food-sequence-cotton-burger-content-plushie-whistler = whistler
+food-sequence-cotton-burger-content-plushie-patty = patty
+food-sequence-cotton-burger-content-plushie-twiggy = twiggy
+food-sequence-cotton-burger-content-plushie-stu = stu
+food-sequence-cotton-burger-content-plushie-phil = normal?
