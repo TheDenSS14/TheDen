@@ -244,7 +244,7 @@ public sealed partial class ChatSystem
             obfuscatedKeys,
             isDetailed);
 
-        foreach (var (session, data) in GetRecipients(source, WhisperMuffledRange))
+        foreach (var (session, data) in GetRecipients(source, WhisperClearRange))
         {
             if (session.AttachedEntity is not { Valid: true } listener
                 || session.AttachedEntity.HasValue && HasComp<GhostComponent>(session.AttachedEntity.Value)
@@ -272,13 +272,6 @@ public sealed partial class ChatSystem
                 // Scenario 1: the listener can clearly understand the message
                 result = perceivedMessage;
                 wrappedMessage = WrapWhisperMessageDepending(source, false, name, result, perceivedKeys, language, isDetailed, space);
-            }
-            else if (_interactionSystem.InRangeUnobstructed(source, listener, WhisperMuffledRange, _subtleWhisperMask))
-            {
-                // Scenario 2: if the listener is too far, they only hear fragments of the message
-                result = ObfuscateMessageReadabilityDepending(perceivedMessage, perceivedKeys, isDetailed: isDetailed);
-                perceivedKeys = _language.GetKeysWithinDialogue(result);
-                wrappedMessage = WrapWhisperMessageDepending(source, false, nameIdentity, result, perceivedKeys, language, isDetailed, space);
             }
             else
             {
