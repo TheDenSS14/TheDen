@@ -56,58 +56,39 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Ghost;
 using Content.Server.Language;
-using Content.Server.Speech.Components;
 using Content.Server.Speech.EntitySystems;
-using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
-using Content.Shared.Database;
 using Content.Shared.Ghost;
 using Content.Shared.Language;
-using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Players;
 using Content.Shared.Players.RateLimiting;
-using Content.Shared.Radio;
 using Content.Shared.Whitelist;
 using Robust.Server.Player;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
-using Robust.Shared.Network;
-using Robust.Shared.Physics;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
-using Content.Shared.Language.Components;
 using Content.Shared.Physics;
-using Content.Server.Shuttles.Components;
-using Content.Shared.Actions;
-using Robust.Shared.Map;
-using Robust.Shared.Physics.Components;
-using Robust.Shared.Physics.Dynamics.Joints;
-using Content.Server.Effects;
 using Content.Server.Hands.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Popups;
 using Content.Server._Wizden.Chat.Systems;
 using Content.Server._Floof.Consent;
-using Content.Shared._DEN.Earmuffs;
-using Content.Shared._DEN.StringBounds;
+using Content.Shared._Floof.Consent;
 
 
 namespace Content.Server.Chat.Systems;
@@ -150,16 +131,15 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly LastMessageBeforeDeathSystem _lastMessageBeforeDeathSystem = default!; // Imp Edit LastMessageBeforeDeath Webhook
     [Dependency] private readonly ConsentSystem _consent = default!;
 
-    private readonly string LastMessageConsent = "LastMessage";
+    private readonly ProtoId<ConsentTogglePrototype> LastMessageConsent = "LastMessage";
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
-    public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
     public const float InSpaceRange = .3f; // how far speech travels in space
     public const string DefaultAnnouncementSound = "/Audio/Announcements/announce.ogg";
     public const float DefaultObfuscationFactor = 0.2f; // Percentage of symbols in a whispered message that can be seen even by "far" listeners
     public readonly Color DefaultSpeakColor = Color.White;
-    private readonly CollisionGroup _subtleWhisperMask = CollisionGroup.Impassable;
+    private readonly CollisionGroup _subtleWhisperMask = CollisionGroup.InteractImpassable;
 
     private bool _loocEnabled = true;
     private bool _deadLoocEnabled;
