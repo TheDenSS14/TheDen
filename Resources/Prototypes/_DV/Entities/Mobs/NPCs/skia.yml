@@ -82,15 +82,15 @@
     lightThreshold: 0.7
     darkDamage:
       groups:
-        Brute: -5
-        Burn: -5
+        Brute: -10 # Den
+        Burn: -10 # Den
         Toxin: -5
         Airloss: -5
         Genetic: -5
         Metaphysical: -1
     lightDamage:
       groups:
-        Brute: 5
+        Brute: 0 # Den
     healWhenDead: true
     darkMovementSpeedMultiplier: 1.25
     lightMovementSpeedMultiplier: 1.0
