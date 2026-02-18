@@ -120,4 +120,6 @@ public sealed class DenuUIController : UIController
             _circleOverlay = null;
         }
     }
+
+    public void SetShouldUseTypingCircleOverlay(bool value) => _earmuffsSystem.UpdateTypingUsesCircleOverlay(value);
 }

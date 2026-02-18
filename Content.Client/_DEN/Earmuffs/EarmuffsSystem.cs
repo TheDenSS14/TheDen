@@ -19,6 +19,7 @@ public sealed class EarmuffsSystem : SharedEarmuffsSystem
     [Dependency] private readonly IUserInterfaceManager _ui = null!;
 
     private CircleOverlay? _circleOverlay;
+    private bool _useCircleOverlay;
 
     public override void Initialize()
     {
@@ -29,6 +30,9 @@ public sealed class EarmuffsSystem : SharedEarmuffsSystem
 
     private void OnTypingChanged(TypingChangedEvent ev)
     {
+        if (!_useCircleOverlay)
+            return;
+
         var range = GetRange();
 
         if (ev.State != TypingIndicatorState.Typing || range == null)
@@ -43,6 +47,11 @@ public sealed class EarmuffsSystem : SharedEarmuffsSystem
 
         _circleOverlay.Range = range.Value;
         _circleOverlay.ShowCircle();
+    }
+
+    public void UpdateTypingUsesCircleOverlay(bool value)
+    {
+        _useCircleOverlay = value;
     }
 
     public void UpdateEarmuffs(float range)

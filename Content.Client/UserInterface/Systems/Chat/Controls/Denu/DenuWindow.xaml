@@ -20,6 +20,10 @@
                 </BoxContainer>
 
                 <BoxContainer Orientation="Horizontal" Margin="0 0">
+                    <CheckBox Name="ShowTypingRange" Text="Show Typing Range on Whispers/Subtles" />
+                </BoxContainer>
+
+                <BoxContainer Orientation="Horizontal" Margin="0 0">
                     <components:ToggleCheckbox Name="TypingToggleButton" Text="Typing Toggle" />
                 </BoxContainer>
 

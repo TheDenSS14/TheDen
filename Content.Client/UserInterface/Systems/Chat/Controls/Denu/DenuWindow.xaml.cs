@@ -71,6 +71,7 @@ public sealed partial class DenuWindow : AnimatedWindow
         EarmuffSlider.OnValueChanged += slider => OnEarmuffSliderChanged(slider.Value);
 
         AutoFormatterCheckBox.OnToggled += args => _denuUIController.AutoFormatterEnabled = args.Pressed;
+        ShowTypingRange.OnToggled += args => _denuUIController.SetShouldUseTypingCircleOverlay(args.Pressed);
         RemoveAsterisksCheckBox.OnToggled += args =>
         {
             _denuUIController.FormatterConfig.RemoveAsterisks = args.Pressed;

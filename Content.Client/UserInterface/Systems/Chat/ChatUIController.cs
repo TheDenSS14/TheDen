@@ -847,7 +847,13 @@ public sealed partial class ChatUIController : UIController
             text = $";{text}";
         }
 
-        if (_denuUIController!.AutoFormatterEnabled)
+        if (_denuUIController!.AutoFormatterEnabled
+            && channel is ChatSelectChannel.Local
+                or ChatSelectChannel.Radio
+                or ChatSelectChannel.Whisper
+                or ChatSelectChannel.Subtle
+                or ChatSelectChannel.SubtleOOC
+                or ChatSelectChannel.Emotes)
         {
             text = _denuUIController.FormatMessage(text);
         }
