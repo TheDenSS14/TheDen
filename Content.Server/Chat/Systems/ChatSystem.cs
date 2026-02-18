@@ -133,9 +133,6 @@ public sealed partial class ChatSystem : SharedChatSystem
 
     private readonly ProtoId<ConsentTogglePrototype> LastMessageConsent = "LastMessage";
 
-    public const int VoiceRange = 10; // how far voice goes in world units
-    public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
-    public const float InSpaceRange = .3f; // how far speech travels in space
     public const string DefaultAnnouncementSound = "/Audio/Announcements/announce.ogg";
     public const float DefaultObfuscationFactor = 0.2f; // Percentage of symbols in a whispered message that can be seen even by "far" listeners
     public readonly Color DefaultSpeakColor = Color.White;

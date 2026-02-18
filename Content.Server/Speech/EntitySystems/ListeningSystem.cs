@@ -62,7 +62,7 @@ public sealed class ListeningSystem : EntitySystem
                 continue;
             }
 
-            if (obfuscatedEv != null && distance > ChatSystem.WhisperClearRange)
+            if (obfuscatedEv != null && distance > _chat.WhisperClearRange)
                 RaiseLocalEvent(listenerUid, obfuscatedEv);
             else
                 RaiseLocalEvent(listenerUid, ev);

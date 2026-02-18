@@ -15,5 +15,5 @@ namespace Content.Server.Speech.Components;
 public sealed partial class ActiveListenerComponent : Component
 {
     [DataField("range")]
-    public float Range = ChatSystem.VoiceRange;
+    public float Range = 10f;
 }
