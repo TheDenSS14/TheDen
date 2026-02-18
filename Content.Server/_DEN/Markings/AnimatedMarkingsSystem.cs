@@ -89,6 +89,7 @@ public sealed class AnimatedMarkingsSystem : EntitySystem
         }
 
         ent.Comp.StopAnimatingNextFrame = !ent.Comp.StopAnimatingNextFrame;
+        args.Handled = true;
     }
 
     public void DoDebugAnimation(Entity<HumanoidAppearanceComponent> ent)
