@@ -80,6 +80,8 @@ entities:
     - type: GridTree
     - type: Broadphase
     - type: OccluderTree
+    - type: Parallax
+      parallax: ArenaStation
   - uid: 2
     components:
     - type: MetaData
