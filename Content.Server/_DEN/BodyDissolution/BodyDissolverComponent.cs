@@ -13,6 +13,12 @@ namespace Content.Server.BodyDissolution
         public SoundSpecifier? DissolveSound = new SoundPathSpecifier("/Audio/_DEN/Effects/body_dissolver_tack.ogg");
 
         /// <summary>
+        ///     Destroy on use?
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public bool DestroyOnUse = true;
+
+        /// <summary>
         ///     Can this be emagged?
         /// </summary>
         [DataField, ViewVariables(VVAccess.ReadWrite)]

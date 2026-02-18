@@ -109,7 +109,9 @@ namespace Content.Server.BodyDissolution
             }
 
             DissolveBody(tack, args.Embedded);
-            Del(tack);
+
+            if (tack.Comp.DestroyOnUse)
+                Del(tack);
         }
 
         private void OnAfterInteract(Entity<BodyDissolverComponent> tack, ref AfterInteractEvent args)
@@ -136,7 +138,8 @@ namespace Content.Server.BodyDissolution
             }
 
             DissolveBody(tack, (EntityUid) args.Target);
-            Del(tack);
+            if (tack.Comp.DestroyOnUse)
+                Del(tack);
         }
 
         private void OnEmagged(Entity<BodyDissolverComponent> tack, ref GotEmaggedEvent args)
