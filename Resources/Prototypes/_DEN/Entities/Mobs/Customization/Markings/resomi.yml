@@ -1,17 +1,20 @@
 - type: marking
   id: ResomiFuzzballMk2
-  bodyPart: Head
-  markingCategory: Head
+  bodyPart: HeadSide
+  markingCategory: HeadSide
   speciesRestriction: [ Resomi ]
+  colorLinks:
+    resomi_m_ears_antenna_fuzzballv2_ADJ_primary: resomi_m_ears_antenna_fuzzballv2_FRONT_primary
+    resomi_m_ears_antenna_fuzzballv2_ADJ_tertiary: resomi_m_ears_antenna_fuzzballv2_FRONT_tertiary
   forcedColoring: false
   followSkinColor: false
   sprites:
-  - sprite: _DEN\Mobs\Customization\Head\resomi.rsi
-    state: resomi_m_ears_antenna_fuzzballv2_ADJ_primary
-  - sprite: _DEN\Mobs\Customization\Head\resomi.rsi
-    state: resomi_m_ears_antenna_fuzzballv2_ADJ_tertiary
-  - sprite: _DEN\Mobs\Customization\Head\resomi.rsi
+  - sprite: _DEN/Mobs/Customization/Head/resomi.rsi
     state: resomi_m_ears_antenna_fuzzballv2_FRONT_primary
-  - sprite: _DEN\Mobs\Customization\Head\resomi.rsi
+  - sprite: _DEN/Mobs/Customization/Head/resomi.rsi
+    state: resomi_m_ears_antenna_fuzzballv2_ADJ_tertiary
+  - sprite: _DEN/Mobs/Customization/Head/resomi.rsi
+    state: resomi_m_ears_antenna_fuzzballv2_ADJ_primary
+  - sprite: _DEN/Mobs/Customization/Head/resomi.rsi
     state: resomi_m_ears_antenna_fuzzballv2_FRONT_tertiary
   shader: unshaded
