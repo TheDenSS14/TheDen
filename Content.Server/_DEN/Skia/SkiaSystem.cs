@@ -28,6 +28,7 @@ public sealed class SkiaSystem : SharedSkiaSystem
 {
 
     private const string SKIA_REAP_MOOD_PROTO_ID = "SkiaReaped";
+    private const string SKIA_BLUESPACE_FLASH_EFFECT_PROTO_ID = "EffectLivingShadows";
 
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedInteractionSystem _interact = default!;
@@ -133,6 +134,12 @@ public sealed class SkiaSystem : SharedSkiaSystem
         AddComp<SoulReapedComponent>(args.Target.Value);
         RaiseLocalEvent(args.Target.Value, new MoodEffectEvent(SKIA_REAP_MOOD_PROTO_ID));
 
+        // Spawn mob on the victim
+        var coords = Transform(args.Target.Value).Coordinates;
+
+        Spawn(SKIA_BLUESPACE_FLASH_EFFECT_PROTO_ID, coords);
+        Spawn(comp.MobReapSpawnProtoId, coords);
+
         // Add soul silk to the Skia
         _store.TryAddCurrency(new Dictionary<string, FixedPoint2> { { comp.SoulSilkCurrencyPrototype, comp.SilkGained } }, uid);
         comp.ReapCount++;
@@ -149,9 +156,11 @@ public sealed class SkiaSystem : SharedSkiaSystem
 
         var xform = Transform(uid);
 
+        Spawn(SKIA_BLUESPACE_FLASH_EFFECT_PROTO_ID, xform.Coordinates);
+
         for (int i = 0; i < comp.MobSpawnAmount + comp.ReapCount; i++)
         {
-            Spawn(comp.MobProtoId, xform.Coordinates);
+            Spawn(comp.MobTwistShadowProtoId, xform.Coordinates);
         }
     }
 }

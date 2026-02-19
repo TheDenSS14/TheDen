@@ -49,14 +49,16 @@ public sealed partial class SkiaComponent : Component
     [DataField, AutoNetworkedField]
     public EntityUid? ShopAction;
 
-    [DataField]
-    public EntProtoId SummonShadowsActionId = "ActionSkiaSpawnShadows";
+    /// <summary>
+    /// ProtoId of mobs to spawn on Reap
+    /// </summary>
+    public EntProtoId MobReapSpawnProtoId = "MobSpectre";
 
     /// <summary>
     /// ProtoId of mobs to spawn on SummonShadowsActionId
     /// </summary>
     [DataField]
-    public EntProtoId MobProtoId = "MobLivingShadow";
+    public EntProtoId MobTwistShadowProtoId = "MobLivingShadow";
 
     /// <summary>
     /// How many mobs are spawned on SummonShadowsActionId
