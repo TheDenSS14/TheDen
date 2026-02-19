@@ -1,7 +1,7 @@
 - type: entity
   name: living shadow
   parent: [ SimpleSpaceMobBase, FlyingMobBase, MobCombat ]
-  id: MobSkiaLivingShadow
+  id: MobLivingShadow
   description: A tortured scream, agony given metaphysical flesh
   components:
   - type: NoSlip
@@ -82,13 +82,23 @@
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTypeTrigger
-        damageType: Brute
+        !type:DamageTrigger
         damage: 70
       behaviors:
-      - !type:GibBehavior
-        gibContents: Skip
-        recursive: false
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/wail.ogg
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: AmbientSound
+    volume: -8
+    range: 5
+    sound:
+      path: /Audio/Ambience/wisp_ambience.ogg
+  - type: DamageOnDispel
+    damage:
+      types:
+        Holy: 100
   - type: EmbedImmune
     immuneTo:
       components:
