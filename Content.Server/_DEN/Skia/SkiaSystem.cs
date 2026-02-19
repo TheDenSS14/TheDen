@@ -21,6 +21,7 @@ using Content.Shared.Pinpointer;
 using Content.Server.Objectives.Systems;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mood;
+using Content.Shared._DEN.Actions;
 
 namespace Contnet.Server._DEN.Skia;
 
@@ -160,7 +161,12 @@ public sealed class SkiaSystem : SharedSkiaSystem
 
         for (int i = 0; i < comp.MobSpawnAmount + comp.ReapCount; i++)
         {
+            if (i >= comp.MaxSpawnAmount)
+                break;
+
             Spawn(comp.MobTwistShadowProtoId, xform.Coordinates);
         }
+
+        args.Handled = true;
     }
 }

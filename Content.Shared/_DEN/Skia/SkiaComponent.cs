@@ -55,6 +55,11 @@ public sealed partial class SkiaComponent : Component
     public EntProtoId MobReapSpawnProtoId = "MobSpectre";
 
     /// <summary>
+    /// Maximum number of spawns that can be generated from either Reaping or SummonShadowsActionId
+    /// </summary>
+    public float MaxSpawnAmount = 10f;
+
+    /// <summary>
     /// ProtoId of mobs to spawn on SummonShadowsActionId
     /// </summary>
     [DataField]

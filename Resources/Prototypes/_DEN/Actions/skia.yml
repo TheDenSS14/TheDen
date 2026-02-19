@@ -35,9 +35,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
+    useDelay: 45
     icon:
       sprite: _NF/Mobs/BloodCult/drainedone.rsi
       state: icon
-    useDelay: 90
     priority: 5
     event: !type:SkiaSpawnMobsActionEvent
