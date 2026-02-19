@@ -31,13 +31,13 @@
 - type: entity
   id: ActionSkiaTwistShadows
   name: Twist Shadows
-  description: Imbue the shadows around you with vengeful purpose.
+  description: Twist the shadows into minions to protect you.
   categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
-      icon:
-        sprite: _NF/Mobs/BloodCult/drainedone.rsi
-        state: icon
-      useDelay: 120
-      priority: 4
-      event: !type:SkiaSpawnMobsActionEvent
+  - type: InstantAction
+    icon:
+      sprite: _NF/Mobs/BloodCult/drainedone.rsi
+      state: icon
+    useDelay: 180
+    priority: 4
+    event: !type:SkiaSpawnMobsActionEvent
