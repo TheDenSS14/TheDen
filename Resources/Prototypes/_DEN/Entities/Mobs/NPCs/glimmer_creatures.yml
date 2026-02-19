@@ -1,8 +1,8 @@
 - type: entity
+  id: MobLivingShadow
   name: living shadow
   parent: [ SimpleSpaceMobBase, FlyingMobBase, MobCombat ]
-  id: MobLivingShadow
-  description: A tortured scream, agony given metaphysical flesh
+  description: A tortured scream, agony given metaphysical flesh.
   components:
   - type: NoSlip
   - type: ZombieImmune
@@ -18,6 +18,9 @@
     factions:
     - LordsOfTheEndTime
   - type: CanMoveInAir
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.25
+    baseSprintSpeed: 3.75
   - type: Sprite
     drawdepth: Mobs
     sprite: _NF/Mobs/BloodCult/drainedone.rsi
@@ -56,7 +59,6 @@
       groups:
         Brute: -1
         Burn: -1
-        Airloss: -1
   - type: Insulated
   - type: MeleeWeapon
     soundHit:
@@ -90,11 +92,6 @@
           path: /Audio/Effects/wail.ogg
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: AmbientSound
-    volume: -8
-    range: 5
-    sound:
-      path: /Audio/Ambience/wisp_ambience.ogg
   - type: DamageOnDispel
     damage:
       types:
@@ -103,3 +100,90 @@
     immuneTo:
       components:
       - FlareGunPellet
+
+- type: entity
+  id: MobSpectre
+  parent: [ MobLivingShadow ]
+  name: drained one
+  description: A fragment of a tormented soul.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Ghosts/revenant.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: active
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: active
+      Critical:
+        Base: stunned
+      Dead:
+        Base: stunned
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 250
+    damage:
+      groups:
+        Brute: -3
+        Burn: -3
+  - type: MeleeWeapon
+    soundHit:
+    path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 90
+    animation: WeaponArcSkiaLunge
+    wideAnimation: WeaponArcSkiaSwipe
+    wideAnimationRotation: -90
+    swingLeft: true
+    attackRate: 1.0
+    range: 2.0
+    altDisarm: false
+    damage:
+      types:
+        Slash: 25
+        Pierce: 15
+        Cold: 10
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/wail.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Ectoplasm:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: GlimmerSource
+    glimmerPerSecond: 2
+    glimmerExponentOffset: -5
+  - type: AmbientSound
+    volume: -8
+    range: 5
+    sound:
+      path: /Audio/Ambience/wisp_ambience.ogg
+  - type: DamageOnDispel
+    damage:
+      types:
+        Holy: 250
+  - type: EmbedImmune
+    immuneTo:
+      components:
+      - FlareGunPellet
+  - type: EmitSoundOnSpawn
+    sound: /Audio/_DV/Effects/creepyshriek.ogg
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.5
+    baseSprintSpeed: 1.25

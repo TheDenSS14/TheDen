@@ -1,0 +1,13 @@
+- type: entity
+  id: EffectLivingShadows
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    radius: 5
+    energy: 3.5
+    color: "#9370DB"
+  - type: TimedDespawn
+    lifetime: 1
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Effects/Shadowkin/darkswapon.ogg
