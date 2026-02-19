@@ -80,6 +80,9 @@ public sealed class AnimatedMarkingsSystem : EntitySystem
 
     private void OnToggleAction(Entity<AnimatedMarkingsComponent> ent, ref ToggleActionEvent args)
     {
+        if (args.Handled)
+            return;
+
         _actionsSystem.SetToggled(ent.Comp.ActionEntity, !ent.Comp.IsAnimating);
 
         if (!ent.Comp.IsAnimating)
@@ -89,6 +92,7 @@ public sealed class AnimatedMarkingsSystem : EntitySystem
         }
 
         ent.Comp.StopAnimatingNextFrame = !ent.Comp.StopAnimatingNextFrame;
+        args.Handled = true;
     }
 
     public void DoDebugAnimation(Entity<HumanoidAppearanceComponent> ent)
