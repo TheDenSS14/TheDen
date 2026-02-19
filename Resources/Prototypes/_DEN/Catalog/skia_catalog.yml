@@ -8,7 +8,7 @@
   description: mass-sleep-initialization-feedback
   productAction: ActionMassSleep
   cost:
-    SoulSilk: 4
+    SoulSilk: 3
   categories:
   - SkiaAbilities
   conditions:
@@ -24,6 +24,45 @@
     SoulSilk: 2
   categories:
   - SkiaAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: SkiaNoosphericZap
+  name: action-name-noospheric-zap
+  description: action-description-noospheric-zap
+  productAction: ActionNoosphericZap
+  cost:
+    SoulSilk: 3
+  categories:
+    - SkiaAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: SkiaTelekineticPulse
+  name: action-name-telekinetic-pulse
+  description: action-description-telekinetic-pulse
+  productAction: ActionTelekineticPulse
+  cost:
+    SoulSilk: 2
+  categories:
+    - SkiaAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: SkiaLivingShadows
+  name: action-name-twist-shadows
+  description: action-description-twist-shadows
+  productAction: ActionSkiaTwistShadows
+  cost:
+    SoulSilk: 1
+  categories:
+    - SkiaAbilities
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1

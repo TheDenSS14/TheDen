@@ -1,0 +1,95 @@
+- type: entity
+  name: living shadow
+  parent: [ SimpleSpaceMobBase, FlyingMobBase, MobCombat ]
+  id: MobSkiaLivingShadow
+  description: A tortured scream, agony given metaphysical flesh
+  components:
+  - type: NoSlip
+  - type: ZombieImmune
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+  - type: NpcFactionMember
+    factions:
+    - LordsOfTheEndTime
+  - type: CanMoveInAir
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _NF/Mobs/BloodCult/drainedone.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: drained
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 10
+        mask:
+        - SmallMobMask
+        layer:
+        - Opaque
+  - type: Damageable
+    damageContainer: ManifestedSpirit
+    damageModifierSet: ManifestedSpirit
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: drained
+      Dead:
+        Base: icon
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      70: Dead
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 70
+    damage:
+      groups:
+        Brute: -1
+        Burn: -1
+        Airloss: -1
+  - type: Insulated
+  - type: MeleeWeapon
+    soundHit:
+      collection: MetalThud
+    damage:
+      types:
+        Slash: 5
+        Pierce: 5
+        Cold: 10
+    animation: WeaponArcClaw
+  - type: Bloodstream
+    bloodReagent: BlackBlood
+    maxBleedAmount: 0
+    bloodMaxVolume: 15
+  - type: Speech
+    speechVerb: Ghost
+  - type: Body
+    prototype: Skia
+  - type: Butcherable
+    spawned:
+    - id: Ectoplasm
+      amount: 1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Brute
+        damage: 70
+      behaviors:
+      - !type:GibBehavior
+        gibContents: Skip
+        recursive: false
+  - type: EmbedImmune
+    immuneTo:
+      components:
+      - FlareGunPellet

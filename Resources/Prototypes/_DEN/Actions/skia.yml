@@ -14,7 +14,7 @@
       sprite: Objects/Fun/dice.rsi
       state: d6_1
     useDelay: 300
-    priority: 5
+    priority: 6
     event: !type:RerollSkiaObjectivesActionEvent
 
 - type: entity
@@ -25,4 +25,19 @@
   components:
   - type: InstantAction
     icon: Interface/Actions/shop.png
+    priority: 5
     event: !type:SkiaShopActionEvent
+
+- type: entity
+  id: ActionSkiaTwistShadows
+  name: Twist Shadows
+  description: Imbue the shadows around you with vengeful purpose.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: InstantAction
+      icon:
+        sprite: _NF/Mobs/BloodCult/drainedone.rsi
+        state: icon
+      useDelay: 120
+      priority: 4
+      event: !type:SkiaSpawnMobsActionEvent
