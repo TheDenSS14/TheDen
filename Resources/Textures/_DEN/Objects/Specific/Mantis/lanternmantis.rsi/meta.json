@@ -8,20 +8,17 @@
   },
   "states": [
     {
-      "name": "crystal"
+      "name": "icon"
     },
     {
-      "name": "lantern"
+      "name": "icon-crystal"
     },
     {
-      "name": "lantern-on"
-    },
-    {
-      "name": "off-inhand-left",
+      "name": "inhand-left",
       "directions": 4
     },
     {
-      "name": "off-inhand-right",
+      "name": "inhand-right",
       "directions": 4
     },
     {
@@ -33,19 +30,19 @@
       "directions": 4
     },
 	{
+	  "name": "equipped-BELT",
+	  "directions": 4
+	},
+	{
+	  "name": "equipped-SUITSTORAGE",
+	  "directions": 4
+	},
+	{
 	  "name": "on-equipped-BELT",
 	  "directions": 4
 	},
 	{
-	  "name": "off-equipped-BELT",
-	  "directions": 4
-	},
-	{
 	  "name": "on-equipped-SUITSTORAGE",
-	  "directions": 4
-	},
-	{
-	  "name": "off-equipped-SUITSTORAGE",
 	  "directions": 4
 	}
   ]
