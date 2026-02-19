@@ -2,7 +2,7 @@
 // SPDX-FileCopyrightText: 2025 Cami
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Numerics;
 using Content.Client._DEN.Earmuffs;
@@ -120,4 +120,6 @@ public sealed class DenuUIController : UIController
             _circleOverlay = null;
         }
     }
+
+    public void SetShouldUseTypingCircleOverlay(bool value) => _earmuffsSystem.UpdateTypingUsesCircleOverlay(value);
 }

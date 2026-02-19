@@ -1,4 +1,12 @@
-﻿<controls:DenuWindow
+<!--
+SPDX-FileCopyrightText: 2025 Cam
+SPDX-FileCopyrightText: 2025 Cami
+SPDX-FileCopyrightText: 2025 sleepyyapril
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<controls:DenuWindow
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Systems.Chat.Controls.Denu"
     xmlns:components="clr-namespace:Content.Client.UserInterface.Systems.Chat.Controls.Denu.Components"
@@ -17,6 +25,10 @@
 
                 <BoxContainer Orientation="Horizontal" Margin="0 0">
                     <CheckBox Name="RemoveAsterisksCheckBox" Text="Remove Asterisks from Emotes" />
+                </BoxContainer>
+
+                <BoxContainer Orientation="Horizontal" Margin="0 0">
+                    <CheckBox Name="ShowTypingRange" Text="Show Typing Range on Whispers/Subtles" />
                 </BoxContainer>
 
                 <BoxContainer Orientation="Horizontal" Margin="0 0">
