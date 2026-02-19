@@ -4,14 +4,12 @@
 
 using Content.Server.Store.Systems;
 using Content.Shared._DEN.Skia;
-using Content.Shared.Actions;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
-using Content.Shared.Mind;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -21,15 +19,15 @@ using Content.Shared.Stealth.Components;
 using Content.Shared.Store.Components;
 using Content.Shared.Pinpointer;
 using Content.Server.Objectives.Systems;
-using Content.Server.Objectives.Components;
-using Content.Shared.Objectives.Components;
-using Content.Shared.Inventory;
 using Content.Shared.Mind.Components;
+using Content.Shared.Mood;
 
 namespace Contnet.Server._DEN.Skia;
 
 public sealed class SkiaSystem : SharedSkiaSystem
 {
+
+    private const string SKIA_REAP_MOOD_PROTO_ID = "SkiaReaped";
 
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedInteractionSystem _interact = default!;
@@ -131,7 +129,9 @@ public sealed class SkiaSystem : SharedSkiaSystem
         damageSpec.DamageDict.Add("Cold", damage.Value);
         _damage.TryChangeDamage(args.Target, damageSpec, true, origin: uid);
 
+        // Mark target as reaped, change their mood
         AddComp<SoulReapedComponent>(args.Target.Value);
+        RaiseLocalEvent(args.Target.Value, new MoodEffectEvent(SKIA_REAP_MOOD_PROTO_ID));
 
         // Add soul silk to the Skia
         _store.TryAddCurrency(new Dictionary<string, FixedPoint2> { { comp.SoulSilkCurrencyPrototype, comp.SilkGained } }, uid);
