@@ -12,12 +12,11 @@
     - type: Sprite
       sprite: _DEN/Objects/Specific/Mantis/lanternmantis.rsi
       layers:
-        - state: lantern
-        - state: crystal
+        - state: icon
+        - state: icon-crystal
           shader: unshaded
     - type: Item
       sprite: _DEN/Objects/Specific/Mantis/lanternmantis.rsi
-      heldPrefix: off
     - type: EtherealLight # Dims around ethereal entities
     - type: PointLight
       enabled: false
@@ -26,8 +25,24 @@
       color: "#d9418d"
       netsync: false
     - type: Appearance
+    - type: UseDelay
     - type: ToggleableVisuals
+      replaceMode: false
       spriteLayer: light
+      inhandVisuals:
+        left:
+          - state: on-inhand-left
+            shader: unshaded
+        right:
+          - state: on-inhand-right
+            shader: unshaded
+      clothingVisuals:
+        belt:
+        - state: on-equipped-BELT
+          shader: unshaded
+        suitstorage:
+        - state: on-equipped-SUITSTORAGE
+          shader: unshaded
     - type: ItemTogglePointLight
     - type: ItemToggle
       predictable: false
@@ -45,7 +60,6 @@
       stealGroup: LAMP # The moths are coming the moths are coming
     - type: Clothing
       sprite: _DEN/Objects/Specific/Mantis/lanternmantis.rsi
-      equippedPrefix: off
       quickEquip: false
       slots:
         - Belt
@@ -75,19 +89,19 @@
     - type: Sprite
       sprite: _DEN/Objects/Tools/somberlamp.rsi
       layers:
-        - state: lantern
-        - state: crystal
+        - state: icon
+        - state: icon-crystal
           shader: unshaded
     - type: Item
       sprite: _DEN/Objects/Tools/somberlamp.rsi
       inhandVisuals:
         left:
           - state: inhand-left
-          - state: inhand-left-glow
+          - state: inhand-left-crystal
             shader: unshaded
         right:
           - state: inhand-right
-          - state: inhand-right-glow
+          - state: inhand-right-crystal
             shader: unshaded
     - type: EtherealLight # Dims around ethereal entities
     - type: PointLight
@@ -97,6 +111,7 @@
       color: "#d9418d"
       netsync: false
     - type: Appearance
+    - type: UseDelay
     - type: ToggleableVisuals
       spriteLayer: light
     - type: ItemTogglePointLight
