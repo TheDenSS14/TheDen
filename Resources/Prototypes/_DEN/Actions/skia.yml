@@ -25,7 +25,7 @@
   components:
   - type: InstantAction
     icon: Interface/Actions/shop.png
-    priority: 5
+    priority: 7
     event: !type:SkiaShopActionEvent
 
 - type: entity
@@ -38,6 +38,6 @@
     icon:
       sprite: _NF/Mobs/BloodCult/drainedone.rsi
       state: icon
-    useDelay: 180
-    priority: 4
+    useDelay: 90
+    priority: 5
     event: !type:SkiaSpawnMobsActionEvent
