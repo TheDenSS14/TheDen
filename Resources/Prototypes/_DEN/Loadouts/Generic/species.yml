@@ -111,3 +111,291 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Vox
+
+# Glorbs start (glowing orbs for slimes)
+- type: loadout
+  id: LoadoutSpeciesGlorb01Red
+  category: Species
+  cost: 0
+  items:
+    - GlorbRed
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb02Vermilion
+  category: Species
+  cost: 0
+  items:
+    - GlorbVermilion
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb03Orange
+  category: Species
+  cost: 0
+  items:
+    - GlorbOrange
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb04Amber
+  category: Species
+  cost: 0
+  items:
+    - GlorbAmber
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb05Yellow
+  category: Species
+  cost: 0
+  items:
+    - GlorbYellow
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb06Lime
+  category: Species
+  cost: 0
+  items:
+    - GlorbLime
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb07Green
+  category: Species
+  cost: 0
+  items:
+    - GlorbGreen
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb08Mint
+  category: Species
+  cost: 0
+  items:
+    - GlorbMint
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb09Cyan
+  category: Species
+  cost: 0
+  items:
+    - GlorbCyan
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb10SkyBlue
+  category: Species
+  cost: 0
+  items:
+    - GlorbSkyBlue
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb11Azure
+  category: Species
+  cost: 0
+  items:
+    - GlorbAzure
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb12Blue
+  category: Species
+  cost: 0
+  items:
+    - GlorbBlue
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb13Indigo
+  category: Species
+  cost: 0
+  items:
+    - GlorbIndigo
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb14Violet
+  category: Species
+  cost: 0
+  items:
+    - GlorbViolet
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb15Purple
+  category: Species
+  cost: 0
+  items:
+    - GlorbPurple
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb16Magenta
+  category: Species
+  cost: 0
+  items:
+    - GlorbMagenta
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb17HotPink
+  category: Species
+  cost: 0
+  items:
+    - GlorbHotPink
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb18Crimson
+  category: Species
+  cost: 0
+  items:
+    - GlorbCrimson
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb19White
+  category: Species
+  cost: 0
+  items:
+    - GlorbWhite
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb20CoolWhite
+  category: Species
+  cost: 0
+  items:
+    - GlorbCoolWhite
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb21WarmWhite
+  category: Species
+  cost: 0
+  items:
+    - GlorbWarmWhite
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+
+- type: loadout
+  id: LoadoutSpeciesGlorb22Void
+  category: Species
+  cost: 0
+  items:
+    - GlorbVoid
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupGlorbs
+# Glorbs end

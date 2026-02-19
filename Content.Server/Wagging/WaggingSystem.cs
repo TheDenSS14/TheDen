@@ -52,7 +52,7 @@ public sealed class WaggingSystem : EntitySystem
         if (args.Handled)
             return;
 
-        TryToggleWagging(uid, wagging: component);
+        args.Handled = TryToggleWagging(uid, wagging: component);
     }
 
     private void OnMobStateChanged(EntityUid uid, WaggingComponent component, MobStateChangedEvent args)
