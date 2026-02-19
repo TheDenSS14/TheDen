@@ -28,8 +28,9 @@ public abstract class SharedSkiaSystem : EntitySystem
 
 public sealed partial class SkiaShopActionEvent : InstantActionEvent { }
 
+public sealed partial class SkiaSpawnMobsActionEvent : InstantActionEvent { }
+
 [Serializable, NetSerializable]
 public sealed partial class SkiaReapingEvent : SimpleDoAfterEvent { }
 
-[Serializable, NetSerializable]
-public sealed partial class SkiaSpawnMobsActionEvent : InstantActionEvent { }
+

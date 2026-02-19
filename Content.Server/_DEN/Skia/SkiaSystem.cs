@@ -149,7 +149,7 @@ public sealed class SkiaSystem : SharedSkiaSystem
 
         var xform = Transform(uid);
 
-        for (int i = 0; i < comp.MobSpawnAmount; i++)
+        for (int i = 0; i < comp.MobSpawnAmount + comp.ReapCount; i++)
         {
             Spawn(comp.MobProtoId, xform.Coordinates);
         }

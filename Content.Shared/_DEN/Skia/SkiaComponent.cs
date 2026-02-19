@@ -62,5 +62,5 @@ public sealed partial class SkiaComponent : Component
     /// How many mobs are spawned on SummonShadowsActionId
     /// </summary>
     [DataField("mobSpawnAmount")]
-    public float MobSpawnAmount = 3f;
+    public float MobSpawnAmount = 2f;
 }
