@@ -424,7 +424,7 @@
       iconOn: { sprite: Interface/Actions/wagging.rsi, state: icon-on }
       itemIconStyle: NoItem
       useDelay: 1 # emote spam
-      event: !type:ToggleActionEvent
+      event: !type:WaggingActionEvent
 
 - type: entity
   id: ActionFabricateLollipop
