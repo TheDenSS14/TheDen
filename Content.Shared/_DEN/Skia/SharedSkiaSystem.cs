@@ -30,3 +30,6 @@ public sealed partial class SkiaShopActionEvent : InstantActionEvent { }
 
 [Serializable, NetSerializable]
 public sealed partial class SkiaReapingEvent : SimpleDoAfterEvent { }
+
+[Serializable, NetSerializable]
+public sealed partial class SkiaSpawnMobsActionEvent : InstantActionEvent { }

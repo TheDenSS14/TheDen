@@ -50,6 +50,7 @@ public sealed class SkiaSystem : SharedSkiaSystem
         SubscribeLocalEvent<SkiaComponent, SkiaShopActionEvent>(OnShop);
         SubscribeLocalEvent<SkiaComponent, UserActivateInWorldEvent>(OnInteract);
         SubscribeLocalEvent<SkiaComponent, SkiaReapingEvent>(OnReaping);
+        SubscribeLocalEvent<SkiaComponent, SkiaSpawnMobsActionEvent>(OnSummonMobs);
     }
 
     private void OnShop(EntityUid uid, SkiaComponent comp, SkiaShopActionEvent args)
@@ -134,10 +135,23 @@ public sealed class SkiaSystem : SharedSkiaSystem
 
         // Add soul silk to the Skia
         _store.TryAddCurrency(new Dictionary<string, FixedPoint2> { { comp.SoulSilkCurrencyPrototype, comp.SilkGained } }, uid);
-
+        comp.ReapCount++;
 
         _glimmerSystem.DeltaGlimmerInput(comp.ReapGlimmerValue);
 
         args.Handled = true;
+    }
+
+    private void OnSummonMobs(EntityUid uid, SkiaComponent comp, SkiaSpawnMobsActionEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        var xform = Transform(uid);
+
+        for (int i = 0; i < comp.MobSpawnAmount; i++)
+        {
+            Spawn(comp.MobProtoId, xform.Coordinates);
+        }
     }
 }
