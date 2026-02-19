@@ -112,11 +112,11 @@
     sprite: Mobs/Ghosts/revenant.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: active
+      state: idle
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: active
+        Base: idle
       Critical:
         Base: stunned
       Dead:
