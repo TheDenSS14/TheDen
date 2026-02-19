@@ -1,0 +1,304 @@
+# ears
+
+- type: marking
+  abstract: true
+  id: BaseDenTajaranEars
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Tajaran, Felinid]
+
+- type: marking
+  parent: BaseDenTajaranEars
+  id: TajaranServalEars
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/ears.rsi
+    state: serval_ears
+  - sprite: _DEN/Mobs/Customization/Tajaran/ears.rsi
+    state: serval_ears_markings
+  - sprite: _DEN/Mobs/Customization/Tajaran/ears.rsi
+    state: serval_ears_inside
+
+# tails
+
+- type: marking
+  abstract: true
+  id: BaseDenTajaranTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Tajaran, Felinid]
+
+- type: marking
+  parent: BaseDenTajaranTail
+  id: TajaranTailSpottedAnimated
+  sprites:
+  - sprite: _EE/Mobs/Customization/Tajaran/tails.rsi
+    state: tail_anim
+  - sprite: _DEN/Mobs/Customization/Tajaran/tail_markings.rsi
+    state: tail_spots_anim
+
+- type: marking
+  parent: BaseDenTajaranTail
+  id: TajaranTailSpottedSparseAnimated
+  sprites:
+  - sprite: _EE/Mobs/Customization/Tajaran/tails.rsi
+    state: tail_anim
+  - sprite: _DEN/Mobs/Customization/Tajaran/tail_markings.rsi
+    state: tail_spots_alt_anim
+
+- type: marking
+  parent: BaseDenTajaranTail
+  id: TajaranTailSpottedDoubleAnimated
+  sprites:
+  - sprite: _EE/Mobs/Customization/Tajaran/tails.rsi
+    state: tail_anim
+  - sprite: _DEN/Mobs/Customization/Tajaran/tail_markings.rsi
+    state: tail_spots_anim
+  - sprite: _DEN/Mobs/Customization/Tajaran/tail_markings.rsi
+    state: tail_spots_alt_anim
+
+- type: marking
+  parent: BaseDenTajaranTail
+  id: TajaranTailNubAnimated
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/tails.rsi
+    state: tail_nub_anim
+
+- type: marking
+  parent: BaseDenTajaranTail
+  id: TajaranTailNubUndersideAnimated
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/tails.rsi
+    state: tail_nub_anim
+  - sprite: _DEN/Mobs/Customization/Tajaran/tail_markings.rsi
+    state: tail_nub_underside_anim
+
+- type: marking
+  parent: BaseDenTajaranTail
+  id: TajaranTailNubTippedAnimated
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/tails.rsi
+    state: tail_nub_anim
+  - sprite: _DEN/Mobs/Customization/Tajaran/tail_markings.rsi
+    state: tail_nub_tip_anim
+
+# l foot
+
+- type: marking
+  abstract: true
+  id: BaseDenTajaranLFoot
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  speciesRestriction: [Tajaran]
+
+- type: marking
+  parent: BaseDenTajaranLFoot
+  id: TajaranLFootSpotted
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/legs.rsi
+    state: spotted_foot_left
+  - sprite: _DEN/Mobs/Customization/Tajaran/legs.rsi
+    state: spotted_foot_left_extra
+
+# r foot
+
+- type: marking
+  abstract: true
+  id: BaseDenTajaranRFoot
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  speciesRestriction: [Tajaran]
+
+- type: marking
+  parent: BaseDenTajaranRFoot
+  id: TajaranRFootSpotted
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/legs.rsi
+    state: spotted_foot_right
+  - sprite: _DEN/Mobs/Customization/Tajaran/legs.rsi
+    state: spotted_foot_right_extra
+
+# l leg
+
+- type: marking
+  abstract: true
+  id: BaseDenTajaranLLeg
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [Tajaran]
+
+- type: marking
+  parent: BaseDenTajaranLLeg
+  id: TajaranLLegSpotted
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/legs.rsi
+    state: spotted_leg_left
+  - sprite: _DEN/Mobs/Customization/Tajaran/legs.rsi
+    state: spotted_leg_left_extra
+
+# r leg
+
+- type: marking
+  abstract: true
+  id: BaseDenTajaranRLeg
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [Tajaran]
+
+- type: marking
+  parent: BaseDenTajaranRLeg
+  id: TajaranRLegSpotted
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/legs.rsi
+    state: spotted_leg_right
+  - sprite: _DEN/Mobs/Customization/Tajaran/legs.rsi
+    state: spotted_leg_right_extra
+
+# l arm
+
+- type: marking
+  abstract: true
+  id: BaseDenTajaranLArm
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Tajaran]
+
+- type: marking
+  parent: BaseDenTajaranLArm
+  id: TajaranLArmSpotted
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/arms.rsi
+    state: spotted_arm_left
+  - sprite: _DEN/Mobs/Customization/Tajaran/arms.rsi
+    state: spotted_arm_left_extra
+
+# r arm
+
+- type: marking
+  abstract: true
+  id: BaseDenTajaranRArm
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Tajaran]
+
+- type: marking
+  parent: BaseDenTajaranRArm
+  id: TajaranRArmSpotted
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/arms.rsi
+    state: spotted_arm_right
+  - sprite: _DEN/Mobs/Customization/Tajaran/arms.rsi
+    state: spotted_arm_right_extra
+
+# l hand
+
+- type: marking
+  abstract: true
+  id: BaseDenTajaranLHand
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [Tajaran]
+
+- type: marking
+  parent: BaseDenTajaranLHand
+  id: TajaranLHandSpotted
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/arms.rsi
+    state: spotted_paw_left
+  - sprite: _DEN/Mobs/Customization/Tajaran/arms.rsi
+    state: spotted_paw_left_extra
+
+# r hand
+
+- type: marking
+  abstract: true
+  id: BaseDenTajaranRHand
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [Tajaran]
+
+- type: marking
+  parent: BaseDenTajaranRHand
+  id: TajaranRHandSpotted
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/arms.rsi
+    state: spotted_paw_right
+  - sprite: _DEN/Mobs/Customization/Tajaran/arms.rsi
+    state: spotted_paw_right_extra
+
+# Face
+
+- type: marking
+  abstract: true
+  id: BaseDenTajaranFace
+  bodyPart: Face
+  markingCategory: Face
+  speciesRestriction: [Tajaran]
+
+- type: marking
+  parent: BaseDenTajaranFace
+  id: TajaranFaceServal
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/head.rsi
+    state: serval_face
+
+- type: marking
+  parent: BaseDenTajaranFace
+  id: TajaranFaceSpots
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/head.rsi
+    state: face_spots
+
+- type: marking
+  parent: BaseDenTajaranFace
+  id: TajaranFaceTearL
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/head.rsi
+    state: tear_left
+
+- type: marking
+  parent: BaseDenTajaranFace
+  id: TajaranFaceTearR
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/head.rsi
+    state: tear_right
+
+# chest
+
+- type: marking
+  abstract: true
+  id: BaseDenTajaranChest
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Tajaran]
+
+- type: marking
+  parent: BaseDenTajaranChest
+  id: TajaranSpotted
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/chest.rsi
+    state: spotted
+  - sprite: _DEN/Mobs/Customization/Tajaran/chest.rsi
+    state: spotted_extra
+
+- type: marking
+  parent: BaseDenTajaranChest
+  id: TajaranSpottedAlt
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/chest.rsi
+    state: spotted_alt
+  - sprite: _DEN/Mobs/Customization/Tajaran/chest.rsi
+    state: spotted_extra
+
+- type: marking
+  parent: BaseDenTajaranChest
+  id: TajaranHeart
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/chest.rsi
+    state: heart_big
+
+- type: marking
+  parent: BaseDenTajaranChest
+  id: TajaranHeartSmall
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Tajaran/chest.rsi
+    state: heart_small
