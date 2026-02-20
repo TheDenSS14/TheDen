@@ -2,10 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Store.Components;
 using Content.Shared.Actions;
-using Content.Shared.DoAfter;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared._DEN.Skia;
 
@@ -25,8 +22,3 @@ public abstract class SharedSkiaSystem : EntitySystem
         _action.AddAction(uid, ref comp.ShopAction, comp.ShopActionId);
     }
 }
-
-public sealed partial class SkiaShopActionEvent : InstantActionEvent { }
-
-[Serializable, NetSerializable]
-public sealed partial class SkiaReapingEvent : SimpleDoAfterEvent { }

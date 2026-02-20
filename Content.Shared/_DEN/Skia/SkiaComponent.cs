@@ -37,9 +37,37 @@ public sealed partial class SkiaComponent : Component
     [DataField("silkGained")]
     public float SilkGained = 1f;
 
+    /// <summary>
+    /// How many targets the Skia has reaped
+    /// </summary>
+    [DataField("reapCount")]
+    public float ReapCount = 0f;
+
     [DataField("shopActionId")]
     public EntProtoId ShopActionId = "ActionSkiaShop";
 
     [DataField, AutoNetworkedField]
     public EntityUid? ShopAction;
+
+    /// <summary>
+    /// ProtoId of mobs to spawn on Reap
+    /// </summary>
+    public EntProtoId MobReapSpawnProtoId = "MobSpectre";
+
+    /// <summary>
+    /// Maximum number of spawns that can be generated from either Reaping or SummonShadowsActionId
+    /// </summary>
+    public float MaxSpawnAmount = 10f;
+
+    /// <summary>
+    /// ProtoId of mobs to spawn on SummonShadowsActionId
+    /// </summary>
+    [DataField]
+    public EntProtoId MobTwistShadowProtoId = "MobLivingShadow";
+
+    /// <summary>
+    /// How many mobs are spawned on SummonShadowsActionId
+    /// </summary>
+    [DataField("mobSpawnAmount")]
+    public float MobSpawnAmount = 2f;
 }
