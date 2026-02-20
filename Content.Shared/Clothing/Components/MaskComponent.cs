@@ -1,6 +1,7 @@
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2024 themias
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 HTML/Crystal
 //
 // SPDX-License-Identifier: MIT
 
@@ -28,4 +29,16 @@ public sealed partial class MaskComponent : Component
 
     [DataField, AutoNetworkedField]
     public string EquippedPrefix = "toggled";
+
+    /// <summary>
+    /// When <see langword="true"/> will function normally, otherwise will not react to events
+    /// </summary>
+    [DataField("enabled"), AutoNetworkedField]
+    public bool IsEnabled = true;
+
+    /// <summary>
+    /// When <see langword="true"/> will disable <see cref="IsEnabled"/> when folded
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool DisableOnFolded;
 }

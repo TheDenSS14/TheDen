@@ -5,6 +5,7 @@
 using System.Linq;
 using Content.Server.Actions;
 using Content.Server.Humanoid;
+using Content.Shared._DEN.Actions;
 using Content.Shared._DEN.CCVars;
 using Content.Shared._DEN.Markings;
 using Content.Shared.CCVar;
@@ -40,7 +41,7 @@ public sealed class AnimatedMarkingsSystem : EntitySystem
 
         SubscribeLocalEvent<AnimatedMarkingsComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<AnimatedMarkingsComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<AnimatedMarkingsComponent, ToggleActionEvent>(OnToggleAction);
+        SubscribeLocalEvent<AnimatedMarkingsComponent, AnimateMarkingsToggleActionEvent>(OnToggleAction);
     }
 
     private void OnMarkingGlowAnimationToggled(bool newValue) => _glowAnimationEnabled = newValue;
@@ -78,8 +79,11 @@ public sealed class AnimatedMarkingsSystem : EntitySystem
     private void OnShutdown(Entity<AnimatedMarkingsComponent> ent, ref ComponentShutdown args) =>
         _actionsSystem.RemoveAction(ent, ent.Comp.ActionEntity);
 
-    private void OnToggleAction(Entity<AnimatedMarkingsComponent> ent, ref ToggleActionEvent args)
+    private void OnToggleAction(Entity<AnimatedMarkingsComponent> ent, ref AnimateMarkingsToggleActionEvent args)
     {
+        if (args.Handled)
+            return;
+
         _actionsSystem.SetToggled(ent.Comp.ActionEntity, !ent.Comp.IsAnimating);
 
         if (!ent.Comp.IsAnimating)
@@ -89,7 +93,6 @@ public sealed class AnimatedMarkingsSystem : EntitySystem
         }
 
         ent.Comp.StopAnimatingNextFrame = !ent.Comp.StopAnimatingNextFrame;
-        args.Handled = true;
     }
 
     public void DoDebugAnimation(Entity<HumanoidAppearanceComponent> ent)

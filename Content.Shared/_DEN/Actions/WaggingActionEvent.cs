@@ -8,4 +8,4 @@ using Content.Shared.Actions;
 namespace Content.Shared._DEN.Actions;
 
 
-public sealed partial class RerollSkiaObjectivesActionEvent : InstantActionEvent;
+public sealed partial class WaggingActionEvent : InstantActionEvent;

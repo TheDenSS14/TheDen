@@ -1,0 +1,1306 @@
+# SPDX-FileCopyrightText: 2026 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseItem
+  id: GlorbWhite
+  name: glorb (white)
+  description: "A glowing orb that forms naturally within some slime people, like a pearl grown from living gel. It emits light when squeezed and feels faintly sticky to the touch."
+  abstract: false
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/glorb.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+    - state: icon-on
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    size: Tiny
+    sprite: _DEN/Objects/Misc/glorb.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: Clothing
+    sprite: _DEN/Objects/Misc/glorb.rsi
+    quickEquip: false
+    equipDelay: 0.2
+    unequipDelay: 0.2
+    slots:
+    - HEAD
+    - MASK
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        shader: unshaded
+  - type: Appearance
+  - type: ToggleableVisuals
+    replaceMode: true
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        shader: unshaded
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        icon:
+          True: { visible: false }
+          False: { visible: true }
+        light:
+          True: { visible: true }
+          False: { visible: false }
+  - type: UseDelay
+    delay: 0.5
+  - type: PointLight # As bright as a crystal shard
+    enabled: false
+    radius: 2
+    energy: 2.5
+    color: "#FFFFFF"
+    netsync: false
+  - type: ItemTogglePointLight
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      path: /Audio/Voice/Slime/slime_schlorp.ogg
+      params:
+        volume: -7
+        pitch: 1.2
+        variation: 0.05
+    soundDeactivate:
+      path: /Audio/Voice/Slime/slime_schlorp.ogg
+      params:
+        volume: -7
+        pitch: 0.8
+        variation: 0.05
+  - type: StealTarget
+    stealGroup: LAMP
+  - type: Tag
+    tags:
+    - IPCMaskWearable
+  - type: EmbeddableProjectile
+    removalTime: 0.2
+    autoRemoveDuration: 0
+    sound:
+      path: /Audio/Voice/Slime/slime_schlorp.ogg
+      params:
+        volume: -7
+        variation: 0.05
+  - type: LandAtCursor
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbRed
+  name: glorb (red)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#FF0000"
+      shader: unshaded
+    - state: icon-on
+      color: "#FF0000"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FF0000"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#FF0000"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#FF0000"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#FF0000"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#FF0000"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#FF0000"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#FF0000"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#FF0000"
+        shader: unshaded
+  - type: PointLight
+    color: "#FF0000"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbVermilion
+  name: glorb (vermilion)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#FF4000"
+      shader: unshaded
+    - state: icon-on
+      color: "#FF4000"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FF4000"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#FF4000"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#FF4000"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#FF4000"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#FF4000"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#FF4000"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#FF4000"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#FF4000"
+        shader: unshaded
+  - type: PointLight
+    color: "#FF4000"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbOrange
+  name: glorb (orange)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#FF8000"
+      shader: unshaded
+    - state: icon-on
+      color: "#FF8000"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FF8000"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#FF8000"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#FF8000"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#FF8000"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#FF8000"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#FF8000"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#FF8000"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#FF8000"
+        shader: unshaded
+  - type: PointLight
+    color: "#FF8000"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbAmber
+  name: glorb (amber)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#FFBF00"
+      shader: unshaded
+    - state: icon-on
+      color: "#FFBF00"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FFBF00"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#FFBF00"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#FFBF00"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#FFBF00"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#FFBF00"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#FFBF00"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#FFBF00"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#FFBF00"
+        shader: unshaded
+  - type: PointLight
+    color: "#FFBF00"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbYellow
+  name: glorb (yellow)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#FFFF00"
+      shader: unshaded
+    - state: icon-on
+      color: "#FFFF00"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FFFF00"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#FFFF00"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#FFFF00"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#FFFF00"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#FFFF00"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#FFFF00"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#FFFF00"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#FFFF00"
+        shader: unshaded
+  - type: PointLight
+    color: "#FFFF00"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbLime
+  name: glorb (lime)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#BFFF00"
+      shader: unshaded
+    - state: icon-on
+      color: "#BFFF00"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#BFFF00"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#BFFF00"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#BFFF00"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#BFFF00"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#BFFF00"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#BFFF00"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#BFFF00"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#BFFF00"
+        shader: unshaded
+  - type: PointLight
+    color: "#BFFF00"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbGreen
+  name: glorb (green)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#00FF00"
+      shader: unshaded
+    - state: icon-on
+      color: "#00FF00"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#00FF00"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#00FF00"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#00FF00"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#00FF00"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#00FF00"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#00FF00"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#00FF00"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#00FF00"
+        shader: unshaded
+  - type: PointLight
+    color: "#00FF00"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbMint
+  name: glorb (mint)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#00FF80"
+      shader: unshaded
+    - state: icon-on
+      color: "#00FF80"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#00FF80"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#00FF80"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#00FF80"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#00FF80"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#00FF80"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#00FF80"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#00FF80"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#00FF80"
+        shader: unshaded
+  - type: PointLight
+    color: "#00FF80"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbCyan
+  name: glorb (cyan)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#00FFFF"
+      shader: unshaded
+    - state: icon-on
+      color: "#00FFFF"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#00FFFF"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#00FFFF"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#00FFFF"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#00FFFF"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#00FFFF"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#00FFFF"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#00FFFF"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#00FFFF"
+        shader: unshaded
+  - type: PointLight
+    color: "#00FFFF"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbSkyBlue
+  name: glorb (sky blue)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#00BFFF"
+      shader: unshaded
+    - state: icon-on
+      color: "#00BFFF"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#00BFFF"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#00BFFF"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#00BFFF"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#00BFFF"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#00BFFF"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#00BFFF"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#00BFFF"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#00BFFF"
+        shader: unshaded
+  - type: PointLight
+    color: "#00BFFF"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbAzure
+  name: glorb (azure)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#0080FF"
+      shader: unshaded
+    - state: icon-on
+      color: "#0080FF"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#0080FF"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#0080FF"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#0080FF"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#0080FF"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#0080FF"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#0080FF"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#0080FF"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#0080FF"
+        shader: unshaded
+  - type: PointLight
+    color: "#0080FF"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbBlue
+  name: glorb (blue)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#0000FF"
+      shader: unshaded
+    - state: icon-on
+      color: "#0000FF"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#0000FF"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#0000FF"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#0000FF"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#0000FF"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#0000FF"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#0000FF"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#0000FF"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#0000FF"
+        shader: unshaded
+  - type: PointLight
+    color: "#0000FF"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbIndigo
+  name: glorb (indigo)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#4000FF"
+      shader: unshaded
+    - state: icon-on
+      color: "#4000FF"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#4000FF"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#4000FF"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#4000FF"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#4000FF"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#4000FF"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#4000FF"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#4000FF"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#4000FF"
+        shader: unshaded
+  - type: PointLight
+    color: "#4000FF"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbViolet
+  name: glorb (violet)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#8000FF"
+      shader: unshaded
+    - state: icon-on
+      color: "#8000FF"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8000FF"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#8000FF"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#8000FF"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#8000FF"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#8000FF"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#8000FF"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#8000FF"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#8000FF"
+        shader: unshaded
+  - type: PointLight
+    color: "#8000FF"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbPurple
+  name: glorb (purple)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#BF00FF"
+      shader: unshaded
+    - state: icon-on
+      color: "#BF00FF"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#BF00FF"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#BF00FF"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#BF00FF"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#BF00FF"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#BF00FF"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#BF00FF"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#BF00FF"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#BF00FF"
+        shader: unshaded
+  - type: PointLight
+    color: "#BF00FF"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbMagenta
+  name: glorb (magenta)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#FF00FF"
+      shader: unshaded
+    - state: icon-on
+      color: "#FF00FF"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FF00FF"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#FF00FF"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#FF00FF"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#FF00FF"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#FF00FF"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#FF00FF"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#FF00FF"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#FF00FF"
+        shader: unshaded
+  - type: PointLight
+    color: "#FF00FF"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbHotPink
+  name: glorb (hot pink)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#FF00BF"
+      shader: unshaded
+    - state: icon-on
+      color: "#FF00BF"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FF00BF"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#FF00BF"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#FF00BF"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#FF00BF"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#FF00BF"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#FF00BF"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#FF00BF"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#FF00BF"
+        shader: unshaded
+  - type: PointLight
+    color: "#FF00BF"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbCrimson
+  name: glorb (crimson)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#FF0040"
+      shader: unshaded
+    - state: icon-on
+      color: "#FF0040"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FF0040"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#FF0040"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#FF0040"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#FF0040"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#FF0040"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#FF0040"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#FF0040"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#FF0040"
+        shader: unshaded
+  - type: PointLight
+    color: "#FF0040"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbCoolWhite
+  name: glorb (cool white)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#E6F2FF"
+      shader: unshaded
+    - state: icon-on
+      color: "#E6F2FF"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#E6F2FF"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#E6F2FF"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#E6F2FF"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#E6F2FF"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#E6F2FF"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#E6F2FF"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#E6F2FF"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#E6F2FF"
+        shader: unshaded
+  - type: PointLight
+    color: "#E6F2FF"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbWarmWhite
+  name: glorb (warm white)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#FFE4CE"
+      shader: unshaded
+    - state: icon-on
+      color: "#FFE4CE"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FFE4CE"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#FFE4CE"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#FFE4CE"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#FFE4CE"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#FFE4CE"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#FFE4CE"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#FFE4CE"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#FFE4CE"
+        shader: unshaded
+  - type: PointLight
+    color: "#FFE4CE"
+
+- type: entity
+  parent: GlorbWhite
+  id: GlorbVoid
+  name: glorb (void)
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#5A2A7F"
+      shader: unshaded
+    - state: icon-on
+      color: "#5A2A7F"
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#5A2A7F"
+        shader: unshaded
+      right:
+      - state: inhand-right
+        color: "#5A2A7F"
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#5A2A7F"
+        shader: unshaded
+      mask:
+      - state: equipped-MASK
+        color: "#5A2A7F"
+        shader: unshaded
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        color: "#5A2A7F"
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        color: "#5A2A7F"
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        color: "#5A2A7F"
+        shader: unshaded
+      mask:
+      - state: on-equipped-MASK
+        color: "#5A2A7F"
+        shader: unshaded
+  - type: PointLight
+    color: "#5A2A7F"
