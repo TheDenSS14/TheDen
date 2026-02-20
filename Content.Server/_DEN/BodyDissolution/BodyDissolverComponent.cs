@@ -1,5 +1,6 @@
 using Content.Shared.Damage;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.BodyDissolution
 {
@@ -17,6 +18,12 @@ namespace Content.Server.BodyDissolution
         /// </summary>
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public bool DestroyOnUse = true;
+
+        /// <summary>
+        ///     Effect to use upon dissolution of the body.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public EntProtoId DissolutionEffect = "AcidifierWhite";
 
         /// <summary>
         ///     Can this be emagged?
@@ -47,7 +54,7 @@ namespace Content.Server.BodyDissolution
         ///     How much time before despawning the entity after it embeds itself while emagged.
         /// </summary>
         [DataField, ViewVariables(VVAccess.ReadWrite)]
-        public float EmaggedLifetime = 1f;
+        public TimeSpan EmaggedLifetime = TimeSpan.FromSeconds(1);
 
         [DataField]
         public TimeSpan DestroyBy = TimeSpan.Zero;

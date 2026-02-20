@@ -4,7 +4,6 @@ using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Coordinates;
-using Content.Shared.Mind;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Projectiles;
 using Robust.Shared.Audio;
@@ -14,16 +13,11 @@ using Content.Shared.Body.Components;
 using Robust.Shared.Physics.Components;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Emag.Components;
-using Microsoft.CodeAnalysis.Elfie.Serialization;
-using Content.Shared.Destructible;
 using Robust.Shared.Timing;
-using Robust.Shared.Spawners;
-using System.Runtime.Intrinsics.X86;
-using Npgsql.Replication.PgOutput.Messages;
-using Content.Server.Worldgen.Prototypes;
 using Content.Shared.Interaction;
-using Content.Server.Popups;
 using Content.Shared.Popups;
+using Content.Server.Paint;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.BodyDissolution
 {
@@ -36,6 +30,9 @@ namespace Content.Server.BodyDissolution
         [Dependency] private readonly SharedSolutionContainerSystem _sharedSolutionContainerSystem = default!;
         [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
         [Dependency] private readonly SharedPopupSystem _sharedPopupSystem = default!;
+        [Dependency] private readonly PaintSystem _paintSystem = default!;
+        [Dependency] private readonly IPrototypeManager _proto = default!;
+        [Dependency] private readonly IGameTiming _timing = default!;
 
         private readonly HashSet<EntityUid> _queuedDestroyTacks = new();
 
@@ -62,9 +59,7 @@ namespace Content.Server.BodyDissolution
                     embeddableProjectileComponent.Target is null)
                     continue;
 
-                bodyDissolverComponent.EmaggedLifetime -= frameTime;
-
-                if (bodyDissolverComponent.EmaggedLifetime <= 0)
+                if (bodyDissolverComponent.DestroyBy < _timing.RealTime)
                 {
                     _queuedDestroyTacks.Add(uid);
                 }
@@ -90,8 +85,9 @@ namespace Content.Server.BodyDissolution
         /// </summary>
         private void OnEmbed(Entity<BodyDissolverComponent> tack, ref EmbedEvent args)
         {
-            if (!tack.Comp.SafetyEnabled) // if the safety is disabled, that means we've added EmbedPassiveDamageComponent. everything except for the message is handled by EmbedPassiveDamageSystem
+            if (!tack.Comp.SafetyEnabled) // if the safety is disabled, that means we've added EmbedPassiveDamageComponent
             {
+                tack.Comp.DestroyBy = _timing.RealTime + tack.Comp.EmaggedLifetime;
                 _sharedChatSystem.TrySendInGameICMessage(tack, Loc.GetString("body-dissolution-emagged"), InGameICChatType.Speak, hideChat: true);
                 return;
             }
@@ -167,10 +163,12 @@ namespace Content.Server.BodyDissolution
             _sharedSolutionContainerSystem.TryGetSolution(dissolutee, "bloodstream", out var _, out var bodyBloodstreamSolution);
 
             var solution = new Solution("Water", bodyDissolvableComponent.MaximumSpillAmount);
+            var bloodColor = new Color(0, 255, 0, 255);
 
             if (bodyBloodstreamSolution is not null)
             {
                 solution = bodyBloodstreamSolution.SplitSolution(Math.Min(bodyDissolvableComponent.MaximumSpillAmount, (float) bodyBloodstreamSolution.Volume));
+                bloodColor = bodyBloodstreamSolution.GetColor(_proto).WithAlpha(255).WithGreen(255);
             }
 
             _puddleSystem.TrySpillAt(dissolutee.ToCoordinates(), solution, out var puddle, true);
@@ -180,6 +178,10 @@ namespace Content.Server.BodyDissolution
             {
                 _sharedAudioSystem.PlayPvs(bodyComponent.GibSound, puddle); // I could play the gib sound at the dissolu-tee's coordinates but this works just as well
             }
+
+            var dissolveEffect = SpawnAtPosition(dissolver.Comp.DissolutionEffect, dissolutee.ToCoordinates());
+
+            _paintSystem.Paint(null, null, dissolveEffect, bloodColor);
 
             var plume = new GasMixture(1) { Temperature = 330.0f };
             var environment = _atmosphereSystem.GetContainingMixture(dissolutee, true, true);
@@ -191,7 +193,6 @@ namespace Content.Server.BodyDissolution
             }
 
             plume.SetMoles(bodyDissolvableComponent.EmittedGas, physicsComponent.Mass * bodyDissolvableComponent.EmittedGasCoefficient);
-
             _atmosphereSystem.Merge(environment, plume);
 
             Del(dissolutee);
