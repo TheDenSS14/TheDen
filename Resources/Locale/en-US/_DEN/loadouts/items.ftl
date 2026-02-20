@@ -74,5 +74,6 @@ character-item-group-LoadoutPrescriptionAnxiolytic = Anxiolytics
 character-item-group-LoadoutPrescriptionAntidepressant = Antidepressants
 character-item-group-LoadoutCostumeBundles = Costume Bundles
 
-# ??? good enough i guess
+# misc
 character-item-group-LoadoutMagicMirrors = Hair Styling Tools
+character-item-group-LoadoutGroupGlorbs = Glorbs
