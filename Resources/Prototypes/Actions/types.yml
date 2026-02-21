@@ -91,7 +91,7 @@
 - type: entity
   id: ActionOpenStorageImplant
   name: Open Storage Implant
-  description: Opens the storage implant embedded under your skin
+  description: Opens or closes the storage implant embedded under your skin; note that it cannot store high value or storage based items. # DeltaV
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -424,7 +424,7 @@
       iconOn: { sprite: Interface/Actions/wagging.rsi, state: icon-on }
       itemIconStyle: NoItem
       useDelay: 1 # emote spam
-      event: !type:ToggleActionEvent
+      event: !type:WaggingActionEvent
 
 - type: entity
   id: ActionFabricateLollipop

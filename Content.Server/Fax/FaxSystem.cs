@@ -33,8 +33,9 @@
 // SPDX-FileCopyrightText: 2025 deltanedas
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 // SPDX-FileCopyrightText: 2025 themias
+// SPDX-FileCopyrightText: 2026 MajorMoth
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Server.Administration;
@@ -527,6 +528,56 @@ public sealed class FaxSystem : EntitySystem
             $"added copy job to \"{component.FaxName}\" {ToPrettyString(uid):tool} " +
             $"of {ToPrettyString(sendEntity):subject}: {printout.Content}");
     }
+
+    // Den start
+
+    /// <summary>
+    ///     Copies any given piece of paper.
+    /// </summary>
+    public void CopyNoMachine(EntityUid uid)
+    {
+        // this is partly code form Copy() and partly code from SpawnPaperFromQueue()
+        if (!TryComp<MetaDataComponent>(uid, out var metadata) ||
+            !TryComp<PaperComponent>(uid, out var paperComp))
+            return;
+
+        TryComp<LabelComponent>(uid, out var labelComponent);
+        TryComp<NameModifierComponent>(uid, out var nameMod);
+
+        // TODO: See comment in 'Send()' about not being able to copy whole entities
+        var printout = new FaxPrintout(paperComp.Content,
+                                       nameMod?.BaseName ?? metadata.EntityName,
+                                       labelComponent?.CurrentLabel,
+                                       metadata.EntityPrototype?.ID,
+                                       paperComp.StampState,
+                                       paperComp.StampedBy);
+
+        var entityToSpawn = printout.PrototypeId;
+        var coordinates = _transform.GetMapCoordinates(uid); // Goobstation
+        var printed = EntityManager.SpawnEntity(entityToSpawn, coordinates);
+
+        if (TryComp<PaperComponent>(printed, out var paper))
+        {
+            _paperSystem.SetContent((printed, paper), printout.Content);
+
+            // Apply stamps
+            if (printout.StampState != null)
+            {
+                foreach (var stamp in printout.StampedBy)
+                {
+                    _paperSystem.TryStamp((printed, paper), stamp, printout.StampState);
+                }
+            }
+        }
+
+        _metaData.SetEntityName(printed, printout.Name);
+
+        if (printout.Label is { } label)
+        {
+            _labelSystem.Label(printed, label);
+        }
+    }
+    // Den end
 
     /// <summary>
     ///     Sends message to addressee if paper is set and a known fax is selected

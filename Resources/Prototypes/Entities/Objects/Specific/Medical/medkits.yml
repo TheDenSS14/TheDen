@@ -12,10 +12,12 @@
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 Debug
 # SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Jakumba
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: first aid kit
@@ -28,10 +30,35 @@
     state: firstaid
   - type: Storage
     maxItemSize: Small
-    grid:
-    - 0,0,3,2
+    grid: # Den change the grid size
+    - 0,0,3,1
+    - 5,0,8,1
+    whitelist: # Den add a whitelist to contents
+      tags:
+        - Bottle
+        - Spray
+        - Brutepack
+        - Bloodpack
+        - Gauze
+        - Ointment
+        - PillCanister
+        - DiscreteHealthAnalyzer
+        - Dropper
+        - Vial
+        - CableCoil
+        - WeldingTool
+        - BodyBag
+        - Rollerbed
+        - Syringe
+      components:
+        - BreathMask
+        - Hypospray
+        - Injector
+        - Pill
+        - GasTank
+        - AACTablet
   - type: Item
-    size: Normal # TheDen - Just make all medkits the same size. Everyone just uses combat medkits anyways.
+    size: Large # TheDen - Just make all medkits the same size. Everyone just uses combat medkits anyways.
     sprite: Objects/Specific/Medical/firstaidkits.rsi
     heldPrefix: firstaid
   - type: PhysicalComposition
@@ -117,5 +144,6 @@
     state: blackkit
   - type: Item
     heldPrefix: blackkit
-    size: Normal
+  - type: ExplosionResistance # Den
+    damageCoefficient: 0.1
 

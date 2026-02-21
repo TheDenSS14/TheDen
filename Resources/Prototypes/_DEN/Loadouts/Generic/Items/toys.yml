@@ -5,8 +5,10 @@
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Asa
+# SPDX-FileCopyrightText: 2026 sheepie
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: loadout
   id: LoadoutToyBasketball
@@ -31,6 +33,14 @@
   canBeHeirloom: true
   items:
     - BeachBall
+
+- type: loadout
+  id: LoadoutTennisBall
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items:
+    - TennisBall
 
 - type: loadout
   id: LoadoutToySkimmerDiscus
@@ -79,6 +89,30 @@
   canBeHeirloom: true
   items:
     - PlushieWhistler
+
+- type: loadout
+  id: LoadoutPlushiePatty
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items:
+  - PlushiePatty
+
+- type: loadout
+  id: LoadoutPlushieTwiggy
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items:
+  - PlushieTwiggy
+
+- type: loadout
+  id: LoadoutPlushieStu
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items:
+  - PlushieStu
 
 - type: loadout
   id: PlushieFelinid

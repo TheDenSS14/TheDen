@@ -53,7 +53,7 @@
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingBackpackDuffelMedical
@@ -504,10 +504,10 @@
   description: "All you need to get your comrades back in the fight."
   components:
   - type: StorageFill
-    contents:
+    contents: # DEN - Change contents so that 2 medkits fit
       - id: DefibrillatorSyndicate
       - id: MedkitCombatFilled
-        amount: 4
+        amount: 2
       - id: Tourniquet
         amount: 4
       - id: CombatMedipen
