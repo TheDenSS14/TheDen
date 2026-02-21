@@ -10,7 +10,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Systems.Chat.Controls.Denu"
     xmlns:components="clr-namespace:Content.Client.UserInterface.Systems.Chat.Controls.Denu.Components"
-    SetSize="400 650"
+    SetSize="400 700"
     MinSize="200 200">
 
     <TabContainer Name="Tabs">
@@ -24,7 +24,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 </BoxContainer>
 
                 <BoxContainer Orientation="Horizontal" Margin="0 0">
-                    <CheckBox Name="RemoveAsterisksCheckBox" Text="Remove Asterisks from Emotes" />
+                    <CheckBox Name="RemoveAsterisksCheckBox" Text="Remove Asterisks In Auto-Formatted" />
                 </BoxContainer>
 
                 <BoxContainer Orientation="Horizontal" Margin="0 0">
