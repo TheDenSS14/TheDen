@@ -47,10 +47,10 @@ public sealed partial class DenuWindow : AnimatedWindow
     {
         SetupWindow();
         SetupEventHandlers();
+        SetCVarDefaults();
         SetupColorSelectors();
         SetupHelpDisplay();
         UpdateExamplePreview();
-        SetCVarDefaults();
     }
 
     private void SetupWindow()
@@ -116,6 +116,15 @@ public sealed partial class DenuWindow : AnimatedWindow
         AutoFormatterCheckBox.Pressed = _cfg.GetCVar(DenCCVars.AutoFormatterEnabled);
         RemoveAsterisksCheckBox.Pressed = _cfg.GetCVar(DenCCVars.RemoveAsterisksFromEmotes);
         ShowTypingRange.Pressed = _cfg.GetCVar(DenCCVars.ShowTypingRange);
+
+        var dialogueColorSaved = _cfg.GetCVar(DenCCVars.DialogueColor);
+        var emoteColorSaved =  _cfg.GetCVar(DenCCVars.EmoteColor);
+
+        var dialogueColor = Color.FromHex(dialogueColorSaved);
+        var emoteColor = Color.FromHex(emoteColorSaved);
+
+        _denuUIController.SetColorReplacement("DialogueColor", dialogueColor);
+        _denuUIController.SetColorReplacement("EmoteColor", emoteColor);
 
         OnAutoFormatterPressed(AutoFormatterCheckBox.Pressed);
         OnRemoveAsterisksChanged(RemoveAsterisksCheckBox.Pressed);

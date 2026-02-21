@@ -40,6 +40,26 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                 <CheckBox Name="RemoveAsterisksFromEmotes" Text="{Loc 'ui-options-disable-singulo-warp'}" />
                 <CheckBox Name="ShowTypingRangeOnShortRange" Text="{Loc 'ui-options-show-typing-range'}" />
 
+                <PanelContainer StyleClasses="LowDivider" Margin="0 8" />
+
+                <BoxContainer Orientation="Vertical" Margin="0 0" HorizontalExpand="True">
+                    <Label Text="{Loc 'ui-options-dialogue-color'}"
+                           HorizontalExpand="True"
+                           FontColorOverride="{xNamespace:Static s:StyleNano.NanoGold}"
+                           StyleClasses="LabelKeyText"/>
+                    <RichTextLabel Name="DialoguePreviewLabel" Text="{Loc 'ui-options-preview-placeholder'}" />
+                    <ColorSelectorSliders Name="DialogueColorSelector" HorizontalExpand="True" MinWidth="200" />
+
+                    <PanelContainer StyleClasses="LowDivider" Margin="0 8" />
+
+                    <Label Text="{Loc 'ui-options-emote-color'}"
+                           HorizontalExpand="True"
+                           FontColorOverride="{xNamespace:Static s:StyleNano.NanoGold}"
+                           StyleClasses="LabelKeyText"/>
+                    <RichTextLabel Name="EmotePreviewLabel" Text="{Loc 'ui-options-preview-placeholder'}" />
+                    <ColorSelectorSliders Name="EmoteColorSelector" HorizontalExpand="True" MinWidth="200" />
+                </BoxContainer>
+
             </BoxContainer>
         </ScrollContainer>
 
