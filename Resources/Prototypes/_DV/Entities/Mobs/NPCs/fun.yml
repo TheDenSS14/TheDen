@@ -67,3 +67,8 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
+  - type: GhostRole # DEN: Make ghostrole for my amusement
+    prob: 0.1
+    makeSentient: true
+    name: ghost-role-information-shrimp-name
+    description: ghost-role-information-shrimp-description
