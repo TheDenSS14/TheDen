@@ -170,3 +170,39 @@
   - type: Tag
     tags:
     - Meat
+
+- type: entity
+  parent: FoodNoodlesBase
+  id: FoodNoodlesShrimpScampi
+  name: shrimp scampi
+  description: Actually named after a specific kind of lobster, but who cares?
+  components:
+  - type: FlavorProfile
+    flavors:
+    - pasta
+    - shrimp
+    - garlic
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+    state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 55
+        # nutriment: 3u (shrimp) + 20u (noodles) + 10u (garlic) = 33u
+        # vitamin: 4u (garlic) + 4u (bonus) = 8u
+        # protein: 5u (shrimp)
+        # allicin: 4u (garlic)
+        # 33 + 8 + 5 + 4 = 50
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 33
+        - ReagentId: Vitamin
+          Quantity: 8
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: Allicin
+          Quantity: 4
+  - type: Tag
+    tags:
+    - Meat

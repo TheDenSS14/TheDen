@@ -88,6 +88,19 @@
   solids:
     FoodMeatShrimpCooked: 1
 
+- type: microwaveMealRecipe
+  id: RecipeShrimpScampi
+  name: shrimp scampi recipe
+  result: FoodNoodlesShrimpScampi
+  time: 10
+  reagents:
+    JuiceLemon: 5
+  solids:
+    FoodNoodlesBoiled: 1
+    FoodMeatShrimpCooked: 1
+    FoodButterSlice: 1
+    FoodGarlic: 1
+
 # sorry but im not adding a recipe for every kind of liver
 
 - type: microwaveMealRecipe
