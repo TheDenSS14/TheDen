@@ -37,3 +37,45 @@
     - Meat
     - Soup
     - VampireFood
+
+## salad & other "cold" bowl foods
+
+- type: entity
+  parent: FoodBowlBase
+  id: FoodBowlCevicheShrimp
+  name: shrimp ceviche
+  description: A cold dish of shrimp "cooked" in lime juice, mixed with onions and other vegetables.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - tangy
+    - sour
+    - shrimp
+  - type: Sprite
+    layers:
+    - state: bowl
+    - sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+      state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 45
+        # these values are based on entityspawn and not botanicals (which are much lower than this)
+        # nutriment: 3u (shrimp) + 7u (tomato) + 10u (red onion) = 20u
+        # vitamin: 3u (tomato) + 4u (red onion) + 4u (bonus) = 11u
+        # protein: 5u (shrimp)
+        # allicin: 4u (red onion)
+        # 5u + 4u + 11u + 20u = 40u
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Vitamin
+          Quantity: 11
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: Allicin
+          Quantity: 4
+  - type: Tag
+    tags:
+    - Meat
+    - Soup # not sure why but all salads count as soups. so

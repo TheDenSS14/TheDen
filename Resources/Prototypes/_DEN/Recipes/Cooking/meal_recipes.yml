@@ -53,6 +53,19 @@
     FoodChiliPepper: 1
     FoodMeat: 1
 
+- type: microwaveMealRecipe
+  id: RecipeCevicheShrimp
+  name: shrimp ceviche recipe
+  result: FoodBowlCevicheShrimp
+  time: 10
+  reagents:
+    JuiceLime: 10
+  solids:
+    FoodBowlBig: 1
+    FoodMeatShrimp: 1
+    FoodTomato: 1
+    FoodOnionRed: 1
+
 # sorry but im not adding a recipe for every kind of liver
 
 - type: microwaveMealRecipe
