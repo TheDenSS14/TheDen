@@ -64,6 +64,19 @@
     FoodMeatShrimpCooked: 1
 
 - type: microwaveMealRecipe
+  id: RecipePininyahangHipon # shrimp with pineapples
+  name: pininyahang hipon recipe
+  result: FoodBowlPininyahangHipon
+  time: 10
+  reagents:
+    CoconutWater: 5
+    Milk: 5
+  solids:
+    FoodBowlBig: 1
+    FoodMeatShrimpCooked: 1
+    FoodPineappleSlice: 2
+
+- type: microwaveMealRecipe
   id: RecipeCevicheShrimp
   name: shrimp ceviche recipe
   result: FoodBowlCevicheShrimp
@@ -126,17 +139,16 @@
     FoodOnionSlice: 1
 
 - type: microwaveMealRecipe
-  id: RecipePininyahangHipon # shrimp with pineapples
-  name: pininyahang hipon recipe
-  result: FoodBowlPininyahangHipon
+  id: RecipeShrimpCake
+  name: shrimp cake recipe
+  result: FoodMealShrimpCake
   time: 10
   reagents:
-    CoconutWater: 5
-    Milk: 5
+    Egg: 6
+    Mayonnaise: 5
   solids:
-    FoodBowlBig: 1
+    FoodBreadPlainSlice: 1
     FoodMeatShrimpCooked: 1
-    FoodPineappleSlice: 2
 
 # sorry but im not adding a recipe for every kind of liver
 

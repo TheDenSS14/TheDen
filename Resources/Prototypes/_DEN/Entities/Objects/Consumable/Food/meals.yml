@@ -242,3 +242,31 @@
   - type: Tag
     tags:
     - Meat
+
+- type: entity
+  parent: FoodMealBase
+  id: FoodMealShrimpCake
+  name: shrimp cake
+  description: Not quite a dessert like other cakes, but the crispy exterior is a treat of its own.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - shrimp
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+    state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        # nutriment: 3u (shrimp) + 4u (bread) + 1u (bonus) = 8u
+        # protein: 5u (shrimp) + 2u (bonus) = 7u
+        # 8u + 7u = 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Protein
+          Quantity: 7
+  - type: Tag
+    tags:
+    - Meat
