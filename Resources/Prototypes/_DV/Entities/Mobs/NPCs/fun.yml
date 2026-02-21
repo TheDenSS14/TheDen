@@ -9,6 +9,7 @@
   parent: [ SimpleMobBase, FlyingMobBase, MobCombat ]
   id: MobSpaceShrimp
   description: Shrimply cursed...
+  suffix: AI, metempsychosis # DEN: Clarifying suffix
   components:
   - type: MeleeWeapon
     soundHit:
@@ -42,7 +43,7 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatShrimp # DEN: Add shrimp meat
-      amount: 3
+      amount: 1 # You get one, sorry. It's the whole shrimp
   - type: Bloodstream
     bloodMaxVolume: 100
     bloodReagent: BbqSauce # Australia reference
@@ -67,8 +68,3 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
-  - type: GhostRole # DEN: Make ghostrole for my amusement
-    prob: 0.1
-    makeSentient: true
-    name: ghost-role-information-shrimp-name
-    description: ghost-role-information-shrimp-description

@@ -1,7 +1,23 @@
 - type: entity
   parent: MobSpaceShrimp
+  id: MobSpaceShrimpWild
+  suffix: AI, wild
+  components:
+  - type: Bloodstream
+    bloodReagent: CopperBlood # sorry Leo. I respect your "when high" creative decisions.
+    #  but these can actually spawn naturally so
+  - type: GhostRole
+    prob: 0.1
+    makeSentient: true
+    name: ghost-role-information-shrimp-name
+    description: ghost-role-information-shrimp-description
+  - type: MindContainer
+    showExamineInfo: false
+
+- type: entity
+  parent: MobSpaceShrimpWild
   id: MobSpaceShrimpGhostrole
-  suffix: ghostrole
+  suffix: AI, ghostrole
   components:
   - type: GhostRole
     prob: 1
