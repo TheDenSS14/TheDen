@@ -43,6 +43,7 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatShrimp # DEN: Add shrimp meat
+      gibBody: false # DEN: Don't gib shrimps on butcher
       amount: 1 # You get one, sorry. It's the whole shrimp
   - type: Bloodstream
     bloodMaxVolume: 100
