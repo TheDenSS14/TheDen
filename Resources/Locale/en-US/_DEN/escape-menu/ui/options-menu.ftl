@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 ui-options-tab-den = Den
 ui-options-den-denu = Denu Defaults (First Open)
 
