@@ -37,7 +37,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                 <PanelContainer StyleClasses="LowDivider" Margin="0 8" />
 
                 <CheckBox Name="AutoFormatterEnabled" Text="{Loc 'ui-options-auto-formatter-enabled'}" />
-                <CheckBox Name="RemoveAsterisksFromEmotes" Text="{Loc 'ui-options-disable-singulo-warp'}" />
+                <CheckBox Name="RemoveAsterisksFromEmotes" Text="{Loc 'ui-options-remove-asterisks'}" />
                 <CheckBox Name="ShowTypingRangeOnShortRange" Text="{Loc 'ui-options-show-typing-range'}" />
 
                 <PanelContainer StyleClasses="LowDivider" Margin="0 8" />
