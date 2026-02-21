@@ -242,11 +242,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 13
         reagents:
         - ReagentId: UncookedAnimalProteins
-          Quantity: 3
+          Quantity: 5
         - ReagentId: Fat
-          Quantity: 2
+          Quantity: 3
   - type: Construction
     graph: CookedShrimp
     node: start
@@ -271,11 +272,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 13
         reagents:
         - ReagentId: Protein
-          Quantity: 3
+          Quantity: 5
         - ReagentId: Nutriment
-          Quantity: 2
+          Quantity: 3
   - type: Construction
     graph: CookedShrimp
     node: cooked shrimp
