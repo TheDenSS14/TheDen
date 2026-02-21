@@ -47,3 +47,5 @@ flavor-complex-weldingcoils = electrifying
 
 flavor-base-fatty = fatty
 flavor-base-gooey = gooey
+
+flavor-complex-secticket = like rotten eggs
