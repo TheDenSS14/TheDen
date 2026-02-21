@@ -38,6 +38,46 @@
     - Soup
     - VampireFood
 
+## rice
+
+- type: entity
+  parent: FoodBowlBase
+  id: FoodBowlRiceShrimp
+  name: shrimp-fried rice
+  description: You're telling me. # REALLY FUNNY JOKE
+  components:
+  - type: FlavorProfile
+    flavors:
+    - rice
+    - shrimp
+  - type: Sprite
+    layers:
+    - state: bowl
+    - sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+      state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 45
+        # nutriment: 3u (shrimp) + 20u (rice) = 23u
+        # vitamin: 4u (carrot) + 5u (bonus) = 9u
+        # protein: 5u (shrimp)
+        # oculine: 3u (carrot)
+        # 23 + 9 + 5 + 3 = 40u
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 23
+        - ReagentId: Vitamin
+          Quantity: 9
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: Oculine
+          Quantity: 3
+  - type: Tag
+    tags:
+    - Meat
+    - Soup
+
 ## salad & other "cold" bowl foods
 
 - type: entity

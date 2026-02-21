@@ -54,6 +54,16 @@
     FoodMeat: 1
 
 - type: microwaveMealRecipe
+  id: RecipeRiceShrimp
+  name: shrimp-fried rice recipe
+  result: FoodBowlRiceShrimp
+  time: 15
+  solids:
+    FoodRiceBoiled: 1
+    FoodCarrot: 1
+    FoodMeatShrimpCooked: 1
+
+- type: microwaveMealRecipe
   id: RecipeCevicheShrimp
   name: shrimp ceviche recipe
   result: FoodBowlCevicheShrimp
