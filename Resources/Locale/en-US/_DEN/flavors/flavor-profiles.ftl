@@ -8,6 +8,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 flavor-complex-tirggel = crunchy
+flavor-base-shrimp = shrimpy
 
 ## Candy
 flavor-complex-artificial-blue-raspbery = blue raspberry-flavored

@@ -227,3 +227,55 @@
   - type: FoodSequenceElement
     entries:
       Burger: BlackPudding
+
+- type: entity
+  parent: FoodMeatRawBase
+  id: FoodMeatShrimp
+  name: raw shrimp
+  description: A lot of people don't know that shrimp is gray before it's cooked.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - shrimp
+  - type: Sprite
+    state: crab
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+        - ReagentId: Fat
+          Quantity: 2
+  - type: Construction
+    graph: CookedShrimp
+    node: start
+    defaultTarget: cooked shrimp
+
+- type: entity
+  parent: FoodMeatBase
+  id: FoodMeatShrimpCooked
+  name: cooked shrimp
+  description: You're telling me a shrimp cooked... oh, nevermind.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - shrimp
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: Sprite
+    layers:
+    - state: crab-cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Protein
+          Quantity: 3
+        - ReagentId: Nutriment
+          Quantity: 2
+  - type: Construction
+    graph: CookedShrimp
+    node: cooked shrimp
