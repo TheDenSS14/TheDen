@@ -125,6 +125,19 @@
     FoodCarrot: 1
     FoodOnionSlice: 1
 
+- type: microwaveMealRecipe
+  id: RecipePininyahangHipon # shrimp with pineapples
+  name: pininyahang hipon recipe
+  result: FoodBowlPininyahangHipon
+  time: 10
+  reagents:
+    CoconutWater: 5
+    Milk: 5
+  solids:
+    FoodBowlBig: 1
+    FoodMeatShrimpCooked: 1
+    FoodPineappleSlice: 2
+
 # sorry but im not adding a recipe for every kind of liver
 
 - type: microwaveMealRecipe

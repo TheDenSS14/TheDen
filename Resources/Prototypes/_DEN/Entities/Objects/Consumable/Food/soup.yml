@@ -38,6 +38,47 @@
     - Soup
     - VampireFood
 
+## "hot" bowl foods
+
+- type: entity
+  parent: FoodBowlBase
+  id: FoodBowlPininyahangHipon
+  name: pininyahang hipon
+  description: A Filipino dish of shrimp cooked in a creamy coconut and pineapple sauce. Sweet and savory!
+  components:
+  - type: FlavorProfile
+    flavors:
+    - shrimp
+    - creamy
+    - pineapple
+  - type: Sprite
+    layers:
+    - state: bowl
+    - sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+      state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        # nutriment: 3u (shrimp) + 4u (pineapple) + 3u (bonus) = 10u
+        # vitamin: 5u (bonus)
+        # protein: 5u (shrimp)
+        # 5u coconut water (sorry, no coconut cream)
+        # 10 + 5 + 5 + 5 = 25u
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: CoconutWater
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
+    - Soup
+
 ## rice
 
 - type: entity
