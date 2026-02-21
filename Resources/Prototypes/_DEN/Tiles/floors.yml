@@ -805,6 +805,102 @@
   heatCapacity: 10000
 
 - type: tile
+  id: FloorSomberGlassNE
+  name: tiles-somber-glass-NE
+  sprite: /Textures/_DEN/Tiles/somberglass-NE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassNE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassNW
+  name: tiles-somber-glass-NW
+  sprite: /Textures/_DEN/Tiles/somberglass-NW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassNW
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassSE
+  name: tiles-somber-glass-SE
+  sprite: /Textures/_DEN/Tiles/somberglass-SE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassSE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassSW
+  name: tiles-somber-glass-SW
+  sprite: /Textures/_DEN/Tiles/somberglass-SW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassSW
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassDarkNE
+  name: tiles-somber-glass-dark-NE
+  sprite: /Textures/_DEN/Tiles/somberglass-dark-NE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassDarkNE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassDarkNW
+  name: tiles-somber-glass-dark-NW
+  sprite: /Textures/_DEN/Tiles/somberglass-dark-NW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassDarkNW
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassDarkSE
+  name: tiles-somber-glass-dark-SE
+  sprite: /Textures/_DEN/Tiles/somberglass-dark-SE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassDarkSE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassDarkSW
+  name: tiles-somber-glass-dark-SW
+  sprite: /Textures/_DEN/Tiles/somberglass-dark-SW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassDarkSW
+  heatCapacity: 10000
+
+- type: tile
   id: FloorSomberGlassTinted
   name: tiles-somber-glass-floor-tinted
   sprite: /Textures/_DEN/Tiles/somber-glass-tinted.png

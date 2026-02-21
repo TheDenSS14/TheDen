@@ -694,6 +694,118 @@
 
 - type: entity
   parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassNE
+  name: somber glass corner (NE)
+  components:
+  - type: Sprite
+    state: somberglass-NE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassNE
+  - type: Stack
+    stackType: FloorTileSomberGlassNE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassNW
+  name: somber glass corner (NW)
+  components:
+  - type: Sprite
+    state: somberglass-NW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassNW
+  - type: Stack
+    stackType: FloorTileSomberGlassNW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassSE
+  name: somber glass corner (SE)
+  components:
+  - type: Sprite
+    state: somberglass-SE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassSE
+  - type: Stack
+    stackType: FloorTileSomberGlassSE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassSW
+  name: somber glass corner (SW)
+  components:
+  - type: Sprite
+    state: somberglass-SW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassSW
+  - type: Stack
+    stackType: FloorTileSomberGlassSW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassDarkNE
+  name: somber glass corner (dark, NE)
+  components:
+  - type: Sprite
+    state: somberglass-dark-NE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassDarkNE
+  - type: Stack
+    stackType: FloorTileSomberGlassDarkNE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassDarkNW
+  name: somber glass corner (dark, NW)
+  components:
+  - type: Sprite
+    state: somberglass-dark-NW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassDarkNW
+  - type: Stack
+    stackType: FloorTileSomberGlassDarkNW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassDarkSE
+  name: somber glass corner (dark, SE)
+  components:
+  - type: Sprite
+    state: somberglass-dark-SE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassDarkSE
+  - type: Stack
+    stackType: FloorTileSomberGlassDarkSE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassDarkSW
+  name: somber glass corner (dark, SW)
+  components:
+  - type: Sprite
+    state: somberglass-dark-SW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassDarkSW
+  - type: Stack
+    stackType: FloorTileSomberGlassDarkSW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
   id: FloorTileItemSomberGlassTinted
   name: somber glass tile (tinted)
   components:

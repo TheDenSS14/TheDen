@@ -353,13 +353,14 @@
 # Chairs
 
 - type: entity
-  parent: BedPenthouseUpper
+  parent: BigBedUpperFancy1
   id: SomberPsychBedLong
   name: somber leather chaise lounge
   description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it."
   suffix: Long
   components:
   - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture-64x32.rsi
     state: somberpsychbedlong
     snapCardinals: false
     noRot: false
@@ -374,6 +375,7 @@
   suffix: Long, Flipped
   components:
   - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture-64x32.rsi
     state: somberpsychbedlongflipped
     snapCardinals: false
     noRot: false
@@ -456,7 +458,7 @@
     noRot: false
 
 - type: entity
-  parent: BedPenthouseUpper
+  parent: BigBedUpperFancy1
   id: BenchSofaSomberFootrestRight
   name: somber leather footrest
   suffix: Right
@@ -473,7 +475,7 @@
     buckleOffset: "0.35,0.64"
 
 - type: entity
-  parent: BedPenthouseUpper
+  parent: BigBedUpperFancy1
   id: BenchSofaSomberFootrestMiddle
   name: somber leather footrest
   suffix: Middle
@@ -490,7 +492,7 @@
     buckleOffset: "0.35,-0.06"
 
 - type: entity
-  parent: BedPenthouseUpper
+  parent: BigBedUpperFancy1
   id: BenchSofaSomberFootrestLeft
   name: somber leather footrest
   suffix: Left

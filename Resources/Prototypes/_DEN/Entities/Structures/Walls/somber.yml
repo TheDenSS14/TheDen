@@ -1,7 +1,7 @@
 # Standard
 
 - type: entity
-  parent: WallShuttle
+  parent: WallReinforced
   id: WallSomber
   name: somber wall
   description: "Layered with rough, slanted mnemolith slabs in a tight grid to prevent psionic scrying."
@@ -16,9 +16,11 @@
   - type: IconSmooth
     key: walls
     base: wall
+  - type: Reflect
+    reflectProb: 1
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: WallReinforcedDiagonal
   id: WallSomberDiagonal
   name: somber wall
   suffix: Diagonal
@@ -35,6 +37,8 @@
     mode: Diagonal
     key: walls
     base: state
+  - type: Reflect
+    reflectProb: 1
 
 # Dark
 

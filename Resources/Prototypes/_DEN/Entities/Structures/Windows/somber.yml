@@ -1,7 +1,7 @@
 # Standard
 
 - type: entity
-  parent: ShuttleWindow
+  parent: ReinforcedWindow
   id: WindowSomber
   name: somber window
   description: "Your reflection shimmers faintly in the glass."
@@ -13,9 +13,11 @@
   - type: IconSmooth
     key: walls
     base: window
+  - type: Reflect
+    reflectProb: 1
 
 - type: entity
-  parent: ShuttleWindowDiagonal
+  parent: ReinforcedWindowDiagonal
   id: WindowSomberDiagonal
   name: somber window
   suffix: Diagonal
@@ -29,6 +31,8 @@
     mode: Diagonal
     key: walls
     base: state
+  - type: Reflect
+    reflectProb: 1
 
 - type: entity
   parent: WindowSomberDiagonal
@@ -195,6 +199,8 @@
   - type: Icon
     sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
     state: somber
+  - type: Reflect
+    reflectProb: 1
 
 - type: entity
   parent: WindowSomberDirectional
