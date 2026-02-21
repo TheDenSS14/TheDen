@@ -66,6 +66,17 @@
     FoodTomato: 1
     FoodOnionRed: 1
 
+- type: microwaveMealRecipe
+  id: RecipeCocktailShrimp
+  name: shrimp cocktail recipe
+  result: FoodMealCocktailShrimp
+  time: 10
+  reagents:
+    CocktailSauce: 10
+  solids:
+    DrinkGlassCoupeShaped: 1
+    FoodMeatShrimpCooked: 2
+
 # sorry but im not adding a recipe for every kind of liver
 
 - type: microwaveMealRecipe
