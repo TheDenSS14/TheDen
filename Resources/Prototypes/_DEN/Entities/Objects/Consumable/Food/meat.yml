@@ -237,7 +237,7 @@
   - type: FlavorProfile
     flavors:
     - shrimp
-  - type: Sprite
+  - type: Sprite # TODO: Shrimp sprite
     state: crab
   - type: SolutionContainerManager
     solutions:
@@ -266,7 +266,7 @@
     tags:
     - Cooked
     - Meat
-  - type: Sprite
+  - type: Sprite # TODO: Shrimp sprite
     layers:
     - state: crab-cooked
   - type: SolutionContainerManager
@@ -281,3 +281,7 @@
   - type: Construction
     graph: CookedShrimp
     node: cooked shrimp
+  - type: FoodSequenceElement
+    entries:
+      Taco: ShrimpTaco
+      Skewer: ShrimpSkewer
