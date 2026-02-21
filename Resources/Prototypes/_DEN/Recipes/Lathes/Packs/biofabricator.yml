@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: latheRecipePack
+  parent: [BiofabricatorDen]
   id: BiofabricatorStaticAwfulDen
   recipes:
   - MonkeyCube
@@ -12,6 +13,12 @@
   - MothroachCube
   - MouseCube
   - CockroachCube
+
+- type: latheRecipePack
+  id: BiofabricatorDen
+  recipes:
+  - SnailCube
+  - ShrimpCube
 
 - type: latheRecipePack
   id: BiofabricatorEmagStaticAwfulDen
