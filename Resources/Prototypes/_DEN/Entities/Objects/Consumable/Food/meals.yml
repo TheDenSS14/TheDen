@@ -206,3 +206,39 @@
   - type: Tag
     tags:
     - Meat
+
+- type: entity
+  parent: FoodMealBase
+  id: FoodMealUkoy
+  name: ukoy
+  description: A fritter made from shrimp, onions, and other vegetables.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - shrimp
+    - onion
+    - oily
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+    state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        # nutriment: 3u (shrimp) + 2u (onion slice) + 4u (bonus) = 9u
+        # vitamin: 1u (onion slice) + 4u (carrot) = 5u
+        # protein: 5u (shrimp) = 5u
+        # allicin: 1u (onion slice)
+        # 9 + 5 + 5 + 1 = 20u
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 9
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: Allicin
+          Quantity: 1
+  - type: Tag
+    tags:
+    - Meat

@@ -111,6 +111,20 @@
     FoodButterSlice: 1
     FoodGarlic: 1
 
+- type: microwaveMealRecipe
+  id: RecipeUkoy # shrimp fritters
+  name: ukoy recipe
+  result: FoodMealUkoy
+  time: 10
+  # TODO: wish we had sweet potato. oh well!
+  reagents:
+    Flour: 5
+    Egg: 6
+  solids:
+    FoodMeatShrimpCooked: 1
+    FoodCarrot: 1
+    FoodOnionSlice: 1
+
 # sorry but im not adding a recipe for every kind of liver
 
 - type: microwaveMealRecipe
