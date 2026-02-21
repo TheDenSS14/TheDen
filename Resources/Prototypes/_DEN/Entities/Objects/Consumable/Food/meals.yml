@@ -121,10 +121,8 @@
     - tangy
     - shrimp
   - type: Sprite
-    layers:
-    - state: bowl
-    - sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
-      state: dinuguan
+    sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+    state: dinuguan
   - type: SolutionContainerManager
     solutions:
       food:
@@ -140,6 +138,35 @@
           Quantity: 12
         - ReagentId: CocktailSauce
           Quantity: 10
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  parent: FoodMealBase
+  id: FoodMealShrimpNigiri
+  name: shrimp nigiri
+  description: A bite-sized serving of butterflied shrimp over rice.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - shrimp
+    - rice
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+    state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        # nutriment: 3u (shrimp) + 7u (bonus) = 10u
+        # protein: 5u (shrimp)
+        # 10 + 5 = 15u
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 5
   - type: Tag
     tags:
     - Meat

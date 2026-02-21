@@ -77,6 +77,17 @@
     DrinkGlassCoupeShaped: 1
     FoodMeatShrimpCooked: 2
 
+- type: microwaveMealRecipe
+  id: RecipeShrimpNigiri
+  name: shrimp nigiri recipe
+  result: FoodMealShrimpNigiri
+  time: 10
+  reagents:
+    Rice: 10
+    Water: 5
+  solids:
+    FoodMeatShrimpCooked: 1
+
 # sorry but im not adding a recipe for every kind of liver
 
 - type: microwaveMealRecipe
