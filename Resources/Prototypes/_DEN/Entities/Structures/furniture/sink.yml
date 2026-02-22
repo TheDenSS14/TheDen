@@ -1,0 +1,26 @@
+- type: entity
+  parent: SinkEmpty
+  id: SinkCenteredEmpty
+  suffix: centered
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/sink.rsi
+    layers:
+    - state: sink_centered
+    - map: [ "enum.SolutionContainerLayers.Fill" ]
+      state: sink_centered-fill-1
+      visible: false
+
+- type: entity
+  parent: SinkCenteredEmpty
+  id: SinkCentered
+  suffix: centered, Water
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drainBuffer:
+        maxVol: 200
+      tank:
+        reagents:
+        - ReagentId: Water
+          Quantity: 500
