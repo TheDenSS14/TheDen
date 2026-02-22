@@ -269,6 +269,7 @@
   - BaseSpeciesRodentiaHybrid
   - BaseRodentiaCheeks
   id: RodentiaCheeksRound
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human, Oni, Vulpkanin]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: cheeks
@@ -278,6 +279,7 @@
   - BaseSpeciesRodentiaHybrid
   - BaseRodentiaCheeks
   id: RodentiaCheeksRoundCounter
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human, Oni, Vulpkanin]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: cheeks
@@ -289,6 +291,7 @@
   - BaseSpeciesRodentiaHybrid
   - BaseRodentiaCheeks
   id: RodentiaCheeksFluff
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human, Oni, Vulpkanin]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff
@@ -298,6 +301,7 @@
   - BaseSpeciesRodentiaHybrid
   - BaseRodentiaCheeks
   id: RodentiaCheeksFluffCounter
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human, Oni, Vulpkanin]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff
@@ -309,6 +313,7 @@
   - BaseSpeciesRodentiaHybrid
   - BaseRodentiaCheeks
   id: RodentiaCheeksFluffAlt
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human, Oni, Vulpkanin]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff_alt
@@ -318,6 +323,7 @@
   - BaseSpeciesRodentiaHybrid
   - BaseRodentiaCheeks
   id: RodentiaCheeksFluffAltCounter
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human, Oni, Vulpkanin]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff_alt
@@ -328,7 +334,7 @@
   id: RodentiaCheeksWhiskers
   markingCategory: Head # for no-cost markings
   bodyPart: HeadTop # for layering
-  speciesRestriction: [Rodentia, IPC, Human, Kitsune]
+  speciesRestriction: [Rodentia, IPC, Human, Kitsune, Vulpkanin]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: whiskers
@@ -500,6 +506,7 @@
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/body_markings.rsi
       state: fawn
+  speciesRestriction: [Rodentia, SlimePerson, Human, Oni, Vulpkanin]
 
 - type: marking
   parent: # Aurora Song: Inherit species restrictions and part categories.
