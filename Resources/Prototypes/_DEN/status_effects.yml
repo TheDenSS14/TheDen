@@ -1,0 +1,10 @@
+# Status effect prototypes.
+# Holds no actual logic, just some basic data about the effect.
+
+- type: statusEffect
+  id: SeeingMnemolith
+  alwaysAllowed: true # It's this or fuck up five or six mob files, and it's just cosmetic...
+
+- type: statusEffect
+  id: SeeingMnemolithHighlight
+  alwaysAllowed: true
