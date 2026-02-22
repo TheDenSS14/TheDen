@@ -20,8 +20,8 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.60
-        Slash: 0.60
+        Blunt: 0.70
+        Slash: 0.70
         Piercing: 0.65
         Heat: 0.70
   - type: StaminaDamageResistance #Den
@@ -39,6 +39,9 @@
     sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_jacket.rsi
   - type: Clothing
     sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_jacket.rsi
+  - type: TemperatureProtection # DEN
+    heatingCoefficient: 1.1 # DEN
+    coolingCoefficient: 0.1 # DEN
   - type: Item
     size: Normal
 

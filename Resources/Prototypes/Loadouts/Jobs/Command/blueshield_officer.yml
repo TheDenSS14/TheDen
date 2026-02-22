@@ -111,23 +111,23 @@
   items:
     - WeaponEnergyRevolverSecurity
 
-- type: loadout
-  id: LoadoutBSOMace
-  category: JobsCommandBlueshieldOfficer
-  cost: 0
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerSecondary
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 18000 # 5 hours
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - BlueshieldMace
+#- type: loadout
+#  id: LoadoutBSOMace
+#  category: JobsCommandBlueshieldOfficer
+#  cost: 0
+#  canBeHeirloom: true
+#  guideEntry: SecurityWeapons
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutBlueshieldOfficerSecondary
+#    - !type:CharacterDepartmentTimeRequirement
+#      department: Security
+#      min: 18000 # 5 hours
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - BlueshieldOfficer
+#  items:
+#    - BlueshieldMace
 
 - type: loadout
   id: LoadoutBSOAxe
@@ -147,98 +147,98 @@
   items:
     - BlueshieldAxe
 
-- type: loadout
-  id: LoadoutBSORifleChester
-  category: JobsCommandBlueshieldOfficer
-  cost: 6
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerPrimary
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - WeaponLeverChester
+#- type: loadout
+#  id: LoadoutBSORifleChester
+#  category: JobsCommandBlueshieldOfficer
+#  cost: 6
+#  canBeHeirloom: true
+#  guideEntry: SecurityWeapons
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutBlueshieldOfficerPrimary
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - BlueshieldOfficer
+#  items:
+#    - WeaponLeverChester
 
-- type: loadout
-  id: LoadoutMagazineShotgunLeverRifle
-  category: JobsCommandBlueshieldOfficer
-  cost: 2
-  requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - MagazineShotgunLeverRifle
+#- type: loadout
+#  id: LoadoutMagazineShotgunLeverRifle
+#  category: JobsCommandBlueshieldOfficer
+#  cost: 2
+#  requirements:
+#    - !type:CharacterDepartmentTimeRequirement
+#      department: Security
+#      min: 3600 # 1 hours
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutSecurityEquipment
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - BlueshieldOfficer
+#  items:
+#    - MagazineShotgunLeverRifle
 
-- type: loadout
-  id: LoadoutMagazineRifleBRDIR25
-  category: JobsCommandBlueshieldOfficer
-  cost: 2
-  requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - MagazineRifle
+#- type: loadout
+#  id: LoadoutMagazineRifleBRDIR25
+#  category: JobsCommandBlueshieldOfficer
+#  cost: 2
+#  requirements:
+#    - !type:CharacterDepartmentTimeRequirement
+#      department: Security
+#      min: 3600 # 1 hours
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutSecurityEquipment
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - BlueshieldOfficer
+#  items:
+#    - MagazineRifle
 
-- type: loadout
-  id: LoadoutMagazineRifleBSOAk
-  category: JobsCommandBlueshieldOfficer
-  cost: 2
-  requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - MagazineLightRifle
+#- type: loadout
+#  id: LoadoutMagazineRifleBSOAk
+#  category: JobsCommandBlueshieldOfficer
+#  cost: 2
+#  requirements:
+#    - !type:CharacterDepartmentTimeRequirement
+#      department: Security
+#      min: 3600 # 1 hours
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutSecurityEquipment
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - BlueshieldOfficer
+#  items:
+#    - MagazineLightRifle
 
-- type: loadout
-  id: LoadoutBSORifleBRDIR25
-  category: JobsCommandBlueshieldOfficer
-  cost: 6 # Significant upgrade over a Chester, offered here for the STYLE. Intentionally priced at you not being able to buy all 3 medical items alongside it, plus being unable to buy it alongside the CQC Manual.
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerPrimary
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - WeaponSubMachineGunBRDIR25BSO # The Den sprites
+#- type: loadout
+#  id: LoadoutBSORifleBRDIR25
+#  category: JobsCommandBlueshieldOfficer
+#  cost: 6 # Significant upgrade over a Chester, offered here for the STYLE. Intentionally priced at you not being able to buy all 3 medical items alongside it, plus being unable to buy it alongside the CQC Manual.
+#  canBeHeirloom: true
+#  guideEntry: SecurityWeapons
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutBlueshieldOfficerPrimary
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - BlueshieldOfficer
+#  items:
+#    - WeaponSubMachineGunBRDIR25BSO # The Den sprites
 
-- type: loadout
-  id: LoadoutWeaponRiflBSOAk
-  category: JobsCommandBlueshieldOfficer
-  cost: 6 # upgrade over the chester, but a lot less subtle than the brdi
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerPrimary
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - WeaponRiflBSOAk
+#- type: loadout
+#  id: LoadoutWeaponRiflBSOAk
+#  category: JobsCommandBlueshieldOfficer
+#  cost: 6 # upgrade over the chester, but a lot less subtle than the brdi
+#  canBeHeirloom: true
+#  guideEntry: SecurityWeapons
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutBlueshieldOfficerPrimary
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - BlueshieldOfficer
+#  items:
+#    - WeaponRiflBSOAk
 
 - type: loadout
   id: LoadoutBSOShield
@@ -255,20 +255,20 @@
   items:
     - BlueShieldShield
 
-- type: loadout
-  id: LoadoutBSOGreatsword
-  category: JobsCommandBlueshieldOfficer
-  cost: 4
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerPrimary
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - GreatswordBlueshield
+#- type: loadout
+#  id: LoadoutBSOGreatsword
+#  category: JobsCommandBlueshieldOfficer
+#  cost: 4
+#  canBeHeirloom: true
+#  guideEntry: SecurityWeapons
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutBlueshieldOfficerPrimary
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - BlueshieldOfficer
+#  items:
+#    - GreatswordBlueshield
 
 - type: loadout
   id: LoadoutBSOMedkitCombatFilled
@@ -292,25 +292,25 @@
 #   items:
 #     - NTCQCManual
 
-- type: loadout
-  id: LoadoutBSOTerminus
-  category: JobsCommandBlueshieldOfficer
-  cost: 0
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerPrimary
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-#    - !type:CharacterAgeRequirement - TheDen
-#      min: 21
-    - !type:CharacterSpeciesRequirement
-      species:
-      - Oni
-  items:
-    - Terminus
+#- type: loadout
+#  id: LoadoutBSOTerminus
+#  category: JobsCommandBlueshieldOfficer
+#  cost: 0
+#  canBeHeirloom: true
+#  guideEntry: SecurityWeapons
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutBlueshieldOfficerPrimary
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - BlueshieldOfficer
+##    - !type:CharacterAgeRequirement - TheDen
+##      min: 21
+#    - !type:CharacterSpeciesRequirement
+#      species:
+#      - Oni
+#  items:
+#    - Terminus
 
 # Eyes
 
