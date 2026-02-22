@@ -4,6 +4,7 @@
 # SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
 # SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
 # SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -16,3 +17,29 @@ zombie-role-desc =  A malevolent creature of the dead.
 zombie-role-rules = You are an antagonist. Search out the living and bite them in order to infect them and turn them into zombies. Work together with the other zombies to overtake the station.
 
 zombie-permadeath = This time, you're dead for real.
+
+zombie-tumor-infection-contracted = You feel a strange sensation spreading through your body...
+zombie-tumor-infection-symptoms-start = You begin to feel unwell. Something is very wrong...
+zombie-tumor-removed = The zombie tumor has been removed. You feel the infection receding.
+
+zombie-robotumor-infection-contracted = WARNING: Foreign code detected in system memory...
+zombie-robotumor-infection-symptoms-start = ERROR: Critical system anomalies detected. Diagnostic routines failing...
+zombie-robotumor-removed = The corrupted hardware has been removed. Systems stabilizing...
+
+zombie-tumor-sickness-1 = You feel terrible...
+zombie-tumor-sickness-2 = Your body aches all over.
+zombie-tumor-sickness-3 = You feel nauseous and weak.
+zombie-tumor-sickness-4 = Everything hurts. You can barely think straight.
+zombie-tumor-sickness-5 = You feel like you're dying...
+
+zombie-tumor-advanced-1 = You feel paranoid...
+zombie-tumor-advanced-2 = You feel angry!
+
+zombie-robotumor-sickness-1 = Your internal mechanisms are grinding and jamming...
+zombie-robotumor-sickness-2 = Your actuators are seizing up.
+zombie-robotumor-sickness-3 = You detect multiple system malfunctions.
+
+zombie-robotumor-advanced-1 = CRITICAL ERROR: Logic circuits unstable.
+zombie-robotumor-advanced-2 = WARNING: Hostile subroutines detected in memory banks!
+
+zombie-tumor-ability-gained = You feel an overwhelming urge to give in to the infection...
