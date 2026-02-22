@@ -38,6 +38,45 @@
     - Soup
     - VampireFood
 
+- type: entity
+  parent: FoodBowlBase
+  id: FoodSoupShrimpSour
+  name: shrimp sour soup
+  # shoutout to domino (@YomieI on GitHub) for this one, this is a cambodian dish that romanizes to "sgnor chrouk bangkea"
+  description:
+  components:
+  - type: FlavorProfile
+    flavors:
+    - shrimp
+    - sour
+  - type: Sprite
+    layers:
+    - state: bowl
+    - sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+      state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 45
+        # nutriment: 3u (shrimp) + 5u (lime) + 10u (garlic) + 2 (bonus) = 20u
+        # vitamin: 4u (lime) + 4u (garlic) + 3 (bonus) = 11u
+        # protein: 5u (shrimp)
+        # allicin: 4u (garlic)
+        # 20 + 11 + 5 + 4 = 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Vitamin
+          Quantity: 11
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: Allicin
+          Quantity: 4
+  - type: Tag
+    tags:
+    - Meat
+    - Soup
+
 ## "hot" bowl foods
 
 - type: entity

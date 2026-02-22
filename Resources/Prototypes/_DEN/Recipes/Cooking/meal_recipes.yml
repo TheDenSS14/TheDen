@@ -54,6 +54,20 @@
     FoodMeat: 1
 
 - type: microwaveMealRecipe
+  id: RecipeSoupShrimpSour
+  name: shrimp sour soup recipe
+  result: FoodSoupShrimpSour
+  time: 10
+  reagents:
+    Water: 10
+    JuiceLime: 5
+  solids:
+    FoodBowlBig: 1
+    FoodMeatShrimpCooked: 1
+    FoodLime: 1
+    FoodGarlic: 1
+
+- type: microwaveMealRecipe
   id: RecipeRiceShrimp
   name: shrimp-fried rice recipe
   result: FoodBowlRiceShrimp
