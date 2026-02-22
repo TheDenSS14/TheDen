@@ -74,9 +74,6 @@
     immuneTo:
       components:
       - FlareGunPellet
-  - type: Damageable
-    damageContainer: ManifestedSpirit
-    damageModifierSet: ManifestedSpirit
 
 - type: entity
   id: MobLivingShadow
@@ -154,8 +151,8 @@
     damageCap: 250
     damage:
       groups:
-        Brute: -3
-        Burn: -3
+        Brute: -6
+        Burn: -6
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
