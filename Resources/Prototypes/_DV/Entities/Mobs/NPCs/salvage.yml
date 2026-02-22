@@ -14,6 +14,10 @@
   id: MobRadioGuard
   description: "Mindwiped and hypno-indoctrinated into perfect loyalty by the Syndicate. They will throw their life away to defend their objective."
   components:
+    # Den begin additions, randomizes the mobs so they're not just all bald guys, syndicate hires everyone :3
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    # Den end additions
     - type: NpcFactionMember
       factions:
         - Syndicate
