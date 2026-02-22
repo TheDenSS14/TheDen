@@ -1,12 +1,13 @@
 # SPDX-FileCopyrightText: 2026 Jakumba
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-
 - type: entity
-  id: MobLivingShadow
-  name: living shadow
+  id: MobShadowCreatureBase
+  name: MobShadowCreatureBase
+  abstract: true
+  categories: [ HideSpawnMenu ]
   parent: [ SimpleSpaceMobBase, FlyingMobBase, MobCombat ]
-  description: A tortured scream, agony given metaphysical flesh.
+  description: You shouldn't see this.
   components:
   - type: NoSlip
   - type: ZombieImmune
@@ -25,6 +26,64 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.25
     baseSprintSpeed: 3.75
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 50
+    damage:
+      groups:
+        Brute: -1
+        Burn: -1
+  - type: Insulated
+  - type: Bloodstream
+    bloodReagent: BlackBlood
+    maxBleedAmount: 0
+    bloodMaxVolume: 15
+  - type: Speech
+    speechVerb: Ghost
+  - type: Psionic
+    removable: false
+    roller: false
+    psychognomicDescriptors:
+      - p-descriptor-vampiric
+  - type: Body
+    prototype: Skia
+  - type: Butcherable
+    spawned:
+    - id: Ectoplasm
+      amount: 1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/wail.ogg
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Damageable
+    damageContainer: ManifestedSpirit
+    damageModifierSet: ManifestedSpirit
+  - type: DamageOnDispel
+    damage:
+      types:
+        Heat: 50
+  - type: EmbedImmune
+    immuneTo:
+      components:
+      - FlareGunPellet
+  - type: Damageable
+    damageContainer: ManifestedSpirit
+    damageModifierSet: ManifestedSpirit
+
+- type: entity
+  id: MobLivingShadow
+  name: living shadow
+  parent: [ MobShadowCreatureBase ]
+  description: A tortured scream, agony given metaphysical flesh.
+  components:
   - type: Sprite
     drawdepth: Mobs
     sprite: _NF/Mobs/BloodCult/drainedone.rsi
@@ -42,9 +101,6 @@
         - SmallMobMask
         layer:
         - Opaque
-  - type: Damageable
-    damageContainer: ManifestedSpirit
-    damageModifierSet: ManifestedSpirit
   - type: DamageStateVisuals
     states:
       Alive:
@@ -54,16 +110,9 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      70: Dead
-  - type: PassiveDamage
-    allowedStates:
-    - Alive
-    damageCap: 70
-    damage:
-      groups:
-        Brute: -1
-        Burn: -1
-  - type: Insulated
+      50: Dead
+  - type: TimedDespawn
+    lifetime: 45
   - type: MeleeWeapon
     soundHit:
       collection: MetalThud
@@ -73,41 +122,10 @@
         Pierce: 5
         Cold: 10
     animation: WeaponArcClaw
-  - type: Bloodstream
-    bloodReagent: BlackBlood
-    maxBleedAmount: 0
-    bloodMaxVolume: 15
-  - type: Speech
-    speechVerb: Ghost
-  - type: Body
-    prototype: Skia
-  - type: Butcherable
-    spawned:
-    - id: Ectoplasm
-      amount: 1
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 70
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/wail.ogg
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: DamageOnDispel
-    damage:
-      types:
-        Heat: 70
-  - type: EmbedImmune
-    immuneTo:
-      components:
-      - FlareGunPellet
 
 - type: entity
   id: MobSpectre
-  parent: [ MobLivingShadow ]
+  parent: [ MobShadowCreatureBase ]
   name: drained one
   description: A fragment of a tormented soul.
   components:
