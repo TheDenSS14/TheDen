@@ -470,9 +470,10 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
             ? string.Join(", ", recipients.Select(r => ToPrettyString(r)))
             : $"#{msg.RecipientNumber:D4}";
 
-        _adminLogger.Add(LogType.Chat,
+        _adminLogger.Add(
+            LogType.Chat,
             LogImpact.Low,
-            $"{ToPrettyString(card):user} sent NanoChat message to {recipientsText}: {content}{(deliveryFailed ? " [DELIVERY FAILED]" : "")}");
+            $"{ToPrettyString(msg.Actor):user} (using ID: {ToPrettyString(card):entity}) sent NanoChat message to {recipientsText}: {content}{(deliveryFailed ? " [DELIVERY FAILED]" : "")}");
 
         var msgEv = new NanoChatMessageReceivedEvent(card);
         RaiseLocalEvent(ref msgEv);
