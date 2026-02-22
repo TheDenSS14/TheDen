@@ -7,10 +7,10 @@
     startAnnouncement: true
     startDelay: 10
     earliestStart: 15
-    weight: 2
+    weight: 3
     duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector
       children:
-      - id: MobSpaceShrimpWild
+      - id: MobSpaceShrimpGhostrole
         weight: 1
