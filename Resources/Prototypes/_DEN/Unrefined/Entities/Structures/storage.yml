@@ -1,0 +1,159 @@
+# Alas, try as I might, I cannot get the barrel to show as open when open.
+# The Openable component would need fixing.
+
+- type: entity
+  parent: BaseStructureDynamic
+  id: WoodenBarrel
+  name: wooden barrel
+  description: This wooden barrel was designed to hold fluids.
+#  abstract: true
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Structures/Storage/wood_barrel.rsi
+    netsync: false
+    noRot: true
+    layers:
+    - state: open
+    - state: closed
+    - state: paper
+      sprite: Structures/Storage/Crates/labels.rsi
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.2,-0.2,0.2,0.45"
+        density: 50
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 25
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: barrel
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Piercing
+        damage: 25
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: barrel
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpillBehavior
+        solution: barrel
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Openable
+    sound:
+      collection: bottleOpenSounds
+    closeable: true
+    closeSound:
+      collection: bottleCloseSounds
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        maxVol: 500
+  - type: DrainableSolution
+    solution: barrel
+  - type: ReagentTank
+  - type: PhysicalComposition
+    materialComposition:
+      Wood: 300
+      Steel: 75
+  - type: ExaminableSolution
+    solution: barrel
+    heldOnly: false
+  - type: DumpableSolution
+    solution: barrel
+  - type: DrawableSolution
+    solution: barrel
+  - type: PaperLabel
+    labelSlot:
+      insertVerbText: Attach Label
+      ejectVerbText: Remove Label
+      whitelist:
+        components:
+        - Paper
+  - type: GenericVisualizer
+    visuals:
+      enum.PaperLabelVisuals.HasLabel:
+        enum.PaperLabelVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+      enum.PaperLabelVisuals.LabelType:
+        enum.PaperLabelVisuals.Layer:
+          Paper: { state: paper }
+          Bounty: { state: bounty }
+          CaptainsPaper: { state: captains_paper }
+          Invoice: { state: invoice }
+          MantisPaper: { state: mantis_paper } # TheDen
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      paper_label: !type:ContainerSlot
+  - type: ItemSlots
+      
+- type: entity
+  parent: WoodenBarrel
+  id: WoodenBarrelWater
+  suffix: water
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: Water
+          Quantity: 500
+
+- type: entity
+  parent: WoodenBarrel
+  id: WoodenBarrelWine
+  suffix: wine
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: Wine
+          Quantity: 500
+            
+- type: entity
+  parent: WoodenBarrel
+  id: WoodenBarrelSalt
+  suffix: salt
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: TableSalt
+          Quantity: 500
+            
+- type: entity
+  parent: WoodenBarrel
+  id: WoodenBarrelFlour
+  suffix: flour
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: Flour
+          Quantity: 500

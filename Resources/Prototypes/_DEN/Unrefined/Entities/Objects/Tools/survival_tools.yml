@@ -1,0 +1,177 @@
+- type: entity
+  name: stone knife
+  parent: BaseKnife
+  id: HardStoneKnife
+  description: It's a lot harder to get a nice edge than you'd think. Our ancestors must have had a lot of patience.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Tools/stone_knife.rsi
+    state: icon
+  - type: ThrowingAngle
+    angle: 135
+  - type: Item
+  - type: MeleeWeapon
+    attackRate: 1.0
+    heavyRateModifier: 1.5
+    heavyDamageBaseModifier: 1.2
+    range: 1.4
+    damage:
+      types:
+        Slash: 3
+        Blunt: 2
+  - type: DisarmMalus
+    malus: 0.225
+
+- type: entity
+  name: stone pickaxe
+  parent: Pickaxe
+  id: HardStonePickaxe
+  description: If you swing too hard, the tip might break off.
+  components:
+    - type: Sprite
+      sprite: _DEN/Unrefined/Objects/Tools/stone_pickaxe.rsi
+      state: stone_pickaxe
+    - type: MeleeWeapon
+      attackRate: 1.5
+      wideAnimationRotation: -45
+      damage:
+        types:
+          Blunt: 5
+          Piercing: 3
+    - type: IncreaseDamageOnWield
+      damage:
+        types:
+          Structural: 10
+          Piercing: 2
+
+- type: entity
+  name: stone shovel
+  parent: Shovel
+  id: HardStoneShovel
+  description: It's impressive that the handle can support the rock on top.
+  components:
+    - type: Sprite
+      sprite: _DEN/Unrefined/Objects/Tools/stone_shovel.rsi
+      state: stone_shovel
+    - type: MeleeWeapon
+      attackRate: 1.4
+      damage:
+        types:
+          Blunt: 7
+          
+- type: entity
+  name: paint bucket
+  parent: Bucket
+  id: SteelPaintBucket
+  description: Half-filled with pigment, all you need to do is add water to paint. Sadly, no brush was included, so you have to use your fingers.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Tools/paint_bucket.rsi
+    layers:
+    - state: icon
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: fill-1
+      visible: false
+  - type: Item
+  - type: SolutionContainerManager
+    solutions:
+      bucket:
+        maxVol: 120
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 50
+  - type: Paint
+    solution: bucket
+    reagent: Water  # Change this to something harder to obtain
+    consumptionUnit: 10
+    blacklist:
+      tags:
+        - NoPaint
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    fillBaseName: fill-
+        
+- type: entity
+  name: blue paint bucket
+  parent: SteelPaintBucket
+  id: SteelPaintBucketBlue
+  suffix: Blue
+  components:
+  - type: Paint
+    color: "#5890f7"
+    
+- type: entity
+  name: red paint bucket
+  parent: SteelPaintBucket
+  id: SteelPaintBucketRed
+  suffix: Red
+  components:
+  - type: Paint
+    color: "#ff3b3b"
+    
+- type: entity
+  name: green paint bucket
+  parent: SteelPaintBucket
+  id: SteelPaintBucketGreen
+  suffix: Green
+  components:
+  - type: Paint
+    color: "#73f170"
+    
+- type: entity
+  name: black paint bucket
+  parent: SteelPaintBucket
+  id: SteelPaintBucketBlack
+  suffix: Black
+  components:
+  - type: Paint
+    color: "#3a3a3a"
+    
+- type: entity
+  name: white paint bucket
+  parent: SteelPaintBucket
+  id: SteelPaintBucketWhite
+  suffix: White
+  components:
+  - type: Paint
+    color: "#f2f2f2"
+    
+- type: entity
+  name: vellum map
+  parent: BaseItem
+  id: VellumMap
+  description: Helping lost spacemen find their way through the planets since 2016.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Objects/Tools/vellum_map.rsi
+    layers:
+    - state: icon
+    - state: active
+  - type: Item
+  - type: HandheldGPS
+  - type: Tag
+    tags:
+    - GPS
+
+- type: entity
+  id: PinpointerDeath
+  parent: PinpointerBase
+  name: death compass
+  description: This heavily cursed object points towards the nearest corpse laden with soul.
+  components:
+  - type: Sprite
+    noRot: True
+    sprite: _DEN/Unrefined/Objects/Tools/compass.rsi
+    layers:
+    - state: death_compass
+      map: ["enum.PinpointerLayers.Base"]
+    - state: pinonnull
+      map: ["enum.PinpointerLayers.Screen"]
+      shader: unshaded
+      visible: false
+  - type: Pinpointer
+    component: SaturationScaleOverlay
+    targetName: damaged body
+    mediumDistance: 48
+    closeDistance: 16

@@ -1,0 +1,691 @@
+# Skeletons
+
+- type: entity
+  parent: [ BaseSimpleMob, MobCombat, StripableInventoryBase ]
+  id: SkeletonWild
+  abstract: true
+  description: Spooky, scary skeletons send punches to your face.
+  components:
+    - type: Hands
+    - type: HumanoidAppearance
+      species: Skeleton
+    - type: Icon
+      sprite: Mobs/Species/Skeleton/parts.rsi
+      state: full
+    - type: Body
+      prototype: Skeleton
+      requiredLegs: 2
+      gibSound: /Audio/Effects/bone_rattle.ogg
+    - type: Damageable
+      damageContainer: ManifestedSpirit
+      damageModifierSet: Undead
+    - type: NpcFactionMember
+      factions:
+        - SimpleHostile
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        60: Dead
+    - type: Tag
+      tags:
+        - FootstepSound
+        - DoorBumpOpener
+    - type: InputMover
+    - type: MobMover
+    - type: HTN
+      rootTask:
+        task: SimpleHumanoidHostileCompound
+    - type: CombatMode
+    - type: Butcherable
+      butcheringType: Knife
+      spawned:
+      - id: MaterialBones1
+        amount: 3
+    - type: LayingDown
+    - type: Fauna
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              MaterialBones1:
+                min: 2
+                max: 3
+
+- type: damageModifierSet
+  id: Undead
+  coefficients:
+    Holy: 1.4
+    Blunt: 1.1
+    Heat: 1.1
+    Cold: 0.5
+    Shock: 0.5
+
+- type: entity
+  name: angry skeleton
+  parent: SkeletonWild
+  id: SkeletonWildAngry
+  components:
+    - type: HTN
+      rootTask:
+        task: AngrySkeletonCompound
+    - type: MeleeWeapon
+      altDisarm: false
+      soundHit:
+        path: /Audio/Weapons/punch3.ogg
+      angle: 0
+      animation: WeaponArcPunch
+      damage:
+        types:
+          Blunt: 5
+    - type: Loadout
+      prototypes:
+        - AngrySkeletonKnife
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              MaterialBones1:
+                min: 2
+                max: 3
+ 
+- type: htnCompound
+  id: AngrySkeletonCompound
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MeleeCombatCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: EscapeCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompound
+
+- type: startingGear
+  id: AngrySkeletonKnife
+  inhand:
+    - HardStoneKnife
+ 
+- type: entity
+  name: angry skeleton
+  parent: SkeletonWildAngry
+  id: SkeletonWildAngryPick
+  components:
+    - type: Loadout
+      prototypes:
+        - AngrySkeletonPick  
+
+- type: startingGear
+  id: AngrySkeletonPick
+  inhand:
+    - HardStonePickaxe
+
+- type: entity
+  name: angry skeleton
+  parent: SkeletonWildAngry
+  id: SkeletonWildAngryShovel
+  components:
+    - type: Loadout
+      prototypes:
+        - AngrySkeletonShovel  
+
+- type: startingGear
+  id: AngrySkeletonShovel
+  inhand:
+    - HardStoneShovel
+ 
+- type: entity
+  name: angry skeleton archer
+  parent: SkeletonWild
+  id: SkeletonWildArcher
+  components:
+    - type: HTN
+      rootTask:
+        task: AngrySkeletonArcherCompound
+    - type: Gun
+      fireRate: 10
+      minAngle: 1
+      maxAngle: 15
+      soundGunshot: /Audio/Items/bow_pull.ogg
+      useKey: false
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+    - type: BasicEntityAmmoProvider
+      proto: ArrowSkeleton
+      capacity: 1
+      count: 1
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 10
+      rechargeSound:
+        path: /Audio/Weapons/Guns/Misc/arrow_nock.ogg
+    - type: LayingDown
+    - type: Loadout
+      prototypes:
+        - SkeletonArcher
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              MaterialBones1:
+                min: 2
+                max: 3
+
+- type: htnCompound
+  id: AngrySkeletonArcherCompound
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: RangedCombatCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: EscapeCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompound
+
+- type: startingGear
+  id: SkeletonArcher
+  inhand:
+    - ArrowSkeleton
+    - BowImprovised 
+
+- type: entity
+  parent: BaseArrow
+  id: ArrowSkeleton
+  name: ancient arrow
+  description: It's a miracle it manages to shoot without shattering to pieces.
+  components:
+  - type: Sprite
+    layers:
+    - state: tail
+      color: white
+    - state: rod
+      color: black
+    - state: tip
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 10
+        
+- type: entityTable
+  id: GrasslandsUndead
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      weight: 60
+      children:
+      - id: SkeletonWildAngry
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: SkeletonWildAngryPick
+      - id: SkeletonWildAngryShovel
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: SkeletonWildArcher
+      
+- type: entity
+  name: wild undead spawner
+  id: SpawnerRandomWildUndead
+  parent: MarkerBase
+  suffix: Grasslands
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: full
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: GrasslandsUndead
+  placement:
+    mode: AlignTileAny
+    
+- type: entity
+  name: angry skeleton warrior
+  parent: SkeletonWild
+  id: SkeletonWildWarrior
+  components:
+    - type: HTN
+      rootTask:
+        task: AngrySkeletonCompound
+    - type: MeleeWeapon
+      altDisarm: false
+      soundHit:
+        path: /Audio/Weapons/punch3.ogg
+      angle: 0
+      animation: WeaponArcPunch
+      damage:
+        types:
+          Blunt: 5
+    - type: Loadout
+      prototypes:
+        - AngrySkeletonWarriorKnife
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              MaterialBones1:
+                min: 2
+                max: 3
+        
+- type: startingGear
+  id: AngrySkeletonWarriorKnife
+  inhand:
+    - SteelKnife
+    - WoodenBuckler
+  equipment:
+    head: HelmetCraftedSteel
+    outerClothing: ChainmailArmor
+
+- type: entity
+  name: angry skeleton warrior
+  parent: SkeletonWildWarrior
+  id: SkeletonWildWarriorMace
+  components:
+    - type: Loadout
+      prototypes:
+        - AngrySkeletonWarriorMace
+    
+- type: startingGear
+  id: AngrySkeletonWarriorMace
+  inhand:
+    - SteelMace
+    - WoodenBuckler
+  equipment:
+    head: HelmetCraftedSteel
+    outerClothing: ChainmailArmor
+
+- type: entity
+  name: angry skeleton warrior
+  parent: SkeletonWildWarrior
+  id: SkeletonWildWarriorSpear
+  components:
+    - type: Loadout
+      prototypes:
+        - AngrySkeletonWarriorSpear
+
+- type: startingGear
+  id: AngrySkeletonWarriorSpear
+  inhand:
+    - SteelSpear
+    - WoodenBuckler
+  equipment:
+    head: HelmetCraftedSteel
+    outerClothing: ChainmailArmor
+
+- type: entityTable
+  id: GrasslandsUndeadGreater
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      weight: 80
+      children:
+      - id: SkeletonWildWarrior
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: SkeletonWildWarriorMace
+      - id: SkeletonWildWarriorSpear
+      
+- type: entity
+  name: wild greater undead spawner
+  id: SpawnerRandomWildUndeadGreater
+  parent: MarkerBase
+  suffix: Grasslands
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: full
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: GrasslandsUndeadGreater
+  placement:
+    mode: AlignTileAny
+    
+# Spiders
+
+- type: entity
+  name: angry giant spider
+  parent: MobGiantSpiderAngry
+  id: MobSpiderWild
+  description: All eight eyes glow with unnatural rage.
+  components:
+  - type: Tag
+    tags:
+    - Wildlife
+
+- type: entityTable
+  id: GrasslandsSpiders
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      weight: 80
+      children:
+      - id: MobSpiderWild
+      
+- type: entity
+  name: wild spider spawner
+  id: SpawnerRandomWildSpider
+  parent: MarkerBase
+  suffix: Grasslands
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: GrasslandsSpiders
+  placement:
+    mode: AlignTileAny
+
+# Slimes
+
+- type: entity
+  name: wild slime
+  parent: MobAdultSlimesGreen
+  id: MobSlimeWild
+  components:
+  - type: Tag
+    tags:
+    - Wildlife
+
+- type: entity
+  name: angry wild slime
+  parent: MobAdultSlimesGreenAngry
+  id: MobSlimeWildAngry
+  description: It wobbles ominously, emerald slime aglow.
+  components:
+  - type: Tag
+    tags:
+    - Wildlife
+
+- type: entityTable
+  id: GrasslandsSlimes
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      weight: 80
+      children:
+      - id: MobSlimeWild
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: MobSlimeWildAngry
+      
+- type: entity
+  name: wild slime spawner
+  id: SpawnerRandomWildSlime
+  parent: MarkerBase
+  suffix: Grasslands
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: GrasslandsSlimes
+  placement:
+    mode: AlignTileAny
+    
+# Mimics
+
+- type: entity
+  parent: [ BaseSimpleMob, MobCombat]
+  id: CrateWoodenMimic
+  name: wooden crate?
+  suffix: mimic
+  description: Looks a bit strange...
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: Structures/Storage/Crates/cratewooden.rsi
+    state: icon
+  - type: Icon
+    sprite: Structures/Storage/Crates/cratewooden.rsi
+    state: icon
+  - type: NpcFactionMember
+    factions:
+      - SimpleHostile
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      75: Dead
+  - type: InputMover
+  - type: MobMover
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0
+    baseSprintSpeed: 0
+  - type: NoSlip
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: CombatMode
+  - type: Fauna
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 75
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            MaterialWoodPlank1:
+              min: 1
+              max: 1
+            IngotSilver1:
+              min: 2
+              max: 5
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            MaterialWoodPlank1:
+              min: 1
+              max: 1
+      - trigger:
+          !type:DamageTrigger
+          damage: 35
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            MaterialWoodPlank1:
+              min: 1
+              max: 1
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcFist
+    damage:
+      types:
+        Blunt: 10
+
+- type: entity
+  parent: CrateWoodenMimic
+  id: CrateSteelMimic
+  name: crate?
+  suffix: mimic
+  description: Looks a bit strange...
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: Structures/Storage/Crates/generic.rsi
+    state: icon
+  - type: Icon
+    sprite: Structures/Storage/Crates/generic.rsi
+    state: icon
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      125: Dead
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 125
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 1
+              max: 1
+            IngotGold1:
+              min: 2
+              max: 5
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 1
+              max: 1
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 1
+              max: 1
+              
+- type: entity
+  parent: CrateWoodenMimic
+  id: CrateGoldMimic
+  name: treasure chest?
+  suffix: mimic
+  description: Looks a bit strange...
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: Structures/Storage/Crates/piratechest.rsi
+    layers:
+    - state: crate
+    - state: crate_door
+  - type: Icon
+    sprite: Structures/Storage/Crates/piratechest.rsi
+    state: crate
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Dead
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            MaterialWoodPlank1:
+              min: 1
+              max: 1
+            MaterialDiamond1:
+              min: 2
+              max: 5
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+      - trigger:
+          !type:DamageTrigger
+          damage: 165
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            MaterialWoodPlank1:
+              min: 1
+              max: 1
+      - trigger:
+          !type:DamageTrigger
+          damage: 120
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            MaterialWoodPlank1:
+              min: 1
+              max: 1
+              
+- type: entityTable
+  id: GrasslandsMimics
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      weight: 60
+      children:
+      - id: CrateWoodenMimic
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - id: CrateSteelMimic
+    - !type:GroupSelector
+      weight: 1
+      children:
+      - id: CrateGoldMimic
+      
+- type: entity
+  name: wild mimic spawner
+  id: SpawnerRandomMimic
+  parent: MarkerBase
+  suffix: Grasslands
+  components:
+  - type: Icon
+    sprite: Structures/Storage/Crates/cratewooden.rsi
+    state: icon
+  - type: Sprite
+    sprite: Structures/Storage/Crates/cratewooden.rsi
+    state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: GrasslandsMimics
+  placement:
+    mode: AlignTileAny

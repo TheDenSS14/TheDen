@@ -1,0 +1,21 @@
+- type: entity
+  id: PinpointerQuest
+  parent: PinpointerBase
+  name: hunter compass
+  description: This rugged object points towards the closest megafauna.
+  components:
+  - type: Sprite
+    noRot: True
+    sprite: _DEN/Unrefined/Objects/Tools/compass.rsi
+    layers:
+    - state: quest_compass
+      map: ["enum.PinpointerLayers.Base"]
+    - state: pinonnull
+      map: ["enum.PinpointerLayers.Screen"]
+      shader: unshaded
+      visible: false
+  - type: Pinpointer
+    component: Megafauna
+    targetName: fate-imbued entity
+    mediumDistance: 48
+    closeDistance: 16

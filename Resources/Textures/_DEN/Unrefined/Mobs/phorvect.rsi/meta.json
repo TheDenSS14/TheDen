@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "license": "CC-BY-4.0",
+  "copyright": "By Gawdayumeet",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "phorvect",
+      "directions": 4
+    },
+    {
+      "name": "phorvect-dead"
+    },
+    {
+      "name": "phorvect-dead-plumage"
+    },
+    {
+      "name": "phorvect-moving",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "phorvect-plumage",
+      "directions": 4
+    }
+  ]
+}

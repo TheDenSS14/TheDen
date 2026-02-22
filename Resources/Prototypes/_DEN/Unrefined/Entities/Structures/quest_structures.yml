@@ -1,0 +1,115 @@
+- type: entity
+  parent: BaseStructure
+  id: StoneFurnaceGreatBroken
+  name: broken great furnace
+  description: This was clearly once a place of wonderous smeltings, but numerous cracks have diminished to uselessness.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Structures/Misc/Quest/great_furnace.rsi
+    state: icon
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 999
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak  
+    
+- type: entity
+  parent: BaseStructure
+  id: MysticAnvil
+  name: mystic anvil
+  description: The gleaming adamant surface is as brilliant as the day it was cast.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Structures/Misc/Quest/mystic_anvil.rsi
+    state: icon
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 999
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+    
+- type: entity
+  id: TreeMoonlightWood
+  parent: BaseStructure
+  name: moonlightwood tree
+  description: This sparse arborling gleams with the pale light of the night-sun.
+  components:
+  - type: Sprite
+    sprite: _DEN/Unrefined/Structures/Misc/Quest/moonlightwood_tree.rsi
+    noRot: true
+    layers:
+      - state: icon
+        shader: unshaded
+  - type: PointLight
+    radius: 1.6
+    energy: 1.2
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 75
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+            
+- type: entity
+  parent: BaseStructure
+  id: OracleHunter
+  name: Hunter
+  description: This stony visage remains silent, eyes cast into the distance.
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    offset: "0.0,0.5"
+    sprite: _DEN/Unrefined/Structures/Misc/Quest/hunter_statue.rsi
+    layers:
+      - state: hunter_statue-0
+      - map: ["enum.SolutionContainerLayers.Fill"]
+        state: hunter_statue-0
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 9999
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: VulpkaninHowls
+
+- type: entity
+  name: Hunter Statue Spawner
+  id: HunterStatueSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+  - type: ConditionalSpawner
+    prototypes:
+      - OracleHunter

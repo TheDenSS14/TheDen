@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "license": "CC-BY-4.0",
+  "copyright": "By Gawdayumeet",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "death_compass"
+        },
+        {
+            "name": "pinonalert",
+            "directions": 8
+        },
+        {
+            "name": "pinonclose"
+        },
+        {
+            "name": "pinondirect"
+        },
+        {
+            "name": "pinonfar"
+        },
+        {
+            "name": "pinonmedium"
+        },
+        {
+            "name": "pinonnull"
+        },
+        {
+            "name": "quest_compass"
+        }
+    ]
+}

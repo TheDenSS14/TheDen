@@ -1,0 +1,709 @@
+# Wild crops
+
+- type: entity
+  id: BaseWildCrop
+  description: A wild-grown patch of produce.
+  abstract: true
+  components:
+  - type: SpriteFade
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: Objects/Decoration/Flora/flora_trees.rsi
+    drawdepth: Overdoors
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.2,0.15,0.2"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+
+- type: entity
+  parent: BaseWildCrop
+  id: WildCropApple
+  name: apple tree
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/apple.rsi
+    state: harvest
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/drop.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Log:
+            min: 0
+            max: 1
+          FoodApple:
+            min: 2
+            max: 4
+          AppleSeeds:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: BaseWildCrop
+  id: WildCropGoldenApple
+  name: golden apple tree
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/golden_apple.rsi
+    state: harvest
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/drop.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Log:
+            min: 1
+            max: 2
+          FoodGoldenApple:
+            min: 2
+            max: 4
+          GoldenAppleSeeds:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: BaseWildCrop
+  id: WildCropWheat
+  name: wild wheat
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/wheat.rsi
+    state: harvest
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/drop.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          WheatBushel:
+            min: 2
+            max: 4
+          WheatSeeds:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: BaseWildCrop
+  id: WildCropCotton
+  name: wild cotton
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cotton.rsi
+    state: harvest
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/drop.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CottonBol:
+            min: 2
+            max: 4
+          CottonSeeds:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: BaseWildCrop
+  id: WildCropAloe
+  name: wild aloe
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/aloe.rsi
+    state: harvest
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/drop.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodAloe:
+            min: 2
+            max: 4
+          AloeSeeds:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: BaseWildCrop
+  id: WildCropAmbrosiaVulgaris
+  name: wild ambrosia vulgaris
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/ambrosia_vulgaris.rsi
+    state: harvest
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/drop.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodAmbrosiaVulgaris:
+            min: 2
+            max: 4
+          AmbrosiaVulgarisSeeds:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: BaseWildCrop
+  id: WildCropGalaxythistle
+  name: wild galaxythistle
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/galaxythistle.rsi
+    state: harvest
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/drop.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodGalaxythistle:
+            min: 2
+            max: 4
+          GalaxythistleSeeds:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: BaseWildCrop
+  id: WildCropPoppy
+  name: wild poppy
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/poppy.rsi
+    state: harvest
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/drop.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodPoppy:
+            min: 2
+            max: 4
+          PoppySeeds:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: BaseWildCrop
+  id: WildCropLingzhi
+  name: wild lingzhi
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/lingzhi.rsi
+    state: harvest
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/drop.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodLingzhi:
+            min: 2
+            max: 4
+          LingzhiSeeds:
+            min: 1
+            max: 1
+            
+- type: entity
+  parent: BaseWildCrop
+  id: WildCropCorn
+  name: wild corn
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/corn.rsi
+    state: harvest
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/drop.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodCorn:
+            min: 2
+            max: 4
+          CornSeeds:
+            min: 1
+            max: 1
+            
+- type: entity
+  parent: BaseWildCrop
+  id: WildCropBerry
+  name: wild berry bush
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/berries.rsi
+    state: harvest
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/drop.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodBerries:
+            min: 2
+            max: 4
+          BerrySeeds:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: BaseWildCrop
+  id: WildCropTobacco
+  name: wild tobacco
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/tobacco.rsi
+    state: harvest
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/drop.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          LeavesTobacco:
+            min: 2
+            max: 4
+          TobaccoSeeds:
+            min: 1
+            max: 1
+            
+- type: entity
+  parent: BaseWildCrop
+  id: WildCropCannabis
+  name: wild cannabis
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cannabis.rsi
+    state: harvest
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/drop.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          LeavesCannabis:
+            min: 2
+            max: 4
+          CannabisSeeds:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: BaseWildCrop
+  id: WildCropMushrooms
+  name: wild spaceshrooms
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/spaceshroom.rsi
+    state: structure
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/drop.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodSpaceshroom:
+            min: 1
+            max: 2
+
+- type: entityTable
+  id: GrasslandsWildCrops
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      weight: 900
+      children:
+      - id: WildCropApple
+      - id: WildCropWheat
+      - id: WildCropCotton
+      - id: WildCropCorn
+      - id: WildCropBerry
+    - !type:GroupSelector
+      weight: 300
+      children:
+      - id: WildCropAloe
+      - id: WildCropAmbrosiaVulgaris
+      - id: WildCropGalaxythistle
+      - id: WildCropPoppy
+      - id: WildCropLingzhi
+    - !type:GroupSelector
+      weight: 100
+      children:
+      - id: WildCropTobacco
+      - id: WildCropCannabis
+      - id: WildCropMushrooms
+    - !type:GroupSelector
+      weight: 2
+      children:
+      - id: WildCropGoldenApple
+      
+- type: entity
+  name: wild crops spawner
+  id: SpawnerRandomWildCrops
+  parent: MarkerBase
+  suffix: Grasslands
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/apple.rsi
+    state: harvest
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: GrasslandsWildCrops
+  placement:
+    mode: AlignTileAny
+    
+    
+# Thornvine (like meat tendons but natural)
+
+- type: entity
+  id: ThornVine
+  name: thorny vines
+  parent: BaseKudzu
+  description: The thorns glisten with sickly ooze. I don't think you should be stepping into this...
+  placement:
+    mode: SnapgridCenter
+    snap:
+      - Wall
+  components:
+    - type: MeleeSound
+      soundGroups:
+        Brute:
+          path: "/Audio/Weapons/slash.ogg"
+    - type: Sprite
+      sprite: Objects/Misc/kudzu.rsi
+      state: kudzu_11
+      drawdepth: Overdoors
+#    - type: KudzuVisuals
+    - type: Clickable
+    - type: Fixtures
+      fixtures:
+        fix1:
+          hard: false
+          density: 7
+          shape: !type:PhysShapeAabb
+            bounds: "-0.5,-0.5,0.5,0.5"
+          layer:
+            - MidImpassable
+    - type: Damageable
+    - type: Destructible
+      thresholds:
+        - trigger: !type:DamageTrigger
+            damage: 15
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+    - type: DamageContacts
+      damage:
+        types:
+          Slash: 1
+          Piercing: 1
+          Poison: 1
+      ignoreWhitelist:
+        tags:
+          - Wildlife
+    - type: Kudzu
+      #enabled: false
+      #growthStage: 1
+      growthTickChance: 0
+      spreadChance: 0
+      # Heals each time it manages to do a growth tick:
+      damageRecovery: null
+    - type: Temperature
+      heatDamage:
+        types:
+          Heat: 10
+      coldDamage:
+        types:
+          Cold: 5
+    - type: Barotrauma
+      damage:
+        types:
+          Blunt: 0.10
+    - type: Flammable
+      fireSpread: true
+      damage:
+        types:
+          Heat: 3
+    - type: AtmosExposed
+    - type: SpeedModifierContacts
+      walkSpeedModifier: 0.3
+      sprintSpeedModifier: 0.3
+      ignoreWhitelist:
+        tags:
+          - Wildlife
+    - type: Food
+      delay: 0.5
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          reagents:
+            - ReagentId: Nutriment
+              Quantity: 2
+    - type: Respirator
+      damage:
+        types:
+          Asphyxiation: 0.25
+      damageRecovery:
+        types:
+          Asphyxiation: -0.25
+          
+- type: entity
+  name: Thorny Vines Spawner
+  id: SpawnThornVine
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: kudzu_11
+      sprite: Objects/Misc/kudzu.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - ThornVine
