@@ -66,6 +66,9 @@
   - type: Damageable
     damageContainer: ManifestedSpirit
     damageModifierSet: ManifestedSpirit
+  - type: Reactive
+    groups:
+      Acidic: [Touch] # Holy water
   - type: DamageOnDispel
     damage:
       types:
