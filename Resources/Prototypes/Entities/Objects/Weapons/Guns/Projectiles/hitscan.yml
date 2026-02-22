@@ -43,7 +43,7 @@
   id: RedLaser
   damage:
     types:
-      Heat: 14
+      Heat: 15 #Den
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_laser
@@ -120,7 +120,7 @@
   id: RedHeavyLaser
   damage:
     types:
-      Heat: 28
+      Heat: 32 #Den
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_beam_heavy

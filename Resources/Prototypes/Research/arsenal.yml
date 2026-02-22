@@ -52,7 +52,6 @@
   - WeaponEnergyGun
   - WeaponEnergyGunMini
   - WeaponLaserSvalinn
-  - WeaponEnergyGunPistol
   - WeaponDisablerSMG
   - Truncheon
   #- WeaponDisabler #TheDen, Made roundstart tech
@@ -215,10 +214,12 @@
   - WeaponMechCombatSolarisLaser # Goobstation
   # - WeaponPistolN1984 # DEN
   # - WeaponPistolViper # DEN
+  - WeaponEnergyGunPistol # Den
   - Terminus
   - WeaponSubMachineGunDrozdEmpty # DEN
   - WeaponRifleLecterEmpty # DEN
   - WeaponRifleVulcanEmpty # DEN
+  - PortableRecharger # Den
   technologyPrerequisites:
   - BasicWeapons
 
@@ -273,7 +274,6 @@
   cost: 20000
   recipeUnlocks:
   - WeaponAdvancedLaser
-  - PortableRecharger
   - GrenadeEMP
   - PowerCageHigh
   - ShuttleGunDusterCircuitboard
