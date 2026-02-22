@@ -53,6 +53,115 @@
     FoodChiliPepper: 1
     FoodMeat: 1
 
+- type: microwaveMealRecipe
+  id: RecipeSoupShrimpSour
+  name: shrimp sour soup recipe
+  result: FoodSoupShrimpSour
+  time: 10
+  reagents:
+    Water: 10
+    JuiceLime: 5
+  solids:
+    FoodBowlBig: 1
+    FoodMeatShrimpCooked: 1
+    FoodLime: 1
+    FoodGarlic: 1
+
+- type: microwaveMealRecipe
+  id: RecipeRiceShrimp
+  name: shrimp-fried rice recipe
+  result: FoodBowlRiceShrimp
+  time: 15
+  solids:
+    FoodRiceBoiled: 1
+    FoodCarrot: 1
+    FoodMeatShrimpCooked: 1
+
+- type: microwaveMealRecipe
+  id: RecipeRiceGumboShrimp
+  name: shrimp gumbo recipe
+  result: FoodBowlRiceGumboShrimp
+  time: 15
+  solids:
+    FoodRiceBoiled: 1
+    FoodMeatShrimpCooked: 1
+    FoodChiliPepper: 1
+    FoodOnionSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipePininyahangHipon # shrimp with pineapples
+  name: pininyahang hipon recipe
+  result: FoodBowlPininyahangHipon
+  time: 10
+  reagents:
+    CoconutWater: 5
+    Milk: 5
+  solids:
+    FoodBowlBig: 1
+    FoodMeatShrimpCooked: 1
+    FoodPineappleSlice: 2
+
+- type: microwaveMealRecipe
+  id: RecipeCevicheShrimp
+  name: shrimp ceviche recipe
+  result: FoodBowlCevicheShrimp
+  time: 10
+  reagents:
+    JuiceLime: 5
+  solids:
+    FoodBowlBig: 1
+    FoodMeatShrimp: 1
+    FoodTomato: 1
+    FoodOnionRed: 1
+
+- type: microwaveMealRecipe
+  id: RecipeShrimpGrits
+  name: shrimp and grits recipe
+  result: FoodBowlShrimpGrits
+  time: 10
+  reagents:
+    Cornmeal: 10
+    Milk: 10
+  solids:
+    FoodBowlBig: 1
+    FoodMeatShrimp: 1
+    FoodCheeseSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeCocktailShrimp
+  name: shrimp cocktail recipe
+  result: FoodMealCocktailShrimp
+  time: 10
+  reagents:
+    CocktailSauce: 10
+  solids:
+    DrinkGlassCoupeShaped: 1
+    FoodMeatShrimpCooked: 2
+
+- type: microwaveMealRecipe
+  id: RecipeShrimpNigiri
+  name: shrimp nigiri recipe
+  result: FoodMealShrimpNigiri
+  time: 10
+  reagents:
+    Rice: 10
+    Water: 5
+  solids:
+    FoodMeatShrimpCooked: 1
+
+- type: microwaveMealRecipe
+  id: RecipeShrimpScampi
+  name: shrimp scampi recipe
+  result: FoodNoodlesShrimpScampi
+  time: 10
+  reagents:
+    JuiceLemon: 5
+  solids:
+    FoodNoodlesBoiled: 1
+    FoodMeatShrimpCooked: 1
+    FoodButterSlice: 1
+    FoodGarlic: 1
+
 # sorry but im not adding a recipe for every kind of liver
 
 - type: microwaveMealRecipe
@@ -110,3 +219,29 @@
     Sugar: 5
     Water: 5
     Flour: 5
+
+- type: microwaveMealRecipe
+  id: RecipeUkoy # shrimp fritters
+  name: ukoy recipe
+  result: FoodMealUkoy
+  time: 10
+  # TODO: wish we had sweet potato. oh well!
+  reagents:
+    Flour: 5
+    Egg: 6
+  solids:
+    FoodMeatShrimpCooked: 1
+    FoodCarrot: 1
+    FoodOnionSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeShrimpCake
+  name: shrimp cake recipe
+  result: FoodMealShrimpCake
+  time: 10
+  reagents:
+    Egg: 6
+    Mayonnaise: 5
+  solids:
+    FoodBreadPlainSlice: 1
+    FoodMeatShrimpCooked: 1

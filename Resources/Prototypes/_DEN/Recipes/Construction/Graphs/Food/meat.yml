@@ -31,3 +31,18 @@
       - minTemperature: 335
   - node: carp cutlet
     entity: FoodMeatFishCutletCooked
+
+- type: constructionGraph
+  id: CookedShrimp
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: cooked shrimp
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+  - node: cooked shrimp
+    entity: FoodMeatShrimpCooked

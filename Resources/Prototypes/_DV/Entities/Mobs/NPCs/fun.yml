@@ -9,6 +9,7 @@
   parent: [ SimpleMobBase, FlyingMobBase, MobCombat ]
   id: MobSpaceShrimp
   description: Shrimply cursed...
+  suffix: AI, metempsychosis # DEN: Clarifying suffix
   components:
   - type: MeleeWeapon
     soundHit:
@@ -41,8 +42,9 @@
         Base: dead
   - type: Butcherable
     spawned:
-    - id: FoodMeatCrab
-      amount: 3
+    - id: FoodMeatShrimp # DEN: Add shrimp meat
+      gibBody: false # DEN: Don't gib shrimps on butcher
+      amount: 1 # DEN: You get one, sorry. It's the whole shrimp
   - type: Bloodstream
     bloodMaxVolume: 100
     bloodReagent: BbqSauce # Australia reference

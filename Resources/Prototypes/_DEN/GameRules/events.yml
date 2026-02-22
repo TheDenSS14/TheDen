@@ -1,0 +1,16 @@
+- type: entity
+  id: ShrimpMigration
+  parent: BaseVentCritterSpawn
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    startDelay: 10
+    earliestStart: 15
+    weight: 3
+    duration: 30
+  - type: VentCrittersRule
+    table: !type:GroupSelector
+      children:
+      - id: MobSpaceShrimpGhostrole
+        weight: 1

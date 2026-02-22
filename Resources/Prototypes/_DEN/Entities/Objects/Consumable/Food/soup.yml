@@ -37,3 +37,242 @@
     - Meat
     - Soup
     - VampireFood
+
+- type: entity
+  parent: FoodBowlBase
+  id: FoodSoupShrimpSour
+  name: shrimp sour soup
+  description: A simple Cambodian soup made with shrimp, lime, and other herbs.
+  # shoutout to domino (@YomieI on GitHub) for this one, this is a cambodian dish that romanizes to "sgnor chrouk bangkea"
+  components:
+  - type: FlavorProfile
+    flavors:
+    - shrimp
+    - sour
+  - type: Sprite
+    layers:
+    - state: bowl
+    - sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+      state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 45
+        # nutriment: 3u (shrimp) + 5u (lime) + 10u (garlic) + 2 (bonus) = 20u
+        # vitamin: 4u (lime) + 4u (garlic) + 3 (bonus) = 11u
+        # protein: 5u (shrimp)
+        # allicin: 4u (garlic)
+        # 20 + 11 + 5 + 4 = 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Vitamin
+          Quantity: 11
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: Allicin
+          Quantity: 4
+  - type: Tag
+    tags:
+    - Meat
+    - Soup
+
+## "hot" bowl foods
+
+- type: entity
+  parent: FoodBowlBase
+  id: FoodBowlPininyahangHipon
+  name: pininyahang hipon
+  description: A Filipino dish of shrimp cooked in a creamy coconut and pineapple sauce. Sweet and savory!
+  components:
+  - type: FlavorProfile
+    flavors:
+    - shrimp
+    - creamy
+    - pineapple
+  - type: Sprite
+    layers:
+    - state: bowl
+    - sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+      state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        # nutriment: 3u (shrimp) + 4u (pineapple) + 3u (bonus) = 10u
+        # vitamin: 5u (bonus)
+        # protein: 5u (shrimp)
+        # 5u coconut water (sorry, no coconut cream)
+        # 10 + 5 + 5 + 5 = 25u
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: CoconutWater
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
+    - Soup
+    - Fruit
+
+- type: entity
+  parent: FoodBowlBase
+  id: FoodBowlShrimpGrits
+  name: shrimp and grits
+  description: A bowl of grilled shrimp served over creamy grits - hearty and comforting.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - shrimp
+    - creamy
+    - corn
+  - type: Sprite
+    layers:
+    - state: bowl
+    - sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+      state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        # nutriment: 3u (shrimp) + 5u (cheese wedge) + 7u (bonus) = 15u
+        # protein: 5u (shrimp)
+        # 15u + 5u = 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: Protein
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
+    - Soup
+
+## rice
+
+- type: entity
+  parent: FoodBowlBase
+  id: FoodBowlRiceShrimp
+  name: shrimp-fried rice
+  description: You're telling me. # REALLY FUNNY JOKE
+  components:
+  - type: FlavorProfile
+    flavors:
+    - rice
+    - shrimp
+  - type: Sprite
+    layers:
+    - state: bowl
+    - sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+      state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 45
+        # nutriment: 3u (shrimp) + 20u (rice) = 23u
+        # vitamin: 4u (carrot) + 5u (bonus) = 9u
+        # protein: 5u (shrimp)
+        # oculine: 3u (carrot)
+        # 23 + 9 + 5 + 3 = 40u
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 23
+        - ReagentId: Vitamin
+          Quantity: 9
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: Oculine
+          Quantity: 3
+  - type: Tag
+    tags:
+    - Meat
+    - Soup
+
+- type: entity
+  parent: FoodBowlBase
+  id: FoodBowlRiceGumboShrimp
+  name: shrimp gumbo
+  description: A spicy and savory shrimp and rice dish.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - rice
+    - spicy
+    - shrimp
+    - savory
+  - type: Sprite
+    layers:
+    - state: bowl
+    - sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+      state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 55
+        # nutriment: 3u (shrimp) + 20u (rice) + 4u (chili) + 2u (onion slice) = 29u
+        # vitamin: 4u (chili) + 1u (onion slice) = 5u
+        # protein: 5u (shrimp)
+        # capsaicin oil: 10u (chili)
+        # allicin: 1u (onion slice)
+        # 29 + 10 + 5 + 5 + 1 = 50u
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 29
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: CapsaicinOil
+          Quantity: 10
+        - ReagentId: Allicin
+          Quantity: 1
+  - type: Tag
+    tags:
+    - Meat
+    - Soup
+
+## salad & other "cold" bowl foods
+
+- type: entity
+  parent: FoodBowlBase
+  id: FoodBowlCevicheShrimp
+  name: shrimp ceviche
+  description: A cold dish of shrimp "cooked" in lime juice by denaturing the proteins, mixed with onions and other vegetables.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - tangy
+    - sour
+    - shrimp
+  - type: Sprite
+    layers:
+    - state: bowl
+    - sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+      state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 45
+        # these values are based on entityspawn and not botanicals (which are much lower than this)
+        # nutriment: 3u (shrimp) + 7u (tomato) + 10u (red onion) = 20u
+        # vitamin: 3u (tomato) + 4u (red onion) + 4u (bonus) = 11u
+        # protein: 5u (shrimp)
+        # allicin: 4u (red onion)
+        # 5u + 4u + 11u + 20u = 40u
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Vitamin
+          Quantity: 11
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: Allicin
+          Quantity: 4
+  - type: Tag
+    tags:
+    - Meat
+    - Soup # not sure why but all salads count as soups. so
