@@ -79,6 +79,39 @@
     - Meat
     - Soup
 
+- type: entity
+  parent: FoodBowlBase
+  id: FoodBowlShrimpGrits
+  name: shrimp and grits
+  description: A bowl of grilled shrimp served over creamy grits - hearty and comforting.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - shrimp
+    - creamy
+    - corn
+  - type: Sprite
+    layers:
+    - state: bowl
+    - sprite: _DEN/Objects/Consumable/Food/bowl.rsi # TODO: Shrimp sprite
+      state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        # nutriment: 3u (shrimp) + 5u (cheese wedge) + 7u (bonus) = 15u
+        # protein: 5u (shrimp)
+        # 15u + 5u = 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: Protein
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
+    - Soup
+
 ## rice
 
 - type: entity

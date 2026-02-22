@@ -90,6 +90,19 @@
     FoodOnionRed: 1
 
 - type: microwaveMealRecipe
+  id: RecipeShrimpGrits
+  name: shrimp and grits recipe
+  result: FoodBowlShrimpGrits
+  time: 10
+  reagents:
+    Cornmeal: 10
+    Milk: 10
+  solids:
+    FoodBowlBig: 1
+    FoodMeatShrimp: 1
+    FoodCheeseSlice: 1
+
+- type: microwaveMealRecipe
   id: RecipeCocktailShrimp
   name: shrimp cocktail recipe
   result: FoodMealCocktailShrimp
