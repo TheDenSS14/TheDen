@@ -64,6 +64,17 @@
     FoodMeatShrimpCooked: 1
 
 - type: microwaveMealRecipe
+  id: RecipeRiceGumboShrimp
+  name: shrimp gumbo recipe
+  result: FoodBowlRiceGumboShrimp
+  time: 15
+  solids:
+    FoodRiceBoiled: 1
+    FoodMeatShrimpCooked: 1
+    FoodChiliPepper: 1
+    FoodOnionSlice: 1
+
+- type: microwaveMealRecipe
   id: RecipePininyahangHipon # shrimp with pineapples
   name: pininyahang hipon recipe
   result: FoodBowlPininyahangHipon
