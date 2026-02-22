@@ -1,0 +1,6 @@
+ghost-role-information-eidolitehermit-name = Eidolite Hermit
+ghost-role-information-eidolitehermit-description = A harmless creature from somewhere beyond the noosphere that occasionally slips into our world.
+
+ghost-role-information-eidolitehermitpet-name = Pet Eidolite Hermit
+ghost-role-information-eidolitehermitpet-description = A harmless creature from somewhere beyond the noosphere. This one's found itself in someone's care...
+ghost-role-information-eidolitehermitpet-rules = Follow your owner around unless told otherwise. You know they'll keep you safe. Perhaps there's some way you can help them in return? You hope they like the calming light of your crystal as much as you do...

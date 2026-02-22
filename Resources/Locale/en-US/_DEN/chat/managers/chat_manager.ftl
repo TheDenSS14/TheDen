@@ -8,3 +8,9 @@ chat-speech-verb-ovinia-1 = baas
 chat-speech-verb-ovinia-2 = bleats
 chat-speech-verb-ovinia-3 = maas
 chat-speech-verb-ovinia-4 = mehs
+
+chat-speech-verb-name-crystalline = Crystalline
+chat-speech-verb-crystalline-1 = tinks
+chat-speech-verb-crystalline-2 = chimes
+chat-speech-verb-crystalline-3 = glints
+chat-speech-verb-crystalline-4 = shimmers

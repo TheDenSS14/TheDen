@@ -280,6 +280,11 @@
       damageRecovery:
         types:
           Asphyxiation: -0.25
+    - type: Psionic # DEN
+      removable: false
+      roller: false
+      assayFeedback:
+        - fleshkudzu-feedback
 
 - type: entity
   name: dark haze
