@@ -12,7 +12,7 @@
 
 - type: entity
   save: false
-  parent: [ BaseSimpleMob, MobCombat ]
+  parent: [ BaseSimpleMob, MobCombat, MobVentCritter ] # Den: add MobVentCritter
   id: BaseMobArgocyte
   suffix: AI
   description: A dangerous alien found on the wrong side of planets, known for their propensity for munching on ruins.

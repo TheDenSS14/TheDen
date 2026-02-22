@@ -262,7 +262,7 @@
 
 - type: entity
   name: blue slime
-  parent: MobAdultSlimesBlue
+  parent: [ MobAdultSlimesBlue, MobVentCritter ] # Den: add MobVentCritter
   id: MobAdultSlimesBlueAngry
   suffix: Angry
   components:
@@ -318,7 +318,7 @@
 
 - type: entity
   name: green slime
-  parent: MobAdultSlimesGreen
+  parent: [ MobAdultSlimesGreen, MobVentCritter ] # Den: add MobVentCritter
   id: MobAdultSlimesGreenAngry
   suffix: Angry
   components:
@@ -374,7 +374,7 @@
 
 - type: entity
   name: yellow slime
-  parent: MobAdultSlimesYellow
+  parent: [ MobAdultSlimesYellow, MobVentCritter ] # Den: add MobVentCritter
   id: MobAdultSlimesYellowAngry
   suffix: Angry
   components:

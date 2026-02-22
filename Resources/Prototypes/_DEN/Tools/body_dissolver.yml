@@ -1,0 +1,98 @@
+- type: entity
+  name: body dissolver tack
+  description: A specialized piece of janitorial equipment used to dispose of the bodies of vent critters and other hostile creatures.
+  parent: BaseItem
+  id: BodyDissolverTack
+  components:
+  - type: EmbeddableProjectile
+    minimumSpeed: 3
+    removalTime: 0.5
+    offset: 0.0,0.0
+  - type: ThrowingAngle
+    angle: 315
+  - type: LandAtCursor
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PolygonShape
+          vertices:
+            - -0.20,0.10
+            - -0.10,0.20
+            - 0.20,-0.10
+            - 0.10,-0.20
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: Sprite
+    sprite: _DEN/Objects/Tools/body_dissolver.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -45
+    damage:
+      types:
+        Piercing: 2
+    angle: 0
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/pierce.ogg
+  - type: Item
+    size: Tiny
+    sprite: _DEN/Objects/Tools/body_dissolver.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 3 # can be broken in one hit via a melee strike for example
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+  - type: Appearance
+  - type: BodyDissolver
+    emaggedLifetime: 5.5
+    damageWhenEmagged:
+      types:
+        Caustic: 5 # this means it should deal 25 caustic damage in total, if it's not ripped out before then
+  - type: Speech
+    speechSounds: Pai
+  - type: Tag
+    tags:
+      - BodyDissolverTack
+
+- type: entity
+  parent: BoxCardboard
+  id: BodyDissolverTackBox
+  name: Xeno-B-Gone body dissolver tack box
+  description: A box containing multiple Xeno-B-Gone brand body dissolver tacks.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,4,3
+    whitelist:
+      tags:
+        - BodyDissolverTack
+  - type: StorageFill
+    contents:
+    - id: BodyDissolverTack
+      amount: 10
+  - type: Sprite
+    layers:
+    - state: box_of_doom
+    - state: vials
+
+- type: entity
+  parent: CratePlastic
+  id: BodyDissolverTackCrate
+  name: Xeno-B-Gone body dissolver tack crate
+  description: Contains 4 boxes of Xeno-B-Gone brand body dissolver tacks.
+  components:
+  - type: StorageFill
+    contents:
+    - id: BodyDissolverTackBox
+      amount: 4

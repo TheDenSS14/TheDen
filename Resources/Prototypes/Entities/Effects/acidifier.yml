@@ -32,3 +32,31 @@
         hard: false
   - type: TimedDespawn
     lifetime: 2.4
+
+- type: entity
+  id: AcidifierWhite
+  name: acid (white)
+  description: Melts you into a puddle of yuck!
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
+  components:
+  - type: Transform
+    anchored: True
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    sprite: /Textures/Effects/acidifier.rsi
+    state: acid_white
+  - type: Fixtures
+    fixtures:
+      portalFixture:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.48,0.25,0.48"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        hard: false
+  - type: TimedDespawn
+    lifetime: 2.4

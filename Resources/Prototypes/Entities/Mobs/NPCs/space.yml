@@ -115,7 +115,7 @@
 - type: entity
   name: space bear
   id: MobBearSpace
-  parent: MobSpaceBasic
+  parent: [ MobSpaceBasic, MobVentCritter ] # Den: add MobVentCritter
   description: It looks friendly. Why don't you give it a hug?
   components:
   - type: Sprite
@@ -165,7 +165,7 @@
 - type: entity
   name: space kangaroo
   id: MobKangarooSpace
-  parent: [MobSpaceBasic, StripableInventoryBase]
+  parent: [ MobSpaceBasic, StripableInventoryBase, MobVentCritter ] # Den: add MobVentCritter
   description: It looks friendly. Why don't you give it a hug?
   components:
   - type: Sprite
@@ -225,7 +225,7 @@
 - type: entity
   name: space spider
   id: MobSpiderSpace
-  parent: MobSpaceBasic
+  parent: [ MobSpaceBasic, MobVentCritter ] # Den: add MobVentCritter
   description: It's so glowing, it looks dangerous.
   components:
   - type: Sprite
@@ -329,7 +329,7 @@
 - type: entity
   name: space cobra
   id: MobCobraSpace
-  parent: MobSpaceBasic
+  parent: [ MobSpaceBasic, MobVentCritter ] # Den: add MobVentCritter
   description: Long fangs and a glowing hood, and the alluring look begs to come closer.
   components:
     - type: Body # Shitmed Change
