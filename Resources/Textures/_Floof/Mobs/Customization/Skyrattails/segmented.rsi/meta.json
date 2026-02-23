@@ -1,0 +1,311 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from Nova Sector at https://github.com/NovaSector/NovaSector",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "m_tail_segmentedtail_BEHIND_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_tail_segmentedtail_BEHIND_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_tail_segmentedtail_BEHIND_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "m_tail_segmentedtail_FRONT_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_tail_segmentedtail_FRONT_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_tail_segmentedtail_FRONT_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "m_waggingtail_segmentedtail_BEHIND_primary",
+            "directions": 4,
+            "delays": [
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ]
+            ]
+        },
+        {
+            "name": "m_waggingtail_segmentedtail_BEHIND_secondary",
+            "directions": 4,
+            "delays": [
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ]
+            ]
+        },
+        {
+            "name": "m_waggingtail_segmentedtail_BEHIND_tertiary",
+            "directions": 4,
+            "delays": [
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ]
+            ]
+        },
+        {
+            "name": "m_waggingtail_segmentedtail_FRONT_primary",
+            "directions": 4,
+            "delays": [
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ]
+            ]
+        },
+        {
+            "name": "m_waggingtail_segmentedtail_FRONT_secondary",
+            "directions": 4,
+            "delays": [
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ]
+            ]
+        },
+        {
+            "name": "m_waggingtail_segmentedtail_FRONT_tertiary",
+            "directions": 4,
+            "delays": [
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    1.5,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.5,
+                    0.15,
+                    0.15,
+                    0.15
+                ]
+            ]
+        }
+    ]
+}
