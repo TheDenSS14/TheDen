@@ -19,7 +19,7 @@
 // SPDX-FileCopyrightText: 2025 Timfa
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Collections.Frozen;
 using System.Text.RegularExpressions;
@@ -52,6 +52,10 @@ public abstract class SharedChatSystem : EntitySystem
     public const char WhisperPrefix = ',';
     public const char TelepathicPrefix = '='; //Nyano - Summary: Adds the telepathic channel's prefix.
     public const char DefaultChannelKey = 'h';
+
+    public float VoiceRange = 10f; // how far voice goes in world units
+    public float WhisperClearRange = 2f; // how far whisper goes while still being understandable, in world units
+    public float InSpaceRange = .3f; // how far speech travels in space
 
     [ValidatePrototypeId<RadioChannelPrototype>]
     public const string CommonChannel = "Common";

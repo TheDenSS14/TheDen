@@ -241,3 +241,12 @@
   parent: BaseHoloprojector
   id: HoloprojectorPrivate
   result: HoloprojectorPrivate
+
+- type: latheRecipe
+  id: InsulativeFilling
+  result: InsulativeFilling
+  completetime: 3
+  materials:
+    Aluminum: 400 # Aluminium foil :)
+    Gold: 200
+    Bluespace: 40 # The other insulatives cost this.

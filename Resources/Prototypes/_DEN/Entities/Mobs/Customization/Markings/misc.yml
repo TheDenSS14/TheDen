@@ -1,0 +1,50 @@
+# SPDX-FileCopyrightText: 2026 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Head
+
+- type: marking
+  parent: [BaseSpeciesHeadStandard, BaseHeadSide]
+  id: BigAhoge
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/misc.rsi
+    state: big_ahoge1
+  - sprite: _DEN/Mobs/Customization/Head/misc.rsi
+    state: big_ahoge2
+
+# Chest
+
+- type: marking
+  parent: [BaseSpeciesChestStandard, BaseChest]
+  id: GradientChestMale
+  sexRestriction: [ Male ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/misc.rsi
+    state: male_gradient_chest
+
+- type: marking
+  parent: [BaseSpeciesChestStandard, BaseChest]
+  id: GradientChestMaleUnshaded
+  sexRestriction: [ Male ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/misc.rsi
+    state: male_gradient_chest
+  shader: unshaded
+
+- type: marking
+  parent: [BaseSpeciesChestStandard, BaseChest]
+  id: GradientChestFemale
+  sexRestriction: [ Female ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/misc.rsi
+    state: female_gradient_chest
+
+- type: marking
+  parent: [BaseSpeciesChestStandard, BaseChest]
+  id: GradientChestFemaleUnshaded
+  sexRestriction: [ Female ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/misc.rsi
+    state: female_gradient_chest
+  shader: unshaded

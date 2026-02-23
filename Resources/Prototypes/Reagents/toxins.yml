@@ -547,10 +547,13 @@
         - !type:OrganType
           type: Animal
           shouldHave: true
+        - !type:ReagentThreshold # Den: no popups until poisoning starts
+            min: 1
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-sick" ]
-        probability: 0.2
+        probability: 0.1 # Den: reduced popup frequency
+
 
 - type: reagent
   id: Amatoxin
@@ -702,10 +705,12 @@
         - !type:OrganType
           type: Animal
           shouldHave: true
+        - !type:ReagentThreshold # Den - no popups until poisoning starts
+            min: 1
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-sick" ]
-        probability: 0.2
+        probability: 0.1 # Den - reduced popup frequency
 
 - type: reagent
   id: Pax
@@ -754,11 +759,12 @@
         - !type:OrganType
           type: Animal
           shouldHave: true
+        - !type:ReagentThreshold # Den: no popups until they start taking damage
+            min: 1
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-sick" ]
-        probability: 0.2
-
+        probability: 0.1 # Den: reduced popup frequency
 
 - type: reagent
   id: Lead

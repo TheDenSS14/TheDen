@@ -1,0 +1,193 @@
+# SPDX-FileCopyrightText: 2026 Jakumba
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: MobLivingShadow
+  name: living shadow
+  parent: [ SimpleSpaceMobBase, FlyingMobBase, MobCombat ]
+  description: A tortured scream, agony given metaphysical flesh.
+  components:
+  - type: NoSlip
+  - type: ZombieImmune
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+  - type: NpcFactionMember
+    factions:
+    - LordsOfTheEndTime
+  - type: CanMoveInAir
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.25
+    baseSprintSpeed: 3.75
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _NF/Mobs/BloodCult/drainedone.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: drained
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 10
+        mask:
+        - SmallMobMask
+        layer:
+        - Opaque
+  - type: Damageable
+    damageContainer: ManifestedSpirit
+    damageModifierSet: ManifestedSpirit
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: drained
+      Dead:
+        Base: icon
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      70: Dead
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 70
+    damage:
+      groups:
+        Brute: -1
+        Burn: -1
+  - type: Insulated
+  - type: MeleeWeapon
+    soundHit:
+      collection: MetalThud
+    damage:
+      types:
+        Slash: 5
+        Pierce: 5
+        Cold: 10
+    animation: WeaponArcClaw
+  - type: Bloodstream
+    bloodReagent: BlackBlood
+    maxBleedAmount: 0
+    bloodMaxVolume: 15
+  - type: Speech
+    speechVerb: Ghost
+  - type: Body
+    prototype: Skia
+  - type: Butcherable
+    spawned:
+    - id: Ectoplasm
+      amount: 1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 70
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/wail.ogg
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageOnDispel
+    damage:
+      types:
+        Heat: 70
+  - type: EmbedImmune
+    immuneTo:
+      components:
+      - FlareGunPellet
+
+- type: entity
+  id: MobSpectre
+  parent: [ MobLivingShadow ]
+  name: drained one
+  description: A fragment of a tormented soul.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Ghosts/revenant.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: idle
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: idle
+      Critical:
+        Base: stunned
+      Dead:
+        Base: stunned
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 250
+    damage:
+      groups:
+        Brute: -3
+        Burn: -3
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 90
+    animation: WeaponArcSkiaLunge
+    wideAnimation: WeaponArcSkiaSwipe
+    wideAnimationRotation: -90
+    swingLeft: true
+    attackRate: 1.0
+    range: 2.0
+    altDisarm: false
+    damage:
+      types:
+        Slash: 25
+        Pierce: 15
+        Cold: 10
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/wail.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Ectoplasm:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: GlimmerSource
+    glimmerPerSecond: 2
+    glimmerExponentOffset: -5
+  - type: AmbientSound
+    volume: -8
+    range: 5
+    sound:
+      path: /Audio/Ambience/wisp_ambience.ogg
+  - type: DamageOnDispel
+    damage:
+      types:
+        Heat: 100
+  - type: EmbedImmune
+    immuneTo:
+      components:
+      - FlareGunPellet
+  - type: EmitSoundOnSpawn
+    sound: /Audio/_DV/Effects/creepyshriek.ogg
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.5
+    baseSprintSpeed: 1.25

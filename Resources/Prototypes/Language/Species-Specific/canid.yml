@@ -1,10 +1,11 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Fox" Miakova
 # SPDX-FileCopyrightText: 2026 portfiend
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
-# A horrifying mix of Sol Common and Canilunzt, the language is loosely remembles the structure Sol Common with alot more yapping, snarling, and growling.
+# A language based on a mix of Canilunzt and Terran Chinese, Alaseta is hard to understand at first, but a careful ear can soon adapt.
 # TODO: Replace this with a much better language.
 - type: language
   id: Alaseta
@@ -16,18 +17,22 @@
     minSyllables: 1 # DEN - 2 -> 1
     maxSyllables: 3
     replacement:
-    - wuff
-    - awuff
-    - bow
-    - wow
-    - ahwa
-    - grr
-    - awf
+    - bao
+    - bei
+    - zen
+    - rang
+    - reng
+    - zhai
+    - nia
     - rrr
-    - shna
-    - yhi
-    - yip
+    - duan
+    - suan
+    - gau
     - bau
+    - waff
+    - aruf
+    - grau
+    - rhen
     # DEN: more short syllables, doubled for weight
     - wf
     - gr
@@ -39,3 +44,9 @@
     - af
     - rr
     - wa
+    - xi
+    - me
+    - za
+    - ca
+    - sa
+    - re

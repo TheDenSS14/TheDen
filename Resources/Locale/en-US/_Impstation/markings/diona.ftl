@@ -1,7 +1,9 @@
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 Doop
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 marking-DionaFlowersHead_colorable-flowers_head_primary_colorable = Stems
 marking-DionaFlowersHead_colorable-flowers_head_secondary_colorable = Flowers
@@ -100,3 +102,11 @@ marking-DionaVinelHead_colorable = Diona Vines Long (Vines, Colorable)
 marking-DionaVinesHead_colorable = Diona Vines Short (Vines, Colorable)
 marking-DionaWildflowerHead_colorable = Diona Wild Flowers (Flowers, Colorable)
 
+marking-DionaSunflower = Sunflower
+marking-DionaSunflower-sunflower_base = Sunflower Center
+marking-DionaSunflower-sunflower_eyes = Sunflower Eyes
+marking-DionaSunflower-sunflower_petals1 = Sunflower Petals 1
+marking-DionaSunflower-sunflower_petals2 = Sunflower Petals 2
+
+marking-DionaSunflowerEyesUnshaded = Sunflower Eyes (Unshaded)
+marking-DionaSunflowerEyesUnshaded-sunflower_eyes = Sunflower Eyes

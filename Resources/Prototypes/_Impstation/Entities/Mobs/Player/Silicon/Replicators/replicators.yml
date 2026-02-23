@@ -37,7 +37,7 @@
     raffle:
       settings: short
     #Den
-    requirements: 
+    requirements:
     - !type:CharacterOverallTimeRequirement
       min: 36000 #Den - 10 hours
     #Den End
@@ -167,9 +167,11 @@
         Structural: -0.5
   - type: ThermalVision
     lightRadius: 7
+    drawOverlay: false
     color: "#d70aa0"
   - type: NightVision # Den
-    color: "#d70aa0"
+    drawOverlay: false
+    color: "#808080"
   - type: Prying
     pryPowered: true
     force: true
@@ -187,6 +189,10 @@
       components:
       - AACTablet
   # DEN
+  - type: Clumsy
+    clumsyCatching: false
+    clumsyVaulting: false
+    clumsySound: "/Audio/_NF/Mecha/mechstep.ogg"
   - type: Bloodstream
     bloodReagent: Oil
     maxBleedAmount: 1
@@ -245,13 +251,6 @@
         - SmallMobMask
         layer:
         - SmallMobLayer
-  # DEN
-  - type: ThermalVision
-    lightRadius: 7
-    color: "#d70aa0"
-  - type: NightVision # Den
-    color: "#d70aa0"
-  # DEN
 
 # Tier 1: These guys are mooks. They're vulnerable, bad at dragging, and don't do much damage, but they have a disabler ranged attack.
 - type: entity

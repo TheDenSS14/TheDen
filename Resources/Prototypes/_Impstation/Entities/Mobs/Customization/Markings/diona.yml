@@ -1,7 +1,9 @@
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 Doop
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 kieranonline
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: DionaThornsHead_colorable
@@ -314,3 +316,36 @@
     state: wildflower_flowers3_colorable
   - sprite: _Impstation/Mobs/Customization/diona.rsi
     state: wildflower_flowers4_colorable
+
+- type: marking
+  id: DionaSunflower
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Diona ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/diona.rsi
+    state: sunflower_base
+  - sprite: _Impstation/Mobs/Customization/diona.rsi
+    state: sunflower_eyes
+  - sprite: _Impstation/Mobs/Customization/diona.rsi
+    state: sunflower_petals1
+  - sprite: _Impstation/Mobs/Customization/diona.rsi
+    state: sunflower_petals2
+
+- type: marking
+  id: DionaSunflowerEyesUnshaded
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Diona ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/diona.rsi
+    state: sunflower_eyes
+  shader: unshaded

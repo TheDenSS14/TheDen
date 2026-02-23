@@ -226,7 +226,10 @@
       - id: EphedrineChemistryBottle
         amount: 2
       - id: OmnizineChemistryBottle
-      - id: MedkitCombatFilled
+  - type: ContainerFill
+    containers:
+      medkit:
+      - MedkitCombatFilled
 
 - type: entity
   parent: ClothingBeltWand

@@ -7,6 +7,7 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 maelines
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Fuvias
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -27,8 +28,8 @@
 
 - type: marking
   id: fizz
-  bodyPart: Head
-  markingCategory: Head
+  bodyPart: Chest
+  markingCategory: Chest
   speciesRestriction: [ SlimePerson ]
   forcedColoring: false
   followSkinColor: false
@@ -62,8 +63,8 @@
 
 - type: marking
   id: FadingStars
-  bodyPart: Head
-  markingCategory: Head
+  bodyPart: Chest
+  markingCategory: Chest
   speciesRestriction: [ SlimePerson ]
   forcedColoring: false
   followSkinColor: false
@@ -139,7 +140,7 @@
   id: DionaFirefly
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Diona, IPC, Slimeperson ]
+  speciesRestriction: [ Diona, IPC, Slimeperson, Resomi ]
   forcedColoring: false
   followSkinColor: false
   sprites:

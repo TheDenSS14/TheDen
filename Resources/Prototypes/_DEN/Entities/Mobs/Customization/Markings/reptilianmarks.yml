@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: ReptilianSharpCobraHood
@@ -62,3 +62,30 @@
     state: furred_tail_under
   - sprite: _DEN/Mobs/Customization/Reptilian/tail.rsi
     state: furred_tail_over
+
+- type: marking
+  id: ReptilianEarsSoft
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Reptilian/softears.rsi
+    state: koboldearssoft
+
+- type: marking
+  id: ReptilianEarsTall
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Reptilian/softears.rsi
+    state: koboldearstall
+
+- type: marking
+  id: LizardLittleHorns
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Reptilian/littlehorns.rsi
+    state: little

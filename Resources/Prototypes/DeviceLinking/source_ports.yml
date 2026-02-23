@@ -1,20 +1,18 @@
-# SPDX-FileCopyrightText: 2022 Chris V <HoofedEar@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
-# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
-# SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Chris V
+# SPDX-FileCopyrightText: 2022 Leon Friedrich
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 fishfish458
+# SPDX-FileCopyrightText: 2023 AJCM-git
+# SPDX-FileCopyrightText: 2023 Ed
+# SPDX-FileCopyrightText: 2023 Julian Giebel
+# SPDX-FileCopyrightText: 2023 Kevin Zheng
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 Timfa
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -22,13 +20,13 @@
   id: Pressed
   name: signal-port-name-pressed
   description: signal-port-description-pressed
-  defaultLinks: [ Toggle, Trigger ]
+  defaultLinks: [ Toggle, Trigger, Timer ]
 
 - type: sourcePort
   id: On
   name: signal-port-name-on-transmitter
   description: signal-port-description-on-transmitter
-  defaultLinks: [ On, Open, Forward, Trigger ]
+  defaultLinks: [ On, Open, Forward, Trigger, Timer ]
 
 - type: sourcePort
   id: Off
@@ -45,13 +43,13 @@
   id: Left
   name: signal-port-name-left
   description: signal-port-description-left
-  defaultLinks: [ On, Open, Forward, Trigger ]
+  defaultLinks: [ On, Open, Forward, Trigger, Timer ]
 
 - type: sourcePort
   id: Right
   name: signal-port-name-right
   description: signal-port-description-right
-  defaultLinks: [ On, Open, Reverse, Trigger ]
+  defaultLinks: [ On, Open, Reverse, Trigger, Timer ]
 
 - type: sourcePort
   id: Middle
@@ -96,7 +94,7 @@
   id: Timer
   name: signal-port-name-timer-trigger
   description: signal-port-description-timer-trigger
-  defaultLinks: [ AutoClose, On, Open, Forward, Trigger ]
+  defaultLinks: [ AutoClose, On, Open, Forward, Trigger, Timer ]
 
 - type: sourcePort
   id: Start
@@ -114,7 +112,7 @@
   id: OutputHigh
   name: signal-port-name-logic-output-high
   description: signal-port-description-logic-output-high
-  defaultLinks: [ On, Open, Forward, Trigger ]
+  defaultLinks: [ On, Open, Forward, Trigger, Timer ]
 
 - type: sourcePort
   id: OutputLow

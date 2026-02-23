@@ -1,7 +1,6 @@
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: characterItemGroup
   id: LoadoutGroupOniMask
@@ -11,3 +10,52 @@
       id: LoadoutOniMaskRed
     - type: loadout
       id: LoadoutOniMaskBlue
+
+- type: characterItemGroup
+  id: LoadoutGroupGlorbs
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSpeciesGlorb01Red
+    - type: loadout
+      id: LoadoutSpeciesGlorb02Vermilion
+    - type: loadout
+      id: LoadoutSpeciesGlorb03Orange
+    - type: loadout
+      id: LoadoutSpeciesGlorb04Amber
+    - type: loadout
+      id: LoadoutSpeciesGlorb05Yellow
+    - type: loadout
+      id: LoadoutSpeciesGlorb06Lime
+    - type: loadout
+      id: LoadoutSpeciesGlorb07Green
+    - type: loadout
+      id: LoadoutSpeciesGlorb08Mint
+    - type: loadout
+      id: LoadoutSpeciesGlorb09Cyan
+    - type: loadout
+      id: LoadoutSpeciesGlorb10SkyBlue
+    - type: loadout
+      id: LoadoutSpeciesGlorb11Azure
+    - type: loadout
+      id: LoadoutSpeciesGlorb12Blue
+    - type: loadout
+      id: LoadoutSpeciesGlorb13Indigo
+    - type: loadout
+      id: LoadoutSpeciesGlorb14Violet
+    - type: loadout
+      id: LoadoutSpeciesGlorb15Purple
+    - type: loadout
+      id: LoadoutSpeciesGlorb16Magenta
+    - type: loadout
+      id: LoadoutSpeciesGlorb17HotPink
+    - type: loadout
+      id: LoadoutSpeciesGlorb18Crimson
+    - type: loadout
+      id: LoadoutSpeciesGlorb19White
+    - type: loadout
+      id: LoadoutSpeciesGlorb20CoolWhite
+    - type: loadout
+      id: LoadoutSpeciesGlorb21WarmWhite
+    - type: loadout
+      id: LoadoutSpeciesGlorb22Void

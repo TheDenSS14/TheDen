@@ -33,3 +33,23 @@
   - sprite: Mobs/Species/Shadowkin/parts.rsi
     state: eyes
   shader: unshaded
+
+# Tails
+
+- type: marking
+  id: TailShadowkinBigFluffAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Shadowkin, Reptilian, SlimePerson, Human]
+  layering:
+    shadowkin_big_fluff_under_wag: TailBehind
+    shadowkin_big_fluff_over_wag: Tail
+  colorLinks:
+    shadowkin_big_fluff_under_wag: shadowkin_big_fluff_over_wag
+  colorIndexRedirect:
+  - 0
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Shadowkin/tailwag64x32.rsi
+    state: shadowkin_big_fluff_over_wag
+  - sprite: _DEN/Mobs/Customization/Shadowkin/tailwag64x32.rsi
+    state: shadowkin_big_fluff_under_wag

@@ -161,10 +161,10 @@
     intensitySlope: 15
     maxIntensity: 20
   - type: ExplodeOnTrigger
-  - type: TriggerOnSignal
+  - type: TimerStartOnSignal
   - type: DeviceLinkSink
     ports:
-      - Trigger
+      - Timer
   - type: OnUseTimerTrigger
     delay: 5
   - type: TimerTriggerVisuals

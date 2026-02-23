@@ -45,8 +45,7 @@ public sealed class VocalSystem : EntitySystem
     [Dependency] private readonly ILogManager _log = default!;
     [Dependency] private readonly AdditionalVocalSoundsSystem _additionalVocalSounds = default!;
 
-    [ValidatePrototypeId<ReplacementAccentPrototype>]
-    private const string MuzzleAccent = "mumble";
+    private readonly ProtoId<ReplacementAccentPrototype> _muzzleAccent = "mumble";
 
     public override void Initialize()
     {
@@ -87,7 +86,7 @@ public sealed class VocalSystem : EntitySystem
         if (args.Handled
             || !args.Emote.Category.HasFlag(EmoteCategory.Vocal)
             || !_actionBlocker.CanSpeak(uid)
-            || TryComp<ReplacementAccentComponent>(uid, out var replacement) && replacement.Accent == MuzzleAccent)
+            || TryComp<ReplacementAccentComponent>(uid, out var replacement) && replacement.Accent == _muzzleAccent)
             return;
 
         Dictionary<string, SoundSpecifier> sounds = component.EmoteSounds?.Sounds != null ? new(component.EmoteSounds.Sounds) : new(); // TheDen - Add Voice

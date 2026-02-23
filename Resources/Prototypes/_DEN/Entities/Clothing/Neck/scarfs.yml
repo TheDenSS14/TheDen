@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 Aikakakah
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -23,3 +24,14 @@
     sprite: _DEN/Clothing/Neck/Scarfs/colorable.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Neck/Scarfs/colorable.rsi
+
+- type: entity
+  parent: ClothingNeckScarfBase
+  id: ClothingNeckScarfLoop
+  name: loop scarf
+  description: A stylish loop scarf.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Scarfs/loop.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Scarfs/loop.rsi

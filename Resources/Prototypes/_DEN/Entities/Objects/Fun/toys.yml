@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 sheepie
 #
 # SPDX-License-Identifier: MPL-2.0
 
@@ -272,3 +273,58 @@
       entries:
         CottonBurger: WhistlerPlushie
 
+# @ undertalesex; approved by june (owner)
+- type: entity
+  parent: BasePlushie
+  id: PlushiePatty
+  name: pitiless plushie
+  description: It doesn't look very healthy.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/pattyplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PattyPlushie
+
+# @ twiggythedragon; approved by june (owner)
+- type: entity
+  parent: BasePlushie
+  id: PlushieTwiggy
+  name: twiggy plushie
+  description: Blep!
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/twiggyplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PattyPlushie
+
+# @ lonely1400; approved by june (owner)
+- type: entity
+  parent: BasePlushie
+  id: PlushieStu
+  name: stu plushie
+  description: A blood-shaded plushie of a certain security officer.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/stuplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PattyPlushie
+
+# @ leonardo_dabepis; approved by june (owner)
+- type: entity
+  parent: BasePlushie
+  id: PlushiePhil
+  name: normal cat plushie
+  description: Why does it look like that...?!
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/philplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PhilPlushie

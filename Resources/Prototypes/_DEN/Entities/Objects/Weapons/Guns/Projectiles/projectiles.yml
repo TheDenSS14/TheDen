@@ -163,6 +163,34 @@
 # Initial piercing/holy damage values chosen by direction, may need work
 - type: entity
   parent: BaseBullet
+  id: BaseBulletMantis
+  categories: [ HideSpawnMenu ]
+  abstract: true
+  components:
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+        - Opaque
+      fly-by: &flybyfixture
+        shape: !type:PhysShapeCircle
+          radius: 1.5
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        - Opaque
+        hard: False
+
+- type: entity
+  parent: BaseBulletMantis
   id: BulletMantisCrypto
   categories: [ HideSpawnMenu ]
   components:
@@ -199,7 +227,7 @@
     transferAmount: 5 # 5u of crypto disables psionics for 1m40s, and a full magazine of any mantis gun will disable psionics for 20m
 
 - type: entity
-  parent: BaseBullet
+  parent: BaseBulletMantis
   id: BulletMantisHoly
   categories: [ HideSpawnMenu ]
   components:
@@ -226,7 +254,7 @@
         variation: 0.05
 
 - type: entity
-  parent: BaseBullet
+  parent: BaseBulletMantis
   id: BulletMantisLethal
   categories: [ HideSpawnMenu ]
   components:

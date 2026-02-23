@@ -1,4 +1,8 @@
-﻿using System.Numerics;
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Numerics;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
 using Robust.Shared.Maths;
@@ -16,11 +20,11 @@ public sealed class CircleOverlay : Overlay
 
     private const float CircleThickness = 0.05f;
     private const float OutlineThickness = 0.05f;
-    private const float EaseInDuration = 0.5f;
+    private const float EaseInDuration = 1.0f;
     private const float EaseOutDuration = 2.5f;
-    private const float FadeTime = EaseInDuration + EaseOutDuration; 
-    private const int CircleSegments = 128; 
-    private const float MaxOpacity = 1.0f;
+    private const float FadeTime = EaseInDuration + EaseOutDuration;
+    private const int CircleSegments = 128;
+    private const float MaxOpacity = 0.8f;
 
     public float Range { get; set; } = 10.0f;
 
@@ -59,7 +63,7 @@ public sealed class CircleOverlay : Overlay
 
             filledVertices.Add(center);
 
-            for (int i = 0; i <= CircleSegments; i++)
+            for (var i = 0; i <= CircleSegments; i++)
             {
                 var angle = (float)(i * 2 * Math.PI / CircleSegments);
                 var x = center.X + outerRadius * MathF.Cos(angle);
@@ -73,7 +77,7 @@ public sealed class CircleOverlay : Overlay
 
         var ringVertices = new List<Vector2>();
 
-        for (int i = 0; i <= CircleSegments; i++)
+        for (var i = 0; i <= CircleSegments; i++)
         {
             var angle = (float)(i * 2 * Math.PI / CircleSegments);
             var cos = MathF.Cos(angle);
@@ -102,7 +106,7 @@ public sealed class CircleOverlay : Overlay
         if (elapsedSeconds >= FadeTime)
         {
             _isVisible = false;
-            OnFullyFaded?.Invoke(); 
+            OnFullyFaded?.Invoke();
             return;
         }
 
@@ -128,8 +132,8 @@ public sealed class CircleOverlay : Overlay
 
         easedAlpha = Math.Max(0f, Math.Min(MaxOpacity, easedAlpha));
 
-        var blackColor = Color.Black.WithAlpha(easedAlpha);
-        DrawThickCircle(drawingHandle, playerWorldPos, Range, CircleThickness + 2 * OutlineThickness, blackColor);
+        // var blackColor = Color.Black.WithAlpha(easedAlpha);
+        // DrawThickCircle(drawingHandle, playerWorldPos, Range, CircleThickness + 2 * OutlineThickness, blackColor);
 
         var whiteColor = Color.White.WithAlpha(easedAlpha);
         DrawThickCircle(drawingHandle, playerWorldPos, Range, CircleThickness, whiteColor);

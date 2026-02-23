@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Dirius77
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingShoesBootsMag
@@ -17,3 +18,20 @@
   - type: Magboots
     activeWalkModifier: 0.90
     activeSprintModifier: 0.85
+
+- type: entity
+  parent: ClothingShoesBootsMagAdv
+  id: ClothingShoesBootsMagAdvCE
+  name: chief engineer's advanced magboots
+  description: State-of-the-art magnetic boots that do not slow down their wearer. This is the CE's pair.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Shoes/magboots-ce.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Shoes/magboots-ce.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HighRiskItem
+  - type: StealTarget
+    stealGroup: ClothingShoesBootsMagAdvCE

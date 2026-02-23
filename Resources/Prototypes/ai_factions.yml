@@ -1,22 +1,21 @@
-# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
-# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nim <128169402+Nimfar11@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 coolmankid12345 <coolmankid12345@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Nathaniel Adams <60526456+Nathaniel-Adams@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Solaris <60526456+SolarisBirb@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 stellar-novas <stellar_novas@riseup.net>
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 metalgearsloth
+# SPDX-FileCopyrightText: 2023 Leon Friedrich
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Nim
+# SPDX-FileCopyrightText: 2023 coolmankid12345
+# SPDX-FileCopyrightText: 2024 Remuchi
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2025 Nathaniel Adams
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Solaris
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 stellar-novas
+# SPDX-FileCopyrightText: 2026 Jakumba
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: npcFaction
   id: Dragon
@@ -34,6 +33,7 @@
     - GladiabotYellow
     - SAN
     - Changeling
+    - LordsOfTheEndTime # Den
 
 - type: npcFaction
   id: NanoTrasen
@@ -45,6 +45,7 @@
     - Revolutionary
     - Dragon
     - SAN
+    - LordsOfTheEndTime # Den
 
 - type: npcFaction
   id: Mouse
@@ -61,6 +62,7 @@
     - SimpleHostile
     - Zombie
     - Xeno
+    - LordsOfTheEndTime # Den
 
 - type: npcFaction
   id: SimpleHostile
@@ -81,6 +83,7 @@
     - GladiabotYellow
     - SAN
     - Changeling
+    - LordsOfTheEndTime # Den
 
 - type: npcFaction
   id: SimpleNeutral
@@ -95,6 +98,7 @@
     - Zombie
     - SAN
     - Changeling
+    - LordsOfTheEndTime # Den
 
 - type: npcFaction
   id: Xeno
@@ -112,6 +116,7 @@
     - GladiabotYellow
     - SAN
     - Changeling
+    - LordsOfTheEndTime # Den
 
 - type: npcFaction
   id: Zombie
@@ -139,6 +144,7 @@
     - SimpleHostile
     - Dragon
     - SAN
+    - LordsOfTheEndTime # Den
 
 - type: npcFaction
   id: Pibble
@@ -275,3 +281,4 @@
     - GladiabotYellow
     - SAN
     - Changeling
+    - LordsOfTheEndTime # Den

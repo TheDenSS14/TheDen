@@ -30,6 +30,7 @@
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Dirius77
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -100,14 +101,8 @@
   - type: Magboots
     activeWalkModifier: 1
     activeSprintModifier: 1
-  - type: Tag
-    tags:
-    - WhitelistChameleon
-    - HighRiskItem
   - type: StaticPrice
     price: 750
-  - type: StealTarget
-    stealGroup: ClothingShoesBootsMagAdv
   - type: DamageOtherOnHit
     damage:
       types:
