@@ -1,0 +1,99 @@
+- type: decal
+  id: Misc
+  parent: Overlays
+  abstract: true
+
+# Wall spikes (snap to tile, then place on diagonal walls)
+
+- type: decal
+  id: WallSpikeNE
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeNE
+
+- type: decal
+  id: WallSpikeNW
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeNW
+
+- type: decal
+  id: WallSpikeSE
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeSE
+
+- type: decal
+  id: WallSpikeSW
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeSW
+
+# Rotatable wall spikes (snap to tile, then rotate 45 degrees to place on non-diagonal walls)
+
+- type: decal
+  id: WallSpikeNERotatable
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeNErotatable
+
+- type: decal
+  id: WallSpikeNWRotatable
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeNWrotatable
+
+- type: decal
+  id: WallSpikeSERotatable
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeSErotatable
+
+- type: decal
+  id: WallSpikeSWRotatable
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeSWrotatable
+
+# Diagonal stairs (don't snap to tile, rotate 45 degrees and zoom in and do pixel-perfect placement) (good luck)
+
+- type: decal
+  id: CornerStairsLeft
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: cornerstairsleft
+
+- type: decal
+  id: CornerStairsRight
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: cornerstairsright
+
+# Planter decals to put non-potted plants in
+- type: decal
+  id: Planter
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: planter

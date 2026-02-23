@@ -417,7 +417,7 @@
 - type: entity
   parent: Airlock
   id: AirlockSomber
-  name: somber airlock
+  name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
     - type: Sprite
@@ -434,7 +434,7 @@
 - type: entity
   parent: AirlockGlass
   id: AirlockGlassSomber
-  name: somber glass airlock
+  name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
     - type: Sprite

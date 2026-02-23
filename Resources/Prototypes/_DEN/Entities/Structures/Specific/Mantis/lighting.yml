@@ -6,9 +6,9 @@
   parent: BaseStructure
   id: LightSomberEidoliteWellLamp
   name: eidolite well lamp
-  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on by hand."
-  suffix: Off
-  components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS LIKE RemoteSignallerSomberTV
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on and off by hand."
+  suffix: CLICK AFTER MAPPING TO ENABLE
+  components:
   - type: Sprite
     sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitewell.rsi
     drawdepth: Objects
@@ -86,8 +86,9 @@
   parent: LightSomberEidoliteWellLamp
   id: LightSomberEidoliteWellLampOn
   description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. The switch on this one takes a few tries..."
-  suffix: DO NOT MAP # If you do, it'll appear on, but they'll have to interact with it twice before it turns off again. It's more fun to manually light the office anyway
-  components: # TODO: APRIL HELP MAKE THIS ACTUALLY SPAWN IN THE TOGGLED STATE SO WE CAN USE THEM ON ETERNITY
+  suffix: DO NOT MAP # If you do, it'll appear on, but they'll have to interact with it twice before it turns off again
+  categories: [ HideSpawnMenu ] # TODO: Delete this prototype with migration in case any were mapped, it's basically deprecated due to its unintended behavior
+  components:
   - type: PointLight
     enabled: true
 
@@ -95,8 +96,8 @@
   parent: LightSomberEidoliteWellLamp
   id: LightSomberEidoliteFloorLamp
   name: eidolite floor lamp
-  description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. You can turn it on by hand."
-  suffix: Off
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. You can turn it on and off by hand."
+  suffix: CLICK AFTER MAPPING TO ENABLE
   components:
   - type: Sprite
     sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitefloor.rsi
@@ -124,7 +125,8 @@
   parent: LightSomberEidoliteFloorLamp
   id: LightSomberEidoliteFloorLampOn
   description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. The switch on this one takes a few tries..."
-  suffix: DO NOT MAP # If you do, it'll appear on, but they'll have to interact with it twice before it turns off again. It's more fun to manually light the office anyway
-  components: # TODO: APRIL HELP MAKE THIS ACTUALLY SPAWN IN THE TOGGLED STATE SO WE CAN USE THEM ON ETERNITY
+  suffix: DO NOT MAP # If you do, it'll appear on, but they'll have to interact with it twice before it turns off again
+  categories: [ HideSpawnMenu ] # TODO: Delete this prototype with migration in case any were mapped, it's basically deprecated due to its unintended behavior
+  components:
   - type: PointLight
     enabled: true

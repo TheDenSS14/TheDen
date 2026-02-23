@@ -1,0 +1,1461 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: tile
+  id: FloorSomberAmaranth
+  name: tiles-somber-amaranth
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-amaranth.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  itemDrop: FloorTileItemSomberAmaranth
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberAmaranthEye
+  name: tiles-somber-amaranth-eye
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-amaranth-eye.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  itemDrop: FloorTileItemSomberAmaranthEye
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberMnemolithRough
+  name: tiles-somber-mnemolith-rough
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-mnemolith-rough.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: FloorTileItemSomberMnemolithRough
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberMnemolithSmooth
+  name: tiles-somber-mnemolith-smooth
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-mnemolith-smooth.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: FloorTileItemSomberMnemolithSmooth
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlass
+  name: tiles-somber-glass-floor
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-glass.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassPlasma
+  name: tiles-somber-glass-floor-plasma
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-glass-plasma.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassTilePlasma
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassUranium
+  name: tiles-somber-glass-floor-uranium
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-glass-uranium.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassTileUranium
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteel
+  name: tiles-somber-steel-floor
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteel
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelDark
+  name: tiles-somber-steel-floor-dark
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-dark.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelDark
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelBandedMagenta
+  name: tiles-somber-steel-floor-banded-magenta
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-banded-magenta.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelBandedMagenta
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelBandedPurple
+  name: tiles-somber-steel-floor-banded-purple
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-banded-purple.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelBandedPurple
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelCheckerMagenta
+  name: tiles-somber-steel-floor-checker-magenta
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-checkered-magenta.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelCheckerMagenta
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelCheckerPurple
+  name: tiles-somber-steel-floor-checker-purple
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-checkered-purple.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelCheckerPurple
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelDiagonal
+  name: tiles-somber-steel-floor-diagonal
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelDiagonal
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelDiagonalMini
+  name: tiles-somber-steel-floor-diagonal-mini
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal-mini.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelDiagonalMini
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelHerringbone
+  name: tiles-somber-steel-floor-herringbone
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-herringbone.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelHerringbone
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelMini
+  name: tiles-somber-steel-floor-mini
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-mini.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelMini
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelMono
+  name: tiles-somber-steel-floor-mono
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-mono.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelMono
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelMonoEye
+  name: tiles-somber-steel-floor-mono-eye
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-mono-eye.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelMonoEye
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelOffset
+  name: tiles-somber-steel-floor-offset
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-offset.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelOffset
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelPavement
+  name: tiles-somber-steel-floor-pavement
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-pavement.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelPavement
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelPavementVertical
+  name: tiles-somber-steel-floor-pavement-vertical
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-pavement-vertical.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelPavementVertical
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelBandedDark
+  name: tiles-somber-steel-floor-banded-dark
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-banded-dark.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelBandedDark
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelCheckerDark
+  name: tiles-somber-steel-floor-checker-dark
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-checkered-dark.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelCheckerDark
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelDiagonalDark
+  name: tiles-somber-steel-floor-diagonal-dark
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal-dark.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelDiagonalDark
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelDiagonalMiniDark
+  name: tiles-somber-steel-floor-diagonal-mini-dark
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal-mini-dark.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelDiagonalMiniDark
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelMonoDarkEye
+  name: tiles-somber-steel-floor-mono-dark-eye
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-mono-dark-eye.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelMonoDarkEye
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelMonoDark
+  name: tiles-somber-steel-floor-mono-dark
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-mono-dark.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelMonoDark
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelDiagonalMagenta
+  name: tiles-somber-steel-floor-diagonal-magenta
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal-magenta.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelDiagonalMagenta
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelDiagonalMiniMagenta
+  name: tiles-somber-steel-floor-diagonal-mini-magenta
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal-mini-magenta.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelDiagonalMiniMagenta
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelDiagonalPurple
+  name: tiles-somber-steel-floor-diagonal-purple
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal-purple.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelDiagonalPurple
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelDiagonalMiniPurple
+  name: tiles-somber-steel-floor-diagonal-mini-purple
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal-mini-purple.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelDiagonalMiniPurple
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberCircuit
+  name: tiles-somber-circuit
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-circuit.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberCircuit
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberCircuitDark
+  name: tiles-somber-circuit-dark
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-circuit-dark.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberCircuitDark
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberNE
+  name: tiles-somber-NE
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-NE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberNE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberNW
+  name: tiles-somber-NW
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-NW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberNW
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSE
+  name: tiles-somber-SE
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-SE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSW
+  name: tiles-somber-SW
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-SW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSW
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberDarkNE
+  name: tiles-somber-dark-NE
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-dark-NE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberDarkNE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberDarkNW
+  name: tiles-somber-dark-NW
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-dark-NW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberDarkNW
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberDarkSE
+  name: tiles-somber-dark-SE
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-dark-SE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberDarkSE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberDarkSW
+  name: tiles-somber-dark-SW
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-dark-SW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberDarkSW
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassNE
+  name: tiles-somber-glass-NE
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-NE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassNE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassNW
+  name: tiles-somber-glass-NW
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-NW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassNW
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassSE
+  name: tiles-somber-glass-SE
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-SE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassSE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassSW
+  name: tiles-somber-glass-SW
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-SW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassSW
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassDarkNE
+  name: tiles-somber-glass-dark-NE
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-dark-NE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassDarkNE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassDarkNW
+  name: tiles-somber-glass-dark-NW
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-dark-NW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassDarkNW
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassDarkSE
+  name: tiles-somber-glass-dark-SE
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-dark-SE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassDarkSE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassDarkSW
+  name: tiles-somber-glass-dark-SW
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-dark-SW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassDarkSW
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassTileNE
+  name: tiles-somber-glass-tile-NE
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-NE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassTileNE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassTileNW
+  name: tiles-somber-glass-tile-NW
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-NW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassTileNW
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassTileSE
+  name: tiles-somber-glass-tile-SE
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-SE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassTileSE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassTileSW
+  name: tiles-somber-glass-tile-SW
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-SW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassTileSW
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassTileDarkNE
+  name: tiles-somber-glass-tile-dark-NE
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-dark-NE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassTileDarkNE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassTileDarkNW
+  name: tiles-somber-glass-tile-dark-NW
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-dark-NW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassTileDarkNW
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassTileDarkSE
+  name: tiles-somber-glass-tile-dark-SE
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-dark-SE.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassTileDarkSE
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassTileDarkSW
+  name: tiles-somber-glass-tile-dark-SW
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-dark-SW.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassTileDarkSW
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassTinted
+  name: tiles-somber-glass-floor-tinted
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-glass-tinted.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassTinted
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberGlassTintedDark
+  name: tiles-somber-glass-floor-tinted-dark
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-glass-tinted-dark.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberGlassTintedDark
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWood
+  name: tiles-somber-wood
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWood
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberBrokenWood
+  name: tiles-somber-wood3
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-broken.png
+  variants: 7
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWood
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodLarge
+  name: tiles-somber-wood-large
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-large.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodLarge
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodTile
+  name: tiles-somber-wood2
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-pattern.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodPattern
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodChess
+  name: tiles-somber-wood-chess
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-chess.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodChess
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodParquet
+  name: tiles-somber-wood-parquet
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-parquet.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodParquet
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodAmaranth
+  name: tiles-somber-wood-amaranth
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-amaranth.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodAmaranth
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberBrokenWoodAmaranth
+  name: tiles-somber-wood3-amaranth
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-broken-amaranth.png
+  variants: 7
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodAmaranth
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodLargeAmaranth
+  name: tiles-somber-wood-large-amaranth
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-large-amaranth.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodLargeAmaranth
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodTileAmaranth
+  name: tiles-somber-wood2-amaranth
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-pattern-amaranth.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodPatternAmaranth
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodChessAmaranth
+  name: tiles-somber-wood-chess-amaranth
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-chess-amaranth.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodChessAmaranth
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodParquetAmaranth
+  name: tiles-somber-wood-parquet-amaranth
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-parquet-amaranth.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodParquetAmaranth
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodFloral
+  name: tiles-somber-wood-floral
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-floral.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodFloral
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberBrokenWoodFloral
+  name: tiles-somber-wood3-floral
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-broken-floral.png
+  variants: 7
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodFloral
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodLargeFloral
+  name: tiles-somber-wood-large-floral
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-large-floral.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodLargeFloral
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodTileFloral
+  name: tiles-somber-wood2-floral
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-pattern-floral.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodPatternFloral
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodChessFloral
+  name: tiles-somber-wood-chess-floral
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-chess-floral.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodChessFloral
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodParquetFloral
+  name: tiles-somber-wood-parquet-floral
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-parquet-floral.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodParquetFloral
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodShadow
+  name: tiles-somber-wood-shadow
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-shadow.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodShadow
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberBrokenWoodShadow
+  name: tiles-somber-wood3-shadow
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-broken-shadow.png
+  variants: 7
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodShadow
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodLargeShadow
+  name: tiles-somber-wood-large-shadow
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-large-shadow.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodLargeShadow
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodTileShadow
+  name: tiles-somber-wood2-shadow
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-pattern-shadow.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodPatternShadow
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodChessShadow
+  name: tiles-somber-wood-chess-shadow
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-chess-shadow.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodChessShadow
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberWoodParquetShadow
+  name: tiles-somber-wood-parquet-shadow
+  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-parquet-shadow.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSomberWoodParquetShadow
+  heatCapacity: 10000
+
+# "Planet" tiles (dirt, grass, etc)
+
+- type: tile
+  id: FloorSomberDirtPlanet
+  name: tiles-somber-dirt-planet
+  sprite: /Textures/_DEN/Tiles/Planet/Somber/dirt.rsi/dirt.png
+  variants: 7
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+- type: tile
+  parent: FloorSomberDirtPlanet
+  id: FloorSomberDirt
+  name: tiles-somber-dirt
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  weather: false
+  indestructible: false
+  itemDrop: FloorTileItemSomberDirt
+
+- type: tile
+  id: FloorSomberGrassPlanet
+  name: tiles-somber-grass-planet
+  sprite: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/grass.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/single_edge.png
+    NorthEast: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/single_edge.png
+    NorthWest: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/single_edge.png
+    SouthWest: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/single_edge.png
+    South: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/double_edge.png
+    East: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/double_edge.png
+    North: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/double_edge.png
+    West: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/double_edge.png
+  baseTurf: FloorSomberDirtPlanet
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepGrass
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+- type: tile
+  parent: FloorSomberGrassPlanet
+  id: FloorSomberGrass
+  name: tiles-somber-grass
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  weather: false
+  indestructible: false
+  itemDrop: FloorTileItemSomberGrass

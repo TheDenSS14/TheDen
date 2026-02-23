@@ -224,3 +224,14 @@
   materials:
     Cloth: 800
     Steel: 600
+
+# Tiles
+- type: latheRecipe
+  parent: BaseFauxTileRecipe
+  id: FauxTileSomberDirt
+  result: FloorTileItemSomberDirt
+
+- type: latheRecipe
+  parent: BaseFauxTileRecipe
+  id: FauxTileSomberGrass
+  result: FloorTileItemSomberGrass

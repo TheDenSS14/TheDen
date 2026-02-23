@@ -62,8 +62,41 @@
 
 - type: entity
   parent: StairSomberWood
+  id: StairSomberWoodAmaranth
+  name: somber wood stairs (amaranth)
+  suffix: ""
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_somber_wood_amaranth
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: StairSomberWood
+  id: StairSomberWoodFloral
+  name: somber wood stairs (floral)
+  suffix: ""
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_somber_wood_floral
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: StairSomberWood
+  id: StairSomberWoodShadow
+  name: somber wood stairs (shadow)
+  suffix: ""
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_somber_wood_shadow
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: StairSomberWood
   id: StairSomberAmaranth
-  name: somber amaranth stairs
+  name: somber ornate amaranth stairs
   suffix: ""
   components:
   - type: Sprite
@@ -162,11 +195,43 @@
     state: stairs_stage_somber_wood
     drawdepth: FloorTiles
 
+- type: entity
+  parent: StairStageSomberWood
+  id: StairStageSomberWoodAmaranth
+  name: somber wood stairs (amaranth)
+  suffix: Stage
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_stage_somber_wood_amaranth
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: StairStageSomberWood
+  id: StairStageSomberWoodFloral
+  name: somber wood stairs (floral)
+  suffix: Stage
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_stage_somber_wood_floral
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: StairStageSomberWood
+  id: StairStageSomberWoodShadow
+  name: somber wood stairs (shadow)
+  suffix: Stage
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_stage_somber_wood_shadow
+    drawdepth: FloorTiles
 
 - type: entity
   parent: StairSomberAmaranth
   id: StairStageSomberAmaranth
-  name: somber amaranth stairs
+  name: somber ornate amaranth stairs
   suffix: Stage
   components:
   - type: Sprite

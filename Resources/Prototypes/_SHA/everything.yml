@@ -120,6 +120,28 @@
   heatCapacity: 10000
   indestructible: true
 
+- type: tile
+  id: FloorBreakLatticeGlassBalconyN
+  name: tiles-break-lattice-glass-balcony-N
+  sprite: /Textures/_SHA/Tiles/break-lattice-glass-balcony-N.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  indestructible: true
+
+- type: tile
+  id: FloorBreakLatticeGlassBalconyS
+  name: tiles-break-lattice-glass-balcony-S
+  sprite: /Textures/_SHA/Tiles/break-lattice-glass-balcony-S.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  indestructible: true
+
 # Decals
 
 - type: decal

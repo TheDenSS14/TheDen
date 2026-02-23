@@ -1,0 +1,1190 @@
+
+
+- type: entity
+  parent: FloorTileItemBase
+  id: FloorTileItemSomberSteel
+  name: somber steel tile
+  components:
+  - type: Item
+    sprite: _DEN/Objects/Tiles/somber.rsi
+  - type: Sprite
+    sprite: _DEN/Objects/Tiles/somber.rsi
+    state: somber-tile
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteel
+  - type: Stack
+    stackType: FloorTileSomberSteel
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 9.5 # Heavier tiles hurt more, based on FloorTileItemSteel
+    staminaCost: 6
+    soundHit:
+      path: /Audio/Weapons/block_metal1.ogg
+      params:
+        volume: -60 # Why is it so loud...
+        variation: 0.05
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelDark
+  name: somber steel tile (dark)
+  components:
+  - type: Sprite
+    state: somber-tile-dark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelDark
+  - type: Stack
+    stackType: FloorTileSomberSteelDark
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelBandedMagenta
+  name: somber steel tile (banded, magenta)
+  components:
+  - type: Sprite
+    state: somber-tile-banded-magenta
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelBandedMagenta
+  - type: Stack
+    stackType: FloorTileSomberSteelBandedMagenta
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelBandedPurple
+  name: somber steel tile (banded, purple)
+  components:
+  - type: Sprite
+    state: somber-tile-banded-purple
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelBandedPurple
+  - type: Stack
+    stackType: FloorTileSomberSteelBandedPurple
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelCheckerMagenta
+  name: somber steel tile (checkered, magenta)
+  components:
+  - type: Sprite
+    state: somber-tile-checkered-magenta
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelCheckerMagenta
+  - type: Stack
+    stackType: FloorTileSomberSteelCheckerMagenta
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelCheckerPurple
+  name: somber steel tile (checkered, purple)
+  components:
+  - type: Sprite
+    state: somber-tile-checkered-purple
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelCheckerPurple
+  - type: Stack
+    stackType: FloorTileSomberSteelCheckerPurple
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelDiagonal
+  name: somber steel tile (diagonal)
+  components:
+  - type: Sprite
+    state: somber-tile-diagonal
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelDiagonal
+  - type: Stack
+    stackType: FloorTileSomberSteelDiagonal
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelDiagonalMini
+  name: somber steel tile (mini diagonal)
+  components:
+  - type: Sprite
+    state: somber-tile-diagonal-mini
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelDiagonalMini
+  - type: Stack
+    stackType: FloorTileSomberSteelDiagonalMini
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelHerringbone
+  name: somber steel tile (herringbone)
+  components:
+  - type: Sprite
+    state: somber-tile-herringbone
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelHerringbone
+  - type: Stack
+    stackType: FloorTileSomberSteelHerringbone
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelMini
+  name: somber steel tile (mini)
+  components:
+  - type: Sprite
+    state: somber-tile-mini
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelMini
+  - type: Stack
+    stackType: FloorTileSomberSteelMini
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelMono
+  name: somber steel tile (mono)
+  components:
+  - type: Sprite
+    state: somber-tile-mono
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelMono
+  - type: Stack
+    stackType: FloorTileSomberSteelMono
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelMonoEye
+  name: somber steel tile (mono, eye)
+  components:
+  - type: Sprite
+    state: somber-tile-mono-eye
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelMonoEye
+  - type: Stack
+    stackType: FloorTileSomberSteelMonoEye
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelOffset
+  name: somber steel tile (offset)
+  components:
+  - type: Sprite
+    state: somber-tile-offset
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelOffset
+  - type: Stack
+    stackType: FloorTileSomberSteelOffset
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelPavement
+  name: somber steel tile (pavement)
+  components:
+  - type: Sprite
+    state: somber-tile-pavement
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelPavement
+  - type: Stack
+    stackType: FloorTileSomberSteelPavement
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelPavementVertical
+  name: somber steel tile (pavement, vertical)
+  components:
+  - type: Sprite
+    state: somber-tile-pavement-vertical
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelPavementVertical
+  - type: Stack
+    stackType: FloorTileSomberSteelPavementVertical
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassTile
+  name: somber glass tile
+  components:
+  - type: Sprite
+    state: somber-glass
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberGlass
+  - type: Stack
+    stackType: FloorTileSomberGlass
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassTilePlasma
+  name: somber glass tile (plasma)
+  components:
+  - type: Sprite
+    state: somber-glass-plasma
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberGlassPlasma
+  - type: Stack
+    stackType: FloorTileSomberGlassPlasma
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassTileUranium
+  name: somber glass tile (uranium)
+  components:
+  - type: Sprite
+    state: somber-glass-uranium
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberGlassUranium
+  - type: Stack
+    stackType: FloorTileSomberGlassUranium
+
+- type: entity
+  parent: [FloorTileItemSomberSteel, BaseAntiPsionicWeapon]
+  id: FloorTileItemSomberMnemolithRough
+  name: somber mnemolith tile (rough)
+  components:
+  - type: Sprite
+    state: somber-mnemolith-rough
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberMnemolithRough
+  - type: Stack
+    stackType: FloorTileSomberMnemolithRough
+  - type: DamageOtherOnHit # Well, it is made of mnemolith...
+    damage:
+      types: # Damage against non-psions is based on FloorTileItemSteel
+        Blunt: 9.5 # 11.88 damage against psions
+        Holy: 4.75 # 17.81 total damage against supernaturals
+
+- type: entity
+  parent: [FloorTileItemSomberSteel, BaseAntiPsionicWeapon]
+  id: FloorTileItemSomberMnemolithSmooth
+  name: somber mnemolith tile (smooth)
+  components:
+  - type: Sprite
+    state: somber-mnemolith-smooth
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberMnemolithSmooth
+  - type: Stack
+    stackType: FloorTileSomberMnemolithSmooth
+  - type: DamageOtherOnHit
+    damage:
+      types: # Damage against non-psions is based on FloorTileItemSteel
+        Blunt: 9.5 # 11.88 damage against psions
+        Holy: 4.75 # 17.81 total damage against supernaturals
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberAmaranth
+  name: somber ornate amaranth floor
+  components:
+  - type: Sprite
+    state: somber-amaranth
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberAmaranth
+  - type: Stack
+    stackType: FloorTileSomberAmaranth
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberAmaranthEye
+  name: somber ornate amaranth floor (eye)
+  components:
+  - type: Sprite
+    state: somber-amaranth-eye
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberAmaranthEye
+  - type: Stack
+    stackType: FloorTileSomberAmaranthEye
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelBandedDark
+  name: somber steel tile (banded, dark)
+  components:
+  - type: Sprite
+    state: somber-tile-banded-dark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelBandedDark
+  - type: Stack
+    stackType: FloorTileSomberSteelBandedDark
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelCheckerDark
+  name: somber steel tile (checkered, dark)
+  components:
+  - type: Sprite
+    state: somber-tile-checkered-dark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelCheckerDark
+  - type: Stack
+    stackType: FloorTileSomberSteelCheckerDark
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelDiagonalDark
+  name: somber steel tile (diagonal, dark)
+  components:
+  - type: Sprite
+    state: somber-tile-diagonal-dark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelDiagonalDark
+  - type: Stack
+    stackType: FloorTileSomberSteelDiagonalDark
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelDiagonalMiniDark
+  name: somber steel tile (mini diagonal, dark)
+  components:
+  - type: Sprite
+    state: somber-tile-diagonal-mini-dark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelDiagonalMiniDark
+  - type: Stack
+    stackType: FloorTileSomberSteelDiagonalMiniDark
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelMonoDark
+  name: somber steel tile (mono, dark)
+  components:
+  - type: Sprite
+    state: somber-tile-mono-dark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelMonoDark
+  - type: Stack
+    stackType: FloorTileSomberSteelMonoDark
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelMonoDarkEye
+  name: somber steel tile (mono, dark, eye)
+  components:
+  - type: Sprite
+    state: somber-tile-mono-dark-eye
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelMonoDarkEye
+  - type: Stack
+    stackType: FloorTileSomberSteelMonoDarkEye
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelDiagonalMagenta
+  name: somber steel tile (diagonal, magenta)
+  components:
+  - type: Sprite
+    state: somber-tile-diagonal-magenta
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelDiagonalMagenta
+  - type: Stack
+    stackType: FloorTileSomberSteelDiagonalMagenta
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelDiagonalMiniMagenta
+  name: somber steel tile (mini diagonal, magenta)
+  components:
+  - type: Sprite
+    state: somber-tile-diagonal-mini-magenta
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelDiagonalMiniMagenta
+  - type: Stack
+    stackType: FloorTileSomberSteelDiagonalMiniMagenta
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelDiagonalPurple
+  name: somber steel tile (diagonal, purple)
+  components:
+  - type: Sprite
+    state: somber-tile-diagonal-purple
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelDiagonalPurple
+  - type: Stack
+    stackType: FloorTileSomberSteelDiagonalPurple
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelDiagonalMiniPurple
+  name: somber steel tile (mini diagonal, purple)
+  components:
+  - type: Sprite
+    state: somber-tile-diagonal-mini-purple
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelDiagonalMiniPurple
+  - type: Stack
+    stackType: FloorTileSomberSteelDiagonalMiniPurple
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberCircuit
+  name: somber circuit
+  components:
+  - type: Sprite
+    state: somber-circuit
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberCircuit
+  - type: Stack
+    stackType: FloorTileSomberCircuit
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberCircuitDark
+  name: somber circuit (dark)
+  components:
+  - type: Sprite
+    state: somber-circuit-dark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberCircuitDark
+  - type: Stack
+    stackType: FloorTileSomberCircuitDark
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberNE
+  name: somber steel corner (NE)
+  components:
+  - type: Sprite
+    state: somber-NE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberNE
+  - type: Stack
+    stackType: FloorTileSomberNE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberNW
+  name: somber steel corner (NW)
+  components:
+  - type: Sprite
+    state: somber-NW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberNW
+  - type: Stack
+    stackType: FloorTileSomberNW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSE
+  name: somber steel corner (SE)
+  components:
+  - type: Sprite
+    state: somber-SE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberSE
+  - type: Stack
+    stackType: FloorTileSomberSE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSW
+  name: somber steel corner (SW)
+  components:
+  - type: Sprite
+    state: somber-SW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberSW
+  - type: Stack
+    stackType: FloorTileSomberSW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberDarkNE
+  name: somber steel corner (NE, dark)
+  components:
+  - type: Sprite
+    state: somber-dark-NE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberDarkNE
+  - type: Stack
+    stackType: FloorTileSomberDarkNE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberDarkNW
+  name: somber steel corner (NW, dark)
+  components:
+  - type: Sprite
+    state: somber-dark-NW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberDarkNW
+  - type: Stack
+    stackType: FloorTileSomberDarkNW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberDarkSE
+  name: somber steel corner (SE, dark)
+  components:
+  - type: Sprite
+    state: somber-dark-SE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberDarkSE
+  - type: Stack
+    stackType: FloorTileSomberDarkSE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberDarkSW
+  name: somber steel corner (SW, dark)
+  components:
+  - type: Sprite
+    state: somber-dark-SW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberDarkSW
+  - type: Stack
+    stackType: FloorTileSomberDarkSW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassNE
+  name: somber glass corner (NE, tinted)
+  components:
+  - type: Sprite
+    state: somberglass-NE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassNE
+  - type: Stack
+    stackType: FloorTileSomberGlassNE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassNW
+  name: somber glass corner (NW, tinted)
+  components:
+  - type: Sprite
+    state: somberglass-NW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassNW
+  - type: Stack
+    stackType: FloorTileSomberGlassNW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassSE
+  name: somber glass corner (SE, tinted)
+  components:
+  - type: Sprite
+    state: somberglass-SE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassSE
+  - type: Stack
+    stackType: FloorTileSomberGlassSE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassSW
+  name: somber glass corner (SW, tinted)
+  components:
+  - type: Sprite
+    state: somberglass-SW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassSW
+  - type: Stack
+    stackType: FloorTileSomberGlassSW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassDarkNE
+  name: somber glass corner (NE, tinted, dark)
+  components:
+  - type: Sprite
+    state: somberglass-dark-NE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassDarkNE
+  - type: Stack
+    stackType: FloorTileSomberGlassDarkNE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassDarkNW
+  name: somber glass corner (NW, tinted, dark)
+  components:
+  - type: Sprite
+    state: somberglass-dark-NW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassDarkNW
+  - type: Stack
+    stackType: FloorTileSomberGlassDarkNW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassDarkSE
+  name: somber glass corner (SE, tinted, dark)
+  components:
+  - type: Sprite
+    state: somberglass-dark-SE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassDarkSE
+  - type: Stack
+    stackType: FloorTileSomberGlassDarkSE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassDarkSW
+  name: somber glass corner (SW, tinted, dark)
+  components:
+  - type: Sprite
+    state: somberglass-dark-SW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassDarkSW
+  - type: Stack
+    stackType: FloorTileSomberGlassDarkSW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassTileNE
+  name: somber glass tile corner (NE, tinted)
+  components:
+  - type: Sprite
+    state: somberglasstile-NE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassTileNE
+  - type: Stack
+    stackType: FloorTileSomberGlassTileNE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassTileNW
+  name: somber glass tile corner (NW, tinted)
+  components:
+  - type: Sprite
+    state: somberglasstile-NW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassTileNW
+  - type: Stack
+    stackType: FloorTileSomberGlassTileNW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassTileSE
+  name: somber glass tile corner (SE, tinted)
+  components:
+  - type: Sprite
+    state: somberglasstile-SE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassTileSE
+  - type: Stack
+    stackType: FloorTileSomberGlassTileSE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassTileSW
+  name: somber glass tile corner (SW, tinted)
+  components:
+  - type: Sprite
+    state: somberglasstile-SW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassTileSW
+  - type: Stack
+    stackType: FloorTileSomberGlassTileSW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassTileDarkNE
+  name: somber glass tile corner (NE, tinted, dark)
+  components:
+  - type: Sprite
+    state: somberglasstile-dark-NE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassTileDarkNE
+  - type: Stack
+    stackType: FloorTileSomberGlassTileDarkNE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassTileDarkNW
+  name: somber glass tile corner (NW, tinted, dark)
+  components:
+  - type: Sprite
+    state: somberglasstile-dark-NW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassTileDarkNW
+  - type: Stack
+    stackType: FloorTileSomberGlassTileDarkNW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassTileDarkSE
+  name: somber glass tile corner (SE, tinted, dark)
+  components:
+  - type: Sprite
+    state: somberglasstile-dark-SE
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassTileDarkSE
+  - type: Stack
+    stackType: FloorTileSomberGlassTileDarkSE
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassTileDarkSW
+  name: somber glass tile corner (SW, tinted, dark)
+  components:
+  - type: Sprite
+    state: somberglasstile-dark-SW
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassTileDarkSW
+  - type: Stack
+    stackType: FloorTileSomberGlassTileDarkSW
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassTinted
+  name: somber glass tile (tinted)
+  components:
+  - type: Sprite
+    state: somber-glass-tinted
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassTinted
+  - type: Stack
+    stackType: FloorTileSomberGlassTinted
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberGlassTintedDark
+  name: somber glass tile (tinted, dark)
+  components:
+  - type: Sprite
+    state: somber-glass-tinted-dark
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorSomberGlassTintedDark
+  - type: Stack
+    stackType: FloorTileSomberGlassTintedDark
+
+- type: entity
+  parent: FloorTileItemBase
+  id: FloorTileItemSomberDirt
+  name: somber astro-dirt
+  components:
+  - type: Item
+    sprite: _DEN/Objects/Tiles/somber.rsi
+  - type: Sprite
+    sprite: _DEN/Objects/Tiles/somber.rsi
+    state: somber-dirt
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberDirt
+  - type: Stack
+    stackType: FloorTileSomberDirt
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 1 # It's dirt...
+    staminaCost: 3
+    soundHit:
+      collection: MetalThud
+
+- type: entity
+  parent: FloorTileItemSomberDirt
+  id: FloorTileItemSomberGrass
+  name: somber astro-grass
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tiles/somber.rsi
+    state: somber-grass
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberGrass
+  - type: Stack
+    stackType: FloorTileSomberGrass
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberWood
+  name: somber wood floor (standard)
+  components:
+  - type: Sprite
+    state: somber-wood
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWood
+  - type: Stack
+    stackType: FloorTileSomberWood
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5.5 # Lighter tiles hurt less, based on FloorTileItemBase
+    staminaCost: 5
+    soundHit:
+      collection: MetalThud
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodLarge
+  name: somber wood floor (large)
+  components:
+  - type: Sprite
+    state: somber-wood-large
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodLarge
+  - type: Stack
+    stackType: FloorTileSomberWoodLarge
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodPattern
+  name: somber wood floor (patterned)
+  components:
+  - type: Sprite
+    state: somber-wood-pattern
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodTile
+  - type: Stack
+    stackType: FloorTileSomberWoodPattern
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodChess
+  name: somber wood floor (chess)
+  components:
+  - type: Sprite
+    state: somber-wood-chess
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodChess
+  - type: Stack
+    stackType: FloorTileSomberWoodChess
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodParquet
+  name: somber wood floor (parquet)
+  components:
+  - type: Sprite
+    state: somber-wood-parquet
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodParquet
+  - type: Stack
+    stackType: FloorTileSomberWoodParquet
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberWoodAmaranth
+  name: somber wood floor (standard, amaranth)
+  components:
+  - type: Sprite
+    state: somber-wood-amaranth
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodAmaranth
+  - type: Stack
+    stackType: FloorTileSomberWoodAmaranth
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodLargeAmaranth
+  name: somber wood floor (large, amaranth)
+  components:
+  - type: Sprite
+    state: somber-wood-large-amaranth
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodLargeAmaranth
+  - type: Stack
+    stackType: FloorTileSomberWoodLargeAmaranth
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodPatternAmaranth
+  name: somber wood floor (patterned, amaranth)
+  components:
+  - type: Sprite
+    state: somber-wood-pattern-amaranth
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodTileAmaranth
+  - type: Stack
+    stackType: FloorTileSomberWoodPatternAmaranth
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodChessAmaranth
+  name: somber wood floor (chess, amaranth)
+  components:
+  - type: Sprite
+    state: somber-wood-chess-amaranth
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodChessAmaranth
+  - type: Stack
+    stackType: FloorTileSomberWoodChessAmaranth
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodParquetAmaranth
+  name: somber wood floor (parquet, amaranth)
+  components:
+  - type: Sprite
+    state: somber-wood-parquet-amaranth
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodParquetAmaranth
+  - type: Stack
+    stackType: FloorTileSomberWoodParquetAmaranth
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberWoodFloral
+  name: somber wood floor (standard, floral)
+  components:
+  - type: Sprite
+    state: somber-wood-floral
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodFloral
+  - type: Stack
+    stackType: FloorTileSomberWoodFloral
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodLargeFloral
+  name: somber wood floor (large, floral)
+  components:
+  - type: Sprite
+    state: somber-wood-large-floral
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodLargeFloral
+  - type: Stack
+    stackType: FloorTileSomberWoodLargeFloral
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodPatternFloral
+  name: somber wood floor (patterned, floral)
+  components:
+  - type: Sprite
+    state: somber-wood-pattern-floral
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodTileFloral
+  - type: Stack
+    stackType: FloorTileSomberWoodPatternFloral
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodChessFloral
+  name: somber wood floor (chess, floral)
+  components:
+  - type: Sprite
+    state: somber-wood-chess-floral
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodChessFloral
+  - type: Stack
+    stackType: FloorTileSomberWoodChessFloral
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodParquetFloral
+  name: somber wood floor (parquet, floral)
+  components:
+  - type: Sprite
+    state: somber-wood-parquet-floral
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodParquetFloral
+  - type: Stack
+    stackType: FloorTileSomberWoodParquetFloral
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberWoodShadow
+  name: somber wood floor (standard, shadow)
+  components:
+  - type: Sprite
+    state: somber-wood-shadow
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodShadow
+  - type: Stack
+    stackType: FloorTileSomberWoodShadow
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodLargeShadow
+  name: somber wood floor (large, shadow)
+  components:
+  - type: Sprite
+    state: somber-wood-large-shadow
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodLargeShadow
+  - type: Stack
+    stackType: FloorTileSomberWoodLargeShadow
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodPatternShadow
+  name: somber wood floor (patterned, shadow)
+  components:
+  - type: Sprite
+    state: somber-wood-pattern-shadow
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodTileShadow
+  - type: Stack
+    stackType: FloorTileSomberWoodPatternShadow
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodChessShadow
+  name: somber wood floor (chess, shadow)
+  components:
+  - type: Sprite
+    state: somber-wood-chess-shadow
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodChessShadow
+  - type: Stack
+    stackType: FloorTileSomberWoodChessShadow
+
+- type: entity
+  parent: FloorTileItemSomberWood
+  id: FloorTileItemSomberWoodParquetShadow
+  name: somber wood floor (parquet, shadow)
+  components:
+  - type: Sprite
+    state: somber-wood-parquet-shadow
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberWoodParquetShadow
+  - type: Stack
+    stackType: FloorTileSomberWoodParquetShadow

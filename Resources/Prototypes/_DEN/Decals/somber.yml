@@ -135,6 +135,8 @@
     sprite: _DEN/Decals/somber_dark.rsi
     state: wallspikeSWrotatable
 
+# Diagonal stairs (don't snap to tile, rotate 45 degrees and zoom in and do pixel-perfect placement) (good luck)
+
 - type: decal
   id: SomberCornerStairsLeft
   tags: ["station", "overlay"]
@@ -166,3 +168,21 @@
   sprite:
     sprite: _DEN/Decals/somber_dark.rsi
     state: cornerstairsright
+
+# Planter decals to put non-potted plants in, matched to the tiles
+
+- type: decal
+  id: SomberPlanter
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: planter
+
+- type: decal
+  id: SomberPlanterDark
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: planter

@@ -15,8 +15,13 @@ defaultpreset = "breakhome"
 lobbyduration = 30
 maxcharacterslots = 100
 
+[mood]
+enabled = false
+
 [vote]
 autovote_enabled = false
+map_autovote_enabled = false
+preset_autovote_enabled = false
 
 [chat]
 max_message_length = 30000
