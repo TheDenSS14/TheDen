@@ -1,0 +1,123 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from Nova Sector at https://github.com/NovaSector/NovaSector",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "m_waggingtail_rabbit_BEHIND_primary",
+            "directions": 4,
+            "delays": [
+                [
+                    1,
+                    0.1
+                ],
+                [
+                    1,
+                    0.1
+                ],
+                [
+                    1,
+                    0.1
+                ],
+                [
+                    1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "m_waggingtail_rabbit_FRONT_primary",
+            "directions": 4,
+            "delays": [
+                [
+                    1,
+                    0.1
+                ],
+                [
+                    1,
+                    0.1
+                ],
+                [
+                    1,
+                    0.1
+                ],
+                [
+                    1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "m_tail_rabbit_BEHIND_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_tail_rabbit_FRONT_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_tail_rabbit_alt_FRONT_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_tail_rabbit_alt_FRONT_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_waggingtail_rabbit_alt_FRONT_primary",
+            "directions": 4,
+            "delays": [
+                [
+                    0.3,
+                    0.1,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.1,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.1,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.1,
+                    0.3
+                ]
+            ]
+        },
+        {
+            "name": "m_waggingtail_rabbit_alt_FRONT_secondary",
+            "directions": 4,
+            "delays": [
+                [
+                    0.3,
+                    0.1,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.1,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.1,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.1,
+                    0.3
+                ]
+            ]
+        }
+    ]
+}
