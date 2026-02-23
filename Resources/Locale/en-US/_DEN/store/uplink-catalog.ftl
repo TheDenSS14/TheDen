@@ -24,3 +24,6 @@ uplink-mantis-caster-submachinegun-lethal-desc = A rock anomaly core harnessed a
 
 uplink-syndicate-eggnog-name = bottle of syndicate eggnog
 uplink-syndicate-eggnog-desc = For those special occasions. This stuff will knock you on your ass.
+
+uplink-baseballbundle-name = syndicate baseball uniform bundle
+uplink-baseballbundle-desc = Go to bat for the winning team with this stylish uniform.
