@@ -92,6 +92,52 @@
 
 - type: entity
   parent: BaseCostumeBundle
+  id: CostumeBundleBaseballNT
+  name: NT baseball uniform bundle
+  components:
+  - type: Sprite
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#2A2E41"
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#1b67a5"
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatNanoballsoft
+    - id: ClothingUniformJumpsuitBaseballNT
+    - id: ClothingHandsGlovesColorWhite
+    - id: ClothingShoesBootsLaceup
+    - id: NTHandyFlag
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleBaseballSyndie
+  name: syndicate baseball uniform bundle
+  components:
+  - type: Sprite
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#872020"
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#ff0000"
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatSyndieballsoft
+    - id: ClothingUniformJumpsuitBaseballSyndicate
+    - id: ClothingHandsGlovesColorWhite
+    - id: ClothingShoesBootsLaceup
+    - id: SyndieHandyFlag
+
+- type: entity
+  parent: BaseCostumeBundle
   id: CostumeBundleBunnySuit
   name: bunny suit costume bundle
   components:

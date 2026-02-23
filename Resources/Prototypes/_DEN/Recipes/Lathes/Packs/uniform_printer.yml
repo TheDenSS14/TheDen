@@ -12,7 +12,7 @@
 # There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
 
 - type: latheRecipePack
-  parent: [ ClothingServiceImp, ClothingArmWarmersDen ]
+  parent: [ ClothingServiceImp, ClothingArmWarmersDen, HandyFlagsDen ]
   id: UniformPrinterStaticAwfulDen
   recipes:
   - ClothingUniformJumpsuitColorGrey
@@ -299,8 +299,12 @@
   - ClothingUniformJumpsuitAdminAssistant
   - ClothingUniformAdminAssistantTurtleneck
   - ClothingUniformAAThong
+  # TheDen Baseball
+  - ClothingHeadHatNanoballsoft
+  - ClothingUniformJumpsuitBaseballNT
 
 - type: latheRecipePack
+  parent: [ EmagHandyFlagsDen ]
   id: UniformPrinterEmagStaticAwfulDen
   recipes:
   - ClothingHeadHatCentcomcap
@@ -326,6 +330,10 @@
   - ClothingOuterWinterSyndie
   - ClothingOuterWinterSyndieCap
 
+  # TheDen - Baseball
+  - ClothingHeadHatSyndieballsoft
+  - ClothingUniformJumpsuitBaseballSyndicate
+
   # DV - CentComm Drip
   - ClothingHeadHatBeretCentcomm
   - ClothingUniformJumpskirtCentcomAgent
@@ -344,3 +352,16 @@
   - ClothingHandsArmWarmersFingerlessValid
   - ClothingHandsArmWarmersFingerlessStriped
   - ClothingHandsArmWarmersFingerlessPurple
+
+- type: latheRecipePack
+  id: HandyFlagsDen
+  recipes:
+  - BlankHandyFlag
+  - NTHandyFlag
+  - LGBTQHandyFlag
+
+- type: latheRecipePack
+  id: EmagHandyFlagsDen
+  recipes:
+  - SyndieHandyFlag
+  - PirateHandyFlag

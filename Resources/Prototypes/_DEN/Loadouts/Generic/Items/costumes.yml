@@ -85,6 +85,16 @@
   - CostumeBundleAngel
 
 - type: loadout
+  id: LoadoutCostumeBundleBaseballNT
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleBaseballNT
+
+- type: loadout
   id: LoadoutCostumeBundleBunnySuit
   category: Costumes
   cost: 2

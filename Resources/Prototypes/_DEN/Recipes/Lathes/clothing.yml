@@ -12,6 +12,13 @@
   materials:
     Cloth: 200
 
+- type: latheRecipe
+  abstract: true
+  id: BaseHandyFlags
+  completetime: 2
+  materials:
+    Cloth: 100
+
 # Towels
 - type: latheRecipe
   id: TowelColorWhite
@@ -273,3 +280,51 @@
   completetime: 5
   materials:
     Cloth: 100
+
+# Baseball Uniforms & Hats
+
+- type: latheRecipe
+  parent: BaseJumpsuitRecipe
+  id: ClothingUniformJumpsuitBaseballNT
+  result: ClothingUniformJumpsuitBaseballNT
+
+- type: latheRecipe
+  parent: BaseJumpsuitRecipe
+  id: ClothingUniformJumpsuitBaseballSyndicate
+  result: ClothingUniformJumpsuitBaseballSyndicate
+
+- type: latheRecipe
+  parent: BaseHatRecipe
+  id: ClothingHeadHatNanoballsoft
+  result: ClothingHeadHatNanoballsoft
+
+- type: latheRecipe
+  parent: BaseHatRecipe
+  id: ClothingHeadHatSyndieballsoft
+  result: ClothingHeadHatSyndieballsoft
+
+# Handyflags
+- type: latheRecipe
+  parent: BaseHandyFlags
+  id: BlankHandyFlag
+  result: BlankHandyFlag
+
+- type: latheRecipe
+  parent: BaseHandyFlags
+  id: NTHandyFlag
+  result: NTHandyFlag
+
+- type: latheRecipe
+  parent: BaseHandyFlags
+  id: LGBTQHandyFlag
+  result: LGBTQHandyFlag
+
+- type: latheRecipe
+  parent: BaseHandyFlags
+  id: SyndieHandyFlag
+  result: SyndieHandyFlag
+
+- type: latheRecipe
+  parent: BaseHandyFlags
+  id: PirateHandyFlag
+  result: PirateHandyFlag
