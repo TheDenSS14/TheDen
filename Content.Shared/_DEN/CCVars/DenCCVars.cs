@@ -43,4 +43,36 @@ public sealed class DenCCVars
     /// </summary>
     public static readonly CVarDef<bool> MarkingGlowAnimation =
         CVarDef.Create("game.marking_glow_animation", false, CVar.SERVERONLY);
+
+    // Denu
+
+    /// <summary>
+    /// Whether the Denu's Auto Formatter starts enabled.
+    /// </summary>
+    public static readonly CVarDef<bool> AutoFormatterEnabled =
+        CVarDef.Create("denu.auto_formatter_enabled", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Whether to remove asterisks in Denu's auto-formatted message results.
+    /// </summary>
+    public static readonly CVarDef<bool> RemoveAsterisksFromEmotes =
+        CVarDef.Create("denu.remove_asterisks", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Whether to show whisper/subtles typing range when typing.
+    /// </summary>
+    public static readonly CVarDef<bool> ShowTypingRange =
+        CVarDef.Create("denu.show_typing_range", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Whether to remove asterisks in Denu's auto-formatted message results.
+    /// </summary>
+    public static readonly CVarDef<string> DialogueColor =
+        CVarDef.Create("denu.dialogue_color", "#FFFFFF", CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Whether to show whisper/subtles typing range when typing.
+    /// </summary>
+    public static readonly CVarDef<string> EmoteColor =
+        CVarDef.Create("denu.emote_color", "#FF13FF", CVar.CLIENTONLY | CVar.ARCHIVE);
 }

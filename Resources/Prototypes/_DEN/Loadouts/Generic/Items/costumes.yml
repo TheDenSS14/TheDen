@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 pocl v
+#
+# SPDX-License-Identifier: MIT
+
 ## Job-specific
 
 - type: loadout
@@ -83,6 +88,16 @@
     group: LoadoutCostumeBundles
   items:
   - CostumeBundleAngel
+
+- type: loadout
+  id: LoadoutCostumeBundleBaseballNT
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleBaseballNT
 
 - type: loadout
   id: LoadoutCostumeBundleBunnySuit

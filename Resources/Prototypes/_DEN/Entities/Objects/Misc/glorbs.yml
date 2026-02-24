@@ -98,6 +98,15 @@
   - type: Tag
     tags:
     - IPCMaskWearable
+  - type: EmbeddableProjectile
+    removalTime: 0.2
+    autoRemoveDuration: 0
+    sound:
+      path: /Audio/Voice/Slime/slime_schlorp.ogg
+      params:
+        volume: -7
+        variation: 0.05
+  - type: LandAtCursor
 
 - type: entity
   parent: GlorbWhite

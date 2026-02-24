@@ -64,12 +64,12 @@
     altDisarm: false
     damage:
       types:
-        Slash: 20
-        Pierce: 10
+        Slash: 25
+        Pierce: 15
         Cold: 10
   - type: NpcFactionMember
     factions:
-    - SimpleHostile
+    - LordsOfTheEndTime # Den
   - type: Tag
     tags: [ ]
   - type: Speech
@@ -82,15 +82,15 @@
     lightThreshold: 0.7
     darkDamage:
       groups:
-        Brute: -5
-        Burn: -5
+        Brute: -10 # Den
+        Burn: -10 # Den
         Toxin: -5
         Airloss: -5
         Genetic: -5
         Metaphysical: -1
     lightDamage:
       groups:
-        Brute: 5
+        Brute: 0 # Den
     healWhenDead: true
     darkMovementSpeedMultiplier: 1.25
     lightMovementSpeedMultiplier: 1.0
@@ -123,10 +123,11 @@
     speedModifier: 8.5 # needs to be fast because they'll get ganked otherwise
     useSound:
       path: /Audio/Items/crowbar.ogg
-  - type: NightVision
-    drawOverlay: false
+  # - type: NightVision
+  #   drawOverlay: false
   - type: Targeting
   # DEN
+  - type: ZombieImmune
   - type: Skia
   - type: UserInterface
     interfaces:
@@ -138,6 +139,8 @@
     - SkiaAbilities
     currencyWhitelist:
     - SoulSilk
+    balance:
+      SoulSilk: 5
   - type: UniversalLanguageSpeaker
   - type: LanguageKnowledge
     speaks:
@@ -155,12 +158,13 @@
   - type: ActionGrant
     actions:
       - ActionSkiaRerollObjectives
+      - ActionSkiaTwistShadows
   - type: InnatePsionicPowers
     powersToAdd:
       - XenoglossyPower
       - TelepathyPower
-      - TelekineticPulsePower
-      - NoosphericZapPower
+      # - TelekineticPulsePower
+      # - NoosphericZapPower
   - type: RandomMetadata
     nameSegments:
     - NamesRevenantType
@@ -194,6 +198,7 @@
     prototype: Skia
   - type: ThermalVision
     pulseTime: 0
+    drawOverlay: false
     color: "#9370DB"
   - type: ComplexInteraction
   # DEN

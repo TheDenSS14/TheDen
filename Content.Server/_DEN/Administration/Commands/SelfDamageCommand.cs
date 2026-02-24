@@ -5,9 +5,11 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Server.Administration.Logs;
 using Content.Shared.Administration;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Database;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -17,8 +19,9 @@ namespace Content.Server._DEN.Administration.Commands;
 [AnyCommand]
 sealed class SelfDamageCommand : IConsoleCommand
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IAdminLogManager _adminLogManager = null!;
+    [Dependency] private readonly IEntityManager _entManager = null!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = null!;
 
     public string Command => "selfdamage";
     public string Description => Loc.GetString("self-damage-command-description");
@@ -120,6 +123,7 @@ sealed class SelfDamageCommand : IConsoleCommand
             var damageResult = _entManager.System<DamageableSystem>()
                 .TryChangeDamage(entity, damageSpecifier, ignoreResistances);
 
+
             if (damageResult == null)
             {
                 shell.WriteError(Loc.GetString("damage-command-fail-message",
@@ -131,6 +135,10 @@ sealed class SelfDamageCommand : IConsoleCommand
                 ("damage", damageResult.GetTotal()),
                 ("type", damageTypeOrGroup),
                 ("entity", name)));
+            _adminLogManager.Add(
+                LogType.Damaged,
+                LogImpact.High,
+                $"{_entManager.ToPrettyString(entity):entity} used self damage for {damageResult.GetTotal()} {damageTypeOrGroup}");
         };
 
         return true;

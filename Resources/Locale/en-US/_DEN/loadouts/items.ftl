@@ -6,7 +6,7 @@
 # SPDX-FileCopyrightText: 2025 wheelwrightt
 # SPDX-FileCopyrightText: 2026 Alex C
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # head
 loadout-name-LoadoutHeadHatPatrolCap = patrol cap (colorable)
@@ -77,5 +77,6 @@ character-item-group-LoadoutPrescriptionAnxiolytic = Anxiolytics
 character-item-group-LoadoutPrescriptionAntidepressant = Antidepressants
 character-item-group-LoadoutCostumeBundles = Costume Bundles
 
-# ??? good enough i guess
+# misc
 character-item-group-LoadoutMagicMirrors = Hair Styling Tools
+character-item-group-LoadoutGroupGlorbs = Glorbs
