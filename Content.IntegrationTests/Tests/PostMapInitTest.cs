@@ -137,7 +137,8 @@ namespace Content.IntegrationTests.Tests
             "Northway",
             "Barrier",
             "Manta",
-            "Dingo"
+            "Dingo",
+            "Acrux"
         };
 
         /// <summary>
