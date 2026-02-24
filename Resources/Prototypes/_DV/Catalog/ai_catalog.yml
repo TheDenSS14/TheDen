@@ -50,18 +50,18 @@
   - !type:ListingLimitedStockCondition
     stock: 1
 
-- type: listing
-  id: AiEmergencySealant
-  name: ai-emergency-sealant-name
-  description: ai-emergency-sealant-desc
-  productAction: ActionStationAiEmergencySealant
-  cost:
-    SiliconMemory: 5
-  categories:
-  - AiAbilities
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
+# - type: listing
+#   id: AiEmergencySealant
+#   name: ai-emergency-sealant-name
+#   description: ai-emergency-sealant-desc
+#   productAction: ActionStationAiEmergencySealant
+#   cost:
+#     SiliconMemory: 5
+#   categories:
+#   - AiAbilities
+#   conditions:
+#   - !type:ListingLimitedStockCondition
+#     stock: 1
 
 - type: listing
   id: AiRepairNanites
