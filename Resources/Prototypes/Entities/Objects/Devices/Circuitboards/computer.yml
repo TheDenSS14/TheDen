@@ -455,7 +455,7 @@
   description: A computer printed circuit board for a syndicate communications console.
   components:
   - type: Sprite
-    state: cpu_syndicate
+    state: cpu_security
   - type: ComputerBoard
     prototype: SyndicateComputerComms
 
@@ -558,7 +558,7 @@
   description: Allows you to control the IFF and stealth characteristics of this vessel.
   components:
   - type: Sprite
-    state: cpu_syndicate
+    state: cpu_security
   - type: ComputerBoard
     prototype: ComputerIFFSyndicate
 
