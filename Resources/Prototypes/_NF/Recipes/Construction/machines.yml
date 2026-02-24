@@ -1,9 +1,26 @@
 ﻿- type: construction
   id: ConstructionComputerTabletop
-  name: recipes-computer-tabletop-name
+  name: computer frame (tabletop)
   graph: ComputerTabletop
   startNode: start
   targetNode: tabletop computer
   category: construction-category-machines
   placementMode: SnapgridCenter
   canBuildInImpassable: false
+  icon:
+    sprite: _NF/Structures/Machines/computer_tabletop.rsi
+    state: computer_tabletop_frame
+
+# - type: construction
+#   name: computer
+#   id: Computer
+#   graph: Computer
+#   startNode: start
+#   targetNode: computer
+#   category: construction-category-machines
+#   description: A frame used to construct anything with a computer circuitboard.
+#   placementMode: SnapgridCenter
+#   canBuildInImpassable: false
+#   icon:
+#     sprite: Structures/Machines/parts.rsi
+#     state: 4
