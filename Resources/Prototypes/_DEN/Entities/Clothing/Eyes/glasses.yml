@@ -186,3 +186,18 @@
     sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_visor.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_visor.rsi
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesRimless
+  name: rimless glasses
+  description: A pair of round, rimless glasses. Barely there.
+  components:
+    - type: Sprite
+      sprite: _DEN/Clothing/Eyes/Glasses/rimless.rsi
+    - type: Clothing
+      sprite: _DEN/Clothing/Eyes/Glasses/rimless.rsi
+    - type: VisionCorrection
+    - type: Tag
+      tags:
+      - WhitelistChameleon
