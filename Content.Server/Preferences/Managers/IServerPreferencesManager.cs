@@ -36,6 +36,8 @@ namespace Content.Server.Preferences.Managers
         IEnumerable<KeyValuePair<NetUserId, ICharacterProfile>> GetSelectedProfilesForPlayers(List<NetUserId> userIds);
         bool HavePreferencesLoaded(ICommonSession session);
 
+        Task<PlayerPreferences?> GetUserPreferences(Guid userId, CancellationToken cancel); // DEN: Get offline user preferences
+
         Task SetProfile(NetUserId userId, int slot, ICharacterProfile profile);
     }
 }

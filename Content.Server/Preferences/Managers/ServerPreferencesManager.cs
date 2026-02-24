@@ -228,6 +228,16 @@ namespace Content.Server.Preferences.Managers
             }
         }
 
+        // DEN start: Get characters for offline player
+        public async Task<PlayerPreferences?> GetUserPreferences(Guid userId, CancellationToken cancel)
+        {
+            var netUserId = new NetUserId(userId);
+            var prefs = await _db.GetPlayerPreferencesAsync(netUserId, cancel);
+
+            return prefs;
+        }
+        // DEN end
+
         public void FinishLoad(ICommonSession session)
         {
             // This is a separate step from the actual database load.
