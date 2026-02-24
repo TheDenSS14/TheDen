@@ -12,6 +12,9 @@
 loadout-name-LoadoutHeadHatPatrolCap = patrol cap (colorable)
 loadout-name-LoadoutHeadHatFuzzyEarmuffs = fuzzy earmuffs (colorable)
 
+# eyes
+loadout-name-LoadoutClothingEyesGlassesRimless = rimless glasses (colorable)
+
 # mask
 loadout-name-LoadoutClothingMaskBreathFashion = fashion breath mask (colorable)
 
