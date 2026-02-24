@@ -1,8 +1,9 @@
-// SPDX-FileCopyrightText: 2022 Pancake <Pangogie@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Peptide90 <78795277+Peptide90@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Pancake
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2025 Peptide90
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 Aikakakah
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -32,12 +33,12 @@ public sealed class RussianAccentSystem : EntitySystem
                 'A' => 'Д',
                 'b' => 'в',
                 'N' => 'И',
-                'n' => 'и',
+                'n' => 'ɴ',
                 'K' => 'К',
                 'k' => 'к',
                 'm' => 'м',
                 'h' => 'н',
-                't' => 'т',
+                't' => 'ᴛ',
                 'R' => 'Я',
                 'r' => 'я',
                 'Y' => 'У',

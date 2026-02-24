@@ -26,8 +26,9 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2026 Aikakakah
+# SPDX-FileCopyrightText: 2026 MajorMoth
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   name: basic slime
@@ -262,7 +263,7 @@
 
 - type: entity
   name: blue slime
-  parent: MobAdultSlimesBlue
+  parent: [ MobAdultSlimesBlue, MobVentCritter ] # Den: add MobVentCritter
   id: MobAdultSlimesBlueAngry
   suffix: Angry
   components:
@@ -318,7 +319,7 @@
 
 - type: entity
   name: green slime
-  parent: MobAdultSlimesGreen
+  parent: [ MobAdultSlimesGreen, MobVentCritter ] # Den: add MobVentCritter
   id: MobAdultSlimesGreenAngry
   suffix: Angry
   components:
@@ -374,7 +375,7 @@
 
 - type: entity
   name: yellow slime
-  parent: MobAdultSlimesYellow
+  parent: [ MobAdultSlimesYellow, MobVentCritter ] # Den: add MobVentCritter
   id: MobAdultSlimesYellowAngry
   suffix: Angry
   components:
