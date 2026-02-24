@@ -1,0 +1,12 @@
+# Glasses
+
+- type: loadout
+  id: LoadoutClothingEyesGlassesRimless
+  category: Eyes
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingEyesGlassesRimless
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
