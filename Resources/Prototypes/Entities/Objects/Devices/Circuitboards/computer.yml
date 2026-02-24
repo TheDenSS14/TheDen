@@ -98,13 +98,9 @@
     prototype: ComputerPowerMonitoring
   - type: ComputerTabletopBoard # Frontier
     prototype: ComputerTabletopPowerMonitoring # Frontier
-    - type: Sprite
-      state: cpu_engineering
-    - type: ComputerBoard
-      prototype: ComputerPowerMonitoring
-    - type: ReverseEngineering # Nyano
-      recipes:
-        - PowerComputerCircuitboard
+  - type: ReverseEngineering # Nyano
+    recipes:
+      - PowerComputerCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -251,7 +247,7 @@
     price: 750
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseCargoContraband ] # imp contraband
+  parent: [ BaseComputerCircuitboard ]
   id: CargoSaleComputerCircuitboard
   name: cargo sale computer board
   description: A computer printed circuit board for a cargo sale computer.
