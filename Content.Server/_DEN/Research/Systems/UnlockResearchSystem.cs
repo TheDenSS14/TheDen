@@ -24,6 +24,8 @@ public sealed class UnlockResearchSystem : EntitySystem
         _prototype.PrototypesReloaded += _ => GenerateTechnologies();
 
         SubscribeLocalEvent<UnlockResearchComponent, MapInitEvent>(OnMapInit);
+
+        GenerateTechnologies();
     }
 
     private void OnMapInit(Entity<UnlockResearchComponent> ent, ref MapInitEvent args)
