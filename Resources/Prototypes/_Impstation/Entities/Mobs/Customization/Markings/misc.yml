@@ -139,7 +139,7 @@
   id: DionaFirefly
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Diona, IPC, Slimeperson ]
+  speciesRestriction: [ Diona, IPC, SlimePerson ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -151,7 +151,7 @@
   id: DionaPollenDust
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Diona, IPC, Slimeperson ]
+  speciesRestriction: [ Diona, IPC, SlimePerson ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -162,8 +162,7 @@
   id: DwarfBearCheeks
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
-  forcedColoring: true
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
@@ -174,8 +173,7 @@
   id: DwarfHeadGlow
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
-  forcedColoring: true
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
@@ -186,7 +184,7 @@
   id: DwarfConstellationHead
   bodyPart: Head
   markingCategory: Overlay
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -202,7 +200,7 @@
   id: DwarfConstellationChest
   bodyPart: Chest
   markingCategory: Overlay
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -218,7 +216,7 @@
   id: DwarfConstellationLArm
   bodyPart: LArm
   markingCategory: LeftArm #TheDen: Marking fixes
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -234,7 +232,7 @@
   id: DwarfConstellationLHand
   bodyPart: LHand
   markingCategory: LeftHand #TheDen: Marking fixes
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -250,7 +248,7 @@
   id: DwarfConstellationRArm
   bodyPart: RArm
   markingCategory: RightArm #TheDen: Marking fixes
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -266,7 +264,7 @@
   id: DwarfConstellationRHand
   bodyPart: RHand
   markingCategory: RightHand #TheDen: Marking fixes
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -282,7 +280,7 @@
   id: DwarfConstellationLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg #TheDen: Marking fixes
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -298,7 +296,7 @@
   id: DwarfConstellationLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot #TheDen: Marking fixes
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -314,7 +312,7 @@
   id: DwarfConstellationRLeg
   bodyPart: RLeg
   markingCategory: RightLeg #TheDen: Marking fixes
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -330,7 +328,7 @@
   id: DwarfConstellationRFoot
   bodyPart: RFoot
   markingCategory: RightFoot #TheDen: Marking fixes
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -346,7 +344,7 @@
   id: DwarfChestHair
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: dwarfchesthair
@@ -355,7 +353,7 @@
   id: DwarfArmHair
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: dwarfarmhair
@@ -364,7 +362,7 @@
   id: DwarfLegHair
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: dwarfleghair
@@ -373,7 +371,7 @@
   id: DwarfTattooShootingStar
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -388,7 +386,7 @@
   id: DwarfMarkBear
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   sexRestriction: [Male] #TheDen - Splitting the scars and tattoos
   coloring:
     default:
@@ -404,7 +402,7 @@
   id: DwarfMarkBearFemale
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   sexRestriction: [Female] #TheDen - Splitting the scars and tattoos
   coloring:
     default:
@@ -420,7 +418,7 @@
   id: DwarfMarkKangarooLHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -435,7 +433,7 @@
   id: DwarfMarkKangarooRHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -450,7 +448,7 @@
   id: DwarfMarkCobra
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -465,7 +463,7 @@
   id: DwarfMarkSpider
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
