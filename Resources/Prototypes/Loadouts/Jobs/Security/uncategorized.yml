@@ -935,7 +935,7 @@
 #   items:
 #     - WeaponEnergyRevolverSecurity
 
-- type: loadout #TheDen Added the EG-4 to security loadout for Senior Officers, Wardens, HoS's, and BSO's
+- type: loadout #TheDen Added the PDW-9 to security loadout for Senior Officers, Wardens, HoS's, and BSO's
   id: LoadoutSecurityEnergyGunPistol
   category: JobsSecurityAUncategorized
   cost: 5
@@ -951,6 +951,7 @@
           - SeniorOfficer
   items:
     - WeaponEnergyGunPistolSecurity
+
 # Eyes
 - type: loadout
   id: LoadoutSecurityEyesHudSecurity
