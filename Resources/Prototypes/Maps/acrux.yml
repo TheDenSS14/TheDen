@@ -8,7 +8,7 @@
   id: Acrux
   mapName: 'Port Acrux'
   mapPath: /Maps/TheDen/acrux.yml
-  minPlayers: 15
+  minPlayers: 10
   maxPlayers: 70
   stations:
     Acrux:
@@ -20,7 +20,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TD'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/_DV/NTES_Right.yml
+          emergencyShuttlePath: /Maps/Shuttles/_DV/NTES_Lox.yml
         - type: StationJobs
           overflowJobs:
             - Passenger
