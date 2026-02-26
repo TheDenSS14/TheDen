@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2026 Jakumba
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: construction
+  id: ConstructionComputerTabletop
+  name: computer frame (tabletop)
+  graph: ComputerTabletop
+  startNode: start
+  targetNode: tabletop computer
+  category: construction-category-machines
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  icon:
+    sprite: _NF/Structures/Machines/computer_tabletop.rsi
+    state: computer_tabletop_frame

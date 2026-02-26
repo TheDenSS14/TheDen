@@ -51,7 +51,7 @@
       amount: 1
   products:
     Jaegerita: 6
-    
+
 - type: reaction
   id: Surfer
   requiredMixerCategories:
@@ -65,7 +65,7 @@
       amount: 1
   products:
     Surfer: 3
-    
+
 - type: reaction
   id: SurferOnAcid
   reactants:
@@ -75,7 +75,7 @@
       amount: 1
   products:
     SurferOnAcid: 3
-    
+
 - type: reaction
   id: Fizzball
   reactants:
@@ -85,7 +85,7 @@
       amount: 1
   products:
     Fizzball: 2
-    
+
 - type: reaction
   id: TuxedoSunset
   reactants:
@@ -105,7 +105,7 @@
       amount: 1
   products:
     InsideScoop: 3
-    
+
 - type: reaction
   id: FizzballFloat
   reactants:
@@ -115,7 +115,7 @@
       amount: 1
   products:
     FizzballFloat: 3
-    
+
 - type: reaction
   id: Chartruse
   requiredMixerCategories:
@@ -129,7 +129,7 @@
       amount: 1
   products:
     Chartruse: 3
-    
+
 - type: reaction
   id: DeathFlip
   requiredMixerCategories:
@@ -145,7 +145,7 @@
       amount: 1
   products:
     DeathFlip: 5
-    
+
 - type: reaction
   id: BloodyJaeger
   requiredMixerCategories:
@@ -159,7 +159,7 @@
       amount: 1
   products:
     BloodyJaeger: 6
-    
+
 - type: reaction
   id: PopQuiz
   reactants:
@@ -169,7 +169,7 @@
       amount: 1
   products:
     PopQuiz: 2
-    
+
 - type: reaction
   id: NaughtyBartender
   requiredMixerCategories:
@@ -185,7 +185,7 @@
       amount: 1
   products:
     NaughtyBartender: 6
-    
+
 - type: reaction
   id: AtlanticOcean
   requiredMixerCategories:
@@ -209,7 +209,7 @@
   reactants:
     Jaegermister:
       amount: 1
-    MelonLiquor: 
+    MelonLiquor:
       amount: 1
     CoffeeLiqueur:
       amount: 1
@@ -217,7 +217,7 @@
       amount: 1
   products:
     CafeCocktail: 4
-    
+
 - type: reaction
   id: CinnamonCookie
   requiredMixerCategories:
@@ -231,7 +231,7 @@
       amount: 1
   products:
     CinnamonCookie: 3
-    
+
 # - type: reaction
 #   id: ThoughtsAndPrayers
 #   reactants:
@@ -255,7 +255,7 @@
 #       amount: 1
 #   products:
 #     MutuallyAssuredDestruction: 3
-    
+
 # - type: reaction
 #   id: Zenith
 #   requiredMixerCategories:
@@ -271,7 +271,7 @@
 #       amount: 1
 #   products:
 #     Zenith: 4
-  
+
 - type: reaction
   id: BloodRedLicorice
   requiredMixerCategories:
@@ -317,9 +317,9 @@
       amount: 1
     JuiceBanana:
       amount: 1
-    JuiceApple: 
+    JuiceApple:
       amount: 1
-    Rum: 
+    Rum:
       amount: 1
     LotophagoiOil:
       amount: 1
@@ -335,13 +335,13 @@
       amount: 2
     CoffeeLiqueur:
       amount: 1
-  products: 
+  products:
     TohokuBlaze: 6
 
 - type: reaction
   id: TouchofGrass
   reactants:
-    SolDry: 
+    SolDry:
       amount: 1
     LemonLime:
       amount: 2
@@ -359,7 +359,7 @@
       amount: 1
     Frostoil:
       amount: 1
-  products: 
+  products:
     Songbird: 3
 
 - type: reaction
@@ -374,10 +374,10 @@
 
 - type: reaction
   id: TheSilverhand
-  reactants: 
+  reactants:
     Tequila:
       amount: 3
-    Beer: 
+    Beer:
       amount: 1
     CapsaicinOil:
       amount: 1
@@ -388,10 +388,10 @@
 
 - type: reaction
   id: ArkveilTemple
-  reactants: 
+  reactants:
     GreenGrass:
       amount: 3
-    ShirleyTemple: 
+    ShirleyTemple:
       amount: 3
     JuiceWatermelon:
       amount: 2
@@ -407,23 +407,23 @@
       amount: 1
     Milk:
       amount: 1
-    Cum: 
+    Cum:
       amount: 1
   products:
     CoconutDoubleCreamPie: 3
 
 - type: reaction
   id: EmeraldJourney
-  reactants: 
-    SodaWater: 
+  reactants:
+    SodaWater:
       amount: 3
-    LemonLime: 
+    LemonLime:
       amount: 1
     Absinthe:
       amount: 1
     MelonLiquor:
       amount: 1
-  products: 
+  products:
     EmeraldJourney: 6
 
 - type: reaction
@@ -435,25 +435,25 @@
       amount: 1
     Grenadine:
       amount: 1
-  products: 
+  products:
     VampiresDelight: 4
 
 - type: reaction
   id: WitchingHour
-  reactants: 
-    Wine: 
+  reactants:
+    Wine:
       amount: 2
-    DrGibb: 
+    DrGibb:
       amount: 2
     BlueCuracao:
       amount: 1
     Grenadine:
       amount: 1
-  products: 
+  products:
     WitchingHour: 6
 
 - type: reaction
-  id: PlasmaFlood 
+  id: PlasmaFlood
   reactants:
     SolDry:
       amount: 3
@@ -461,7 +461,7 @@
       amount: 1
     Gin:
       amount: 2
-  products: 
+  products:
     PlasmaFlood: 6
 
 # Choccy milk.............................
@@ -508,4 +508,17 @@
       amount: 1
   products:
       Chainmail: 6
-      
+
+# this is a copy of the coffee recipe but for tea
+- type: reaction
+  id: Tea
+  minTemp: 353 # ~80 deg C
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Water:
+      amount: 3
+    TeaPowder:
+      amount: 1
+  products:
+    Tea: 4

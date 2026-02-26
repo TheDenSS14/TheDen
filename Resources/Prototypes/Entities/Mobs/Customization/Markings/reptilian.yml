@@ -20,6 +20,7 @@
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2026 ivorytemple
+# SPDX-FileCopyrightText: 2026 starlighthowls
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -473,3 +474,12 @@
   sprites:
     - sprite: Mobs/Customization/reptilian_parts.rsi
       state: tail_dtiger_wagging
+
+- type: marking
+  id: LizardTailLargeAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: tail_large_wagging
