@@ -64,8 +64,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Tools/thief_beacon.rsi
-      state: extraction_point
+      sprite: Objects/Devices/goldwatch.rsi
+      state: goldwatch
 
 - type: entity
   parent: BaseConspiratorObjective
@@ -75,8 +75,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Clothing/Hands/Gloves/KnuckleDusters/brassknuckleduster.rsi
-      state: brassknuckleduster
+      sprite: Objects/Misc/cablecuffs.rsi
+      state: cuff
 
 - type: entity
   parent: BaseConspiratorObjective
