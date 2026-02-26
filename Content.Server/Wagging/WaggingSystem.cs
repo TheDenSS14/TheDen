@@ -9,6 +9,7 @@
 using Content.Server._DEN.Markings;
 using Content.Server.Actions;
 using Content.Server.Humanoid;
+using Content.Shared._DEN.Actions;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Mobs;
@@ -33,7 +34,7 @@ public sealed class WaggingSystem : EntitySystem
 
         SubscribeLocalEvent<WaggingComponent, MapInitEvent>(OnWaggingMapInit);
         SubscribeLocalEvent<WaggingComponent, ComponentShutdown>(OnWaggingShutdown);
-        SubscribeLocalEvent<WaggingComponent, ToggleActionEvent>(OnWaggingToggle);
+        SubscribeLocalEvent<WaggingComponent, WaggingActionEvent>(OnWaggingToggle);
         SubscribeLocalEvent<WaggingComponent, MobStateChangedEvent>(OnMobStateChanged);
     }
 
@@ -47,12 +48,12 @@ public sealed class WaggingSystem : EntitySystem
         _actions.RemoveAction(uid, component.ActionEntity);
     }
 
-    private void OnWaggingToggle(EntityUid uid, WaggingComponent component, ref ToggleActionEvent args)
+    private void OnWaggingToggle(EntityUid uid, WaggingComponent component, ref WaggingActionEvent args)
     {
         if (args.Handled)
             return;
 
-        TryToggleWagging(uid, wagging: component);
+        args.Handled = TryToggleWagging(uid, wagging: component);
     }
 
     private void OnMobStateChanged(EntityUid uid, WaggingComponent component, MobStateChangedEvent args)

@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2026 Dirius77
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseItem
+  id: InsulativeFilling
+  name: insulative filling
+  description: "An insulative filling you can stuff into headwear in order to make it psionically insulative"
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Misc/insulative_filling.rsi
+      state: base
+    - type: ModifyOnApply
+      whitelistTags:
+        - Headwear
+      whitelist:
+        components:
+          - Clothing
+      blacklist:
+        components:
+          - Armor
+          - TinfoilHat
+      applyComps:
+        - type: TinfoilHat
+          destroyOnFry: false
+        - type: WearerGetsExamineText
+          examineText: obvious-desc-default-no-short
+          thingType: obvious-type-psionically-insulative
+          thing: obvious-thing-hat
+      modifyName: "insulative-filling-name-modifier"
+      modifyDescription: "insulative-filling-description"

@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2026 meatsmall
 # SPDX-FileCopyrightText: 2026 portfiend
 #
 # SPDX-License-Identifier: MIT
@@ -119,6 +120,7 @@
   category: Hands
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutGloves
