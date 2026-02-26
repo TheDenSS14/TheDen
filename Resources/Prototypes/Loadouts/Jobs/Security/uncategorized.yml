@@ -915,10 +915,30 @@
   items:
     - WeaponRevolverArgentiSecurity #TheDen
 
+# - type: loadout #TheDen Added the EG-4 to security loadout for Senior Officers, Wardens, HoS's, and BSO's
+#   id: LoadoutSecurityPistolEnergyRevolver
+#   category: JobsSecurityAUncategorized
+#   cost: 7 # Price of a 1984 + Spare .38 mag
+#   canBeHeirloom: true
+#   guideEntry: SecurityWeapons
+#   requirements:
+#     - !type:CharacterItemGroupRequirement
+#       group: LoadoutSecurityWeapons
+#     - !type:CharacterLogicOrRequirement
+#       requirements:
+#         - !type:CharacterJobRequirement
+#           jobs:
+#           - SeniorOfficer
+#           - Warden
+#           - HeadOfSecurity
+#           - BlueshieldOfficer
+#   items:
+#     - WeaponEnergyRevolverSecurity
+
 - type: loadout #TheDen Added the EG-4 to security loadout for Senior Officers, Wardens, HoS's, and BSO's
-  id: LoadoutSecurityPistolEnergyRevolver
+  id: LoadoutSecurityEnergyGunPistol
   category: JobsSecurityAUncategorized
-  cost: 7 # Price of a 1984 + Spare .38 mag
+  cost: 5
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -929,12 +949,8 @@
         - !type:CharacterJobRequirement
           jobs:
           - SeniorOfficer
-          - Warden
-          - HeadOfSecurity
-          - BlueshieldOfficer
   items:
-    - WeaponEnergyRevolverSecurity
-
+    - WeaponEnergyGunPistolSecurity
 # Eyes
 - type: loadout
   id: LoadoutSecurityEyesHudSecurity
