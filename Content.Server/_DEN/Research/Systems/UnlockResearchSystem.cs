@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 portfiend
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Research.Systems;
 using Content.Shared._DEN.Research;
 using Content.Shared.Research.Components;
@@ -24,6 +29,8 @@ public sealed class UnlockResearchSystem : EntitySystem
         _prototype.PrototypesReloaded += _ => GenerateTechnologies();
 
         SubscribeLocalEvent<UnlockResearchComponent, MapInitEvent>(OnMapInit);
+
+        GenerateTechnologies();
     }
 
     private void OnMapInit(Entity<UnlockResearchComponent> ent, ref MapInitEvent args)

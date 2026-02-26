@@ -79,7 +79,7 @@
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -235,7 +235,7 @@
       - id: ClothingBeltChiefEngineerFilled # DEN
       - id: ClothingMaskBreath
       - id: ClothingEyesGlassesMeson
-      - id: ClothingShoesBootsMagAdv
+      - id: ClothingShoesBootsMagAdvCE
       - id: ClothingHandsGlovesColorYellow
       - id: CigarCase
         prob: 0.15
@@ -470,6 +470,7 @@
       - id: Multitool # DEN
       - id: ClothingNeckSecuritymedal # DEN
       - id: ClothingNeckBronzeheart # DEN
+      - id: TicketPad #imp special
 
 - type: entity
   id: LockerHeadOfSecurityFilled
@@ -502,6 +503,7 @@
       - id: Multitool # DEN
       - id: ClothingNeckSecuritymedal # DEN
       - id: ClothingNeckBronzeheart # DEN
+      - id: TicketPad #imp special
 
 - type: entity
   id: LockerFreezerVaultFilled

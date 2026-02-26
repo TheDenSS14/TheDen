@@ -60,7 +60,7 @@
 # SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: MuzzleFlashEffect
@@ -619,8 +619,8 @@
         - MobState
     damage:
       types:
-        Blunt: 25
-        Slash: 10
+        Blunt: 0 #Den Change
+        Slash: 0 #Den Change
   - type: Projectile
     impactEffect: BulletImpactEffectKinetic
     damage:
@@ -929,24 +929,28 @@
     layers:
     - state: cleanade
   - type: ActiveTimerTrigger
-    timeRemaining: 0.3
+    timeRemaining: 0.25
   - type: SmokeOnTrigger
-    duration: 3.5
-    spreadAmount: 30
+    duration: 6
+    spreadAmount: 50
     smokePrototype: Foam
     solution:
       reagents:
       - ReagentId: SpaceCleaner
-        Quantity: 30
+        Quantity: 100
   - type: SoundOnTrigger
     sound: /Audio/Items/smoke_grenade_smoke.ogg
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 0.01 # a little pop
-    intensitySlope: 1
-    maxIntensity: 0.01
-    tileBreakScale: 0.01
+    totalIntensity: 0 # no more exploding the lights you just repaired or the bartender's cups
+    intensitySlope: 0
+    maxIntensity: 0
+    tileBreakScale: 0
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 0
 
 - type: entity
   id: BulletGrenadeEMP
@@ -1059,6 +1063,42 @@
     damage:
       types:
         Piercing: 0
+
+- type: entity
+  id: BulletTennis
+  name: tennis ball
+  description: A fuzzy orb of endless betrayal.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Physics
+    bodyType: Dynamic
+    linearDamping: 0
+    angularDamping: 0
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+  - type: Sprite
+    sprite: Objects/Fun/Balls/tennisball.rsi
+    layers:
+      - state: icon
+  - type: Ammo
+    muzzleFlash: null
+  - type: Projectile
+    deleteOnCollide: true
+    damage:
+      types:
+        Piercing: 0
+    soundHit: null
+  - type: TimedDespawn
+    lifetime: 10
+    
 
 - type: entity
   id: BulletAcid

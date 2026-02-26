@@ -47,6 +47,8 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 somekindofbox
+# SPDX-FileCopyrightText: 2026 Jadrek
+# SPDX-FileCopyrightText: 2026 entings
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -446,16 +448,16 @@ trait-description-NaturalWeaponRemoval =
     This could have been done to better fit in with terran space stations, or as a cosmetic choice.
     As a result, your unarmed attacks deal Blunt damage instead of the standard damage type for your species.
     This has no effect on damage dealt with any form of armed melee.
-
+# Den edit
 trait-name-StrikingCalluses = Striking Calluses
 trait-description-StrikingCalluses =
     An iconic enhancement commonly found in the world of cyberenhanced martial arts.
     Striking Calluses consist of bony dermal deposits grafted into a user's hands, either inside the palm
     for "Tiger Style" fighting, or just below the knuckles for those who favor traditional boxing.
     Owners of prosthetic or bionic limbs would instead have a hard plastic shell over their knuckles.
-    These enhancements increase your unarmed strike damage by 2 point base, but do not confer
-    any benefits to any form of armed melee.
-
+    Your unarmed melee attacks deal blunt instead of the standard damage type for your species.
+    Additionally, it increases your unarmed damage by 2 blunt at base. This does not confer any benefit to armed melee.
+# end Den edit
 trait-name-Spinarette = Bionic Spinarette
 trait-description-Spinarette =
     This vatgrown organ-- trademarked and patented by the Cybersun Corporation, is marketed as a highly
@@ -763,6 +765,9 @@ trait-description-Caprine = A language spoken by the Ovinia, the language is com
 
 trait-name-Synthetic = Synthetic
 trait-description-Synthetic = You are a biomechanical construct, who bleeds coolant and is notified of ongoing Ion Storms.
+
+trait-name-SyntheticVoicebox = Synthetic Voicebox
+trait-description-SyntheticVoicebox = Your vocal apparatus is itself synthetic, and starts to malfunction when you are injured.
 
 trait-name-NoContractions = No Contractions
 trait-description-NoContractions = You are (mostly) incapable of using contractions.

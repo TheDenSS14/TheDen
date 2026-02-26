@@ -290,7 +290,7 @@
             max: 213.0
           damage:
           # todo scale with temp like SS13
-            Airloss: -7 # The Den, same as other Cryochemicals.
+            Airloss: -14 # The Den, same as other Cryochemicals.
         - !type:ModifyBloodLevel
           amount: 6     # The Den, same as Saline
 
@@ -312,7 +312,7 @@
             max: 213.0
           damage:
             types:
-             Cellular: -4
+             Cellular: -8
 
 - type: reagent
   id: Dermaline
@@ -1350,11 +1350,11 @@
           - !type:MobStateCondition
             mobstate: Dead  # It's called NECROsol, not ALIVEsol
           damage:
-            Brute: -5       # 4 -> 5. A general buff
-            Burn: -5
-            Airloss: -5     # Added.
-            Toxin: -5       # 2 -> 5, Poison -> Toxin
-            Genetic: -5     # Added.
+            Brute: -10      # 4 -> 10 . A general buff
+            Burn: -10       # 5 -> 10 . A general buff
+            Airloss: -10     # Added.
+            Toxin: -10       # 2 -> 10, Poison -> Toxin
+            Genetic: -10     # Added.
         # End of Changes
 
 - type: reagent
@@ -1374,7 +1374,7 @@
         - !type:Temperature
           max: 213.0
         damage:
-          Burn: -7 # Den
+          Burn: -14 # Den
 
 - type: reagent
   id : Mannitol # currently this is just a way to create psicodine

@@ -50,7 +50,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entityTable
   id: AllPlushiesTable
@@ -115,6 +115,14 @@
         id: PlushieJenn
       - !type:EntSelector
         id: PlushieAzalea
+      - !type:EntSelector
+        id: PlushiePatty
+      - !type:EntSelector
+        id: PlushieTwiggy
+      - !type:EntSelector
+        id: PlushieStu
+      - !type:EntSelector
+        id: PlushiePhil
       - !type:EntSelector
         id: PlushieSharkBlue
       - !type:EntSelector
@@ -485,6 +493,8 @@
       - id: ClothingShoesClownLarge
       - id: ClothingHeadHatMagician
       - id: BeachBall
+      - id: TennisBall
+        amount: 2
       - id: ClothingShoesSkates
 
 - type: entity

@@ -1,13 +1,14 @@
-// SPDX-FileCopyrightText: 2020 DamianX <DamianX@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2021 Leo <lzimann@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 DamianX
+// SPDX-FileCopyrightText: 2020 DrSmugleaf
+// SPDX-FileCopyrightText: 2020 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2021 Leo
+// SPDX-FileCopyrightText: 2021 Visne
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
+using System.Diagnostics.CodeAnalysis;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
@@ -60,6 +61,18 @@ namespace Content.Shared.Preferences
         public bool TryIndexOfCharacter(ICharacterProfile profile, out int index)
         {
             return (index = IndexOfCharacter(profile)) != -1;
+        }
+
+        public bool TryGetProfile(int index, [NotNullWhen(true)] out ICharacterProfile? profile)
+        {
+            var exists = _characters.ContainsKey(index);
+
+            if (exists)
+                profile = _characters[index];
+            else
+                profile = null;
+
+            return exists;
         }
     }
 }
