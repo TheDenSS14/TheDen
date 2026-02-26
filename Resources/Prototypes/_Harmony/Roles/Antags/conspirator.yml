@@ -6,5 +6,5 @@
   objective: roles-antag-conspirator-objective
   guides: [ Conspirators ]
   requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 3600 # 1h
+    - !type:CharacterOverallTimeRequirement
+      min: 36000 #Den - 10 hours
