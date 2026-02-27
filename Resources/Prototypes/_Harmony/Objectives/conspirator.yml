@@ -2,6 +2,7 @@
   abstract: true
   parent: BaseObjective
   id: BaseConspiratorObjective
+  categories: [ HideSpawnMenu ]
   components:
   - type: Objective
     issuer: Conspiracy
@@ -17,6 +18,7 @@
   id: ConspiratorUnionObjective
   name: Forcefully seize control of a department
   description: Assume direct control over a department and declare independence from Nanotrasen.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Objective
     icon:
@@ -28,6 +30,7 @@
   id: ConspiratorGameshowObjective
   name: Run a life-or-death game show
   description: Force the crew to take part in a game show with incredible stakes.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Objective
     icon:
@@ -39,6 +42,7 @@
   id: ConspiratorTechnologyObjective
   name: Seize all station technology
   description: Show the crew the merits of a simpler life. Because only you deserve the wonders of technology.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Objective
     icon:
@@ -50,6 +54,7 @@
   id: ConspiratorArmsObjective
   name: Disarm Security and arm yourselves instead
   description: Take the guns from Security and give them to yourselves. They cannot be trusted with them.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Objective
     icon:
@@ -61,6 +66,7 @@
   id: ConspiratorThiefObjective
   name: Pull off the greatest heist of all time
   description: Get your names written in the history books for what you take from this station.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Objective
     icon:
@@ -72,6 +78,7 @@
   id: ConspiratorMafiaObjective
   name: Form a crime family
   description: Become the leaders of crime on this station and cement your reputation as a group not to be messed with.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Objective
     icon:
@@ -83,6 +90,7 @@
   id: ConspiratorArrestObjective
   name: Trick Security into arresting innocent people
   description:  Demonstrate their incompetence by showing just how easy they are to fool.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Objective
     icon:
@@ -93,6 +101,7 @@
   parent: BaseConspiratorObjective
   id: ConspiratorCameraObjective
   name: Dismantle the surveillance state
+  categories: [ HideSpawnMenu ]
   description: Bring back the right to privacy for Nanotrasen employees.
   components:
   - type: Objective
