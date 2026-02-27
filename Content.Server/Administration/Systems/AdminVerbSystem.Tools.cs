@@ -1111,5 +1111,7 @@ public sealed partial class AdminVerbSystem
         PauseRotting = -32,
         TurnIntoFlatpack = -33,
         AddUplink = -34,
+        RemovePaint = -35, // DEN
+        RefreshPaint = -36, // DEN
     }
 }
