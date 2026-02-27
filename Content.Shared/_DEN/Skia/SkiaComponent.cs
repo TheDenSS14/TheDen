@@ -57,7 +57,7 @@ public sealed partial class SkiaComponent : Component
     /// <summary>
     /// Maximum number of spawns that can be generated from either Reaping or SummonShadowsActionId
     /// </summary>
-    public float MaxSpawnAmount = 10f;
+    public float MaxSpawnAmount = 8f;
 
     /// <summary>
     /// ProtoId of mobs to spawn on SummonShadowsActionId

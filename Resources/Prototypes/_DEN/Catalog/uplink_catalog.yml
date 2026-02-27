@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 pocl v
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -115,6 +116,16 @@
   name: uplink-syndicate-eggnog-name
   description: uplink-syndicate-eggnog-desc
   productEntity: DrinkSyndicateEggnogBottleFull
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkPointless
+
+- type: listing
+  id: UplinkCostumeBundleBaseballSyndie
+  name: uplink-baseballbundle-name
+  description: uplink-baseballbundle-desc
+  productEntity: CostumeBundleBaseballSyndie
   cost:
     Telecrystal: 5
   categories:
