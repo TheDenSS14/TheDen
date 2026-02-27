@@ -132,7 +132,7 @@
   id: Conspirators
   components:
   - type: GameRule
-    minPlayers: 30 # minimum of 3 conspirators
+    minPlayers: 20 # minimum of 2 conspirators
     delay:
       min: 1800
       max: 2400
@@ -141,7 +141,7 @@
     # selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ Conspirator ]
-      min: 3
+      min: 2
       max: 8
       playerRatio: 10
       briefing:
