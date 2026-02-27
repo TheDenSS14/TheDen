@@ -154,3 +154,25 @@
     - rattles
     - rattling
     - rattled
+
+- type: emote
+  id: InsectoidBuzz
+  name: chat-emote-name-buzz
+  category: Vocal
+  icon:
+    sprite: Nyanotrasen/Objects/Fun/Toys/moff.rsi
+    state: "moff1"
+  whitelist:
+    tags:
+    - MothEmotes
+    - ChitinidEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-buzz"]
+  chatTriggers:
+    - buzz
+    - buzzing
+    - bzz
+    - bzzz
+    - bzzzz
