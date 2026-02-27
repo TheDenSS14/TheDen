@@ -48,6 +48,7 @@ public sealed partial class PaintSystem : SharedPaintSystem // DEN - Made partia
         SubscribeLocalEvent<PaintComponent, GetVerbsEvent<UtilityVerb>>(OnPaintVerb);
 
         SubscribeLocalEvent<PaintComponent, ExaminedEvent>(OnExamined); // DEN - Examine text for paint cans
+        SubscribeLocalEvent<PaintedComponent, MapInitEvent>(OnMapInit); // DEN - Init map with spray paint
     }
 
     private void OnInteract(EntityUid uid, PaintComponent component, AfterInteractEvent args)

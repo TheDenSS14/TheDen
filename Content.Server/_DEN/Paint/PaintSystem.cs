@@ -10,6 +10,11 @@ namespace Content.Server.Paint;
 
 public sealed partial class PaintSystem
 {
+    private void OnMapInit(Entity<PaintedComponent> ent, ref MapInitEvent args)
+    {
+        _appearanceSystem.SetData(ent, PaintVisuals.Painted, true);
+    }
+
     private void OnExamined(Entity<PaintComponent> ent, ref ExaminedEvent args)
     {
         var colorName = ColorNaming.Describe(ent.Comp.Color, Loc);
