@@ -32,7 +32,7 @@ public sealed partial class PaintSystem
             Category = VerbCategory.Tricks,
             Impact = LogImpact.Low,
             Priority = (int) AdminVerbSystem.TricksVerbPriorities.RemovePaint,
-            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Objects/Specific/Janitorial/rag.rsi"), "icon"),
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Objects/Specific/Janitorial/rag.rsi"), "rag"),
             Act = () =>
             {
                 RemComp<PaintedComponent>(ent);
@@ -48,6 +48,7 @@ public sealed partial class PaintSystem
             Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Objects/Fun/spraycans.rsi"), "rainbow2_cap"),
             Act = () =>
             {
+                _appearanceSystem.SetData(ent, PaintVisuals.Painted, false);
                 _appearanceSystem.SetData(ent, PaintVisuals.Painted, true);
             }
         };
