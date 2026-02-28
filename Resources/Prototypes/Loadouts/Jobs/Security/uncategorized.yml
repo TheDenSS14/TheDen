@@ -1320,10 +1320,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Brigmedic # Corpsman has ClothingUniformJumpsuitCorpsmanSummer
   items:
     - ClothingUniformJumpsuitSecSummer
 
