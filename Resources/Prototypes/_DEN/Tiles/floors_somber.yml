@@ -5,7 +5,7 @@
 - type: tile
   id: FloorSomberAmaranth
   name: tiles-somber-amaranth
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-amaranth.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-amaranth.png
   variants: 4
   placementVariants:
   - 1.0
@@ -23,7 +23,7 @@
 - type: tile
   id: FloorSomberAmaranthEye
   name: tiles-somber-amaranth-eye
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-amaranth-eye.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-amaranth-eye.png
   variants: 4
   placementVariants:
   - 1.0
@@ -41,7 +41,7 @@
 - type: tile
   id: FloorSomberMnemolithRough
   name: tiles-somber-mnemolith-rough
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-mnemolith-rough.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-mnemolith-rough.png
   variants: 4
   placementVariants:
   - 1.0
@@ -59,7 +59,7 @@
 - type: tile
   id: FloorSomberMnemolithSmooth
   name: tiles-somber-mnemolith-smooth
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-mnemolith-smooth.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-mnemolith-smooth.png
   variants: 4
   placementVariants:
   - 1.0
@@ -77,7 +77,7 @@
 - type: tile
   id: FloorSomberGlass
   name: tiles-somber-glass-floor
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-glass.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-glass.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -89,7 +89,7 @@
 - type: tile
   id: FloorSomberGlassPlasma
   name: tiles-somber-glass-floor-plasma
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-glass-plasma.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-glass-plasma.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -101,7 +101,7 @@
 - type: tile
   id: FloorSomberGlassUranium
   name: tiles-somber-glass-floor-uranium
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-glass-uranium.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-glass-uranium.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -113,7 +113,7 @@
 - type: tile
   id: FloorSomberSteel
   name: tiles-somber-steel-floor
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile.png
   variants: 4
   placementVariants:
   - 1.0
@@ -131,7 +131,7 @@
 - type: tile
   id: FloorSomberSteelDark
   name: tiles-somber-steel-floor-dark
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-dark.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-dark.png
   variants: 4
   placementVariants:
   - 1.0
@@ -149,7 +149,7 @@
 - type: tile
   id: FloorSomberSteelBandedMagenta
   name: tiles-somber-steel-floor-banded-magenta
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-banded-magenta.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-banded-magenta.png
   variants: 4
   placementVariants:
   - 1.0
@@ -167,7 +167,7 @@
 - type: tile
   id: FloorSomberSteelBandedPurple
   name: tiles-somber-steel-floor-banded-purple
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-banded-purple.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-banded-purple.png
   variants: 4
   placementVariants:
   - 1.0
@@ -185,7 +185,7 @@
 - type: tile
   id: FloorSomberSteelCheckerMagenta
   name: tiles-somber-steel-floor-checker-magenta
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-checkered-magenta.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-checkered-magenta.png
   variants: 4
   placementVariants:
   - 1.0
@@ -203,7 +203,7 @@
 - type: tile
   id: FloorSomberSteelCheckerPurple
   name: tiles-somber-steel-floor-checker-purple
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-checkered-purple.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-checkered-purple.png
   variants: 4
   placementVariants:
   - 1.0
@@ -221,7 +221,7 @@
 - type: tile
   id: FloorSomberSteelDiagonal
   name: tiles-somber-steel-floor-diagonal
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-diagonal.png
   variants: 4
   placementVariants:
   - 1.0
@@ -239,7 +239,7 @@
 - type: tile
   id: FloorSomberSteelDiagonalMini
   name: tiles-somber-steel-floor-diagonal-mini
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal-mini.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-diagonal-mini.png
   variants: 4
   placementVariants:
   - 1.0
@@ -257,7 +257,7 @@
 - type: tile
   id: FloorSomberSteelHerringbone
   name: tiles-somber-steel-floor-herringbone
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-herringbone.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-herringbone.png
   variants: 4
   placementVariants:
   - 1.0
@@ -275,7 +275,7 @@
 - type: tile
   id: FloorSomberSteelMini
   name: tiles-somber-steel-floor-mini
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-mini.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-mini.png
   variants: 4
   placementVariants:
   - 1.0
@@ -293,7 +293,7 @@
 - type: tile
   id: FloorSomberSteelMono
   name: tiles-somber-steel-floor-mono
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-mono.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-mono.png
   variants: 4
   placementVariants:
   - 1.0
@@ -311,7 +311,7 @@
 - type: tile
   id: FloorSomberSteelMonoEye
   name: tiles-somber-steel-floor-mono-eye
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-mono-eye.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-mono-eye.png
   variants: 4
   placementVariants:
   - 1.0
@@ -329,7 +329,7 @@
 - type: tile
   id: FloorSomberSteelOffset
   name: tiles-somber-steel-floor-offset
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-offset.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-offset.png
   variants: 4
   placementVariants:
   - 1.0
@@ -347,7 +347,7 @@
 - type: tile
   id: FloorSomberSteelPavement
   name: tiles-somber-steel-floor-pavement
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-pavement.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-pavement.png
   variants: 4
   placementVariants:
   - 1.0
@@ -365,7 +365,7 @@
 - type: tile
   id: FloorSomberSteelPavementVertical
   name: tiles-somber-steel-floor-pavement-vertical
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-pavement-vertical.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-pavement-vertical.png
   variants: 4
   placementVariants:
   - 1.0
@@ -383,7 +383,7 @@
 - type: tile
   id: FloorSomberSteelBandedDark
   name: tiles-somber-steel-floor-banded-dark
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-banded-dark.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-banded-dark.png
   variants: 4
   placementVariants:
   - 1.0
@@ -401,7 +401,7 @@
 - type: tile
   id: FloorSomberSteelCheckerDark
   name: tiles-somber-steel-floor-checker-dark
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-checkered-dark.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-checkered-dark.png
   variants: 4
   placementVariants:
   - 1.0
@@ -419,7 +419,7 @@
 - type: tile
   id: FloorSomberSteelDiagonalDark
   name: tiles-somber-steel-floor-diagonal-dark
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal-dark.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-diagonal-dark.png
   variants: 4
   placementVariants:
   - 1.0
@@ -437,7 +437,7 @@
 - type: tile
   id: FloorSomberSteelDiagonalMiniDark
   name: tiles-somber-steel-floor-diagonal-mini-dark
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal-mini-dark.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-diagonal-mini-dark.png
   variants: 4
   placementVariants:
   - 1.0
@@ -455,7 +455,7 @@
 - type: tile
   id: FloorSomberSteelMonoDarkEye
   name: tiles-somber-steel-floor-mono-dark-eye
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-mono-dark-eye.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-mono-dark-eye.png
   variants: 4
   placementVariants:
   - 1.0
@@ -473,7 +473,7 @@
 - type: tile
   id: FloorSomberSteelMonoDark
   name: tiles-somber-steel-floor-mono-dark
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-mono-dark.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-mono-dark.png
   variants: 4
   placementVariants:
   - 1.0
@@ -491,7 +491,7 @@
 - type: tile
   id: FloorSomberSteelDiagonalMagenta
   name: tiles-somber-steel-floor-diagonal-magenta
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal-magenta.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-diagonal-magenta.png
   variants: 4
   placementVariants:
   - 1.0
@@ -509,7 +509,7 @@
 - type: tile
   id: FloorSomberSteelDiagonalMiniMagenta
   name: tiles-somber-steel-floor-diagonal-mini-magenta
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal-mini-magenta.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-diagonal-mini-magenta.png
   variants: 4
   placementVariants:
   - 1.0
@@ -527,7 +527,7 @@
 - type: tile
   id: FloorSomberSteelDiagonalPurple
   name: tiles-somber-steel-floor-diagonal-purple
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal-purple.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-diagonal-purple.png
   variants: 4
   placementVariants:
   - 1.0
@@ -545,7 +545,7 @@
 - type: tile
   id: FloorSomberSteelDiagonalMiniPurple
   name: tiles-somber-steel-floor-diagonal-mini-purple
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-tile-diagonal-mini-purple.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-diagonal-mini-purple.png
   variants: 4
   placementVariants:
   - 1.0
@@ -563,7 +563,7 @@
 - type: tile
   id: FloorSomberCircuit
   name: tiles-somber-circuit
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-circuit.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-circuit.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -575,7 +575,7 @@
 - type: tile
   id: FloorSomberCircuitDark
   name: tiles-somber-circuit-dark
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-circuit-dark.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-circuit-dark.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -587,7 +587,7 @@
 - type: tile
   id: FloorSomberNE
   name: tiles-somber-NE
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-NE.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-NE.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -599,7 +599,7 @@
 - type: tile
   id: FloorSomberNW
   name: tiles-somber-NW
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-NW.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-NW.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -611,7 +611,7 @@
 - type: tile
   id: FloorSomberSE
   name: tiles-somber-SE
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-SE.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-SE.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -623,7 +623,7 @@
 - type: tile
   id: FloorSomberSW
   name: tiles-somber-SW
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-SW.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-SW.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -635,7 +635,7 @@
 - type: tile
   id: FloorSomberDarkNE
   name: tiles-somber-dark-NE
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-dark-NE.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-dark-NE.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -647,7 +647,7 @@
 - type: tile
   id: FloorSomberDarkNW
   name: tiles-somber-dark-NW
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-dark-NW.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-dark-NW.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -659,7 +659,7 @@
 - type: tile
   id: FloorSomberDarkSE
   name: tiles-somber-dark-SE
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-dark-SE.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-dark-SE.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -671,7 +671,7 @@
 - type: tile
   id: FloorSomberDarkSW
   name: tiles-somber-dark-SW
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-dark-SW.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-dark-SW.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -683,7 +683,7 @@
 - type: tile
   id: FloorSomberGlassNE
   name: tiles-somber-glass-NE
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-NE.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglass-NE.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -695,7 +695,7 @@
 - type: tile
   id: FloorSomberGlassNW
   name: tiles-somber-glass-NW
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-NW.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglass-NW.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -707,7 +707,7 @@
 - type: tile
   id: FloorSomberGlassSE
   name: tiles-somber-glass-SE
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-SE.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglass-SE.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -719,7 +719,7 @@
 - type: tile
   id: FloorSomberGlassSW
   name: tiles-somber-glass-SW
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-SW.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglass-SW.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -731,7 +731,7 @@
 - type: tile
   id: FloorSomberGlassDarkNE
   name: tiles-somber-glass-dark-NE
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-dark-NE.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglass-dark-NE.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -743,7 +743,7 @@
 - type: tile
   id: FloorSomberGlassDarkNW
   name: tiles-somber-glass-dark-NW
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-dark-NW.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglass-dark-NW.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -755,7 +755,7 @@
 - type: tile
   id: FloorSomberGlassDarkSE
   name: tiles-somber-glass-dark-SE
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-dark-SE.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglass-dark-SE.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -767,7 +767,7 @@
 - type: tile
   id: FloorSomberGlassDarkSW
   name: tiles-somber-glass-dark-SW
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglass-dark-SW.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglass-dark-SW.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -779,7 +779,7 @@
 - type: tile
   id: FloorSomberGlassTileNE
   name: tiles-somber-glass-tile-NE
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-NE.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglasstile-NE.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -791,7 +791,7 @@
 - type: tile
   id: FloorSomberGlassTileNW
   name: tiles-somber-glass-tile-NW
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-NW.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglasstile-NW.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -803,7 +803,7 @@
 - type: tile
   id: FloorSomberGlassTileSE
   name: tiles-somber-glass-tile-SE
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-SE.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglasstile-SE.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -815,7 +815,7 @@
 - type: tile
   id: FloorSomberGlassTileSW
   name: tiles-somber-glass-tile-SW
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-SW.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglasstile-SW.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -827,7 +827,7 @@
 - type: tile
   id: FloorSomberGlassTileDarkNE
   name: tiles-somber-glass-tile-dark-NE
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-dark-NE.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglasstile-dark-NE.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -839,7 +839,7 @@
 - type: tile
   id: FloorSomberGlassTileDarkNW
   name: tiles-somber-glass-tile-dark-NW
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-dark-NW.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglasstile-dark-NW.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -851,7 +851,7 @@
 - type: tile
   id: FloorSomberGlassTileDarkSE
   name: tiles-somber-glass-tile-dark-SE
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-dark-SE.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglasstile-dark-SE.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -863,7 +863,7 @@
 - type: tile
   id: FloorSomberGlassTileDarkSW
   name: tiles-somber-glass-tile-dark-SW
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somberglasstile-dark-SW.png
+  sprite: /Textures/_DEN/Tiles/Somber/somberglasstile-dark-SW.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -875,7 +875,7 @@
 - type: tile
   id: FloorSomberGlassTinted
   name: tiles-somber-glass-floor-tinted
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-glass-tinted.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-glass-tinted.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -887,7 +887,7 @@
 - type: tile
   id: FloorSomberGlassTintedDark
   name: tiles-somber-glass-floor-tinted-dark
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-glass-tinted-dark.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-glass-tinted-dark.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -899,7 +899,7 @@
 - type: tile
   id: FloorSomberWood
   name: tiles-somber-wood
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood.png
   variants: 4
   placementVariants:
   - 1.0
@@ -919,7 +919,7 @@
 - type: tile
   id: FloorSomberBrokenWood
   name: tiles-somber-wood3
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-broken.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-broken.png
   variants: 7
   placementVariants:
   - 1.0
@@ -942,7 +942,7 @@
 - type: tile
   id: FloorSomberWoodLarge
   name: tiles-somber-wood-large
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-large.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-large.png
   variants: 4
   placementVariants:
   - 1.0
@@ -962,7 +962,7 @@
 - type: tile
   id: FloorSomberWoodTile
   name: tiles-somber-wood2
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-pattern.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-pattern.png
   variants: 4
   placementVariants:
   - 1.0
@@ -982,7 +982,7 @@
 - type: tile
   id: FloorSomberWoodChess
   name: tiles-somber-wood-chess
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-chess.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-chess.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1002,7 +1002,7 @@
 - type: tile
   id: FloorSomberWoodParquet
   name: tiles-somber-wood-parquet
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-parquet.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-parquet.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1022,7 +1022,7 @@
 - type: tile
   id: FloorSomberWoodAmaranth
   name: tiles-somber-wood-amaranth
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-amaranth.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-amaranth.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1042,7 +1042,7 @@
 - type: tile
   id: FloorSomberBrokenWoodAmaranth
   name: tiles-somber-wood3-amaranth
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-broken-amaranth.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-broken-amaranth.png
   variants: 7
   placementVariants:
   - 1.0
@@ -1065,7 +1065,7 @@
 - type: tile
   id: FloorSomberWoodLargeAmaranth
   name: tiles-somber-wood-large-amaranth
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-large-amaranth.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-large-amaranth.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1085,7 +1085,7 @@
 - type: tile
   id: FloorSomberWoodTileAmaranth
   name: tiles-somber-wood2-amaranth
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-pattern-amaranth.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-pattern-amaranth.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1105,7 +1105,7 @@
 - type: tile
   id: FloorSomberWoodChessAmaranth
   name: tiles-somber-wood-chess-amaranth
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-chess-amaranth.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-chess-amaranth.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1125,7 +1125,7 @@
 - type: tile
   id: FloorSomberWoodParquetAmaranth
   name: tiles-somber-wood-parquet-amaranth
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-parquet-amaranth.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-parquet-amaranth.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1145,7 +1145,7 @@
 - type: tile
   id: FloorSomberWoodFloral
   name: tiles-somber-wood-floral
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-floral.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-floral.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1165,7 +1165,7 @@
 - type: tile
   id: FloorSomberBrokenWoodFloral
   name: tiles-somber-wood3-floral
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-broken-floral.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-broken-floral.png
   variants: 7
   placementVariants:
   - 1.0
@@ -1188,7 +1188,7 @@
 - type: tile
   id: FloorSomberWoodLargeFloral
   name: tiles-somber-wood-large-floral
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-large-floral.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-large-floral.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1208,7 +1208,7 @@
 - type: tile
   id: FloorSomberWoodTileFloral
   name: tiles-somber-wood2-floral
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-pattern-floral.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-pattern-floral.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1228,7 +1228,7 @@
 - type: tile
   id: FloorSomberWoodChessFloral
   name: tiles-somber-wood-chess-floral
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-chess-floral.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-chess-floral.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1248,7 +1248,7 @@
 - type: tile
   id: FloorSomberWoodParquetFloral
   name: tiles-somber-wood-parquet-floral
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-parquet-floral.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-parquet-floral.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1268,7 +1268,7 @@
 - type: tile
   id: FloorSomberWoodShadow
   name: tiles-somber-wood-shadow
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-shadow.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-shadow.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1288,7 +1288,7 @@
 - type: tile
   id: FloorSomberBrokenWoodShadow
   name: tiles-somber-wood3-shadow
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-broken-shadow.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-broken-shadow.png
   variants: 7
   placementVariants:
   - 1.0
@@ -1311,7 +1311,7 @@
 - type: tile
   id: FloorSomberWoodLargeShadow
   name: tiles-somber-wood-large-shadow
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-large-shadow.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-large-shadow.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1331,7 +1331,7 @@
 - type: tile
   id: FloorSomberWoodTileShadow
   name: tiles-somber-wood2-shadow
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-pattern-shadow.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-pattern-shadow.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1351,7 +1351,7 @@
 - type: tile
   id: FloorSomberWoodChessShadow
   name: tiles-somber-wood-chess-shadow
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-chess-shadow.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-chess-shadow.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1371,7 +1371,7 @@
 - type: tile
   id: FloorSomberWoodParquetShadow
   name: tiles-somber-wood-parquet-shadow
-  sprite: /Textures/_DEN/Tiles/somber.rsi/somber-wood-parquet-shadow.png
+  sprite: /Textures/_DEN/Tiles/Somber/somber-wood-parquet-shadow.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1393,7 +1393,7 @@
 - type: tile
   id: FloorSomberDirtPlanet
   name: tiles-somber-dirt-planet
-  sprite: /Textures/_DEN/Tiles/Planet/Somber/dirt.rsi/dirt.png
+  sprite: /Textures/_DEN/Tiles/Planet/Somber/Dirt/dirt.png
   variants: 7
   placementVariants:
   - 1.0
@@ -1424,7 +1424,7 @@
 - type: tile
   id: FloorSomberGrassPlanet
   name: tiles-somber-grass-planet
-  sprite: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/grass.png
+  sprite: /Textures/_DEN/Tiles/Planet/Somber/Grass/grass.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1433,14 +1433,14 @@
   - 1.0
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/single_edge.png
-    NorthEast: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/single_edge.png
-    NorthWest: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/single_edge.png
-    SouthWest: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/single_edge.png
-    South: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/double_edge.png
-    East: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/double_edge.png
-    North: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/double_edge.png
-    West: /Textures/_DEN/Tiles/Planet/Somber/grass.rsi/double_edge.png
+    SouthEast: /Textures/_DEN/Tiles/Planet/Somber/Grass/single_edge.png
+    NorthEast: /Textures/_DEN/Tiles/Planet/Somber/Grass/single_edge.png
+    NorthWest: /Textures/_DEN/Tiles/Planet/Somber/Grass/single_edge.png
+    SouthWest: /Textures/_DEN/Tiles/Planet/Somber/Grass/single_edge.png
+    South: /Textures/_DEN/Tiles/Planet/Somber/Grass/double_edge.png
+    East: /Textures/_DEN/Tiles/Planet/Somber/Grass/double_edge.png
+    North: /Textures/_DEN/Tiles/Planet/Somber/Grass/double_edge.png
+    West: /Textures/_DEN/Tiles/Planet/Somber/Grass/double_edge.png
   baseTurf: FloorSomberDirtPlanet
   isSubfloor: true
   footstepSounds:

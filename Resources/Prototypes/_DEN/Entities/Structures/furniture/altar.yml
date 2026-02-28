@@ -1,0 +1,108 @@
+- type: entity
+  parent: [BaseStructure, BaseObjectVerbsStructure] # Not parented because it's so weird
+  id: AltarSomber
+  name: mnemolith altar
+  description: "A broad, dark mnemolith altar, its basins slowly welling with a draught distilled from the stone itself. The surface is etched with a rare example of psychomantic script, legible to anyone who looks upon it: \"IN STILLNESS, ALL RETURNS.\""
+  components:
+  - type: Anchorable
+  - type: Transform
+  - type: Prayable
+  - type: Sprite
+    snapCardinals: true
+    noRot: true
+    sprite: _DEN/Structures/Furniture/Altars/Cults/somber.rsi
+    layers:
+      - state: altar
+      - state: fill-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: candles
+        shader: unshaded
+      - state: glow
+        shader: unshaded
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Altars/Cults/somber.rsi
+    state: altar
+  - type: SolutionContainerManager
+    solutions:
+      fountain:
+        maxVol: 120 # Enough mnemolith to get two people into the deepest level of dosing
+        reagents:
+        - ReagentId: MnemolithReagent
+          Quantity: 120
+  - type: SolutionRegeneration # The only infinite source of mnemolith
+    solution: fountain
+    generated:
+      reagents:
+      - ReagentId: MnemolithReagent
+        Quantity: 0.4 # Takes five minutes to refill
+  - type: Drink
+    solution: fountain
+    transferAmount: 5
+  - type: DrawableSolution
+    solution: fountain
+  - type: DrainableSolution
+    solution: fountain
+  - type: ExaminableSolution
+    solution: fountain
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: fill-
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak # Mnemolith is glassy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialMnemolith1:
+            min: 30 # It's a massive slab of stone
+            max: 30 # If you take the time to break it, you deserve it
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PlaceableSurface
+  - type: Climbable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.95,-0.35,0.95,0.35"
+        density: 5000
+        mask:
+        - TableMask
+        - LowImpassable
+        layer:
+        - TableLayer
+  - type: Clickable
+  - type: SacrificialAltar
+  - type: Strap
+    position: Down
+    rotation: -90
+  - type: HealOnBuckle # Slowly heals holy damage at the cost of slash damage
+    damage:
+      types:
+        Slash: 0.5
+        Holy: -0.25
+  - type: PointLight
+    radius: 3
+    energy: 3
+    color: "#4dc4ff"
+    autoRot: true # If only light masks would rotate with the camera...  Oh well, can't fix it
+    mask: /Textures/_DEN/Effects/LightMasks/double_circle.png
+  - type: StealTarget
+    stealGroup: AltarNanotrasen

@@ -1,0 +1,40 @@
+- type: entity
+  parent: ChurchBell
+  id: ChurchBellSomber
+  name: electrum bell
+  description: "A heavy bell plated in electrum, suspended from a patterned steel beam."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Specific/Chapel/somber-church-bell.rsi
+  - type: InteractionPopup
+    interactDelay: 1
+    successChance: 1
+    interactSuccessSound:
+      path: /Audio/_DEN/Effects/spookybell.ogg
+      params:
+        variation: 0.15
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ScrapElectrum:
+            min: 3
+            max: 3

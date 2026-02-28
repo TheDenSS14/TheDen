@@ -7,7 +7,7 @@
   id: LightSomberEidoliteWellLamp
   name: eidolite well lamp
   description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on and off by hand."
-  suffix: CLICK AFTER MAPPING TO ENABLE
+  suffix: Mantis, Standard] [Click After Mapping To Enable
   components:
   - type: Sprite
     sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitewell.rsi
@@ -84,20 +84,124 @@
 
 - type: entity
   parent: LightSomberEidoliteWellLamp
-  id: LightSomberEidoliteWellLampOn
-  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. The switch on this one takes a few tries..."
-  suffix: DO NOT MAP # If you do, it'll appear on, but they'll have to interact with it twice before it turns off again
-  categories: [ HideSpawnMenu ] # TODO: Delete this prototype with migration in case any were mapped, it's basically deprecated due to its unintended behavior
+  id: LightSomberEidoliteWellLampFluorescent
+  name: eidolite well lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on and off by hand. This one's been altered to mimic a fluorescent bulb."
+  suffix: Fluorescent] [Click After Mapping To Enable
   components:
+  - type: Sprite
+    layers:
+    - state: fluorescent-base
+    - state: fluorescent-glow
+      shader: unshaded
   - type: PointLight
-    enabled: true
+    enabled: false
+    radius: 3
+    energy: 4
+    softness: 1.1
+    color: "#ffe4ce"
+
+- type: entity
+  parent: LightSomberEidoliteWellLamp
+  id: LightSomberEidoliteWellLampLED
+  name: eidolite well lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on and off by hand. This one's been altered to mimic an LED bulb."
+  suffix: LED] [Click After Mapping To Enable
+  components:
+  - type: Sprite
+    layers:
+    - state: LED-base
+    - state: LED-glow
+      shader: unshaded
+  - type: PointLight
+    enabled: false
+    radius: 3
+    energy: 4
+    softness: 1.1
+    color: "#eeeeff"
+
+- type: entity
+  parent: LightSomberEidoliteWellLamp
+  id: LightSomberEidoliteWellLampWarm
+  name: eidolite well lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on and off by hand. This one's been altered to mimic a warm bulb."
+  suffix: Warm] [Click After Mapping To Enable
+  components:
+  - type: Sprite
+    layers:
+    - state: warm-base
+    - state: warm-glow
+      shader: unshaded
+  - type: PointLight
+    enabled: false
+    radius: 3
+    energy: 4
+    softness: 1.1
+    color: "#ff9833"
+
+- type: entity
+  parent: LightSomberEidoliteWellLamp
+  id: LightSomberEidoliteWellLampCold
+  name: eidolite well lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on and off by hand. This one's been altered to mimic a cold bulb."
+  suffix: Cold] [Click After Mapping To Enable
+  components:
+  - type: Sprite
+    layers:
+    - state: cold-base
+    - state: cold-glow
+      shader: unshaded
+  - type: PointLight
+    enabled: false
+    radius: 3
+    energy: 4
+    softness: 1.1
+    color: "#b1d4ed"
+
+- type: entity
+  parent: LightSomberEidoliteWellLamp
+  id: LightSomberEidoliteWellLampDim
+  name: eidolite well lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on and off by hand. This one's been altered to mimic a dim bulb."
+  suffix: Dim] [Click After Mapping To Enable
+  components:
+  - type: Sprite
+    layers:
+    - state: dim-base
+    - state: dim-glow
+      shader: unshaded
+  - type: PointLight
+    enabled: false
+    radius: 3
+    energy: 2
+    softness: 1.1
+    color: "#ba473f"
+
+- type: entity
+  parent: LightSomberEidoliteWellLamp
+  id: LightSomberEidoliteWellLampUV
+  name: eidolite well lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on and off by hand. This one's been altered to mimic an ultraviolet bulb."
+  suffix: Mantis, Ultraviolet] [Click After Mapping To Enable
+  components:
+  - type: Sprite
+    layers:
+    - state: ultraviolet-base
+    - state: ultraviolet-glow
+      shader: unshaded
+  - type: PointLight
+    enabled: false
+    radius: 3
+    energy: 4
+    softness: 1.1
+    color: "#9e00ff"
 
 - type: entity
   parent: LightSomberEidoliteWellLamp
   id: LightSomberEidoliteFloorLamp
   name: eidolite floor lamp
   description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. You can turn it on and off by hand."
-  suffix: CLICK AFTER MAPPING TO ENABLE
+  suffix: Mantis, Standard] [Click After Mapping To Enable
   components:
   - type: Sprite
     sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitefloor.rsi
@@ -120,6 +224,130 @@
     enabled: false
     radius: 4
     energy: 6
+
+- type: entity
+  parent: LightSomberEidoliteFloorLamp
+  id: LightSomberEidoliteFloorLampFluorescent
+  name: eidolite floor lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. You can turn it on and off by hand. This one's been altered to mimic a fluorescent bulb."
+  suffix: Fluorescent] [Click After Mapping To Enable
+  components:
+  - type: Sprite
+    layers:
+    - state: fluorescent-base
+    - state: fluorescent-glow
+      shader: unshaded
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 6
+    softness: 1.1
+    color: "#ffe4ce"
+
+- type: entity
+  parent: LightSomberEidoliteFloorLamp
+  id: LightSomberEidoliteFloorLampLED
+  name: eidolite floor lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. You can turn it on and off by hand. This one's been altered to mimic an LED bulb."
+  suffix: LED] [Click After Mapping To Enable
+  components:
+  - type: Sprite
+    layers:
+    - state: LED-base
+    - state: LED-glow
+      shader: unshaded
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 6
+    softness: 1.1
+    color: "#eeeeff"
+
+- type: entity
+  parent: LightSomberEidoliteFloorLamp
+  id: LightSomberEidoliteFloorLampWarm
+  name: eidolite floor lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. You can turn it on and off by hand. This one's been altered to mimic a warm bulb."
+  suffix: Warm] [Click After Mapping To Enable
+  components:
+  - type: Sprite
+    layers:
+    - state: warm-base
+    - state: warm-glow
+      shader: unshaded
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 6
+    softness: 1.1
+    color: "#ff9833"
+
+- type: entity
+  parent: LightSomberEidoliteFloorLamp
+  id: LightSomberEidoliteFloorLampCold
+  name: eidolite floor lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. You can turn it on and off by hand. This one's been altered to mimic a cold bulb."
+  suffix: Cold] [Click After Mapping To Enable
+  components:
+  - type: Sprite
+    layers:
+    - state: cold-base
+    - state: cold-glow
+      shader: unshaded
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 6
+    softness: 1.1
+    color: "#b1d4ed"
+
+- type: entity
+  parent: LightSomberEidoliteFloorLamp
+  id: LightSomberEidoliteFloorLampDim
+  name: eidolite floor lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. You can turn it on and off by hand. This one's been altered to mimic a dim bulb."
+  suffix: Dim] [Click After Mapping To Enable
+  components:
+  - type: Sprite
+    layers:
+    - state: dim-base
+    - state: dim-glow
+      shader: unshaded
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 3
+    softness: 1.1
+    color: "#ba473f"
+
+- type: entity
+  parent: LightSomberEidoliteFloorLamp
+  id: LightSomberEidoliteFloorLampUV
+  name: eidolite floor lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. You can turn it on and off by hand. This one's been altered to mimic an ultraviolet bulb."
+  suffix: Mantis, Ultraviolet] [Click After Mapping To Enable
+  components:
+  - type: Sprite
+    layers:
+    - state: ultraviolet-base
+    - state: ultraviolet-glow
+      shader: unshaded
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 6
+    softness: 1.1
+    color: "#9e00ff"
+
+- type: entity
+  parent: LightSomberEidoliteWellLamp
+  id: LightSomberEidoliteWellLampOn
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. The switch on this one takes a few tries..."
+  suffix: DO NOT MAP # If you do, it'll appear on, but they'll have to interact with it twice before it turns off again
+  categories: [ HideSpawnMenu ] # TODO: Delete this prototype with migration in case any were mapped, it's basically deprecated due to its unintended behavior
+  components:
+  - type: PointLight
+    enabled: true
 
 - type: entity
   parent: LightSomberEidoliteFloorLamp
