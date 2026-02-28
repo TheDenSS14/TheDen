@@ -2608,23 +2608,6 @@
 
 - type: entity
   parent: BasePlushie
-  id: PlushieAlice
-  name: alice plushie
-  description: This plushie was produced as part of central commands "cuddle command" propaganda plushie line. This one speaks in an unintelligible dialect whenever someone squeezes it.
-  components:
-  - type: Sprite
-    sprite: Objects/Fun/toys.rsi
-    state: aliceplush
-  - type: StaminaDamageOnHit
-    damage: 0.8
-  - type: UseDelay
-    delay: 1.5
-  - type: FoodSequenceElement
-    entries:
-      CottonBurger: AlicePlushie
-
-- type: entity
-  parent: BasePlushie
   id: PlushieJenn
   name: jenn plushie
   description: Smells like vanilla and dominance.
