@@ -22,7 +22,7 @@
 #    tags:
 #    - Condom
   - type: Sprite
-    sprite: _DEN/VASH/Objects/condoms.rsi
+    sprite: _DEN/Objects/Specific/Lewd/condoms.rsi
     state: condom
 
 - type: entity #copied from Entities/Objects/Specific/rehydrateable.yml
@@ -39,7 +39,7 @@
 #    tags:
 #    - Condom
   - type: Sprite
-    sprite: _DEN/VASH/Objects/condoms.rsi
+    sprite: _DEN/Objects/Specific/Lewd/condoms.rsi
     state: condomout
   - type: EmitSoundOnUse
     sound: /Audio/Effects/Fluids/blood2.ogg # I don't feel confident trying to find a rubber sound free of copyright. This should be just fine. -KC

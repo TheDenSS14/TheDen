@@ -10,10 +10,10 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _DEN/VASH/Objects/bloodyboyes.rsi #I thought it'd be funny lol -KC
+    sprite: _DEN/Objects/Specific/Hygiene/menstrual_products.rsi
   - type: Item
     size: Small
-    sprite: _DEN/VASH/Objects/bloodyboyes.rsi
+    sprite: _DEN/Objects/Specific/Hygiene/menstrual_products.rsi
     heldPrefix: tampon
   # Inherited from the copy. idk.-KC
   - type: StaticPrice
@@ -31,11 +31,9 @@
 #    - Gauze
 #    - Tampon
   - type: Sprite
-    sprite: _DEN/VASH/Objects/bloodyboyes.rsi
     state: tampon
   - type: Item
     size: Tiny #applicators may be long, but they're not very big. Plus, bleeding isn't helped all that much.-KC
-    sprite: _DEN/VASH/Objects/bloodyboyes.rsi
     heldPrefix: tampon
   - type: Construction
     graph: Gauze
@@ -59,12 +57,9 @@
 #    - Gauze
 #    - Pad
   - type: Sprite
-    sprite: _DEN/VASH/Objects/bloodyboyes.rsi
     heldPrefix: pad
     state: pad
   - type: Item
-    size: Small
-    sprite: _DEN/VASH/Objects/bloodyboyes.rsi
     heldPrefix: pad
   - type: Construction
     graph: Gauze
@@ -88,12 +83,10 @@
 #    - Gauze
 #    - Liner
   - type: Sprite
-    sprite: _DEN/VASH/Objects/bloodyboyes.rsi
     heldPrefix: liner
     state: liner
   - type: Item
     size: Tiny
-    sprite: _DEN/VASH/Objects/bloodyboyes.rsi
     heldPrefix: liner
   - type: Construction
     graph: Gauze

@@ -1,0 +1,21 @@
+- type: entity #Copied from Catalog/Fills/Boxes/emergency.yml
+  name: VASHBox (Hygiene)
+  parent: BoxCardboard
+  id: VASHBox
+  description: A box containing all you'd need in the event of a blood moon.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,5,1
+  - type: StorageFill
+    contents:
+    - id: BirthControlCanister
+    - id: pad
+    - id: pad
+    - id: liner
+    - id: tampon
+    - id: DrinkWaterBottleFull
+    - id: RagItem
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxes.rsi
+    state: hygiene
