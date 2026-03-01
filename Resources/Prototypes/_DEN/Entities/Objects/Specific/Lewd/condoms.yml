@@ -23,7 +23,9 @@
 #    - Condom
   - type: Sprite
     sprite: _DEN/Objects/Specific/Lewd/condoms.rsi
-    state: condom
+    layers:
+    - state: condom
+      color: "#fd7586"
 
 - type: entity #copied from Entities/Objects/Specific/rehydrateable.yml
   parent: [BaseObjectVerbsLewd, BaseItem]
