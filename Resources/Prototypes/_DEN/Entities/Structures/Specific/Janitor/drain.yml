@@ -1,9 +1,62 @@
-- type: entity
-  parent: FloorDrain
+- type: entity # Not parented to avoid interaction outlines
   id: FloorDrainSomber
   name: somber drain
   suffix: Rotate To Change Type
   description: "A polished drain shaped to align with the tile design."
+  placement:
+    mode: SnapgridCenter
   components:
     - type: Sprite
+      drawdepth: FloorObjects
       sprite: _DEN/Objects/Specific/Janitorial/somberdrain.rsi
+      layers:
+      - state: icon
+      - map: [ "enum.SolutionContainerLayers.Fill" ]
+        state: fill-1
+        visible: false
+    - type: Clickable
+    - type: Transform
+      anchored: true
+    - type: Physics
+      bodyType: Static
+      canCollide: false
+    - type: AmbientSound
+      enabled: false
+      volume: -8
+      range: 8
+      sound:
+        path: /Audio/Ambience/Objects/drain.ogg
+    - type: Drain
+    - type: DumpableSolution
+      solution: drainBuffer
+    - type: Appearance
+    - type: SolutionContainerVisuals
+      maxFillLevels: 1
+      fillBaseName: fill-
+      solutionName: drainBuffer
+    - type: SolutionContainerManager
+      solutions:
+        drainBuffer:
+          maxVol: 1000
+    - type: DrainableSolution
+      solution: drainBuffer
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Metallic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 300
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+        - trigger:
+            !type:DamageTrigger
+            damage: 150
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalBreak
