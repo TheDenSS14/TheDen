@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: trait
   id: CumProducer
@@ -18,8 +18,12 @@
         - StationAi
         - Borg
         - MedicalBorg
+    - !type:CharacterTraitRequirement # DEN
+      inverted: true
+      traits:
+      - SynthCumProducer
   functions:
-    - !type:TraitAddReagentProduction # Den new reagent production system
+    - !type:TraitAddReagentProduction # DEN
       reagentProductionTypes:
       - CumProduction
 
@@ -46,7 +50,7 @@
         - Borg
         - MedicalBorg
   functions:
-  - !type:TraitAddReagentProduction # Den new reagent production system
+  - !type:TraitAddReagentProduction # DEN
     reagentProductionTypes:
     - BreastMilkProduction
 
@@ -73,8 +77,12 @@
         - StationAi
         - Borg
         - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+      - SynthLubeProducer
   functions:
-  - !type:TraitAddReagentProduction # Den new reagent production system
+  - !type:TraitAddReagentProduction # DEN
     reagentProductionTypes:
     - SquirtProduction
 
@@ -88,20 +96,3 @@
 #           reagents:
 #           - ReagentId: NaturalLubricant
 #             Quantity: 25
-
-- type: trait
-  id: HoneyProducer
-  category: TraitsPhysicalBiological
-  points: -1 # Point cost added to balance with removal of species restriction
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - StationAi
-        - Borg
-        - MedicalBorg
-  functions:
-  - !type:TraitAddReagentProduction # Den new reagent production system
-    reagentProductionTypes:
-    - HoneyProduction
-
