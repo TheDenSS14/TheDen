@@ -182,7 +182,7 @@
 
 - type: entity
   parent: BaseWallCloset
-  id: SomberWallCloset # If we ever fix shelves, replace this with SomberWallShelf
+  id: SomberWallCloset
   name: somber wall cabinet
   description: "An expensive wall cabinet made of gloomy, patterned wood. Unfortunately, the shelves are unstable, and it's likely to dump your things in the floor..."
   components:
@@ -244,7 +244,7 @@
 
 - type: entity
   parent: SomberWallCloset
-  id: SomberWallClosetLocker # If we ever fix shelves, replace this with SomberWallShelfLocking
+  id: SomberWallClosetLocker
   name: somber wall cabinet
   suffix: Locking
   description: "An expensive, locking wall cabinet made of gloomy, patterned wood. Unfortunately, the shelves are unstable, and it's likely to dump your things in the floor..."
