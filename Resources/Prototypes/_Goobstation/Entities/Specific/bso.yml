@@ -38,11 +38,26 @@
   name: handheld command monitor
   description: A handheld crew monitor modified for blueshield officer's needs. Designed to inject a tracking device into command personnel and alarm you about them being in danger.
   components:
-  - type: Sprite
-    sprite: _Goobstation/Objects/Specific/Security/bso_monitor.rsi
-    state: scanner
-  - type: Item
+  - type: Item # den
+    sprite: _DEN/Objects/Specific/Command/handheld_command_monitor.rsi
+    heldPrefix: commmon # thats 3 Ms. COMMand MONitor. hehe
     size: Small
+  - type: Sprite # den
+    sprite: _DEN/Objects/Specific/Command/handheld_command_monitor.rsi
+    state: icon
+    layers:
+      - state: icon
+      - state: command_monitor
+        shader: unshaded
+        visible: true
+        map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: Appearance # den
+  - type: GenericVisualizer #den
+    visuals:
+      enum.PowerCellSlotVisuals.Enabled:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
   - type: CrewMonitorScanning
     whitelist:
       components:
@@ -65,3 +80,23 @@
     price: 1000
   - type: Speech
     speechSounds: Borg
+
+- type: entity # den, for power states (and also there just wasnt an empty one)
+  id: HandheldCrewMonitorBSOEmpty
+  parent: HandheldCrewMonitorBSO
+  suffix: Empty 
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Command/handheld_command_monitor.rsi
+    state: icon
+    layers:
+      - state: icon
+      - state: command_monitor
+        shader: unshaded
+        visible: false
+        map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+
