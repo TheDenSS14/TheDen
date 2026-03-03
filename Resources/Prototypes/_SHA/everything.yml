@@ -129,6 +129,46 @@
     sprite: _SHA/Decals/monotile_somber_dark.rsi
     state: steel_trim_sw
 
+- type: decal
+  id: SomberRailBalcony
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony
+
+- type: decal
+  id: SomberRailBalconyN
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony-N
+
+- type: decal
+  id: SomberRailBalconyS
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony-S
+
+- type: decal
+  id: SomberRailV
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-vertical
+
+- type: decal
+  id: SomberRailH
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-horizontal
+
 # Diagonal windows
 
 - type: entity
