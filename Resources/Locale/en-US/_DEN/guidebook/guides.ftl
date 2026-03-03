@@ -20,3 +20,5 @@ guide-entry-cooking-food-sequence = Sequence Cooking
 guide-entry-rules-eternity = Eternity Rules
 
 guide-entry-lewd-chems = Lewd
+
+guide-entry-antagonist-skia = Skia
