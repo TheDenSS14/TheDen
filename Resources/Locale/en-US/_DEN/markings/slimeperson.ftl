@@ -36,6 +36,9 @@ marking-AnatomicalBrain-brain = Brain
 marking-AnatomicalPelvis = Anatomical Pelvis
 marking-AnatomicalPelvis-pelvis = Pelvis
 
+marking-AnatomicalRibs = Anatomical Ribs
+marking-AnatomicalRibs-floating_ribs = Ribs
+
 marking-AnatomicalLungs = Anatomical Lungs
 marking-AnatomicalLungs-lungs = Lungs
 
