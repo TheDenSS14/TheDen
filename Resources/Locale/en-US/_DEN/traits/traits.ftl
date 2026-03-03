@@ -139,3 +139,11 @@ trait-name-DispelVulnerability = Ethereal Presence
 trait-description-DispelVulnerability =
     Some aspect of your presence is intrinsically and perilously tied to the noosphere.
     You suffer [color=red]extreme heat damage[/color] from being the subject of a [color=purple]Dispel[/color] cast.
+
+trait-name-TenuousGrip = Tenuous Grip
+trait-description-TenuousGrip =
+    Due to the nature of your being, death has a further toll on you in relation to the strength of the noosphere.
+    You lose [color=red]all[/color] non-inherent psionic abilities upon death, and you are unable to be revived if the glimmer level is above a certain threshold.
+noospheric-vulnerability-unrevivable = INTANGIBILITY DETECTED: Patient is susceptible to noospheric flux. Contact epistemics for
+    assistance in patient revival.
+

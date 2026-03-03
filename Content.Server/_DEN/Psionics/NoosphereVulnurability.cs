@@ -7,9 +7,8 @@ using Content.Shared.Psionics.Glimmer;
 
 namespace Content.Server._DEN.Psionics;
 
-public sealed class TenuousGripSystem : EntitySystem
+public sealed class NoosphereVulnurability : EntitySystem
 {
-    [Dependency] private readonly GlimmerSystem _glimmer = default!;
     [Dependency] private readonly PsionicAbilitiesSystem _psionics = default!;
 
     /// <inheritdoc/>
@@ -17,10 +16,10 @@ public sealed class TenuousGripSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<TenuousGripComponent, MobStateChangedEvent>(OnDeath);
+        SubscribeLocalEvent<NoosphereVulnerabilityComponent, MobStateChangedEvent>(OnDeath);
     }
 
-    private void OnDeath(Entity<TenuousGripComponent> ent, ref MobStateChangedEvent args)
+    private void OnDeath(Entity<NoosphereVulnerabilityComponent> ent, ref MobStateChangedEvent args)
     {
         if (args.NewMobState != MobState.Dead ||
             !TryComp<PsionicComponent>(ent, out var psionic))

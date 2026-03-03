@@ -234,7 +234,7 @@ public sealed class DefibrillatorSystem : EntitySystem
         }
         // wizden end
         // den start - if hell my beloathed
-        if (TryComp<TenuousGripComponent>(target, out var comp) &&
+        if (TryComp<NoosphereVulnerabilityComponent>(target, out var comp) &&
             _glimmer.GlimmerOutput >= comp.ReviveThreshold)
         {
             _chatManager.TrySendInGameICMessage(
