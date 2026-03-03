@@ -144,6 +144,6 @@ trait-name-TenuousGrip = Tenuous Grip
 trait-description-TenuousGrip =
     Due to the nature of your being, death has a further toll on you in relation to the strength of the noosphere.
     You lose [color=red]all[/color] non-inherent psionic abilities upon death, and you are unable to be revived if the glimmer level is above a certain threshold.
-noospheric-vulnerability-unrevivable = INTANGIBILITY DETECTED: Patient is susceptible to noospheric flux. Contact epistemics for
-    assistance in patient revival.
-
+noospheric-vulnerability-unresurrectable = INTANGIBILITY DETECTED: Patient is susceptible to noospheric flux. Contact epistemics for
+    assistance in patient ressurection.
+noosphere-vulnerability-revive-attempt-failed = twitches and seizes up before falling limp once more.

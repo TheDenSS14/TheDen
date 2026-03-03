@@ -233,17 +233,6 @@ public sealed class DefibrillatorSystem : EntitySystem
             return; // imp rdnr return
         }
         // wizden end
-        // den start - if hell my beloathed
-        if (TryComp<NoosphereVulnerabilityComponent>(target, out var comp) &&
-            _glimmer.GlimmerOutput >= comp.ReviveThreshold)
-        {
-            _chatManager.TrySendInGameICMessage(
-                uid,
-                Loc.GetString(comp.UnrevivableMessage),
-                InGameICChatType.Speak,
-                true);
-            return;
-        }
 
         // imp rdnr begin
         if (HasComp<RandomUnrevivableComponent>(target))
