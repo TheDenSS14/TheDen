@@ -100,10 +100,14 @@
       - id: SpaceCash20000
         amount: 1
       - id: ClothingUniformJumpsuitTacticool
-      - id: ClothingOuterCoatJensen
+      - id: EncryptionKeyStationMaster
       - id: ClothingHandsGlovesCombat
-      - id: ClothingMaskNeckGaiter
-      - id: ToyFigurineThief
+      - id: SpyCrewMonitor
+      - id: ClothingMaskGasVoiceChameleon
+      - id: CyberPen
+      - id: TraitorCodePaper
+      - id: EncryptionKeyFreelance
+        amount: 2
 
 - type: entity
   id: BriefcaseThiefBribingBundlePlasmamanFilled
@@ -117,6 +121,58 @@
         amount: 1
       - id: ClothingUniformEnvirosuitTacticool
       - id: ClothingHeadEnvirohelmTacticool
-      - id: ClothingOuterCoatJensen
+      - id: EncryptionKeyStationMaster
       - id: ClothingHandsGlovesCombat
-      - id: ToyFigurineThief
+      - id: SpyCrewMonitor
+      - id: CyberPen
+      - id: TraitorCodePaper
+      - id: EncryptionKeyFreelance
+        amount: 2
+
+- type: entity
+  id: BriefcaseThiefSyndiBundleFilled
+  parent: BriefcaseSyndie
+  suffix: Thief
+  components:
+  - type: StorageFill
+    contents:
+    - id: RadioJammer
+    - id: TraitorCodePaper
+    - id: Emag
+    - id: MysteryLighterBox
+    - id: SyndicatePersonalAI
+    - id: ClothingHeadHatSyndieMAA
+    - id: CigPackSyndicate
+    - id: Telecrystal50 #The thief cannot use them, but it may induce communication with traitors
+
+- type: entity
+  id: BriefcaseThiefSleeperBundleFilled
+  parent: BriefcaseSyndie
+  suffix: Thief
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadPyjamaSyndicateBlack
+    - id: ClothingUniformJumpsuitPyjamaSyndicateBlack
+    - id: NocturineChemistryBottle
+    - id: NocturineChemistryBottle
+    - id: NocturineChemistryBottle
+    - id: HypopenBox
+    - id: NitrousOxideTankFilled
+    - id: BedsheetSyndie
+    - id: Handcuffs
+    - id: ClothingMaskBreathMedical
+
+- type: entity
+  id: BriefcaseThiefChemistryBundleFilled
+  parent: BriefcaseSyndie
+  suffix: Thief
+  components:
+  - type: StorageFill
+    contents:
+    - id: StorageImplanter
+    - id: DnaScramblerImplanter
+    - id: EphedrineChemistryBottle
+    - id: SoapOmega
+    - id: Syringe
+    - id: DrinkVodkaBottleFull

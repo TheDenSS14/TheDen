@@ -306,3 +306,24 @@
     walkModifier: 1
     sprintModifier: 1
   - type: HeldSpeedModifier
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelThiefChameleon
+  name: duffel bag
+  suffix: Thief
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingUniformJumpsuitChameleon
+    - id: ClothingOuterChameleon
+    - id: ClothingShoesChameleon
+    - id: ClothingNeckChameleon
+    - id: ClothingMaskGasChameleon
+    - id: ClothingHeadHatChameleon
+    - id: ClothingEyesChameleon
+    - id: ClothingHeadsetChameleon
+    - id: AgentIDCard
+    - id: ChameleonProjector
+    - id: IDComputerCircuitboard # Den, to alter their own entry on the manifest
+    - id: MindShieldImplanterFake # Den, it's a real mindshield component, but doesn't stop someone from thieving
