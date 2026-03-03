@@ -9,11 +9,15 @@ using Content.Shared.Verbs;
 using Content.Server.Administration.Systems;
 using Content.Shared.Database;
 using Robust.Shared.Utility;
+using Content.Server.Administration.Managers;
+using Content.Shared.Administration;
 
 namespace Content.Server.Paint;
 
 public sealed partial class PaintSystem
 {
+    [Dependency] private readonly IAdminManager _adminManager = default!;
+
     private void OnPaintedComponentStartup(Entity<PaintedComponent> ent, ref ComponentStartup args)
     {
         _appearanceSystem.SetData(ent, PaintVisuals.Painted, true);
@@ -26,6 +30,9 @@ public sealed partial class PaintSystem
 
     private void OnPaintedGetVerbs(Entity<PaintedComponent> ent, ref GetVerbsEvent<Verb> args)
     {
+        if (!_adminManager.HasAdminFlag(args.User, AdminFlags.Admin))
+            return;
+
         var removePaint = new Verb
         {
             Text = "Remove Paint",
