@@ -48,9 +48,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Random; // imp rdnr
-using Content.Server._Impstation.Traits;
-using Content.Shared._DEN.Traits;
-using Content.Shared.Psionics.Glimmer; // imp rdnr
+using Content.Server._Impstation.Traits; // imp rdnr
 
 namespace Content.Server.Medical;
 
@@ -76,7 +74,6 @@ public sealed class DefibrillatorSystem : EntitySystem
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly IRobustRandom _random = default!; // imp rdnr
-    [Dependency] private readonly GlimmerSystem _glimmer = default!; // den
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -233,7 +230,6 @@ public sealed class DefibrillatorSystem : EntitySystem
             return; // imp rdnr return
         }
         // wizden end
-
         // imp rdnr begin
         if (HasComp<RandomUnrevivableComponent>(target))
         {
