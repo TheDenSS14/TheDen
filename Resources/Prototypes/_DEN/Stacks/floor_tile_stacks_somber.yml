@@ -24,9 +24,23 @@
   itemSize: 5
 
 - type: stack
+  id: FloorTileSomberSteelBandedMagentaDark
+  name: somber steel tile (banded, magenta, dark)
+  spawn: FloorTileItemSomberSteelBandedMagentaDark
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
   id: FloorTileSomberSteelBandedPurple
   name: somber steel tile (banded, purple)
   spawn: FloorTileItemSomberSteelBandedPurple
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberSteelBandedPurpleDark
+  name: somber steel tile (banded, purple, dark)
+  spawn: FloorTileItemSomberSteelBandedPurpleDark
   maxCount: 30
   itemSize: 5
 
@@ -38,9 +52,23 @@
   itemSize: 5
 
 - type: stack
+  id: FloorTileSomberSteelCheckerMagentaDark
+  name: somber steel tile (checkered, magenta, dark)
+  spawn: FloorTileItemSomberSteelCheckerMagentaDark
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
   id: FloorTileSomberSteelCheckerPurple
   name: somber steel tile (checkered, purple)
   spawn: FloorTileItemSomberSteelCheckerPurple
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberSteelCheckerPurpleDark
+  name: somber steel tile (checkered, purple, dark)
+  spawn: FloorTileItemSomberSteelCheckerPurpleDark
   maxCount: 30
   itemSize: 5
 
@@ -66,9 +94,23 @@
   itemSize: 5
 
 - type: stack
+  id: FloorTileSomberSteelHerringboneDark
+  name: somber steel tile (herringbone, dark)
+  spawn: FloorTileItemSomberSteelHerringboneDark
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
   id: FloorTileSomberSteelMini
   name: somber steel tile (mini)
   spawn: FloorTileItemSomberSteelMini
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberSteelMiniDark
+  name: somber steel tile (mini, dark)
+  spawn: FloorTileItemSomberSteelMiniDark
   maxCount: 30
   itemSize: 5
 
@@ -94,6 +136,13 @@
   itemSize: 5
 
 - type: stack
+  id: FloorTileSomberSteelOffsetDark
+  name: somber steel tile (offset, dark)
+  spawn: FloorTileItemSomberSteelOffsetDark
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
   id: FloorTileSomberSteelPavement
   name: somber steel tile (pavement)
   spawn: FloorTileItemSomberSteelPavement
@@ -101,9 +150,23 @@
   itemSize: 5
 
 - type: stack
+  id: FloorTileSomberSteelPavementDark
+  name: somber steel tile (pavement, dark)
+  spawn: FloorTileItemSomberSteelPavementDark
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
   id: FloorTileSomberSteelPavementVertical
   name: somber steel tile (pavement, vertical)
   spawn: FloorTileItemSomberSteelPavementVertical
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberSteelPavementVerticalDark
+  name: somber steel tile (pavement, vertical, dark)
+  spawn: FloorTileItemSomberSteelPavementVerticalDark
   maxCount: 30
   itemSize: 5
 
@@ -158,29 +221,43 @@
 
 - type: stack
   id: FloorTileSomberSteelBandedDark
-  name: somber steel tile (banded, dark)
+  name: somber steel tile (banded, half dark)
   spawn: FloorTileItemSomberSteelBandedDark
   maxCount: 30
   itemSize: 5
 
 - type: stack
   id: FloorTileSomberSteelCheckerDark
-  name: somber steel tile (checkered, dark)
+  name: somber steel tile (checkered, half dark)
   spawn: FloorTileItemSomberSteelCheckerDark
   maxCount: 30
   itemSize: 5
 
 - type: stack
   id: FloorTileSomberSteelDiagonalDark
-  name: somber steel tile (diagonal, dark)
+  name: somber steel tile (diagonal, half dark)
   spawn: FloorTileItemSomberSteelDiagonalDark
   maxCount: 30
   itemSize: 5
 
 - type: stack
+  id: FloorTileSomberSteelDiagonalDarkAll
+  name: somber steel tile (diagonal, dark)
+  spawn: FloorTileItemSomberSteelDiagonalDarkAll
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
   id: FloorTileSomberSteelDiagonalMiniDark
-  name: somber steel tile (mini diagonal, dark)
+  name: somber steel tile (mini diagonal, half dark)
   spawn: FloorTileItemSomberSteelDiagonalMiniDark
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberSteelDiagonalMiniDarkAll
+  name: somber steel tile (mini diagonal, dark)
+  spawn: FloorTileItemSomberSteelDiagonalMiniDarkAll
   maxCount: 30
   itemSize: 5
 
@@ -206,9 +283,23 @@
   itemSize: 5
 
 - type: stack
+  id: FloorTileSomberSteelDiagonalMagentaDark
+  name: somber steel tile (diagonal, magenta, dark)
+  spawn: FloorTileItemSomberSteelDiagonalMagentaDark
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
   id: FloorTileSomberSteelDiagonalMiniMagenta
   name: somber steel tile (mini diagonal, magenta)
   spawn: FloorTileItemSomberSteelDiagonalMiniMagenta
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberSteelDiagonalMiniMagentaDark
+  name: somber steel tile (mini diagonal, magenta, dark)
+  spawn: FloorTileItemSomberSteelDiagonalMiniMagentaDark
   maxCount: 30
   itemSize: 5
 
@@ -220,9 +311,23 @@
   itemSize: 5
 
 - type: stack
+  id: FloorTileSomberSteelDiagonalPurpleDark
+  name: somber steel tile (diagonal, purple, dark)
+  spawn: FloorTileItemSomberSteelDiagonalPurpleDark
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
   id: FloorTileSomberSteelDiagonalMiniPurple
   name: somber steel tile (mini diagonal, purple)
   spawn: FloorTileItemSomberSteelDiagonalMiniPurple
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileSomberSteelDiagonalMiniPurpleDark
+  name: somber steel tile (mini diagonal, purple, dark)
+  spawn: FloorTileItemSomberSteelDiagonalMiniPurpleDark
   maxCount: 30
   itemSize: 5
 

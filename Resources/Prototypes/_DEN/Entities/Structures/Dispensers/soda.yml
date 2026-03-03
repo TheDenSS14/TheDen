@@ -11,10 +11,10 @@
     pack: SodaDispenserInventoryExtended
 
 - type: entity
-  parent: SodaDispenserExtended
-  id: SodaDispenserExtendedSomber
+  parent: SodaDispenser
+  id: SodaDispenserSomber
   name: somber soda taps
-  suffix: Soda Dispenser] [Extended
+  suffix: Soda Dispenser
   description: "An electrum pipe fitted with soda taps, delivering perfectly chilled pours."
   components:
   - type: Sprite
@@ -32,3 +32,11 @@
         - TabletopMachineMask
         layer:
         - TabletopMachineLayer
+
+- type: entity
+  parent: SodaDispenserSomber
+  id: SodaDispenserExtendedSomber
+  suffix: Soda Dispenser] [Extended
+  components:
+  - type: ReagentDispenser
+    pack: SodaDispenserInventoryExtended

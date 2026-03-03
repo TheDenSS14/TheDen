@@ -294,7 +294,7 @@
   components:
   - type: VendingMachine
     offState: off
-    pack: CondimentInventoryExtended
+    pack: CondimentInventory
     soundVend: /Audio/Items/squeezebottle.ogg # It's funny ok
   - type: Sprite
     noRot: false
@@ -320,6 +320,14 @@
         - TabletopMachineMask
         layer:
         - TabletopMachineLayer
+
+- type: entity
+  parent: VendingMachineCondimentsSomber
+  id: VendingMachineCondimentsExtendedSomber
+  suffix: Condiment Station] [Extended
+  components:
+  - type: VendingMachine
+    pack: CondimentInventoryExtended
 
 - type: entity
   parent: VendingMachineSilent

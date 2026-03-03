@@ -7,10 +7,10 @@
     pack: BoozeDispenserInventoryExtended
 
 - type: entity
-  parent: BoozeDispenserExtended
-  id: BoozeDispenserExtendedSomber
+  parent: BoozeDispenser
+  id: BoozeDispenserSomber
   name: somber liquor taps
-  suffix: Booze Dispenser] [Extended
+  suffix: Booze Dispenser
   description: "An electrum pipe fitted with liquor taps, delivering perfectly chilled pours."
   components:
   - type: Sprite
@@ -28,3 +28,11 @@
         - TabletopMachineMask
         layer:
         - TabletopMachineLayer
+
+- type: entity
+  parent: BoozeDispenserSomber
+  id: BoozeDispenserExtendedSomber
+  suffix: Booze Dispenser] [Extended
+  components:
+  - type: ReagentDispenser
+    pack: BoozeDispenserInventoryExtended

@@ -97,6 +97,11 @@
   description: "A lattice of patterned steel rods."
   suffix: Diagonal
   components:
+    - type: MeleeSound
+      soundGroups:
+        Brute:
+          path:
+            "/Audio/Weapons/grille_hit.ogg"
     - type: Sprite
       sprite: _DEN/Structures/Walls/Somber/sombergrille.rsi
     - type: Icon
