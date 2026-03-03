@@ -209,7 +209,7 @@
   components:
     - type: EntityTargetAction
       icon: { sprite: Interface/Actions/psionics.rsi, state: revivify }
-      useDelay: 120
+      useDelay: 1 # temp
       checkCanAccess: false
       range: 2
       itemIconStyle: BigAction
