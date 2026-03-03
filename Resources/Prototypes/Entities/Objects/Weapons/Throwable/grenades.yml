@@ -41,7 +41,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   abstract: true
@@ -161,10 +161,10 @@
     intensitySlope: 15
     maxIntensity: 20
   - type: ExplodeOnTrigger
-  - type: TriggerOnSignal
+  - type: TimerStartOnSignal
   - type: DeviceLinkSink
     ports:
-      - Trigger
+      - Timer
   - type: OnUseTimerTrigger
     delay: 5
   - type: TimerTriggerVisuals
@@ -457,7 +457,7 @@
     solution:
       reagents:
       - ReagentId: SpaceCleaner
-        Quantity: 30
+        Quantity: 100
 
 - type: entity
   parent: [ BaseSecurityBlueshieldOfficerContraband, SmokeGrenade ]

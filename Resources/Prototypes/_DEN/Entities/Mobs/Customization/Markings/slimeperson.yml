@@ -1,0 +1,79 @@
+# SPDX-FileCopyrightText: 2026 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Head
+
+# Eyes
+
+- type: marking
+  id: SlimeEyesCyclopsPulsing
+  bodyPart: Eyes
+  markingCategory: Eyes
+  speciesRestriction: [ SlimePerson ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _DEN/Mobs/Customization/SlimePerson/eyes.rsi
+    state: cyclopspulseeye
+  - sprite: _DEN/Mobs/Customization/SlimePerson/eyes.rsi
+    state: cyclopspulsering
+  shader: unshaded
+
+# Chest
+
+- type: marking
+  id: BubbleGlowing
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ SlimePerson ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
+    state: bubble
+  shader: unshaded
+
+- type: marking
+  id: FadingStarsNonglowing
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ SlimePerson ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
+    state: fadingstars1
+  - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
+    state: fadingstars2
+  - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
+    state: fadingstars3
+
+- type: marking
+  id: FishbowlGlowing
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ SlimePerson ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
+    state: fishbowl1
+  - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
+    state: fishbowl2
+  shader: unshaded
+
+- type: marking
+  id: FizzGlowing
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ SlimePerson ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
+    state: fizz
+  shader: unshaded

@@ -67,8 +67,9 @@
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Jakumba
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Weapons
 uplink-pistol-viper-name = Viper
@@ -310,6 +311,9 @@ uplink-death-acidifier-implant-desc = Completely melts the user and their equipm
 
 uplink-micro-bomb-implanter-name = Micro Bomb Implanter
 uplink-micro-bomb-implanter-desc = Explode on death or manual activation with this implant. Destroys the body with all equipment.
+
+uplink-radio-implanter-name = Radio Implanter
+uplink-radio-implanter-desc = Implants a Syndicate radio, allowing covert communication without a headset.
 
 # Bundles
 uplink-observation-kit-name = Observation Kit

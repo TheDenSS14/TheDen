@@ -156,7 +156,9 @@ public sealed class SharedLoadoutSystem : EntitySystem
                     && _inventory.TryGetSlots(uid, out var slotDefinitions))
                 {
                     var deleted = false;
-                    var slotsToUse = loadoutCategory.Slot ?? clothingComp.Slots; // DEN: Use forced slot for category
+                    var slotsToUse = loadoutCategory.Slot != null
+                        ? loadoutCategory.Slot.Value & clothingComp.Slots // (intersection of valid slots)
+                        : clothingComp.Slots; // DEN: Use forced slot for category
 
                     foreach (var curSlot in slotDefinitions)
                     {

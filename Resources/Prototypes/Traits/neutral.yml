@@ -12,6 +12,7 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 entings
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -186,3 +187,21 @@
         - type: ReplacementAccent
           replacementChance: 0.15
           accent: liar
+
+- type: trait
+  id: SyntheticVoicebox
+  category: TraitsSpeechAccents
+  points: 0 # no mechanical benefit
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: DamagedSiliconAccent
+          enableChargeCorruption: false
+          damageAtMaxCorruption: 200

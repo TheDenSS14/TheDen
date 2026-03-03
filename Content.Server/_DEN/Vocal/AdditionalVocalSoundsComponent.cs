@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Humanoid.Prototypes;
@@ -17,8 +17,8 @@ namespace Content.Server._DEN.Vocal;
 public sealed partial class AdditionalVocalSoundsComponent : Component
 {
     [DataField]
-    public ProtoId<EmoteSoundsPrototype> AdditionalSounds { get; set; }
+    public HashSet<ProtoId<EmoteSoundsPrototype>> AdditionalSounds { get; set; } = new();
 
     [DataField]
-    public bool ReplaceExistingEmotes { get; set; }
+    public ProtoId<EmoteSoundsPrototype>? ReplacesDefaultSounds { get; set; }
 }

@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: 2026 Alex C
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: reagent
+  id: Glycerol
+  group: Foods
+  name: reagent-name-glycerol
+  desc: reagent-desc-glycerol
+  color: "#E9EAF2"
+  flavor: sweet
+  viscosity: 0.35
+  physicalDesc: reagent-physical-desc-thick
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 6
+
+- type: reagent
+  id: HydroxyethylCellulose
+  color: "#E9EAF2"
+  group: Foods
+  name: reagent-name-hydro-cellulose
+  desc: reagent-desc-hydro-cellulose
+  flavor: nothing
+  viscosity: 0.35
+  physicalDesc: reagent-physical-desc-thick

@@ -22,6 +22,8 @@
 # SPDX-FileCopyrightText: 2025 HoboLyra
 # SPDX-FileCopyrightText: 2025 Memeji Dankiri
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Dirius77
+# SPDX-FileCopyrightText: 2026 Jakumba
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -147,6 +149,13 @@
     - type: Storage
       grid:
       - 0,0,2,2
+      blacklist:
+        components:
+        - Storage
+        - SecretStash
+        tags:
+        - HighRiskItem
+        - FakeNukeDisk # Woops people can test if the disk is fake otherwise
     - type: ContainerContainer
       containers:
         storagebase: !type:Container
@@ -168,6 +177,18 @@
       whitelist:
         components:
         - Cuffable # useless if you cant be cuffed
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: RadioImplant
+  name: radio implant
+  description: This implant grants access to the Syndicate channel without a headset.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+  - type: RadioImplant
+    radioChannels:
+    - Syndicate
 
 - type: entity
   parent: [ BaseSubdermalImplant, StorePresetUplink ]
@@ -352,6 +373,20 @@
    - type: Tag
      tags:
        - MindShield
+
+# Centcomm implants
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: RadioImplantCentcomm
+  name: radio implant
+  description: This implant grants access to the Centcomm channel without a headset. Only authorized for Centcomm employees.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+  - type: RadioImplant
+    radioChannels:
+    - CentCom
 
 # Example component adding implant
 - type: entity

@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: 2026 Alex C
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: reagent
+  id: SyntheticCum
+  parent: Cum
+  name: reagent-name-synth-cum
+  desc: reagent-desc-synth-cum
+  flavor: nothing
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 0.1
+  noRandom: true
+
+- type: reagent
+  id: SyntheticLubricant
+  parent: NaturalLubricant
+  name: reagent-name-synth-lube
+  desc: reagent-desc-synth-lube
+  color: "#d6d6d6"
+  physicalDesc: reagent-physical-desc-shiny
+  flavor: nothing
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 0.1
+  noRandom: true

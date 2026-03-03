@@ -34,7 +34,7 @@
     sprite: _DV/Objects/Weapons/Guns/Battery/energygun.rsi
   - type: Gun
     soundGunshot:
-      path: /Audio/_DV/Weapons/Guns/Gunshots/laser.ogg
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg #Den, different sound for energy longarms
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
   - type: Battery
@@ -49,8 +49,8 @@
       fireCost: 50
       name: disable
       state: disabler
-    - proto: BulletEnergyGunLaser
-      fireCost: 100
+    - proto: BulletEnergyGunLaserStrong #Den
+      fireCost: 50 #Den, more lethal ammo
       name: lethal
       state: lethal
   - type: MagazineVisuals
@@ -155,19 +155,19 @@
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
   - type: Battery
-    maxCharge: 500
-    startingCharge: 500
+    maxCharge: 750 #Den, energy weapon tweaks
+    startingCharge: 750 #Den, energy weapon tweaks
   - type: ProjectileBatteryAmmoProvider
     proto: BulletDisabler
     fireCost: 50
   - type: EnergyGun
     fireModes:
     - proto: BulletDisabler
-      fireCost: 50
+      fireCost: 46 #Den, matching standard disabler magazine count of 16 shots
       name: disable
       state: disabler
     - proto: BulletEnergyGunLaser
-      fireCost: 100
+      fireCost: 75 #Den, increased lethal magazine
       name: lethal
       state: lethal
   - type: MagazineVisuals
@@ -240,7 +240,7 @@
       name: disable
       state: disabler
     - proto: BulletEnergyGunLaser
-      fireCost: 100
+      fireCost: 83 #Den, slightly more lethal ammo
       name: lethal
       state: lethal
   - type: MagazineVisuals
@@ -284,7 +284,7 @@
   name: IK-60 energy carbine
   parent: BaseWeaponBattery
   id: WeaponGunLaserCarbineAutomatic
-  description: "A 30 round hybrid-fire energy carbine." # den, fix description to match capacity
+  description: "A 60 round hybrid-fire energy carbine." # den, fix description to match capacity
   components:
   - type: Sprite
     sprite: _DV/Objects/Weapons/Guns/Battery/energygun_carbine.rsi
@@ -298,22 +298,22 @@
     sprite: _DV/Objects/Weapons/Guns/Battery/energygun_carbine.rsi
   - type: Gun
     soundGunshot:
-      path: /Audio/_DV/Weapons/Guns/Gunshots/laser.ogg
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg #Den, different sound for energy longarms
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
     selectedMode: SemiAuto
-    fireRate: 3
+    fireRate: 4 #Den, increased fire rate to keep DPS the same
     availableModes:
       - SemiAuto
       - FullAuto
   - type: Wieldable
   - type: GunRequiresWield
   - type: Battery
-    maxCharge: 3000
-    startingCharge: 3000
+    maxCharge: 1500 #Den, reduced maximum battery to normalize recharge rates
+    startingCharge: 1500
   - type: ProjectileBatteryAmmoProvider
-    proto: BulletEnergyGunLaser
-    fireCost: 100
+    proto: BulletEnergyGunLaserWeak #Den, less damage per hit
+    fireCost: 25
   - type: MagazineVisuals
     magState: mag
     steps: 5

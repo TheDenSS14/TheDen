@@ -8,15 +8,16 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 therealDLondon
 # SPDX-FileCopyrightText: 2026 Gregg
+# SPDX-FileCopyrightText: 2026 Nata F Miakova
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: gameMap
   id: Glacier
   mapName: Glacier
   mapPath: /Maps/TheDen/glacier.yml
-  minPlayers: 10
-  maxPlayers: 150
+  minPlayers: 15
+  maxPlayers: 65
   stations:
     Glacier:
       stationProto: StandardNanotrasenStation

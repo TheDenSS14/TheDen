@@ -1,5 +1,8 @@
-# SPDX-FileCopyrightText: 2025 juniwoofs <180479595+juniwoofs@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Mono
+# SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Aikakakah
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -9,6 +12,8 @@ marking-OviniaEars-ovinia-ears-inner = Inner Ears
 
 marking-OviniaTail = Ovinia Tail (Default)
 marking-OviniaTail-ovinia-tail = Tail
+marking-OviniaTailAnimated = Ovinia Tail (animated)
+marking-OviniaTailAnimated-ovinia-tail_wag = Tail
 
 marking-OviniaEarsCow = Ovinia Ears (Side)
 marking-OviniaEarsCow-cow-ears = Outer Ears

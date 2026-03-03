@@ -17,8 +17,9 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 SeamLesss
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Jakumba
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Implanters
 
@@ -200,6 +201,14 @@
       implant: FreedomImplant
 
 - type: entity
+  id: RadioImplanter
+  suffix: radio Syndicate
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: RadioImplant
+
+- type: entity
   id: UplinkImplanter
   name: uplink implanter
   parent: BaseImplantOnlyImplanterSyndi
@@ -282,6 +291,15 @@
   components:
   - type: Implanter
     implant: MindShieldImplant
+# Centcomm implanters
+
+- type: entity
+  id: RadioImplanterCentcomm
+  suffix: radio Centcomm
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: RadioImplantCentcomm
 
 # Example component implant
 - type: entity

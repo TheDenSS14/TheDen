@@ -1,0 +1,67 @@
+# SPDX-FileCopyrightText: 2026 Alex C
+#
+# SPDX-License-Identifier: MIT
+
+- type: reagentProductionType
+  id: CumProduction
+  reagent: Cum
+  solutionName: balls
+  maximumCapacity: 30
+  maximumLoad: 10
+  unitsPerProduction: 5
+  dryPopup: cum-verb-dry
+  successPopup: cum-verb-success
+
+- type: reagentProductionType
+  id: BreastMilkProduction
+  reagent: Milk
+  solutionName: breasts
+  maximumCapacity: 50
+  maximumLoad: 5
+  fillTime: 1
+  unitsPerProduction: 5
+  dryPopup: milk-verb-dry
+  successPopup: milk-verb-success
+
+- type: reagentProductionType
+  id: SquirtProduction
+  reagent: NaturalLubricant
+  solutionName: pussy
+  maximumCapacity: 10
+  maximumLoad: 2
+  unitsPerProduction: 4
+  dryPopup: squirt-verb-dry
+  successPopup: squirt-verb-success
+
+- type: reagentProductionType
+  id: HoneyProduction
+  reagent: Honey
+  solutionName: honeyStomach
+  maximumCapacity: 50
+  maximumLoad: 5
+  fillTime: 1
+  unitsPerProduction: 5
+  dryPopup: honey-verb-dry
+  successPopup: honey-verb-success
+
+- type: reagentProductionType
+  id: SynthCumProduction
+  reagent: SyntheticCum
+  solutionName: syntheticBalls #I guess????????
+  maximumCapacity: 50
+  maximumLoad: 10
+  fillTime: 3
+  unitsPerProduction: 10
+  dryPopup: synth-cum-verb-dry
+  successPopup: synth-cum-verb-success
+
+- type: reagentProductionType
+  id: SynthLubeProduction
+  reagent: SyntheticLubricant
+  solutionName: syntheticLubeTube #yupppp
+  maximumCapacity: 70
+  maximumLoad: 30
+  fillTime: 3
+  unitsPerProduction: 2
+  dryPopup: synth-lube-verb-dry
+  successPopup: synth-lube-verb-success

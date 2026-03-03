@@ -6,6 +6,8 @@
 # SPDX-FileCopyrightText: 2025 pocl v
 # SPDX-FileCopyrightText: 2025 pocl.v
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 Tomce795
+# SPDX-FileCopyrightText: 2026 entings
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -158,3 +160,18 @@
   id: rose
   flavorType: Complex
   description: flavor-complex-rose
+
+- type: flavor
+  id: fatty
+  flavorType: Base
+  description: flavor-base-fatty
+
+- type: flavor
+  id: gooey
+  flavorType: Base
+  description: flavor-base-gooey
+
+- type: flavor
+  id: secticket
+  flavorType: Complex
+  description: flavor-complex-secticket

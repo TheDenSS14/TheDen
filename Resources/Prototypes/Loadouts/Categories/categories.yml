@@ -402,5 +402,5 @@
 
 - type: loadoutCategory
   id: Uniform
-  slot: [INNERCLOTHING] # DEN - Forced slots
+  slot: [INNERCLOTHING, HEAD] # DEN - Forced slots. Head is included because of plasmaman envirosuits!
   root: true
