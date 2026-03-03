@@ -24,6 +24,7 @@
     pricePerJoule: 0
     maxCharge: 120 # One third of PowerCellSmall in case they accidentally plug into something
     startingCharge: 120 # Not intended to be a particularly useful power source if so
+  - type: EmpImmune
   - type: PowerCell
   - type: Appearance
   - type: PowerCellVisuals
