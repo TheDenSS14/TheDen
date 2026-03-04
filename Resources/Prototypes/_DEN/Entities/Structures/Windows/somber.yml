@@ -204,9 +204,18 @@
 
 - type: entity
   parent: WindowSomberDirectional
+  id: WindowSomberDirectionalTinted
+  name: somber window (tinted)
+  suffix: Directional
+  components:
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,-0.3"
+
+- type: entity
+  parent: WindowSomberDirectional
   id: WindowSomberDarkDirectional
   name: somber window
-  suffix: Dark, Directional
+  suffix: Directional, Dark
   components:
   - type: Sprite
     sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
@@ -214,6 +223,15 @@
   - type: Icon
     sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
     state: somberdark
+
+- type: entity
+  parent: WindowSomberDarkDirectional
+  id: WindowSomberDarkDirectionalTinted
+  name: somber window (tinted)
+  suffix: Directional, Dark
+  components:
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,-0.3"
 
 # TV Kit
 
