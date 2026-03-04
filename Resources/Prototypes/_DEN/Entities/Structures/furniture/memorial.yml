@@ -10,7 +10,9 @@
   suffix: Random, Mappable
   components:
   - type: Sprite
-    drawdepth: Overdoors
+    noRot: true
+    offset: "0.0,1.0"
+    drawdepth: Mobs
     sprite: _DEN/Structures/Furniture/Memorials/somber.rsi
     layers:
     - state: somber0
