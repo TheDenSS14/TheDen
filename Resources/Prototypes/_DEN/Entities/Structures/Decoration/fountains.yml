@@ -3,6 +3,7 @@
   id: FountainSomber
   name: somber fountain
   description: "A carved mnemolith basin crowned with electrum spouts, spilling streams of water into drains set into the floor below."
+  suffix: Floor, Basin
   components:
   - type: Sprite
     noRot: true
@@ -10,11 +11,11 @@
     sprite: _DEN/Structures/Decoration/somberfountains-96x.rsi
     layers:
     - state: fountain
-    - state: water
-    - state: watershine
+    - state: fountainwater
+    - state: fountainwatershine
       shader: unshaded
-    - state: streams
-    - state: streamshine
+    - state: fountainstreams
+    - state: fountainstreamshine
       shader: unshaded
   - type: SolutionContainerManager
     solutions:
@@ -55,7 +56,7 @@
   id: FountainSomberDrains
   name: somber fountain drains
   description: "An artful array of electrum drains set into the floor."
-  suffix: ""
+  suffix: Floor
   components:
   - type: Sprite
     noRot: true
@@ -73,18 +74,16 @@
 
 - type: entity
   parent: FountainSomber
-  id: FountainSomberRing
-  name: somber fountain ring
+  id: FountainSomberRingHalf
+  name: somber fountain
   description: "A carved mnemolith ring crowned with electrum spouts, spilling streams of water into drains set into the floor below."
-  suffix: North Wall
+  suffix: Wall
   components:
   - type: Sprite
-    snapCardinals: false
-    noRot: false
     layers:
-    - state: ringfountain
-    - state: ringstreams
-    - state: ringstreamshine
+    - state: halfringfountain
+    - state: halfringstreams
+    - state: halfringstreamshine
       shader: unshaded
   - type: Fixtures
     fixtures:
@@ -99,36 +98,36 @@
 
 - type: entity
   parent: FountainSomberDrains
-  id: FountainSomberRingDrains
-  name: somber fountain ring drains
+  id: FountainSomberRingHalfDrains
+  name: somber fountain drains
   description: "An artful array of electrum drains set into the floor."
-  suffix: North Wall
+  suffix: Wall
   components:
   - type: Sprite
     snapCardinals: false
     noRot: false
     layers:
-    - state: ringfountaindrains
-    - state: ringfountaindrains-fill-1
+    - state: halfringfountaindrains
+    - state: halfringfountaindrains-fill-1
       map: [ "enum.SolutionContainerLayers.Fill" ]
       visible: false
   - type: SolutionContainerVisuals
     maxFillLevels: 1
-    fillBaseName: ringfountaindrains-fill-
+    fillBaseName: halfringfountaindrains-fill-
     solutionName: drainBuffer
 
 - type: entity
-  parent: FountainSomberRing
-  id: FountainSomberRingNE
-  name: somber fountain ring
+  parent: FountainSomberRingHalf
+  id: FountainSomberRingQuarter
+  name: somber fountain
   description: "A carved mnemolith ring crowned with electrum spouts, spilling streams of water into drains set into the floor below."
-  suffix: Northeast Corner
+  suffix: Corner
   components:
   - type: Sprite
     layers:
-    - state: ringfountainNE
-    - state: ringstreamsNE
-    - state: ringstreamshineNE
+    - state: quarterringfountain
+    - state: quarterringstreams
+    - state: quarterringstreamshine
       shader: unshaded
   - type: Fixtures
     fixtures:
@@ -142,61 +141,19 @@
         - WallLayer
 
 - type: entity
-  parent: FountainSomberRingDrains
-  id: FountainSomberRingDrainsNE
-  name: somber fountain ring drains
+  parent: FountainSomberRingHalfDrains
+  id: FountainSomberRingQuarterDrains
+  name: somber fountain drains
   description: "An artful array of electrum drains set into the floor."
-  suffix: Northeast Corner
+  suffix: Corner
   components:
   - type: Sprite
     layers:
-    - state: ringfountainNEdrains
-    - state: ringfountainNEdrains-fill-1
+    - state: quarterringfountaindrains
+    - state: quarterringfountaindrains-fill-1
       map: [ "enum.SolutionContainerLayers.Fill" ]
       visible: false
   - type: SolutionContainerVisuals
     maxFillLevels: 1
-    fillBaseName: ringfountainNEdrains-fill-
-    solutionName: drainBuffer
-
-- type: entity
-  parent: FountainSomberRing
-  id: FountainSomberRingNW
-  name: somber fountain ring
-  description: "A carved mnemolith ring crowned with electrum spouts, spilling streams of water into drains set into the floor below."
-  suffix: Northwest Corner
-  components:
-  - type: Sprite
-    layers:
-    - state: ringfountainNW
-    - state: ringstreamsNW
-    - state: ringstreamshineNW
-      shader: unshaded
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-1.5,0.45,-0.55,1.5"
-        hard: false
-        density: 1000
-        layer:
-        - WallLayer
-
-- type: entity
-  parent: FountainSomberRingDrains
-  id: FountainSomberRingDrainsNW
-  name: somber fountain ring drains
-  description: "An artful array of electrum drains set into the floor."
-  suffix: Northwest Corner
-  components:
-  - type: Sprite
-    layers:
-    - state: ringfountainNWdrains
-    - state: ringfountainNWdrains-fill-1
-      map: [ "enum.SolutionContainerLayers.Fill" ]
-      visible: false
-  - type: SolutionContainerVisuals
-    maxFillLevels: 1
-    fillBaseName: ringfountainNWdrains-fill-
+    fillBaseName: quarterringfountaindrains-fill-
     solutionName: drainBuffer
