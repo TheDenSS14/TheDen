@@ -26,7 +26,7 @@
 - type: entity
   parent: HolopadLongRange
   id: GloomyHolopadLongRange
-  name: gloomy long-range holopad
+  name: gloomy holopad (long-range)
   description: "A somber holopad with an esoteric eye motif. On a long-range network."
   components:
   - type: Sprite
@@ -43,7 +43,7 @@
 - type: entity
   parent: HolopadUnlimitedRange
   id: GloomyHolopadUnlimitedRange
-  name: gloomy quantum-entangling holopad
+  name: gloomy holopad (quantum-entangling)
   description: "A somber holopad with an esoteric eye motif. On an extreme-range network."
   components:
   - type: Sprite
@@ -60,7 +60,7 @@
 - type: entity
   parent: HolopadBluespace
   id: GloomyHolopadBluespace
-  name: gloomy bluespace holopad
+  name: gloomy holopad (bluespace)
   suffix: Unrestricted Range
   description: "A somber holopad with an esoteric eye motif, utilizing experimental bluespace technology. Range is no longer a question."
   components:
@@ -338,7 +338,7 @@
 - type: entity
   parent: GloomyHolopad
   id: GloomyHolopadEpistemicsMantis
-  suffix: Mantis, Somber # The source of my suffering
+  suffix: Mantis] [Somber # The source of my suffering
   components: # Hopefully mappers can infer that the rest are called "gloomy" if they want them
   - type: Label
     currentLabel: holopad-epistemics-mantis

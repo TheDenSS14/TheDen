@@ -651,7 +651,7 @@
 - type: entity
   parent: SomberSteelDoorDark
   id: SomberSteelDoorDarkAir
-  suffix: NON-AIRTIGHT, Dark] [PENTHOUSE
+  suffix: NON-AIRTIGHT] [Dark] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -659,7 +659,7 @@
 - type: entity
   parent: GloomyAirlock
   id: GloomyAirlockAir
-  suffix: NON-AIRTIGHT] [Somber, PENTHOUSE
+  suffix: NON-AIRTIGHT] [Public] [Somber] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -667,7 +667,7 @@
 - type: entity
   parent: GloomyAirlockDark
   id: GloomyAirlockDarkAir
-  suffix: NON-AIRTIGHT, Dark] [Somber, PENTHOUSE
+  suffix: NON-AIRTIGHT] [Public, Dark] [Somber] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -675,7 +675,7 @@
 - type: entity
   parent: GloomyAirlockGlass
   id: GloomyAirlockGlassAir
-  suffix: NON-AIRTIGHT] [Somber, PENTHOUSE
+  suffix: NON-AIRTIGHT] [Public] [Somber] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -683,7 +683,7 @@
 - type: entity
   parent: GloomyAirlockGlassDark
   id: GloomyAirlockGlassDarkAir
-  suffix: NON-AIRTIGHT, Dark] [Somber, PENTHOUSE
+  suffix: NON-AIRTIGHT] [Public, Dark] [Somber] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -691,7 +691,7 @@
 - type: entity
   parent: GloomyAirlockMantisLocked
   id: GloomyAirlockMantisLockedAir
-  suffix: NON-AIRTIGHT, Mantis, Locked] [Somber, PENTHOUSE
+  suffix: NON-AIRTIGHT] [Mantis-Locked] [Somber] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -699,7 +699,7 @@
 - type: entity
   parent: GloomyAirlockMantisDarkLocked
   id: GloomyAirlockMantisDarkLockedAir
-  suffix: NON-AIRTIGHT, Mantis, Locked, Dark] [Somber, PENTHOUSE
+  suffix: NON-AIRTIGHT] [Mantis-Locked, Dark] [Somber] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -707,7 +707,7 @@
 - type: entity
   parent: GloomyAirlockMantisGlassLocked
   id: GloomyAirlockMantisGlassLockedAir
-  suffix: NON-AIRTIGHT, Mantis, Locked] [Somber, PENTHOUSE
+  suffix: NON-AIRTIGHT] [Mantis-Locked] [Somber] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -715,7 +715,7 @@
 - type: entity
   parent: GloomyAirlockMantisGlassDarkLocked
   id: GloomyAirlockMantisGlassDarkLockedAir
-  suffix: NON-AIRTIGHT, Mantis, Locked, Dark] [Somber, PENTHOUSE
+  suffix: NON-AIRTIGHT] [Mantis-Locked, Dark] [Somber] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
