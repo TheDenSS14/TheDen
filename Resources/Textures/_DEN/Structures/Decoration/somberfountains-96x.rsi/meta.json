@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-NC-SA-4.0",
-    "copyright": "rosieposieeee (Github), edited by Sha-Seng (GitHub)",
+    "copyright": "Originally by rosieposieeee (Github), heavily edited by Sha-Seng (GitHub)",
     "size": {
         "x": 96,
         "y": 96
@@ -17,7 +17,7 @@
             "name": "fountaindrains-fill-1"
         },
         {
-            "name": "water",
+            "name": "fountainwater",
             "delays": [
                 [
                     0.5,
@@ -26,7 +26,7 @@
             ]
         },
         {
-            "name": "watershine",
+            "name": "fountainwatershine",
             "delays": [
                 [
                     0.5,
@@ -35,7 +35,7 @@
             ]
         },
         {
-            "name": "streams",
+            "name": "fountainstreams",
             "delays": [
                 [
                     0.3,
@@ -44,7 +44,7 @@
             ]
         },
         {
-            "name": "streamshine",
+            "name": "fountainstreamshine",
             "delays": [
                 [
                     0.3,
@@ -53,17 +53,33 @@
             ]
         },
         {
-            "name": "ringfountain"
+            "name": "halfringfountain",
+            "directions": 4
         },
         {
-            "name": "ringfountaindrains"
+            "name": "halfringfountaindrains",
+            "directions": 4
         },
         {
-            "name": "ringfountaindrains-fill-1"
+            "name": "halfringfountaindrains-fill-1",
+            "directions": 4
         },
         {
-            "name": "ringstreams",
+            "name": "halfringstreams",
+            "directions": 4,
             "delays": [
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ],
                 [
                     0.3,
                     0.3
@@ -71,8 +87,21 @@
             ]
         },
         {
-            "name": "ringstreamshine",
+            "name": "halfringstreamshine",
+            "directions": 4,
             "delays": [
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ],
                 [
                     0.3,
                     0.3
@@ -80,17 +109,33 @@
             ]
         },
         {
-            "name": "ringfountainNW"
+            "name": "quarterringfountain",
+            "directions": 4
         },
         {
-            "name": "ringfountainNWdrains"
+            "name": "quarterringfountaindrains",
+            "directions": 4
         },
         {
-            "name": "ringfountainNWdrains-fill-1"
+            "name": "quarterringfountaindrains-fill-1",
+            "directions": 4
         },
         {
-            "name": "ringstreamsNW",
+            "name": "quarterringstreams",
+            "directions": 4,
             "delays": [
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ],
                 [
                     0.3,
                     0.3
@@ -98,35 +143,21 @@
             ]
         },
         {
-            "name": "ringstreamshineNW",
+            "name": "quarterringstreamshine",
+            "directions": 4,
             "delays": [
                 [
                     0.3,
                     0.3
-                ]
-            ]
-        },
-        {
-            "name": "ringfountainNE"
-        },
-        {
-            "name": "ringfountainNEdrains"
-        },
-        {
-            "name": "ringfountainNEdrains-fill-1"
-        },
-        {
-            "name": "ringstreamsNE",
-            "delays": [
+                ],
                 [
                     0.3,
                     0.3
-                ]
-            ]
-        },
-        {
-            "name": "ringstreamshineNE",
-            "delays": [
+                ],
+                [
+                    0.3,
+                    0.3
+                ],
                 [
                     0.3,
                     0.3
