@@ -6,6 +6,8 @@
   suffix: Floor, Basin
   components:
   - type: Sprite
+    offset: "0.0,-0.5"
+    snapCardinals: false
     noRot: true
     drawdepth: Overdoors
     sprite: _DEN/Structures/Decoration/somberfountains-96x.rsi
@@ -46,7 +48,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.875
-          offset: "0.0,0.453125"
+          offset: "0.0,0.05"
         density: 1000
         layer:
         - WallLayer
@@ -59,6 +61,8 @@
   suffix: Floor
   components:
   - type: Sprite
+    offset: "0.0,-0.5"
+    snapCardinals: false
     noRot: true
     drawdepth: FloorObjects
     sprite: _DEN/Structures/Decoration/somberfountains-96x.rsi
@@ -80,6 +84,9 @@
   suffix: Wall
   components:
   - type: Sprite
+    offset: "0.0,0.0"
+    snapCardinals: false
+    noRot: false
     layers:
     - state: halfringfountain
     - state: halfringstreams
@@ -104,6 +111,7 @@
   suffix: Wall
   components:
   - type: Sprite
+    offset: "0.0,0.0"
     snapCardinals: false
     noRot: false
     layers:
