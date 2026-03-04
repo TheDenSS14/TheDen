@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 leo
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Kellaris
 # SPDX-FileCopyrightText: 2026 sheepie
 #
 # SPDX-License-Identifier: MIT
@@ -54,14 +55,6 @@
       state: teddybear
 
 ## self-insert plushies
-
-- type: foodSequenceElement
-  id: AlicePlushie # got permission from alice -port
-  scale: 0.8, 0.8
-  name: food-sequence-cotton-burger-content-plushie-alice
-  sprites:
-    - sprite: Objects/Fun/toys.rsi
-      state: aliceplush
 
 - type: foodSequenceElement
   id: JennPlushie # got permission from jenn -port

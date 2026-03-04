@@ -17655,3 +17655,97 @@ Entries:
   id: 1733
   time: '2026-02-27T15:27:48.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2479
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        Spray-painted entities will now properly update their paint visuals when
+        initiated or removed. This means admins can remove the "Painted"
+        component to remove an entity's paint. This also means that painted
+        entities in maps will show their color in the map editor and after map
+        initialization!
+    - type: Add
+      message: >-
+        Admins now have two new trick verbs - "remove paint" and "refresh
+        paint". The latter will update the visual paint color of the entity,
+        allowing admins to use VV to repaint entities.
+  id: 1734
+  time: '2026-02-28T00:05:24.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2482
+- author: Kelaris
+  changes:
+    - type: Remove
+      message: >-
+        Removed Captain's Dogi, HoS' Samurai Armor, Corpsman's Summer Jumpsuit,
+        and the Oni lore entry in the guidebook, by request of the contributor.
+  id: 1735
+  time: '2026-02-28T08:34:08.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2484
+- author: Aikakakah
+  changes:
+    - type: Add
+      message: >-
+        Ovinia can now wag their (default) tails! Be sure to take the tail wag
+        trait.
+  id: 1736
+  time: '2026-02-28T17:15:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2483
+- author: Zilanthros
+  changes:
+    - type: Tweak
+      message: (Obsidian) added dirt/polish/junk to majority of station
+    - type: Tweak
+      message: (Obsidian) prototype file better fits station
+  id: 1737
+  time: '2026-03-01T02:02:49.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2487
+- author: GreggTheFather
+  changes:
+    - type: Tweak
+      message: Jakumba/Gregg updated LPO, see PR for details!
+  id: 1738
+  time: '2026-03-01T02:22:01.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2488
+- author: honeyed-lemons
+  changes:
+    - type: Add
+      message: Traits to produce Synthetic Cum and Synthetic Lube!
+    - type: Add
+      message: >-
+        Synthetic Cum and Synthetic Lube are now able to be made by a fairly
+        complex chemical process. Have fun!
+  id: 1739
+  time: '2026-03-01T22:09:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2480
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: Fixed Skia guidebook entry
+  id: 1740
+  time: '2026-03-03T02:02:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2492
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: Fixed conspirators lol
+  id: 1741
+  time: '2026-03-03T02:02:40.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2491
+- author: lunarcomets
+  changes:
+    - type: Add
+      message: >-
+        Add the Tenuous Grip trait for psionics that wish for greater
+        consequences upon death in exchange for trait points.
+  id: 1742
+  time: '2026-03-04T00:46:27.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2494
+- author: Kelaris
+  changes:
+    - type: Add
+      message: Added privacy and nsfw holoprojectors to all dressers.
+    - type: Tweak
+      message: Dressers have slightly more storage space now.
+  id: 1743
+  time: '2026-03-04T00:48:05.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2496

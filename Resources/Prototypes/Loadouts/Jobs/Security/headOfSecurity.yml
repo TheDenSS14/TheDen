@@ -11,7 +11,7 @@
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Head Of Security
 # Backpacks
@@ -322,20 +322,6 @@
         - HeadOfSecurity
   items:
     - ClothingOuterCoatHoSTrench
-
-- type: loadout
-  id: LoadoutCommandHOSOuterArmorHosSamurai
-  category: JobsSecurityHeadOfSecurity
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfSecurity
-  items:
-    - ClothingOuterArmorHosSamurai
 
 - type: loadout
   id: LoadoutCommandHOSOuterVestHoSVestWeb

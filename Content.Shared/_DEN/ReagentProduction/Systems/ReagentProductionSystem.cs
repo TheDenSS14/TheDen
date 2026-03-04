@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using System.Globalization;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
@@ -53,12 +54,10 @@ public sealed class ReagentProductionSystem : EntitySystem
     {
         base.Update(frameTime);
         var query = EntityQueryEnumerator<ReagentProducerComponent, SolutionContainerManagerComponent>();
-        while (query.MoveNext(out var uid, out var producerComponent, out var sol))
+        while (query.MoveNext(out var uid, out var producerComponent, out _))
         {
-            if (!_mobState.IsAlive(uid))
-                continue;
-
-            if (_gameTiming.CurTime < producerComponent.NextUpdate)
+            // If the mob is dead OR it isnt time for the next update, don't move foward
+            if (!_mobState.IsAlive(uid) || _gameTiming.CurTime < producerComponent.NextUpdate)
                 continue;
 
             producerComponent.NextUpdate += producerComponent.UpdateInterval;
@@ -95,14 +94,15 @@ public sealed class ReagentProductionSystem : EntitySystem
             if (!_protoManager.TryIndex(productionTypeId, out var productionType) ||
                 !_protoManager.TryIndex(productionType.Reagent, out var reagent))
                 continue;
+
             var producer = args.User;
             var verb = new InteractionVerb
             {
                 Category = ReagentFillCategory,
                 Act = () => StartFillDoAfter((producer, producerComp), container, productionTypeId),
-                Text = reagent.LocalizedName,
+                Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(reagent.LocalizedName),
                 CloseMenu = true,
-                Priority = 1
+                Priority = -1
             };
             args.Verbs.Add(verb);
         }

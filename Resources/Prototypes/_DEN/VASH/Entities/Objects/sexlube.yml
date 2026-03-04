@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 KekaniCreates
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Alex C
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -18,7 +19,7 @@
       drink:
         maxVol: 20 #it probably doesn't need to be that big. If you want more, go ask the Chemist or get a Toybox.-KC
         reagents:
-        - ReagentId: SpaceLube
+        - ReagentId: SyntheticLubricant # DEN
           Quantity: 20
   - type: Sprite
     sprite: _DEN/VASH/Objects/bottlelube.rsi

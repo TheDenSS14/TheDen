@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Jakumba
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -52,3 +53,19 @@
   description: eternity-description
   supportedMaps: EternityMapPool
   rules: []
+
+- type: gamePreset
+  id: Conspiracy
+  alias:
+  - conspirators
+  - conspirator
+  name: conspiracy-title
+  description: conspiracy-description
+  showInVote: false # secret
+  rules:
+  - Conspirators
+  - BasicRoundstartVariation
+  - Thief
+  - SubGamemodesRule
+  - LavalandStormScheduler # Lavaland Change
+  - IrregularExtendedStationEventScheduler
