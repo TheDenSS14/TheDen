@@ -68,6 +68,7 @@
   parent: SheetMetalBase
   id: SheetSteel
   name: steel
+  description: A sheet of super-tough metal. Can stand the test of time. # den
   suffix: Full
   components:
   - type: Material
@@ -283,6 +284,7 @@
   parent: SheetMetalBase
   id: SheetPlasteel
   name: plasteel
+  description: Plasma-hardened steel. Has the weirdness of plasma, and the strength and certainty of steel. # den
   suffix: Full
   components:
   - type: Material
