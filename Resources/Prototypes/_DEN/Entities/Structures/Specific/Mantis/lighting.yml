@@ -8,7 +8,7 @@
   name: eidolite well lamp
   description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on and off by hand."
   suffix: Mantis, Magenta] [Click After Mapping
-  components:
+  components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS PLEASE GOD PLEASE (SO THEY CAN BE TOGGLED WITH SWITCHES)
   - type: Sprite
     sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitewell.rsi
     drawdepth: Objects
@@ -34,8 +34,8 @@
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
     enabled: false
-    radius: 3
-    energy: 4
+    radius: 4
+    energy: 5
     softness: 1.1
     color: "#d9418d"
   - type: Appearance
@@ -155,8 +155,8 @@
     - state: dim-glow
       shader: unshaded
   - type: PointLight
-    radius: 3
-    energy: 2
+    radius: 4
+    energy: 2.5
     color: "#ba473f"
 
 - type: entity
@@ -181,27 +181,31 @@
   description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. You can turn it on and off by hand."
   suffix: Mantis, Magenta] [Click After Mapping
   components:
+  - type: SpriteFade
   - type: Sprite
+    offset: "0.0, 0.3125"
     sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitefloor.rsi
-    drawdepth: Objects
+    drawdepth: Overdoors
   - type: Fixtures
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeAabb
-          bounds: "-0.01,0.1,0.01,0.35"
+          !type:PhysShapeCircle
+          radius: 0.15
+          position: -0.0156,0.0156 # Half a pixel left and up from center
         hard: true
         density: 200
         mask:
         - MachineMask
         layer:
+        - BulletImpassable
         - MidImpassable
         - LowImpassable
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
     enabled: false
-    radius: 4
-    energy: 6
+    radius: 5
+    energy: 7
 
 - type: entity
   parent: LightSomberEidoliteFloorLamp
@@ -276,8 +280,8 @@
     - state: dim-glow
       shader: unshaded
   - type: PointLight
-    radius: 4
-    energy: 3
+    radius: 5
+    energy: 2.5
     color: "#ba473f"
 
 - type: entity

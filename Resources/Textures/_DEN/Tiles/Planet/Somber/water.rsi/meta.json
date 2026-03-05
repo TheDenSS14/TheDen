@@ -23,261 +23,6 @@
       ]
     },
     {
-      "name": "poolwater",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterN",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterS",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterE",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterW",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterNE",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterNW",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterSE",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterSW",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterNdark",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterSdark",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterEdark",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterWdark",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterNEdark",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterNWdark",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterSEdark",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "poolwaterSWdark",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
       "name": "watershine",
       "delays": [
         [
@@ -293,8 +38,39 @@
       ]
     },
     {
-      "name": "poolwaterNshine",
+      "name": "poolwater",
+      "directions": 4,
       "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ],
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ],
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ],
         [
           0.3,
           0.3,
@@ -308,8 +84,39 @@
       ]
     },
     {
-      "name": "poolwaterSshine",
+      "name": "poolwatershine",
+      "directions": 4,
       "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ],
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ],
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ],
         [
           0.3,
           0.3,
@@ -323,94 +130,62 @@
       ]
     },
     {
-      "name": "poolwaterEshine",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
+      "name": "poolbox"
     },
     {
-      "name": "poolwaterWshine",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
+      "name": "poolboxdark"
     },
     {
-      "name": "poolwaterNEshine",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
+      "name": "poolcircle"
     },
     {
-      "name": "poolwaterNWshine",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
+      "name": "poolcircledark"
     },
     {
-      "name": "poolwaterSEshine",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
+      "name": "poolcorner",
+      "directions": 4
     },
     {
-      "name": "poolwaterSWshine",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
+      "name": "poolcornerdark",
+      "directions": 4
+    },
+    {
+      "name": "pooldiagonal",
+      "directions": 4
+    },
+    {
+      "name": "pooldiagonaldark",
+      "directions": 4
+    },
+    {
+      "name": "pooldiagonalglass",
+      "directions": 4
+    },
+    {
+      "name": "pooldiagonalglassdark",
+      "directions": 4
+    },
+    {
+      "name": "poolend",
+      "directions": 4
+    },
+    {
+      "name": "poolenddark",
+      "directions": 4
+    },
+    {
+      "name": "poolglass"
+    },
+    {
+      "name": "poolglassdark"
+    },
+    {
+      "name": "poolside",
+      "directions": 4
+    },
+    {
+      "name": "poolsidedark",
+      "directions": 4
     }
   ]
 }

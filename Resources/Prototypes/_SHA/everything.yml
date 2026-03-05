@@ -281,6 +281,7 @@
         layer:
           - WallLayer
   - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,-0.3"
 
 - type: entity
   parent: WallSomber
@@ -297,6 +298,45 @@
   components:
   - type: Occluder
     enabled: false
+
+- type: entity
+  parent: WallMining
+  id: WallMiningPenthouse
+  name: elevator wall
+  description: "A sturdy wall with space for the elevator."
+  suffix: Right Side] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/elevator.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Walls/elevator.rsi
+
+- type: entity
+  parent: WallMining
+  id: WallMiningPenthouseLeft
+  name: elevator wall
+  description: "A sturdy wall with space for the elevator."
+  suffix: Left Side] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/elevatorleft.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Walls/elevatorleft.rsi
+
+- type: entity
+  parent: WindowSomberDirectionalTinted
+  id: WindowFireEscape
+  name: fire escape wall
+  suffix: Directional, Opaque
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Windows/fire_escape.rsi
+    state: fire_escape
+  - type: Icon
+    sprite: _SHA/Structures/Windows/fire_escape.rsi
+    state: fire_escape
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,-0.3"
 
 # Chairs
 
@@ -719,3 +759,47 @@
   components:
   - type: Airtight
     airBlocked: false
+
+- type: entity
+  parent: AirlockMining
+  id: AirlockMiningPenthouse
+  name: Elevator Door
+  description: "Two-sided doors that link with those of the residence."
+  suffix: NON-AIRTIGHT] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Doors/Airlocks/Standard/elevator.rsi
+  - type: Airtight
+    airBlocked: false
+
+# Stairs
+
+- type: entity
+  parent: Stairs
+  id: StairFireEscape
+  suffix: PENTHOUSE
+  name: fire escape stairs
+  description: "Just in case."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/stairs.rsi
+    state: stairs_fire_escape
+    drawdepth: FloorTiles
+
+# Tiles
+
+- type: tile
+  id: FloorElevatorTransition
+  name: tiles-elevator-transition
+  sprite: /Textures/_SHA/Tiles/elevator.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000

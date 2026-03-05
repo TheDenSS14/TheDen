@@ -72,13 +72,14 @@
   parent: BenchBaseMiddle
   id: BenchSomberMiddle
   name: somber bench
-  suffix: Middle
-  description: "A steel bench with an electrum seat. Uncomfortable, but pretty."
+  suffix: Amaranth, Middle
+  description: "A gloomy steel bench with a polished amaranth wood seat."
   placement:
     mode: SnapgridCenter
   components:
   - type: Sprite
     sprite: _DEN/Structures/Furniture/Benches/somberbench.rsi
+    state: middlepink
   - type: StaticPrice
     price: 125
   - type: Damageable
@@ -113,23 +114,89 @@
 - type: entity
   parent: BenchSomberMiddle
   id: BenchSomberLeft
-  suffix: Left
+  suffix: Amaranth, Left
   components:
   - type: Sprite
-    state: left
+    state: leftpink
 
 - type: entity
   parent: BenchSomberMiddle
   id: BenchSomberRight
-  suffix: Right
+  suffix: Amaranth, Right
   components:
   - type: Sprite
-    state: right
+    state: rightpink
 
 - type: entity
   parent: BenchSomberMiddle
   id: BenchSomberCorner
-  suffix: Corner
+  suffix: Amaranth, Corner
   components:
   - type: Sprite
-    state: corner
+    state: cornerpink
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberMiddleGreen
+  suffix: Floral, Middle
+  description: "A gloomy steel bench with a polished floral wood seat."
+  components:
+  - type: Sprite
+    state: middlegreen
+
+- type: entity
+  parent: BenchSomberMiddleGreen
+  id: BenchSomberLeftGreen
+  suffix: Floral, Left
+  components:
+  - type: Sprite
+    state: leftgreen
+
+- type: entity
+  parent: BenchSomberMiddleGreen
+  id: BenchSomberRightGreen
+  suffix: Floral, Right
+  components:
+  - type: Sprite
+    state: rightgreen
+
+- type: entity
+  parent: BenchSomberMiddleGreen
+  id: BenchSomberCornerGreen
+  suffix: Floral, Corner
+  components:
+  - type: Sprite
+    state: cornergreen
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberMiddlePurple
+  suffix: Shadow, Middle
+  description: "A gloomy steel bench with a polished shadow wood seat."
+  components:
+  - type: Sprite
+    state: middlepurple
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberLeftPurple
+  suffix: Shadow, Left
+  components:
+  - type: Sprite
+    state: leftpurple
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberRightPurple
+  suffix: Shadow, Right
+  components:
+  - type: Sprite
+    state: rightpurple
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberCornerPurple
+  suffix: Shadow, Corner
+  components:
+  - type: Sprite
+    state: cornerpurple
