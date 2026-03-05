@@ -9,5 +9,5 @@ marking-CyberLimbsMarkingAEONLFoot = AEON Left Foot
 marking-CyberLimbsMarkingAEONLFoot-l_foot_base = Base
 marking-CyberLimbsMarkingAEONLFoot-l_foot_marking = Marking
 marking-CyberLimbsMarkingAEONRFoot = AEON Right Foot
-marking-CyberLimbsMarkingAEONRFoot-l_foot_base = Base
-marking-CyberLimbsMarkingAEONRFoot-l_foot_marking = Marking
+marking-CyberLimbsMarkingAEONRFoot-r_foot_base = Base
+marking-CyberLimbsMarkingAEONRFoot-r_foot_marking = Marking
