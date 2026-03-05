@@ -1098,7 +1098,7 @@
     soundHit: null
   - type: TimedDespawn
     lifetime: 10
-    
+
 
 - type: entity
   id: BulletAcid
@@ -1446,7 +1446,7 @@
     impactEffect: BulletImpactEffectRedDisabler
     damage:
       types:
-        Heat: 18 # Den
+        Heat: 14 # Den
     soundHit:
       collection: MeatLaserImpact
 

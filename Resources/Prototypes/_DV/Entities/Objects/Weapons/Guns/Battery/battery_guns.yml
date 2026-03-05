@@ -38,11 +38,11 @@
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
   - type: Battery
-    maxCharge: 1500
-    startingCharge: 1500
+    maxCharge: 2000
+    startingCharge: 2000
   - type: ProjectileBatteryAmmoProvider
     proto: BulletDisabler
-    fireCost: 50
+    fireCost: 66
   - type: EnergyGun
     fireModes:
     - proto: BulletDisabler
@@ -50,7 +50,7 @@
       name: disable
       state: disabler
     - proto: BulletEnergyGunLaserStrong #Den
-      fireCost: 50 #Den, more lethal ammo
+      fireCost: 66 #Den, more lethal ammo
       name: lethal
       state: lethal
   - type: MagazineVisuals
@@ -284,7 +284,7 @@
   name: IK-60 energy carbine
   parent: BaseWeaponBattery
   id: WeaponGunLaserCarbineAutomatic
-  description: "A 60 round hybrid-fire energy carbine." # den, fix description to match capacity
+  description: "A 60 round hybrid-fire energy carbine. Hardened against electromagnetic pulses." # den, fix description to match capacity
   components:
   - type: Sprite
     sprite: _DV/Objects/Weapons/Guns/Battery/energygun_carbine.rsi
@@ -302,23 +302,24 @@
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
     selectedMode: SemiAuto
-    fireRate: 4 #Den, increased fire rate to keep DPS the same
+    fireRate: 5 #Den, increased fire rate to keep DPS the same
     availableModes:
       - SemiAuto
       - FullAuto
   - type: Wieldable
   - type: GunRequiresWield
   - type: Battery
-    maxCharge: 1500 #Den, reduced maximum battery to normalize recharge rates
-    startingCharge: 1500
+    maxCharge: 2000 #Den, reduced maximum battery to normalize recharge rates
+    startingCharge: 2000
   - type: ProjectileBatteryAmmoProvider
     proto: BulletEnergyGunLaserWeak #Den, less damage per hit
-    fireCost: 25
+    fireCost: 33.3
   - type: MagazineVisuals
     magState: mag
     steps: 5
     zeroVisible: true
   - type: Appearance
+  - type: EmpImmune
 
 - type: entity
   parent: BaseWeaponBatterySmall
