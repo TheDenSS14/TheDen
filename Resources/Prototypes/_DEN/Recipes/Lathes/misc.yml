@@ -9,6 +9,13 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: latheRecipe
+  id: BaseHoloprojector
+  completetime: 2
+  materials:
+    Plastic: 250
+    Glass: 200
+
+- type: latheRecipe
   id: BoxFolderFireproof
   result: BoxFolderFireproof
   category: Tools
@@ -224,6 +231,25 @@
   materials:
     Cloth: 800
     Steel: 600
+  
+- type: latheRecipe
+  parent: BaseHoloprojector
+  id: HoloprojectorNSFW
+  result: HoloprojectorNSFW
+
+- type: latheRecipe
+  parent: BaseHoloprojector
+  id: HoloprojectorPrivate
+  result: HoloprojectorPrivate
+
+- type: latheRecipe
+  id: InsulativeFilling
+  result: InsulativeFilling
+  completetime: 3
+  materials:
+    Aluminum: 400 # Aluminium foil :)
+    Gold: 200
+    Bluespace: 40 # The other insulatives cost this.
 
 # Tiles
 - type: latheRecipe

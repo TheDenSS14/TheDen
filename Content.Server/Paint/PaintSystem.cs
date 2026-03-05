@@ -48,6 +48,9 @@ public sealed partial class PaintSystem : SharedPaintSystem // DEN - Made partia
         SubscribeLocalEvent<PaintComponent, GetVerbsEvent<UtilityVerb>>(OnPaintVerb);
 
         SubscribeLocalEvent<PaintComponent, ExaminedEvent>(OnExamined); // DEN - Examine text for paint cans
+        SubscribeLocalEvent<PaintedComponent, ComponentStartup>(OnPaintedComponentStartup); // DEN - Refresh appearance on entity start
+        SubscribeLocalEvent<PaintedComponent, ComponentShutdown>(OnPaintedComponentShutdown); // DEN - Refresh appearance when component removed
+        SubscribeLocalEvent<PaintedComponent, GetVerbsEvent<Verb>>(OnPaintedGetVerbs); // DEN - Refresh / remove paint verbs
     }
 
     private void OnInteract(EntityUid uid, PaintComponent component, AfterInteractEvent args)
@@ -205,10 +208,18 @@ public sealed partial class PaintSystem : SharedPaintSystem // DEN - Made partia
     private bool CanPaint(Entity<PaintComponent> reagent, EntityUid target)
     {
         if (HasComp<HumanoidAppearanceComponent>(target)
-            || HasComp<SubFloorHideComponent>(target)
-            || !_solutionContainer.TryGetSolution(reagent.Owner, reagent.Comp.Solution, out _, out var solution))
+            || HasComp<SubFloorHideComponent>(target))
             return false;
-        var quantity = solution.RemoveReagent(reagent.Comp.Reagent, reagent.Comp.ConsumptionUnit);
-        return (quantity > 0);
+
+        if (!reagent.Comp.ConsumptionUnit.Equals(0.0f))
+        {
+            if (!_solutionContainer.TryGetSolution(reagent.Owner, reagent.Comp.Solution, out _, out var solution))
+                return false;
+
+            var quantity = solution.RemoveReagent(reagent.Comp.Reagent, reagent.Comp.ConsumptionUnit);
+            return quantity > 0;
+        }
+
+        return true;
     }
 }

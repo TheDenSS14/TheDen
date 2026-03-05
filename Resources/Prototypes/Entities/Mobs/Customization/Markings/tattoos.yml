@@ -18,6 +18,7 @@
 # SPDX-FileCopyrightText: 2025 Zephyr
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 ivorytemple
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -113,6 +114,46 @@
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_campbell_r_leg
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesArmsStandardOrganic] # AuroraSong: Marking inheritance
+  id: TattooCampbellLeftArmU
+  bodyPart: LArm
+  markingCategory: LeftArm
+  sprites:
+  - sprite: Mobs/Customization/tattoos.rsi
+    state: tattoo_campbell_l_arm
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesArmsStandardOrganic] # AuroraSong: Marking inheritance
+  id: TattooCampbellRightArmU
+  bodyPart: RArm
+  markingCategory: RightArm
+  sprites:
+  - sprite: Mobs/Customization/tattoos.rsi
+    state: tattoo_campbell_r_arm
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesLegsStandardOrganic] # AuroraSong: Marking inheritance
+  id: TattooCampbellLeftLegU
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  sprites:
+  - sprite: Mobs/Customization/tattoos.rsi
+    state: tattoo_campbell_l_leg
+  shader: unshaded
+
+- type: marking
+  parent: [BaseTattoo, BaseSpeciesLegsStandardOrganic] # AuroraSong: Marking inheritance
+  id: TattooCampbellRightLegU
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  sprites:
+  - sprite: Mobs/Customization/tattoos.rsi
+    state: tattoo_campbell_r_leg
+  shader: unshaded
 
 - type: marking
   parent: [BaseEyes, BaseSpeciesEyesStandard] # AuroraSong: Marking inheritance

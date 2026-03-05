@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 ##### TAILS #####
 
@@ -1191,6 +1191,46 @@
     state: m_tail_snakestripealt_BEHIND_secondary
 
 - type: marking
+  id: TailSnakeStripeU
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Reptilian]
+  layering:
+    m_tail_snakestripe_BEHIND_primary: TailBehind
+    m_tail_snakestripe_BEHIND_secondary: TailBehind
+    m_tail_snakestripe_FRONT_primary: Tail
+    m_tail_snakestripe_FRONT_secondary: Tail
+  colorLinks:
+    m_tail_snakestripe_BEHIND_primary: m_tail_snakestripe_FRONT_primary
+    m_tail_snakestripe_BEHIND_secondary: m_tail_snakestripe_FRONT_secondary
+  sprites:
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakestripe_FRONT_secondary
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakestripe_BEHIND_secondary
+  shader: unshaded
+
+- type: marking
+  id: TailSnakeStripeAltU
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Reptilian]
+  layering:
+    m_tail_snakestripealt_BEHIND_primary: TailBehind
+    m_tail_snakestripealt_BEHIND_secondary: TailBehind
+    m_tail_snakestripealt_FRONT_primary: Tail
+    m_tail_snakestripealt_FRONT_secondary: Tail
+  colorLinks:
+    m_tail_snakestripealt_BEHIND_primary: m_tail_snakestripealt_FRONT_primary
+    m_tail_snakestripealt_BEHIND_secondary: m_tail_snakestripealt_FRONT_secondary
+  sprites:
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakestripealt_FRONT_secondary
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakestripealt_BEHIND_secondary
+  shader: unshaded
+
+- type: marking
   id: TailSnakeTail
   bodyPart: Tail
   markingCategory: Tail
@@ -1228,6 +1268,26 @@
     state: m_tail_snakeunder_BEHIND_primary
   - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
     state: m_tail_snakeunder_BEHIND_secondary
+
+- type: marking
+  id: TailSnakeUnderU
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Reptilian]
+  layering:
+    m_tail_snakeunder_BEHIND_primary: TailBehind
+    m_tail_snakeunder_BEHIND_secondary: TailBehind
+    m_tail_snakeunder_FRONT_primary: Tail
+    m_tail_snakeunder_FRONT_secondary: Tail
+  colorLinks:
+    m_tail_snakeunder_BEHIND_primary: m_tail_snakeunder_FRONT_primary
+    m_tail_snakeunder_BEHIND_secondary: m_tail_snakeunder_FRONT_secondary
+  sprites:
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakeunder_FRONT_secondary
+  - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakeunder_BEHIND_secondary
+  shader: unshaded
 
 - type: marking
   id: TailSpade

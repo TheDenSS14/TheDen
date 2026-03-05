@@ -2,6 +2,8 @@
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Dirius77
+# SPDX-FileCopyrightText: 2026 Kellaris
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -151,7 +153,6 @@
   - JetpackBlue
   - JetpackMini
   - Truncheon
-  - PlasteelArmingSword
   - Terminus
   - CrossbowModern # Frontier
   - BoxShotgunIncendiary
@@ -279,7 +280,8 @@
   - MagazineBRDIP15Incendiary #TheDen
   - MagazineBRDIP15Uranium #TheDen
   - WeaponPistolBRDIP15Standard #TheDen
-  - WeaponPistolEnergyRevolver #TheDen
+  # - WeaponPistolEnergyRevolver #TheDen
+  - InsulativeFilling # Den
 
 - type: latheRecipePack
   id: SecurityTechFabDynamicDenWeaponsNonMech
@@ -288,3 +290,13 @@
   - WeaponRifleVulcanEmpty
   - WeaponRifleLecterEmpty
   - WeaponSubMachineGunDrozdEmpty
+
+# Look, this shouldn't really be in this file. But y'know, we don't really have anywhere else to put it
+- type: latheRecipePack
+  id: NFMercenaryArchetypeMeleeStatic
+  recipes:
+  - PlasteelArmingSword
+  - PlasteelMaceNF
+  - PlasteelEpeeNF
+  - PlasteelAxeNF
+  - PlasteelSpearNF

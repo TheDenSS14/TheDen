@@ -1,10 +1,11 @@
-# SPDX-FileCopyrightText: 2023 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Ed <96445749+theshued@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Ed
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Kellaris
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -27,7 +28,8 @@ thief-backpack-category-chameleon-name = chameleon's kit
 thief-backpack-category-chameleon-description =
     You are everyone and no one; you are a master of disguise.
     Includes: A full set of chameleon clothing,
-    a chameleon projector, and an Agent ID.
+    a chameleon projector, an Agent ID, fake mind-shield implant,
+    and an ID computer board to manipulate your manifest entry.
     Disguise as anyone and anything.
 
 thief-backpack-category-tools-name = bearcatcher's kit
@@ -36,7 +38,9 @@ thief-backpack-category-tools-description =
     and anything else that for whatever reason doesn't
     want to let you in where you need to go.
     Includes two breaching charges, a multitool, jaws of life,
-    a pair of advanced welder meson glasses and some insulated gloves.
+    a pair of advanced welder meson glasses, diamond drill,
+    some insulated gloves, and a smuggler's satchel
+    to keep things hidden.
 
 thief-backpack-category-chemistry-name = chemistry kit
 thief-backpack-category-chemistry-description =
@@ -63,20 +67,25 @@ thief-backpack-category-sleeper-description =
 thief-backpack-category-communicator-name = communicator's kit
 thief-backpack-category-communicator-description =
     A communication enthusiast's kit. Includes a master key
-    for all station channels, a cybersun pen, a portable
-    crew monitor, a voice chameleon mask and lots of money for business deals.
+    for all station channels, two freelancer encryption keys,
+    a cybersun pen, a portable crew monitor, a voice chameleon
+    mask, lots of money for business deals, and a single
+    syndicate code word.
 
 thief-backpack-category-communicator-plasmaman-name = communicator's kit
 thief-backpack-category-communicator-plasmaman-description =
     A communication enthusiast's kit. Includes a master key
-    for all station channels, a cybersun pen, a portable
-    crew monitor, a voice chameleon mask, a tacticool envirosuit
-    and lots of money for business deals.
+    for all station channels, two freelancer encryption keys,
+    a cybersun pen, a portable crew monitor, a voice chameleon
+    mask, lots of money for business deals, and a single
+    syndicate code word.
 
 thief-backpack-category-smuggler-name = smuggler's kit
 thief-backpack-category-smuggler-description =
     A kit for those who like to have big pockets.
-    Includes a fulton beacon, ten fultons, 3 smoke grenades
-    and an invisible crate. You can't move in them,
-    but you can quickly hide or carry valuable loot.
-    This kit also has a cool void cloak to go along with it.
+    Includes thieving gloves, a fulton beacon,
+    ten fultons, 3 smoke grenades, a smuggler's satchel,
+    and an invisible crate.
+    You can't move in them, but you can quickly hide or carry
+    valuable loot. This kit also has a cool void cloak
+    to go along with it.

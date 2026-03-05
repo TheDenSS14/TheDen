@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: consentCategory
   id: general
   priority: 0
@@ -21,3 +26,12 @@
   - ChangelingTarget
   - DragonDevour
   - AllowMoodEmagging
+
+- type: consentCategory
+  id: admin
+  priority: 3
+  members:
+  - AdminBasedHarm
+  - AdminGifts
+  - AdminPettingVictim
+  - Haunting

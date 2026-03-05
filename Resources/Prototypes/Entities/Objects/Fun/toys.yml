@@ -91,7 +91,7 @@
 # SPDX-FileCopyrightText: 2025 slarticodefast
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # A "squeaky toy" is just a toy that squeaks. They lack stashes as well. Plushies are made of fabric and all.
 
@@ -1920,6 +1920,47 @@
 
 - type: entity
   parent: BaseItem
+  id: TennisBall
+  name: tennis ball
+  description: A fuzzy orb of endless betrayal.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Balls/tennisball.rsi
+    state: icon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.25
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.5 # a little bouncy
+        friction: 0.2
+  - type: Catchable
+    catchChance: 0.8
+    catchSuccessSound:
+      path: /Audio/Effects/Footsteps/bounce.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Effects/Footsteps/bounce.ogg
+  - type: Item
+    size: Small
+    sprite: Objects/Fun/Balls/tennisball.rsi
+  - type: EmitSoundOnUse
+    sound:
+      collection: ToySqueak
+      params:
+        volume: -4
+  - type: UseDelay
+  - type: Clothing
+    slots: [mask]
+  - type: Tag
+    tags:
+    - PetWearable
+
+- type: entity
+  parent: BaseItem
   id: BeachBall
   name: beach ball
   description: The simple beach ball is one of Nanotrasen's most popular products. 'Why do we make beach balls? Because we can! (TM)' - Nanotrasen
@@ -2564,23 +2605,6 @@
   - type: FoodSequenceElement
     entries:
       CottonBurger: VegaPlushie
-
-- type: entity
-  parent: BasePlushie
-  id: PlushieAlice
-  name: alice plushie
-  description: This plushie was produced as part of central commands "cuddle command" propaganda plushie line. This one speaks in an unintelligible dialect whenever someone squeezes it.
-  components:
-  - type: Sprite
-    sprite: Objects/Fun/toys.rsi
-    state: aliceplush
-  - type: StaminaDamageOnHit
-    damage: 0.8
-  - type: UseDelay
-    delay: 1.5
-  - type: FoodSequenceElement
-    entries:
-      CottonBurger: AlicePlushie
 
 - type: entity
   parent: BasePlushie

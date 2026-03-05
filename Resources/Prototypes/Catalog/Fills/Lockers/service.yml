@@ -34,7 +34,7 @@
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   id: LockerBoozeFilled
@@ -140,6 +140,10 @@
       - id: LunchboxServiceFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: MoproachBox
+      - id: WireBrush
+        amount: 2
+      - id: BodyDissolverTackBox
+        amount: 2
 
 - type: entity
   id: ClosetLegalFilled

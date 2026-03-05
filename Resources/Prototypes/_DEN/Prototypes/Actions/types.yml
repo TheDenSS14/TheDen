@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2026 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ActionToggleGlowAnimation
+  name: action-name-toggle-glow-animation
+  description: action-description-toggle-glow-animation
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: InstantAction
+      icon: Interface/AdminActions/play.png
+      iconOn: Interface/AdminActions/pause.png
+      itemIconStyle: NoItem
+      useDelay: 1
+      event: !type:AnimateMarkingsToggleActionEvent

@@ -1,7 +1,7 @@
-// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree <airfryerbuyonegetonefree@gmail.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree
+// SPDX-FileCopyrightText: 2025 deltanedas
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 Dirius77
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -28,10 +28,17 @@ public sealed class LatheUpgradeSystem : EntitySystem
         if (!TryComp<LatheComponent>(ent, out var lathe))
             return;
 
-        if (ent.Comp.MaterialUseMultiplier is {} matMul)
+        if (ent.Comp.MaterialUseMultiplier is { } matMul)
+        {
             lathe.MaterialUseMultiplier = matMul;
-        if (ent.Comp.TimeMultiplier is {} timeMul)
+            lathe.FinalMaterialUseMultiplier *= lathe.MaterialUseMultiplier; // DEN: Part upgrades
+        }
+
+        if (ent.Comp.TimeMultiplier is { } timeMul)
+        {
             lathe.TimeMultiplier = timeMul;
+            lathe.FinalTimeMultiplier *= lathe.TimeMultiplier; // DEN: Part upgrades
+        }
 
         Dirty(ent, lathe);
     }

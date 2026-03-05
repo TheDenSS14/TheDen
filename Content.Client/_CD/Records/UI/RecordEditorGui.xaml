@@ -1,9 +1,11 @@
 <!--
-SPDX-FileCopyrightText: 2025 Lyndomen <49795619+Lyndomen@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+SPDX-FileCopyrightText: 2025 Lyndomen
+SPDX-FileCopyrightText: 2025 Shaman
+SPDX-FileCopyrightText: 2025 portfiend
+SPDX-FileCopyrightText: 2025 sleepyyapril
+SPDX-FileCopyrightText: 2026 Aikakakah
 
-SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 -->
 
 <Control xmlns="https://spacestation14.io"
@@ -11,6 +13,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
     <BoxContainer Orientation="Vertical">
          <ScrollContainer VerticalExpand="True">
              <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="10">
+                <!-- DEN Birthday -->
+                 <BoxContainer Orientation="Horizontal">
+                     <Label Text="{Loc 'humanoid-profile-editor-cd-records-birthday'}" />
+                     <Control HorizontalExpand="True" />
+                     <LineEdit Name="BirthdayEdit" HorizontalAlignment="Right" MinSize="350 0"/>
+                 </BoxContainer>
                  <!-- Emergency Contact -->
                  <BoxContainer Orientation="Horizontal">
                      <Label Text="{Loc 'humanoid-profile-editor-cd-records-contact-name'}" />

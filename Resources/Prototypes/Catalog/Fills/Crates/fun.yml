@@ -110,11 +110,17 @@
       - !type:EntSelector
         id: PlushieVega
       - !type:EntSelector
-        id: PlushieAlice
-      - !type:EntSelector
         id: PlushieJenn
       - !type:EntSelector
         id: PlushieAzalea
+      - !type:EntSelector
+        id: PlushiePatty
+      - !type:EntSelector
+        id: PlushieTwiggy
+      - !type:EntSelector
+        id: PlushieStu
+      - !type:EntSelector
+        id: PlushiePhil
       - !type:EntSelector
         id: PlushieSharkBlue
       - !type:EntSelector
@@ -131,6 +137,8 @@
         id: PlushieHampter
       - !type:EntSelector
         id: PlushieMoth
+      - !type:EntSelector # Den
+        id: PlushieMothObservant
       - !type:EntSelector
         id: PlushieArachind
       - !type:EntSelector
@@ -485,6 +493,8 @@
       - id: ClothingShoesClownLarge
       - id: ClothingHeadHatMagician
       - id: BeachBall
+      - id: TennisBall
+        amount: 2
       - id: ClothingShoesSkates
 
 - type: entity

@@ -20,7 +20,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: vendingMachineInventory
   id: NanoMedPlusInventory
@@ -31,6 +31,18 @@
     Bloodpack: 5
     EpinephrineChemistryBottle: 3
     Syringe: 5
+    # DEN Start
+    PillBicaridine: 3
+    PillDermaline: 3
+    PillDexalin: 3
+    PillSaline: 5
+    PillTricordrazine: 5
+    AntiPoisonMedipen: 1
+    RadAutoInjector: 1
+    AirlossAutoInjector: 1
+    FoodGumball: 10
+    FoodLollipop: 10
+    # DEN End
     Portafib: 1
     ClothingEyesGlasses: 5
     ClothingEyesHudMedical: 2

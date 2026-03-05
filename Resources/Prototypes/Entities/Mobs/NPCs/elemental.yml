@@ -22,7 +22,7 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   abstract: true
@@ -266,7 +266,7 @@
   name: Reagent slime
   id: ReagentSlime
   suffix: Water
-  parent: [ MobAdultSlimes, MobCombat ]
+  parent: [ MobAdultSlimes, MobCombat, MobVentCritter ] # Den: add MobVentCritter
   description: It consists of a liquid, and it wants to dissolve you in itself.
   components:
   - type: GhostRole

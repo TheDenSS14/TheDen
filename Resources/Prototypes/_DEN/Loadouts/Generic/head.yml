@@ -41,6 +41,17 @@
       group: LoadoutHead
 
 - type: loadout
+  id: LoadoutHeadHatNanoballsoft
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatNanoballsoft
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
   id: LoadoutHeadBeretWhite
   category: Head
   cost: 1

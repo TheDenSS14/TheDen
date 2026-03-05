@@ -32,6 +32,7 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Kellaris
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -306,3 +307,24 @@
     walkModifier: 1
     sprintModifier: 1
   - type: HeldSpeedModifier
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelThiefChameleon
+  name: duffel bag
+  suffix: Thief
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingUniformJumpsuitChameleon
+    - id: ClothingOuterChameleon
+    - id: ClothingShoesChameleon
+    - id: ClothingNeckChameleon
+    - id: ClothingMaskGasChameleon
+    - id: ClothingHeadHatChameleon
+    - id: ClothingEyesChameleon
+    - id: ClothingHeadsetChameleon
+    - id: AgentIDCard
+    - id: ChameleonProjector
+    - id: IDComputerCircuitboard # Den, to alter their own entry on the manifest
+    - id: MindShieldImplanterFake # Den, it's a real mindshield component, but doesn't stop someone from thieving

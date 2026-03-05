@@ -10,6 +10,7 @@
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 entings
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -18,8 +19,8 @@
   parent: BaseItem
   abstract: true
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Arachnid/organs.rsi
+  - type: Sprite #imp
+    sprite: _Impstation/Mobs/Species/Arachnid/organs.rsi
   - type: Organ
   - type: Food
   - type: Extractable
@@ -43,17 +44,21 @@
 - type: entity
   id: OrganArachnidStomach
   parent: OrganAnimalStomach
-  name: stomach
+  name: arachnid stomach #imp
   description: "Gross. This is hard to stomach."
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Arachnid/organs.rsi
+  - type: Sprite #imp
+    sprite: _Impstation/Mobs/Species/Arachnid/organs.rsi
     state: stomach
   - type: Organ # Shitmed
     slotId: stomach
   - type: Stomach
     updateInterval: 1.5
+    specialDigestible:  #imp
+      tags:
+      - SpiderFood
+    isSpecialDigestibleExclusive: false  #imp
   - type: SolutionContainerManager
     solutions:
       stomach:
@@ -69,26 +74,26 @@
 - type: entity
   id: OrganArachnidLungs
   parent: BaseArachnidOrgan
-  name: lungs
+  name: book lungs #imp
   description: "Filters oxygen from an atmosphere... just more greedily."
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     layers:
-      - state: lung-l
-      - state: lung-r
+      - state: lung_l
+      - state: lung_r
   - type: Organ # Shitmed
     slotId: lungs
   - type: Lung
   - type: Metabolizer
-    updateInterval: 1.5
+    updateInterval: 0.75 #imp edited from 1.5
     removeEmpty: true
     solutionOnBody: false
     solution: "Lung"
     metabolizerTypes: [ Human ]
     groups:
     - id: Gas
-      rateModifier: 100.0
+      rateModifier: 75.0 #imp edited from 100.0
   - type: SolutionContainerManager
     solutions:
       organ:
@@ -108,7 +113,7 @@
   id: OrganArachnidHeart
   parent: BaseArachnidOrgan
   name: heart
-  description: "A disgustingly persistent little biological pump made for spiders."
+  description: "A persistent little biological pump made for spiders." #imp: removed 'disgustingly'
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -116,7 +121,7 @@
   - type: Metabolizer
     updateInterval: 1.5
     maxReagents: 2
-    metabolizerTypes: [Arachnid]
+    metabolizerTypes: [Arachnid, Animal] #imp - adds animal
     groups:
     - id: Medicine
     - id: Poison
@@ -128,11 +133,12 @@
 - type: entity
   id: OrganArachnidLiver
   parent: BaseHumanOrgan
-  name: liver
+  name: hepatic caecum #imp
   description: "Pairing suggestion: chianti and fava beans."
   categories: [ HideSpawnMenu ]
   components:
-  - type: Sprite
+  - type: Sprite #imp
+    sprite: _Impstation/Mobs/Species/Arachnid/organs.rsi
     state: liver
   - type: Metabolizer # The liver metabolizes certain chemicals only, like alcohol.
     updateInterval: 1.5
@@ -148,16 +154,17 @@
 - type: entity
   id: OrganArachnidKidneys
   parent: BaseHumanOrgan
-  name: kidneys
+  name: malpighian tubules #imp
   description: "Filters toxins from the bloodstream."
   categories: [ HideSpawnMenu ]
   components:
   - type: Organ # Shitmed
     slotId: kidneys
-  - type: Sprite
+  - type: Sprite #imp
+    sprite: _Impstation/Mobs/Species/Arachnid/organs.rsi
     layers:
-      - state: kidney-l
-      - state: kidney-r
+      - state: kidney_l
+      - state: kidney_r
   # The kidneys just remove anything that doesn't currently have any metabolisms, as a stopgap.
   - type: Metabolizer
     updateInterval: 1.5
@@ -187,5 +194,6 @@
   description: "A fleshy muscle mostly used for lying."
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
-  - type: Sprite
+  - type: Sprite #imp
+    sprite: Mobs/Species/Arachnid/organs.rsi
     state: tongue

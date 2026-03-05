@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 This_Is_Gray
+# SPDX-FileCopyrightText: 2026 sheepie
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -108,6 +109,11 @@ entities:
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
+    - type: DeviceNetwork
+      deviceNetId: Wireless
+      configurators: []
+      deviceLists: []
+      transmitFrequencyId: ShuttleTimer
     - type: DecalGrid
       chunkCollection:
         version: 2

@@ -4,6 +4,7 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Jakumba
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -307,3 +308,76 @@
         - Security
   items:
     - ClothingOuterArmorBasicCompact
+
+- type: loadout
+  id: LoadoutSecurityPlasteelEpee
+  category: JobsSecurityAUncategorized
+  cost: 3
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 10800 # 3 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+  items:
+    - PlasteelEpeeSecurity
+
+
+- type: loadout
+  id: LoadoutSecurityPlasteelMace
+  category: JobsSecurityAUncategorized
+  cost: 3
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 10800 # 3 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+  items:
+    - PlasteelMaceSecurity
+
+- type: loadout
+  id: LoadoutSecurityPlasteelAxe
+  category: JobsSecurityAUncategorized
+  cost: 3
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 10800 # 3 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+  items:
+    - PlasteelAxeSecurity
+
+- type: loadout
+  id: LoadoutSecurityPlasteelSpear
+  category: JobsSecurityAUncategorized
+  cost: 3
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 10800 # 3 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+  items:
+    - PlasteelSpearSecurity

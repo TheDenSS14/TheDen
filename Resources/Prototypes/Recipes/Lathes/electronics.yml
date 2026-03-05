@@ -60,6 +60,7 @@
 # SPDX-FileCopyrightText: 2025 lzk
 # SPDX-FileCopyrightText: 2025 marc-pelletier
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 Kellaris
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -1175,6 +1176,17 @@
      Steel: 100
      Glass: 500
      Gold: 100
+
+- type: latheRecipe
+  id: ReagentGrinderAdvancedMachineCircuitboard
+  result: ReagentGrinderAdvancedMachineCircuitboard
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
+    Uranium: 500
+    Bluespace: 200
 
 - type: latheRecipe
   id: JukeboxCircuitBoard

@@ -4,6 +4,9 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 creku
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Kellaris
+# SPDX-FileCopyrightText: 2026 LilNutters
+# SPDX-FileCopyrightText: 2026 Tanix
 # SPDX-FileCopyrightText: 2026 crekulon
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -97,6 +100,8 @@
   - WelderExperimental
   - JawsOfLife
   - OreBagOfHolding
+  - PlantBagOfHolding
+  - ConstructionBagOfHolding
   - DeviceQuantumSpinInverter
   - PKAUpgradeDamage # Lavaland Change
   - PKAUpgradeRange # Lavaland Change
@@ -130,6 +135,8 @@
   - BluespaceManipulatorStockPart
   - BluespaceCapacitorStockPart
   - BluespacePlushiePatch
+  - ClothingMaskBreathEatThrough #DEN - Vox Mask
+  - InsulativeFilling
 
 - type: latheRecipePack
   id: ProtolatheDynamicEmagAwfulDen
@@ -175,7 +182,7 @@
   - WeaponPistolBRDIP15Standard #TheDen
   - MagazineBRDIP15Incendiary #TheDen
   - MagazineBRDIP15Uranium #TheDen
-  - WeaponPistolEnergyRevolver #TheDen
+  # - WeaponPistolEnergyRevolver #TheDen
 
 - type: latheRecipePack
   id: ProtolatheStaticEmagAwfulDen

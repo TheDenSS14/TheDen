@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 ivorytemple
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -42,3 +43,7 @@ marking-TailSnailLizard = Snail Shell
 marking-TailSnailLizard-tail_snizard1 = Shell
 marking-TailSnailLizard-tail_snizard2 = Tail
 marking-TailSnailLizard-tail_snizard3 = Undertail
+
+marking-TailGeckoU-tail_gecko2 = Spots
+marking-TailSnailLizardU = Snail Shell (Overlay)
+marking-TailSnailLizardU-tail_snizard3 = Undertail

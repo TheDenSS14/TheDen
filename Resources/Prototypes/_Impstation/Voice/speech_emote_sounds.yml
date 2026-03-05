@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Suyo
+# SPDX-FileCopyrightText: 2026 entings
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -25,3 +26,24 @@
       collection: Weh
   params:
     variation: 0.125
+
+- type: emoteSounds
+  id: ArachnidBodyEmotes
+  sounds:
+    Clap:
+      collection: Claps
+    ClapSingle:
+      collection: ClapSingle
+    Snap:
+      collection: Snaps
+      params:
+        volume: -6
+    Salute:
+      collection: Salutes
+    Crack:
+      collection: Cracks
+    Blink:
+      collection: SpiderBlinks
+      params:
+        volume: -3
+        variation: 0.1

@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2026 Marcel
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -116,3 +117,6 @@ reagent-desc-cherrysoda = A sweet glass of cherry soda.
 
 reagent-name-vodkacheers = vodka cheers
 reagent-desc-vodkacheers = A crisp cherry flavored cocktail.
+
+reagent-name-chainmail = chainmail
+reagent-desc-chainmail = A bitter bite, served in a dark oak tankard. Only for the brave dungeon delvers.

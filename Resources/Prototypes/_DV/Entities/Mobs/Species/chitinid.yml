@@ -33,7 +33,7 @@
 - type: entity
   save: false
   name: Urist McAnt
-  parent: BaseMobSpeciesOrganic
+  parent: [BaseMobSpeciesOrganic, StorableSpecies] # TheDen
   id: BaseMobChitinid
   abstract: true
   components:

@@ -6,8 +6,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._DEN.Markings;
 using Content.Server.Actions;
 using Content.Server.Humanoid;
+using Content.Shared._DEN.Actions;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Mobs;
@@ -32,7 +34,7 @@ public sealed class WaggingSystem : EntitySystem
 
         SubscribeLocalEvent<WaggingComponent, MapInitEvent>(OnWaggingMapInit);
         SubscribeLocalEvent<WaggingComponent, ComponentShutdown>(OnWaggingShutdown);
-        SubscribeLocalEvent<WaggingComponent, ToggleActionEvent>(OnWaggingToggle);
+        SubscribeLocalEvent<WaggingComponent, WaggingActionEvent>(OnWaggingToggle);
         SubscribeLocalEvent<WaggingComponent, MobStateChangedEvent>(OnMobStateChanged);
     }
 
@@ -46,12 +48,12 @@ public sealed class WaggingSystem : EntitySystem
         _actions.RemoveAction(uid, component.ActionEntity);
     }
 
-    private void OnWaggingToggle(EntityUid uid, WaggingComponent component, ref ToggleActionEvent args)
+    private void OnWaggingToggle(EntityUid uid, WaggingComponent component, ref WaggingActionEvent args)
     {
         if (args.Handled)
             return;
 
-        TryToggleWagging(uid, wagging: component);
+        args.Handled = TryToggleWagging(uid, wagging: component);
     }
 
     private void OnMobStateChanged(EntityUid uid, WaggingComponent component, MobStateChangedEvent args)
@@ -71,41 +73,43 @@ public sealed class WaggingSystem : EntitySystem
         if (markings.Count == 0)
             return false;
 
-        wagging.Wagging = !wagging.Wagging;
-        _actions.SetToggled(wagging.ActionEntity, wagging.Wagging);
-
         for (var idx = 0; idx < markings.Count; idx++) // Animate all possible tails
         {
             var currentMarkingId = markings[idx].MarkingId;
-            string newMarkingId;
+            var opposite = _humanoidAppearance.GetOppositeAnimatedMarking(
+                MarkingCategories.Tail,
+                markings[idx].MarkingId,
+                wagging.Suffix);
 
-            if (wagging.Wagging)
+
+            if (opposite.Marking != null)
             {
-                newMarkingId = $"{currentMarkingId}{wagging.Suffix}";
-            }
-            else
-            {
-                if (currentMarkingId.EndsWith(wagging.Suffix))
+                var ev = new AnimatedToggleEvent
                 {
-                    newMarkingId = currentMarkingId[..^wagging.Suffix.Length];
-                }
-                else
-                {
-                    newMarkingId = currentMarkingId;
-                    Log.Warning($"Unable to revert wagging for {currentMarkingId}");
-                }
+                    ActionEntity = wagging.ActionEntity,
+                    OldMarkingId = currentMarkingId,
+                    NewMarkingId = opposite.Marking
+                };
+                RaiseLocalEvent(uid, ev);
             }
 
-            if (!_prototype.HasIndex<MarkingPrototype>(newMarkingId))
+            var isAnimated = _humanoidAppearance.SetAnimatedMarkingId(
+                uid,
+                MarkingCategories.Tail,
+                idx,
+                currentMarkingId,
+                wagging.Suffix,
+                humanoid: humanoid);
+
+            if (isAnimated == null)
             {
-                Log.Warning($"{ToPrettyString(uid)} tried toggling wagging but {newMarkingId} marking doesn't exist");
+                Log.Warning($"{ToPrettyString(uid)} tried toggling wagging for {currentMarkingId} but something went wrong.");
                 continue;
             }
 
-            _humanoidAppearance.SetMarkingId(uid, MarkingCategories.Tail, idx, newMarkingId,
-                humanoid: humanoid);
+            wagging.Wagging = isAnimated.Value;
+            _actions.SetToggled(wagging.ActionEntity, wagging.Wagging);
         }
-
         return true;
     }
 }

@@ -4,8 +4,9 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 sheepie
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: greatshield
@@ -82,7 +83,7 @@
       color: "#678AD9"
     - type: ItemTogglePointLight
     - type: Blocking
-      passiveBlockFraction: 0.7
+      passiveBlockFraction: 0.70
       passiveBlockModifier:
         coefficients:
           Blunt: 1
