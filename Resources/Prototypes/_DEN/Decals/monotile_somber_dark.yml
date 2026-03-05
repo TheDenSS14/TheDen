@@ -119,3 +119,34 @@
     sprite: _DEN/Decals/monotile_somber_dark.rsi
     state: steel_line_w
 
+- type: decal
+  id: MonoTileSomberDarkInnerNe
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber_dark.rsi
+    state: steel_inner_ne
+
+- type: decal
+  id: MonoTileSomberDarkInnerSe
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber_dark.rsi
+    state: steel_inner_se
+
+- type: decal
+  id: MonoTileSomberDarkInnerNw
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber_dark.rsi
+    state: steel_inner_nw
+
+- type: decal
+  id: MonoTileSomberDarkInnerSw
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber_dark.rsi
+    state: steel_inner_sw

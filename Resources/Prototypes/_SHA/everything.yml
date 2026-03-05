@@ -49,8 +49,18 @@
 # Decals
 
 - type: decal
+  id: MonoTileSomberDarkPenthouseMigrations
+  parent: Overlays
+  abstract: true
+
+- type: decal
+  id: MonoTileSomberDarkPenthouse
+  parent: MiniTile
+  abstract: true
+
+- type: decal
   id: MonoTileSomberDarkPenthouseTrimN
-  parent: MonoTileSomberDark
+  parent: MonoTileSomberDarkPenthouseMigrations
   tags: ["station", "markings"]
   sprite:
     sprite: _SHA/Decals/monotile_somber_dark.rsi
@@ -58,7 +68,7 @@
 
 - type: decal
   id: MonoTileSomberDarkPenthouseTrimS
-  parent: MonoTileSomberDark
+  parent: MonoTileSomberDarkPenthouseMigrations
   tags: ["station", "markings"]
   sprite:
     sprite: _SHA/Decals/monotile_somber_dark.rsi
@@ -66,7 +76,7 @@
 
 - type: decal
   id: MonoTileSomberDarkPenthouseTrimE
-  parent: MonoTileSomberDark
+  parent: MonoTileSomberDarkPenthouseMigrations
   tags: ["station", "markings"]
   sprite:
     sprite: _SHA/Decals/monotile_somber_dark.rsi
@@ -74,7 +84,7 @@
 
 - type: decal
   id: MonoTileSomberDarkPenthouseTrimW
-  parent: MonoTileSomberDark
+  parent: MonoTileSomberDarkPenthouseMigrations
   tags: ["station", "markings"]
   sprite:
     sprite: _SHA/Decals/monotile_somber_dark.rsi
@@ -82,7 +92,7 @@
 
 - type: decal
   id: MonoTileSomberDarkPenthouseTrimNE
-  parent: MonoTileSomberDark
+  parent: MonoTileSomberDarkPenthouseMigrations
   tags: ["station", "markings"]
   sprite:
     sprite: _SHA/Decals/monotile_somber_dark.rsi
@@ -90,7 +100,7 @@
 
 - type: decal
   id: MonoTileSomberDarkPenthouseTrimNW
-  parent: MonoTileSomberDark
+  parent: MonoTileSomberDarkPenthouseMigrations
   tags: ["station", "markings"]
   sprite:
     sprite: _SHA/Decals/monotile_somber_dark.rsi
@@ -98,7 +108,7 @@
 
 - type: decal
   id: MonoTileSomberDarkPenthouseTrimSE
-  parent: MonoTileSomberDark
+  parent: MonoTileSomberDarkPenthouseMigrations
   tags: ["station", "markings"]
   sprite:
     sprite: _SHA/Decals/monotile_somber_dark.rsi
@@ -106,10 +116,74 @@
 
 - type: decal
   id: MonoTileSomberDarkPenthouseTrimSW
-  parent: MonoTileSomberDark
+  parent: MonoTileSomberDarkPenthouseMigrations
   tags: ["station", "markings"]
   sprite:
     sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_sw
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimNReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_n
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimSReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_s
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimEReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_e
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimWReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_w
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimNEReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_ne
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimNWReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_nw
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimSEReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_se
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimSWReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
     state: steel_trim_sw
 
 - type: decal
