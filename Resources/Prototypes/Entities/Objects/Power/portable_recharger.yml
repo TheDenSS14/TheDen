@@ -40,7 +40,7 @@
   - type: ItemSlots
     slots:
       charger_slot:
-        ejectOnInteract: true
+        insertOnInteract: true
         whitelist:
           components:
           - HitscanBatteryAmmoProvider
