@@ -4,7 +4,7 @@
   name: somber shower
   description: "A bulky, angled showerhead with pressure tuned for full coverage."
   components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS PLEASE GOD PLEASE (SO I CAN TOGGLE MULTIPLE SHOWERS AT ONCE)
-    - type: Sprite
+    - type: Sprite # TODO: IT'D ALSO BE REALLY NICE IF SHOWERS DIDN'T RANDOMLY SPAWN TURNED ON, IT SUCKS FOR A PENTHOUSE
       sprite: _DEN/Structures/Furniture/sombershower.rsi
     - type: StaticPrice
       price: 125

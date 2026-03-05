@@ -306,6 +306,9 @@
           bounds: "-0.5,-0.5,0.5,0.5"
         hard: false
         density: 100
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepTile
 
 - type: entity
   parent: SomberPoolWater
@@ -327,6 +330,9 @@
           bounds: "-0.5,-0.5,0.5,0.5"
         hard: false
         density: 100
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepTile
 
 # Dark Color
 
