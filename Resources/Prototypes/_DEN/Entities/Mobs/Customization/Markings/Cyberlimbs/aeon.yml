@@ -1,0 +1,72 @@
+- type: marking
+  id: CyberLimbsMarkingAEONLLeg
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [IPC, Human, Felinid, Canid]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+      fallbackTypes:
+      - !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Cyberlimbs/aeon.rsi
+    state: l_leg_base
+  - sprite: _DEN/Mobs/Customization/Cyberlimbs/aeon.rsi
+    state: l_leg_marking
+
+- type: marking
+  id: CyberLimbsMarkingAEONRLeg
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [IPC, Human, Felinid, Canid]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+      fallbackTypes:
+      - !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Cyberlimbs/aeon.rsi
+    state: r_leg_base
+  - sprite: _DEN/Mobs/Customization/Cyberlimbs/aeon.rsi
+    state: r_leg_marking
+
+- type: marking
+  id: CyberLimbsMarkingAEONLFoot
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  speciesRestriction: [IPC, Human, Felinid, Canid]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+      fallbackTypes:
+      - !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Cyberlimbs/aeon.rsi
+    state: l_foot_base
+  - sprite: _DEN/Mobs/Customization/Cyberlimbs/aeon.rsi
+    state: l_foot_marking
+
+- type: marking
+  id: CyberLimbsMarkingAEONRFoot
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  speciesRestriction: [IPC, Human, Felinid, Canid]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+      fallbackTypes:
+      - !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Cyberlimbs/aeon.rsi
+    state: r_foot_base
+  - sprite: _DEN/Mobs/Customization/Cyberlimbs/aeon.rsi
+    state: r_foot_marking
+
