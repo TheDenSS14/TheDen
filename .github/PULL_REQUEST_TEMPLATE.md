@@ -1,7 +1,7 @@
 <!-- Guidelines: https://docs.spacestation14.io/en/getting-started/pr-guideline -->
-<!-- NOTE: All code submitted to this repository is ALWAYS licensed under the AGPL-3.0-or-later license. 
-The REUSE Specification headers or separate .license files indicate a secondary license (e.g., MPL or MIT) solely to facilitate 
-integration for projects that do not use the AGPL license. This secondary license does not replace the fact that AGPL-3.0-or-later remains the primary and binding license. 
+<!-- NOTE: All code submitted to this repository is ALWAYS licensed under the AGPL-3.0-or-later license.
+The REUSE Specification headers or separate .license files indicate a secondary license (e.g., MPL or MIT) solely to facilitate
+integration for projects that do not use the AGPL license. This secondary license does not replace the fact that AGPL-3.0-or-later remains the primary and binding license.
 Uncomment and modify the following line if you wish to change the license from the default of AGPL.-->
 <!--- LICENSE: AGPL -->
 ## About the PR
@@ -24,6 +24,9 @@ Small fixes/refactors are exempt. Media may be used in SS14 progress reports wit
 - [ ] I have tested any changes or additions.
 - [ ] I can confirm this PR contains no AI-generated content, and did not use any AI-generated content.
 <!-- You should understand that not following the above may get your PR closed at maintainer’s discretion -->
+
+### Licensing
+- [ ] (OPTIONAL) This pull request contains code or assets that are owned by me, and I give permission for my own contributions to be re-licensed under MIT.
 
 ## Breaking changes
 <!-- List any breaking changes, including namespaces, public class/method/field changes, prototype renames; and provide instructions for fixing them.
