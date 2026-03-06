@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Shaman
+# SPDX-FileCopyrightText: 2026 gardens
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
