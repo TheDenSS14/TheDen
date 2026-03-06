@@ -88,3 +88,16 @@
           color: "#ffffff"
     - type: FireVisuals
       normalState: fire-cluster
+
+- type: entity
+  parent: CandleSomberMantis
+  id: CandleSomberMantisTiny
+  name: mnemolith candle (tea light)
+  description: "A tea light made with mnemolith powder. Light enough to float on water."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-tiny
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-tiny

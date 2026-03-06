@@ -7,9 +7,10 @@
   parent: Fireplace
   id: SomberFireplace
   name: somber electrum fireplace
+  suffix: Click After Mapping
   description: "An avant-garde fireplace shaped like an eye, its smokeless psionic flame rippling like liquid."
-  components:
-  - type: Sprite
+  components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS PLEASE GOD PLEASE (SO THEY CAN BE TOGGLED WITH SWITCHES)
+  - type: Sprite # TODO: IT'D ALSO BE REALLY NICE IF THEY COULD SPAWN TURNED ON SO I CAN MIGRATE ALL THE TURNED-OFF ONES TO BE LIT UP ON MAP SPAWN
     noRot: true
     sprite: _DEN/Structures/Decoration/somberfireplace.rsi
     layers:
@@ -17,10 +18,10 @@
       - state: fireplacefestive
         map: ["christmas"]
         visible: false
-      - state: fireplace_fire4
+      - state: fireplace_fire
         shader: unshaded
-      - state: fireplace_glow
-        shader: unshaded
+        visible: false
+        map: ["light"]
   - type: Appearance
   - type: HolidayVisuals
     holidays:
@@ -31,14 +32,31 @@
       enum.HolidayVisuals.Holiday:
         christmas:
           festive: { visible: true }
-  - type: AmbientSound
-    volume: -6
-    range: 5
-    sound:
-      path: /Audio/Ambience/Objects/fireplace.ogg
+      enum.ToggleableVisuals.Enabled:
+        light:
+          True: { visible: true }
+          False: { visible: false }
+  - type: InteractionOutline
+  - type: ItemTogglePointLight
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      path: /Audio/_DEN/Effects/crystaltap1.ogg
+      params:
+        volume: -6
+        variation: 0.05
+    soundDeactivate:
+      path: /Audio/_DEN/Effects/crystaltap2.ogg
+      params:
+        volume: -6
+        variation: 0.05
+  - type: UnpoweredFlashlight
+  - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
-    radius: 4
-    energy: 6
+    enabled: false
+    radius: 5
+    energy: 7
+    softness: 1.22
     color: "#4dc4ff"
   - type: AlwaysHot
   - type: Damageable
@@ -85,23 +103,24 @@
   parent: BaseSignDirectional # So it's technically wall decor, but whatever
   id: SomberHangingBrazier
   name: somber hanging brazier
+  suffix: Click After Mapping
   description: "An electrum brazier, its smokeless psionic flame rippling like liquid."
   placement:
     mode: WallmountLight
-  components:
-  - type: Sprite
+  components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS PLEASE GOD PLEASE (SO THEY CAN BE TOGGLED WITH SWITCHES)
+  - type: Sprite # TODO: IT'D ALSO BE REALLY NICE IF THEY COULD SPAWN TURNED ON SO I CAN MIGRATE ALL THE TURNED-OFF ONES TO BE LIT UP ON MAP SPAWN
     drawdepth: SmallObjects
-    noRot: true
+    noRot: false
     sprite: _DEN/Structures/Decoration/somberhangingbrazier.rsi
     layers:
       - state: fireplace
       - state: fireplacefestive # It still gets a ribbon when it's Christmas
         map: ["christmas"]
         visible: false
-      - state: fireplace_fire4
+      - state: fireplace_fire
         shader: unshaded
-      - state: fireplace_glow
-        shader: unshaded
+        visible: false
+        map: ["light"]
   - type: Appearance
   - type: HolidayVisuals
     holidays:
@@ -112,10 +131,31 @@
       enum.HolidayVisuals.Holiday:
         christmas:
           festive: { visible: true }
+      enum.ToggleableVisuals.Enabled:
+        light:
+          True: { visible: true }
+          False: { visible: false }
+  - type: InteractionOutline
+  - type: ItemTogglePointLight
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      path: /Audio/_DEN/Effects/crystaltap1.ogg
+      params:
+        volume: -6
+        variation: 0.05
+    soundDeactivate:
+      path: /Audio/_DEN/Effects/crystaltap2.ogg
+      params:
+        volume: -6
+        variation: 0.05
+  - type: UnpoweredFlashlight
+  - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
-    radius: 3
-    energy: 4
-    softness: 1.1
+    enabled: false
+    radius: 4
+    energy: 5
+    softness: 1.22
     color: "#4dc4ff"
   - type: StaticPrice
     price: 125

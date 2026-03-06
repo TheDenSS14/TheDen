@@ -7,14 +7,19 @@
   parent: [BaseItem, BaseAntiPsionicWeapon, BaseMantisContraband] # If I parented it to Lantern, it would have a battery slot...
   id: LanternMantis
   name: mantis lantern
-  description: "An ornate lantern housing an eidolite pyramid that draws power from the noosphere. Instead of merely casting light, it seems to declare it--an austere radiance that etches itself into whatever it touches. Stare too long and the gleam resolves into shapes you almost recognize, then promptly forget. For all its theatrics, the handle still hangs comfortably on your back."
+  description: "An ornate lantern housing an eidolite pyramid that draws power from the noosphere. Stare too long and the gleam resolves into shapes you almost recognize, then promptly forget. For all its theatrics, the handle still hangs comfortably on your back."
   components:
     - type: Sprite
       sprite: _DEN/Objects/Specific/Mantis/lanternmantis.rsi
       layers:
-        - state: icon
-        - state: icon-crystal
-          shader: unshaded
+      - state: icon
+      - state: icon-crystal
+      - state: icon-crystal-glow
+        shader: unshaded
+      - state: icon-crystal
+        shader: unshaded
+        visible: false
+        map: ["light"]
     - type: Item
       sprite: _DEN/Objects/Specific/Mantis/lanternmantis.rsi
     - type: EtherealLight # Dims around ethereal entities
@@ -22,6 +27,7 @@
       enabled: false
       radius: 3
       energy: 4
+      softness: 1.22
       color: "#d9418d"
       netsync: false
     - type: Appearance
@@ -56,6 +62,12 @@
         params:
           volume: -2
           variation: 0.05
+    - type: GenericVisualizer
+      visuals:
+        enum.ToggleableVisuals.Enabled:
+          light:
+            True: { visible: true }
+            False: { visible: false }
     - type: StealTarget
       stealGroup: LAMP # The moths are coming the moths are coming
     - type: Clothing
@@ -81,39 +93,44 @@
       - MantisBeltStorable
 
 - type: entity
-  parent: BaseItem # And if I parented LanternMantis to this, the sprite layers would freak out...
+  parent: BaseItem
   id: LanternSomber
-  name: somber orb
+  name: somber lamp
   description: "A palm-sized electrum sphere studded with shards of eidolite, each humming with faint noospheric charge. Its glow lingers in your vision, imprinting shapes you can't quite name."
   components:
     - type: Sprite
       sprite: _DEN/Objects/Tools/somberlamp.rsi
       layers:
-        - state: icon
-        - state: icon-crystal
-          shader: unshaded
+      - state: icon
+      - state: icon-crystal
+      - state: icon-crystal-glow
+        shader: unshaded
+      - state: icon-crystal
+        shader: unshaded
+        visible: false
+        map: ["light"]
     - type: Item
       sprite: _DEN/Objects/Tools/somberlamp.rsi
-      inhandVisuals:
-        left:
-          - state: inhand-left
-          - state: inhand-left-crystal
-            shader: unshaded
-        right:
-          - state: inhand-right
-          - state: inhand-right-crystal
-            shader: unshaded
     - type: EtherealLight # Dims around ethereal entities
     - type: PointLight
       enabled: false
       radius: 3
       energy: 4
+      softness: 1.22
       color: "#d9418d"
       netsync: false
     - type: Appearance
     - type: UseDelay
     - type: ToggleableVisuals
+      replaceMode: false
       spriteLayer: light
+      inhandVisuals:
+        left:
+          - state: on-inhand-left
+            shader: unshaded
+        right:
+          - state: on-inhand-right
+            shader: unshaded
     - type: ItemTogglePointLight
     - type: ItemToggle
       predictable: false
@@ -127,6 +144,12 @@
         params:
           volume: -2
           variation: 0.05
+    - type: GenericVisualizer
+      visuals:
+        enum.ToggleableVisuals.Enabled:
+          light:
+            True: { visible: true }
+            False: { visible: false }
     - type: StealTarget
       stealGroup: LAMP # The moths are coming the moths are coming
     - type: LandAtCursor

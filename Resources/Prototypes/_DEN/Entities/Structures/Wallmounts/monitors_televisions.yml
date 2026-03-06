@@ -19,6 +19,7 @@
   - type: PointLight
     radius: 2
     energy: 4
+    softness: 1.22
     color: "#4dc4ff"
   - type: Fixtures
     fixtures:
@@ -67,7 +68,7 @@
   description: "A futuristic frame television with a textured, shifting surface, set to freeze its last image in faux mnemolith--an eclipsed, bleeding sun breaking through clouds, this time. This thing must be ungodly expensive."
   suffix: Decorative] [Click After Mapping To Enable
   components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS PLEASE GOD PLEASE (WHAT TV DOESN'T HAVE A REMOTE)
-  - type: Sprite # TODO: Maybe it should also function as an actual TV??  But the glowing visual is more important and idk how to tie both together...
+  - type: Sprite # TODO: MAYBE IT SHOULD FUNCTION LIKE AN ACTUAL TV BUT REALLY I JUST WANT A TV FOR RP, IDK HOW TO CLICK TO OPEN CAMERA HUD BUT ALSO KEEP IT GLOWING...
     sprite: _DEN/Structures/Wallmounts/sombertv.rsi
     drawdepth: WallMountedItems
     layers:
@@ -81,12 +82,13 @@
   - type: Appearance
   - type: Anchorable
   - type: InteractionOutline
+  - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
     enabled: false
     radius: 4
     energy: 6
-    softness: 1.1
-    color: "#ffa054"
+    softness: 1.22
+    color: "#ff9833"
   - type: ItemTogglePointLight
   - type: ItemToggle
     predictable: false

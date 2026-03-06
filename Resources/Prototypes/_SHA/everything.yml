@@ -32,6 +32,23 @@
   maps:
   - Infinity # TODO
 
+# Parallax
+
+- type: parallax
+  id: Bloom
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_SHA/Parallaxes/bloomcitylights.png"
+      slowness: 0
+      scale: "0.85,0.85"
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_SHA/Parallaxes/bloomcloudslightpollution.png"
+      slowness: 0
+      scale: "0.5,0.5"
+      scrolling: "0.30, -0.50"
+
 # Damage
 
 - type: damageContainer
@@ -893,3 +910,123 @@
   footstepSounds:
     collection: FootstepTile
   heatCapacity: 10000
+
+# Fire Items
+
+- type: entity
+  parent: CandleSomberMantis
+  id: CandleSomberPenthouse
+  name: candle
+  suffix: PENTHOUSE
+  description: "A candle. That's all."
+  components:
+    - type: Sprite
+      sprite: _SHA/Objects/Misc/candlespenthouse.rsi
+    - type: Item
+      sprite: _SHA/Objects/Misc/candlespenthouse.rsi
+    - type: FireVisuals
+      sprite: _SHA/Objects/Misc/candlespenthouse.rsi
+      normalState: fire-big
+      lightColor: "#FF9833"
+    - type: Damageable
+      damageModifierSet: Wood
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 5
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+              ScrapElectrum: # The dish it sits in
+                min: 1
+                max: 1
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/drop.ogg
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - type: Tag
+      tags: []
+
+- type: entity
+  parent: CandleSomberPenthouse
+  id: CandleSomberPenthouseSmall
+  name: candle (small)
+  suffix: PENTHOUSE
+  description: "A small candle. That's all."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-small
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-small
+
+- type: entity
+  parent: CandleSomberPenthouse
+  id: CandleSomberPenthouseCluster
+  name: candle (cluster)
+  suffix: PENTHOUSE
+  description: "A cluster of candles. Not a birthday cake."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-cluster
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-cluster
+
+- type: entity
+  parent: CandleSomberPenthouse
+  id: CandleSomberPenthouseTiny
+  name: candle (tea light)
+  suffix: PENTHOUSE
+  description: "A tea light. Light enough to float on water."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-tiny
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-tiny
+
+- type: entity
+  parent: SomberFireplace
+  id: SomberFireplacePenthouse
+  name: somber electrum fireplace
+  suffix: PENTHOUSE] [Click After Mapping
+  description: "An avant-garde fireplace shaped like an eye."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/somberfireplacepenthouse.rsi
+  - type: PointLight
+    enabled: false
+    radius: 5
+    energy: 7
+    softness: 1.22
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberHangingBrazier
+  id: SomberHangingBrazierPenthouse
+  name: somber hanging brazier
+  suffix: PENTHOUSE] [Click After Mapping
+  description: "An electrum brazier."
+  placement:
+    mode: WallmountLight
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/somberhangingbrazierpenthouse.rsi
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 5
+    softness: 1.22
+    color: "#FF9833"

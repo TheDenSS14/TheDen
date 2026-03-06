@@ -98,9 +98,11 @@
       types:
         Slash: 0.5
         Holy: -0.25
+  - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
     radius: 3
     energy: 3
+    softness: 1.22
     color: "#4dc4ff"
     autoRot: true # If only light masks would rotate with the camera...  Oh well, can't fix it
     mask: /Textures/_DEN/Effects/LightMasks/double_circle.png
