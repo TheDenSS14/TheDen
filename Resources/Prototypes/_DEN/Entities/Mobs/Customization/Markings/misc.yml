@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Shaman
+# SPDX-FileCopyrightText: 2026 gardens
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -12,6 +13,34 @@
     state: big_ahoge1
   - sprite: _DEN/Mobs/Customization/Head/misc.rsi
     state: big_ahoge2
+
+# Head Side
+- type: marking
+  id: HighEars
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  parent: [BaseHeadSide, BaseSpeciesHeadHuman ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/ears.rsi
+    state: high_ears
+
+- type: marking
+  id: HighEarsR
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  parent: [HighEars]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/ears.rsi
+    state: high_ears_r
+
+- type: marking
+  id: HighEarsL
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  parent: [HighEars]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/ears.rsi
+    state: high_ears_l
 
 # Chest
 
