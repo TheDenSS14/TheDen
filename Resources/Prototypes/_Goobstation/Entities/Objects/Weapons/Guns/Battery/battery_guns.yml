@@ -33,7 +33,7 @@
     - Back
     sprite: _Goobstation/Objects/Weapons/Guns/Battery/erevolver.rsi
   - type: Gun
-    fireRate: 2 #Den
+    fireRate: 2.5 #Den
     projectileSpeed: 37.50
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
@@ -44,15 +44,15 @@
     startingCharge: 1005
   - type: ProjectileBatteryAmmoProvider
     proto: BulletDisabler
-    fireCost: 62
+    fireCost: 50
   - type: EnergyGun
     fireModes:
     - proto: BulletDisabler
-      fireCost: 62 #Den
+      fireCost: 50
       name: disabling
       state: disabler
     - proto: BulletEnergyGunMagnum
-      fireCost: 62 #Den
+      fireCost: 100
       name: lethal
       state: lethal
   - type: MagazineVisuals
