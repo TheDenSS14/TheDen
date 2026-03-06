@@ -2,10 +2,12 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# Somber Tables Start
 - type: entity
   parent: TableBase
   id: SomberTable
-  name: somber wood table
+  name: somber table
+  suffix: Wood
   description: "An expensive table made of gloomy, patterned wood."
   components:
   - type: Sprite
@@ -14,8 +16,8 @@
     sprite: _DEN/Structures/Furniture/Tables/somberwoodtable.rsi
     state: full
   - type: Damageable
-    damageModifierSet: Wood
     damageContainer: Inorganic
+    damageModifierSet: Wood
   - type: Destructible
     thresholds:
     - trigger:
@@ -38,7 +40,7 @@
             max: 3
           ScrapElectrum:
             min: 1
-            max: 3
+            max: 2
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Fixtures
@@ -52,17 +54,115 @@
         - TableMask
         layer:
         - TableLayer
+        - MidImpassable
+        - BulletImpassable
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepWood
-  - type: Tag
-    tags:
-    - Wooden
+
+- type: entity
+  parent: SomberTable
+  id: SomberTableCornerNW
+  suffix: Wood, NW Corner] [PLACE SOUTH ONLY
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableNW.rsi
+    state: wttable0
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableNW.rsi
+    state: wttable0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.28125
+          offset: "-0.328125,-0.109375"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - BulletImpassable
+  - type: IconSmooth
+    key: state
+    base: wttable
+    mode: CardinalFlags # You have no idea what it cost me to make these sprites
+
+- type: entity
+  parent: SomberTableCornerNW
+  id: SomberTableCornerNE
+  suffix: Wood, NE Corner] [PLACE SOUTH ONLY
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableNE.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableNE.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.28125
+          offset: "0.296875,-0.109375"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: SomberTableCornerNW
+  id: SomberTableCornerSW
+  suffix: Wood, SW Corner] [PLACE SOUTH ONLY
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableSW.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableSW.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.28125
+          offset: "-0.203125,-0.109375"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: SomberTableCornerNW
+  id: SomberTableCornerSE
+  suffix: Wood, SE Corner] [PLACE SOUTH ONLY
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableSE.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableSE.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.28125
+          offset: "0.171875,-0.109375"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - BulletImpassable
 
 - type: entity
   parent: SomberTable
   id: SomberCounter
-  name: somber wood counter
+  name: somber counter
+  suffix: Wood
   description: "An expensive counter made of gloomy, patterned wood."
   components:
   - type: Sprite
@@ -82,6 +182,268 @@
         layer:
         - MidImpassable
         - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: SomberCounter
+  id: SomberCounterCornerNW
+  suffix: Wood, NW Corner] [PLACE SOUTH ONLY
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterNW.rsi
+    state: wctable0
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterNW.rsi
+    state: wctable0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.28125
+          offset: "-0.328125,-0.109375"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+  - type: IconSmooth
+    key: state
+    base: wctable
+    mode: CardinalFlags
+
+- type: entity
+  parent: SomberCounterCornerNW
+  id: SomberCounterCornerNE
+  suffix: Wood, NE Corner] [PLACE SOUTH ONLY
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterNE.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterNE.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.28125
+          offset: "0.296875,-0.109375"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: SomberCounterCornerNW
+  id: SomberCounterCornerSW
+  suffix: Wood, SW Corner] [PLACE SOUTH ONLY
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterSW.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterSW.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.28125
+          offset: "-0.203125,-0.109375"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: SomberCounterCornerNW
+  id: SomberCounterCornerSE
+  suffix: Wood, SE Corner] [PLACE SOUTH ONLY
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterSE.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterSE.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.28125
+          offset: "0.171875,-0.109375"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: SomberCounter
+  id: SomberCounterMetal
+  name: somber counter
+  suffix: Metal
+  description: "An expensive counter made of clean, patterned steel."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounter.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounter.rsi
+    state: full
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepPlating
+
+- type: entity
+  parent: SomberCounterMetal
+  id: SomberCounterMetalCornerNW
+  suffix: Metal, NW Corner] [PLACE SOUTH ONLY
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterNW.rsi
+    state: mctable0
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterNW.rsi
+    state: mctable0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.28125
+          offset: "-0.328125,-0.109375"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+  - type: IconSmooth
+    key: state
+    base: mctable
+    mode: CardinalFlags
+
+- type: entity
+  parent: SomberCounterMetalCornerNW
+  id: SomberCounterMetalCornerNE
+  suffix: Metal, NE Corner] [PLACE SOUTH ONLY
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterNE.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterNE.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.28125
+          offset: "0.296875,-0.109375"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: SomberCounterMetalCornerNW
+  id: SomberCounterMetalCornerSW
+  suffix: Metal, SW Corner] [PLACE SOUTH ONLY
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterSW.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterSW.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.28125
+          offset: "-0.203125,-0.109375"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: SomberCounterMetalCornerNW
+  id: SomberCounterMetalCornerSE
+  suffix: Metal, SE Corner] [PLACE SOUTH ONLY
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterSE.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterSE.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.28125
+          offset: "0.171875,-0.109375"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
 
 - type: entity
   parent: BaseStructure # Doesn't merge with nearby tables, so I can't parent it
@@ -108,9 +470,11 @@
         - TableMask
         layer:
         - TableLayer
+        - MidImpassable
+        - BulletImpassable
   - type: Damageable
-    damageModifierSet: Wood
     damageContainer: Inorganic
+    damageModifierSet: Wood
   - type: Destructible
     thresholds:
     - trigger:
@@ -133,7 +497,7 @@
             max: 3
           ScrapElectrum:
             min: 1
-            max: 3
+            max: 2
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: StaticPrice
@@ -141,9 +505,6 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepWood
-  - type: Tag
-    tags:
-    - Wooden
   - type: PlaceableSurface
   - type: SpriteFade
   - type: Climbable
@@ -179,3 +540,5 @@
         - TableLayer
         - MidImpassable
         - LowImpassable
+        - BulletImpassable
+# Somber Tables End
