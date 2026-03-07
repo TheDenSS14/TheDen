@@ -1,3 +1,5 @@
+# Round Fountains
+
 - type: entity
   parent: BaseStructure
   id: FountainSomber
@@ -9,7 +11,7 @@
     offset: "0.0,-0.5"
     snapCardinals: false
     noRot: true
-    drawdepth: Overdoors
+    drawdepth: Mobs
     sprite: _DEN/Structures/Decoration/somberfountains-96x.rsi
     layers:
     - state: fountain
@@ -165,3 +167,41 @@
     maxFillLevels: 1
     fillBaseName: quarterringfountaindrains-fill-
     solutionName: drainBuffer
+
+# Wall Fountains
+
+# Pillars (see SomberMemorial for the monuments)
+
+- type: entity
+  parent: Memorial
+  id: SomberPillar
+  name: mnemolith pillar
+  suffix: Tall
+  description: "A towering mnemolith pillar etched with dense, repeating patterns. The stone seems to bear a weight you cannot see."
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    noRot: true
+    offset: "0.0,1.0"
+    drawdepth: Mobs
+    sprite: _DEN/Structures/Decoration/somberpillar.rsi
+    state: pillar
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,0.375,0.25,0.175"
+        density: 1000
+        layer:
+        - WallLayer
+
+- type: entity
+  parent: SomberPillar
+  id: SomberPillarShort
+  name: mnemolith pillar
+  suffix: Short
+  description: "A mnemolith pillar etched with dense, repeating patterns. The stone seems to bear a weight you cannot see."
+  components:
+  - type: Sprite
+    state: pillarshort

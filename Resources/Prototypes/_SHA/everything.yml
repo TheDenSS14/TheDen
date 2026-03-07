@@ -244,6 +244,14 @@
     state: penthouse-lattice-balcony-S-inner
 
 - type: decal
+  id: SomberRailPenthouseBalconyDiagonal
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony-diagonal
+
+- type: decal
   id: SomberRailPenthouseV
   tags: ["station", "overlay"]
   parent: SomberMisc

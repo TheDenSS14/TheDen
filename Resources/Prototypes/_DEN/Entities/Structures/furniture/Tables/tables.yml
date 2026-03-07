@@ -11,9 +11,9 @@
   description: "An expensive table made of gloomy, patterned wood."
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodtable.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtable.rsi
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodtable.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtable.rsi
     state: full
   - type: Damageable
     damageContainer: Inorganic
@@ -66,10 +66,10 @@
   suffix: Wood, NW Corner] [PLACE SOUTH ONLY
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableNW.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtableNW.rsi
     state: wttable0
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableNW.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtableNW.rsi
     state: wttable0
   - type: Fixtures
     fixtures:
@@ -95,9 +95,9 @@
   suffix: Wood, NE Corner] [PLACE SOUTH ONLY
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableNE.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtableNE.rsi
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableNE.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtableNE.rsi
   - type: Fixtures
     fixtures:
       fix1:
@@ -118,9 +118,9 @@
   suffix: Wood, SW Corner] [PLACE SOUTH ONLY
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableSW.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtableSW.rsi
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableSW.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtableSW.rsi
   - type: Fixtures
     fixtures:
       fix1:
@@ -141,9 +141,9 @@
   suffix: Wood, SE Corner] [PLACE SOUTH ONLY
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableSE.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtableSE.rsi
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableSE.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtableSE.rsi
   - type: Fixtures
     fixtures:
       fix1:
@@ -166,9 +166,9 @@
   description: "An expensive counter made of gloomy, patterned wood."
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounter.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodcounter.rsi
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounter.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodcounter.rsi
     state: full
   - type: Fixtures
     fixtures:
@@ -190,10 +190,10 @@
   suffix: Wood, NW Corner] [PLACE SOUTH ONLY
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterNW.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodcounterNW.rsi
     state: wctable0
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterNW.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodcounterNW.rsi
     state: wctable0
   - type: Fixtures
     fixtures:
@@ -220,9 +220,9 @@
   suffix: Wood, NE Corner] [PLACE SOUTH ONLY
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterNE.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodcounterNE.rsi
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterNE.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodcounterNE.rsi
   - type: Fixtures
     fixtures:
       fix1:
@@ -244,9 +244,9 @@
   suffix: Wood, SW Corner] [PLACE SOUTH ONLY
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterSW.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodcounterSW.rsi
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterSW.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodcounterSW.rsi
   - type: Fixtures
     fixtures:
       fix1:
@@ -268,9 +268,9 @@
   suffix: Wood, SE Corner] [PLACE SOUTH ONLY
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterSE.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodcounterSE.rsi
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodcounterSE.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodcounterSE.rsi
   - type: Fixtures
     fixtures:
       fix1:
@@ -294,9 +294,9 @@
   description: "An expensive counter made of clean, patterned steel."
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounter.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/sombermetalcounter.rsi
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounter.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/sombermetalcounter.rsi
     state: full
   - type: Fixtures
     fixtures:
@@ -349,10 +349,10 @@
   suffix: Metal, NW Corner] [PLACE SOUTH ONLY
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterNW.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/sombermetalcounterNW.rsi
     state: mctable0
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterNW.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/sombermetalcounterNW.rsi
     state: mctable0
   - type: Fixtures
     fixtures:
@@ -379,9 +379,9 @@
   suffix: Metal, NE Corner] [PLACE SOUTH ONLY
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterNE.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/sombermetalcounterNE.rsi
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterNE.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/sombermetalcounterNE.rsi
   - type: Fixtures
     fixtures:
       fix1:
@@ -403,9 +403,9 @@
   suffix: Metal, SW Corner] [PLACE SOUTH ONLY
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterSW.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/sombermetalcounterSW.rsi
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterSW.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/sombermetalcounterSW.rsi
   - type: Fixtures
     fixtures:
       fix1:
@@ -427,9 +427,9 @@
   suffix: Metal, SE Corner] [PLACE SOUTH ONLY
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterSE.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/sombermetalcounterSE.rsi
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/sombermetalcounterSE.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/sombermetalcounterSE.rsi
   - type: Fixtures
     fixtures:
       fix1:
@@ -452,13 +452,12 @@
   description: "An expensive coffee table made of gloomy, patterned wood."
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodtablecoffee.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtablecoffee.rsi
     state: full
-    noRot: true
+    noRot: false
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodtablecoffee.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtablecoffee.rsi
     state: full
-  - type: InteractionOutline
   - type: Fixtures
     fixtures:
       fix1:
@@ -506,7 +505,6 @@
     footstepSoundCollection:
       collection: FootstepWood
   - type: PlaceableSurface
-  - type: SpriteFade
   - type: Climbable
   - type: Bonkable
     bonkDamage:
@@ -517,22 +515,27 @@
   - type: ThrownItemImmune
 
 - type: entity
-  parent: SomberTableCoffee
+  parent: SomberDresser
   id: SomberTableEnd
   name: somber end table
-  description: "An expensive end table made of gloomy, patterned wood."
+  description: "An expensive end table made of gloomy, patterned wood. It has drawers, of course. Can't you see them there?"
   components:
+  - type: InteractionOutline
+  - type: Storage
+    grid:
+    - 0,0,5,3
+    maxItemSize: Normal
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableend.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtableend.rsi
     state: full
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Tables/somberwoodtableend.rsi
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtableend.rsi
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.4,-0.4,0.4,0.225"
+          bounds: "-0.45,-0.225,0.45,0.225"
         density: 55
         mask:
         - TableMask
@@ -541,4 +544,18 @@
         - MidImpassable
         - LowImpassable
         - BulletImpassable
+  - type: StaticPrice
+    price: 125
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepWood
+  - type: PlaceableSurface
+  - type: Climbable
+  - type: Bonkable
+    bonkDamage:
+      types:
+        Blunt: 4
+  - type: Clickable
+  - type: RequireProjectileTarget
+  - type: ThrownItemImmune
 # Somber Tables End

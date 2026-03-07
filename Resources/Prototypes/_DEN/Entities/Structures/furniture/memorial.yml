@@ -1,11 +1,13 @@
-# Mnemolith columns start
-# There's 10 different pillar heights and 20 different writings, so 20 different prototypes total
+# Mnemolith monuments start
+# There's 10 different heights and 20 different writings, so 20 different prototypes total
 # The writings, found in the descriptions, are the reagent-effect-mnemolith-heroicdose messages
-# The idea is that the pillars shift and change to record the noosphere's thoughts, but it takes a lot of prototypes
+# The idea is that the monuments shift and change to record the noosphere's thoughts, but it takes a lot of prototypes
+# See SomberPillar for the decorative pillars
+
 - type: entity
   parent: MarkerBase
   id: RandomSomberMemorial
-  name: mnemolith column spawner
+  name: mnemolith monument spawner
   description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The inscription shifts each time it's seen."
   suffix: Random, Mappable
   components:
@@ -45,7 +47,7 @@
 - type: entity
   parent: Memorial
   id: SomberMemorial1
-  name: mnemolith column
+  name: mnemolith monument
   suffix: DO NOT MAP # If you don't use the spawner, they'll be static, when really they should change each time a map is loaded
   description: "The dark stone bears a rare example of psychomantic script, legible to anyone who looks upon it. The shifting inscription currently reads:                         \"DO NOT BE FRIGHTENED.\""
   components:
@@ -276,4 +278,4 @@
     - state: somber20
     - state: somber20glow
       shader: unshaded
-# Mnemolith columns end
+# Mnemolith monuments end
