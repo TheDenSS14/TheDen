@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by TheShuEd(Github) for SS14, edits to inhands, spy_device, and icon by RosySaturniidae (github)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "spy_device",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "spydevice-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "spydevice-inhand-right",
+      "directions": 4
+    }
+  ]
+}
