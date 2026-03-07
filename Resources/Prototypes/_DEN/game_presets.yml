@@ -62,7 +62,8 @@
   - conspirator
   name: conspiracy-title
   description: conspiracy-description
-  showInVote: false # secret
+  showInVote: true
+  highDanger: true
   rules:
   - Conspirators
   - BasicRoundstartVariation
