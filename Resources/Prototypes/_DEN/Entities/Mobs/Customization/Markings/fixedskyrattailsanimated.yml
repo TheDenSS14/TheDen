@@ -170,3 +170,27 @@
   - sprite: _Floof/Mobs/Customization/fixedskyrattails.rsi
     state: m_waggingtail_snakeunder_BEHIND_secondary
   shader: unshaded
+
+- type: marking
+  id: TailBatlAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  layering:
+    m_waggingtail_batl_BEHIND_primary: TailBehind
+    m_waggingtail_batl_BEHIND_secondary: TailBehind
+    m_waggingtail_batl_FRONT_primary: Tail
+    m_waggingtail_batl_FRONT_secondary: Tail
+  colorLinks:
+    m_waggingtail_batl_BEHIND_primary: m_waggingtail_batl_FRONT_primary
+    m_waggingtail_batl_BEHIND_secondary: m_waggingtail_batl_FRONT_secondary
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Skyrattails/bat_long.rsi
+    state: m_waggingtail_batl_FRONT_primary
+  - sprite: _Floof/Mobs/Customization/Skyrattails/bat_long.rsi
+    state: m_waggingtail_batl_FRONT_secondary
+  - sprite: _Floof/Mobs/Customization/Skyrattails/bat_long.rsi
+    state: m_waggingtail_batl_BEHIND_primary
+  - sprite: _Floof/Mobs/Customization/Skyrattails/bat_long.rsi
+    state: m_waggingtail_batl_BEHIND_secondary
+
