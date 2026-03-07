@@ -95,7 +95,7 @@
     price: 2
 
 - type: entity
-  parent: SheetGlassBase
+  parent: [SheetGlassBase, BaseQuickConstructionMaterial] # DEN add quick construction parent
   id: SheetGlass
   suffix: Full
   components:
@@ -130,6 +130,8 @@
         reagents:
         - ReagentId: Silicon
           Quantity: 10
+  - type: QuickConstructable # DEN quick construction
+    category: Glass
 
 - type: entity
   parent: SheetGlass
@@ -163,7 +165,7 @@
     count: 0
 
 - type: entity
-  parent: SheetGlassBase
+  parent: [SheetGlassBase, BaseQuickConstructionMaterial] # DEN add quick construction parent
   id: SheetRGlass
   name: reinforced glass
   description: A reinforced sheet of glass.
@@ -216,6 +218,8 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: QuickConstructable # DEN quick construction
+    category: ReinforcedGlass
 
 - type: entity
   parent: SheetRGlass
@@ -255,7 +259,7 @@
     count: 10
 
 - type: entity
-  parent: SheetGlassBase
+  parent: [SheetGlassBase, BaseQuickConstructionMaterial] # DEN add quick construction parent
   id: SheetPGlass
   name: plasma glass
   description: A sheet of translucent plasma.
@@ -305,6 +309,8 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: QuickConstructable # DEN quick construction
+    category: PlasmaGlass
 
 - type: entity
   parent: SheetPGlass
@@ -342,7 +348,7 @@
     count: 10
 
 - type: entity
-  parent: SheetPGlass
+  parent: [SheetPGlass, BaseQuickConstructionMaterial] # DEN add quick construction parent
   id: SheetRPGlass
   name: reinforced plasma glass
   description: A reinforced sheet of translucent plasma.
@@ -383,6 +389,8 @@
         - ReagentId: Carbon
           Quantity: 0.5
         canReact: false
+  - type: QuickConstructable # DEN quick construction
+    category: ReinforcedPlasmaGlass
 
 - type: entity
   parent: SheetRPGlass
@@ -409,7 +417,7 @@
     count: 10
 
 - type: entity
-  parent: SheetGlassBase
+  parent: [SheetGlassBase, BaseQuickConstructionMaterial] # DEN add quick construction parent
   id: SheetUGlass
   name: uranium glass
   description: A sheet of uranium glass.
@@ -470,6 +478,8 @@
         - ReagentId: Uranium
           Quantity: 10
         canReact: false
+  - type: QuickConstructable # DEN quick construction
+    category: UraniumGlass
 
 - type: entity
   parent: SheetUGlass
@@ -496,7 +506,7 @@
     count: 10
 
 - type: entity
-  parent: SheetUGlass
+  parent: [SheetUGlass, BaseQuickConstructionMaterial] # DEN add quick construction parent
   id: SheetRUGlass
   name: reinforced uranium glass
   description: A reinforced sheet of uranium.
@@ -536,6 +546,8 @@
         - ReagentId: Carbon
           Quantity: 0.5
         canReact: false
+  - type: QuickConstructable # DEN quick construction
+    category: ReinforcedUraniumGlass
 
 - type: entity
   parent: SheetRUGlass
@@ -562,7 +574,7 @@
     count: 10
 
 - type: entity
-  parent: SheetGlassBase
+  parent: [SheetGlassBase, BaseQuickConstructionMaterial] # DEN add quick construction parent
   id: SheetClockworkGlass
   name: clockwork glass
   description: A sheet of brass-hardened glass, primarily used by clockwork enthusiasts and remnants of Ratvarian cults.
@@ -625,6 +637,8 @@
         - ReagentId: Copper
           Quantity: 6.7
         canReact: false
+  - type: QuickConstructable # DEN quick construction
+    category: ClockworkGlass
 
 - type: entity
   parent: SheetClockworkGlass

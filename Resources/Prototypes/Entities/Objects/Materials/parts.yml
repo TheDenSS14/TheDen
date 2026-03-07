@@ -47,7 +47,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: PartBase
+  parent: [PartBase, BaseQuickConstructionMaterial] # DEN add quick construction parent
   id: PartRodMetal
   name: metal rod
   suffix: Full
@@ -97,6 +97,8 @@
   - type: Tag
     tags:
     - RodMetal1
+  - type: QuickConstructable # DEN quick construction
+    category: MetalRod
 
 - type: entity
   parent: PartRodMetal
