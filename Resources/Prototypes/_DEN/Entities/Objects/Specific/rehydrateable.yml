@@ -1,0 +1,20 @@
+- type: entity
+  parent: MonkeyCube
+  id: SnailCube
+  name: snail cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobSnail
+    - MobSnail
+    - MobSnail
+    - MobSnailMoth # 1/4 chance
+
+- type: entity
+  parent: MonkeyCube
+  id: ShrimpCube
+  name: space shrimp cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobSpaceShrimpWild
