@@ -114,7 +114,7 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutNeck
-    
+
 - type: loadout
   id: LoadoutClothingNeckLoopScarf
   category: Neck
@@ -135,6 +135,17 @@
   customColorTint: true
   items:
   - ClothingNeckMantleDraped
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckCloakMagicianCape
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+  - ClothingNeckCloakMagicianCape
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutNeck

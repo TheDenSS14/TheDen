@@ -15,3 +15,14 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepSpurs
+
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: ClothingShoesKneeHighBoots
+  name: knee high boots
+  description: Simple yet fashionable heeled boots, suitable for many occasions.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Shoes/Boots/kneehighboots.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Shoes/Boots/kneehighboots.rsi

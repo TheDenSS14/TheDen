@@ -77,3 +77,12 @@
   - type: Construction
     graph: WebObjects
     node: cloakfancy
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakMagicianCape
+  name: magician's cape
+  description: "A collared cape with red lining, a staple accessory for any magician or vampire."
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Neck/Cloaks/magiciancape.rsi

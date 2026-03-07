@@ -13,3 +13,14 @@
       group: LoadoutShoes
   items:
     - ClothingShoesFootProtectors
+
+- type: loadout
+  id: LoadoutShoesKneeHighBoots
+  category: Shoes
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesKneeHighBoots

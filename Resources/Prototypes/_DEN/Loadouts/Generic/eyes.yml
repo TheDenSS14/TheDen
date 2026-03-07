@@ -14,3 +14,15 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutEyesGlassesWhiteHalfMask
+  category: Eyes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingEyesGlassesWhiteHalfMask
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutEyes
