@@ -44,12 +44,19 @@
       path: /Audio/_DEN/Effects/crystaltap1.ogg
       params:
         volume: -6
+        pitch: 0.5
         variation: 0.05
     soundDeactivate:
       path: /Audio/_DEN/Effects/crystaltap2.ogg
       params:
         volume: -6
+        pitch: 0.5
         variation: 0.05
+  - type: AmbientSound
+    volume: -6
+    range: 5
+    sound:
+      path: /Audio/Effects/silence.ogg
   - type: UnpoweredFlashlight
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
@@ -91,13 +98,18 @@
           !type:PhysShapeAabb
           bounds: "-0.05,0.1,0.05,0.35"
         hard: true
-        density: 200
+        density: 1000
         mask:
         - MachineMask
         layer:
         - MidImpassable
         - LowImpassable
         - BulletImpassable
+  - type: UseDelay
+  - type: Anchorable
+  - type: Transform
+  - type: Physics
+    bodyType: Static
 
 - type: entity
   parent: BaseSignDirectional # So it's technically wall decor, but whatever
@@ -135,6 +147,7 @@
         light:
           True: { visible: true }
           False: { visible: false }
+  - type: UseDelay
   - type: InteractionOutline
   - type: ItemTogglePointLight
   - type: ItemToggle
@@ -143,11 +156,13 @@
       path: /Audio/_DEN/Effects/crystaltap1.ogg
       params:
         volume: -6
+        pitch: 0.75
         variation: 0.05
     soundDeactivate:
       path: /Audio/_DEN/Effects/crystaltap2.ogg
       params:
         volume: -6
+        pitch: 0.75
         variation: 0.05
   - type: UnpoweredFlashlight
   - type: EtherealLight # Dims around ethereal entities

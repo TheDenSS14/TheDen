@@ -4,13 +4,13 @@
   parent: WallReinforced
   id: WallSomber
   name: somber wall
+  suffix: Reinforced
   description: "Layered with rough, slanted mnemolith slabs in a tight grid to prevent psionic scrying."
   components:
   - type: Sprite
     sprite: _DEN/Structures/Walls/Somber/somber.rsi
   - type: Icon
     sprite: _DEN/Structures/Walls/Somber/somber.rsi
-  - type: Reflect
 
 - type: entity
   parent: WallReinforcedDiagonal
@@ -23,7 +23,18 @@
     sprite: _DEN/Structures/Walls/Somber/somber_diagonal.rsi
   - type: Icon
     sprite: _DEN/Structures/Walls/Somber/somber_diagonal.rsi
-  - type: Reflect
+
+- type: entity
+  parent: WallSolid # Weaker, better for real maps, but I can't make weak versions of all this or I'll die
+  id: WallSomberSolid
+  name: somber wall
+  suffix: Solid
+  description: "Made of gloomy, patterned steel."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somber.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somber.rsi
 
 # Dark
 
@@ -46,6 +57,18 @@
     sprite: _DEN/Structures/Walls/Somber/somberdark_diagonal.rsi
   - type: Icon
     sprite: _DEN/Structures/Walls/Somber/somberdark_diagonal.rsi
+
+- type: entity
+  parent: WallSomberSolid # Weaker, better for real maps, but I can't make weak versions of all this or I'll die
+  id: WallSomberSolidDark
+  name: somber wall
+  suffix: Dark, Solid
+  description: "Made of gloomy, patterned steel."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberdark.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberdark.rsi
 
 # Grilles
 

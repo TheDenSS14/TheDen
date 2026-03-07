@@ -90,6 +90,21 @@
     key: walls
     base: state
 
+- type: entity
+  parent: ReinforcedUraniumWindow
+  id: WindowSomberUranium
+  name: shielded somber window
+  suffix: Radiation Shielding
+  description: "Built with occult-treated uranium shielding to keep you safe from radiation. Ignore the whispering."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_shielded.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_shielded.rsi
+  - type: IconSmooth
+    key: walls
+    base: window
+
 # Dark
 
 - type: entity
@@ -179,6 +194,20 @@
     mode: Diagonal
     key: walls
     base: state
+
+- type: entity
+  parent: WindowSomberUranium
+  id: WindowSomberDarkUranium
+  name: shielded somber window
+  suffix: Dark, Radiation Shielding
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark_shielded.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark_shielded.rsi
+  - type: IconSmooth
+    key: walls
+    base: window
 
 # Directional
 

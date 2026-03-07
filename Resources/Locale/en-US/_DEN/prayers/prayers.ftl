@@ -1,0 +1,3 @@
+prayer-verbs-nazarplate = Gaze
+prayer-chat-notify-nazarplate = NAZAR PRAYER
+prayer-popup-notify-nazarplate-sent = You focus your thoughts on the nazar, drawing its quiet attention...

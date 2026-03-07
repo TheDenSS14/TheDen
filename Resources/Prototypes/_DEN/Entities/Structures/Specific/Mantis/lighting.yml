@@ -34,7 +34,11 @@
         density: 100
         mask:
         - MachineMask
+  - type: UseDelay
   - type: Anchorable
+  - type: Transform
+  - type: Physics
+    bodyType: Static
   - type: InteractionOutline
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
