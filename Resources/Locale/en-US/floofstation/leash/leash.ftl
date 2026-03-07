@@ -25,5 +25,6 @@ leash-detaching-popup-others = {THE($user)} is trying to remove the leash {$isSe
 
 leash-snap-popup = {THE($leash)} snaps off!
 leash-set-length-popup = Length set to {$length}m.
+leash-set-type-popup = Type set to {$sprite}.
 
 leash-length-examine-text = Its current length is {$length}m.

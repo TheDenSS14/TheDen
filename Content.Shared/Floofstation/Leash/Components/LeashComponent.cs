@@ -50,7 +50,7 @@ public sealed partial class LeashComponent : Component
     public TimeSpan SelfDetachDelay = TimeSpan.FromSeconds(8f);
 
     [DataField, AutoNetworkedField]
-    public SpriteSpecifier? LeashSprite;
+    public SpriteSpecifier.Rsi LeashSprite;
 
     [DataField]
     public TimeSpan NextPull = TimeSpan.Zero;
