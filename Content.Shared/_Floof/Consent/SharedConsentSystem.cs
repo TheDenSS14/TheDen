@@ -5,6 +5,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared._DEN.Consent;
 using Content.Shared.Examine;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -83,10 +84,26 @@ public abstract partial class SharedConsentSystem : EntitySystem
         return new();
     }
 
+    public bool HasConsent(EntityUid uid, ProtoId<ConsentTogglePrototype> consentId)
+    {
+        if (!_prototypeManager.TryIndex(consentId, out var consentToggle))
+            return false;
+
+        if (!TryComp<ConsentComponent>(uid, out var consentComponent)
+            || !consentComponent.NotDefaultConsents.Contains(consentId))
+            return consentToggle.DefaultValue;
+
+        return !consentToggle.DefaultValue;
+    }
+
     public bool HasConsent(Entity<MindContainerComponent?> ent, ProtoId<ConsentTogglePrototype> consentId)
     {
         if (!_prototypeManager.TryIndex(consentId, out var consentToggle))
             return false;
+
+        if (TryComp<ConsentComponent>(ent, out var consentComponent)
+            && consentComponent.NotDefaultConsents.Contains(consentId))
+            return !consentToggle.DefaultValue;
 
         if (!_mindSystem.TryGetMind(ent.Owner, out _, out var mind)
             || mind.Session == null
