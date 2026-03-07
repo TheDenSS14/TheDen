@@ -662,8 +662,8 @@
   params:
     variation: 0.125
   sounds:
-    Buzz:
-      path: /Audio/Voice/Moth/moth_scream.ogg
+    InsectoidBuzz:
+      collection: InsectoidBuzz # DEN: insectoid buzz
     Scream:
       path: /Audio/Voice/Moth/moth_scream.ogg
     Laugh:
@@ -708,8 +708,8 @@
   params:
     variation: 0.125
   sounds:
-    Buzz:
-      path: /Audio/Voice/Moth/moth_scream.ogg
+    InsectoidBuzz:
+      collection: InsectoidBuzz
     Scream:
       path: /Audio/Voice/Moth/moth_scream.ogg
     Laugh:
