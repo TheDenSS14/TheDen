@@ -448,7 +448,8 @@
 - type: entity
   parent: BaseStructure # Doesn't merge with nearby tables, so I can't parent it
   id: SomberTableCoffee
-  name: somber coffee table
+  name: somber table
+  suffix: Coffee
   description: "An expensive coffee table made of gloomy, patterned wood."
   components:
   - type: Sprite
@@ -463,7 +464,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-.8,-0.225,0.8,0.45"
+          bounds: "-.8,-0.225,0.8,0.225"
         density: 55
         mask:
         - TableMask
@@ -517,25 +518,22 @@
 - type: entity
   parent: SomberDresser
   id: SomberTableEnd
-  name: somber end table
-  description: "An expensive end table made of gloomy, patterned wood. It has drawers, of course. Can't you see them there?"
+  name: somber table
+  suffix: End
+  description: "An expensive end table made of gloomy, patterned wood. It has drawers, of course."
   components:
-  - type: InteractionOutline
-  - type: Storage
-    grid:
-    - 0,0,5,3
-    maxItemSize: Normal
   - type: Sprite
     sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtableend.rsi
     state: full
   - type: Icon
     sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtableend.rsi
+    state: full
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.45,-0.225,0.45,0.225"
+          bounds: "-0.375,-0.375,0.375,0.175"
         density: 55
         mask:
         - TableMask
@@ -544,18 +542,14 @@
         - MidImpassable
         - LowImpassable
         - BulletImpassable
-  - type: StaticPrice
-    price: 125
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepWood
-  - type: PlaceableSurface
   - type: Climbable
   - type: Bonkable
     bonkDamage:
       types:
         Blunt: 4
-  - type: Clickable
   - type: RequireProjectileTarget
   - type: ThrownItemImmune
 # Somber Tables End
