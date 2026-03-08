@@ -209,8 +209,8 @@
 - type: hitscan
   id: HitscanReplicator
   damage:
-  types:
-    Heat: 10 #Den
+    types:
+      Heat: 10 #Den
   staminaDamage: 20 # Den
   muzzleFlash:
     sprite: _Impstation/Mobs/Replicator/replicator_gun.rsi
@@ -225,8 +225,8 @@
 - type: hitscan
   id: HitscanReplicator2
   damage:
-  types:
-    Heat: 15 #Den
+    types:
+      Heat: 20 #Den
   staminaDamage: 30 # Den
   muzzleFlash:
     sprite: _Impstation/Mobs/Replicator/replicator_gun.rsi
