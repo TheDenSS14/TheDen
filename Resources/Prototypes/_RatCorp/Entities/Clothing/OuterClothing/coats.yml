@@ -1,0 +1,132 @@
+- type: entity
+  parent: ClothingOuterCoatLab
+  id: ClothingOuterCoatSciencecoatLong
+  name: science Howie coat
+  description: A Nanotrasen standard labcoat for science personnel.
+  components:
+  - type: Sprite
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/sciencelonglabcoat.rsi
+  - type: Clothing
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/sciencelonglabcoat.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 1.0
+    coolingCoefficient: 0.2
+
+- type: entity
+  parent: ClothingOuterCoatLabChem
+  id: ClothingOuterCoatLabcoatChemLong
+  name: chemistry Howie coat
+  description: A standard labcoat for chemistry which protects the wearer from acid spills.
+  components:
+  - type: Sprite
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/labcoatchemist.rsi
+  - type: Clothing
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/labcoatchemist.rsi
+  - type: Armor
+    coverage:
+    - Chest
+    - Groin
+    - Tail
+    - Arm
+    - Leg
+    modifiers:
+      coefficients:
+        Heat: 0.9
+        Caustic: 0.75
+  - type: TemperatureProtection
+    heatingCoefficient: 1.0
+    coolingCoefficient: 0.2
+
+- type: entity
+  parent: ClothingOuterCoatLab
+  id: ClothingOuterCoatHowie
+  name: Howie coat
+  description: A Nanotrasen standard labcoat for personnel.
+  components:
+  - type: Sprite
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/longlabcoat.rsi
+  - type: Clothing
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/longlabcoat.rsi
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCMOLabCoat
+  name: Chief Medical Officer's splashproof Howie coat
+  description: A heavy, splash resistant labcoat made out of a fabric inner layer and plastic outer layer. Practical and cozy!
+  components:
+  - type: Sprite
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/CMOlabcoat.rsi
+  - type: Clothing
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/CMOlabcoat.rsi
+  - type: ExplosionResistance
+  - type: Armor
+    coverage:
+    - Chest
+    - Groin
+    - Tail
+    - Arm
+    - Leg
+    modifiers:
+      coefficients:
+        Slash: 0.9
+        Heat: 0.9
+        Caustic: 0.4
+  - type: TemperatureProtection
+    heatingCoefficient: 1.0
+    coolingCoefficient: 0.2
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id:  ClothingOuterCentcomLabcoat
+  name: Central Command Howie coat
+  description: Style, Performance, elegance. Accept no compromise. Fur lined for maximum comfort, bluespace rubber exterior for maximum performance.
+  components:
+  - type: Sprite
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/centcomlabcoat.rsi
+  - type: Clothing
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/centcomlabcoat.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 1.0
+    coolingCoefficient: 0.2
+
+- type: entity
+  parent: ClothingOuterCoatLab
+  id: ClothingOuterCoatSyndicateLongCoat
+  name: Syndicate Howie coat
+  description: A Syndicate standard labcoat for personnel with a peculiar fashion sense.
+  components:
+  - type: Sprite
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/syndicatelongcoat.rsi
+  - type: Clothing
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/syndicatelongcoat.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 1.0
+    coolingCoefficient: 0.2
+
+- type: entity
+  parent: ClothingOuterCoatLab
+  id: ClothingOuterCoatMedicalLongCoat
+  name: medical Howie coat
+  description: A Nanotrasen standard labcoat for medical personnel.
+  components:
+  - type: Sprite
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/medicallabcoat.rsi
+  - type: Clothing
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/medicallabcoat.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 1.0
+    coolingCoefficient: 0.2
+
+- type: entity
+  parent: ClothingOuterCoatLab
+  id: ClothingOuterCoatLongLabcoatPara
+  name: paramedic Howie coat
+  description: A Nanotrasen standard labcoat for paramedics.
+  components:
+  - type: Sprite
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/paramedlonglabcoat.rsi
+  - type: Clothing
+    sprite: _RatCorp/Clothing/OuterClothing/Coats/paramedlonglabcoat.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 1.0
+    coolingCoefficient: 0.2

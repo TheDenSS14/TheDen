@@ -1,0 +1,10 @@
+- type: loadout
+  id: ClothingOuterCentcomLabcoat
+  category: JobsCommandAUncategorized
+  cost: 1
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Dignitary
+  items:
+    -  ClothingOuterCentcomLabcoat

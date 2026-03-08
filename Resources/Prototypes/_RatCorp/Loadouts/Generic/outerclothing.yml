@@ -1,0 +1,10 @@
+- type: loadout
+  id: ClothingOuterCoatHowie  
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    -  ClothingOuterCoatHowie
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter

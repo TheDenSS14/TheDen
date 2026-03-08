@@ -1,0 +1,13 @@
+- type: loadout
+  id: ClothingOuterCoatSciencecoatLong 
+  category: JobsEpistemicsAAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    -  ClothingOuterCoatSciencecoatLong
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics

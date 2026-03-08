@@ -1,0 +1,42 @@
+- type: loadout
+  id: ClothingOuterCoatMedicalLongCoat
+  category: JobsMedicalAUncategorized
+  cost: 1
+  exclusive: true
+  items:
+    -  ClothingOuterCoatMedicalLongCoat
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+
+- type: loadout
+  id: ClothingOuterCoatLabcoatChemLong
+  category: JobsMedicalChemist
+  cost: 1
+  exclusive: true
+  items:
+    -  ClothingOuterCoatLabcoatChemLong
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+
+- type: loadout
+  id: ClothingOuterCoatLongLabcoatPara
+  category: JobsMedicalParamedic
+  cost: 1
+  exclusive: true
+  items:
+    -  ClothingOuterCoatLongLabcoatPara
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    
