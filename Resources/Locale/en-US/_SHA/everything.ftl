@@ -9,3 +9,7 @@ breakhideout-description = Hidden within seaside cliffs. Where the dead return w
 # Tiles
 
 tiles-elevator-transition = elevator transition tile [PENTHOUSE]
+
+# Misc
+
+fibers-magenta = magenta

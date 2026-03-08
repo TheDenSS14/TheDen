@@ -176,8 +176,7 @@
   parent: Memorial
   id: SomberPillar
   name: mnemolith pillar
-  suffix: Tall
-  description: "A towering mnemolith pillar etched with dense, repeating patterns. The stone seems to bear a weight you cannot see."
+  description: "A mnemolith pillar etched with dense, repeating patterns. The stone seems to bear a weight you cannot see."
   components:
   - type: SpriteFade
   - type: Sprite
@@ -191,17 +190,49 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.25,0.375,0.25,0.175"
+          bounds: "-0.25,-0.25,0.25,0.25"
         density: 1000
         layer:
         - WallLayer
 
 - type: entity
   parent: SomberPillar
-  id: SomberPillarShort
-  name: mnemolith pillar
-  suffix: Short
-  description: "A mnemolith pillar etched with dense, repeating patterns. The stone seems to bear a weight you cannot see."
+  id: SomberPillarTall
+  suffix: Tall
   components:
   - type: Sprite
-    state: pillarshort
+    state: pillartall
+
+- type: entity
+  parent: SomberPillar
+  id: SomberPillarStoneTaller
+  name: raw mnemolith column
+  suffix: Taller
+  description: "A rough hexagonal column of raw mnemolith that appears to have grown straight from the floor. It seems to resonate with nearby thoughts, and etches new patterns into itself around powerful psions."
+  components:
+  - type: Sprite
+    state: stonecolumntaller
+
+- type: entity
+  parent: SomberPillarStoneTaller
+  id: SomberPillarStoneTall
+  suffix: Tall
+  components:
+  - type: Sprite
+    state: stonecolumntall
+
+- type: entity
+  parent: SomberPillarStoneTaller
+  id: SomberPillarStoneShort
+  suffix: Short
+  components:
+  - type: Sprite
+    state: stonecolumnshort
+
+- type: entity
+  parent: SomberPillarStoneTaller
+  id: SomberPillarStoneShorter
+  suffix: Shorter
+  components:
+  - type: Sprite
+    state: stonecolumnshorter

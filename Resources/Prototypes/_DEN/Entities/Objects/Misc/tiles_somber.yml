@@ -1113,6 +1113,21 @@
     stackType: FloorTileSomberGrass
 
 - type: entity
+  parent: FloorTileItemSomberDirt
+  id: FloorTileItemSomberSand
+  name: somber astro-sand
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tiles/somber.rsi
+    state: somber-sand
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSand
+  - type: Stack
+    stackType: FloorTileSomberSand
+
+- type: entity
   parent: FloorTileItemSomberSteel
   id: FloorTileItemSomberWood
   name: somber wood floor (standard)

@@ -1038,3 +1038,71 @@
     energy: 5
     softness: 1.22
     color: "#FF9833"
+
+# Misc
+
+- type: entity
+  parent: BaseStructure
+  id: SomberNazarInlaid
+  name: nazar (inlaid)
+  suffix: PENTHOUSE] [Produces Chapel Ambience
+  description: "An eyelike mnemolith plate inlaid in the floor to shelter the area from certain metaphysical threats."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    snapCardinals: true
+    noRot: true
+    drawdepth: FloorTiles
+    sprite: _SHA/Structures/Specific/Chapel/sombernazarinlaid.rsi
+    state: inlaid
+  - type: Prayable
+    bibleUserOnly: true
+    sentMessage: prayer-popup-notify-nazar-sent
+    notificationPrefix: prayer-chat-notify-nazar
+    verb: prayer-verbs-nazar
+    verbImage: null
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.1
+        hard: false
+        density: 10
+
+- type: entity
+  id: TowelColorMagenta
+  parent: BaseTowel
+  name: magenta towel
+  description: "An absurdly expensive magenta towel, plush enough to feel indulgent even when used for something ordinary."
+  suffix: PENTHOUSE
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#b32d70"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#b32d70"
+      right:
+      - state: inhand-right
+        color: "#b32d70"
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#b32d70"
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#b32d70"
+      belt:
+      - state: equipped-BELT
+        color: "#b32d70"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
+        color: "#b32d70"
+  - type: Fiber
+    fiberColor: fibers-magenta

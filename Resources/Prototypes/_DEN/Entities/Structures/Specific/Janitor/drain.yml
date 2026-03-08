@@ -1,19 +1,25 @@
 - type: entity # Not parented to avoid interaction outlines
   id: FloorDrainSomber
   name: somber drain
-  suffix: Rotate To Change Type
-  description: "A polished drain shaped to align with the tile design."
+  suffix: Tile
+  description: "A dark drain shaped to fit seamlessly into the tiles."
   placement:
     mode: SnapgridCenter
   components:
     - type: Sprite
+      snapCardinals: true
+      noRot: true
       drawdepth: FloorObjects
       sprite: _DEN/Objects/Specific/Janitorial/somberdrain.rsi
       layers:
-      - state: icon
+      - state: tile
       - map: [ "enum.SolutionContainerLayers.Fill" ]
-        state: fill-1
+        state: tile-fill-1
         visible: false
+    - type: SolutionContainerVisuals
+      maxFillLevels: 1
+      fillBaseName: tile-fill-
+      solutionName: drainBuffer
     - type: Clickable
     - type: Transform
       anchored: true
@@ -30,10 +36,6 @@
     - type: DumpableSolution
       solution: drainBuffer
     - type: Appearance
-    - type: SolutionContainerVisuals
-      maxFillLevels: 1
-      fillBaseName: fill-
-      solutionName: drainBuffer
     - type: SolutionContainerManager
       solutions:
         drainBuffer:
@@ -60,3 +62,66 @@
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalBreak
+
+- type: entity
+  parent: FloorDrainSomber
+  id: FloorDrainSomberMini
+  name: somber drain
+  suffix: Mini Tile
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _DEN/Objects/Specific/Janitorial/somberdrain.rsi
+      layers:
+      - state: mini
+      - map: [ "enum.SolutionContainerLayers.Fill" ]
+        state: mini-fill-1
+        visible: false
+    - type: SolutionContainerVisuals
+      maxFillLevels: 1
+      fillBaseName: mini-fill-
+      solutionName: drainBuffer
+
+- type: entity
+  parent: FloorDrainSomber
+  id: FloorDrainSomberMono
+  name: somber drain
+  suffix: Mono Tile
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _DEN/Objects/Specific/Janitorial/somberdrain.rsi
+      layers:
+      - state: mono
+      - map: [ "enum.SolutionContainerLayers.Fill" ]
+        state: mono-fill-1
+        visible: false
+    - type: SolutionContainerVisuals
+      maxFillLevels: 1
+      fillBaseName: mono-fill-
+      solutionName: drainBuffer
+
+- type: entity
+  parent: FloorDrainSomber
+  id: FloorDrainSomberEye
+  name: somber drain
+  suffix: Eye Tile
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _DEN/Objects/Specific/Janitorial/somberdrain.rsi
+      layers:
+      - state: eye
+      - map: [ "enum.SolutionContainerLayers.Fill" ]
+        state: eye-fill-1
+        visible: false
+    - type: SolutionContainerVisuals
+      maxFillLevels: 1
+      fillBaseName: eye-fill-
+      solutionName: drainBuffer

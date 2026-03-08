@@ -231,7 +231,7 @@
   materials:
     Cloth: 800
     Steel: 600
-  
+
 - type: latheRecipe
   parent: BaseHoloprojector
   id: HoloprojectorNSFW
@@ -261,3 +261,8 @@
   parent: BaseFauxTileRecipe
   id: FauxTileSomberGrass
   result: FloorTileItemSomberGrass
+
+- type: latheRecipe
+  parent: BaseFauxTileRecipe
+  id: FauxTileSomberSand
+  result: FloorTileItemSomberSand

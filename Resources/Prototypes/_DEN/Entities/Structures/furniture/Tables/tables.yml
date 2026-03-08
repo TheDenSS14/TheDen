@@ -449,7 +449,7 @@
   parent: BaseStructure # Doesn't merge with nearby tables, so I can't parent it
   id: SomberTableCoffee
   name: somber table
-  suffix: Coffee
+  suffix: Coffee Table
   description: "An expensive coffee table made of gloomy, patterned wood."
   components:
   - type: Sprite
@@ -519,7 +519,7 @@
   parent: SomberDresser
   id: SomberTableEnd
   name: somber table
-  suffix: End
+  suffix: End Table
   description: "An expensive end table made of gloomy, patterned wood. It has drawers, of course."
   components:
   - type: Sprite
@@ -550,6 +550,76 @@
     bonkDamage:
       types:
         Blunt: 4
+  - type: RequireProjectileTarget
+  - type: ThrownItemImmune
+
+- type: entity
+  parent: SomberTableCoffee
+  id: SomberTableFire
+  name: somber table
+  suffix: Fire Table
+  description: "An expensive fire table made of gloomy, patterned wood. Mind your hands."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtablefire.rsi
+    state: full
+    noRot: false
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtablefire.rsi
+    state: full
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-.8,-0.225,0.8,0.225"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+        - MidImpassable
+        - BulletImpassable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: StaticPrice
+    price: 125
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepWood
+  - type: PlaceableSurface
+  - type: Climbable
+  - type: Bonkable
+    bonkDamage:
+      types:
+        Blunt: 4
+  - type: Clickable
   - type: RequireProjectileTarget
   - type: ThrownItemImmune
 # Somber Tables End

@@ -1701,7 +1701,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 1
+  edgeSpritePriority: 2
   edgeSprites:
     SouthEast: /Textures/_DEN/Tiles/Planet/Somber/Grass/single_edge.png
     NorthEast: /Textures/_DEN/Tiles/Planet/Somber/Grass/single_edge.png
@@ -1729,3 +1729,44 @@
   weather: false
   indestructible: false
   itemDrop: FloorTileItemSomberGrass
+
+- type: tile
+  id: FloorSomberSandPlanet
+  name: tiles-somber-sand-planet
+  sprite: /Textures/_DEN/Tiles/Planet/Somber/Sand/sand.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_DEN/Tiles/Planet/Somber/Sand/single_edge.png
+    NorthEast: /Textures/_DEN/Tiles/Planet/Somber/Sand/single_edge.png
+    NorthWest: /Textures/_DEN/Tiles/Planet/Somber/Sand/single_edge.png
+    SouthWest: /Textures/_DEN/Tiles/Planet/Somber/Sand/single_edge.png
+    South: /Textures/_DEN/Tiles/Planet/Somber/Sand/double_edge.png
+    East: /Textures/_DEN/Tiles/Planet/Somber/Sand/double_edge.png
+    North: /Textures/_DEN/Tiles/Planet/Somber/Sand/double_edge.png
+    West: /Textures/_DEN/Tiles/Planet/Somber/Sand/double_edge.png
+  baseTurf: FloorSomberDirtPlanet
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+- type: tile
+  parent: FloorSomberSandPlanet
+  id: FloorSomberSand
+  name: tiles-somber-sand
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  weather: false
+  indestructible: false
+  itemDrop: FloorTileItemSomberSand

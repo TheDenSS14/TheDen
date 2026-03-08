@@ -6,12 +6,14 @@
 - type: entity
   parent: Fireplace
   id: SomberFireplace
-  name: somber electrum fireplace
+  name: electrum fireplace
   suffix: Click After Mapping
   description: "An avant-garde fireplace shaped like an eye, its smokeless psionic flame rippling like liquid."
   components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS PLEASE GOD PLEASE (SO THEY CAN BE TOGGLED WITH SWITCHES)
   - type: Sprite # TODO: IT'D ALSO BE REALLY NICE IF THEY COULD SPAWN TURNED ON SO I CAN MIGRATE ALL THE TURNED-OFF ONES TO BE LIT UP ON MAP SPAWN
+    snapCardinals: true
     noRot: true
+    drawdepth: Mobs
     sprite: _DEN/Structures/Decoration/somberfireplace.rsi
     layers:
       - state: fireplace
@@ -95,8 +97,8 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeAabb
-          bounds: "-0.05,0.1,0.05,0.35"
+          !type:PhysShapeCircle
+          radius: 0.4
         hard: true
         density: 1000
         mask:
@@ -114,7 +116,7 @@
 - type: entity
   parent: BaseSignDirectional # So it's technically wall decor, but whatever
   id: SomberHangingBrazier
-  name: somber hanging brazier
+  name: electrum hanging brazier
   suffix: Click After Mapping
   description: "An electrum brazier, its smokeless psionic flame rippling like liquid."
   placement:
