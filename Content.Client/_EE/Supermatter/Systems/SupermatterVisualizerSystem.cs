@@ -1,4 +1,4 @@
-﻿using Content.Client._EE.Supermatter.Components;
+using Content.Client._EE.Supermatter.Components;
 using Content.Shared._EE.Supermatter.Components;
 using Robust.Client.GameObjects;
 
