@@ -1,0 +1,300 @@
+# Designed to match the somber set, but they need to be useful for anyone, so I have to do all this for mappers
+# Called "gloomy" so as not to clutter the list when "somber" is searched, though that will bring up the public and mantis versions
+
+# Yes, this could be organized better, but I priorized ease of copy/paste and find/replace to keep myself something like sane
+# Also to clutter the entity list as little as possible, they're all secure since it's very rare to need to rip apart an unsecure windoor anyway
+
+
+# PUBLIC WINDOORS (UNLOCKED)
+
+# Public, Standard
+- type: entity
+  parent: WindoorSecure
+  id: GloomyWindoorSecure
+  name: gloomy windoor
+  suffix: Public] [Somber
+  description: "A gloomy, secure windoor, designed to match everything else in this place."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Windoors/somber.rsi
+
+# Public, Dark
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureDark
+  suffix: Public, Dark] [Somber
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Windoors/somberdark.rsi
+
+
+# MANTIS WINDOORS (ALL VARIANTS IN ONE PLACE)
+
+# Mantis (Locked)
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureMantisLocked
+  suffix: Mantis-Locked] [Somber
+  components:
+  - type: Label
+    currentLabel: mantis
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
+
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureMantisDarkLocked
+  suffix: Mantis-Locked, Dark] [Somber
+  components:
+  - type: Label
+    currentLabel: mantis
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
+
+
+# DEPARMTENTAL STANDARD (LOCKED)
+
+# Logistics
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureCargoLocked
+  suffix: Logistics, Locked
+  components:
+  - type: Label
+    currentLabel: logistics
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCargo ]
+
+# Command
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureCommandLocked
+  suffix: Command, Locked
+  components:
+  - type: Label
+    currentLabel: command
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCommand ]
+
+# Engineering
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureEngineeringLocked
+  suffix: Engineering, Locked
+  components:
+  - type: Label
+    currentLabel: engineering
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEngineering ]
+
+# Justice
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureJusticeLocked
+  suffix: Justice, Locked
+  components:
+  - type: Label
+    currentLabel: justice
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsJustice ]
+
+# Medical
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureMedicalLocked
+  suffix: Medical, Locked
+  components:
+  - type: Label
+    currentLabel: medical
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedical ]
+
+# Epistemics
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureScienceLocked
+  suffix: Epistemics, Locked
+  components:
+  - type: Label
+    currentLabel: epistemics
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsResearch ]
+
+# Security
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureSecurityLocked
+  suffix: Security, Locked
+  components:
+  - type: Label
+    currentLabel: security
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurity ]
+
+# Armory
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureArmoryLocked
+  suffix: Armory, Locked
+  components:
+  - type: Label
+    currentLabel: armory
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsArmory ]
+
+# Service
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureServiceLocked
+  suffix: Service, Locked
+  components:
+  - type: Label
+    currentLabel: service
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsService ]
+
+# Central Command
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureCentralCommandLocked
+  suffix: Central Command, Locked
+  components:
+  - type: Label
+    currentLabel: central command
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCentralCommand ]
+
+
+# DEPARTMENTAL DARK (LOCKED)
+
+# Logistics
+- type: entity
+  parent: GloomyWindoorSecureDark
+  id: GloomyWindoorSecureCargoDarkLocked
+  suffix: Logistics, Locked, Dark
+  components:
+  - type: Label
+    currentLabel: logistics
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCargo ]
+
+# Command
+- type: entity
+  parent: GloomyWindoorSecureDark
+  id: GloomyWindoorSecureCommandDarkLocked
+  suffix: Command, Locked, Dark
+  components:
+  - type: Label
+    currentLabel: command
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCommand ]
+
+# Engineering
+- type: entity
+  parent: GloomyWindoorSecureDark
+  id: GloomyWindoorSecureEngineeringDarkLocked
+  suffix: Engineering, Locked, Dark
+  components:
+  - type: Label
+    currentLabel: engineering
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEngineering ]
+
+# Justice
+- type: entity
+  parent: GloomyWindoorSecureDark
+  id: GloomyWindoorSecureJusticeDarkLocked
+  suffix: Justice, Locked, Dark
+  components:
+  - type: Label
+    currentLabel: justice
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsJustice ]
+
+# Medical
+- type: entity
+  parent: GloomyWindoorSecureDark
+  id: GloomyWindoorSecureMedicalDarkLocked
+  suffix: Medical, Locked, Dark
+  components:
+  - type: Label
+    currentLabel: medical
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedical ]
+
+# Epistemics
+- type: entity
+  parent: GloomyWindoorSecureDark
+  id: GloomyWindoorSecureScienceDarkLocked
+  suffix: Epistemics, Locked, Dark
+  components:
+  - type: Label
+    currentLabel: epistemics
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsResearch ]
+
+# Security
+- type: entity
+  parent: GloomyWindoorSecureDark
+  id: GloomyWindoorSecureSecurityDarkLocked
+  suffix: Security, Locked, Dark
+  components:
+  - type: Label
+    currentLabel: security
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurity ]
+
+# Armory
+- type: entity
+  parent: GloomyWindoorSecureDark
+  id: GloomyWindoorSecureArmoryDarkLocked
+  suffix: Armory, Locked, Dark
+  components:
+  - type: Label
+    currentLabel: armory
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsArmory ]
+
+# Service
+- type: entity
+  parent: GloomyWindoorSecureDark
+  id: GloomyWindoorSecureServiceDarkLocked
+  suffix: Service, Locked, Dark
+  components:
+  - type: Label
+    currentLabel: service
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsService ]
+
+# Central Command
+- type: entity
+  parent: GloomyWindoorSecureDark
+  id: GloomyWindoorSecureCentralCommandDarkLocked
+  suffix: Central Command, Locked, Dark
+  components:
+  - type: Label
+    currentLabel: central command
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCentralCommand ]

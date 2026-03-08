@@ -1,7 +1,7 @@
 {
     "version":1,
     "license":"CC-BY-SA-3.0",
-    "copyright":"Taken from Paradise at https://github.com/ParadiseSS13/Paradise/blob/bd91a1b962fe9bd38e346e9fafd4ebb10784fcb3/icons/obj/doors/windoor.dmi",
+    "copyright":"By Sha-Seng (GitHub)",
     "size": {
         "x":32,
         "y":32
@@ -166,7 +166,25 @@
         },
         {
             "name": "emergency_unlit",
-            "directions": 4
+            "directions":4,
+            "delays": [
+                [
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4
+                ]
+            ]
         }
     ]
 }

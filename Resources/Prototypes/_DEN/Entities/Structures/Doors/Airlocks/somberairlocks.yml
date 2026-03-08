@@ -7,7 +7,48 @@
 # Yes, this could be organized better, but I priorized ease of copy/paste and find/replace to keep myself something like sane
 
 
-# MANTIS AIRLOCKS (ALL VARIANTS IN ONE PLACE SINCE THEY'RE SPECIAL)
+# PUBLIC AIRLOCKS (UNLOCKED)
+
+# Public, Standard
+- type: entity
+  parent: Airlock
+  id: GloomyAirlock
+  name: gloomy airlock
+  suffix: Public] [Somber
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
+
+- type: entity
+  parent: AirlockGlass
+  id: GloomyAirlockGlass
+  name: gloomy glass airlock
+  suffix: Public] [Somber
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
+
+# Public, Dark
+- type: entity
+  parent: GloomyAirlock
+  id: GloomyAirlockDark
+  suffix: Public, Dark] [Somber
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
+
+- type: entity
+  parent: GloomyAirlockGlass
+  id: GloomyAirlockGlassDark
+  suffix: Public, Dark] [Somber
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
+
+
+# MANTIS AIRLOCKS (ALL VARIANTS IN ONE PLACE)
 
 # Mantis (Unlocked)
 - type: entity
@@ -125,54 +166,13 @@
     sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermaintenancemantis.rsi
 
 
-# PUBLIC AIRLOCKS (UNLOCKED)
-
-# Public, Standard
-- type: entity
-  parent: Airlock
-  id: GloomyAirlock
-  name: gloomy airlock
-  suffix: Public] [Somber
-  description: "It has survived much more, and much worse, than you."
-  components:
-  - type: Sprite
-    sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
-
-- type: entity
-  parent: AirlockGlass
-  id: GloomyAirlockGlass
-  name: gloomy glass airlock
-  suffix: Public] [Somber
-  description: "It has survived much more, and much worse, than you."
-  components:
-  - type: Sprite
-    sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
-
-# Public, Dark
-- type: entity
-  parent: GloomyAirlock
-  id: GloomyAirlockDark
-  suffix: Public, Dark] [Somber
-  components:
-  - type: Sprite
-    sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
-
-- type: entity
-  parent: GloomyAirlockGlass
-  id: GloomyAirlockGlassDark
-  suffix: Public, Dark] [Somber
-  components:
-  - type: Sprite
-    sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
-
-
 # DEPARMTENTAL STANDARD (LOCKED)
 
 # Logistics
 - type: entity
   parent: AirlockCargoLocked
   id: GloomyAirlockCargoLocked
-  suffix: Logistics-Locked
+  suffix: Logistics, Locked
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -184,7 +184,7 @@
 - type: entity
   parent: AirlockCargoGlassLocked
   id: GloomyAirlockCargoGlassLocked
-  suffix: Logistics-Locked
+  suffix: Logistics, Locked
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -197,7 +197,7 @@
 - type: entity
   parent: AirlockCommandLocked
   id: GloomyAirlockCommandLocked
-  suffix: Command-Locked
+  suffix: Command, Locked
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -209,7 +209,7 @@
 - type: entity
   parent: AirlockCommandGlassLocked
   id: GloomyAirlockCommandGlassLocked
-  suffix: Command-Locked
+  suffix: Command, Locked
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -222,7 +222,7 @@
 - type: entity
   parent: AirlockEngineeringLocked
   id: GloomyAirlockEngineeringLocked
-  suffix: Engineering-Locked
+  suffix: Engineering, Locked
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -234,7 +234,7 @@
 - type: entity
   parent: AirlockEngineeringGlassLocked
   id: GloomyAirlockEngineeringGlassLocked
-  suffix: Engineering-Locked
+  suffix: Engineering, Locked
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -247,7 +247,7 @@
 - type: entity
   parent: AirlockJusticeLocked
   id: GloomyAirlockJusticeLocked
-  suffix: Justice-Locked
+  suffix: Justice, Locked
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -259,7 +259,7 @@
 - type: entity
   parent: AirlockJusticeGlassLocked
   id: GloomyAirlockJusticeGlassLocked
-  suffix: Justice-Locked
+  suffix: Justice, Locked
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -272,7 +272,7 @@
 - type: entity
   parent: AirlockMedicalLocked
   id: GloomyAirlockMedicalLocked
-  suffix: Medical-Locked
+  suffix: Medical, Locked
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -284,7 +284,7 @@
 - type: entity
   parent: AirlockMedicalGlassLocked
   id: GloomyAirlockMedicalGlassLocked
-  suffix: Medical-Locked
+  suffix: Medical, Locked
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -297,7 +297,7 @@
 - type: entity
   parent: AirlockScienceLocked
   id: GloomyAirlockScienceLocked
-  suffix: Epistemics-Locked
+  suffix: Epistemics, Locked
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -309,7 +309,7 @@
 - type: entity
   parent: AirlockScienceGlassLocked
   id: GloomyAirlockScienceGlassLocked
-  suffix: Epistemics-Locked
+  suffix: Epistemics, Locked
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -322,7 +322,7 @@
 - type: entity
   parent: AirlockSecurityLocked
   id: GloomyAirlockSecurityLocked
-  suffix: Security-Locked
+  suffix: Security, Locked
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -334,7 +334,7 @@
 - type: entity
   parent: AirlockSecurityGlassLocked
   id: GloomyAirlockSecurityGlassLocked
-  suffix: Security-Locked
+  suffix: Security, Locked
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -343,11 +343,36 @@
   - type: Sprite
     sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
 
+# Armory
+- type: entity
+  parent: AirlockArmoryLocked
+  id: GloomyAirlockArmoryLocked
+  suffix: Armory, Locked
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: armory
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
+
+- type: entity
+  parent: AirlockArmoryGlassLocked
+  id: GloomyAirlockArmoryGlassLocked
+  suffix: Armory, Locked
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: armory
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
+
 # Service
 - type: entity
   parent: AirlockServiceLocked
   id: GloomyAirlockServiceLocked
-  suffix: Service-Locked
+  suffix: Service, Locked
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -359,12 +384,37 @@
 - type: entity
   parent: AirlockServiceGlassLocked
   id: GloomyAirlockServiceGlassLocked
-  suffix: Service-Locked
+  suffix: Service, Locked
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
   - type: Label
     currentLabel: service
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
+
+# Central Command
+- type: entity
+  parent: AirlockCentralCommandLocked
+  id: GloomyAirlockCentralCommandLocked
+  suffix: Central Command, Locked
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: central command
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
+
+- type: entity
+  parent: AirlockCentralCommandGlassLocked
+  id: GloomyAirlockCentralCommandGlassLocked
+  suffix: Central Command, Locked
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: central command
   - type: Sprite
     sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
 
@@ -375,7 +425,7 @@
 - type: entity
   parent: AirlockCargoLocked
   id: GloomyAirlockCargoDarkLocked
-  suffix: Logistics-Locked, Dark
+  suffix: Logistics, Locked, Dark
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -387,7 +437,7 @@
 - type: entity
   parent: AirlockCargoGlassLocked
   id: GloomyAirlockCargoGlassDarkLocked
-  suffix: Logistics-Locked, Dark
+  suffix: Logistics, Locked, Dark
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -400,7 +450,7 @@
 - type: entity
   parent: AirlockCommandLocked
   id: GloomyAirlockCommandDarkLocked
-  suffix: Command-Locked, Dark
+  suffix: Command, Locked, Dark
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -412,7 +462,7 @@
 - type: entity
   parent: AirlockCommandGlassLocked
   id: GloomyAirlockCommandGlassDarkLocked
-  suffix: Command-Locked, Dark
+  suffix: Command, Locked, Dark
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -425,7 +475,7 @@
 - type: entity
   parent: AirlockEngineeringLocked
   id: GloomyAirlockEngineeringDarkLocked
-  suffix: Engineering-Locked, Dark
+  suffix: Engineering, Locked, Dark
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -437,7 +487,7 @@
 - type: entity
   parent: AirlockEngineeringGlassLocked
   id: GloomyAirlockEngineeringGlassDarkLocked
-  suffix: Engineering-Locked, Dark
+  suffix: Engineering, Locked, Dark
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -450,7 +500,7 @@
 - type: entity
   parent: AirlockJusticeLocked
   id: GloomyAirlockJusticeDarkLocked
-  suffix: Justice-Locked, Dark
+  suffix: Justice, Locked, Dark
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -462,7 +512,7 @@
 - type: entity
   parent: AirlockJusticeGlassLocked
   id: GloomyAirlockJusticeGlassDarkLocked
-  suffix: Justice-Locked, Dark
+  suffix: Justice, Locked, Dark
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -475,7 +525,7 @@
 - type: entity
   parent: AirlockMedicalLocked
   id: GloomyAirlockMedicalDarkLocked
-  suffix: Medical-Locked, Dark
+  suffix: Medical, Locked, Dark
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -487,7 +537,7 @@
 - type: entity
   parent: AirlockMedicalGlassLocked
   id: GloomyAirlockMedicalGlassDarkLocked
-  suffix: Medical-Locked, Dark
+  suffix: Medical, Locked, Dark
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -500,7 +550,7 @@
 - type: entity
   parent: AirlockScienceLocked
   id: GloomyAirlockScienceDarkLocked
-  suffix: Epistemics-Locked, Dark
+  suffix: Epistemics, Locked, Dark
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -512,7 +562,7 @@
 - type: entity
   parent: AirlockScienceGlassLocked
   id: GloomyAirlockScienceGlassDarkLocked
-  suffix: Epistemics-Locked, Dark
+  suffix: Epistemics, Locked, Dark
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -525,7 +575,7 @@
 - type: entity
   parent: AirlockSecurityLocked
   id: GloomyAirlockSecurityDarkLocked
-  suffix: Security-Locked, Dark
+  suffix: Security, Locked, Dark
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -537,7 +587,7 @@
 - type: entity
   parent: AirlockSecurityGlassLocked
   id: GloomyAirlockSecurityGlassDarkLocked
-  suffix: Security-Locked, Dark
+  suffix: Security, Locked, Dark
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -546,11 +596,36 @@
   - type: Sprite
     sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
 
+# Armory
+- type: entity
+  parent: AirlockArmoryLocked
+  id: GloomyAirlockArmoryDarkLocked
+  suffix: Armory, Locked, Dark
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: armory
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
+
+- type: entity
+  parent: AirlockArmoryGlassLocked
+  id: GloomyAirlockArmoryGlassDarkLocked
+  suffix: Armory, Locked, Dark
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: armory
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
+
 # Service
 - type: entity
   parent: AirlockServiceLocked
   id: GloomyAirlockServiceDarkLocked
-  suffix: Service-Locked, Dark
+  suffix: Service, Locked, Dark
   name: gloomy airlock
   description: "It has survived much more, and much worse, than you."
   components:
@@ -562,12 +637,37 @@
 - type: entity
   parent: AirlockServiceGlassLocked
   id: GloomyAirlockServiceGlassDarkLocked
-  suffix: Service-Locked, Dark
+  suffix: Service, Locked, Dark
   name: gloomy glass airlock
   description: "It has survived much more, and much worse, than you."
   components:
   - type: Label
     currentLabel: service
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
+
+# Central Command
+- type: entity
+  parent: AirlockCentralCommandLocked
+  id: GloomyAirlockCentralCommandDarkLocked
+  suffix: Central Command, Locked, Dark
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: central command
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
+
+- type: entity
+  parent: AirlockCentralCommandGlassLocked
+  id: GloomyAirlockCentralCommandGlassDarkLocked
+  suffix: Central Command, Locked, Dark
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: central command
   - type: Sprite
     sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
 
@@ -599,7 +699,7 @@
 - type: entity
   parent: AirlockCargoLocked
   id: GloomyAirlockMaintCargoLocked
-  suffix: Logistics-Locked
+  suffix: Logistics, Locked
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
@@ -611,7 +711,7 @@
 - type: entity
   parent: AirlockCargoGlassLocked
   id: GloomyAirlockMaintCargoGlassLocked
-  suffix: Logistics-Locked, Glass
+  suffix: Logistics, Locked, Glass
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
@@ -624,7 +724,7 @@
 - type: entity
   parent: AirlockCommandLocked
   id: GloomyAirlockMaintCommandLocked
-  suffix: Command-Locked
+  suffix: Command, Locked
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
@@ -636,7 +736,7 @@
 - type: entity
   parent: AirlockCommandGlassLocked
   id: GloomyAirlockMaintCommandGlassLocked
-  suffix: Command-Locked, Glass
+  suffix: Command, Locked, Glass
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
@@ -649,7 +749,7 @@
 - type: entity
   parent: AirlockEngineeringLocked
   id: GloomyAirlockMaintEngineeringLocked
-  suffix: Engineering-Locked
+  suffix: Engineering, Locked
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
@@ -661,7 +761,7 @@
 - type: entity
   parent: AirlockEngineeringGlassLocked
   id: GloomyAirlockMaintEngineeringGlassLocked
-  suffix: Engineering-Locked, Glass
+  suffix: Engineering, Locked, Glass
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
@@ -674,7 +774,7 @@
 - type: entity
   parent: AirlockJusticeLocked
   id: GloomyAirlockMaintJusticeLocked
-  suffix: Justice-Locked
+  suffix: Justice, Locked
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
@@ -686,7 +786,7 @@
 - type: entity
   parent: AirlockJusticeGlassLocked
   id: GloomyAirlockMaintJusticeGlassLocked
-  suffix: Justice-Locked, Glass
+  suffix: Justice, Locked, Glass
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
@@ -699,7 +799,7 @@
 - type: entity
   parent: AirlockMedicalLocked
   id: GloomyAirlockMaintMedicalLocked
-  suffix: Medical-Locked
+  suffix: Medical, Locked
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
@@ -711,7 +811,7 @@
 - type: entity
   parent: AirlockMedicalGlassLocked
   id: GloomyAirlockMaintMedicalGlassLocked
-  suffix: Medical-Locked, Glass
+  suffix: Medical, Locked, Glass
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
@@ -724,7 +824,7 @@
 - type: entity
   parent: AirlockScienceLocked
   id: GloomyAirlockMaintScienceLocked
-  suffix: Epistemics-Locked
+  suffix: Epistemics, Locked
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
@@ -736,7 +836,7 @@
 - type: entity
   parent: AirlockScienceGlassLocked
   id: GloomyAirlockMaintScienceGlassLocked
-  suffix: Epistemics-Locked, Glass
+  suffix: Epistemics, Locked, Glass
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
@@ -749,7 +849,7 @@
 - type: entity
   parent: AirlockSecurityLocked
   id: GloomyAirlockMaintSecurityLocked
-  suffix: Security-Locked
+  suffix: Security, Locked
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
@@ -761,7 +861,7 @@
 - type: entity
   parent: AirlockSecurityGlassLocked
   id: GloomyAirlockMaintSecurityGlassLocked
-  suffix: Security-Locked, Glass
+  suffix: Security, Locked, Glass
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
@@ -770,11 +870,36 @@
   - type: Sprite
     sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermaintenance.rsi
 
+# Armory Maints
+- type: entity
+  parent: AirlockArmoryLocked
+  id: GloomyAirlockMaintArmoryLocked
+  suffix: Armory, Locked
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: armory
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
+
+- type: entity
+  parent: AirlockArmoryGlassLocked
+  id: GloomyAirlockMaintArmoryGlassLocked
+  suffix: Armory, Locked, Glass
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: armory
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermaintenance.rsi
+
 # Service Maints
 - type: entity
   parent: AirlockServiceLocked
   id: GloomyAirlockMaintServiceLocked
-  suffix: Service-Locked
+  suffix: Service, Locked
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
@@ -786,11 +911,36 @@
 - type: entity
   parent: AirlockServiceGlassLocked
   id: GloomyAirlockMaintServiceGlassLocked
-  suffix: Service-Locked, Glass
+  suffix: Service, Locked, Glass
   name: gloomy maintenance access
   description: "It has survived much more, and much worse, than you."
   components:
   - type: Label
     currentLabel: service
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermaintenance.rsi
+
+# Central Command Maints
+- type: entity
+  parent: AirlockCentralCommandLocked
+  id: GloomyAirlockMaintCentralCommandLocked
+  suffix: Central Command, Locked
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: central command
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
+
+- type: entity
+  parent: AirlockCentralCommandGlassLocked
+  id: GloomyAirlockMaintCentralCommandGlassLocked
+  suffix: Central Command, Locked, Glass
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: central command
   - type: Sprite
     sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermaintenance.rsi
