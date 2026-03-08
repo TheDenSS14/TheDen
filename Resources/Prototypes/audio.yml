@@ -319,7 +319,7 @@
       anchored: true
       components:
         - type: Prayable
-      range: 5
+      range: 50 # Sha - For Break's penthouse, do not push to Den
 
 - type: rules
   id: NearMorgue
@@ -330,7 +330,7 @@
       components:
         - type: Morgue
       range: 3
-      
+
 - type: rules
   id: NearSpookyFog
   rules:

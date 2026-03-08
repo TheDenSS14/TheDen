@@ -1106,3 +1106,29 @@
         color: "#b32d70"
   - type: Fiber
     fiberColor: fibers-magenta
+
+# Tables
+
+- type: entity
+  parent: SomberTableFire
+  id: SomberTableFirePenthouse
+  name: somber table
+  suffix: Fire Table] [PENTHOUSE
+  description: "An expensive fire table made of gloomy, patterned wood. Mind your hands."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Tables/Somber/somberwoodtablefirepenthouse.rsi
+    layers:
+      - state: full
+      - state: fire
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: Icon
+    sprite: _SHA/Structures/Furniture/Tables/Somber/somberwoodtablefirepenthouse.rsi
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 5
+    softness: 1.22
+    color: "#FF9833"

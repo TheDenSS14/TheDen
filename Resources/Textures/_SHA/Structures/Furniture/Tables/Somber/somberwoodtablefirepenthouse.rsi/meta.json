@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "By Sha-Seng (GitHub)",
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "full",
+      "directions": 4
+    },
+    {
+      "name": "fire",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    }
+  ]
+}

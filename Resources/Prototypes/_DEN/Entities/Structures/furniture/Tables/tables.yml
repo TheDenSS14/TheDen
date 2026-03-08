@@ -464,7 +464,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-.8,-0.225,0.8,0.225"
+          bounds: "-.75,-0.225,0.75,0.225"
         density: 55
         mask:
         - TableMask
@@ -559,20 +559,23 @@
   name: somber table
   suffix: Fire Table
   description: "An expensive fire table made of gloomy, patterned wood. Mind your hands."
-  components:
-  - type: Sprite
+  components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS PLEASE GOD PLEASE (SO THEY CAN BE TOGGLED WITH SWITCHES)
+  - type: Sprite # TODO: IT'D ALSO BE REALLY NICE IF THEY COULD SPAWN TURNED ON SO I CAN MIGRATE ALL THE TURNED-OFF ONES TO BE LIT UP ON MAP SPAWN
     sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtablefire.rsi
-    state: full
-    noRot: false
+    layers:
+      - state: full
+      - state: fire
+        shader: unshaded
+        visible: false
+        map: ["light"]
   - type: Icon
     sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtablefire.rsi
-    state: full
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-.8,-0.225,0.8,0.225"
+          bounds: "-.75,-0.45,0.75,0.45"
         density: 55
         mask:
         - TableMask
@@ -580,9 +583,6 @@
         - TableLayer
         - MidImpassable
         - BulletImpassable
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Wood
   - type: Destructible
     thresholds:
     - trigger:
@@ -593,7 +593,7 @@
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 75 # Stronger because there's stone and pipes in it
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -608,18 +608,48 @@
             max: 2
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: StaticPrice
-    price: 125
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepWood
-  - type: PlaceableSurface
-  - type: Climbable
   - type: Bonkable
     bonkDamage:
       types:
-        Blunt: 4
-  - type: Clickable
-  - type: RequireProjectileTarget
-  - type: ThrownItemImmune
+        Heat: 6 # Hehe
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        light:
+          True: { visible: true }
+          False: { visible: false }
+  - type: InteractionOutline
+  - type: ItemTogglePointLight
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      path: /Audio/_DEN/Effects/crystaltap1.ogg
+      params:
+        volume: -6
+        pitch: 0.5
+        variation: 0.05
+    soundDeactivate:
+      path: /Audio/_DEN/Effects/crystaltap2.ogg
+      params:
+        volume: -6
+        pitch: 0.5
+        variation: 0.05
+  - type: AmbientSound
+    enabled: false
+    volume: -8
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: UnpoweredFlashlight
+  - type: EtherealLight # Dims around ethereal entities
+  - type: StaticPrice
+    price: 125
+  - type: ItemToggleHot
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 5
+    softness: 1.22
+    color: "#4dc4ff"
 # Somber Tables End

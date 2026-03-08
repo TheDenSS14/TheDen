@@ -55,10 +55,11 @@
         pitch: 0.5
         variation: 0.05
   - type: AmbientSound
+    enabled: false
     volume: -6
     range: 5
     sound:
-      path: /Audio/Effects/silence.ogg
+      path: /Audio/Ambience/Objects/fireplace.ogg
   - type: UnpoweredFlashlight
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
@@ -67,7 +68,7 @@
     energy: 7
     softness: 1.22
     color: "#4dc4ff"
-  - type: AlwaysHot
+  - type: ItemToggleHot
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -166,6 +167,12 @@
         volume: -6
         pitch: 0.75
         variation: 0.05
+  - type: AmbientSound
+    enabled: false
+    volume: -8
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
   - type: UnpoweredFlashlight
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
@@ -176,7 +183,7 @@
     color: "#4dc4ff"
   - type: StaticPrice
     price: 125
-  - type: AlwaysHot
+  - type: ItemToggleHot
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic

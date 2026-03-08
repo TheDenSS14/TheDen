@@ -1,0 +1,21 @@
+- type: entity
+  parent: KitchenElectricGrill
+  id: KitchenElectricGrillSomber
+  name: somber grill
+  description: "Ostentatious, but the electrum grates distribute heat beautifully."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Machines/somberelectricgrill.rsi
+    snapCardinals: false
+    noRot: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.375,-0.03125,0.375,0.40625"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+        hard: false
