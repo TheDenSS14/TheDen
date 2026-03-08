@@ -5,6 +5,8 @@
   description: "A pneumatic waste disposal unit. There is no reason for it to be this ornate."
   components:
   - type: Sprite
+    snapCardinals: false
+    noRot: true
     sprite: _DEN/Structures/Piping/somberdisposal.rsi
 
 - type: entity
