@@ -1,0 +1,95 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from Nova Sector at https://github.com/NovaSector/NovaSector",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "m_tail_tailmaw_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "m_tail_tailmaw_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "m_tail_tailmawwag_BEHIND",
+            "directions": 4
+        },
+        {
+            "name": "m_tail_tailmawwag_FRONT",
+            "directions": 4
+        },
+        {
+            "name": "m_waggingtail_tailmawwag_FRONT",
+            "directions": 4,
+            "delays": [
+                [
+                    1,
+                    0.3,
+                    1,
+                    0.2,
+                    0.4
+                ],
+                [
+                    1,
+                    0.3,
+                    1,
+                    0.2,
+                    0.4
+                ],
+                [
+                    1,
+                    0.3,
+                    1,
+                    0.2,
+                    0.4
+                ],
+                [
+                    1,
+                    0.3,
+                    1,
+                    0.2,
+                    0.4
+                ]
+            ]
+        },
+        {
+            "name": "m_waggingtail_tailmawwag_BEHIND",
+            "directions": 4,
+            "delays": [
+                [
+                    1,
+                    0.3,
+                    1,
+                    0.2,
+                    0.4
+                ],
+                [
+                    1,
+                    0.3,
+                    1,
+                    0.2,
+                    0.4
+                ],
+                [
+                    1,
+                    0.3,
+                    1,
+                    0.2,
+                    0.4
+                ],
+                [
+                    1,
+                    0.3,
+                    1,
+                    0.2,
+                    0.4
+                ]
+            ]
+        }
+    ]
+}

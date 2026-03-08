@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 sheepie
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # AEON
 marking-CyberLimbsMarkingAEONLLeg = AEON Left Leg
 marking-CyberLimbsMarkingAEONLLeg-l_leg_base = Base

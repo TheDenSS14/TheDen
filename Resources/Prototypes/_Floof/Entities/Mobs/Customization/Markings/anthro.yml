@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Stegomancer
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 #####    SNOUTS    #####
 
@@ -11,221 +11,263 @@
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/canid.rsi
     state: snout_canid_alt2
+  #End Den additions
 
 #- type: marking
 #  id: SnoutCanidAlt
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/canid.rsi
 #    state: snout_canid_alt
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/canid.rsi
 #    state: snout_canid_alt_secondary
+#  #End Den additions
 
 - type: marking
   id: SnoutFLCanid
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/lcanid.rsi
     state: snout_flcanid_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/lcanid.rsi
     state: snout_flcanid_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutLCanid
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/lcanid.rsi
     state: snout_lcanid_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/lcanid.rsi
     state: snout_lcanid_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutFLCanidAlt
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/lcanidalt.rsi
     state: snout_flcanidalt_primary
+  #End Den additions
 
 - type: marking
   id: SnoutFLCanidStripe
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/lcanidstripe.rsi
     state: snout_flcanidstripe_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/lcanidstripe.rsi
     state: snout_flcanidstripe_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutLCanidStripe
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/lcanidstripe.rsi
     state: snout_lcanidstripe_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/lcanidstripe.rsi
     state: snout_lcanidstripe_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutFLCanidStripeAlt
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/lcanidstripealt.rsi
     state: snout_flcanidstripealt_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/lcanidstripealt.rsi
     state: snout_flcanidstripealt_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutLCanidStripeAlt
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/lcanidstripealt.rsi
     state: snout_lcanidstripealt_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/lcanidstripealt.rsi
     state: snout_lcanidstripealt_secondary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFHusky
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/husky.rsi
 #    state: snout_fhusky_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/husky.rsi
 #    state: snout_fhusky_secondary
+#  #End Den additions
 
 - type: marking
   id: SnoutHusky
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/husky.rsi
     state: snout_husky_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/husky.rsi
     state: snout_husky_secondary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFWolf
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wolf.rsi
 #    state: snout_fwolf_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wolf.rsi
 #    state: snout_fwolf_secondary
+#  #End Den additions
 
 - type: marking
   id: SnoutWolf
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wolf.rsi
     state: snout_wolf_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wolf.rsi
     state: snout_wolf_secondary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFWolfAlt
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wolfalt.rsi
 #    state: snout_fwolfalt_primary
+#  #End Den additions
 
 - type: marking
   id: SnoutWolfAlt
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wolfalt.rsi
     state: snout_wolfalt_primary
+  #End Den additions
 
 - type: marking
   id: SnoutFSCanid
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/scanid.rsi
     state: snout_fscanid_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/scanid.rsi
     state: snout_fscanid_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutSCanid
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/scanid.rsi
     state: snout_scanid_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/scanid.rsi
     state: snout_scanid_secondary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFSCanidAlt
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/scanidalt.rsi
 #    state: snout_fscanidalt_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/scanidalt.rsi
 #    state: snout_fscanidalt_secondary
+#  #End Den additions
 #
 #- type: marking
 #  id: SnoutFSCanidAlt2
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/scanidalt2.rsi
 #    state: snout_fscanidalt2_primary
+#  #End Den additions
 #
 #- type: marking
 #  id: SnoutFSCanidAlt3
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/scanidalt3.rsi
 #    state: snout_fscanidalt3_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/scanidalt3.rsi
 #    state: snout_fscanidalt3_secondary
+#  #End Den additions
 
 - type: marking
   id: SnoutSCanidAlt3
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/scanidalt3.rsi
     state: snout_scanidalt3_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/scanidalt3.rsi
     state: snout_scanidalt3_secondary
+  #End Den additions
 
 ## LIZARD SNOUTS ##
 
@@ -234,36 +276,44 @@
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/round.rsi
     state: snout_round
+  #End Den additions
 
 - type: marking
   id: SnoutSharp
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/sharp.rsi
     state: snout_sharp
+  #End Den additions
 
 - type: marking
   id: SnoutRoundLight
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/roundlight.rsi
     state: snout_roundlight
+  #End Den additions
 
 - type: marking
   id: SnoutSharpLight
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/sharplight.rsi
     state: snout_sharplight
+  #End Den additions
 
 ## BIRD SNOUTS ##
 
@@ -272,142 +322,170 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bird.rsi
 #    state: snout_fbird_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bird.rsi
 #    state: snout_fbird_secondary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bird.rsi
 #    state: snout_fbird_tertiary
+#  #End Den additions
 
 - type: marking
   id: SnoutBird
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bird.rsi
     state: snout_bird_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bird.rsi
     state: snout_bird_secondary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bird.rsi
     state: snout_bird_tertiary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFBigBeak
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bigbeak.rsi
 #    state: snout_fbigbeak_primary
+#  #End Den additions
 
 - type: marking
   id: SnoutBigBeak
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bigbeak.rsi
     state: snout_bigbeak_primary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFCorvidBeak
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/corvid.rsi
 #    state: snout_fcorvidbeak_primary
+#  #End Den additons
 #
 #- type: marking
 #  id: SnoutFToucan
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/toucan.rsi
 #    state: snout_ftoucan_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/toucan.rsi
 #    state: snout_ftoucan_tertiary
+#  #End Den additions
 
 - type: marking
   id: SnoutToucan
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/toucan.rsi
     state: snout_toucan_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/toucan.rsi
     state: snout_toucan_tertiary
+  #End Den additions
 
 - type: marking
   id: SnoutBirdSmall
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/birdsmall.rsi
     state: snout_birdsmall_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/birdsmall.rsi
     state: snout_birdsmall_secondary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/birdsmall.rsi
     state: snout_birdsmall_tertiary
+  #End Den additions
 
 - type: marking
   id: SnoutBigBeakShort
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bigbeakshort.rsi
     state: snout_bigbeakshort_primary
+  #End Den additions
 
 - type: marking
   id: SnoutSlimBeak
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/slimbeak.rsi
     state: snout_slimbeak_primary
+  #End Den additions
 
 - type: marking
   id: SnoutSlimBeakAlt
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/slimbeakalt.rsi
     state: snout_slimbeakalt_primary
+  #End Den additions
 
 - type: marking
   id: SnoutSlimBeakShort
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/slimbeakshort.rsi
     state: snout_slimbeakshort_primary
+  #End Den additions
 
 - type: marking
   id: SnoutHookBeak
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/hookbeak.rsi
     state: snout_hookbeak_primary
+  #End Den additions
 
 - type: marking
   id: SnoutHookBeakBig
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/hookbeak.rsi
     state: snout_hookbeakbig_primary
+  #End Den additions
 
 ## MISC SNOUTS ##
 
@@ -416,282 +494,334 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wah.rsi
 #    state:  snout_fwah_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wah.rsi
 #    state:  snout_fwah_secondary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wah.rsi
 #    state:  snout_fwah_tertiary
+#  #End Den additions
 
 - type: marking
   id: SnoutWah
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wah.rsi
     state:  snout_wah_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wah.rsi
     state:  snout_wah_secondary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wah.rsi
     state:  snout_wah_tertiary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFWahAlt
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wahalt.rsi
 #    state:  snout_fwahalt_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wahalt.rsi
 #    state:  snout_fwahalt_secondary
+#  #End Den additions
 
 - type: marking
   id: SnoutWahAlt
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wahalt.rsi
     state:  snout_wahalt_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/wahalt.rsi
     state:  snout_wahalt_secondary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFOtie
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/otie.rsi
 #    state:  snout_fotie_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/otie.rsi
 #    state:  snout_fotie_secondary
+#  #End Den additions
 
 - type: marking
   id: SnoutOtie
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/otie.rsi
     state:  snout_otie_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/otie.rsi
     state:  snout_otie_secondary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFOtieSmile
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/otiesmile.rsi
 #    state:  snout_fotiesmile_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/otiesmile.rsi
 #    state:  snout_fotiesmile_secondary
+#  #End Den additions
 
 - type: marking
   id: SnoutOtieSmile
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/otiesmile.rsi
     state:  snout_otiesmile_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/otiesmile.rsi
     state:  snout_otiesmile_secondary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFPede
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/pede.rsi
 #    state:  snout_fpede_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/pede.rsi
 #    state:  snout_fpede_secondary
+#  #End Den additions
 
 - type: marking
   id: SnoutPede
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/pede.rsi
     state:  snout_pede_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/pede.rsi
     state:  snout_pede_secondary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFRodent
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/rodent.rsi
 #    state:  snout_frodent_primary
+#  #End Den additions
 
 - type: marking
   id: SnoutRodent
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/rodent.rsi
     state:  snout_rodent_primary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFSergal
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/sergal.rsi
 #    state:  snout_fsergal_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/sergal.rsi
 #    state:  snout_fsergal_secondary
+#  #End Den additions
 #
 #- type: marking
 #  id: SnoutFRhino
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/rhino.rsi
 #    state:  snout_frhino_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/rhino.rsi
 #    state:  snout_frhino_secondary
+#  #End Den additions
 
 - type: marking
   id: SnoutRhino
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/rhino.rsi
     state:  snout_rhino_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/rhino.rsi
     state:  snout_rhino_secondary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/rhino.rsi
     state:  snout_rhino_tertiary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFBovine
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bovine.rsi
 #    state:  snout_fbovine_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bovine.rsi
 #    state:  snout_fbovine_secondary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bovine.rsi
 #    state:  snout_fbovine_tertiary
+#  #End Den additions
 
 - type: marking
   id: SnoutBovine
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Ovinia] # Den - Added Ovinia
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bovine.rsi
     state:  snout_bovine_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bovine.rsi
     state:  snout_bovine_secondary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bovine.rsi
     state:  snout_bovine_tertiary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFElephant
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/elephant.rsi
 #    state:  snout_felephant_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/elephant.rsi
 #    state:  snout_felephant_secondary
+#  #End Den additions
 
 - type: marking
   id: SnoutElephant
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/elephant.rsi
     state:  snout_elephant_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/elephant.rsi
     state:  snout_elephant_secondary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFRound
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/round.rsi
 #    state:  snout_fround
+#  #End Den additions
 #
 #- type: marking
 #  id: SnoutFSharpLight
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/sharplight.rsi
 #    state:  snout_fsharplight
+#  #End Den additions
 #
 #- type: marking
 #  id: SnoutFRoundLight
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/roundlight.rsi
 #    state:  snout_froundlight
+#  #End Den additions
 #
 #- type: marking
 #  id: SnoutFShark
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/shark.rsi
 #    state:  snout_fshark_primary
+#  #End Den additions
 
 - type: marking
   id: SnoutShark
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/shark.rsi
     state:  snout_shark_primary
+  #End Den additions
 
 - type: marking
   id: SnoutHShark
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/hshark.rsi
     state:  snout_hshark_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/hshark.rsi
     state:  snout_hshark_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutHSharkEyes
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/hshark.rsi
     state:  snout_hshark_eyes_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/hshark.rsi
     state:  snout_hshark_eyes_secondary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFBug
@@ -700,186 +830,220 @@
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
 #  colorLinks:
 #    snout_fbug_FRONT_primary: snout_fbug_primary
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bug.rsi
 #    state:  snout_fbug_FRONT_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bug.rsi
 #    state:  snout_fbug_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bug.rsi
 #    state:  snout_fbug_secondary
+#  #End Den additions
 
 - type: marking
   id: SnoutBug
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bug.rsi
     state:  snout_bug_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bug.rsi
     state:  snout_bug_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutBugNoEyes
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/bug.rsi
     state:  snout_bug_no_eyes
+  #End Den additions
 
 - type: marking
   id: SnoutSergal
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/sergal.rsi
     state:  snout_sergal_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/sergal.rsi
     state:  snout_sergal_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutHHorse
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/horse.rsi
     state:  snout_hhorse_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/horse.rsi
     state:  snout_hhorse_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutHZebra
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/hzebra.rsi
     state:  snout_hzebra_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/hzebra.rsi
     state:  snout_hzebra_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutHAnubus
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/hanubus.rsi
     state:  snout_hanubus_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/hanubus.rsi
     state:  snout_hanubus_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutHPanda
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/panda.rsi
     state:  snout_hpanda_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/panda.rsi
     state:  snout_hpanda_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutHJackal
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/jackel.rsi
     state:  snout_hjackal_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/jackel.rsi
     state:  snout_hjackal_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutHSpots
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/hspots.rsi
     state: snout_hspots_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/hspots.rsi
     state: snout_hspots_secondary
+  #End Den additions
 
 #- type: marking
 #  id: SnoutFSkulldog
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/skulldog.rsi
 #    state: snout_fskulldog_primary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/skulldog.rsi
 #    state: snout_fskulldog_secondary
-#  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratsnouts/skulldog.rsi
 #    state: snout_fskulldog_tertiary
+#  #End Den additions
 
 - type: marking
   id: SnoutSkulldog
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/skulldog.rsi
     state: snout_skulldog_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/skulldog.rsi
     state: snout_skulldog_secondary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/skulldog.rsi
     state: snout_skulldog_tertiary
+  #End Den additions
 
 - type: marking
   id: SnoutSharkBlubber
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/sharkblubber.rsi
     state: snout_sharkblubber_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/sharkblubber.rsi
     state: snout_sharkblubber_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutRat
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/rat.rsi
     state: snout_rat_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/rat.rsi
     state: snout_rat_tertiary
+  #End Den additions
 
 - type: marking
   id: SnoutNTajaran
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/tajaran.rsi
     state: snout_ntajaran
+  #End Den additions
 
 - type: marking
   id: SnoutStubby
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/stubby.rsi
     state: snout_stubby_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/stubby.rsi
     state: snout_stubby_secondary
+  #End Den additions
 
 - type: marking
   id: SnoutLeporid
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/leporid.rsi
     state: snout_leporid_primary
-  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratsnouts/leporid.rsi
     state: snout_leporid_secondary
+  #End Den additions
