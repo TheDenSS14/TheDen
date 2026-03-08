@@ -1,0 +1,178 @@
+# Unpotted plants in gloomy colors
+
+- type: entity
+  parent: PottedPlantBase
+  id: PottedPlantSomberBase
+  name: somber ornamental plant
+  description: "As it turns out, there's a market for plants altered by floral anomalies. It persists even without its pot."
+  abstract: true
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Sprite
+    offset: "0.0,0.0"
+    sprite: _DEN/Structures/Furniture/somber_potted_plants.rsi
+
+- type: entity
+  id: PottedPlantSomber0
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-00
+
+- type: entity
+  id: PottedPlantSomber1
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-01
+
+- type: entity
+  id: PottedPlantSomber2
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-02
+
+- type: entity
+  id: PottedPlantSomber3
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-03
+
+- type: entity
+  id: PottedPlantSomber4
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-04
+
+- type: entity
+  id: PottedPlantSomber5
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-05
+
+- type: entity
+  id: PottedPlantSomber6
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-06
+
+- type: entity
+  id: PottedPlantSomber7
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-07
+
+- type: entity
+  id: PottedPlantSomber8
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-08
+
+- type: entity
+  id: PottedPlantSomberBioluminescent
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-09
+  - type: PointLight
+    radius: 2
+    color: "#4dc4ff" # Slight adjustment to the color of psionic fire
+
+- type: entity
+  id: PottedPlantSomber10
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-10
+
+- type: entity
+  id: PottedPlantSomber11
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-11
+
+- type: entity
+  id: PottedPlantSomber12
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-12
+
+- type: entity
+  id: PottedPlantSomber13
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-13
+
+- type: entity
+  id: PottedPlantSomber14
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-14
+
+- type: entity
+  id: PottedPlantSomber16
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-16
+
+- type: entity
+  id: PottedPlantSomber18
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-18
+
+- type: entity
+  id: PottedPlantSomber19
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-19
+
+- type: entity
+  id: PottedPlantSomber21
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-21
+
+- type: entity
+  id: PottedPlantSomber22
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-22
+
+- type: entity
+  id: PottedPlantSomber24
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-24
+
+- type: entity
+  id: PottedPlantSomber26
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-26
+
+- type: entity
+  id: PottedPlantSomber29
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-29

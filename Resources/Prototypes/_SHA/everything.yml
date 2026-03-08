@@ -1,0 +1,1134 @@
+# Game Presets
+
+- type: gamePreset
+  id: BreakHome
+  alias:
+  - breakhome
+  - home
+  name: breakhome-title
+  description: breakhome-description
+  supportedMaps: HomeMapPool
+  rules: []
+
+- type: gamePreset
+  id: BreakHideout
+  alias:
+  - breakhideout
+  - hideout
+  name: breakhideout-title
+  description: breakhideout-description
+  supportedMaps: HideoutMapPool
+  rules: []
+
+# Game Map Pools
+
+- type: gameMapPool
+  id: HomeMapPool
+  maps:
+  - Infinity # TODO
+
+- type: gameMapPool
+  id: HideoutMapPool
+  maps:
+  - Infinity # TODO
+
+# Parallax
+
+- type: parallax
+  id: Bloom
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_SHA/Parallaxes/bloomcitylights.png"
+      slowness: 0
+      scale: "0.85,0.85"
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_SHA/Parallaxes/bloomcloudslightpollution.png"
+      slowness: 0
+      scale: "0.5,0.5"
+      scrolling: "0.30, -0.50"
+
+# Damage
+
+- type: damageContainer
+  id: Indestructible
+  supportedTypes:
+    - Holy
+
+- type: damageModifierSet
+  id: Indestructible
+  coefficients:
+    Holy: 0.0
+  flatReductions:
+    Holy: 100
+
+# Decals
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseMigrations
+  parent: Overlays
+  abstract: true
+
+- type: decal
+  id: MonoTileSomberDarkPenthouse
+  parent: MiniTile
+  abstract: true
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimN
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_n
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimS
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_s
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimE
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_e
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimW
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_w
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimNE
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_ne
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimNW
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_nw
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimSE
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_se
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimSW
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_sw
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimNReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_n
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimSReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_s
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimEReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_e
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimWReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_w
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimNEReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_ne
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimNWReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_nw
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimSEReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_se
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimSWReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_sw
+
+- type: decal
+  id: SomberRailPenthouseBalcony
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony
+
+- type: decal
+  id: SomberRailPenthouseBalconyN
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony-N
+
+- type: decal
+  id: SomberRailPenthouseBalconyS
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony-S
+
+- type: decal
+  id: SomberRailPenthouseBalconyNInner
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony-N-inner
+
+- type: decal
+  id: SomberRailPenthouseBalconySInner
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony-S-inner
+
+- type: decal
+  id: SomberRailPenthouseBalconyDiagonal
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony-diagonal
+
+- type: decal
+  id: SomberRailPenthouseV
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-vertical
+
+- type: decal
+  id: SomberRailPenthouseH
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-horizontal
+
+# Diagonal windows
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDiagonalFramedLeftEnd
+  name: somber window
+  suffix: Diagonal, Framed, Left End] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Windows/Somber/somber_diagonal_framed_left_end.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Windows/Somber/somber_diagonal_framed_left_end.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDiagonalFramedRightEnd
+  name: somber window
+  suffix: Diagonal, Framed, Right End] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Windows/Somber/somber_diagonal_framed_right_end.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Windows/Somber/somber_diagonal_framed_right_end.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDarkDiagonalFramedLeftEnd
+  name: somber window
+  suffix: Dark, Diagonal, Framed, Left End] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Windows/Somber/somberdark_diagonal_framed_left_end.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Windows/Somber/somberdark_diagonal_framed_left_end.rsi
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDarkDiagonalFramedRightEnd
+  name: somber window
+  suffix: Dark, Diagonal, Framed, Right End] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Windows/Somber/somberdark_diagonal_framed_right_end.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Windows/Somber/somberdark_diagonal_framed_right_end.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+# Walls
+
+- type: entity
+  parent: BaseStructure
+  id: RailingInvisible
+  name: ledge
+  description: "You're an idiot. You'll fall. Get back."
+  suffix: PENTHOUSE
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: invisible
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: invisible
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.25"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+  - type: Damageable
+    damageContainer: Indestructible
+    damageModifierSet: Indestructible
+
+- type: entity
+  parent: RailingInvisible
+  id: RailingInvisibleOccluder
+  name: darkness
+  description: "You can't see anything..."
+  suffix: PENTHOUSE
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,0.49"
+        hard: true
+        density: 1000
+        mask:
+          - FullTileMask
+        layer:
+          - WallLayer
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,-0.3"
+
+- type: entity
+  parent: WallSomber
+  id: WallSomberSeethrough
+  suffix: SEE-THROUGH] [PENTHOUSE
+  components:
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: WallSomberDark
+  id: WallSomberDarkSeethrough
+  suffix: SEE-THROUGH, Dark] [PENTHOUSE
+  components:
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: WallMining
+  id: WallMiningPenthouse
+  name: elevator wall
+  description: "A sturdy wall with space for the elevator."
+  suffix: Right Side] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/elevator.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Walls/elevator.rsi
+
+- type: entity
+  parent: WallMining
+  id: WallMiningPenthouseLeft
+  name: elevator wall
+  description: "A sturdy wall with space for the elevator."
+  suffix: Left Side] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/elevatorleft.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Walls/elevatorleft.rsi
+
+- type: entity
+  parent: WindowSomberDirectionalTinted
+  id: WindowFireEscape
+  name: fire escape wall
+  suffix: Directional, Opaque
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Windows/fire_escape.rsi
+    state: fire_escape
+  - type: Icon
+    sprite: _SHA/Structures/Windows/fire_escape.rsi
+    state: fire_escape
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,-0.3"
+
+# Chairs
+
+- type: entity
+  parent: BigBedUpperFancy1
+  id: SomberPsychBedLong
+  name: somber leather chaise lounge
+  description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it."
+  suffix: Long] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture-64x32.rsi
+    state: somberpsychbedlong
+    snapCardinals: false
+    noRot: false
+  - type: Strap
+    position: Down
+    rotation: -90
+    buckleOffset: "-0.275,0.025"
+
+- type: entity
+  parent: SomberPsychBedLong
+  id: SomberPsychBedLongFlipped
+  suffix: Long, Flipped] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture-64x32.rsi
+    state: somberpsychbedlongflipped
+    snapCardinals: false
+    noRot: false
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: "0.275,0.06"
+
+- type: entity
+  parent: SomberPsychBedLong
+  id: SomberPsychBedLongTable
+  name: somber leather chaise lounge
+  description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it. This one has a table attached."
+  suffix: Long, Table] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
+    state: somberpsychbedlongtable
+    snapCardinals: false
+    noRot: false
+  - type: Strap
+    position: Down
+    rotation: -90
+    buckleOffset: "-0.775,0.4375"
+
+- type: entity
+  parent: SomberPsychBedLongTable
+  id: SomberPsychBedLongFlippedTable
+  description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it. This one has a table attached."
+  suffix: Long, Flipped, Table] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: somberpsychbedlongflippedtable
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: "0.775,0.475"
+
+# Couches
+
+- type: entity
+  parent: BenchSofaSomberMiddle
+  id: BenchSofaSomberMiddleNoRotation
+  suffix: Rotation Disabled, Middle] [PENTHOUSE
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Benches/sombersofa.rsi
+    snapCardinals: false
+    noRot: false
+
+- type: entity
+  parent: BenchSofaSomberLeft
+  id: BenchSofaSomberLeftNoRotation
+  suffix: Rotation Disabled, Left] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Benches/sombersofa.rsi
+    snapCardinals: false
+    noRot: false
+
+- type: entity
+  parent: BenchSofaSomberRight
+  id: BenchSofaSomberRightNoRotation
+  suffix: Rotation Disabled, Right] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Benches/sombersofa.rsi
+    snapCardinals: false
+    noRot: false
+
+- type: entity
+  parent: BenchSofaSomberCorner
+  id: BenchSofaSomberCornerNoRotation
+  suffix: Rotation Disabled, Corner] [PENTHOUSE
+  components:
+  - type: Sprite
+    snapCardinals: false
+    noRot: false
+
+- type: entity
+  parent: BigBedUpperFancy1
+  id: BenchSofaSomberFootrestRight
+  name: somber leather footrest
+  suffix: Right] [PENTHOUSE
+  description: "A plush leather footrest so you can stretch out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
+    state: sofafootrestright
+    snapCardinals: false
+    noRot: false
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: "0.35,0.64"
+
+- type: entity
+  parent: BigBedUpperFancy1
+  id: BenchSofaSomberFootrestMiddle
+  name: somber leather footrest
+  suffix: Middle] [PENTHOUSE
+  description: "A plush leather footrest so you can stretch out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
+    state: sofafootrestmiddle
+    snapCardinals: false
+    noRot: false
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: "0.35,-0.06"
+
+- type: entity
+  parent: BigBedUpperFancy1
+  id: BenchSofaSomberFootrestLeft
+  name: somber leather footrest
+  suffix: Left] [PENTHOUSE
+  description: "A plush leather footrest so you can stretch out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
+    state: sofafootrestleft
+    snapCardinals: false
+    noRot: false
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: "0.35,-0.74"
+
+# Small fancy beds
+
+- type: entity
+  parent: BaseStructure
+  id: BedPenthouseSmall
+  name: penthouse bed
+  description: "A plush bed draped in silky sheets."
+  suffix: Small, Fancy] [PENTHOUSE
+  components:
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -0.1
+        Blunt: -0.1
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,0.45,0.45,0.0"
+        density: 190
+        mask:
+        - TableMask
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture.rsi
+    state: bed
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: -90
+    buckleOffset: "0.02,0"
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Anchorable
+  - type: Pullable
+  - type: InteractionOutline
+
+- type: entity
+  parent: BedPenthouseSmall
+  id: BedPenthouseSmallFlipped
+  suffix: Small, Fancy, Flipped] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: bedflipped
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: "-0.02,0"
+
+# Small basic beds
+
+- type: entity
+  parent: BedPenthouseSmall
+  id: BedPenthouseSmallBasic
+  description: "A plush bed draped in warm sheets."
+  suffix: Small, Basic] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: bedbasic
+    noRot: true
+
+- type: entity
+  parent: BedPenthouseSmallFlipped
+  id: BedPenthouseSmallBasicFlipped
+  suffix: Small, Basic, Flipped] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: bedbasicflipped
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: 90
+
+# Trees
+
+- type: entity
+  parent: SomberAmaranthTree01
+  id: AmaranthTree01Penthouse
+  name: amaranth tree
+  description: "An exotic hardwood tree with faintly luminescent leaves. Its resin is toxic, making the lumber notoriously difficult to work."
+  suffix: PENTHOUSE
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Decoration/Flora/flora_amaranth_trees.rsi
+    layers:
+    - state: tree01
+    - state: tree01glow
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.2,0.1,0.2"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: MetalThud # They're tough as hell
+  - type: Damageable
+    damageContainer: Indestructible
+    damageModifierSet: Indestructible
+
+- type: entity
+  parent: SomberAmaranthTree01
+  id: AmaranthTree02Penthouse
+  suffix: PENTHOUSE
+  components:
+  - type: Sprite
+    layers:
+    - state: tree02
+    - state: tree02glow
+      shader: unshaded
+
+- type: entity
+  parent: SomberAmaranthTree01
+  id: AmaranthTree03Penthouse
+  suffix: PENTHOUSE
+  components:
+  - type: Sprite
+    layers:
+    - state: tree03
+    - state: tree03glow
+      shader: unshaded
+
+- type: entity
+  parent: SomberAmaranthTree01
+  id: AmaranthTree04Penthouse
+  suffix: PENTHOUSE
+  components:
+  - type: Sprite
+    layers:
+    - state: tree04
+    - state: tree04glow
+      shader: unshaded
+
+- type: entity
+  parent: SomberAmaranthTree01
+  id: AmaranthTree05Penthouse
+  suffix: PENTHOUSE
+  components:
+  - type: Sprite
+    layers:
+    - state: tree05
+    - state: tree05glow
+      shader: unshaded
+
+- type: entity
+  parent: SomberAmaranthTree01
+  id: AmaranthTree06Penthouse
+  suffix: PENTHOUSE
+  components:
+  - type: Sprite
+    layers:
+    - state: tree06
+    - state: tree06glow
+      shader: unshaded
+
+# NON-AIRTIGHT Doors
+
+- type: entity
+  parent: SomberAmaranthDoor
+  id: SomberAmaranthDoorAir
+  suffix: NON-AIRTIGHT] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: SomberMnemolithDoor
+  id: SomberMnemolithDoorAir
+  suffix: NON-AIRTIGHT] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: SomberSteelDoor
+  id: SomberSteelDoorAir
+  suffix: NON-AIRTIGHT] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: SomberSteelDoorDark
+  id: SomberSteelDoorDarkAir
+  suffix: NON-AIRTIGHT] [Dark] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: GloomyAirlock
+  id: GloomyAirlockAir
+  suffix: NON-AIRTIGHT] [Public] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: GloomyAirlockDark
+  id: GloomyAirlockDarkAir
+  suffix: NON-AIRTIGHT] [Public, Dark] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: GloomyAirlockGlass
+  id: GloomyAirlockGlassAir
+  suffix: NON-AIRTIGHT] [Public] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: GloomyAirlockGlassDark
+  id: GloomyAirlockGlassDarkAir
+  suffix: NON-AIRTIGHT] [Public, Dark] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: GloomyAirlockMantisLocked
+  id: GloomyAirlockMantisLockedAir
+  suffix: NON-AIRTIGHT] [Mantis-Locked] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: GloomyAirlockMantisDarkLocked
+  id: GloomyAirlockMantisDarkLockedAir
+  suffix: NON-AIRTIGHT] [Mantis-Locked, Dark] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: GloomyAirlockMantisGlassLocked
+  id: GloomyAirlockMantisGlassLockedAir
+  suffix: NON-AIRTIGHT] [Mantis-Locked] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: GloomyAirlockMantisGlassDarkLocked
+  id: GloomyAirlockMantisGlassDarkLockedAir
+  suffix: NON-AIRTIGHT] [Mantis-Locked, Dark] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: AirlockMining
+  id: AirlockMiningPenthouse
+  name: Elevator Door
+  description: "Two-sided doors that link with those of the residence."
+  suffix: NON-AIRTIGHT] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Doors/Airlocks/Standard/elevator.rsi
+  - type: Airtight
+    airBlocked: false
+
+# Stairs
+
+- type: entity
+  parent: Stairs
+  id: StairFireEscape
+  suffix: PENTHOUSE
+  name: fire escape stairs
+  description: "Just in case."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/stairs.rsi
+    state: stairs_fire_escape
+    drawdepth: FloorTiles
+
+# Tiles
+
+- type: tile
+  id: FloorElevatorTransition
+  name: tiles-elevator-transition
+  sprite: /Textures/_SHA/Tiles/elevator.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+# Fire Items
+
+- type: entity
+  parent: CandleSomberMantis
+  id: CandleSomberPenthouse
+  name: candle
+  suffix: PENTHOUSE
+  description: "A candle. That's all."
+  components:
+    - type: Sprite
+      sprite: _SHA/Objects/Misc/candlespenthouse.rsi
+    - type: Item
+      sprite: _SHA/Objects/Misc/candlespenthouse.rsi
+    - type: FireVisuals
+      sprite: _SHA/Objects/Misc/candlespenthouse.rsi
+      normalState: fire-big
+      lightColor: "#FF9833"
+    - type: Damageable
+      damageModifierSet: Wood
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 5
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+              ScrapElectrum: # The dish it sits in
+                min: 1
+                max: 1
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/drop.ogg
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - type: Tag
+      tags: []
+
+- type: entity
+  parent: CandleSomberPenthouse
+  id: CandleSomberPenthouseSmall
+  name: candle (small)
+  suffix: PENTHOUSE
+  description: "A small candle. That's all."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-small
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-small
+
+- type: entity
+  parent: CandleSomberPenthouse
+  id: CandleSomberPenthouseCluster
+  name: candle (cluster)
+  suffix: PENTHOUSE
+  description: "A cluster of candles. Not a birthday cake."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-cluster
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-cluster
+
+- type: entity
+  parent: CandleSomberPenthouse
+  id: CandleSomberPenthouseTiny
+  name: candle (tea light)
+  suffix: PENTHOUSE
+  description: "A tea light. Light enough to float on water."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-tiny
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-tiny
+
+- type: entity
+  parent: SomberFireplace
+  id: SomberFireplacePenthouse
+  name: somber electrum fireplace
+  suffix: PENTHOUSE] [Click After Mapping
+  description: "An avant-garde fireplace shaped like an eye."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/somberfireplacepenthouse.rsi
+  - type: PointLight
+    enabled: false
+    radius: 5
+    energy: 7
+    softness: 1.22
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberHangingBrazier
+  id: SomberHangingBrazierPenthouse
+  name: somber hanging brazier
+  suffix: PENTHOUSE] [Click After Mapping
+  description: "An electrum brazier."
+  placement:
+    mode: WallmountLight
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/somberhangingbrazierpenthouse.rsi
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 5
+    softness: 1.22
+    color: "#FF9833"
+
+# Misc
+
+- type: entity
+  parent: BaseStructure
+  id: SomberNazarInlaid
+  name: nazar (inlaid)
+  suffix: PENTHOUSE] [Produces Chapel Ambience
+  description: "An eyelike mnemolith plate inlaid in the floor to shelter the area from certain metaphysical threats."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    snapCardinals: true
+    noRot: true
+    drawdepth: FloorTiles
+    sprite: _SHA/Structures/Specific/Chapel/sombernazarinlaid.rsi
+    state: inlaid
+  - type: Prayable
+    bibleUserOnly: true
+    sentMessage: prayer-popup-notify-nazar-sent
+    notificationPrefix: prayer-chat-notify-nazar
+    verb: prayer-verbs-nazar
+    verbImage: null
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.1
+        hard: false
+        density: 10
+
+- type: entity
+  id: TowelColorMagenta
+  parent: BaseTowel
+  name: magenta towel
+  description: "An absurdly expensive magenta towel, plush enough to feel indulgent even when used for something ordinary."
+  suffix: PENTHOUSE
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#b32d70"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#b32d70"
+      right:
+      - state: inhand-right
+        color: "#b32d70"
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#b32d70"
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#b32d70"
+      belt:
+      - state: equipped-BELT
+        color: "#b32d70"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
+        color: "#b32d70"
+  - type: Fiber
+    fiberColor: fibers-magenta
+
+# Tables
+
+- type: entity
+  parent: SomberTableFire
+  id: SomberTableFirePenthouse
+  name: somber table
+  suffix: Fire Table] [PENTHOUSE
+  description: "An expensive fire table made of gloomy, patterned wood. Mind your hands."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Tables/Somber/somberwoodtablefirepenthouse.rsi
+    layers:
+      - state: full
+      - state: fire
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: Icon
+    sprite: _SHA/Structures/Furniture/Tables/Somber/somberwoodtablefirepenthouse.rsi
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 5
+    softness: 1.22
+    color: "#FF9833"

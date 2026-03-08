@@ -19,6 +19,7 @@
   - type: PointLight
     radius: 2
     energy: 4
+    softness: 1.22
     color: "#4dc4ff"
   - type: Fixtures
     fixtures:
@@ -59,3 +60,113 @@
           ScrapElectrum:
             min: 1
             max: 3
+
+- type: entity
+  parent: BaseStructure
+  id: SomberTV
+  name: somber widescreen television
+  description: "A futuristic frame television with a textured, shifting surface, set to freeze its last image in faux mnemolith--an eclipsed, bleeding sun breaking through clouds, this time. This thing must be ungodly expensive."
+  suffix: Decorative] [Click After Mapping To Enable
+  components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS PLEASE GOD PLEASE (WHAT TV DOESN'T HAVE A REMOTE)
+  - type: Sprite # TODO: MAYBE IT SHOULD FUNCTION LIKE AN ACTUAL TV BUT REALLY I JUST WANT A TV FOR RP, IDK HOW TO CLICK TO OPEN CAMERA HUD BUT ALSO KEEP IT GLOWING...
+    sprite: _DEN/Structures/Wallmounts/sombertv.rsi
+    drawdepth: WallMountedItems
+    layers:
+    - state: tv
+    - state: tvglow
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: ToggleableVisuals
+    spriteLayer: light
+  - type: Appearance
+  - type: Anchorable
+  - type: InteractionOutline
+  - type: EtherealLight # Dims around ethereal entities
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 6
+    softness: 1.22
+    color: "#ff9833"
+  - type: ItemTogglePointLight
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      path: /Audio/Machines/lightswitch.ogg
+      params:
+        pitch: 1.1
+    soundDeactivate:
+      path: /Audio/Machines/lightswitch.ogg
+      params:
+        pitch: 0.9
+  - type: UnpoweredFlashlight
+  - type: WallMount
+    arc: 360
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-2,-0.375,2,0.375"
+        hard: false
+        density: 1000
+        mask:
+          - FullTileMask
+        layer:
+          - WallLayer
+  - type: Transform
+    anchored: true
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmack
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassSmash
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 3
+            max: 3
+          SheetGlass1:
+            min: 3
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: SmartLight
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - On
+      - Off
+      - Toggle
+  - type: PoweredLightVisuals
+    blinkingSound:
+      path: "/Audio/Machines/light_tube_on.ogg"
+    spriteStateMap:
+      off: tv
+      on: tv
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KnockOn
+    - KissObject
+    - LickObject

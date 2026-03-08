@@ -1,0 +1,796 @@
+# Designed to match the somber set, but they need to be useful for anyone, so I have to do all this for mappers
+# Called "gloomy" so as not to clutter the list when "somber" is searched, though that will bring up the public and mantis versions
+
+# Only mantis has a unique sprite since these won't be used commonly, but they do have labels so players can read their accesses by examining them
+# Not perfect, but I never made the somber set to be used for a whole live station anyway, because I'd have to resprite the whole game lol
+
+# Yes, this could be organized better, but I priorized ease of copy/paste and find/replace to keep myself something like sane
+
+
+# MANTIS AIRLOCKS (ALL VARIANTS IN ONE PLACE SINCE THEY'RE SPECIAL)
+
+# Mantis (Unlocked)
+- type: entity
+  parent: Airlock
+  id: GloomyAirlockMantis
+  name: gloomy airlock
+  suffix: Mantis-Unlocked] [Somber # Hopefully mappers can infer that the rest are called "gloomy" if they want them
+  description: "It has survived much more, and much worse, than you. A Greek psi is engraved on the panel."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermantis.rsi
+
+- type: entity
+  parent: Airlock
+  id: GloomyAirlockMantisDark
+  name: gloomy airlock
+  suffix: Mantis-Unlocked, Dark] [Somber
+  description: "It has survived much more, and much worse, than you. A Greek psi is engraved on the panel."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdarkmantis.rsi
+
+- type: entity
+  parent: AirlockGlass
+  id: GloomyAirlockMantisGlass
+  name: gloomy glass airlock
+  suffix: Mantis-Unlocked] [Somber
+  description: "It has survived much more, and much worse, than you. A Greek psi is engraved on the panel."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermantis.rsi
+
+- type: entity
+  parent: AirlockGlass
+  id: GloomyAirlockMantisGlassDark
+  name: gloomy glass airlock
+  suffix: Mantis-Unlocked, Dark] [Somber
+  description: "It has survived much more, and much worse, than you. A Greek psi is engraved on the panel."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdarkmantis.rsi
+
+# Mantis (Locked)
+- type: entity
+  parent: AirlockMantisLocked
+  id: GloomyAirlockMantisLocked
+  name: gloomy airlock
+  suffix: Mantis-Locked] [Somber
+  description: "It has survived much more, and much worse, than you. A Greek psi is engraved on the panel."
+  components:
+  - type: Label
+    currentLabel: mantis
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermantis.rsi
+
+- type: entity
+  parent: AirlockMantisLocked
+  id: GloomyAirlockMantisDarkLocked
+  name: gloomy airlock
+  suffix: Mantis-Locked, Dark] [Somber
+  description: "It has survived much more, and much worse, than you. A Greek psi is engraved on the panel."
+  components:
+  - type: Label
+    currentLabel: mantis
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdarkmantis.rsi
+
+- type: entity
+  parent: AirlockMantisGlassLocked
+  id: GloomyAirlockMantisGlassLocked
+  name: gloomy glass airlock
+  suffix: Mantis-Locked] [Somber
+  description: "It has survived much more, and much worse, than you. A Greek psi is engraved on the panel."
+  components:
+  - type: Label
+    currentLabel: mantis
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermantis.rsi
+
+- type: entity
+  parent: AirlockMantisGlassLocked
+  id: GloomyAirlockMantisGlassDarkLocked
+  name: gloomy glass airlock
+  suffix: Mantis-Locked, Dark] [Somber
+  description: "It has survived much more, and much worse, than you. A Greek psi is engraved on the panel."
+  components:
+  - type: Label
+    currentLabel: mantis
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdarkmantis.rsi
+
+# Mantis Maints (Locked)
+- type: entity
+  parent: AirlockMantisLocked
+  id: GloomyAirlockMaintMantisLocked
+  name: gloomy maintenance access
+  suffix: Mantis-Locked] [Somber
+  description: "It has survived much more, and much worse, than you. A Greek psi is engraved on the panel."
+  components:
+  - type: Label
+    currentLabel: mantis
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenancemantis.rsi
+
+- type: entity
+  parent: AirlockMantisGlassLocked
+  id: GloomyAirlockMaintMantisGlassLocked
+  name: gloomy maintenance access
+  suffix: Mantis-Locked, Glass] [Somber
+  description: "It has survived much more, and much worse, than you. A Greek psi is engraved on the panel."
+  components:
+  - type: Label
+    currentLabel: mantis
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermaintenancemantis.rsi
+
+
+# PUBLIC AIRLOCKS (UNLOCKED)
+
+# Public, Standard
+- type: entity
+  parent: Airlock
+  id: GloomyAirlock
+  name: gloomy airlock
+  suffix: Public] [Somber
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
+
+- type: entity
+  parent: AirlockGlass
+  id: GloomyAirlockGlass
+  name: gloomy glass airlock
+  suffix: Public] [Somber
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
+
+# Public, Dark
+- type: entity
+  parent: GloomyAirlock
+  id: GloomyAirlockDark
+  suffix: Public, Dark] [Somber
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
+
+- type: entity
+  parent: GloomyAirlockGlass
+  id: GloomyAirlockGlassDark
+  suffix: Public, Dark] [Somber
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
+
+
+# DEPARMTENTAL STANDARD (LOCKED)
+
+# Logistics
+- type: entity
+  parent: AirlockCargoLocked
+  id: GloomyAirlockCargoLocked
+  suffix: Logistics-Locked
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: logistics
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
+
+- type: entity
+  parent: AirlockCargoGlassLocked
+  id: GloomyAirlockCargoGlassLocked
+  suffix: Logistics-Locked
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: logistics
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
+
+# Command
+- type: entity
+  parent: AirlockCommandLocked
+  id: GloomyAirlockCommandLocked
+  suffix: Command-Locked
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: command
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
+
+- type: entity
+  parent: AirlockCommandGlassLocked
+  id: GloomyAirlockCommandGlassLocked
+  suffix: Command-Locked
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: command
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
+
+# Engineering
+- type: entity
+  parent: AirlockEngineeringLocked
+  id: GloomyAirlockEngineeringLocked
+  suffix: Engineering-Locked
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: engineering
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
+
+- type: entity
+  parent: AirlockEngineeringGlassLocked
+  id: GloomyAirlockEngineeringGlassLocked
+  suffix: Engineering-Locked
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: engineering
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
+
+# Justice
+- type: entity
+  parent: AirlockJusticeLocked
+  id: GloomyAirlockJusticeLocked
+  suffix: Justice-Locked
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: justice
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
+
+- type: entity
+  parent: AirlockJusticeGlassLocked
+  id: GloomyAirlockJusticeGlassLocked
+  suffix: Justice-Locked
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: justice
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
+
+# Medical
+- type: entity
+  parent: AirlockMedicalLocked
+  id: GloomyAirlockMedicalLocked
+  suffix: Medical-Locked
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: medical
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
+
+- type: entity
+  parent: AirlockMedicalGlassLocked
+  id: GloomyAirlockMedicalGlassLocked
+  suffix: Medical-Locked
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: medical
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
+
+# Epistemics
+- type: entity
+  parent: AirlockScienceLocked
+  id: GloomyAirlockScienceLocked
+  suffix: Epistemics-Locked
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: epistemics
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
+
+- type: entity
+  parent: AirlockScienceGlassLocked
+  id: GloomyAirlockScienceGlassLocked
+  suffix: Epistemics-Locked
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: epistemics
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
+
+# Security
+- type: entity
+  parent: AirlockSecurityLocked
+  id: GloomyAirlockSecurityLocked
+  suffix: Security-Locked
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: security
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
+
+- type: entity
+  parent: AirlockSecurityGlassLocked
+  id: GloomyAirlockSecurityGlassLocked
+  suffix: Security-Locked
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: security
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
+
+# Service
+- type: entity
+  parent: AirlockServiceLocked
+  id: GloomyAirlockServiceLocked
+  suffix: Service-Locked
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: service
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
+
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: GloomyAirlockServiceGlassLocked
+  suffix: Service-Locked
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: service
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somber.rsi
+
+
+# DEPARTMENTAL DARK (LOCKED)
+
+# Logistics
+- type: entity
+  parent: AirlockCargoLocked
+  id: GloomyAirlockCargoDarkLocked
+  suffix: Logistics-Locked, Dark
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: logistics
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
+
+- type: entity
+  parent: AirlockCargoGlassLocked
+  id: GloomyAirlockCargoGlassDarkLocked
+  suffix: Logistics-Locked, Dark
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: logistics
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
+
+# Command
+- type: entity
+  parent: AirlockCommandLocked
+  id: GloomyAirlockCommandDarkLocked
+  suffix: Command-Locked, Dark
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: command
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
+
+- type: entity
+  parent: AirlockCommandGlassLocked
+  id: GloomyAirlockCommandGlassDarkLocked
+  suffix: Command-Locked, Dark
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: command
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
+
+# Engineering
+- type: entity
+  parent: AirlockEngineeringLocked
+  id: GloomyAirlockEngineeringDarkLocked
+  suffix: Engineering-Locked, Dark
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: engineering
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
+
+- type: entity
+  parent: AirlockEngineeringGlassLocked
+  id: GloomyAirlockEngineeringGlassDarkLocked
+  suffix: Engineering-Locked, Dark
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: engineering
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
+
+# Justice
+- type: entity
+  parent: AirlockJusticeLocked
+  id: GloomyAirlockJusticeDarkLocked
+  suffix: Justice-Locked, Dark
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: justice
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
+
+- type: entity
+  parent: AirlockJusticeGlassLocked
+  id: GloomyAirlockJusticeGlassDarkLocked
+  suffix: Justice-Locked, Dark
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: justice
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
+
+# Medical
+- type: entity
+  parent: AirlockMedicalLocked
+  id: GloomyAirlockMedicalDarkLocked
+  suffix: Medical-Locked, Dark
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: medical
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
+
+- type: entity
+  parent: AirlockMedicalGlassLocked
+  id: GloomyAirlockMedicalGlassDarkLocked
+  suffix: Medical-Locked, Dark
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: medical
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
+
+# Epistemics
+- type: entity
+  parent: AirlockScienceLocked
+  id: GloomyAirlockScienceDarkLocked
+  suffix: Epistemics-Locked, Dark
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: epistemics
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
+
+- type: entity
+  parent: AirlockScienceGlassLocked
+  id: GloomyAirlockScienceGlassDarkLocked
+  suffix: Epistemics-Locked, Dark
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: epistemics
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
+
+# Security
+- type: entity
+  parent: AirlockSecurityLocked
+  id: GloomyAirlockSecurityDarkLocked
+  suffix: Security-Locked, Dark
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: security
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
+
+- type: entity
+  parent: AirlockSecurityGlassLocked
+  id: GloomyAirlockSecurityGlassDarkLocked
+  suffix: Security-Locked, Dark
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: security
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
+
+# Service
+- type: entity
+  parent: AirlockServiceLocked
+  id: GloomyAirlockServiceDarkLocked
+  suffix: Service-Locked, Dark
+  name: gloomy airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: service
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
+
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: GloomyAirlockServiceGlassDarkLocked
+  suffix: Service-Locked, Dark
+  name: gloomy glass airlock
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: service
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/somberdark.rsi
+
+
+# MAINTENANCE ACCESS (LOCKED)
+
+# Public Maints
+- type: entity
+  parent: AirlockMaintLocked
+  id: GloomyAirlockMaintLocked
+  name: gloomy maintenance access
+  suffix: Public, Locked
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
+
+- type: entity
+  parent: AirlockMaintGlassLocked
+  id: GloomyAirlockMaintGlassLocked
+  suffix: Public, Glass, Locked
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermaintenance.rsi
+
+# Logistics Maints
+- type: entity
+  parent: AirlockCargoLocked
+  id: GloomyAirlockMaintCargoLocked
+  suffix: Logistics-Locked
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: logistics
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
+
+- type: entity
+  parent: AirlockCargoGlassLocked
+  id: GloomyAirlockMaintCargoGlassLocked
+  suffix: Logistics-Locked, Glass
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: logistics
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermaintenance.rsi
+
+# Command Maints
+- type: entity
+  parent: AirlockCommandLocked
+  id: GloomyAirlockMaintCommandLocked
+  suffix: Command-Locked
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: command
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
+
+- type: entity
+  parent: AirlockCommandGlassLocked
+  id: GloomyAirlockMaintCommandGlassLocked
+  suffix: Command-Locked, Glass
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: command
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermaintenance.rsi
+
+# Engineering Maints
+- type: entity
+  parent: AirlockEngineeringLocked
+  id: GloomyAirlockMaintEngineeringLocked
+  suffix: Engineering-Locked
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: engineering
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
+
+- type: entity
+  parent: AirlockEngineeringGlassLocked
+  id: GloomyAirlockMaintEngineeringGlassLocked
+  suffix: Engineering-Locked, Glass
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: engineering
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermaintenance.rsi
+
+# Justice Maints
+- type: entity
+  parent: AirlockJusticeLocked
+  id: GloomyAirlockMaintJusticeLocked
+  suffix: Justice-Locked
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: justice
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
+
+- type: entity
+  parent: AirlockJusticeGlassLocked
+  id: GloomyAirlockMaintJusticeGlassLocked
+  suffix: Justice-Locked, Glass
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: justice
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermaintenance.rsi
+
+# Medical Maints
+- type: entity
+  parent: AirlockMedicalLocked
+  id: GloomyAirlockMaintMedicalLocked
+  suffix: Medical-Locked
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: medical
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
+
+- type: entity
+  parent: AirlockMedicalGlassLocked
+  id: GloomyAirlockMaintMedicalGlassLocked
+  suffix: Medical-Locked, Glass
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: medical
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermaintenance.rsi
+
+# Epistemics Maints
+- type: entity
+  parent: AirlockScienceLocked
+  id: GloomyAirlockMaintScienceLocked
+  suffix: Epistemics-Locked
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: epistemics
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
+
+- type: entity
+  parent: AirlockScienceGlassLocked
+  id: GloomyAirlockMaintScienceGlassLocked
+  suffix: Epistemics-Locked, Glass
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: epistemics
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermaintenance.rsi
+
+# Security Maints
+- type: entity
+  parent: AirlockSecurityLocked
+  id: GloomyAirlockMaintSecurityLocked
+  suffix: Security-Locked
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: security
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
+
+- type: entity
+  parent: AirlockSecurityGlassLocked
+  id: GloomyAirlockMaintSecurityGlassLocked
+  suffix: Security-Locked, Glass
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: security
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermaintenance.rsi
+
+# Service Maints
+- type: entity
+  parent: AirlockServiceLocked
+  id: GloomyAirlockMaintServiceLocked
+  suffix: Service-Locked
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: service
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
+
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: GloomyAirlockMaintServiceGlassLocked
+  suffix: Service-Locked, Glass
+  name: gloomy maintenance access
+  description: "It has survived much more, and much worse, than you."
+  components:
+  - type: Label
+    currentLabel: service
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermaintenance.rsi

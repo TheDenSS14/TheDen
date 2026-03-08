@@ -1,0 +1,102 @@
+# Somber switches start
+- type: entity
+  parent: SignalSwitchDirectional
+  id: SignalSwitchSomber
+  name: somber signal switch
+  suffix: Directional
+  description: "A brushed metal switch, shaped like an eye."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+
+- type: entity
+  parent: SignalButtonDirectional
+  id: SignalButtonSomber
+  name: somber signal button
+  suffix: Directional
+  description: "A brushed metal button, shaped like an eye."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    state: base
+
+# Lockable buttons
+
+- type: entity
+  parent: LockableButton
+  id: LockableButtonSomber
+  name: somber lockable button
+  suffix: Unprogrammed
+  description: "A brushed metal button, shaped like an eye. It closes when locked."
+  categories: [] # If mappers want more than these they'll have to configure them themselves, sorry...
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+
+- type: entity
+  parent: LockableButtonSomber
+  id: LockableButtonSomberResearch
+  suffix: Epistemics
+  components:
+  - type: AccessReader
+    access: [["Research"]]
+
+- type: entity
+  parent: LockableButtonSomber
+  id: LockableButtonSomberChapel
+  suffix: Chapel
+  components:
+  - type: AccessReader
+    access: [["Chapel"]]
+
+- type: entity
+  parent: LockableButtonSomber
+  id: LockableButtonSomberMantis
+  suffix: Mantis
+  components:
+  - type: AccessReader
+    access: [["Mantis"]]
+
+- type: entity
+  parent: LockableButtonSomber
+  id: LockableButtonSomberResearchDirector
+  suffix: Mystagogue
+  components:
+  - type: AccessReader
+    access: [["ResearchDirector"]]
+
+# Button frames
+
+- type: entity
+  parent: ButtonFrame
+  id: ButtonFrameSomberGold
+  name: somber signal button frame
+  suffix: Gold
+  description: "A gold button frame shaped like an eye."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    state: framegold
+
+- type: entity
+  parent: ButtonFrame
+  id: ButtonFrameSomberMagenta
+  name: somber signal button frame
+  suffix: Magenta
+  description: "A magenta button frame shaped like an eye."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    state: framepink
+
+- type: entity
+  parent: ButtonFrame
+  id: ButtonFrameSomberPurple
+  name: somber signal button frame
+  suffix: Purple
+  description: "A purple button frame shaped like an eye."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    state: framepurple
+# Somber switches end
