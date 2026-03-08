@@ -1,0 +1,8 @@
+- type: entity
+  id: CrateArmoryDerringer
+  parent: CrateWeaponSecure
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSmallFancyDerringer
+        amount: 2

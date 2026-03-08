@@ -1,0 +1,10 @@
+- type: cargoProduct
+  id: ArmoryDerringer
+  icon:
+    sprite: _DEN/Objects/Weapons/Guns/Pistols/derringer.rsi
+    state: icon
+  product: CrateArmoryDerringer
+  cost: 1400
+  category: Armory
+  group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
