@@ -388,7 +388,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,0.49"
+          bounds: "-0.5,-0.5,0.5,-0.3"
         hard: false
         density: 1000
         mask:
@@ -457,8 +457,8 @@
 - type: entity
   parent: SomberChairCushion
   id: SomberChairCushionFancy
-  name: Break's somber floor cushion
-  suffix: PENTHOUSE, JUST ONE
+  name: Break's meditation cushion
+  suffix: Somber] [PENTHOUSE, JUST ONE
   description: "A textured meditation cushion filled with mnemolith powder, ringed by an electrum yantra to steady and shield the mind. The pattern hums faintly when someone settles in to focus."
   placement:
     mode: SnapgridCenter
@@ -1131,7 +1131,7 @@
   - type: Sprite
     snapCardinals: true
     noRot: true
-    drawdepth: FloorTiles
+    drawdepth: HighFloorObjects
     sprite: _SHA/Structures/Specific/Chapel/sombernazarinlaid.rsi
     state: inlaid
   - type: Prayable
@@ -1146,8 +1146,9 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.1
-        hard: false
         density: 10
+        mask:
+        - MachineMask
 
 - type: entity
   id: TowelColorMagenta

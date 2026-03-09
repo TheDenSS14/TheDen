@@ -268,14 +268,16 @@
   - type: Occluder
     boundingBox: "-0.5,-0.5,0.5,-0.3"
 
-# TV Kit
+# Somber TV Kit
+# To make theaters using ComputerSomberTelevision and RemoteSignallerSomberTV
+# Only comes in the dark color
 
 - type: entity
-  parent: WindowSomber
+  parent: WindowSomberDark
   id: SomberTVSpeakerWindowLeft
   name: somber sound system
-  description: "A sleek surround speaker in brushed metal, set into the wall. This sound system could probably blow the windows out."
-  suffix: TV Window Speaker, Left
+  description: "A sleek surround sound speaker in brushed metal, set into the wall. This system could probably blow the windows out."
+  suffix: Speaker Window, Left] [Somber TV Kit
   components:
   - type: Sprite
     sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
@@ -290,7 +292,7 @@
 - type: entity
   parent: SomberTVSpeakerWindowLeft
   id: SomberTVSpeakerWindowRight
-  suffix: TV Window Speaker, Right
+  suffix: Speaker Window, Right] [Somber TV Kit
   components:
   - type: Sprite
     sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
@@ -302,7 +304,7 @@
 - type: entity
   parent: SomberTVSpeakerWindowLeft
   id: SomberTVSpeakerWindowMiddle
-  suffix: TV Window Speaker, Middle
+  suffix: Speaker Window, Middle] [Somber TV Kit
   components:
   - type: Sprite
     sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
@@ -312,11 +314,11 @@
     state: middle
 
 - type: entity
-  parent: SomberTVSpeakerWindowLeft
-  id: SomberTVSpeakerWindow
+  parent: SomberTVSpeakerWindowLeft # Useful if the TV's on an exterior wall so you can see space behind it
+  id: SomberTVSpeakerWindow # It does have glass slits, so you can see through it
   name: somber window
   description: "Your reflection shimmers faintly in the glass."
-  suffix: TV Backing, See-Through
+  suffix: TV Backing Window, See-Through] [Somber TV Kit
   components:
   - type: Sprite
     sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
@@ -324,15 +326,13 @@
   - type: Icon
     sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
     state: tvback
-  - type: Occluder
-    enabled: false # It does have glass, but maybe it should block sight since it's meant to hold SomberTV which would block sight? Enable this if so
 
 - type: entity
-  parent: BaseStructure # Debatably, these are directional windows, and all the other somber TV stuff is here except SomberTV itself
+  parent: BaseStructure # Debatably, these are directional windows
   id: SomberTVSpeakerBig
   name: somber sound system
   description: "A sleek surround speaker in brushed metal. This sound system could probably blow the windows out."
-  suffix: TV Window Attachment, Big] [Decorative
+  suffix: Speaker Window/Wall Attachment, Big] [Somber TV Kit
   placement:
     mode: SnapgridCenter
     snap:
@@ -401,7 +401,7 @@
   parent: SomberTVSpeakerBig
   id: SomberTVSpeakerSmall
   name: somber sound system
-  suffix: TV Window Attachment, Small] [Decorative
+  suffix: Speaker Window/Wall Attachment, Small] [Somber TV Kit
   components:
   - type: Sprite
     sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
@@ -414,7 +414,7 @@
   parent: SomberTVSpeakerBig
   id: SomberTVSpeakerSteel
   name: somber sound system
-  suffix: TV Speaker, Steel Wall] [Decorative
+  suffix: Speaker, Matches Walls] [Somber TV Kit
   components:
   - type: Sprite
     sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
@@ -427,7 +427,7 @@
   parent: SomberTVSpeakerBig
   id: SomberTVSpeakerMnemolith
   name: somber sound system
-  suffix: TV Speaker, Mnemolith Wall] [Decorative
+  suffix: Speaker, Matches Diagonal Walls] [Somber TV Kit
   components:
   - type: Sprite
     sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi

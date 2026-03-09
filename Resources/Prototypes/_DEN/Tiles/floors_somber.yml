@@ -1658,6 +1658,78 @@
   itemDrop: FloorTileItemSomberWoodParquetShadow
   heatCapacity: 10000
 
+- type: tile
+  id: FloorSomberSteelCheckerKitchen
+  name: tiles-somber-steel-floor-checker-kitchen
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-checkered-kitchen.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelCheckerKitchen
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelCheckerKitchenDark
+  name: tiles-somber-steel-floor-checker-kitchen-dark
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-checkered-kitchen-dark.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelCheckerKitchenDark
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelMonoKitchen
+  name: tiles-somber-steel-floor-mono-kitchen
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-mono-kitchen.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelMonoKitchen
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelMonoKitchenEye
+  name: tiles-somber-steel-floor-mono-kitchen-eye
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-mono-kitchen-eye.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelMonoKitchenEye
+  heatCapacity: 10000
+
 # "Planet" tiles (dirt, grass, etc)
 
 - type: tile

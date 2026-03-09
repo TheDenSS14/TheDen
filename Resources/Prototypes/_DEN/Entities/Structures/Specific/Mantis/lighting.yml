@@ -11,7 +11,7 @@
   components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS PLEASE GOD PLEASE (SO THEY CAN BE TOGGLED WITH SWITCHES)
   - type: Sprite # TODO: IT'D ALSO BE REALLY NICE IF THEY COULD SPAWN TURNED ON SO I CAN MIGRATE ALL THE TURNED-OFF ONES TO BE LIT UP ON MAP SPAWN
     sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitewell.rsi
-    drawdepth: FloorObjects
+    drawdepth: HighFloorObjects # So they render above puddles
     snapCardinals: true
     noRot: true
     layers:

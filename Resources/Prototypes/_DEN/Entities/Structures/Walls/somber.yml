@@ -353,3 +353,48 @@
   - type: Icon
     sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
     state: round_dark
+
+# Somber TV Kit
+# To make theaters using ComputerSomberTelevision and RemoteSignallerSomberTV
+# Only comes in the dark color
+
+- type: entity
+  parent: WallSomberDark
+  id: SomberTVSpeakerWallLeft
+  name: somber sound system
+  description: "A sleek surround sound speaker in brushed metal, set into the wall. This system could probably blow the windows out."
+  suffix: Speaker Wall, Left] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: left
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: left
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+
+- type: entity
+  parent: SomberTVSpeakerWallLeft
+  id: SomberTVSpeakerWallRight
+  suffix: Speaker Wall, Right] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: right
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: right
+
+- type: entity
+  parent: SomberTVSpeakerWallLeft
+  id: SomberTVSpeakerWallMiddle
+  suffix: Speaker Wall, Middle] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: middle
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: middle

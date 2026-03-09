@@ -520,8 +520,11 @@
   id: SomberTableEnd
   name: somber table
   suffix: End Table
-  description: "An expensive end table made of gloomy, patterned wood. It has drawers, of course."
+  description: "An expensive end table made of gloomy, patterned wood. It has drawers, of course. Can't you see them there?"
   components:
+  - type: Storage
+    grid:
+    - 0,0,5,3
   - type: Sprite
     sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtableend.rsi
     state: full

@@ -1413,3 +1413,59 @@
       - FloorSomberWoodParquetShadow
   - type: Stack
     stackType: FloorTileSomberWoodParquetShadow
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelCheckerKitchen
+  name: somber steel tile (checkered, kitchen)
+  components:
+  - type: Sprite
+    state: somber-tile-checkered-kitchen
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelCheckerKitchen
+  - type: Stack
+    stackType: FloorTileSomberSteelCheckerKitchen
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelCheckerKitchenDark
+  name: somber steel tile (checkered, kitchen, dark)
+  components:
+  - type: Sprite
+    state: somber-tile-checkered-kitchen-dark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelCheckerKitchenDark
+  - type: Stack
+    stackType: FloorTileSomberSteelCheckerKitchenDark
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelMonoKitchen
+  name: somber steel tile (mono, kitchen)
+  components:
+  - type: Sprite
+    state: somber-tile-mono-kitchen
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelMonoKitchen
+  - type: Stack
+    stackType: FloorTileSomberSteelMonoKitchen
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelMonoKitchenEye
+  name: somber steel tile (mono, kitchen, eye)
+  components:
+  - type: Sprite
+    state: somber-tile-mono-kitchen-eye
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelMonoKitchenEye
+  - type: Stack
+    stackType: FloorTileSomberSteelMonoKitchenEye

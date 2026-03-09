@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# Somber closets start
+# Somber lockers start
 - type: entity
   parent: ClosetBase
   id: SomberCloset
@@ -160,7 +160,6 @@
 - type: entity
   parent: SomberFreezer
   id: SomberFreezerLocker
-  name: somber refrigerator
   suffix: Freezer] [Locked
   components:
   - type: AccessReader
@@ -179,6 +178,42 @@
     - state: welded
       visible: false
       map: ["enum.WeldableLayers.BaseWelded"]
+
+- type: entity
+  parent: SomberFreezer
+  id: SomberFreezerLeft
+  name: somber double refrigerator (left)
+  suffix: Freezer] [No Lock
+  description: "A glossy, brushed-metal refrigerator with twice the storage of a standard model."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Storage/somberfridgeleft.rsi
+
+- type: entity
+  parent: SomberFreezerLocker
+  id: SomberFreezerLeftLocker
+  name: somber double refrigerator (left)
+  suffix: Freezer] [Locked
+  description: "A glossy, brushed-metal refrigerator with twice the storage of a standard model."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Storage/somberfridgeleft.rsi
+
+- type: entity
+  parent: SomberFreezerLeft
+  id: SomberFreezerRight
+  name: somber double refrigerator (right)
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Storage/somberfridgeleft.rsi
+
+- type: entity
+  parent: SomberFreezerLeftLocker
+  id: SomberFreezerRightLocker
+  name: somber double refrigerator (right)
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Storage/somberfridgeleft.rsi
 
 - type: entity
   parent: BaseWallCloset
@@ -264,7 +299,7 @@
     - state: welded
       visible: false
       map: ["enum.WeldableLayers.BaseWelded"]
-# Somber closets end
+# Somber lockers end
 
 - type: entity
   id: ClosetEmergencyUniversal
