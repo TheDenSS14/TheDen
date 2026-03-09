@@ -366,7 +366,7 @@
     damageModifierSet: Indestructible
 
 - type: entity
-  parent: RailingInvisible
+  parent: WindowSomberDirectionalTinted
   id: RailingInvisibleOccluder
   name: darkness
   description: "You can't see anything..."
@@ -382,7 +382,7 @@
     state: occluder
   - type: Icon
     sprite: _SHA/Structures/Walls/invisible.rsi
-    state: occluder
+    state: invisible
   - type: Fixtures
     fixtures:
       fix1:
@@ -918,7 +918,7 @@
 - type: entity
   parent: AirlockMining
   id: AirlockMiningPenthouse
-  name: Elevator Door
+  name: elevator door
   description: "Two-sided doors that link with those of the residence."
   suffix: NON-AIRTIGHT] [PENTHOUSE
   components:
@@ -930,7 +930,7 @@
 - type: entity
   parent: AirlockMining
   id: AirlockMiningPenthouseLeft
-  name: Elevator Utility Door # For the little cryopod closet
+  name: elevator utility door # For the little cryopod closet
   description: "Two-sided doors that link with those of maintenance levels."
   suffix: NON-AIRTIGHT] [PENTHOUSE
   components:
@@ -981,6 +981,16 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: BlackFloor
+  name: tiles-black
+  sprite: /Textures/_SHA/Tiles/black.png
   baseTurf: Plating
   isSubfloor: false
   footstepSounds:
