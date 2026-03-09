@@ -389,7 +389,7 @@
         shape:
           !type:PhysShapeAabb
           bounds: "-0.49,-0.49,0.49,0.49"
-        hard: true
+        hard: false
         density: 1000
         mask:
           - FullTileMask
