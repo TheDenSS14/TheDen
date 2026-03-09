@@ -454,6 +454,46 @@
     boundingBox: "-0.5,-0.5,0.5,-0.3"
 
 # Chairs
+- type: entity
+  parent: SomberChairCushion
+  id: SomberChairCushionFancy
+  name: Break's somber floor cushion
+  suffix: PENTHOUSE, JUST ONE
+  description: "A textured meditation cushion filled with mnemolith powder, ringed by an electrum yantra to steady and shield the mind. The pattern hums faintly when someone settles in to focus."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/chairs.rsi
+    state: somberfloorcushionfancy
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Ambience/ambiruin6.ogg # She felt that.
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialCloth:
+            min: 5
+            max: 5
+          ScrapElectrum:
+            min: 5
+            max: 5
+          MaterialMnemolith1:
+            min: 5
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   parent: BigBedUpperFancy1
@@ -887,6 +927,18 @@
   - type: Airtight
     airBlocked: false
 
+- type: entity
+  parent: AirlockMining
+  id: AirlockMiningPenthouseLeft
+  name: Elevator Utility Door # For the little cryopod closet
+  description: "Two-sided doors that link with those of maintenance levels."
+  suffix: NON-AIRTIGHT] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Doors/Airlocks/Standard/elevatorleft.rsi
+  - type: Airtight
+    airBlocked: false
+
 # Stairs
 
 - type: entity
@@ -907,6 +959,22 @@
   id: FloorElevatorTransition
   name: tiles-elevator-transition
   sprite: /Textures/_SHA/Tiles/elevator.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorTransitionLeft
+  name: tiles-elevator-transition-left
+  sprite: /Textures/_SHA/Tiles/elevatorleft.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1132,3 +1200,88 @@
     energy: 5
     softness: 1.22
     color: "#FF9833"
+
+# Huge Bed
+
+- type: entity
+  parent: BaseStructure
+  id: PenthouseBreakBedLower
+  name: Break's bed
+  suffix: Lower] [PENTHOUSE
+  description: "A massive, plush bed with silky sheets and a cashmere throw blanket folded over the end."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
+    state: bedlowerhugeflipped
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -0.1
+        Blunt: -0.1
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.45,-1.0,0.45,-0.2"
+        hard: false
+        density: 190
+        mask:
+        - TableMask
+    snapCardinals: false
+    noRot: false
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: "-.85,-0.4"
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+  - type: Pullable
+  - type: InteractionOutline
+
+- type: entity
+  parent: PenthouseBreakBedLower
+  id: PenthouseBreakBedMiddle
+  suffix: Middle] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: bedmiddlehugeflipped
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.45,-0.2,0.45,0.4"
+        hard: false
+        density: 190
+        mask:
+        - TableMask
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: ".1,-0.08"
+
+- type: entity
+  parent: PenthouseBreakBedLower
+  id: PenthouseBreakBedUpper
+  suffix: Upper] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: bedupperhugeflipped
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.45,0.4,0.45,1.0"
+        hard: false
+        density: 190
+        mask:
+        - TableMask
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: ".1,-0.08"

@@ -78,6 +78,11 @@
   components:
   - type: PoweredLight
     hasLampOnSpawn: LightTube
+  - type: PointLight
+    color: "#FFE4CE"
+    energy: 0.8
+    radius: 10
+    softness: 1
 
 - type: entity
   parent: PoweredlightSomber
@@ -86,6 +91,11 @@
   components:
   - type: PoweredLight
     hasLampOnSpawn: LedLightTube
+  - type: PointLight
+    color: "#EEEEFF"
+    energy: 1
+    radius: 15
+    softness: 0.9
 
 - type: entity
   parent: PoweredlightSomber
@@ -94,6 +104,11 @@
   components:
   - type: PoweredLight
     hasLampOnSpawn: UvLightTube
+  - type: PointLight
+    radius: 15
+    energy: 1
+    softness: 0.9
+    color: "#9E00FF"
 
 # Bulb Fixtures
 - type: entity
@@ -174,6 +189,11 @@
   components:
   - type: PoweredLight
     hasLampOnSpawn: WarmLightBulb
+  - type: PointLight
+    color: "#ff9833"
+    energy: 1
+    radius: 6
+    softness: 3
 
 - type: entity
   parent: PoweredSmallLightSomber
@@ -182,6 +202,11 @@
   components:
   - type: PoweredLight
     hasLampOnSpawn: ColdLightBulb
+  - type: PointLight
+    color: "#b1d4ed" # 6000k color temp
+    energy: 1
+    radius: 6
+    softness: 3
 
 - type: entity
   parent: PoweredSmallLightSomber
@@ -190,3 +215,8 @@
   components:
   - type: PoweredLight
     hasLampOnSpawn: DimLightBulb
+  - type: PointLight
+    color: "#ba473f"
+    energy: 0.5
+    radius: 5
+    softness: 3

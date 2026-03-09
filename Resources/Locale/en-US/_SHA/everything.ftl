@@ -8,7 +8,8 @@ breakhideout-description = Hidden within seaside cliffs. Where the dead return w
 
 # Tiles
 
-tiles-elevator-transition = elevator transition tile [PENTHOUSE]
+tiles-elevator-transition = elevator transition tile [Right] [PENTHOUSE]
+tiles-elevator-transition-left = elevator transition tile [Left] [PENTHOUSE]
 
 # Misc
 

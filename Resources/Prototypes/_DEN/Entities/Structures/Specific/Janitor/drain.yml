@@ -1,4 +1,4 @@
-- type: entity # Not parented to avoid interaction outlines
+- type: entity # Not parented to avoid interaction outlines, why isn't that component nullable
   id: FloorDrainSomber
   name: somber drain
   suffix: Tile
@@ -7,8 +7,8 @@
     mode: SnapgridCenter
   components:
     - type: Sprite
-      snapCardinals: true
-      noRot: true
+      snapCardinals: false
+      noRot: false
       drawdepth: FloorObjects
       sprite: _DEN/Objects/Specific/Janitorial/somberdrain.rsi
       layers:
@@ -21,8 +21,6 @@
       fillBaseName: tile-fill-
       solutionName: drainBuffer
     - type: Clickable
-    - type: Transform
-      anchored: true
     - type: Physics
       bodyType: Static
       canCollide: false
