@@ -1,12 +1,8 @@
-# SPDX-FileCopyrightText: 2026 sheepie
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 - type: marking
   id: CyberLimbsMarkingAEONLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [IPC, Human, Felinid, Canid]
+  speciesRestriction: [IPC]
   coloring:
     default:
       type:
@@ -24,7 +20,7 @@
   id: CyberLimbsMarkingAEONRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [IPC, Human, Felinid, Canid]
+  speciesRestriction: [IPC]
   coloring:
     default:
       type:
@@ -42,7 +38,7 @@
   id: CyberLimbsMarkingAEONLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [IPC, Human, Felinid, Canid]
+  speciesRestriction: [IPC]
   coloring:
     default:
       type:
@@ -60,7 +56,7 @@
   id: CyberLimbsMarkingAEONRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [IPC, Human, Felinid, Canid]
+  speciesRestriction: [IPC]
   coloring:
     default:
       type:
