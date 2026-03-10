@@ -91,9 +91,11 @@
     availableModes:
     - SemiAuto
     - FullAuto
-    # DEN
     soundGunshot:
-      path: /Audio/_DV/Weapons/Guns/Gunshots/laser.ogg
+      collection: MultiphaseEnergyGun
+      params:
+        variation: 0
+    # DEN
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
   - type: Battery
