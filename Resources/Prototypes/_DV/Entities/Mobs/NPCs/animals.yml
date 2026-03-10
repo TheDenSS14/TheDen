@@ -90,13 +90,13 @@
   name: security dog
   parent: MobCorgi # There isn't a base dog mob, surprisingly.
   id: MobSecDog
-  description: Funnily enough, this pig is actually a dog.
+  description: Large, fluffy and loveable. This mutt is here to make a bad day just a little bit better.
   components:
   - type: GhostRole
     makeSentient: true
     allowSpeech: true
     allowMovement: true
-    name: "emotional station dog" # Den
+    name: "emotional support dog" # Den
     description: "Help out the crew by biting the baddies and barking at everything that moves." # Den
   - type: GhostTakeoverAvailable
   - type: CombatMode
