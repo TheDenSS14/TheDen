@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2026 HTML/Crystal
 # SPDX-FileCopyrightText: 2026 starlighthowls
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
