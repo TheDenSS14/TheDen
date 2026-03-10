@@ -23,7 +23,7 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 therealDLondon
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: gameMap
   id: Gravel
@@ -88,7 +88,7 @@
             Detective: [ 1, 1 ]
             SecurityCadet: [ 2, 2 ]
             Lawyer: [ 2, 2 ]
-            Prisoner: [ 2, 2 ]
+            Prisoner: [ 0, 0 ]
             SeniorOfficer: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]

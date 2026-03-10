@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 DOSRG
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: [ClothingUniformBase]
   id: ClothingUniformHitmanSuitSkirt
@@ -132,3 +137,27 @@
     sprite: _Impstation/Clothing/Uniforms/Jumpskirt/mus_singerdress.rsi
   - type: Clothing
     sprite: _Impstation/Clothing/Uniforms/Jumpskirt/mus_singerdress.rsi
+
+- type: entity
+  name: pink princess dress
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformPinkPrincessDress
+  description: A sweet and fluffy dress fit for royalty though... it is a little itchy
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpskirt/pinkprincessdress.rsi
+  - type: Item
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpskirt/pinkprincessdress.rsi
+
+- type: entity
+  name: green princess dress
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformGreenPrincessDress
+  description: A smooth and elegant dress fit for royalty. It's totally just a costume though.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpskirt/greenprincessdress.rsi
+  - type: Item
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpskirt/greenprincessdress.rsi
