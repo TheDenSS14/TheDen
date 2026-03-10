@@ -83,3 +83,6 @@ character-item-group-LoadoutCostumeBundles = Costume Bundles
 # misc
 character-item-group-LoadoutMagicMirrors = Hair Styling Tools
 character-item-group-LoadoutGroupGlorbs = Glorbs
+
+# lewd
+loadout-name-LoadoutCondom = wrapped condom (colorable)

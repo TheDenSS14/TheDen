@@ -30,7 +30,7 @@
 # SPDX-FileCopyrightText: 2025 fishbait
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   id: ToolboxBase
@@ -218,8 +218,8 @@
 
 - type: entity
   id: ToolboxThief
-  name: thief undetermined toolbox
-  description: This is where your favorite thief's supplies lie. Try to remember which ones.
+  name: odd toolbox #Den, renamed to be less metagamey
+  description: A strangely heavy toolbox with very little storage space, currently full of fittings, screws, and miscellaneous scraps.
   parent: BaseItem
   components:
   - type: Sprite

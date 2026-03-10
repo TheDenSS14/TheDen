@@ -1,4 +1,4 @@
-﻿using Content.Client._EE.Supermatter.Systems;
+using Content.Client._EE.Supermatter.Systems;
 using Content.Shared._EE.Supermatter.Components;
 
 namespace Content.Client._EE.Supermatter.Components;

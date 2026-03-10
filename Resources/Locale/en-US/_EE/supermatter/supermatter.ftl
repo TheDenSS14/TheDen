@@ -1,11 +1,3 @@
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
-
-supermatter-announcer = Automatic Supermatter Engine
-
 supermatter-examine-integrity =
     Its integrity is [color=yellow]{$integrity}%[/color].
 supermatter-healing =
@@ -46,7 +38,7 @@ supermatter-tamper-end =
     You feel the power of a thousand suns laying on your palms. Or is it all the radiation?
 supermatter-announcement-cc-tamper =
     Our automatic casualty system has detected that the supermatter crystal structural integrity was compromised by an external force.
-        Engineering department, report to the supermatter engine immediately.
+    Engineering department, report to the supermatter engine immediately.
 
 supermatter-collide =
     {CAPITALIZE(THE($target))} slams into {THE($sm)}!
@@ -60,3 +52,6 @@ supermatter-collide-insert-unremoveable =
     {CAPITALIZE(THE($target))} touches {THE($sm)} with {THE($item)} and flashes into dust!
 supermatter-collide-insert-unremoveable-user =
     You touch {THE($sm)} with {THE($item)} and flash into dust!
+
+supermatter-paracusia-player-message =
+    You feel your head throb with otherworldly visions...

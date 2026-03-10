@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 January Nelson
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 sheepie
+# SPDX-FileCopyrightText: 2026 mhachimagus
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -77,3 +78,12 @@
   - type: Construction
     graph: WebObjects
     node: cloakfancy
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakMagicianCape
+  name: magician's cape
+  description: "A collared cape with red lining, a staple accessory for any magician or vampire."
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Neck/Cloaks/magiciancape.rsi
