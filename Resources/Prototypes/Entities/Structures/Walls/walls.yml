@@ -82,7 +82,7 @@
     - Wall
   components:
   - type: Anchorable
-    flags: 
+    flags:
     - Anchorable
   - type: Rotatable
   - type: RangedDamageSound
@@ -124,7 +124,7 @@
   - type: StaticPrice #was DynamicPrice
     price: 75
   - type: RadiationBlocker
-    resistance: 1
+    resistance: 2
   - type: BlockWeather
 
 - type: entity
@@ -501,7 +501,7 @@
     key: walls
     base: plasma
   - type: RadiationBlocker
-    resistance: 7
+    resistance: 5
 
 - type: entity
   parent: BaseWall
@@ -1207,7 +1207,7 @@
     key: walls
     base: uranium
   - type: RadiationBlocker
-    resistance: 10
+    resistance: 6
 
 - type: entity
   parent: BaseWall
@@ -1643,5 +1643,5 @@
   - type: IconSmooth
     key: cards
     base: card
-  - type: Occluder 
+  - type: Occluder
   - type: BlockWeather

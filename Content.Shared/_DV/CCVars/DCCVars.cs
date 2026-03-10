@@ -118,7 +118,7 @@ public sealed class DCCVars
     ///    Maximum number of characters in objective summaries.
     /// </summary>
     public static readonly CVarDef<int> MaxObjectiveSummaryLength =
-        CVarDef.Create("game.max_objective_summary_length", 256, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("game.max_objective_summary_length", 512, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     ///    Disables the drug warping effect for people who find the motion uncomfortable.

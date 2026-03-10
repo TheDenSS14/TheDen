@@ -338,6 +338,29 @@
 
 - type: entity
   parent: BaseCostumeBundle
+  id: CostumeBundleMagician
+  name: magician costume bundle
+  components:
+  - type: Sprite
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#2c2a2d"
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#bc0b1b"
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatMagician
+    - id: ClothingEyesGlassesWhiteHalfMask
+    - id: ClothingNeckCloakMagicianCape
+    - id: ClothingUniformJumpsuitTailcoatSuit
+    - id: ClothingShoesKneeHighBoots
+
+- type: entity
+  parent: BaseCostumeBundle
   id: CostumeBundleMonkey
   name: monkey costume bundle
   components:
@@ -446,6 +469,50 @@
     - id: ClothingUniformJumpskirtPerformer
     - id: ClothingShoesBootsPerformer
     - id: FoodMealMemoryleek
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundlePrincessGreen
+  name: green princess costume bundle
+  components:
+  - type: Sprite
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#57ab91"
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#ffc419"
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatCuteTiara
+    - id: ClothingHeadHatSimpleTiara
+    - id: ClothingHeadHatGreenEscoffion
+    - id: ClothingUniformGreenPrincessDress
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundlePrincessPink
+  name: pink princess costume bundle
+  components:
+  - type: Sprite
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#fb819f"
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#ffc419"
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatCuteTiara
+    - id: ClothingHeadHatSimpleTiara
+    - id: ClothingHeadHatPrincess
+    - id: ClothingUniformPinkPrincessDress
 
 - type: entity
   parent: BaseCostumeBundle
