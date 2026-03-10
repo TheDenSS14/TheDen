@@ -354,6 +354,54 @@
     sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
     state: round_dark
 
+- type: entity
+  parent: RailingSomber
+  id: RailingSomberElectrum
+  suffix: Straight, Electrum
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: side_electrum
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: side_electrum
+
+- type: entity
+  parent: RailingSomberCorner
+  id: RailingSomberCornerElectrum
+  suffix: Corner, Electrum
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_electrum
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_electrum
+
+- type: entity
+  parent: RailingSomberCornerSmall
+  id: RailingSomberCornerSmallElectrum
+  suffix: Small Corner, Electrum
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_small_electrum
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_small_electrum
+
+- type: entity
+  parent: RailingSomberRound
+  id: RailingSomberRoundElectrum
+  suffix: Round, Electrum
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: round_electrum
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: round_electrum
+
 # Somber TV Kit
 # To make theaters using ComputerSomberTelevision and RemoteSignallerSomberTV
 # Only comes in the dark color

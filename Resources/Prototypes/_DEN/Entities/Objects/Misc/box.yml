@@ -21,6 +21,7 @@
   parent: [ BaseStorageItem, BaseBagOpenClose ]
   id: MantisCase
   name: amaranth case # Generic version with no whitelist, but also doesn't fit in the mantis belt. Gift box?
+  suffix: Somber
   description: "A case made of exotic, extremely durable hardwood."
   components:
   - type: Sprite
@@ -43,6 +44,7 @@
   parent: MantisCase
   id: MantisCaseSmall
   name: amaranth case (small)
+  suffix: Somber
   description: "A case made of exotic, extremely durable hardwood."
   components:
   - type: Sprite
@@ -63,6 +65,7 @@
   parent: MantisCase
   id: MantisCaseLarge
   name: amaranth case (long)
+  suffix: Somber
   description: "A case made of exotic, extremely durable hardwood."
   components:
   - type: Sprite
@@ -84,6 +87,7 @@
   parent: MantisCase
   id: MantisCaseExtraLarge
   name: amaranth case (extra long)
+  suffix: Somber
   description: "A case made of exotic, extremely durable hardwood."
   components:
   - type: Sprite

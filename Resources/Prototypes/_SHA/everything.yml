@@ -494,6 +494,8 @@
             max: 5
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Strap
+    buckleOffset: "-0.015625,0.0" # Center her
 
 - type: entity
   parent: BigBedUpperFancy1
@@ -735,9 +737,7 @@
   id: AmaranthTree01Penthouse
   name: amaranth tree
   description: "An exotic hardwood tree with faintly luminescent leaves. Its resin is toxic, making the lumber notoriously difficult to work."
-  suffix: PENTHOUSE
-  placement:
-    mode: SnapgridCenter
+  suffix: Somber] [PENTHOUSE
   components:
   - type: Sprite
     sprite: _DEN/Objects/Decoration/Flora/flora_amaranth_trees.rsi
@@ -763,9 +763,8 @@
     damageModifierSet: Indestructible
 
 - type: entity
-  parent: SomberAmaranthTree01
+  parent: AmaranthTree01Penthouse
   id: AmaranthTree02Penthouse
-  suffix: PENTHOUSE
   components:
   - type: Sprite
     layers:
@@ -774,9 +773,8 @@
       shader: unshaded
 
 - type: entity
-  parent: SomberAmaranthTree01
+  parent: AmaranthTree01Penthouse
   id: AmaranthTree03Penthouse
-  suffix: PENTHOUSE
   components:
   - type: Sprite
     layers:
@@ -785,9 +783,8 @@
       shader: unshaded
 
 - type: entity
-  parent: SomberAmaranthTree01
+  parent: AmaranthTree01Penthouse
   id: AmaranthTree04Penthouse
-  suffix: PENTHOUSE
   components:
   - type: Sprite
     layers:
@@ -796,9 +793,8 @@
       shader: unshaded
 
 - type: entity
-  parent: SomberAmaranthTree01
+  parent: AmaranthTree01Penthouse
   id: AmaranthTree05Penthouse
-  suffix: PENTHOUSE
   components:
   - type: Sprite
     layers:
@@ -807,9 +803,8 @@
       shader: unshaded
 
 - type: entity
-  parent: SomberAmaranthTree01
+  parent: AmaranthTree01Penthouse
   id: AmaranthTree06Penthouse
-  suffix: PENTHOUSE
   components:
   - type: Sprite
     layers:
@@ -938,6 +933,76 @@
     sprite: _SHA/Structures/Doors/Airlocks/Standard/elevatorleft.rsi
   - type: Airtight
     airBlocked: false
+
+- type: entity
+  parent: AirlockMining
+  id: AirlockMiningPenthouseAir
+  name: elevator utility door # For the little cryopod closet
+  description: "Two-sided doors that link with those of maintenance levels."
+  suffix: NON-AIRTIGHT] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureAir
+  name: gloomy windoor
+  suffix: NON-AIRTIGHT] [Public] [Somber
+  description: "A gloomy, secure windoor, designed to match everything else in this place."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Windoors/somber.rsi
+
+- type: entity
+  parent: GloomyWindoorSecureDark
+  id: GloomyWindoorSecureDarkAir
+  suffix: NON-AIRTIGHT] [Public, Dark] [Somber
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Windoors/somberdark.rsi
+
+- type: entity
+  parent: GloomyWindoorSecureTinted
+  id: GloomyWindoorSecureTintedAir
+  name: NON-AIRTIGHT] [gloomy windoor (tinted)
+  suffix: Public] [Somber
+  description: "A gloomy, secure windoor, designed to match everything else in this place."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Windoors/somber.rsi
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,-0.3"
+
+- type: entity
+  parent: GloomyWindoorSecureTintedDark
+  id: GloomyWindoorSecureTintedDarkAir
+  suffix: NON-AIRTIGHT] [Public, Dark] [Somber
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Windoors/somberdark.rsi
+
+- type: entity
+  parent: GloomyWindoorSecureTintedMantisLocked
+  id: GloomyWindoorSecureTintedMantisLockedAir
+  suffix: NON-AIRTIGHT] [Mantis, Locked] [Somber
+  components:
+  - type: Label
+    currentLabel: mantis
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
+
+- type: entity
+  parent: GloomyWindoorSecureTintedMantisDarkLocked
+  id: GloomyWindoorSecureTintedMantisDarkLockedAir
+  suffix: NON-AIRTIGHT] [Mantis, Locked, Dark] [Somber
+  components:
+  - type: Label
+    currentLabel: mantis
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
 
 # Stairs
 
@@ -1086,7 +1151,6 @@
 - type: entity
   parent: SomberFireplace
   id: SomberFireplacePenthouse
-  name: somber electrum fireplace
   suffix: PENTHOUSE] [Click After Mapping
   description: "An avant-garde fireplace shaped like an eye."
   components:
@@ -1102,7 +1166,6 @@
 - type: entity
   parent: SomberHangingBrazier
   id: SomberHangingBrazierPenthouse
-  name: somber hanging brazier
   suffix: PENTHOUSE] [Click After Mapping
   description: "An electrum brazier."
   placement:
@@ -1296,3 +1359,162 @@
     position: Down
     rotation: 90
     buckleOffset: ".1,-0.08"
+
+# Paintings
+
+- type: entity
+  parent: PaintingBase
+  id: PaintingBasePenthouse
+  name: Painting
+  description: "An original work framed in patterned electrum."
+  suffix: PENTHOUSE
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Wallmounts/paintings.rsi
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse1
+  suffix: "PENTHOUSE, #1"
+  components:
+  - type: Sprite
+    state: painting1
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse2
+  suffix: "PENTHOUSE, #2"
+  components:
+  - type: Sprite
+    state: painting2
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse3
+  suffix: "PENTHOUSE, #3"
+  components:
+  - type: Sprite
+    state: painting3
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse4
+  suffix: "PENTHOUSE, #4"
+  components:
+  - type: Sprite
+    state: painting4
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse5
+  suffix: "PENTHOUSE, #5"
+  components:
+  - type: Sprite
+    state: painting5
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse6
+  suffix: "PENTHOUSE, #6"
+  components:
+  - type: Sprite
+    state: painting6
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse7
+  suffix: "PENTHOUSE, #7"
+  components:
+  - type: Sprite
+    state: painting7
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse8
+  suffix: "PENTHOUSE, #8"
+  components:
+  - type: Sprite
+    state: painting8
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse9
+  suffix: "PENTHOUSE, #9"
+  components:
+  - type: Sprite
+    state: painting9
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse12
+  suffix: "PENTHOUSE, #12"
+  components:
+  - type: Sprite
+    state: painting12
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse13
+  suffix: "PENTHOUSE, #13"
+  components:
+  - type: Sprite
+    state: painting13
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse14
+  suffix: "PENTHOUSE, #14"
+  components:
+  - type: Sprite
+    state: painting14
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse15
+  suffix: "PENTHOUSE, #15"
+  components:
+  - type: Sprite
+    state: painting15
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse21
+  suffix: "PENTHOUSE, #21"
+  components:
+  - type: Sprite
+    state: painting21
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse22
+  suffix: "PENTHOUSE, #22"
+  components:
+  - type: Sprite
+    state: painting22
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse23
+  suffix: "PENTHOUSE, #23"
+  components:
+  - type: Sprite
+    state: painting23
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse24
+  suffix: "PENTHOUSE, #24"
+  components:
+  - type: Sprite
+    state: painting24 # Kaasi hehe
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse25
+  name: Aldieux family portrait
+  suffix: "PENTHOUSE, #25"
+  description: "A painting of several serious-faced humans in dated clothing, with Mireille standing at their side."
+  components:
+  - type: Sprite
+    state: painting25

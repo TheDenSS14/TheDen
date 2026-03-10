@@ -182,8 +182,8 @@
 - type: entity
   parent: SomberFreezer
   id: SomberFreezerLeft
-  name: somber double refrigerator (left)
-  suffix: Freezer] [No Lock
+  name: somber refrigerator (left)
+  suffix: Freezer, Double] [No Lock
   description: "A glossy, brushed-metal refrigerator with twice the storage of a standard model."
   components:
   - type: Sprite
@@ -192,8 +192,8 @@
 - type: entity
   parent: SomberFreezerLocker
   id: SomberFreezerLeftLocker
-  name: somber double refrigerator (left)
-  suffix: Freezer] [Locked
+  name: somber refrigerator (left)
+  suffix: Freezer, Double] [Locked
   description: "A glossy, brushed-metal refrigerator with twice the storage of a standard model."
   components:
   - type: Sprite
@@ -202,18 +202,18 @@
 - type: entity
   parent: SomberFreezerLeft
   id: SomberFreezerRight
-  name: somber double refrigerator (right)
+  name: somber refrigerator (right)
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Storage/somberfridgeleft.rsi
+    sprite: _DEN/Structures/Storage/somberfridgeright.rsi
 
 - type: entity
   parent: SomberFreezerLeftLocker
   id: SomberFreezerRightLocker
-  name: somber double refrigerator (right)
+  name: somber refrigerator (right)
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Storage/somberfridgeleft.rsi
+    sprite: _DEN/Structures/Storage/somberfridgeright.rsi
 
 - type: entity
   parent: BaseWallCloset
