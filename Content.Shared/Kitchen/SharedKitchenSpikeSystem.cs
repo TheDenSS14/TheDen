@@ -23,6 +23,8 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
 using Content.Shared.Kitchen.Components;
+using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
 using Content.Shared.Nutrition.Components;
@@ -323,7 +325,14 @@ public sealed class SharedKitchenSpikeSystem : EntitySystem
         // Gib the victim if there is nothing else to butcher.
         if (butcherable.SpawnedEntities.Count == 0)
         {
-            _bodySystem.GibBody(args.Target.Value, true);
+            if (TryComp<MindContainerComponent>(args.Target, out var mind) && mind.HasMind)
+            {
+                _bodySystem.GibBody(args.Target.Value, true);
+            }
+            else
+            {
+                QueueDel(args.Target.Value);
+            }
 
             var logSeverity = HasComp<HumanoidAppearanceComponent>(args.Target) ? LogImpact.Extreme : LogImpact.High;
 
