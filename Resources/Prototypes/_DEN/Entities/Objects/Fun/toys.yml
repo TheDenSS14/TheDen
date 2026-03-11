@@ -338,3 +338,23 @@
   - type: FoodSequenceElement
     entries:
       CottonBurger: PhilPlushie
+
+# @ eightballll;; approved by june (owner)
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieInkdrop
+  name: mischevious plushie
+  description: What did he do this time...
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/inkdropplushie.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+        - state: inhand-left
+      right:
+        - state: inhand-right
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: InkdropPlushie
