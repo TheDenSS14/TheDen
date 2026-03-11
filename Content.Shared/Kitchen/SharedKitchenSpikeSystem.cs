@@ -4,6 +4,7 @@
 // SPDX-FileCopyrightText: 2025 Kowlin
 // SPDX-FileCopyrightText: 2025 Winkarst-cpu
 // SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 Jakumba
 //
 // SPDX-License-Identifier: MIT
 
