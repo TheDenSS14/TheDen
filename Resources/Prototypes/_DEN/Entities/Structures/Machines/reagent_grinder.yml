@@ -1,0 +1,10 @@
+- type: entity
+  parent: KitchenReagentGrinder
+  id: KitchenReagentGrinderSomber
+  name: somber blender # Nobody has a device in their home called a god damn "reagent grinder"
+  suffix: Reagent Grinder
+  description: "A brushed metal blender that runs with a quiet, refined hum. Or at least, it's supposed to."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Machines/somberjuicer.rsi
+    offset: "0.0,0.2"

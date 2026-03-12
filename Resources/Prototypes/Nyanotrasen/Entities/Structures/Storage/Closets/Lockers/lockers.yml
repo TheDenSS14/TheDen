@@ -36,7 +36,7 @@
         volume: -4
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Metallic # Metal structure instead of wood like the other somber closets
+    damageModifierSet: Metallic
   - type: Destructible
     thresholds:
     - trigger: # In case it gets nuked it doesn't cause lag by dumping its contents

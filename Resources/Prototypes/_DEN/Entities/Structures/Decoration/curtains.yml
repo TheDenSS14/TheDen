@@ -1,0 +1,146 @@
+- type: entity
+  parent: BaseCurtains
+  id: BaseCurtainsDurable
+  name: durable curtains
+  description: Thicker than usual, and hanging from a strong steel rod.
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Items/Handling/cloth_drop.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialCloth1:
+            min: 2
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: BaseCurtainsDurable
+  id: CurtainsBlackSomber
+  suffix: Somber Black
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _DEN/Structures/Decoration/Curtains/somberblack.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: Curtains
+    node: CurtainsBlack
+
+- type: entity
+  parent: CurtainsBlackSomber
+  id: CurtainsBlackOpenSomber
+  suffix: Open, Somber Black
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: Curtains
+    node: CurtainsBlackOpen
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  parent: BaseCurtainsDurable
+  id: CurtainsCyanSomber
+  suffix: Somber Cyan
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _DEN/Structures/Decoration/Curtains/sombercyan.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: Curtains
+    node: CurtainsCyan
+
+- type: entity
+  parent: CurtainsCyanSomber
+  id: CurtainsCyanOpenSomber
+  suffix: Open, Somber Cyan
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: Curtains
+    node: CurtainsCyanOpen
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  parent: BaseCurtainsDurable
+  id: CurtainsPinkSomber
+  suffix: Somber Pink
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _DEN/Structures/Decoration/Curtains/somberpink.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: Curtains
+    node: CurtainsPink
+
+- type: entity
+  parent: CurtainsPinkSomber
+  id: CurtainsPinkOpenSomber
+  suffix: Open, Somber Pink
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: Curtains
+    node: CurtainsPinkOpen
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  parent: BaseCurtainsDurable
+  id: CurtainsPurpleSomber
+  suffix: Somber Purple
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _DEN/Structures/Decoration/Curtains/somberpurple.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: Curtains
+    node: CurtainsPurple
+
+- type: entity
+  parent: CurtainsPurpleSomber
+  id: CurtainsPurpleOpenSomber
+  suffix: Open, Somber Purple
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: Curtains
+    node: CurtainsPurpleOpen
+  - type: Physics
+    canCollide: false

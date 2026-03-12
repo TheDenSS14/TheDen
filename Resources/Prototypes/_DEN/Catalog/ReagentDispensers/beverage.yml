@@ -16,5 +16,26 @@
   - DrinkJuicePineappleJug
   - DrinkJuicePomegranateJug
   - DrinkJuiceRoseJug
+  - DrinkJuiceTomatoJug
   - DrinkBloodJug
   - DrinkPomelustineJug
+
+- type: reagentDispenserInventory
+  parent: BoozeDispenserInventory
+  id: BoozeDispenserInventoryExtended
+  inventory:
+  - DrinkAbsintheBottleFull
+  - DrinkAngobittersBottleFull
+  - DrinkAnisetteBottleFull
+  - DrinkBlueCuracaoBottleFull
+  - DrinkBottleOfNothingFull
+  - DrinkEggnogBottleFull
+  - DrinkGrenadineBottleFull
+  - DrinkGildlagerBottleFull
+  - DrinkChampagneBottleFull
+  - DrinkMelonLiquorBottleFull
+  - DrinkPatronBottleFull
+  - DrinkSakeBottleFull
+  - DrinkSojuBottleFull
+  - DrinkEggJug # Only served with alcohol, so it's "booze"
+  - DrinkShimmeringBloodJug # Psychoactive, so it's "booze"

@@ -1,0 +1,529 @@
+# Standard
+
+- type: entity
+  parent: ReinforcedWindow
+  id: WindowSomber
+  name: somber window
+  description: "Your reflection shimmers faintly in the glass."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber.rsi
+  - type: IconSmooth
+    key: walls
+    base: window
+
+- type: entity
+  parent: ReinforcedWindowDiagonal
+  id: WindowSomberDiagonal
+  name: somber window
+  suffix: Diagonal
+  description: "Your reflection shimmers faintly in the glass."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDiagonalFramed
+  name: somber window
+  suffix: Diagonal, Framed
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDiagonalFramedLeft
+  name: somber window
+  suffix: Diagonal, Framed, Left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed_left.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed_left.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDiagonalFramedMiddle
+  name: somber window
+  suffix: Diagonal, Framed, Middle
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed_middle.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed_middle.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDiagonalFramedRight
+  name: somber window
+  suffix: Diagonal, Framed, Right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed_right.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_diagonal_framed_right.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: ReinforcedUraniumWindow
+  id: WindowSomberUranium
+  name: shielded somber window
+  suffix: Radiation Shielding
+  description: "Built with occult-treated uranium shielding to keep you safe from radiation. Ignore the whispering."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_shielded.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_shielded.rsi
+  - type: IconSmooth
+    key: walls
+    base: window
+
+# Dark
+
+- type: entity
+  parent: WindowSomber
+  id: WindowSomberDark
+  name: somber window
+  suffix: Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark.rsi
+  - type: IconSmooth
+    key: walls
+    base: window
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDarkDiagonal
+  name: somber window
+  suffix: Dark, Diagonal
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDarkDiagonalFramed
+  name: somber window
+  suffix: Dark, Diagonal, Framed
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDarkDiagonalFramedLeft
+  name: somber window
+  suffix: Dark, Diagonal, Framed, Left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed_left.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed_left.rsi
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDarkDiagonalFramedMiddle
+  name: somber window
+  suffix: Dark, Diagonal, Framed, Middle
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed_middle.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed_middle.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDarkDiagonalFramedRight
+  name: somber window
+  suffix: Dark, Diagonal, Framed, Right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed_right.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal_framed_right.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberUranium
+  id: WindowSomberDarkUranium
+  name: shielded somber window
+  suffix: Dark, Radiation Shielding
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark_shielded.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark_shielded.rsi
+  - type: IconSmooth
+    key: walls
+    base: window
+
+# Directional
+
+- type: entity
+  parent: WindowReinforcedDirectional
+  id: WindowSomberDirectional
+  name: somber window
+  suffix: Directional
+  description: "Your reflection shimmers faintly in the glass."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somber
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somber
+
+- type: entity
+  parent: WindowSomberDirectional
+  id: WindowSomberDirectionalTinted
+  name: somber window (tinted)
+  suffix: Directional
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somberdarktinted
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somberdarktinted
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,-0.3"
+
+- type: entity
+  parent: WindowSomberDirectional
+  id: WindowSomberDarkDirectional
+  name: somber window
+  suffix: Directional, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somberdark
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somberdark
+
+- type: entity
+  parent: WindowSomberDarkDirectional
+  id: WindowSomberDarkDirectionalTinted
+  name: somber window (tinted)
+  suffix: Directional, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somberdarktinted
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somberdarktinted
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,-0.3"
+
+- type: entity
+  parent: WindowSomberDirectional
+  id: WindowSomberDirectionalCorner
+  suffix: Directional Corner
+  description: "Your reflection shimmers faintly in the glass."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: sombercorner
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: sombercorner
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.36,-0.49,0.49,-0.36"
+        density: 1500
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageVisuals
+    damageOverlay:
+      sprite: _DEN/Structures/Windows/cracks_corner.rsi
+  - type: Occluder
+    boundingBox: "0.3,-0.5,0.5,-0.3"
+
+- type: entity
+  parent: WindowSomberDirectionalCorner
+  id: WindowSomberDarkDirectionalCorner
+  suffix: Directional Corner, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somberdarkcorner
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somberdarkcorner
+
+- type: entity
+  parent: WindowSomberDirectionalCorner
+  id: WindowSomberDirectionalTintedCorner
+  name: somber window (tinted)
+  suffix: Directional Corner
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: sombertintedcorner
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: sombertintedcorner
+
+- type: entity
+  parent: WindowSomberDirectionalCorner
+  id: WindowSomberDarkDirectionalTintedCorner
+  name: somber window (tinted)
+  suffix: Directional Corner, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somberdarktintedcorner
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
+    state: somberdarktintedcorner
+
+# Somber TV Kit
+# To make theaters using ComputerSomberTelevision and RemoteSignallerSomberTV
+# Only comes in the dark color
+
+- type: entity
+  parent: WindowSomberDark
+  id: SomberTVSpeakerWindowLeft
+  name: somber sound system
+  description: "A sleek surround sound speaker in brushed metal, set into the wall. This system could probably blow the windows out."
+  suffix: Speaker Window, Left] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: left
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: left
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+
+- type: entity
+  parent: SomberTVSpeakerWindowLeft
+  id: SomberTVSpeakerWindowRight
+  suffix: Speaker Window, Right] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: right
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: right
+
+- type: entity
+  parent: SomberTVSpeakerWindowLeft
+  id: SomberTVSpeakerWindowMiddle
+  suffix: Speaker Window, Middle] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: middle
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: middle
+
+- type: entity
+  parent: SomberTVSpeakerWindowLeft # Useful if the TV's on an exterior wall so you can see space behind it
+  id: SomberTVSpeakerWindow # It does have glass slits, so you can see through it
+  name: somber window
+  description: "Your reflection shimmers faintly in the glass."
+  suffix: TV Backing Window, See-Through] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: tvback
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvwindows.rsi
+    state: tvback
+
+- type: entity
+  parent: BaseStructure # Debatably, these are directional windows
+  id: SomberTVSpeakerBig
+  name: somber sound system
+  description: "A sleek surround speaker in brushed metal. This sound system could probably blow the windows out."
+  suffix: Speaker Window/Wall Attachment, Big] [Somber TV Kit
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    drawdepth: FloorObjects
+    state: wallspeakerbig
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    state: wallspeakerbig
+  - type: WallMount
+    arc: 360
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.36"
+        hard: false
+        density: 1500
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: MetalThud
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KnockOn
+    - HugObject
+    - PetObject
+    - KissObject
+    - LickObject
+
+- type: entity
+  parent: SomberTVSpeakerBig
+  id: SomberTVSpeakerSmall
+  name: somber sound system
+  suffix: Speaker Window/Wall Attachment, Small] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    state: wallspeakersmall
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    state: wallspeakersmall
+
+- type: entity
+  parent: SomberTVSpeakerBig
+  id: SomberTVSpeakerSteel
+  name: somber sound system
+  suffix: Speaker, Matches Walls] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    state: wallspeakersteel
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    state: wallspeakersteel
+
+- type: entity
+  parent: SomberTVSpeakerBig
+  id: SomberTVSpeakerMnemolith
+  name: somber sound system
+  suffix: Speaker, Matches Diagonal Walls] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    state: wallspeakermnemolith
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/sombertvspeakers.rsi
+    state: wallspeakermnemolith

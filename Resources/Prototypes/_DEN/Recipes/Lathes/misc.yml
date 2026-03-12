@@ -250,3 +250,19 @@
     Aluminum: 400 # Aluminium foil :)
     Gold: 200
     Bluespace: 40 # The other insulatives cost this.
+
+# Tiles
+- type: latheRecipe
+  parent: BaseFauxTileRecipe
+  id: FauxTileSomberDirt
+  result: FloorTileItemSomberDirt
+
+- type: latheRecipe
+  parent: BaseFauxTileRecipe
+  id: FauxTileSomberGrass
+  result: FloorTileItemSomberGrass
+
+- type: latheRecipe
+  parent: BaseFauxTileRecipe
+  id: FauxTileSomberSand
+  result: FloorTileItemSomberSand

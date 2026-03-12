@@ -6,6 +6,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # Captain
+job-name-alternate-owner = Owner
 job-name-alternate-commander = Commander
 job-name-alternate-shogun = Shōgun
 

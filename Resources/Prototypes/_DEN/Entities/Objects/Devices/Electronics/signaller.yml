@@ -1,0 +1,22 @@
+- type: entity
+  parent: RemoteSignaller
+  id: RemoteSignallerSomber
+  name: somber remote signaller
+  description: "A brushed metal remote used for remotely sending signals to objects within a small radius of about 15 meters."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Devices/signaller.rsi
+    layers:
+      - state: somber-signaller
+      - state: somber-signaller-light
+        shader: unshaded
+  - type: Item
+    sprite: _DEN/Objects/Devices/signaller.rsi
+    heldPrefix: somber
+
+- type: entity
+  parent: RemoteSignallerSomber
+  id: RemoteSignallerSomberTV
+  name: somber television remote
+  suffix: Must Be Linked] [Somber TV Kit
+  description: "A brushed metal remote for the television. It can activate other items, too, but don't run off with it or you'll pay."

@@ -275,3 +275,33 @@
           Quantity: 150
   - type: Label
     currentLabel: rose water
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkJuiceTomatoJug
+  suffix: tomato juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: JuiceTomato
+          Quantity: 150
+  - type: Label
+    currentLabel: tomato juice
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkEggJug
+  suffix: egg
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: Egg
+          Quantity: 150
+  - type: Label
+    currentLabel: egg

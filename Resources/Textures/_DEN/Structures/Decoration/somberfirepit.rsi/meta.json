@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "By Sha-Seng (GitHub), burning by Juniwoofs",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "bonfire"
+    },
+    {
+      "name": "bonfire_extinguished"
+    },
+    {
+      "name": "burning",
+      "delays": [
+        [
+      0.3,
+      0.3,
+      0.3
+        ]
+      ]
+    }
+  ]
+}

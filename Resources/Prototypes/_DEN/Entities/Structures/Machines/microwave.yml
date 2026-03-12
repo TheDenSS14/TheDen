@@ -1,0 +1,35 @@
+- type: entity
+  parent: KitchenMicrowave
+  id: KitchenMicrowaveSomber
+  name: somber microwave
+  suffix: ""
+  description: "A brushed metal microwave. Unreasonably expensive, considering it's not all that special."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Machines/sombermicrowave.rsi
+  - type: Item
+    sprite: _DEN/Structures/Machines/sombermicrowave.rsi
+
+- type: entity
+  parent: AdvancedMicrowave
+  id: AdvancedMicrowaveSomber
+  name: somber microwave
+  suffix: Advanced
+  description: "A brushed metal, extremely high-powered microwave. Don't leave any metal in it. Or stand too close."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Machines/sombermicrowave.rsi
+  - type: Item
+    sprite: _DEN/Structures/Machines/sombermicrowave.rsi
+
+- type: entity
+  parent: SyndicateMicrowave
+  id: SyndicateMicrowaveSomber
+  name: somber microwave
+  suffix: Syndicate
+  description: "A brushed metal microwave, probably illegal given the Donk Co. branding on the back. Heavy enough to beat someone to death."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Machines/sombermicrowave.rsi
+  - type: Item
+    sprite: _DEN/Structures/Machines/sombermicrowave.rsi

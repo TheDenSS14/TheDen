@@ -2,7 +2,9 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# GLOOMY HOLOPADS START - Designed to match the "somber" mantis tilesets, but they need to be useful for anyone, so I have to do all this sorry
+# Designed to match the somber set, but they need to be useful for anyone, so I have to do all this for mappers
+# Called "gloomy" so as not to clutter the list when "somber" is searched, though that will bring up the mantis version
+
 - type: entity
   parent: Holopad
   id: GloomyHolopad
@@ -24,7 +26,7 @@
 - type: entity
   parent: HolopadLongRange
   id: GloomyHolopadLongRange
-  name: gloomy long-range holopad
+  name: gloomy holopad (long-range)
   description: "A somber holopad with an esoteric eye motif. On a long-range network."
   components:
   - type: Sprite
@@ -41,7 +43,7 @@
 - type: entity
   parent: HolopadUnlimitedRange
   id: GloomyHolopadUnlimitedRange
-  name: gloomy quantum-entangling holopad
+  name: gloomy holopad (quantum-entangling)
   description: "A somber holopad with an esoteric eye motif. On an extreme-range network."
   components:
   - type: Sprite
@@ -58,7 +60,7 @@
 - type: entity
   parent: HolopadBluespace
   id: GloomyHolopadBluespace
-  name: gloomy bluespace holopad
+  name: gloomy holopad (bluespace)
   suffix: Unrestricted Range
   description: "A somber holopad with an esoteric eye motif, utilizing experimental bluespace technology. Range is no longer a question."
   components:
@@ -336,9 +338,9 @@
 - type: entity
   parent: GloomyHolopad
   id: GloomyHolopadEpistemicsMantis
-  suffix: Mantis, Somber # The source of my suffering
-  components: # Hopefully they can infer that the rest are called "gloomy" if they want them
-  - type: Label # I specifically chose a word that appears alphabetically after standard holopads
+  suffix: Mantis] [Somber # The source of my suffering
+  components: # Hopefully mappers can infer that the rest are called "gloomy" if they want them
+  - type: Label
     currentLabel: holopad-epistemics-mantis
 
 - type: entity

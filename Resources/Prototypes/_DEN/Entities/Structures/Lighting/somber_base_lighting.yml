@@ -1,0 +1,222 @@
+# Tube Fixtures
+- type: entity
+  parent: PoweredlightEmpty
+  id: PoweredlightSomberEmpty
+  suffix: Empty
+  name: electrum light
+  description: "An ornate light fixture. It needs power, and a light tube. Everyone knows that."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Lighting/somber_light_tube.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:EmptyAllContainersBehaviour
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ScrapElectrum:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+
+- type: entity
+  parent: Poweredlight
+  id: PoweredlightSomber
+  suffix: ""
+  name: electrum light
+  description: "An ornate light fixture. It needs power, and a light tube. Everyone knows that."
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Lighting/somber_light_tube.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:EmptyAllContainersBehaviour
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ScrapElectrum:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 2
+    popupText: powered-light-component-burn-hand
+
+- type: entity
+  parent: PoweredlightSomber
+  id: PoweredlightSomberFluorescent
+  suffix: Fluorescent
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: LightTube
+  - type: PointLight
+    color: "#FFE4CE"
+    energy: 0.8
+    radius: 10
+    softness: 1
+
+- type: entity
+  parent: PoweredlightSomber
+  id: PoweredlightSomberLED
+  suffix: LED
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: LedLightTube
+  - type: PointLight
+    color: "#EEEEFF"
+    energy: 1
+    radius: 15
+    softness: 0.9
+
+- type: entity
+  parent: PoweredlightSomber
+  id: PoweredlightSomberUV
+  suffix: Ultraviolet
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: UvLightTube
+  - type: PointLight
+    radius: 15
+    energy: 1
+    softness: 0.9
+    color: "#9E00FF"
+
+# Bulb Fixtures
+- type: entity
+  parent: PoweredSmallLightEmpty
+  id: PoweredSmallLightSomberEmpty
+  name: electrum light
+  description: "An ornate light fixture. It needs power, and a light bulb. Everyone knows that."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Lighting/somber_light_small.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:EmptyAllContainersBehaviour
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ScrapElectrum:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+
+- type: entity
+  parent: PoweredSmallLight
+  id: PoweredSmallLightSomber
+  suffix: ""
+  name: electrum light
+  description: "An ornate light fixture. It needs power, and a light bulb. Everyone knows that."
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Lighting/somber_light_small.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:EmptyAllContainersBehaviour
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ScrapElectrum:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 2
+    popupText: powered-light-component-burn-hand
+
+- type: entity
+  parent: PoweredSmallLightSomber
+  id: PoweredSmallLightSomberWarm
+  suffix: Warm
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: WarmLightBulb
+  - type: PointLight
+    color: "#ff9833"
+    energy: 1
+    radius: 6
+    softness: 3
+
+- type: entity
+  parent: PoweredSmallLightSomber
+  id: PoweredSmallLightSomberCold
+  suffix: Cold
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: ColdLightBulb
+  - type: PointLight
+    color: "#b1d4ed" # 6000k color temp
+    energy: 1
+    radius: 6
+    softness: 3
+
+- type: entity
+  parent: PoweredSmallLightSomber
+  id: PoweredSmallLightSomberDim
+  suffix: Dim
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: DimLightBulb
+  - type: PointLight
+    color: "#ba473f"
+    energy: 0.5
+    radius: 5
+    softness: 3
