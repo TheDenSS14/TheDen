@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 Eightballll
 # SPDX-FileCopyrightText: 2026 sheepie
 #
 # SPDX-License-Identifier: MIT
