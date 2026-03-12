@@ -87,10 +87,37 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
-      - type: BloodCultist # SHA EDITS START
-      - type: BloodCultSpellsHolder
+      # SHA EDITS START
+      - type: BloodCultist # So only she can wield her Faust
+      - type: BloodCultSpellsHolder # So she can summon her Faust
       - type: Psionic
-        powerSlots: 100
+        powerSlots: 100 # So she never increases Glimmer
+      - type: ThermalVision # The order of these components affects their position in the action bar so I don't have to rearrange everything every time I use Telegnosis
+        pulseTime: 2
+        lightRadius: 0
+        color: "#4dc4ff"
+        activateSound:
+          path: /Audio/_White/BloodCult/veilin.ogg
+          params:
+            volume: -3
+            variation: 0.075
+        deactivateSound:
+          path: /Audio/_White/BloodCult/veilout.ogg
+          params:
+            volume: -3
+            variation: 0.075
+      - type: NightVision
+        color: "#4dc4ff"
+        activateSound:
+          path: /Audio/Effects/eye_open.ogg
+          params:
+            volume: -3
+            variation: 0.075
+        deactivateSound:
+          path: /Audio/Effects/eye_close.ogg
+          params:
+            volume: -3
+            variation: 0.075
       - type: InnatePsionicPowers
         powersToAdd:
           - PowerOverwhelming
@@ -102,7 +129,8 @@
           - RevivifyPower
           - DarkSwapPower
           - TelegnosisPower
-          - AssayPower # SHA EDITS END
+          - AssayPower
+      # SHA EDITS END
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial
     charges: 8

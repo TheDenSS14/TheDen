@@ -25,12 +25,15 @@
   - type: Psionic
     removable: false
     roller: false
-  - type: TypingIndicator # SHA EDITS START
+  # SHA EDITS START
+  - type: CombatMode
+  - type: TypingIndicator
     proto: mantis
   - type: Speech
     speechSounds: Alto
   - type: InnatePsionicPowers
     powersToAdd:
+      - PowerOverwhelming
       - XenoglossyPower
       - TelepathyPower
   - type: IntrinsicRadioReceiver
@@ -47,10 +50,38 @@
     understands:
     - Psychomantic
   - type: Actions
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_White/BloodCult/magic.ogg
+      params:
+        volume: -5
+        pitch: 0.75
   - type: ThermalVision
-    pulseTime: 0
-    lightRadius: 25
+    pulseTime: 2
+    lightRadius: 0
     color: "#4dc4ff"
+    activateSound:
+      path: /Audio/_White/BloodCult/veilin.ogg
+      params:
+        volume: -3
+        variation: 0.075
+    deactivateSound:
+      path: /Audio/_White/BloodCult/veilout.ogg
+      params:
+        volume: -3
+        variation: 0.075
+  - type: NightVision
+    color: "#4dc4ff"
+    activateSound:
+      path: /Audio/Effects/eye_open.ogg
+      params:
+        volume: -3
+        variation: 0.075
+    deactivateSound:
+      path: /Audio/Effects/eye_close.ogg
+      params:
+        volume: -3
+        variation: 0.075
   - type: PointLight # As bright as a candle
     radius: 2.4
     energy: 2.4
@@ -58,15 +89,16 @@
     color: "#4dc4ff"
   - type: AmbientSound
     range: 5
-    volume: -2
+    volume: -8
     sound:
-      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+      path: /Audio/Ambience/wisp_ambience.ogg
   - type: Emoting
   - type: BodyEmotes
     soundsId: GeneralBodyEmotes
   - type: Grammar
     attributes:
-      proper: true # SHA EDITS END
+      proper: true
+  # SHA EDITS END
   - type: MindContainer
   - type: Clickable
 #  - type: InteractionOutline # SHA
@@ -86,7 +118,7 @@
     baseSprintSpeed: 8
     baseWalkSpeed: 3
   - type: MovementIgnoreGravity
-  #- type: PsionicallyInvisible
+# - type: PsionicallyInvisible
   - type: InputMover
   - type: Appearance
   - type: Eye
@@ -101,11 +133,14 @@
     context: "ghost"
   - type: Examiner
   - type: TelegnosticProjection
-#  - type: Stealth # SHA EDITS START
+  # SHA EDITS START
+#  - type: Stealth
 #    lastVisibility: 0.66
 #  - type: Visibility
-#    layer: 4 # SHA EDITS END
+#    layer: 4
+  # SHA EDITS END
   - type: NoNormalInteraction
   - type: Tag # SHA
     tags:
     - BypassInteractionRangeChecks
+    - ThavenEmotes

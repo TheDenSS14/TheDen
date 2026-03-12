@@ -167,6 +167,16 @@
     pulseTime: 0 # Toggled, not timed
     lightRadius: 7
     color: "#4dc4ff"
+    activateSound:
+      path: /Audio/Effects/eye_open.ogg
+      params:
+        volume: -3
+        variation: 0.075
+    deactivateSound:
+      path: /Audio/Effects/eye_close.ogg
+      params:
+        volume: -3
+        variation: 0.075
   - type: Examiner # So they can at least inspect what they dispensed
   - type: Fixtures
     fixtures:
