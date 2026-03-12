@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2026 Alex C
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# This is NOT accurate.
+- type: reaction
+  id: Glycerol
+  minTemp: 373.15
+  reactants:
+    Water:
+      amount: 3
+    Fat:
+      amount: 1
+  products:
+    Glycerol: 4
+
+- type: reaction
+  id: HydroxyethylCellulose
+  reactants:
+    Cellulose:
+      amount: 1
+    SodiumHydroxide:
+      amount: 1
+  products:
+    HydroxyethylCellulose: 1
+    SodiumHydroxide: 1

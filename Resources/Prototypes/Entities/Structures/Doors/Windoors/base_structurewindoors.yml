@@ -303,7 +303,7 @@
   - type: StaticPrice
     price: 170
   - type: RadiationBlocker
-    resistance: 4
+    resistance: 2
 
 - type: entity
   id: BaseSecurePlasmaWindoor
@@ -358,7 +358,12 @@
   - type: StaticPrice
     price: 312
   - type: RadiationBlocker
-    resistance: 6
+    resistance: 4
+  - type: Tag
+    tags:
+      - SecurePlasmaWindoor
+      # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
+
 
 #Uranium Windoors
 - type: entity
@@ -413,7 +418,7 @@
   - type: StaticPrice
     price: 180
   - type: RadiationBlocker
-    resistance: 5
+    resistance: 3
 
 - type: entity
   id: BaseSecureUraniumWindoor
@@ -468,4 +473,8 @@
   - type: StaticPrice
     price: 462
   - type: RadiationBlocker
-    resistance: 8
+    resistance: 5
+  - type: Tag
+    tags:
+      - SecureUraniumWindoor
+      # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor

@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Flipp Syder
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 AvianMaiden
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: VoxHairAfro
@@ -21,6 +22,15 @@
   sprites:
     - sprite: Mobs/Customization/vox_hair.rsi
       state: braid_s
+
+- type: marking
+  id: VoxHairBushy
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_hair.rsi
+    state: bushy_s
 
 - type: marking
   id: VoxHairCrestedQuills
@@ -57,6 +67,15 @@
   sprites:
     - sprite: Mobs/Customization/vox_hair.rsi
       state: hawk_s
+
+- type: marking
+  id: VoxHairHedgehog
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_hair.rsi
+    state: hedgehog_s
 
 - type: marking
   id: VoxHairHorns
@@ -101,7 +120,16 @@
   speciesRestriction: [Vox]
   sprites:
     - sprite: Mobs/Customization/vox_hair.rsi
-      state: afro_s
+      state: long_braid_s
+
+- type: marking
+  id: VoxHairMadScientist
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_hair.rsi
+    state: mad_scientist_s
 
 - type: marking
   id: VoxHairMange
@@ -111,7 +139,7 @@
   sprites:
     - sprite: Mobs/Customization/vox_hair.rsi
       state: mange_s
-      
+
 - type: marking
   id: VoxHairMohawk
   bodyPart: Hair
@@ -176,6 +204,24 @@
       state: shortquills_s
 
 - type: marking
+  id: VoxHairSlick
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_hair.rsi
+    state: slick_s
+
+- type: marking
+  id: VoxHairSpotty
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_hair.rsi
+    state: spotty_s
+
+- type: marking
   id: VoxHairSurf
   bodyPart: Hair
   markingCategory: Hair
@@ -194,6 +240,15 @@
       state: tielquills_s
 
 - type: marking
+  id: VoxHairWiseBraid
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_hair.rsi
+    state: wise_braid_s
+
+- type: marking
   id: VoxHairYasu
   bodyPart: Hair
   markingCategory: Hair
@@ -201,3 +256,12 @@
   sprites:
     - sprite: Mobs/Customization/vox_hair.rsi
       state: yasu_s
+
+- type: marking
+  id: VoxHairCatfish
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_hair.rsi
+    state: catfish_s

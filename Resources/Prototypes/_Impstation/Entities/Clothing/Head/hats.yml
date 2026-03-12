@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 DOSRG
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -163,6 +164,7 @@
     clothingVisuals:
       head:
       - state: on-equipped-HELMET
+        shader: unshaded
   - type: PointLight
     enabled: false
     radius: 1.4
@@ -266,3 +268,47 @@
   - type: Construction
     graph: WebObjects
     node: widehat
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCuteTiara
+  name: cute tiara
+  description: A tiara fit for royalty, except that it's definitely not real gold.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Head/Hats/cutetiara.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Head/Hats/cutetiara.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSimpleTiara
+  name: simple tiara
+  description: A simple tiara for those seeking elegance through simplicity.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Head/Hats/simpletiara.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Head/Hats/simpletiara.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatPrincess
+  name: princess hat
+  description: Did you know these are actually called a Hennin?
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Head/Hats/princesshat.rsi
+  - type: Clothing
+    sprite:  _Impstation/Clothing/Head/Hats/princesshat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatGreenEscoffion
+  name: green escoffion
+  description: Fit for some kind of fancy princess, bet you didn't know this kind of hat has a name.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Head/Hats/greenescoffion.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Head/Hats/greenescoffion.rsi

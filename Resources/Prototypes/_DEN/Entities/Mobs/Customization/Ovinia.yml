@@ -5,8 +5,9 @@
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Aikakakah
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
   abstract: true
@@ -52,6 +53,13 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/tail_markings.rsi
     state: ovinia-tail
+
+- type: marking
+  parent: BaseOviniaTail
+  id: OviniaTailAnimated
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/tail_markings.rsi
+    state: ovinia-tail_wag
 
 # Ears Markings
 - type: marking

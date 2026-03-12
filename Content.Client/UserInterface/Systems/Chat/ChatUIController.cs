@@ -33,7 +33,7 @@
 // SPDX-FileCopyrightText: 2025 lzk
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Globalization;
 using System.Linq;
@@ -847,7 +847,13 @@ public sealed partial class ChatUIController : UIController
             text = $";{text}";
         }
 
-        if (_denuUIController!.AutoFormatterEnabled)
+        if (_denuUIController!.AutoFormatterEnabled
+            && channel is ChatSelectChannel.Local
+                or ChatSelectChannel.Radio
+                or ChatSelectChannel.Whisper
+                or ChatSelectChannel.Subtle
+                or ChatSelectChannel.SubtleOOC
+                or ChatSelectChannel.Emotes)
         {
             text = _denuUIController.FormatMessage(text);
         }

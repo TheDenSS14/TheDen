@@ -1065,6 +1065,42 @@
         Piercing: 0
 
 - type: entity
+  id: BulletTennis
+  name: tennis ball
+  description: A fuzzy orb of endless betrayal.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Physics
+    bodyType: Dynamic
+    linearDamping: 0
+    angularDamping: 0
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+  - type: Sprite
+    sprite: Objects/Fun/Balls/tennisball.rsi
+    layers:
+      - state: icon
+  - type: Ammo
+    muzzleFlash: null
+  - type: Projectile
+    deleteOnCollide: true
+    damage:
+      types:
+        Piercing: 0
+    soundHit: null
+  - type: TimedDespawn
+    lifetime: 10
+
+
+- type: entity
   id: BulletAcid
   name: acid spit
   parent: BaseBullet
@@ -1370,7 +1406,87 @@
     impactEffect: BulletImpactEffectRedDisabler
     damage:
       types:
-        Heat: 24 # Slightly more damage than the 17heat from the Captain's Hitscan lasgun, these will hurt but not quite a 4 shot
+        Heat: 28 # Den
+    soundHit:
+      collection: MeatLaserImpact
+
+- type: entity #Den, added for a weaker hitting energy bolt
+  name: energy bolt
+  id: BulletEnergyGunLaserWeak
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 5
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: omnilaser_greyscale
+      shader: unshaded
+      color: red
+  - type: Ammo
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        mask:
+        - Opaque
+      fly-by: *flybyfixture
+  - type: Projectile
+    impactEffect: BulletImpactEffectRedDisabler
+    damage:
+      types:
+        Heat: 18 # Den
+    soundHit:
+      collection: MeatLaserImpact
+
+- type: entity #Den, added for a harder hitting energy bolt
+  name: energy bolt
+  id: BulletEnergyGunLaserStrong
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 5
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: omnilaser_greyscale
+      shader: unshaded
+      color: red
+  - type: Ammo
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        mask:
+        - Opaque
+      fly-by: *flybyfixture
+  - type: Projectile
+    impactEffect: BulletImpactEffectRedDisabler
+    damage:
+      types:
+        Heat: 32 # Den
     soundHit:
       collection: MeatLaserImpact
 
@@ -1504,8 +1620,8 @@
     impactEffect: BulletImpactEffectRedDisabler
     damage:
       types:
-        Blunt: 5 #TheDen Damage increase
-        Heat: 20 #TheDen Damage increase
+        Blunt: 6 #TheDen Damage increase
+        Heat: 24 #TheDen Damage increase
     soundHit:
       collection: MeatLaserImpact
 

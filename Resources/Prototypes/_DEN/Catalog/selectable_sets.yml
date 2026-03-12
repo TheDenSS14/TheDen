@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2026 sheepie
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -49,7 +50,7 @@
     sprite: _Goobstation/Objects/Weapons/Guns/Rifles/annie.rsi
     state: base
   content:
-    - WeaponRifleAnnie
+    - WeaponRiflBSOAk
     - MagazineLightRifle
     - MagazineLightRifle
     - MagazineLightRifle
@@ -77,13 +78,12 @@
   name: ert-security-loadout-3-name
   description: ert-security-loadout-3-desc
   sprite:
-    sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
+    sprite: _DEN/Objects/Weapons/Guns/Shotguns/salamander.rsi
     state: icon
   content:
-    - WeaponShotgunEnforcer
-    - MagazineShotgun
-    - MagazineShotgun
-    - MagazineShotgunSlug
+    - WeaponShotgunSalamander
+    - MagazineBoxShotgunHighCaliber
+    - MagazineBoxShotgunSlugHighCaliber
     - GrenadeStinger
     - GrenadeStinger
 
@@ -139,10 +139,10 @@
   name: ert-engineer-loadout-4-name
   description: ert-engineer-loadout-4-desc
   sprite:
-    sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi
+    sprite: _DEN/Objects/Weapons/Guns/Battery/pulse_pdw.rsi
     state: base
   content:
-    - WeaponDisablerSMG
+    - WeaponPulsePDW
     - TearGasGrenade
     - TearGasGrenade
     - GrenadeStinger
@@ -192,10 +192,10 @@
   name: ert-medic-loadout-2-name
   description: ert-medic-loadout-2-desc
   sprite:
-    sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi
+    sprite: _DEN/Objects/Weapons/Guns/Battery/pulse_pdw.rsi
     state: base
   content:
-    - WeaponDisablerSMG
+    - WeaponPulsePDW
     - MedkitCombatFilled
     - TearGasGrenade
     - TearGasGrenade
@@ -232,6 +232,36 @@
     - CleanerGrenade
     - CleanerGrenade
     - CleanerGrenade
+
+# ERT CBURN
+- type: selectableSet
+  id: ERTCBURNLoadout1
+  name: ert-cburn-loadout-1-name
+  description: ert-cburn-loadout-1-desc
+  sprite:
+    sprite: _DEN/Objects/Weapons/Guns/Shotguns/salamander.rsi
+    state: icon
+  content:
+    - BoxSurvivalEngineering
+    - WeaponShotgunSalamanderIncendiary
+    - MagazineBoxShotgunIncendiaryHighCaliber
+    - MagazineBoxShotgunIncendiaryHighCaliber
+    - MagazineBoxShotgunHighCaliber
+    - GrenadeIncendiary
+    - GrenadeIncendiary
+    - TearGasGrenade
+    - TearGasGrenade
+    - PillAmbuzolPlus
+    - PillCanisterAmbuzol
+    - Zipties
+    - Zipties
+    - Zipties
+    - Zipties
+    - Flare
+    - Flare
+    - Flare
+    - Flare
+
 
 # Emergency internals
 - type: selectableSet

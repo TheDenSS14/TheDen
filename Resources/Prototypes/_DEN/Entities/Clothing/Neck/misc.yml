@@ -7,6 +7,7 @@
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2026 Alex C
+# SPDX-FileCopyrightText: 2026 meatsmall
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -154,6 +155,17 @@
   - type: Clothing
     sprite: _DEN/Clothing/Neck/Collars/collar_aa.rsi
 
+- type: entity
+  parent: ClothingNeckCollarBaseFoldable
+  id: ClothingNeckSpikedCollar
+  name: spiked collar
+  description: A simple leather collar with decorative spikes.  Can be unfolded to appear thicker.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Collars/collar_spiked.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Collars/collar_spiked.rsi
+    
 - type: entity
   parent: ClothingNeckCollarBaseFoldable
   id: ClothingNeckColorableCollar

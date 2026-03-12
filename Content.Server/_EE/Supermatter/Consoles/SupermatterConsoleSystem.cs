@@ -1,10 +1,4 @@
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
-
-using Content.Server.Pinpointer;
-using Content.Shared._EE.CCVars;
+using Content.Shared._EE.CCVar;
 using Content.Shared._EE.Supermatter.Components;
 using Content.Shared._EE.Supermatter.Consoles;
 using Content.Shared.Atmos;
@@ -177,7 +171,7 @@ public sealed class SupermatterConsoleSystem : SharedSupermatterConsoleSystem
         if (sm.GasStorage != null)
             gases = sm.GasStorage;
 
-        var tempThreshold = Atmospherics.T0C + _config.GetCVar(ECCVars.SupermatterHeatPenaltyThreshold);
+        var tempThreshold = Atmospherics.T0C + _config.GetCVar(EECCVars.SupermatterHeatPenaltyThreshold);
 
         return new SupermatterFocusData(
             GetNetEntity(focusSupermatter.Value),

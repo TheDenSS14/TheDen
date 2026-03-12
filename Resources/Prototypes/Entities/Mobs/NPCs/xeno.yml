@@ -48,20 +48,23 @@
 # SPDX-FileCopyrightText: 2024 fox
 # SPDX-FileCopyrightText: 2025 Avalon
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Spatison
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 MajorMoth
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Hacky for the stress test so don't even consider adding to this
+
 - type: entity
   name: Burrower
   id: MobXeno
-  parent: SimpleSpaceMobBase
+  parent: [ SimpleSpaceMobBase, MobVentCritter ] # Den: add MobVentCritter
   description: They mostly come at night. Mostly.
   components:
   - type: Insulated
@@ -482,7 +485,7 @@
 
 - type: entity
   name: space adder
-  parent: SimpleSpaceMobBase
+  parent: [ SimpleSpaceMobBase, MobVentCritter ] # Den: add MobVentCritter
   id: MobPurpleSnake
   description: A menacing purple snake from Kepler-283c.
   components:

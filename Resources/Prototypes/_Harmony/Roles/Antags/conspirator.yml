@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2026 Jakumba
+#
+# SPDX-License-Identifier: MIT
+
+- type: antag
+  id: Conspirator
+  name: roles-antag-conspirator-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-conspirator-objective
+  guides: [ Conspirators ]
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 36000 #Den - 10 hours

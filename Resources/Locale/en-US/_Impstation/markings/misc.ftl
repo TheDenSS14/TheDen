@@ -7,7 +7,7 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2026 little-meow-meow
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # this file is subject to getting its shit moved to other files at a later date#
 
@@ -161,7 +161,8 @@ marking-fishbowl = Fishbowl
 marking-fishbowl-fishbowl1 = Fish
 # Frontier: bubbles < Bubbles
 marking-fishbowl-fishbowl2 = Fish Bubbles
-marking-FadingStars = Fading Starlight
+# TheDen: Added (Glowing) below
+marking-FadingStars = Fading Starlight (Glowing)
 marking-FadingStars-fadingstars1 = Brightest
 marking-FadingStars-fadingstars2 = Middling
 marking-FadingStars-fadingstars3 = Darkest

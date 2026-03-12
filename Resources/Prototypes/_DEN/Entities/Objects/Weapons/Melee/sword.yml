@@ -131,9 +131,9 @@
         volume: -2
         variation: 0.05
   - type: DamageOtherOnHit
-    staminaCost: 80 # Throwing it will nearly, unless your species or traits let you do it, but then you'll still be extremely slow and unarmed
+    staminaCost: 80 # Throwing it will nearly stun you, unless your species or traits let you do it, but then you'll still be extremely slow and unarmed
   - type: EmbeddableProjectile
-    sound: 
+    sound:
       path: /Audio/_DEN/Weapons/Melee/fausthit.ogg
       params:
         volume: -2
@@ -198,7 +198,15 @@
     sound:
       path: /Audio/Effects/metal_slam1.ogg
       params:
-        volume: -4
+        volume: -3
+        pitch: 0.9
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Effects/metal_slam4.ogg
+      params:
+        volume: -6
+        pitch: 1.1
         variation: 0.05
   - type: Appearance
   - type: ContainerContainer

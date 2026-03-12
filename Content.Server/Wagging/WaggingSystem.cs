@@ -6,8 +6,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._DEN.Markings;
 using Content.Server.Actions;
 using Content.Server.Humanoid;
+using Content.Shared._DEN.Actions;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Mobs;
@@ -32,7 +34,7 @@ public sealed class WaggingSystem : EntitySystem
 
         SubscribeLocalEvent<WaggingComponent, MapInitEvent>(OnWaggingMapInit);
         SubscribeLocalEvent<WaggingComponent, ComponentShutdown>(OnWaggingShutdown);
-        SubscribeLocalEvent<WaggingComponent, ToggleActionEvent>(OnWaggingToggle);
+        SubscribeLocalEvent<WaggingComponent, WaggingActionEvent>(OnWaggingToggle);
         SubscribeLocalEvent<WaggingComponent, MobStateChangedEvent>(OnMobStateChanged);
     }
 
@@ -46,12 +48,12 @@ public sealed class WaggingSystem : EntitySystem
         _actions.RemoveAction(uid, component.ActionEntity);
     }
 
-    private void OnWaggingToggle(EntityUid uid, WaggingComponent component, ref ToggleActionEvent args)
+    private void OnWaggingToggle(EntityUid uid, WaggingComponent component, ref WaggingActionEvent args)
     {
         if (args.Handled)
             return;
 
-        TryToggleWagging(uid, wagging: component);
+        args.Handled = TryToggleWagging(uid, wagging: component);
     }
 
     private void OnMobStateChanged(EntityUid uid, WaggingComponent component, MobStateChangedEvent args)
@@ -74,6 +76,23 @@ public sealed class WaggingSystem : EntitySystem
         for (var idx = 0; idx < markings.Count; idx++) // Animate all possible tails
         {
             var currentMarkingId = markings[idx].MarkingId;
+            var opposite = _humanoidAppearance.GetOppositeAnimatedMarking(
+                MarkingCategories.Tail,
+                markings[idx].MarkingId,
+                wagging.Suffix);
+
+
+            if (opposite.Marking != null)
+            {
+                var ev = new AnimatedToggleEvent
+                {
+                    ActionEntity = wagging.ActionEntity,
+                    OldMarkingId = currentMarkingId,
+                    NewMarkingId = opposite.Marking
+                };
+                RaiseLocalEvent(uid, ev);
+            }
+
             var isAnimated = _humanoidAppearance.SetAnimatedMarkingId(
                 uid,
                 MarkingCategories.Tail,
@@ -91,7 +110,6 @@ public sealed class WaggingSystem : EntitySystem
             wagging.Wagging = isAnimated.Value;
             _actions.SetToggled(wagging.ActionEntity, wagging.Wagging);
         }
-
         return true;
     }
 }

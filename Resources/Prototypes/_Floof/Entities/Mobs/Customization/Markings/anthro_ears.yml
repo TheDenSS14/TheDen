@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 #####    EARS    #####
 
@@ -10,11 +10,13 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/fox.rsi
     state: ears_fox_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/fox.rsi
     state: ears_fox_secondary
+  #End Den additions
 
 - type: marking
   id: EarsAntennaFuzzball
@@ -24,15 +26,17 @@
   colorLinks:
     m_ears_antenna_fuzzball_ADJ_secondary: m_ears_antenna_fuzzball_FRONT_secondary
     m_ears_antenna_fuzzball_ADJ_tertiary: m_ears_antenna_fuzzball_FRONT_tertiary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennafuzzball.rsi
     state: m_ears_antenna_fuzzball_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennafuzzball.rsi
     state: m_ears_antenna_fuzzball_FRONT_tertiary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennafuzzball.rsi
     state: m_ears_antenna_fuzzball_ADJ_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennafuzzball.rsi
     state: m_ears_antenna_fuzzball_ADJ_tertiary
+  #End Den additions
 
 - type: marking
   id: EarsAntennaFuzzballv2
@@ -42,15 +46,17 @@
   colorLinks:
     m_ears_antenna_fuzzballv2_ADJ_primary: m_ears_antenna_fuzzballv2_FRONT_primary
     m_ears_antenna_fuzzballv2_ADJ_tertiary: m_ears_antenna_fuzzballv2_FRONT_tertiary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennafuzzball.rsi
     state: m_ears_antenna_fuzzballv2_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennafuzzball.rsi
     state: m_ears_antenna_fuzzballv2_FRONT_tertiary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennafuzzball.rsi
     state: m_ears_antenna_fuzzballv2_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennafuzzball.rsi
     state: m_ears_antenna_fuzzballv2_ADJ_tertiary
+  #End Den additions
 
 - type: marking
   id: EarsAntennaSimple1
@@ -59,11 +65,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_antenna_simple1_ADJ_primary: m_ears_antenna_simple1_FRONT_primary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennasimple.rsi
     state: m_ears_antenna_simple1_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennasimple.rsi
     state: m_ears_antenna_simple1_ADJ_primary
+  #End Den additions
 
 - type: marking
   id: EarsAntennaSimple1v2
@@ -72,11 +80,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_antenna_simple1v2_ADJ_primary: m_ears_antenna_simple1v2_FRONT_primary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennasimple.rsi
     state: m_ears_antenna_simple1v2_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennasimple.rsi
     state: m_ears_antenna_simple1v2_ADJ_primary
+  #End Den additions
 
 - type: marking
   id: EarsAntennaSimple2
@@ -85,11 +95,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_antenna_simple2_ADJ_primary: m_ears_antenna_simple2_FRONT_primary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennasimple.rsi
     state: m_ears_antenna_simple2_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennasimple.rsi
     state: m_ears_antenna_simple2_ADJ_primary
+  #End Den additions
 
 - type: marking
   id: EarsAntennaSimple2v2
@@ -98,11 +110,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_antenna_simple2v2_ADJ_primary: m_ears_antenna_simple2v2_FRONT_primary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennasimple.rsi
     state: m_ears_antenna_simple2v2_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/antennasimple.rsi
     state: m_ears_antenna_simple2v2_ADJ_primary
+  #End Den additions
 
 - type: marking
   id: EarsAxolotl
@@ -111,22 +125,26 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_axolotl_ADJ: m_ears_axolotl_FRONT
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/axolotl.rsi
     state: m_ears_axolotl_FRONT
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/axolotl.rsi
     state: m_ears_axolotl_ADJ
+  #End Den additions
 
 - type: marking
   id: EarsBat
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/bat.rsi
     state: m_ears_bat_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/bat.rsi
     state: m_ears_bat_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsBear
@@ -135,11 +153,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_bear_ADJ: m_ears_bear_FRONT
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/bear.rsi
     state: m_ears_bear_FRONT
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/bear.rsi
     state: m_ears_bear_ADJ
+  #End Den additions
 
 # These two have some serious coloration issues
 # TODO: Fix them
@@ -151,19 +171,21 @@
 #  colorLinks:
 #    m_ears_bigwolf_ADJ_primary: m_ears_bigwolf_FRONT_primary
 #    m_ears_bigwolfinner_ADJ: m_ears_bigwolfinner_FRONT
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratears/bigwolf.rsi
 #    state: m_ears_bigwolf_ADJ_primary
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratears/bigwolf.rsi
 #    state: m_ears_bigwolf_FRONT_primary
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratears/bigwolf.rsi
 #    state: m_ears_bigwolf_FRONT_tertiary
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratears/bigwolf.rsi
 #    state: m_ears_bigwolfinner_ADJ
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratears/bigwolf.rsi
 #    state: m_ears_bigwolfinner_FRONT
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratears/bigwolf.rsi
 #    state: m_earsinner_bigwolfinner_FRONT
+#  #End Den additions
 #
 #- type: marking
 #  id: EarsBigWolfDark
@@ -173,19 +195,21 @@
 #  colorLinks:
 #    m_ears_bigwolfdark_ADJ_primary: m_ears_bigwolfdark_FRONT_primary
 #    m_ears_bigwolfinnerdark_ADJ: m_ears_bigwolfinnerdark_FRONT
+#  #Begin Den additions - reorganize skyrat textures
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratears/bigwolfdark.rsi
 #    state: m_ears_bigwolfdark_ADJ_primary
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratears/bigwolfdark.rsi
 #    state: m_ears_bigwolfdark_FRONT_primary
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratears/bigwolfdark.rsi
 #    state: m_ears_bigwolfdark_FRONT_tertiary
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratears/bigwolfdark.rsi
 #    state: m_ears_bigwolfinnerdark_ADJ
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratears/bigwolfdark.rsi
 #    state: m_ears_bigwolfinnerdark_FRONT
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratears/bigwolfdark.rsi
 #    state: m_earsinner_bigwolfinnerdark_FRONT
+#  #End Den additions
 
 - type: marking
   id: EarsBunny
@@ -194,13 +218,15 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_bunny_ADJ_primary: m_ears_bunny_FRONT_primary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/bunny.rsi
     state: m_ears_bunny_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/bunny.rsi
     state: m_ears_bunny_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/bunny.rsi
     state: m_ears_bunny_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsBunnyAlt
@@ -210,15 +236,17 @@
   colorLinks:
     m_ears_bunnyalt_ADJ_primary: m_ears_bunnyalt_FRONT_primary
     m_ears_bunnyalt_ADJ_secondary: m_ears_bunnyalt_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/bunny.rsi
     state: m_ears_bunnyalt_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/bunny.rsi
     state: m_ears_bunnyalt_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/bunny.rsi
     state: m_ears_bunnyalt_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/bunny.rsi
     state: m_ears_bunnyalt_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsCatBig
@@ -228,15 +256,17 @@
   colorLinks:
     m_ears_catbig_ADJ_primary: m_ears_catbig_FRONT_primary
     m_ears_catbig_ADJ_secondary: m_ears_catbig_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/catbig.rsi
     state: m_ears_catbig_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/catbig.rsi
     state: m_ears_catbig_ADJ_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/catbig.rsi
     state: m_ears_catbig_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/catbig.rsi
     state: m_ears_catbig_FRONT_secondary
+  #End Den additions
 
 - type: marking
   id: EarsCatNormal
@@ -246,37 +276,43 @@
   colorLinks:
     m_ears_catnormal_ADJ_primary: m_ears_catnormal_FRONT_primary
     m_ears_catnormal_ADJ_secondary: m_ears_catnormal_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/cat.rsi
     state: m_ears_catnormal_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/cat.rsi
     state: m_ears_catnormal_ADJ_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/cat.rsi
     state: m_ears_catnormal_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/cat.rsi
     state: m_ears_catnormal_FRONT_secondary
+  #End Den additions
 
 - type: marking
   id: EarsCobraEars
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/cobra.rsi
     state: m_ears_cobraears_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/cobra.rsi
     state: m_ears_cobraears_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsCobraHood
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/cobra.rsi
     state: m_ears_cobrahood_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/cobra.rsi
     state: m_ears_cobrahood_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsCow
@@ -285,11 +321,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Ovinia] # Den-Added Oni and Ovinia
   colorLinks:
     m_ears_cow_ADJ: m_ears_cow_FRONT
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/cow.rsi
     state: m_ears_cow_ADJ
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/cow.rsi
     state: m_ears_cow_FRONT
+  #End Den additions
 
 - type: marking
   id: EarsDeer
@@ -298,11 +336,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_cow_ADJ: m_ears_cow_FRONT
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/deer.rsi
     state: m_ears_deer_ADJ
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/deer.rsi
     state: m_ears_deer_FRONT
+  #End Den additions
 
 - type: marking
   id: EarsDeer2
@@ -311,11 +351,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_cow_ADJ: m_ears_cow_FRONT
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/deer.rsi
     state: m_ears_deer2_ADJ
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/deer.rsi
     state: m_ears_deer2_FRONT
+  #End Den additions
 
 - type: marking
   id: EarsDeerEar
@@ -325,15 +367,17 @@
   colorLinks:
     m_ears_deerear_ADJ_primary: m_ears_deerear_FRONT_primary
     m_ears_deerear_ADJ_secondary: m_ears_deerear_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/deer.rsi
     state: m_ears_deerear_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/deer.rsi
     state: m_ears_deerear_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/deer.rsi
     state: m_ears_deerear_ADJ_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/deer.rsi
     state: m_ears_deerear_FRONT_secondary
+  #End Den additions
 
 - type: marking
   id: EarsEevee
@@ -343,15 +387,17 @@
   colorLinks:
     m_ears_eevee_ADJ_primary: m_ears_eevee_FRONT_primary
     m_ears_eevee_ADJ_secondary: m_ears_eevee_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/eevee.rsi
     state: m_ears_eevee_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/eevee.rsi
     state: m_ears_eevee_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/eevee.rsi
     state: m_ears_eevee_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/eevee.rsi
     state: m_ears_eevee_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsEeveeAlt
@@ -361,15 +407,17 @@
   colorLinks:
     m_ears_eevee_alt_ADJ_primary: m_ears_eevee_alt_FRONT_primary
     m_ears_eevee_alt_ADJ_secondary: m_ears_eevee_alt_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/eevee.rsi
     state: m_ears_eevee_alt_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/eevee.rsi
     state: m_ears_eevee_alt_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/eevee.rsi
     state: m_ears_eevee_alt_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/eevee.rsi
     state: m_ears_eevee_alt_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsElephant
@@ -378,11 +426,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_elephant_ADJ: m_ears_elephant_FRONT
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/elephant.rsi
     state: m_ears_elephant_FRONT
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/elephant.rsi
     state: m_ears_elephant_ADJ
+  #End Den additions
 
 - type: marking
   id: EarsElf
@@ -391,11 +441,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_elf_ADJ: m_ears_elf_FRONT
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/elf.rsi
     state: m_ears_elf_FRONT
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/elf.rsi
     state: m_ears_elf_ADJ
+  #End Den additions
 
 - type: marking
   id: EarsElfBroad
@@ -404,11 +456,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_elfbroad_ADJ: m_ears_elfbroad_FRONT
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/elfbroad.rsi
     state: m_ears_elfbroad_FRONT
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/elfbroad.rsi
     state: m_ears_elfbroad_ADJ
+  #End Den additions
 
 - type: marking
   id: EarsElfLonger
@@ -417,11 +471,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_elflonger_ADJ: m_ears_elflonger_FRONT
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/elflonger.rsi
     state: m_ears_elflonger_FRONT
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/elflonger.rsi
     state: m_ears_elflonger_ADJ
+  #End Den additions
 
 - type: marking
   id: EarsElfWide
@@ -430,11 +486,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_elfwide_ADJ: m_ears_elfwide_FRONT
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/elfwide.rsi
     state: m_ears_elfwide_FRONT
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/elfwide.rsi
     state: m_ears_elfwide_ADJ
+  #End Den additions
 
 - type: marking
   id: EarsSabresuneExtra
@@ -443,11 +501,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_extra_sabresune_ADJ: m_ears_extra_sabresune_FRONT
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/sabresune.rsi
     state: m_ears_extra_sabresune_FRONT
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/sabresune.rsi
     state: m_ears_extra_sabresune_ADJ
+  #End Den additions
 
 - type: marking
   id: EarsFennec
@@ -457,15 +517,17 @@
   colorLinks:
     m_ears_fennec_ADJ_primary: m_ears_fennec_FRONT_primary
     m_ears_fennec_ADJ_tertiary: m_ears_fennec_FRONT_tertiary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/fennec.rsi
     state: m_ears_fennec_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/fennec.rsi
     state: m_ears_fennec_FRONT_tertiary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/fennec.rsi
     state: m_ears_fennec_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/fennec.rsi
     state: m_ears_fennec_ADJ_tertiary
+  #End Den additions
 
 - type: marking
   id: EarsFish
@@ -474,11 +536,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_fish_ADJ: m_ears_fish_FRONT
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/fish.rsi
     state: m_ears_fish_FRONT
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/fish.rsi
     state: m_ears_fish_ADJ
+  #End Den additions
 
 - type: marking
   id: EarsFourEars2
@@ -487,13 +551,15 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_four_ears_2_ADJ_primary: m_ears_four_ears_2_FRONT_primary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/fourears.rsi
     state: m_ears_four_ears_2_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/fourears.rsi
     state: m_ears_four_ears_2_FRONT_tertiary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/fourears.rsi
     state: m_ears_four_ears_2_ADJ_primary
+  #End Den additions
 
 - type: marking
   id: MEarsFox
@@ -503,26 +569,30 @@
   colorLinks:
     m_ears_fox_ADJ_primary: m_ears_fox_FRONT_primary
     m_ears_fox_ADJ_secondary: m_ears_fox_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/fox.rsi
     state: m_ears_fox_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/fox.rsi
     state: m_ears_fox_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/fox.rsi
     state: m_ears_fox_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/fox.rsi
     state: m_ears_fox_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsHammerhead
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/hammerhead.rsi
     state: m_ears_hammerhead_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/hammerhead.rsi
     state: m_ears_hammerhead_FRONT_secondary
+  #End Den additions
 
 - type: marking
   id: EarsHawk
@@ -531,20 +601,24 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_hawk_ADJ_primary: m_ears_hawk_FRONT_primary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/hawk.rsi
     state: m_ears_hawk_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/hawk.rsi
     state: m_ears_hawk_ADJ_primary
+  #End Den additions
 
 - type: marking
   id: EarsHorn1
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/horn1.rsi
     state: m_ears_horn1_FRONT
+  #End Den additions
 
 - type: marking
   id: EarsJellyfish
@@ -553,11 +627,13 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_jellyfish_ADJ: m_ears_jellyfish_FRONT
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/jellyfish.rsi
     state: m_ears_jellyfish_FRONT
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/jellyfish.rsi
     state: m_ears_jellyfish_ADJ
+  #End Den additions
 
 - type: marking
   id: EarsKangaroo
@@ -567,26 +643,30 @@
   colorLinks:
     m_ears_kangaroo_ADJ_primary: m_ears_kangaroo_FRONT_primary
     m_ears_kangaroo_ADJ_secondary: m_ears_kangaroo_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/kangaroo.rsi
     state: m_ears_kangaroo_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/kangaroo.rsi
     state: m_ears_kangaroo_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/kangaroo.rsi
     state: m_ears_kangaroo_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/kangaroo.rsi
     state: m_ears_kangaroo_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsLab
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/lab.rsi
     state: m_ears_lab_FRONT
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/lab.rsi
     state: m_ears_lab_ADJ
+  #End Den additions
 
 - type: marking
   id: EarsLunasune
@@ -596,15 +676,17 @@
   colorLinks:
     m_ears_lunasune_ADJ_primary: m_ears_lunasune_FRONT_primary
     m_ears_lunasune_ADJ_secondary: m_ears_lunasune_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/lunasune.rsi
     state: m_ears_lunasune_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/lunasune.rsi
     state: m_ears_lunasune_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/lunasune.rsi
     state: m_ears_lunasune_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/lunasune.rsi
     state: m_ears_lunasune_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsMiqote
@@ -614,15 +696,17 @@
   colorLinks:
     m_ears_miqote_ADJ_primary: m_ears_miqote_FRONT_primary
     m_ears_miqote_ADJ_secondary: m_ears_miqote_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/miqote.rsi
     state: m_ears_miqote_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/miqote.rsi
     state: m_ears_miqote_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/miqote.rsi
     state: m_ears_miqote_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/miqote.rsi
     state: m_ears_miqote_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsMouse
@@ -632,17 +716,19 @@
   colorLinks:
     m_ears_mouse_ADJ_primary: m_ears_mouse_FRONT_primary
     m_ears_mouse_ADJ_secondary: m_ears_mouse_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/mouse1.rsi
     state: m_ears_mouse_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/mouse1.rsi
     state: m_ears_mouse_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/mouse1.rsi
     state: m_ears_mouse_FRONT_tertiary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/mouse1.rsi
     state: m_ears_mouse_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/mouse1.rsi
     state: m_ears_mouse_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsMouse2
@@ -652,17 +738,19 @@
   colorLinks:
     m_ears_mouse_two_ADJ_primary: m_ears_mouse_two_FRONT_primary
     m_ears_mouse_two_ADJ_secondary: m_ears_mouse_two_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/mouse2.rsi
     state: m_ears_mouse_two_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/mouse2.rsi
     state: m_ears_mouse_two_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/mouse2.rsi
     state: m_ears_mouse_two_FRONT_tertiary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/mouse2.rsi
     state: m_ears_mouse_two_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/mouse2.rsi
     state: m_ears_mouse_two_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsMurid
@@ -672,15 +760,17 @@
   colorLinks:
     m_ears_murid_ADJ_primary: m_ears_murid_FRONT_primary
     m_ears_murid_ADJ_secondary: m_ears_murid_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/murid.rsi
     state: m_ears_murid_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/murid.rsi
     state: m_ears_murid_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/murid.rsi
     state: m_ears_murid_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/murid.rsi
     state: m_ears_murid_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsOtie
@@ -690,15 +780,17 @@
   colorLinks:
     m_ears_otie_ADJ_primary: m_ears_otie_FRONT_primary
     m_ears_otie_ADJ_secondary: m_ears_otie_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/otie.rsi
     state: m_ears_otie_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/otie.rsi
     state: m_ears_otie_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/otie.rsi
     state: m_ears_otie_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/otie.rsi
     state: m_ears_otie_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsPede
@@ -708,15 +800,17 @@
   colorLinks:
     m_ears_pede_ADJ_primary: m_ears_pede_FRONT_primary
     m_ears_pede_ADJ_secondary: m_ears_pede_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/pede.rsi
     state: m_ears_pede_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/pede.rsi
     state: m_ears_pede_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/pede.rsi
     state: m_ears_pede_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/pede.rsi
     state: m_ears_pede_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsPerky
@@ -726,15 +820,17 @@
   colorLinks:
     m_ears_perky_ADJ_primary: m_ears_perky_FRONT_primary
     m_ears_perky_ADJ_secondary: m_ears_perky_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/perky.rsi
     state: m_ears_perky_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/perky.rsi
     state: m_ears_perky_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/perky.rsi
     state: m_ears_perky_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/perky.rsi
     state: m_ears_perky_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsPossum
@@ -744,15 +840,17 @@
   colorLinks:
     m_ears_possum_ADJ_primary: m_ears_possum_FRONT_primary
     m_ears_possum_ADJ_secondary: m_ears_possum_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/possum.rsi
     state: m_ears_possum_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/possum.rsi
     state: m_ears_possum_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/possum.rsi
     state: m_ears_possum_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/possum.rsi
     state: m_ears_possum_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsProtogen
@@ -762,18 +860,20 @@
   colorLinks:
     m_ears_protogen_ADJ_primary: m_ears_protogen_FRONT_primary
     m_ears_protogen_ADJ_secondary: m_ears_protogen_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/protogen.rsi
     state: m_ears_protogen_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/protogen.rsi
     state: m_ears_protogen_FRONT_secondary
     shader: unshaded
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratears/
 #    state: m_ears_protogen_ADJs_primary
 #    shader: unshaded
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
+#  - sprite: _Floof/Mobs/Customization/Skyratears/
 #    state: m_ears_protogen_ADJs_secondary
 #    shader: unshaded
+# #End Den additions
 
 - type: marking
   id: EarsRabbit
@@ -783,15 +883,17 @@
   colorLinks:
     m_ears_rabbit_ADJ_primary: m_ears_rabbit_FRONT_primary
     m_ears_rabbit_ADJ_secondary: m_ears_rabbit_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/rabbit.rsi
     state: m_ears_rabbit_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/rabbit.rsi
     state: m_ears_rabbit_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/rabbit.rsi
     state: m_ears_rabbit_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/rabbit.rsi
     state: m_ears_rabbit_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsRabbitAlt
@@ -801,15 +903,17 @@
   colorLinks:
     m_ears_rabbitalt_ADJ_primary: m_ears_rabbitalt_FRONT_primary
     m_ears_rabbitalt_ADJ_secondary: m_ears_rabbitalt_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/rabbit.rsi
     state: m_ears_rabbitalt_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/rabbit.rsi
     state: m_ears_rabbitalt_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/rabbit.rsi
     state: m_ears_rabbitalt_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/rabbit.rsi
     state: m_ears_rabbitalt_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsRabbitLop
@@ -819,15 +923,17 @@
   colorLinks:
     m_ears_rabbitlop_ADJ_primary: m_ears_rabbitlop_FRONT_primary
     m_ears_rabbitlop_ADJ_secondary: m_ears_rabbitlop_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/rabbitlop.rsi
     state: m_ears_rabbitlop_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/rabbitlop.rsi
     state: m_ears_rabbitlop_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/rabbitlop.rsi
     state: m_ears_rabbitlop_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/rabbitlop.rsi
     state: m_ears_rabbitlop_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsRaccoon
@@ -837,15 +943,17 @@
   colorLinks:
     m_ears_raccoon_ADJ_primary: m_ears_raccoon_FRONT_primary
     m_ears_raccoon_ADJ_secondary: m_ears_raccoon_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/raccoon.rsi
     state: m_ears_raccoon_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/raccoon.rsi
     state: m_ears_raccoon_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/raccoon.rsi
     state: m_ears_raccoon_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/raccoon.rsi
     state: m_ears_raccoon_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsSabresune
@@ -855,15 +963,17 @@
   colorLinks:
     m_ears_sabresune_ADJ_primary: m_ears_sabresune_FRONT_primary
     m_ears_sabresune_ADJ_secondary: m_ears_sabresune_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/sabresune.rsi
     state: m_ears_sabresune_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/sabresune.rsi
     state: m_ears_sabresune_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/sabresune.rsi
     state: m_ears_sabresune_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/sabresune.rsi
     state: m_ears_sabresune_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsSergal
@@ -872,13 +982,15 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   colorLinks:
     m_ears_sergal_ADJ_primary: m_ears_sergal_FRONT_primary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/sergal.rsi
     state: m_ears_sergal_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/sergal.rsi
     state: m_ears_sergal_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/sergal.rsi
     state: m_ears_sergal_ADJ_primary
+  #End Den additions
 
 - type: marking
   id: EarsSkunk
@@ -888,15 +1000,17 @@
   colorLinks:
     m_ears_skunk_ADJ_primary: m_ears_skunk_FRONT_primary
     m_ears_skunk_ADJ_secondary: m_ears_skunk_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/skunk.rsi
     state: m_ears_skunk_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/skunk.rsi
     state: m_ears_skunk_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/skunk.rsi
     state: m_ears_skunk_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/skunk.rsi
     state: m_ears_skunk_ADJ_secondary
+  #End Den additions
 
 - type: marking
   id: EarsSquirrel
@@ -906,15 +1020,17 @@
   colorLinks:
     m_ears_squirrel_ADJ_primary: m_ears_squirrel_FRONT_primary
     m_ears_squirrel_ADJ_secondary: m_ears_squirrel_FRONT_secondary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/squirrel.rsi
     state: m_ears_squirrel_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/squirrel.rsi
     state: m_ears_squirrel_FRONT_secondary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/squirrel.rsi
     state: m_ears_squirrel_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/squirrel.rsi
     state: m_ears_squirrel_ADJ_secondary
+  #End Den additions
 
 ### Skipping Teshari for now! ###########
 # Feel free to add them, if you dare!!! #
@@ -927,21 +1043,25 @@
   colorLinks:
     m_ears_wolf_ADJ_primary: m_ears_wolf_FRONT_primary
     m_ears_wolf_ADJ_tertiary: m_ears_wolf_FRONT_tertiary
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/wolf.rsi
     state: m_ears_wolf_FRONT_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/wolf.rsi
     state: m_ears_wolf_FRONT_tertiary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/wolf.rsi
     state: m_ears_wolf_ADJ_primary
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/wolf.rsi
     state: m_ears_wolf_ADJ_tertiary
+  #End Den additions
 
 - type: marking
   id: EarsGuilmonHorns
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  #Begin Den additions - reorganize skyrat textures
   sprites:
-  - sprite: Floof/Mobs/Customization/skyratears.rsi
+  - sprite: _Floof/Mobs/Customization/Skyratears/guilmon.rsi
     state: m_horns_guilmon
+  #End Den additions

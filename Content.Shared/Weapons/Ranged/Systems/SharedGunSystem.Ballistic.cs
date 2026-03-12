@@ -17,9 +17,11 @@
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 nikthechampiongr
 // SPDX-FileCopyrightText: 2025 KOTOB
+// SPDX-FileCopyrightText: 2025 Sir Warock
 // SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 sheepie
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
@@ -267,6 +269,11 @@ public abstract partial class SharedGunSystem
                 entity = component.Entities[^1];
 
                 args.Ammo.Add((entity, EnsureShootable(entity)));
+
+                if (!component.AutoCycle) //  Goobstation - do not remove spent ammo from the gun it doesn't autocycle
+                    break;
+
+
                 component.Entities.RemoveAt(component.Entities.Count - 1);
                 Containers.Remove(entity, component.Container);
             }
@@ -275,6 +282,15 @@ public abstract partial class SharedGunSystem
                 component.UnspawnedCount--;
                 entity = Spawn(component.Proto, args.Coordinates);
                 args.Ammo.Add((entity, EnsureShootable(entity)));
+
+                // Goobstation - put spent ammo back in the gun if it doesn't autocycle
+                if (!component.AutoCycle)
+                {
+                    component.Entities.Add(entity);
+                    Containers.Insert(entity, component.Container);
+
+                }
+                // Goobstation - end
             }
         }
 

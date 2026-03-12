@@ -1,0 +1,35 @@
+# SPDX-FileCopyrightText: 2026 mhachimagus
+# SPDX-FileCopyrightText: 2026 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: CrateFunPrincessSet
+  parent: CratePirate
+  name: princess set
+  description: All you need for a royal dress up adventure!
+  components:
+  - type: StorageFill # DEN: sorry we have to use StorageFill
+    contents:
+    - id: ClothingUniformPinkPrincessDress
+    - id: ClothingUniformGreenPrincessDress
+    - id: ClothingHeadHatCuteTiara
+      amount: 2
+    - id: ClothingHeadHatSimpleTiara
+      amount: 2
+    - id: ClothingHeadHatPrincess
+    - id: ClothingHeadHatGreenEscoffion
+
+- type: entity
+  id: CrateFunMagicianSet
+  parent: CratePirate
+  name: magician's crate
+  description: A chest containing a set of magician's clothing. Put on a dazzling show!
+  components:
+  - type: StorageFill # DEN: sorry we have to use StorageFill
+    contents:
+    - id: ClothingUniformJumpsuitTailcoatSuit
+    - id: ClothingEyesGlassesWhiteHalfMask
+    - id: ClothingHeadHatMagician
+    - id: ClothingShoesKneeHighBoots
+    - id: ClothingNeckCloakMagicianCape

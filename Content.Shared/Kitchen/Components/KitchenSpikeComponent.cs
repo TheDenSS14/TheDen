@@ -1,55 +1,152 @@
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2025 Winkarst-cpu
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared.Nutrition.Components;
+using Content.Shared.Damage;
+using Content.Shared.FixedPoint;
+using Content.Shared.Nutrition.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Kitchen.Components;
 
+/// <summary>
+/// Used to mark entity that should act as a spike.
+/// </summary>
 [RegisterComponent, NetworkedComponent]
+[AutoGenerateComponentState, AutoGenerateComponentPause]
 [Access(typeof(SharedKitchenSpikeSystem))]
 public sealed partial class KitchenSpikeComponent : Component
 {
-    [DataField("delay")]
-    public float SpikeDelay = 7.0f;
+    /// <summary>
+    /// Default sound to play when the victim is hooked or unhooked.
+    /// </summary>
+    private static readonly ProtoId<SoundCollectionPrototype> DefaultSpike = new("Spike");
 
-    [ViewVariables(VVAccess.ReadWrite)]
-    [DataField("sound")]
-    public SoundSpecifier SpikeSound = new SoundPathSpecifier("/Audio/Effects/Fluids/splat.ogg");
+    /// <summary>
+    /// Default sound to play when the victim is butchered.
+    /// </summary>
+    private static readonly ProtoId<SoundCollectionPrototype> DefaultSpikeButcher = new("SpikeButcher");
 
-    public List<string>? PrototypesToSpawn;
+    /// <summary>
+    /// ID of the container where the victim will be stored.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public string ContainerId = "body";
 
-    // TODO: Spiking alive mobs? (Replace with uid) (deal damage to their limbs on spiking, kill on first butcher attempt?)
+    /// <summary>
+    /// Container where the victim will be stored.
+    /// </summary>
     [ViewVariables]
-    public Container SpikeContainer = default!;
-    // Note: This is not the "real" entity being spiked, but a "virtual entity"
-    // containing only relevant components instead. I am pretty uncertain about the inherent
-    // unpredictability of spiking entities who have a bunch of active systems running on them,
-    // and I don't want to find out.
+    public ContainerSlot BodyContainer = default!;
 
-    // Prevents simultaneous spiking of two bodies (could be replaced with CancellationToken, but I don't see any situation where Cancel could be called)
-    public bool InUse;
+    /// <summary>
+    /// Sound to play when the victim is hooked or unhooked.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier SpikeSound = new SoundCollectionSpecifier(DefaultSpike);
 
-    [DataField]
-    public string ContainerName = "spike";
+    /// <summary>
+    /// Sound to play when the victim is butchered.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier ButcherSound = new SoundCollectionSpecifier(DefaultSpikeButcher);
 
-    [Serializable, NetSerializable]
-    public enum KitchenSpikeVisuals : byte
+    /// <summary>
+    /// Damage that will be applied to the victim when they are hooked or unhooked.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public DamageSpecifier SpikeDamage = new()
     {
-        Status
-    }
+        DamageDict = new Dictionary<string, FixedPoint2>
+        {
+            { "Piercing", 10 },
+        },
+    };
 
-    [Serializable, NetSerializable]
-    public enum KitchenSpikeStatus : byte
+    /// <summary>
+    /// Damage that will be applied to the victim when they are butchered.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public DamageSpecifier ButcherDamage = new()
     {
-        Empty,
-        Bloody
-    }
+        DamageDict = new Dictionary<string, FixedPoint2>
+        {
+            { "Slash", 20 },
+        },
+    };
+
+    /// <summary>
+    /// Damage that the victim will receive over time.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public DamageSpecifier TimeDamage = new()
+    {
+        DamageDict = new Dictionary<string, FixedPoint2>
+        {
+            { "Blunt", 1 }, // Mobs are only gibbed from blunt (at least for now).
+        },
+    };
+
+    /// <summary>
+    /// The next time when the damage will be applied to the victim.
+    /// </summary>
+    [AutoPausedField, AutoNetworkedField]
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+    public TimeSpan NextDamage;
+
+    /// <summary>
+    /// How often the damage should be applied to the victim.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public TimeSpan DamageInterval = TimeSpan.FromSeconds(10);
+
+    /// <summary>
+    /// Time that it will take to put the victim on the spike.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public TimeSpan HookDelay = TimeSpan.FromSeconds(7);
+
+    /// <summary>
+    /// Time that it will take to put the victim off the spike.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public TimeSpan UnhookDelay = TimeSpan.FromSeconds(10);
+
+    /// <summary>
+    /// Time that it will take to butcher the victim while they are alive.
+    /// </summary>
+    /// <remarks>
+    /// This is summed up with a <see cref="ButcherableComponent"/>'s butcher delay in butcher DoAfter.
+    /// </remarks>
+    [DataField, AutoNetworkedField]
+    public TimeSpan ButcherDelayAlive = TimeSpan.FromSeconds(8);
+
+    /// <summary>
+    /// Value by which the butchering delay will be multiplied if the victim is dead.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float ButcherModifierDead = 0.5f;
+}
+
+[Serializable, NetSerializable]
+public enum KitchenSpikeVisuals : byte
+{
+    Status,
+}
+
+[Serializable, NetSerializable]
+public enum KitchenSpikeStatus : byte
+{
+    Empty,
+    Bloody, // TODO: Add sprites for different species.
 }

@@ -112,7 +112,7 @@
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # TODO: make more categories
 # Guns
@@ -1600,6 +1600,20 @@
     Telecrystal: 10
   categories:
     - UplinkImplants
+
+- type: listing
+  id: UplinkRadioImplanter
+  name: uplink-radio-implanter-name
+  description: uplink-radio-implanter-desc
+  icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: synd_label }
+  productEntity: RadioImplanter
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkImplants
 
 - type: listing
   id: UplinkMicroBombImplanter

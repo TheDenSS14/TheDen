@@ -31,8 +31,10 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 therealDLondon
 # SPDX-FileCopyrightText: 2026 Gregg
+# SPDX-FileCopyrightText: 2026 Jakumba
+# SPDX-FileCopyrightText: 2026 Nata F Miakova
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: gameMapPool
   id: DefaultMapPool
@@ -40,7 +42,7 @@
   - Arena
   - Asterisk
  # - Core - 02/22/24
- # - Edge - 1/13/26 Disabled pending investigation into lag
+  - Edge
   - Glacier
 #  - Hammurabi - 02/22/24
   - Lighthouse # Guess who's back - Aug 19th 25
@@ -53,8 +55,8 @@
   - Manta
 #  - Barrier - October 21st - pending rework
   - Gravel
-  - Anvil
   - Dingo
+  - Acrux
 #  - Gax - im so sorry this wasn't commented out
 #  - Rad - im so sorry this wasn't commented out
 #  - Meta

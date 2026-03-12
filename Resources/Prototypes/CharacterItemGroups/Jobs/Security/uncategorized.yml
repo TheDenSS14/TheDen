@@ -17,7 +17,7 @@
 # SPDX-FileCopyrightText: 2025 neuPanda
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # All Security
 - type: characterItemGroup
@@ -158,8 +158,8 @@
       id: LoadoutSecurityShotgunSawn
     - type: loadout
       id: LoadoutSecurityPlasteelArmingSword
-    - type: loadout #TheDen
-      id: LoadoutSecurityPistolEnergyRevolver
+    # - type: loadout #TheDen
+    #   id: LoadoutSecurityPistolEnergyRevolver
     - type: loadout #TheDen
       id: LoadoutSecurityPlasteelEpee
     - type: loadout #TheDen
@@ -168,6 +168,8 @@
       id: LoadoutSecurityPlasteelAxe
     - type: loadout #TheDen
       id: LoadoutSecurityPlasteelSpear
+    - type: loadout #TheDen
+      id: LoadoutSecurityEnergyGunPistol
 
 - type: characterItemGroup
   id: LoadoutSecurityEyes

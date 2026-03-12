@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2026 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: listing
   id: AiRgbLighting
   name: ai-rgb-lighting-name
@@ -50,18 +55,18 @@
   - !type:ListingLimitedStockCondition
     stock: 1
 
-- type: listing
-  id: AiEmergencySealant
-  name: ai-emergency-sealant-name
-  description: ai-emergency-sealant-desc
-  productAction: ActionStationAiEmergencySealant
-  cost:
-    SiliconMemory: 5
-  categories:
-  - AiAbilities
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
+# - type: listing
+#   id: AiEmergencySealant
+#   name: ai-emergency-sealant-name
+#   description: ai-emergency-sealant-desc
+#   productAction: ActionStationAiEmergencySealant
+#   cost:
+#     SiliconMemory: 5
+#   categories:
+#   - AiAbilities
+#   conditions:
+#   - !type:ListingLimitedStockCondition
+#     stock: 1
 
 - type: listing
   id: AiRepairNanites

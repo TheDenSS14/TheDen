@@ -41,6 +41,17 @@
       group: LoadoutHead
 
 - type: loadout
+  id: LoadoutHeadHatNanoballsoft
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatNanoballsoft
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
   id: LoadoutHeadBeretWhite
   category: Head
   cost: 1
@@ -183,6 +194,41 @@
   customColorTint: true
   items:
   - ClothingHeadHatFuzzyEarmuffs
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatMagician
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingHeadHatMagician
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatCuteTiara
+  category: Head
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingHeadHatCuteTiara
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatSimpleTiara
+  category: Head
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingHeadHatSimpleTiara
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutHead
