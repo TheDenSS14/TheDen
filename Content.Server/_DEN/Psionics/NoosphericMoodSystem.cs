@@ -14,7 +14,7 @@ public sealed class NoosphericMoodSystem : SharedNoosphericMoodSystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly GlimmerSystem _glimmer = default!;
 
-    private readonly TimeSpan _updateInterval = TimeSpan.FromSeconds(30);
+    private readonly TimeSpan _updateInterval = TimeSpan.FromSeconds(10);
     private TimeSpan _nextUpdate;
 
     public override void Initialize()
@@ -52,6 +52,8 @@ public sealed class NoosphericMoodSystem : SharedNoosphericMoodSystem
 
         if (correctMood is not { } mood)
             return;
+
+        Log.Debug("Setting mood for: " + mood.Id);
 
         var ev = new MoodEffectEvent(mood);
         RaiseLocalEvent(entity.Owner, ev);

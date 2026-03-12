@@ -87,7 +87,7 @@
     - type: NoosphereVulnerability
 
 - type: trait
-  id: NoosphericMood
+  id: NoosphericAlignedMood
   category: Mental
   points: 0
   requirements:
@@ -116,7 +116,56 @@
       inverted: true
       traits:
       - ShadowkinBlackeye
+      - NoosphericOpposedMood
   functions:
   - !type:TraitAddComponent
     components:
     - type: NoosphericMood
+      thresholds:
+        NoosphericAlignedGlimmerVeryHigh: 600
+        NoosphericAlignedGlimmerHigh: 400
+        NoosphericAlignedGlimmerNeutral: 300
+        NoosphericAlignedGlimmerLow: 150
+        NoosphericAlignedGlimmerVeryLow: 0
+
+- type: trait
+  id: NoosphericOpposedMood
+  category: Mental
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - StationAi
+    - Borg
+    - MedicalBorg
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - IPC
+    - !type:CharacterTraitRequirement
+      traits:
+      - AnomalousPositronics
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+      - ShadowkinBlackeye
+      - NoosphericAlignedMood
+  functions:
+  - !type:TraitAddComponent
+    components:
+    - type: NoosphericMood
+      thresholds:
+        NoosphericOpposedGlimmerVeryHigh: 800
+        NoosphericOpposedGlimmerHigh: 600
+        NoosphericOpposedGlimmerNeutral: 400
+        NoosphericOpposedGlimmerLow: 200
+        NoosphericOpposedGlimmerVeryLow: 0

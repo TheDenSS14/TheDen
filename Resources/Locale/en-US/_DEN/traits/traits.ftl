@@ -150,7 +150,12 @@ noospheric-vulnerability-unresurrectable = INTANGIBILITY DETECTED: Patient is su
     assistance in patient ressurection.
 noosphere-vulnerability-revive-attempt-failed = twitches and seizes up before falling limp once more.
 
-trait-name-NoosphericMood = Noospheric Mood
-trait-description-NoosphericMood =
+trait-name-NoosphericAlignedMood = Noospheric Aligned Mood
+trait-description-NoosphericAlignedMood =
     You feel your connection to the noosphere as a part of your very being.
     Low glimmer dampens your mood. High glimmer improves your mood.
+
+trait-name-NoosphericOpposedMood = Noospheric Opposed Mood
+trait-description-NoosphericOpposedMood =
+    Something about the connection to the noosphere grates on your psyche.
+    Low glimmer improves your mood. High glimmer dampens your mood.

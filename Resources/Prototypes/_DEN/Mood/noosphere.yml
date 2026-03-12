@@ -1,27 +1,54 @@
 - type: moodCategory
   id: Noospheric
 
+# Aligned
 - type: moodEffect
-  id: NoosphericGlimmerVeryLow
+  id: NoosphericAlignedGlimmerVeryLow
   category: "Noospheric"
   moodChange: -30
 
 - type: moodEffect
-  id: NoosphericGlimmerLow
+  id: NoosphericAlignedGlimmerLow
   category: "Noospheric"
   moodChange: -15
 
 - type: moodEffect
-  id: NoosphericGlimmerNeutral
+  id: NoosphericAlignedGlimmerNeutral
   category: "Noospheric"
   moodChange: 0
 
 - type: moodEffect
-  id: NoosphericGlimmerHigh
+  id: NoosphericAlignedGlimmerHigh
   category: "Noospheric"
   moodChange: 15
 
 - type: moodEffect
-  id: NoosphericGlimmerVeryHigh
+  id: NoosphericAlignedGlimmerVeryHigh
   category: "Noospheric"
   moodChange: 30
+
+# Opposed
+- type: moodEffect
+  id: NoosphericOpposeGlimmerVeryLow
+  category: "Noospheric"
+  moodChange: 30
+
+- type: moodEffect
+  id: NoosphericOpposedGlimmerLow
+  category: "Noospheric"
+  moodChange: 15
+
+- type: moodEffect
+  id: NoosphericOpposedGlimmerNeutral
+  category: "Noospheric"
+  moodChange: 0
+
+- type: moodEffect
+  id: NoosphericOpposedGlimmerHigh
+  category: "Noospheric"
+  moodChange: -15
+
+- type: moodEffect
+  id: NoosphericOpposedGlimmerVeryHigh
+  category: "Noospheric"
+  moodChange: -30
