@@ -149,3 +149,8 @@ trait-description-TenuousGrip =
 noospheric-vulnerability-unresurrectable = INTANGIBILITY DETECTED: Patient is susceptible to noospheric flux. Contact epistemics for
     assistance in patient ressurection.
 noosphere-vulnerability-revive-attempt-failed = twitches and seizes up before falling limp once more.
+
+trait-name-NoosphericMood = Noospheric Mood
+trait-description-NoosphericMood =
+    You feel your connection to the noosphere as a part of your very being.
+    Low glimmer dampens your mood. High glimmer improves your mood.

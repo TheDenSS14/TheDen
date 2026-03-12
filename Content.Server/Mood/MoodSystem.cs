@@ -180,7 +180,7 @@ public sealed class MoodSystem : EntitySystem
         if (prototype.Hidden)
             return;
 
-        _popup.PopupEntity(prototype.Description, uid, uid, (prototype.MoodChange > 0) ? PopupType.Medium : PopupType.MediumCaution);
+        _popup.PopupEntity(prototype.Description, uid, uid, (prototype.MoodChange >= 0) ? PopupType.Medium : PopupType.MediumCaution); // DEN: 0 mood shifts aren't a caution event
     }
 
     private void RemoveTimedOutEffect(EntityUid uid, string prototypeId, string? category = null)

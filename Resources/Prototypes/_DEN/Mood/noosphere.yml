@@ -1,0 +1,27 @@
+- type: moodCategory
+  id: Noospheric
+
+- type: moodEffect
+  id: NoosphericGlimmerVeryLow
+  category: "Noospheric"
+  moodChange: -30
+
+- type: moodEffect
+  id: NoosphericGlimmerLow
+  category: "Noospheric"
+  moodChange: -15
+
+- type: moodEffect
+  id: NoosphericGlimmerNeutral
+  category: "Noospheric"
+  moodChange: 0
+
+- type: moodEffect
+  id: NoosphericGlimmerHigh
+  category: "Noospheric"
+  moodChange: 15
+
+- type: moodEffect
+  id: NoosphericGlimmerVeryHigh
+  category: "Noospheric"
+  moodChange: 30
