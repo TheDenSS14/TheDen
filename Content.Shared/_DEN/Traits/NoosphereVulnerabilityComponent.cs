@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: 2026 Dirius77
 // SPDX-FileCopyrightText: 2026 lunarcomets
 //
 // SPDX-License-Identifier: MIT
