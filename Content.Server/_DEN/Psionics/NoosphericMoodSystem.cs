@@ -14,7 +14,7 @@ public sealed class NoosphericMoodSystem : SharedNoosphericMoodSystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly GlimmerSystem _glimmer = default!;
 
-    private readonly TimeSpan _updateInterval = TimeSpan.FromSeconds(1);
+    private readonly TimeSpan _updateInterval = TimeSpan.FromSeconds(30);
     private TimeSpan _nextUpdate;
 
     public override void Initialize()
