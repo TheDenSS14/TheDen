@@ -16,6 +16,7 @@
   id: UraniumGlass
   constructionEntries:
   - UraniumWindow
+  - UraniumWindowDirectional
   - UraniumWindowDiagonal
 
 - type: quickConstructionCategory
@@ -23,6 +24,7 @@
   constructionEntries:
   - ReinforcedUraniumWindow
   - ReinforcedUraniumWindowDiagonal
+  - UraniumReinforcedWindowDirectional
 
 - type: quickConstructionCategory
   id: PlasmaGlass

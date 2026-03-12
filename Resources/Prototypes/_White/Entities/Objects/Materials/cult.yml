@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  parent: SheetOtherBase
+  parent: [SheetOtherBase, BaseQuickConstructionMaterial] # DEN add quick construction parent
   id: RunedMetal
   name: runic metal
   description: An unusual sheet of metal with a pulsating rune.
@@ -34,6 +34,8 @@
   - type: Item
     size: Small
   - type: CultItem
+  - type: QuickConstructable # DEN quick construction, not sure this is even obtainable but wte
+    category: Cult
 
 - type: entity
   parent: RunedMetal
