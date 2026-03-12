@@ -1518,3 +1518,70 @@
   components:
   - type: Sprite
     state: painting25
+
+# Weapons
+
+- type: entity
+  parent: MantisMeleeGreatsword
+  id: MantisMeleeGreatswordPenthouse
+  suffix: PENTHOUSE, JUST ONE
+  description:
+    "It sees you.
+    It does not know you.
+    It only answers to her."
+  components:
+  - type: AntiPsionicWeapon # It knows her
+    punishChances: 1
+    punishSelfDamage: 10
+    punishStunDuration: 1
+  - type: MeleeRequiresWield
+    fumbleOnAttempt: false
+  - type: MeleeRequiresWield # She just won't swing it if she's not wielding it properly
+  - type: Wieldable
+    wieldSound:
+      path: /Audio/_DEN/Weapons/Melee/faustwield.ogg
+      params:
+        volume: 0 # Louder
+        variation: 0.05
+    unwieldSound:
+      path: /Audio/_DEN/Weapons/Melee/faustunwield.ogg
+      params:
+        volume: 0 # Louder
+        variation: 0.05
+  - type: MeleeWeapon
+    heavyStaminaCost: 0
+    soundHit:
+      path: /Audio/_DEN/Weapons/Melee/fausthit.ogg
+      params:
+        volume: 0 # Louder
+        variation: 0.05
+    soundSwing:
+      path: /Audio/_DEN/Weapons/Melee/faustmiss.ogg
+      params:
+        volume: 0 # Louder
+        variation: 0.05
+    soundNoDamage:
+      path: /Audio/_DEN/Weapons/Melee/fausthit.ogg
+      params:
+        volume: 0 # Louder
+        variation: 0.05
+  - type: EmbeddableProjectile
+    sound:
+      path: /Audio/_DEN/Weapons/Melee/fausthit.ogg
+      params:
+        volume: 0 # Louder
+        variation: 0.05
+    removalTime: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_DEN/Weapons/Melee/fausthit.ogg
+      params:
+        volume: 0 # Louder
+        variation: 0.05
+  - type: MeleeThrowOnHit # Throws you like a manifold
+    speed: 10
+    lifetime: 0.5
+  - type: Reflect # No cheesing the boss fight
+    reflectProb: 1.0
+    spread: 0
+    innate: true
