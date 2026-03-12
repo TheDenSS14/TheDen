@@ -104,8 +104,6 @@ public sealed class MoodSystem : EntitySystem
 
     private void OnMoodEffect(EntityUid uid, MoodComponent component, MoodEffectEvent args)
     {
-        Log.Debug("Applying Mood Effect: " + args.EffectId);
-
         if (!_config.GetCVar(CCVars.MoodEnabled)
             || !_config.GetCVar(CCVars.MoodEnabled)
             || !_prototypeManager.TryIndex<MoodEffectPrototype>(args.EffectId, out var prototype) )
@@ -113,8 +111,6 @@ public sealed class MoodSystem : EntitySystem
 
         var ev = new OnMoodEffect(uid, args.EffectId, args.EffectModifier, args.EffectOffset);
         RaiseLocalEvent(uid, ref ev);
-
-        Log.Debug("Actually Found The Mood Tho: " + args.EffectId);
 
         ApplyEffect(uid, component, prototype, ev.EffectModifier, ev.EffectOffset);
     }
