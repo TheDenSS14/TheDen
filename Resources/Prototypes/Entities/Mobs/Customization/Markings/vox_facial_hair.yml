@@ -41,6 +41,15 @@
       state: mane_s
 
 - type: marking
+  id: VoxFacialHairManeSmall
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  speciesRestriction: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_facial_hair.rsi
+    state: manesmall_s
+
+- type: marking
   id: VoxFacialHairNeck
   bodyPart: FacialHair
   markingCategory: FacialHair
@@ -48,3 +57,12 @@
   sprites:
     - sprite: Mobs/Customization/vox_facial_hair.rsi
       state: neck_s
+
+- type: marking
+  id: VoxFacialHairTufts
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  speciesRestriction: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_facial_hair.rsi
+    state: tuft_s
