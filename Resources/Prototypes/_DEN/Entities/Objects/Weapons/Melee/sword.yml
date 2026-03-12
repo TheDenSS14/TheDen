@@ -81,7 +81,7 @@
 - type: entity # Please expect this to need rebalancing...
   parent: [BaseSword, BaseAntiPsionicWeapon, BaseMantisContraband]
   id: MantisMeleeGreatsword # The risk/reward option, highly likely to knock you on your ass and get you killed, extremely difficult to use effectively
-  name: faust # Part of the reason it's so punishing, aside from the challenge, is because antags could possibly use it against psions - it needs to be unreliable
+  name: Faust # Part of the reason it's so punishing, aside from the challenge, is because antags could possibly use it against psions - it needs to be unreliable
   description: "A mnemolith greatsword whose unstable resonance makes it treacherous to wield. Faust rebounds violently from any impact that does not strike a psion, whipping back into its bearer even if it merely grazes a wall. It must be properly wielded--without absolute focus, the blade resists. Unmatched against psionic and otherworldly threats, perilous against anything else."
   components: # Yes the description is long, but players must understand how it works from description alone, and I want it to remain in-universe
   - type: AntiPsionicWeapon
@@ -172,17 +172,22 @@
   id: MantisMeleeGreatswordSheath # A suitstorage sheath for Faust, in this file because it's basically part of the sword
   name: foreboding scabbard
   suffix: Faust, Empty
-  description: "A heavy scabbard reinforced with mu-metal bands that cross over its ornamental eyes, likely as a warning. This psionically insulating metal is only used to contain weapons that would otherwise recoil violently against their housing when drawn. Its stillness feels wrong, as if the scabbard itself is holding its breath. So heavy you can only wear it over outerwear."
+  description: "A heavy scabbard reinforced with mu-metal bands that cross over its ornamental eyes, likely as a warning. This psionically insulating metal is only used to contain weapons that would otherwise recoil violently against their housing when drawn. Its stillness feels wrong, as if the scabbard itself is holding its breath. So heavy it can only be worn over outerwear--and the weapon within so long it must be drawn with telekinesis."
   components:
   - type: Foldable
     canFoldInsideContainer: true
-    foldVerbText: fold-flip-verb
-    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-straps-verb
+    unfoldVerbText: unfold-straps-verb
   - type: FoldableClothing
-    foldedEquippedPrefix: flipped
+    foldedEquippedPrefix: flipped # This should've always been "folded" to play nicer with BaseFoldable
   - type: Sprite
     sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatswordsheath.rsi
-    state: icon
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-flipped
+      map: ["foldedLayer"]
+      visible: false
   - type: Item
     sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatswordsheath.rsi
     size: Ginormous
