@@ -120,3 +120,6 @@ reagent-desc-vodkacheers = A crisp cherry flavored cocktail.
 
 reagent-name-chainmail = chainmail
 reagent-desc-chainmail = A bitter bite, served in a dark oak tankard. Only for the brave dungeon delvers.
+
+reagent-name-kindness = kindness
+reagent-desc-kindness = A fungal sister-drink to Bad, this Thaven offering can be seen as insult or succor, depending on the circumstance. Small effervescent crystals mollify the flavor over time.

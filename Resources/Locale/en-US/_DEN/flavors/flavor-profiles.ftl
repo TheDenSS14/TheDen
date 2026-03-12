@@ -60,6 +60,7 @@ flavor-complex-arkveiltemple = like a tropical adventure
 flavor-complex-plasmaflood = like fruity plasma burn
 flavor-complex-vodkacheers = like spicy cherry
 flavor-complex-chainmail = like death in a dark, cold cellar
+flavor-complex-kindness = like cherry-speckled blood
 
 ## Chemicals
 flavor-complex-mantispaper = like a name set in stone
