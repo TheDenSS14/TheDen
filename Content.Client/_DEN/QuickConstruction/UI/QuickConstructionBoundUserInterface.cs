@@ -52,15 +52,13 @@ public sealed class QuickConstructionBoundUserInterface : BoundUserInterface
 
         foreach (var constructionEntry in constructionEntries)
         {
-            if (!_prototypeManager.TryIndex(constructionEntry, out var prototype)
-                || !constructionSystem.TryGetRecipePrototype(constructionEntry, out var recipePrototypeId)
-                || !_prototypeManager.TryIndex(recipePrototypeId, out var recipePrototype))
+            if (!_prototypeManager.TryIndex(constructionEntry, out var prototype))
                 continue;
 
             var topLevelActionOption = new RadialMenuActionOption<ConstructionPrototype>(HandlePlacement, prototype)
                 {
-                    IconSpecifier = RadialMenuIconSpecifier.With(recipePrototype),
-                    ToolTip = recipePrototype.Name,
+                    IconSpecifier = RadialMenuIconSpecifier.With(prototype.Icon),
+                    ToolTip = prototype.Name,
                 };
             constructionButtons.Add(topLevelActionOption);
         }
