@@ -9,25 +9,67 @@
 
 - type: entity
   id: MobObserverTelegnostic
-  name: telegnostic projection
-  description: Ominous.
+  name: Breaking Marble Faces # SHA
+  description: "You can't hide from her here.                                                                                                    You knew that." # SHA
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     overrideContainerOcclusion: true # Ghosts always show up regardless of where they're contained.
     noRot: true
-    drawdepth: Ghosts
+    drawdepth: Effects # SHA
     sprite: _DEN/Mobs/Ghosts/telegnosis.rsi
-    color: "#90EE90"
+    color: "#FFFFFF" # SHA
     layers:
       - state: telegnosis
         shader: unshaded
   - type: Psionic
     removable: false
     roller: false
+  - type: TypingIndicator # SHA EDITS START
+    proto: mantis
+  - type: Speech
+    speechSounds: Alto
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - XenoglossyPower
+      - TelepathyPower
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Common
+  - type: ActiveRadio
+    channels:
+    - Common
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - Psychomantic
+    understands:
+    - Psychomantic
+  - type: Actions
+  - type: ThermalVision
+    pulseTime: 0
+    lightRadius: 25
+    color: "#4dc4ff"
+  - type: PointLight # As bright as a candle
+    radius: 2.4
+    energy: 2.4
+    softness: 1.22
+    color: "#4dc4ff"
+  - type: AmbientSound
+    range: 5
+    volume: -2
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+  - type: Emoting
+  - type: BodyEmotes
+    soundsId: GeneralBodyEmotes
+  - type: Grammar
+    attributes:
+      proper: true # SHA EDITS END
   - type: MindContainer
   - type: Clickable
-  - type: InteractionOutline
+#  - type: InteractionOutline # SHA
   - type: Physics
     bodyType: KinematicController
     fixedRotation: true
@@ -42,7 +84,7 @@
         - GhostImpassable
   - type: MovementSpeedModifier
     baseSprintSpeed: 8
-    baseWalkSpeed: 5
+    baseWalkSpeed: 3
   - type: MovementIgnoreGravity
   #- type: PsionicallyInvisible
   - type: InputMover
@@ -53,12 +95,17 @@
       - Normal
       - TelegnosticProjection
       - PsionicInvisibility
+      - Ethereal # SHA
+  - type: ContentEye # SHA
   - type: Input
     context: "ghost"
   - type: Examiner
   - type: TelegnosticProjection
-  - type: Stealth
-    lastVisibility: 0.66
-  - type: Visibility
-    layer: 4
+#  - type: Stealth # SHA EDITS START
+#    lastVisibility: 0.66
+#  - type: Visibility
+#    layer: 4 # SHA EDITS END
   - type: NoNormalInteraction
+  - type: Tag # SHA
+    tags:
+    - BypassInteractionRangeChecks

@@ -83,10 +83,26 @@
   - AllAccess
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [] # SHA - NO, SHE IS NOT
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      - type: BloodCultist # SHA EDITS START
+      - type: BloodCultSpellsHolder
+      - type: Psionic
+        powerSlots: 100
+      - type: InnatePsionicPowers
+        powersToAdd:
+          - PowerOverwhelming
+          - XenoglossyPower
+          - TelepathyPower
+          - MassSleepPower
+          - PsionicRegenerationPower
+          - HealingWordPower
+          - RevivifyPower
+          - DarkSwapPower
+          - TelegnosisPower
+          - AssayPower # SHA EDITS END
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial
     charges: 8
@@ -101,8 +117,8 @@
     jumpsuit: ClothingUniformJumpsuitCaptain
     back: ClothingBackpackCaptainFilled
     shoes: ClothingShoesBootsLaceup
-    id: ForensicMantisPDA
-    ears: ClothingHeadsetMantis
+    id: ForensicMantisPDA # SHA
+    ears: ClothingHeadsetMantis # SHA
   innerClothingSkirt: ClothingUniformJumpskirtCaptain
   satchel: ClothingBackpackSatchelCaptainFilled
   duffelbag: ClothingBackpackDuffelCaptainFilled
