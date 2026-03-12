@@ -639,6 +639,27 @@
 
 - type: entity
   parent: BaseCostumeBundle
+  id: CostumeBundleTacticalMaid
+  name: tactical maid costume bundle
+  components:
+  - type: Sprite
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#39393f"
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#88242d"
+  - type: StorageFill
+    contents:
+    - id: ClothingHandsTacticalMaidGlovesLoadout
+    - id: ClothingUniformJumpskirtTacticalMaid
+    - id: ClothingHeadHatTacticalMaidHeadband
+
+- type: entity
+  parent: BaseCostumeBundle
   id: CostumeBundleWitch
   name: witch costume bundle
   components:
