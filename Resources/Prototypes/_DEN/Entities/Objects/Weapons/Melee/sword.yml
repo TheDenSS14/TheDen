@@ -84,6 +84,9 @@
   name: Faust # Part of the reason it's so punishing, aside from the challenge, is because antags could possibly use it against psions - it needs to be unreliable
   description: "A mnemolith greatsword whose unstable resonance makes it treacherous to wield. Faust rebounds violently from any impact that does not strike a psion, whipping back into its bearer even if it merely grazes a wall. It must be properly wielded--without absolute focus, the blade resists. Unmatched against psionic and otherworldly threats, perilous against anything else."
   components: # Yes the description is long, but players must understand how it works from description alone, and I want it to remain in-universe
+  - type: Grammar # Faust is its name
+    attributes:
+      proper: true
   - type: AntiPsionicWeapon
     punish: true # It'll hurt you if you hit anything non-psionic (a mouse, a wall, etc.)
     punishChances: 1 # Every time
