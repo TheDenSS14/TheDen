@@ -848,8 +848,12 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/antiquelasergun.rsi
   - type: Gun
+    # DEN start
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+      collection: MultiphaseEnergyGun
+      params:
+        variation: 0
+    # DEN end
   - type: HitscanBatteryAmmoProvider
     proto: RedMediumLaser
     fireCost: 100

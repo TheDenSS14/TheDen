@@ -290,6 +290,16 @@
   - CostumeBundleSkub
 
 - type: loadout
+  id: LoadoutCostumeBundleTacticalMaid
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleTacticalMaid
+
+- type: loadout
   id: LoadoutCostumeBundleWitch
   category: Costumes
   cost: 2
