@@ -49,6 +49,7 @@ using Robust.Shared.Utility;
 using Robust.Shared.GameStates;
 using Content.Shared.Language;
 
+
 namespace Content.Server.Traits;
 
 /// Used for traits that add a Component upon spawning in, overwriting the pre-existing component if it already exists.
@@ -927,6 +928,9 @@ public sealed partial class TraitAddAdditionalEmoteSound : TraitFunction
     [DataField, AlwaysPushInheritance]
     public bool UseSex { get; private set; }
 
+    [DataField("baseMob"), AlwaysPushInheritance]
+    public EntProtoId? BaseMobProto;
+
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
@@ -935,6 +939,7 @@ public sealed partial class TraitAddAdditionalEmoteSound : TraitFunction
         var additionalVocalSounds = entityManager.EnsureComponent<AdditionalVocalSoundsComponent>(uid);
         var appearanceComponent = entityManager.GetComponentOrNull<HumanoidAppearanceComponent>(uid);
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+        var componentFactory = IoCManager.Resolve<IComponentFactory>();
         var voice = appearanceComponent?.PreferredVoice ?? Sex.Unsexed;
         var emotePrefix = string.Empty;
 
@@ -952,6 +957,17 @@ public sealed partial class TraitAddAdditionalEmoteSound : TraitFunction
             return;
 
         additionalVocalSounds.AdditionalSounds.Add(protoId);
+
+        // DEN: Copy AllowedEmotes so that they can actually use all their emotes.
+        if (BaseMobProto is { } baseMobProtoId && prototypeManager.TryIndex(baseMobProtoId, out var baseMobProto))
+        {
+            if (baseMobProto.Components.TryGetComponent<SpeechComponent>(componentFactory, out var extraSpeechComp) &&
+                entityManager.TryGetComponent<SpeechComponent>(uid, out var speechComp))
+            {
+                speechComp.AllowedEmotes.AddRange(extraSpeechComp.AllowedEmotes);
+                speechComp.AllowedEmotes = speechComp.AllowedEmotes.Distinct().ToList();
+            }
+        }
     }
 }
 
@@ -967,6 +983,9 @@ public sealed partial class TraitSetReplacingEmoteSound : TraitFunction
     [DataField, AlwaysPushInheritance]
     public bool UseSex { get; private set; }
 
+    [DataField("baseMob"), AlwaysPushInheritance]
+    public EntProtoId? BaseMobProto;
+
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
@@ -975,6 +994,7 @@ public sealed partial class TraitSetReplacingEmoteSound : TraitFunction
         var additionalVocalSounds = entityManager.EnsureComponent<AdditionalVocalSoundsComponent>(uid);
         var appearanceComponent = entityManager.GetComponentOrNull<HumanoidAppearanceComponent>(uid);
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+        var componentFactory = IoCManager.Resolve<IComponentFactory>();
         var voice = appearanceComponent?.PreferredVoice ?? Sex.Unsexed;
         var emotePrefix = string.Empty;
 
@@ -992,5 +1012,15 @@ public sealed partial class TraitSetReplacingEmoteSound : TraitFunction
             return;
 
         additionalVocalSounds.ReplacesDefaultSounds = protoId;
+
+        // DEN: Replace AllowedEmotes so that they can actually use all their emotes.
+        if (BaseMobProto is not null && prototypeManager.TryIndex(BaseMobProto.Value, out var baseMobProto))
+        {
+            if (baseMobProto.Components.TryGetComponent<SpeechComponent>(componentFactory, out var extraSpeechComp) &&
+                entityManager.TryGetComponent<SpeechComponent>(uid, out var speechComp))
+            {
+                speechComp.AllowedEmotes = extraSpeechComp.AllowedEmotes;
+            }
+        }
     }
 }

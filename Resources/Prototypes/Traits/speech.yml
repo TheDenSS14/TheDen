@@ -25,6 +25,7 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: Vulpkanin
       useSex: true
+      baseMob: MobVulpkanin
 
 - type: trait
   id: FelinidSounds
@@ -44,6 +45,7 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: Felinid
       useSex: true
+      baseMob: MobFelinid
 
 - type: trait
   id: OniSounds
@@ -63,6 +65,7 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: Oni
       useSex: true
+      baseMob: MobOni
 
 - type: trait
   id: ShadowkinSounds
@@ -82,6 +85,7 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: Shadowkin
       useSex: true
+      baseMob: MobShadowkin
 
 - type: trait
   id: SiliconSounds
@@ -107,6 +111,7 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: UnisexIPC
       useSex: false
+      baseMob: MobIPC
 
 - type: trait
   id: ReptilianSounds
@@ -126,6 +131,7 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: Reptilian
       useSex: true
+      baseMob: MobReptilian
 
 - type: trait
   id: OviniaSounds
@@ -145,6 +151,7 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: Ovinia
       useSex: true
+      baseMob: MobOvinia
 
 - type: trait
   id: FeroxiSounds
@@ -164,6 +171,7 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: Feroxi
       useSex: true
+      baseMob: MobFeroxi
 
 - type: trait
   id: HarpySounds
@@ -183,6 +191,7 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: SoundsHarpyExclusive
       useSex: false
+      baseMob: MobHarpy
 
 - type: trait
   id: RodentiaSounds
@@ -202,6 +211,7 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: Rodentia
       useSex: true
+      baseMob: MobRodentia
 
 - type: trait
   id: ResomiSounds
@@ -221,6 +231,7 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: Avali
       useSex: true
+      baseMob: MobResomi
 
 - type: trait
   id: ArachneSounds
@@ -240,6 +251,7 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: Arachne
       useSex: true
+      baseMob: MobArachne
 
 - type: trait
   id: KitsuneSounds
@@ -259,6 +271,7 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: Kitsune
       useSex: true
+      baseMob: MobKitsune
 
 - type: trait
   id: MothSounds
@@ -278,6 +291,7 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: UnisexMoth
       useSex: false
+      baseMob: MobMoth
 
 - type: trait
   id: VoxSounds
@@ -297,6 +311,47 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: UnisexVox
       useSex: false
+      baseMob: MobVox
+
+- type: trait
+  id: SlimeSounds
+  category: TraitsSpeechSounds
+  points: -1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: TraitsRaceSounds
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - SlimePerson
+  functions:
+  - !type:TraitAddTag
+    tags:
+    - SlimeEmotes
+  - !type:TraitAddAdditionalEmoteSound
+    emoteSound: Slime
+    useSex: true
+    baseMob: MobSlimePerson
+
+- type: trait
+  id: DionaSounds
+  category: TraitsSpeechSounds
+  points: -1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: TraitsRaceSounds
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - Diona
+  functions:
+  - !type:TraitAddTag
+    tags:
+    - DionaEmotes
+  - !type:TraitAddAdditionalEmoteSound
+    emoteSound: Diona
+    useSex: false
+    baseMob: MobDiona
 
 # REPLACE SOUNDS
 
@@ -318,6 +373,7 @@
     - !type:TraitAddAdditionalEmoteSound
       emoteSound: Vulpkanin
       useSex: true
+      baseMob: MobVulpkanin
 
 - type: trait
   id: FelinidSoundsReplace
@@ -337,6 +393,7 @@
     - !type:TraitSetReplacingEmoteSound
       emoteSound: Felinid
       useSex: true
+      baseMob: MobFelinid
 
 - type: trait
   id: OniSoundsReplace
@@ -356,6 +413,7 @@
     - !type:TraitSetReplacingEmoteSound
       emoteSound: Oni
       useSex: true
+      baseMob: MobOni
 
 - type: trait
   id: ShadowkinSoundsReplace
@@ -375,6 +433,7 @@
     - !type:TraitSetReplacingEmoteSound
       emoteSound: Shadowkin
       useSex: true
+      baseMob: MobShadowkin
 
 - type: trait
   id: SiliconSoundsReplace
@@ -400,6 +459,7 @@
     - !type:TraitSetReplacingEmoteSound
       emoteSound: UnisexIPC
       useSex: false
+      baseMob: MobIPC
 
 - type: trait
   id: ReptilianSoundsReplace
@@ -419,6 +479,7 @@
     - !type:TraitSetReplacingEmoteSound
       emoteSound: Reptilian
       useSex: true
+      baseMob: MobReptilian
 
 - type: trait
   id: OviniaSoundsReplace
@@ -438,6 +499,7 @@
     - !type:TraitSetReplacingEmoteSound
       emoteSound: Ovinia
       useSex: true
+      baseMob: MobOvinia
 
 - type: trait
   id: FeroxiSoundsReplace
@@ -457,6 +519,7 @@
     - !type:TraitSetReplacingEmoteSound
       emoteSound: Feroxi
       useSex: true
+      baseMob: MobFeroxi
 
 - type: trait
   id: HarpySoundsReplace
@@ -476,6 +539,7 @@
     - !type:TraitSetReplacingEmoteSound
       emoteSound: SoundsHarpyExclusive
       useSex: false
+      baseMob: MobHarpy
 
 - type: trait
   id: RodentiaSoundsReplace
@@ -495,6 +559,7 @@
     - !type:TraitSetReplacingEmoteSound
       emoteSound: Rodentia
       useSex: true
+      baseMob: MobRodentia
 
 - type: trait
   id: ResomiSoundsReplace
@@ -514,6 +579,7 @@
     - !type:TraitSetReplacingEmoteSound
       emoteSound: Avali
       useSex: true
+      baseMob: MobResomi
 
 - type: trait
   id: KitsuneSoundsReplace
@@ -533,6 +599,7 @@
     - !type:TraitSetReplacingEmoteSound
       emoteSound: Kitsune
       useSex: true
+      baseMob: MobKitsune
 
 - type: trait
   id: MothSoundsReplace
@@ -552,6 +619,7 @@
     - !type:TraitSetReplacingEmoteSound
       emoteSound: UnisexMoth
       useSex: false
+      baseMob: MobMoth
 
 - type: trait
   id: ArachneSoundsReplace
@@ -571,6 +639,7 @@
     - !type:TraitSetReplacingEmoteSound
       emoteSound: Arachne
       useSex: true
+      baseMob: MobArachne
 
 - type: trait
   id: VoxSoundsReplace
@@ -590,3 +659,44 @@
     - !type:TraitSetReplacingEmoteSound
       emoteSound: UnisexVox
       useSex: false
+      baseMob: MobVox
+
+- type: trait
+  id: SlimeSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: TraitsReplaceRaceSounds
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - SlimePerson
+  functions:
+  - !type:TraitAddTag
+    tags:
+    - SlimeEmotes
+  - !type:TraitSetReplacingEmoteSound
+    emoteSound: Slime
+    useSex: true
+    baseMob: MobSlimePerson
+
+- type: trait
+  id: DionaSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: TraitsRaceSounds
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - Diona
+  functions:
+  - !type:TraitAddTag
+    tags:
+    - DionaEmotes
+  - !type:TraitSetReplacingEmoteSound
+    emoteSound: Diona
+    useSex: false
+    baseMob: MobDiona
