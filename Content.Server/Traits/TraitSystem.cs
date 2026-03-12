@@ -104,8 +104,7 @@ public sealed class TraitSystem : EntitySystem
             }
             else
             {
-                DebugTools.Assert($"No trait found with ID {traitId}!");
-                return;
+                Log.Warning($"No trait found with ID {traitId}!"); // DEN: Please stop crashing me for switching branches...
             }
         }
 
