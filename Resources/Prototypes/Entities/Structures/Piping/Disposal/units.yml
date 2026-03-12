@@ -108,6 +108,7 @@
     blacklist:
       components:
       - SegmentedEntity
+      - MantisGreatsword # TheDen - Prevents a potential exploit
   - type: ThrowInsertContainer
     containerId: disposals
   - type: UserInterface
