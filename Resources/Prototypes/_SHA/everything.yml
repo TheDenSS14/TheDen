@@ -11,13 +11,13 @@
   rules: []
 
 - type: gamePreset
-  id: BreakHideout
+  id: BreakSanctum
   alias:
-  - breakhideout
-  - hideout
-  name: breakhideout-title
-  description: breakhideout-description
-  supportedMaps: HideoutMapPool
+  - breaksanctum
+  - sanctum
+  name: breaksanctum-title
+  description: breaksanctum-description
+  supportedMaps: SanctumMapPool
   rules: []
 
 # Game Map Pools
@@ -1526,17 +1526,14 @@
   id: MantisMeleeGreatswordPenthouse
   suffix: PENTHOUSE, JUST ONE
   description:
-    "It sees you.
-    It does not know you.
-    It only answers to her."
+    "It sees you.                                                                                                    It does not know you.                                                                                                    It only answers to her."
   components:
   - type: AntiPsionicWeapon # It knows her
     punishChances: 1
-    punishSelfDamage: 10
+    punishSelfDamage: 1
     punishStunDuration: 1
-  - type: MeleeRequiresWield
-    fumbleOnAttempt: false
   - type: MeleeRequiresWield # She just won't swing it if she's not wielding it properly
+    fumbleOnAttempt: false
   - type: Wieldable
     wieldSound:
       path: /Audio/_DEN/Weapons/Melee/faustwield.ogg
@@ -1578,6 +1575,9 @@
       params:
         volume: 0 # Louder
         variation: 0.05
+  - type: DamageOtherOnHit
+    staminaCost: 0
+  - type: EmbedPassiveDamage
   - type: MeleeThrowOnHit # Throws you like a manifold
     speed: 10
     lifetime: 0.5
@@ -1585,3 +1585,19 @@
     reflectProb: 1.0
     spread: 0
     innate: true
+  - type: DisarmMalus
+    malus: 1.0
+
+- type: entity
+  parent: MantisMeleeGreatswordSheath
+  id: MantisMeleeGreatswordSheathFilledPenthouse
+  suffix: Faust] [PENTHOUSE, DO NOT MAP
+  components:
+  - type: ContainerFill
+    containers:
+      mantisgreatsword:
+      - MantisMeleeGreatswordPenthouse
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: folded

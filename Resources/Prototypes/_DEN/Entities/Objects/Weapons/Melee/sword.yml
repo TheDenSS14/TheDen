@@ -130,9 +130,9 @@
       params:
         volume: -2
         variation: 0.05
-  - type: DamageOtherOnHit
-    staminaCost: 80 # Throwing it will nearly stun you, unless your species or traits let you do it, but then you'll still be extremely slow and unarmed
-  - type: EmbeddableProjectile
+  - type: DamageOtherOnHit # Unfortunately, throwing Faust still lets it severely injure non-psions at no risk to its wielder
+    staminaCost: 150 # But it's more flavorful to make it too heavy even for an oni with Vigor to throw
+  - type: EmbeddableProjectile # But if you trip and it stabs you, that's your own fault
     sound:
       path: /Audio/_DEN/Weapons/Melee/fausthit.ogg
       params:
