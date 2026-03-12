@@ -237,9 +237,10 @@
   showInVote: false
   rules:
   - Zombie
-  - CalmTraitor
+  - SubGamemodesRule
   - BasicStationEventScheduler
   - BasicRoundstartVariation
+  - IrregularStationEventScheduler
   - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
