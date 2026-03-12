@@ -75,6 +75,16 @@
   - type: FoldableClothing
     foldedEquippedPrefix: flipped
 
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingBackpackMantis
+  id: ClothingBackpackMantisFlipped
+  suffix: Flipped
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
+
 - type: entity
   parent: [ClothingBackpackDuffel, BaseFoldable]
   id: ClothingBackpackDuffelMantis
@@ -97,6 +107,16 @@
   - type: FoldableClothing
     foldedEquippedPrefix: flipped
 
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingBackpackDuffelMantis
+  id: ClothingBackpackDuffelMantisFlipped
+  suffix: Flipped
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
+
 - type: entity
   parent: ClothingBackpackSatchel
   id: ClothingBackpackSatchelMantis
@@ -114,6 +134,16 @@
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Back/Satchels/mantispurse.rsi
+
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingBackpackSatchelMantisPurse
+  id: ClothingBackpackSatchelMantisPurseFlipped
+  suffix: Flipped
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
 
 - type: entity
   parent: [ClothingBackpackMessengerBase, BaseFoldable]
@@ -136,6 +166,16 @@
     unfoldVerbText: unfold-straps-verb
   - type: FoldableClothing
     foldedEquippedPrefix: flipped
+
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingBackpackMessengerMantis
+  id: ClothingBackpackMessengerMantisFlipped
+  suffix: Flipped
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
 
 - type: entity
   parent: [ClothingBackpackNapsack, BaseFoldable, BaseObjectVerbsCutenessWall, BaseMantisContraband] # A roleplay toy that can carry people
