@@ -3,21 +3,26 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# SHA EDITED THIS WHOLE FILE, DO NOT PUSH TO DEN
+
 - type: entity
-  name: passport
   parent: BaseItem
   id: BasePassport
   abstract: true
-  description: A passport denoting an individual's nationality and identity.
+  name: Orravion entry permit
+  suffix: PENTHOUSE
+  description: "Impossible to obtain without wealth, legal cause, or a sponsor. Presuming you're not an official resident, it will not last--do not overstay your welcome."
   components:
+    - type: Item
+      size: Tiny
     - type: Passport
     - type: UseDelay
       delay: 0.5
     - type: Sprite
-      sprite: _EE/Contractors/Passport.rsi
+      sprite: _SHA/Contractors/Passport.rsi
       layers:
-      - state: passport_biesel_open # Override this for a new nationality
-      - state: passport_species_human # Todo: make variable via a custom component
+      - state: passport_orravion_open
+      - state: passport_species_thaven
     - type: Appearance
     - type: EmitSoundOnPickup
       sound: /Audio/SimpleStation14/Items/Handling/book_pickup.ogg
@@ -27,92 +32,21 @@
       sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
 
 - type: entity
-  name: Biesel Republic passport
   parent: BasePassport
   id: BieselPassport
-  components:
-    - type: Sprite
-      sprite: _EE/Contractors/Passport.rsi
-      layers:
-      - state: passport_biesel_open # todo: allow people to toggle open and closed
-      - state: passport_species_human # Todo: make variable via a custom component
-    - type: ExtendDescription
-      descriptionList:
-      - description: "bieselite_view_biesel_passport"
-        fontSize: 12
-        color: "#77ff77"
-        requireDetailRange: true
-        requirements:
-        - !type:CharacterNationalityRequirement
-          nationalities:
-          - Bieselite
-      - description: "solarian_view_biesel_passport"
-        fontSize: 12
-        color: "#ff7777"
-        requireDetailRange: true
-        requirements:
-        - !type:CharacterNationalityRequirement
-          nationalities:
-          - Solarian
 
 - type: entity
-  name: Sol Alliance passport
   parent: BasePassport
   id: SolPassport
-  components:
-    - type: Sprite
-      sprite: _EE/Contractors/Passport.rsi
-      layers:
-      - state: passport_sol_open # todo: allow people to toggle open and closed
-      - state: passport_species_human # Todo: make variable via a custom component
-    - type: ExtendDescription
-      descriptionList:
-      - description: "bieselite_view_sol_passport"
-        fontSize: 12
-        color: "#ff7777"
-        requireDetailRange: true
-        requirements:
-        - !type:CharacterNationalityRequirement
-          nationalities:
-          - Bieselite
-      - description: "solarian_view_sol_passport"
-        fontSize: 12
-        color: "#77ff77"
-        requireDetailRange: true
-        requirements:
-        - !type:CharacterNationalityRequirement
-          nationalities:
-          - Solarian
 
 - type: entity
-  name: Republic of Elyra passport
   parent: BasePassport
   id: ElyranPassport
-  components:
-    - type: Sprite
-      sprite: _EE/Contractors/Passport.rsi
-      layers:
-      - state: passport_elyran_open # todo: allow people to toggle open and closed
-      - state: passport_species_human # Todo: make variable via a custom component
 
 - type: entity
-  name: Valyrian 4b passport
   parent: BasePassport
   id: ValyrianPassport
-  components:
-    - type: Sprite
-      sprite: _EE/Contractors/Passport.rsi
-      layers:
-      - state: passport_valyrian_open # todo: allow people to toggle open and closed
-      - state: passport_species_human # Todo: make variable via a custom component
 
 - type: entity
-  name: New-Netherlands passport
   parent: BasePassport
   id: NederlandicPassport
-  components:
-    - type: Sprite
-      sprite: _EE/Contractors/Passport.rsi
-      layers:
-      - state: passport_nederlandic_open # todo: allow people to toggle open and closed
-      - state: passport_species_human # Todo: make variable via a custom component

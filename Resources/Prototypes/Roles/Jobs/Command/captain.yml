@@ -83,7 +83,7 @@
   - AllAccess
   special:
   - !type:AddImplantSpecial
-    implants: [] # SHA - NO, SHE IS NOT
+    implants: [] # SHA
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
@@ -91,6 +91,8 @@
       - type: BloodCultist # So only she can wield her Faust
       - type: BloodCultSpellsHolder # So she can summon her Faust
       - type: Psionic
+        removable: false
+        roller: false
         powerSlots: 100 # So she never increases Glimmer
       - type: NightVision
         color: "#4dc4ff"
@@ -120,17 +122,22 @@
             variation: 0.075
       - type: InnatePsionicPowers
         powersToAdd:
-          - PowerOverwhelming
-          - XenoglossyPower
-          - TelepathyPower
-          - PsychognomyPower
-          - MassSleepPower
-          - PsionicRegenerationPower
-          - HealingWordPower
-          - RevivifyPower
-          - DarkSwapPower
-          - TelegnosisPower
-          - AssayPower
+        - HypnosisPower #5
+        - DispelPower #6
+        - TelegnosisPower #7
+        - DarkSwapPower #8
+        - MassSleepPower #9
+        - HealingWordPower #0
+        - PowerOverwhelming
+        - XenoglossyPower
+        - TelepathyPower
+        - PsychognomyPower
+      - type: ActionGrant
+        actions:
+        - ActionBreakSummonMansusGrasp
+        - ActionBreakSummonGuns
+        - ActionBreakSummonFaust
+        - ActionBreakSummonBloodyBlade
       # SHA EDITS END
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial

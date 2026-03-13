@@ -49,6 +49,19 @@
       scale: "0.5,0.5"
       scrolling: "0.30, -0.50"
 
+# Contraband
+
+- type: contrabandSeverity
+  id: contrabandSeverityHeretic
+  examineText: contraband-examine-text-heretic
+
+- type: entity
+  id: BaseHereticContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: contrabandSeverityHeretic
+
 # Weapon Arcs
 
 - type: entity
@@ -1535,7 +1548,7 @@
 - type: entity
   parent: MantisMeleeGreatsword
   id: MantisMeleeGreatswordPenthouse
-  suffix: PENTHOUSE, JUST ONE
+  suffix: PENTHOUSE, FOR THE ALTAR
   description:
     "It sees you.                                                                                                    It does not know you.                                                                                                    It only answers to her."
   components:
@@ -1545,50 +1558,10 @@
     punishStunDuration: 1
   - type: MeleeRequiresWield # She just won't swing it if she's not wielding it properly
     fumbleOnAttempt: false
-  - type: Wieldable
-    wieldSound:
-      path: /Audio/_DEN/Weapons/Melee/faustwield.ogg
-      params:
-        volume: 0 # Louder
-        variation: 0.05
-    unwieldSound:
-      path: /Audio/_DEN/Weapons/Melee/faustunwield.ogg
-      params:
-        volume: 0 # Louder
-        variation: 0.05
   - type: MeleeWeapon
     heavyStaminaCost: 0
-    soundHit:
-      path: /Audio/_DEN/Weapons/Melee/fausthit.ogg
-      params:
-        volume: 0 # Louder
-        variation: 0.05
-    soundSwing:
-      path: /Audio/_DEN/Weapons/Melee/faustmiss.ogg
-      params:
-        volume: 0 # Louder
-        variation: 0.05
-    soundNoDamage:
-      path: /Audio/_DEN/Weapons/Melee/fausthit.ogg
-      params:
-        volume: 0 # Louder
-        variation: 0.05
-  - type: EmbeddableProjectile
-    sound:
-      path: /Audio/_DEN/Weapons/Melee/fausthit.ogg
-      params:
-        volume: 0 # Louder
-        variation: 0.05
-    removalTime: 2
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/_DEN/Weapons/Melee/fausthit.ogg
-      params:
-        volume: 0 # Louder
-        variation: 0.05
   - type: DamageOtherOnHit
     staminaCost: 0
-  - type: EmbedPassiveDamage
   - type: MeleeThrowOnHit # Throws you like a manifold
     speed: 10
     lifetime: 0.5
@@ -1599,6 +1572,12 @@
   - type: DisarmMalus
     malus: 1.0
   - type: CultItem # Only she can wield it
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_DEN/Weapons/Melee/faustunsheath.ogg
+      params:
+        volume: 0
+        variation: 0.05
 
 - type: entity
   parent: MantisMeleeGreatswordSheath
@@ -1613,3 +1592,384 @@
     folded: true
   - type: Clothing
     equippedPrefix: folded
+
+- type: entity
+  parent: [ BaseHereticContraband, CombatKnife ]
+  id: HereticBladeFleshPenthouse
+  name: bloody blade
+  suffix: DO NOT MAP] [PENTHOUSE
+  description: "Made from her flesh.                                                                                                    The sight of it stings the eye.                                                                                                    Look away. Look away."
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+  - type: Item
+    size: Normal
+    storedSprite: null
+    sprite: _SHA/Heretic/Blades/blade_flesh_break-inhands-64x.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left-grasp
+        shader: unshaded
+      - state: inhand-left
+      - state: inhand-left-unshaded
+        shader: unshaded
+      - state: inhand-left-unshaded-eye
+        shader: unshaded
+      right:
+      - state: inhand-right-grasp
+        shader: unshaded
+      - state: inhand-right
+      - state: inhand-right-unshaded
+        shader: unshaded
+      - state: inhand-right-unshaded-eye
+        shader: unshaded
+  - type: MeleeWeapon
+    autoAttack: true
+    heavyStaminaCost: 0
+    attackRate: 0.6666
+    angle: 90
+    maxTargets: 10
+    damage:
+      types:
+        Slash: 15.55
+        Holy: 7.775
+    soundHit:
+      path: /Audio/_White/BloodCult/butcher.ogg
+      params:
+        volume: -2
+        variation: 0.15
+    soundSwing:
+      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg
+      params:
+        volume: -3
+        variation: 0.15
+  - type: DamageOtherOnHit
+    staminaCost: 0
+  - type: MeleeThrowOnHit
+    speed: 6
+    lifetime: 0.05
+  - type: Reflect
+    reflectProb: 1.0
+    spread: 0
+    innate: true
+  - type: DisarmMalus
+    malus: 1.0
+  - type: CultItem
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_SHA/ascend_flesh.ogg
+      params:
+        volume: -4
+        pitch: 1.5
+
+- type: entity
+  parent: [ BaseHereticContraband, BaseItem ]
+  id: HereticMansusGraspPenthouse
+  name: mansus grasp
+  suffix: DO NOT MAP] [PENTHOUSE
+  description: "The hand wreathed in sickly green flames.                                                                                                    The sight of it stings the eye.                                                                                                    Look away. Look away."
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+    layers:
+    - state: icon-grasp
+      shader: unshaded
+  - type: Item
+    size: Small
+    storedSprite: null
+    sprite: _SHA/Heretic/Blades/blade_flesh_break-inhands-64x.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left-grasp
+        shader: unshaded
+      right:
+      - state: inhand-right-grasp
+        shader: unshaded
+  - type: MeleeWeapon
+    autoAttack: true
+    heavyStaminaCost: 0
+    attackRate: 0.6666
+    angle: 90
+    maxTargets: 1
+    damage:
+      types:
+        Blunt: 10.37
+        Holy: 5.185
+    soundHit:
+      path: /Audio/_SHA/repulse.ogg
+      params:
+        volume: -6
+        variation: 0.15
+    animation: WeaponArcPunch
+    wideAnimation: WeaponArcSmash
+  - type: MeleeThrowOnHit
+    speed: 10
+    lifetime: 0.5
+  - type: Reflect
+    reflectProb: 1.0
+    spread: 0
+    innate: true
+  - type: DisarmMalus
+    malus: 1.0
+  - type: CultItem
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_SHA/voidblink.ogg
+      params:
+        volume: -6
+        pitch: 0.75
+  - type: Unremoveable
+    deleteOnDrop: true
+  - type: DeleteOnDrop
+
+- type: entity
+  parent: MantisRangedShotgun
+  id: MantisRangedShotgunLethal
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MantisCasterShotgunLethal
+        insertSound: /Audio/Weapons/Guns/Misc/revolver_spin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        whitelist:
+          tags:
+          - MantisCasterShotgun
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_White/BloodCult/veilin.ogg
+      params:
+        volume: 0
+        variation: 0.05
+
+- type: entity
+  parent: MantisRangedRevolver
+  id: MantisRangedRevolverLethal
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MantisCasterRevolverLethal
+        insertSound: /Audio/Weapons/Guns/Misc/revolver_spin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        whitelist:
+          tags:
+          - MantisCasterRevolver
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_White/BloodCult/veilout.ogg
+      params:
+        volume: 0
+        variation: 0.05
+
+# Spells
+
+- type: entity
+  id: ActionBreakSummonFaust
+  name: Summon Faust
+  description: "It's been waiting."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatsword.rsi
+    state: icon
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatsword.rsi
+      state: icon
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand: MantisMeleeGreatswordPenthouse
+  - type: BaseCultSpell
+
+- type: entity
+  id: ActionBreakSummonGuns
+  name: Summon Guns
+  description: "They'll never take you."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Guns/Battery/Mantis/mantis-shotgun.rsi
+    state: icon
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _DEN/Objects/Weapons/Guns/Battery/Mantis/mantis-shotgun.rsi
+      state: icon
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand1: MantisRangedShotgunLethal
+        hand2: MantisRangedRevolverLethal
+  - type: BaseCultSpell
+
+- type: entity
+  id: ActionBreakSummonBloodyBlade
+  name: Summon Bloody Blade
+  description: "You won't die like this."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+    state: icon
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+      state: icon
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand1: HereticBladeFleshPenthouse
+        hand2: HereticMansusGraspPenthouse
+  - type: BaseCultSpell
+
+- type: entity
+  id: ActionBreakSummonMansusGrasp
+  name: Summon Mansus Grasp
+  description: "No one's looking."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+    state: icon-grasp
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+      state: icon-grasp
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand: HereticMansusGraspPenthouse
+  - type: BaseCultSpell
+
+# Restraints
+
+- type: entity
+  parent: MantisCaseLarge
+  id: MantisCaseRestraintsPenthouse
+  name: restraints case
+  suffix: PENTHOUSE
+  description: "An amaranth case filled with shackles and chains, complete with an antique wrench. Conveniently portable."
+  components:
+  - type: Sprite
+    layers:
+    - state: 3-closed
+    - state: label-restraints
+    - state: 3-open
+      map: ["openLayer"]
+  - type: Storage
+    grid:
+    - 0,0,5,1
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadCageMantisPenthouse
+    - id: HandcuffsMantisPenthouse
+    - id: ClothingNeckMantisShacklesPenthouse
+    - id: WrenchMantis
+    - id: LeashMantisPenthouse
+      amount: 4
+
+- type: entity
+  parent: ClothingHeadCage
+  id: ClothingHeadCageMantisPenthouse
+  name: gilded headcage
+  suffix: PENTHOUSE
+  description: "A durable cage with a heavy chain."
+  components:
+  - type: Sprite
+    sprite: _SHA/Clothing/Head/Hats/cagemantis.rsi
+  - type: Clothing
+    sprite: _SHA/Clothing/Head/Hats/cagemantis.rsi
+
+- type: entity
+  parent: BaseItem
+  id: HandcuffsMantisPenthouse
+  suffix: PENTHOUSE
+  name: gilded shackles
+  description: "Heavy shackles to bind the unruly."
+  components:
+  - type: Item
+    size: Small
+  - type: Handcuff
+    breakoutTime: 10
+    cuffTime: 3
+    stunBonus: 2
+    uncuffTime: 3
+    cuffedRSI: _SHA/Objects/Misc/handcuffsmantis.rsi
+    bodyIconState: body-overlay
+    breakOnRemove: false
+    startCuffSound:
+      path: /Audio/_DEN/Items/Handcuffs/chain_start.ogg
+    endCuffSound:
+      path: /Audio/_DEN/Items/Handcuffs/chain_end.ogg
+    startUncuffSound:
+      path: /Audio/_DEN/Items/Handcuffs/chain_start.ogg
+    endUncuffSound:
+      path: /Audio/_DEN/Items/Handcuffs/chain_end.ogg
+    startBreakoutSound:
+      path: /Audio/_DEN/Items/Handcuffs/chain_takeoff.ogg
+  - type: Sprite
+    sprite: _SHA/Objects/Misc/handcuffsmantis.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    resetOnHandSelected: false
+    animation: WeaponArcDisarm
+    damage:
+      types:
+        Blunt: 0
+  - type: UseDelay
+    delay: 1
+
+- type: entity
+  parent: ClothingNeckCollarBase
+  id: ClothingNeckMantisShacklesPenthouse
+  name: gilded bindings
+  suffix: PENTHOUSE
+  description: "A set of massive bindings with hanging chains."
+  components:
+  - type: Sprite
+    sprite: _SHA/Clothing/Neck/Misc/mantisshackles.rsi
+  - type: Clothing
+    sprite: _SHA/Clothing/Neck/Misc/mantisshackles.rsi
+
+- type: entity
+  parent: BaseLeash
+  id: LeashMantisPenthouse
+  name: gilded chain
+  suffix: PENTHOUSE
+  description: "A heavy chain leading to a round, anchorable base."
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Mantis/leashmantis.rsi
+    state: icon
+  - type: Leash
+    leashSprite:
+      sprite: _SHA/Objects/Specific/Mantis/leashmantis-chain.rsi
+      state: chain
+    pullInterval: 0.75
+    length: 3
+    lengthConfigs: [1.5, 2.25, 3]
+    maxDistance: 6
+    attachDelay: 1
+    detachDelay: 1
+    selfDetachDelay: 10
+  - type: Anchorable
+    delay: 1
+    snap: false
