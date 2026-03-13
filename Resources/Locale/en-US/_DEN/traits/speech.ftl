@@ -68,6 +68,18 @@ trait-name-VoxSounds = Extra Emotes (Vox)
 trait-description-VoxSounds = Adds on to your existing emotes, giving your character access to the emotes that Vox have.
     Such as: coo, chitter, hiss, caw, hoot
 
+trait-name-SlimeSounds = Extra Emotes (Slime)
+trait-description-SlimeSounds = Adds on to your existing emotes, giving your character access to the emotes that Slimes have.
+    Such as: squish, bubble, pop
+
+trait-name-DionaSounds = Extra Emotes (Diona)
+trait-description-DionaSounds = Adds on to your existing emotes, giving your character access to the emotes that Diona have.
+    Such as: chirp
+
+trait-name-HumanSounds = Extra Emotes (Human)
+trait-description-HumanSounds = Adds on to your existing emotes, giving your character access to the emotes that Humans have.
+    Such as: laugh, sneeze, cough, yawn
+
 trait-name-VulpkaninSoundsReplace = Replace Emotes (Vulpkanin)
 trait-description-VulpkaninSoundsReplace = Replace any existing emote sounds, giving your character access to the emotes that Vulpkanins have instead.
     Such as: wag, bark, awoo, snarl, whine, yip, yap, howl, gekker, growl
@@ -131,6 +143,21 @@ trait-name-VoxSoundsReplace = Replace Emotes (Vox)
 trait-description-VoxSoundsReplace =
     Replace any existing emote sounds, giving your character access to the emotes that Vox have instead.
     Such as: coo, chitter, hiss, caw, hoot
+
+trait-name-SlimeSoundsReplace = Replace Emotes (Slime)
+trait-description-SlimeSoundsReplace =
+    Replace any existing emote sounds, giving your character access to the emotes that Slimes have instead.
+    Such as: squish, bubble, pop
+
+trait-name-DionaSoundsReplace = Replace Emotes (Diona)
+trait-description-DionaSoundsReplace =
+    Replace any existing emote sounds, giving your character access to the emotes that Diona have instead.
+    Such as: chirp
+
+trait-name-HumanSoundsReplace = Replace Emotes (Human)
+trait-description-HumanSoundsReplace =
+    Replace any existing emote sounds, giving your character access to the emotes that Humans have instead.
+    Such as: laugh, sneeze, cough, yawn
 
 trait-name-ToggleVoiceGender = Voice Training
 trait-description-ToggleVoiceGender =
