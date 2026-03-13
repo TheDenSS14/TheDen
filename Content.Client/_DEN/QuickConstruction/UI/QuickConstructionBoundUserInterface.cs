@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Alex C
+//
+// SPDX-License-Identifier: MIT
+
 using System.Linq;
 using Content.Client.Construction;
 using Content.Client.UserInterface.Controls;

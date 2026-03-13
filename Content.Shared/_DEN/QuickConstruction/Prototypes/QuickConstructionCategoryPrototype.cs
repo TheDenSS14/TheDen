@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Alex C
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Construction.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
