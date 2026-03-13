@@ -3,6 +3,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using System.Reflection.Metadata.Ecma335;
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
 using Content.Shared.StepTrigger.Components;
@@ -22,7 +23,12 @@ public sealed class StepTriggerImmuneSystem : EntitySystem
 
     private void OnStepTriggerClothingAttempt(Entity<PreventableStepTriggerComponent> ent, ref StepTriggerAttemptEvent args)
     {
-        if (HasComp<ProtectedFromStepTriggersComponent>(args.Tripper) || _inventory.TryGetInventoryEntity<ProtectedFromStepTriggersComponent>(args.Tripper, out _))
+        // DEN: If the comp has a whitelist, it has been checked already.
+        if (TryComp<ProtectedFromStepTriggersComponent>(args.Tripper, out var selfComp) && selfComp.Whitelist is null)
+        {
+            args.Cancelled = true;
+        }
+        else if (_inventory.TryGetInventoryEntity<ProtectedFromStepTriggersComponent>(args.Tripper, out _))
         {
             args.Cancelled = true;
         }
