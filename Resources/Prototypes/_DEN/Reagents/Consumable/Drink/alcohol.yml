@@ -1030,11 +1030,11 @@
         factor: 0.667
       - !type:ChemAddMoodlet
         moodPrototype: TempSanguine
-      conditions:
-      - !type:ReagentThreshold
-        reagent: Kindness
-        min: 0.02
-      - !type:OrganType 
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Kindness
+          min: 0.02
+        - !type:OrganType 
           type: Thaven
           shouldHave: false
   fizziness: 0.2
