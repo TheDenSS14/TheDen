@@ -353,6 +353,26 @@
     useSex: false
     baseMob: MobDiona
 
+- type: trait
+  id: HumanSounds
+  category: TraitsSpeechSounds
+  points: -1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: TraitsRaceSounds
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - Human
+  functions:
+  - !type:TraitAddTag
+    tags:
+    - HumanEmotes
+  - !type:TraitAddAdditionalEmoteSound
+    emoteSound: Human
+    useSex: true
+    baseMob: MobHuman
+
 # REPLACE SOUNDS
 
 - type: trait
@@ -700,3 +720,23 @@
     emoteSound: Diona
     useSex: false
     baseMob: MobDiona
+
+- type: trait
+  id: HumanSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: TraitsReplaceRaceSounds
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - Human
+  functions:
+  - !type:TraitAddTag
+    tags:
+    - HumanEmotes
+  - !type:TraitSetReplacingEmoteSound
+    emoteSound: Human
+    useSex: true
+    baseMob: MobHuman
