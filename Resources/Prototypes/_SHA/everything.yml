@@ -49,6 +49,17 @@
       scale: "0.5,0.5"
       scrolling: "0.30, -0.50"
 
+# Weapon Arcs
+
+- type: entity
+  parent: WeaponArcStatic
+  id: WeaponArcNone
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _SHA/Effects/arcs.rsi
+      state: none
+
 # Damage
 
 - type: damageContainer

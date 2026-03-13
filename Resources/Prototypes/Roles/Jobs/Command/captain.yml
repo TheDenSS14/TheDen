@@ -92,6 +92,18 @@
       - type: BloodCultSpellsHolder # So she can summon her Faust
       - type: Psionic
         powerSlots: 100 # So she never increases Glimmer
+      - type: NightVision
+        color: "#4dc4ff"
+        activateSound:
+          path: /Audio/Effects/eye_open.ogg
+          params:
+            volume: -3
+            variation: 0.075
+        deactivateSound:
+          path: /Audio/Effects/eye_close.ogg
+          params:
+            volume: -3
+            variation: 0.075
       - type: ThermalVision # The order of these components affects their position in the action bar so I don't have to rearrange everything every time I use Telegnosis
         pulseTime: 2
         lightRadius: 0
@@ -106,23 +118,12 @@
           params:
             volume: -3
             variation: 0.075
-      - type: NightVision
-        color: "#4dc4ff"
-        activateSound:
-          path: /Audio/Effects/eye_open.ogg
-          params:
-            volume: -3
-            variation: 0.075
-        deactivateSound:
-          path: /Audio/Effects/eye_close.ogg
-          params:
-            volume: -3
-            variation: 0.075
       - type: InnatePsionicPowers
         powersToAdd:
           - PowerOverwhelming
           - XenoglossyPower
           - TelepathyPower
+          - PsychognomyPower
           - MassSleepPower
           - PsionicRegenerationPower
           - HealingWordPower

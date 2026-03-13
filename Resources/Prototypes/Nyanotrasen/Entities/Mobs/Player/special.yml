@@ -25,83 +25,9 @@
   - type: Psionic
     removable: false
     roller: false
-  # SHA EDITS START
-  - type: CombatMode
-  - type: TypingIndicator
-    proto: mantis
-  - type: Speech
-    speechSounds: Alto
-  - type: InnatePsionicPowers
-    powersToAdd:
-      - PowerOverwhelming
-      - XenoglossyPower
-      - TelepathyPower
-  - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Common
-  - type: ActiveRadio
-    channels:
-    - Common
-  - type: LanguageSpeaker
-  - type: LanguageKnowledge
-    speaks:
-    - Psychomantic
-    understands:
-    - Psychomantic
-  - type: Actions
-  - type: EmitSoundOnSpawn
-    sound:
-      path: /Audio/_White/BloodCult/magic.ogg
-      params:
-        volume: -5
-        pitch: 0.75
-  - type: ThermalVision
-    pulseTime: 2
-    lightRadius: 0
-    color: "#4dc4ff"
-    activateSound:
-      path: /Audio/_White/BloodCult/veilin.ogg
-      params:
-        volume: -3
-        variation: 0.075
-    deactivateSound:
-      path: /Audio/_White/BloodCult/veilout.ogg
-      params:
-        volume: -3
-        variation: 0.075
-  - type: NightVision
-    color: "#4dc4ff"
-    activateSound:
-      path: /Audio/Effects/eye_open.ogg
-      params:
-        volume: -3
-        variation: 0.075
-    deactivateSound:
-      path: /Audio/Effects/eye_close.ogg
-      params:
-        volume: -3
-        variation: 0.075
-  - type: PointLight # As bright as a candle
-    radius: 2.4
-    energy: 2.4
-    softness: 1.22
-    color: "#4dc4ff"
-  - type: AmbientSound
-    range: 5
-    volume: -8
-    sound:
-      path: /Audio/Ambience/wisp_ambience.ogg
-  - type: Emoting
-  - type: BodyEmotes
-    soundsId: GeneralBodyEmotes
-  - type: Grammar
-    attributes:
-      proper: true
-  # SHA EDITS END
   - type: MindContainer
   - type: Clickable
-#  - type: InteractionOutline # SHA
+  - type: InteractionOutline
   - type: Physics
     bodyType: KinematicController
     fixedRotation: true
@@ -116,7 +42,7 @@
         - GhostImpassable
   - type: MovementSpeedModifier
     baseSprintSpeed: 8
-    baseWalkSpeed: 3
+    baseWalkSpeed: 3 # SHA
   - type: MovementIgnoreGravity
 # - type: PsionicallyInvisible
   - type: InputMover
@@ -128,19 +54,118 @@
       - TelegnosticProjection
       - PsionicInvisibility
       - Ethereal # SHA
-  - type: ContentEye # SHA
   - type: Input
     context: "ghost"
   - type: Examiner
+    skipChecks: true
   - type: TelegnosticProjection
   # SHA EDITS START
 #  - type: Stealth
 #    lastVisibility: 0.66
 #  - type: Visibility
 #    layer: 4
+#  - type: NoNormalInteraction
+  - type: CombatMode
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/lightburn.ogg
+      params:
+        variation: 0.05
+    soundNoDamage:
+      path: /Audio/Effects/lightburn.ogg
+      params:
+        variation: 0.05
+    soundSwing:
+      path: /Audio/Effects/silence.ogg
+    autoAttack: true
+    angle: 30
+    animation: WeaponArcNone
+    attackRate: 0.1
+    damage:
+      types:
+        Heat: 0.1
+    heavyRateModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyPartDamageMultiplier: 1
+    heavyStaminaCost: 0
+    maxTargets: 1
+  - type: ContentEye
+    maxZoom: 8.916104, 8.916104
+  - type: GhostHearing
+  - type: TypingIndicator
+    proto: mantis
+  - type: Speech
+    speechVerb: Ghost
+    speechSounds: Alto
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - PowerOverwhelming
+      - XenoglossyPower
+      - TelepathyPower
+      - PsychognomyPower
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Common
+  - type: ActiveRadio
+    channels:
+    - Common
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - Psychomantic
+    understands:
+    - Psychomantic
+  - type: ProperCapitalization
+  - type: DoAfter
+  - type: Actions
+  - type: NightVision
+    color: "#4dc4ff"
+    activateSound:
+      path: /Audio/Effects/eye_open.ogg
+      params:
+        volume: -3
+        variation: 0.075
+    deactivateSound:
+      path: /Audio/Effects/eye_close.ogg
+      params:
+        volume: -3
+        variation: 0.075
+  - type: ThermalVision
+    pulseTime: 2
+    lightRadius: 0
+    color: "#4dc4ff"
+    activateSound:
+      path: /Audio/_White/BloodCult/veilin.ogg
+      params:
+        volume: -3
+        variation: 0.075
+    deactivateSound:
+      path: /Audio/_White/BloodCult/veilout.ogg
+      params:
+        volume: -3
+        variation: 0.075
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_White/BloodCult/magic.ogg
+      params:
+        volume: -5
+        pitch: 0.75
+  - type: PointLight # As bright as a candle
+    radius: 2.4
+    energy: 2.4
+    softness: 1.22
+    color: "#4dc4ff"
+  - type: AmbientSound
+    range: 5
+    volume: -8
+    sound:
+      path: /Audio/Ambience/wisp_ambience.ogg
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: Emoting
+  - type: AnimatedEmotes
+  - type: AnimationPlayer
+  - type: OwnInteractionVerbs
   # SHA EDITS END
-  - type: NoNormalInteraction
-  - type: Tag # SHA
-    tags:
-    - BypassInteractionRangeChecks
-    - ThavenEmotes
