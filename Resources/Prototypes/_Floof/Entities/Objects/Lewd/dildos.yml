@@ -32,6 +32,16 @@
     layers: # DEN
     - state: dildo-avian
       color: "#ffe269"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffe269"
+        map: ["enum.DamageStateVisualLayers.Base"]
+      right:
+      - state: inhand-right
+        color: "#ffe269"
+        map: ["enum.DamageStateVisualLayers.Base"]
 
 - type: entity
   parent: BaseDildo
@@ -44,6 +54,16 @@
     layers: # DEN
     - state: dildo-canine
       color: "#ff0b39"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ff0b39"
+        map: ["enum.DamageStateVisualLayers.Base"]
+      right:
+      - state: inhand-right
+        color: "#ff0b39"
+        map: ["enum.DamageStateVisualLayers.Base"]
 
 - type: entity
   parent: BaseDildo
@@ -66,6 +86,16 @@
     layers: # DEN
     - state: dildo-equine
       color: "#696969" # Heh, nice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#696969"
+        map: ["enum.DamageStateVisualLayers.Base"]
+      right:
+      - state: inhand-right
+        color: "#696969"
+        map: ["enum.DamageStateVisualLayers.Base"]
 
 - type: entity
   parent: BaseDildo
@@ -78,6 +108,16 @@
     layers: # DEN
     - state: dildo-dragon
       color: "#ff8840"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ff8840"
+        map: ["enum.DamageStateVisualLayers.Base"]
+      right:
+      - state: inhand-right
+        color: "#ff8840"
+        map: ["enum.DamageStateVisualLayers.Base"]
 
 - type: entity
   parent: BaseDildo
@@ -90,6 +130,16 @@
     layers: # DEN
     - state: dildo-humanoid
       color: "#4e95ff"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#4e95ff"
+        map: ["enum.DamageStateVisualLayers.Base"]
+      right:
+      - state: inhand-right
+        color: "#4e95ff"
+        map: ["enum.DamageStateVisualLayers.Base"]
 
 - type: entity
   parent: BaseDildo
@@ -102,6 +152,16 @@
     layers: # DEN
     - state: dildo-tentacle
       color: "#18ff92"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#18ff92"
+        map: ["enum.DamageStateVisualLayers.Base"]
+      right:
+      - state: inhand-right
+        color: "#18ff92"
+        map: ["enum.DamageStateVisualLayers.Base"]
 
 - type: entity
   parent: BaseDildo
@@ -114,3 +174,13 @@
     layers: # DEN
     - state: dildo-double
       color: "#cd40ff"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#cd40ff"
+        map: ["enum.DamageStateVisualLayers.Base"]
+      right:
+      - state: inhand-right
+        color: "#cd40ff"
+        map: ["enum.DamageStateVisualLayers.Base"]
