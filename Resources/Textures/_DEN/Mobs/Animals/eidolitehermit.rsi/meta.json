@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "By Sha-Seng (GitHub)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "fella",
+      "directions": 4
+    },
+    {
+      "name": "fella-moving",
+      "directions": 4,
+      "delays": [
+        [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ]
+      ]
+    },
+    {
+      "name": "fella-dead",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "icon-unshaded"
+    },
+    {
+      "name": "fella-unshaded",
+      "directions": 4
+    },
+    {
+      "name": "fella-moving-unshaded",
+      "directions": 4,
+      "delays": [
+        [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ]
+      ]
+    },
+    {
+      "name": "fella-dead-unshaded",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left-unshaded",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right-unshaded",
+      "directions": 4
+    },
+    {
+      "name": "equipped-HELMET-unshaded",
+      "directions": 4
+    }
+  ]
+}

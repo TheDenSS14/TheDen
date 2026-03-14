@@ -20,6 +20,11 @@
         - state: basalt1
           shader: unshaded
       drawdepth: LowFloors
+    - type: Psionic # DEN
+      removable: false
+      roller: false
+      assayFeedback:
+        - shadowstone-feedback
     - type: SyncSprite
     - type: RequiresTile
     - type: Transform

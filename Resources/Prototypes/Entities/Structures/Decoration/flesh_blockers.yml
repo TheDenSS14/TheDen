@@ -44,3 +44,8 @@
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
+  - type: Psionic # DEN
+    removable: false
+    roller: false
+    assayFeedback:
+      - fleshblocker-feedback
