@@ -4,9 +4,7 @@
 
 - type: marking
   id: TattooHiveChestFemale #DeltaV: Splitting the scars and tattoos
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid, Oni
+  parent: BaseChestMarking
   sexRestriction: [Female] #DeltaV: Splitting the scars and tattoos
   coloring:
     default:
@@ -19,9 +17,7 @@
 
 - type: marking
   id: TattooNightlingChestFemale #DeltaV: Splitting the scars and tattoos
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid, Oni
+  parent: BaseChestMarking
   sexRestriction: [Female] #DeltaV: Splitting the scars and tattoos
   coloring:
     default:

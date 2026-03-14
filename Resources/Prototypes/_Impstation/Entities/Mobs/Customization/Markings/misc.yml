@@ -80,9 +80,7 @@
 
 - type: marking
   id: Shadow
-  bodyPart: Head
-  markingCategory: Face #TheDen: Marking fixes
-  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune, SlimePerson ]
+  parent: BaseFace
   forcedColoring: true
   coloring:
     default:
