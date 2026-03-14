@@ -43,11 +43,11 @@
     allowSpeech: true
     allowMovement: true
     name: "Laika"
-    description: "Security's resident she-dog. Badger the officers for headpats and nip at the heels of violent offenders."
-    requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 14400 # DeltaV - 4 hours
+    description: "The stations's resident she-dog. Badger the crew for headpats and nip at the heels of vent critters."
+    # requirements:
+    # - !type:CharacterDepartmentTimeRequirement
+    #   department: Security
+    #   min: 14400 # DeltaV - 4 hours
   - type: GhostTakeoverAvailable
   - type: ScentTracker # Floof - Added Scent Tracking
   - type: InteractionPopup
@@ -60,15 +60,15 @@
     attributes:
       proper: true
       gender: female
-  - type: Loadout
-    prototypes: [ MobSecDogLaikaGear ]
+  # - type: Loadout # Den
+  #   prototypes: [ MobSecDogLaikaGear ]
   - type: Tag
     tags:
     - CannotSuicide
     - VimPilot
     - DoorBumpOpener
-  - type: StealTarget
-    stealGroup: AnimalSecurity #DeltaV - Adjusts because we have multiple possible sec animals
+  # - type: StealTarget # Den
+  #   stealGroup: AnimalSecurity #DeltaV - Adjusts because we have multiple possible sec animals
 
 - type: entity
   name: Silvia
