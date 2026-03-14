@@ -8,7 +8,7 @@
 
 - type: entity
   parent: IDCardStandard
-  id: PrisonerIDCard
+  id: BasePrisonerIDCard
   name: prisoner ID card
   components:
   - type: Sprite
@@ -31,10 +31,6 @@
     jobTitle: job-name-prisoner
     jobIcon: JobIconPrisoner
     canMicrowave: false
-  - type: ExpireIdCard
-    expireMessage: genpop-prisoner-id-expire
-    expiredAccess:
-    - GenpopLeave
   - type: Speech
     speechVerb: Robotic
   - type: Tag
@@ -45,6 +41,17 @@
     - Recyclable
   - type: StaticPrice # these are infinitely producible.
     price: 0
+
+
+- type: entity
+  parent: BasePrisonerIDCard
+  id: PrisonerIDCard
+  name: prisoner ID card
+  components:
+  - type: ExpireIdCard
+    expireMessage: genpop-prisoner-id-expire
+    expiredAccess:
+    - GenpopLeave
 
 - type: entity
   parent: IDCardStandard
