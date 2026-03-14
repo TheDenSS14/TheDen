@@ -2,6 +2,7 @@
   parent: [BaseStructure, BaseObjectVerbsStructure] # Not parented because it's so weird
   id: AltarSomber
   name: mnemolith altar
+  suffix: Map With Amphorae
   description: "A broad, dark mnemolith altar, its basins slowly welling with a draught distilled from the stone itself. The surface is etched with a rare example of psychomantic script, legible to anyone who looks upon it: \"IN STILLNESS, ALL RETURNS.\""
   components:
   - type: Anchorable
@@ -18,6 +19,13 @@
         shader: unshaded
       - state: glow
         shader: unshaded
+      - state: faust
+        map: ["enum.ItemCabinetVisualLayers.ContainsItem"]
+        visible: true
+      - state: cover
+        map: ["enum.ItemCabinetVisualLayers.Door"]
+      - state: locked
+        map: ["enum.LockVisualLayers.Lock"]
   - type: Icon
     sprite: _DEN/Structures/Furniture/Altars/Cults/somber.rsi
     state: altar
@@ -37,6 +45,7 @@
   - type: Drink
     solution: fountain
     transferAmount: 5
+    delay: 3 # Longer in case they drink accidentally since it's also a cabinet and a bed
   - type: DrawableSolution
     solution: fountain
   - type: DrainableSolution
@@ -60,16 +69,29 @@
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 150
       behaviors:
       - !type:PlaySoundBehavior
         sound:
           collection: MetalGlassBreak # Mnemolith is glassy
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Ambience/ambiruin6.ogg
+          params:
+            volume: 2
       - !type:SpawnEntitiesBehavior
         spawn:
           MaterialMnemolith1:
             min: 30 # It's a massive slab of stone
             max: 30 # If you take the time to break it, you deserve it
+          ScrapElectrum:
+            min: 3
+            max: 5
+          CandleSomberMantisSmall:
+            min: 1
+            max: 6
+      - !type:SpillBehavior { }
+      - !type:EmptyAllContainersBehaviour
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: PlaceableSurface
@@ -111,3 +133,63 @@
       path: /Audio/Ambience/Objects/gravity_gen_hum.ogg # So ominous it needs a quiet rumble
   - type: StealTarget
     stealGroup: AltarNanotrasen
+  - type: ItemSlots # Let it store Faust like the antique laser case
+  - type: ContainerContainer
+    containers:
+      ItemCabinet: !type:ContainerSlot
+  - type: AccessReader
+    access: [["Mantis"], ["Chaplain"]] # It would be rude otherwise
+  - type: LockVisuals
+  - type: Lock
+    breakOnEmag: false # It's not electronic...
+    unlockOnClick: true # Use the context menu, mnemolith comes first
+    lockOnClick: true # Use the context menu, mnemolith comes first
+    unlockingSound:
+      path: /Audio/_DEN/Effects/crystalshimmer5.ogg # Happy sword
+      params:
+        volume: 0
+        variation: 0.05
+    lockingSound:
+      path: /Audio/_DEN/Effects/crystalshimmer3.ogg # Sad sword
+      params:
+        volume: 0
+        variation: 0.05
+    locked: false
+  - type: ItemCabinet
+    opened: true
+    cabinetSlot:
+      priority: 20
+      ejectOnInteract: true # Use the context menu, mnemolith comes first
+      ejectOnBreak: true
+      name: clothing-suitstorage-mantisgreatsword # Well, it says Faust
+      insertVerbText: faust-insert-verb
+      ejectVerbText: faust-eject-verb
+      insertSound:
+        path: /Audio/_DEN/Weapons/Melee/faustsheath.ogg
+        params:
+          volume: -2
+          variation: 0.05
+      ejectSound:
+        path: /Audio/_DEN/Weapons/Melee/faustunsheath.ogg
+        params:
+          volume: -2
+          variation: 0.05
+      whitelist:
+        tags:
+        - MantisGreatsword
+    doorSound:
+      path: /Audio/Effects/silence.ogg
+    openState: cover-off
+    closedState: cover
+
+- type: entity
+  parent: AltarSomber
+  id: AltarSomberFaust
+  suffix: Faust, Filled] [MAP CAREFULLY
+  components:
+  - type: Lock
+    locked: true
+  - type: ItemCabinet
+    opened: false
+    cabinetSlot:
+      startingItem: MantisMeleeGreatsword

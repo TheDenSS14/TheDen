@@ -2,5 +2,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# For MantisMeleeGreatswordSheath
+# For MantisMeleeGreatsword
 clothing-suitstorage-mantisgreatsword = Faust
+faust-insert-verb = Seal Faust
+faust-eject-verb = Unseal Faust
