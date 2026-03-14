@@ -57,7 +57,7 @@
     availableModes:
     - FullAuto
     clumsyProof: true # Den
-    fireRate: 0.8 # Den
+    fireRate: 0.7 # Den
     soundGunshot:
       path: /Audio/_Impstation/Weapons/Guns/Gunshots/stunprojector.ogg
   - type: HitscanBatteryAmmoProvider
@@ -120,10 +120,10 @@
       types:
         Blunt: 5 # Den
         Slash: 10 # Den
-        Shock: 10 # Den
+        Shock: 5 # Den
         Structural: 20 # Den
   - type: StaminaDamageOnHit
-    damage: 40
+    damage: 30
 
 - type: entity
   id: ReplicatorT3Weapon
@@ -208,6 +208,9 @@
 
 - type: hitscan
   id: HitscanReplicator
+  damage:
+    types:
+      Heat: 10 #Den
   staminaDamage: 20 # Den
   muzzleFlash:
     sprite: _Impstation/Mobs/Replicator/replicator_gun.rsi
@@ -221,7 +224,10 @@
 
 - type: hitscan
   id: HitscanReplicator2
-  staminaDamage: 40 # Den
+  damage:
+    types:
+      Heat: 20 #Den
+  staminaDamage: 30 # Den
   muzzleFlash:
     sprite: _Impstation/Mobs/Replicator/replicator_gun.rsi
     state: muzzle_repli2
