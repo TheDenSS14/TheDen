@@ -31,6 +31,7 @@
 # SPDX-FileCopyrightText: 2025 fishbait
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2026 Alex C
+# SPDX-FileCopyrightText: 2026 January Nelson
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -68,6 +69,7 @@
   parent: SheetOtherBase
   id: SheetPaper
   name: paper
+  description: Most commercially-made paper is made from paper. Paper is made from wood, trees, and paper. # den edit
   suffix: Full, Material # TheDen
   components:
   - type: Stack
@@ -119,6 +121,7 @@
   parent: SheetOtherBase
   id: SheetPlasma
   name: plasma
+  description: What Nanotrasen calls 'plasma' or 'phoron' is an enigmatic, highly-reactive material that taps into... Well, it'll make you rich. # den
   suffix: Full
   components:
   - type: Material
@@ -180,6 +183,7 @@
   parent: SheetOtherBase
   id: SheetPlastic
   name: plastic
+  description: A sheet of non-descript polymers that can be molded into anything you can imagine. Fun to play with, but not to eat. # den
   suffix: Full
   components:
   - type: Tag
@@ -244,6 +248,7 @@
   parent: [SheetOtherBase, FoodBase]
   id: SheetUranium
   name: uranium
+  description: A sheet of Element 92. Puts the 'new' in 'nuclear' and the 'active' in 'radioactive'. # den
   suffix: Full
   components:
   - type: Material
@@ -293,6 +298,7 @@
   parent: SheetOtherBase
   id: MaterialSheetMeat
   name: meat sheet
+  description: Doesn't have the answers to your tests. Does have lots of protein. # den
   suffix: Full
   components:
     - type: Sprite
