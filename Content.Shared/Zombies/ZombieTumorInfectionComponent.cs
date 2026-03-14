@@ -70,7 +70,7 @@ public sealed partial class ZombieTumorInfectionComponent : Component
             {
                 DamageDict = new()
                 {
-                    { "Poison", 0.1 }
+                { "Genetic", 0.2 } // Den
                 }
             }
         },
@@ -80,7 +80,7 @@ public sealed partial class ZombieTumorInfectionComponent : Component
             {
                 DamageDict = new()
                 {
-                    { "Poison", 0.2 }
+                    { "Genetic", 0.4 } // Den
                 }
             }
         },
@@ -90,7 +90,7 @@ public sealed partial class ZombieTumorInfectionComponent : Component
             {
                 DamageDict = new()
                 {
-                    { "Poison", 0.5 }
+                    { "Genetic", 0.9 } // Den
                 }
             }
         }
