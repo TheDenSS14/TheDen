@@ -51,6 +51,7 @@
   parent: [PartBase, BaseQuickConstructionMaterial] # DEN add quick construction parent
   id: PartRodMetal
   name: metal rod
+  description: A long piece of steel. Not thick enough to hurt much if you get hit by it. # den
   suffix: Full
   components:
   - type: PhysicalComposition
