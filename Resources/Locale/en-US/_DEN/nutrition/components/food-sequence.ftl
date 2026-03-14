@@ -11,6 +11,7 @@ food-sequence-content-fish = fish
 food-sequence-content-fried-egg = egg
 food-sequence-content-liverwurst = liver
 food-sequence-content-black-pudding = blood
+food-sequence-content-shrimp = shrimp
 
 # cotton burger
 food-sequence-cotton-burger-content-plushie-abductor = abductor
