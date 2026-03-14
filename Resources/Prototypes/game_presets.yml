@@ -234,11 +234,11 @@
   - zomber
   name: zombie-title
   description: zombie-description
-  showInVote: false
+  showInVote: true
+  highDanger: true
   rules:
   - Zombie
   - SubGamemodesRule
-  - BasicStationEventScheduler
   - BasicRoundstartVariation
   - IrregularStationEventScheduler
   - LavalandStormScheduler # Lavaland Change
