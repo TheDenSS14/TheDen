@@ -522,3 +522,17 @@
       amount: 1
   products:
     Tea: 4
+
+- type: reaction
+  id: Kindness
+  reactants:
+    SpaceDrugs:
+      amount: 1
+    Iron:
+      amount: 1
+    Sap:
+      amount: 2
+    Tea:
+      amount: 2
+  products:
+      Kindness: 6

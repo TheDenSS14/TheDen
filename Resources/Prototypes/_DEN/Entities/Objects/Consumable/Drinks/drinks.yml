@@ -622,3 +622,16 @@
         reagents:
         - ReagentId: Chainmail
           Quantity: 30
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkKindnessGlass
+  suffix: kindness
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Kindness
+          Quantity: 30
