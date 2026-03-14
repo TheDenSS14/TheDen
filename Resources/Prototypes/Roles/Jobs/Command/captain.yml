@@ -134,10 +134,11 @@
         - PsychognomyPower
       - type: ActionGrant
         actions:
-        - ActionBreakSummonMansusGrasp
-        - ActionBreakSummonGuns
+        # - ActionBreakSummonGuns # This many abilities messes up the order
         - ActionBreakSummonFaust
+        - ActionBreakSummonMansusGrasp
         - ActionBreakSummonBloodyBlade
+        - ActionBreakSummonMansusGraspDouble
       # SHA EDITS END
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial

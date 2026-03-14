@@ -1291,6 +1291,50 @@
         density: 500
   - type: BlockMovement
 
+- type: entity
+  parent: SomberHangingBrazierPillarShorter
+  id: SomberHangingBrazierPenthousePillarShorter
+  suffix: PENTHOUSE] [Fits Shorter Pillars, Click After Mapping
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpenthousepillarshorter.rsi
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 5
+    softness: 1.22
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberHangingBrazierPenthousePillarShorter
+  id: SomberHangingBrazierPenthousePillarShort
+  suffix: PENTHOUSE] [Fits Short Pillars, Click After Mapping
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpenthousepillarshort.rsi
+
+- type: entity
+  parent: SomberHangingBrazierPenthousePillarShorter
+  id: SomberHangingBrazierPenthousePillarTall
+  suffix: PENTHOUSE] [Fits Tall Pillars, Click After Mapping
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpenthousepillartall.rsi
+
+- type: entity
+  parent: SomberHangingBrazierPenthousePillarShorter
+  id: SomberHangingBrazierPenthousePillarTaller
+  suffix: PENTHOUSE] [Fits Taller Pillars, Click After Mapping
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpenthousepillartaller.rsi
+
 # Mansus Fire Items
 
 - type: entity
@@ -1494,7 +1538,7 @@
       - state: glow
         shader: unshaded
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Altars/Cults/somber.rsi
+    sprite: _SHA/Structures/Furniture/Altars/Cults/sombersanctum.rsi
     state: altar
   - type: SolutionContainerManager
     solutions:
@@ -1581,11 +1625,55 @@
     mask: /Textures/_DEN/Effects/LightMasks/double_circle.png
   - type: AmbientSound
     range: 5
-    volume: -8
+    volume: -6
     sound:
       path: /Audio/Ambience/Objects/gravity_gen_hum.ogg # So ominous it needs a quiet rumble
   - type: StealTarget
     stealGroup: AltarNanotrasen
+
+- type: entity
+  parent: SomberHangingBrazierPillarShorter
+  id: SomberHangingBrazierSanctumPillarShorter
+  suffix: SANCTUM] [Fits Shorter Pillars, Click After Mapping
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbraziersanctumpillarshorter.rsi
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 5
+    softness: 1.22
+    color: "#00684E"
+
+- type: entity
+  parent: SomberHangingBrazierSanctumPillarShorter
+  id: SomberHangingBrazierSanctumPillarShort
+  suffix: SANCTUM] [Fits Short Pillars, Click After Mapping
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbraziersanctumpillarshort.rsi
+
+- type: entity
+  parent: SomberHangingBrazierSanctumPillarShorter
+  id: SomberHangingBrazierSanctumPillarTall
+  suffix: SANCTUM] [Fits Tall Pillars, Click After Mapping
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbraziersanctumpillartall.rsi
+
+- type: entity
+  parent: SomberHangingBrazierSanctumPillarShorter
+  id: SomberHangingBrazierSanctumPillarTaller
+  suffix: SANCTUM] [Fits Taller Pillars, Click After Mapping
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbraziersanctumpillartaller.rsi
 
 # Sanctum Fountains# Round Fountains
 
@@ -1782,8 +1870,8 @@
   description: "A cute amigurumi doll. You swear she moves when you're not looking."
 
 - type: entity
-  parent: PersonalAI
-  id: PersonalAISomber
+  parent: PersonalAISomber
+  id: PersonalAISomberTatter
   name: Tatter's soul
   suffix: PENTHOUSE, MAP IN TATTER
   description: "This doesn't exist. You're hallucinating. The doll is possessed - that part's real."
@@ -2036,7 +2124,7 @@
 
 - type: entity
   parent: MantisMeleeGreatsword
-  id: MantisMeleeGreatswordPenthouse
+  id: MantisMeleeGreatswordBreak
   suffix: PENTHOUSE, FOR THE ALTAR
   description:
     "It sees you.                                                                                                    It does not know you.                                                                                                    It only answers to her."
@@ -2070,13 +2158,13 @@
 
 - type: entity
   parent: MantisMeleeGreatswordSheath
-  id: MantisMeleeGreatswordSheathFilledPenthouse
+  id: MantisMeleeGreatswordSheathFilledBreak
   suffix: Faust] [PENTHOUSE, DO NOT MAP
   components:
   - type: ContainerFill
     containers:
       mantisgreatsword:
-      - MantisMeleeGreatswordPenthouse
+      - MantisMeleeGreatswordBreak
   - type: Foldable
     folded: true
   - type: Clothing
@@ -2084,9 +2172,9 @@
 
 - type: entity
   parent: [ BaseHereticContraband, CombatKnife ]
-  id: HereticBladeFleshPenthouse
+  id: HereticBladeFleshBreak
   name: bloody blade
-  suffix: DO NOT MAP] [PENTHOUSE
+  suffix: DO NOT MAP] [BREAK
   description: "Made from her flesh.                                                                                                    The sight of it stings the eye.                                                                                                    Look away. Look away."
   components:
   - type: Sprite
@@ -2150,21 +2238,16 @@
   - type: CultItem
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/_SHA/ascend_flesh.ogg
+      path: /Audio/_SHA/castsummon.ogg
       params:
-        volume: -4
-        pitch: 1.5
-  - type: PointLight
-    radius: 2.4
-    energy: 2.4
-    softness: 1.22
-    color: "#00684E" # Mansus grasp color
+        volume: -6
+        pitch: 1.0
 
 - type: entity
   parent: [ BaseHereticContraband, BaseItem ]
-  id: HereticMansusGraspPenthouse
+  id: HereticMansusGraspBreak
   name: mansus grasp
-  suffix: DO NOT MAP] [PENTHOUSE
+  suffix: DO NOT MAP] [BREAK
   description: "The hand wreathed in sickly green flames.                                                                                                    The sight of it stings the eye.                                                                                                    Look away. Look away."
   components:
   - type: Sprite
@@ -2215,20 +2298,108 @@
   - type: DisarmMalus
     malus: 1.0
   - type: CultItem
+  - type: Unremoveable
+    deleteOnDrop: true
+  - type: DeleteOnDrop
   - type: EmitSoundOnSpawn
     sound:
       path: /Audio/_SHA/voidblink.ogg
       params:
-        volume: -6
+        volume: -4
         pitch: 0.75
+  - type: AmbientSound
+    range: 1000
+    volume: -8
+    sound:
+      path: /Audio/Ambience/wisp_ambience.ogg
+  - type: PointLight
+    radius: 1.5
+    energy: 2.5
+    softness: 1.0
+    color: "#00684E" # Mansus grasp color
+
+- type: entity
+  parent: HereticMansusGraspBreak
+  id: HereticMansusGraspDoubleBreak
+  name: far-gone mansus grasp
+  suffix: DO NOT MAP] [BREAK
+  description: "NO NO NO NO."
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+    layers:
+    - state: icon-grasp-both
+      shader: unshaded
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-both-silhouette
+      - state: inhand-both-grasp
+        shader: unshaded
+      right:
+      - state: inhand-both-silhouette
+      - state: inhand-both-grasp
+        shader: unshaded
+  - type: MeleeWeapon
+    autoAttack: true
+    heavyStaminaCost: 0
+    attackRate: 0.3333
+    angle: 90
+    maxTargets: 10
+    damage:
+      types:
+        Blunt: 15.55
+        Holy: 7.775
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_SHA/ascend_flesh_voidblink.ogg
+      params:
+        volume: -2
+        pitch: 1.0
+  - type: AmbientSound
+    range: 1000
+    volume: -8
+    sound:
+      path: /Audio/Ambience/wisp_ambience.ogg
+  - type: PointLight
+    radius: 1.5
+    energy: 5
+    softness: 1.0
+    color: "#00684E" # Mansus grasp color
+
+- type: entity
+  parent: BaseItem
+  id: SilhouetteBreak
+  name: ominous silhouette
+  suffix: DO NOT MAP] [BREAK
+  description: "Oh lord."
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+    layers:
+    - state: icon-silhouette
+    - state: icon-silhouette-eyes
+      shader: unshaded
+  - type: Item
+    size: Small
+    storedSprite: null
+    sprite: _SHA/Heretic/Blades/blade_flesh_break-inhands-64x.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-both-silhouette
+      right:
+      - state: inhand-both-silhouette
+  - type: MeleeWeapon
+    soundHit:
+      collection: ShockPunch
+    angle: 30
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Shock: 5
   - type: Unremoveable
     deleteOnDrop: true
   - type: DeleteOnDrop
-  - type: PointLight
-    radius: 2.4
-    energy: 2.4
-    softness: 1.22
-    color: "#00684E" # Mansus grasp color
 
 - type: entity
   parent: MantisRangedShotgun
@@ -2275,30 +2446,30 @@
 # Spells
 
 - type: entity
-  id: ActionBreakSummonFaust
-  name: Summon Faust
-  description: "It's been waiting."
+  id: ActionBreakSummonMansusGrasp
+  name: Mansus Grasp
+  description: "No one's looking."
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatsword.rsi
-    state: icon
+    sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+    state: icon-grasp
   - type: InstantAction
     itemIconStyle: BigAction
     charges: 1000
     temporary: false
     icon:
-      sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatsword.rsi
-      state: icon
+      sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+      state: icon-grasp
     event: !type:SummonEquipmentEvent
       prototypes:
-        hand: MantisMeleeGreatswordPenthouse
+        hand: HereticMansusGraspBreak
   - type: BaseCultSpell
 
 - type: entity
   id: ActionBreakSummonGuns
-  name: Summon Guns
-  description: "They'll never take you."
+  name: Summon Empusa & Charon
+  description: "Final warning."
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -2318,9 +2489,30 @@
   - type: BaseCultSpell
 
 - type: entity
+  id: ActionBreakSummonFaust
+  name: Summon Faust
+  description: "It's eager."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatsword.rsi
+    state: icon
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatsword.rsi
+      state: icon
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand: MantisMeleeGreatswordBreak
+  - type: BaseCultSpell
+
+- type: entity
   id: ActionBreakSummonBloodyBlade
-  name: Summon Bloody Blade
-  description: "You won't die like this."
+  name: Manifest Bloody Blade
+  description: "I won't die like this."
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -2335,29 +2527,29 @@
       state: icon
     event: !type:SummonEquipmentEvent
       prototypes:
-        hand1: HereticBladeFleshPenthouse
-        hand2: HereticMansusGraspPenthouse
+        hand1: HereticBladeFleshBreak
+        hand2: HereticMansusGraspBreak
   - type: BaseCultSpell
 
 - type: entity
-  id: ActionBreakSummonMansusGrasp
-  name: Summon Mansus Grasp
-  description: "No one's looking."
+  id: ActionBreakSummonMansusGraspDouble
+  name: Lose Your Mind
+  description: "NO NO NO NO."
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
-    state: icon-grasp
+    state: icon-grasp-both
   - type: InstantAction
     itemIconStyle: BigAction
     charges: 1000
     temporary: false
     icon:
       sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
-      state: icon-grasp
+      state: icon-grasp-both
     event: !type:SummonEquipmentEvent
       prototypes:
-        hand: HereticMansusGraspPenthouse
+        hand: HereticMansusGraspDoubleBreak
   - type: BaseCultSpell
 
 # Restraints
@@ -2484,6 +2676,7 @@
   parent: BaseItem
   id: EldritchTome
   name: eldritch tome
+  suffix: SANCTUM ONLY
   description: "A strange book with some kind of ritualistic rune emblazoned on the front. The text seems to rewrite itself whenever you look away."
   components:
   - type: Sprite
@@ -2513,7 +2706,7 @@
           eldritch-book-icon6: ""
   - type: PointLight
     radius: 1.5
-    energy: 0.5
+    energy: 2.5
     color: "#00684E" # Mansus grasp color
   - type: Tag
     tags:

@@ -124,7 +124,7 @@
     mode: WallmountLight
   components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS PLEASE GOD PLEASE (SO THEY CAN BE TOGGLED WITH SWITCHES)
   - type: Sprite # TODO: IT'D ALSO BE REALLY NICE IF THEY COULD SPAWN TURNED ON SO I CAN MIGRATE ALL THE TURNED-OFF ONES TO BE LIT UP ON MAP SPAWN
-    drawdepth: Overdoors
+    drawdepth: WallMountedItems
     noRot: false
     sprite: _DEN/Structures/Decoration/somberhangingbrazier.rsi
     layers:
@@ -211,9 +211,50 @@
             max: 3
 
 - type: entity
+  parent: SomberHangingBrazier
+  id: SomberHangingBrazierPillarShorter
+  suffix: Fits Shorter Pillars, Click After Mapping
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    noRot: true
+    offset: "0.0,1.0"
+    drawdepth: Mobs # You have to place these after the pillars, but otherwise they won't be hidden by them if the camera turns
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
+
+- type: entity
+  parent: SomberHangingBrazierPillarShorter
+  id: SomberHangingBrazierPillarShort
+  suffix: Fits Short Pillars, Click After Mapping
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
+
+- type: entity
+  parent: SomberHangingBrazierPillarShorter
+  id: SomberHangingBrazierPillarTall
+  suffix: Fits Tall Pillars, Click After Mapping
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
+
+- type: entity
+  parent: SomberHangingBrazierPillarShorter
+  id: SomberHangingBrazierPillarTaller
+  suffix: Fits Taller Pillars, Click After Mapping
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartaller.rsi
+
+- type: entity
   parent: BaseSignDirectional
   id: SomberHangingBrazierGuidebook # Now that the braziers are toggled, the guidebook ones don't burn...
-  name: electrum hanging brazier test
+  name: electrum hanging brazier
   description: "An electrum brazier, its smokeless psionic flame rippling like liquid."
   categories: [ HideSpawnMenu ]
   components:
