@@ -2290,12 +2290,44 @@
     equippedPrefix: folded
 
 - type: entity
-  parent: [ BaseHereticContraband, CombatKnife ]
+  parent: [ BaseKnifeSpinnable, BaseHereticContraband, CombatKnife ]
   id: HereticBladeFleshBreak
   name: bloody blade
   suffix: DO NOT MAP] [BREAK
   description: "Made from her flesh.                                                                                                    The sight of it stings the eye.                                                                                                    Look away. Look away."
   components:
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg # Spin
+      params:
+        volume: -3
+        variation: 0.15
+    soundDeactivate:
+      path: /Audio/Effects/weak_hit2.ogg # Catch
+      params:
+        volume: -3
+        pitch: 0.5
+        variation: 0.05
+  - type: ToggleableVisuals
+    spriteLayer: null # Spinning it only changes the inhand sprites
+    replaceMode: true # The original inhand sprites won't remain visible when toggled
+    inhandVisuals:
+      left:
+      - state: inhand-left-grasp
+        shader: unshaded
+      - state: spinning-inhand-left
+      - state: spinning-inhand-left-unshaded
+        shader: unshaded
+      - state: spinning-inhand-left-unshaded-eye
+        shader: unshaded
+      right:
+      - state: inhand-right-grasp
+        shader: unshaded
+      - state: spinning-inhand-right
+      - state: spinning-inhand-right-unshaded
+        shader: unshaded
+      - state: spinning-inhand-right-unshaded-eye
+        shader: unshaded
   - type: Sprite
     sprite: _SHA/Heretic/break_icons.rsi
     layers:
