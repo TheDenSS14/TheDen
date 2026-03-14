@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Dirius77
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 mood-effect-name-NoosphericAlignedGlimmerVeryLow = very low glimmer
 mood-effect-NoosphericAlignedGlimmerVeryLow = The world's connection to the noosphere is practically gone, you feel awful.
 

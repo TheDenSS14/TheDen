@@ -10,6 +10,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Dirius77
 # SPDX-FileCopyrightText: 2026 Fuvias
 # SPDX-FileCopyrightText: 2026 Jadrek
 # SPDX-FileCopyrightText: 2026 lunarcomets
