@@ -1,7 +1,7 @@
 # Standard
 
 - type: entity
-  parent: WallReinforced
+  parent: [ WallReinforced, BasePsionic ]
   id: WallSomber
   name: somber wall
   description: "Layered with rough, slanted mnemolith slabs in a tight grid to prevent psionic scrying."
@@ -12,7 +12,7 @@
     sprite: _DEN/Structures/Walls/Somber/somber.rsi
 
 - type: entity
-  parent: WallReinforcedDiagonal
+  parent: [ WallReinforcedDiagonal, BasePsionic ]
   id: WallSomberDiagonal
   name: somber wall
   suffix: Diagonal
@@ -24,11 +24,11 @@
     sprite: _DEN/Structures/Walls/Somber/somber_diagonal.rsi
 
 - type: entity
-  parent: WallSolid # Weaker, better for real maps, but I can't make weak versions of all this or I'll die
+  parent: [ WallSolid, BasePsionic ] # Weaker, better for real maps, but I can't make weak versions of all this or I'll die (if you wanna help be my guest)
   id: WallSomberSolid
   name: somber wall
   suffix: Solid
-  description: "Made of gloomy, patterned steel."
+  description: "Made of gloomy, patterned steel. It hums faintly, just below hearing."
   components:
   - type: Sprite
     sprite: _DEN/Structures/Walls/Somber/somber.rsi
@@ -58,11 +58,11 @@
     sprite: _DEN/Structures/Walls/Somber/somberdark_diagonal.rsi
 
 - type: entity
-  parent: WallSomberSolid # Weaker, better for real maps, but I can't make weak versions of all this or I'll die
+  parent: WallSomberSolid # Weaker, better for real maps, but I can't make weak versions of all this or I'll die (if you wanna help be my guest)
   id: WallSomberSolidDark
   name: somber wall
   suffix: Dark, Solid
-  description: "Made of gloomy, patterned steel."
+  description: "Made of gloomy, patterned steel. It hums faintly, just below hearing."
   components:
   - type: Sprite
     sprite: _DEN/Structures/Walls/Somber/somberdark.rsi
@@ -72,10 +72,10 @@
 # Grilles
 
 - type: entity
-  parent: Grille
+  parent: [ Grille, BasePsionic ]
   id: GrilleSomber
   name: somber grille
-  description: "A lattice of patterned steel rods."
+  description: "A lattice of patterned steel rods. They seem to shift slightly when you look away."
   components:
     - type: Sprite
       sprite: _DEN/Structures/Walls/Somber/sombergrille.rsi
@@ -91,10 +91,10 @@
               acts: ["Destruction"]
 
 - type: entity
-  parent: GrilleBroken
+  parent: [ GrilleBroken, BasePsionic ]
   id: GrilleSomberBroken
   name: somber grille
-  description: "A lattice of patterned steel rods. Broken, now."
+  description: "A lattice of patterned steel rods. They seem to shift slightly when you look away. Broken, now."
   suffix: Broken
   components:
     - type: Sprite
@@ -111,10 +111,10 @@
               acts: ["Destruction"]
 
 - type: entity
-  parent: GrilleDiagonal
+  parent: [ GrilleDiagonal, BasePsionic ]
   id: GrilleSomberDiagonal
   name: somber grille
-  description: "A lattice of patterned steel rods."
+  description: "A lattice of patterned steel rods. They seem to shift slightly when you look away."
   suffix: Diagonal
   components:
     - type: MeleeSound
@@ -138,10 +138,10 @@
 # Railings
 
 - type: entity
-  parent: Railing
+  parent: [ Railing, BasePsionic ]
   id: RailingSomber
   name: somber railing
-  description: "A sturdy, patterned rail."
+  description: "A sturdy, patterned rail. The lines seem to ripple in the presence of psions. Why can't things just be normal."
   suffix: Straight
   components:
   - type: Sprite
@@ -180,10 +180,10 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: RailingCorner
+  parent: [ RailingCorner, BasePsionic ]
   id: RailingSomberCorner
   name: somber railing
-  description: "A sturdy, patterned rail."
+  description: "A sturdy, patterned rail. The lines seem to ripple in the presence of psions. Why can't things just be normal."
   suffix: Corner
   components:
   - type: Sprite
@@ -222,10 +222,10 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: RailingCornerSmall
+  parent: [ RailingCornerSmall, BasePsionic ]
   id: RailingSomberCornerSmall
   name: somber railing
-  description: "A sturdy, patterned rail."
+  description: "A sturdy, patterned rail. The lines seem to ripple in the presence of psions. Why can't things just be normal."
   suffix: Small Corner
   components:
   - type: Sprite
@@ -264,10 +264,10 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: RailingRound
+  parent: [ RailingRound, BasePsionic ]
   id: RailingSomberRound
   name: somber railing
-  description: "A sturdy, patterned rail."
+  description: "A sturdy, patterned rail. The lines seem to ripple in the presence of psions. Why can't things just be normal."
   suffix: Round
   components:
   - type: Sprite

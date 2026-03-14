@@ -1,7 +1,7 @@
 # Standard
 
 - type: entity
-  parent: ReinforcedWindow
+  parent: [ ReinforcedWindow, BasePsionic ]
   id: WindowSomber
   name: somber window
   description: "Your reflection shimmers faintly in the glass."
@@ -15,7 +15,7 @@
     base: window
 
 - type: entity
-  parent: ReinforcedWindowDiagonal
+  parent: [ ReinforcedWindowDiagonal, BasePsionic ]
   id: WindowSomberDiagonal
   name: somber window
   suffix: Diagonal
@@ -91,7 +91,7 @@
     base: state
 
 - type: entity
-  parent: ReinforcedUraniumWindow
+  parent: [ ReinforcedUraniumWindow, BasePsionic ]
   id: WindowSomberUranium
   name: shielded somber window
   suffix: Radiation Shielding
@@ -104,6 +104,25 @@
   - type: IconSmooth
     key: walls
     base: window
+
+- type: entity
+  parent: ReinforcedUraniumWindowDiagonal
+  id: WindowSomberUraniumDiagonal
+  name: shielded somber window
+  suffix: Diagonal, Radiation Shielding
+  description: "Built with occult-treated uranium shielding to keep you safe from radiation. Ignore the whispering."
+  components:
+  - type: Psionic # Things made of mnemolith or eidolite, or with weird descriptions, are naturally noospheric
+    removable: false # But generally only damageable things should have this so Faust can hit them
+    roller: false # Items parented to BaseAntiPsionic anything are already psionic
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somber_shielded_diagonal.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somber_shielded_diagonal.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
 
 # Dark
 
@@ -208,6 +227,21 @@
   - type: IconSmooth
     key: walls
     base: window
+
+- type: entity
+  parent: WindowSomberUraniumDiagonal
+  id: WindowSomberDarkUraniumDiagonal
+  name: shielded somber window
+  suffix: Dark, Diagonal, Radiation Shielding
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark_shielded_diagonal.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark_shielded_diagonal.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
 
 # Directional
 

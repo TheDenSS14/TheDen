@@ -48,7 +48,7 @@
           collection: WoodDestroyHeavy
 
 - type: entity
-  parent: BaseMaterialDoorNavMap
+  parent: [ BaseMaterialDoorNavMap, BasePsionic ]
   id: SomberMnemolithDoor
   name: somber mnemolith door
   description: "A door made of mnemolith, a dark, glassy stone that forms during severe noospheric storms."

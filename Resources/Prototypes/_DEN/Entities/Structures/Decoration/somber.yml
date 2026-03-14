@@ -1,7 +1,7 @@
 # Round Fountains
 
 - type: entity
-  parent: BaseStructure
+  parent: [ BaseStructure, BasePsionic ]
   id: FountainSomber
   name: somber fountain
   description: "A carved mnemolith basin crowned with electrum spouts, spilling streams of water into drains set into the floor below."
@@ -171,7 +171,7 @@
 # Pillars (see SomberMemorial for the monuments)
 
 - type: entity
-  parent: Memorial
+  parent: [ Memorial, BasePsionic ]
   id: SomberPillarTall
   name: mnemolith pillar
   suffix: Tall

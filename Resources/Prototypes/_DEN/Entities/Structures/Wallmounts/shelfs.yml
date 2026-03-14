@@ -94,7 +94,7 @@
           collection: WoodDestroyHeavy
 
 - type: entity
-  parent: SomberDoorCloset
+  parent: [ SomberDoorCloset, BasePsionic ]
   id: SomberDoorClosetMnemolith
   suffix: Mnemolith
   description: "Mnemolith stone doors concealing what is ostensibly a walk-in closet, although you shouldn't try it."

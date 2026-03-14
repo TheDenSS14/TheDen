@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: BaseStructure
+  parent: [ BaseStructure, BasePsionic ]
   id: LightSomberEidoliteWellLamp
   name: eidolite well lamp
   description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on and off by hand."

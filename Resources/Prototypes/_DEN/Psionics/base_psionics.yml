@@ -1,8 +1,21 @@
-# SPDX-FileCopyrightText: 2025 Shaman
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# ENTITIES
 
-# I'm sick of adding this component to every mantis weapon so I'm making a base item for it
+# A psionic base for the purposes of AntiPsionicWeapon interaction (see below), which affects damage dealt and weapon punish ("rebounds")
+# Things made of mnemolith or eidolite, or psionic-adjacent things with weird descriptions (like much of the Somber set), are naturally noospheric
+# This includes anomalous and supernatural objects and creatures, which the mantis is purpose-built to fight
+# Generally only damageable things should have this parent, since otherwise it doesn't matter
+# `roller: false` means that the entity in question won't gain new psionic abilities
+- type: entity
+  id: BasePsionic
+  abstract: true
+  components:
+  - type: Psionic
+    removable: false
+    roller: false
+
+# WEAPONS
+
+# I'm sick of adding this component to every mantis weapon so I'm making a base for it
 # I've included notes on anti-psionic weapon design here if you want to make something with it, because the system is unintuitive
 - type: entity
   parent: [BaseItem, BaseObjectVerbsCuteness]
@@ -50,7 +63,7 @@
   - type: LandAtCursor
   - type: ThrowingAngle
     angularVelocity: false
-  # Probably a good idea to have this here too
+  # Probably a good idea to have this here too, since generally these belong to the mantis
   # It'd be nice to have a guidebook just for anti-psionic weapons though
   - type: GuideHelp
     guides: [ MantisGuide ]

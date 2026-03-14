@@ -85,7 +85,7 @@
     access: []
 
 - type: entity
-  parent: VendingMachine
+  parent: [ VendingMachine, BasePsionic ]
   id: VendingMachineSomberMantis
   name: mantis reliquary conduit
   description: "An occult-machine interface through which mantes summon equipment from the Reliquary by thought alone."
@@ -129,7 +129,7 @@
     enabled: false
     sound:
       path: /Audio/Effects/silence.ogg # It has some wires inside, but it doesn't hum
-  - type: SentienceTarget
+  - type: SentienceTarget # If this ever causes a consent breach, comment this out...
     flavorKind: station-event-random-sentience-flavor-mechanical
     weight: 0.25 # It's plugged into the noosphere, come on
   - type: TypingIndicator

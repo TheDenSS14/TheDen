@@ -45,7 +45,7 @@
     chance: 1
 
 - type: entity
-  parent: Memorial
+  parent: [ Memorial, BasePsionic ]
   id: SomberMemorial1
   name: mnemolith monument
   suffix: DO NOT MAP # If you don't use the spawner, they'll be static, when really they should change each time a map is loaded

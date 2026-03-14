@@ -43,6 +43,7 @@
 # Players can unanchor them and pick them up, so only chaplains can use them to pray, and they only produce sound when anchored
 # Not parented since it's halfway between an item and a structure (spawns anchored, no interaction outlines, etc.)
 - type: entity
+  parent: BasePsionic
   id: SomberNazar
   name: nazar
   suffix: Chapel Ambience, 5 Tile Radius

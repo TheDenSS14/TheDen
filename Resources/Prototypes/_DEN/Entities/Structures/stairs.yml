@@ -130,7 +130,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: StairSomberSteel
+  parent: [ StairSomberSteel, BasePsionic ]
   id: StairSomberMnemolith
   name: somber mnemolith stairs
   suffix: ""

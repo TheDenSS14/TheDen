@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: Candle
+  parent: [ Candle, BasePsionic ]
   id: CandleSomberMantis
   name: mnemolith candle
   suffix: Never Burns Out, Light After Mapping

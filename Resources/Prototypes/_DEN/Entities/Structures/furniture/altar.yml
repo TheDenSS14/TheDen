@@ -1,6 +1,6 @@
-# Welcome to the most mechanically complex altar in the game, with 196 lines of code
+# Welcome to the most mechanically complex altar in the game, with 200 lines of code
 - type: entity
-  parent: [BaseStructure, BaseObjectVerbsStructure] # Not parented because it's so weird
+  parent: [ BaseStructure, BaseObjectVerbsStructure, BasePsionic ] # Not parented because it's so weird
   id: AltarSomber
   name: mnemolith altar
   suffix: Map With Amphorae
