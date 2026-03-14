@@ -231,9 +231,9 @@
 - type: entity
   parent: VendingMachineSomberMantis
   id: VendingMachineSomberMantisWall
-  name: mantis reliquary wall conduit
+  name: mantis reliquary conduit
   description: "A wall-mounted, occult-machine interface through which mantes summon equipment from the Reliquary by thought alone."
-  suffix: DO NOT MAP # Wall vending machines can only be used from the south side and then they throw the item through the north wall
+  suffix: DO NOT MAP] [Wall # Wall vending machines can only be used from the south side and then they throw the item through the north wall
   placement: # Just leaving this prototype here for if we ever fix that... Also I have to change all the sprites and must preserve these
     mode: SnapgridCenter
     snap:
@@ -243,7 +243,6 @@
     arc: 175
   - type: Sprite
     drawdepth: WallMountedItems
-    snapCardinals: false
     noRot: true
     sprite: _DEN/Structures/Machines/VendingMachines/mantiswall.rsi
     layers:

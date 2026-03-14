@@ -1132,7 +1132,7 @@
     size: Small
 
 - type: entity
-  parent: ClothingBeltStorageBase # SHA
+  parent: ClothingBeltBase
   id: ClothingBeltWaist
   name: waist belt
   description: A belt worn around the waist, giving outfits a more fitted silhouette.
@@ -1145,23 +1145,6 @@
     renderLayer: innerBelt
   - type: Item # DEN: Reduce size of generic belts
     size: Small
-  # SHA EDITS START
-  - type: Storage
-    maxItemSize: Ginormous
-    grid:
-    - 0,0,20,9
-  - type: StorageFill
-    contents:
-    - id: ClothingHeadCageMantisPenthouse
-      amount: 5
-    - id: HandcuffsMantisPenthouse
-      amount: 5
-    - id: ClothingNeckMantisShacklesPenthouse
-      amount: 5
-    - id: WrenchMantis
-    - id: LeashMantisPenthouse
-      amount: 10
-  # SHA EDITS END
 
 - type: entity
   parent: ClothingBeltBase

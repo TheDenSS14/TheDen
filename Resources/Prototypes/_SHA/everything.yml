@@ -1086,13 +1086,13 @@
     collection: FootstepTile
   heatCapacity: 10000
 
-# Fire Items
+# Warm Fire Items
 
 - type: entity
   parent: CandleSomberMantis
   id: CandleSomberPenthouse
   name: candle
-  suffix: PENTHOUSE
+  suffix: PENTHOUSE] [Light After Mapping
   description: "A candle. That's all."
   components:
     - type: Sprite
@@ -1134,7 +1134,6 @@
   parent: CandleSomberPenthouse
   id: CandleSomberPenthouseSmall
   name: candle (small)
-  suffix: PENTHOUSE
   description: "A small candle. That's all."
   components:
     - type: Sprite
@@ -1148,7 +1147,6 @@
   parent: CandleSomberPenthouse
   id: CandleSomberPenthouseCluster
   name: candle (cluster)
-  suffix: PENTHOUSE
   description: "A cluster of candles. Not a birthday cake."
   components:
     - type: Sprite
@@ -1162,7 +1160,6 @@
   parent: CandleSomberPenthouse
   id: CandleSomberPenthouseTiny
   name: candle (tea light)
-  suffix: PENTHOUSE
   description: "A tea light. Light enough to float on water."
   components:
     - type: Sprite
@@ -1203,6 +1200,496 @@
     energy: 5
     softness: 1.22
     color: "#FF9833"
+
+- type: entity
+  parent: SomberTableFire
+  id: SomberTableFirePenthouse
+  suffix: Fire Table] [PENTHOUSE] [Click After Mapping
+  description: "An expensive fire table made of gloomy, patterned wood. Mind your hands."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Tables/Somber/somberwoodtablefirepenthouse.rsi
+    layers:
+      - state: full
+      - state: fire
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: Icon
+    sprite: _SHA/Structures/Furniture/Tables/Somber/somberwoodtablefirepenthouse.rsi
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 5
+    softness: 1.22
+    color: "#FF9833"
+
+- type: entity
+  parent: VendingMachineSomberMantis
+  id: VendingMachineSomberMantisPenthouse
+  name: reliquary conduit
+  suffix: PENTHOUSE
+  description: "An occult-machine interface that reacts to thought alone."
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _SHA/Structures/Machines/VendingMachines/mantispenthouse.rsi
+  - type: PointLight # As bright as a candle
+    radius: 2.4
+    energy: 2.4
+    softness: 1.22
+    color: "#FF9833"
+    mask: null
+  - type: ThermalVision # Weird psionic senses
+    pulseTime: 0 # Toggled, not timed
+    lightRadius: 7
+    color: "#FF9833"
+    activateSound:
+      path: /Audio/Effects/eye_open.ogg
+      params:
+        volume: -3
+        variation: 0.075
+    deactivateSound:
+      path: /Audio/Effects/eye_close.ogg
+      params:
+        volume: -3
+        variation: 0.075
+
+- type: entity
+  parent: VendingMachineSomberMantisSanctum
+  id: VendingMachineSomberMantisWallPenthouse
+  suffix: PENTHOUSE] [Wall, Decorative Only
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: WallMount
+    arc: 0
+  - type: Sprite
+    drawdepth: WallMountedItems
+    noRot: true
+    sprite: _SHA/Structures/Machines/VendingMachines/mantiswallpenthouse.rsi
+  - type: PointLight # As bright as a candle
+    radius: 2.4
+    energy: 2.4
+    softness: 1.22
+    color: "#FF9833"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1875,-0.28125,0.15625,0.25"
+        hard: false
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 500
+  - type: BlockMovement
+
+# Mansus Fire Items
+
+- type: entity
+  parent: CandleSomberPenthouse
+  id: CandleSomberSanctum
+  name: candle
+  suffix: SANCTUM] [Light After Mapping
+  description: "A candle. That's all."
+  components:
+    - type: Sprite
+      sprite: _SHA/Objects/Misc/candlessanctum.rsi
+    - type: Item
+      sprite: _SHA/Objects/Misc/candlessanctum.rsi
+    - type: FireVisuals
+      sprite: _SHA/Objects/Misc/candlessanctum.rsi
+      normalState: fire-big
+      lightColor: "#00684E" # Mansus grasp color
+
+- type: entity
+  parent: CandleSomberSanctum
+  id: CandleSomberSanctumSmall
+  name: candle (small)
+  suffix: SANCTUM] [Light After Mapping
+  description: "A small candle. That's all."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-small
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-small
+
+- type: entity
+  parent: CandleSomberSanctum
+  id: CandleSomberSanctumCluster
+  name: candle (cluster)
+  suffix: SANCTUM] [Light After Mapping
+  description: "A cluster of candles. Not a birthday cake."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-cluster
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-cluster
+
+- type: entity
+  parent: CandleSomberSanctum
+  id: CandleSomberSanctumTiny
+  name: candle (tea light)
+  suffix: SANCTUM] [Light After Mapping
+  description: "A tea light. Light enough to float on water."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-tiny
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-tiny
+
+- type: entity
+  parent: SomberFireplacePenthouse
+  id: SomberFireplaceSanctum
+  suffix: SANCTUM] [Click After Mapping
+  description: "An avant-garde fireplace shaped like an eye."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/somberfireplacesanctum.rsi
+  - type: PointLight
+    enabled: false
+    radius: 5
+    energy: 7
+    softness: 1.22
+    color: "#00684E" # Mansus grasp color
+
+- type: entity
+  parent: SomberHangingBrazierPenthouse
+  id: SomberHangingBrazierSanctum
+  suffix: SANCTUM] [Click After Mapping
+  description: "An electrum brazier."
+  placement:
+    mode: WallmountLight
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/somberhangingbraziersanctum.rsi
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 5
+    softness: 1.22
+    color: "#00684E" # Mansus grasp color
+
+- type: entity
+  parent: SomberTableFirePenthouse
+  id: SomberTableFireSanctum
+  suffix: Fire Table] [SANCTUM] [Click After Mapping
+  description: "An expensive fire table made of gloomy, patterned wood. Mind your hands."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Tables/Somber/somberwoodtablefiresanctum.rsi
+    layers:
+      - state: full
+      - state: fire
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: Icon
+    sprite: _SHA/Structures/Furniture/Tables/Somber/somberwoodtablefiresanctum.rsi
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 5
+    softness: 1.22
+    color: "#00684E" # Mansus grasp color
+
+- type: entity
+  parent: VendingMachineSomberMantis
+  id: VendingMachineSomberMantisSanctum
+  name: reliquary conduit
+  suffix: SANCTUM
+  description: "An occult-machine interface that reacts to thought alone."
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _SHA/Structures/Machines/VendingMachines/mantissanctum.rsi
+  - type: PointLight # As bright as a candle
+    radius: 2.4
+    energy: 2.4
+    softness: 1.22
+    color: "#00684E" # Mansus grasp color
+    mask: null
+  - type: ThermalVision # Weird psionic senses
+    pulseTime: 0 # Toggled, not timed
+    lightRadius: 7
+    color: "#00684E" # Mansus grasp color
+    activateSound:
+      path: /Audio/Effects/eye_open.ogg
+      params:
+        volume: -3
+        variation: 0.075
+    deactivateSound:
+      path: /Audio/Effects/eye_close.ogg
+      params:
+        volume: -3
+        variation: 0.075
+
+- type: entity
+  parent: VendingMachineSomberMantisSanctum
+  id: VendingMachineSomberMantisWallSanctum
+  suffix: SANCTUM] [Wall, Decorative Only
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: WallMount
+    arc: 0
+  - type: Sprite
+    drawdepth: WallMountedItems
+    noRot: true
+    sprite: _SHA/Structures/Machines/VendingMachines/mantiswallsanctum.rsi
+  - type: PointLight # As bright as a candle
+    radius: 2.4
+    energy: 2.4
+    softness: 1.22
+    color: "#00684E" # Mansus grasp color
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1875,-0.28125,0.15625,0.25"
+        hard: false
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 500
+  - type: BlockMovement
+
+- type: entity
+  parent: [BaseStructure, BaseObjectVerbsStructure]
+  id: AltarSomberSanctum
+  name: mnemolith altar
+  suffix: SANCTUM
+  description: "A broad, dark mnemolith altar, its basins slowly welling with a draught distilled from the stone itself. The surface is etched with a rare example of psychomantic script, legible to anyone who looks upon it: \"IN STILLNESS, ALL RETURNS.\""
+  components:
+  - type: Anchorable
+  - type: Transform
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Altars/Cults/sombersanctum.rsi
+    layers:
+      - state: altar
+      - state: fill-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: candles
+        shader: unshaded
+      - state: glow
+        shader: unshaded
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Altars/Cults/somber.rsi
+    state: altar
+  - type: SolutionContainerManager
+    solutions:
+      fountain:
+        maxVol: 120 # Enough mnemolith to get two people into the deepest level of dosing
+        reagents:
+        - ReagentId: MnemolithReagent
+          Quantity: 120
+  - type: SolutionRegeneration # The only infinite source of mnemolith
+    solution: fountain
+    generated:
+      reagents:
+      - ReagentId: MnemolithReagent
+        Quantity: 4.0 # Takes five seconds to refill
+  - type: Drink
+    solution: fountain
+    transferAmount: 5
+  - type: DrawableSolution
+    solution: fountain
+  - type: DrainableSolution
+    solution: fountain
+  - type: ExaminableSolution
+    solution: fountain
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: fill-
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak # Mnemolith is glassy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialMnemolith1:
+            min: 30 # It's a massive slab of stone
+            max: 30 # If you take the time to break it, you deserve it
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PlaceableSurface
+  - type: Climbable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.95,-0.35,0.95,0.35"
+        density: 2000
+        mask:
+        - TableMask
+        - LowImpassable
+        layer:
+        - TableLayer
+  - type: Clickable
+  - type: SacrificialAltar
+  - type: Strap
+    position: Down
+    rotation: -90
+  - type: HealOnBuckle # Slowly heals holy damage at the cost of slash damage
+    damage:
+      types:
+        Slash: 0.5
+        Holy: -0.25
+  - type: EtherealLight # Dims around ethereal entities
+  - type: PointLight
+    radius: 3.5
+    energy: 5
+    softness: 1.22
+    color: "#00684E" # Mansus grasp color
+    autoRot: true
+    mask: /Textures/_DEN/Effects/LightMasks/double_circle.png
+  - type: AmbientSound
+    range: 5
+    volume: -8
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg # So ominous it needs a quiet rumble
+  - type: StealTarget
+    stealGroup: AltarNanotrasen
+
+# Sanctum Fountains# Round Fountains
+
+- type: entity
+  parent: BaseStructure
+  id: FountainSomberSanctum
+  name: somber fountain
+  description: "A carved mnemolith basin crowned with electrum spouts, spilling streams of water into drains set into the floor below."
+  suffix: Floor, Basin] [SANCTUM
+  components:
+  - type: Sprite
+    offset: "0.0,-0.5"
+    snapCardinals: false
+    noRot: true
+    drawdepth: Mobs
+    sprite: _DEN/Structures/Decoration/somberfountains-96x.rsi
+    layers:
+    - state: fountain
+    - state: fountainwater
+    - state: fountainwatershine
+      shader: unshaded
+    - state: fountainstreams
+    - state: fountainstreamshine
+      shader: unshaded
+  - type: SolutionContainerManager
+    solutions:
+      fountain:
+        maxVol: 100
+  - type: SolutionRegeneration
+    solution: fountain
+    generated:
+      reagents:
+      - ReagentId: Water
+        Quantity: 100
+  - type: Drink
+    solution: fountain
+  - type: DrawableSolution
+    solution: fountain
+  - type: DrainableSolution
+    solution: fountain
+  - type: ExaminableSolution
+    solution: fountain
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.875
+          offset: "0.0,0.05"
+        density: 1000
+        layer:
+        - WallLayer
+
+- type: entity
+  parent: FountainSomber
+  id: FountainSomberRingHalfSanctum
+  name: somber fountain
+  description: "A carved mnemolith ring crowned with electrum spouts, spilling streams of water into drains set into the floor below."
+  suffix: Wall] [SANCTUM
+  components:
+  - type: Sprite
+    offset: "0.0,0.0"
+    snapCardinals: false
+    noRot: false
+    layers:
+    - state: halfringfountain
+    - state: halfringstreams
+    - state: halfringstreamshine
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.75,0.45,0.75,1.5"
+        hard: false
+        density: 1000
+        layer:
+        - WallLayer
+
+- type: entity
+  parent: FountainSomberRingHalf
+  id: FountainSomberRingQuarterSanctum
+  name: somber fountain
+  description: "A carved mnemolith ring crowned with electrum spouts, spilling streams of water into drains set into the floor below."
+  suffix: Corner] [SANCTUM
+  components:
+  - type: Sprite
+    layers:
+    - state: quarterringfountain
+    - state: quarterringstreams
+    - state: quarterringstreamshine
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.55,0.45,1.5,1.5"
+        hard: false
+        density: 1000
+        layer:
+        - WallLayer
+
 
 # Misc
 
@@ -1273,31 +1760,33 @@
   - type: Fiber
     fiberColor: fibers-magenta
 
-# Tables
+- type: entity
+  parent: CigPackMnemolith
+  id: CigPackMnemolithLighter
+  suffix: PENTHOUSE
+  components:
+  - type: Storage
+    grid:
+    - 0,0,9,1
+  - type: StorageFill
+    contents:
+    - id: FlippoLighterMantis
+    - id: CigaretteMnemolith
+      amount: 19
 
 - type: entity
-  parent: SomberTableFire
-  id: SomberTableFirePenthouse
-  name: somber table
-  suffix: Fire Table] [PENTHOUSE
-  description: "An expensive fire table made of gloomy, patterned wood. Mind your hands."
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Furniture/Tables/Somber/somberwoodtablefirepenthouse.rsi
-    layers:
-      - state: full
-      - state: fire
-        shader: unshaded
-        visible: false
-        map: ["light"]
-  - type: Icon
-    sprite: _SHA/Structures/Furniture/Tables/Somber/somberwoodtablefirepenthouse.rsi
-  - type: PointLight
-    enabled: false
-    radius: 4
-    energy: 5
-    softness: 1.22
-    color: "#FF9833"
+  parent: PlushieDollHair
+  id: PlushieDollHairPenthouse
+  name: Tatter
+  suffix: PENTHOUSE
+  description: "A cute amigurumi doll. You swear she moves when you're not looking."
+
+- type: entity
+  parent: PersonalAI
+  id: PersonalAISomber
+  name: Tatter's soul
+  suffix: PENTHOUSE, MAP IN TATTER
+  description: "This doesn't exist. You're hallucinating. The doll is possessed - that part's real."
 
 # Huge Bed
 
@@ -1665,6 +2154,11 @@
       params:
         volume: -4
         pitch: 1.5
+  - type: PointLight
+    radius: 2.4
+    energy: 2.4
+    softness: 1.22
+    color: "#00684E" # Mansus grasp color
 
 - type: entity
   parent: [ BaseHereticContraband, BaseItem ]
@@ -1704,6 +2198,11 @@
       params:
         volume: -6
         variation: 0.15
+    soundSwing:
+      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg
+      params:
+        volume: -3
+        variation: 0.15
     animation: WeaponArcPunch
     wideAnimation: WeaponArcSmash
   - type: MeleeThrowOnHit
@@ -1725,6 +2224,11 @@
   - type: Unremoveable
     deleteOnDrop: true
   - type: DeleteOnDrop
+  - type: PointLight
+    radius: 2.4
+    energy: 2.4
+    softness: 1.22
+    color: "#00684E" # Mansus grasp color
 
 - type: entity
   parent: MantisRangedShotgun
@@ -1973,3 +2477,107 @@
   - type: Anchorable
     delay: 1
     snap: false
+
+# Books
+
+- type: entity
+  parent: BaseItem
+  id: EldritchTome
+  name: eldritch tome
+  description: "A strange book with some kind of ritualistic rune emblazoned on the front. The text seems to rewrite itself whenever you look away."
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/eldritch_book.rsi
+    layers:
+    - state: eldritch-book-base1
+      map : [ "cover" ]
+    - state: eldritch-book-icon1
+      map : [ "icon" ]
+  - type: RandomSprite
+    available:
+      - cover:
+          eldritch-book-base1: ""
+          eldritch-book-base2: ""
+          eldritch-book-base3: ""
+          eldritch-book-base4: ""
+          eldritch-book-base5: ""
+          eldritch-book-base6: ""
+          eldritch-book-base7: ""
+          eldritch-book-base8: ""
+        icon:
+          eldritch-book-icon1: ""
+          eldritch-book-icon2: ""
+          eldritch-book-icon3: ""
+          eldritch-book-icon4: ""
+          eldritch-book-icon5: ""
+          eldritch-book-icon6: ""
+  - type: PointLight
+    radius: 1.5
+    energy: 0.5
+    color: "#00684E" # Mansus grasp color
+  - type: Tag
+    tags:
+      - Book
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/book_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+
+- type: entity
+  parent: BookshelfSomberFilled
+  id: BookshelfSomberSanctumFilled
+  name: somber bookshelf
+  suffix: SANCTUM ONLY
+  description: "A gloomy bookshelf sagging beneath volumes that should not exist. Their spines are cracked, titles faded, and the air around them feels wrong when you linger too long."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/somberbookshelfsanctum.rsi
+  - type: StorageFill
+    contents:
+      - id: EldritchTome
+        prob: 0.6
+        amount: 10
+        maxAmount: 20
+
+# Break's Belt (Extra Storage)
+
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltWaistPenthouse
+  name: skirt band
+  suffix: PENTHOUSE, DO NOT MAP
+  description: "Technically the band of a high-waisted skirt, though it seems like you've ripped it off. You animal."
+  components:
+  - type: Sprite
+    sprite: _SHA/Clothing/Belt/waist.rsi
+    state: icon
+  - type: Clothing
+    sprite: _SHA/Clothing/Belt/waist.rsi
+    renderLayer: innerBelt
+  - type: Item
+    size: Small
+  - type: Storage
+    maxItemSize: Ginormous
+    grid:
+    - 0,0,20,9
+  - type: StorageFill
+    contents:
+    - id: MantisMeleeSickle
+    - id: MantisMeleeKnife
+    - id: MantisTailorsKnife
+    - id: ClothingNeckMantisPendulum
+    - id: BoxFolderMantis
+    - id: CigPackMnemolithLighter
+      amount: 2
+    - id:
+    - id: ClothingHeadCageMantisPenthouse
+      amount: 1
+    - id: HandcuffsMantisPenthouse
+      amount: 4
+    - id: ClothingNeckMantisShacklesPenthouse
+      amount: 4
+    - id: WrenchMantis
+    - id: LeashMantisPenthouse
+      amount: 4
