@@ -13,8 +13,9 @@
 // SPDX-FileCopyrightText: 2025 oberonics
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 Dirius77
 //
-// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
 using Content.Server.Administration.Logs;
