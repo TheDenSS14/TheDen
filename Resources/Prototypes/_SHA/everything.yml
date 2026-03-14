@@ -2178,7 +2178,7 @@
   description: "Made from her flesh.                                                                                                    The sight of it stings the eye.                                                                                                    Look away. Look away."
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+    sprite: _SHA/Heretic/break_icons.rsi
     layers:
     - state: icon
     - state: icon-unshaded
@@ -2186,7 +2186,7 @@
   - type: Item
     size: Normal
     storedSprite: null
-    sprite: _SHA/Heretic/Blades/blade_flesh_break-inhands-64x.rsi
+    sprite: _SHA/Heretic/break_inhands.rsi
     inhandVisuals:
       left:
       - state: inhand-left-grasp
@@ -2251,14 +2251,14 @@
   description: "The hand wreathed in sickly green flames.                                                                                                    The sight of it stings the eye.                                                                                                    Look away. Look away."
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+    sprite: _SHA/Heretic/break_icons.rsi
     layers:
     - state: icon-grasp
       shader: unshaded
   - type: Item
     size: Small
     storedSprite: null
-    sprite: _SHA/Heretic/Blades/blade_flesh_break-inhands-64x.rsi
+    sprite: _SHA/Heretic/break_inhands.rsi
     inhandVisuals:
       left:
       - state: inhand-left-grasp
@@ -2326,7 +2326,7 @@
   description: "NO NO NO NO."
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+    sprite: _SHA/Heretic/break_icons.rsi
     layers:
     - state: icon-grasp-both
       shader: unshaded
@@ -2375,7 +2375,7 @@
   description: "Oh lord."
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+    sprite: _SHA/Heretic/break_icons.rsi
     layers:
     - state: icon-silhouette
     - state: icon-silhouette-eyes
@@ -2383,7 +2383,7 @@
   - type: Item
     size: Small
     storedSprite: null
-    sprite: _SHA/Heretic/Blades/blade_flesh_break-inhands-64x.rsi
+    sprite: _SHA/Heretic/break_inhands.rsi
     inhandVisuals:
       left:
       - state: inhand-both-silhouette
@@ -2452,14 +2452,14 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+    sprite: _SHA/Heretic/break_icons.rsi
     state: icon-grasp
   - type: InstantAction
     itemIconStyle: BigAction
     charges: 1000
     temporary: false
     icon:
-      sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+      sprite: _SHA/Heretic/break_icons.rsi
       state: icon-grasp
     event: !type:SummonEquipmentEvent
       prototypes:
@@ -2516,14 +2516,14 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+    sprite: _SHA/Heretic/break_icons.rsi
     state: icon
   - type: InstantAction
     itemIconStyle: BigAction
     charges: 1000
     temporary: false
     icon:
-      sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+      sprite: _SHA/Heretic/break_icons.rsi
       state: icon
     event: !type:SummonEquipmentEvent
       prototypes:
@@ -2538,14 +2538,14 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+    sprite: _SHA/Heretic/break_icons.rsi
     state: icon-grasp-both
   - type: InstantAction
     itemIconStyle: BigAction
     charges: 1000
     temporary: false
     icon:
-      sprite: _SHA/Heretic/Blades/blade_flesh_break.rsi
+      sprite: _SHA/Heretic/break_icons.rsi
       state: icon-grasp-both
     event: !type:SummonEquipmentEvent
       prototypes:

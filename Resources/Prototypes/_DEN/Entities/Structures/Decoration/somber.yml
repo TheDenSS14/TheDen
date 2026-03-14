@@ -183,7 +183,7 @@
     offset: "0.0,1.0"
     drawdepth: Mobs # Just don't put them against doors
     sprite: _DEN/Structures/Decoration/somberpillar.rsi
-    state: pillar
+    state: pillartall
   - type: Fixtures
     fixtures:
       fix1:
@@ -200,10 +200,10 @@
   suffix: Taller
   components:
   - type: Sprite
-    state: pillartall
+    state: pillartaller
 
 - type: entity
-  parent: SomberPillar
+  parent: SomberPillarTall
   id: SomberPillarStoneTaller
   name: raw mnemolith column
   suffix: Taller
