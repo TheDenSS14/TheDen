@@ -1,6 +1,6 @@
 using System.Numerics;
 using Content.Server.Power.Components;
-using Content.Shared.DeviceNetwork.Components;
+using Content.Server.DeviceNetwork.Components;
 using Content.Shared.SurveillanceCamera.Components;
 
 namespace Content.Server.SurveillanceCamera;
