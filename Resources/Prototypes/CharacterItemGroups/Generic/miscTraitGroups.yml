@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Selva
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Dirius77
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -40,6 +41,12 @@
       id: ArachneSounds
     - type: trait
       id: VoxSounds
+    - type: trait
+      id: SlimeSounds
+    - type: trait
+      id: DionaSounds
+    - type: trait
+      id: HumanSounds
 
 - type: characterItemGroup
   id: TraitsReplaceRaceSounds
@@ -75,4 +82,10 @@
       id: ArachneSoundsReplace
     - type: trait
       id: VoxSoundsReplace
+    - type: trait
+      id: SlimeSoundsReplace
+    - type: trait
+      id: DionaSoundsReplace
+    - type: trait
+      id: HumanSoundsReplace
 
