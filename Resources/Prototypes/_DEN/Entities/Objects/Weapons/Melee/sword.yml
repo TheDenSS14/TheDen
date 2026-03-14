@@ -118,6 +118,7 @@
       types:
         Slash: 28 # 18.66 DPS (same as CaptainSabre), or 23.33 DPS against psions (but if you miss, it hits you hard)
         Holy: 20 # 40 total DPS against psionic supernaturals (no way are you landing every left click on a simplemob)
+        Structural: 30 # 20 structural DPS (but it'll only hurt psionic objects since it can't be thrown)
     soundHit:
       path: /Audio/_DEN/Weapons/Melee/fausthit.ogg
       params:

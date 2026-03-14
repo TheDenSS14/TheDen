@@ -106,15 +106,12 @@
     base: window
 
 - type: entity
-  parent: ReinforcedUraniumWindowDiagonal
+  parent: [ ReinforcedUraniumWindowDiagonal, BasePsionic ]
   id: WindowSomberUraniumDiagonal
   name: shielded somber window
   suffix: Diagonal, Radiation Shielding
   description: "Built with occult-treated uranium shielding to keep you safe from radiation. Ignore the whispering."
   components:
-  - type: Psionic # Things made of mnemolith or eidolite, or with weird descriptions, are naturally noospheric
-    removable: false # But generally only damageable things should have this so Faust can hit them
-    roller: false # Items parented to BaseAntiPsionic anything are already psionic
   - type: Sprite
     sprite: _DEN/Structures/Windows/Somber/somber_shielded_diagonal.rsi
   - type: Icon
