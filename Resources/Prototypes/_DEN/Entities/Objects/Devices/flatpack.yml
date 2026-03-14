@@ -1,0 +1,8 @@
+- type: entity
+  parent: BaseFlatpack
+  id: ComputerCrewMonitoringFlatpack
+  name: crew monitor computer flatpack
+  description: A flatpack used for constructing a crew monitor.
+  components:
+  - type: Flatpack
+    entity: ComputerCrewMonitoring
