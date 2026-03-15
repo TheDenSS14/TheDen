@@ -10,25 +10,10 @@
   supportedMaps: HomeMapPool
   rules: []
 
-- type: gamePreset
-  id: BreakSanctum
-  alias:
-  - breaksanctum
-  - sanctum
-  name: breaksanctum-title
-  description: breaksanctum-description
-  supportedMaps: SanctumMapPool
-  rules: []
-
 # Game Map Pools
 
 - type: gameMapPool
   id: HomeMapPool
-  maps:
-  - Infinity # TODO
-
-- type: gameMapPool
-  id: HideoutMapPool
   maps:
   - Infinity # TODO
 
@@ -355,7 +340,7 @@
 # Walls
 
 - type: entity
-  parent: BaseStructure
+  parent: [ BaseStructure, BasePsionic ] # Just in case
   id: RailingInvisible
   name: ledge
   description: "You're an idiot. You'll fall. Get back."
@@ -439,7 +424,7 @@
     enabled: false
 
 - type: entity
-  parent: WallMining
+  parent: [ WallMining, BasePsionic ]
   id: WallMiningPenthouse
   name: elevator wall
   description: "A sturdy wall with space for the elevator."
@@ -451,7 +436,7 @@
     sprite: _SHA/Structures/Walls/elevator.rsi
 
 - type: entity
-  parent: WallMining
+  parent: [ WallMining, BasePsionic ]
   id: WallMiningPenthouseLeft
   name: elevator wall
   description: "A sturdy wall with space for the elevator."
@@ -525,7 +510,7 @@
     buckleOffset: "-0.015625,0.0" # Center her
 
 - type: entity
-  parent: BigBedUpperFancy1
+  parent: [ BigBedUpperFancy1, BasePsionic ]
   id: SomberPsychBedLong
   name: somber leather chaise lounge
   description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it."
@@ -630,7 +615,7 @@
     noRot: false
 
 - type: entity
-  parent: BigBedUpperFancy1
+  parent: [ BigBedUpperFancy1, BasePsionic ]
   id: BenchSofaSomberFootrestRight
   name: somber leather footrest
   suffix: Right] [PENTHOUSE
@@ -647,7 +632,7 @@
     buckleOffset: "0.35,0.64"
 
 - type: entity
-  parent: BigBedUpperFancy1
+  parent: [ BigBedUpperFancy1, BasePsionic ]
   id: BenchSofaSomberFootrestMiddle
   name: somber leather footrest
   suffix: Middle] [PENTHOUSE
@@ -664,7 +649,7 @@
     buckleOffset: "0.35,-0.06"
 
 - type: entity
-  parent: BigBedUpperFancy1
+  parent: [ BigBedUpperFancy1, BasePsionic ]
   id: BenchSofaSomberFootrestLeft
   name: somber leather footrest
   suffix: Left] [PENTHOUSE
@@ -683,7 +668,7 @@
 # Small fancy beds
 
 - type: entity
-  parent: BaseStructure
+  parent: [ BaseStructure, BasePsionic ]
   id: BedPenthouseSmall
   name: penthouse bed
   description: "A plush bed draped in silky sheets."
@@ -938,7 +923,7 @@
     airBlocked: false
 
 - type: entity
-  parent: AirlockMining
+  parent: [ AirlockMining, BasePsionic ]
   id: AirlockMiningPenthouse
   name: elevator door
   description: "Two-sided doors that link with those of the residence."
@@ -950,7 +935,7 @@
     airBlocked: false
 
 - type: entity
-  parent: AirlockMining
+  parent: [ AirlockMining, BasePsionic ]
   id: AirlockMiningPenthouseLeft
   name: elevator utility door # For the little cryopod closet
   description: "Two-sided doors that link with those of maintenance levels."
@@ -962,7 +947,7 @@
     airBlocked: false
 
 - type: entity
-  parent: AirlockMining
+  parent: [ AirlockMining, BasePsionic ]
   id: AirlockMiningPenthouseAir
   name: elevator utility door # For the little cryopod closet
   description: "Two-sided doors that link with those of maintenance levels."
@@ -980,6 +965,8 @@
   components:
   - type: Sprite
     sprite: _DEN/Structures/Doors/Windoors/somber.rsi
+  - type: Airtight
+    airBlocked: false
 
 - type: entity
   parent: GloomyWindoorSecureDark
@@ -988,6 +975,8 @@
   components:
   - type: Sprite
     sprite: _DEN/Structures/Doors/Windoors/somberdark.rsi
+  - type: Airtight
+    airBlocked: false
 
 - type: entity
   parent: GloomyWindoorSecureTinted
@@ -1000,6 +989,8 @@
     sprite: _DEN/Structures/Doors/Windoors/somber.rsi
   - type: Occluder
     boundingBox: "-0.5,-0.5,0.5,-0.3"
+  - type: Airtight
+    airBlocked: false
 
 - type: entity
   parent: GloomyWindoorSecureTintedDark
@@ -1008,6 +999,8 @@
   components:
   - type: Sprite
     sprite: _DEN/Structures/Doors/Windoors/somberdark.rsi
+  - type: Airtight
+    airBlocked: false
 
 - type: entity
   parent: GloomyWindoorSecureTintedMantisLocked
@@ -1019,6 +1012,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMantis ]
+  - type: Airtight
+    airBlocked: false
 
 - type: entity
   parent: GloomyWindoorSecureTintedMantisDarkLocked
@@ -1030,6 +1025,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMantis ]
+  - type: Airtight
+    airBlocked: false
 
 # Stairs
 
@@ -1521,7 +1518,7 @@
   - type: BlockMovement
 
 - type: entity
-  parent: [BaseStructure, BaseObjectVerbsStructure]
+  parent: [BaseStructure, BaseObjectVerbsStructure, BasePsionic ]
   id: AltarSomberSanctum
   name: mnemolith altar
   suffix: SANCTUM, Map With Amphorae
@@ -1723,7 +1720,7 @@
   components:
   - type: ItemCabinet
     cabinetSlot:
-      startingItem: MantisMeleeGreatsword
+      startingItem: MantisMeleeGreatswordBreak
       ejectOnInteract: true
       ejectOnBreak: true
       swap: false
@@ -1794,10 +1791,10 @@
   - type: Sprite
     sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbraziersanctumpillartaller.rsi
 
-# Sanctum Fountains# Round Fountains
+# Sanctum Fountains
 
 - type: entity
-  parent: BaseStructure
+  parent: [ BaseStructure, BasePsionic ]
   id: FountainSomberSanctum
   name: somber fountain
   description: "A carved mnemolith basin crowned with electrum spouts, spilling streams of water into drains set into the floor below."
@@ -1847,7 +1844,7 @@
         - WallLayer
 
 - type: entity
-  parent: FountainSomber
+  parent: FountainSomberSanctum
   id: FountainSomberRingHalfSanctum
   name: somber fountain
   description: "A carved mnemolith ring crowned with electrum spouts, spilling streams of water into drains set into the floor below."
@@ -1874,7 +1871,7 @@
         - WallLayer
 
 - type: entity
-  parent: FountainSomberRingHalf
+  parent: FountainSomberRingHalfSanctum
   id: FountainSomberRingQuarterSanctum
   name: somber fountain
   description: "A carved mnemolith ring crowned with electrum spouts, spilling streams of water into drains set into the floor below."
@@ -1897,11 +1894,46 @@
         layer:
         - WallLayer
 
+# Meditation Chamber Altar
+
+- type: entity
+  parent: AltarSomber
+  id: AltarSomberFaustPenthouse
+  suffix: Faust, Filled] [MAP CAREFULLY
+  components:
+  - type: ItemCabinet
+    cabinetSlot:
+      startingItem: MantisMeleeGreatswordBreak
+      ejectOnInteract: true # For some reason I have to specify all of this again for it to work
+      ejectOnBreak: true
+      swap: false
+      insertVerbText: faust-insert-verb
+      ejectVerbText: faust-eject-verb
+      insertSuccessPopup: faust-insert-success
+      insertSound:
+        path: /Audio/_DEN/Weapons/Melee/faustsheath.ogg
+        params:
+          volume: -2
+          variation: 0.05
+      ejectSound:
+        path: /Audio/_DEN/Weapons/Melee/faustunsheath.ogg
+        params:
+          volume: -2
+          variation: 0.05
+      whitelist:
+        tags:
+        - MantisGreatsword
+    doorSound:
+      path: /Audio/Items/Handling/cloth_drop.ogg
+      params:
+        variation: 0.025
+    openState: cover-off
+    closedState: cover
 
 # Misc
 
 - type: entity
-  parent: BaseStructure
+  parent: [ BaseStructure, BasePsionic ]
   id: SomberNazarInlaid
   name: nazar (inlaid)
   suffix: PENTHOUSE] [Produces Chapel Ambience
@@ -1982,7 +2014,7 @@
       amount: 19
 
 - type: entity
-  parent: PlushieDollHair
+  parent: [ PlushieDollHair, BasePsionic ]
   id: PlushieDollHairPenthouse
   name: Tatter
   suffix: PENTHOUSE
@@ -1998,7 +2030,7 @@
 # Huge Bed
 
 - type: entity
-  parent: BaseStructure
+  parent: [ BaseStructure, BasePsionic ]
   id: PenthouseBreakBedLower
   name: Break's bed
   suffix: Lower] [PENTHOUSE
@@ -2083,7 +2115,7 @@
 # Paintings
 
 - type: entity
-  parent: PaintingBase
+  parent: [ PaintingBase, BasePsionic ]
   id: PaintingBasePenthouse
   name: Painting
   description: "An original work framed in patterned electrum."
@@ -2244,7 +2276,7 @@
 - type: entity
   parent: MantisMeleeGreatsword
   id: MantisMeleeGreatswordBreak
-  suffix: PENTHOUSE, FOR THE ALTAR
+  suffix: PENTHOUSE, DO NOT MAP
   description:
     "It sees you.                                                                                                    It does not know you.                                                                                                    It only answers to her."
   components:
@@ -2290,7 +2322,7 @@
     equippedPrefix: folded
 
 - type: entity
-  parent: [ BaseKnifeSpinnable, BaseHereticContraband, CombatKnife ]
+  parent: [ BaseKnifeSpinnable, BaseHereticContraband, BaseAntiPsionicWeapon ]
   id: HereticBladeFleshBreak
   name: bloody blade
   suffix: DO NOT MAP] [BREAK
@@ -2363,8 +2395,8 @@
     maxTargets: 10
     damage:
       types:
-        Slash: 15.55
-        Holy: 7.775
+        Slash: 15
+        Holy: 7.5
     soundHit:
       path: /Audio/_White/BloodCult/butcher.ogg
       params:
@@ -2395,7 +2427,7 @@
         pitch: 1.0
 
 - type: entity
-  parent: [ BaseHereticContraband, BaseItem ]
+  parent: [ BaseHereticContraband, BaseItem, BaseAntiPsionicWeapon ]
   id: HereticMansusGraspBreak
   name: mansus grasp
   suffix: DO NOT MAP] [BREAK
@@ -2425,8 +2457,8 @@
     maxTargets: 1
     damage:
       types:
-        Blunt: 10.37
-        Holy: 5.185
+        Blunt: 10
+        Holy: 5
     soundHit:
       path: /Audio/_SHA/repulse.ogg
       params:
@@ -2499,8 +2531,8 @@
     maxTargets: 10
     damage:
       types:
-        Blunt: 15.55
-        Holy: 7.775
+        Blunt: 10
+        Holy: 5
   - type: EmitSoundOnSpawn
     sound:
       path: /Audio/_SHA/ascend_flesh_voidblink.ogg
@@ -2552,30 +2584,30 @@
     deleteOnDrop: true
   - type: DeleteOnDrop
 
+# Guns
+
 - type: entity
-  parent: MantisRangedShotgun
-  id: MantisRangedShotgunLethal
+  parent: MantisRangedPistol
+  id: MantisRangedPistolLethal
+  name: OCC-P12-P "Kalliste"
+  suffix: PENTHOUSE
   components:
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MantisCasterShotgunLethal
-        insertSound: /Audio/Weapons/Guns/Misc/revolver_spin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        startingItem: MantisCasterPistolLethal
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         whitelist:
           tags:
-          - MantisCasterShotgun
-  - type: EmitSoundOnSpawn
-    sound:
-      path: /Audio/_White/BloodCult/veilin.ogg
-      params:
-        volume: 0
-        variation: 0.05
+          - MantisCasterPistol
 
 - type: entity
   parent: MantisRangedRevolver
   id: MantisRangedRevolverLethal
+  name: OCC-P06-P "Charon"
+  suffix: PENTHOUSE
   components:
   - type: ItemSlots
     slots:
@@ -2587,12 +2619,81 @@
         whitelist:
           tags:
           - MantisCasterRevolver
+
+- type: entity
+  parent: MantisRangedShotgun
+  id: MantisRangedShotgunLethal
+  name: OCC-S05-P "Empusa"
+  suffix: PENTHOUSE
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MantisCasterShotgunLethal
+        insertSound: /Audio/Weapons/Guns/Misc/revolver_spin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        whitelist:
+          tags:
+          - MantisCasterShotgun
+
+- type: entity
+  parent: MantisRangedSubMachineGun
+  id: MantisRangedSubMachineGunLethal
+  name: OCC-A24-P "Strix"
+  suffix: PENTHOUSE
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MantisCasterSubMachineGunLethal
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        whitelist:
+          tags:
+          - MantisCasterSubMachineGun
+
+- type: entity
+  parent: MantisRangedShotgunLethal
+  id: MantisRangedShotgunLethalSummoned
+  components:
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_White/BloodCult/veilin.ogg
+      params:
+        volume: 0
+        variation: 0.05
+
+- type: entity
+  parent: MantisRangedRevolverLethal
+  id: MantisRangedRevolverLethalSummoned
+  components:
   - type: EmitSoundOnSpawn
     sound:
       path: /Audio/_White/BloodCult/veilout.ogg
       params:
         volume: 0
         variation: 0.05
+
+- type: entity
+  parent: MantisRangedRevolverLethal
+  id: MantisRangedRevolverLethalBreak
+  suffix: PENTHOUSE, DO NOT MAP
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,1 # So it fits in her storage belt without rearranging things
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MantisCasterRevolverLethal
+        insertSound: /Audio/Weapons/Guns/Misc/revolver_spin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        whitelist:
+          tags:
+          - MantisCasterRevolver
 
 # Spells
 
@@ -2635,8 +2736,8 @@
       state: icon
     event: !type:SummonEquipmentEvent
       prototypes:
-        hand1: MantisRangedShotgunLethal
-        hand2: MantisRangedRevolverLethal
+        hand1: MantisRangedShotgunLethalSummoned
+        hand2: MantisRangedRevolverLethalSummoned
   - type: BaseCultSpell
 
 - type: entity
@@ -2908,20 +3009,155 @@
     - 0,0,20,9
   - type: StorageFill
     contents:
+    - id: MantisRangedRevolverLethal
     - id: MantisMeleeSickle
     - id: MantisMeleeKnife
     - id: MantisTailorsKnife
     - id: ClothingNeckMantisPendulum
     - id: BoxFolderMantis
+    - id: MantisCaseChemicalsBreak
     - id: CigPackMnemolithLighter
       amount: 2
-    - id:
     - id: ClothingHeadCageMantisPenthouse
       amount: 1
     - id: HandcuffsMantisPenthouse
-      amount: 4
+      amount: 3
     - id: ClothingNeckMantisShacklesPenthouse
-      amount: 4
+      amount: 3
     - id: WrenchMantis
     - id: LeashMantisPenthouse
       amount: 4
+
+# Chemicals
+
+- type: entity
+  parent: MantisCaseChemicals
+  id: MantisCaseChemicalsBreak
+  name: amaranth chemicals case
+  suffix: PENTHOUSE
+  description: "An amaranth case to carry chemicals. A watchful eye is carved into the top."
+  components:
+  - type: Storage
+    grid:
+    - 0,0,1,2 # 2x3
+    whitelist:
+      tags:
+        - Syringe
+        - Bottle
+        - PillCanister
+        - Pill
+        - MantisBoxChemicalsStorable
+  - type: StorageFill
+    contents:
+    - id: SyringeMantis
+    - id: ChemistryEmptyBottleMantis
+    - id: PillCanisterMnemolithMantis
+    - id: PillCanisterSpaceDrugsMantisBreak
+    - id: PillCanisterPsicodineMantisBreak
+    - id: PillCanisterPhilterexMantisBreak
+
+- type: entity
+  parent: PillCanisterSpaceDrugsMantis
+  id: PillCanisterSpaceDrugsMantisBreak
+  suffix: LSD, 10] [PENTHOUSE
+  description: "A potent psychedelic that may awaken psionic abilities in those with potential, coloquially called \"space drugs.\""
+  components:
+  - type: Label
+    currentLabel: LSD 15u
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Mantis/pillcanistermantis.rsi
+    layers:
+      - state: pill_canister
+      - state: pill_canister-spacedrugs
+  - type: StorageFill
+    contents:
+    - id: PillSpaceDrugs
+      amount: 10
+
+- type: entity
+  parent: PillCanisterMantis
+  id: PillCanisterPhilterexMantisBreak
+  suffix: Philterex, 10] [PENTHOUSE
+  description: "An alarmingly potent aphrodisiac. Extra strength. Only take one."
+  components:
+  - type: Label
+    currentLabel: philterex 30u
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Mantis/pillcanistermantis.rsi
+    layers:
+      - state: pill_canister
+      - state: pill_canister-philterex
+  - type: StorageFill
+    contents:
+    - id: PillPhilterexMantisBreak
+      amount: 10
+
+- type: entity
+  parent: PillCanisterMantis
+  id: PillCanisterPsicodineMantisBreak
+  suffix: Psicodine, 10] [PENTHOUSE
+  description: "To calm the nerves. Extra strength. Only take one."
+  components:
+  - type: Label
+    currentLabel: psicodine 15u
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Mantis/pillcanistermantis.rsi
+    layers:
+      - state: pill_canister
+      - state: pill_canister-psicodine
+  - type: StorageFill
+    contents:
+    - id: PillPsicodineMantisBreak
+      amount: 10
+
+- type: entity
+  parent: Pill
+  id: PillPhilterexMantisBreak
+  name: pill
+  suffix: Philterex 30u
+  description: "Extra strength. Only take one."
+  components:
+  - type: Label
+    currentLabel: philterex 30u
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Chemistry/pills.rsi
+    state: philterexpill
+  - type: Item
+    size: Tiny
+    sprite: _SHA/Objects/Specific/Chemistry/pills.rsi
+    heldPrefix: philterex
+  - type: Pill
+    state: philterexpill
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Philterex
+          Quantity: 30
+
+- type: entity
+  parent: Pill
+  id: PillPsicodineMantisBreak
+  name: pill
+  suffix: Psicodine 15u
+  description: "Extra strength. Only take one."
+  components:
+  - type: Label
+    currentLabel: psicodine 15u
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Chemistry/pills.rsi
+    state: psicodinepill
+  - type: Item
+    size: Tiny
+    sprite: _SHA/Objects/Specific/Chemistry/pills.rsi
+    heldPrefix: psicodine
+  - type: Pill
+    state: psicodinepill
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Psicodine
+          Quantity: 10

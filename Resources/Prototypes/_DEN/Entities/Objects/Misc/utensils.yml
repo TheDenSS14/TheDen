@@ -1,0 +1,33 @@
+- type: entity
+  parent: BarSpoon
+  id: BarSpoonSomber
+  name: electrum bar spoon
+  suffix: Somber
+  description: "A swept mixing spoon made of a natural alloy of gold and silver."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    state: electrumbarspoon
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    heldPrefix: electrumbarspoon
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: Skimmer # It's technically a chemistry item, but it only comes from VendingMachineBoozeSomber
+  id: SkimmerSomber
+  name: electrum skimmer
+  suffix: Somber
+  description: "An electrum skimmer. Used to skim."
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Specific/Chemistry/skimmer.rsi
+  - type: Item
+    sprite: _DV/Objects/Specific/Chemistry/skimmer.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10

@@ -11,7 +11,7 @@
 
 # Public, Standard
 - type: entity
-  parent: Airlock
+  parent: [ Airlock, BasePsionic ]
   id: GloomyAirlock
   name: gloomy airlock
   suffix: Public] [Somber
@@ -21,7 +21,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
 
 - type: entity
-  parent: AirlockGlass
+  parent: [ AirlockGlass, BasePsionic ]
   id: GloomyAirlockGlass
   name: gloomy glass airlock
   suffix: Public] [Somber
@@ -52,7 +52,7 @@
 
 # Mantis (Unlocked)
 - type: entity
-  parent: Airlock
+  parent: [ Airlock, BasePsionic ]
   id: GloomyAirlockMantis
   name: gloomy airlock
   suffix: Mantis-Unlocked] [Somber # Hopefully mappers can infer that the rest are called "gloomy" if they want them
@@ -62,7 +62,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermantis.rsi
 
 - type: entity
-  parent: Airlock
+  parent: [ Airlock, BasePsionic ]
   id: GloomyAirlockMantisDark
   name: gloomy airlock
   suffix: Mantis-Unlocked, Dark] [Somber
@@ -72,7 +72,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdarkmantis.rsi
 
 - type: entity
-  parent: AirlockGlass
+  parent: [ AirlockGlass, BasePsionic ]
   id: GloomyAirlockMantisGlass
   name: gloomy glass airlock
   suffix: Mantis-Unlocked] [Somber
@@ -82,7 +82,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermantis.rsi
 
 - type: entity
-  parent: AirlockGlass
+  parent: [ AirlockGlass, BasePsionic ]
   id: GloomyAirlockMantisGlassDark
   name: gloomy glass airlock
   suffix: Mantis-Unlocked, Dark] [Somber
@@ -93,7 +93,7 @@
 
 # Mantis (Locked)
 - type: entity
-  parent: AirlockMantisLocked
+  parent: [ AirlockMantisLocked, BasePsionic ]
   id: GloomyAirlockMantisLocked
   name: gloomy airlock
   suffix: Mantis, Locked] [Somber
@@ -105,7 +105,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermantis.rsi
 
 - type: entity
-  parent: AirlockMantisLocked
+  parent: [ AirlockMantisLocked, BasePsionic ]
   id: GloomyAirlockMantisDarkLocked
   name: gloomy airlock
   suffix: Mantis, Locked, Dark] [Somber
@@ -117,7 +117,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdarkmantis.rsi
 
 - type: entity
-  parent: AirlockMantisGlassLocked
+  parent: [ AirlockMantisGlassLocked, BasePsionic ]
   id: GloomyAirlockMantisGlassLocked
   name: gloomy glass airlock
   suffix: Mantis, Locked] [Somber
@@ -129,7 +129,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Glass/sombermantis.rsi
 
 - type: entity
-  parent: AirlockMantisGlassLocked
+  parent: [ AirlockMantisGlassLocked, BasePsionic ]
   id: GloomyAirlockMantisGlassDarkLocked
   name: gloomy glass airlock
   suffix: Mantis, Locked, Dark] [Somber
@@ -142,7 +142,7 @@
 
 # Mantis Maints (Locked)
 - type: entity
-  parent: AirlockMantisLocked
+  parent: [ AirlockMantisLocked, BasePsionic ]
   id: GloomyAirlockMaintMantisLocked
   name: gloomy maintenance access
   suffix: Mantis, Locked] [Somber
@@ -154,7 +154,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenancemantis.rsi
 
 - type: entity
-  parent: AirlockMantisGlassLocked
+  parent: [ AirlockMantisGlassLocked, BasePsionic ]
   id: GloomyAirlockMaintMantisGlassLocked
   name: gloomy maintenance access
   suffix: Mantis, Locked, Glass] [Somber
@@ -170,7 +170,7 @@
 
 # Logistics
 - type: entity
-  parent: AirlockCargoLocked
+  parent: [ AirlockCargoLocked, BasePsionic ]
   id: GloomyAirlockCargoLocked
   suffix: Logistics, Locked
   name: gloomy airlock
@@ -182,7 +182,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
 
 - type: entity
-  parent: AirlockCargoGlassLocked
+  parent: [ AirlockCargoGlassLocked, BasePsionic ]
   id: GloomyAirlockCargoGlassLocked
   suffix: Logistics, Locked
   name: gloomy glass airlock
@@ -195,7 +195,7 @@
 
 # Command
 - type: entity
-  parent: AirlockCommandLocked
+  parent: [ AirlockCommandLocked, BasePsionic ]
   id: GloomyAirlockCommandLocked
   suffix: Command, Locked
   name: gloomy airlock
@@ -207,7 +207,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
 
 - type: entity
-  parent: AirlockCommandGlassLocked
+  parent: [ AirlockCommandGlassLocked, BasePsionic ]
   id: GloomyAirlockCommandGlassLocked
   suffix: Command, Locked
   name: gloomy glass airlock
@@ -220,7 +220,7 @@
 
 # Engineering
 - type: entity
-  parent: AirlockEngineeringLocked
+  parent: [ AirlockEngineeringLocked, BasePsionic ]
   id: GloomyAirlockEngineeringLocked
   suffix: Engineering, Locked
   name: gloomy airlock
@@ -232,7 +232,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
 
 - type: entity
-  parent: AirlockEngineeringGlassLocked
+  parent: [ AirlockEngineeringGlassLocked, BasePsionic ]
   id: GloomyAirlockEngineeringGlassLocked
   suffix: Engineering, Locked
   name: gloomy glass airlock
@@ -245,7 +245,7 @@
 
 # Justice
 - type: entity
-  parent: AirlockJusticeLocked
+  parent: [ AirlockJusticeLocked, BasePsionic ]
   id: GloomyAirlockJusticeLocked
   suffix: Justice, Locked
   name: gloomy airlock
@@ -257,7 +257,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
 
 - type: entity
-  parent: AirlockJusticeGlassLocked
+  parent: [ AirlockJusticeGlassLocked, BasePsionic ]
   id: GloomyAirlockJusticeGlassLocked
   suffix: Justice, Locked
   name: gloomy glass airlock
@@ -270,7 +270,7 @@
 
 # Medical
 - type: entity
-  parent: AirlockMedicalLocked
+  parent: [ AirlockMedicalLocked, BasePsionic ]
   id: GloomyAirlockMedicalLocked
   suffix: Medical, Locked
   name: gloomy airlock
@@ -282,7 +282,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
 
 - type: entity
-  parent: AirlockMedicalGlassLocked
+  parent: [ AirlockMedicalGlassLocked, BasePsionic ]
   id: GloomyAirlockMedicalGlassLocked
   suffix: Medical, Locked
   name: gloomy glass airlock
@@ -295,7 +295,7 @@
 
 # Epistemics
 - type: entity
-  parent: AirlockScienceLocked
+  parent: [ AirlockScienceLocked, BasePsionic ]
   id: GloomyAirlockScienceLocked
   suffix: Epistemics, Locked
   name: gloomy airlock
@@ -307,7 +307,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
 
 - type: entity
-  parent: AirlockScienceGlassLocked
+  parent: [ AirlockScienceGlassLocked, BasePsionic ]
   id: GloomyAirlockScienceGlassLocked
   suffix: Epistemics, Locked
   name: gloomy glass airlock
@@ -320,7 +320,7 @@
 
 # Security
 - type: entity
-  parent: AirlockSecurityLocked
+  parent: [ AirlockSecurityLocked, BasePsionic ]
   id: GloomyAirlockSecurityLocked
   suffix: Security, Locked
   name: gloomy airlock
@@ -332,7 +332,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
 
 - type: entity
-  parent: AirlockSecurityGlassLocked
+  parent: [ AirlockSecurityGlassLocked, BasePsionic ]
   id: GloomyAirlockSecurityGlassLocked
   suffix: Security, Locked
   name: gloomy glass airlock
@@ -345,7 +345,7 @@
 
 # Armory
 - type: entity
-  parent: AirlockArmoryLocked
+  parent: [ AirlockArmoryLocked, BasePsionic ]
   id: GloomyAirlockArmoryLocked
   suffix: Armory, Locked
   name: gloomy airlock
@@ -357,7 +357,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
 
 - type: entity
-  parent: AirlockArmoryGlassLocked
+  parent: [ AirlockArmoryGlassLocked, BasePsionic ]
   id: GloomyAirlockArmoryGlassLocked
   suffix: Armory, Locked
   name: gloomy glass airlock
@@ -370,7 +370,7 @@
 
 # Service
 - type: entity
-  parent: AirlockServiceLocked
+  parent: [ AirlockServiceLocked, BasePsionic ]
   id: GloomyAirlockServiceLocked
   suffix: Service, Locked
   name: gloomy airlock
@@ -382,7 +382,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
 
 - type: entity
-  parent: AirlockServiceGlassLocked
+  parent: [ AirlockServiceGlassLocked, BasePsionic ]
   id: GloomyAirlockServiceGlassLocked
   suffix: Service, Locked
   name: gloomy glass airlock
@@ -395,7 +395,7 @@
 
 # Central Command
 - type: entity
-  parent: AirlockCentralCommandLocked
+  parent: [ AirlockCentralCommandLocked, BasePsionic ]
   id: GloomyAirlockCentralCommandLocked
   suffix: Central Command, Locked
   name: gloomy airlock
@@ -407,7 +407,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somber.rsi
 
 - type: entity
-  parent: AirlockCentralCommandGlassLocked
+  parent: [ AirlockCentralCommandGlassLocked, BasePsionic ]
   id: GloomyAirlockCentralCommandGlassLocked
   suffix: Central Command, Locked
   name: gloomy glass airlock
@@ -423,7 +423,7 @@
 
 # Logistics
 - type: entity
-  parent: AirlockCargoLocked
+  parent: [ AirlockCargoLocked, BasePsionic ]
   id: GloomyAirlockCargoDarkLocked
   suffix: Logistics, Locked, Dark
   name: gloomy airlock
@@ -435,7 +435,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
 
 - type: entity
-  parent: AirlockCargoGlassLocked
+  parent: [ AirlockCargoGlassLocked, BasePsionic ]
   id: GloomyAirlockCargoGlassDarkLocked
   suffix: Logistics, Locked, Dark
   name: gloomy glass airlock
@@ -448,7 +448,7 @@
 
 # Command
 - type: entity
-  parent: AirlockCommandLocked
+  parent: [ AirlockCommandLocked, BasePsionic ]
   id: GloomyAirlockCommandDarkLocked
   suffix: Command, Locked, Dark
   name: gloomy airlock
@@ -460,7 +460,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
 
 - type: entity
-  parent: AirlockCommandGlassLocked
+  parent: [ AirlockCommandGlassLocked, BasePsionic ]
   id: GloomyAirlockCommandGlassDarkLocked
   suffix: Command, Locked, Dark
   name: gloomy glass airlock
@@ -473,7 +473,7 @@
 
 # Engineering
 - type: entity
-  parent: AirlockEngineeringLocked
+  parent: [ AirlockEngineeringLocked, BasePsionic ]
   id: GloomyAirlockEngineeringDarkLocked
   suffix: Engineering, Locked, Dark
   name: gloomy airlock
@@ -485,7 +485,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
 
 - type: entity
-  parent: AirlockEngineeringGlassLocked
+  parent: [ AirlockEngineeringGlassLocked, BasePsionic ]
   id: GloomyAirlockEngineeringGlassDarkLocked
   suffix: Engineering, Locked, Dark
   name: gloomy glass airlock
@@ -498,7 +498,7 @@
 
 # Justice
 - type: entity
-  parent: AirlockJusticeLocked
+  parent: [ AirlockJusticeLocked, BasePsionic ]
   id: GloomyAirlockJusticeDarkLocked
   suffix: Justice, Locked, Dark
   name: gloomy airlock
@@ -510,7 +510,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
 
 - type: entity
-  parent: AirlockJusticeGlassLocked
+  parent: [ AirlockJusticeGlassLocked, BasePsionic ]
   id: GloomyAirlockJusticeGlassDarkLocked
   suffix: Justice, Locked, Dark
   name: gloomy glass airlock
@@ -523,7 +523,7 @@
 
 # Medical
 - type: entity
-  parent: AirlockMedicalLocked
+  parent: [ AirlockMedicalLocked, BasePsionic ]
   id: GloomyAirlockMedicalDarkLocked
   suffix: Medical, Locked, Dark
   name: gloomy airlock
@@ -535,7 +535,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
 
 - type: entity
-  parent: AirlockMedicalGlassLocked
+  parent: [ AirlockMedicalGlassLocked, BasePsionic ]
   id: GloomyAirlockMedicalGlassDarkLocked
   suffix: Medical, Locked, Dark
   name: gloomy glass airlock
@@ -548,7 +548,7 @@
 
 # Epistemics
 - type: entity
-  parent: AirlockScienceLocked
+  parent: [ AirlockScienceLocked, BasePsionic ]
   id: GloomyAirlockScienceDarkLocked
   suffix: Epistemics, Locked, Dark
   name: gloomy airlock
@@ -560,7 +560,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
 
 - type: entity
-  parent: AirlockScienceGlassLocked
+  parent: [ AirlockScienceGlassLocked, BasePsionic ]
   id: GloomyAirlockScienceGlassDarkLocked
   suffix: Epistemics, Locked, Dark
   name: gloomy glass airlock
@@ -573,7 +573,7 @@
 
 # Security
 - type: entity
-  parent: AirlockSecurityLocked
+  parent: [ AirlockSecurityLocked, BasePsionic ]
   id: GloomyAirlockSecurityDarkLocked
   suffix: Security, Locked, Dark
   name: gloomy airlock
@@ -585,7 +585,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
 
 - type: entity
-  parent: AirlockSecurityGlassLocked
+  parent: [ AirlockSecurityGlassLocked, BasePsionic ]
   id: GloomyAirlockSecurityGlassDarkLocked
   suffix: Security, Locked, Dark
   name: gloomy glass airlock
@@ -598,7 +598,7 @@
 
 # Armory
 - type: entity
-  parent: AirlockArmoryLocked
+  parent: [ AirlockArmoryLocked, BasePsionic ]
   id: GloomyAirlockArmoryDarkLocked
   suffix: Armory, Locked, Dark
   name: gloomy airlock
@@ -610,7 +610,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
 
 - type: entity
-  parent: AirlockArmoryGlassLocked
+  parent: [ AirlockArmoryGlassLocked, BasePsionic ]
   id: GloomyAirlockArmoryGlassDarkLocked
   suffix: Armory, Locked, Dark
   name: gloomy glass airlock
@@ -623,7 +623,7 @@
 
 # Service
 - type: entity
-  parent: AirlockServiceLocked
+  parent: [ AirlockServiceLocked, BasePsionic ]
   id: GloomyAirlockServiceDarkLocked
   suffix: Service, Locked, Dark
   name: gloomy airlock
@@ -635,7 +635,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
 
 - type: entity
-  parent: AirlockServiceGlassLocked
+  parent: [ AirlockServiceGlassLocked, BasePsionic ]
   id: GloomyAirlockServiceGlassDarkLocked
   suffix: Service, Locked, Dark
   name: gloomy glass airlock
@@ -648,7 +648,7 @@
 
 # Central Command
 - type: entity
-  parent: AirlockCentralCommandLocked
+  parent: [ AirlockCentralCommandLocked, BasePsionic ]
   id: GloomyAirlockCentralCommandDarkLocked
   suffix: Central Command, Locked, Dark
   name: gloomy airlock
@@ -660,7 +660,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/somberdark.rsi
 
 - type: entity
-  parent: AirlockCentralCommandGlassLocked
+  parent: [ AirlockCentralCommandGlassLocked, BasePsionic ]
   id: GloomyAirlockCentralCommandGlassDarkLocked
   suffix: Central Command, Locked, Dark
   name: gloomy glass airlock
@@ -676,7 +676,7 @@
 
 # Public Maints
 - type: entity
-  parent: AirlockMaintLocked
+  parent: [ AirlockMaintLocked, BasePsionic ]
   id: GloomyAirlockMaintLocked
   name: gloomy maintenance access
   suffix: Public, Locked
@@ -686,7 +686,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
 
 - type: entity
-  parent: AirlockMaintGlassLocked
+  parent: [ AirlockMaintGlassLocked, BasePsionic ]
   id: GloomyAirlockMaintGlassLocked
   suffix: Public, Glass, Locked
   name: gloomy maintenance access
@@ -697,7 +697,7 @@
 
 # Logistics Maints
 - type: entity
-  parent: AirlockCargoLocked
+  parent: [ AirlockCargoLocked, BasePsionic ]
   id: GloomyAirlockMaintCargoLocked
   suffix: Logistics, Locked
   name: gloomy maintenance access
@@ -709,7 +709,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
 
 - type: entity
-  parent: AirlockCargoGlassLocked
+  parent: [ AirlockCargoGlassLocked, BasePsionic ]
   id: GloomyAirlockMaintCargoGlassLocked
   suffix: Logistics, Locked, Glass
   name: gloomy maintenance access
@@ -722,7 +722,7 @@
 
 # Command Maints
 - type: entity
-  parent: AirlockCommandLocked
+  parent: [ AirlockCommandLocked, BasePsionic ]
   id: GloomyAirlockMaintCommandLocked
   suffix: Command, Locked
   name: gloomy maintenance access
@@ -734,7 +734,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
 
 - type: entity
-  parent: AirlockCommandGlassLocked
+  parent: [ AirlockCommandGlassLocked, BasePsionic ]
   id: GloomyAirlockMaintCommandGlassLocked
   suffix: Command, Locked, Glass
   name: gloomy maintenance access
@@ -747,7 +747,7 @@
 
 # Engineering Maints
 - type: entity
-  parent: AirlockEngineeringLocked
+  parent: [ AirlockEngineeringLocked, BasePsionic ]
   id: GloomyAirlockMaintEngineeringLocked
   suffix: Engineering, Locked
   name: gloomy maintenance access
@@ -759,7 +759,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
 
 - type: entity
-  parent: AirlockEngineeringGlassLocked
+  parent: [ AirlockEngineeringGlassLocked, BasePsionic ]
   id: GloomyAirlockMaintEngineeringGlassLocked
   suffix: Engineering, Locked, Glass
   name: gloomy maintenance access
@@ -772,7 +772,7 @@
 
 # Justice Maints
 - type: entity
-  parent: AirlockJusticeLocked
+  parent: [ AirlockJusticeLocked, BasePsionic ]
   id: GloomyAirlockMaintJusticeLocked
   suffix: Justice, Locked
   name: gloomy maintenance access
@@ -784,7 +784,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
 
 - type: entity
-  parent: AirlockJusticeGlassLocked
+  parent: [ AirlockJusticeGlassLocked, BasePsionic ]
   id: GloomyAirlockMaintJusticeGlassLocked
   suffix: Justice, Locked, Glass
   name: gloomy maintenance access
@@ -797,7 +797,7 @@
 
 # Medical Maints
 - type: entity
-  parent: AirlockMedicalLocked
+  parent: [ AirlockMedicalLocked, BasePsionic ]
   id: GloomyAirlockMaintMedicalLocked
   suffix: Medical, Locked
   name: gloomy maintenance access
@@ -809,7 +809,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
 
 - type: entity
-  parent: AirlockMedicalGlassLocked
+  parent: [ AirlockMedicalGlassLocked, BasePsionic ]
   id: GloomyAirlockMaintMedicalGlassLocked
   suffix: Medical, Locked, Glass
   name: gloomy maintenance access
@@ -822,7 +822,7 @@
 
 # Epistemics Maints
 - type: entity
-  parent: AirlockScienceLocked
+  parent: [ AirlockScienceLocked, BasePsionic ]
   id: GloomyAirlockMaintScienceLocked
   suffix: Epistemics, Locked
   name: gloomy maintenance access
@@ -834,7 +834,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
 
 - type: entity
-  parent: AirlockScienceGlassLocked
+  parent: [ AirlockScienceGlassLocked, BasePsionic ]
   id: GloomyAirlockMaintScienceGlassLocked
   suffix: Epistemics, Locked, Glass
   name: gloomy maintenance access
@@ -847,7 +847,7 @@
 
 # Security Maints
 - type: entity
-  parent: AirlockSecurityLocked
+  parent: [ AirlockSecurityLocked, BasePsionic ]
   id: GloomyAirlockMaintSecurityLocked
   suffix: Security, Locked
   name: gloomy maintenance access
@@ -859,7 +859,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
 
 - type: entity
-  parent: AirlockSecurityGlassLocked
+  parent: [ AirlockSecurityGlassLocked, BasePsionic ]
   id: GloomyAirlockMaintSecurityGlassLocked
   suffix: Security, Locked, Glass
   name: gloomy maintenance access
@@ -872,7 +872,7 @@
 
 # Armory Maints
 - type: entity
-  parent: AirlockArmoryLocked
+  parent: [ AirlockArmoryLocked, BasePsionic ]
   id: GloomyAirlockMaintArmoryLocked
   suffix: Armory, Locked
   name: gloomy maintenance access
@@ -884,7 +884,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
 
 - type: entity
-  parent: AirlockArmoryGlassLocked
+  parent: [ AirlockArmoryGlassLocked, BasePsionic ]
   id: GloomyAirlockMaintArmoryGlassLocked
   suffix: Armory, Locked, Glass
   name: gloomy maintenance access
@@ -897,7 +897,7 @@
 
 # Service Maints
 - type: entity
-  parent: AirlockServiceLocked
+  parent: [ AirlockServiceLocked, BasePsionic ]
   id: GloomyAirlockMaintServiceLocked
   suffix: Service, Locked
   name: gloomy maintenance access
@@ -909,7 +909,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
 
 - type: entity
-  parent: AirlockServiceGlassLocked
+  parent: [ AirlockServiceGlassLocked, BasePsionic ]
   id: GloomyAirlockMaintServiceGlassLocked
   suffix: Service, Locked, Glass
   name: gloomy maintenance access
@@ -922,7 +922,7 @@
 
 # Central Command Maints
 - type: entity
-  parent: AirlockCentralCommandLocked
+  parent: [ AirlockCentralCommandLocked, BasePsionic ]
   id: GloomyAirlockMaintCentralCommandLocked
   suffix: Central Command, Locked
   name: gloomy maintenance access
@@ -934,7 +934,7 @@
     sprite: _DEN/Structures/Doors/Airlocks/Standard/sombermaintenance.rsi
 
 - type: entity
-  parent: AirlockCentralCommandGlassLocked
+  parent: [ AirlockCentralCommandGlassLocked, BasePsionic ]
   id: GloomyAirlockMaintCentralCommandGlassLocked
   suffix: Central Command, Locked, Glass
   name: gloomy maintenance access

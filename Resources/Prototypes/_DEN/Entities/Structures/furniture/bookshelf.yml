@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: Bookshelf
+  parent: [ Bookshelf, BasePsionic ]
   id: BookshelfSomber
   name: somber bookshelf
   description: "A gloomy bookshelf full of gloomy books."
@@ -41,7 +41,7 @@
       - !type:EmptyAllContainersBehaviour
 
 - type: entity
-  parent: BookshelfFilled
+  parent: [ BookshelfFilled, BasePsionic ]
   id: BookshelfSomberFilled
   name: somber bookshelf
   description: "A gloomy bookshelf full of gloomy books."

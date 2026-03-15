@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: Fireplace
+  parent: [ Fireplace, BasePsionic ]
   id: SomberFireplace
   name: electrum fireplace
   suffix: Click After Mapping
@@ -115,7 +115,7 @@
     bodyType: Static
 
 - type: entity
-  parent: BaseSignDirectional # So it's technically wall decor, but whatever
+  parent: [ BaseSignDirectional, BasePsionic ] # So it's technically wall decor, but whatever
   id: SomberHangingBrazier
   name: electrum hanging brazier
   suffix: Click After Mapping

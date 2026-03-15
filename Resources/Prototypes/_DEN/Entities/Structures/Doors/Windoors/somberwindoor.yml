@@ -3,13 +3,14 @@
 
 # Yes, this could be organized better, but I priorized ease of copy/paste and find/replace to keep myself something like sane
 # Also to clutter the entity list as little as possible, they're all secure since it's very rare to need to rip apart an unsecure windoor anyway
+# Unlike airlocks, they don't have special wiring, so they're all just parented to GloomyWindoorSecure
 
 
 # PUBLIC WINDOORS (UNLOCKED)
 
 # Public, Standard
 - type: entity
-  parent: WindoorSecure
+  parent: [ WindoorSecure, BasePsionic ]
   id: GloomyWindoorSecure
   name: gloomy windoor
   suffix: Public] [Somber

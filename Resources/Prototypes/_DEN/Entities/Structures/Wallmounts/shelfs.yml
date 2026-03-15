@@ -1,5 +1,5 @@
 - type: entity
-  parent: ShelfBase
+  parent: [ ShelfBase, BasePsionic ]
   id: SomberDoorCloset
   name: somber closet door
   description: "Gloomy steel doors concealing what is ostensibly a walk-in closet, although you shouldn't try it."
@@ -94,7 +94,7 @@
           collection: WoodDestroyHeavy
 
 - type: entity
-  parent: [ SomberDoorCloset, BasePsionic ]
+  parent: SomberDoorCloset
   id: SomberDoorClosetMnemolith
   suffix: Mnemolith
   description: "Mnemolith stone doors concealing what is ostensibly a walk-in closet, although you shouldn't try it."
@@ -128,7 +128,7 @@
           collection: MetalGlassBreak
 
 - type: entity
-  parent: ShelfBase # Technically a tablemounted item, rather than wallmounted
+  parent: [ ShelfBase, BasePsionic ] # Technically a tablemounted item, rather than wallmounted
   id: SomberCabinetsWood
   name: somber counter cabinets
   suffix: Wood] [Place On Counters

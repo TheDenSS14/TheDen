@@ -4,7 +4,7 @@
 
 # Somber Tables Start
 - type: entity
-  parent: TableBase
+  parent: [ TableBase, BasePsionic ]
   id: SomberTable
   name: somber table
   suffix: Wood
@@ -446,7 +446,7 @@
         - BulletImpassable
 
 - type: entity
-  parent: BaseStructure # Doesn't merge with nearby tables, so I can't parent it
+  parent: [ BaseStructure, BasePsionic ] # Doesn't merge with nearby tables, so I can't parent it
   id: SomberTableCoffee
   name: somber table
   suffix: Coffee Table

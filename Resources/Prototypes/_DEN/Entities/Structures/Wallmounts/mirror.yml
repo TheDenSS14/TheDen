@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: Mirror
+  parent: [ Mirror, BasePsionic ]
   id: SomberMirror
   name: somber mirror
   description: "A glossy electrum mirror with a polished mu-metal backing that prevents psionic scrying. A calm, private moment."

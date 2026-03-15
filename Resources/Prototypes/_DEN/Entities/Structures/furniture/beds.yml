@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: PsychBed
+  parent: [ PsychBed, BasePsionic ]
   id: SomberPsychBed
   name: somber leather chaise lounge
   description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it."

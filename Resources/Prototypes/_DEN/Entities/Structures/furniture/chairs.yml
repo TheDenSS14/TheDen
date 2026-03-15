@@ -6,7 +6,7 @@
 
 # Somber chairs start
 - type: entity
-  parent: OfficeChairBase
+  parent: [ OfficeChairBase, BasePsionic ]
   id: SomberChairCushion
   name: somber floor cushion
   description: "A firm pillow to sit on, useful for meditation."
@@ -48,7 +48,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: OfficeChairBase
+  parent: [ OfficeChairBase, BasePsionic ]
   id: SomberChairLeather
   name: somber leather chair
   description: "A plush leather office chair with electrum accents."
@@ -90,7 +90,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: VehicleWheelchair
+  parent: [ VehicleWheelchair, BasePsionic ]
   id: SomberChairLeatherMantisWheelchair
   name: mantis chair
   description: "A plush leather office chair concealing strange bluespace mechanisms that let it compact into an electrum orb. It hovers just above the ground and can be steered with psionic influence."
@@ -156,7 +156,7 @@
     - MantisBeltStorable
 
 - type: entity
-  parent: UnanchoredChairBase
+  parent: [ UnanchoredChairBase, BasePsionic ]
   id: SomberChairWood
   name: somber wood chair
   description: "An expensive chair made of gloomy, patterned wood."
@@ -208,7 +208,7 @@
     state: somberstool
 
 - type: entity
-  parent: StoolBase
+  parent: [ StoolBase, BasePsionic ]
   id: SomberBarStool
   name: somber bar stool
   description: "A patterned cushion atop a striped electrum pole."

@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: PowerCellRecharger
+  parent: [ PowerCellRecharger, BasePsionic ]
   id: SomberPowerCellRecharger
   name: somber orgone pyramid
   suffix: Cell Recharger

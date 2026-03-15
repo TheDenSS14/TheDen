@@ -56,7 +56,7 @@
         - WallLayer
 
 - type: entity
-  parent: FloorDrainSomber
+  parent: [ FloorDrainSomber, BasePsionic ] # Fuck it, being built under mnemolith makes them absorb noospheric energy or something
   id: FountainSomberDrains
   name: somber fountain drains
   description: "An artful array of electrum drains set into the floor."

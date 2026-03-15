@@ -7,7 +7,7 @@
     pack: BoozeDispenserInventoryExtended
 
 - type: entity
-  parent: BoozeDispenser
+  parent: [ BoozeDispenser, BasePsionic ] # At this point I'm just going to make the whole somber set psionic, just ctrl+shift+F and remove it when we rebase or something
   id: BoozeDispenserSomber
   name: somber liquor taps
   suffix: Booze Dispenser

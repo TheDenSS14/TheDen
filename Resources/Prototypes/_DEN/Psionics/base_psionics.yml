@@ -1,7 +1,7 @@
 # ENTITIES
 
 # A psionic base for the purposes of AntiPsionicWeapon interaction (see below), which affects damage dealt and weapon punish ("rebounds")
-# Things made of mnemolith or eidolite, or psionic-adjacent things with weird descriptions (like much of the Somber set), are naturally noospheric
+# Things made of mnemolith or eidolite, or psionic-adjacent things with weird descriptions (like the Somber set), are naturally noospheric
 # This includes anomalous and supernatural objects and creatures, which the mantis is purpose-built to fight
 # Generally only damageable things should have this parent, since otherwise it doesn't matter
 # `roller: false` means that the entity in question won't gain new psionic abilities
@@ -18,7 +18,7 @@
 # I'm sick of adding this component to every mantis weapon so I'm making a base for it
 # I've included notes on anti-psionic weapon design here if you want to make something with it, because the system is unintuitive
 - type: entity
-  parent: [BaseItem, BaseObjectVerbsCuteness]
+  parent: [BasePsionic, BaseItem, BaseObjectVerbsCuteness]
   # See MantisMeleeKnife if you need an implementation example, that's the flagship anti-psionic weapon
   # Anti-psionic weapons are always made of MaterialMnemolith and use that palette in the fashion you see there
   id: BaseAntiPsionicWeapon

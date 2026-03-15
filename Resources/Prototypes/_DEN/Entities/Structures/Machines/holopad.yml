@@ -6,7 +6,7 @@
 # Called "gloomy" so as not to clutter the list when "somber" is searched, though that will bring up the mantis version
 
 - type: entity
-  parent: Holopad
+  parent: [ Holopad, BasePsionic ]
   id: GloomyHolopad
   name: gloomy holopad
   suffix:
@@ -24,7 +24,7 @@
     speechSounds: SyndieBorg # Identical to borg, only slightly deeper, same reason as above
 
 - type: entity
-  parent: HolopadLongRange
+  parent: [ HolopadLongRange, BasePsionic ]
   id: GloomyHolopadLongRange
   name: gloomy holopad (long-range)
   description: "A somber holopad with an esoteric eye motif. On a long-range network."
@@ -41,7 +41,7 @@
     speechSounds: SyndieBorg
 
 - type: entity
-  parent: HolopadUnlimitedRange
+  parent: [ HolopadUnlimitedRange, BasePsionic ]
   id: GloomyHolopadUnlimitedRange
   name: gloomy holopad (quantum-entangling)
   description: "A somber holopad with an esoteric eye motif. On an extreme-range network."
@@ -58,7 +58,7 @@
     speechSounds: SyndieBorg
 
 - type: entity
-  parent: HolopadBluespace
+  parent: [ HolopadBluespace, BasePsionic ]
   id: GloomyHolopadBluespace
   name: gloomy holopad (bluespace)
   suffix: Unrestricted Range

@@ -83,7 +83,7 @@
       fillBaseName: packet-solid-
 
 - type: entity
-  parent: BaseFoodShaker
+  parent: [ BaseFoodShaker, BasePsionic ]
   id: BaseFoodShakerSomber
   abstract: true
   name: empty shaker

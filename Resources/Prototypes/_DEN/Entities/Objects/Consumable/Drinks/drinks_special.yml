@@ -1,0 +1,97 @@
+- type: entity
+  parent: DrinkShaker
+  id: DrinkShakerSomber
+  name: electrum shaker
+  suffix: Somber
+  description: "An expensive shaker made of a natural alloy of gold and silver."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/sombershaker.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Drinks/sombershaker.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: DrinkJigger
+  id: DrinkJiggerSomber
+  name: electrum jigger
+  suffix: Somber
+  description: "An expensive jigger made of a natural alloy of gold and silver."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/somberjigger.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Drinks/somberjigger.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: DrinkIceBucket
+  id: DrinkIceBucketSomber
+  name: electrum ice bucket
+  suffix: Somber
+  description: "Who the hell buys an electrum ice bucket. It's made of gold. At least partly."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/sombericebucket.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Drinks/sombericebucket.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: [ DrinkGlassCoupeShaped, BasePsionic ] # Breakable somber dishes should be psionic
+  id: DrinkGlassCoupeShapedSomber
+  name: eidolite chalice
+  suffix: Somber
+  description: "A swirling chalice shaped from eidolite crystal."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/sombercoupeglass.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Drinks/sombercoupeglass.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: [ DrinkShotGlass, BasePsionic] # Breakable somber dishes should be psionic
+  id: DrinkShotGlassSomber
+  name: eidolite shot glass
+  suffix: Somber
+  description: "A trimmed shot glass shaped from eidolite crystal."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/sombershotglass.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Drinks/sombershotglass.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkGlassSomber
+  name: eidolite glass
+  suffix: Somber
+  description: "An eidolite glass that knows to reshape itself based on what you pour into it. That's normal. At least it looks nice for now."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/somberglass.rsi
+  - type: SolutionContainerVisuals
+    metamorphicDefaultSprite:
+      sprite: _DEN/Objects/Consumable/Drinks/somberglass.rsi
+      state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10

@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: Mannequin
+  parent: [ Mannequin, BasePsionic ]
   id: SomberMannequin
   name: somber mannequin
   description: "A gloomy mannequin with only slightly unsettling electrum eyes, made to display clothes."

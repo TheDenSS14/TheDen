@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseTree
+  parent: [ BaseTree, BasePsionic ] # Fuck it, psionic trees. That's why they glow, or some shit
   id: SomberAmaranthTree01
   name: amaranth tree
   description: "An exotic hardwood tree with faintly luminescent leaves. Its resin is toxic, making the lumber notoriously difficult to work."

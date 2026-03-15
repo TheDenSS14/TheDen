@@ -5,6 +5,36 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
+  parent: [ CustomDrinkJug, BasePsionic ] # Breakable somber dishes should be psionic
+  id: CustomDrinkJugSomber
+  name: eidolite beverage bottle
+  description: "An eidolite crystal bottle for storing drinks."
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpillBehavior { }
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/sombercoupeglass.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Drinks/sombercoupeglass.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
   id: DrinkJaegermisterBottleFull
   name: jaegermister bottle

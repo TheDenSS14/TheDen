@@ -11,7 +11,7 @@
     pack: SodaDispenserInventoryExtended
 
 - type: entity
-  parent: SodaDispenser
+  parent: [ SodaDispenser, BasePsionic ]
   id: SodaDispenserSomber
   name: somber soda taps
   suffix: Soda Dispenser

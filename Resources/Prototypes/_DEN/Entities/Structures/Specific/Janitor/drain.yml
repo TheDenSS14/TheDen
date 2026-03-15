@@ -1,4 +1,5 @@
 - type: entity # Not parented to avoid interaction outlines, why isn't that component nullable
+  parent: BasePsionic
   id: FloorDrainSomber
   name: somber drain
   suffix: Tile

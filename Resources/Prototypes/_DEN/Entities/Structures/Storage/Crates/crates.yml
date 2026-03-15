@@ -1,5 +1,5 @@
 - type: entity
-  parent: CrateCoffin
+  parent: [ CrateCoffin, BasePsionic ]
   id: CrateCoffinSomber
   name: amaranth coffin
   description: "An amaranth coffin with electrum accents and a plush green interior. There are coins embedded in the lid that rest over the eyes of the dead."
@@ -38,7 +38,7 @@
             max: 3
 
 - type: entity
-  parent: CrateGenericSteel
+  parent: [ CrateGenericSteel, BasePsionic ]
   id: CrateSomber
   name: amaranth crate
   suffix: Somber

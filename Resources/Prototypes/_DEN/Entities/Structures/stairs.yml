@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: Stairs
+  parent: [ Stairs, BasePsionic ]
   id: StairSomberSteel
   name: somber steel stairs
   suffix: ""
@@ -14,7 +14,7 @@
     drawdepth: FloorTiles
 
 - type: entity
-  parent: Stairs
+  parent: StairSomberSteel
   id: StairSomberSteelDark
   name: somber dark steel stairs
   suffix: ""
@@ -130,7 +130,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: [ StairSomberSteel, BasePsionic ]
+  parent: StairSomberSteel
   id: StairSomberMnemolith
   name: somber mnemolith stairs
   suffix: ""

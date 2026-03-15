@@ -1,6 +1,6 @@
 # Tube Fixtures
 - type: entity
-  parent: PoweredlightEmpty
+  parent: [ PoweredlightEmpty, BasePsionic ]
   id: PoweredlightSomberEmpty
   suffix: Empty
   name: electrum light
@@ -33,7 +33,7 @@
           collection: GlassBreak
 
 - type: entity
-  parent: Poweredlight
+  parent: [ Poweredlight, BasePsionic ]
   id: PoweredlightSomber
   suffix: ""
   name: electrum light
@@ -112,7 +112,7 @@
 
 # Bulb Fixtures
 - type: entity
-  parent: PoweredSmallLightEmpty
+  parent: [ PoweredSmallLightEmpty, BasePsionic ]
   id: PoweredSmallLightSomberEmpty
   name: electrum light
   description: "An ornate light fixture. It needs power, and a light bulb. Everyone knows that."
@@ -144,7 +144,7 @@
           collection: GlassBreak
 
 - type: entity
-  parent: PoweredSmallLight
+  parent: [ PoweredSmallLight, BasePsionic ]
   id: PoweredSmallLightSomber
   suffix: ""
   name: electrum light

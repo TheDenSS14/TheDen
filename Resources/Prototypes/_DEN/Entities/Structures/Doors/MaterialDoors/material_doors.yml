@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: BaseMaterialDoorNavMap
+  parent: [ BaseMaterialDoorNavMap, BasePsionic ]
   id: SomberAmaranthDoor
   name: somber amaranth door
   description: "A door made of exotic, extremely durable hardwood. Also called purpleheart, or incorrectly, rosewood."
@@ -85,7 +85,7 @@
           collection: MetalGlassBreak # Mnemolith stone is glassy
 
 - type: entity
-  parent: BaseMaterialDoorNavMap
+  parent: [ BaseMaterialDoorNavMap, BasePsionic ]
   id: SomberSteelDoor
   name: somber steel door
   description: "A gloomy steel door."

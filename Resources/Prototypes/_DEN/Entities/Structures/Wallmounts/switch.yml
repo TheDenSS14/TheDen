@@ -1,6 +1,6 @@
 # Somber switches start
 - type: entity
-  parent: SignalSwitchDirectional
+  parent: [ SignalSwitchDirectional, BasePsionic ]
   id: SignalSwitchSomber
   name: somber signal switch
   suffix: Directional
@@ -10,7 +10,7 @@
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
 
 - type: entity
-  parent: SignalButtonDirectional
+  parent: [ SignalButtonDirectional, BasePsionic ]
   id: SignalButtonSomber
   name: somber signal button
   suffix: Directional
@@ -23,7 +23,7 @@
 # Lockable buttons
 
 - type: entity
-  parent: LockableButton
+  parent: [ LockableButton, BasePsionic ]
   id: LockableButtonSomber
   name: somber lockable button
   suffix: Unprogrammed
@@ -68,7 +68,7 @@
 # Button frames
 
 - type: entity
-  parent: ButtonFrame
+  parent: [ ButtonFrame, BasePsionic ]
   id: ButtonFrameSomberGold
   name: somber signal button frame
   suffix: Gold
@@ -79,7 +79,7 @@
     state: framegold
 
 - type: entity
-  parent: ButtonFrame
+  parent: [ ButtonFrame, BasePsionic ]
   id: ButtonFrameSomberMagenta
   name: somber signal button frame
   suffix: Magenta
@@ -90,7 +90,7 @@
     state: framepink
 
 - type: entity
-  parent: ButtonFrame
+  parent: [ ButtonFrame, BasePsionic ]
   id: ButtonFrameSomberPurple
   name: somber signal button frame
   suffix: Purple

@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: NoticeBoard
+  parent: [ NoticeBoard, BasePsionic ]
   id: SomberNoticeBoard
   name: mantis pinboard
   description: "Is there a job for a witcher?" # This is also the other notice board's description and I'm keeping it unless I get vetoed (crossing my arms)

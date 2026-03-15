@@ -6,7 +6,7 @@
 
 # Somber lockers start
 - type: entity
-  parent: ClosetBase
+  parent: [ ClosetBase, BasePsionic ]
   id: SomberCloset
   name: somber cabinet
   description: "An expensive cabinet made of gloomy, patterned wood."
@@ -216,7 +216,7 @@
     sprite: _DEN/Structures/Storage/somberfridgeright.rsi
 
 - type: entity
-  parent: BaseWallCloset
+  parent: [ BaseWallCloset, BasePsionic ]
   id: SomberWallCloset
   name: somber wall cabinet
   description: "An expensive wall cabinet made of gloomy, patterned wood. Unfortunately, the shelves are unstable, and it's likely to dump your things in the floor..."

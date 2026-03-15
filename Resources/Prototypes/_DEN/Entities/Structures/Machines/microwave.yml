@@ -1,5 +1,5 @@
 - type: entity
-  parent: KitchenMicrowave
+  parent: [ KitchenMicrowave, BasePsionic ]
   id: KitchenMicrowaveSomber
   name: somber microwave
   suffix: ""
@@ -11,7 +11,7 @@
     sprite: _DEN/Structures/Machines/sombermicrowave.rsi
 
 - type: entity
-  parent: AdvancedMicrowave
+  parent: [ AdvancedMicrowave, BasePsionic ]
   id: AdvancedMicrowaveSomber
   name: somber microwave
   suffix: Advanced
@@ -23,7 +23,7 @@
     sprite: _DEN/Structures/Machines/sombermicrowave.rsi
 
 - type: entity
-  parent: SyndicateMicrowave
+  parent: [ SyndicateMicrowave, BasePsionic ]
   id: SyndicateMicrowaveSomber
   name: somber microwave
   suffix: Syndicate

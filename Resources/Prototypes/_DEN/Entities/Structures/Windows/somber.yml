@@ -399,7 +399,7 @@
   parent: WindowSomberDark
   id: SomberTVSpeakerWindowLeft
   name: somber sound system
-  description: "A sleek surround sound speaker in brushed metal, set into the wall. This system could probably blow the windows out."
+  description: "A sleek surround sound speaker in brushed metal, set into the wall. This system could probably blow the windows out. Occasionally emits low murmuring."
   suffix: Speaker Window, Left] [Somber TV Kit
   components:
   - type: Sprite
@@ -451,10 +451,10 @@
     state: tvback
 
 - type: entity
-  parent: BaseStructure # Debatably, these are directional windows
+  parent: [ BaseStructure, BasePsionic ] # Debatably, these are directional windows
   id: SomberTVSpeakerBig
   name: somber sound system
-  description: "A sleek surround speaker in brushed metal. This sound system could probably blow the windows out."
+  description: "A sleek surround sound speaker in brushed metal, set into the wall. This system could probably blow the windows out. Occasionally emits low murmuring."
   suffix: Speaker Window/Wall Attachment, Big] [Somber TV Kit
   placement:
     mode: SnapgridCenter

@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: ComputerTelevision
+  parent: [ ComputerTelevision, BasePsionic ]
   id: ComputerSomberTelevision
   name: somber television
   description: "A striped amaranth television. It looks like an expensive antique, but the screen is so small and square that it's hard to appreciate. For some reason, it has a channel zero that only displays grainy images of rotating fruit."
@@ -62,11 +62,11 @@
             max: 3
 
 - type: entity
-  parent: BaseStructure
+  parent: [ BaseStructure, BasePsionic ]
   id: SomberTV
   name: somber widescreen television
   suffix: Decorative Only, Click After Mapping To Enable] [Somber TV Kit
-  description: "A futuristic frame television with a textured, shifting surface, set to freeze its last image in faux mnemolith--an eclipsed, bleeding sun breaking through clouds, this time. This thing must be ungodly expensive." # Not real mnemolith, so it's not psionic for damage purposes
+  description: "A futuristic frame television with a textured, shifting surface, set to freeze its last image in faux mnemolith--an eclipsed, bleeding sun breaking through clouds, this time. This thing must be ungodly expensive."
   components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS PLEASE GOD PLEASE (WHAT TV DOESN'T HAVE A REMOTE)
   - type: Sprite # TODO: MAYBE IT SHOULD FUNCTION LIKE AN ACTUAL TV BUT REALLY I JUST WANT A TV FOR RP, IDK HOW TO CLICK TO OPEN CAMERA HUD BUT ALSO KEEP IT GLOWING...
     sprite: _DEN/Structures/Wallmounts/sombertv.rsi

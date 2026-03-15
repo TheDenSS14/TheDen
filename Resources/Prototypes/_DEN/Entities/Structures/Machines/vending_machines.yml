@@ -85,6 +85,29 @@
     access: []
 
 - type: entity
+  parent: VendingMachine
+  id: VendingMachineSilent # For "vending machines" that are presented as analogue machines rather than talking, beeping computers
+  abstract: true
+  components:
+  - type: VendingMachine
+    soundVend: /Audio/Items/bottle_clunk.ogg # Pulling something out of a cabinet...
+    soundDeny: /Audio/Items/trayhit1.ogg # Clumsily failing to remove something...
+    ejectDelay: 0.5 # No animations to time around
+  - type: AmbientSound
+    volume: 0
+    range: 0
+    enabled: false
+    sound:
+      path: /Audio/Effects/silence.ogg
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 0
+    energy: 0
+    mask: null
+
+# Somber vending machines start
+- type: entity
   parent: [ VendingMachine, BasePsionic ]
   id: VendingMachineSomberMantis
   name: mantis reliquary conduit
@@ -276,30 +299,7 @@
   - type: BlockMovement
 
 - type: entity
-  parent: VendingMachine
-  id: VendingMachineSilent # For "vending machines" that are presented as analogue machines rather than talking, beeping computers
-  abstract: true
-  components:
-  - type: VendingMachine
-    soundVend: /Audio/Items/bottle_clunk.ogg # Pulling something out of a cabinet...
-    soundDeny: /Audio/Items/trayhit1.ogg # Clumsily failing to remove something...
-    ejectDelay: 0.5 # No animations to time around
-  - type: AmbientSound
-    volume: 0
-    range: 0
-    enabled: false
-    sound:
-      path: /Audio/Effects/silence.ogg
-  - type: PointLight
-    enabled: false
-    castShadows: false
-    radius: 0
-    energy: 0
-    mask: null
-
-# Somber vending machines start
-- type: entity
-  parent: VendingMachineSilent # If I parent it to VendingMachineCondiments it starts talking... And if I give it an empty message list, it throws errors...
+  parent: [ VendingMachineSilent, BasePsionic ]
   id: VendingMachineCondimentsSomber
   name: somber condiment taps
   suffix: Condiment Station
@@ -343,14 +343,14 @@
     pack: CondimentInventoryExtended
 
 - type: entity
-  parent: VendingMachineSilent
+  parent: [ VendingMachineSilent, BasePsionic ]
   id: VendingMachineBoozeSomber
   name: somber liquor cabinet
   suffix: Booze-O-Mat
   description: "A glossy, brushed-metal liquor cabinet."
   components:
   - type: VendingMachine
-    pack: BoozeOMatInventory
+    pack: SomberBoozeOMatInventory
     offState: off
     brokenState: broken
     normalState: normal-unshaded
@@ -385,7 +385,7 @@
     access: []
 
 - type: entity
-  parent: VendingMachineSilent
+  parent: [ VendingMachineSilent, BasePsionic ]
   id: VendingMachineChefvendSomber
   name: somber pantry (ingredients)
   suffix: ChefVend, Left
@@ -427,7 +427,7 @@
     access: []
 
 - type: entity
-  parent: VendingMachineSilent
+  parent: [ VendingMachineSilent, BasePsionic ]
   id: VendingMachineDinnerwareSomber
   name: somber pantry (utensils)
   suffix: Dinnerware, Right
