@@ -43,7 +43,17 @@
 # Waterfalls
 
 - type: entity
-  parent: FloorWaterEntity
+  id: FloorWaterfallBase
+  abstract: true
+  components:
+  - type: AmbientSound
+    volume: 4
+    range: 6
+    sound:
+      path: /Audio/_DEN/Effects/Fluids/waterfall.ogg
+
+- type: entity
+  parent: [FloorWaterEntity, FloorWaterfallBase]
   id: FloorWaterfallEntity
   name: waterfall
   suffix: non-occluded
@@ -63,7 +73,7 @@
   - type: Occluder
 
 - type: entity
-  parent: FloorWaterEntityPool
+  parent: [FloorWaterEntityPool, FloorWaterfallBase]
   id: FloorWaterfallEntityPool
   name: waterfall
   suffix: pool, non-occluded
