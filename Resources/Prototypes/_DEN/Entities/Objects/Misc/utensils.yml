@@ -17,16 +17,16 @@
       Silver: 10
 
 - type: entity
-  parent: Skimmer # It's technically a chemistry item, but it only comes from VendingMachineBoozeSomber
+  parent: Skimmer # It's technically a chemistry item, but it only comes from VendingMachineBoozeSomber, so whatever
   id: SkimmerSomber
   name: electrum skimmer
   suffix: Somber
   description: "An electrum skimmer. Used to skim."
   components:
   - type: Sprite
-    sprite: _DV/Objects/Specific/Chemistry/skimmer.rsi
+    sprite: _DEN/Objects/Misc/somberskimmer.rsi
   - type: Item
-    sprite: _DV/Objects/Specific/Chemistry/skimmer.rsi
+    sprite: _DEN/Objects/Misc/somberskimmer.rsi
   - type: PhysicalComposition
     materialComposition:
       Gold: 10
