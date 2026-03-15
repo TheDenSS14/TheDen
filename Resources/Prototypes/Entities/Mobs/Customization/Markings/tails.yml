@@ -6,18 +6,14 @@
 
 - type: marking
   id: LizardTailShort
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian, Human, IPC, SlimePerson]
+  parent: BaseTailMarking
   sprites:
   - sprite: Mobs/Customization/tails.rsi
     state: m_tail_short
 
 - type: marking
   id: LizardTailShortTwoTone
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian, Human, IPC, SlimePerson]
+  parent: BaseTailMarking
   sprites:
   - sprite: Mobs/Customization/tails.rsi
     state: m_tail_short
@@ -26,9 +22,7 @@
 
 - type: marking
   id: LizardTailShortTwoToneU
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian, Human, IPC, SlimePerson]
+  parent: BaseTailMarking
   sprites:
   - sprite: Mobs/Customization/tails.rsi
     state: m_tail_short2tone

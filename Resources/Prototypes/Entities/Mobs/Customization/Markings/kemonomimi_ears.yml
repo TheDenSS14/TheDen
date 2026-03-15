@@ -11,9 +11,7 @@
 
 - type: marking
   id: BullishHorns
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, SlimePerson, IPC]
+  parent: BaseHornsMarking
   coloring:
     default:
       type:
@@ -27,9 +25,7 @@
 
 - type: marking
   id: BunnyEars
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, SlimePerson, IPC]
+  parent: BaseEarsMarking
   coloring:
     default:
       type:
@@ -50,9 +46,7 @@
 
 - type: marking
   id: BunnyEarsAlt
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human,]
+  parent: BaseEarsMarking
   coloring:
     default:
       type:
@@ -66,9 +60,7 @@
 
 - type: marking
   id: FoxEars
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, SlimePerson, IPC, Canid] # The Den - Add Canid
+  parent: BaseEarsMarking
   coloring:
     default:
       type:
@@ -82,9 +74,7 @@
 
 - type: marking
   id: GoatHorns
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, SlimePerson, IPC]
+  parent: BaseEarsMarking
   coloring:
     default:
       type:
@@ -105,9 +95,7 @@
 
 - type: marking
   id: LambHorns
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, SlimePerson, IPC]
+  parent: BaseEarsMarking
   coloring:
     default:
       type:
@@ -128,9 +116,7 @@
 
 - type: marking
   id: GoatHornsNoEars
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, SlimePerson, IPC]
+  parent: BaseHornsMarking
   coloring:
     default:
       type:
@@ -149,9 +135,7 @@
 
 - type: marking
   id: LambHornsNoEars
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, SlimePerson, IPC]
+  parent: BaseHornsMarking
   coloring:
     default:
       type:

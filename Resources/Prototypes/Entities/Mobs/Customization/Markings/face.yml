@@ -10,9 +10,7 @@
 
 - type: marking
   id: FaceBindi
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -24,9 +22,7 @@
 
 - type: marking
   id: FaceFullblush
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -38,9 +34,7 @@
 
 - type: marking
   id: FaceCheekspotRight
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -52,9 +46,7 @@
 
 - type: marking
   id: FaceCheekspotLeft
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -66,9 +58,7 @@
 
 - type: marking
   id: FaceChesireRight
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceSnoutlessMarking
   coloring:
     default:
       type:
@@ -80,9 +70,7 @@
 
 - type: marking
   id: FaceChesireLeft
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceSnoutlessMarking
   coloring:
     default:
       type:
@@ -94,9 +82,7 @@
 
 - type: marking
   id: FaceCrowRight
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -108,9 +94,7 @@
 
 - type: marking
   id: FaceCrowLeft
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -122,9 +106,7 @@
 
 - type: marking
   id: FaceEarRight
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -136,9 +118,7 @@
 
 - type: marking
   id: FaceEarLeft
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -150,9 +130,7 @@
 
 - type: marking
   id: FaceEyebrowRight
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -165,9 +143,7 @@
 
 - type: marking
   id: FaceEyebrowLeft
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -180,9 +156,7 @@
 
 - type: marking
   id: FaceEyebrows
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -194,9 +168,7 @@
 
 - type: marking
   id: FaceEyecornerRight
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -208,9 +180,7 @@
 
 - type: marking
   id: FaceEyecornerLeft
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -222,9 +192,7 @@
 
 - type: marking
   id: FaceEyelashRight
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -236,9 +204,7 @@
 
 - type: marking
   id: FaceEyelashLeft
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -250,9 +216,7 @@
 
 - type: marking
   id: FaceEyestripe
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -264,9 +228,7 @@
 
 - type: marking
   id: FaceLipcornerRight
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceSnoutlessMarking
   coloring:
     default:
       type:
@@ -278,9 +240,7 @@
 
 - type: marking
   id: FaceLipcornerLeft
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceSnoutlessMarking
   coloring:
     default:
       type:
@@ -292,9 +252,7 @@
 
 - type: marking
   id: FaceGlabella
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -306,9 +264,7 @@
 
 - type: marking
   id: FaceLowercheekRight
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -320,9 +276,7 @@
 
 - type: marking
   id: FaceLowercheekLeft
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -334,9 +288,7 @@
 
 - type: marking
   id: FaceNosetape
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceSnoutlessMarking
   coloring:
     default:
       type:
@@ -348,9 +300,7 @@
 
 - type: marking
   id: FaceNosetip
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceSnoutlessMarking
   coloring:
     default:
       type:
@@ -360,12 +310,9 @@
   - sprite: Mobs/Customization/face.rsi
     state: nosetip
 
-
 - type: marking
   id: FaceNosestripe
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -377,9 +324,7 @@
 
 - type: marking
   id: FaceUnibrow
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -391,9 +336,7 @@
 
 - type: marking
   id: FaceNeckSlim
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi
@@ -401,9 +344,7 @@
 
 - type: marking
   id: FaceNeckWide
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi
@@ -411,9 +352,7 @@
 
 - type: marking
   id: FaceNeckSlimThick
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi
@@ -421,9 +360,7 @@
 
 - type: marking
   id: FaceNeckWideThick
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseFaceMarking
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi

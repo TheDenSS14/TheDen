@@ -39,8 +39,8 @@
   sprites:
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
-    Face: MobHumanoidAnyMarking
     Head: MobSlimeHead
+    Face: MobHumanoidAnyMarking
     Hair: MobSlimeMarkingFollowSkin
     FacialHair: MobSlimeMarkingFollowSkin
     NeckFluff: MobHumanoidAnyMarking
@@ -88,10 +88,10 @@
       points: 1
       required: false
     Head:
-      points: 4
+      points: 6
       required: false
     HeadTop:
-      points: 4
+      points: 6
       required: false
     Chest:
       points: 6 # TheDen
