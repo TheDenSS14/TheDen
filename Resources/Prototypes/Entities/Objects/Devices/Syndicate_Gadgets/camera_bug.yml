@@ -18,7 +18,7 @@
       enum.SurveillanceCameraMonitorUiKey.Key:
         type: SurveillanceCameraMonitorBoundUserInterface
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless # DEN
     receiveFrequencyId: SurveillanceCamera
     transmitFrequencyId: SurveillanceCamera
   - type: WiredNetworkConnection
