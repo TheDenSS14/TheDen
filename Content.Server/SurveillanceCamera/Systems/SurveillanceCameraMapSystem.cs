@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 B_Kirill
+// SPDX-FileCopyrightText: 2026 Jakumba
+//
+// SPDX-License-Identifier: MIT
+
 using System.Numerics;
 using Content.Server.Power.Components;
 using Content.Server.DeviceNetwork.Components;
