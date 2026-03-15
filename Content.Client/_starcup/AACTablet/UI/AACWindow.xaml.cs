@@ -11,23 +11,39 @@ namespace Content.Client._DV.AACTablet.UI;
 
 public sealed partial class AACWindow
 {
-    private string Prefix => (string?)RadioChannels.SelectedMetadata ?? SharedChatSystem.LocalPrefix.ToString();
+    private string Prefix => (string?) RadioChannels.SelectedMetadata ?? SharedChatSystem.LocalPrefix.ToString();
 
     internal void Update(AACTabletBuiState msg)
     {
         RadioChannels.Clear();
 
         var id = 0;
-        RadioChannels.AddItem("Local", id);
-        RadioChannels.SetItemMetadata(RadioChannels.GetIdx(id), SharedChatSystem.LocalPrefix.ToString());
+        AddChannel(Loc.GetString("hud-chatbox-channel-Local"), // DEN: use helper function
+            SharedChatSystem.LocalPrefix.ToString(),
+            ref id);
+        AddChannel(Loc.GetString("hud-chatbox-channel-Whisper"), // DEN: add whisper
+            SharedChatSystem.WhisperPrefix.ToString(),
+            ref id);
 
         foreach (var channel in msg.RadioChannels)
         {
             var channelProto = _prototype.Index<RadioChannelPrototype>(channel);
-            RadioChannels.AddItem(channelProto.LocalizedName, ++id);
-            RadioChannels.SetItemMetadata(RadioChannels.GetIdx(id), string.Concat(SharedChatSystem.RadioChannelPrefix, channelProto.KeyCode));
+            // DEN start: use helper function
+            var prefix = string.Concat(SharedChatSystem.RadioChannelPrefix, channelProto.KeyCode);
+
+            AddChannel(channelProto.LocalizedName, prefix, ref id);
+            // DEN end
         }
     }
+
+    // DEN start: helper function
+    private void AddChannel(string channelName, string prefix, ref int id)
+    {
+        RadioChannels.AddItem(channelName, id);
+        RadioChannels.SetItemMetadata(RadioChannels.GetIdx(id), prefix);
+        id++;
+    }
+    // DEN end
 
     private void OnChannelSelected(OptionButton.ItemSelectedEventArgs args)
     {
