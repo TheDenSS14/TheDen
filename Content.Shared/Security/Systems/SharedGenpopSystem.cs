@@ -127,7 +127,11 @@ public abstract class SharedGenpopSystem : EntitySystem
             if (!args.Silent)
                 _popup.PopupClient(Loc.GetString("genpop-prisoner-id-popup-not-served"), ent, args.User);
             args.Cancelled = true;
+            return;
         }
+
+
+        QueueDel(ent.Comp.LinkedId);
     }
 
     private bool CheckForAccess(Entity<GenpopLockerComponent> ent, EntityUid accessItem)
