@@ -86,16 +86,16 @@
   - type: Clothing
     sprite: _DV/Objects/Weapons/Guns/Battery/multiphase_energygun.rsi
   - type: Gun
-    # DEN
+    # DEN start
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
     - FullAuto
     soundGunshot:
-      collection: MultiphaseEnergyGun
+      collection: GunMultiphaseEnergy
       params:
         variation: 0
-    # DEN
+    # DEN end
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
   - type: Battery
