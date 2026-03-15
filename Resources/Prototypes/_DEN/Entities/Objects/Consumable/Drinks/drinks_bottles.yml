@@ -8,13 +8,23 @@
   parent: [ CustomDrinkJug, BasePsionic ] # Breakable somber dishes should be psionic
   id: CustomDrinkJugSomber
   name: eidolite decanter
-  suffix: Somber Barware
-  description: "An eidolite crystal decanter, braced with electrum to protect it from falls."
+  suffix: Somber Barware, Jug
+  description: "An eidolite crystal decanter, braced with electrum to protect it from falls. Clearly crafted at the Outer Chamber Crucible, considering the stopper is a Greek psi. They can't seem to help themselves."
   components:
   - type: Sprite
     sprite: _DEN/Objects/Consumable/Drinks/somberjug.rsi
+    layers:
+    - state: icon
+      map: ["enum.OpenableVisuals.Layer"]
   - type: Item
     sprite: _DEN/Objects/Consumable/Drinks/somberjug.rsi
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "icon_open"}
+          False: {state: "icon"}
   - type: PhysicalComposition
     materialComposition:
       Gold: 10
