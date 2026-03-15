@@ -176,3 +176,29 @@
     - bzz
     - bzzz
     - bzzzz
+
+
+- type: emote
+  id: InsectoidWingFlutter
+  name: chat-emote-name-insectoid-wing-flutter
+  category: Vocal
+  icon:
+    sprite: Clothing/Neck/Cloaks/moth.rsi
+    state: "icon"
+  whitelist:
+    tags:
+    - MothEmotes
+    - ChitinidEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-insectoid-wing-flutter"]
+  chatTriggers:
+    - flutter
+    - flutters
+    - fluttered
+    - fluttering
+    - flutters wings
+    - flutters his wings
+    - flutters her wings
+    - flutters their wings

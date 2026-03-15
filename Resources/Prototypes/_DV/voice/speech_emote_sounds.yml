@@ -350,6 +350,10 @@
   sounds:
     InsectoidBuzz:
       collection: InsectoidBuzz # DEN: insectoid buzz
+    InsectoidWingFlutter:
+      collection: InsectoidWingFlutter # DEN: insectoid wing flutter
+      params:
+        variation: 0.125
     Scream:
       path: /Audio/Voice/Arachnid/arachnid_scream.ogg
     Laugh:
