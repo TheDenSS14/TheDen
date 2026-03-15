@@ -216,3 +216,47 @@
         whitelist:
           tags:
           - CartridgePistol
+          
+- type: entity
+  name: steel derringer
+  parent: [BaseObjectVerbsCommon, BaseItem, BaseSalvageSpecialistSecurityContraband]
+  id: WeaponPistolDerringer
+  description: A tiny two-barrelled handgun that was the favorite of aristocrats and pickpockets for about a century. Uses .35 auto ammo.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Guns/Pistols/derringer.rsi
+    layers:
+      - state: icon
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - Sidearm
+  - type: Gun
+    minAngle: 10
+    maxAngle: 15
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+    fireOnDropChance: 0.2
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgePistol
+    capacity: 2
+    proto: null
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+    fillDelay: 2
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: Appearance
+  - type: StaticPrice
+    price: 250
+  - type: Execution
+  - type: AmmoCounter

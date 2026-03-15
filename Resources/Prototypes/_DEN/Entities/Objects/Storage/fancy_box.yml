@@ -1,0 +1,45 @@
+- type: entity
+  id: BoxSmallFancy
+  parent: BaseStorageItem
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/fancy_box.rsi
+    noRot: true
+    state: icon
+  - type: Item
+    sprite: _DEN/Objects/Storage/fancy_box.rsi
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,1,1
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: PhysicalComposition
+    materialComposition:
+      Wood: 100
+  - type: StaticPrice
+    price: 100
+    
+- type: entity
+  id: BoxSmallFancyDerringer
+  parent: BoxSmallFancy
+  name: steel derringer giftbox
+  description: More than two hundred years ago, a now-defunct weapon manufacturing upstart attempted to flood the civilian market with cheap pistols and almost succeeded. It has since become tradition for gun enthusiasts to gift one of them to newcomers as a lesson on why cheap doesn't mean good.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: FillBoxDerringer
+        
+- type: entityTable
+  id: FillBoxDerringer
+  table: !type:AllSelector
+    children:
+    - id: WeaponPistolDerringer
+    - id: CartridgePistol
+    - id: CartridgePistol
