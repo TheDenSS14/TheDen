@@ -1,0 +1,55 @@
+- type: entity
+  parent: Soap
+  id: SoapSomberPurple
+  name: fine soap
+  suffix: Somber, Purple
+  description: "A striped purple bar of soap. Smells like lavender and anise."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
+    layers:
+    - state: somberpurple-4
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    fillBaseName: somberpurple-
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
+    heldPrefix: somberpurple
+  - type: SolutionContainerManager
+    solutions:
+      soap:
+        maxVol: 100
+        reagents:
+        - ReagentId: SoapReagent
+          Quantity: 100
+  - type: Residue
+    residueAdjective: residue-slippery
+    residueColor: residue-purple
+
+- type: entity
+  parent: Soap
+  id: SoapSomberPink
+  name: fine soap
+  suffix: Somber, Pink
+  description: "A striped pink bar of soap. Smells like like sweet incense."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
+    layers:
+    - state: somberpink-4
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    fillBaseName: somberpink-
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
+    heldPrefix: somberpink
+  - type: SolutionContainerManager
+    solutions:
+      soap:
+        maxVol: 100
+        reagents:
+        - ReagentId: SoapReagent
+          Quantity: 100
+  - type: Residue
+    residueAdjective: residue-slippery
+    residueColor: residue-pink

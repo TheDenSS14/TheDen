@@ -7,24 +7,10 @@
 - type: entity
   parent: [ CustomDrinkJug, BasePsionic ] # Breakable somber dishes should be psionic
   id: CustomDrinkJugSomber
-  name: electrum jug
-  description: "An electrum jug storing drinks."
+  name: eidolite decanter
+  suffix: Somber Barware
+  description: "An eidolite crystal decanter, braced with electrum to protect it from falls."
   components:
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 10
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:SpillBehavior { }
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: Sprite
     sprite: _DEN/Objects/Consumable/Drinks/somberjug.rsi
   - type: Item
@@ -33,6 +19,21 @@
     materialComposition:
       Gold: 10
       Silver: 10
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic # Has a metal cage around the crystal
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpillBehavior { }
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]

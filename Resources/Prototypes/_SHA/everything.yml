@@ -2811,7 +2811,7 @@
   id: MantisCaseRestraintsPenthouse
   name: restraints case
   suffix: PENTHOUSE
-  description: "An amaranth case filled with shackles and chains, complete with an antique wrench. Conveniently portable."
+  description: "An amaranth case filled with shackles and chains, complete with an antique wrench."
   components:
   - type: Sprite
     layers:
@@ -3015,7 +3015,7 @@
     - id: MantisTailorsKnife
     - id: ClothingNeckMantisPendulum
     - id: BoxFolderMantis
-    - id: MantisCaseChemicalsBreak
+    - id: MantisCaseChemicalsPenthouse
     - id: CigPackMnemolithLighter
       amount: 2
     - id: ClothingHeadCageMantisPenthouse
@@ -3032,10 +3032,10 @@
 
 - type: entity
   parent: MantisCaseChemicals
-  id: MantisCaseChemicalsBreak
+  id: MantisCaseChemicalsPenthouse
   name: amaranth chemicals case
   suffix: PENTHOUSE
-  description: "An amaranth case to carry chemicals. A watchful eye is carved into the top."
+  description: "An amaranth case of chemicals. A watchful eye is carved into the top."
   components:
   - type: Storage
     grid:
@@ -3161,3 +3161,117 @@
         reagents:
         - ReagentId: Psicodine
           Quantity: 10
+
+# Stored Things
+
+- type: entity
+  parent: LightTube
+  id: WarmLightTube
+  name: warm light tube
+  suffix: PENTHOUSE
+  description: A warm light tube for a more cozy atmosphere.
+  components:
+  - type: LightBulb
+    color: "#ff9833"
+    lightEnergy: 0.8
+    lightRadius: 10
+    lightSoftness: 1
+
+- type: entity
+  parent: LightBulb
+  id: UvLightBulb
+  name: ultraviolet light bulb
+  suffix: PENTHOUSE
+  description: A high power high energy bulb for the depths of space. Purple.
+  components:
+  - type: LightBulb
+    bulb: Bulb
+    color: "#9E00FF"
+    lightEnergy: 1
+    lightRadius: 9
+    lightSoftness: 0.9
+    BurningTemperature: 190
+    PowerUse: 60
+
+- type: entity
+  parent: PoweredlightSomber
+  id: PoweredlightSomberWarm
+  suffix: Warm] [PENTHOUSE
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: WarmLightTube
+  - type: PointLight
+    color: "#ff9833"
+    energy: 0.8
+    radius: 10
+    softness: 1
+
+- type: entity
+  parent: PoweredSmallLightSomber
+  id: PoweredSmallLightSomberUV
+  suffix: Ultraviolet] [PENTHOUSE
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: UvLightBulb
+  - type: PointLight
+    color: "#9E00FF"
+    energy: 1
+    radius: 9
+    softness: 0.9
+
+- type: entity
+  parent: LightReplacer
+  id: LightReplacerWarm
+  suffix: Warm] [PENTHOUSE
+  components:
+  - type: Label
+    currentLabel: warm
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
+    state: icon
+  - type: Item
+    sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
+  - type: LightReplacer
+    contents:
+    - id: WarmLightTube
+      amount: 20
+    - id: WarmLightBulb
+      amount: 20
+
+- type: entity
+  parent: LightReplacer
+  id: LightReplacerUV
+  suffix: Ultraviolet] [PENTHOUSE
+  components:
+  - type: Label
+    currentLabel: ultraviolet
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
+    state: icon-UV
+  - type: Item
+    sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
+    heldPrefix: UV
+  - type: LightReplacer
+    contents:
+    - id: UvLightTube
+      amount: 20
+    - id: UvLightBulb
+      amount: 20
+
+- type: entity
+  parent: MantisCaseCandles
+  id: MantisCaseCandlesPenthouse
+  name: amaranth candle case
+  description: "An amaranth case of mixed candles."
+  components:
+  - type: StorageFill
+    contents:
+    - id: CandleSomberPenthouseTiny
+    - id: CandleSomberPenthouseSmall
+    - id: CandleSomberPenthouseTiny
+    - id: CandleSomberPenthouse
+    - id: CandleSomberPenthouseCluster
+    - id: CandleSomberPenthouse
+    - id: CandleSomberPenthouseSmall
+    - id: CandleSomberPenthouse
+    - id: CandleSomberPenthouseSmall
