@@ -15,11 +15,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
-    - !type:CharacterDepartmentRequirement
-      inverted: true
-      departments:
-        - Security
-        - Command
 
 - type: loadout
   id: LoadoutClothingUniformJumpsuitCatsuit
