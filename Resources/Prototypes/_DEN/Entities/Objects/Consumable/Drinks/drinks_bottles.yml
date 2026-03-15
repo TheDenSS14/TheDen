@@ -7,8 +7,8 @@
 - type: entity
   parent: [ CustomDrinkJug, BasePsionic ] # Breakable somber dishes should be psionic
   id: CustomDrinkJugSomber
-  name: eidolite beverage bottle
-  description: "An eidolite crystal bottle for storing drinks."
+  name: electrum jug
+  description: "An electrum jug storing drinks."
   components:
   - type: Damageable
     damageContainer: Inorganic
