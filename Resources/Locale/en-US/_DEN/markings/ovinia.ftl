@@ -67,7 +67,7 @@ marking-OviniaBlaze-ovinia-blaze = Face
 marking-OviniaBlaze-ovinia-nose = Nose
 
 marking-OviniaSnoutDefault = Default Snout
-marking-OviniaSnoutDefault-marking-OviniaSnoutDefault = Snout
+marking-OviniaSnoutDefault-snout = Snout
 
 marking-OviniaSnout = Ovinia Snout
 marking-OviniaSnout-ovinia-snout = Snout
