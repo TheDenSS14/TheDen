@@ -39,3 +39,47 @@
   - type: Drink
     solution: pool
     transferAmount: 1
+
+# Waterfalls
+
+- type: entity
+  parent: FloorWaterEntity
+  id: FloorWaterfallEntity
+  name: waterfall
+  suffix: non-occluded
+  description: Secrets lie behind.. Or not. Find out.
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/waterfall.rsi
+    layers:
+    - state: regular-water
+    drawdepth: Overdoors
+
+- type: entity
+  parent: FloorWaterfallEntity
+  id: FloorWaterfallEntityOccluded
+  suffix: occluded
+  components:
+  - type: Occluder
+
+- type: entity
+  parent: FloorWaterEntityPool
+  id: FloorWaterfallEntityPool
+  name: waterfall
+  suffix: pool, non-occluded
+  description: Usually pools don't have waterfalls. This one is unique.
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/waterfall.rsi
+    layers:
+    - state: pool-water
+    drawdepth: Overdoors
+
+- type: entity
+  parent: FloorWaterfallEntityPool
+  id: FloorPoolWaterfallEntityOccluded
+  suffix: pool, occluded
+  components:
+  - type: Sprite
+    layers:
+    - state: pool-water
