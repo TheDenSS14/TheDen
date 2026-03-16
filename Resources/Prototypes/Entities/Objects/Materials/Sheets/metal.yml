@@ -29,6 +29,7 @@
 # SPDX-FileCopyrightText: 2025 fishbait
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2026 Alex C
+# SPDX-FileCopyrightText: 2026 January Nelson
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -70,6 +71,7 @@
   parent: [SheetMetalBase, BaseQuickConstructionMaterial] # DEN add quick construction parent
   id: SheetSteel
   name: steel
+  description: A sheet of super-tough metal. Can stand the test of time. # den
   suffix: Full
   components:
   - type: Material
@@ -208,6 +210,7 @@
   parent: SheetMetalBase
   id: SheetPlasteel
   name: plasteel
+  description: Plasma-hardened steel. Has the weirdness of plasma, and the strength and certainty of steel. # den
   suffix: Full
   components:
   - type: Material

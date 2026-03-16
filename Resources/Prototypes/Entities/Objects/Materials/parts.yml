@@ -21,6 +21,7 @@
 # SPDX-FileCopyrightText: 2025 fishbait
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2026 Alex C
+# SPDX-FileCopyrightText: 2026 January Nelson
 # SPDX-FileCopyrightText: 2026 MajorMoth
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
@@ -51,6 +52,7 @@
   parent: [PartBase, BaseQuickConstructionMaterial] # DEN add quick construction parent
   id: PartRodMetal
   name: metal rod
+  description: A long piece of steel. Not thick enough to hurt much if you get hit by it. # den
   suffix: Full
   components:
   - type: PhysicalComposition
