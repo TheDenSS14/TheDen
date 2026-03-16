@@ -123,22 +123,33 @@
       - type: InnatePsionicPowers
         powersToAdd:
         - HypnosisPower #5
-        - DispelPower #6
-        - TelegnosisPower #7
-        - DarkSwapPower #8
-        - MassSleepPower #9
-        - HealingWordPower #0
+        - TelegnosisPower #6
+        - DarkSwapPower #7
+        - MassSleepPower #8
+        - HealingWordPower #9
         - PowerOverwhelming
         - XenoglossyPower
         - TelepathyPower
         - PsychognomyPower
       - type: ActionGrant
         actions:
-        # - ActionBreakSummonGuns # This many abilities messes up the order
         - ActionBreakSummonFaust
         - ActionBreakSummonMansusGrasp
         - ActionBreakSummonBloodyBlade
         - ActionBreakSummonMansusGraspDouble
+      - type: Devourer # (wheeze)
+        healDamage:
+          types:
+            Heat: -35
+          groups:
+            Brute: -35
+        shouldStoreDevoured: true
+        chemical: Ichor
+        healRate: 12.0
+        foodPreference: All
+        blacklist: null
+        devourTime: 3
+        structureDevourTime: 3
       # SHA EDITS END
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial

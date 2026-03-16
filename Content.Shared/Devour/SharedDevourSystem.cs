@@ -127,6 +127,7 @@ public abstract class SharedDevourSystem : EntitySystem
 
         switch (targetState?.CurrentState)
         {
+            case MobState.Alive: // # SHA (wheeze)
             case MobState.Critical:
             case MobState.Dead:
                 var isDevourable = _consentSystem.HasConsent(target, DevourConsent);
