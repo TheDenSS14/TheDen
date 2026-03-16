@@ -74,7 +74,7 @@
 - type: entity
   parent: PoweredlightSomber
   id: PoweredlightSomberFluorescent
-  suffix: Fluorescent
+  suffix: Fluorescent Bulb
   components:
   - type: PoweredLight
     hasLampOnSpawn: LightTube
@@ -87,7 +87,7 @@
 - type: entity
   parent: PoweredlightSomber
   id: PoweredlightSomberLED
-  suffix: LED
+  suffix: LED Bulb
   components:
   - type: PoweredLight
     hasLampOnSpawn: LedLightTube
@@ -100,7 +100,7 @@
 - type: entity
   parent: PoweredlightSomber
   id: PoweredlightSomberUV
-  suffix: Ultraviolet
+  suffix: Ultraviolet Bulb
   components:
   - type: PoweredLight
     hasLampOnSpawn: UvLightTube
@@ -185,7 +185,7 @@
 - type: entity
   parent: PoweredSmallLightSomber
   id: PoweredSmallLightSomberWarm
-  suffix: Warm
+  suffix: Warm Bulb
   components:
   - type: PoweredLight
     hasLampOnSpawn: WarmLightBulb
@@ -198,7 +198,7 @@
 - type: entity
   parent: PoweredSmallLightSomber
   id: PoweredSmallLightSomberCold
-  suffix: Cold
+  suffix: Cold Bulb
   components:
   - type: PoweredLight
     hasLampOnSpawn: ColdLightBulb
@@ -211,7 +211,7 @@
 - type: entity
   parent: PoweredSmallLightSomber
   id: PoweredSmallLightSomberDim
-  suffix: Dim
+  suffix: Dim Bulb
   components:
   - type: PoweredLight
     hasLampOnSpawn: DimLightBulb

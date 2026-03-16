@@ -2407,6 +2407,7 @@
       params:
         volume: -3
         variation: 0.15
+  - type: LandAtCursor
   - type: DamageOtherOnHit
     staminaCost: 0
   - type: MeleeThrowOnHit
@@ -2418,6 +2419,8 @@
     innate: true
   - type: DisarmMalus
     malus: 1.0
+  - type: ThrowingAngle
+    angle: 225
   - type: CultItem
   - type: EmitSoundOnSpawn
     sound:
@@ -2488,10 +2491,10 @@
     sound:
       path: /Audio/_SHA/voidblink.ogg
       params:
-        volume: -4
+        volume: -2
         pitch: 0.75
   - type: AmbientSound
-    range: 1000
+    range: 25
     volume: -8
     sound:
       path: /Audio/Ambience/wisp_ambience.ogg
@@ -2516,11 +2519,13 @@
   - type: Item
     inhandVisuals:
       left:
-      - state: inhand-both-silhouette
+      - state: inhand-both-silhouette-black
+        shader: unshaded
       - state: inhand-both-grasp
         shader: unshaded
       right:
-      - state: inhand-both-silhouette
+      - state: inhand-both-silhouette-black
+        shader: unshaded
       - state: inhand-both-grasp
         shader: unshaded
   - type: MeleeWeapon
@@ -2535,12 +2540,12 @@
         Holy: 5
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/_SHA/ascend_flesh_voidblink.ogg
+      path: /Audio/_SHA/ascend_flesh.ogg
       params:
-        volume: -2
-        pitch: 1.0
+        volume: 0
+        pitch: 1.5
   - type: AmbientSound
-    range: 1000
+    range: 25
     volume: -8
     sound:
       path: /Audio/Ambience/wisp_ambience.ogg
@@ -2549,6 +2554,63 @@
     energy: 5
     softness: 1.0
     color: "#00684E" # Mansus grasp color
+
+- type: entity
+  parent: [ HereticMansusGraspDoubleBreak ]
+  id: BreakSoul
+  name: what was left
+  description: "ONLY I WILL REMAIN."
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/break_icons.rsi
+    layers:
+    - state: icon-soul
+      shader: unshaded
+  - type: Item
+    sprite: _SHA/Heretic/ritual_circle.rsi
+    inhandVisuals:
+      left:
+      - state: draw-ritual-mirror
+        shader: unshaded
+        offset: 0,-0.5
+      - state: soul
+        shader: unshaded
+      - state: soul-eyes
+        shader: unshaded
+        scale: 0.5,0.5
+        offset: 0,-0.1
+      right:
+      - state: draw-ritual-mirror
+        shader: unshaded
+        offset: 0,-0.5
+      - state: soul
+        shader: unshaded
+      - state: soul-eyes
+        shader: unshaded
+        scale: 0.5,0.5
+        offset: 0,-0.1
+  - type: InputMover
+    toParent: true
+  - type: MovementSpeedModifier
+    walkModifier: 5
+    sprintModifier: 5
+  - type: DeleteOnDrop
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_SHA/soulscream.ogg
+      params:
+        volume: 0
+        pitch: 1.0
+  - type: AmbientSound
+    range: 25
+    volume: -2
+    sound:
+      path: /Audio/_SHA/whatwasleft.ogg
+  - type: PointLight
+    radius: 0
+    energy: 0
+    softness: 1.0
+    color: "#000000"
 
 - type: entity
   parent: BaseItem
@@ -2561,6 +2623,7 @@
     sprite: _SHA/Heretic/break_icons.rsi
     layers:
     - state: icon-silhouette
+      shader: unshaded
     - state: icon-silhouette-eyes
       shader: unshaded
   - type: Item
@@ -2570,8 +2633,10 @@
     inhandVisuals:
       left:
       - state: inhand-both-silhouette
+        shader: unshaded
       right:
       - state: inhand-both-silhouette
+        shader: unshaded
   - type: MeleeWeapon
     soundHit:
       collection: ShockPunch
@@ -2801,6 +2866,7 @@
       state: icon-grasp-both
     event: !type:SummonEquipmentEvent
       prototypes:
+        neck: BreakSoul
         hand: HereticMansusGraspDoubleBreak
   - type: BaseCultSpell
 
@@ -3009,7 +3075,7 @@
     - 0,0,20,9
   - type: StorageFill
     contents:
-    - id: MantisRangedRevolverLethal
+    - id: MantisRangedRevolverLethalBreak
     - id: MantisMeleeSickle
     - id: MantisMeleeKnife
     - id: MantisTailorsKnife
@@ -3181,7 +3247,7 @@
   parent: LightBulb
   id: UvLightBulb
   name: ultraviolet light bulb
-  suffix: PENTHOUSE
+  suffix: Ultraviolet Bulb] [PENTHOUSE
   description: A high power high energy bulb for the depths of space. Purple.
   components:
   - type: LightBulb
@@ -3196,7 +3262,7 @@
 - type: entity
   parent: PoweredlightSomber
   id: PoweredlightSomberWarm
-  suffix: Warm] [PENTHOUSE
+  suffix: Warm Bulb] [PENTHOUSE
   components:
   - type: PoweredLight
     hasLampOnSpawn: WarmLightTube
