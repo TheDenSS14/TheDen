@@ -68,6 +68,26 @@
   - Meat
   - Slice
 
+- type: foodSequenceElement
+  id: ShrimpTaco
+  name: food-sequence-content-shrimp
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/meat.rsi # TODO: Shrimp sprite
+    state: cutlet_fish
+  tags:
+  - Cooked
+  - Meat
+
+- type: foodSequenceElement
+  id: ShrimpSkewer
+  name: food-sequence-content-shrimp
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/meat.rsi # TODO: Shrimp sprite
+    state: cutlet_fish
+  tags:
+  - Cooked
+  - Meat
+
 # Burger patty sprites
 
 - type: foodSequenceElement
