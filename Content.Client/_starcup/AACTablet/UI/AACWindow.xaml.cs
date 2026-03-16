@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 little-meow-meow
+// SPDX-FileCopyrightText: 2026 portfiend
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
