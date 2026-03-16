@@ -1,7 +1,9 @@
+// SPDX-FileCopyrightText: 2026 Dirius77
 // SPDX-FileCopyrightText: 2026 lunarcomets
 //
 // SPDX-License-Identifier: MIT
 
+using System.Linq;
 using Content.Server.Abilities.Psionics;
 using Content.Server.Chat.Systems;
 using Content.Shared._DEN.Traits;
@@ -42,7 +44,10 @@ public sealed class NoosphereVulnurabilitySystem : EntitySystem
         if (!TryComp<MobStateComponent>(ent, out var mobState))
             return;
 
-        ent.Comp.OriginalAllowedDamageStates = mobState.AllowedStates;
+        foreach (var state in mobState.AllowedStates)
+        {
+            ent.Comp.OriginalAllowedDamageStates.Add(state);
+        }
     }
 
     private void OnDefibAttempt(Entity<NoosphereVulnerabilityComponent> ent, ref TargetBeforeDefibrillatorZapsEvent args)
@@ -67,7 +72,10 @@ public sealed class NoosphereVulnurabilitySystem : EntitySystem
         // kind of hacky but we work with what we got
         if (_glimmer.GlimmerOutput >= ent.Comp.ResurrectionThreshold)
         {
-            args.Component.AllowedStates = ent.Comp.OriginalAllowedDamageStates;
+            foreach (var state in ent.Comp.OriginalAllowedDamageStates)
+            {
+                args.Component.AllowedStates.Add(state);
+            }
             return;
         }
 

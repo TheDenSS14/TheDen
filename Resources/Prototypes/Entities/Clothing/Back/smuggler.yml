@@ -1,4 +1,5 @@
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Kellaris
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -122,3 +123,45 @@
   - type: EntityTableSpawner
     table: !type:NestedSelector
       tableId: RandomSatchelTable
+
+- type: entity
+  parent: [ BaseSubfloorAnchorStorageAnchored, ClothingBackpackSatchel ]
+  id: ClothingBackpackSatchelSmugglerThiefBearcatcher
+  name: smuggler's satchel
+  suffix: Thief
+  description: A dingy, suspicious looking satchel.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Satchels/smuggler.rsi
+    state: icon
+  - type: StorageFill
+    contents:
+    - id: WelderIndustrialAdvanced
+    - id: ClothingEyesGlassesMeson
+    - id: ClothingHandsGlovesColorYellow
+    - id: JawsOfLife
+    - id: MiningDrillDiamond
+    - id: Multitool
+    - id: BreachingCharge
+    - id: BreachingCharge
+    - id: ClothingMaskClown
+
+- type: entity
+  parent: [ BaseSubfloorAnchorStorageAnchored, ClothingBackpackSatchel ]
+  id: ClothingBackpackSatchelSmugglerThiefSmuggler
+  name: smuggler's satchel
+  suffix: Thief
+  description: A dingy, suspicious looking satchel.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Satchels/smuggler.rsi
+    state: icon
+  - type: StorageFill
+    contents:
+    - id: ClothingNeckCloakVoid
+    - id: FultonBeacon
+    - id: Fulton
+    - id: SmokeGrenade
+    - id: SmokeGrenade
+    - id: SmokeGrenade
+    - id: ClothingHandsChameleonThief

@@ -18,6 +18,7 @@
 # SPDX-FileCopyrightText: 2024 sleepyyapril
 # SPDX-FileCopyrightText: 2025 Spatison
 # SPDX-FileCopyrightText: 2026 Kellaris
+# SPDX-FileCopyrightText: 2026 LilNutters
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -204,6 +205,16 @@
 - type: latheRecipe
   id: PlantBagOfHolding #Den
   result: PlantBagOfHolding
+  completetime: 5
+  materials:
+    Steel: 2000
+    Silver: 750
+    Plasma: 1000 #Den, matching ore bag of holding
+    Bluespace: 100 #Den, matching ore bag of holding
+
+- type: latheRecipe
+  id: ConstructionBagOfHolding #Den
+  result: ConstructionBagOfHolding
   completetime: 5
   materials:
     Steel: 2000

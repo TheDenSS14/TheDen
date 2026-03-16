@@ -1,9 +1,9 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2025 RedFoxIV
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2026 Dirius77
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -180,7 +180,7 @@ public sealed class MoodSystem : EntitySystem
         if (prototype.Hidden)
             return;
 
-        _popup.PopupEntity(prototype.Description, uid, uid, (prototype.MoodChange > 0) ? PopupType.Medium : PopupType.MediumCaution);
+        _popup.PopupEntity(prototype.Description, uid, uid, (prototype.MoodChange >= 0) ? PopupType.Medium : PopupType.MediumCaution); // DEN: 0 mood shifts aren't a caution event
     }
 
     private void RemoveTimedOutEffect(EntityUid uid, string prototypeId, string? category = null)

@@ -170,6 +170,16 @@
   - CostumeBundleJudge
 
 - type: loadout
+  id: LoadoutCostumeBundleMagician
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleMagician
+
+- type: loadout
   id: LoadoutCostumeBundleMonkey
   category: Costumes
   cost: 2
@@ -198,6 +208,26 @@
     group: LoadoutCostumeBundles
   items:
   - CostumeBundlePerformer
+
+- type: loadout
+  id: LoadoutCostumeBundlePrincessGreen
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundlePrincessGreen
+
+- type: loadout
+  id: LoadoutCostumeBundlePrincessPink
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundlePrincessPink
 
 - type: loadout
   id: LoadoutCostumeBundleRedRaccoon
@@ -258,6 +288,16 @@
     group: LoadoutCostumeBundles
   items:
   - CostumeBundleSkub
+
+- type: loadout
+  id: LoadoutCostumeBundleTacticalMaid
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleTacticalMaid
 
 - type: loadout
   id: LoadoutCostumeBundleWitch

@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2026 Kellaris
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -7,7 +8,7 @@
   name: pulse PDW
   parent: [BaseWeaponBattery, BaseGunWieldable, BaseCentcommBlueshieldContraband]
   id: WeaponPulsePDW
-  description: A compact pulse weapon issued to Blueshield Officers for the rapid neutralization of close-range threats.
+  description: A compact pulse weapon issued to ERT for the rapid neutralization of close-range threats.
   components:
   - type: Sprite
     sprite: _DEN/Objects/Weapons/Guns/Battery/pulse_pdw.rsi

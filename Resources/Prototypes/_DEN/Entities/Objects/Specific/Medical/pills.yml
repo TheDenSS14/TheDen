@@ -4,6 +4,7 @@
 # SPDX-FileCopyrightText: 2025 pocl v
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 sheepie
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -1015,4 +1016,16 @@
   - type: StorageFill
     contents:
     - id: PillEthyloxyephedrine
+      amount: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterAmbuzol
+  suffix: Ambuzol, 10u x5
+  components:
+  - type: Label
+    currentLabel: ambuzol 10u
+  - type: StorageFill
+    contents:
+    - id: PillAmbuzol
       amount: 5
