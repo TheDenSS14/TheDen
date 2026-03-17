@@ -10,6 +10,7 @@
   parent: BaseStructureDynamic
   id: SmartFridge
   name: SmartFridge
+  suffix: DO NOT MAP # DEN
   description: A refrigerated storage unit for keeping items cold and fresh.
   categories: [ HideSpawnMenu ] # DeltaV - apparently we can't migrate abstract/disabled prototypes
   components:
