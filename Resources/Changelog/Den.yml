@@ -18255,3 +18255,45 @@ Entries:
   id: 1794
   time: '2026-03-17T06:08:49.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2554
+- author: Shaman
+  changes:
+    - type: Fix
+      message: >-
+        Unfortunately, Faust is now too heavy to throw, because it would
+        severely injure even non-psions at no risk to its wielder
+    - type: Tweak
+      message: Faust is now a proper noun (*Faust waves.)
+    - type: Tweak
+      message: You can now toggle swinging the mantis pendulum by pressing Z
+    - type: Tweak
+      message: >-
+        All mantis back items that previously could flip their straps now hide
+        their straps instead
+    - type: Tweak
+      message: >-
+        The mantis hood can now be butchered to lower it onto your shoulders
+        (because only folding it would keep your hair hidden...), or you can
+        select it that way from loadout
+    - type: Tweak
+      message: >-
+        The mantis veil and mantis arm chains are now tiny items because
+        realistically they'd fold up small
+    - type: Tweak
+      message: >-
+        The mantis waistplate can now be folded lower to look better with the
+        loincloth
+    - type: Tweak
+      message: >-
+        Added all significant folded variants of mantis clothes to chameleon
+        lists
+    - type: Fix
+      message: Mantis door colors now appear in the spray painter list
+    - type: Fix
+      message: The floating mantis chair will now bump doors open
+    - type: Fix
+      message: >-
+        The mantis guidebook can now be correctly accessed from the menus
+        (whoops)
+  id: 1795
+  time: '2026-03-17T06:34:34.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2547
