@@ -144,6 +144,12 @@
         variation: 0.05
     removalTime: 2
   - type: EmbedPassiveDamage
+  - type: EmitSoundOnThrow # It's not throwable by players anymore, but maybe an admin will do it
+    sound:
+      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg
+      params:
+        volume: -3
+        variation: 0.05
   - type: EmitSoundOnLand
     sound:
       path: /Audio/_DEN/Weapons/Melee/fausthit.ogg
@@ -203,6 +209,12 @@
     - suitStorage
   - type: ThrowingAngle
     angularVelocity: true
+  - type: EmitSoundOnThrow
+    sound:
+      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg
+      params:
+        volume: -3
+        variation: 0.05
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Effects/metal_slam1.ogg

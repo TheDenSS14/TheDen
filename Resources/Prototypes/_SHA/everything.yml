@@ -1138,8 +1138,6 @@
             path: /Audio/Effects/drop.ogg
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
-    - type: Tag
-      tags: []
 
 - type: entity
   parent: CandleSomberPenthouse
@@ -2282,6 +2280,100 @@
   - type: Sprite
     state: painting25
 
+# Guns
+
+- type: entity
+  parent: MantisRangedPistol
+  id: MantisRangedPistolLethal
+  name: OCC-P12-P "Kalliste"
+  suffix: PENTHOUSE
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MantisCasterPistolLethal
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        whitelist:
+          tags:
+          - MantisCasterPistol
+
+- type: entity
+  parent: MantisRangedRevolver
+  id: MantisRangedRevolverLethal
+  name: OCC-P06-P "Charon"
+  suffix: PENTHOUSE
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MantisCasterRevolverLethal
+        insertSound: /Audio/Weapons/Guns/Misc/revolver_spin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        whitelist:
+          tags:
+          - MantisCasterRevolver
+
+- type: entity
+  parent: MantisRangedShotgun
+  id: MantisRangedShotgunLethal
+  name: OCC-S05-P "Empusa"
+  suffix: PENTHOUSE
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MantisCasterShotgunLethal
+        insertSound: /Audio/Weapons/Guns/Misc/revolver_spin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        whitelist:
+          tags:
+          - MantisCasterShotgun
+
+- type: entity
+  parent: MantisRangedSubMachineGun
+  id: MantisRangedSubMachineGunLethal
+  name: OCC-A24-P "Strix"
+  suffix: PENTHOUSE
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MantisCasterSubMachineGunLethal
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        whitelist:
+          tags:
+          - MantisCasterSubMachineGun
+
+- type: entity
+  parent: MantisRangedShotgunLethal
+  id: MantisRangedShotgunLethalSummoned
+  suffix: PENTHOUSE, DO NOT MAP
+  components:
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_White/BloodCult/veilin.ogg
+      params:
+        volume: 0
+        variation: 0.05
+
+- type: entity
+  parent: MantisRangedRevolverLethal
+  id: MantisRangedRevolverLethalSummoned
+  suffix: PENTHOUSE, DO NOT MAP
+  components:
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_White/BloodCult/veilout.ogg
+      params:
+        volume: 0
+        variation: 0.05
+
 # Weapons
 
 - type: entity
@@ -2440,6 +2532,8 @@
         volume: -6
         pitch: 1.0
 
+# Magic Effects
+
 - type: entity
   parent: [ BaseHereticContraband, BaseItem, BaseAntiPsionicWeapon ]
   id: HereticMansusGraspBreak
@@ -2453,7 +2547,7 @@
     - state: icon-grasp
       shader: unshaded
   - type: Item
-    size: Ginormous
+    size: Huge
     storedSprite: null
     sprite: _SHA/Heretic/break_inhands.rsi
     inhandVisuals:
@@ -2496,8 +2590,13 @@
   - type: DisarmMalus
     malus: 1.0
   - type: CultItem
-  - type: DeleteOnDrop
   - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_SHA/voidblink.ogg
+      params:
+        volume: -2
+        pitch: 0.75
+  - type: EmitSoundOnPickup
     sound:
       path: /Audio/_SHA/voidblink.ogg
       params:
@@ -2513,6 +2612,19 @@
     energy: 2.5
     softness: 1.0
     color: "#00684E" # Mansus grasp color
+  # - type: DeleteOnDrop
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/Effects/eye_close.ogg
+      params:
+        volume: -6
+        variation: 0.075
+  - type: EmitSoundOnThrow
+    sound:
+      path: /Audio/Effects/eye_close.ogg
+      params:
+        volume: -6
+        variation: 0.075
 
 - type: entity
   parent: HereticMansusGraspBreak
@@ -2619,10 +2731,6 @@
     energy: 0
     softness: 1.0
     color: "#000000"
-  - type: ClothingSpeedModifier
-    walkModifier: 1
-    sprintModifier: 10
-  - type: HeldSpeedModifier
 
 - type: entity
   parent: ClothingNeckBase
@@ -2637,13 +2745,16 @@
     - state: icon-meditation
       shader: unshaded
   - type: Item
-    size: Normal
+    size: Tiny
   - type: Clothing
     sprite: _SHA/Heretic/effect_clothing.rsi
     equipDelay: 0
     unequipDelay: 0
     quickEquip: true
   - type: AntiGravityClothing
+  - type: SpawnItemsOnUse # Preferring this over DeleteOnDrop so you can store them and equip them but just press Z to delete them
+    items: # Otherwise storing/equipping counts as dropping so it won't let you, they're like consumable props
+    - id: null
 
 - type: entity
   parent: BreakFocusMeditation
@@ -2672,9 +2783,22 @@
         Radiation: 0.5
         Shock: 0.5
         Slash: 0.5
+        Structural: 0.5
   - type: StaminaDamageResistance
     coefficient: 0.5
-  - type: DeleteOnDrop
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 15
+    requiresToggle: false
+  - type: HeldSpeedModifier
+  - type: SpawnItemsOnUse
+    items:
+    - id: null
+  #- type: DeleteOnDrop
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/book_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
 
 - type: entity
   parent: ClothingHeadBase
@@ -2691,7 +2815,7 @@
     - state: icon-silhouette-eyes
       shader: unshaded
   - type: Item
-    size: Normal
+    size: Tiny
   - type: Clothing
     sprite: _SHA/Heretic/effect_clothing.rsi
     equipDelay: 0
@@ -2699,98 +2823,6 @@
     quickEquip: true
   - type: IdentityBlocker # As if ANYONE can't tell
     coverage: FULL
-
-# Guns
-
-- type: entity
-  parent: MantisRangedPistol
-  id: MantisRangedPistolLethal
-  name: OCC-P12-P "Kalliste"
-  suffix: PENTHOUSE
-  components:
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MantisCasterPistolLethal
-        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
-        whitelist:
-          tags:
-          - MantisCasterPistol
-
-- type: entity
-  parent: MantisRangedRevolver
-  id: MantisRangedRevolverLethal
-  name: OCC-P06-P "Charon"
-  suffix: PENTHOUSE
-  components:
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MantisCasterRevolverLethal
-        insertSound: /Audio/Weapons/Guns/Misc/revolver_spin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
-        whitelist:
-          tags:
-          - MantisCasterRevolver
-
-- type: entity
-  parent: MantisRangedShotgun
-  id: MantisRangedShotgunLethal
-  name: OCC-S05-P "Empusa"
-  suffix: PENTHOUSE
-  components:
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MantisCasterShotgunLethal
-        insertSound: /Audio/Weapons/Guns/Misc/revolver_spin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
-        whitelist:
-          tags:
-          - MantisCasterShotgun
-
-- type: entity
-  parent: MantisRangedSubMachineGun
-  id: MantisRangedSubMachineGunLethal
-  name: OCC-A24-P "Strix"
-  suffix: PENTHOUSE
-  components:
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MantisCasterSubMachineGunLethal
-        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-        whitelist:
-          tags:
-          - MantisCasterSubMachineGun
-
-- type: entity
-  parent: MantisRangedShotgunLethal
-  id: MantisRangedShotgunLethalSummoned
-  components:
-  - type: EmitSoundOnSpawn
-    sound:
-      path: /Audio/_White/BloodCult/veilin.ogg
-      params:
-        volume: 0
-        variation: 0.05
-
-- type: entity
-  parent: MantisRangedRevolverLethal
-  id: MantisRangedRevolverLethalSummoned
-  components:
-  - type: EmitSoundOnSpawn
-    sound:
-      path: /Audio/_White/BloodCult/veilout.ogg
-      params:
-        volume: 0
-        variation: 0.05
 
 # Spells
 
@@ -2910,7 +2942,7 @@
   id: MantisCaseRestraintsPenthouse
   name: restraints case
   suffix: PENTHOUSE
-  description: "An amaranth case filled with shackles and chains, complete with an antique wrench."
+  description: "A floral case filled with shackles and chains, complete with an antique wrench."
   components:
   - type: Sprite
     layers:
@@ -3071,9 +3103,9 @@
 
 - type: entity
   parent: BookshelfSomberFilled
-  id: BookshelfSomberSanctumFilled
+  id: BookshelfSomberFilledSanctum
   name: somber bookshelf
-  suffix: SANCTUM ONLY
+  suffix: SANCTUM ONLY, Filled
   description: "A gloomy bookshelf sagging beneath volumes that should not exist. Their spines are cracked, titles faded, and the air around them feels wrong when you linger too long."
   components:
   - type: Sprite
@@ -3085,11 +3117,25 @@
         amount: 5
         maxAmount: 10
 
+- type: entity
+  parent: BookshelfSomberFilledSanctum
+  id: BookshelfSomberBacklessFilledSanctum
+  suffix: SANCTUM ONLY, See-Through, Filled
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/somberbookshelfsanctum.rsi
+    layers:
+      - state: base-backless
+      - state: book-0
+      - map: ["enum.StorageFillLayers.Fill"]
+  - type: Occluder
+    enabled: false
+
 # Break's Belt (Extra Storage)
 
 - type: entity
   parent: ClothingBeltStorageBase
-  id: ClothingBeltWaistPenthouse
+  id: ClothingBeltBreak
   name: skirt band
   suffix: PENTHOUSE, DO NOT MAP
   description: "Technically the band of a high-waisted skirt, though it seems like you've ripped it off. You animal."
@@ -3103,10 +3149,43 @@
   - type: Item
     size: Small
   - type: Storage
-    defaultStorageOrientation: null
     maxItemSize: Ginormous
     grid:
     - 0,0,20,9
+  - type: StorageFill
+    contents:
+    - id: MantisMeleeSickle
+    - id: MantisMeleeKnife
+    - id: MantisTailorsKnife
+    - id: ClothingNeckMantisPendulum
+    - id: BoxFolderMantis
+    - id: MantisCaseChemicalsPenthouse
+    - id: MantisCaseAdminToys
+    - id: CigPackMnemolithLighter
+      amount: 2
+    - id: ClothingHeadCageMantisPenthouse
+      amount: 1
+    - id: HandcuffsMantisPenthouse
+      amount: 3
+    - id: ClothingNeckMantisShacklesPenthouse
+      amount: 3
+    - id: WrenchMantis
+    - id: LeashMantisPenthouse
+      amount: 6
+
+# Tatter's "Belt"
+
+- type: entity
+  parent: ClothingBeltBreak
+  id: ClothingBeltTatter
+  name: nothing
+  suffix: PENTHOUSE, DO NOT MAP
+  description: "Nothing to see here."
+  components:
+  - type: Sprite
+    sprite: _SHA/Clothing/Belt/nothing.rsi
+  - type: Clothing
+    sprite: _SHA/Clothing/Belt/nothing.rsi
   - type: StorageFill
     contents:
     - id: MantisMeleeSickle
@@ -3132,34 +3211,47 @@
 
 - type: entity
   parent: MantisCaseSmall
-  id: MantisCaseAdminToys # Just RP toys I don't want cluttering my belt, but spawning them is more annoying
-  name: amaranth case
+  id: MantisCaseAdminToys # Generally for consumable RP toys
+  name: small case
   suffix: PENTHOUSE, DO NOT MAP
-  description: "Only an amaranth case. What are you looking at."
+  description: "A shadow wood case for important things."
   components:
   - type: Sprite
-    sprite: _SHA/Objects/Storage/boxmantis.rsi
+    sprite: _SHA/Objects/Storage/boxshadow.rsi
     layers:
     - state: 1-closed
-    - state: label-smiley
+    - state: label-psi
     - state: 1-open
       map: ["openLayer"]
   - type: Item
-    sprite: _SHA/Objects/Storage/boxmantis.rsi
+    size: Small
+    sprite: _SHA/Objects/Storage/boxshadow.rsi
   - type: Storage
+    maxItemSize: Huge
     grid:
-    - 0,0,3,3
+    - 0,0,20,9
+    storageOpenSound: /Audio/Effects/silence.ogg
+    storageCloseSound: /Audio/Effects/silence.ogg
+    storageInsertSound: /Audio/Effects/silence.ogg
+    storageRemoveSound: /Audio/Effects/silence.ogg
   - type: StorageFill
     contents:
     - id: BreakSilhouette
+      amount: 1
     - id: BreakFocusMeditation
+      amount: 1
 
 - type: entity
   parent: MantisCaseCandles
   id: MantisCaseCandlesPenthouse
-  name: amaranth candle case
-  description: "An amaranth case of mixed candles."
+  name: candle case
+  suffix: PENTHOUSE
+  description: "A floral wood case of mixed candles."
   components:
+  - type: Sprite
+    sprite: _SHA/Objects/Storage/boxfloral.rsi
+  - type: Item
+    sprite: _SHA/Objects/Storage/boxfloral.rsi
   - type: StorageFill
     contents:
     - id: CandleSomberPenthouseTiny
@@ -3175,10 +3267,14 @@
 - type: entity
   parent: MantisCaseChemicals
   id: MantisCaseChemicalsPenthouse
-  name: amaranth chemicals case
+  name: chemicals case
   suffix: PENTHOUSE
-  description: "An amaranth case of chemicals. A watchful eye is carved into the top."
+  description: "A floral wood case of chemicals."
   components:
+  - type: Sprite
+    sprite: _SHA/Objects/Storage/boxfloral.rsi
+  - type: Item
+    sprite: _SHA/Objects/Storage/boxfloral.rsi
   - type: Storage
     grid:
     - 0,0,1,2 # 2x3

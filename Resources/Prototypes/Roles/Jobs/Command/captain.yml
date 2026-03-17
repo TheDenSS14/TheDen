@@ -137,19 +137,6 @@
         - ActionBreakSummonMansusGrasp
         - ActionBreakSummonBloodyBlade
         - ActionBreakSummonMansusGraspDouble
-      - type: Devourer # (wheeze)
-        healDamage:
-          types:
-            Heat: -35
-          groups:
-            Brute: -35
-        shouldStoreDevoured: true
-        chemical: Ichor
-        healRate: 12.0
-        foodPreference: All
-        blacklist: null
-        devourTime: 3
-        structureDevourTime: 3
       # SHA EDITS END
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial
@@ -165,9 +152,12 @@
     jumpsuit: ClothingUniformJumpsuitCaptain
     back: ClothingBackpackCaptainFilled
     shoes: ClothingShoesBootsLaceup
-    id: ForensicMantisPDA # SHA
-    ears: ClothingHeadsetMantis # SHA
-    belt: ClothingBeltWaistPenthouse # SHA
+    # SHA EDITS START
+    id: ForensicMantisPDA
+    ears: ClothingHeadsetMantis
+    belt: ClothingBeltBreak
+    pocket1: MantisCaseAdminToys
+    # SHA EDITS END
   innerClothingSkirt: ClothingUniformJumpskirtCaptain
   satchel: ClothingBackpackSatchelCaptainFilled
   duffelbag: ClothingBackpackDuffelCaptainFilled

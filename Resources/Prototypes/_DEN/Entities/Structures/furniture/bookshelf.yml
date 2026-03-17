@@ -44,6 +44,7 @@
   parent: [ BookshelfFilled, BasePsionic ]
   id: BookshelfSomberFilled
   name: somber bookshelf
+  suffix: Random Filled
   description: "A gloomy bookshelf full of gloomy books."
   components:
   - type: Sprite
@@ -77,3 +78,33 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
       - !type:EmptyAllContainersBehaviour
+
+# See-through bookshelves so mappers have options
+
+- type: entity
+  parent: BookshelfSomber
+  id: BookshelfSomberBackless
+  suffix: See-Through
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/somberbookshelf.rsi
+    layers:
+      - state: base-backless
+      - state: book-0
+      - map: ["enum.StorageFillLayers.Fill"]
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: BookshelfSomberFilled
+  id: BookshelfSomberBacklessFilled
+  suffix: See-Through, Random Filled
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/somberbookshelf.rsi
+    layers:
+      - state: base-backless
+      - state: book-0
+      - map: ["enum.StorageFillLayers.Fill"]
+  - type: Occluder
+    enabled: false
