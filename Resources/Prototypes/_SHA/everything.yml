@@ -17,6 +17,16 @@
   maps:
   - Infinity # TODO
 
+# Sound Collections
+
+- type: soundCollection
+  id: SoulTalk
+  files:
+    - /Audio/_SHA/soultalk1.ogg
+    - /Audio/_SHA/soultalk2.ogg
+    - /Audio/_SHA/soultalk3.ogg
+    - /Audio/_SHA/soultalk4.ogg
+
 # Parallax
 
 - type: parallax
@@ -2387,7 +2397,7 @@
     punishChances: 1
     punishSelfDamage: 1
     punishStunDuration: 1
-  - type: MeleeRequiresWield # She just won't swing it if she's not wielding it properly
+  - type: MeleeRequiresWield # She just won't swing it if she's not wielding it
     fumbleOnAttempt: false
   - type: MeleeWeapon
     heavyStaminaCost: 0
@@ -2527,7 +2537,7 @@
   - type: CultItem
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/_SHA/castsummon.ogg
+      path: /Audio/_SHA/castsummoninstant.ogg
       params:
         volume: -6
         pitch: 1.0
@@ -2569,9 +2579,9 @@
         Holy: 5
         Structural: 25
     soundHit:
-      path: /Audio/_SHA/repulse.ogg
+      path: /Audio/_SHA/repulseinstant.ogg
       params:
-        volume: -6
+        volume: 0
         variation: 0.15
     soundSwing:
       path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg
@@ -2596,15 +2606,9 @@
       params:
         volume: -2
         pitch: 0.75
-  - type: EmitSoundOnPickup
-    sound:
-      path: /Audio/_SHA/voidblink.ogg
-      params:
-        volume: -2
-        pitch: 0.75
   - type: AmbientSound
-    range: 25
-    volume: -8
+    range: 5
+    volume: -4
     sound:
       path: /Audio/Ambience/wisp_ambience.ogg
   - type: PointLight
@@ -2612,19 +2616,7 @@
     energy: 2.5
     softness: 1.0
     color: "#00684E" # Mansus grasp color
-  # - type: DeleteOnDrop
-  - type: EmitSoundOnDrop
-    sound:
-      path: /Audio/Effects/eye_close.ogg
-      params:
-        volume: -6
-        variation: 0.075
-  - type: EmitSoundOnThrow
-    sound:
-      path: /Audio/Effects/eye_close.ogg
-      params:
-        volume: -6
-        variation: 0.075
+  - type: DeleteOnDrop
 
 - type: entity
   parent: HereticMansusGraspBreak
@@ -2657,17 +2649,6 @@
         Blunt: 10
         Holy: 5
         Structural: 50
-  - type: EmitSoundOnSpawn
-    sound:
-      path: /Audio/_SHA/ascend_flesh.ogg
-      params:
-        volume: 0
-        pitch: 1.5
-  - type: AmbientSound
-    range: 25
-    volume: -8
-    sound:
-      path: /Audio/Ambience/wisp_ambience.ogg
   - type: PointLight
     radius: 2
     energy: 2.5
@@ -2717,15 +2698,24 @@
         offset: 0,0.4
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/_SHA/soulscream.ogg
+      path: /Audio/_SHA/soulscreamlong+ascendfleshlong.ogg
       params:
-        volume: -1
+        volume: 0
         pitch: 1.0
   - type: AmbientSound
     range: 25
     volume: -3
     sound:
-      path: /Audio/_SHA/whatwasleft.ogg
+      path: /Audio/_SHA/whatwasleft+wisp.ogg
+      params:
+        volume: 0
+        pitch: 1.0
+  - type: EmitSoundOnUse
+    sound:
+      collection: SoulTalk
+      params:
+        volume: -4
+        variation: 0.05
   - type: PointLight
     radius: 0
     energy: 0
@@ -2745,7 +2735,7 @@
     - state: icon-meditation
       shader: unshaded
   - type: Item
-    size: Tiny
+    size: Normal
   - type: Clothing
     sprite: _SHA/Heretic/effect_clothing.rsi
     equipDelay: 0
@@ -2755,6 +2745,12 @@
   - type: SpawnItemsOnUse # Preferring this over DeleteOnDrop so you can store them and equip them but just press Z to delete them
     items: # Otherwise storing/equipping counts as dropping so it won't let you, they're like consumable props
     - id: null
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/Effects/eye_close.ogg
+      params:
+        volume: -6
+        variation: 0.075
 
 - type: entity
   parent: BreakFocusMeditation
@@ -2768,6 +2764,8 @@
     layers:
     - state: icon-trance
       shader: unshaded
+  - type: Clothing
+    quickEquip: false
   - type: Armor # Magic bullshit (in case I sprint into a wall)
     modifiers:
       coefficients:
@@ -2788,17 +2786,17 @@
     coefficient: 0.5
   - type: ClothingSpeedModifier
     walkModifier: 1
-    sprintModifier: 15
+    sprintModifier: 10
     requiresToggle: false
-  - type: HeldSpeedModifier
   - type: SpawnItemsOnUse
     items:
     - id: null
-  #- type: DeleteOnDrop
-  - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/book_pickup.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+  - type: DeleteOnDrop
+  - type: NoSlip
+  - type: Insulated
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 60
 
 - type: entity
   parent: ClothingHeadBase
@@ -2811,11 +2809,10 @@
     sprite: _SHA/Heretic/break_icons.rsi
     layers:
     - state: icon-silhouette
-      shader: unshaded
-    - state: icon-silhouette-eyes
+    - state: icon-silhouette-unshaded
       shader: unshaded
   - type: Item
-    size: Tiny
+    size: Normal
   - type: Clothing
     sprite: _SHA/Heretic/effect_clothing.rsi
     equipDelay: 0
@@ -2825,6 +2822,27 @@
     coverage: FULL
 
 # Spells
+
+- type: entity
+  id: ActionBreakSummonFaust
+  name: Summon Faust
+  description: "It will enjoy this."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatsword.rsi
+    state: icon
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatsword.rsi
+      state: icon
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand: MantisMeleeGreatswordBreak
+  - type: BaseCultSpell
 
 - type: entity
   id: ActionBreakSummonMansusGrasp
@@ -2848,52 +2866,9 @@
   - type: BaseCultSpell
 
 - type: entity
-  id: ActionBreakSummonGuns # Unused because the action bar shuffles if you fill it up with 17+ things (at least on my machine)
-  name: Summon Empusa & Charon
-  description: "Final warning."
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _DEN/Objects/Weapons/Guns/Battery/Mantis/mantis-shotgun.rsi
-    state: icon
-  - type: InstantAction
-    itemIconStyle: BigAction
-    charges: 1000
-    temporary: false
-    icon:
-      sprite: _DEN/Objects/Weapons/Guns/Battery/Mantis/mantis-shotgun.rsi
-      state: icon
-    event: !type:SummonEquipmentEvent
-      prototypes:
-        hand1: MantisRangedShotgunLethalSummoned
-        hand2: MantisRangedRevolverLethalSummoned
-  - type: BaseCultSpell
-
-- type: entity
-  id: ActionBreakSummonFaust
-  name: Summon Faust
-  description: "It's eager."
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatsword.rsi
-    state: icon
-  - type: InstantAction
-    itemIconStyle: BigAction
-    charges: 1000
-    temporary: false
-    icon:
-      sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatsword.rsi
-      state: icon
-    event: !type:SummonEquipmentEvent
-      prototypes:
-        hand: MantisMeleeGreatswordBreak
-  - type: BaseCultSpell
-
-- type: entity
   id: ActionBreakSummonBloodyBlade
   name: Manifest Bloody Blade
-  description: "I won't die like this."
+  description: "My flesh and blood."
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -2933,6 +2908,30 @@
         hand1: HereticMansusGraspDoubleBreak
         hand2: BreakSoul
         neck: BreakFocusTrance
+  - type: BaseCultSpell
+
+# Unused Spells
+
+- type: entity
+  id: ActionBreakSummonGuns
+  name: Summon Empusa & Charon
+  description: "Final warning."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Guns/Battery/Mantis/mantis-shotgun.rsi
+    state: icon
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _DEN/Objects/Weapons/Guns/Battery/Mantis/mantis-shotgun.rsi
+      state: icon
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand1: MantisRangedShotgunLethalSummoned
+        hand2: MantisRangedRevolverLethalSummoned
   - type: BaseCultSpell
 
 # Restraints
@@ -3207,6 +3206,33 @@
     - id: LeashMantisPenthouse
       amount: 6
 
+# Shut Up I Didn't Ask For This
+
+- type: entity
+  parent: [ BaseStorageItem, BaseBagOpenClose ]
+  id: StorageStomach
+  name: her stomach
+  suffix: DO NOT MAP] [BREAK
+  description: "It's not normally seen from this side."
+  components:
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: Sprite
+    sprite: _Impstation/Mobs/Species/Thaven/organs.rsi
+    state: stomach
+  - type: Item
+    sprite: null
+    size: Tiny
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+      - 0,0,20,5
+    storageOpenSound: /Audio/Effects/silence.ogg
+    storageCloseSound: /Audio/Effects/silence.ogg
+    storageInsertSound: /Audio/_SHA/storage.ogg
+    storageRemoveSound: /Audio/Effects/silence.ogg
+
 # Cases
 
 - type: entity
@@ -3229,7 +3255,7 @@
   - type: Storage
     maxItemSize: Huge
     grid:
-    - 0,0,20,9
+    - 0,0,4,19
     storageOpenSound: /Audio/Effects/silence.ogg
     storageCloseSound: /Audio/Effects/silence.ogg
     storageInsertSound: /Audio/Effects/silence.ogg
@@ -3237,9 +3263,11 @@
   - type: StorageFill
     contents:
     - id: BreakSilhouette
-      amount: 1
+      amount: 10
     - id: BreakFocusMeditation
-      amount: 1
+      amount: 10
+    - id: StorageStomach
+      amount: 20
 
 - type: entity
   parent: MantisCaseCandles
