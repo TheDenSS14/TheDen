@@ -555,3 +555,22 @@
     - FloorTilePoolDark
   - type: Stack
     stackType: FloorTilePoolDark
+
+- type: entity
+  parent: FloorTileItemBase
+  id: FloorTileItemEightiesLowContrast
+  name: eighties floor
+  suffix: lower contrast
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tiles/eighties.rsi
+    state: eighties
+  - type: Item
+    sprite: _DEN/Objects/Tiles/eighties.rsi
+    heldPrefix: eighties
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorEightiesLowContrast
+  - type: Stack
+    stackType: FloorTileStackEightiesLowContrast
