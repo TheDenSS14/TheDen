@@ -1,0 +1,7 @@
+- type: entity
+  parent: DVSmartFridge
+  id: DVSmartFridgeKitchenHydroponics
+  suffix: Kitchen/Hydroponics
+  components:
+  - type: AccessReader
+    access: [["Kitchen"], ["Hydroponics"]]
