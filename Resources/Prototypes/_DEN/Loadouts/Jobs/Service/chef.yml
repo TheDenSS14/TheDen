@@ -274,3 +274,39 @@
         - Chef
   items:
     - ClothingOuterApronCuteChef
+
+- type: loadout
+  id: LoadoutServiceButchCleaver
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ButchCleaver
+
+- type: loadout
+  id: LoadoutServiceKitchenKnife
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - KitchenKnife
+
+- type: loadout
+  id: LoadoutServiceRollingPin
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - RollingPin
