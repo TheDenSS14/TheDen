@@ -99,12 +99,12 @@
         activateSound:
           path: /Audio/Effects/eye_open.ogg
           params:
-            volume: -3
+            volume: -5
             variation: 0.075
         deactivateSound:
           path: /Audio/Effects/eye_close.ogg
           params:
-            volume: -3
+            volume: -5
             variation: 0.075
       - type: ThermalVision # The order of these components affects their position in the action bar so I don't have to rearrange everything every time I use Telegnosis
         pulseTime: 2

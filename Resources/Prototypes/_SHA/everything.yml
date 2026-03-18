@@ -1266,12 +1266,12 @@
     activateSound:
       path: /Audio/Effects/eye_open.ogg
       params:
-        volume: -3
+        volume: -5
         variation: 0.075
     deactivateSound:
       path: /Audio/Effects/eye_close.ogg
       params:
-        volume: -3
+        volume: -5
         variation: 0.075
 
 - type: entity
@@ -1492,12 +1492,12 @@
     activateSound:
       path: /Audio/Effects/eye_open.ogg
       params:
-        volume: -3
+        volume: -5
         variation: 0.075
     deactivateSound:
       path: /Audio/Effects/eye_close.ogg
       params:
-        volume: -3
+        volume: -5
         variation: 0.075
 
 - type: entity
@@ -2481,7 +2481,6 @@
       shader: unshaded
   - type: Item
     size: Normal
-    storedSprite: null
     sprite: _SHA/Heretic/break_inhands.rsi
     inhandVisuals:
       left:
@@ -2557,8 +2556,7 @@
     - state: icon-grasp
       shader: unshaded
   - type: Item
-    size: Huge
-    storedSprite: null
+    size: Ginormous
     sprite: _SHA/Heretic/break_inhands.rsi
     inhandVisuals:
       left:
@@ -2651,12 +2649,15 @@
         Structural: 50
   - type: PointLight
     radius: 2
-    energy: 2.5
+    energy: 3
     softness: 1.0
     color: "#00684E" # Mansus grasp color
 
+#  - type: TimedDespawn
+#    lifetime: 2
+
 - type: entity
-  parent: [ HereticMansusGraspDoubleBreak ]
+  parent: HereticMansusGraspDoubleBreak
   id: BreakSoul
   name: what was left
   description: "ONLY I WILL REMAIN."
@@ -2742,15 +2743,6 @@
     unequipDelay: 0
     quickEquip: true
   - type: AntiGravityClothing
-  - type: SpawnItemsOnUse # Preferring this over DeleteOnDrop so you can store them and equip them but just press Z to delete them
-    items: # Otherwise storing/equipping counts as dropping so it won't let you, they're like consumable props
-    - id: null
-  - type: EmitSoundOnPickup
-    sound:
-      path: /Audio/Effects/eye_close.ogg
-      params:
-        volume: -6
-        variation: 0.075
 
 - type: entity
   parent: BreakFocusMeditation
@@ -2764,6 +2756,8 @@
     layers:
     - state: icon-trance
       shader: unshaded
+  - type: Item
+    size: Ginormous
   - type: Clothing
     quickEquip: false
   - type: Armor # Magic bullshit (in case I sprint into a wall)
@@ -2788,18 +2782,15 @@
     walkModifier: 1
     sprintModifier: 10
     requiresToggle: false
-  - type: SpawnItemsOnUse
-    items:
-    - id: null
-  - type: DeleteOnDrop
   - type: NoSlip
   - type: Insulated
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 60
+  - type: DeleteOnDrop
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: BaseItem
   id: BreakSilhouette
   name: ominous silhouette
   suffix: DO NOT MAP] [BREAK
@@ -2809,17 +2800,38 @@
     sprite: _SHA/Heretic/break_icons.rsi
     layers:
     - state: icon-silhouette
-    - state: icon-silhouette-unshaded
       shader: unshaded
   - type: Item
-    size: Normal
-  - type: Clothing
-    sprite: _SHA/Heretic/effect_clothing.rsi
-    equipDelay: 0
-    unequipDelay: 0
-    quickEquip: true
-  - type: IdentityBlocker # As if ANYONE can't tell
-    coverage: FULL
+    size: Huge
+    sprite: _SHA/Heretic/break_inhands.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-both-silhouette
+        shader: unshaded
+      - state: inhand-both-silhouette-eyes
+        shader: unshaded
+      right:
+      - state: inhand-both-silhouette
+        shader: unshaded
+      - state: inhand-both-silhouette-eyes
+        shader: unshaded
+  - type: MeleeWeapon
+    soundHit:
+      collection: ShockPunch
+    angle: 30
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Shock: 5
+  - type: SpawnItemsOnUse
+    items:
+    - id: null
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/Effects/eye_close.ogg
+      params:
+        volume: -6
+        variation: 0.075
 
 # Spells
 
@@ -3255,7 +3267,7 @@
   - type: Storage
     maxItemSize: Huge
     grid:
-    - 0,0,4,19
+    - 0,0,25,4
     storageOpenSound: /Audio/Effects/silence.ogg
     storageCloseSound: /Audio/Effects/silence.ogg
     storageInsertSound: /Audio/Effects/silence.ogg
