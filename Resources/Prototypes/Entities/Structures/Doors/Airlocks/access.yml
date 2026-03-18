@@ -261,8 +261,9 @@
   id: AirlockParamedicLocked
   suffix: Paramedic, Locked
   components:
-  - type: AccessReader
-    access: [["Paramedic"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsParamedic ]
 
 - type: entity
   parent: AirlockVirology
@@ -657,8 +658,9 @@
   id: AirlockParamedicGlassLocked
   suffix: Paramedic, Locked
   components:
-  - type: AccessReader
-    access: [["Paramedic"]]
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsParamedic ]
 
 - type: entity
   parent: AirlockVirologyGlass
