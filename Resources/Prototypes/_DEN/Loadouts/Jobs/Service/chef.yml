@@ -281,36 +281,6 @@
   cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutChefUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chef
-  items:
-    - ButchCleaver
-
-- type: loadout
-  id: LoadoutServiceOuterApronCuteChef
-  category: JobsServiceChef
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutChefOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - Chef
-  items:
-    - ClothingOuterApronCuteChef
-
-- type: loadout
-  id: LoadoutServiceButchCleaver
-  category: JobsServiceChef
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutChefUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Chef
@@ -323,8 +293,6 @@
   cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutChefUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Chef
@@ -337,8 +305,6 @@
   cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutChefUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Chef
