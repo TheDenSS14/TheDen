@@ -34,6 +34,7 @@
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
     Head: MobDionaHead
+    Face: MobHumanoidAnyMarking
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Underwear: MobHumanoidAnyMarking
@@ -54,10 +55,10 @@
   onlyWhitelisted: true
   points:
     Head:
-      points: 5
+      points: 6
       required: false
     HeadTop:
-      points: 3 #imp
+      points: 6
       required: false
     HeadSide:
       points: 6
@@ -96,7 +97,7 @@
       points: 6
       required: false
     Overlay:
-      points: 1
+      points: 6
       required: true
       defaultMarkings: [ DionaVineOverlay ]
 

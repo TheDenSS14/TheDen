@@ -11,9 +11,7 @@
 
 - type: marking
   id: MakeupLips
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Harpy; The Den - Canid
+  parent: BaseFaceSnoutlessMarking
   coloring:
     default:
       type:
@@ -24,10 +22,22 @@
     state: lips
 
 - type: marking
-  id: MakeupBlush
+  id: MakeupLipsSnout
+  speciesRestriction: [ Tajaran, Rodentia ]
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, Reptilian, SlimePerson, Felinid, Oni, Vulpkanin, Harpy, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Vulpkanin, Harpy; The Den - Canid
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#7e2727"
+  sprites:
+  - sprite: Mobs/Customization/makeup.rsi
+    state: snout_lips
+    
+- type: marking
+  id: MakeupBlush
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -39,9 +49,7 @@
 
 - type: marking
   id: MakeupNailPolishRight
-  bodyPart: RHand
-  markingCategory: RightHand
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Vulpkanin; The Den - Canid
+  parent: BaseRHandMarking
   coloring:
     default:
       type:
@@ -53,9 +61,7 @@
 
 - type: marking
   id: MakeupNailPolishLeft
-  bodyPart: LHand
-  markingCategory: LeftHand
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Vulpkanin; The Den - Canid
+  parent: BaseLHandMarking
   coloring:
     default:
       type:

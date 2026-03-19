@@ -129,9 +129,7 @@
 
 - type: marking
   id: HarpyEarsDefault
-  bodyPart: Head
-  markingCategory: HeadTop
-  speciesRestriction: [Harpy, SlimePerson, IPC]
+  parent: BaseEarsMarking
   coloring:
     default:
       type:
@@ -146,9 +144,7 @@
 
 - type: marking
   id: HarpyEarsLarge
-  bodyPart: Head
-  markingCategory: HeadTop
-  speciesRestriction: [Harpy, SlimePerson, IPC]
+  parent: BaseEarsMarking
   coloring:
     default:
       type:
@@ -163,9 +159,7 @@
 
 - type: marking
   id: HarpyTailPhoenix
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Harpy, SlimePerson, IPC]
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -180,9 +174,7 @@
 
 - type: marking
   id: HarpyTailRooster
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Harpy, SlimePerson, IPC]
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -196,9 +188,7 @@
 
 - type: marking
   id: HarpyTailForkedWhitescale
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Harpy, SlimePerson, IPC]
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -212,9 +202,7 @@
 
 - type: marking
   id: HarpyTailForkedHuescale
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Harpy, SlimePerson, IPC]
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -228,9 +216,7 @@
 
 - type: marking
   id: HarpyTailFinch
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Harpy, SlimePerson, IPC]
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -244,9 +230,7 @@
 
 - type: marking
   id: HarpyTailPeacock
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Harpy, SlimePerson, IPC]
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -262,9 +246,7 @@
 
 - type: marking
   id: HarpyTailHaven
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Harpy, SlimePerson, IPC]
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -280,9 +262,7 @@
 
 - type: marking
   id: HarpyTailForkedLong
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Harpy, SlimePerson, IPC]
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -296,9 +276,7 @@
 
 - type: marking
   id: HarpyTailSwallow
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Harpy, SlimePerson, IPC]
+  parent: BaseTailMarking
   coloring:
     default:
       type:

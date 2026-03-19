@@ -7,6 +7,9 @@
 marking-MakeupLips-lips = Lips
 marking-MakeupLips = Lips
 
+marking-MakeupLipsSnout-snout_lips = Lips
+marking-MakeupLipsSnout = Lips
+
 marking-MakeupBlush-blush = Blush
 marking-MakeupBlush = Blush
 
