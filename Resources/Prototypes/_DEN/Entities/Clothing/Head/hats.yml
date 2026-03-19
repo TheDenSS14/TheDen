@@ -63,6 +63,7 @@
     guides: [ PsionicInsulation ]
   - type: Tag
     tags:
+    - WhitelistChameleon
     - MantisBeltStorable
   - type: Foldable
     canFoldInsideContainer: true
@@ -116,6 +117,16 @@
     unfoldVerbText: unfold-verb
   - type: FoldableClothing
     foldedEquippedPrefix: folded
+
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingHeadHatFezMantisOrnate
+  id: ClothingHeadHatFezMantisOrnateFolded
+  suffix: Folded
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: folded
 
 - type: entity
   parent: [ClothingHeadCage, BaseMantisContraband]

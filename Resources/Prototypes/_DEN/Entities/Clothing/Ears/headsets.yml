@@ -7,7 +7,7 @@
   parent: ClothingHeadset
   id: ClothingHeadsetMantis
   name: mantis headset
-  description: "A dark headset with a magenta stripe, marking it as the mantis's. It has a direct line to the Epistemics Cult."
+  description: "A dark, compact headset with a magenta stripe, marking it as the mantis's. It has a direct line to the Epistemics Cult."
   components:
   - type: ContainerFill
     containers:
@@ -20,6 +20,7 @@
     sprite: _DEN/Clothing/Ears/Headsets/mantis.rsi
   - type: Tag
     tags:
+    - WhitelistChameleon
     - MantisBeltStorable
 
 - type: entity

@@ -1,10 +1,5 @@
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
-
 using Content.Client.Stylesheets;
-using Content.Shared._EE.CCVars;
+using Content.Shared._EE.CCVar;
 using Content.Shared._EE.Supermatter.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Prototypes;
@@ -117,7 +112,7 @@ public sealed partial class SupermatterGasBarContainer : BoxContainer
         PowerInfoLabel.Text = Loc.GetString("supermatter-console-window-label-gas-power-bar", ("power", powerMix.ToString("+0.00;-0.00")));
         PowerInfoLabel.FontColorOverride = GetDetailColor(powerMix);
 
-        var heatResistance = (gasData.HeatResistance - 1) * (Atmospherics.T0C + _config.GetCVar(ECCVars.SupermatterHeatPenaltyThreshold));
+        var heatResistance = (gasData.HeatResistance - 1) * (Atmospherics.T0C + _config.GetCVar(EECCVars.SupermatterHeatPenaltyThreshold));
         HeatInfoLabel.Text = Loc.GetString("supermatter-console-window-label-gas-heat-bar", ("heat", heatResistance.ToString("+0.00;-0.00")));
         HeatInfoLabel.FontColorOverride = GetDetailColor(heatResistance);
 

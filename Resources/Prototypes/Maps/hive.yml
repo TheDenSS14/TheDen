@@ -10,8 +10,9 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 therealDLondon
+# SPDX-FileCopyrightText: 2026 Gregg
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: gameMap
   id: TheHive
@@ -59,7 +60,7 @@
             Brigmedic: [ 1, 1 ]
             Detective: [ 1, 1 ]
             HeadOfSecurity: [ 1, 1 ]
-            Prisoner: [ 2, 3 ]
+            Prisoner: [ 0, 0 ]
             PrisonGuard: [ 1, 1 ]
             SecurityOfficer: [ 4, 6 ]
             SecurityCadet: [ 1, 2 ]

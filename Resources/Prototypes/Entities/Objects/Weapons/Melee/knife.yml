@@ -41,6 +41,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 January Nelson
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -274,7 +275,7 @@
   name: shiv
   parent: [ BaseImprovisedContraband, BaseKnife ]
   id: Shiv
-  description: A crude weapon fashioned from a piece of cloth and a glass shard.
+  description: Some say, "If it ain't broke, don't fix it." The inventor of the shiv said, "I'm going to stab you." # den edit
   suffix: Glass # TheDen
   components:
   - type: Tag
@@ -307,7 +308,7 @@
   name: reinforced shiv
   parent: Shiv
   id: ReinforcedShiv
-  description: A crude weapon fashioned from a piece of cloth and a reinforced glass shard.
+  description: A wrapped shard of reinforced glass. A cut above a normal shiv. # den edit
   components:
   - type: Construction
     graph: ReinforcedShiv
@@ -325,7 +326,7 @@
   name: plasma shiv
   parent: Shiv
   id: PlasmaShiv
-  description: A crude weapon fashioned from a piece of cloth and a plasma glass shard.
+  description: A wrapped shard of plasma glass. The pinkness of the glass makes it do extra damage. # den edit
   components:
   - type: Construction
     graph: PlasmaShiv
@@ -343,7 +344,7 @@
   name: uranium shiv
   parent: Shiv
   id: UraniumShiv
-  description: A crude weapon fashioned from a piece of cloth and a uranium glass shard. Violates the geneva convention!
+  description: A wrapped shard of uranium glass. Use it to escape the Green Dimension. # den edit
   components:
   - type: Construction
     graph: UraniumShiv

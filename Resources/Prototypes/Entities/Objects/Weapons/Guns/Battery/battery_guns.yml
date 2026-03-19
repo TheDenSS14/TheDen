@@ -388,7 +388,11 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+    # DEN start
+      collection: GunPulsePistol
+      params:
+        variation: 0
+    # DEN end
   - type: HitscanBatteryAmmoProvider
     proto: Pulse
     fireCost: 200
@@ -496,11 +500,11 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: Battery #Den, increased maximum battery size so it takes longer to recharge
-    maxCharge: 1500
-    startingCharge: 1500
+    maxCharge: 2000
+    startingCharge: 2000
   - type: HitscanBatteryAmmoProvider
     proto: RedHeavyLaser
-    fireCost: 60 #Den
+    fireCost: 80 #Den
   - type: MeleeWeapon
     attackRate: 1.4
     damage:

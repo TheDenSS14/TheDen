@@ -68,11 +68,10 @@
     - WhitelistChameleon
     - MantisBeltStorable
 
-- type: entity
+- type: entity # An extra loadout option
   parent: ClothingEyesHudEpistemicsMantis
   id: ClothingEyesHudEpistemicsMantisFolded
-  suffix: Folded
-  categories: [ HideSpawnMenu ]
+  suffix: Flipped
   components:
   - type: Foldable
     folded: true

@@ -15,7 +15,7 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: gameMap
   id: Lighthouse
@@ -83,7 +83,7 @@
           Detective: [ 1, 1 ]
           SecurityOfficer: [ 3, 5 ]
           SecurityCadet: [ 2, 3 ]
-          Prisoner: [ 2, 3 ]
+          Prisoner: [ 0, 0 ]
           SeniorOfficer: [ 1, 2 ]
           Brigmedic: [ 1, 1 ]
         #supply

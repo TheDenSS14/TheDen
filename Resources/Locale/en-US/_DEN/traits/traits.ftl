@@ -10,6 +10,8 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Dirius77
+# SPDX-FileCopyrightText: 2026 Fuvias
 # SPDX-FileCopyrightText: 2026 Jadrek
 # SPDX-FileCopyrightText: 2026 lunarcomets
 #
@@ -144,7 +146,17 @@ trait-description-DispelVulnerability =
 trait-name-TenuousGrip = Tenuous Grip
 trait-description-TenuousGrip =
     Due to the nature of your being, death has a further toll on you in relation to the strength of the noosphere.
-    You lose [color=red]all[/color] non-inherent psionic abilities upon death, and you are unable to be revived if the glimmer level is above a certain threshold.
+    You lose [color=red]all[/color] non-inherent psionic abilities upon death, and you are unable to be revived if the glimmer level is below a certain threshold.
 noospheric-vulnerability-unresurrectable = INTANGIBILITY DETECTED: Patient is susceptible to noospheric flux. Contact epistemics for
     assistance in patient ressurection.
 noosphere-vulnerability-revive-attempt-failed = twitches and seizes up before falling limp once more.
+
+trait-name-NoosphericAlignedMood = Noospheric Aligned Mood
+trait-description-NoosphericAlignedMood =
+    You feel your connection to the noosphere as a part of your very being.
+    Low glimmer dampens your mood. High glimmer improves your mood.
+
+trait-name-NoosphericOpposedMood = Noospheric Opposed Mood
+trait-description-NoosphericOpposedMood =
+    Something about the connection to the noosphere grates on your psyche.
+    Low glimmer improves your mood. High glimmer dampens your mood.

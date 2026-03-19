@@ -50,6 +50,16 @@
   - type: FoldableClothing
     foldedEquippedPrefix: flipped
 
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingUniformSkirtMantisOrnate
+  id: ClothingUniformSkirtMantisOrnateFlipped
+  suffix: Flipped
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformSkirtColorable

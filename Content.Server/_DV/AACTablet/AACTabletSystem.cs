@@ -6,7 +6,7 @@
 // SPDX-FileCopyrightText: 2025 little-meow-meow
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Server.Abilities.Mime;
 using Content.Server.Chat.Systems;
@@ -92,9 +92,20 @@ public sealed partial class AACTabletSystem : EntitySystem // starcup: made part
         // starcup: prefix
         // DEN: need this for logging
         var messageContents = message.Prefix + _chat.SanitizeMessageCapital(string.Join(" ", _localisedPhrases));
+        var chatType = InGameICChatType.Speak;
+
+        // DEN start: add whispering this code kinda sux but it works whatever)
+        var whisperPrefix = SharedChatSystem.WhisperPrefix.ToString();
+        if (messageContents.StartsWith(whisperPrefix))
+        {
+            chatType = InGameICChatType.Whisper;
+            messageContents = messageContents[whisperPrefix.Length..];
+        }
+        // DEN end
+
         _chat.TrySendInGameICMessage(ent,
             messageContents,
-            InGameICChatType.Speak,
+            chatType,
             hideChat: false,
             nameOverride: speakerName);
 

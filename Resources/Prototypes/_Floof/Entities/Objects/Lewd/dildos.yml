@@ -18,6 +18,8 @@
   - type: Tag
     tags:
     - AdultToy
+  - type: Sprite # DEN
+    sprite: _DEN/Objects/Specific/Lewd/dildos.rsi
 
 - type: entity
   parent: BaseDildo
@@ -26,18 +28,42 @@
   description: Typically birds have an internal penis, but we'll let this one slide.
   components:
   - type: Sprite
-    sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_avian.rsi
-    state: icon
+  #  sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_avian.rsi
+    layers: # DEN
+    - state: dildo-avian
+      color: "#ffe269"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffe269"
+        map: ["enum.DamageStateVisualLayers.Base"]
+      right:
+      - state: inhand-right
+        color: "#ffe269"
+        map: ["enum.DamageStateVisualLayers.Base"]
 
 - type: entity
   parent: BaseDildo
   id: CanineDildo
   name: canine dildo
-  description: Aren't these usually red?
+  description: NOT a bottle rocket. Please do not attempt to launch. # DEN
   components:
   - type: Sprite
-    sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_canine.rsi
-    state: icon
+  #  sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_canine.rsi
+    layers: # DEN
+    - state: dildo-canine
+      color: "#ff0b39"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ff0b39"
+        map: ["enum.DamageStateVisualLayers.Base"]
+      right:
+      - state: inhand-right
+        color: "#ff0b39"
+        map: ["enum.DamageStateVisualLayers.Base"]
 
 - type: entity
   parent: BaseDildo
@@ -56,8 +82,20 @@
   description: With years of training, you might be able to take half of it. Good luck, and call an ambulance!
   components:
   - type: Sprite
-    sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_equine.rsi
-    state: icon
+  #  sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_equine.rsi
+    layers: # DEN
+    - state: dildo-equine
+      color: "#696969" # Heh, nice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#696969"
+        map: ["enum.DamageStateVisualLayers.Base"]
+      right:
+      - state: inhand-right
+        color: "#696969"
+        map: ["enum.DamageStateVisualLayers.Base"]
 
 - type: entity
   parent: BaseDildo
@@ -66,8 +104,20 @@
   description: Has anyone even gotten close enough to a dragon to see how it should look?
   components:
   - type: Sprite
-    sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_dragon.rsi
-    state: icon
+  #  sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_dragon.rsi
+    layers: # DEN
+    - state: dildo-dragon
+      color: "#ff8840"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ff8840"
+        map: ["enum.DamageStateVisualLayers.Base"]
+      right:
+      - state: inhand-right
+        color: "#ff8840"
+        map: ["enum.DamageStateVisualLayers.Base"]
 
 - type: entity
   parent: BaseDildo
@@ -76,8 +126,20 @@
   description: A simple shape anybody can get behind-- or rather, in their behind.
   components:
   - type: Sprite
-    sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_human.rsi
-    state: icon
+  #  sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_human.rsi
+    layers: # DEN
+    - state: dildo-humanoid
+      color: "#4e95ff"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#4e95ff"
+        map: ["enum.DamageStateVisualLayers.Base"]
+      right:
+      - state: inhand-right
+        color: "#4e95ff"
+        map: ["enum.DamageStateVisualLayers.Base"]
 
 - type: entity
   parent: BaseDildo
@@ -86,8 +148,20 @@
   description: Truly a gateway dick into a whole new world of possibilities.
   components:
   - type: Sprite
-    sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_tentacle.rsi
-    state: icon
+  #  sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_tentacle.rsi
+    layers: # DEN
+    - state: dildo-tentacle
+      color: "#18ff92"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#18ff92"
+        map: ["enum.DamageStateVisualLayers.Base"]
+      right:
+      - state: inhand-right
+        color: "#18ff92"
+        map: ["enum.DamageStateVisualLayers.Base"]
 
 - type: entity
   parent: BaseDildo
@@ -96,5 +170,17 @@
   description: Hope you got the kegels to back it up! The other person will thank you, and you'll thank them, and they'll thank you, and... so on and so on.
   components:
   - type: Sprite
-    sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_double.rsi
-    state: icon
+  #  sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_double.rsi
+    layers: # DEN
+    - state: dildo-double
+      color: "#cd40ff"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#cd40ff"
+        map: ["enum.DamageStateVisualLayers.Base"]
+      right:
+      - state: inhand-right
+        color: "#cd40ff"
+        map: ["enum.DamageStateVisualLayers.Base"]

@@ -3,16 +3,17 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Shared._DEN.ReagentProduction.Prototypes;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 
 namespace Content.Shared._DEN.ReagentProduction.Components;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState,]
 public sealed partial class ReagentProducerComponent : Component
 {
-    [DataField]
+    [DataField, AutoNetworkedField,]
     public List<ProtoId<ReagentProductionTypePrototype>> ProductionTypes = [];
 
     /// <summary>

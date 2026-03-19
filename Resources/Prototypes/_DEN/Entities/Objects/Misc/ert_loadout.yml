@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2026 sheepie
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -104,3 +105,21 @@
       path: /Audio/Effects/kaching.ogg
     possibleSets:
     - ERTJanitorLoadout1
+
+# ERT CBURN
+- type: entity
+  id: ERTCBURNLoadoutSelector
+  name: ERT CBURN loadout selector
+  description: selectable-item-engineer-example-desc
+  parent: [ BaseItem, BaseSetSelector ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/unique_teleporters.rsi
+    state: standard
+  - type: SetSelector
+    spawnedStoragePrototype: ClothingBackpackDuffelCBURN
+    spawnedStorageContainer: storagebase
+    approveSound:
+      path: /Audio/Effects/kaching.ogg
+    possibleSets:
+    - ERTCBURNLoadout1
