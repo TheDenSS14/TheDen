@@ -27,6 +27,15 @@
     - /Audio/_SHA/soultalk3.ogg
     - /Audio/_SHA/soultalk4.ogg
 
+# Typing Indicator
+
+- type: typingIndicator
+  id: break
+  spritePath: /Textures/_DEN/Effects/speech.rsi
+  typingState: break0
+  idleState: break3
+  offset: 0, 0.125
+
 # Parallax
 
 - type: parallax
@@ -2743,6 +2752,8 @@
     unequipDelay: 0
     quickEquip: true
   - type: AntiGravityClothing
+  - type: TypingIndicatorClothing
+    proto: psionic
 
 - type: entity
   parent: BreakFocusMeditation
@@ -3218,20 +3229,20 @@
     - id: LeashMantisPenthouse
       amount: 6
 
-# Shut Up I Didn't Ask For This
+# Shush
 
 - type: entity
   parent: [ BaseStorageItem, BaseBagOpenClose ]
-  id: StorageStomach
-  name: her stomach
+  id: StorageToy
+  name: storage
   suffix: DO NOT MAP] [BREAK
-  description: "It's not normally seen from this side."
+  description: ""
   components:
   - type: Grammar
     attributes:
       proper: true
   - type: Sprite
-    sprite: _Impstation/Mobs/Species/Thaven/organs.rsi
+    sprite: _SHA/
     state: stomach
   - type: Item
     sprite: null
@@ -3242,7 +3253,7 @@
       - 0,0,20,5
     storageOpenSound: /Audio/Effects/silence.ogg
     storageCloseSound: /Audio/Effects/silence.ogg
-    storageInsertSound: /Audio/_SHA/storage.ogg
+    storageInsertSound: /Audio/Effects/silence.ogg
     storageRemoveSound: /Audio/Effects/silence.ogg
 
 # Cases
@@ -3278,7 +3289,7 @@
       amount: 10
     - id: BreakFocusMeditation
       amount: 10
-    - id: StorageStomach
+    - id: StorageToy
       amount: 20
 
 - type: entity

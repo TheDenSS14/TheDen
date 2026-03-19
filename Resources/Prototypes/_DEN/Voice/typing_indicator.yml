@@ -12,8 +12,15 @@
   typingState: ovinia0
   idleState: ovinia1
 
-- type: typingIndicator # From wearing PaperMantis as a mask
+- type: typingIndicator # From wearing PaperMantis as a mask, or for psionic things visibly made of mnemolith
   id: mantis
   spritePath: /Textures/_DEN/Effects/speech.rsi
   typingState: mantis0
   idleState: mantis3
+
+- type: typingIndicator # For psionic entities in general
+  id: psionic
+  spritePath: /Textures/_DEN/Effects/speech.rsi
+  typingState: psionic0
+  idleState: psionic3
+  offset: -.3, 0.36
