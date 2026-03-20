@@ -1,0 +1,47 @@
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorDrugRing
+  name: Establish a drug cartel
+  categories: [ HideSpawnMenu ]
+  description: Produce and peddle your own narcotics under the nose of Nanotrasen.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Specific/Chemistry/pills.rsi
+      state: pill1
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorAnimalRightsConsortium
+  name: Liberate all animals on the station
+  categories: [ HideSpawnMenu ]
+  description: On behalf of the Animal Rights Consortium, liberate all animals on the station. By any means necessary.
+  components:
+  - type: Objective
+    icon:
+      sprite: Mobs/Animals/chicken.rsi
+      state: icon-1
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorDarkCommunion
+  name: Rip aside the veil of reality
+  categories: [ HideSpawnMenu ]
+  description: Disrupt the noösphere by raising Glimmer levels as high as possible.
+  components:
+  - type: Objective
+    icon:
+      sprite: Mobs/Demons/glimmer_wisp.rsi
+      state: willowisp
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorArmTheCrew
+  name: Arm the crew
+  categories: [ HideSpawnMenu ]
+  description: Overthrow commands monopoly on force. Ensure the crew is all armed.
+  components:
+  - type: Objective
+    icon:
+      sprite: Weapons/Guns/Pistols/mk58.rsi
+      state: base
