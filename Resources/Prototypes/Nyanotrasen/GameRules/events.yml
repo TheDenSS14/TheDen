@@ -100,7 +100,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: GlimmerEvent
-      minimumGlimmer: 700
+      minimumGlimmer: 200
       maximumGlimmer: 1000
     - type: NoosphericFryRule
 
@@ -110,7 +110,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: GlimmerEvent
-      minimumGlimmer: 600
+      minimumGlimmer: 500
       maximumGlimmer: 1000
       glimmerBurnLower: 80
       glimmerBurnUpper: 120
@@ -122,7 +122,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: GlimmerEvent
-      minimumGlimmer: 900
+      minimumGlimmer: 700
       glimmerBurnLower: 750
       glimmerBurnUpper: 950 # Unless epistemics badly f-d up, this will restore the Glimmer balance for a while.
     - type: MassMindSwapRule
@@ -157,7 +157,7 @@
   components:
   - type: FreeProberRule
   - type: GlimmerEvent
-    minimumGlimmer: 700
+    minimumGlimmer: 600
     maximumGlimmer: 1000
 
 ## converted upstream events
@@ -195,7 +195,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: GlimmerEvent
-    minimumGlimmer: 620
+    minimumGlimmer: 520
     maximumGlimmer: 900
     glimmerBurnLower: 50
     glimmerBurnUpper: 250
