@@ -8,7 +8,7 @@
     maximumGlimmer: 1000
   - type: GlimmerMobRule
     mobPrototype: MobLivingShadow
-
+    glimmerProb: 0
 
 - type: entity
   id: SpectreSpawn
@@ -20,3 +20,4 @@
     maximumGlimmer: 1000
   - type: GlimmerMobRule
     mobPrototype: MobSpectre
+    glimmerProb: 0
