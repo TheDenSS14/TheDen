@@ -6,9 +6,7 @@
 
 - type: marking
   id: HumanEyesGlow
-  bodyPart: Eyes
-  markingCategory: Head
-  speciesRestriction: [Human , Oni , Harpy , Lamia , Felinid, Kitsune , Canid, IPC, Reptilian]
+  parent: BaseEyesMarking
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -18,9 +16,7 @@
 
 - type: marking
   id: HumanEyesGlowR
-  bodyPart: Eyes
-  markingCategory: Head
-  speciesRestriction: [Human , Oni , Harpy , Lamia , Felinid, Kitsune , Canid, IPC, Reptilian]
+  parent: BaseEyesMarking
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -30,9 +26,7 @@
 
 - type: marking
   id: HumanEyesGlowL
-  bodyPart: Eyes
-  markingCategory: Head
-  speciesRestriction: [Human , Oni , Harpy , Lamia , Felinid, Kitsune , Canid, IPC, Reptilian]
+  parent: BaseEyesMarking
   forcedColoring: false
   followSkinColor: false
   sprites:
