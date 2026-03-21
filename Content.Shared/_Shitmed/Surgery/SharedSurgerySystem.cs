@@ -1,15 +1,14 @@
-// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Tadeo <td12233a@gmail.com>
-// SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
-// SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2024 BombasterDS
 // SPDX-FileCopyrightText: 2024 Skubman
 // SPDX-FileCopyrightText: 2024 gluesniffler
 // SPDX-FileCopyrightText: 2024 sleepyyapril
 // SPDX-FileCopyrightText: 2025 Blitz
 // SPDX-FileCopyrightText: 2025 Spatison
+// SPDX-FileCopyrightText: 2025 Tadeo
+// SPDX-FileCopyrightText: 2025 Terkala
+// SPDX-FileCopyrightText: 2025 corresp0nd
+// SPDX-FileCopyrightText: 2025 deltanedas
+// SPDX-FileCopyrightText: 2025 taydeo
 //
 // SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 

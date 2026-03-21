@@ -1,4 +1,5 @@
-// SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
+// SPDX-FileCopyrightText: 2025 Terkala
+// SPDX-FileCopyrightText: 2026 Jakumba
 //
 // SPDX-License-Identifier: MIT
 
