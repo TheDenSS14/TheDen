@@ -34,7 +34,6 @@ using Content.Shared.Administration;
 using Content.Shared.Database;
 using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
-using Content.Shared.Silicon.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -45,7 +44,7 @@ namespace Content.Server.Administration.Systems;
 public sealed partial class AdminVerbSystem
 {
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
-    [Dependency] private readonly ZombieSystem _zombie = default!;
+    [Dependency] private readonly ZombieTumorOrganSystem _zombieTumor = default!;
 
     private static readonly EntProtoId DefaultTraitorRule = "Traitor";
     private static readonly EntProtoId DefaultInitialInfectedRule = "Zombie";
@@ -97,13 +96,14 @@ public sealed partial class AdminVerbSystem
             Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/Actions/zombie-turn.png")),
             Act = () =>
             {
-                _zombie.ZombifyEntity(args.Target);
+                // Give them a tumor infection instead of immediately zombifying
+                // The tumor will progress normally and eventually zombify them
+                _zombieTumor.InfectEntity(args.Target);
             },
             Impact = LogImpact.High,
             Message = Loc.GetString("admin-verb-make-zombie"),
         };
         args.Verbs.Add(zombie);
-
 
         Verb nukeOp = new()
         {
