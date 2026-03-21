@@ -35,5 +35,5 @@ public sealed partial class SelfAwareComponent : Component
     //     These are calculated as a percentage of the entity's critical threshold.
     // </summary>
     public List<FixedPoint2> Thresholds = new()
-        { FixedPoint2.New(0.10), FixedPoint2.New(0.25), FixedPoint2.New(0.40), FixedPoint2.New(0.60) };
+        { FixedPoint2.New(0.08), FixedPoint2.New(0.30), FixedPoint2.New(0.50), FixedPoint2.New(0.75) }; // den edit, better health examine
 }
