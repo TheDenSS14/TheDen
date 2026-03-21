@@ -54,6 +54,7 @@ health-examinable-carbon-Heat-100 = [color=crimson]{ CAPITALIZE(SUBJECT($target)
 health-examinable-carbon-Heat-200 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } body is completely burnt to a crisp![/color]
 
 # health-examinable-carbon-Shock-50 = [color=lightgoldenrodyellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } electrical shock marks across { POSS-ADJ($target) } body![/color]
+health-examinable-carbon-Shock-8 = [color=lightgoldenrodyellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-BE($target) } a little singed.[/color]
 health-examinable-carbon-Shock-15 = [color=lightgoldenrodyellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } mild charring on { POSS-ADJ($target) } skin.[/color]
 health-examinable-carbon-Shock-30 = [color=lightgoldenrodyellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } charring across { POSS-ADJ($target) } body.[/color]
 health-examinable-carbon-Shock-50 = [color=lightgoldenrodyellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } serious charring across { POSS-ADJ($target) } body.[/color]
@@ -74,7 +75,7 @@ health-examinable-carbon-Caustic-15 = [color=yellowgreen]{ CAPITALIZE(POSS-ADJ($
 health-examinable-carbon-Caustic-30 = [color=yellowgreen]{ CAPITALIZE(POSS-ADJ($target)) } skin is inflamed and beginning to shed.[/color]
 health-examinable-carbon-Caustic-50 = [color=yellowgreen]{ CAPITALIZE(POSS-ADJ($target)) } skin is burnt and peeling off in large chunks.[/color]
 health-examinable-carbon-Caustic-75 = [color=yellowgreen]{ CAPITALIZE(POSS-ADJ($target)) } skin is severely burnt and is sloughing off.[/color]
-health-examinable-carbon-Caustic-100 = [color=yellowgreen]Most of { POSS-ADJ($target) } is sloughing and melting away.[/color]
+health-examinable-carbon-Caustic-100 = [color=yellowgreen]Most of { POSS-ADJ($target) } body is sloughing and melting away.[/color]
 health-examinable-carbon-Caustic-200 = [color=yellowgreen]Most of { POSS-ADJ($target) } body is completely melted![/color]
 
 health-examinable-carbon-Radiation-50 = [color=orange]{ CAPITALIZE(POSS-ADJ($target)) } skin has formed large blisters.[/color]
