@@ -30,6 +30,7 @@ public sealed partial class TypingIndicatorComponent : Component
     /// <summary>
     ///     Prototype id that store all visual info about typing indicator, set to the value of StartingPrototype on component init.
     /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
     [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<TypingIndicatorPrototype>)), AutoNetworkedField]
     public string Prototype = SharedTypingIndicatorSystem.InitialIndicatorId;
 }
