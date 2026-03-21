@@ -72,6 +72,9 @@ consent-DragonDevour-desc = Whether you should be able to be devoured by a space
 consent-AllowMoodEmagging-name = Mood Emagging
 consent-AllowMoodEmagging-desc = Allow other players to use a crypotographic sequencer to add new, random, chaotic moods to your mood list, as a thaven or another mob with moods. This toggle does not apply to cyborg laws and does not prevent you from gaining moods from ion storms.
 
+consent-AllowZombification-name = Allow Zombification
+consent-AllowZombification-desc = Whether you should turn into a zombie upon dying while infected with Romerol.
+
 # Admin Category
 
 consent-AdminBasedHarm-name = Admin-based Harm
