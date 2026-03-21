@@ -26,15 +26,19 @@
     - /Audio/_SHA/soultalk2.ogg
     - /Audio/_SHA/soultalk3.ogg
     - /Audio/_SHA/soultalk4.ogg
+    - /Audio/_SHA/soultalk5.ogg
+    - /Audio/_SHA/soultalk6.ogg
+    - /Audio/_SHA/soultalk7.ogg
+    - /Audio/_SHA/soultalk8.ogg
 
 # Typing Indicator
 
 - type: typingIndicator
   id: break
-  spritePath: /Textures/_DEN/Effects/speech.rsi
+  spritePath: /Textures/_SHA/Effects/speech.rsi
   typingState: break0
   idleState: break3
-  offset: 0, 0.125
+  offset: -.44, 1.16
 
 # Parallax
 
@@ -2687,28 +2691,36 @@
         shader: unshaded
       - state: soul
         shader: unshaded
-      - state: draw-ritual-mirror
-        shader: unshaded
-        offset: 0,-0.5
       - state: soul-eyes
         shader: unshaded
         scale: 0.2,0.2
         offset: 0,0.4
+      - state: soul-cover
+        shader: unshaded
+      - state: draw-ritual-mirror
+        shader: unshaded
+        offset: 0,-0.5
+      - state: soul-crown
+        shader: unshaded
       right:
       - state: inhand-both-silhouette-black
         shader: unshaded
       - state: soul
         shader: unshaded
-      - state: draw-ritual-mirror
-        shader: unshaded
-        offset: 0,-0.5
       - state: soul-eyes
         shader: unshaded
         scale: 0.2,0.2
         offset: 0,0.4
+      - state: soul-cover
+        shader: unshaded
+      - state: draw-ritual-mirror
+        shader: unshaded
+        offset: 0,-0.5
+      - state: soul-crown
+        shader: unshaded
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/_SHA/soulscreamlong+ascendfleshlong.ogg
+      path: /Audio/_SHA/soulscream+ascendfleshlong.ogg
       params:
         volume: 0
         pitch: 1.0
@@ -2726,11 +2738,6 @@
       params:
         volume: -4
         variation: 0.05
-  - type: PointLight
-    radius: 0
-    energy: 0
-    softness: 1.0
-    color: "#000000"
 
 - type: entity
   parent: ClothingNeckBase
@@ -2752,8 +2759,6 @@
     unequipDelay: 0
     quickEquip: true
   - type: AntiGravityClothing
-  - type: TypingIndicatorClothing
-    proto: psionic
 
 - type: entity
   parent: BreakFocusMeditation
@@ -2799,6 +2804,8 @@
   - type: EyeProtection
     protectionTime: 60
   - type: DeleteOnDrop
+  - type: TypingIndicatorClothing
+    proto: break
 
 - type: entity
   parent: BaseItem
@@ -2912,13 +2919,13 @@
 
 - type: entity
   id: ActionBreakSummonMansusGraspDouble
-  name: Lose Your Mind
+  name: CORONATION
   description: "NO NO NO NO."
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _SHA/Heretic/break_icons.rsi
-    state: icon-grasp-both
+    state: icon-soul
   - type: InstantAction
     itemIconStyle: BigAction
     charges: 1000
@@ -2928,8 +2935,7 @@
       state: icon-grasp-both
     event: !type:SummonEquipmentEvent
       prototypes:
-        hand1: HereticMansusGraspDoubleBreak
-        hand2: BreakSoul
+        hand: BreakSoul
         neck: BreakFocusTrance
   - type: BaseCultSpell
 
@@ -3242,8 +3248,7 @@
     attributes:
       proper: true
   - type: Sprite
-    sprite: _SHA/
-    state: stomach
+    sprite: null
   - type: Item
     sprite: null
     size: Tiny
