@@ -88,11 +88,11 @@
     components:
       - type: CommandStaff
       # SHA EDITS START
-      - type: BloodCultist # So only she can wield her Faust
-      - type: BloodCultSpellsHolder # So she can summon her Faust
+      - type: BloodCultist # So only she can wield her magic weapons
+      - type: BloodCultSpellsHolder # So she can summon them
       - type: Psionic
         removable: false
-        roller: false
+        roller: false # Don't need more powers than this
         powerSlots: 100 # So she never increases Glimmer
       - type: NightVision
         color: "#4dc4ff"
@@ -135,6 +135,7 @@
         actions:
         - ActionBreakSummonFaust
         - ActionBreakSummonMansusGrasp
+        - ActionBreakSummonMansusGraspDouble
         - ActionBreakSummonBloodyBlade
         - ActionBreakSummonMansusGraspDouble
       # SHA EDITS END

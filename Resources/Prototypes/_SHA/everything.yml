@@ -2403,8 +2403,7 @@
   parent: MantisMeleeGreatsword
   id: MantisMeleeGreatswordBreak
   suffix: PENTHOUSE, DO NOT MAP
-  description:
-    "It sees you.                                                                                                    It does not know you.                                                                                                    It only answers to her."
+  description: "It sees you.                                                                                                    It does not know you.                                                                                                    It only answers to her."
   components:
   - type: AntiPsionicWeapon # It knows her
     punishChances: 1
@@ -2452,7 +2451,7 @@
   id: HereticBladeFleshBreak
   name: bloody blade
   suffix: DO NOT MAP] [BREAK
-  description: "Made from her flesh.                                                                                                    The sight of it stings the eye.                                                                                                    Look away. Look away."
+  description: ""
   components:
   - type: ItemToggle
     soundActivate:
@@ -2549,9 +2548,9 @@
   - type: CultItem
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/_SHA/castsummoninstant.ogg
+      path: /Audio/_SHA/blood+enterblood.ogg
       params:
-        volume: -6
+        volume: -2
         pitch: 1.0
 
 # Magic Effects
@@ -2561,7 +2560,7 @@
   id: HereticMansusGraspBreak
   name: mansus grasp
   suffix: DO NOT MAP] [BREAK
-  description: "The hand wreathed in sickly green flames.                                                                                                    The sight of it stings the eye.                                                                                                    Look away. Look away."
+  description: ""
   components:
   - type: Sprite
     sprite: _SHA/Heretic/break_icons.rsi
@@ -2634,7 +2633,7 @@
   id: HereticMansusGraspDoubleBreak
   name: far-gone grasp
   suffix: DO NOT MAP] [BREAK
-  description: "NO NO NO NO."
+  description: ""
   components:
   - type: Sprite
     sprite: _SHA/Heretic/break_icons.rsi
@@ -2673,7 +2672,7 @@
   parent: HereticMansusGraspDoubleBreak
   id: BreakSoul
   name: what was left
-  description: "ONLY I WILL REMAIN."
+  description: ""
   components:
   - type: Grammar
     attributes:
@@ -2856,7 +2855,7 @@
 - type: entity
   id: ActionBreakSummonFaust
   name: Summon Faust
-  description: "It will enjoy this."
+  description: ""
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -2877,7 +2876,7 @@
 - type: entity
   id: ActionBreakSummonMansusGrasp
   name: Mansus Grasp
-  description: "No one's looking."
+  description: ""
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -2896,9 +2895,30 @@
   - type: BaseCultSpell
 
 - type: entity
+  id: ActionBreakSummonMansusGraspDouble
+  name: Far-Gone Grasp
+  description: ""
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/break_icons.rsi
+    state: icon-grasp-both
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _SHA/Heretic/break_icons.rsi
+      state: icon-grasp-both
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand: HereticMansusGraspDoubleBreak
+  - type: BaseCultSpell
+
+- type: entity
   id: ActionBreakSummonBloodyBlade
   name: Manifest Bloody Blade
-  description: "My flesh and blood."
+  description: ""
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -2918,9 +2938,9 @@
   - type: BaseCultSpell
 
 - type: entity
-  id: ActionBreakSummonMansusGraspDouble
+  id: ActionBreakCoronation
   name: CORONATION
-  description: "NO NO NO NO."
+  description: ""
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -2932,7 +2952,7 @@
     temporary: false
     icon:
       sprite: _SHA/Heretic/break_icons.rsi
-      state: icon-grasp-both
+      state: icon-soul
     event: !type:SummonEquipmentEvent
       prototypes:
         hand: BreakSoul
