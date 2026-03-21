@@ -22,7 +22,7 @@ public sealed partial class HealthExaminableComponent : Component
     //     These are calculated as a percentage of the entity's critical threshold.
     // </summary>
     public List<FixedPoint2> Thresholds = new()
-        { FixedPoint2.New(0.10), FixedPoint2.New(0.25), FixedPoint2.New(0.50), FixedPoint2.New(0.75) };
+        { FixedPoint2.New(0.08), FixedPoint2.New(0.15), FixedPoint2.New(0.30), FixedPoint2.New(0.50), FixedPoint2.New(0.75), FixedPoint2.New(1), FixedPoint2.New(2) }; // wizden edit, better health examine
 
     [DataField(required: true)]
     public HashSet<ProtoId<DamageTypePrototype>> ExaminableTypes = default!;

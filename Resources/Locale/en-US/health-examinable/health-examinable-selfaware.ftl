@@ -16,12 +16,14 @@ health-examinable-selfaware-type-Shock = [color=lightgoldenrodyellow]Shock[/colo
 health-examinable-selfaware-type-Cold = [color=lightblue]Cold[/color] burns
 health-examinable-selfaware-type-Caustic = [color=yellowgreen]Caustic[/color] burns
 
-health-examinable-selfaware-group-Toxin-10 = [color=green]You feel sick.[/color]
-health-examinable-selfaware-group-Toxin-25 = [color=green]You feel nauseated.[/color]
-health-examinable-selfaware-group-Toxin-40 = [color=green]You feel very unwell![/color]
-health-examinable-selfaware-group-Toxin-60 = [color=green]You feel gravely ill![/color]
+# den edit, better health examine
+health-examinable-selfaware-group-Toxin-8 = [color=green]You feel a little sick.[/color]
+health-examinable-selfaware-group-Toxin-30 = [color=green]You feel nauseous.[/color]
+health-examinable-selfaware-group-Toxin-50 = [color=green]You feel very unwell![/color]
+health-examinable-selfaware-group-Toxin-75 = [color=green]You feel gravely ill![/color]
 
-health-examinable-selfaware-group-Airloss-10 = [color=lightblue]You feel lightheaded.[/color]
-health-examinable-selfaware-group-Airloss-25 = [color=lightblue]You feel faint and woozy.[/color]
-health-examinable-selfaware-group-Airloss-40 = [color=lightblue]You're struggling to breathe![/color]
-health-examinable-selfaware-group-Airloss-60 = [color=lightblue]You're suffocating badly![/color]
+# den edit, better health examine
+health-examinable-selfaware-group-Airloss-8 = [color=lightblue]You feel a little lightheaded.[/color]
+health-examinable-selfaware-group-Airloss-30 = [color=lightblue]You feel faint and woozy.[/color]
+health-examinable-selfaware-group-Airloss-50 = [color=lightblue]You're struggling to breathe![/color]
+health-examinable-selfaware-group-Airloss-75 = [color=lightblue]You're suffocating badly![/color]
