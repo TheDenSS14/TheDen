@@ -13,6 +13,11 @@ tiles-elevator-transition = elevator transition tile [Right Side] [PENTHOUSE]
 tiles-elevator-transition-left = elevator transition tile [Left Side] [PENTHOUSE]
 tiles-black = pitch black [PENTHOUSE]
 
-# Misc
+# Fibers
 
 fibers-magenta = magenta
+
+# Verbs
+
+item-toggle-ritualon = Begin Ritual
+item-toggle-ritualoff = End Ritual

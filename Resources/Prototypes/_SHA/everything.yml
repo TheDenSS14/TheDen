@@ -81,6 +81,126 @@
       sprite: _SHA/Effects/arcs.rsi
       state: none
 
+- type: entity
+  parent: WeaponArcPunch
+  id: WeaponArcPunchDark
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _SHA/Effects/arcs.rsi
+      state: punch
+
+- type: entity
+  parent: WeaponArcSmash
+  id: WeaponArcSmashDark
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _SHA/Effects/arcs.rsi
+      state: smash
+
+# Projectiles
+
+- type: entity
+  parent: BaseBullet
+  id: BulletGrasp
+  name: mage hand
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 10
+  - type: Sprite
+    sprite: _SHA/Heretic/grasp_projectiles.rsi
+    layers:
+    - state: bulletgrasp
+      shader: unshaded
+  - type: PointLight
+    radius: 2
+    energy: 2
+    color: "#00684E" # Mansus grasp color
+  - type: Ammo
+    muzzleFlash: null
+  - type: Projectile
+    impactEffect: BulletImpactGrasp
+    forceSound: true
+    soundHit:
+      path: /Audio/_SHA/resonatorblast.ogg
+      params:
+        volume: 0
+        pitch: 1
+        variation: 0.05
+    damage:
+      types:
+        Holy: 0
+  - type: StaminaDamageOnCollide
+    damage: 150
+  - type: FlyBySound
+    sound:
+      path: /Audio/_SHA/rites.ogg
+      params:
+        volume: 0
+        pitch: 1
+        variation: 0.05
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.3,0.15,0.3"
+        hard: false
+        mask:
+        - Opaque
+
+- type: entity
+  parent: BulletImpactEffect
+  id: BulletImpactGrasp
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 1.0
+  - type: Sprite
+    sprite: _SHA/Heretic/grasp_projectiles.rsi
+    layers:
+    - state: impactgrasp
+      shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+  - type: PointLight
+    radius: 2
+    energy: 2
+    color: "#00684E" # Mansus grasp color
+
+- type: entity
+  parent: BulletGrasp
+  id: BulletGraspSoul
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: bulletgraspsoul
+      shader: unshaded
+  - type: PointLight
+    radius: 2
+    energy: 2
+    color: "#ff0066" # Her crimson
+  - type: Projectile
+    impactEffect: BulletImpactGraspSoul
+
+- type: entity
+  parent: BulletImpactGrasp
+  id: BulletImpactGraspSoul
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: impactgraspsoul
+      shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+  - type: PointLight
+    radius: 2
+    energy: 2
+    color: "#ff0066" # Her crimson
+
 # Damage
 
 - type: damageContainer
@@ -1672,11 +1792,6 @@
     buckleOnInteractHand: false
     position: Down
     rotation: -90
-  - type: HealOnBuckle # Slowly heals holy damage at the cost of slash damage
-    damage:
-      types:
-        Slash: 0.5
-        Holy: -0.25
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
     radius: 3.5
@@ -2425,12 +2540,39 @@
   - type: DisarmMalus
     malus: 1.0
   - type: CultItem # Only she can wield it
+  - type: EmbeddableProjectile
+    minimumSpeed: 1
+    autoRemoveDuration: 0
+
+- type: entity
+  parent: MantisMeleeGreatswordBreak
+  id: MantisMeleeGreatswordBreakSummoned
+  components:
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/_DEN/Weapons/Melee/faustunsheath.ogg
+      path: /Audio/_SHA/castsummon+faustunsheath.ogg
       params:
         volume: 0
         variation: 0.05
+
+- type: entity
+  parent: BaseItem
+  id: MantisMeleeGreatswordBreakSummonFlash
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 10
+  - type: Item
+    sprite: _SHA/Objects/Weapons/Melee/Mantis/mantisgreatsword-inhands-64x.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-right-summon
+        shader: unshaded
+        loop: false
+      right:
+      - state: inhand-left-summon
+        shader: unshaded
+        loop: false
 
 - type: entity
   parent: MantisMeleeGreatswordSheath
@@ -2451,7 +2593,7 @@
   id: HereticBladeFleshBreak
   name: bloody blade
   suffix: DO NOT MAP] [BREAK
-  description: ""
+  description: "Her flesh and blood.                                                                                                    It stings the eye to behold.                                                                                                    Look away. Look away."
   components:
   - type: ItemToggle
     soundActivate:
@@ -2503,6 +2645,12 @@
         shader: unshaded
       - state: inhand-left-unshaded-eye
         shader: unshaded
+      - state: inhand-left-grasp-summon
+        shader: unshaded
+        loop: false
+      - state: inhand-left-summon
+        shader: unshaded
+        loop: false
       right:
       - state: inhand-right-grasp
         shader: unshaded
@@ -2511,6 +2659,12 @@
         shader: unshaded
       - state: inhand-right-unshaded-eye
         shader: unshaded
+      - state: inhand-right-grasp-summon
+        shader: unshaded
+        loop: false
+      - state: inhand-right-summon
+        shader: unshaded
+        loop: false
   - type: MeleeWeapon
     autoAttack: true
     heavyStaminaCost: 0
@@ -2546,6 +2700,9 @@
   - type: ThrowingAngle
     angle: 225
   - type: CultItem
+  - type: EmbeddableProjectile
+    minimumSpeed: 1
+    autoRemoveDuration: 0
   - type: EmitSoundOnSpawn
     sound:
       path: /Audio/_SHA/blood+enterblood.ogg
@@ -2560,12 +2717,39 @@
   id: HereticMansusGraspBreak
   name: mansus grasp
   suffix: DO NOT MAP] [BREAK
-  description: ""
+  description: "The hand wreathed in false flame.                                                                                                    It pries at the world's threads.                                                                                                    The witch's will made manifest."
   components:
+  - type: ItemToggle # You can flash a ritual circle by toggling it
+    verbToggleOn: item-toggle-ritualon
+    verbToggleOff: item-toggle-ritualoff
+    predictable: false
+    soundActivate:
+      path: /Audio/_SHA/
+      params:
+        volume: -6
+        pitch: 1.3
+        variation: 0.05
+    soundDeactivate:
+      path: /Audio/Effects/weak_hit2.ogg
+      params:
+        volume: -9
+        pitch: 1.3
+        variation: 0.05
+  - type: UseDelay
+    delay: 0.92 # This is just under one swing animation
+  - type: Appearance
+  - type: ToggleableVisuals
+    spriteLayer: null # Swinging it only changes the inhand sprites
+    replaceMode: true # The original inhand sprites won't remain visible when toggled
+    inhandVisuals:
+      left:
+      - state: swinging-inhand-left
+      right:
+      - state: swinging-inhand-right
   - type: Sprite
     sprite: _SHA/Heretic/break_icons.rsi
     layers:
-    - state: icon-grasp
+    - state: icon-grasp-left
       shader: unshaded
   - type: Item
     size: Ginormous
@@ -2574,10 +2758,17 @@
       left:
       - state: inhand-left-grasp
         shader: unshaded
+      - state: inhand-left-grasp-summon
+        shader: unshaded
+        loop: false
       right:
       - state: inhand-right-grasp
         shader: unshaded
+      - state: inhand-right-grasp-summon
+        shader: unshaded
+        loop: false
   - type: MeleeWeapon
+    hidden: true
     autoAttack: true
     heavyStaminaCost: 0
     attackRate: 0.6666
@@ -2627,28 +2818,76 @@
     softness: 1.0
     color: "#00684E" # Mansus grasp color
   - type: DeleteOnDrop
+  - type: Tool
+    qualities:
+      - Prying
+  - type: Prying
+  - type: Gun
+    projectileSpeed: 12.5
+    cameraRecoilScalar: 0
+    fireOnDropChance: 0
+    meleeCooldown: 0
+    resetOnHandSelected: false
+    showExamineText: false
+    uniformSpread: true
+    soundGunshot:
+      path: /Audio/_White/BloodCult/wand_teleport.ogg
+      params:
+        volume: -2
+        pitch: 0.75
+        variation: 0.05
+    soundEmpty: /Audio/Effects/silence.ogg
+    fireRate: 3
+    useKey: false
+  - type: AmmoCounter
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.333
+    rechargeSound: /Audio/Effects/silence.ogg
+  - type: BasicEntityAmmoProvider
+    proto: BulletGrasp
+    capacity: 1
+    count: 1
 
 - type: entity
-  parent: HereticMansusGraspBreak
-  id: HereticMansusGraspDoubleBreak
+  parent: [ BaseHereticContraband, BaseItem, BaseAntiPsionicWeapon ]
+  id: HereticMansusGraspStrongBreak
   name: far-gone grasp
   suffix: DO NOT MAP] [BREAK
-  description: ""
+  description: "The hand wreathed in false flame.                                                                                                    It pries at the world's threads.                                                                                                    The witch's will made manifest."
   components:
   - type: Sprite
     sprite: _SHA/Heretic/break_icons.rsi
     layers:
-    - state: icon-grasp-both
+    - state: icon-grasp-right
       shader: unshaded
   - type: Item
+    size: Ginormous
+    sprite: _SHA/Heretic/break_inhands.rsi
     inhandVisuals:
       left:
-      - state: inhand-both-grasp
+      - state: inhand-both-silhouette
         shader: unshaded
+      - state: inhand-left-grasp
+        shader: unshaded
+      - state: inhand-both-silhouette-summon
+        shader: unshaded
+        loop: false
+      - state: inhand-left-grasp-summon
+        shader: unshaded
+        loop: false
       right:
-      - state: inhand-both-grasp
+      - state: inhand-both-silhouette
         shader: unshaded
+      - state: inhand-right-grasp
+        shader: unshaded
+      - state: inhand-both-silhouette-summon
+        shader: unshaded
+        loop: false
+      - state: inhand-right-grasp-summon
+        shader: unshaded
+        loop: false
   - type: MeleeWeapon
+    hidden: true
     autoAttack: true
     heavyStaminaCost: 0
     attackRate: 0.3333
@@ -2659,20 +2898,56 @@
         Blunt: 10
         Holy: 5
         Structural: 50
+    soundHit:
+      path: /Audio/_SHA/repulseinstant.ogg
+      params:
+        volume: 0
+        variation: 0.15
+    soundSwing:
+      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg
+      params:
+        volume: -3
+        variation: 0.15
+    animation: WeaponArcPunchDark
+    wideAnimation: WeaponArcSmashDark
+  - type: MeleeThrowOnHit
+    speed: 10
+    lifetime: 0.5
+  - type: Reflect
+    reflectProb: 1.0
+    spread: 0
+    innate: true
+  - type: DisarmMalus
+    malus: 1.0
+  - type: CultItem
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_SHA/voidblink.ogg
+      params:
+        volume: -2
+        pitch: 0.75
+  - type: AmbientSound
+    range: 5
+    volume: -4
+    sound:
+      path: /Audio/Ambience/wisp_ambience.ogg
+  - type: DeleteOnDrop
+  - type: Tool
+    qualities:
+      - Prying
+  - type: Prying
   - type: PointLight
     radius: 2
     energy: 3
     softness: 1.0
     color: "#00684E" # Mansus grasp color
 
-#  - type: TimedDespawn
-#    lifetime: 2
-
 - type: entity
-  parent: HereticMansusGraspDoubleBreak
+  parent: HereticMansusGraspStrongBreak
   id: BreakSoul
-  name: what was left
-  description: ""
+  name: what remained
+  suffix: DO NOT MAP] [BREAK SOUL, RIGHT HAND
+  description: "A fractured thing, long unseen.                                                                                                    Now brought forth as a weapon.                                                                                                    What have you done."
   components:
   - type: Grammar
     attributes:
@@ -2680,7 +2955,7 @@
   - type: Sprite
     sprite: _SHA/Heretic/break_icons.rsi
     layers:
-    - state: icon-soul
+    - state: icon-grasp-soul-right
       shader: unshaded
   - type: Item
     sprite: _SHA/Heretic/ritual_circle.rsi
@@ -2696,11 +2971,14 @@
         offset: 0,0.42
       - state: soul-cover
         shader: unshaded
+        loop: false
       - state: draw-ritual-mirror
         shader: unshaded
         offset: 0,-0.5
+        loop: false
       - state: soul-crown
         shader: unshaded
+        loop: false
       right:
       - state: inhand-both-silhouette-black
         shader: unshaded
@@ -2712,11 +2990,14 @@
         offset: 0,0.42
       - state: soul-cover
         shader: unshaded
+        loop: false
       - state: draw-ritual-mirror
         shader: unshaded
         offset: 0,-0.5
+        loop: false
       - state: soul-crown
         shader: unshaded
+        loop: false
   - type: EmitSoundOnSpawn
     sound:
       path: /Audio/_SHA/soulscream+ascendfleshlong.ogg
@@ -2742,7 +3023,98 @@
     energy: 0.025
     softness: 1.0
     falloff: 0.0
-    color: "#ff0066"
+    color: "#ff0066" # Her crimson
+
+- type: entity
+  parent: HereticMansusGraspBreak
+  id: BreakSoulHand
+  name: what remained
+  suffix: DO NOT MAP] [BREAK SOUL, LEFT HAND
+  description: "A fractured thing, long unseen.                                                                                                    Now brought forth as a weapon.                                                                                                    What have you done."
+  components:
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: Sprite
+    sprite: _SHA/Heretic/break_icons.rsi
+    layers:
+    - state: icon-grasp-soul-left
+      shader: unshaded
+  - type: Item
+    sprite: _SHA/Heretic/ritual_circle.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-both-silhouette-black
+        shader: unshaded
+      - state: soul
+        shader: unshaded
+      - state: soul-eyes
+        shader: unshaded
+        scale: 0.2,0.2
+        offset: 0,0.42
+      - state: soul-cover
+        shader: unshaded
+        loop: false
+      - state: draw-ritual-mirror
+        shader: unshaded
+        offset: 0,-0.5
+        loop: false
+      - state: soul-crown
+        shader: unshaded
+        loop: false
+      right:
+      - state: inhand-both-silhouette-black
+        shader: unshaded
+      - state: soul
+        shader: unshaded
+      - state: soul-eyes
+        shader: unshaded
+        scale: 0.2,0.2
+        offset: 0,0.42
+      - state: soul-cover
+        shader: unshaded
+        loop: false
+      - state: draw-ritual-mirror
+        shader: unshaded
+        offset: 0,-0.5
+        loop: false
+      - state: soul-crown
+        shader: unshaded
+        loop: false
+  - type: MeleeWeapon
+    hidden: true
+    autoAttack: true
+    heavyStaminaCost: 0
+    attackRate: 0.6666
+    angle: 90
+    maxTargets: 1
+    damage:
+      types:
+        Blunt: 10
+        Holy: 5
+        Structural: 25
+    soundHit:
+      path: /Audio/_SHA/repulseinstant.ogg
+      params:
+        volume: 0
+        variation: 0.15
+    soundSwing:
+      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg
+      params:
+        volume: -3
+        variation: 0.15
+    animation: WeaponArcPunch
+    wideAnimation: WeaponArcSmash
+  - type: MeleeThrowOnHit
+    speed: 10
+    lifetime: 0.5
+  - type: PointLight # For the "muzzle flashes"
+    radius: 2
+    energy: 0.01
+    softness: 1.0
+    color: "#ff0066" # Her crimson
+  - type: BasicEntityAmmoProvider
+    proto: BulletGraspSoul
 
 - type: entity
   parent: ClothingNeckBase
@@ -2839,6 +3211,7 @@
       - state: inhand-both-silhouette-eyes
         shader: unshaded
   - type: MeleeWeapon
+    hidden: true
     soundHit:
       collection: ShockPunch
     angle: 30
@@ -2876,7 +3249,7 @@
       state: icon
     event: !type:SummonEquipmentEvent
       prototypes:
-        hand: MantisMeleeGreatswordBreak
+        hand: MantisMeleeGreatswordBreakSummoned
   - type: BaseCultSpell
 
 - type: entity
@@ -2887,14 +3260,14 @@
   components:
   - type: Sprite
     sprite: _SHA/Heretic/break_icons.rsi
-    state: icon-grasp
+    state: icon-grasp-right
   - type: InstantAction
     itemIconStyle: BigAction
     charges: 1000
     temporary: false
     icon:
       sprite: _SHA/Heretic/break_icons.rsi
-      state: icon-grasp
+      state: icon-grasp-right
     event: !type:SummonEquipmentEvent
       prototypes:
         hand: HereticMansusGraspBreak
@@ -2918,7 +3291,8 @@
       state: icon-grasp-both
     event: !type:SummonEquipmentEvent
       prototypes:
-        hand: HereticMansusGraspDoubleBreak
+        hand1: HereticMansusGraspStrongBreak
+        hand2: HereticMansusGraspBreak
   - type: BaseCultSpell
 
 - type: entity
@@ -2961,7 +3335,8 @@
       state: icon-soul
     event: !type:SummonEquipmentEvent
       prototypes:
-        hand: BreakSoul
+        hand1: BreakSoul
+        hand2: BreakSoulHand
         neck: BreakFocusTrance
   - type: BaseCultSpell
 
@@ -2970,7 +3345,7 @@
 - type: entity
   id: ActionBreakSummonGuns
   name: Summon Empusa & Charon
-  description: "Final warning."
+  description: ""
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite

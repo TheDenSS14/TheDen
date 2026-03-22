@@ -33,6 +33,26 @@
             "directions": 4
         },
         {
+            "name": "inhand-left-summon",
+            "directions": 4,
+            "delays": [
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
+            ]
+        },
+        {
+            "name": "inhand-right-summon",
+            "directions": 4,
+            "delays": [
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
+            ]
+        },
+        {
             "name": "inhand-left-grasp",
             "directions": 4,
             "delays": [
@@ -63,8 +83,48 @@
             ]
         },
         {
+            "name": "inhand-left-grasp-summon",
+            "directions": 4,
+            "delays": [
+                [ 0.1, 0.1 ],
+                [ 0.1, 0.1 ],
+                [ 0.1, 0.1 ],
+                [ 0.1, 0.1 ]
+            ]
+        },
+        {
+            "name": "inhand-right-grasp-summon",
+            "directions": 4,
+            "delays": [
+                [ 0.1, 0.1 ],
+                [ 0.1, 0.1 ],
+                [ 0.1, 0.1 ],
+                [ 0.1, 0.1 ]
+            ]
+        },
+        {
+            "name": "inhand-both-grasp-summon",
+            "directions": 4,
+            "delays": [
+                [ 0.1, 0.1 ],
+                [ 0.1, 0.1 ],
+                [ 0.1, 0.1 ],
+                [ 0.1, 0.1 ]
+            ]
+        },
+        {
             "name": "inhand-both-silhouette",
             "directions": 4
+        },
+        {
+            "name": "inhand-both-silhouette-summon",
+            "directions": 4,
+            "delays": [
+                [ 0.1, 0.1 ],
+                [ 0.1, 0.1 ],
+                [ 0.1, 0.1 ],
+                [ 0.1, 0.1 ]
+            ]
         },
         {
             "name": "inhand-both-silhouette-eyes",
