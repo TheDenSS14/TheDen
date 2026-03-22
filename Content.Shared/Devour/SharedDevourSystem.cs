@@ -129,7 +129,7 @@ public abstract class SharedDevourSystem : EntitySystem
         {
             case MobState.Critical:
             case MobState.Dead:
-                var isDevourable = _consentSystem.HasConsent(target, DevourConsent);
+                var isDevourable = _consentSystem.HasdwsConsent(target, DevourConsent);
 
                 _doAfterSystem.TryStartDoAfter(new(
                     EntityManager,
