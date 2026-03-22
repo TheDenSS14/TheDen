@@ -102,7 +102,9 @@
   components:
     - type: Sprite
       sprite: _SHA/Effects/arcs.rsi
-      state: punch
+      layers:
+      - state: punchdark
+        shader: unshaded
 
 - type: entity
   parent: WeaponArcSmash
@@ -111,7 +113,31 @@
   components:
     - type: Sprite
       sprite: _SHA/Effects/arcs.rsi
-      state: smash
+      layers:
+      - state: smashdark
+        shader: unshaded
+
+- type: entity
+  parent: WeaponArcPunch
+  id: WeaponArcPunchGreen
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _SHA/Effects/arcs.rsi
+      layers:
+      - state: punchgreen
+        shader: unshaded
+
+- type: entity
+  parent: WeaponArcSmash
+  id: WeaponArcSmashGreen
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _SHA/Effects/arcs.rsi
+      layers:
+      - state: smashgreen
+        shader: unshaded
 
 # Projectiles
 
@@ -124,7 +150,7 @@
   - type: TimedDespawn
     lifetime: 10
   - type: Sprite
-    sprite: _SHA/Heretic/grasp_projectiles.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     layers:
     - state: bulletgrasp
       shader: unshaded
@@ -174,7 +200,7 @@
   - type: TimedDespawn
     lifetime: 0.8
   - type: Sprite
-    sprite: _SHA/Heretic/grasp_projectiles.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     layers:
     - state: impactgrasp
       shader: unshaded
@@ -2584,7 +2610,7 @@
 
 - type: entity
   parent: BaseMagicRing
-  id: MagicRingSummonFlashGreatsword
+  id: MagicRingGreatswordFlash
   components:
   - type: TimedDespawn
     lifetime: 0.7
@@ -2607,7 +2633,7 @@
 
 - type: entity
   parent: BaseMagicRing
-  id: MagicRingSummonFlashBlade
+  id: MagicRingBladeFlash
   components:
   - type: TimedDespawn
     lifetime: 0.7
@@ -2617,7 +2643,7 @@
     - state: label-light
       shader: unshaded
   - type: Item
-    sprite: _SHA/Heretic/break_inhands.rsi
+    sprite: _SHA/Heretic/break-64x.rsi
     inhandVisuals:
       left:
       - state: inhand-right-summon
@@ -2796,14 +2822,14 @@
       - state: spinning-inhand-right-unshaded-eye
         shader: unshaded
   - type: Sprite
-    sprite: _SHA/Heretic/break_icons.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     layers:
     - state: icon
     - state: icon-unshaded
       shader: unshaded
   - type: Item
     size: Normal
-    sprite: _SHA/Heretic/break_inhands.rsi
+    sprite: _SHA/Heretic/break-64x.rsi
     inhandVisuals:
       left:
       - state: inhand-left-grasp
@@ -2847,6 +2873,7 @@
       params:
         volume: -3
         variation: 0.15
+    animation: WeaponArcPunchGreen
   - type: LandAtCursor
   - type: DamageOtherOnHit
     staminaCost: 0
@@ -2899,21 +2926,21 @@
     replaceMode: false
     inhandVisuals:
       left:
-      - state: ritual-mirror-instant
+      - state: ritual-mirror-fast
         shader: unshaded
         offset: 0,-0.5
       right:
-      - state: ritual-mirror-instant
+      - state: ritual-mirror-fast
         shader: unshaded
         offset: 0,-0.5
   - type: Sprite
-    sprite: _SHA/Heretic/break_icons.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     layers:
     - state: icon-grasp-left
       shader: unshaded
   - type: Item
     size: Ginormous
-    sprite: _SHA/Heretic/break_inhands.rsi
+    sprite: _SHA/Heretic/break-96x.rsi
     inhandVisuals:
       left:
       - state: inhand-left-grasp
@@ -2949,8 +2976,8 @@
       params:
         volume: -3
         variation: 0.15
-    animation: WeaponArcPunch
-    wideAnimation: WeaponArcSmash
+    animation: WeaponArcPunchGreen
+    wideAnimation: WeaponArcSmashGreen
   - type: MeleeThrowOnHit
     speed: 10
     lifetime: 0.5
@@ -2994,7 +3021,7 @@
       path: /Audio/_White/BloodCult/wand_teleport.ogg
       params:
         volume: -2
-        pitch: 0.75
+        pitch: 0.5
         variation: 0.05
     soundEmpty: /Audio/Effects/silence.ogg
     fireRate: 3
@@ -3016,13 +3043,13 @@
   description: "The hand wreathed in false flame.                                                                                                    It pries at the world's threads.                                                                                                    The witch's will made manifest."
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/break_icons.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     layers:
     - state: icon-grasp-right
       shader: unshaded
   - type: Item
     size: Ginormous
-    sprite: _SHA/Heretic/break_inhands.rsi
+    sprite: _SHA/Heretic/break-64x.rsi
     inhandVisuals:
       left:
       - state: inhand-both-silhouette
@@ -3068,8 +3095,8 @@
       params:
         volume: -3
         variation: 0.15
-    animation: WeaponArcPunchDark
-    wideAnimation: WeaponArcSmashDark
+    animation: WeaponArcPunchGreen
+    wideAnimation: WeaponArcSmashGreen
   - type: MeleeThrowOnHit
     speed: 10
     lifetime: 0.5
@@ -3102,12 +3129,12 @@
     attributes:
       proper: true
   - type: Sprite
-    sprite: _SHA/Heretic/break_icons.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     layers:
     - state: icon-grasp-soul-right
       shader: unshaded
   - type: Item
-    sprite: _SHA/Heretic/ritual_circle.rsi
+    sprite: _SHA/Heretic/break-96x.rsi
     inhandVisuals:
       left:
       - state: inhand-both-silhouette-black
@@ -3147,6 +3174,9 @@
       - state: soul-crown
         shader: unshaded
         loop: false
+  - type: MeleeWeapon
+    animation: WeaponArcPunchDark
+    wideAnimation: WeaponArcSmashDark
   - type: EmitSoundOnSpawn
     sound:
       path: /Audio/_SHA/soulscream+ascendfleshlong.ogg
@@ -3185,12 +3215,12 @@
     attributes:
       proper: true
   - type: Sprite
-    sprite: _SHA/Heretic/break_icons.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     layers:
     - state: icon-grasp-soul-left
       shader: unshaded
   - type: Item
-    sprite: _SHA/Heretic/ritual_circle.rsi
+    sprite: _SHA/Heretic/break-96x.rsi
     inhandVisuals:
       left:
       - state: inhand-both-silhouette-black
@@ -3252,8 +3282,8 @@
       params:
         volume: -3
         variation: 0.15
-    animation: WeaponArcPunch
-    wideAnimation: WeaponArcSmash
+    animation: WeaponArcPunchDark
+    wideAnimation: WeaponArcSmashDark
   - type: MeleeThrowOnHit
     speed: 10
     lifetime: 0.5
@@ -3273,14 +3303,14 @@
   description: "So focused that she seems to have forgotten about gravity."
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/break_icons.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     layers:
     - state: icon-meditation
       shader: unshaded
   - type: Item
     size: Small
   - type: Clothing
-    sprite: _SHA/Heretic/effect_clothing.rsi
+    sprite: null
     equipDelay: 0
     unequipDelay: 0
     quickEquip: true
@@ -3296,7 +3326,7 @@
   description: "You have earned her full attention."
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/break_icons.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     layers:
     - state: icon-trance
       shader: unshaded
@@ -3346,13 +3376,13 @@
   description: "Oh lord."
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/break_icons.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     layers:
     - state: icon-silhouette
       shader: unshaded
   - type: Item
     size: Small
-    sprite: _SHA/Heretic/break_inhands.rsi
+    sprite: _SHA/Heretic/break-64x.rsi
     inhandVisuals:
       left:
       - state: inhand-both-silhouette
@@ -3391,13 +3421,13 @@
   description: "Something is there, unseen by most.                                                                                                    A ragged thing that stares unblinking.                                                                                                    It moves before she moves."
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/break_icons.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     layers:
     - state: icon-soul-faint
       shader: unshaded
   - type: Item
     size: Ginormous
-    sprite: _SHA/Heretic/break_inhands.rsi
+    sprite: _SHA/Heretic/break-64x.rsi
     inhandVisuals:
       left:
       - state: soul-faint
@@ -3458,7 +3488,7 @@
     event: !type:SummonEquipmentEvent
       prototypes:
         hand1: MantisMeleeGreatswordBreakSummoned
-        hand2: MagicRingSummonFlashGreatsword
+        hand2: MagicRingGreatswordFlash
   - type: BaseCultSpell
 
 - type: entity
@@ -3468,14 +3498,14 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/break_icons.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     state: icon-grasp-right
   - type: InstantAction
     itemIconStyle: BigAction
     charges: 1000
     temporary: false
     icon:
-      sprite: _SHA/Heretic/break_icons.rsi
+      sprite: _SHA/Heretic/break-32x.rsi
       state: icon-grasp-right
     event: !type:SummonEquipmentEvent
       prototypes:
@@ -3489,14 +3519,14 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/break_icons.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     state: icon-grasp-both
   - type: InstantAction
     itemIconStyle: BigAction
     charges: 1000
     temporary: false
     icon:
-      sprite: _SHA/Heretic/break_icons.rsi
+      sprite: _SHA/Heretic/break-32x.rsi
       state: icon-grasp-both
     event: !type:SummonEquipmentEvent
       prototypes:
@@ -3511,19 +3541,19 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/break_icons.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     state: icon
   - type: InstantAction
     itemIconStyle: BigAction
     charges: 1000
     temporary: false
     icon:
-      sprite: _SHA/Heretic/break_icons.rsi
+      sprite: _SHA/Heretic/break-32x.rsi
       state: icon
     event: !type:SummonEquipmentEvent
       prototypes:
         hand1: HereticBladeFleshBreak
-        hand2: MagicRingSummonFlashBlade
+        hand2: MagicRingBladeFlash
   - type: BaseCultSpell
 
 - type: entity
@@ -3533,14 +3563,14 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/break_icons.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     state: icon-soul-faint
   - type: InstantAction
     itemIconStyle: BigAction
     charges: 1000
     temporary: false
     icon:
-      sprite: _SHA/Heretic/break_icons.rsi
+      sprite: _SHA/Heretic/break-32x.rsi
       state: icon-soul-faint
     event: !type:SummonEquipmentEvent
       prototypes:
@@ -3554,14 +3584,14 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _SHA/Heretic/break_icons.rsi
+    sprite: _SHA/Heretic/break-32x.rsi
     state: icon-soul
   - type: InstantAction
     itemIconStyle: BigAction
     charges: 1000
     temporary: false
     icon:
-      sprite: _SHA/Heretic/break_icons.rsi
+      sprite: _SHA/Heretic/break-32x.rsi
       state: icon-soul
     event: !type:SummonEquipmentEvent
       prototypes:

@@ -11,25 +11,31 @@
             "name": "none"
         },
         {
-            "name": "punch",
-            "delays": [
-                [
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1
-                ]
+            "name": "punchdark",
+            "delays":
+            [
+                [ 0.1, 0.1, 0.1, 0.1, 0.1 ]
             ]
         },
         {
-            "name": "smash",
-            "delays": [
-                [
-                    0.1,
-                    0.1,
-                    0.1
-                ]
+            "name": "smashdark",
+            "delays":
+            [
+                [ 0.1, 0.1, 0.1 ]
+            ]
+        },
+        {
+            "name": "punchgreen",
+            "delays":
+            [
+                [ 0.1, 0.1, 0.1, 0.1, 0.1 ]
+            ]
+        },
+        {
+            "name": "smashgreen",
+            "delays":
+            [
+                [ 0.1, 0.1, 0.1 ]
             ]
         }
     ]
