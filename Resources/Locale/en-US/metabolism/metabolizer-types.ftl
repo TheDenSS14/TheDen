@@ -1,8 +1,7 @@
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan
-# SPDX-FileCopyrightText: 2025 Skubman
-# SPDX-FileCopyrightText: 2025 Terkala
-# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -21,4 +20,3 @@ metabolizer-type-vampiric = Vampiric
 metabolizer-type-liquorlifeline = Liquor Lifeline
 metabolizer-type-shadowkin = Shadowkin
 metabolizer-type-plasmaman = Plasmaman
-metabolizer-type-zombie-tumor = Zombie Tumor
