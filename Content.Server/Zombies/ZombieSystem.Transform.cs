@@ -81,7 +81,6 @@ using Content.Shared.Standing;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Stunnable;
 using Content.Shared.Silicon.Components;
-using Content.Shared._Floof.Consent;
 using Robust.Shared.Prototypes;
 using Content.Server.Abilities.Psionics;
 
@@ -111,11 +110,9 @@ public sealed partial class ZombieSystem
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly PsionicAbilitiesSystem _psionic = default!;
     [Dependency] private readonly ZombieTumorOrganSystem _zombieTumor = default!;
-    [Dependency] private readonly SharedConsentSystem _consentSystem = default!;
 
     // private static readonly ProtoId<TagPrototype> InvalidForGlobalSpawnSpellTag = "InvalidForGlobalSpawnSpell";
     private static readonly ProtoId<TagPrototype> CannotSuicideTag = "CannotSuicide";
-    private ProtoId<ConsentTogglePrototype> ZombificationConsent = "AllowZombification";
 
     /// <summary>
     /// Handles an entity turning into a zombie when they die or go into crit
@@ -143,8 +140,8 @@ public sealed partial class ZombieSystem
     /// </remarks>
     public void ZombifyEntity(EntityUid target, MobStateComponent? mobState = null)
     {
-        //Don't zombfiy zombies or the unconsenting
-        if (HasComp<ZombieComponent>(target) || HasComp<ZombieImmuneComponent>(target) || !_consentSystem.HasConsent(target, ZombificationConsent))
+        //Don't zombfiy zombies
+        if (HasComp<ZombieComponent>(target) || HasComp<ZombieImmuneComponent>(target))
             return;
 
         if (!Resolve(target, ref mobState, logMissing: false))
