@@ -953,12 +953,6 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
         if (TerminatingOrDeleted(ent.Owner) || args.OldBody == EntityUid.Invalid || TerminatingOrDeleted(args.OldBody))
             return;
 
-        // Den - if the target is already a zombie, revert if possible
-        if (TryComp<ZombieComponent>(ent.Owner, out var zomComp))
-        {
-            _zombieSystem.UnZombify(ent.Owner, ent.Owner, zomComp);
-        }
-
         // When tumor is removed, cure the infection
         if (HasComp<ZombieTumorInfectionComponent>(args.OldBody))
         {
@@ -967,7 +961,6 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
             var removalMessage = wasRoboTumor ? "zombie-robotumor-removed" : "zombie-tumor-removed";
 
             RemComp<ZombieTumorInfectionComponent>(args.OldBody);
-
             _popup.PopupEntity(Loc.GetString(removalMessage), args.OldBody, args.OldBody);
         }
     }
