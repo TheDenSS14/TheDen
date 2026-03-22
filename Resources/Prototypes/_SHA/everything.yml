@@ -2693,7 +2693,7 @@
       - state: soul-eyes
         shader: unshaded
         scale: 0.2,0.2
-        offset: 0,0.4
+        offset: 0,0.42
       - state: soul-cover
         shader: unshaded
       - state: draw-ritual-mirror
@@ -2709,7 +2709,7 @@
       - state: soul-eyes
         shader: unshaded
         scale: 0.2,0.2
-        offset: 0,0.4
+        offset: 0,0.42
       - state: soul-cover
         shader: unshaded
       - state: draw-ritual-mirror
@@ -2737,6 +2737,12 @@
       params:
         volume: -4
         variation: 0.05
+  - type: PointLight
+    radius: 30.0
+    energy: 0.025
+    softness: 1.0
+    falloff: 0.0
+    color: "#ff0066"
 
 - type: entity
   parent: ClothingNeckBase
