@@ -101,7 +101,7 @@ public sealed partial class AdminVerbSystem
                 // Give them a tumor infection instead of immediately zombifying
                 // The tumor will progress normally and eventually zombify them
                 // _zombieTumor.InfectEntity(args.Target);
-                _zombie.ZombifyEntity(args.target);
+                _zombie.ZombifyEntity(args.Target);
             },
             Impact = LogImpact.High,
             Message = Loc.GetString("admin-verb-make-zombie"),
