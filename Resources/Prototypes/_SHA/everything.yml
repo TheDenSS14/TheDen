@@ -31,6 +31,13 @@
     - /Audio/_SHA/soultalk7.ogg
     - /Audio/_SHA/soultalk8.ogg
 
+- type: soundCollection
+  id: Storage
+  files:
+    - /Audio/_SHA/storage1.ogg
+    - /Audio/_SHA/storage2.ogg
+    - /Audio/_SHA/storage3.ogg
+
 # Typing Indicator
 
 - type: typingIndicator
@@ -39,6 +46,13 @@
   typingState: break0
   idleState: break3
   offset: -.44, 1.16
+
+- type: typingIndicator
+  id: breakfaint
+  spritePath: /Textures/_SHA/Effects/speech.rsi
+  typingState: break0
+  idleState: break3
+  offset: -.36, 0.36
 
 # Parallax
 
@@ -158,7 +172,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
-    lifetime: 1.0
+    lifetime: 0.8
   - type: Sprite
     sprite: _SHA/Heretic/grasp_projectiles.rsi
     layers:
@@ -2512,6 +2526,169 @@
         volume: 0
         variation: 0.05
 
+# Special Items/Effects
+
+- type: entity
+  parent: [ BaseItem, BaseHereticContraband ]
+  id: BaseMagicRingWrapped
+  name: bound glittering ring
+  suffix: DO NOT MAP] [BREAK
+  description: "You don't know what this is, but something about it feels terribly unnatural. It's wrapped in silvery bands..."
+  abstract: true
+  components:
+#  - type: SpawnItemsOnUse
+#    items:
+#    - id: null
+  - type: Sprite
+    sprite: _SHA/Misc/misc.rsi
+    layers:
+    - state: icon
+    - state: wrap
+  - type: Item
+    size: Tiny
+    sprite: null
+  - type: DisarmMalus
+    malus: 1.0
+
+- type: entity
+  parent: [ BaseItem, BaseHereticContraband ]
+  id: BaseMagicRing
+  name: glittering ring
+  suffix: DO NOT MAP] [BREAK
+  description: "You don't know what this is, but something about it feels terribly unnatural."
+  abstract: true
+  components:
+#  - type: TimedDespawn
+#    lifetime: 0.7
+  - type: Sprite
+    sprite: _SHA/Misc/misc.rsi
+    layers:
+    - state: icon
+    - state: label
+      shader: unshaded
+  - type: Item
+    size: Tiny
+    sprite: null
+  - type: DisarmMalus
+    malus: 1.0
+
+- type: entity
+  parent: BaseMagicRing
+  id: MagicRingSummonFlashGreatsword
+  components:
+  - type: TimedDespawn
+    lifetime: 0.7
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: label-light
+      shader: unshaded
+  - type: Item
+    sprite: _SHA/Objects/Weapons/Melee/Mantis/mantisgreatsword-inhands-64x.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-right-summon
+        shader: unshaded
+        loop: false
+      right:
+      - state: inhand-left-summon
+        shader: unshaded
+        loop: false
+
+- type: entity
+  parent: BaseMagicRing
+  id: MagicRingSummonFlashBlade
+  components:
+  - type: TimedDespawn
+    lifetime: 0.7
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: label-light
+      shader: unshaded
+  - type: Item
+    sprite: _SHA/Heretic/break_inhands.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-right-summon
+        shader: unshaded
+        loop: false
+      right:
+      - state: inhand-left-summon
+        shader: unshaded
+        loop: false
+
+- type: entity
+  parent: [ BaseMagicRing, BaseStorageItem ]
+  id: MagicRingStorage
+  components:
+  - type: Sprite
+    sprite: _SHA/Misc/misc.rsi
+    layers:
+    - state: icon
+    - state: label-storage
+      shader: unshaded
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+      - 0,0,20,23
+    storageOpenSound: /Audio/Effects/silence.ogg
+    storageCloseSound: /Audio/Effects/silence.ogg
+    storageInsertSound:
+      collection: Storage
+      params:
+        volume: 0
+        variation: 0.15
+
+- type: entity
+  parent: BaseMagicRing
+  id: MagicRingStorageSound
+  components:
+  - type: Sprite
+    sprite: _SHA/Misc/misc.rsi
+    layers:
+    - state: icon
+    - state: label-sound2
+      shader: unshaded
+  - type: EmitSoundOnUse
+    sound:
+      collection: Storage
+      params:
+        volume: 0
+        variation: 0.33
+
+- type: entity
+  parent: BaseMagicRingWrapped
+  id: MagicRingStorageAmbienceWrapped
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: MagicRingStorageAmbience
+  - type: Sprite
+    sprite: _SHA/Misc/misc.rsi
+    layers:
+    - state: icon
+    - state: wrap
+
+- type: entity
+  parent: BaseMagicRing
+  id: MagicRingStorageAmbience
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: MagicRingStorageAmbienceWrapped
+  - type: Sprite
+    sprite: _SHA/Misc/misc.rsi
+    layers:
+    - state: icon
+    - state: label-sound3
+      shader: unshaded
+  - type: AmbientSound
+    range: 5
+    volume: 0
+    sound:
+      path: /Audio/_SHA/storage.ogg
+
 # Weapons
 
 - type: entity
@@ -2550,29 +2727,10 @@
   components:
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/_SHA/castsummon+faustunsheath.ogg
+      path: /Audio/_SHA/castsummoninstant+faustunsheath.ogg
       params:
         volume: 0
         variation: 0.05
-
-- type: entity
-  parent: BaseItem
-  id: MantisMeleeGreatswordBreakSummonFlash
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: TimedDespawn
-    lifetime: 10
-  - type: Item
-    sprite: _SHA/Objects/Weapons/Melee/Mantis/mantisgreatsword-inhands-64x.rsi
-    inhandVisuals:
-      left:
-      - state: inhand-right-summon
-        shader: unshaded
-        loop: false
-      right:
-      - state: inhand-left-summon
-        shader: unshaded
-        loop: false
 
 - type: entity
   parent: MantisMeleeGreatswordSheath
@@ -2648,9 +2806,6 @@
       - state: inhand-left-grasp-summon
         shader: unshaded
         loop: false
-      - state: inhand-left-summon
-        shader: unshaded
-        loop: false
       right:
       - state: inhand-right-grasp
         shader: unshaded
@@ -2660,9 +2815,6 @@
       - state: inhand-right-unshaded-eye
         shader: unshaded
       - state: inhand-right-grasp-summon
-        shader: unshaded
-        loop: false
-      - state: inhand-right-summon
         shader: unshaded
         loop: false
   - type: MeleeWeapon
@@ -2724,28 +2876,26 @@
     verbToggleOff: item-toggle-ritualoff
     predictable: false
     soundActivate:
-      path: /Audio/_SHA/
+      path: /Audio/_SHA/castsummonfast.ogg
       params:
-        volume: -6
-        pitch: 1.3
+        volume: 0
         variation: 0.05
-    soundDeactivate:
-      path: /Audio/Effects/weak_hit2.ogg
-      params:
-        volume: -9
-        pitch: 1.3
-        variation: 0.05
+    soundDeactivate: /Audio/Effects/silence.ogg
   - type: UseDelay
-    delay: 0.92 # This is just under one swing animation
+    delay: 0.98
   - type: Appearance
   - type: ToggleableVisuals
-    spriteLayer: null # Swinging it only changes the inhand sprites
-    replaceMode: true # The original inhand sprites won't remain visible when toggled
+    spriteLayer: null
+    replaceMode: false
     inhandVisuals:
       left:
-      - state: swinging-inhand-left
+      - state: ritual-mirror-instant
+        shader: unshaded
+        offset: 0,-0.5
       right:
-      - state: swinging-inhand-right
+      - state: ritual-mirror-instant
+        shader: unshaded
+        offset: 0,-0.5
   - type: Sprite
     sprite: _SHA/Heretic/break_icons.rsi
     layers:
@@ -2823,7 +2973,7 @@
       - Prying
   - type: Prying
   - type: Gun
-    projectileSpeed: 12.5
+    projectileSpeed: 8
     cameraRecoilScalar: 0
     fireOnDropChance: 0
     meleeCooldown: 0
@@ -2850,7 +3000,7 @@
 
 - type: entity
   parent: [ BaseHereticContraband, BaseItem, BaseAntiPsionicWeapon ]
-  id: HereticMansusGraspStrongBreak
+  id: HereticMansusGraspFarGoneBreak
   name: far-gone grasp
   suffix: DO NOT MAP] [BREAK
   description: "The hand wreathed in false flame.                                                                                                    It pries at the world's threads.                                                                                                    The witch's will made manifest."
@@ -2920,30 +3070,19 @@
   - type: DisarmMalus
     malus: 1.0
   - type: CultItem
-  - type: EmitSoundOnSpawn
-    sound:
-      path: /Audio/_SHA/voidblink.ogg
-      params:
-        volume: -2
-        pitch: 0.75
-  - type: AmbientSound
-    range: 5
-    volume: -4
-    sound:
-      path: /Audio/Ambience/wisp_ambience.ogg
   - type: DeleteOnDrop
   - type: Tool
     qualities:
       - Prying
   - type: Prying
-  - type: PointLight
+  - type: PointLight # For the "muzzle flashes"
     radius: 2
-    energy: 3
+    energy: 0.01
     softness: 1.0
     color: "#00684E" # Mansus grasp color
 
 - type: entity
-  parent: HereticMansusGraspStrongBreak
+  parent: HereticMansusGraspFarGoneBreak
   id: BreakSoul
   name: what remained
   suffix: DO NOT MAP] [BREAK SOUL, RIGHT HAND
@@ -3129,16 +3268,18 @@
     - state: icon-meditation
       shader: unshaded
   - type: Item
-    size: Normal
+    size: Small
   - type: Clothing
     sprite: _SHA/Heretic/effect_clothing.rsi
     equipDelay: 0
     unequipDelay: 0
     quickEquip: true
   - type: AntiGravityClothing
+  - type: DisarmMalus
+    malus: 1.0
 
 - type: entity
-  parent: BreakFocusMeditation
+  parent: [ BaseHereticContraband, BreakFocusMeditation ]
   id: BreakFocusTrance
   name: trance
   suffix: DO NOT MAP] [BREAK
@@ -3183,6 +3324,9 @@
   - type: DeleteOnDrop
   - type: TypingIndicatorClothing
     proto: break
+  - type: SpawnItemsOnUse
+    items:
+    - id: null
 
 - type: entity
   parent: BaseItem
@@ -3197,7 +3341,7 @@
     - state: icon-silhouette
       shader: unshaded
   - type: Item
-    size: Huge
+    size: Small
     sprite: _SHA/Heretic/break_inhands.rsi
     inhandVisuals:
       left:
@@ -3219,15 +3363,69 @@
     damage:
       types:
         Shock: 5
-  - type: SpawnItemsOnUse
-    items:
-    - id: null
   - type: EmitSoundOnPickup
     sound:
       path: /Audio/Effects/eye_close.ogg
       params:
         volume: -6
         variation: 0.075
+  - type: DisarmMalus
+    malus: 1.0
+  - type: CultItem # Only she can wield it
+
+- type: entity
+  parent: [ BaseHereticContraband, BreakSilhouette ]
+  id: BreakSoulFaint
+  name: the shape behind her
+  suffix: DO NOT MAP] [BREAK SOUL, FAINT
+  description: "Something is there, unseen by most.                                                                                                    A ragged thing that stares unblinking.                                                                                                    It moves before she moves."
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/break_icons.rsi
+    layers:
+    - state: icon-soul-faint
+      shader: unshaded
+  - type: Item
+    size: Ginormous
+    sprite: _SHA/Heretic/break_inhands.rsi
+    inhandVisuals:
+      left:
+      - state: soul-faint
+        shader: unshaded
+      - state: soul-eyes-faint
+        shader: unshaded
+        scale: 0.2,0.2
+        offset: 0,0.42
+      right:
+      - state: soul-faint
+        shader: unshaded
+      - state: soul-eyes-faint
+        shader: unshaded
+        scale: 0.2,0.2
+        offset: 0,0.42
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      collection: ShockPunch
+    angle: 30
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Shock: 5
+  - type: AmbientSound
+    range: 5
+    volume: -6
+    sound:
+      path: /Audio/Ambience/wisp_ambience.ogg
+  - type: EmitSoundOnUse
+    sound:
+      collection: SoulTalk
+      params:
+        volume: -6
+        variation: 0.05
+  - type: DeleteOnDrop
+  - type: TypingIndicatorClothing
+    proto: breakfaint
 
 # Spells
 
@@ -3249,7 +3447,8 @@
       state: icon
     event: !type:SummonEquipmentEvent
       prototypes:
-        hand: MantisMeleeGreatswordBreakSummoned
+        hand1: MantisMeleeGreatswordBreakSummoned
+        hand2: MagicRingSummonFlashGreatsword
   - type: BaseCultSpell
 
 - type: entity
@@ -3291,7 +3490,7 @@
       state: icon-grasp-both
     event: !type:SummonEquipmentEvent
       prototypes:
-        hand1: HereticMansusGraspStrongBreak
+        hand1: HereticMansusGraspFarGoneBreak
         hand2: HereticMansusGraspBreak
   - type: BaseCultSpell
 
@@ -3314,7 +3513,28 @@
     event: !type:SummonEquipmentEvent
       prototypes:
         hand1: HereticBladeFleshBreak
-        hand2: HereticMansusGraspBreak
+        hand2: MagicRingSummonFlashBlade
+  - type: BaseCultSpell
+
+- type: entity
+  id: ActionBreakRevelation
+  name: Apparition
+  description: ""
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/break_icons.rsi
+    state: icon-soul-faint
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _SHA/Heretic/break_icons.rsi
+      state: icon-soul-faint
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand: BreakSoulFaint
   - type: BaseCultSpell
 
 - type: entity
@@ -3576,31 +3796,27 @@
     sprite: _SHA/Clothing/Belt/waist.rsi
     renderLayer: innerBelt
   - type: Item
-    size: Small
+    size: Ginormous
   - type: Storage
     maxItemSize: Ginormous
     grid:
-    - 0,0,20,9
+    - 0,0,19,2
+    storageOpenSound: /Audio/Effects/silence.ogg
+    storageCloseSound: /Audio/Effects/silence.ogg
+    storageInsertSound: /Audio/Effects/silence.ogg
+    storageRemoveSound: /Audio/Effects/silence.ogg
   - type: StorageFill
     contents:
-    - id: MantisMeleeSickle
-    - id: MantisMeleeKnife
-    - id: MantisTailorsKnife
-    - id: ClothingNeckMantisPendulum
-    - id: BoxFolderMantis
-    - id: MantisCaseChemicalsPenthouse
-    - id: MantisCaseAdminToys
-    - id: CigPackMnemolithLighter
-      amount: 2
-    - id: ClothingHeadCageMantisPenthouse
-      amount: 1
-    - id: HandcuffsMantisPenthouse
-      amount: 3
-    - id: ClothingNeckMantisShacklesPenthouse
-      amount: 3
-    - id: WrenchMantis
-    - id: LeashMantisPenthouse
-      amount: 6
+    - id: BreakSilhouette
+      amount: 10
+    - id: BreakFocusMeditation
+      amount: 10
+    - id: MagicRingStorage
+      amount: 8
+    - id: MagicRingStorageAmbienceWrapped
+      amount: 4
+    - id: MagicRingStorageSound
+      amount: 8
 
 # Tatter's "Belt"
 
@@ -3615,58 +3831,12 @@
     sprite: _SHA/Clothing/Belt/nothing.rsi
   - type: Clothing
     sprite: _SHA/Clothing/Belt/nothing.rsi
-  - type: StorageFill
-    contents:
-    - id: MantisMeleeSickle
-    - id: MantisMeleeKnife
-    - id: MantisTailorsKnife
-    - id: ClothingNeckMantisPendulum
-    - id: BoxFolderMantis
-    - id: MantisCaseChemicalsPenthouse
-    - id: MantisCaseAdminToys
-    - id: CigPackMnemolithLighter
-      amount: 2
-    - id: ClothingHeadCageMantisPenthouse
-      amount: 1
-    - id: HandcuffsMantisPenthouse
-      amount: 3
-    - id: ClothingNeckMantisShacklesPenthouse
-      amount: 3
-    - id: WrenchMantis
-    - id: LeashMantisPenthouse
-      amount: 6
-
-# Shush
-
-- type: entity
-  parent: [ BaseStorageItem, BaseBagOpenClose ]
-  id: StorageToy
-  name: storage
-  suffix: DO NOT MAP] [BREAK
-  description: ""
-  components:
-  - type: Grammar
-    attributes:
-      proper: true
-  - type: Sprite
-    sprite: null
-  - type: Item
-    sprite: null
-    size: Tiny
-  - type: Storage
-    maxItemSize: Huge
-    grid:
-      - 0,0,20,5
-    storageOpenSound: /Audio/Effects/silence.ogg
-    storageCloseSound: /Audio/Effects/silence.ogg
-    storageInsertSound: /Audio/Effects/silence.ogg
-    storageRemoveSound: /Audio/Effects/silence.ogg
 
 # Cases
 
 - type: entity
   parent: MantisCaseSmall
-  id: MantisCaseAdminToys # Generally for consumable RP toys
+  id: MantisCaseAdmin
   name: small case
   suffix: PENTHOUSE, DO NOT MAP
   description: "A shadow wood case for important things."
@@ -3679,24 +3849,31 @@
     - state: 1-open
       map: ["openLayer"]
   - type: Item
-    size: Small
+    size: Normal
     sprite: _SHA/Objects/Storage/boxshadow.rsi
   - type: Storage
-    maxItemSize: Huge
+    maxItemSize: Ginormous
     grid:
-    - 0,0,25,4
-    storageOpenSound: /Audio/Effects/silence.ogg
-    storageCloseSound: /Audio/Effects/silence.ogg
-    storageInsertSound: /Audio/Effects/silence.ogg
-    storageRemoveSound: /Audio/Effects/silence.ogg
+    - 0,0,20,7
   - type: StorageFill
     contents:
-    - id: BreakSilhouette
-      amount: 10
-    - id: BreakFocusMeditation
-      amount: 10
-    - id: StorageToy
-      amount: 20
+    - id: MantisMeleeSickle
+    - id: MantisMeleeKnife
+    - id: MantisTailorsKnife
+    - id: ClothingNeckMantisPendulum
+    - id: BoxFolderMantis
+    - id: MantisCaseChemicalsPenthouse
+    - id: CigPackMnemolithLighter
+      amount: 3
+    - id: ClothingHeadCageMantisPenthouse
+      amount: 1
+    - id: HandcuffsMantisPenthouse
+      amount: 3
+    - id: ClothingNeckMantisShacklesPenthouse
+      amount: 3
+    - id: WrenchMantis
+    - id: LeashMantisPenthouse
+      amount: 6
 
 - type: entity
   parent: MantisCaseCandles
