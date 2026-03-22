@@ -201,6 +201,16 @@
     impactEffect: BulletImpactGraspSoul
 
 - type: entity
+  parent: BulletGraspSoul
+  id: BulletGraspSoulSpread
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: BulletGraspSoul
+    count: 3
+    spread: 20
+
+- type: entity
   parent: BulletImpactGrasp
   id: BulletImpactGraspSoul
   categories: [ HideSpawnMenu ]
