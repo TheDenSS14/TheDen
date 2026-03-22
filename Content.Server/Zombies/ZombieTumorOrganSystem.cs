@@ -31,7 +31,6 @@ using Content.Shared.Popups;
 using Content.Shared.Zombies;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Silicon.Components;
-using Content.Shared.IdentityManagement.Components;
 using Robust.Shared.Collections;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
@@ -60,6 +59,7 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
     [Dependency] private readonly ZombieSystem _zombieSystem = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+    [Dependency] private readonly InventorySystem _inventorySystem = default!;
     [Dependency] private readonly InternalsSystem _internalsSystem = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
@@ -170,29 +170,6 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
         }
     }
 
-    // Helper function so zombie tumors harm the body part they're in
-    private TargetBodyPart? GetTumorBodyPart(EntityUid bodyUid)
-    {
-        if (!TryComp<BodyComponent>(bodyUid, out var body) || body.RootContainer.ContainedEntity == null)
-            return null;
-
-        // Find the tumor organ
-        var bodyEntity = (bodyUid, body);
-        var tumorOrgans = _bodySystem.GetBodyOrganEntityComps<ZombieTumorOrganComponent>(bodyEntity);
-        if (tumorOrgans.Count == 0)
-            return null;
-
-        var tumorOrgan = tumorOrgans[0];
-
-        // Get the body part that contains this tumor organ
-        var parentPartUid = _bodySystem.GetParentPartOrNull(tumorOrgan.Owner);
-        if (parentPartUid == null || !TryComp<BodyPartComponent>(parentPartUid.Value, out var parentPart))
-            return null;
-
-        // Convert body part type to TargetBodyPart
-        return _bodySystem.GetTargetBodyPart(parentPart.PartType, parentPart.Symmetry) ?? TargetBodyPart.Torso;
-    }
-
     private void HandleIPCDamage(EntityUid uid, ZombieTumorInfectionComponent infection, DamageableComponent damageable, BloodstreamComponent bloodstream)
     {
         // No damage during incubation period
@@ -227,27 +204,36 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
         }
         else
         {
-            // Oil is empty, apply radiation damage to the body part containing the tumor
+            // Oil is empty, apply radiation damage to torso only
             var multiplier = _mobState.IsCritical(uid) ? infection.CritDamageMultiplier : 1f;
             var damage = infection.RadiationDamage * multiplier;
-            var targetPart = GetTumorBodyPart(uid) ?? TargetBodyPart.Torso;
-            _damageable.TryChangeDamage(uid, damage, true, false, damageable, targetPart: targetPart);
+            _damageable.TryChangeDamage(uid, damage, true, false, damageable, targetPart: TargetBodyPart.Torso);
         }
     }
 
     private void HandleNormalDamage(EntityUid uid, ZombieTumorInfectionComponent infection, DamageableComponent damageable, MobStateComponent mobState)
     {
-        // No damage during incubation period
-        if (infection.Stage == ZombieTumorInfectionStage.Incubation)
-            return;
-
-        // Get damage for current stage from dictionary
-        if (!infection.StageDamage.TryGetValue(infection.Stage, out var damage))
-            return;
+        DamageSpecifier damage;
+        switch (infection.Stage)
+        {
+            case ZombieTumorInfectionStage.Incubation:
+                // No damage during incubation period
+                return;
+            case ZombieTumorInfectionStage.Early:
+                damage = infection.EarlyDamage;
+                break;
+            case ZombieTumorInfectionStage.TumorFormed:
+                damage = infection.TumorDamage;
+                break;
+            case ZombieTumorInfectionStage.Advanced:
+                damage = infection.AdvancedDamage;
+                break;
+            default:
+                return;
+        }
 
         var multiplier = _mobState.IsCritical(uid, mobState) ? infection.CritDamageMultiplier : 1f;
-        var targetPart = GetTumorBodyPart(uid) ?? TargetBodyPart.Torso;
-        _damageable.TryChangeDamage(uid, damage * multiplier, true, false, damageable, targetPart: targetPart);
+        _damageable.TryChangeDamage(uid, damage * multiplier, true, false, damageable, targetPart: TargetBodyPart.Torso);
     }
 
     private void HandleSicknessEffects(EntityUid uid, ZombieTumorInfectionComponent infection, TimeSpan curTime)
@@ -371,7 +357,7 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
     }
 
     /// <summary>
-    /// Spawns a zombie tumor organ in a random valid body part (torso, head, or arm). Returns true if successful.
+    /// Spawns a zombie tumor organ in the entity's torso. Returns true if successful.
     /// </summary>
     public bool SpawnTumorOrgan(EntityUid bodyUid)
     {
@@ -387,47 +373,22 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
         if (HasTumorOrgan(bodyUid))
             return true;
 
-        // Collect all valid body parts we can spawn tumors in
-        // GetBodyChildrenOfType only returns attached parts
-        var validBodyParts = new List<(EntityUid Id, BodyPartComponent Component)>();
-
-        // Add torso (if exists)
+        // Find torso body part
         var torso = _bodySystem.GetBodyChildrenOfType(bodyUid, BodyPartType.Torso, body).FirstOrDefault();
-        if (torso.Id != EntityUid.Invalid)
-            validBodyParts.Add(torso);
-
-        // Add head (if exists)
-        var head = _bodySystem.GetBodyChildrenOfType(bodyUid, BodyPartType.Head, body).FirstOrDefault();
-        if (head.Id != EntityUid.Invalid)
-            validBodyParts.Add(head);
-
-        // Add all arms (left and right if they exist)
-        var arms = _bodySystem.GetBodyChildrenOfType(bodyUid, BodyPartType.Arm, body);
-        foreach (var arm in arms)
-        {
-            if (arm.Id != EntityUid.Invalid)
-                validBodyParts.Add(arm);
-        }
-
-        // If no valid body parts found, fail
-        // Safety check, what kind of player has no torso?
-        if (validBodyParts.Count == 0)
+        if (torso.Id == EntityUid.Invalid)
             return false;
-
-        // Randomly select a body part
-        var selectedPart = _random.Pick(validBodyParts);
 
         // Check if this is an IPC (has Silicon component AND Bloodstream - to exclude borgs)
         var isIPC = HasComp<SiliconComponent>(bodyUid) && HasComp<BloodstreamComponent>(bodyUid);
         var tumorPrototype = isIPC ? "ZombieRoboTumor" : "ZombieTumorOrgan";
 
         // Try to add to first valid slot first (in case slot already exists)
-        if (_bodySystem.CanInsertOrgan(selectedPart.Id, "tumor", selectedPart.Component))
+        if (_bodySystem.CanInsertOrgan(torso.Id, "tumor", torso.Component))
         {
             // Slot exists, spawn and insert directly
             // Spawn at map null to avoid state sync issues
             var tumorOrgan = Spawn(tumorPrototype, MapCoordinates.Nullspace);
-            if (_bodySystem.InsertOrgan(selectedPart.Id, tumorOrgan, "tumor", selectedPart.Component, null))
+            if (_bodySystem.InsertOrgan(torso.Id, tumorOrgan, "tumor", torso.Component, null))
             {
                 return true;
             }
@@ -436,14 +397,14 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
         }
 
         // If no slot available, try to create one
-        if (_bodySystem.TryCreateOrganSlot(selectedPart.Id, "tumor", out var slot))
+        if (_bodySystem.TryCreateOrganSlot(torso.Id, "tumor", out var slot))
         {
             // Spawn tumor organ after slot is created
             // Spawn at map null to avoid state sync issues
             var tumorOrgan = Spawn(tumorPrototype, MapCoordinates.Nullspace);
 
             // Verify slot exists before inserting
-            if (!_bodySystem.CanInsertOrgan(selectedPart.Id, "tumor", selectedPart.Component))
+            if (!_bodySystem.CanInsertOrgan(torso.Id, "tumor", torso.Component))
             {
                 Log.Warning($"Tumor slot was created but is not available for insertion in {ToPrettyString(bodyUid)}");
                 Del(tumorOrgan);
@@ -451,7 +412,7 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
             }
 
             // InsertOrgan returns false if it fails - check the result
-            if (!_bodySystem.InsertOrgan(selectedPart.Id, tumorOrgan, "tumor", selectedPart.Component, null))
+            if (!_bodySystem.InsertOrgan(torso.Id, tumorOrgan, "tumor", torso.Component, null))
             {
                 Log.Warning($"Failed to insert zombie tumor organ into {ToPrettyString(bodyUid)} after creating slot");
                 Del(tumorOrgan);
@@ -515,6 +476,10 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
         var organQuery = EntityQueryEnumerator<ZombieTumorOrganComponent, OrganComponent, TransformComponent>();
         while (organQuery.MoveNext(out var uid, out var organ, out var organComp, out var xform))
         {
+            // Skip if not in a body
+            if (organComp.Body == null)
+                continue;
+
             // Check if it's time to update (now every 1 second)
             if (organ.NextUpdate > curTime)
                 continue;
@@ -522,27 +487,12 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
             organ.NextUpdate = curTime + organ.UpdateInterval;
             Dirty(uid, organ);
 
-            // Determine the source entity and transform for infection spread
-            // If the tumor is in a body, use the body's transform (the zombie carrying the tumor)
-            // If the tumor is not in a body, use the tumor's own transform
-            EntityUid sourceUid;
-            TransformComponent sourceXform;
-
-            if (organComp.Body != null && TryComp(organComp.Body.Value, out TransformComponent? bodyXform))
-            {
-                // Tumor is in a body - use body's transform
-                sourceUid = organComp.Body.Value;
-                sourceXform = bodyXform;
-            }
-            else
-            {
-                // Tumor is not in a body - use tumor's own transform
-                sourceUid = uid;
-                sourceXform = xform;
-            }
+            // Get the body's transform (the zombie carrying the tumor)
+            if (!TryComp(organComp.Body.Value, out TransformComponent? bodyXform))
+                continue;
 
             // Use tile-based flood fill to find infectible entities in the same room with distances
-            var infectableEntities = GetInfectableEntitiesInRoomWithDistances(sourceUid, sourceXform, organ.InfectionRange);
+            var infectableEntities = GetInfectableEntitiesInRoomWithDistances(organComp.Body.Value, bodyXform, organ.InfectionRange);
 
             // Calculate infection chance from this specific tumor based on its distance to each target
             foreach (var (target, distance) in infectableEntities)
@@ -550,11 +500,11 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
                 // Calculate base infection chance based on THIS tumor's distance to the target
                 float baseChance;
                 if (distance <= 1f)
-                    baseChance = 0.0045f; // 0.35% at 1 tile. 13% chance to infect at 1 tile in 30 sec.
+                    baseChance = 0.0035f; // 0.35% at 1 tile. 10% chance to infect at 1 tile in 30 sec.
                 else if (distance <= 2f)
-                    baseChance = 0.0022f; // 0.17% at 2 tiles. 6.5% chance to infect at 2 tiles in 30 sec.
+                    baseChance = 0.0017f; // 0.17% at 2 tiles. 5% chance to infect at 2 tiles in 30 sec.
                 else if (distance <= 3f)
-                    baseChance = 0.00087f; // 0.067% at 3 tiles. 2.6% chance to infect at 3 tiles in 30 sec.
+                    baseChance = 0.00067f; // 0.067% at 3 tiles. 2% chance to infect at 3 tiles in 30 sec.
                 else
                     continue; // Beyond 3 tiles, no infection from this tumor
 
@@ -582,9 +532,9 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
     }
 
     /// <summary>
-    /// Calculates the protection multiplier based on mouth coverage and internals status.
+    /// Calculates the protection multiplier based on mask and internals status.
     /// Returns 0.0 if internals are active (100% protection),
-    /// 0.1 if mouth is covered (90% reduction),
+    /// 0.1 if wearing a mask (90% reduction),
     /// or 1.0 if no protection.
     /// </summary>
     private float GetProtectionMultiplier(EntityUid target)
@@ -593,14 +543,8 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
         if (_internalsSystem.AreInternalsWorking(target))
             return 0f;
 
-        // Check if mouth is covered - provides 90% reduction
-        // This uses the same system that determines face/head coverage
-        var ev = new SeeIdentityAttemptEvent();
-        RaiseLocalEvent(target, ev);
-
-        // If mouth is covered (MOUTH bit is set), provide 90% reduction
-        // FULL coverage includes MOUTH, so it will also trigger this
-        if ((ev.TotalCoverage & IdentityBlockerCoverage.MOUTH) != 0)
+        // Check if wearing a mask in the mask slot - provides 90% reduction
+        if (_inventorySystem.TryGetSlotEntity(target, "mask", out var _))
             return 0.1f;
 
         // No protection
@@ -750,9 +694,7 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
     /// <summary>
     /// Infects an entity with the zombie tumor infection. This will progress through stages and eventually form a tumor organ.
     /// </summary>
-    /// <param name="target">The entity to infect</param>
-    /// <param name="initialStage">The initial stage of infection. Defaults to Incubation for airborne infections.</param>
-    public void InfectEntity(EntityUid target, ZombieTumorInfectionStage initialStage = ZombieTumorInfectionStage.Incubation)
+    public void InfectEntity(EntityUid target)
     {
         if (HasComp<ZombieTumorInfectionComponent>(target))
             return;
@@ -770,31 +712,9 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
             return;
 
         var infection = EnsureComp<ZombieTumorInfectionComponent>(target);
-        infection.Stage = initialStage;
+        infection.Stage = ZombieTumorInfectionStage.Incubation;
         infection.NextTick = _timing.CurTime + TimeSpan.FromSeconds(1);
-
-        // Set NextStageAt and initialize stage-specific timers based on initial stage
-        if (initialStage == ZombieTumorInfectionStage.Incubation)
-        {
-            infection.NextStageAt = _timing.CurTime + infection.IncubationToEarlyTime;
-        }
-        else if (initialStage == ZombieTumorInfectionStage.Early)
-        {
-            infection.NextStageAt = _timing.CurTime + infection.EarlyToTumorTime;
-        }
-        else if (initialStage == ZombieTumorInfectionStage.TumorFormed)
-        {
-            infection.NextStageAt = _timing.CurTime + infection.TumorToAdvancedTime;
-
-            // Initialize random timers for sickness effects (same as when progressing to TumorFormed)
-            infection.NextSicknessMessage = _timing.CurTime + TimeSpan.FromSeconds(_random.Next(30, 91));
-            infection.NextCough = _timing.CurTime + TimeSpan.FromSeconds(_random.Next(15, 46));
-
-            // Spawn the tumor organ immediately since we're starting at TumorFormed stage
-            SpawnTumorOrgan(target);
-        }
-        // Advanced stage doesn't progress further
-
+        infection.NextStageAt = _timing.CurTime + infection.IncubationToEarlyTime;
         Dirty(target, infection);
 
         // Use IPC-specific message if this is an IPC (has Silicon component AND Bloodstream)
@@ -878,8 +798,7 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
         if (HasComp<ZombieComponent>(ent.Owner))
             return;
 
-        // Cleanup: remove and delete tumor organ if it exists
-        // Organs should only drop when surgically removed, not when cured via ambuzol or other means
+        // Cleanup: remove tumor organ if it exists
         if (!TryComp<BodyComponent>(ent, out var body))
             return;
 
@@ -897,11 +816,9 @@ public sealed class ZombieTumorOrganSystem : SharedZombieTumorOrganSystem
             if (TerminatingOrDeleted(organUid))
                 continue;
 
-            // Remove the organ from the body and delete it
-            // This prevents the organ from dropping when cured (e.g., via ambuzol)
-            // Surgical removal is handled separately and will drop the organ
+            // Remove the organ from the body - it will drop as an item
+            // Deletion will be handled naturally if needed
             _bodySystem.RemoveOrgan(organUid);
-            QueueDel(organUid);
         }
     }
 

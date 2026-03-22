@@ -1,15 +1,11 @@
-# SPDX-FileCopyrightText: 2023 IntegerTempest
-# SPDX-FileCopyrightText: 2023 Nemanja
-# SPDX-FileCopyrightText: 2023 coolmankid12345
-# SPDX-FileCopyrightText: 2024 Golinth
-# SPDX-FileCopyrightText: 2024 SimpleStation14
-# SPDX-FileCopyrightText: 2024 slarticodefast
-# SPDX-FileCopyrightText: 2025 Skye
-# SPDX-FileCopyrightText: 2025 Tay
-# SPDX-FileCopyrightText: 2025 Terkala
-# SPDX-FileCopyrightText: 2025 kbarkevich
-# SPDX-FileCopyrightText: 2025 sleepyyapril
-# SPDX-FileCopyrightText: 2025 taydeo
+# SPDX-FileCopyrightText: 2023 IntegerTempest <30300017+IntegerTempest@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 coolmankid12345 <coolmankid12345@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Golinth <amh2023@gmail.com>
+# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -22,48 +18,8 @@
     - Zombie
     - InitialInfected
   icon:
-    sprite: /Textures/_Funkystation/Interface/Misc/zombie_job_icons.rsi
-    state: Stage5
-
-- type: factionIcon
-  id: ZombieInfectionIncubation
-  priority: 11
-  showTo:
-    components:
-    - ShowAntagIcons
-  icon:
-    sprite: /Textures/_Funkystation/Interface/Misc/zombie_job_icons.rsi
-    state: Stage1
-
-- type: factionIcon
-  id: ZombieInfectionEarly
-  priority: 11
-  showTo:
-    components:
-    - ShowAntagIcons
-  icon:
-    sprite: /Textures/_Funkystation/Interface/Misc/zombie_job_icons.rsi
-    state: Stage2
-
-- type: factionIcon
-  id: ZombieInfectionTumorFormed
-  priority: 11
-  showTo:
-    components:
-    - ShowAntagIcons
-  icon:
-    sprite: /Textures/_Funkystation/Interface/Misc/zombie_job_icons.rsi
-    state: Stage3
-
-- type: factionIcon
-  id: ZombieInfectionAdvanced
-  priority: 11
-  showTo:
-    components:
-    - ShowAntagIcons
-  icon:
-    sprite: /Textures/_Funkystation/Interface/Misc/zombie_job_icons.rsi
-    state: Stage4
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Zombie
 
 - type: factionIcon
   id: InitialInfectedFaction
