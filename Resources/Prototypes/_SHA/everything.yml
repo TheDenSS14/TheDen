@@ -217,7 +217,7 @@
   - type: ProjectileSpread
     proto: BulletGraspSoul
     count: 5
-    spread: 10
+    spread: 15
 
 - type: entity
   parent: BulletImpactGrasp
@@ -3428,14 +3428,14 @@
         Shock: 5
   - type: AmbientSound
     range: 5
-    volume: -9
+    volume: -8
     sound:
       path: /Audio/Ambience/wisp_ambience.ogg
   - type: EmitSoundOnUse
     sound:
       collection: SoulTalk
       params:
-        volume: -11
+        volume: -10
         variation: 0.05
   - type: DeleteOnDrop
   - type: TypingIndicatorClothing
@@ -3825,12 +3825,12 @@
       amount: 10
     - id: BreakFocusMeditation
       amount: 10
-    - id: FragmentStorage
-      amount: 8
-    - id: FragmentStorageAmbienceToggle
-      amount: 4
     - id: FragmentStorageSound
-      amount: 8
+      amount: 5
+    - id: FragmentStorage
+      amount: 10
+    - id: FragmentStorageAmbienceToggle
+      amount: 5
 
 # Tatter's "Belt"
 
