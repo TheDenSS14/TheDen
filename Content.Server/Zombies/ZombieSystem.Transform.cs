@@ -1,42 +1,43 @@
-// SPDX-FileCopyrightText: 2022 EmoGarbage404
-// SPDX-FileCopyrightText: 2022 Kara
-// SPDX-FileCopyrightText: 2022 metalgearsloth
-// SPDX-FileCopyrightText: 2023 0x6273
-// SPDX-FileCopyrightText: 2023 Alex Evgrashin
-// SPDX-FileCopyrightText: 2023 Doru991
-// SPDX-FileCopyrightText: 2023 DrSmugleaf
-// SPDX-FileCopyrightText: 2023 Flipp Syder
-// SPDX-FileCopyrightText: 2023 LankLTE
-// SPDX-FileCopyrightText: 2023 Leon Friedrich
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
-// SPDX-FileCopyrightText: 2023 PixelTK
-// SPDX-FileCopyrightText: 2023 ShadowCommander
-// SPDX-FileCopyrightText: 2023 Simon
-// SPDX-FileCopyrightText: 2023 Sirionaut
-// SPDX-FileCopyrightText: 2023 Tom Leys
-// SPDX-FileCopyrightText: 2023 Vasilis
-// SPDX-FileCopyrightText: 2023 Visne
-// SPDX-FileCopyrightText: 2023 Vyacheslav Titov
-// SPDX-FileCopyrightText: 2023 Whisper
-// SPDX-FileCopyrightText: 2023 corentt
-// SPDX-FileCopyrightText: 2023 nikthechampiongr
-// SPDX-FileCopyrightText: 2024 Arendian
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
-// SPDX-FileCopyrightText: 2024 Debug
-// SPDX-FileCopyrightText: 2024 Errant
-// SPDX-FileCopyrightText: 2024 Jezithyr
-// SPDX-FileCopyrightText: 2024 Nemanja
-// SPDX-FileCopyrightText: 2024 OldDanceJacket
-// SPDX-FileCopyrightText: 2024 ShatteredSwords
-// SPDX-FileCopyrightText: 2024 SimpleStation14
-// SPDX-FileCopyrightText: 2024 Tayrtahn
-// SPDX-FileCopyrightText: 2024 VMSolidus
-// SPDX-FileCopyrightText: 2024 deltanedas
-// SPDX-FileCopyrightText: 2024 sleepyyapril
-// SPDX-FileCopyrightText: 2024 Łukasz Mędrek
-// SPDX-FileCopyrightText: 2025 RedFoxIV
-// SPDX-FileCopyrightText: 2025 Terkala
-// SPDX-FileCopyrightText: 2025 tetkala
+// SPDX-FileCopyrightText: 2022 EmoGarbage404 <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2023 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2023 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Sirionaut <148076704+Sirionaut@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
+// SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vyacheslav Titov <rincew1nd@ya.ru>
+// SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 corentt <36075110+corentt@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2023 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Arendian <137322659+Arendian@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 OldDanceJacket <98985560+OldDanceJacket@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2024 Łukasz Mędrek <lukasz@lukaszm.xyz>
+// SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 //
 // SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -51,6 +52,7 @@ using Content.Server.Inventory;
 using Content.Server.Mind;
 using Content.Server.Mind.Commands;
 using Content.Server.NPC;
+using Content.Server.NPC.Components;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
 using Content.Server.Speech.Components;
@@ -65,8 +67,10 @@ using Content.Shared.Humanoid;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Systems;
+using Content.Shared.NPC.Components;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Nutrition.AnimalHusbandry;
 using Content.Shared.Nutrition.Components;
@@ -76,288 +80,255 @@ using Content.Shared.Weapons.Melee;
 using Content.Shared.Zombies;
 using Content.Shared.Prying.Components;
 using Robust.Shared.Audio.Systems;
-using Content.Shared.Tag;
-using Content.Shared.Standing;
-using Content.Shared.Bed.Sleep;
-using Content.Shared.Stunnable;
-using Content.Shared.Silicon.Components;
-using Content.Shared._Floof.Consent;
-using Robust.Shared.Prototypes;
+using Content.Shared.Traits.Assorted.Components;
 using Content.Server.Abilities.Psionics;
 
-namespace Content.Server.Zombies;
-
-/// <summary>
-///     Handles zombie propagation and inherent zombie traits
-/// </summary>
-/// <remarks>
-///     Don't Shitcode Open Inside
-/// </remarks>
-public sealed partial class ZombieSystem
+namespace Content.Server.Zombies
 {
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IChatManager _chatMan = default!;
-    [Dependency] private readonly SharedCombatModeSystem _combat = default!;
-    [Dependency] private readonly NpcFactionSystem _faction = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearance = default!;
-    [Dependency] private readonly IdentitySystem _identity = default!;
-    [Dependency] private readonly ServerInventorySystem _inventory = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
-    [Dependency] private readonly NPCSystem _npc = default!;
-    [Dependency] private readonly SharedRoleSystem _roles = default!;
-    [Dependency] private readonly StandingStateSystem _standing = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly PsionicAbilitiesSystem _psionic = default!;
-    [Dependency] private readonly ZombieTumorOrganSystem _zombieTumor = default!;
-    [Dependency] private readonly SharedConsentSystem _consentSystem = default!;
-
-    // private static readonly ProtoId<TagPrototype> InvalidForGlobalSpawnSpellTag = "InvalidForGlobalSpawnSpell";
-    private static readonly ProtoId<TagPrototype> CannotSuicideTag = "CannotSuicide";
-    private ProtoId<ConsentTogglePrototype> ZombificationConsent = "AllowZombification";
-
     /// <summary>
-    /// Handles an entity turning into a zombie when they die or go into crit
+    ///     Handles zombie propagation and inherent zombie traits
     /// </summary>
-    private void OnDamageChanged(EntityUid uid, ZombifyOnDeathComponent component, MobStateChangedEvent args)
-    {
-        if (args.NewMobState == MobState.Dead)
-        {
-            ZombifyEntity(uid, args.Component);
-        }
-    }
-
-    /// <summary>
-    ///     This is the general purpose function to call if you want to zombify an entity.
-    ///     It handles both humanoid and nonhumanoid transformation and everything should be called through it.
-    /// </summary>
-    /// <param name="target">the entity being zombified</param>
-    /// <param name="mobState"></param>
     /// <remarks>
-    ///     ALRIGHT BIG BOYS, GIRLS AND ANYONE ELSE. YOU'VE COME TO THE LAYER OF THE BEAST. THIS IS YOUR WARNING.
-    ///     This function is the god function for zombie stuff, and it is cursed. I have
-    ///     attempted to label everything thouroughly for your sanity. I have attempted to
-    ///     rewrite this, but this is how it shall lie eternal. Turn back now.
-    ///     -emo
+    ///     Don't Shitcode Open Inside
     /// </remarks>
-    public void ZombifyEntity(EntityUid target, MobStateComponent? mobState = null)
+    public sealed partial class ZombieSystem
     {
-        //Don't zombfiy zombies or the unconsenting
-        if (HasComp<ZombieComponent>(target) || HasComp<ZombieImmuneComponent>(target) || !_consentSystem.HasConsent(target, ZombificationConsent))
-            return;
+        [Dependency] private readonly SharedHandsSystem _hands = default!;
+        [Dependency] private readonly ServerInventorySystem _inventory = default!;
+        [Dependency] private readonly NpcFactionSystem _faction = default!;
+        [Dependency] private readonly NPCSystem _npc = default!;
+        [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearance = default!;
+        [Dependency] private readonly IdentitySystem _identity = default!;
+        [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
+        [Dependency] private readonly SharedCombatModeSystem _combat = default!;
+        [Dependency] private readonly IChatManager _chatMan = default!;
+        [Dependency] private readonly MindSystem _mind = default!;
+        [Dependency] private readonly SharedRoleSystem _roles = default!;
+        [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
+        [Dependency] private readonly SharedAudioSystem _audio = default!;
+        [Dependency] private readonly PsionicAbilitiesSystem _psionic = default!;
 
-        if (!Resolve(target, ref mobState, logMissing: false))
-            return;
-
-        //you're a real zombie now, son.
-        var zombiecomp = AddComp<ZombieComponent>(target);
-
-        //we need to basically remove all of these because zombies shouldn't
-        //get diseases, breath, be thirst, be hungry, die in space, have offspring or be paraplegic.
-        RemComp<RespiratorComponent>(target);
-        RemComp<BarotraumaComponent>(target);
-        RemComp<HungerComponent>(target);
-        RemComp<ThirstComponent>(target);
-        RemComp<ReproductiveComponent>(target);
-        RemComp<ReproductivePartnerComponent>(target);
-        RemComp<ComplexInteractionComponent>(target);
-
-        if (HasComp<PsionicComponent>(target)) // Prevent psionic zombies
+        /// <summary>
+        /// Handles an entity turning into a zombie when they die or go into crit
+        /// </summary>
+        private void OnDamageChanged(EntityUid uid, ZombifyOnDeathComponent component, MobStateChangedEvent args)
         {
-            _psionic.RemoveAllPsionicPowers(target, true);
-        }
-
-        //funny voice
-        var accentType = "zombie";
-        if (TryComp<ZombieAccentOverrideComponent>(target, out var accent))
-            accentType = accent.Accent;
-
-        EnsureComp<ReplacementAccentComponent>(target).Accent = accentType;
-
-        //This is needed for stupid entities that fuck up combat mode component
-        //in an attempt to make an entity not attack. This is the easiest way to do it.
-        var combat = EnsureComp<CombatModeComponent>(target);
-        RemComp<PacifiedComponent>(target);
-        _combat.SetCanDisarm(target, false, combat);
-        _combat.SetInCombatMode(target, true, combat);
-
-        //This is the actual damage of the zombie. We assign the visual appearance
-        //and range here because of stuff we'll find out later
-        var melee = EnsureComp<MeleeWeaponComponent>(target);
-        melee.Animation = zombiecomp.AttackAnimation;
-        melee.WideAnimation = zombiecomp.AttackAnimation;
-        melee.AltDisarm = false;
-        melee.Range = 1.2f;
-        melee.Angle = 0.0f;
-        melee.SoundHit = zombiecomp.BiteSound;
-
-        if (mobState.CurrentState == MobState.Alive)
-        {
-            // Groaning when damaged
-            EnsureComp<EmoteOnDamageComponent>(target);
-            _emoteOnDamage.AddEmote(target, "Scream");
-
-            // Random groaning
-            EnsureComp<AutoEmoteComponent>(target);
-            _autoEmote.AddEmote(target, "ZombieGroan");
-        }
-
-        //We have specific stuff for humanoid zombies because they matter more
-        if (TryComp<HumanoidAppearanceComponent>(target, out var huApComp)) //huapcomp
-        {
-            //store some values before changing them in case the humanoid get cloned later
-            zombiecomp.BeforeZombifiedSkinColor = huApComp.SkinColor;
-            zombiecomp.BeforeZombifiedEyeColor = huApComp.EyeColor;
-            zombiecomp.BeforeZombifiedCustomBaseLayers = new(huApComp.CustomBaseLayers);
-            if (TryComp<BloodstreamComponent>(target, out var stream))
-                zombiecomp.BeforeZombifiedBloodReagent = stream.BloodReagent;
-
-            _humanoidAppearance.SetSkinColor(target, zombiecomp.SkinColor, verify: false, humanoid: huApComp);
-
-            // Messing with the eye layer made it vanish upon cloning, and also it didn't even appear right
-            huApComp.EyeColor = zombiecomp.EyeColor;
-
-            // this might not resync on clone?
-            _humanoidAppearance.SetBaseLayerId(target, HumanoidVisualLayers.Tail, zombiecomp.BaseLayerExternal, humanoid: huApComp);
-            _humanoidAppearance.SetBaseLayerId(target, HumanoidVisualLayers.HeadSide, zombiecomp.BaseLayerExternal, humanoid: huApComp);
-            _humanoidAppearance.SetBaseLayerId(target, HumanoidVisualLayers.HeadTop, zombiecomp.BaseLayerExternal, humanoid: huApComp);
-            _humanoidAppearance.SetBaseLayerId(target, HumanoidVisualLayers.Snout, zombiecomp.BaseLayerExternal, humanoid: huApComp);
-
-            //This is done here because non-humanoids shouldn't get baller damage
-            //lord forgive me for the hardcoded damage
-            DamageSpecifier dspec = new()
+            if (args.NewMobState == MobState.Dead)
             {
-                DamageDict = new()
+                ZombifyEntity(uid, args.Component);
+            }
+        }
+
+        /// <summary>
+        ///     This is the general purpose function to call if you want to zombify an entity.
+        ///     It handles both humanoid and nonhumanoid transformation and everything should be called through it.
+        /// </summary>
+        /// <param name="target">the entity being zombified</param>
+        /// <param name="mobState"></param>
+        /// <remarks>
+        ///     ALRIGHT BIG BOYS, GIRLS AND ANYONE ELSE. YOU'VE COME TO THE LAYER OF THE BEAST. THIS IS YOUR WARNING.
+        ///     This function is the god function for zombie stuff, and it is cursed. I have
+        ///     attempted to label everything thouroughly for your sanity. I have attempted to
+        ///     rewrite this, but this is how it shall lie eternal. Turn back now.
+        ///     -emo
+        /// </remarks>
+        public void ZombifyEntity(EntityUid target, MobStateComponent? mobState = null)
+        {
+            //Don't zombfiy zombies
+            if (HasComp<ZombieComponent>(target) || HasComp<ZombieImmuneComponent>(target))
+                return;
+
+            if (!Resolve(target, ref mobState, logMissing: false))
+                return;
+
+            //you're a real zombie now, son.
+            var zombiecomp = AddComp<ZombieComponent>(target);
+
+            //we need to basically remove all of these because zombies shouldn't
+            //get diseases, breath, be thirst, be hungry, die in space, have offspring or be paraplegic.
+            RemComp<RespiratorComponent>(target);
+            RemComp<BarotraumaComponent>(target);
+            RemComp<HungerComponent>(target);
+            RemComp<ThirstComponent>(target);
+            RemComp<ReproductiveComponent>(target);
+            RemComp<ReproductivePartnerComponent>(target);
+            RemComp<LegsParalyzedComponent>(target);
+            RemComp<ComplexInteractionComponent>(target);
+
+            if (HasComp<PsionicComponent>(target)) // Prevent psionic zombies
+            {
+                _psionic.RemoveAllPsionicPowers(target, true);
+            }
+
+            //funny voice
+            var accentType = "zombie";
+            if (TryComp<ZombieAccentOverrideComponent>(target, out var accent))
+                accentType = accent.Accent;
+
+            EnsureComp<ReplacementAccentComponent>(target).Accent = accentType;
+
+            //This is needed for stupid entities that fuck up combat mode component
+            //in an attempt to make an entity not attack. This is the easiest way to do it.
+            var combat = EnsureComp<CombatModeComponent>(target);
+            RemComp<PacifiedComponent>(target);
+            _combat.SetCanDisarm(target, false, combat);
+            _combat.SetInCombatMode(target, true, combat);
+
+            //This is the actual damage of the zombie. We assign the visual appearance
+            //and range here because of stuff we'll find out later
+            var melee = EnsureComp<MeleeWeaponComponent>(target);
+            melee.Animation = zombiecomp.AttackAnimation;
+            melee.WideAnimation = zombiecomp.AttackAnimation;
+            melee.AltDisarm = false;
+            melee.Range = 1.2f;
+            melee.Angle = 0.0f;
+            melee.SoundHit = zombiecomp.BiteSound;
+
+            if (mobState.CurrentState == MobState.Alive)
+            {
+                // Groaning when damaged
+                EnsureComp<EmoteOnDamageComponent>(target);
+                _emoteOnDamage.AddEmote(target, "Scream");
+
+                // Random groaning
+                EnsureComp<AutoEmoteComponent>(target);
+                _autoEmote.AddEmote(target, "ZombieGroan");
+            }
+
+            //We have specific stuff for humanoid zombies because they matter more
+            if (TryComp<HumanoidAppearanceComponent>(target, out var huApComp)) //huapcomp
+            {
+                //store some values before changing them in case the humanoid get cloned later
+                zombiecomp.BeforeZombifiedSkinColor = huApComp.SkinColor;
+                zombiecomp.BeforeZombifiedEyeColor = huApComp.EyeColor;
+                zombiecomp.BeforeZombifiedCustomBaseLayers = new(huApComp.CustomBaseLayers);
+                if (TryComp<BloodstreamComponent>(target, out var stream))
+                    zombiecomp.BeforeZombifiedBloodReagent = stream.BloodReagent;
+
+                _humanoidAppearance.SetSkinColor(target, zombiecomp.SkinColor, verify: false, humanoid: huApComp);
+
+                // Messing with the eye layer made it vanish upon cloning, and also it didn't even appear right
+                huApComp.EyeColor = zombiecomp.EyeColor;
+
+                // this might not resync on clone?
+                _humanoidAppearance.SetBaseLayerId(target, HumanoidVisualLayers.Tail, zombiecomp.BaseLayerExternal, humanoid: huApComp);
+                _humanoidAppearance.SetBaseLayerId(target, HumanoidVisualLayers.HeadSide, zombiecomp.BaseLayerExternal, humanoid: huApComp);
+                _humanoidAppearance.SetBaseLayerId(target, HumanoidVisualLayers.HeadTop, zombiecomp.BaseLayerExternal, humanoid: huApComp);
+                _humanoidAppearance.SetBaseLayerId(target, HumanoidVisualLayers.Snout, zombiecomp.BaseLayerExternal, humanoid: huApComp);
+
+                //This is done here because non-humanoids shouldn't get baller damage
+                //lord forgive me for the hardcoded damage
+                DamageSpecifier dspec = new()
                 {
-                    { "Slash", 13 },
-                    { "Piercing", 7 },
-                    { "Structural", 10 }
-                }
-            };
-            melee.Damage = dspec;
+                    DamageDict = new()
+                    {
+                        { "Slash", 13 },
+                        { "Piercing", 7 },
+                        { "Structural", 10 }
+                    }
+                };
+                melee.Damage = dspec;
 
-            // humanoid zombies get to pry open doors and shit
-            var pryComp = EnsureComp<PryingComponent>(target);
-            pryComp.SpeedModifier = 0.75f;
-            pryComp.PryPowered = true;
-            pryComp.Force = true;
+                // humanoid zombies get to pry open doors and shit
+                var pryComp = EnsureComp<PryingComponent>(target);
+                pryComp.SpeedModifier = 0.75f;
+                pryComp.PryPowered = true;
+                pryComp.Force = true;
 
-            Dirty(target, pryComp);
-        }
+                Dirty(target, pryComp);
+            }
 
-        Dirty(target, melee);
+            Dirty(target, melee);
 
-        //The zombie gets the assigned damage weaknesses and strengths
-        _damageable.SetDamageModifierSetId(target, "Zombie");
+            //The zombie gets the assigned damage weaknesses and strengths
+            _damageable.SetDamageModifierSetId(target, "Zombie");
 
-        //This makes it so the zombie doesn't take bloodloss damage.
-        //NOTE: they are supposed to bleed, just not take damage
-        _bloodstream.SetBloodLossThreshold(target, 0f);
-        //Give them zombie blood (but IPCs keep their Oil)
-        // Only change blood if NOT an IPC (doesn't have Silicon component)
-        if (!HasComp<SiliconComponent>(target) && TryComp<BloodstreamComponent>(target, out var bloodstreamComp))
-        {
+            //This makes it so the zombie doesn't take bloodloss damage.
+            //NOTE: they are supposed to bleed, just not take damage
+            _bloodstream.SetBloodLossThreshold(target, 0f);
+            //Give them zombie blood
             _bloodstream.ChangeBloodReagent(target, zombiecomp.NewBloodReagent);
+
+            //This is specifically here to combat insuls, because frying zombies on grilles is funny as shit.
+            _inventory.TryUnequip(target, "gloves", true, true);
+            //Should prevent instances of zombies using comms for information they shouldnt be able to have.
+            _inventory.TryUnequip(target, "ears", true, true);
+
+            //popup
+            _popup.PopupEntity(Loc.GetString("zombie-transform", ("target", target)), target, PopupType.LargeCaution);
+
+            //Make it sentient if it's an animal or something
+            MakeSentientCommand.MakeSentient(target, EntityManager);
+
+            //Make the zombie not die in the cold. Good for space zombies
+            if (TryComp<TemperatureComponent>(target, out var tempComp))
+                tempComp.ColdDamage.ClampMax(0);
+
+            //Heals the zombie from all the damage it took while human
+            if (TryComp<DamageableComponent>(target, out var damageablecomp))
+                _damageable.SetAllDamage(target, damageablecomp, 0);
+            _mobState.ChangeMobState(target, MobState.Alive);
+
+            _faction.ClearFactions(target, dirty: false);
+            _faction.AddFaction(target, "Zombie");
+
+            //gives it the funny "Zombie ___" name.
+            _nameMod.RefreshNameModifiers(target);
+
+            _identity.QueueIdentityUpdate(target);
+
+            var htn = EnsureComp<HTNComponent>(target);
+            htn.RootTask = new HTNCompoundTask() { Task = "SimpleHostileCompound" };
+            htn.Blackboard.SetValue(NPCBlackboard.Owner, target);
+            _npc.SleepNPC(target, htn);
+
+            //He's gotta have a mind
+            var hasMind = _mind.TryGetMind(target, out var mindId, out _);
+            if (hasMind && _mind.TryGetSession(mindId, out var session))
+            {
+                //Zombie role for player manifest
+                _roles.MindAddRole(mindId, "MindRoleZombie", mind: null, silent: true);
+
+                //Greeting message for new bebe zombers
+                _chatMan.DispatchServerMessage(session, Loc.GetString("zombie-infection-greeting"));
+
+                // Notificate player about new role assignment
+                _audio.PlayGlobal(zombiecomp.GreetSoundNotification, session);
+            }
+            else
+            {
+                _npc.WakeNPC(target, htn);
+            }
+
+            if (!HasComp<GhostRoleMobSpawnerComponent>(target) && !hasMind) //this specific component gives build test trouble so pop off, ig
+            {
+                //yet more hardcoding. Visit zombie.ftl for more information.
+                var ghostRole = EnsureComp<GhostRoleComponent>(target);
+                EnsureComp<GhostTakeoverAvailableComponent>(target);
+                ghostRole.RoleName = Loc.GetString("zombie-generic");
+                ghostRole.RoleDescription = Loc.GetString("zombie-role-desc");
+                ghostRole.RoleRules = Loc.GetString("zombie-role-rules");
+            }
+
+            if (TryComp<HandsComponent>(target, out var handsComp))
+            {
+                _hands.RemoveHands(target);
+                RemComp(target, handsComp);
+            }
+
+            // Sloth: What the fuck?
+            // How long until compregistry lmao.
+            RemComp<PullerComponent>(target);
+
+            // No longer waiting to become a zombie:
+            // Requires deferral because this is (probably) the event which called ZombifyEntity in the first place.
+            RemCompDeferred<PendingZombieComponent>(target);
+
+            //zombie gamemode stuff
+            var ev = new EntityZombifiedEvent(target);
+            RaiseLocalEvent(target, ref ev, true);
+            //zombies get slowdown once they convert
+            _movementSpeedModifier.RefreshMovementSpeedModifiers(target);
         }
-
-        //This is specifically here to combat insuls, because frying zombies on grilles is funny as shit.
-        _inventory.TryUnequip(target, "gloves", true, true);
-        //Should prevent instances of zombies using comms for information they shouldnt be able to have.
-        _inventory.TryUnequip(target, "ears", true, true);
-
-        //popup
-        _popup.PopupEntity(Loc.GetString("zombie-transform", ("target", target)), target, PopupType.LargeCaution);
-
-        //Make it sentient if it's an animal or something
-        MakeSentientCommand.MakeSentient(target, EntityManager);
-
-        //Make the zombie not die in the cold. Good for space zombies
-        if (TryComp<TemperatureComponent>(target, out var tempComp))
-            tempComp.ColdDamage.ClampMax(0);
-
-        //Heals the zombie from all the damage it took while human
-        if (TryComp<DamageableComponent>(target, out var damageablecomp))
-            _damageable.SetAllDamage(target, damageablecomp, 0);
-        _mobState.ChangeMobState(target, MobState.Alive);
-
-        // Force zombie to wake up and stand - remove sleep/knockdown status
-        RemComp<SleepingComponent>(target);
-        RemComp<ForcedSleepingComponent>(target);
-        RemComp<KnockedDownComponent>(target);
-        _standing.Stand(target, force: true);
-
-        _faction.ClearFactions(target, dirty: false);
-        _faction.AddFaction(target, "Zombie");
-
-        //gives it the funny "Zombie ___" name.
-        _nameMod.RefreshNameModifiers(target);
-
-        _identity.QueueIdentityUpdate(target);
-
-        var htn = EnsureComp<HTNComponent>(target);
-        htn.RootTask = new HTNCompoundTask() { Task = "SimpleHostileCompound" };
-        htn.Blackboard.SetValue(NPCBlackboard.Owner, target);
-        _npc.SleepNPC(target, htn);
-
-        //He's gotta have a mind
-        var hasMind = _mind.TryGetMind(target, out var mindId, out _);
-        if (hasMind && _mind.TryGetSession(mindId, out var session))
-        {
-            //Zombie role for player manifest
-            _roles.MindAddRole(mindId, "MindRoleZombie", mind: null, silent: true);
-
-            //Greeting message for new bebe zombers
-            _chatMan.DispatchServerMessage(session, Loc.GetString("zombie-infection-greeting"));
-
-            // Notificate player about new role assignment
-            _audio.PlayGlobal(zombiecomp.GreetSoundNotification, session);
-        }
-        else
-        {
-            _npc.WakeNPC(target, htn);
-        }
-
-        if (!HasComp<GhostRoleMobSpawnerComponent>(target) && !hasMind) //this specific component gives build test trouble so pop off, ig
-        {
-            //yet more hardcoding. Visit zombie.ftl for more information.
-            var ghostRole = EnsureComp<GhostRoleComponent>(target);
-            EnsureComp<GhostTakeoverAvailableComponent>(target);
-            ghostRole.RoleName = Loc.GetString("zombie-generic");
-            ghostRole.RoleDescription = Loc.GetString("zombie-role-desc");
-            ghostRole.RoleRules = Loc.GetString("zombie-role-rules");
-        }
-
-        if (TryComp<HandsComponent>(target, out var handsComp))
-        {
-            _hands.RemoveHands(target);
-            RemComp(target, handsComp);
-        }
-
-        // Sloth: What the fuck?
-        // How long until compregistry lmao.
-        RemComp<PullerComponent>(target);
-
-        // No longer waiting to become a zombie:
-        // Requires deferral because this is (probably) the event which called ZombifyEntity in the first place.
-        RemCompDeferred<PendingZombieComponent>(target);
-
-        //zombie gamemode stuff
-        var ev = new EntityZombifiedEvent(target);
-        RaiseLocalEvent(target, ref ev, true);
-        //zombies get slowdown once they convert
-        _movementSpeedModifier.RefreshMovementSpeedModifiers(target);
-
-        // If this zombie doesn't already have a tumor organ (e.g., from romerol infection),
-        // spawn one immediately so they can spread the infection
-        if (!_zombieTumor.HasTumorOrgan(target))
-        {
-            _zombieTumor.SpawnTumorOrgan(target);
-        }
-
-        //Need to prevent them from getting an item, they have no hands.
-        // Also prevents them from becoming a Survivor. They're undead.
-        // _tag.AddTag(target, InvalidForGlobalSpawnSpellTag);
-        _tag.AddTag(target, CannotSuicideTag);
     }
 }

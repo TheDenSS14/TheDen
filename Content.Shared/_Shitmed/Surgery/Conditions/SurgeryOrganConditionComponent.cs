@@ -22,6 +22,6 @@ public sealed partial class SurgeryOrganConditionComponent : Component
     [DataField]
     public bool Reattaching;
 
-    [DataField(required: false)]
+    [DataField(required: true)]
     public string SlotId = string.Empty;
 }

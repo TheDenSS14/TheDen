@@ -45,7 +45,8 @@ namespace Content.Server.Administration.Systems;
 public sealed partial class AdminVerbSystem
 {
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
-    [Dependency] private readonly ZombieTumorOrganSystem _zombieTumor = default!;
+    // [Dependency] private readonly ZombieTumorOrganSystem _zombieTumor = default!;
+    [Dependency] private readonly ZombieSystem _zombie = default!;
 
     private static readonly EntProtoId DefaultTraitorRule = "Traitor";
     private static readonly EntProtoId DefaultInitialInfectedRule = "Zombie";
@@ -99,7 +100,8 @@ public sealed partial class AdminVerbSystem
             {
                 // Give them a tumor infection instead of immediately zombifying
                 // The tumor will progress normally and eventually zombify them
-                _zombieTumor.InfectEntity(args.Target);
+                // _zombieTumor.InfectEntity(args.Target);
+                _zombie.ZombifyEntity(args.Target);
             },
             Impact = LogImpact.High,
             Message = Loc.GetString("admin-verb-make-zombie"),

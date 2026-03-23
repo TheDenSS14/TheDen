@@ -32,7 +32,6 @@
 # SPDX-FileCopyrightText: 2024 neuPanda
 # SPDX-FileCopyrightText: 2024 slarticodefast
 # SPDX-FileCopyrightText: 2025 Sir Warock
-# SPDX-FileCopyrightText: 2025 Terkala
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -255,10 +254,8 @@
       amount: 1
     ZombieBlood:
       amount: 2
-    Romerol:
-      amount: 5
   products:
-    Ambuzol: 5
+    Ambuzol: 4
 
 - type: reaction
   id: AmbuzolPlus
@@ -266,13 +263,11 @@
     Ambuzol:
       amount: 5
     Necrosol:
-      amount: 5
+      amount: 1
     Plasma:
       amount: 5
-    Romerol:
-      amount: 10
   products:
-    AmbuzolPlus: 5
+    AmbuzolPlus: 10
 
 - type: reaction
   id: Synaptizine
