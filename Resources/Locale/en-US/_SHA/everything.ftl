@@ -20,4 +20,4 @@ fibers-magenta = magenta
 # Verbs
 
 item-toggle-ritualon = Begin Ritual
-item-toggle-ritualoff = End Ritual
+item-toggle-ritualoff = Prepare Ritual

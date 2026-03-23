@@ -117,28 +117,6 @@
       - state: smashdark
         shader: unshaded
 
-- type: entity
-  parent: WeaponArcPunch
-  id: WeaponArcPunchGreen
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      sprite: _SHA/Effects/arcs.rsi
-      layers:
-      - state: punchgreen
-        shader: unshaded
-
-- type: entity
-  parent: WeaponArcSmash
-  id: WeaponArcSmashGreen
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      sprite: _SHA/Effects/arcs.rsi
-      layers:
-      - state: smashgreen
-        shader: unshaded
-
 # Projectiles
 
 - type: entity
@@ -155,7 +133,7 @@
     - state: bulletgrasp
       shader: unshaded
   - type: PointLight
-    radius: 2
+    radius: 1.5
     energy: 2
     color: "#00684E" # Mansus grasp color
   - type: Ammo
@@ -178,8 +156,8 @@
     sound:
       path: /Audio/_SHA/rites.ogg
       params:
-        volume: 0
-        pitch: 1
+        volume: -2
+        pitch: 0.5
         variation: 0.05
   - type: Physics
   - type: Fixtures
@@ -204,9 +182,8 @@
     layers:
     - state: impactgrasp
       shader: unshaded
-      map: ["enum.EffectLayers.Unshaded"]
   - type: PointLight
-    radius: 2
+    radius: 1.5
     energy: 2
     color: "#00684E" # Mansus grasp color
 
@@ -220,11 +197,17 @@
     - state: bulletgraspsoul
       shader: unshaded
   - type: PointLight
-    radius: 2
-    energy: 2
-    color: "#ff0066" # Her crimson
+    radius: 0
+    energy: 0
+    color: "#ff0066"
   - type: Projectile
     impactEffect: BulletImpactGraspSoul
+    soundHit:
+      path: /Audio/_SHA/resonatorblast.ogg
+      params:
+        volume: -2
+        pitch: 1
+        variation: 0.05
 
 - type: entity
   parent: BulletGraspSoul
@@ -233,8 +216,8 @@
   components:
   - type: ProjectileSpread
     proto: BulletGraspSoul
-    count: 3
-    spread: 20
+    count: 5
+    spread: 10
 
 - type: entity
   parent: BulletImpactGrasp
@@ -245,11 +228,10 @@
     layers:
     - state: impactgraspsoul
       shader: unshaded
-      map: ["enum.EffectLayers.Unshaded"]
   - type: PointLight
-    radius: 2
-    energy: 2
-    color: "#ff0066" # Her crimson
+    radius: 0
+    energy: 0
+    color: "#ff0066"
 
 # Damage
 
@@ -2566,10 +2548,10 @@
 
 - type: entity
   parent: [ BaseItem, BaseHereticContraband ]
-  id: BaseMagicRingWrapped
-  name: bound glittering ring
+  id: BaseFragmentToggle
+  name: otherworldly fragment (inert)
   suffix: DO NOT MAP] [BREAK
-  description: "You don't know what this is, but something about it feels terribly unnatural. It's wrapped in silvery bands..."
+  description: "Something about this feels terribly unnatural."
   abstract: true
   components:
 #  - type: SpawnItemsOnUse
@@ -2579,28 +2561,6 @@
     sprite: _SHA/Misc/misc.rsi
     layers:
     - state: icon
-    - state: wrap
-  - type: Item
-    size: Tiny
-    sprite: null
-  - type: DisarmMalus
-    malus: 1.0
-
-- type: entity
-  parent: [ BaseItem, BaseHereticContraband ]
-  id: BaseMagicRing
-  name: glittering ring
-  suffix: DO NOT MAP] [BREAK
-  description: "You don't know what this is, but something about it feels terribly unnatural."
-  abstract: true
-  components:
-#  - type: TimedDespawn
-#    lifetime: 0.7
-  - type: Sprite
-    sprite: _SHA/Misc/misc.rsi
-    layers:
-    - state: icon
-    - state: label
       shader: unshaded
   - type: Item
     size: Tiny
@@ -2609,15 +2569,36 @@
     malus: 1.0
 
 - type: entity
-  parent: BaseMagicRing
-  id: MagicRingGreatswordFlash
+  parent: [ BaseItem, BaseHereticContraband ]
+  id: BaseFragment
+  name: otherworldly fragment
+  suffix: DO NOT MAP] [BREAK
+  description: "Something about this feels terribly unnatural."
+  abstract: true
+  components:
+#  - type: TimedDespawn
+#    lifetime: 0.7
+  - type: Appearance # Forces visual effects to render over items in the other hand
+  - type: Sprite
+    sprite: _SHA/Misc/misc.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: Item
+    size: Tiny
+    sprite: null
+  - type: DisarmMalus
+    malus: 1.0
+
+- type: entity
+  parent: BaseFragment
+  id: FragmentGreatswordFlash
   components:
   - type: TimedDespawn
     lifetime: 0.7
   - type: Sprite
     layers:
-    - state: icon
-    - state: label-light
+    - state: icon-light
       shader: unshaded
   - type: Item
     sprite: _SHA/Objects/Weapons/Melee/Mantis/mantisgreatsword-inhands-64x.rsi
@@ -2632,37 +2613,41 @@
         loop: false
 
 - type: entity
-  parent: BaseMagicRing
-  id: MagicRingBladeFlash
+  parent: BaseFragment
+  id: FragmentBladeFlash
   components:
   - type: TimedDespawn
     lifetime: 0.7
   - type: Sprite
     layers:
-    - state: icon
-    - state: label-light
+    - state: icon-light
       shader: unshaded
   - type: Item
     sprite: _SHA/Heretic/break-64x.rsi
     inhandVisuals:
       left:
+      - state: inhand-right-grasp-summon
+        shader: unshaded
+        loop: false
       - state: inhand-right-summon
         shader: unshaded
         loop: false
       right:
+      - state: inhand-left-grasp-summon
+        shader: unshaded
+        loop: false
       - state: inhand-left-summon
         shader: unshaded
         loop: false
 
 - type: entity
-  parent: [ BaseMagicRing, BaseStorageItem ]
-  id: MagicRingStorage
+  parent: [ BaseFragment, BaseStorageItem ]
+  id: FragmentStorage
   components:
   - type: Sprite
     sprite: _SHA/Misc/misc.rsi
     layers:
-    - state: icon
-    - state: label-storage
+    - state: icon-storage
       shader: unshaded
   - type: Storage
     maxItemSize: Huge
@@ -2674,17 +2659,16 @@
       collection: Storage
       params:
         volume: 0
-        variation: 0.15
+        variation: 0.33
 
 - type: entity
-  parent: BaseMagicRing
-  id: MagicRingStorageSound
+  parent: BaseFragment
+  id: FragmentStorageSound
   components:
   - type: Sprite
     sprite: _SHA/Misc/misc.rsi
     layers:
-    - state: icon
-    - state: label-sound2
+    - state: icon-sound1
       shader: unshaded
   - type: EmitSoundOnUse
     sound:
@@ -2694,30 +2678,29 @@
         variation: 0.33
 
 - type: entity
-  parent: BaseMagicRingWrapped
-  id: MagicRingStorageAmbienceWrapped
+  parent: BaseFragmentToggle
+  id: FragmentStorageAmbienceToggle
   components:
   - type: SpawnItemsOnUse
     items:
-    - id: MagicRingStorageAmbience
+    - id: FragmentStorageAmbience
   - type: Sprite
     sprite: _SHA/Misc/misc.rsi
     layers:
-    - state: icon
-    - state: wrap
+    - state: icon-sound2
+      shader: unshaded
 
 - type: entity
-  parent: BaseMagicRing
-  id: MagicRingStorageAmbience
+  parent: BaseFragment
+  id: FragmentStorageAmbience
   components:
   - type: SpawnItemsOnUse
     items:
-    - id: MagicRingStorageAmbienceWrapped
+    - id: FragmentStorageAmbienceToggle
   - type: Sprite
     sprite: _SHA/Misc/misc.rsi
     layers:
-    - state: icon
-    - state: label-sound3
+    - state: icon-sound2
       shader: unshaded
   - type: AmbientSound
     range: 5
@@ -2783,44 +2766,12 @@
     equippedPrefix: folded
 
 - type: entity
-  parent: [ BaseKnifeSpinnable, BaseHereticContraband, BaseAntiPsionicWeapon ]
-  id: HereticBladeFleshBreak
+  parent: [ BaseHereticContraband, BaseKnife, BaseAntiPsionicWeapon ]
+  id: HereticBladeFleshBreakSummoned
   name: bloody blade
   suffix: DO NOT MAP] [BREAK
   description: "Her flesh and blood.                                                                                                    It stings the eye to behold.                                                                                                    Look away. Look away."
   components:
-  - type: ItemToggle
-    soundActivate:
-      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg # Spin
-      params:
-        volume: -3
-        variation: 0.15
-    soundDeactivate:
-      path: /Audio/Effects/weak_hit2.ogg # Catch
-      params:
-        volume: -3
-        pitch: 0.5
-        variation: 0.05
-  - type: ToggleableVisuals
-    spriteLayer: null # Spinning it only changes the inhand sprites
-    replaceMode: true # The original inhand sprites won't remain visible when toggled
-    inhandVisuals:
-      left:
-      - state: inhand-left-grasp
-        shader: unshaded
-      - state: spinning-inhand-left
-      - state: spinning-inhand-left-unshaded
-        shader: unshaded
-      - state: spinning-inhand-left-unshaded-eye
-        shader: unshaded
-      right:
-      - state: inhand-right-grasp
-        shader: unshaded
-      - state: spinning-inhand-right
-      - state: spinning-inhand-right-unshaded
-        shader: unshaded
-      - state: spinning-inhand-right-unshaded-eye
-        shader: unshaded
   - type: Sprite
     sprite: _SHA/Heretic/break-32x.rsi
     layers:
@@ -2839,9 +2790,6 @@
         shader: unshaded
       - state: inhand-left-unshaded-eye
         shader: unshaded
-      - state: inhand-left-grasp-summon
-        shader: unshaded
-        loop: false
       right:
       - state: inhand-right-grasp
         shader: unshaded
@@ -2850,9 +2798,6 @@
         shader: unshaded
       - state: inhand-right-unshaded-eye
         shader: unshaded
-      - state: inhand-right-grasp-summon
-        shader: unshaded
-        loop: false
   - type: MeleeWeapon
     autoAttack: true
     heavyStaminaCost: 0
@@ -2873,7 +2818,14 @@
       params:
         volume: -3
         variation: 0.15
-    animation: WeaponArcPunchGreen
+    animation: WeaponArcPunch
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_SHA/scrape.ogg
+      params:
+        volume: -1
+        pitch: 1.1
+        variation: 0.1
   - type: LandAtCursor
   - type: DamageOtherOnHit
     staminaCost: 0
@@ -2898,6 +2850,51 @@
       params:
         volume: -2
         pitch: 1.0
+  - type: SpawnItemsOnUse # To get around an annoying inhands layering issue with toggled items...
+    items:
+    - id: HereticBladeFleshBreak
+
+- type: entity
+  parent: [ HereticBladeFleshBreakSummoned, BaseKnifeSpinnable ]
+  id: HereticBladeFleshBreak
+  name: bloody blade
+  suffix: DO NOT MAP] [BREAK
+  description: "Her flesh and blood.                                                                                                    It stings the eye to behold.                                                                                                    Look away. Look away."
+  components:
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg # Spin
+      params:
+        volume: -5
+        variation: 0.15
+    soundDeactivate:
+      path: /Audio/Effects/weak_hit2.ogg # Catch
+      params:
+        volume: -5
+        pitch: 0.5
+        variation: 0.05
+  - type: ToggleableVisuals
+    spriteLayer: null # Spinning it only changes the inhand sprites
+    replaceMode: true # The original inhand sprites won't remain visible when toggled
+    inhandVisuals:
+      left:
+      - state: inhand-left-grasp
+        shader: unshaded
+      - state: spinning-inhand-left
+      - state: spinning-inhand-left-unshaded
+        shader: unshaded
+      - state: spinning-inhand-left-unshaded-eye
+        shader: unshaded
+      right:
+      - state: inhand-right-grasp
+        shader: unshaded
+      - state: spinning-inhand-right
+      - state: spinning-inhand-right-unshaded
+        shader: unshaded
+      - state: spinning-inhand-right-unshaded-eye
+        shader: unshaded
+  - type: EmitSoundOnSpawn
+    sound: null
 
 # Magic Effects
 
@@ -2919,20 +2916,22 @@
         variation: 0.05
     soundDeactivate: /Audio/Effects/silence.ogg
   - type: UseDelay
-    delay: 0.98
+    delay: 1.27
   - type: Appearance
   - type: ToggleableVisuals
     spriteLayer: null
     replaceMode: false
     inhandVisuals:
       left:
-      - state: ritual-mirror-fast
+      - state: ritual-mirror-fast-break
         shader: unshaded
         offset: 0,-0.5
+        loop: false
       right:
-      - state: ritual-mirror-fast
+      - state: ritual-mirror-fast-break
         shader: unshaded
         offset: 0,-0.5
+        loop: false
   - type: Sprite
     sprite: _SHA/Heretic/break-32x.rsi
     layers:
@@ -2955,7 +2954,6 @@
         shader: unshaded
         loop: false
   - type: MeleeWeapon
-    hidden: true
     autoAttack: true
     heavyStaminaCost: 0
     attackRate: 0.6666
@@ -2976,8 +2974,8 @@
       params:
         volume: -3
         variation: 0.15
-    animation: WeaponArcPunchGreen
-    wideAnimation: WeaponArcSmashGreen
+    animation: WeaponArcPunch
+    wideAnimation: WeaponArcSmash
   - type: MeleeThrowOnHit
     speed: 10
     lifetime: 0.5
@@ -3002,7 +3000,6 @@
   - type: PointLight
     radius: 1.5
     energy: 2.5
-    softness: 1.0
     color: "#00684E" # Mansus grasp color
   - type: DeleteOnDrop
   - type: Tool
@@ -3010,7 +3007,7 @@
       - Prying
   - type: Prying
   - type: Gun
-    projectileSpeed: 8
+    projectileSpeed: 9
     cameraRecoilScalar: 0
     fireOnDropChance: 0
     meleeCooldown: 0
@@ -3018,15 +3015,14 @@
     showExamineText: false
     uniformSpread: true
     soundGunshot:
-      path: /Audio/_White/BloodCult/wand_teleport.ogg
+      path: /Audio/_SHA/rites.ogg
       params:
-        volume: -2
+        volume: -1
         pitch: 0.5
         variation: 0.05
     soundEmpty: /Audio/Effects/silence.ogg
     fireRate: 3
     useKey: false
-  - type: AmmoCounter
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 0.333
     rechargeSound: /Audio/Effects/silence.ogg
@@ -3074,7 +3070,6 @@
         shader: unshaded
         loop: false
   - type: MeleeWeapon
-    hidden: true
     autoAttack: true
     heavyStaminaCost: 0
     attackRate: 0.3333
@@ -3095,8 +3090,8 @@
       params:
         volume: -3
         variation: 0.15
-    animation: WeaponArcPunchGreen
-    wideAnimation: WeaponArcSmashGreen
+    animation: WeaponArcPunch
+    wideAnimation: WeaponArcSmash
   - type: MeleeThrowOnHit
     speed: 10
     lifetime: 0.5
@@ -3113,10 +3108,9 @@
       - Prying
   - type: Prying
   - type: PointLight # For the "muzzle flashes"
-    radius: 2
-    energy: 0.01
-    softness: 1.0
-    color: "#00684E" # Mansus grasp color
+    radius: 0
+    energy: 0
+    color: "#00684E"
 
 - type: entity
   parent: HereticMansusGraspFarGoneBreak
@@ -3200,7 +3194,6 @@
   - type: PointLight
     radius: 30.0
     energy: 0.025
-    softness: 1.0
     falloff: 0.0
     color: "#ff0066" # Her crimson
 
@@ -3214,6 +3207,20 @@
   - type: Grammar
     attributes:
       proper: true
+  - type: ToggleableVisuals
+    spriteLayer: null
+    replaceMode: false
+    inhandVisuals:
+      left:
+      - state: ritual-mirror-fast-soul
+        shader: unshaded
+        offset: 0,-0.5
+        loop: false
+      right:
+      - state: ritual-mirror-fast-soul
+        shader: unshaded
+        offset: 0,-0.5
+        loop: false
   - type: Sprite
     sprite: _SHA/Heretic/break-32x.rsi
     layers:
@@ -3223,45 +3230,10 @@
     sprite: _SHA/Heretic/break-96x.rsi
     inhandVisuals:
       left:
-      - state: inhand-both-silhouette-black
-        shader: unshaded
-      - state: soul
-        shader: unshaded
-      - state: soul-eyes
-        shader: unshaded
-        scale: 0.2,0.2
-        offset: 0,0.42
-      - state: soul-cover
-        shader: unshaded
-        loop: false
-      - state: draw-ritual-mirror
-        shader: unshaded
-        offset: 0,-0.5
-        loop: false
-      - state: soul-crown
-        shader: unshaded
-        loop: false
+      - state: invisible
       right:
-      - state: inhand-both-silhouette-black
-        shader: unshaded
-      - state: soul
-        shader: unshaded
-      - state: soul-eyes
-        shader: unshaded
-        scale: 0.2,0.2
-        offset: 0,0.42
-      - state: soul-cover
-        shader: unshaded
-        loop: false
-      - state: draw-ritual-mirror
-        shader: unshaded
-        offset: 0,-0.5
-        loop: false
-      - state: soul-crown
-        shader: unshaded
-        loop: false
+      - state: invisible
   - type: MeleeWeapon
-    hidden: true
     autoAttack: true
     heavyStaminaCost: 0
     attackRate: 0.6666
@@ -3288,12 +3260,11 @@
     speed: 10
     lifetime: 0.5
   - type: PointLight # For the "muzzle flashes"
-    radius: 2
-    energy: 0.01
-    softness: 1.0
-    color: "#ff0066" # Her crimson
+    radius: 0
+    energy: 0
+    color: "#ff0066"
   - type: BasicEntityAmmoProvider
-    proto: BulletGraspSoul
+    proto: BulletGraspSoulSpread
 
 - type: entity
   parent: ClothingNeckBase
@@ -3328,7 +3299,7 @@
   - type: Sprite
     sprite: _SHA/Heretic/break-32x.rsi
     layers:
-    - state: icon-trance
+    - state: icon-soul
       shader: unshaded
   - type: Item
     size: Ginormous
@@ -3395,11 +3366,11 @@
       - state: inhand-both-silhouette-eyes
         shader: unshaded
   - type: MeleeWeapon
-    hidden: true
     soundHit:
       collection: ShockPunch
     angle: 30
     animation: WeaponArcPunch
+    wideAnimation: WeaponArcPunch
     damage:
       types:
         Shock: 5
@@ -3418,8 +3389,11 @@
   id: BreakSoulFaint
   name: the shape behind her
   suffix: DO NOT MAP] [BREAK SOUL, FAINT
-  description: "Something is there, unseen by most.                                                                                                    A ragged thing that stares unblinking.                                                                                                    It moves before she moves."
+  description: "Something is there, unseen by most.                                                                                                    A ragged shape that stares unblinking.                                                                                                    It moves before she moves."
   components:
+  - type: Grammar
+    attributes:
+      proper: true
   - type: Sprite
     sprite: _SHA/Heretic/break-32x.rsi
     layers:
@@ -3427,7 +3401,7 @@
       shader: unshaded
   - type: Item
     size: Ginormous
-    sprite: _SHA/Heretic/break-64x.rsi
+    sprite: _SHA/Heretic/break-96x.rsi
     inhandVisuals:
       left:
       - state: soul-faint
@@ -3444,24 +3418,24 @@
         scale: 0.2,0.2
         offset: 0,0.42
   - type: MeleeWeapon
-    hidden: true
     soundHit:
       collection: ShockPunch
     angle: 30
     animation: WeaponArcPunch
+    wideAnimation: WeaponArcPunch
     damage:
       types:
         Shock: 5
   - type: AmbientSound
     range: 5
-    volume: -6
+    volume: -9
     sound:
       path: /Audio/Ambience/wisp_ambience.ogg
   - type: EmitSoundOnUse
     sound:
       collection: SoulTalk
       params:
-        volume: -6
+        volume: -11
         variation: 0.05
   - type: DeleteOnDrop
   - type: TypingIndicatorClothing
@@ -3472,7 +3446,7 @@
 - type: entity
   id: ActionBreakSummonFaust
   name: Summon Faust
-  description: ""
+  description: "It sees you.                                                                                                    It does not know you.                                                                                                    It only answers to her."
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -3488,13 +3462,35 @@
     event: !type:SummonEquipmentEvent
       prototypes:
         hand1: MantisMeleeGreatswordBreakSummoned
-        hand2: MagicRingGreatswordFlash
+        hand2: FragmentGreatswordFlash
+  - type: BaseCultSpell
+
+- type: entity
+  id: ActionBreakSummonBloodyBlade
+  name: Bloody Blade
+  description: "Her flesh and blood.                                                                                                    It stings the eye to behold.                                                                                                    Look away. Look away."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    state: icon
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _SHA/Heretic/break-32x.rsi
+      state: icon
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand1: HereticBladeFleshBreakSummoned
+        hand2: FragmentBladeFlash
   - type: BaseCultSpell
 
 - type: entity
   id: ActionBreakSummonMansusGrasp
   name: Mansus Grasp
-  description: ""
+  description: "The hand wreathed in false flame.                                                                                                    It pries at the world's threads.                                                                                                    The witch's will made manifest."
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -3515,7 +3511,7 @@
 - type: entity
   id: ActionBreakSummonMansusGraspDouble
   name: Far-Gone Grasp
-  description: ""
+  description: "The hand wreathed in false flame.                                                                                                    It pries at the world's threads.                                                                                                    The witch's will made manifest."
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -3535,31 +3531,9 @@
   - type: BaseCultSpell
 
 - type: entity
-  id: ActionBreakSummonBloodyBlade
-  name: Manifest Bloody Blade
-  description: ""
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _SHA/Heretic/break-32x.rsi
-    state: icon
-  - type: InstantAction
-    itemIconStyle: BigAction
-    charges: 1000
-    temporary: false
-    icon:
-      sprite: _SHA/Heretic/break-32x.rsi
-      state: icon
-    event: !type:SummonEquipmentEvent
-      prototypes:
-        hand1: HereticBladeFleshBreak
-        hand2: MagicRingBladeFlash
-  - type: BaseCultSpell
-
-- type: entity
-  id: ActionBreakRevelation
-  name: Apparition
-  description: ""
+  id: ActionBreakApparition
+  name: The Shape Behind Her
+  description: "Something is there, unseen by most.                                                                                                    A ragged shape that stares unblinking.                                                                                                    It moves before she moves."
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -3579,8 +3553,8 @@
 
 - type: entity
   id: ActionBreakCoronation
-  name: CORONATION
-  description: ""
+  name: What Remained
+  description: "A fractured thing, long unseen.                                                                                                    Now brought forth as a weapon.                                                                                                    What have you done."
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -3851,11 +3825,11 @@
       amount: 10
     - id: BreakFocusMeditation
       amount: 10
-    - id: MagicRingStorage
+    - id: FragmentStorage
       amount: 8
-    - id: MagicRingStorageAmbienceWrapped
+    - id: FragmentStorageAmbienceToggle
       amount: 4
-    - id: MagicRingStorageSound
+    - id: FragmentStorageSound
       amount: 8
 
 # Tatter's "Belt"
