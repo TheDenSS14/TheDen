@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 portfiend
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Server._DEN.Speech.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.Speech;

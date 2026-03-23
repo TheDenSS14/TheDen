@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 portfiend
+//
+// SPDX-License-Identifier: MIT
+
 namespace Content.Server._DEN.Speech.Components;
 
 /// <summary>
