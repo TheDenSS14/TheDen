@@ -39,9 +39,15 @@ public abstract class SharedTypingIndicatorSystem : EntitySystem
         SubscribeLocalEvent<TypingIndicatorClothingComponent, ClothingGotEquippedEvent>(OnGotEquipped);
         SubscribeLocalEvent<TypingIndicatorClothingComponent, ClothingGotUnequippedEvent>(OnGotUnequipped);
         SubscribeLocalEvent<TypingIndicatorClothingComponent, InventoryRelayedEvent<BeforeShowTypingIndicatorEvent>>(BeforeShow);
+        SubscribeLocalEvent<TypingIndicatorComponent, ComponentInit>(OnComponentInit);
 
         SubscribeAllEvent<TypingChangedEvent>(OnTypingChanged);
 
+    }
+
+    protected void OnComponentInit(EntityUid uid, TypingIndicatorComponent component, ComponentInit args)
+    {
+        component.Prototype = component.StartingPrototype;
     }
 
     private void OnPlayerAttached(PlayerAttachedEvent ev)
@@ -62,6 +68,8 @@ public abstract class SharedTypingIndicatorSystem : EntitySystem
     {
         if (!TryComp<TypingIndicatorComponent>(args.Wearer, out var indicator))
             return;
+        if (indicator.Prototype != indicator.StartingPrototype) // avoid unintended behaviour when wearing multiple things modifying your indicator
+            return;
 
         indicator.Prototype = entity.Comp.TypingIndicatorPrototype;
         entity.Comp.GotEquippedTime = _timing.CurTime;
@@ -72,7 +80,10 @@ public abstract class SharedTypingIndicatorSystem : EntitySystem
         if (!TryComp<TypingIndicatorComponent>(args.Wearer, out var indicator))
             return;
 
-        indicator.Prototype = InitialIndicatorId;
+        if (indicator.Prototype != entity.Comp.TypingIndicatorPrototype) // this means we are wearing something else that is modifying our indicator
+            return;
+
+        indicator.Prototype = indicator.StartingPrototype;
         entity.Comp.GotEquippedTime = null;
     }
 

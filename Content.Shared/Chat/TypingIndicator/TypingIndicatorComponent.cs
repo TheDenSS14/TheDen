@@ -21,9 +21,15 @@ namespace Content.Shared.Chat.TypingIndicator;
 public sealed partial class TypingIndicatorComponent : Component
 {
     /// <summary>
-    ///     Prototype id that store all visual info about typing indicator.
+    ///     Prototype ID of the original typing indicator the entity is using set in yml.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("proto", customTypeSerializer: typeof(PrototypeIdSerializer<TypingIndicatorPrototype>)), AutoNetworkedField]
+    public string StartingPrototype = SharedTypingIndicatorSystem.InitialIndicatorId;
+
+    /// <summary>
+    ///     Prototype id that store all visual info about typing indicator, set to the value of StartingPrototype on component init.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
     public string Prototype = SharedTypingIndicatorSystem.InitialIndicatorId;
 }
