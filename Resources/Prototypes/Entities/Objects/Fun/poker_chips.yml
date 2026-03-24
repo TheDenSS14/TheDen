@@ -14,14 +14,14 @@
     tags:
     - PokerChip
   - type: Sprite
-    sprite: _TheDen/Objects/Fun/poker_chips.rsi
+    sprite: _DEN/Objects/Fun/poker_chips.rsi
     state: chip
   - type: Item
     size: Tiny
   - type: EmitSoundOnPickup
-    sound: /Audio/Items/Poker_Chips/chips_handle_large.ogg
+    sound: /Audio/_DEN/Items/Poker_Chips/chips_handle_large.ogg
   - type: EmitSoundOnDrop
-    sound: /Audio/Items/Poker_Chips/chips_stack.ogg
+    sound: /Audio/_DEN/Items/Poker_Chips/chips_stack.ogg
 
 - type: entity
   name: white poker chip
@@ -40,7 +40,7 @@
     - chip_4
     - chip_5
   - type: Sprite
-    sprite: _TheDen/Objects/Fun/poker_chips.rsi
+    sprite: _DEN/Objects/Fun/poker_chips.rsi
     state: chip_5
     layers:
     - state: chip_5
@@ -126,7 +126,7 @@
     - chip_red_4
     - chip_red_5
   - type: Sprite
-    sprite: _TheDen/Objects/Fun/poker_chips.rsi
+    sprite: _DEN/Objects/Fun/poker_chips.rsi
     state: chip_red_5
     layers:
     - state: chip_red_5
@@ -212,7 +212,7 @@
     - chip_green_4
     - chip_green_5
   - type: Sprite
-    sprite: _TheDen/Objects/Fun/poker_chips.rsi
+    sprite: _DEN/Objects/Fun/poker_chips.rsi
     state: chip_green_5
     layers:
     - state: chip_green_5
@@ -298,7 +298,7 @@
     - chip_yellow_4
     - chip_yellow_5
   - type: Sprite
-    sprite: _TheDen/Objects/Fun/poker_chips.rsi
+    sprite: _DEN/Objects/Fun/poker_chips.rsi
     state: chip_yellow_5
     layers:
     - state: chip_yellow_5
@@ -384,7 +384,7 @@
     - chip_blue_4
     - chip_blue_5
   - type: Sprite
-    sprite: _TheDen/Objects/Fun/poker_chips.rsi
+    sprite: _DEN/Objects/Fun/poker_chips.rsi
     state: chip_blue_5
     layers:
     - state: chip_blue_5
@@ -470,7 +470,7 @@
     - chip_black_4
     - chip_black_5
   - type: Sprite
-    sprite: _TheDen/Objects/Fun/poker_chips.rsi
+    sprite: _DEN/Objects/Fun/poker_chips.rsi
     state: chip_black_5
     layers:
     - state: chip_black_5
