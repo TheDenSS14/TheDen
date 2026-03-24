@@ -1,0 +1,41 @@
+- type: stack
+  id: PokerWhite
+  name: stack-white-poker-chip
+  icon: { sprite: "/Textures/_TheDen/Objects/Fun/poker_chips.rsi", state: chip_5 }
+  spawn: WhitePokerChip1
+  maxCount: 50
+
+- type: stack
+  id: PokerRed
+  name: stack-red-poker-chip
+  icon: { sprite: "/Textures/_TheDen/Objects/Fun/poker_chips.rsi", state: chip_red_5 }
+  spawn: RedPokerChip1
+  maxCount: 50
+
+- type: stack
+  id: PokerGreen
+  name: stack-green-poker-chip
+  icon: { sprite: "/Textures/_TheDen/Objects/Fun/poker_chips.rsi", state: chip_green_5 }
+  spawn: GreenPokerChip1
+  maxCount: 50
+
+- type: stack
+  id: PokerYellow
+  name: stack-yellow-poker-chip
+  icon: { sprite: "/Textures/_TheDen/Objects/Fun/poker_chips.rsi", state: chip_yellow_5 }
+  spawn: YellowPokerChip1
+  maxCount: 50
+
+- type: stack
+  id: PokerBlue
+  name: stack-blue-poker-chip
+  icon: { sprite: "/Textures/_TheDen/Objects/Fun/poker_chips.rsi", state: chip_blue_5 }
+  spawn: BluePokerChip1
+  maxCount: 50
+
+- type: stack
+  id: PokerBlack
+  name: stack-black-poker-chip
+  icon: { sprite: "/Textures/_TheDen/Objects/Fun/poker_chips.rsi", state: chip_black_5 }
+  spawn: BlackPokerChip1
+  maxCount: 50
