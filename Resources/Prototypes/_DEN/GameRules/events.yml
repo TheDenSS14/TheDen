@@ -1,0 +1,23 @@
+- type: entity
+  id: LivingShadowSpawn
+  parent: BaseGlimmerSignaturesEvent
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GlimmerEvent
+    minimumGlimmer: 250
+    maximumGlimmer: 1000
+  - type: GlimmerMobRule
+    mobPrototype: MobLivingShadow
+    glimmerProb: 0
+
+- type: entity
+  id: SpectreSpawn
+  parent: BaseGlimmerSignaturesEvent
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GlimmerEvent
+    minimumGlimmer: 400
+    maximumGlimmer: 1000
+  - type: GlimmerMobRule
+    mobPrototype: MobSpectre
+    glimmerProb: 0
