@@ -515,43 +515,8 @@
 # Walls
 
 - type: entity
-  parent: [ BaseStructure, BasePsionic ] # Just in case
-  id: RailingInvisible
-  name: ledge
-  description: "You're an idiot. You'll fall. Get back."
-  suffix: PENTHOUSE
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Wall
-  components:
-  - type: Sprite
-    drawdepth: WallTops
-    sprite: _SHA/Structures/Walls/invisible.rsi
-    state: invisible
-  - type: Icon
-    sprite: _SHA/Structures/Walls/invisible.rsi
-    state: invisible
-  - type: Physics
-    bodyType: Static
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,-0.25"
-        density: 1000
-        mask:
-        - TableMask
-        layer:
-        - TableLayer
-  - type: Damageable
-    damageContainer: Indestructible
-    damageModifierSet: Indestructible
-
-- type: entity
   parent: WindowSomberDirectionalTinted
-  id: RailingInvisibleOccluder
+  id: InvisibleOccluder
   name: darkness
   description: "You can't see anything..."
   suffix: PENTHOUSE
@@ -638,62 +603,6 @@
     boundingBox: "-0.5,-0.5,0.5,-0.3"
 
 # Chairs
-
-- type: entity
-  parent: SomberChairCushion
-  id: SomberChairCushionFancy
-  name: Break's meditation cushion
-  suffix: Somber] [PENTHOUSE, JUST ONE
-  description: "A textured meditation cushion filled with mnemolith powder, ringed by an electrum yantra to steady and shield the mind. The pattern hums faintly when someone settles in to focus."
-  placement:
-    mode: SnapgridCenter
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Furniture/chairs.rsi
-    state: somberfloorcushionfancy
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Items/Handling/cloth_drop.ogg
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Ambience/ambiruin6.ogg # She felt that.
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          MaterialCloth:
-            min: 5
-            max: 5
-          ScrapElectrum:
-            min: 5
-            max: 5
-          MaterialMnemolith1:
-            min: 5
-            max: 5
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: Strap
-    buckleSound:
-      path: /Audio/_White/BloodCult/veilin.ogg
-      params:
-        volume: -2
-        variation: 0.05
-    unbuckleSound:
-      path: /Audio/_White/BloodCult/veilout.ogg
-      params:
-        volume: -2
-        variation: 0.05
-    buckleOffset: "-0.015625,0.0" # Center her
 
 - type: entity
   parent: [ BigBedUpperFancy1, BasePsionic ]

@@ -9,13 +9,13 @@
   parent: [ OfficeChairBase, BasePsionic ]
   id: SomberChairCushion
   name: somber floor cushion
-  description: "A firm pillow to sit on, useful for meditation."
+  description: "A firm cushion to sit on."
   placement:
     mode: SnapgridCenter
   components:
   - type: Sprite
     sprite: _DEN/Structures/Furniture/chairs.rsi
-    state: somberfloorcushion
+    state: somberfloorcushion-pink
   - type: Damageable
     damageModifierSet: Wood
     damageContainer: Inorganic
@@ -41,9 +41,57 @@
           MaterialCloth:
             min: 3
             max: 5
+          MnemolithPowder: # TODO: UPDATE DESCRIPTIONS ABOUT MNEMOLITH BEADS AND STUFF
+            min: 5
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Strap
+    buckleSound:
+      path: /Audio/Items/Handling/cloth_drop.ogg
+      params:
+        volume: -2
+        variation: 0.05
+    unbuckleSound:
+      path: /Audio/Items/Handling/cloth_pickup.ogg
+      params:
+        volume: -2
+        variation: 0.05
+
+- type: entity
+  parent: SomberChairCushion
+  id: SomberChairCushionFancy
+  name: somber meditation cushion
+  description: "A textured meditation cushion filled with mnemolith beads, set within an electrum focus that shapes the flow of the noosphere above it. It resonates with psions who use it, giving off a faint, calming ring."
+  components:
+  - type: Sprite
+    state: somberfloorcushionpink # TODO: ADD RESONATOR LAYERS AND VARIETIES
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Items/Handling/cloth_drop.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialCloth:
+            min: 3
+            max: 5
           ScrapElectrum:
             min: 1
             max: 1
+          MnemolithPowder:
+            min: 5
+            max: 5
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 
