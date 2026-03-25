@@ -14,7 +14,7 @@
     - type: Respirator
       damage:
         types:
-          Asphyxiation: 2.0
+          Asphyxiation: 1.0 #Den, normalizing asphyx damage with other species
       damageRecovery:
         types:
           Asphyxiation: -1.0
