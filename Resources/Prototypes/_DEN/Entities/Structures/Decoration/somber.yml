@@ -172,42 +172,50 @@
 
 - type: entity
   parent: [ Memorial, BasePsionic ]
-  id: SomberPillarTall
+  id: SomberPillarTaller
   name: mnemolith pillar
-  suffix: Tall
+  suffix: Taller
   description: "A mnemolith pillar etched with dense, repeating patterns. The stone seems to bear a weight you cannot see."
   components:
   - type: SpriteFade
   - type: Sprite
     noRot: true
-    offset: "0.0,1.0"
+    offset: "0.0,1.15625" # 37 pixels up from sprite center
     drawdepth: Mobs # Just don't put them against doors
     sprite: _DEN/Structures/Decoration/somberpillar.rsi
-    state: pillartall
+    state: pillartaller
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.25,-0.25,0.25,0.25"
+          bounds: "-0.25,-0.09375,0.25,0.40625"
         density: 1000
         layer:
         - WallLayer
 
 - type: entity
-  parent: SomberPillarTall
-  id: SomberPillarTaller
-  suffix: Taller
+  parent: SomberPillarTaller
+  id: SomberPillarTall
+  suffix: Tall
   components:
   - type: Sprite
-    state: pillartaller
+    state: pillartall
 
 - type: entity
-  parent: SomberPillarTall
+  parent: SomberPillarTaller
+  id: SomberPillarShort
+  suffix: Short
+  components:
+  - type: Sprite
+    state: pillarshort
+
+- type: entity
+  parent: SomberPillarTaller
   id: SomberPillarStoneTaller
   name: raw mnemolith column
   suffix: Taller
-  description: "A rough hexagonal column of raw mnemolith that appears to have grown straight from the floor. It seems to resonate with nearby thoughts, and etches new patterns into itself around powerful psions."
+  description: "A rough hexagonal column of raw mnemolith that appears to have grown straight from the floor. It reacts to nearby thoughts, cutting new patterns into itself around powerful psions."
   components:
   - type: Sprite
     state: stonecolumntaller
@@ -235,3 +243,65 @@
   components:
   - type: Sprite
     state: stonecolumnshorter
+
+- type: entity
+  parent: [ BaseStructure, BasePsionic ]
+  id: SomberElectrumFocus
+  name: electrum focus
+  suffix: Somber Floor Decor, Fits Under Columns, Etc.
+  description: "A psionic lattice that resonates softly, shaping the flow of the noosphere above it."
+  components:
+  - type: Sprite
+    snapCardinals: true
+    noRot: true
+    drawdepth: FloorObjects
+    sprite: _DEN/Structures/Furniture/chairs.rsi # No need to duplicate a sprite just because it's not being a chair here
+    layers:
+    - state: sombercushion-underlay
+    - state: sombercushion-underlay-unshaded1
+      shader: unshaded
+    - state: sombercushion-underlay-unshaded2
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.375,-0.25,0.375,0.25"
+        hard: false
+        density: 100
+        mask:
+        - MachineMask
+  - type: Anchorable
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialMnemolith1:
+            min: 2
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak

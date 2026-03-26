@@ -1802,40 +1802,6 @@
     closedState: cover
 
 - type: entity
-  parent: AltarSomberSanctum
-  id: AltarSomberSanctumFaust
-  suffix: Faust, Filled] [SANCTUM, DO NOT MAP
-  components:
-  - type: ItemCabinet
-    cabinetSlot:
-      startingItem: MantisMeleeGreatswordBreak
-      ejectOnInteract: true
-      ejectOnBreak: true
-      swap: false
-      insertVerbText: faust-insert-verb
-      ejectVerbText: faust-eject-verb
-      insertSuccessPopup: faust-insert-success
-      insertSound:
-        path: /Audio/_DEN/Weapons/Melee/faustsheath.ogg
-        params:
-          volume: -2
-          variation: 0.05
-      ejectSound:
-        path: /Audio/_DEN/Weapons/Melee/faustunsheath.ogg
-        params:
-          volume: -2
-          variation: 0.05
-      whitelist:
-        tags:
-        - MantisGreatsword
-    doorSound:
-      path: /Audio/Items/Handling/cloth_drop.ogg
-      params:
-        variation: 0.025
-    openState: cover-off
-    closedState: cover
-
-- type: entity
   parent: SomberHangingBrazierPillarShorter
   id: SomberHangingBrazierSanctumPillarShorter
   suffix: SANCTUM] [Fits Shorter Pillars, Click After Mapping
@@ -1987,7 +1953,7 @@
 - type: entity
   parent: AltarSomber
   id: AltarSomberFaustPenthouse
-  suffix: Faust, Filled] [MAP CAREFULLY
+  suffix: Faust, Filled] [PENTHOUSE, Map With Amphorae
   components:
   - type: ItemCabinet
     cabinetSlot:
@@ -2458,7 +2424,7 @@
 - type: entity
   parent: [ BaseItem, BaseHereticContraband ]
   id: BaseFragmentToggle
-  name: otherworldly fragment (inert)
+  name: inert otherworldly fragment
   suffix: DO NOT MAP] [BREAK
   description: "Something about this feels terribly unnatural."
   abstract: true
@@ -4052,3 +4018,38 @@
       amount: 20
     - id: UvLightBulb
       amount: 20
+
+# Mnemolith Columns
+
+- type: entity
+  parent: SomberPillarStoneTaller
+  id: SomberPillarStoneTallerPenthouse
+  suffix: Taller] [PENTHOUSE
+  description: "A rough hexagonal column of raw mnemolith that appears to have grown straight from the floor. It reacts to nearby thoughts, cutting new patterns into itself around powerful psions--though this one is already filled with a dense labyrinth of them."
+  components:
+  - type: Sprite
+    state: stonecolumntaller
+
+- type: entity
+  parent: SomberPillarStoneTallerPenthouse
+  id: SomberPillarStoneTallPenthouse
+  suffix: Tall] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: stonecolumntall
+
+- type: entity
+  parent: SomberPillarStoneTallerPenthouse
+  id: SomberPillarStoneShortPenthouse
+  suffix: Short] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: stonecolumnshort
+
+- type: entity
+  parent: SomberPillarStoneTallerPenthouse
+  id: SomberPillarStoneShorterPenthouse
+  suffix: Shorter] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: stonecolumnshorter

@@ -220,7 +220,7 @@
   - type: SpriteFade
   - type: Sprite
     noRot: true
-    offset: "0.0,1.0"
+    offset: "0.0,1.15625" # 37 pixels up from sprite center
     drawdepth: Mobs # You have to place these after the pillars, but otherwise they won't be hidden by them if the camera turns
     sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
 
