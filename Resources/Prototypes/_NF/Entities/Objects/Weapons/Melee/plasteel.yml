@@ -97,8 +97,9 @@
     damage:
       types:
         Slash: 20
-    clickPartDamageMultiplier: 3
-    heavyPartDamageMultiplier: 2.5
+        Structural: 10
+    clickPartDamageMultiplier: 1
+    heavyPartDamageMultiplier: 1.5
     heavyRateModifier: 2
     heavyRangeModifier: 1
     heavyDamageBaseModifier: 2
