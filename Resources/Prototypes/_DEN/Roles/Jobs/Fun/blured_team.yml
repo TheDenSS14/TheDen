@@ -1,0 +1,97 @@
+# BLU Team Gear
+- type: job
+  id: BLUTeamOperator
+  name: job-name-blu-team
+  description: job-description-blu-team
+  playTimeTracker: JobBLUTeam
+  setPreference: false
+  startingGear: BLUTeamOperator
+  icon: "JobIconBlueshield"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  special:
+  - !type:AddImplantSpecial
+    implants: [ CentCommImplant, BluespaceLifelineImplant ]
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+
+- type: startingGear
+  id: BLUTeamOperator
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    jumpsuit: ClothingUniformJumpsuitColorBlue
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitBLUTeam
+    belt: ClothingBeltBSOWebbing
+    id: PassengerPDA
+    pocket2: BLUTeamLoadoutSelector
+
+- type: entity
+  id: SpawnPointBLUTeam
+  categories: [Spawner]
+  parent: SpawnPointJobBase
+  name: BLU team operator
+  suffix: DO NOT MAP
+  components:
+  - type: GhostRole
+    rules: ghost-role-information-rules-default-team-antagonist
+    mindRoles:
+    - MindRoleNukeops
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: MobHumanNukeOp
+  - type: Sprite
+    layers:
+      - sprite: Markers/jobs.rsi
+        state: green
+      - sprite: Markers/jobs.rsi
+        state: ertleader
+
+# RED Team Gear
+- type: job
+  id: REDTeamOperator
+  name: job-name-red-team
+  description: job-description-red-team
+  playTimeTracker: JobREDTeam
+  setPreference: false
+  startingGear: REDTeamOperator
+  icon: "JobIconSyndicate"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  special:
+  - !type:AddImplantSpecial
+    implants: [ CentCommImplant, BluespaceLifelineImplant ]
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+
+- type: startingGear
+  id: REDTeamOperator
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    jumpsuit: ClothingUniformJumpsuitColorRed
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitREDTeam
+    belt: ClothingBeltMilitaryWebbingMed
+    id: PassengerPDA
+    pocket2: REDTeamLoadoutSelector
+
+- type: entity
+  id: SpawnPointREDTeam
+  categories: [Spawner]
+  parent: SpawnPointJobBase
+  name: RED team operator
+  suffix: DO NOT MAP
+  components:
+  - type: SpawnPoint
+    job_id: REDTeamOperator
+  - type: Sprite
+    layers:
+      - sprite: Markers/jobs.rsi
+        state: green
+      - sprite: Markers/jobs.rsi
+        state: ertsecurity
