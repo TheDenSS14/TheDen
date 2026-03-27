@@ -26,6 +26,7 @@
   - UpgradeKitAutomation
   - PortableGeneratorJrPacmanMachineCircuitboard
   - FlatpackerMachineCircuitboard
+  - SMESAdvancedMachineCircuitboard
   # - AutolatheHyperConvectionMachineCircuitboard
   - SolarControlComputerCircuitboard
   - SolarTrackerElectronics # Actual solar panels are not manufacturable
@@ -33,10 +34,8 @@
   # Atmos machines
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard
-  - SpaceHeaterMachineCircuitBoard
   - ThermomachineUpgradedFreezerMachineCircuitBoard
   - ThermomachineAdvancedFreezerMachineCircuitBoard
-  - ElectrolyzerMachineCircuitboard
   - CrystallizerMachineCircuitboard
   # Tools
   - PowerCellHigh
@@ -90,3 +89,5 @@
   id: EngineeringTechFabStaticAwfulDen
   recipes:
   - ThermomachineFreezerMachineCircuitBoard
+  - ElectrolyzerMachineCircuitboard
+  - SpaceHeaterMachineCircuitBoard
