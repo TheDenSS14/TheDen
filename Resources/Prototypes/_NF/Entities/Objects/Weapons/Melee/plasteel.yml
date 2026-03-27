@@ -14,7 +14,7 @@
   - type: MeleeWeapon
     autoAttack: true
     wideAnimationRotation: -135
-    attackRate: 1.2
+    attackRate: 1
     damage:
       types:
         Blunt: 18
@@ -23,7 +23,7 @@
     heavyRateModifier: 1.2
     heavyRangeModifier: 1
     heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 12
+    heavyStaminaCost: 10
     maxTargets: 4
     angle: 80
     animation: WeaponArcThrust
@@ -51,7 +51,7 @@
     state: icon
   - type: MeleeWeapon
     autoAttack: true
-    attackRate: 1.2
+    attackRate: 0.9
     wideAnimationRotation: -135
     range: 1.8
     damage:
@@ -92,17 +92,17 @@
     state: icon
   - type: MeleeWeapon
     autoAttack: true
-    attackRate: 1.5
+    attackRate: 1.2
     wideAnimationRotation: -135
     damage:
       types:
-        Slash: 18
+        Slash: 20
     clickPartDamageMultiplier: 3
     heavyPartDamageMultiplier: 2.5
     heavyRateModifier: 2
     heavyRangeModifier: 1
-    heavyDamageBaseModifier: 1.75
-    heavyStaminaCost: 25
+    heavyDamageBaseModifier: 2
+    heavyStaminaCost: 20
     maxTargets: 8
     animation: WeaponArcThrust
   - type: Clothing
@@ -127,7 +127,7 @@
     state: spear
   - type: MeleeWeapon
     autoAttack: true
-    attackRate: 1.2
+    attackRate: 1
     wideAnimationRotation: -135
     range: 1.8
     damage:
@@ -136,12 +136,12 @@
         Slash: 4
     clickPartDamageMultiplier: 1
     heavyPartDamageMultiplier: 1.5
-    heavyRateModifier: 1.5
-    heavyRangeModifier: 1.2
-    heavyDamageBaseModifier: 1.25
-    heavyStaminaCost: 15
+    heavyRateModifier: 1
+    heavyRangeModifier: 1.8
+    heavyDamageBaseModifier: 1.1
+    heavyStaminaCost: 10
     maxTargets: 3
-    angle: 20
+    angle: 0
     animation: WeaponArcThrust
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/plasteel_spear.rsi
