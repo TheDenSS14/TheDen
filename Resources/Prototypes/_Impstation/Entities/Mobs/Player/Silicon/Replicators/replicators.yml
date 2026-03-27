@@ -96,6 +96,7 @@
     maxZoom: 1.2, 1.2
   - type: Tag
     tags:
+      - SiliconEmotes # Den
       - CannotSuicide
       - EmagImmune
       - DoorBumpOpener
@@ -204,6 +205,11 @@
       types:
         Bloodloss:
           -1
+  - type: LanguageKnowledge
+    speaks:
+    - RobotTalk
+    understands:
+    - RobotTalk
     # DEN
 
 - type: entity
@@ -319,7 +325,7 @@
   id: MobReplicatorTier2
   name: deconstructor
   parent: BaseMobReplicator
-  categories: [HideSpawnMenu] # I don't want admins spawning a replicator that's unlinked to a nest
+  # categories: [HideSpawnMenu] # I don't want admins spawning a replicator that's unlinked to a nest
   suffix: Level 2
   components:
   - type: Replicator
@@ -407,9 +413,9 @@
         Base: dead_level2
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Replicator2
+    damageModifierSet: Replicator2Alt
   - type: Body
-    prototype: Replicator2
+    prototype: Replicator2Alt
   - type: Loadout
     prototypes:
       - StartingGearReplicatorT2Alt
