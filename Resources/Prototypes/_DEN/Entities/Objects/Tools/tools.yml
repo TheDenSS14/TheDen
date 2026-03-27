@@ -32,3 +32,88 @@
     - MantisBoxRestraintsStorable
   - type: GuideHelp
     guides: [ MantisGuide ]
+
+- type: entity
+  parent: [ BaseKnife, Omnitool ] # Primarily an admin tool, but the speedModifier can possibly be balanced to make this salvage loot (since aghosts skip doafters)
+  id: ThavenArmyKnife
+  name: retainer's clasp knife
+  suffix: Omnitool
+  description: "A traditional thaven clasp knife carried by the sworn retainers of Aureate nobles, with practical tools folded into the handle. This design has remained in use since before most species developed interstellar travel."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+    state: omnitool-snipping
+  - type: Item
+    sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+    storedSprite:
+      state: storage
+      sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+  - type: Tool
+    qualities:
+      - Cutting
+    speedModifier: 1.0 # Half the size of Omnitool, so it's slower - same speed as ToolDebug
+    useSound: /Audio/Items/wirecutter.ogg
+  - type: ToolTileCompatible
+  - type: MultipleTool
+    statusShowBehavior: true
+    entries:
+      - behavior: Cutting
+        sprite:
+          sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+          state: omnitool-snipping
+        useSound:
+          path: /Audio/Items/wirecutter.ogg
+        changeSound:
+          path: /Audio/_Impstation/Items/toolslap.ogg
+      - behavior: Pulsing
+        sprite:
+          sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+          state: omnitool-pulsing
+        changeSound:
+          path: /Audio/_Impstation/Items/toolslap.ogg
+      - behavior: Screwing
+        sprite:
+          sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+          state: omnitool-screwing
+        useSound:
+          collection: Screwdriver
+        changeSound:
+          path: /Audio/_Impstation/Items/toolslap.ogg
+      - behavior: Prying
+        sprite:
+          sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+          state: omnitool-prying
+        useSound:
+          path: /Audio/Items/crowbar.ogg
+        changeSound:
+          path: /Audio/_Impstation/Items/toolslap.ogg
+      - behavior: Anchoring
+        sprite:
+          sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+          state: omnitool-wrenching
+        useSound:
+          path: /Audio/Items/ratchet.ogg
+        changeSound:
+          path: /Audio/_Impstation/Items/toolslap.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 0.8
+    damage:
+      types:
+        Slash: 12
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 9
+  - type: ThrowingAngle
+    angle: 225
+  - type: DisarmMalus
+    malus: 0.225
+  - type: Tag
+    tags:
+    - CombatKnife
+    - Knife
+    - Multitool
