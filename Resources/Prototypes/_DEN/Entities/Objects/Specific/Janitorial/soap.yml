@@ -1,20 +1,20 @@
 - type: entity
   parent: Soap
-  id: SoapSomberPurple
+  id: SoapSomberViolet
   name: fine soap
-  suffix: Somber, Purple
-  description: "A striped purple bar of soap. Smells like lavender and anise."
+  suffix: Somber, Violet
+  description: "A striped violet bar of soap. Smells like lavender and anise."
   components:
   - type: Sprite
     sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
     layers:
-    - state: somberpurple-4
+    - state: somberviolet-4
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: SolutionContainerVisuals
-    fillBaseName: somberpurple-
+    fillBaseName: somberviolet-
   - type: Item
     sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
-    heldPrefix: somberpurple
+    heldPrefix: somberviolet
   - type: SolutionContainerManager
     solutions:
       soap:
@@ -24,25 +24,25 @@
           Quantity: 100
   - type: Residue
     residueAdjective: residue-slippery
-    residueColor: residue-purple
+    residueColor: residue-violet
 
 - type: entity
   parent: Soap
-  id: SoapSomberPink
+  id: SoapSomberIndigo
   name: fine soap
-  suffix: Somber, Pink
-  description: "A striped pink bar of soap. Smells like like sweet incense."
+  suffix: Somber, Indigo
+  description: "A striped indigo bar of soap. Smells like like sweet incense."
   components:
   - type: Sprite
     sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
     layers:
-    - state: somberpink-4
+    - state: somberindigo-4
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: SolutionContainerVisuals
-    fillBaseName: somberpink-
+    fillBaseName: somberindigo-
   - type: Item
     sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
-    heldPrefix: somberpink
+    heldPrefix: somberindigo
   - type: SolutionContainerManager
     solutions:
       soap:
@@ -52,4 +52,4 @@
           Quantity: 100
   - type: Residue
     residueAdjective: residue-slippery
-    residueColor: residue-pink
+    residueColor: residue-indigo

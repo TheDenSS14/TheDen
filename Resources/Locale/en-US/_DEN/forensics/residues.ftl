@@ -1,2 +1,2 @@
-residue-purple = purple
-residue-pink = pink
+residue-violet = violet
+residue-indigo = indigo
