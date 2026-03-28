@@ -48,6 +48,11 @@
     storedSprite:
       state: storage
       sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+  - type: Clothing
+    sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+    quickEquip: false
+    slots:
+    - Belt
   - type: Tool
     qualities:
       - Cutting
@@ -56,7 +61,7 @@
   - type: ToolTileCompatible
   - type: MultipleTool
     statusShowBehavior: true
-    entries:
+    entries: # Rising pitches as you cycle through, between the network configurators tones
       - behavior: Cutting
         sprite:
           sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
@@ -65,12 +70,16 @@
           path: /Audio/Items/wirecutter.ogg
         changeSound:
           path: /Audio/_Impstation/Items/toolslap.ogg
+          params:
+            pitch: 0.966
       - behavior: Pulsing
         sprite:
           sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
           state: omnitool-pulsing
         changeSound:
           path: /Audio/_Impstation/Items/toolslap.ogg
+          params:
+            pitch: 0.833
       - behavior: Screwing
         sprite:
           sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
@@ -79,6 +88,8 @@
           collection: Screwdriver
         changeSound:
           path: /Audio/_Impstation/Items/toolslap.ogg
+          params:
+            pitch: 0.866
       - behavior: Prying
         sprite:
           sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
@@ -87,6 +98,8 @@
           path: /Audio/Items/crowbar.ogg
         changeSound:
           path: /Audio/_Impstation/Items/toolslap.ogg
+          params:
+            pitch: 0.9
       - behavior: Anchoring
         sprite:
           sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
@@ -95,6 +108,8 @@
           path: /Audio/Items/ratchet.ogg
         changeSound:
           path: /Audio/_Impstation/Items/toolslap.ogg
+          params:
+            pitch: 0.933
   - type: MeleeWeapon
     wideAnimationRotation: -135
     attackRate: 0.8
@@ -112,8 +127,23 @@
     angle: 225
   - type: DisarmMalus
     malus: 0.225
+  - type: NetworkConfigurator
+    soundSwitchMode:
+      path: /Audio/_Impstation/Items/toolslap.ogg
+  - type: ActivatableUI
+    key: enum.NetworkConfiguratorUiKey.List
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.NetworkConfiguratorUiKey.List:
+        type: NetworkConfiguratorBoundUserInterface
+      enum.NetworkConfiguratorUiKey.Configure:
+        type: NetworkConfiguratorBoundUserInterface
+      enum.NetworkConfiguratorUiKey.Link:
+        type: NetworkConfiguratorBoundUserInterface
   - type: Tag
     tags:
     - CombatKnife
     - Knife
     - Multitool
+    - DoorElectronicsConfigurator

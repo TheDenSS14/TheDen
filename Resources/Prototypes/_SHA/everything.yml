@@ -531,7 +531,7 @@
     state: occluder
   - type: Icon
     sprite: _SHA/Structures/Walls/invisible.rsi
-    state: invisible
+    state: occluder
   - type: Fixtures
     fixtures:
       fix1:
@@ -546,6 +546,34 @@
           - WallLayer
   - type: Occluder
     boundingBox: "-0.5,-0.5,0.5,-0.3"
+
+- type: entity
+  parent: InvisibleOccluder
+  id: InvisibleOccluderLeft
+  suffix: PENTHOUSE, Left
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder-left
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder-left
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0,-0.3"
+
+- type: entity
+  parent: InvisibleOccluder
+  id: InvisibleOccluderRight
+  suffix: PENTHOUSE, Right
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder-right
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder-right
+  - type: Occluder
+    boundingBox: "0,-0.5,0.5,-0.3"
 
 - type: entity
   parent: WallSomber
@@ -566,8 +594,6 @@
 - type: entity
   parent: [ WallMining, BasePsionic ]
   id: WallMiningPenthouse
-  name: elevator wall
-  description: "A sturdy wall with space for the elevator."
   suffix: Right Side] [PENTHOUSE
   components:
   - type: Sprite
@@ -578,8 +604,6 @@
 - type: entity
   parent: [ WallMining, BasePsionic ]
   id: WallMiningPenthouseLeft
-  name: elevator wall
-  description: "A sturdy wall with space for the elevator."
   suffix: Left Side] [PENTHOUSE
   components:
   - type: Sprite
@@ -590,17 +614,62 @@
 - type: entity
   parent: WindowSomberDirectionalTinted
   id: WindowFireEscape
-  name: fire escape wall
+  name: skyscraper wall
   suffix: Directional, Opaque
+  description: "It keeps the city out."
   components:
   - type: Sprite
-    sprite: _SHA/Structures/Windows/fire_escape.rsi
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
     state: fire_escape
   - type: Icon
-    sprite: _SHA/Structures/Windows/fire_escape.rsi
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
     state: fire_escape
+
+- type: entity
+  parent: WindowSomberDirectionalTinted
+  id: WindowFireEscapeLeft
+  name: skyscraper wall
+  suffix: Directional, Opaque, Left
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_left
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_left
   - type: Occluder
-    boundingBox: "-0.5,-0.5,0.5,-0.3"
+    boundingBox: "-0.5,-0.5,0,-0.3"
+
+- type: entity
+  parent: WindowSomberDirectionalTinted
+  id: WindowFireEscapeRight
+  name: skyscraper wall
+  suffix: Directional, Opaque, Right
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_right
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_right
+  - type: Occluder
+    boundingBox: "0,-0.5,0.5,-0.3"
+
+- type: entity
+  parent: WindowSomberDirectionalTintedCorner
+  id: WindowFireEscapeCorner
+  name: skyscraper wall
+  suffix: Directional, Opaque
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_corner
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_corner
 
 # Chairs
 
@@ -1044,8 +1113,7 @@
 - type: entity
   parent: [ AirlockMining, BasePsionic ]
   id: AirlockMiningPenthouseAir
-  name: elevator utility door # For the little cryopod closet
-  description: "Two-sided doors that link with those of maintenance levels."
+  name: skyscraper airlock # For the fire escape utility room
   suffix: NON-AIRTIGHT] [PENTHOUSE
   components:
   - type: Airtight
@@ -1159,12 +1227,106 @@
   id: FloorElevatorTransitionLeft
   name: tiles-elevator-transition-left
   sprite: /Textures/_SHA/Tiles/elevatorleft.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass0
+  name: tiles-elevator-glass-0
+  sprite: /Textures/_SHA/Tiles/elevator0.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass1
+  name: tiles-elevator-glass-1
+  sprite: /Textures/_SHA/Tiles/elevator1.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass2
+  name: tiles-elevator-glass-2
+  sprite: /Textures/_SHA/Tiles/elevator2.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass3
+  name: tiles-elevator-glass-3
+  sprite: /Textures/_SHA/Tiles/elevator3.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass4
+  name: tiles-elevator-glass-4
+  sprite: /Textures/_SHA/Tiles/elevator4.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass5
+  name: tiles-elevator-glass-5
+  sprite: /Textures/_SHA/Tiles/elevator5.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass6
+  name: tiles-elevator-glass-6
+  sprite: /Textures/_SHA/Tiles/elevator6.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass7
+  name: tiles-elevator-glass-7
+  sprite: /Textures/_SHA/Tiles/elevator7.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass8
+  name: tiles-elevator-glass-8
+  sprite: /Textures/_SHA/Tiles/elevator8.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass9
+  name: tiles-elevator-glass-9
+  sprite: /Textures/_SHA/Tiles/elevator9.png
   baseTurf: Plating
   isSubfloor: false
   footstepSounds:
@@ -4055,3 +4217,85 @@
   components:
   - type: Sprite
     state: stonecolumnshorter
+
+# Fish
+
+- type: entity
+  parent: PlushieCarp
+  id: PlushieCarpBreak
+  name: carp plushie
+  suffix: PENTHOUSE, Break
+  description: "An adorable stuffed toy that resembles the monstrous space carp, or perhaps something similar."
+  components:
+  - type: Sprite
+    sprite: _SHA/Objects/Fun/toys.rsi
+    layers:
+    - state: carpplushbreak
+    - state: carpplushbreak-unshaded
+      shader: unshaded
+  - type: Item
+    heldPrefix: carpplushbreak
+  - type: PointLight
+    energy: 0.5
+    radius: 1.5
+    color: "#FFFFFF"
+
+- type: entity
+  parent: PlushieCarpBreak
+  id: PlushieCarpSucker
+  name: carp plushie
+  suffix: PENTHOUSE, Sucker
+  description: "An adorable stuffed toy that resembles the monstrous space carp, or perhaps something similar."
+  components:
+  - type: Sprite
+    layers:
+    - state: carpplushsucker
+    - state: carpplushsucker-unshaded
+      shader: unshaded
+  - type: Item
+    heldPrefix: carpplushsucker
+
+- type: entity
+  parent: PlushieCarpBreak
+  id: PlushieCarpDream
+  name: carp plushie
+  suffix: PENTHOUSE, Dream
+  description: "An adorable stuffed toy that resembles the monstrous space carp, or perhaps something similar."
+  components:
+  - type: Sprite
+    layers:
+    - state: carpplushdream
+    - state: carpplushdream-unshaded
+      shader: unshaded
+  - type: Item
+    heldPrefix: carpplushdream
+
+- type: entity
+  parent: PlushieCarpBreak
+  id: PlushieCarpTatter
+  name: carp plushie
+  suffix: PENTHOUSE, Tatter
+  description: "An adorable stuffed toy that resembles the monstrous space carp, or perhaps something similar."
+  components:
+  - type: Sprite
+    layers:
+    - state: carpplushtatter
+    - state: carpplushtatter-unshaded
+      shader: unshaded
+  - type: Item
+    heldPrefix: carpplushtatter
+
+- type: entity
+  parent: PlushieCarpBreak
+  id: PlushieCarpCast
+  name: carp plushie
+  suffix: PENTHOUSE, Cast
+  description: "An adorable stuffed toy that resembles the monstrous space carp, or perhaps something similar."
+  components:
+  - type: Sprite
+    layers:
+    - state: carpplushcast-unshaded
+      shader: unshaded
+    - state: carpplushcast
+  - type: Item
+    heldPrefix: carpplushcast

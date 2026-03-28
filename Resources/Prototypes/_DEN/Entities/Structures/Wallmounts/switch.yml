@@ -99,4 +99,15 @@
   - type: Sprite
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
     state: framepurple
+
+# Timers
+
+- type: entity
+  parent: [ SignalTimer, BasePsionic ]
+  id: SomberSignalTimer
+  name: somber signal timer
+  description: "A brushed metal timer that sends a signal after a delay."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
 # Somber switches end

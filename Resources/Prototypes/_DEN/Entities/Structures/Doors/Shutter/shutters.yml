@@ -1,0 +1,120 @@
+- type: entity
+  parent: BaseStructure # Too many non-nullable components to parent it...
+  id: ShuttersSomberWindowTint
+  name: electrochromic glass
+  suffix: Closed Privacy Shutters] [Fit Somber Windows
+  description: "A pane of electrochromic glass that shifts from clear to opaque at the touch of a signal. Privacy, rendered obedient to electricity."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: WallMount
+    arc: 360
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: BelowWalls # These go under the windows, really
+    offset: "0.0,-0.0625" # Two pixels down, so a silver panel pokes out at the bottom for access
+    sprite: _DEN/Structures/Doors/Shutters/somberwindowtinting.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Physics
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,0.49"
+        hard: false # The tint itself shouldn't be impassable... It goes on a window
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - AirlockLayer
+  - type: Door
+    openDrawDepth: BelowWalls
+    closedDrawDepth: BelowWalls
+    bumpOpen: false
+    clickOpen: false
+    closeTimeOne: 1.49
+    closeTimeTwo: 1.5
+    openTimeOne: 1.5
+    openTimeTwo: 1.49
+    openingAnimationTime: 1.5
+    closingAnimationTime: 1.5
+    crushDamage:
+      types:
+        Blunt: 0 # If you're somehow in it, you're standing on a pane of glass on the floor, it's fine
+    openSound:
+      path: /Audio/_DEN/Effects/crystalshimmer1.ogg
+      params:
+        volume: 0
+        variation: 0.05
+    closeSound:
+      path: /Audio/_DEN/Effects/crystalshimmer2.ogg
+      params:
+        volume: 0
+        variation: 0.05
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Rotatable
+  - type: AnimationPlayer
+  - type: Appearance
+  - type: UserInterface
+    interfaces:
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: DoorSignalControl
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - Open
+      - Close
+      - Toggle
+  - type: DeviceLinkSource
+    ports:
+    - DoorStatus
+    lastSignals:
+      DoorStatus: false
+
+- type: entity
+  parent: ShuttersSomberWindowTint
+  id: ShuttersSomberWindowTintClosed
+  components:
+  - type: Physics
+    canCollide: false
+  - type: Airtight
+    airBlocked: false
+  - type: RadiationBlocker
+    enabled: false
+  - type: Occluder
+    enabled: true
+
+- type: entity
+  parent: ShuttersSomberWindowTint
+  id: ShuttersSomberWindowTintOpen
+  suffix: Open Privacy Shutters] [Fit Somber Windows
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false

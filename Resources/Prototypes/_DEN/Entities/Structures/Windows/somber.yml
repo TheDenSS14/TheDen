@@ -350,8 +350,6 @@
   - type: DamageVisuals
     damageOverlay:
       sprite: _DEN/Structures/Windows/cracks_corner.rsi
-  - type: Occluder
-    boundingBox: "0.3,-0.5,0.5,-0.3"
 
 - type: entity
   parent: WindowSomberDirectionalCorner
@@ -377,6 +375,8 @@
   - type: Icon
     sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
     state: sombertintedcorner
+  - type: Occluder
+    boundingBox: "0.3,-0.5,0.5,-0.3"
 
 - type: entity
   parent: WindowSomberDirectionalCorner
@@ -390,6 +390,8 @@
   - type: Icon
     sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
     state: somberdarktintedcorner
+  - type: Occluder
+    boundingBox: "0.3,-0.5,0.5,-0.3"
 
 # Somber TV Kit
 # To make theaters using ComputerSomberTelevision and RemoteSignallerSomberTV
