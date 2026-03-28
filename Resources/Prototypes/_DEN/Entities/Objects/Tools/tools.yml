@@ -57,7 +57,7 @@
     qualities:
       - Slicing
     speedModifier: 1.0 # It feels criminal to make it faster than this since it does so many things
-    path: /Audio/Items/Culinary/chop.ogg
+    useSound: /Audio/Items/Culinary/chop.ogg
   - type: ToolTileCompatible
   - type: MultipleTool
     statusShowBehavior: true

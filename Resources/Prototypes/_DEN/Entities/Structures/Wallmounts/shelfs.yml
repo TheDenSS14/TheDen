@@ -2,6 +2,7 @@
   parent: [ ShelfBase, BasePsionic ]
   id: SomberDoorCloset
   name: somber closet door
+  suffix: Steel
   description: "Gloomy steel doors concealing what is ostensibly a walk-in closet, although you shouldn't try it."
   placement:
     mode: SnapgridCenter
@@ -12,6 +13,17 @@
     maxItemSize: Huge
     grid:
     - 0,0,7,4
+    storageOpenSound:
+      path: /Audio/Effects/door_open.ogg
+      params:
+        volume: -5
+    storageCloseSound:
+      path: /Audio/Effects/door_close.ogg
+      params:
+        volume: -5
+    storageInsertSound: /Audio/Items/Handling/drinkglass_drop.ogg
+    storageRemoveSound: /Audio/Items/Handling/drinkglass_pickup.ogg
+    clickInsert: false
   - type: Sprite
     snapCardinals: false
     noRot: false
@@ -57,7 +69,7 @@
 - type: entity
   parent: SomberDoorCloset
   id: SomberDoorClosetDark
-  suffix: Dark
+  suffix: Steel, Dark
   description: "Gloomy steel doors concealing what is ostensibly a walk-in closet, although you shouldn't try it."
   components:
   - type: Sprite
@@ -106,6 +118,15 @@
   suffix: Mnemolith
   description: "Mnemolith stone doors concealing what is ostensibly a walk-in closet, although you shouldn't try it."
   components:
+  - type: Storage
+    storageOpenSound:
+      path: /Audio/Effects/stonedoor_openclose.ogg
+      params:
+        volume: -5
+    storageCloseSound:
+      path: /Audio/Effects/stonedoor_openclose.ogg
+      params:
+        volume: -5
   - type: Sprite
     sprite: _DEN/Structures/Storage/Shelfs/somberdoorclosetmnemolith.rsi
   - type: Damageable

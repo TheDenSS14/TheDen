@@ -5,7 +5,8 @@
 - type: entity
   parent: [ BaseMaterialDoorNavMap, BasePsionic ]
   id: SomberAmaranthDoor
-  name: somber amaranth door
+  name: somber door
+  suffix: Amaranth
   description: "A door made of exotic, extremely durable hardwood. Also called purpleheart, or incorrectly, rosewood."
   components:
   - type: Door
@@ -50,7 +51,8 @@
 - type: entity
   parent: [ BaseMaterialDoorNavMap, BasePsionic ]
   id: SomberMnemolithDoor
-  name: somber mnemolith door
+  name: somber door
+  suffix: Mnemolith
   description: "A door made of mnemolith, a dark, glassy stone that forms during severe noospheric storms."
   components:
   - type: Sprite
@@ -87,9 +89,15 @@
 - type: entity
   parent: [ BaseMaterialDoorNavMap, BasePsionic ]
   id: SomberSteelDoor
-  name: somber steel door
+  name: somber door
+  suffix: Steel
   description: "A gloomy steel door."
   components:
+  - type: Door
+    openSound:
+      path: /Audio/Effects/door_open.ogg
+    closeSound:
+      path: /Audio/Effects/door_close.ogg
   - type: Sprite
     sprite: _DEN/Structures/Doors/MineralDoors/somber_door.rsi
     layers:
@@ -124,8 +132,8 @@
 - type: entity
   parent: SomberSteelDoor
   id: SomberSteelDoorDark
-  name: somber steel door
-  suffix: Dark
+  name: somber door
+  suffix: Steel, Dark
   description: "A gloomy steel door."
   components:
   - type: Sprite

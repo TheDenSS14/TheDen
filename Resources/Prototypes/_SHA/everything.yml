@@ -993,7 +993,7 @@
 - type: entity
   parent: SomberAmaranthDoor
   id: SomberAmaranthDoorAir
-  suffix: NON-AIRTIGHT] [PENTHOUSE
+  suffix: NON-AIRTIGHT] [Amaranth] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -1001,7 +1001,7 @@
 - type: entity
   parent: SomberMnemolithDoor
   id: SomberMnemolithDoorAir
-  suffix: NON-AIRTIGHT] [PENTHOUSE
+  suffix: NON-AIRTIGHT] [Mnemolith] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -1009,7 +1009,7 @@
 - type: entity
   parent: SomberSteelDoor
   id: SomberSteelDoorAir
-  suffix: NON-AIRTIGHT] [PENTHOUSE
+  suffix: NON-AIRTIGHT] [Steel] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -1017,7 +1017,7 @@
 - type: entity
   parent: SomberSteelDoorDark
   id: SomberSteelDoorDarkAir
-  suffix: NON-AIRTIGHT] [Dark] [PENTHOUSE
+  suffix: NON-AIRTIGHT] [Steel, Dark] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -3855,7 +3855,8 @@
     maxItemSize: Ginormous
     grid:
     - 0,0,19,2
-    storageOpenSound: /Audio/Effects/silence.ogg
+    storageOpenSound:
+      collection: trashBagRustle
     storageCloseSound: /Audio/Effects/silence.ogg
     storageInsertSound: /Audio/Effects/silence.ogg
     storageRemoveSound: /Audio/Effects/silence.ogg
