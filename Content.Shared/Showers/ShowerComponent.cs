@@ -24,16 +24,10 @@ namespace Content.Shared.Showers
         // DEN start
 
         /// <summary>
-        /// Whether the shower will be forced on upon map init.
+        /// What state should the shower be on map init?
         /// </summary>
         [DataField]
-        public bool MapStartForceOn = false;
-
-        /// <summary>
-        /// Whether the shower will be forced off upon map init.
-        /// </summary>
-        [DataField]
-        public bool MapStartForceOff = false;
+        public ShowerStartupState StartupState = ShowerStartupState.Random;
         // DEN end
 
         [DataField("enableShowerSound")]
@@ -59,5 +53,15 @@ namespace Content.Shared.Showers
         Off,
         On
     }
+
+    // DEN start
+    [Serializable, NetSerializable]
+    public enum ShowerStartupState : byte
+    {
+        Off,
+        On,
+        Random
+    }
+    // DEN end
 }
 

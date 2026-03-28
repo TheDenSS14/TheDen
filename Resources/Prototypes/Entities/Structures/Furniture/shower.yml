@@ -62,7 +62,7 @@
   id: ShowerStartOff
   components:
   - type: Shower
-    mapStartForceOff: true
+    startupState: Off
 
 - type: entity
   name: shower
@@ -71,5 +71,5 @@
   id: ShowerStartOn
   components:
   - type: Shower
-    mapStartForceOn: true
+    startupState: On
 # DEN end

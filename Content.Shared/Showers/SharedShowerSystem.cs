@@ -28,12 +28,19 @@ namespace Content.Shared.Showers
         private void OnMapInit(EntityUid uid, ShowerComponent component, MapInitEvent args)
         {
             // DEN start
-            if (component.MapStartForceOn)
-                component.ToggleShower = true;
-            else if (component.MapStartForceOff)
-                component.ToggleShower = false;
-            else if (_random.Prob(0.5f))
-                component.ToggleShower = true;
+            switch (component.StartupState)
+            {
+                case ShowerStartupState.Off:
+                    component.ToggleShower = false;
+                    break;
+                case ShowerStartupState.On:
+                    component.ToggleShower = true;
+                    break;
+                case ShowerStartupState.Random:
+                    if (_random.Prob(0.5f))
+                        component.ToggleShower = true;
+                    break;
+            }
             // DEN end
             UpdateAppearance(uid);
         }
