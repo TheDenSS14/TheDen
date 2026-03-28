@@ -21,6 +21,21 @@ namespace Content.Shared.Showers
         [DataField, AutoNetworkedField]
         public bool ToggleShower;
 
+        // DEN start
+
+        /// <summary>
+        /// Whether the shower will be forced on upon map init.
+        /// </summary>
+        [DataField]
+        public bool MapStartForceOn = false;
+
+        /// <summary>
+        /// Whether the shower will be forced off upon map init.
+        /// </summary>
+        [DataField]
+        public bool MapStartForceOff = false;
+        // DEN end
+
         [DataField("enableShowerSound")]
         public SoundSpecifier EnableShowerSound = new SoundPathSpecifier("/Audio/Ambience/Objects/shower_enable.ogg");
 

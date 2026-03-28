@@ -7,6 +7,7 @@
 
 - type: entity
   name: shower
+  suffix: Start Random # DEN
   id: Shower
   description: A shower, complete with bluespace water.
   placement:
@@ -53,3 +54,22 @@
     - type: InteractionVerbs # DEN: add hand washing
       allowedVerbs: [WashHands]
 
+# DEN start
+- type: entity
+  name: shower
+  suffix: Start Off
+  parent: Shower
+  id: ShowerStartOff
+  components:
+  - type: Shower
+    mapStartForceOff: true
+
+- type: entity
+  name: shower
+  suffix: Start On
+  parent: Shower
+  id: ShowerStartOn
+  components:
+  - type: Shower
+    mapStartForceOn: true
+# DEN end
