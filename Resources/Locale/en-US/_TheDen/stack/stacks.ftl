@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Luke Stearns
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 stack-white-poker-chip = {$amount ->
 [1] white poker chip
 *[other] white poker chips
