@@ -1,16 +1,11 @@
-# SPDX-FileCopyrightText: 2025 juniwoofs
-# SPDX-FileCopyrightText: 2025 sleepyyapril
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 meta:
   format: 7
   category: Map
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/19/2025 23:29:57
-  entityCount: 29629
+  time: 03/28/2026 07:03:07
+  entityCount: 29626
 maps:
 - 1
 grids:
@@ -7400,8 +7395,8 @@ entities:
         - volume: 2500
           temperature: 235
           moles:
-            Oxygen: 21.824879
-            Nitrogen: 82.10312
+            Oxygen: 27.225372
+            Nitrogen: 102.419266
         - volume: 2500
           temperature: 293.15
           moles:
@@ -7531,6 +7526,22 @@ entities:
       - 26743
       - 26771
       - 26770
+  - uid: 3902
+    components:
+    - type: Transform
+      pos: 88.5,-12.5
+      parent: 13
+    - type: DeviceList
+      devices:
+      - 18155
+      - 18158
+      - 26387
+      - 26363
+      - 26386
+      - 26385
+      - 26384
+      - 18159
+      - 18157
   - uid: 5783
     components:
     - type: Transform
@@ -8627,24 +8638,6 @@ entities:
       - 26384
       - 26385
       - 26386
-  - uid: 26381
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 88.5,-11.5
-      parent: 13
-    - type: DeviceList
-      devices:
-      - 26363
-      - 26386
-      - 26385
-      - 26384
-      - 18159
-      - 18157
-      - 18158
-      - 18155
-      - 26388
-      - 26387
   - uid: 26389
     components:
     - type: Transform
@@ -10620,7 +10613,7 @@ entities:
       pos: 114.5,11.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -75147.305
+      secondsUntilStateChange: -75554.84
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10941,7 +10934,7 @@ entities:
       pos: 106.5,-61.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -84420.19
+      secondsUntilStateChange: -84827.73
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11593,7 +11586,7 @@ entities:
       pos: 50.5,-60.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -109675.43
+      secondsUntilStateChange: -110082.97
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11953,7 +11946,7 @@ entities:
       pos: 49.5,0.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -267836.12
+      secondsUntilStateChange: -268243.66
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12050,7 +12043,7 @@ entities:
       pos: 101.5,-11.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -94954.84
+      secondsUntilStateChange: -95362.38
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12102,7 +12095,7 @@ entities:
       pos: 125.5,4.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -170753.64
+      secondsUntilStateChange: -171161.19
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12130,7 +12123,7 @@ entities:
       pos: 125.5,-6.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -194168.36
+      secondsUntilStateChange: -194575.9
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12865,6 +12858,12 @@ entities:
       parent: 13
 - proto: AirlockMedicalGlassLocked
   entities:
+  - uid: 1560
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 48.5,-37.5
+      parent: 13
   - uid: 1653
     components:
     - type: Transform
@@ -12960,13 +12959,6 @@ entities:
     components:
     - type: Transform
       pos: 92.5,3.5
-      parent: 13
-- proto: AirlockParamedicLocked
-  entities:
-  - uid: 3902
-    components:
-    - type: Transform
-      pos: 48.5,-37.5
       parent: 13
 - proto: AirlockPsychologistLocked
   entities:
@@ -14187,16 +14179,13 @@ entities:
       parent: 13
     - type: DeviceNetwork
       deviceLists:
-      - 26381
+      - 3902
   - uid: 26388
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 86.5,-10.5
       parent: 13
-    - type: DeviceNetwork
-      deviceLists:
-      - 26381
   - uid: 26390
     components:
     - type: Transform
@@ -15960,13 +15949,6 @@ entities:
     - type: Transform
       pos: 74.5,-4.5
       parent: 13
-  - uid: 7035
-    components:
-    - type: MetaData
-      name: Armory APC
-    - type: Transform
-      pos: 88.5,-12.5
-      parent: 13
   - uid: 7037
     components:
     - type: MetaData
@@ -15974,6 +15956,14 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 72.5,-12.5
+      parent: 13
+  - uid: 7059
+    components:
+    - type: MetaData
+      name: Armory APC
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 88.5,-11.5
       parent: 13
   - uid: 7387
     components:
@@ -25416,6 +25406,11 @@ entities:
     - type: Transform
       pos: 79.5,12.5
       parent: 13
+  - uid: 6870
+    components:
+    - type: Transform
+      pos: 88.5,-11.5
+      parent: 13
   - uid: 7069
     components:
     - type: Transform
@@ -25725,11 +25720,6 @@ entities:
     components:
     - type: Transform
       pos: 75.5,-14.5
-      parent: 13
-  - uid: 7131
-    components:
-    - type: Transform
-      pos: 88.5,-12.5
       parent: 13
   - uid: 7132
     components:
@@ -46635,6 +46625,21 @@ entities:
     - type: Transform
       pos: 40.5,25.5
       parent: 13
+  - uid: 6871
+    components:
+    - type: Transform
+      pos: 87.5,-13.5
+      parent: 13
+  - uid: 6872
+    components:
+    - type: Transform
+      pos: 87.5,-12.5
+      parent: 13
+  - uid: 6884
+    components:
+    - type: Transform
+      pos: 87.5,-11.5
+      parent: 13
   - uid: 7011
     components:
     - type: Transform
@@ -46840,25 +46845,10 @@ entities:
     - type: Transform
       pos: 87.5,-14.5
       parent: 13
-  - uid: 7056
-    components:
-    - type: Transform
-      pos: 88.5,-14.5
-      parent: 13
   - uid: 7057
     components:
     - type: Transform
       pos: 86.5,-14.5
-      parent: 13
-  - uid: 7058
-    components:
-    - type: Transform
-      pos: 88.5,-13.5
-      parent: 13
-  - uid: 7059
-    components:
-    - type: Transform
-      pos: 88.5,-12.5
       parent: 13
   - uid: 7060
     components:
@@ -46904,6 +46894,11 @@ entities:
     components:
     - type: Transform
       pos: 89.5,-21.5
+      parent: 13
+  - uid: 7131
+    components:
+    - type: Transform
+      pos: 88.5,-11.5
       parent: 13
   - uid: 7238
     components:
@@ -54659,13 +54654,6 @@ entities:
     - type: Transform
       pos: 136.5,-4.5
       parent: 13
-- proto: CartridgeRocket
-  entities:
-  - uid: 6885
-    components:
-    - type: Transform
-      pos: 92.40054,-8.249109
-      parent: 13
 - proto: Catwalk
   entities:
   - uid: 179
@@ -62028,22 +62016,37 @@ entities:
     - type: Transform
       pos: 11.5,3.5
       parent: 13
-- proto: ClosetEmergencyFilledRandom
+- proto: ClosetEmergencyUniversalFilled
   entities:
   - uid: 1117
     components:
     - type: Transform
       pos: 48.5,-57.5
       parent: 13
+  - uid: 1137
+    components:
+    - type: Transform
+      pos: 49.5,-62.5
+      parent: 13
   - uid: 2238
     components:
     - type: Transform
       pos: 2.5,-34.5
       parent: 13
+  - uid: 2240
+    components:
+    - type: Transform
+      pos: 2.5,-33.5
+      parent: 13
   - uid: 2242
     components:
     - type: Transform
       pos: 7.5,-46.5
+      parent: 13
+  - uid: 2243
+    components:
+    - type: Transform
+      pos: 7.5,-44.5
       parent: 13
   - uid: 2245
     components:
@@ -62065,10 +62068,25 @@ entities:
     - type: Transform
       pos: 20.5,-29.5
       parent: 13
+  - uid: 2250
+    components:
+    - type: Transform
+      pos: 21.5,-43.5
+      parent: 13
+  - uid: 2251
+    components:
+    - type: Transform
+      pos: 25.5,-51.5
+      parent: 13
   - uid: 3366
     components:
     - type: Transform
       pos: 9.5,0.5
+      parent: 13
+  - uid: 3367
+    components:
+    - type: Transform
+      pos: 11.5,0.5
       parent: 13
   - uid: 3379
     components:
@@ -62085,6 +62103,11 @@ entities:
     - type: Transform
       pos: 1.5,-12.5
       parent: 13
+  - uid: 3382
+    components:
+    - type: Transform
+      pos: 2.5,-12.5
+      parent: 13
   - uid: 4880
     components:
     - type: Transform
@@ -62100,10 +62123,20 @@ entities:
     - type: Transform
       pos: 54.5,-35.5
       parent: 13
+  - uid: 5589
+    components:
+    - type: Transform
+      pos: 56.5,-39.5
+      parent: 13
   - uid: 6790
     components:
     - type: Transform
       pos: 20.5,43.5
+      parent: 13
+  - uid: 7717
+    components:
+    - type: Transform
+      pos: 105.5,-22.5
       parent: 13
   - uid: 7718
     components:
@@ -62120,6 +62153,11 @@ entities:
     - type: Transform
       pos: 90.5,-26.5
       parent: 13
+  - uid: 7731
+    components:
+    - type: Transform
+      pos: 79.5,-25.5
+      parent: 13
   - uid: 7732
     components:
     - type: Transform
@@ -62135,15 +62173,35 @@ entities:
     - type: Transform
       pos: 111.5,0.5
       parent: 13
+  - uid: 10028
+    components:
+    - type: Transform
+      pos: 23.5,43.5
+      parent: 13
+  - uid: 14006
+    components:
+    - type: Transform
+      pos: 69.5,-55.5
+      parent: 13
   - uid: 15486
     components:
     - type: Transform
       pos: 23.5,25.5
       parent: 13
+  - uid: 15499
+    components:
+    - type: Transform
+      pos: 20.5,25.5
+      parent: 13
   - uid: 16824
     components:
     - type: Transform
       pos: 114.5,-8.5
+      parent: 13
+  - uid: 16825
+    components:
+    - type: Transform
+      pos: 114.5,-3.5
       parent: 13
   - uid: 23328
     components:
@@ -62154,6 +62212,11 @@ entities:
     components:
     - type: Transform
       pos: 100.5,17.5
+      parent: 13
+  - uid: 23330
+    components:
+    - type: Transform
+      pos: 88.5,17.5
       parent: 13
   - uid: 23332
     components:
@@ -62174,6 +62237,11 @@ entities:
     components:
     - type: Transform
       pos: 158.5,-31.5
+      parent: 13
+  - uid: 25768
+    components:
+    - type: Transform
+      pos: 158.5,-30.5
       parent: 13
   - uid: 25891
     components:
@@ -62205,6 +62273,11 @@ entities:
     - type: Transform
       pos: 133.5,7.5
       parent: 13
+  - uid: 25933
+    components:
+    - type: Transform
+      pos: 132.5,7.5
+      parent: 13
   - uid: 26088
     components:
     - type: Transform
@@ -62219,6 +62292,11 @@ entities:
     components:
     - type: Transform
       pos: 100.5,-6.5
+      parent: 13
+  - uid: 29266
+    components:
+    - type: Transform
+      pos: 71.5,-1.5
       parent: 13
   - uid: 29267
     components:
@@ -62244,98 +62322,6 @@ entities:
     components:
     - type: Transform
       pos: 40.5,25.5
-      parent: 13
-- proto: ClosetEmergencyN2FilledRandom
-  entities:
-  - uid: 1137
-    components:
-    - type: Transform
-      pos: 49.5,-62.5
-      parent: 13
-  - uid: 2240
-    components:
-    - type: Transform
-      pos: 2.5,-33.5
-      parent: 13
-  - uid: 2243
-    components:
-    - type: Transform
-      pos: 7.5,-44.5
-      parent: 13
-  - uid: 2250
-    components:
-    - type: Transform
-      pos: 21.5,-43.5
-      parent: 13
-  - uid: 2251
-    components:
-    - type: Transform
-      pos: 25.5,-51.5
-      parent: 13
-  - uid: 3367
-    components:
-    - type: Transform
-      pos: 11.5,0.5
-      parent: 13
-  - uid: 3382
-    components:
-    - type: Transform
-      pos: 2.5,-12.5
-      parent: 13
-  - uid: 5589
-    components:
-    - type: Transform
-      pos: 56.5,-39.5
-      parent: 13
-  - uid: 7717
-    components:
-    - type: Transform
-      pos: 105.5,-22.5
-      parent: 13
-  - uid: 7731
-    components:
-    - type: Transform
-      pos: 79.5,-25.5
-      parent: 13
-  - uid: 10028
-    components:
-    - type: Transform
-      pos: 23.5,43.5
-      parent: 13
-  - uid: 14006
-    components:
-    - type: Transform
-      pos: 69.5,-55.5
-      parent: 13
-  - uid: 15499
-    components:
-    - type: Transform
-      pos: 20.5,25.5
-      parent: 13
-  - uid: 16825
-    components:
-    - type: Transform
-      pos: 114.5,-3.5
-      parent: 13
-  - uid: 23330
-    components:
-    - type: Transform
-      pos: 88.5,17.5
-      parent: 13
-  - uid: 25768
-    components:
-    - type: Transform
-      pos: 158.5,-30.5
-      parent: 13
-  - uid: 25933
-    components:
-    - type: Transform
-      pos: 132.5,7.5
-      parent: 13
-  - uid: 29266
-    components:
-    - type: Transform
-      pos: 71.5,-1.5
       parent: 13
 - proto: ClosetFireFilled
   entities:
@@ -65374,7 +65360,7 @@ entities:
       pos: 9.5,-33.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -376162.97
+      secondsUntilStateChange: -376570.5
       state: Opening
   - uid: 2484
     components:
@@ -77771,7 +77757,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 26354
-      - 26381
+      - 3902
   - uid: 26365
     components:
     - type: Transform
@@ -80308,7 +80294,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 26354
-      - 26381
+      - 3902
   - uid: 26385
     components:
     - type: Transform
@@ -80318,7 +80304,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 26354
-      - 26381
+      - 3902
   - uid: 26386
     components:
     - type: Transform
@@ -80328,7 +80314,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 26354
-      - 26381
+      - 3902
   - uid: 26412
     components:
     - type: Transform
@@ -118130,7 +118116,7 @@ entities:
       parent: 13
     - type: DeviceNetwork
       deviceLists:
-      - 26381
+      - 3902
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 18159
@@ -118141,7 +118127,7 @@ entities:
       parent: 13
     - type: DeviceNetwork
       deviceLists:
-      - 26381
+      - 3902
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 18172
@@ -120978,7 +120964,7 @@ entities:
       parent: 13
     - type: DeviceNetwork
       deviceLists:
-      - 26381
+      - 3902
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 18157
@@ -120989,7 +120975,7 @@ entities:
       parent: 13
     - type: DeviceNetwork
       deviceLists:
-      - 26381
+      - 3902
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 18173
@@ -122907,7 +122893,7 @@ entities:
     - type: Transform
       pos: 46.5,28.5
       parent: 13
-- proto: GlassBoxLaserFilled
+- proto: GlassBoxLaser
   entities:
   - uid: 8594
     components:
@@ -155895,13 +155881,11 @@ entities:
       parent: 13
     - type: Stack
       count: 15
-  - uid: 6872
+  - uid: 7056
     components:
     - type: Transform
-      pos: 83.61036,-8.453815
+      pos: 83.30616,-8.196257
       parent: 13
-    - type: Stack
-      count: 15
   - uid: 11168
     components:
     - type: Transform
@@ -155983,6 +155967,11 @@ entities:
       parent: 13
 - proto: SheetPlasteel
   entities:
+  - uid: 7035
+    components:
+    - type: Transform
+      pos: 83.77491,-8.261406
+      parent: 13
   - uid: 14352
     components:
     - type: Transform
@@ -156023,13 +156012,11 @@ entities:
       parent: 13
     - type: Stack
       count: 15
-  - uid: 6870
+  - uid: 6885
     components:
     - type: Transform
-      pos: 83.26661,-8.25069
+      pos: 83.31918,-8.391705
       parent: 13
-    - type: Stack
-      count: 15
   - uid: 11167
     components:
     - type: Transform
@@ -156090,13 +156077,11 @@ entities:
       parent: 13
     - type: Stack
       count: 15
-  - uid: 6871
+  - uid: 7058
     components:
     - type: Transform
-      pos: 83.73536,-8.235065
+      pos: 83.73585,-8.391705
       parent: 13
-    - type: Stack
-      count: 15
   - uid: 11166
     components:
     - type: Transform
@@ -186521,16 +186506,6 @@ entities:
     - type: Transform
       pos: 92.48949,-18.638235
       parent: 13
-- proto: WeaponLauncherRocket
-  entities:
-  - uid: 6884
-    components:
-    - type: Transform
-      pos: 92.41617,-8.452234
-      parent: 13
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
 - proto: WeaponShotgunKammererNonLethal
   entities:
   - uid: 6901
@@ -186754,7 +186729,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -233491.48
+      secondsUntilStateChange: -233899.03
       state: Opening
   - uid: 15839
     components:
