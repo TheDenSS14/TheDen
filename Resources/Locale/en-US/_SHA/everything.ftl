@@ -11,16 +11,16 @@ contraband-examine-text-heretic = [color=red]NO ONE SHOULD HAVE THIS. SOMETHING 
 
 tiles-elevator-transition = elevator transition tile [Right Side] [PENTHOUSE]
 tiles-elevator-transition-left = elevator transition tile [Left Side] [PENTHOUSE]
-tiles-elevator-glass-0 = elevator glass #0
-tiles-elevator-glass-1 = elevator glass #1
-tiles-elevator-glass-2 = elevator glass #2
-tiles-elevator-glass-3 = elevator glass #3
-tiles-elevator-glass-4 = elevator glass #4
-tiles-elevator-glass-5 = elevator glass #5
-tiles-elevator-glass-6 = elevator glass #6
-tiles-elevator-glass-7 = elevator glass #7
-tiles-elevator-glass-8 = elevator glass #8
-tiles-elevator-glass-9 = elevator glass #9
+tiles-elevator-glass-0 = elevator glass #0 [PENTHOUSE]
+tiles-elevator-glass-1 = elevator glass #1 [PENTHOUSE]
+tiles-elevator-glass-2 = elevator glass #2 [PENTHOUSE]
+tiles-elevator-glass-3 = elevator glass #3 [PENTHOUSE]
+tiles-elevator-glass-4 = elevator glass #4 [PENTHOUSE]
+tiles-elevator-glass-5 = elevator glass #5 [PENTHOUSE]
+tiles-elevator-glass-6 = elevator glass #6 [PENTHOUSE]
+tiles-elevator-glass-7 = elevator glass #7 [PENTHOUSE]
+tiles-elevator-glass-8 = elevator glass #8 [PENTHOUSE]
+tiles-elevator-glass-9 = elevator glass #9 [PENTHOUSE]
 tiles-black = pitch black [PENTHOUSE]
 
 # Fibers

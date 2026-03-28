@@ -285,17 +285,6 @@
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
   - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.1875,-0.28125,0.15625,0.25"
-        hard: false
-        mask:
-        - MachineMask
-        layer:
-        - MachineLayer
-        density: 500
   - type: BlockMovement
 
 - type: entity

@@ -3,6 +3,10 @@
   id: SomberDoorCloset
   name: somber closet door
   description: "Gloomy steel doors concealing what is ostensibly a walk-in closet, although you shouldn't try it."
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
   components:
   - type: Storage # Duffel sized
     maxItemSize: Huge
@@ -46,6 +50,9 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalSlam
+  - type: WallMount
+    arc: 175
+  - type: Fixtures # If you specify bounding boxes here, WallMount's arc breaks and stops rotating...
 
 - type: entity
   parent: SomberDoorCloset
@@ -155,14 +162,9 @@
   - type: EntityStorageVisuals
     stateDoorOpen: open
     stateDoorClosed: closed
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.45,-0.45,0.45,0.45"
-        hard: false
-        density: 55
+  - type: WallMount
+    arc: 175
+  - type: Fixtures # If you specify bounding boxes here, WallMount's arc breaks and stops rotating...
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood

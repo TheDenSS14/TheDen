@@ -1144,8 +1144,7 @@
 - type: entity
   parent: GloomyWindoorSecureTinted
   id: GloomyWindoorSecureTintedAir
-  name: NON-AIRTIGHT] [gloomy windoor (tinted)
-  suffix: Public] [Somber
+  suffix: NON-AIRTIGHT] [Public] [Somber
   description: "A gloomy, secure windoor, designed to match everything else in this place."
   components:
   - type: Sprite
@@ -1162,6 +1161,32 @@
   components:
   - type: Sprite
     sprite: _DEN/Structures/Doors/Windoors/somberdark.rsi
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: GloomyWindoorSecureMantisLocked
+  id: GloomyWindoorSecureMantisLockedAir
+  suffix: NON-AIRTIGHT] [Mantis, Locked] [Somber
+  components:
+  - type: Label
+    currentLabel: mantis
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: GloomyWindoorSecureMantisDarkLocked
+  id: GloomyWindoorSecureMantisDarkLockedAir
+  suffix: NON-AIRTIGHT] [Mantis, Locked, Dark] [Somber
+  components:
+  - type: Label
+    currentLabel: mantis
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
   - type: Airtight
     airBlocked: false
 
@@ -1533,17 +1558,6 @@
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
   - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.1875,-0.28125,0.15625,0.25"
-        hard: false
-        mask:
-        - MachineMask
-        layer:
-        - MachineLayer
-        density: 500
   - type: BlockMovement
 
 - type: entity
@@ -1759,17 +1773,6 @@
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
   - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.1875,-0.28125,0.15625,0.25"
-        hard: false
-        mask:
-        - MachineMask
-        layer:
-        - MachineLayer
-        density: 500
   - type: BlockMovement
 
 - type: entity
