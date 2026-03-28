@@ -12,13 +12,11 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: ScarEyeRight
-  bodyPart: Face
-  markingCategory: Face #TheDen: Marking fixes
-  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Arachne, Rodentia, Feroxi, SlimePerson, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi; The Den - Canid
+  parent: BaseFaceSnoutlessMarking
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -27,8 +25,7 @@
 - type: marking
   id: ScarEyeLeft
   bodyPart: Face
-  markingCategory: Face #TheDen: Marking fixes
-  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Arachne, Rodentia, Feroxi, SlimePerson, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi; The Den - Canid
+  parent: BaseFaceSnoutlessMarking
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -36,9 +33,7 @@
 
 - type: marking
   id: ScarTopSurgeryShort
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Tajaran, Feroxi, Canid, Kitsune] # Einstein Engines - Tajaran - DeltaV Feroxi; The Den - Canid
+  parent: BaseChestMarking
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -47,9 +42,7 @@
 
 - type: marking
   id: ScarTopSurgeryLong
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Tajaran, Feroxi, Canid, Kitsune] # DeltaV Feroxi; The Den - Canid
+  parent: BaseChestMarking
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -58,9 +51,7 @@
 
 - type: marking
   id: ScarChest
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Tajaran, Feroxi, Canid, Kitsune] # Einstein Engines - Tajaran - DeltaV - Feroxi; The Den - Canid
+  parent: BaseChestMarking
   sexRestriction: [Male] #DeltaV: Splitting the scars and tattoos
   followSkinColor: true
   sprites:

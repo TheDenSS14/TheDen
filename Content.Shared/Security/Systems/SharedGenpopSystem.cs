@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Nemanja
+// SPDX-FileCopyrightText: 2026 Jakumba
 // SPDX-FileCopyrightText: 2026 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -127,7 +128,11 @@ public abstract class SharedGenpopSystem : EntitySystem
             if (!args.Silent)
                 _popup.PopupClient(Loc.GetString("genpop-prisoner-id-popup-not-served"), ent, args.User);
             args.Cancelled = true;
+            return;
         }
+
+
+        QueueDel(ent.Comp.LinkedId);
     }
 
     private bool CheckForAccess(Entity<GenpopLockerComponent> ent, EntityUid accessItem)

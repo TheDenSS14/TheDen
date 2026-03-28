@@ -1,0 +1,58 @@
+# SPDX-FileCopyrightText: 2026 Dirius77
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: moodCategory
+  id: Noospheric
+
+# Aligned
+- type: moodEffect
+  id: NoosphericAlignedGlimmerVeryLow
+  category: "Noospheric"
+  moodChange: -30
+
+- type: moodEffect
+  id: NoosphericAlignedGlimmerLow
+  category: "Noospheric"
+  moodChange: -15
+
+- type: moodEffect
+  id: NoosphericAlignedGlimmerNeutral
+  category: "Noospheric"
+  moodChange: 0
+
+- type: moodEffect
+  id: NoosphericAlignedGlimmerHigh
+  category: "Noospheric"
+  moodChange: 15
+
+- type: moodEffect
+  id: NoosphericAlignedGlimmerVeryHigh
+  category: "Noospheric"
+  moodChange: 30
+
+# Opposed
+- type: moodEffect
+  id: NoosphericOpposedGlimmerVeryLow
+  category: "Noospheric"
+  moodChange: 30
+
+- type: moodEffect
+  id: NoosphericOpposedGlimmerLow
+  category: "Noospheric"
+  moodChange: 15
+
+- type: moodEffect
+  id: NoosphericOpposedGlimmerNeutral
+  category: "Noospheric"
+  moodChange: 0
+
+- type: moodEffect
+  id: NoosphericOpposedGlimmerHigh
+  category: "Noospheric"
+  moodChange: -15
+
+- type: moodEffect
+  id: NoosphericOpposedGlimmerVeryHigh
+  category: "Noospheric"
+  moodChange: -30

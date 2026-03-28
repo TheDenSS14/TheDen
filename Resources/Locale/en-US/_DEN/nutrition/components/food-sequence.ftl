@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 Eightballll
 # SPDX-FileCopyrightText: 2026 sheepie
 #
 # SPDX-License-Identifier: MIT
@@ -56,3 +57,4 @@ food-sequence-cotton-burger-content-plushie-patty = patty
 food-sequence-cotton-burger-content-plushie-twiggy = twiggy
 food-sequence-cotton-burger-content-plushie-stu = stu
 food-sequence-cotton-burger-content-plushie-phil = normal?
+food-sequence-cotton-burger-content-plushie-inkdrop = inkdrop

@@ -111,8 +111,6 @@
     thresholds:
       0: Alive
       50: Dead
-  - type: TimedDespawn
-    lifetime: 45
   - type: MeleeWeapon
     soundHit:
       collection: MetalThud
@@ -122,6 +120,13 @@
         Pierce: 5
         Cold: 10
     animation: WeaponArcClaw
+
+- type: entity
+  id: MobLivingShadowSkia
+  parent: [MobLivingShadow]
+  components:
+  - type: TimedDespawn
+    lifetime: 45
 
 - type: entity
   id: MobSpectre
@@ -200,10 +205,6 @@
     damage:
       types:
         Heat: 100
-  - type: EmbedImmune
-    immuneTo:
-      components:
-      - FlareGunPellet
   - type: EmitSoundOnSpawn
     sound: /Audio/_DV/Effects/creepyshriek.ogg
   - type: MovementSpeedModifier

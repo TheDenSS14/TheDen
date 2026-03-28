@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 January Nelson
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: BaseItem
@@ -461,7 +462,7 @@
   parent: BaseScrapLarge
   id: ScrapGeneratorPlasmaLeaking
   name: leaking P.A.C.M.A.N. generator
-  description: An old looking P.A.C.M.A.N. generator whos plasma tanks started leaking.
+  description: An old-looking P.A.C.M.A.N. generator. Its plasma tanks have leaked all over the place. # den edit
   components:
   - type: Sprite
     sprite: Objects/Materials/Scrap/generator.rsi
@@ -479,7 +480,7 @@
   parent: BaseScrapLarge
   id: ScrapGeneratorPlasma
   name: old P.A.C.M.A.N. generator
-  description: An old looking P.A.C.M.A.N. generator. It's in very poor condition and non functional.
+  description: An old-looking P.A.C.M.A.N. generator. Visibly space-dusty, there's no way it's getting fixed. # den edit
   components:
   - type: Sprite
     sprite: Objects/Materials/Scrap/generator.rsi
@@ -495,7 +496,7 @@
   parent: BaseScrapLarge
   id: ScrapGeneratorUraniumLeaking
   name: leaking S.U.P.E.R.P.A.C.M.A.N. generator
-  description: A S.U.P.E.R.P.A.C.M.A.N. generator that appears to have had some kind of catastrophic failure. Its leaking uranium.
+  description: A S.U.P.E.R.P.A.C.M.A.N. generator that appears to have had some kind of catastrophic failure. It's leaking uranium. # den edit
   components:
   - type: Sprite
     sprite: Objects/Materials/Scrap/generator.rsi
@@ -524,7 +525,7 @@
   parent: BaseScrapLarge
   id: ScrapGeneratorUranium
   name: destroyed S.U.P.E.R.P.A.C.M.A.N. generator
-  description: A S.U.P.E.R.P.A.C.M.A.N. generator that appears to have had some kind of catastrophic failure.
+  description: A S.U.P.E.R.P.A.C.M.A.N. generator that appears to have had some kind of catastrophic failure. Not so super anymore! # den edit
   components:
   - type: Sprite
     sprite: Objects/Materials/Scrap/generator.rsi

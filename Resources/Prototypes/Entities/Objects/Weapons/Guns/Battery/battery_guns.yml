@@ -388,7 +388,11 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+    # DEN start
+      collection: GunPulsePistol
+      params:
+        variation: 0
+    # DEN end
   - type: HitscanBatteryAmmoProvider
     proto: Pulse
     fireCost: 200

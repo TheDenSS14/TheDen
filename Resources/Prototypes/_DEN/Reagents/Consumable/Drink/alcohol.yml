@@ -5,6 +5,7 @@
 # SPDX-FileCopyrightText: 2025 pocl v
 # SPDX-FileCopyrightText: 2025 pocl.v
 # SPDX-FileCopyrightText: 2026 Marcel
+# SPDX-FileCopyrightText: 2026 Sunburstschitin
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -1007,4 +1008,34 @@
         - !type:AdjustReagent
           reagent: Ethanol
           amount: 0.16
+  fizziness: 0.2
+
+- type: reagent
+  id: Kindness
+  name: reagent-name-kindness
+  parent: BaseAlcohol
+  desc: reagent-desc-kindness
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: kindness
+  color: "#a25d31"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/kindness.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 0.667
+      - !type:ChemAddMoodlet
+        moodPrototype: TempSanguine
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Kindness
+          min: 0.02
+        - !type:OrganType 
+          type: Thaven
+          shouldHave: false
   fizziness: 0.2

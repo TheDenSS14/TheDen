@@ -57,7 +57,7 @@
   parent: [ClothingBackpack, BaseFoldable]
   id: ClothingBackpackMantis
   name: mantis backpack
-  description: "A low-profile backpack for the mantis, signified by the Greek psi in electrum. The strap can be flipped to the other side."
+  description: "A low-profile backpack for the mantis, signified by the Greek psi in electrum. Designed with clips that fit your uniform perfectly, allowing the strap to be removed as desired."
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Back/Backpacks/mantis.rsi
@@ -70,16 +70,26 @@
   - type: Appearance
   - type: Foldable
     canFoldInsideContainer: true
-    foldVerbText: fold-flip-verb
-    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-straps-verb
+    unfoldVerbText: unfold-straps-verb
   - type: FoldableClothing
     foldedEquippedPrefix: flipped
+
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingBackpackMantis
+  id: ClothingBackpackMantisFlipped
+  suffix: Flipped
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
 
 - type: entity
   parent: [ClothingBackpackDuffel, BaseFoldable]
   id: ClothingBackpackDuffelMantis
   name: mantis duffel bag
-  description: "A relatively low-profile duffel bag with a braided handle for the mantis. The strap can be flipped to the other side."
+  description: "A relatively low-profile duffel bag with a braided handle for the mantis. Designed with clips that fit your uniform perfectly, allowing the strap to be removed as desired."
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Back/Duffels/mantis.rsi
@@ -92,10 +102,20 @@
   - type: Appearance
   - type: Foldable
     canFoldInsideContainer: true
-    foldVerbText: fold-flip-verb
-    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-straps-verb
+    unfoldVerbText: unfold-straps-verb
   - type: FoldableClothing
     foldedEquippedPrefix: flipped
+
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingBackpackDuffelMantis
+  id: ClothingBackpackDuffelMantisFlipped
+  suffix: Flipped
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
 
 - type: entity
   parent: ClothingBackpackSatchel
@@ -115,11 +135,21 @@
   - type: Sprite
     sprite: _DEN/Clothing/Back/Satchels/mantispurse.rsi
 
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingBackpackSatchelMantisPurse
+  id: ClothingBackpackSatchelMantisPurseFlipped
+  suffix: Flipped
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
+
 - type: entity
   parent: [ClothingBackpackMessengerBase, BaseFoldable]
   id: ClothingBackpackMessengerMantis
   name: mantis messenger bag
-  description: "A low-profile messenger bag for the mantis, within an electrum shell shaped like a watchful eye. The strap can be flipped to the other side."
+  description: "A low-profile messenger bag for the mantis, within an electrum shell shaped like a watchful eye. Designed with clips that fit your uniform perfectly, allowing the strap to be removed as desired."
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Back/Messenger/mantis.rsi
@@ -132,22 +162,32 @@
   - type: Appearance
   - type: Foldable
     canFoldInsideContainer: true
-    foldVerbText: fold-flip-verb
-    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-straps-verb
+    unfoldVerbText: unfold-straps-verb
   - type: FoldableClothing
     foldedEquippedPrefix: flipped
+
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingBackpackMessengerMantis
+  id: ClothingBackpackMessengerMantisFlipped
+  suffix: Flipped
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
 
 - type: entity
   parent: [ClothingBackpackNapsack, BaseFoldable, BaseObjectVerbsCutenessWall, BaseMantisContraband] # A roleplay toy that can carry people
   id: ClothingBackpackCoffinMantis
   suffix: DO NOT MAP # Use the Basic version instead
   name: sarcophagus
-  description: "An ornate coffin, heavy and gilded, its surface adorned with staring eyes and draped cloths. Used to haul psions away for study, therapy, or questioning. Includes a case of restraints for the stubborn ones. The straps can be flipped to the other side, but it's so heavy you can only wear it over outerwear."
+  description: "An ornate coffin, heavy and gilded, its surface adorned with staring eyes and draped cloths. Used to haul psions away for study, therapy, or questioning. Includes a case of restraints for the stubborn ones. The straps can be stowed away, but it's so heavy you can only wear it over outerwear."
   components:
   - type: Foldable
     canFoldInsideContainer: true
-    foldVerbText: fold-flip-verb
-    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-straps-verb
+    unfoldVerbText: unfold-straps-verb
   - type: FoldableClothing
     foldedEquippedPrefix: flipped
   - type: EmitSoundOnLand
@@ -221,7 +261,7 @@
   id: ClothingBackpackCoffinMantisFilled
   suffix: Filled, DO NOT MAP # Use the Basic version instead
   name: sarcophagus
-  description: "An ornate coffin, heavy and gilded, its surface adorned with staring eyes and draped cloths. Used to haul psions away for study, therapy, or questioning. The straps can be flipped to the other side, but it's so heavy you can only wear it over outerwear."
+  description: "An ornate coffin, heavy and gilded, its surface adorned with staring eyes and draped cloths. Used to haul psions away for study, therapy, or questioning. The straps can be stowed away, but it's so heavy you can only wear it over outerwear."
   components:
   - type: StorageFill
     contents:

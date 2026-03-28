@@ -504,3 +504,88 @@
   - sprite: _DEN/Mobs/Customization/Undershirt/cuffs.rsi
     state: wristcuff_thick
 
+- type: marking
+  id: BustyBreasts
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+    layers:
+      busty_breasts:
+        type:
+          !type:SkinColoring
+      busty_nipples:
+        type:
+          !type:SimpleColoring
+            color: "#f29835"
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+      state: busty_breasts
+    - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+      state: busty_nipples
+
+- type: marking
+  abstract: true
+  id: BaseBustyUndershirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+
+
+- type: marking
+  parent: BaseBustyUndershirt
+  id: BustySleeveless
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_shortsleeve
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_collar
+
+- type: marking
+  parent: BaseBustyUndershirt
+  id: BustyLongsleeve
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_longsleeve
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_collar
+
+- type: marking
+  parent: BaseBustyUndershirt
+  id: BustyWindowedTop
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_windowedtop
+
+- type: marking
+  parent: BaseBustyUndershirt
+  id: BustyBra
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_bra
+
+- type: marking
+  parent: BaseBustyUndershirt
+  id: BustySportsBra
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_sportsbra
+
+- type: marking
+  parent: BaseBustyUndershirt
+  id: BustyHalterneck
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_halterneck
+
+- type: marking
+  parent: BaseBustyUndershirt
+  id: BustyStraplessBra
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_strapless

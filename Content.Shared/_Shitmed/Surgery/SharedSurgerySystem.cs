@@ -3,6 +3,11 @@
 // SPDX-FileCopyrightText: 2024 sleepyyapril
 // SPDX-FileCopyrightText: 2025 Blitz
 // SPDX-FileCopyrightText: 2025 Spatison
+// SPDX-FileCopyrightText: 2025 Tadeo
+// SPDX-FileCopyrightText: 2025 Terkala
+// SPDX-FileCopyrightText: 2025 corresp0nd
+// SPDX-FileCopyrightText: 2025 deltanedas
+// SPDX-FileCopyrightText: 2025 taydeo
 //
 // SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 

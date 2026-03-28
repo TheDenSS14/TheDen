@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2026 Marcel
+# SPDX-FileCopyrightText: 2026 Sunburstschitin
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -120,3 +121,6 @@ reagent-desc-vodkacheers = A crisp cherry flavored cocktail.
 
 reagent-name-chainmail = chainmail
 reagent-desc-chainmail = A bitter bite, served in a dark oak tankard. Only for the brave dungeon delvers.
+
+reagent-name-kindness = kindness
+reagent-desc-kindness = A fungal sister-drink to Bad, this thaven offering can be seen as insult or succour, depending on the circumstance. Small effervescent crystals mollify the sharp, organic flavor over time.

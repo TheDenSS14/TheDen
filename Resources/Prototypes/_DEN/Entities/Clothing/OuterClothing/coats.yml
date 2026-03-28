@@ -26,16 +26,48 @@
   - type: FoldableClothing
     foldedEquippedPrefix: flipped
 
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingOuterCoatMantisAiry
+  id: ClothingOuterCoatMantisAiryFlipped
+  suffix: Flipped
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
+
 - type: entity
-  parent: ClothingOuterCoatMantis
+  parent: [ClothingOuterCoatMantis, BaseFoldable]
   id: ClothingOuterCoatMantisOrnate
   name: ornate mantis waistplate # It's outerwear by design, not a belt
-  description: "A reinforced wrap fitted with a heavy Greek psi, built to protect your middle."
+  description: "A reinforced wrap fitted with a heavy Greek psi, built to protect your middle. You can fold the top down further, if you like."
   components:
   - type: Sprite
     sprite: _DEN/Clothing/OuterClothing/Coats/mantis_jacket_ornate.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-folded
+      map: ["foldedLayer"]
+      visible: false
   - type: Clothing
     sprite: _DEN/Clothing/OuterClothing/Coats/mantis_jacket_ornate.rsi
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-verb
+    unfoldVerbText: unfold-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded
+
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingOuterCoatMantisOrnate
+  id: ClothingOuterCoatMantisOrnateFolded
+  suffix: Lowered
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: folded
 
 - type: entity
   parent: ClothingOuterStorageFoldableBase
