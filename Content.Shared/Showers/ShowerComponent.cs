@@ -21,6 +21,15 @@ namespace Content.Shared.Showers
         [DataField, AutoNetworkedField]
         public bool ToggleShower;
 
+        // DEN start
+
+        /// <summary>
+        /// What state should the shower be on map init?
+        /// </summary>
+        [DataField]
+        public ShowerStartupState StartupState = ShowerStartupState.Random;
+        // DEN end
+
         [DataField("enableShowerSound")]
         public SoundSpecifier EnableShowerSound = new SoundPathSpecifier("/Audio/Ambience/Objects/shower_enable.ogg");
 
@@ -44,5 +53,15 @@ namespace Content.Shared.Showers
         Off,
         On
     }
+
+    // DEN start
+    [Serializable, NetSerializable]
+    public enum ShowerStartupState : byte
+    {
+        Off,
+        On,
+        Random
+    }
+    // DEN end
 }
 
