@@ -69,7 +69,7 @@
         useSound:
           path: /Audio/Items/Culinary/chop.ogg
         changeSound:
-          path: /Audio/_Impstation/Items/toolslap.ogg
+          collection: ToolSlap
           params:
             pitch: 0.829
       - behavior: Cutting
@@ -79,7 +79,7 @@
         useSound:
           path: /Audio/Items/wirecutter.ogg
         changeSound:
-          path: /Audio/_Impstation/Items/toolslap.ogg
+          collection: ToolSlap
           params:
             pitch: 0.857
       - behavior: Pulsing
@@ -87,7 +87,7 @@
           sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
           state: omnitool-pulsing
         changeSound:
-          path: /Audio/_Impstation/Items/toolslap.ogg
+          collection: ToolSlap
           params:
             pitch: 0.886
       - behavior: Screwing
@@ -97,7 +97,7 @@
         useSound:
           collection: Screwdriver
         changeSound:
-          path: /Audio/_Impstation/Items/toolslap.ogg
+          collection: ToolSlap
           params:
             pitch: 0.914
       - behavior: Prying
@@ -107,7 +107,7 @@
         useSound:
           path: /Audio/Items/crowbar.ogg
         changeSound:
-          path: /Audio/_Impstation/Items/toolslap.ogg
+          collection: ToolSlap
           params:
             pitch: 0.943
       - behavior: Anchoring
@@ -117,7 +117,7 @@
         useSound:
           path: /Audio/Items/ratchet.ogg
         changeSound:
-          path: /Audio/_Impstation/Items/toolslap.ogg
+          collection: ToolSlap
           params:
             pitch: 0.971
   - type: MeleeWeapon
@@ -139,7 +139,7 @@
     malus: 0.225
   - type: NetworkConfigurator
     soundSwitchMode:
-      path: /Audio/_Impstation/Items/toolslap.ogg
+      collection: ToolSlap
   - type: ActivatableUI
     key: enum.NetworkConfiguratorUiKey.List
     inHandsOnly: true
