@@ -42,7 +42,7 @@
   components:
   - type: Sprite
     sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
-    state: omnitool-snipping
+    state: omnitool-slicing
   - type: Item
     sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
     storedSprite:
@@ -55,13 +55,23 @@
     - Belt
   - type: Tool
     qualities:
-      - Cutting
-    speedModifier: 1.0 # Half the size of Omnitool, so it's slower - same speed as ToolDebug
-    useSound: /Audio/Items/wirecutter.ogg
+      - Slicing
+    speedModifier: 1.0 # It feels criminal to make it faster than this since it does so many things
+    path: /Audio/Items/Culinary/chop.ogg
   - type: ToolTileCompatible
   - type: MultipleTool
     statusShowBehavior: true
-    entries: # Rising pitches as you cycle through, between the network configurators tones
+    entries: # Rising pitches as you cycle through, spaced evenly among the network configurators tones
+      - behavior: Slicing
+        sprite:
+          sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+          state: omnitool-slicing
+        useSound:
+          path: /Audio/Items/Culinary/chop.ogg
+        changeSound:
+          path: /Audio/_Impstation/Items/toolslap.ogg
+          params:
+            pitch: 0.829
       - behavior: Cutting
         sprite:
           sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
@@ -71,7 +81,7 @@
         changeSound:
           path: /Audio/_Impstation/Items/toolslap.ogg
           params:
-            pitch: 0.966
+            pitch: 0.857
       - behavior: Pulsing
         sprite:
           sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
@@ -79,7 +89,7 @@
         changeSound:
           path: /Audio/_Impstation/Items/toolslap.ogg
           params:
-            pitch: 0.833
+            pitch: 0.886
       - behavior: Screwing
         sprite:
           sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
@@ -89,7 +99,7 @@
         changeSound:
           path: /Audio/_Impstation/Items/toolslap.ogg
           params:
-            pitch: 0.866
+            pitch: 0.914
       - behavior: Prying
         sprite:
           sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
@@ -99,7 +109,7 @@
         changeSound:
           path: /Audio/_Impstation/Items/toolslap.ogg
           params:
-            pitch: 0.9
+            pitch: 0.943
       - behavior: Anchoring
         sprite:
           sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
@@ -109,7 +119,7 @@
         changeSound:
           path: /Audio/_Impstation/Items/toolslap.ogg
           params:
-            pitch: 0.933
+            pitch: 0.971
   - type: MeleeWeapon
     wideAnimationRotation: -135
     attackRate: 0.8
