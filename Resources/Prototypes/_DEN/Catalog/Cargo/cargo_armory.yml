@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2026 GWDYMT
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: cargoProduct
+  id: ArmoryDerringer
+  icon:
+    sprite: _DEN/Objects/Weapons/Guns/Pistols/derringer.rsi
+    state: icon
+  product: CrateArmoryDerringer
+  cost: 1400
+  category: Armory
+  group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity

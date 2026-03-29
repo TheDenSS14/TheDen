@@ -39,7 +39,6 @@
   rules:
     - BasicRoundstartVariation
     - MoreTraitor
-    - Conspirators
     - Thief
     - SubGamemodesRule
     - LavalandStormScheduler # Lavaland Change
@@ -62,7 +61,8 @@
   - conspirator
   name: conspiracy-title
   description: conspiracy-description
-  showInVote: false # secret
+  showInVote: true
+  highDanger: true
   rules:
   - Conspirators
   - BasicRoundstartVariation

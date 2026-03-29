@@ -1,0 +1,38 @@
+- type: entity
+  id: SupermatterDelamEventScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BasicStationEventScheduler
+#    scheduledGameRules: !type:NestedSelector
+#      tableId: SupermatterDelamEventsTable
+
+# - type: entityTable
+#   id: SupermatterDelamEventsTable
+#   table: !type:AllSelector # don't get too goofy with these. please? also try to be nice to engineers, they got enough going on
+#     children:
+#     # basic weirdness
+#     - id: AnomalySpawn
+#     - id: GasLeak
+#     - id: IonStorm
+#     - id: PowerGridCheck
+#     - id: SolarFlare
+#     # supermatter specials
+#     - id: SupermatterSpiderSpawn
+#
+# - type: entity
+#   id: SupermatterSpiderSpawn
+#   parent: BaseStationEventShortDelay
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: StationEvent
+#     earliestStart: 20
+#     minimumPlayers: 15
+#     weight: 5
+#     duration: 60
+#   - type: VentCrittersRule
+#     table: !type:GroupSelector
+#       children:
+#       - id: MobSupermatterSpider
+
+# this would require the modernization of BasicStationEventScheduler to be ported which is out of scope of this pr

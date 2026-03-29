@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2026 Marcel
+# SPDX-FileCopyrightText: 2026 Sunburstschitin
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -522,3 +523,17 @@
       amount: 1
   products:
     Tea: 4
+
+- type: reaction
+  id: Kindness
+  reactants:
+    SpaceDrugs:
+      amount: 1
+    Iron:
+      amount: 1
+    Sap:
+      amount: 2
+    Tea:
+      amount: 2
+  products:
+      Kindness: 6

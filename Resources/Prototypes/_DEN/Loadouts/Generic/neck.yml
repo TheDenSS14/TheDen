@@ -6,7 +6,7 @@
 # SPDX-FileCopyrightText: 2026 Alex C
 # SPDX-FileCopyrightText: 2026 meatsmall
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: loadout
   id: LoadoutNeckVetCone
@@ -114,7 +114,7 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutNeck
-    
+
 - type: loadout
   id: LoadoutClothingNeckLoopScarf
   category: Neck
@@ -135,6 +135,17 @@
   customColorTint: true
   items:
   - ClothingNeckMantleDraped
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckCloakMagicianCape
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+  - ClothingNeckCloakMagicianCape
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutNeck

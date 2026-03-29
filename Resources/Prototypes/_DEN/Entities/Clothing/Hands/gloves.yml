@@ -6,7 +6,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingHandsBase
@@ -99,6 +99,7 @@
   - type: FoldableClothing
     foldedEquippedPrefix: folded
   - type: Butcherable # Butchering it makes the right sleeve foldable instead
+    butcherDelay: 0.5
     butcheringType: Knife
     spawned:
     - id: ClothingHandsGlovesMantisAiryTailored
@@ -116,10 +117,14 @@
   - type: Clothing
     sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_airy_tailored.rsi
   - type: Butcherable # Butchering it makes the left sleeve foldable again
+    butcherDelay: 0.5
     butcheringType: Knife
     spawned:
     - id: ClothingHandsGlovesMantisAiry
       amount: 1
+  - type: Tag
+    tags:
+    - MantisBeltStorable # So it doesn't appear in the chameleon list twice
 
 - type: entity
   parent: ClothingHandsGlovesMantis
@@ -159,6 +164,16 @@
   - type: FoldableClothing
     foldedEquippedPrefix: flipped
 
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingHandsGlovesMantisOrnate
+  id: ClothingHandsGlovesMantisOrnateFlipped
+  suffix: Flipped
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
+
 - type: entity
   parent: ClothingHandsGlovesMantis
   id: ClothingHandsGlovesMantisChains
@@ -169,6 +184,8 @@
     sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_chains.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Hands/Gloves/mantis_gloves_chains.rsi
+  - type: Item
+    size: Tiny
   - type: Fiber
     fiberColor: fibers-gold
 

@@ -12,7 +12,7 @@
 # SPDX-FileCopyrightText: 2025 crekulon
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: species
   id: Arachnid
@@ -37,6 +37,7 @@
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
     Head: MobArachnidHead
+    Face: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking # Imp - They have hair options now
     Underwear: MobHumanoidAnyMarking
@@ -80,7 +81,7 @@
       required: true
       defaultMarkings: [ ArachnidAppendagesDefault ]
     HeadTop:
-      points: 1
+      points: 6
       required: false
     HeadSide:
       points: 6

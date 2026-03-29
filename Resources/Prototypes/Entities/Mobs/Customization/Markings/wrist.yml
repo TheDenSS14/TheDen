@@ -1,18 +1,17 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Tonk-GCR <190437025+Tonk-GCR@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tonk-GCR
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Aikakakah
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: WristBraceletRight
-  bodyPart: RHand
-  markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseRHandMarking
   coloring:
     default:
       type:
@@ -25,9 +24,7 @@
 # Dionae don't have left wrist markings because the markings are currently blocked by their body.
 - type: marking
   id: WristBraceletLeft
-  bodyPart: LHand
-  markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseLHandMarking
   coloring:
     default:
       type:
@@ -39,9 +36,7 @@
 
 - type: marking
   id: WristBraceletArmRight
-  bodyPart: RArm
-  markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseRArmMarking
   coloring:
     default:
       type:
@@ -53,9 +48,7 @@
 
 - type: marking
   id: WristBraceletArmLeft
-  bodyPart: LArm
-  markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseLArmMarking
   coloring:
     default:
       type:
@@ -67,9 +60,7 @@
 
 - type: marking
   id: WristWatchRight
-  bodyPart: RHand
-  markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseRHandMarking
   coloring:
     default:
       type:
@@ -81,9 +72,7 @@
 
 - type: marking
   id: WristWatchLeft
-  bodyPart: LHand
-  markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseLHandMarking
   coloring:
     default:
       type:
@@ -95,9 +84,7 @@
 
 - type: marking
   id: WristWatchSilverRight
-  bodyPart: RHand
-  markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseRHandMarking
   coloring:
     default:
       type:
@@ -109,9 +96,7 @@
 
 - type: marking
   id: WristWatchSilverLeft
-  bodyPart: LHand
-  markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseLHandMarking
   coloring:
     default:
       type:
@@ -123,9 +108,7 @@
 
 - type: marking
   id: WristWatchGoldRight
-  bodyPart: RHand
-  markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseRHandMarking
   coloring:
     default:
       type:
@@ -137,9 +120,7 @@
 
 - type: marking
   id: WristWatchGoldLeft
-  bodyPart: LHand
-  markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseLHandMarking
   coloring:
     default:
       type:
@@ -151,9 +132,7 @@
 
 - type: marking
   id: WristWatchHoloRight
-  bodyPart: RHand
-  markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseRHandMarking
   coloring:
     default:
       type:
@@ -165,9 +144,7 @@
 
 - type: marking
   id: WristWatchHoloLeft
-  bodyPart: LHand
-  markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseLHandMarking
   coloring:
     default:
       type:
@@ -179,9 +156,7 @@
 
 - type: marking
   id: WristWatchLeatherRight
-  bodyPart: RHand
-  markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseRHandMarking
   coloring:
     default:
       type:
@@ -193,9 +168,7 @@
 
 - type: marking
   id: WristWatchLeatherLeft
-  bodyPart: LHand
-  markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseLHandMarking
   coloring:
     default:
       type:
@@ -207,9 +180,7 @@
 
 - type: marking
   id: WristWatchColorableRight
-  bodyPart: RHand
-  markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseRHandMarking
   coloring:
     default:
       type:
@@ -223,9 +194,7 @@
 
 - type: marking
   id: WristWatchColorableLeft
-  bodyPart: LHand
-  markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran, Canid, Kitsune] # The Den - Canid
+  parent: BaseLHandMarking
   coloring:
     default:
       type:

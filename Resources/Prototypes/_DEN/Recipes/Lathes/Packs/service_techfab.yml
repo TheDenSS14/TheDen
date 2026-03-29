@@ -4,6 +4,7 @@
 # SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2026 Kellaris
+# SPDX-FileCopyrightText: 2026 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -11,6 +12,11 @@
 # There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
 
 - type: latheRecipePack
+  parent:
+  - ServiceTechFabStaticDishwareDen
+  - ServiceTechFabStaticJanitorialDen
+  - ServiceTechFabStaticLightsDen
+  - ServiceTechFabStaticMiscellanyDen
   id: ServiceTechFabStaticAwfulDen
   recipes:
   - HandheldStationMap
@@ -77,3 +83,49 @@
   - MassMediaCircuitboard
   - JukeboxCircuitBoard
   - FatExtractorMachineCircuitboard
+
+- type: latheRecipePack
+  id: ServiceTechFabStaticDishwareDen
+  recipes:
+  - DrinkMug
+  - DrinkMugMetal
+  - DrinkGlass
+  - DrinkShotGlass
+  - DrinkGlassCoupeShaped
+  - FoodPlate
+  - FoodPlateSmall
+  - FoodPlatePlastic
+  - FoodPlateSmallPlastic
+  - FoodBowlBig
+  - FoodPlateTin
+  - FoodPlateMuffinTin
+  - FoodKebabSkewer
+  - IceCreamBowl
+
+- type: latheRecipePack
+  id: ServiceTechFabStaticJanitorialDen
+  recipes:
+  - Mousetrap
+  - TrashBag
+
+- type: latheRecipePack
+  id: ServiceTechFabStaticLightsDen
+  recipes:
+  - LightReplacer
+  - LightTube
+  - LedLightTube
+  - SodiumLightTube
+  - ExteriorLightTube
+  - UvLightTube
+  - LightBulb
+  - LedLightBulb
+  - DimLightBulb
+  - WarmLightBulb
+  - ColdLightBulb
+
+- type: latheRecipePack
+  id: ServiceTechFabStaticMiscellanyDen
+  recipes:
+  - FreezerElectronics
+  - HoloprojectorNSFW
+  - HoloprojectorPrivate

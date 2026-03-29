@@ -19,10 +19,11 @@
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 crazybrain23
 // SPDX-FileCopyrightText: 2025 Eris
+// SPDX-FileCopyrightText: 2025 Terkala
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 // SPDX-FileCopyrightText: 2026 Jakumba
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server._Harmony.GameTicking.Rules.Components;
 using Content.Server.Administration.Commands;
@@ -34,7 +35,6 @@ using Content.Shared.Administration;
 using Content.Shared.Database;
 using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
-using Content.Shared.Silicon.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -45,6 +45,7 @@ namespace Content.Server.Administration.Systems;
 public sealed partial class AdminVerbSystem
 {
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
+    // [Dependency] private readonly ZombieTumorOrganSystem _zombieTumor = default!;
     [Dependency] private readonly ZombieSystem _zombie = default!;
 
     private static readonly EntProtoId DefaultTraitorRule = "Traitor";
@@ -97,13 +98,15 @@ public sealed partial class AdminVerbSystem
             Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/Actions/zombie-turn.png")),
             Act = () =>
             {
+                // Give them a tumor infection instead of immediately zombifying
+                // The tumor will progress normally and eventually zombify them
+                // _zombieTumor.InfectEntity(args.Target);
                 _zombie.ZombifyEntity(args.Target);
             },
             Impact = LogImpact.High,
             Message = Loc.GetString("admin-verb-make-zombie"),
         };
         args.Verbs.Add(zombie);
-
 
         Verb nukeOp = new()
         {

@@ -1,8 +1,9 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 lathiatt
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: loadout
   id: LoadoutServiceJumpsuitChef
@@ -274,3 +275,39 @@
         - Chef
   items:
     - ClothingOuterApronCuteChef
+
+- type: loadout
+  id: LoadoutServiceButchCleaver
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ButchCleaver
+
+- type: loadout
+  id: LoadoutServiceKitchenKnife
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - KitchenKnife
+
+- type: loadout
+  id: LoadoutServiceRollingPin
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - RollingPin

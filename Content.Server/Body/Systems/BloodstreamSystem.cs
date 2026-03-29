@@ -33,6 +33,7 @@
 // SPDX-FileCopyrightText: 2025 ash lea
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 pocl.v
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -300,8 +301,19 @@ public sealed partial class BloodstreamSystem : EntitySystem
         if (ent.Comp.MaxBleedAmount == 0)
             return;
 
-        // Shows profusely bleeding at half the max bleed rate.
-        if (ent.Comp.BleedAmount > ent.Comp.MaxBleedAmount / 2)
+        // Shows massively bleeding at 0.75x the max bleed rate. (wizden edit, better health examine)
+        if (ent.Comp.BleedAmount > ent.Comp.MaxBleedAmount * 0.75f)
+        {
+            // Floof: allow empty messages for basic examine
+            if (!args.Message.IsEmpty)
+                args.Message.PushNewline();
+            if (!args.IsSelfAware)
+                args.Message.AddMarkupPermissive(Loc.GetString("bloodstream-component-massive-bleeding", ("target", ent.Owner)));
+            else
+                args.Message.AddMarkupPermissive(Loc.GetString("bloodstream-component-selfaware-massive-bleeding"));
+        }
+        // Shows profusely bleeding message when bleeding above half the max rate, but less than massively. (wizden edit, better health examine)
+        else if (ent.Comp.BleedAmount > ent.Comp.MaxBleedAmount * 0.5f)
         {
             // Floof: allow empty messages for basic examine
             if (!args.Message.IsEmpty)
@@ -311,8 +323,8 @@ public sealed partial class BloodstreamSystem : EntitySystem
             else
                 args.Message.AddMarkupPermissive(Loc.GetString("bloodstream-component-selfaware-profusely-bleeding"));
         }
-        // Shows bleeding message when bleeding, but less than profusely.
-        else if (ent.Comp.BleedAmount > 0)
+        // Shows bleeding message when bleeding above 0.25x the max rate, but less than half the max. (wizden edit, better health examine)
+        else if (ent.Comp.BleedAmount > ent.Comp.MaxBleedAmount * 0.25f)
         {
             // Floof: allow empty messages for basic examine
             if (!args.Message.IsEmpty)
@@ -321,6 +333,17 @@ public sealed partial class BloodstreamSystem : EntitySystem
                 args.Message.AddMarkupPermissive(Loc.GetString("bloodstream-component-bleeding", ("target", ent.Owner)));
             else
                 args.Message.AddMarkupPermissive(Loc.GetString("bloodstream-component-selfaware-bleeding"));
+        }
+        // Shows bleeding message when bleeding above 0.25x the max rate, but less than half the max. (wizden edit, better health examine)
+        else if (ent.Comp.BleedAmount > 0)
+        {
+            // Floof: allow empty messages for basic examine
+            if (!args.Message.IsEmpty)
+                args.Message.PushNewline();
+            if (!args.IsSelfAware)
+                args.Message.AddMarkupPermissive(Loc.GetString("bloodstream-component-slight-bleeding", ("target", ent.Owner)));
+            else
+                args.Message.AddMarkupPermissive(Loc.GetString("bloodstream-component-selfaware-slight-bleeding"));
         }
 
         // If the mob's blood level is below the damage threshhold, the pale message is added.

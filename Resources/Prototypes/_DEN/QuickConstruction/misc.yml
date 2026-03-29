@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2026 Alex C
+#
+# SPDX-License-Identifier: MIT
+
+- type: quickConstructionCategory
+  id: MetalRod
+  constructionEntries:
+  - Grille
+  - Table
+  - Catwalk
+  categoryEntries:
+  - Railings
+
+- type: quickConstructionCategory
+  id: Railings
+  name: quickconstruction-category-railing
+  icon: {sprite: Structures/Walls/railing.rsi, state: side}
+  constructionEntries:
+  - Railing
+  - RailingRound
+  - RailingCorner
+  - RailingCornerSmall
+
+- type: quickConstructionCategory
+  id: Cult
+  constructionEntries:
+  - CultPylon
+  - CultFactoryArchives
+  - CultFactoryForge
+  - CultFactoryAltar
+  - CultGirder
+  - CultDoor
+

@@ -8,7 +8,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: species
   id: Rodentia
@@ -38,6 +38,7 @@
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
     Head: MobRodentiaHead
+    Face: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
@@ -72,44 +73,44 @@
       required: true
       defaultMarkings: [ RodentiaTailDefault ]
     Head:
-      points: 1
+      points: 6
       required: false
     RightLeg:
-      points: 2
+      points: 6
       required: false
     RightFoot:
-      points: 2
+      points: 6
       required: false
     LeftLeg:
-      points: 2
+      points: 6
       required: false
     LeftFoot:
-      points: 2
+      points: 6
       required: false
     RightArm:
-      points: 2
+      points: 6
       required: false
     RightHand:
-      points: 2
+      points: 6
       required: false
     LeftArm:
-      points: 2
+      points: 6
       required: false
     LeftHand:
-      points: 2
+      points: 6
       required: false
     Snout:
       points: 1
       required: false
     HeadTop:
-      points: 1
+      points: 6
       required: true
       defaultMarkings: [ RodentiaHeadTopEarDefault ]
     HeadSide:
-      points: 1
+      points: 6
       required: false
     Chest:
-      points: 1
+      points: 6
       required: false
     Genitals:
       points: 1

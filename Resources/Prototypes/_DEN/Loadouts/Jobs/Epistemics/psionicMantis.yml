@@ -461,6 +461,20 @@
     - ClothingHeadHoodMantisDark
 
 - type: loadout
+  id: LoadoutPsionicMantisHeadHoodMantisDarkFolded
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingHeadHoodMantisDarkFolded
+
+- type: loadout
   id: LoadoutPsionicMantisHeadMantisFezOrnate
   category: JobsEpistemicsPsionicMantis
   cost: 0

@@ -4,7 +4,7 @@
 # SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase]
@@ -112,6 +112,7 @@
     - id: CigPackMnemolith
     - id: FlippoLighterMantis
     - id: SomberChairLeatherMantisWheelchairFolded
+    - id: ClothingNeckMantisPendulum
   - type: Foldable
     folded: true
   - type: Clothing

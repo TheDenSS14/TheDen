@@ -82,6 +82,7 @@
   id: LoadoutItemLewdAvianDildo
   category: ItemsLewd
   cost: 2
+  customColorTint: true # DEN
   items:
   - AvianDildo
   requirements:
@@ -92,26 +93,29 @@
   id: LoadoutItemLewdCanineDildo
   category: ItemsLewd
   cost: 2
+  customColorTint: true # DEN
   items:
   - CanineDildo
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutLewdDildo
 
-- type: loadout
-  id: LoadoutItemLewdCanineDildoRed
-  category: ItemsLewd
-  cost: 2
-  items:
-  - CanineDildoRed
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutLewdDildo
+# DEN Comment out
+#- type: loadout
+#  id: LoadoutItemLewdCanineDildoRed
+#  category: ItemsLewd
+#  cost: 2
+#  items:
+#  - CanineDildoRed
+#  requirements:
+#  - !type:CharacterItemGroupRequirement
+#    group: LoadoutLewdDildo
 
 - type: loadout
   id: LoadoutItemLewdHorseDildo
   category: ItemsLewd
   cost: 2
+  customColorTint: true # DEN
   items:
   - HorseDildo
   requirements:
@@ -122,6 +126,7 @@
   id: LoadoutItemLewdDragonDildo
   category: ItemsLewd
   cost: 2
+  customColorTint: true # DEN
   items:
   - DragonDildo
   requirements:
@@ -132,6 +137,7 @@
   id: LoadoutItemLewdNormalDildo
   category: ItemsLewd
   cost: 2
+  customColorTint: true # DEN
   items:
   - NormalDildo
   requirements:
@@ -142,6 +148,7 @@
   id: LoadoutItemLewdTentacleDildo
   category: ItemsLewd
   cost: 2
+  customColorTint: true # DEN
   items:
   - TentacleDildo
   requirements:
@@ -152,6 +159,7 @@
   id: LoadoutItemLewdDoubleDildo
   category: ItemsLewd
   cost: 2
+  customColorTint: true # DEN
   items:
   - DoubleDildo
   requirements:

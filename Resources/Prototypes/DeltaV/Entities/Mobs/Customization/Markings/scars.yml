@@ -4,9 +4,7 @@
 
 - type: marking
   id: ScarChestFemale #DeltaV: Splitting the scars and tattoos
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] #Einstein Engines - Felinid, Oni
+  parent: BaseChestMarking #TheDen
   sexRestriction: [Female] #DeltaV: Splitting the scars and tattoos
   followSkinColor: true
   sprites:

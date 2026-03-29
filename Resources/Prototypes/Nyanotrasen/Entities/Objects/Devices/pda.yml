@@ -11,6 +11,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Steven Higginbotham
+# SPDX-FileCopyrightText: 2026 Jakumba
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -21,7 +22,7 @@
   description: Clear, so you can make sure there's nothing being smuggled inside.
   components:
   - type: Pda
-    id: PrisonerIDCard
+    id: BasePrisonerIDCard # Den
     state: pda-clear
   - type: Icon
     state: pda-clear

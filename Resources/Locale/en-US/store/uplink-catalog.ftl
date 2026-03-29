@@ -588,6 +588,9 @@ uplink-backpack-syndicate-desc = Lightweight explosion-proof а backpack for hol
 uplink-home-run-bat-name = Home Run Bat
 uplink-home-run-bat-desc = Rigged bat pre-coated in blood for Syndicate tee-ball practice. Launch your foes!
 
+uplink-cameraBug-name = Camera bug
+uplink-cameraBug-desc = A portable device that allows you to view the station's cameras.
+
 uplink-combat-bakery-name = Combat Bakery Kit
 uplink-combat-bakery-desc = A kit of clandestine baked weapons. Contains a baguette sword, a pair of throwing croissants, and a syndicate microwave board for making more. Once the job is done, eat the evidence.
 
