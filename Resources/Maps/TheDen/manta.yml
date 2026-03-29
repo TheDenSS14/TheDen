@@ -1,16 +1,11 @@
-# SPDX-FileCopyrightText: 2025 metalgearsloth
-# SPDX-FileCopyrightText: 2025 sheepie
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 meta:
   format: 7
   category: Map
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 01/27/2026 18:05:32
-  entityCount: 27941
+  time: 03/29/2026 17:26:59
+  entityCount: 27946
 maps:
 - 1
 grids:
@@ -11500,7 +11495,7 @@ entities:
       pos: 76.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -96061.016
+      secondsUntilStateChange: -96372.95
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -12839,16 +12834,6 @@ entities:
     - type: Transform
       pos: 27.5,12.5
       parent: 2
-  - uid: 1022
-    components:
-    - type: Transform
-      pos: 16.5,9.5
-      parent: 2
-  - uid: 5255
-    components:
-    - type: Transform
-      pos: 20.5,10.5
-      parent: 2
   - uid: 23129
     components:
     - type: Transform
@@ -12965,7 +12950,7 @@ entities:
       pos: 2.5,27.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -101050.13
+      secondsUntilStateChange: -101362.07
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12976,6 +12961,18 @@ entities:
     components:
     - type: Transform
       pos: -10.5,-8.5
+      parent: 2
+- proto: AirlockParamedicGlassLocked
+  entities:
+  - uid: 1022
+    components:
+    - type: Transform
+      pos: 20.5,10.5
+      parent: 2
+  - uid: 1584
+    components:
+    - type: Transform
+      pos: 16.5,9.5
       parent: 2
 - proto: AirlockProsecutorLocked
   entities:
@@ -39169,11 +39166,6 @@ entities:
     - type: Transform
       pos: -69.5,30.5
       parent: 2
-  - uid: 1584
-    components:
-    - type: Transform
-      pos: -29.5,-15.5
-      parent: 2
   - uid: 1595
     components:
     - type: Transform
@@ -40043,6 +40035,11 @@ entities:
     components:
     - type: Transform
       pos: -64.5,51.5
+      parent: 2
+  - uid: 5255
+    components:
+    - type: Transform
+      pos: -29.5,-15.5
       parent: 2
   - uid: 5327
     components:
@@ -45998,6 +45995,16 @@ entities:
     components:
     - type: Transform
       pos: -29.5,-14.5
+      parent: 2
+  - uid: 27945
+    components:
+    - type: Transform
+      pos: -31.5,-13.5
+      parent: 2
+  - uid: 27946
+    components:
+    - type: Transform
+      pos: -32.5,-13.5
       parent: 2
 - proto: CableHVStack
   entities:
@@ -64537,6 +64544,11 @@ entities:
     - type: Transform
       pos: -29.5,-29.5
       parent: 2
+  - uid: 27543
+    components:
+    - type: Transform
+      pos: -29.5,-28.5
+      parent: 2
 - proto: CrateFilledSpawner
   entities:
   - uid: 6153
@@ -64752,6 +64764,16 @@ entities:
     components:
     - type: Transform
       pos: -32.5,-19.5
+      parent: 2
+  - uid: 27544
+    components:
+    - type: Transform
+      pos: -47.5,-3.5
+      parent: 2
+  - uid: 27944
+    components:
+    - type: Transform
+      pos: -47.5,-4.5
       parent: 2
 - proto: CrateMedicalSecure
   entities:
@@ -65483,7 +65505,7 @@ entities:
       pos: 65.5,-16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -113374.61
+      secondsUntilStateChange: -113686.55
       state: Closing
   - uid: 23609
     components:
@@ -65491,7 +65513,7 @@ entities:
       pos: 65.5,-17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -113373.67
+      secondsUntilStateChange: -113685.61
       state: Closing
   - uid: 23610
     components:
@@ -65499,7 +65521,7 @@ entities:
       pos: 65.5,-18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -113373.07
+      secondsUntilStateChange: -113685.01
       state: Closing
 - proto: CurtainsWhiteOpen
   entities:
@@ -157538,6 +157560,13 @@ entities:
     - type: Transform
       pos: 58.51378,-29.43339
       parent: 2
+- proto: Turnstile
+  entities:
+  - uid: 9670
+    components:
+    - type: Transform
+      pos: -40.5,22.5
+      parent: 2
 - proto: TurnstileGenpopEnter
   entities:
   - uid: 9672
@@ -157548,11 +157577,6 @@ entities:
       parent: 2
 - proto: TurnstileGenpopLeave
   entities:
-  - uid: 9670
-    components:
-    - type: Transform
-      pos: -40.5,22.5
-      parent: 2
   - uid: 9686
     components:
     - type: Transform
@@ -175488,7 +175512,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -82073.26
+      secondsUntilStateChange: -82385.195
       state: Opening
 - proto: WindoorKitchenLocked
   entities:
