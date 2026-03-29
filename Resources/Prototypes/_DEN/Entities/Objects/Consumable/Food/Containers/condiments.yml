@@ -85,9 +85,8 @@
 - type: entity
   parent: [ BaseFoodShaker, BasePsionic ]
   id: BaseFoodShakerSomber
-  abstract: true
-  name: empty shaker
-  suffix: Somber
+  name: eidolite shaker
+  suffix: Somber, Empty
   description: "A crystal shaker for spices."
   components:
   - type: Destructible

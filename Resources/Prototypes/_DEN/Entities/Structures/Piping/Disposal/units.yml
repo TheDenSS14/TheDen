@@ -10,6 +10,32 @@
     sprite: _DEN/Structures/Piping/somberdisposal.rsi
 
 - type: entity
+  parent: DisposalUnitSomber
+  id: DisposalUnitSomberCounterside
+  name: compact somber disposal unit
+  suffix: Place On Counters
+  description: "A compact pneumatic waste disposal unit. There is no reason for it to be this ornate, though it does fit nicely into the counter."
+  components:
+  - type: Sprite
+    drawdepth: SmallObjects
+    snapCardinals: false
+    noRot: false
+    sprite: _DEN/Structures/Piping/somberdisposalcounterside.rsi
+  - type: Transform
+    noRot: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.21875,-0.4375,0.1875,-0.28125"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+        hard: false
+
+- type: entity
   parent: [ MailingUnit, BasePsionic ]
   id: MailingUnitSomber
   name: somber mailing unit

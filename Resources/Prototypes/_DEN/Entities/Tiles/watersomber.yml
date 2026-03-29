@@ -8,6 +8,7 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: Transform
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
@@ -46,6 +47,8 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
+    snapCardinals: false
+    norot: false
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
     - state: poolwater
