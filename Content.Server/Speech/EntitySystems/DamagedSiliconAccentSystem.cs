@@ -143,7 +143,8 @@ public sealed class DamagedSiliconAccentSystem : EntitySystem
 
     private string CorruptPunctuize()
     {
-        const string punctuation = "\"\\`~!@#$%^&*()_+-={}[]|\\;:<>,.?/";
+        // The Den - removed [] from the string
+        const string punctuation = "\"\\`~!@#$%^&*()_+-={}|\\;:<>,.?/";
         return punctuation[_random.NextByte((byte)punctuation.Length)].ToString();
     }
 
