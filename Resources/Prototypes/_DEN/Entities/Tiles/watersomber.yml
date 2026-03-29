@@ -1,4 +1,4 @@
-
+# I wish these sprites behaved better when the camera rotates, but I'm not flooding the entity list with four times this amount just to fix it. Stop looking around.
 
 - type: entity
   parent: FloorWaterEntity
@@ -761,3 +761,25 @@
       shader: unshaded
     - state: poolglassdark
     - state: poolsidedark
+
+# Waterfalls
+
+- type: entity
+  parent: [SomberWater, FloorWaterfallBase]
+  id: FloorWaterfallEntitySomber
+  name: somber waterfall
+  suffix: Non-Occluded
+  description: "Dark water, like something drawn up from far below. But there is nothing down there."
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/waterfall.rsi
+    layers:
+    - state: waterfall
+    drawdepth: Overdoors
+
+- type: entity
+  parent: FloorWaterfallEntitySomber
+  id: FloorWaterfallEntityOccludedSomber
+  suffix: Occluded
+  components:
+  - type: Occluder

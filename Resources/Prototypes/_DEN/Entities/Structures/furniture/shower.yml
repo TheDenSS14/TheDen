@@ -2,34 +2,37 @@
   parent: [ Shower, BasePsionic ]
   id: SomberShower
   name: somber shower
-  description: "A bulky, angled showerhead with pressure tuned for full coverage."
-  components: # TODO: APRIL HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS PLEASE GOD PLEASE (SO I CAN TOGGLE MULTIPLE SHOWERS AT ONCE)
-    - type: Sprite # TODO: IT'D ALSO BE REALLY NICE IF SHOWERS DIDN'T RANDOMLY SPAWN TURNED ON, IT SUCKS FOR A PENTHOUSE
-      sprite: _DEN/Structures/Furniture/sombershower.rsi
-    - type: StaticPrice
-      price: 125
-    - type: Destructible
-      thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 300
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
-            damage: 100
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-            - !type:PlaySoundBehavior
-              sound:
-                collection: MetalBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 1
-                  max: 2
-                ScrapElectrum:
-                  min: 1
-                  max: 2
+  suffix: Start Off
+  description: "A wide, angled showerhead with pressure tuned for full coverage."
+  components:
+  - type: Shower
+    startupState: Off
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/sombershower.rsi
+  - type: StaticPrice
+    price: 125
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 300
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              SheetSteel1:
+                min: 1
+                max: 2
+              ScrapElectrum:
+                min: 1
+                max: 2

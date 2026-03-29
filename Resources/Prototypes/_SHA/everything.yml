@@ -250,6 +250,30 @@
 # Decals
 
 - type: decal
+  id: SomberElectrumPenthouseEye
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _SHA/Decals/somber_electrum.rsi
+    state: penthouseeye
+
+- type: decal
+  id: SomberElectrumPenthouseEyeBase
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _SHA/Decals/somber_electrum.rsi
+    state: penthouseeyebase
+
+- type: decal
+  id: SomberElectrumPenthouseEyeRing
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _SHA/Decals/somber_electrum.rsi
+    state: penthouseeyering
+
+- type: decal
   id: MonoTileSomberDarkPenthouseMigrations
   parent: Overlays
   abstract: true
@@ -993,7 +1017,7 @@
 - type: entity
   parent: SomberAmaranthDoor
   id: SomberAmaranthDoorAir
-  suffix: NON-AIRTIGHT] [Amaranth] [PENTHOUSE
+  suffix: NON-AIRTIGHT, CLOSED] [Amaranth] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -1001,7 +1025,7 @@
 - type: entity
   parent: SomberMnemolithDoor
   id: SomberMnemolithDoorAir
-  suffix: NON-AIRTIGHT] [Mnemolith] [PENTHOUSE
+  suffix: NON-AIRTIGHT, CLOSED] [Mnemolith] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -1009,7 +1033,7 @@
 - type: entity
   parent: SomberSteelDoor
   id: SomberSteelDoorAir
-  suffix: NON-AIRTIGHT] [Steel] [PENTHOUSE
+  suffix: NON-AIRTIGHT, CLOSED] [Steel] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -1017,10 +1041,42 @@
 - type: entity
   parent: SomberSteelDoorDark
   id: SomberSteelDoorDarkAir
-  suffix: NON-AIRTIGHT] [Steel, Dark] [PENTHOUSE
+  suffix: NON-AIRTIGHT, CLOSED] [Steel, Dark] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
+
+- type: entity
+  parent: SomberAmaranthDoorAir
+  id: SomberAmaranthDoorAirOpen
+  suffix: NON-AIRTIGHT, OPEN] [Amaranth] [PENTHOUSE
+  components:
+  - type: Door
+    state: Open
+
+- type: entity
+  parent: SomberMnemolithDoorAir
+  id: SomberMnemolithDoorAirOpen
+  suffix: NON-AIRTIGHT, OPEN] [Mnemolith] [PENTHOUSE
+  components:
+  - type: Door
+    state: Open
+
+- type: entity
+  parent: SomberSteelDoorAir
+  id: SomberSteelDoorAirOpen
+  suffix: NON-AIRTIGHT, OPEN] [Steel] [PENTHOUSE
+  components:
+  - type: Door
+    state: Open
+
+- type: entity
+  parent: SomberSteelDoorDarkAir
+  id: SomberSteelDoorDarkAirOpen
+  suffix: NON-AIRTIGHT, OPEN] [Steel, Dark] [PENTHOUSE
+  components:
+  - type: Door
+    state: Open
 
 - type: entity
   parent: GloomyAirlock
