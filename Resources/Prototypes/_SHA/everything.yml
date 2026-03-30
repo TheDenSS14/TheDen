@@ -1481,11 +1481,14 @@
   parent: FloorCarpetItemBlack
   id: FloorCarpetItemMidnight
   name: midnight carpet
+  description: "Finely trimmed and durable."
   suffix: Item
   components:
   - type: Sprite
+    sprite: _SHA/Objects/Tiles/tile.rsi
     state: carpet-midnight
   - type: Item
+    sprite: _SHA/Objects/Tiles/tile.rsi
     heldPrefix: carpet-midnight
   - type: Stack
     stackType: FloorCarpetMidnight
@@ -1499,15 +1502,19 @@
   - type: Material
 
 - type: entity
-  id: CarpetMidnightNarrow
-  parent: CarpetMidnight
-  name: narrow midnight carpet
-  suffix: Tile
+  id: CarpetMidnight
+  parent: CarpetBase
+  name: midnight carpet
+  description: "Finely trimmed and durable."
+  suffix: "Tile, #1"
   components:
+  - type: IconSmooth
+    key: carpet1
+  - type: Clickable
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Carpets/narrow_midnight_carpet.rsi
+    sprite: _SHA/Structures/Furniture/Carpets/midnight_carpet.rsi
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Carpets/narrow_midnight_carpet.rsi
+    sprite: _SHA/Structures/Furniture/Carpets/midnight_carpet.rsi
   - type: Destructible
     thresholds:
       - trigger:
@@ -1518,20 +1525,28 @@
           acts: [ "Destruction" ]
       - trigger:
           !type:DamageTrigger
-          damage: 10
+          damage: 50
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
           - !type:SpawnEntitiesBehavior
             spawn:
-              FloorCarpetItemMidnightNarrow:
+              FloorCarpetItemMidnight:
                 min: 1
                 max: 1
+
+- type: entity
+  id: CarpetMidnightSeparate
+  parent: CarpetMidnight
+  suffix: "Tile, #2"
+  components:
+  - type: IconSmooth
+    key: carpet2
 
 - type: stack
   id: FloorCarpetMidnight
   name: midnight carpet
-  icon: { sprite: Objects/Tiles/tile.rsi, state: carpet-midnight }
+  icon: { sprite: _SHA/Objects/Tiles/tile.rsi, state: carpet-midnight }
   spawn: FloorCarpetItemMidnight
   maxCount: 30
   itemSize: 5
@@ -1540,13 +1555,14 @@
   parent: FloorCarpetItemMidnight
   id: FloorCarpetItemMidnightNarrow
   name: narrow midnight carpet
+  description: "Finely trimmed and durable."
   suffix: Item
   components:
   - type: Sprite
-    sprite: _DEN/Objects/Tiles/tile.rsi
+    sprite: _SHA/Objects/Tiles/tile.rsi
     state: carpet-midnight-narrow
   - type: Item
-    sprite: Objects/Tiles/tile.rsi
+    sprite: _SHA/Objects/Tiles/tile.rsi
     heldPrefix: carpet-midnight
   - type: Stack
     stackType: FloorCarpetMidnightNarrow
@@ -1563,12 +1579,15 @@
   id: CarpetMidnightNarrow
   parent: CarpetMidnight
   name: narrow midnight carpet
-  suffix: Tile
+  description: "Finely trimmed and durable."
+  suffix: "Tile, #3"
   components:
+  - type: IconSmooth
+    key: carpet3
   - type: Sprite
-    sprite: _DEN/Structures/Furniture/Carpets/narrow_midnight_carpet.rsi
+    sprite: _SHA/Structures/Furniture/Carpets/narrow_midnight_carpet.rsi
   - type: Icon
-    sprite: _DEN/Structures/Furniture/Carpets/narrow_midnight_carpet.rsi
+    sprite: _SHA/Structures/Furniture/Carpets/narrow_midnight_carpet.rsi
   - type: Destructible
     thresholds:
       - trigger:
@@ -1579,7 +1598,7 @@
           acts: [ "Destruction" ]
       - trigger:
           !type:DamageTrigger
-          damage: 10
+          damage: 50
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -1589,10 +1608,18 @@
                 min: 1
                 max: 1
 
+- type: entity
+  id: CarpetMidnightNarrowSeparate
+  parent: CarpetMidnightNarrow
+  suffix: "Tile, #4"
+  components:
+  - type: IconSmooth
+    key: carpet4
+
 - type: stack
   id: FloorCarpetMidnightNarrow
   name: narrow midnight carpet
-  icon: { sprite: _DEN/Objects/Tiles/tile.rsi, state: carpet-midnight-narrow }
+  icon: { sprite: _SHA/Objects/Tiles/tile.rsi, state: carpet-midnight-narrow }
   spawn: FloorCarpetItemMidnightNarrow
   maxCount: 30
   itemSize: 5
