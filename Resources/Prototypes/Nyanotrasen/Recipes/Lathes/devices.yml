@@ -18,8 +18,26 @@
   result: JetpackBlue
   completetime: 10
   materials:
-    Steel: 8000
-    Plastic: 8000
+    Steel: 800
+    Plastic: 800
+    Gold: 50
+
+- type: latheRecipe
+  id: JetpackBlack
+  result: JetpackBlack
+  completetime: 10
+  materials:
+    Steel: 800
+    Plastic: 800
+    Gold: 50
+
+- type: latheRecipe
+  id: JetpackSecurity
+  result: JetpackSecurity
+  completetime: 10
+  materials:
+    Steel: 800
+    Plastic: 800
     Gold: 50
 
 - type: latheRecipe
@@ -27,6 +45,6 @@
   result: JetpackMini
   completetime: 10
   materials:
-    Steel: 4000
-    Plastic: 4000
+    Steel: 400
+    Plastic: 400
     Gold: 50
