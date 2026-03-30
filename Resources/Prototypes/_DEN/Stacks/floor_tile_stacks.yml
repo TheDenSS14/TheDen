@@ -22,3 +22,35 @@
   spawn: FloorTileItemInvisible
   maxCount: 30
   itemSize: 5
+
+- type: stack
+  id: FloorCarpetBlackNarrow
+  name: narrow black carpet
+  icon: { sprite: _DEN/Objects/Tiles/tile.rsi, state: carpet-black-narrow }
+  spawn: FloorCarpetItemBlackNarrow
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorCarpetPurpleNarrow
+  name: narrow purple carpet
+  icon: { sprite: _DEN/Objects/Tiles/tile.rsi, state: carpet-purple-narrow }
+  spawn: FloorCarpetItemPurpleNarrow
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorCarpetPinkNarrow
+  name: narrow pink carpet
+  icon: { sprite: _DEN/Objects/Tiles/tile.rsi, state: carpet-pink-narrow }
+  spawn: FloorCarpetItemPinkNarrow
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorCarpetCyanNarrow
+  name: narrow cyan carpet
+  icon: { sprite: _DEN/Objects/Tiles/tile.rsi, state: carpet-cyan-narrow }
+  spawn: FloorCarpetItemCyanNarrow
+  maxCount: 30
+  itemSize: 5

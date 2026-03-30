@@ -52,3 +52,110 @@
             min: 1
             max: 3
       - !type:EmptyAllContainersBehaviour
+
+- type: entity
+  parent: SomberMannequin
+  id: SomberMannequinExtended
+  name: somber mammet
+  suffix: Mannequin, Extended Inventory
+  description: "Creepiest mannequin you've ever seen. Looks waiting to get its wire hands around your neck."
+  components:
+  - type: Inventory
+    templateId: mannequinextended
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/mannequin.rsi
+    state: sombermannequin
+    noRot: true
+    layers:
+    - map: [ "mannequin" ]
+      sprite: _DEN/Structures/Decoration/mannequin.rsi
+      state: sombermammet
+    - sprite: _DEN/Structures/Decoration/mannequin.rsi
+      state: sombermammet-unshaded
+      shader: unshaded
+    - map: [ "jumpsuit" ]
+    - map: ["gloves"]
+    - map: ["shoes"]
+    - map: ["outerClothing"]
+    - map: ["belt"]
+    - map: ["back"]
+    - map: ["eyes"]
+    - map: ["neck"]
+    - map: ["suitstorage"]
+    - map: ["mask"]
+    - map: ["head"]
+  - type: ContainerContainer
+    containers:
+      jumpsuit: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      gloves: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      shoes: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      outerClothing: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      belt: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      back: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      eyes: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      neck: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      suitstorage: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      mask: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      head: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 3
+      - !type:EmptyAllContainersBehaviour

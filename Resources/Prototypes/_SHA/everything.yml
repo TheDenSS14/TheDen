@@ -573,6 +573,18 @@
 
 - type: entity
   parent: InvisibleOccluder
+  id: InvisibleOccluderNoSprite
+  suffix: PENTHOUSE, No Sprite
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: invisible
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: invisible
+
+- type: entity
+  parent: InvisibleOccluder
   id: InvisibleOccluderLeft
   suffix: PENTHOUSE, Left
   components:
@@ -938,6 +950,8 @@
   name: amaranth tree
   description: "An exotic hardwood tree with faintly luminescent leaves. Its resin is toxic, making the lumber notoriously difficult to work."
   suffix: Somber] [PENTHOUSE
+  placement:
+    mode: SnapgridCenter
   components:
   - type: Sprite
     sprite: _DEN/Objects/Decoration/Flora/flora_amaranth_trees.rsi
@@ -1564,7 +1578,7 @@
   parent: VendingMachineSomberMantis
   id: VendingMachineSomberMantisPenthouse
   name: reliquary conduit
-  suffix: PENTHOUSE
+  suffix: PENTHOUSE, Unlocked
   description: "An occult-machine interface that reacts to thought alone."
   components:
   - type: Sprite
@@ -1590,6 +1604,8 @@
       params:
         volume: -5
         variation: 0.075
+  - type: AccessReader
+    access: []
 
 - type: entity
   parent: VendingMachineSomberMantisSanctum
@@ -2850,7 +2866,7 @@
 - type: entity
   parent: MantisMeleeGreatswordSheath
   id: MantisMeleeGreatswordSheathFilledBreak
-  suffix: Faust] [PENTHOUSE, DO NOT MAP
+  suffix: Faust, Filled] [PENTHOUSE, DO NOT MAP
   components:
   - type: ContainerFill
     containers:
@@ -3697,7 +3713,7 @@
 # Restraints
 
 - type: entity
-  parent: MantisCaseLarge
+  parent: MantisCaseShadowLarge
   id: MantisCaseRestraintsPenthouse
   name: restraints case
   suffix: PENTHOUSE
@@ -4140,7 +4156,7 @@
   description: "A shadow wood case for important things."
   components:
   - type: Sprite
-    sprite: _SHA/Objects/Storage/boxshadow.rsi
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
     layers:
     - state: 1-closed
     - state: label-psi
@@ -4148,7 +4164,7 @@
       map: ["openLayer"]
   - type: Item
     size: Normal
-    sprite: _SHA/Objects/Storage/boxshadow.rsi
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
   - type: Storage
     maxItemSize: Ginormous
     grid:
@@ -4183,9 +4199,9 @@
   description: "A floral wood case of mixed candles."
   components:
   - type: Sprite
-    sprite: _SHA/Objects/Storage/boxfloral.rsi
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
   - type: Item
-    sprite: _SHA/Objects/Storage/boxfloral.rsi
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
   - type: StorageFill
     contents:
     - id: CandleSomberPenthouseTiny
@@ -4206,9 +4222,9 @@
   description: "A floral wood case of chemicals."
   components:
   - type: Sprite
-    sprite: _SHA/Objects/Storage/boxfloral.rsi
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
   - type: Item
-    sprite: _SHA/Objects/Storage/boxfloral.rsi
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
   - type: Storage
     grid:
     - 0,0,1,2 # 2x3
@@ -4333,6 +4349,70 @@
         reagents:
         - ReagentId: Psicodine
           Quantity: 10
+
+- type: entity
+  parent: MantisCaseFloral
+  id: MantisCaseFloralPistolAmmoPenthouse
+  name: pistol ammo case
+  components:
+  - type: Sprite
+    layers:
+    - state: 2-closed
+    - state: label-pistol
+    - state: 2-open
+      map: ["openLayer"]
+  - type: StorageFill
+    contents:
+    - id: MantisCasterPistolLethal
+      amount: 2
+
+- type: entity
+  parent: MantisCaseFloral
+  id: MantisCaseFloralRevolverAmmoPenthouse
+  name: revolver ammo case
+  components:
+  - type: Sprite
+    layers:
+    - state: 2-closed
+    - state: label-revolver
+    - state: 2-open
+      map: ["openLayer"]
+  - type: StorageFill
+    contents:
+    - id: MantisCasterRevolverLethal
+      amount: 2
+
+- type: entity
+  parent: MantisCaseShadow
+  id: MantisCaseShadowShotgunAmmoPenthouse
+  name: shotgun ammo case
+  components:
+  - type: Sprite
+    layers:
+    - state: 2-closed
+    - state: label-shotgun
+    - state: 2-open
+      map: ["openLayer"]
+  - type: StorageFill
+    contents:
+    - id: MantisCasterShotgunLethal
+      amount: 2
+
+- type: entity
+  parent: MantisCaseShadow
+  id: MantisCaseShadowSubMachineGunAmmoPenthouse
+  name: submachine gun ammo case
+  components:
+  - type: Sprite
+    layers:
+    - state: 2-closed
+    - state: label-smg
+    - state: 2-open
+      map: ["openLayer"]
+  - type: StorageFill
+    contents:
+    - id: MantisCasterSubMachineGunLethal
+      amount: 2
 
 # Stored Things
 

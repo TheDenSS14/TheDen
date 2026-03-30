@@ -106,6 +106,102 @@
     - 0,0,3,1 # 4x2
 
 - type: entity
+  parent: MantisCase
+  id: MantisCaseFloral
+  name: floral case
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+    layers:
+    - state: 2-closed
+    - state: 2-open
+      map: ["openLayer"]
+
+- type: entity
+  parent: MantisCaseSmall
+  id: MantisCaseFloralSmall
+  name: floral case (small)
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+    layers:
+    - state: 1-closed
+    - state: 1-open
+      map: ["openLayer"]
+
+- type: entity
+  parent: MantisCaseLarge
+  id: MantisCaseFloralLarge
+  name: floral case (long)
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+    layers:
+    - state: 3-closed
+    - state: 3-open
+      map: ["openLayer"]
+
+- type: entity
+  parent: MantisCaseExtraLarge
+  id: MantisCaseFloralExtraLarge
+  name: floral case (extra long)
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+    layers:
+    - state: 4-closed
+    - state: 4-open
+      map: ["openLayer"]
+
+- type: entity
+  parent: MantisCase
+  id: MantisCaseShadow
+  name: shadow case
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+    layers:
+    - state: 2-closed
+    - state: 2-open
+      map: ["openLayer"]
+
+- type: entity
+  parent: MantisCaseSmall
+  id: MantisCaseShadowSmall
+  name: shadow case (small)
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+    layers:
+    - state: 1-closed
+    - state: 1-open
+      map: ["openLayer"]
+
+- type: entity
+  parent: MantisCaseLarge
+  id: MantisCaseShadowLarge
+  name: shadow case (long)
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+    layers:
+    - state: 3-closed
+    - state: 3-open
+      map: ["openLayer"]
+
+- type: entity
+  parent: MantisCaseExtraLarge
+  id: MantisCaseShadowExtraLarge
+  name: shadow case (extra long)
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+    layers:
+    - state: 4-closed
+    - state: 4-open
+      map: ["openLayer"]
+
+- type: entity
   parent: [MantisCaseLarge, BaseMantisContraband] # Contraband since its contents are
   id: MantisCaseTools
   name: mantis tools case # In the mantis locker

@@ -105,3 +105,25 @@
   result: FloorTileItemWoodChessRed
 
 # End Corvax tiles
+
+# Narrow Carpets
+
+- type: latheRecipe
+  parent: BaseCarpetRecipe
+  id: CarpetBlackNarrow
+  result: FloorCarpetItemBlackNarrow
+
+- type: latheRecipe
+  parent: BaseCarpetRecipe
+  id: CarpetPinkNarrow
+  result: FloorCarpetItemPinkNarrow
+
+- type: latheRecipe
+  parent: BaseCarpetRecipe
+  id: CarpetPurpleNarrow
+  result: FloorCarpetItemPurpleNarrow
+
+- type: latheRecipe
+  parent: BaseCarpetRecipe
+  id: CarpetCyanNarrow
+  result: FloorCarpetItemCyanNarrow
