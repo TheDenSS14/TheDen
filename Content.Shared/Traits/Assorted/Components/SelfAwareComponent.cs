@@ -1,7 +1,7 @@
-// SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Angelo Fallaria
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Skubman
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -35,5 +35,5 @@ public sealed partial class SelfAwareComponent : Component
     //     These are calculated as a percentage of the entity's critical threshold.
     // </summary>
     public List<FixedPoint2> Thresholds = new()
-        { FixedPoint2.New(0.10), FixedPoint2.New(0.25), FixedPoint2.New(0.40), FixedPoint2.New(0.60) };
+        { FixedPoint2.New(0.08), FixedPoint2.New(0.30), FixedPoint2.New(0.50), FixedPoint2.New(0.75) }; // den edit, better health examine
 }

@@ -1,8 +1,8 @@
-// SPDX-FileCopyrightText: 2024 SleepyScarecrow <136123749+SleepyScarecrow@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SleepyScarecrow
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2026 MajorMoth
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.Interaction;
 using Content.Shared.Verbs;
@@ -27,8 +27,21 @@ namespace Content.Shared.Showers
         }
         private void OnMapInit(EntityUid uid, ShowerComponent component, MapInitEvent args)
         {
-            if (_random.Prob(0.5f))
-                component.ToggleShower = true;
+            // DEN start
+            switch (component.StartupState)
+            {
+                case ShowerStartupState.Off:
+                    component.ToggleShower = false;
+                    break;
+                case ShowerStartupState.On:
+                    component.ToggleShower = true;
+                    break;
+                case ShowerStartupState.Random:
+                    if (_random.Prob(0.5f))
+                        component.ToggleShower = true;
+                    break;
+            }
+            // DEN end
             UpdateAppearance(uid);
         }
         private void OnToggleShowerVerb(EntityUid uid, ShowerComponent component, GetVerbsEvent<AlternativeVerb> args)

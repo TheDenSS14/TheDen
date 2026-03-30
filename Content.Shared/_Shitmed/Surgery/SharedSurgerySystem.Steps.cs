@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2024 Skubman
 // SPDX-FileCopyrightText: 2024 gluesniffler
+// SPDX-FileCopyrightText: 2025 Terkala
 // SPDX-FileCopyrightText: 2025 pathetic meowmeow
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //

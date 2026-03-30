@@ -63,7 +63,7 @@ public sealed partial class SkiaComponent : Component
     /// ProtoId of mobs to spawn on SummonShadowsActionId
     /// </summary>
     [DataField]
-    public EntProtoId MobTwistShadowProtoId = "MobLivingShadow";
+    public EntProtoId MobTwistShadowProtoId = "MobLivingShadowSkia";
 
     /// <summary>
     /// How many mobs are spawned on SummonShadowsActionId

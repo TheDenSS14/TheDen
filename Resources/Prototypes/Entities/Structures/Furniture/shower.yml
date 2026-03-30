@@ -1,12 +1,14 @@
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 SleepyScarecrow
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 MajorMoth
 # SPDX-FileCopyrightText: 2026 portfiend
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: shower
+  suffix: Start Random # DEN
   id: Shower
   description: A shower, complete with bluespace water.
   placement:
@@ -53,3 +55,22 @@
     - type: InteractionVerbs # DEN: add hand washing
       allowedVerbs: [WashHands]
 
+# DEN start
+- type: entity
+  name: shower
+  suffix: Start Off
+  parent: Shower
+  id: ShowerStartOff
+  components:
+  - type: Shower
+    startupState: Off
+
+- type: entity
+  name: shower
+  suffix: Start On
+  parent: Shower
+  id: ShowerStartOn
+  components:
+  - type: Shower
+    startupState: On
+# DEN end
