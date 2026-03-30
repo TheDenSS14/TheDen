@@ -4414,7 +4414,7 @@
     - id: MantisCasterSubMachineGunLethal
       amount: 2
 
-# Stored Things
+# Lights
 
 - type: entity
   parent: LightTube
@@ -4509,6 +4509,48 @@
       amount: 20
     - id: UvLightBulb
       amount: 20
+
+- type: entity
+  parent: LightSomberEidoliteWellLamp
+  id: LightSomberEidoliteWellLampOrchid
+  name: eidolite well lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on and off by hand. This one's been altered to produce orchid light--at great cost, since the Outer Chamber Crucible had to psionically \"anneal\" it through the entire color spectrum to reach this point."
+  suffix: PENTHOUSE, Orchid] [Click After Mapping
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Lighting/LightPosts/lampeidolitewell.rsi
+    layers:
+    - state: base
+    - state: crystal
+    - state: glow
+      shader: unshaded
+    - state: crystal
+      shader: unshaded
+      visible: false
+      map: ["light"]
+  - type: PointLight
+    color: "#ff94e8"
+
+- type: entity
+  parent: LightSomberEidoliteFloorLamp
+  id: LightSomberEidoliteFloorLampOrchid
+  name: eidolite floor lamp
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. You can turn it on and off by hand. This one's been altered to produce orchid light--at great cost, since the Outer Chamber Crucible had to psionically \"anneal\" it through the entire color spectrum to reach this point."
+  suffix: PENTHOUSE, Orchid] [Click After Mapping
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Lighting/LightPosts/lampeidolitefloor.rsi
+    layers:
+    - state: base
+    - state: crystal
+    - state: glow
+      shader: unshaded
+    - state: crystal
+      shader: unshaded
+      visible: false
+      map: ["light"]
+  - type: PointLight
+    color: "#ff94e8"
 
 # Mnemolith Columns
 
