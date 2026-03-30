@@ -30,3 +30,26 @@
     size: Small
     sprite: _DEN/Objects/Specific/Chapel/tanakh.rsi
   - type: Clothing
+
+- type: entity
+  parent: [HolyBookBible, BaseFoldable]
+  id: HolyBookClarion
+  name: clarion
+  description: A tome of those who follow Lady Chaos, 'She-who-Tolls'. The rayskin leather is hydrophobic, and worked thin.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Chapel/clarion.rsi
+    layers:
+    - state: open
+      map: ["unfoldedLayer"]
+    - state: closed
+      map: ["foldedLayer"]
+      visible: false
+  - type: Item
+    size: Small
+  - type: Clothing
+  - type: Appearance
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-close-verb
+    unfoldVerbText: fold-open-verb
