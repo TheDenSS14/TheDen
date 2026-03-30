@@ -1475,6 +1475,128 @@
     collection: FootstepTile
   heatCapacity: 10000
 
+# Carpets
+
+- type: entity
+  parent: FloorCarpetItemBlack
+  id: FloorCarpetItemMidnight
+  name: midnight carpet
+  suffix: Item
+  components:
+  - type: Sprite
+    state: carpet-midnight
+  - type: Item
+    heldPrefix: carpet-midnight
+  - type: Stack
+    stackType: FloorCarpetMidnight
+  - type: Tag
+    tags:
+    - CarpetMidnight
+  - type: SpawnAfterInteract
+    prototype: CarpetMidnight
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+
+- type: entity
+  id: CarpetMidnightNarrow
+  parent: CarpetMidnight
+  name: narrow midnight carpet
+  suffix: Tile
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Carpets/narrow_midnight_carpet.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Carpets/narrow_midnight_carpet.rsi
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 10
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              FloorCarpetItemMidnightNarrow:
+                min: 1
+                max: 1
+
+- type: stack
+  id: FloorCarpetMidnight
+  name: midnight carpet
+  icon: { sprite: Objects/Tiles/tile.rsi, state: carpet-midnight }
+  spawn: FloorCarpetItemMidnight
+  maxCount: 30
+  itemSize: 5
+
+- type: entity
+  parent: FloorCarpetItemMidnight
+  id: FloorCarpetItemMidnightNarrow
+  name: narrow midnight carpet
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tiles/tile.rsi
+    state: carpet-midnight-narrow
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: carpet-midnight
+  - type: Stack
+    stackType: FloorCarpetMidnightNarrow
+  - type: Tag
+    tags:
+    - CarpetMidnight
+  - type: SpawnAfterInteract
+    prototype: CarpetMidnightNarrow
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+
+- type: entity
+  id: CarpetMidnightNarrow
+  parent: CarpetMidnight
+  name: narrow midnight carpet
+  suffix: Tile
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Carpets/narrow_midnight_carpet.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Carpets/narrow_midnight_carpet.rsi
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 10
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              FloorCarpetItemMidnightNarrow:
+                min: 1
+                max: 1
+
+- type: stack
+  id: FloorCarpetMidnightNarrow
+  name: narrow midnight carpet
+  icon: { sprite: _DEN/Objects/Tiles/tile.rsi, state: carpet-midnight-narrow }
+  spawn: FloorCarpetItemMidnightNarrow
+  maxCount: 30
+  itemSize: 5
+
 # Warm Fire Items
 
 - type: entity

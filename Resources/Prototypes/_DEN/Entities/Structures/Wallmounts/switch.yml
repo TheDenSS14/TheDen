@@ -109,9 +109,44 @@
   parent: [ SignalTimer, BasePsionic ]
   id: SomberSignalTimer
   name: somber signal timer
-  suffix: Directional
+  suffix: Directional, 5 seconds
   description: "A brushed metal timer that sends a signal after a delay."
   components:
+  - type: SignalTimer
+    delay: 5
   - type: Sprite
+    drawdepth: WallMountedItems
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+
+- type: entity
+  parent: SomberSignalTimer
+  id: SomberSignalTimer4
+  suffix: Directional, 4 seconds
+  components:
+  - type: SignalTimer
+    delay: 4
+
+- type: entity
+  parent: SomberSignalTimer
+  id: SomberSignalTimer3
+  suffix: Directional, 3 seconds
+  components:
+  - type: SignalTimer
+    delay: 3
+
+- type: entity
+  parent: SomberSignalTimer
+  id: SomberSignalTimer2
+  suffix: Directional, 2 seconds
+  components:
+  - type: SignalTimer
+    delay: 2
+
+- type: entity
+  parent: SomberSignalTimer
+  id: SomberSignalTimer1
+  suffix: Directional, 1 second
+  components:
+  - type: SignalTimer
+    delay: 1
 # Somber switches end
