@@ -64,7 +64,7 @@
       behaviors:
       - !type:PlaySoundBehavior
         sound:
-          collection: MetalGlassBreak
+          collection: GlassBreak
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: DoorSignalControl

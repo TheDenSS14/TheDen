@@ -4,10 +4,10 @@
 
 - type: entity
   parent: [ BaseMaterialDoorNavMap, BasePsionic ]
-  id: SomberAmaranthDoor
+  id: SomberSteelDoor
   name: somber door
-  suffix: Amaranth
-  description: "A door made of exotic, extremely durable hardwood. Also called purpleheart, or incorrectly, rosewood."
+  suffix: Steel, Signal-Friendly
+  description: "A gloomy steel door."
   components:
   - type: Door
     openSound:
@@ -15,10 +15,65 @@
     closeSound:
       path: /Audio/Effects/door_close.ogg
   - type: Sprite
+    sprite: _DEN/Structures/Doors/MineralDoors/somber_door.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel:
+            min: 2
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+  - type: DoorSignalControl
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - Open
+      - Close
+      - Toggle
+  - type: DeviceLinkSource
+    ports:
+    - DoorStatus
+    lastSignals:
+      DoorStatus: false
+
+- type: entity
+  parent: SomberSteelDoor
+  id: SomberSteelDoorDark
+  name: somber door
+  suffix: Steel, Dark, Signal-Friendly
+  description: "A gloomy steel door."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/MineralDoors/somber_door_dark.rsi
+
+- type: entity
+  parent: SomberSteelDoor
+  id: SomberAmaranthDoor
+  name: somber door
+  suffix: Amaranth, Signal-Friendly
+  description: "A door made of exotic, extremely durable hardwood. Also called purpleheart, or incorrectly, rosewood."
+  components:
+  - type: Sprite
     sprite: _DEN/Structures/Doors/MineralDoors/amaranth_door.rsi
-    layers:
-    - state: closed
-      map: ["enum.DoorVisualLayers.Base"]
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -49,20 +104,19 @@
           collection: WoodDestroyHeavy
 
 - type: entity
-  parent: [ BaseMaterialDoorNavMap, BasePsionic ]
+  parent: SomberSteelDoor
   id: SomberMnemolithDoor
   name: somber door
-  suffix: Mnemolith
+  suffix: Mnemolith, Signal-Friendly
   description: "A door made of mnemolith, a dark, glassy stone that forms during severe noospheric storms."
   components:
+  - type: Door
+    openSound:
+      path: /Audio/Effects/stonedoor_openclose.ogg
+    closeSound:
+      path: /Audio/Effects/stonedoor_openclose.ogg
   - type: Sprite
     sprite: _DEN/Structures/Doors/MineralDoors/mnemolith_door.rsi
-    layers:
-    - state: closed
-      map: ["enum.DoorVisualLayers.Base"]
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
   - type: Destructible
     thresholds:
     - trigger:
@@ -85,56 +139,3 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalGlassBreak # Mnemolith stone is glassy
-
-- type: entity
-  parent: [ BaseMaterialDoorNavMap, BasePsionic ]
-  id: SomberSteelDoor
-  name: somber door
-  suffix: Steel
-  description: "A gloomy steel door."
-  components:
-  - type: Door
-    openSound:
-      path: /Audio/Effects/door_open.ogg
-    closeSound:
-      path: /Audio/Effects/door_close.ogg
-  - type: Sprite
-    sprite: _DEN/Structures/Doors/MineralDoors/somber_door.rsi
-    layers:
-    - state: closed
-      map: ["enum.DoorVisualLayers.Base"]
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 200
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          SheetSteel:
-            min: 2
-            max: 2
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalSlam
-
-- type: entity
-  parent: SomberSteelDoor
-  id: SomberSteelDoorDark
-  name: somber door
-  suffix: Steel, Dark
-  description: "A gloomy steel door."
-  components:
-  - type: Sprite
-    sprite: _DEN/Structures/Doors/MineralDoors/somber_door_dark.rsi

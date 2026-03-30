@@ -75,6 +75,38 @@
   heatCapacity: 10000
 
 - type: tile
+  id: FloorSomberMnemolithTracksHorizontal
+  name: tiles-somber-mnemolith-tracks-horizontal
+  sprite: /Textures/_DEN/Tiles/Somber/somber-mnemolith-tracks-horizontal.png
+  variants: 2
+  placementVariants:
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: FloorTileItemSomberMnemolithTracksHorizontal
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberMnemolithTracksVertical
+  name: tiles-somber-mnemolith-tracks-vertical
+  sprite: /Textures/_DEN/Tiles/Somber/somber-mnemolith-tracks-vertical.png
+  variants: 2
+  placementVariants:
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: FloorTileItemSomberMnemolithTracksVertical
+  heatCapacity: 10000
+
+- type: tile
   id: FloorSomberGlass
   name: tiles-somber-glass-floor
   sprite: /Textures/_DEN/Tiles/Somber/somber-glass.png

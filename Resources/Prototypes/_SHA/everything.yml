@@ -1031,7 +1031,7 @@
 - type: entity
   parent: SomberAmaranthDoor
   id: SomberAmaranthDoorAir
-  suffix: NON-AIRTIGHT, CLOSED] [Amaranth] [PENTHOUSE
+  suffix: NON-AIRTIGHT, CLOSED] [Amaranth, Signal-Friendly] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -1039,7 +1039,7 @@
 - type: entity
   parent: SomberMnemolithDoor
   id: SomberMnemolithDoorAir
-  suffix: NON-AIRTIGHT, CLOSED] [Mnemolith] [PENTHOUSE
+  suffix: NON-AIRTIGHT, CLOSED] [Mnemolith, Signal-Friendly] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -1047,7 +1047,7 @@
 - type: entity
   parent: SomberSteelDoor
   id: SomberSteelDoorAir
-  suffix: NON-AIRTIGHT, CLOSED] [Steel] [PENTHOUSE
+  suffix: NON-AIRTIGHT, CLOSED] [Steel, Signal-Friendly] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -1055,7 +1055,7 @@
 - type: entity
   parent: SomberSteelDoorDark
   id: SomberSteelDoorDarkAir
-  suffix: NON-AIRTIGHT, CLOSED] [Steel, Dark] [PENTHOUSE
+  suffix: NON-AIRTIGHT, CLOSED] [Steel, Dark, Signal-Friendly] [PENTHOUSE
   components:
   - type: Airtight
     airBlocked: false
@@ -1063,7 +1063,7 @@
 - type: entity
   parent: SomberAmaranthDoorAir
   id: SomberAmaranthDoorAirOpen
-  suffix: NON-AIRTIGHT, OPEN] [Amaranth] [PENTHOUSE
+  suffix: NON-AIRTIGHT, OPEN] [Amaranth, Signal-Friendly] [PENTHOUSE
   components:
   - type: Door
     state: Open
@@ -1071,7 +1071,7 @@
 - type: entity
   parent: SomberMnemolithDoorAir
   id: SomberMnemolithDoorAirOpen
-  suffix: NON-AIRTIGHT, OPEN] [Mnemolith] [PENTHOUSE
+  suffix: NON-AIRTIGHT, OPEN] [Mnemolith, Signal-Friendly] [PENTHOUSE
   components:
   - type: Door
     state: Open
@@ -1079,7 +1079,7 @@
 - type: entity
   parent: SomberSteelDoorAir
   id: SomberSteelDoorAirOpen
-  suffix: NON-AIRTIGHT, OPEN] [Steel] [PENTHOUSE
+  suffix: NON-AIRTIGHT, OPEN] [Steel, Signal-Friendly] [PENTHOUSE
   components:
   - type: Door
     state: Open
@@ -1087,7 +1087,7 @@
 - type: entity
   parent: SomberSteelDoorDarkAir
   id: SomberSteelDoorDarkAirOpen
-  suffix: NON-AIRTIGHT, OPEN] [Steel, Dark] [PENTHOUSE
+  suffix: NON-AIRTIGHT, OPEN] [Steel, Dark, Signal-Friendly] [PENTHOUSE
   components:
   - type: Door
     state: Open
@@ -1193,7 +1193,7 @@
   parent: GloomyWindoorSecure
   id: GloomyWindoorSecureAir
   name: gloomy windoor
-  suffix: NON-AIRTIGHT] [Public] [Somber
+  suffix: NON-AIRTIGHT] [Public] [Somber] [PENTHOUSE
   description: "A gloomy, secure windoor, designed to match everything else in this place."
   components:
   - type: Sprite
@@ -1204,7 +1204,7 @@
 - type: entity
   parent: GloomyWindoorSecureDark
   id: GloomyWindoorSecureDarkAir
-  suffix: NON-AIRTIGHT] [Public, Dark] [Somber
+  suffix: NON-AIRTIGHT] [Public, Dark] [Somber] [PENTHOUSE
   components:
   - type: Sprite
     sprite: _DEN/Structures/Doors/Windoors/somberdark.rsi
@@ -1214,7 +1214,7 @@
 - type: entity
   parent: GloomyWindoorSecureTinted
   id: GloomyWindoorSecureTintedAir
-  suffix: NON-AIRTIGHT] [Public] [Somber
+  suffix: NON-AIRTIGHT] [Public] [Somber] [PENTHOUSE
   description: "A gloomy, secure windoor, designed to match everything else in this place."
   components:
   - type: Sprite
@@ -1227,7 +1227,7 @@
 - type: entity
   parent: GloomyWindoorSecureTintedDark
   id: GloomyWindoorSecureTintedDarkAir
-  suffix: NON-AIRTIGHT] [Public, Dark] [Somber
+  suffix: NON-AIRTIGHT] [Public, Dark] [Somber] [PENTHOUSE
   components:
   - type: Sprite
     sprite: _DEN/Structures/Doors/Windoors/somberdark.rsi
@@ -1237,7 +1237,7 @@
 - type: entity
   parent: GloomyWindoorSecureMantisLocked
   id: GloomyWindoorSecureMantisLockedAir
-  suffix: NON-AIRTIGHT] [Mantis, Locked] [Somber
+  suffix: NON-AIRTIGHT] [Mantis, Locked] [Somber] [PENTHOUSE
   components:
   - type: Label
     currentLabel: mantis
@@ -1250,7 +1250,7 @@
 - type: entity
   parent: GloomyWindoorSecureMantisDarkLocked
   id: GloomyWindoorSecureMantisDarkLockedAir
-  suffix: NON-AIRTIGHT] [Mantis, Locked, Dark] [Somber
+  suffix: NON-AIRTIGHT] [Mantis, Locked, Dark] [Somber] [PENTHOUSE
   components:
   - type: Label
     currentLabel: mantis
@@ -1263,7 +1263,7 @@
 - type: entity
   parent: GloomyWindoorSecureTintedMantisLocked
   id: GloomyWindoorSecureTintedMantisLockedAir
-  suffix: NON-AIRTIGHT] [Mantis, Locked] [Somber
+  suffix: NON-AIRTIGHT] [Mantis, Locked] [Somber] [PENTHOUSE
   components:
   - type: Label
     currentLabel: mantis
@@ -1276,13 +1276,50 @@
 - type: entity
   parent: GloomyWindoorSecureTintedMantisDarkLocked
   id: GloomyWindoorSecureTintedMantisDarkLockedAir
-  suffix: NON-AIRTIGHT] [Mantis, Locked, Dark] [Somber
+  suffix: NON-AIRTIGHT] [Mantis, Locked, Dark] [Somber] [PENTHOUSE
   components:
   - type: Label
     currentLabel: mantis
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMantis ]
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: SomberSecretDoor
+  id: SomberSecretDoorAir
+  name: somber wall
+  suffix: NON-AIRTIGHT] [Secret Door, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: SomberSecretDoorDark
+  id: SomberSecretDoorDarkAir
+  suffix: NON-AIRTIGHT] [Secret Door, Dark, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: SomberSecretDoorDarkAir
+  id: SomberSecretDoorDarkAirCorner
+  suffix: NON-AIRTIGHT, Corner] [Secret Door, Dark, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Doors/SecretDoors/sombersecretdoordarkcorner.rsi
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: SomberSecretDoorDarkAir
+  id: SomberSecretDoorDarkAirInset
+  suffix: NON-AIRTIGHT, Inset] [Secret Door, Dark, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Doors/SecretDoors/sombersecretdoordarkinset.rsi
   - type: Airtight
     airBlocked: false
 

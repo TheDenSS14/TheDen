@@ -430,6 +430,44 @@
         Holy: 4.75 # 17.81 total damage against supernaturals
 
 - type: entity
+  parent: [FloorTileItemSomberSteel, BaseAntiPsionicWeapon]
+  id: FloorTileItemSomberMnemolithTracksHorizontal
+  name: somber mnemolith tracks (horizontal)
+  components:
+  - type: Sprite
+    state: somber-mnemolith-tracks-horizontal
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberMnemolithTracksHorizontal
+  - type: Stack
+    stackType: FloorTileSomberMnemolithTracksHorizontal
+  - type: DamageOtherOnHit
+    damage:
+      types: # Damage against non-psions is based on FloorTileItemSteel
+        Blunt: 9.5 # 11.88 damage against psions
+        Holy: 4.75 # 17.81 total damage against supernaturals
+
+- type: entity
+  parent: [FloorTileItemSomberSteel, BaseAntiPsionicWeapon]
+  id: FloorTileItemSomberMnemolithTracksVertical
+  name: somber mnemolith tracks (vertical)
+  components:
+  - type: Sprite
+    state: somber-mnemolith-tracks-vertical
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberMnemolithTracksVertical
+  - type: Stack
+    stackType: FloorTileSomberMnemolithTracksVertical
+  - type: DamageOtherOnHit
+    damage:
+      types: # Damage against non-psions is based on FloorTileItemSteel
+        Blunt: 9.5 # 11.88 damage against psions
+        Holy: 4.75 # 17.81 total damage against supernaturals
+
+- type: entity
   parent: FloorTileItemSomberWood
   id: FloorTileItemSomberAmaranth
   name: somber ornate amaranth floor
