@@ -25,4 +25,10 @@ public sealed partial class StunOnContactComponent : Component
 
     [DataField]
     public EntityWhitelist Blacklist = new();
+
+    /// <summary>
+    ///     If the entity has or exceeds this speed when contacting then stun.
+    /// </summary>
+    [DataField]
+    public float TriggerSpeed = 0;
 }
