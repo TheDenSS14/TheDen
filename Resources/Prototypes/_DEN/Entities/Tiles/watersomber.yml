@@ -39,6 +39,40 @@
         hard: false
 
 - type: entity
+  parent: SomberWater
+  id: SomberWaterCorner
+  suffix: Diagonal
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: watercorner
+    - state: watershinecorner
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
   parent: FloorWaterEntityPool
   id: SomberPoolWater
   name: somber pool
@@ -55,6 +89,40 @@
     - state: watershine
       shader: unshaded
   - type: Fixtures # These pools won't grab you from half a tile away
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: SomberPoolWater
+  id: SomberPoolWaterCorner
+  suffix: Diagonal
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: poolwatercorner
+    - state: watershinecorner
+      shader: unshaded
+  - type: Fixtures
     fixtures:
       fix1:
         shape:
@@ -151,7 +219,7 @@
 
 - type: entity
   parent: SomberPoolWater
-  id: SomberPoolWaterCorner
+  id: SomberPoolWaterCornerTile
   suffix: Corner
   components:
   - type: Sprite
@@ -353,8 +421,8 @@
     - state: poolcircledark
 
 - type: entity
-  parent: SomberPoolWaterCorner
-  id: SomberPoolWaterCornerDark
+  parent: SomberPoolWaterCornerTile
+  id: SomberPoolWaterCornerTileDark
   suffix: Corner, Dark
   components:
   - type: Sprite
@@ -527,7 +595,7 @@
 
 - type: entity
   parent: SomberPoolWaterGlass
-  id: SomberPoolWaterCornerGlass
+  id: SomberPoolWaterCornerTileGlass
   suffix: Walkable Glass, Corner
   components:
   - type: Sprite
@@ -693,8 +761,8 @@
     - state: poolcircledark
 
 - type: entity
-  parent: SomberPoolWaterCornerGlass
-  id: SomberPoolWaterCornerGlassDark
+  parent: SomberPoolWaterCornerTileGlass
+  id: SomberPoolWaterCornerTileGlassDark
   suffix: Walkable Glass, Corner, Dark
   components:
   - type: Sprite
@@ -772,10 +840,17 @@
   description: "Dark water, like something drawn up from far below. But there is nothing down there."
   components:
   - type: Sprite
+    drawdepth: Overdoors
     sprite: _DEN/Tiles/Planet/Somber/waterfall.rsi
     layers:
     - state: waterfall
-    drawdepth: Overdoors
+    - state: waterfallshine
+      shader: unshaded
+  - type: AmbientSound
+    volume: 0
+    range: 8
+    sound:
+      path: /Audio/_DEN/Effects/Fluids/waterfall.ogg
 
 - type: entity
   parent: FloorWaterfallEntitySomber
@@ -783,3 +858,61 @@
   suffix: Occluded
   components:
   - type: Occluder
+
+- type: entity
+  parent: [SomberPoolWater, FloorWaterfallBase]
+  id: FloorWaterfallEntitySomberPool
+  name: somber pool waterfall
+  suffix: Non-Occluded
+  description: "Dark water, like something drawn up from far below. But there is nothing down there."
+  components:
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _DEN/Tiles/Planet/Somber/waterfall.rsi
+    layers:
+    - state: poolwaterfall
+    - state: poolwaterfallshine
+      shader: unshaded
+
+# Waterfall Spouts
+
+- type: entity
+  parent: [ BaseStructure, BasePsionic ]
+  id: SomberPoolWaterfallSpout
+  name: somber pool waterfall spout
+  description: "A narrow spout set into the wall, providing fresh water from the filters below."
+  components:
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _DEN/Tiles/Planet/Somber/waterfall.rsi
+    layers:
+    - state: poolwaterfallspout
+    - state: poolwaterfallspoutwater
+    - state: poolwaterfallspoutwatershine
+      shader: unshaded
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+
+- type: entity
+  parent: SomberPoolWaterfallSpout
+  id: SomberPoolWaterfallSpoutDark
+  suffix: Dark
+  components:
+  - type: Sprite
+    layers:
+    - state: poolwaterfallspoutdark
+    - state: poolwaterfallspoutwater
+    - state: poolwaterfallspoutwatershine
+      shader: unshaded

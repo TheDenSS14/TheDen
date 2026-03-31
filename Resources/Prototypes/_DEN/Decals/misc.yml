@@ -72,6 +72,15 @@
     state: wallspikeSWrotatable
 
 # Diagonal stairs (don't snap to tile, rotate 45 degrees and zoom in and do pixel-perfect placement) (good luck)
+# The underlay will help the corner stairs not shift a fraction of a pixel and expose bright tile when the map reloads
+
+- type: decal
+  id: CornerStairsUnderlay
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: cornerstairsunderlay
 
 - type: decal
   id: CornerStairsLeft
@@ -88,6 +97,22 @@
   sprite:
     sprite: _DEN/Decals/misc.rsi
     state: cornerstairsright
+
+- type: decal
+  id: CornerStairsUpLeft
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: cornerstairsupleft
+
+- type: decal
+  id: CornerStairsUpRight
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: cornerstairsupright
 
 # Planter decals to put non-potted plants in
 - type: decal

@@ -651,7 +651,7 @@
   parent: WindowSomberDirectionalTinted
   id: WindowFireEscape
   name: skyscraper wall
-  suffix: Directional, Opaque
+  suffix: Directional, Opaque] [PENTHOUSE
   description: "It keeps the city out."
   components:
   - type: Sprite
@@ -665,7 +665,7 @@
   parent: WindowSomberDirectionalTinted
   id: WindowFireEscapeLeft
   name: skyscraper wall
-  suffix: Directional, Opaque, Left
+  suffix: Directional, Opaque, Left] [PENTHOUSE
   description: "It keeps the city out."
   components:
   - type: Sprite
@@ -681,7 +681,7 @@
   parent: WindowSomberDirectionalTinted
   id: WindowFireEscapeRight
   name: skyscraper wall
-  suffix: Directional, Opaque, Right
+  suffix: Directional, Opaque, Right] [PENTHOUSE
   description: "It keeps the city out."
   components:
   - type: Sprite
@@ -697,7 +697,7 @@
   parent: WindowSomberDirectionalTintedCorner
   id: WindowFireEscapeCorner
   name: skyscraper wall
-  suffix: Directional, Opaque
+  suffix: Directional, Opaque] [PENTHOUSE
   description: "It keeps the city out."
   components:
   - type: Sprite
@@ -706,6 +706,18 @@
   - type: Icon
     sprite: _SHA/Structures/Walls/fire_escape.rsi
     state: fire_escape_corner
+
+- type: entity
+  parent: WallSomber
+  id: WallSomberNoSmoothing
+  suffix: No Smoothing, Dark] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/SecretDoors/sombersecretdoordark.rsi
+    state: closed
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
 
 # Chairs
 

@@ -136,6 +136,15 @@
     state: wallspikeSWrotatable
 
 # Diagonal stairs (don't snap to tile, rotate 45 degrees and zoom in and do pixel-perfect placement) (good luck)
+# The underlay will help the corner stairs not shift a fraction of a pixel and expose bright tile when the map reloads
+
+- type: decal
+  id: SomberCornerStairsUnderlay
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: cornerstairsunderlay
 
 - type: decal
   id: SomberCornerStairsLeft
@@ -154,6 +163,30 @@
     state: cornerstairsright
 
 - type: decal
+  id: SomberCornerStairsUpLeft
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: cornerstairsupleft
+
+- type: decal
+  id: SomberCornerStairsUpRight
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: cornerstairsupright
+
+- type: decal
+  id: SomberCornerStairsUnderlayDark
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: cornerstairsunderlay
+
+- type: decal
   id: SomberCornerStairsLeftDark
   tags: ["station", "overlay"]
   parent: SomberMisc
@@ -168,6 +201,22 @@
   sprite:
     sprite: _DEN/Decals/somber_dark.rsi
     state: cornerstairsright
+
+- type: decal
+  id: SomberCornerStairsUpLeftDark
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: cornerstairsupleft
+
+- type: decal
+  id: SomberCornerStairsUpRightDark
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: cornerstairsupright
 
 # Planter decals to put non-potted plants in, matched to the tiles
 
