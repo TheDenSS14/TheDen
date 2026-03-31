@@ -35,14 +35,8 @@
   name: BLU team operator
   suffix: DO NOT MAP
   components:
-  - type: GhostRole
-    rules: ghost-role-information-rules-default-team-antagonist
-    mindRoles:
-    - MindRoleNukeops
-    raffle:
-      settings: default
-  - type: GhostRoleMobSpawner
-    prototype: MobHumanNukeOp
+  - type: SpawnPoint
+    job_id: BLUTeamOperator
   - type: Sprite
     layers:
       - sprite: Markers/jobs.rsi
