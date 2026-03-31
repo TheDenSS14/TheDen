@@ -89,3 +89,11 @@
   - sprite: Mobs/Customization/ipc_screens.rsi
     state: ipc_no_screen_ring
     shader: unshaded
+
+- type: marking
+  parent: BaseRobotScreen
+  id: NoScreenHeart
+  sprites:
+  - sprite: Mobs/Customization/ipc_screens.rsi
+    state: ipc_no_screen_heart
+    shader: unshaded
