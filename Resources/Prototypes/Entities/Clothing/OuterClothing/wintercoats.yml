@@ -319,7 +319,7 @@
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterHoSUnarmored
   name: head of security's winter coat
-  description: A sturdy coat, a warm coat, but not an armored coat.
+  description: A sturdy coat, a warm coat, and a lightly armored coat.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coathos.rsi
@@ -333,10 +333,12 @@
         Blunt: 0.75
         Slash: 0.75
         Piercing: 0.75
-        Heat: 0.75
+        Heat: 0.6
         Caustic: 0.75 #not the full 90% from ss13 because of the head
   - type: StaminaDamageResistance #Den
     coefficient: 0.75 #Den
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
 
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
