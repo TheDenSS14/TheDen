@@ -325,7 +325,7 @@
   id: MobReplicatorTier2
   name: deconstructor
   parent: BaseMobReplicator
-  # categories: [HideSpawnMenu] # I don't want admins spawning a replicator that's unlinked to a nest
+  categories: [HideSpawnMenu] # I don't want admins spawning a replicator that's unlinked to a nest
   suffix: Level 2
   components:
   - type: Replicator
