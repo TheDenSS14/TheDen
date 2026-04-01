@@ -561,7 +561,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,-0.3"
+          bounds: "-0.5,-0.5,0.5,-0.46875"
         hard: false
         density: 1000
         mask:
@@ -569,7 +569,7 @@
         layer:
           - WallLayer
   - type: Occluder
-    boundingBox: "-0.5,-0.5,0.5,-0.3"
+    boundingBox: "-0.5,-0.5,0.5,-0.46875"
 
 - type: entity
   parent: InvisibleOccluder
@@ -595,7 +595,7 @@
     sprite: _SHA/Structures/Walls/invisible.rsi
     state: occluder-left
   - type: Occluder
-    boundingBox: "-0.5,-0.5,0,-0.3"
+    boundingBox: "-0.5,-0.5,0,-0.46875"
 
 - type: entity
   parent: InvisibleOccluder
@@ -609,7 +609,7 @@
     sprite: _SHA/Structures/Walls/invisible.rsi
     state: occluder-right
   - type: Occluder
-    boundingBox: "0,-0.5,0.5,-0.3"
+    boundingBox: "0,-0.5,0.5,-0.46875"
 
 - type: entity
   parent: WallSomber
@@ -2420,6 +2420,16 @@
     closedState: cover
 
 # Misc
+
+- type: entity
+  parent: RemoteSignallerSomber
+  id: RemoteSignallerSomberAdmin
+  name: somber remote signaller
+  suffix: PENTHOUSE, DO NOT MAP
+  description: "A brushed metal remote used for remotely sending signals to objects."
+  components:
+  - type: WirelessNetworkConnection
+    range: 1000
 
 - type: entity
   parent: [ BaseStructure, BasePsionic ]
@@ -4373,10 +4383,10 @@
     - id: MantisMeleeKnife
     - id: MantisTailorsKnife
     - id: ThavenArmyKnife
+    - id: RemoteSignallerSomberAdmin
     - id: ClothingNeckMantisPendulum
     - id: BoxFolderMantis
     - id: MantisCaseChemicalsPenthouse
-      amount: 2
     - id: CigPackMnemolithLighter
       amount: 2
     - id: ClothingHeadCageMantisPenthouse

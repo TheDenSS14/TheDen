@@ -871,7 +871,9 @@
     sprite: _DEN/Tiles/Planet/Somber/waterfall.rsi
     layers:
     - state: poolwaterfall
+      offset: 0,0.09375 # 3 pixels up to reach the spout
     - state: poolwaterfallshine
+      offset: 0,0.09375
       shader: unshaded
 
 # Waterfall Spouts
@@ -880,16 +882,12 @@
   parent: [ BaseStructure, BasePsionic ]
   id: SomberPoolWaterfallSpout
   name: somber pool waterfall spout
-  description: "A narrow spout set into the wall, providing fresh water from the filters below."
+  description: "A narrow spout set into the wall, providing fresh water from hidden filters."
   components:
   - type: Sprite
-    drawdepth: Overdoors
+    drawdepth: BlastDoors # One layer lower than the waterfall itself
     sprite: _DEN/Tiles/Planet/Somber/waterfall.rsi
-    layers:
-    - state: poolwaterfallspout
-    - state: poolwaterfallspoutwater
-    - state: poolwaterfallspoutwatershine
-      shader: unshaded
+    state: poolwaterfallspout
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -911,8 +909,4 @@
   suffix: Dark
   components:
   - type: Sprite
-    layers:
-    - state: poolwaterfallspoutdark
-    - state: poolwaterfallspoutwater
-    - state: poolwaterfallspoutwatershine
-      shader: unshaded
+    state: poolwaterfallspoutdark

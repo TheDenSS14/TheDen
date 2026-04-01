@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ BaseStructure, BasePsionic ] # Too many non-nullable components to parent it...
+  parent: BaseStructure # Too many non-nullable components to parent it...
   id: ShuttersSomberWindowTint
   name: electrochromic glass
   description: "A pane of electrochromic glass that shifts from clear to opaque at the touch of a signal. Privacy, rendered obedient to electricity."
@@ -85,7 +85,7 @@
       DoorStatus: false
 
 - type: entity
-  parent: ShuttersSomberWindowTint
+  parent: [ ShuttersSomberWindowTint, BasePsionic ]
   id: ShuttersSomberWindowTintClosed
   suffix: Closed Privacy Shutter, Somber Window Underlay
   components:
@@ -99,7 +99,7 @@
     enabled: true
 
 - type: entity
-  parent: ShuttersSomberWindowTint
+  parent: [ ShuttersSomberWindowTint, BasePsionic ]
   id: ShuttersSomberWindowTintOpen
   suffix: Open Privacy Shutter, Somber Window Underlay
   components:
@@ -107,3 +107,175 @@
     state: Open
   - type: Occluder
     enabled: false
+
+- type: entity
+  parent: BaseStructure
+  id: ShuttersFogWall
+  name: fog wall
+  description: "A wall of heavy, roiling fog. Shapes drift within the gray like something half-formed."
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _DEN/Structures/Doors/Shutters/fogwall.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Physics
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.125
+        hard: false
+        density: 100
+        mask:
+        - MachineMask
+  - type: Door
+    openDrawDepth: Effects
+    closedDrawDepth: Effects
+    bumpOpen: false
+    clickOpen: false
+    closeTimeOne: 0.6
+    closeTimeTwo: 0.6
+    openTimeOne: 0.6
+    openTimeTwo: 0.6
+    openingAnimationTime: 1.2
+    closingAnimationTime: 1.2
+    canCrush: false # It's fog
+    doorStunTime: 0
+    crushDamage:
+      types:
+        Blunt: 0 # Just for good measure
+    performCollisionCheck: false
+    canPry: false
+    changeAirtight: false
+    openSound: /Audio/_DEN/Effects/fogopen.ogg
+    closeSound: /Audio/_DEN/Effects/fogclose.ogg
+  - type: Rotatable
+  - type: AnimationPlayer
+  - type: Appearance
+  - type: UserInterface
+    interfaces:
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/_DV/Effects/creepyshriek.ogg # Hehe
+        params:
+          variation: 0.1
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_DV/Effects/creepyshriek.ogg
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: DoorSignalControl
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - Open
+      - Close
+      - Toggle
+  - type: DeviceLinkSource
+    ports:
+    - DoorStatus
+    lastSignals:
+      DoorStatus: false
+  - type: Occluder
+    boundingBox: "-0.5,-0.0234375,0.5,-.0078125" # Just half a pixel thick, centered in the occluding line
+
+- type: entity
+  parent: ShuttersFogWall
+  id: ShuttersFogWallClosed
+  suffix: Closed Privacy Shutter
+  components:
+  - type: Physics
+    canCollide: false
+  - type: Airtight
+    airBlocked: false
+  - type: RadiationBlocker
+    enabled: false
+  - type: Occluder
+    enabled: true
+
+- type: entity
+  parent: ShuttersFogWall
+  id: ShuttersFogWallOpen
+  suffix: Open Privacy Shutter, Right Click To Link
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: ShuttersFogWallClosed
+  id: ShuttersFogWallShadowClosed
+  name: dark haze
+  description: "A wall of heavy, roiling fog, contained by some unseen mechanism so it cannot spread. Shapes drift within the gray like something half-formed."
+  suffix: Closed Privacy Shutter
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _DEN/Structures/Doors/Shutters/fogwallshadow.rsi
+  - type: Door # Moves at half the speed of the other to match the shadow anomaly haze
+    closeTimeOne: 1.2
+    closeTimeTwo: 1.2
+    openTimeOne: 1.2
+    openTimeTwo: 1.2
+    openingAnimationTime: 2.4
+    closingAnimationTime: 2.4
+  - type: RandomSpawner # Dark haze creates shadow basalt
+    deleteSpawnerAfterSpawn: false
+    rareChance: 0
+    offset: 0.2
+    chance: 1
+    prototypes:
+      - ShadowBasaltRandom
+
+- type: entity
+  parent: ShuttersFogWallOpen
+  id: ShuttersFogWallShadowOpen
+  name: dark haze
+  description: "A wall of heavy, roiling fog, contained by some unseen mechanism so it cannot spread. Shapes drift within the gray like something half-formed."
+  suffix: Open Privacy Shutter, Right Click To Link
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _DEN/Structures/Doors/Shutters/fogwallshadow.rsi
+  - type: Door # Moves at half the speed of the other to match the shadow anomaly haze
+    closeTimeOne: 1.2
+    closeTimeTwo: 1.2
+    openTimeOne: 1.2
+    openTimeTwo: 1.2
+    openingAnimationTime: 2.4
+    closingAnimationTime: 2.4
+  - type: RandomSpawner # Dark haze creates shadow basalt
+    deleteSpawnerAfterSpawn: false
+    rareChance: 0
+    offset: 0.2
+    chance: 1
+    prototypes:
+      - ShadowBasaltRandom
