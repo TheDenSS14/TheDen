@@ -38,7 +38,7 @@
 - type: entity
   id: ReplicatorT1Weapon
   parent: [ BaseWeaponBatterySmall, BaseItem ]
-  name: replicator stun projector
+  name: replicator beam projector
   description: You will protect the nest.
   suffix: Unremoveable
   categories: [HideSpawnMenu]
@@ -84,7 +84,7 @@
 
 - type: entity
   id: ReplicatorT2AltWeapon
-  name: defender stun projector
+  name: defender beam projector
   parent: ReplicatorT1Weapon
   categories: [HideSpawnMenu]
   components:
@@ -210,8 +210,7 @@
   id: HitscanReplicator
   damage:
     types:
-      Heat: 10 #Den
-  staminaDamage: 20 # Den
+      Heat: 15 #Den
   muzzleFlash:
     sprite: _Impstation/Mobs/Replicator/replicator_gun.rsi
     state: muzzle_repli
@@ -227,7 +226,6 @@
   damage:
     types:
       Heat: 20 #Den
-  staminaDamage: 30 # Den
   muzzleFlash:
     sprite: _Impstation/Mobs/Replicator/replicator_gun.rsi
     state: muzzle_repli2
