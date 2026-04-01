@@ -1,0 +1,43 @@
+- type: entity
+  id: BLUTeamLoadoutSelector
+  name: BLU team loadout selector
+  description: Defend the nuke by any means necessary.
+  suffix: DO NOT MAP
+  parent: [ BaseItem, BaseSetSelector ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/unique_teleporters.rsi
+    state: standard
+  - type: SetSelector
+    spawnedStoragePrototype: ClothingBackpackDuffelBlueshield
+    spawnedStorageContainer: storagebase
+    approveSound:
+      path: /Audio/Effects/kaching.ogg
+    possibleSets:
+    - BLUTeamSet1
+    - BLUTeamSet2
+    - BLUTeamSet3
+    - BLUTeamSet4
+    - BLUREDTeamSet5
+
+- type: entity
+  id: REDTeamLoadoutSelector
+  name: RED team loadout selector
+  description: Detonate the nuke by any means necessary.
+  suffix: DO NOT MAP
+  parent: [ BaseItem, BaseSetSelector ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/unique_teleporters.rsi
+    state: standard
+  - type: SetSelector
+    spawnedStoragePrototype: ClothingBackpackDuffelSyndicate
+    spawnedStorageContainer: storagebase
+    approveSound:
+      path: /Audio/Effects/kaching.ogg
+    possibleSets:
+    - REDTeamSet1
+    - REDTeamSet2
+    - REDTeamSet3
+    - REDTeamSet4
+    - BLUREDTeamSet5

@@ -1,0 +1,54 @@
+- type: entity
+  parent: ClothingOuterHardsuitSyndie
+  id: ClothingOuterHardsuitBLUTeam
+  suffix: DO NOT MAP
+  name: BLU team tactical suit
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/Combat/blueshield.rsi
+  - type: Clothing
+    sprite:  _Goobstation/Clothing/OuterClothing/Hardsuits/Combat/blueshield.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitBLUTeam
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSyndie
+  id: ClothingHeadHelmetHardsuitBLUTeam
+  categories: [ HideSpawnMenu ]
+  name: BLU team tactical suit helmet
+  description: An advanced hardsuit helmet designed for work in special operations.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hardsuits/blueshield.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hardsuits/blueshield.rsi
+  - type: PointLight
+    color: aquamarine
+
+
+- type: entity
+  parent: ClothingOuterHardsuitSyndie
+  id: ClothingOuterHardsuitREDTeam
+  suffix: DO NOT MAP
+  name: RED team tactical suit
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
+  - type: Clothing
+    sprite:  Clothing/OuterClothing/Hardsuits/syndicate.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitREDTeam
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSyndie
+  id: ClothingHeadHelmetHardsuitREDTeam
+  categories: [ HideSpawnMenu ]
+  name: RED team tactical suit helmet
+  description: An advanced hardsuit helmet designed for work in special operations.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/syndicate.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardsuits/syndicate.rsi
+  - type: PointLight
+    color: green
