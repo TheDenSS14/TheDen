@@ -3228,7 +3228,6 @@
   - type: ItemToggle # You can flash a ritual circle by toggling it
     verbToggleOn: item-toggle-ritualon
     verbToggleOff: item-toggle-ritualoff
-    predictable: false
     soundActivate:
       path: /Audio/_SHA/castsummonfast.ogg
       params:

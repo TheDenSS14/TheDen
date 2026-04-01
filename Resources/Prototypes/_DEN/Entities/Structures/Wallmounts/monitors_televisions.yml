@@ -91,7 +91,7 @@
     color: "#ff9833"
   - type: ItemTogglePointLight
   - type: ItemToggle
-    predictable: false
+    activated: true
     soundActivate:
       path: /Audio/Machines/lightswitch.ogg
       params:
