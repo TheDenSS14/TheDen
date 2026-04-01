@@ -4,7 +4,7 @@
 # SPDX-FileCopyrightText: 2026 Jakumba
 # SPDX-FileCopyrightText: 2026 Kellaris
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: gamePreset
   id: LowDanger
@@ -72,3 +72,13 @@
   - SubGamemodesRule
   - LavalandStormScheduler # Lavaland Change
   - IrregularExtendedStationEventScheduler
+
+- type: gamePreset
+  id: CounterStrike14
+  alias:
+  - cs14
+  name: Counter Strike 14
+  description: Bomb has been planted
+  showInVote: false
+  highDanger: false
+  minPlayers: 0
