@@ -112,6 +112,16 @@ public sealed partial class MindComponent : Component
     [DataField]
     public TimeSpan? TimeOfDeath { get; set; }
 
+    // DEN edit start
+
+    /// <summary>
+    ///     The time the entity spawned in the round.
+    ///     Can be null - will be null if the Mind has not joined the round and is observing, for example.
+    /// </summary>
+    [DataField]
+    public TimeSpan? TimeOfRoundJoin { get; set; }
+    // DEN edit end
+
     /// <summary>
     ///     The entity currently owned by this mind.
     ///     Can be null.

@@ -14,13 +14,13 @@ using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
+using Robust.Shared.Serialization.TypeSerializers.Implementations;
 
 namespace Content.Server.Ghost;
 
 public sealed class GhostReturnToRoundSystem : EntitySystem
 {
     [Dependency] private readonly MindSystem _mindSystem = default!; // WD EDIT
-
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
@@ -64,16 +64,32 @@ public sealed class GhostReturnToRoundSystem : EntitySystem
             return;
         }
 
+        // DEN edit start
+
         var deathTime = EnsureComp<GhostComponent>(uid).TimeOfDeath;
-        // WD EDIT START
-        if (_mindSystem.TryGetMind(uid, out _, out var mind) && mind.TimeOfDeath.HasValue)
-            deathTime = mind.TimeOfDeath.Value;
+        var roundJoinTime = TimeSpan.Zero;
+        bool roundJoined = false;
+        if (_mindSystem.TryGetMind(uid, out _, out var mind))
+        {
+            if (mind.TimeOfDeath.HasValue)
+                deathTime = mind.TimeOfDeath.Value;
+
+            roundJoinTime = mind.TimeOfRoundJoin ?? TimeSpan.Zero;
+            roundJoined = true;
+        }
+
+        var timeUntilGraceEnd = TimeSpan.FromMinutes(_cfg.GetCVar(CCVars.RoundjoinRespawnPeriod));
+        var timePastGrace = _gameTiming.CurTime - roundJoinTime;
 
         var timeUntilRespawn = TimeSpan.FromMinutes(_cfg.GetCVar(CCVars.GhostRespawnTime));
-        var timePast = _gameTiming.CurTime - deathTime;
-        // WD EDIT END
-        if (timePast >= timeUntilRespawn)
+        var timePastDeath = _gameTiming.CurTime - deathTime;
+
+        if (roundJoined && timePastGrace <= timeUntilGraceEnd)
+            timeUntilRespawn = TimeSpan.FromSeconds(31); // ideally we'd get NoMindGracePeriod from CryostorageComponent but who cares, it's prebase.
+
+        if (timePastDeath >= timeUntilRespawn)
         {
+            // DEN edit end
             _playerManager.TryGetSessionById(userId, out var targetPlayer);
 
             if (targetPlayer != null)
@@ -88,7 +104,7 @@ public sealed class GhostReturnToRoundSystem : EntitySystem
         }
 
         // WD EDIT START
-        var timeLeft = timeUntilRespawn - timePast;
+        var timeLeft = timeUntilRespawn - timePastDeath;
         message = timeLeft.Minutes > 0
             ? Loc.GetString("ghost-respawn-minutes-left", ("time", timeLeft.Minutes))
             : Loc.GetString("ghost-respawn-seconds-left", ("time", timeLeft.Seconds));

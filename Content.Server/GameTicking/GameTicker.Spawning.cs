@@ -291,6 +291,7 @@ namespace Content.Server.GameTicking
 
             var newMind = _mind.CreateMind(data!.UserId, character.Name);
             _mind.SetUserId(newMind, data.UserId);
+            newMind.Comp.TimeOfRoundJoin = _gameTiming.CurTime; // DEN edit
 
             var jobPrototype = _prototypeManager.Index<JobPrototype>(jobId);
 
