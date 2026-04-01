@@ -1,24 +1,25 @@
-# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 Moony <moonheart08@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 moonheart08 <moonheart08@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 pointer-to-null <91910481+pointer-to-null@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Mervill <mervills.email@gmail.com>
-# SPDX-FileCopyrightText: 2022 Myctai <108953437+Myctai@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-# SPDX-FileCopyrightText: 2022 Radosvik <65792927+Radosvik@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 ZeroDayDaemon <60460608+ZeroDayDaemon@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 theashtronaut <112137107+theashtronaut@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Rainfey <rainfey0+github@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 DrSmugleaf
+# SPDX-FileCopyrightText: 2021 Galactic Chimp
+# SPDX-FileCopyrightText: 2021 Moony
+# SPDX-FileCopyrightText: 2021 moonheart08
+# SPDX-FileCopyrightText: 2021 pointer-to-null
+# SPDX-FileCopyrightText: 2022 Mervill
+# SPDX-FileCopyrightText: 2022 Myctai
+# SPDX-FileCopyrightText: 2022 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2022 Radosvik
+# SPDX-FileCopyrightText: 2022 ShadowCommander
+# SPDX-FileCopyrightText: 2022 ZeroDayDaemon
+# SPDX-FileCopyrightText: 2022 theashtronaut
+# SPDX-FileCopyrightText: 2023 Chief-Engineer
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Tom Leys
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Rainfey
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 portfiend
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 game-ticker-restart-round = Restarting round...
 game-ticker-start-round = The round is starting now...
@@ -30,13 +31,13 @@ game-ticker-delay-start = Round start has been delayed for {$seconds} seconds.
 game-ticker-pause-start = Round start has been paused.
 game-ticker-pause-start-resumed = Round start countdown is now resumed.
 game-ticker-player-join-game-message = Welcome to Space Station 14! If this is your first time playing, be sure to read the game rules, and don't be afraid to ask for help in LOOC (local OOC) or OOC (usually available only between rounds).
-game-ticker-get-info-text = Hi and welcome to [color=white]Space Station 14![/color]
+game-ticker-get-info-text = Hi and welcome to [color=white]IMPstation - Space Station 14![/color]
                             The current round is: [color=white]#{$roundId}[/color]
                             The current player count is: [color=white]{$playerCount}[/color]
                             The current map is: [color=white]{$mapName}[/color]
                             The current game mode is: [color=white]{$gmTitle}[/color]
                             >[color=yellow]{$desc}[/color]
-game-ticker-get-info-preround-text = Hi and welcome to [color=white]Space Station 14![/color]
+game-ticker-get-info-preround-text = Hi and welcome to [color=white]IMPstation - Space Station 14![/color]
                             The current round is: [color=white]#{$roundId}[/color]
                             The current player count is: [color=white]{$playerCount}[/color] ([color=white]{$readyCount}[/color] {$readyCount ->
                                 [one] is
