@@ -51,6 +51,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Server._DEN.Explosion.Components;
 using Content.Server.Administration.Logs;
 using Content.Server.Body.Systems;
 using Content.Server.Chemistry.Containers.EntitySystems;
@@ -85,6 +86,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Player;
 using Content.Shared.Coordinates;
+using Content.Shared.Item.ItemToggle;
+using Content.Shared.Item.ItemToggle.Components;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Explosion.EntitySystems
@@ -128,6 +131,7 @@ namespace Content.Server.Explosion.EntitySystems
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
         [Dependency] private readonly InventorySystem _inventory = default!;
+        [Dependency] private readonly ItemToggleSystem _toggleSystem = default!; // DEN: Item Toggle Triggers.
 
         public override void Initialize()
         {
@@ -158,6 +162,7 @@ namespace Content.Server.Explosion.EntitySystems
             SubscribeLocalEvent<AnchorOnTriggerComponent, TriggerEvent>(OnAnchorTrigger);
             SubscribeLocalEvent<SoundOnTriggerComponent, TriggerEvent>(OnSoundTrigger);
             SubscribeLocalEvent<RattleComponent, TriggerEvent>(HandleRattleTrigger);
+            SubscribeLocalEvent<ItemToggleOnTriggerComponent, TriggerEvent>(OnToggleTrigger); // DEN: Item Toggle Triggers.
         }
 
         private void OnSoundTrigger(EntityUid uid, SoundOnTriggerComponent component, TriggerEvent args)
@@ -380,6 +385,21 @@ namespace Content.Server.Explosion.EntitySystems
 
             if (TryComp<AppearanceComponent>(uid, out var appearance))
                 _appearance.SetData(uid, TriggerVisuals.VisualState, TriggerVisualState.Primed, appearance);
+        }
+
+        // DEN: Item Toggle Triggers
+        private void OnToggleTrigger(Entity<ItemToggleOnTriggerComponent> entity, ref TriggerEvent evt)
+        {
+            if (!TryComp<ItemToggleComponent>(entity, out var itemToggle))
+                return;
+
+            var handled = false;
+            if (itemToggle.Activated && entity.Comp.CanDeactivate)
+                handled = _toggleSystem.TryDeactivate(entity.Owner, evt.User, false);
+            else if (entity.Comp.CanActivate)
+                handled = _toggleSystem.TryActivate(entity.Owner, evt.User, false);
+
+            evt.Handled |= handled;
         }
 
         public override void Update(float frameTime)
