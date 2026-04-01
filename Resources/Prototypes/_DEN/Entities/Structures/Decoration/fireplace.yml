@@ -209,7 +209,7 @@
 - type: entity
   parent: SomberHangingBrazier
   id: SomberHangingBrazierPillarShorter
-  suffix: Fits Shorter Pillars, Click After Mapping
+  suffix: Fits Shorter Pillars
   placement:
     mode: SnapgridCenter
   components:
@@ -223,7 +223,7 @@
 - type: entity
   parent: SomberHangingBrazierPillarShorter
   id: SomberHangingBrazierPillarShort
-  suffix: Fits Short Pillars, Click After Mapping
+  suffix: Fits Short Pillars
   components:
   - type: SpriteFade
   - type: Sprite
@@ -232,7 +232,7 @@
 - type: entity
   parent: SomberHangingBrazierPillarShorter
   id: SomberHangingBrazierPillarTall
-  suffix: Fits Tall Pillars, Click After Mapping
+  suffix: Fits Tall Pillars
   components:
   - type: SpriteFade
   - type: Sprite
@@ -241,7 +241,7 @@
 - type: entity
   parent: SomberHangingBrazierPillarShorter
   id: SomberHangingBrazierPillarTaller
-  suffix: Fits Taller Pillars, Click After Mapping
+  suffix: Fits Taller Pillars
   components:
   - type: SpriteFade
   - type: Sprite
