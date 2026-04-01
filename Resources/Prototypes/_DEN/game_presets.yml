@@ -72,3 +72,13 @@
   - SubGamemodesRule
   - LavalandStormScheduler # Lavaland Change
   - IrregularExtendedStationEventScheduler
+
+- type: gamePreset
+  id: CounterStrike14
+  alias:
+  - cs14
+  name: Counter Strike 14
+  description: Bomb has been planted
+  showInVote: false
+  highDanger: false
+  minPlayers: 0

@@ -77,4 +77,4 @@ blured-team-set-4-name = Shotgun
 blured-team-set-4-desc = Your teams shotgun, spare ammo and grenades.
 
 blured-team-set-5-name = Medic
-blured-team-set-5-desc = A revolver sidearm, riot shield, medkit and combat pens.
+blured-team-set-5-desc = A revolver sidearm, medkit and combat pens.
