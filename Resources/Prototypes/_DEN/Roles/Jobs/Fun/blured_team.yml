@@ -35,12 +35,18 @@
 - type: entity
   id: SpawnPointBLUTeam
   categories: [Spawner]
-  parent: SpawnPointJobBase
+  parent: SpawnPointPlayerCharacter
   name: BLU team operator
   suffix: DO NOT MAP
   components:
-  - type: SpawnPoint
-    job_id: BLUTeamOperator
+  - type: GhostRole
+    name: BLU Team Operator
+    description: Defeat the RED team.
+    rules: Defend the bomb, at all costs.
+  - type: GhostRoleCharacterSpawner
+    deleteOnSpawn: false
+    availableTakeovers: 50
+    outfitPrototype: BLUTeamOperator
   - type: Sprite
     layers:
       - sprite: Markers/jobs.rsi
@@ -81,12 +87,18 @@
 - type: entity
   id: SpawnPointREDTeam
   categories: [Spawner]
-  parent: SpawnPointJobBase
+  parent: SpawnPointPlayerCharacter
   name: RED team operator
   suffix: DO NOT MAP
   components:
-  - type: SpawnPoint
-    job_id: REDTeamOperator
+  - type: GhostRole
+    name: RED Team Operator
+    description: Defeat the BLU team.
+    rules: Detonate the bomb, at all costs.
+  - type: GhostRoleCharacterSpawner
+    deleteOnSpawn: false
+    availableTakeovers: 50
+    outfitPrototype: REDTeamOperator
   - type: Sprite
     layers:
       - sprite: Markers/jobs.rsi

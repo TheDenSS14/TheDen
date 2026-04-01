@@ -373,75 +373,7 @@
     - GrenadeIncendiary
 
 - type: selectableSet
-  id: REDTeamSet1
-  name: blured-team-set-1-name
-  description: blured-team-set-1-desc
-  sprite:
-    sprite: Objects/Weapons/Guns/Rifles/ak.rsi
-    state: icon
-  content:
-    - WeaponRifleAk
-    - MagazineLightRifle
-    - MagazineLightRifle
-    - MagazineLightRifle
-    - GrenadeShrapnel
-    - GrenadeShrapnel
-    - ExGrenade
-    - ExGrenade
-
-- type: selectableSet
-  id: REDTeamSet2
-  name: blured-team-set-2-name
-  description: blured-team-set-2-desc
-  sprite:
-    sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
-    state: icon
-  content:
-    - WeaponSubMachineGunC20r
-    - MagazinePistolSubMachineGun
-    - MagazinePistolSubMachineGun
-    - MagazinePistolSubMachineGun
-    - GrenadeShrapnel
-    - GrenadeShrapnel
-    - GrenadeFlashBang
-    - GrenadeFlashBang
-
-- type: selectableSet
-  id: REDTeamSet3
-  name: blured-team-set-3-name
-  description: blured-team-set-3-desc
-  sprite:
-    sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
-    state: base
-  content:
-    - WeaponSniperHristov
-    - MagazineBoxAntiMateriel
-    - MagazineBoxAntiMateriel
-    - WeaponRevolverPython
-    - SpeedLoaderMagnum
-    - SpeedLoaderMagnum
-    - SmokeGrenade
-    - GrenadeFlashBang
-
-- type: selectableSet
-  id: REDTeamSet4
-  name: blured-team-set-4-name
-  description: blured-team-set-4-desc
-  sprite:
-    sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
-    state: icon
-  content:
-    - WeaponShotgunBulldog
-    - MagazineShotgun
-    - MagazineShotgun
-    - MagazineShotgun
-    - WeaponPistolViper
-    - MagazinePistol
-    - GrenadeShrapnel
-    - GrenadeIncendiary
-
-- type: selectableSet
-  id: BLUREDTeamSet5
+  id: BLUTeamSet5
   name: blured-team-set-5-name
   description: blured-team-set-5-desc
   sprite:
@@ -461,3 +393,103 @@
     - AirlossAutoInjector
     - SmokeGrenade
     - SmokeGrenade
+
+- type: selectableSet
+  id: REDTeamSet1
+  name: blured-team-set-1-name
+  description: blured-team-set-1-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Rifles/ak.rsi
+    state: icon
+  content:
+    - WeaponRifleAk
+    - MagazineLightRifle
+    - MagazineLightRifle
+    - MagazineLightRifle
+    - GrenadeShrapnel
+    - GrenadeShrapnel
+    - ExGrenade
+    - ExGrenade
+    - NukeCodePaper
+    - PinpointerNuclear
+
+- type: selectableSet
+  id: REDTeamSet2
+  name: blured-team-set-2-name
+  description: blured-team-set-2-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
+    state: icon
+  content:
+    - WeaponSubMachineGunC20r
+    - MagazinePistolSubMachineGun
+    - MagazinePistolSubMachineGun
+    - MagazinePistolSubMachineGun
+    - GrenadeShrapnel
+    - GrenadeShrapnel
+    - GrenadeFlashBang
+    - GrenadeFlashBang
+    - NukeCodePaper
+    - PinpointerNuclear
+
+- type: selectableSet
+  id: REDTeamSet3
+  name: blured-team-set-3-name
+  description: blured-team-set-3-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
+    state: base
+  content:
+    - WeaponSniperHristov
+    - MagazineBoxAntiMateriel
+    - MagazineBoxAntiMateriel
+    - WeaponRevolverPython
+    - SpeedLoaderMagnum
+    - SpeedLoaderMagnum
+    - SmokeGrenade
+    - GrenadeFlashBang
+    - NukeCodePaper
+    - PinpointerNuclear
+
+- type: selectableSet
+  id: REDTeamSet4
+  name: blured-team-set-4-name
+  description: blured-team-set-4-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
+    state: icon
+  content:
+    - WeaponShotgunBulldog
+    - MagazineShotgun
+    - MagazineShotgun
+    - MagazineShotgun
+    - WeaponPistolViper
+    - MagazinePistol
+    - GrenadeShrapnel
+    - GrenadeIncendiary
+    - NukeCodePaper
+    - PinpointerNuclear
+
+- type: selectableSet
+  id: REDTeamSet5
+  name: blured-team-set-5-name
+  description: blured-team-set-5-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
+    state: icon
+  content:
+    - WeaponRevolverMateba
+    - SpeedLoaderMagnum
+    - SpeedLoaderMagnum
+    - SpeedLoaderMagnum
+    - MedkitCombatFilled
+    - PunctAutoInjector
+    - PunctAutoInjector
+    - PunctAutoInjector
+    - PunctAutoInjector
+    - AirlossAutoInjector
+    - AirlossAutoInjector
+    - SmokeGrenade
+    - SmokeGrenade
+    - NukeCodePaper
+    - PinpointerNuclear
