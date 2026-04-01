@@ -121,3 +121,25 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingOuterCoatSpotsJacket
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    -  ClothingOuterCoatSpotsJacket
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingOuterCoatSpotsJacketLoose
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    -  ClothingOuterCoatSpotsJacketLoose
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
