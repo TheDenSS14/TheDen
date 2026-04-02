@@ -78,3 +78,14 @@
     unfoldVerbText: unfold-verb
   - type: FoldableClothing
     foldedEquippedPrefix: folded
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesHighTops
+  name: high-top shoes
+  description: "They're good for skating. Or just for looking cool and pretending you're a skater."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Shoes/Misc/high_tops.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Shoes/Misc/high_tops.rsi

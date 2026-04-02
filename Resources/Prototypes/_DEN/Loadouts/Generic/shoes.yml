@@ -25,3 +25,15 @@
       group: LoadoutShoes
   items:
     - ClothingShoesKneeHighBoots
+
+- type: loadout
+  id: LoadoutShoesHighTops
+  category: Shoes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHighTops

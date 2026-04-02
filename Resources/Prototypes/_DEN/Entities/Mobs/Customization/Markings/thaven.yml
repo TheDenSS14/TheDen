@@ -226,6 +226,36 @@
   - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
     state: nonaturals_f
 
+- type: marking
+  id: ThavenChestRings
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
+    state: chest_rings
+
+- type: marking
+  id: ThavenChestFreckles
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  followSkinColor: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
+    state: chest_freckles
+
+- type: marking
+  id: ThavenChestFrecklesU
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  followSkinColor: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
+    state: chest_freckles
+  shader: unshaded
+
 # Head
 
 - type: marking
@@ -366,6 +396,15 @@
   - sprite: _DEN/Mobs/Customization/Thaven/rarm.rsi
     state: r_arm_heavy2
   shader: unshaded
+
+- type: marking
+  id: ThavenArmRingsRight
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/rarm.rsi
+    state: r_arm_rings
 
 # RHand
 
@@ -575,6 +614,15 @@
     state: l_arm_heavy2
   shader: unshaded
 
+- type: marking
+  id: ThavenArmRingsLeft
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/larm.rsi
+    state: l_arm_rings
+
 # LHand
 
 - type: marking
@@ -700,6 +748,15 @@
     state: m_gradient_r_leg
   shader: unshaded
 
+- type: marking
+  id: ThavenRLegRings
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/rleg.rsi
+    state: r_leg_rings
+
 # RFoot
 
 - type: marking
@@ -741,6 +798,15 @@
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_l_leg
   shader: unshaded
+
+- type: marking
+  id: ThavenLLegRings
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/lleg.rsi
+    state: l_leg_rings
 
 # LFoot
 
@@ -1221,6 +1287,15 @@
     - sprite: _DEN/Mobs/Customization/Thaven/hair.rsi
       state: hair_gloomy_medium
 
+- type: marking
+  id: ThavenGloomyFluffy
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [ Thaven ]
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Thaven/hair.rsi
+      state: hair_gloomy_fluffy
+
 # HeadSide
 
 - type: marking
@@ -1243,7 +1318,27 @@
   - sprite: _DEN/Mobs/Customization/Thaven/headside.rsi
     state: tallears
 
+- type: marking
+  id: ThavenEarsWideFreckledEars
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/headside.rsi
+    state: wideears_freckled1
+  - sprite: _DEN/Mobs/Customization/Thaven/headside.rsi
+    state: wideears_freckled2
+
 # HeadTop
+
+- type: marking
+  id: ThavenHeadTopStrand
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/headtop.rsi
+    state: headtop_strand
 
 # Tail (Single-layer tails commented out for porting to servers without the Floof tail layering system)
 

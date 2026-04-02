@@ -341,3 +341,14 @@
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/syndie_baseball.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/syndie_baseball.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformStrainedShorts
+  name: strained shorts
+  description: These things are not the right size.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/strainedshorts.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/strainedshorts.rsi
