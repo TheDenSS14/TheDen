@@ -128,3 +128,37 @@
   components:
   - type: Sprite
     state: bedupperfancy2flipped
+
+# Psych Beds
+
+- type: entity
+  parent: [ BigBedLowerFancy1, BasePsionic ]
+  id: SomberPsychBedLong
+  name: somber leather chaise lounge
+  description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it."
+  suffix: Long
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/furniture-64x32.rsi
+    state: somberpsychbedlong
+    snapCardinals: false
+    noRot: false
+  - type: Strap
+    position: Down
+    rotation: -90
+    buckleOffset: "-0.275,0.025"
+
+- type: entity
+  parent: SomberPsychBedLong
+  id: SomberPsychBedLongFlipped
+  suffix: Long, Flipped
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/furniture-64x32.rsi
+    state: somberpsychbedlongflipped
+    snapCardinals: false
+    noRot: false
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: "0.275,0.06"

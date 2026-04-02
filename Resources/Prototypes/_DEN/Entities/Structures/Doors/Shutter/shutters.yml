@@ -23,16 +23,16 @@
     canCollide: false
   - type: Fixtures # If you specify bounding boxes here, WallMount's arc breaks and stops rotating...
   - type: Door
-    openDrawDepth: BelowWalls
-    closedDrawDepth: BelowWalls
-    bumpOpen: false
-    clickOpen: false
-    closeTimeOne: 0.749
-    closeTimeTwo: 0.750
-    openTimeOne: 0.750
-    openTimeTwo: 0.749
+    closeTimeOne: 0.75
+    closeTimeTwo: 0.75
+    openTimeOne: 0.75
+    openTimeTwo: 0.75
     openingAnimationTime: 1.5
     closingAnimationTime: 1.5
+    bumpOpen: false
+    clickOpen: false
+    openDrawDepth: BelowWalls
+    closedDrawDepth: BelowWalls
     canCrush: false # If you're somehow in it, you're standing on a pane of glass on the floor, it's fine
     doorStunTime: 0
     crushDamage:
@@ -108,11 +108,12 @@
   - type: Occluder
     enabled: false
 
+# Fog Walls Start
 - type: entity
   parent: BaseStructure
   id: ShuttersFogWall
   name: fog wall
-  description: "A wall of heavy, roiling fog. Shapes drift within the gray like something half-formed."
+  description: "A wall of heavy, roiling fog."
   abstract: true
   placement:
     mode: SnapgridCenter
@@ -140,16 +141,16 @@
         mask:
         - MachineMask
   - type: Door
-    openDrawDepth: Effects
-    closedDrawDepth: Effects
+    closeTimeOne: 1.3
+    closeTimeTwo: 1.3
+    openTimeOne: 1.3
+    openTimeTwo: 1.3
+    openingAnimationTime: 2.4
+    closingAnimationTime: 2.4
     bumpOpen: false
     clickOpen: false
-    closeTimeOne: 0.6
-    closeTimeTwo: 0.6
-    openTimeOne: 0.6
-    openTimeTwo: 0.6
-    openingAnimationTime: 1.2
-    closingAnimationTime: 1.2
+    openDrawDepth: Effects
+    closedDrawDepth: Effects
     canCrush: false # It's fog
     doorStunTime: 0
     crushDamage:
@@ -167,12 +168,6 @@
     interfaces:
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
-  - type: MeleeSound
-    soundGroups:
-      Brute:
-        path: /Audio/_DV/Effects/creepyshriek.ogg # Hehe
-        params:
-          variation: 0.1
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StrongMetallic
@@ -184,7 +179,7 @@
       behaviors:
       - !type:PlaySoundBehavior
         sound:
-          path: /Audio/_DV/Effects/creepyshriek.ogg
+          path: /Audio/_DEN/Effects/fogopen.ogg
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: DoorSignalControl
@@ -211,6 +206,11 @@
   id: ShuttersFogWallClosed
   suffix: Closed Privacy Shutter
   components:
+  - type: Sprite
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+      color: "#808080"
   - type: Physics
     canCollide: false
   - type: Airtight
@@ -223,31 +223,112 @@
 - type: entity
   parent: ShuttersFogWall
   id: ShuttersFogWallOpen
-  suffix: Open Privacy Shutter, Right Click To Link
+  suffix: Open Privacy Shutter] [Right Click To Link
   components:
+  - type: Sprite
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+      color: "#808080"
   - type: Door
     state: Open
   - type: Occluder
     enabled: false
 
+# Black Fog ("Smoke")
+
+- type: entity
+  parent: ShuttersFogWallClosed
+  id: ShuttersFogWallSmokeClosed
+  name: smoke wall
+  description: "A wall of heavy, roiling smoke."
+  suffix: Closed Fog Wall
+  components:
+  - type: Sprite
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+      color: "#000000"
+
+- type: entity
+  parent: ShuttersFogWallOpen
+  id: ShuttersFogWallSmokeOpen
+  name: smoke wall
+  description: "A wall of heavy, roiling smoke."
+  suffix: Open Fog Wall] [Right Click To Link
+  components:
+  - type: Sprite
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+      color: "#000000"
+
+# White Fog ("Steam")
+
+- type: entity
+  parent: ShuttersFogWallClosed
+  id: ShuttersFogWallSteamClosed
+  name: steam wall
+  description: "A wall of heavy, roiling steam."
+  suffix: Closed Fog Wall
+  components:
+  - type: Sprite
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+      color: "#ffffff"
+
+- type: entity
+  parent: ShuttersFogWallOpen
+  id: ShuttersFogWallSteamOpen
+  name: steam wall
+  description: "A wall of heavy, roiling steam."
+  suffix: Open Fog Wall] [Right Click To Link
+  components:
+  - type: Sprite
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+      color: "#ffffff"
+
+# Purple-Black Fog (Resembles shadow anomaly fog and has a slower framerate to match, includes a variant that spawns shadow basalt)
+
 - type: entity
   parent: ShuttersFogWallClosed
   id: ShuttersFogWallShadowClosed
   name: dark haze
-  description: "A wall of heavy, roiling fog, contained by some unseen mechanism so it cannot spread. Shapes drift within the gray like something half-formed."
-  suffix: Closed Privacy Shutter
+  description: "A wall of heavy, roiling fog, contained by some unseen mechanism so it cannot spread. Shapes drift within like something half-formed."
+  suffix: No Basalt, Closed Fog Wall
   components:
   - type: Sprite
-    drawdepth: Effects
     sprite: _DEN/Structures/Doors/Shutters/fogwallshadow.rsi
-  - type: Door # Moves at half the speed of the other to match the shadow anomaly haze
-    closeTimeOne: 1.2
-    closeTimeTwo: 1.2
-    openTimeOne: 1.2
-    openTimeTwo: 1.2
-    openingAnimationTime: 2.4
-    closingAnimationTime: 2.4
-  - type: RandomSpawner # Dark haze creates shadow basalt
+  - type: Door # Aligns the appearance of the occluder line with the occluding state of the door
+    closeTimeOne: 1.4
+    closeTimeTwo: 1.4
+    openTimeOne: 1.4
+    openTimeTwo: 1.4
+
+- type: entity
+  parent: ShuttersFogWallOpen
+  id: ShuttersFogWallShadowOpen
+  name: dark haze
+  description: "A wall of heavy, roiling fog, contained by some unseen mechanism so it cannot spread. Shapes drift within like something half-formed."
+  suffix: No Basalt, Open Fog Wall] [Right Click To Link
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Shutters/fogwallshadow.rsi
+  - type: Door
+    closeTimeOne: 1.4
+    closeTimeTwo: 1.4
+    openTimeOne: 1.4
+    openTimeTwo: 1.4
+
+- type: entity
+  parent: ShuttersFogWallShadowClosed
+  id: ShuttersFogWallShadowBasaltClosed
+  suffix: Spawns Basalt, Closed Fog Wall
+  components:
+  - type: RandomSpawner # Spawns floor crystals like real dark haze
     deleteSpawnerAfterSpawn: false
     rareChance: 0
     offset: 0.2
@@ -256,26 +337,45 @@
       - ShadowBasaltRandom
 
 - type: entity
-  parent: ShuttersFogWallOpen
-  id: ShuttersFogWallShadowOpen
-  name: dark haze
-  description: "A wall of heavy, roiling fog, contained by some unseen mechanism so it cannot spread. Shapes drift within the gray like something half-formed."
-  suffix: Open Privacy Shutter, Right Click To Link
+  parent: ShuttersFogWallShadowOpen
+  id: ShuttersFogWallShadowBasaltOpen
+  suffix: Spawns Basalt, Open Fog Wall] [Right Click To Link
   components:
-  - type: Sprite
-    drawdepth: Effects
-    sprite: _DEN/Structures/Doors/Shutters/fogwallshadow.rsi
-  - type: Door # Moves at half the speed of the other to match the shadow anomaly haze
-    closeTimeOne: 1.2
-    closeTimeTwo: 1.2
-    openTimeOne: 1.2
-    openTimeTwo: 1.2
-    openingAnimationTime: 2.4
-    closingAnimationTime: 2.4
-  - type: RandomSpawner # Dark haze creates shadow basalt
+  - type: RandomSpawner # Spawns floor crystals like real dark haze
     deleteSpawnerAfterSpawn: false
     rareChance: 0
     offset: 0.2
     chance: 1
     prototypes:
       - ShadowBasaltRandom
+
+# White Light (Funny, but it requires two entities linked to the same signal to work)
+
+- type: entity
+  parent: ShuttersFogWallClosed
+  id: ShuttersFogWallBossClosed
+  name: white light
+  description: "A curtain of pale light fills the doorway. You have a bad feeling about this."
+  suffix: Closed Fog Wall
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Shutters/fogwallboss.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+      color: "#d8d4c8"
+
+- type: entity
+  parent: ShuttersFogWallOpen
+  id: ShuttersFogWallBossOpen
+  name: white light
+  description: "A curtain of pale light fills the doorway. You have a bad feeling about this."
+  suffix: Open Fog Wall] [Right Click To Link
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Shutters/fogwallboss.rsi
+    layers:
+    - state: open
+      map: ["enum.DoorVisualLayers.Base"]
+      color: "#d8d4c8"
+# Fog Walls End

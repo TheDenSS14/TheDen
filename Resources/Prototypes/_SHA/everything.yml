@@ -557,59 +557,21 @@
     sprite: _SHA/Structures/Walls/invisible.rsi
     state: occluder
   - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,-0.46875"
-        hard: false
-        density: 1000
-        mask:
-          - FullTileMask
-        layer:
-          - WallLayer
   - type: Occluder
-    boundingBox: "-0.5,-0.5,0.5,-0.46875"
+    boundingBox: "-0.5,-0.5,0.5,-.484375" # Just half a pixel thick, centered in the occluding line
 
 - type: entity
   parent: InvisibleOccluder
-  id: InvisibleOccluderNoSprite
-  suffix: PENTHOUSE, No Sprite
+  id: InvisibleOccluderCentered
+  suffix: PENTHOUSE, Centered
   components:
   - type: Sprite
-    sprite: _SHA/Structures/Walls/invisible.rsi
-    state: invisible
+    state: occludercenter
   - type: Icon
-    sprite: _SHA/Structures/Walls/invisible.rsi
-    state: invisible
-
-- type: entity
-  parent: InvisibleOccluder
-  id: InvisibleOccluderLeft
-  suffix: PENTHOUSE, Left
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Walls/invisible.rsi
-    state: occluder-left
-  - type: Icon
-    sprite: _SHA/Structures/Walls/invisible.rsi
-    state: occluder-left
+    state: occludercenter
+  - type: Fixtures
   - type: Occluder
-    boundingBox: "-0.5,-0.5,0,-0.46875"
-
-- type: entity
-  parent: InvisibleOccluder
-  id: InvisibleOccluderRight
-  suffix: PENTHOUSE, Right
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Walls/invisible.rsi
-    state: occluder-right
-  - type: Icon
-    sprite: _SHA/Structures/Walls/invisible.rsi
-    state: occluder-right
-  - type: Occluder
-    boundingBox: "0,-0.5,0.5,-0.46875"
+    boundingBox: "-0.5,-0.0234375,0.5,-.0078125" # Just half a pixel thick, centered in the occluding line
 
 - type: entity
   parent: WallSomber
@@ -720,38 +682,6 @@
     mode: NoSprite
 
 # Chairs
-
-- type: entity
-  parent: [ BigBedUpperFancy1, BasePsionic ]
-  id: SomberPsychBedLong
-  name: somber leather chaise lounge
-  description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it."
-  suffix: Long] [PENTHOUSE
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Furniture/furniture-64x32.rsi
-    state: somberpsychbedlong
-    snapCardinals: false
-    noRot: false
-  - type: Strap
-    position: Down
-    rotation: -90
-    buckleOffset: "-0.275,0.025"
-
-- type: entity
-  parent: SomberPsychBedLong
-  id: SomberPsychBedLongFlipped
-  suffix: Long, Flipped] [PENTHOUSE
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Furniture/furniture-64x32.rsi
-    state: somberpsychbedlongflipped
-    snapCardinals: false
-    noRot: false
-  - type: Strap
-    position: Down
-    rotation: 90
-    buckleOffset: "0.275,0.06"
 
 - type: entity
   parent: SomberPsychBedLong
