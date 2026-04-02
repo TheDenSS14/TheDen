@@ -5,6 +5,7 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
 # SPDX-FileCopyrightText: 2026 Alex C
+# SPDX-FileCopyrightText: 2026 Octofoss
 # SPDX-FileCopyrightText: 2026 meatsmall
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
