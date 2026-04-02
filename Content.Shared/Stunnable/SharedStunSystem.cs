@@ -185,6 +185,10 @@ public abstract partial class SharedStunSystem : EntitySystem
         if (!TryComp<StatusEffectsComponent>(args.OtherEntity, out var status))
             return;
 
+        if (TryComp<PhysicsComponent>(args.OtherEntity, out var otherPhysics) &&
+            otherPhysics.LinearVelocity.Length() < ent.Comp.TriggerSpeed)
+            return;
+
         TryStun(args.OtherEntity, ent.Comp.Duration, true, status);
         TryKnockdown(args.OtherEntity, ent.Comp.Duration, true, status);
     }
