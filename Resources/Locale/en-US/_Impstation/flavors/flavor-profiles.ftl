@@ -6,6 +6,7 @@
 # SPDX-FileCopyrightText: 2025 pocl v
 # SPDX-FileCopyrightText: 2025 pocl.v
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 Tomce795
 # SPDX-FileCopyrightText: 2026 entings
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -47,3 +48,5 @@ flavor-complex-weldingcoils = electrifying
 
 flavor-base-fatty = fatty
 flavor-base-gooey = gooey
+
+flavor-complex-secticket = like rotten eggs

@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: trait
   id: CumProducer
@@ -18,18 +18,14 @@
         - StationAi
         - Borg
         - MedicalBorg
+    - !type:CharacterTraitRequirement # DEN
+      inverted: true
+      traits:
+      - SynthCumProducer
   functions:
-    - !type:TraitAddComponent
-      components:
-        - type: CumProducer
-          solutionname: penis
-    - !type:TraitAddSolutionContainer
-      solutions:
-        penis:
-          maxVol: 25
-          reagents:
-          - ReagentId: Cum
-            Quantity: 25
+    - !type:TraitAddReagentProduction # DEN
+      reagentProductionTypes:
+      - CumProduction
 
 #   components:
 #     - type: CumProducer
@@ -54,17 +50,10 @@
         - Borg
         - MedicalBorg
   functions:
-    - !type:TraitAddComponent
-      components:
-        - type: MilkProducer
-          solutionname: breasts
-    - !type:TraitAddSolutionContainer
-      solutions:
-        breasts:
-          maxVol: 50
-          reagents:
-          - ReagentId: Milk
-            Quantity: 50
+  - !type:TraitAddReagentProduction # DEN
+    reagentProductionTypes:
+    - BreastMilkProduction
+
 
 #   components:
 #     - type: MilkProducer
@@ -88,18 +77,14 @@
         - StationAi
         - Borg
         - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+      - SynthLubeProducer
   functions:
-    - !type:TraitAddComponent
-      components:
-        - type: SquirtProducer
-          solutionname: vagina
-    - !type:TraitAddSolutionContainer
-      solutions:
-        vagina:
-          maxVol: 25
-          reagents:
-          - ReagentId: NaturalLubricant
-            Quantity: 25
+  - !type:TraitAddReagentProduction # DEN
+    reagentProductionTypes:
+    - SquirtProduction
 
 #   components:
 #     - type: SquirtProducer
@@ -111,27 +96,3 @@
 #           reagents:
 #           - ReagentId: NaturalLubricant
 #             Quantity: 25
-
-- type: trait
-  id: HoneyProducer
-  category: TraitsPhysicalBiological
-  points: -1 # Point cost added to balance with removal of species restriction
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - StationAi
-        - Borg
-        - MedicalBorg
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: HoneyProducer
-          solutionname: honeystomach
-    - !type:TraitAddSolutionContainer
-      solutions:
-        honeystomach:
-          maxVol: 50
-          reagents:
-          - ReagentId: Honey
-            Quantity: 50

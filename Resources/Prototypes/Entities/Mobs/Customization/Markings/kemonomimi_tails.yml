@@ -13,9 +13,7 @@
 
 - type: marking
   id: BunnyTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Human, SlimePerson, IPC]
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -40,9 +38,7 @@
 
 - type: marking
   id: BunnyTailAlt
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Human]
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -58,9 +54,7 @@
 
 - type: marking
   id: DobleFur
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Human, SlimePerson, IPC]
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -78,9 +72,7 @@
 
 - type: marking
   id: FluffyTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Human, SlimePerson, IPC]
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -96,9 +88,7 @@
 
 - type: marking
   id: FoxNineTails
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Human, SlimePerson, IPC, Canid] # The Den - Add Canid
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -116,9 +106,7 @@
 
 - type: marking
   id: FoxThreeTails
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Human, SlimePerson, IPC, Canid] # The Den - Add Canid
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -136,9 +124,7 @@
 
 - type: marking
   id: HorseTailCulty
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Human, SlimePerson, IPC, Oni, Ovinia]
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -154,9 +140,7 @@
 
 - type: marking
   id: HorseTailLong
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Human, SlimePerson, IPC, Ovinia]
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -172,9 +156,7 @@
 
 - type: marking
   id: SharkTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Human, SlimePerson, IPC]
+  parent: BaseTailMarking
   coloring:
     default:
       type:
@@ -190,9 +172,7 @@
 
 - type: marking
   id: TasselTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Human, SlimePerson, IPC, Oni]
+  parent: BaseTailMarking
   coloring:
     default:
       type:

@@ -1,0 +1,52 @@
+# SPDX-FileCopyrightText: 2026 Alex C
+#
+# SPDX-License-Identifier: MIT
+
+- type: quickConstructionCategory
+  id: Glass
+  constructionEntries:
+  - Window
+  - WindowDiagonal
+  - WindowDirectional
+
+- type: quickConstructionCategory
+  id: ReinforcedGlass
+  constructionEntries:
+  - ReinforcedWindow
+  - ReinforcedWindowDiagonal
+  - WindowReinforcedDirectional
+
+- type: quickConstructionCategory
+  id: UraniumGlass
+  constructionEntries:
+  - UraniumWindow
+  - UraniumWindowDirectional
+  - UraniumWindowDiagonal
+
+- type: quickConstructionCategory
+  id: ReinforcedUraniumGlass
+  constructionEntries:
+  - ReinforcedUraniumWindow
+  - ReinforcedUraniumWindowDiagonal
+  - UraniumReinforcedWindowDirectional
+
+- type: quickConstructionCategory
+  id: PlasmaGlass
+  constructionEntries:
+  - PlasmaWindow
+  - PlasmaWindowDiagonal
+  - PlasmaWindowDirectional
+
+- type: quickConstructionCategory
+  id: ReinforcedPlasmaGlass
+  constructionEntries:
+  - ReinforcedPlasmaWindow
+  - ReinforcedPlasmaWindowDiagonal
+  - PlasmaReinforcedWindowDirectional
+
+- type: quickConstructionCategory
+  id: ClockworkGlass
+  constructionEntries:
+  - ClockworkWindow
+  - ClockworkWindowDiagonal
+  - WindowClockworkDirectional

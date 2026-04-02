@@ -13,7 +13,7 @@
 # SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: species
   id: Ovinia
@@ -40,6 +40,7 @@
   id: MobOviniaSprites
   sprites:
     Head: MobOviniaHead
+    Face: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     Underwear: MobHumanoidAnyMarking
@@ -68,16 +69,20 @@
     FacialHair:
       points: 1
       required: false
+    Snout:
+      points: 1
+      required: true
+      defaultMarkings: [ OviniaSnoutDefault ]
     Tail:
       points: 1
       required: true
       defaultMarkings: [ OviniaTail ]
     HeadTop:
-      points: 2
+      points: 6
       required: true
       defaultMarkings: [ OviniaEars ]
     Chest:
-      points: 4
+      points: 6
       required: false
     Genitals:
       points: 1
@@ -133,6 +138,15 @@
   baseSprite:
     sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
     state: head_f
+
+- type: marking
+  id: OviniaSnoutDefault
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [ ]
+  sprites:
+  - sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
+    state: snout
 
 - type: humanoidBaseSprite
   id: MobOviniaTorso

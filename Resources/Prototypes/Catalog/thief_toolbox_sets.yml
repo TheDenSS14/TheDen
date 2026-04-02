@@ -1,10 +1,11 @@
-# SPDX-FileCopyrightText: 2023 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Ed <96445749+theshued@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Agoichi <92464780+Agoichi@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Ed
+# SPDX-FileCopyrightText: 2024 Agoichi
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Kellaris
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -16,16 +17,7 @@
     sprite: /Textures/Clothing/OuterClothing/Misc/black_hoodie.rsi
     state: icon
   content:
-  - ClothingUniformJumpsuitChameleon
-  - ClothingOuterChameleon
-  - ClothingNeckChameleon
-  - ClothingMaskGasChameleon
-  - ClothingHeadHatChameleon
-  - ClothingEyesChameleon
-  - ClothingHeadsetChameleon
-  - ClothingShoesChameleon
-  - ChameleonProjector
-  - AgentIDCard
+  - ClothingBackpackDuffelThiefChameleon
 
 - type: thiefBackpackSet
   id: ToolsSet
@@ -35,14 +27,7 @@
     sprite: Objects/Tools/jaws_of_life.rsi
     state: jaws_pry
   content:
-  - WelderIndustrialAdvanced
-  - ClothingEyesGlassesMeson
-  - ClothingHandsGlovesColorYellow
-  - JawsOfLife
-  - Multitool
-  - BreachingCharge
-  - BreachingCharge
-  - ClothingMaskClown
+  - ClothingBackpackSatchelSmugglerThiefBearcatcher
 
 - type: thiefBackpackSet
   id: ChemistrySet
@@ -52,12 +37,7 @@
     sprite: Objects/Specific/Medical/implanter.rsi
     state: implanter0
   content:
-  - StorageImplanter
-  - DnaScramblerImplanter
-  - EphedrineChemistryBottle
-  - SoapOmega
-  - Syringe
-  - DrinkVodkaBottleFull
+  - BriefcaseThiefChemistryBundleFilled
 
 - type: thiefBackpackSet
   id: SyndieSet
@@ -67,14 +47,7 @@
     sprite: Objects/Specific/Syndicate/telecrystal.rsi
     state: telecrystal
   content:
-  - RadioJammer
-  - TraitorCodePaper
-  - Emag
-  - Lighter
-  - SyndicatePersonalAI
-  - ClothingHeadHatSyndieMAA
-  - CigPackSyndicate
-  - Telecrystal50 #The thief cannot use them, but it may induce communication with traitors
+  - BriefcaseThiefSyndiBundleFilled
 
 - type: thiefBackpackSet
   id: SleeperSet
@@ -84,14 +57,7 @@
     sprite: Objects/Tanks/anesthetic.rsi
     state: icon
   content:
-  - ClothingHeadPyjamaSyndicateBlack
-  - ClothingUniformJumpsuitPyjamaSyndicateBlack
-  - NocturineChemistryBottle
-  - NocturineChemistryBottle
-  - NocturineChemistryBottle
-  - HypopenBox
-  - NitrousOxideTankFilled
-  - BedsheetSyndie
+  - BriefcaseThiefSleeperBundleFilled
 
 - type: thiefBackpackSet
   id: CommunicatorSet
@@ -106,11 +72,7 @@
       species:
       - Plasmaman
   content:
-  - EncryptionKeyStationMaster
-  - CyberPen
-  - SpyCrewMonitor
   - BriefcaseThiefBribingBundleFilled
-  - ClothingMaskGasVoiceChameleon
   #- todo Chameleon Stamp
 
 - type: thiefBackpackSet
@@ -125,11 +87,8 @@
       species:
       - Plasmaman
   content:
-  - EncryptionKeyStationMaster
-  - CyberPen
-  - SpyCrewMonitor
-  - BriefcaseThiefBribingBundlePlasmamanFilled
   - ClothingMaskGasVoiceChameleon
+  - BriefcaseThiefBribingBundlePlasmamanFilled
 
 - type: thiefBackpackSet
   id: SmugglerSet
@@ -140,9 +99,4 @@
     state: icon
   content:
   - InvisibleCrate
-  - ClothingNeckCloakVoid
-  - FultonBeacon
-  - Fulton
-  - SmokeGrenade
-  - SmokeGrenade
-  - SmokeGrenade
+  - ClothingBackpackSatchelSmugglerThiefSmuggler

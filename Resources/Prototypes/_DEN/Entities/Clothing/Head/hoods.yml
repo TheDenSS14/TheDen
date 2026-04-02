@@ -8,7 +8,7 @@
   parent: ClothingHeadHatFezMantis
   id: ClothingHeadHoodMantisDark
   name: dark mantis hood
-  description: "A gloomy hood that sits low on the head, ornamented with magenta tassles. It matches your cloak nicely, though it can be worn on its own."
+  description: "A gloomy hood that sits low on the head, ornamented with magenta tassles. It matches your cloak nicely, though it can be worn on its own. If you have a knife, you could probably tailor it to fit more comfortably atop your shoulders."
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Head/Hoods/mantis_hood_dark.rsi
@@ -21,6 +21,32 @@
     - HeadSide
     clothingSlots:
     - ears
+  - type: Butcherable # Butchering it lowers it
+    butcherDelay: 0.5
+    butcheringType: Knife
+    spawned:
+    - id: ClothingHeadHoodMantisDarkFolded
+      amount: 1
+
+- type: entity # One day when HideLayerClothing can be affected by folding, this shouldn't require butchery
+  parent: ClothingHeadHatFezMantis # When that day comes, parent it to ClothingHeadHoodMantisDark
+  id: ClothingHeadHoodMantisDarkFolded
+  name: dark mantis hood
+  suffix: Lowered
+  description: "A gloomy hood that sits low on the head, ornamented with magenta tassles. It matches your cloak nicely, though it can be worn on its own. It keeps sliding back onto your shoulders, but if you have a knife, you could probably tailor it to fix that."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hoods/mantis_hood_dark.rsi
+    state: icon-folded
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hoods/mantis_hood_dark.rsi
+    equippedPrefix: folded
+  - type: Butcherable # Butchering it raises it again
+    butcherDelay: 0.5
+    butcheringType: Knife
+    spawned:
+    - id: ClothingHeadHoodMantisDark
+      amount: 1
 
 - type: entity
   parent: ClothingHeadHatHoodWinterBase

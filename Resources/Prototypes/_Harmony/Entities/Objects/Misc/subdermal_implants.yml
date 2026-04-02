@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 Jakumba
+#
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: RadioImplantConspiracy
+  categories: [ HideSpawnMenu ]
+  name: conspiracy radio implant
+  description: This implant grants access to the Conspiracy channel without a headset.
+  components:
+  - type: SubdermalImplant
+  - type: RadioImplant
+    radioChannels:
+    - Conspiracy

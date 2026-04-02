@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2026 Alex C
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: reaction
+  id: SyntheticLubricant
+  minTemp: 398.15
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Water:
+      amount: 2
+    Glycerol:
+      amount: 1
+  products:
+    SyntheticLubricant: 3
+
+- type: reaction
+  id: SyntheticCum
+  reactants:
+    SyntheticLubricant:
+      amount: 3
+    SodiumCarbonate:
+      amount: 1
+  products:
+    SyntheticCum: 4

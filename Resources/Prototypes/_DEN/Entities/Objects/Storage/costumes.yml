@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 pocl v
+#
+# SPDX-License-Identifier: MIT
+
 # Costume bundles
 # Used to consolidate multi-item costumes into a single item for drobes.
 
@@ -89,6 +94,52 @@
     - id: ClothingShoesAngelSandals
     - id: ClothingNeckAngelWings
     - id: HandheldHarpInstrument
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleBaseballNT
+  name: NT baseball uniform bundle
+  components:
+  - type: Sprite
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#2A2E41"
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#1b67a5"
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatNanoballsoft
+    - id: ClothingUniformJumpsuitBaseballNT
+    - id: ClothingHandsGlovesColorWhite
+    - id: ClothingShoesBootsLaceup
+    - id: NTHandyFlag
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleBaseballSyndie
+  name: syndicate baseball uniform bundle
+  components:
+  - type: Sprite
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#872020"
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#ff0000"
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatSyndieballsoft
+    - id: ClothingUniformJumpsuitBaseballSyndicate
+    - id: ClothingHandsGlovesColorWhite
+    - id: ClothingShoesBootsLaceup
+    - id: SyndieHandyFlag
 
 - type: entity
   parent: BaseCostumeBundle
@@ -287,6 +338,29 @@
 
 - type: entity
   parent: BaseCostumeBundle
+  id: CostumeBundleMagician
+  name: magician costume bundle
+  components:
+  - type: Sprite
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#2c2a2d"
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#bc0b1b"
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatMagician
+    - id: ClothingEyesGlassesWhiteHalfMask
+    - id: ClothingNeckCloakMagicianCape
+    - id: ClothingUniformJumpsuitTailcoatSuit
+    - id: ClothingShoesKneeHighBoots
+
+- type: entity
+  parent: BaseCostumeBundle
   id: CostumeBundleMonkey
   name: monkey costume bundle
   components:
@@ -395,6 +469,50 @@
     - id: ClothingUniformJumpskirtPerformer
     - id: ClothingShoesBootsPerformer
     - id: FoodMealMemoryleek
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundlePrincessGreen
+  name: green princess costume bundle
+  components:
+  - type: Sprite
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#57ab91"
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#ffc419"
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatCuteTiara
+    - id: ClothingHeadHatSimpleTiara
+    - id: ClothingHeadHatGreenEscoffion
+    - id: ClothingUniformGreenPrincessDress
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundlePrincessPink
+  name: pink princess costume bundle
+  components:
+  - type: Sprite
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#fb819f"
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#ffc419"
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatCuteTiara
+    - id: ClothingHeadHatSimpleTiara
+    - id: ClothingHeadHatPrincess
+    - id: ClothingUniformPinkPrincessDress
 
 - type: entity
   parent: BaseCostumeBundle
@@ -518,6 +636,27 @@
     contents:
     - id: ClothingHeadHatSkub
     - id: ClothingOuterSkub
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleTacticalMaid
+  name: tactical maid costume bundle
+  components:
+  - type: Sprite
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#39393f"
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#88242d"
+  - type: StorageFill
+    contents:
+    - id: ClothingHandsTacticalMaidGlovesLoadout
+    - id: ClothingUniformJumpskirtTacticalMaid
+    - id: ClothingHeadHatTacticalMaidHeadband
 
 - type: entity
   parent: BaseCostumeBundle

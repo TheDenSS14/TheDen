@@ -1,0 +1,29 @@
+# SPDX-FileCopyrightText: 2026 Shaman
+# SPDX-FileCopyrightText: 2026 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Glasses
+
+- type: loadout
+  id: LoadoutClothingEyesGlassesRimless
+  category: Eyes
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingEyesGlassesRimless
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutEyesGlassesWhiteHalfMask
+  category: Eyes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingEyesGlassesWhiteHalfMask
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutEyes

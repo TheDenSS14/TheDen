@@ -63,6 +63,7 @@
     guides: [ PsionicInsulation ]
   - type: Tag
     tags:
+    - WhitelistChameleon
     - MantisBeltStorable
   - type: Foldable
     canFoldInsideContainer: true
@@ -116,6 +117,16 @@
     unfoldVerbText: unfold-verb
   - type: FoldableClothing
     foldedEquippedPrefix: folded
+
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingHeadHatFezMantisOrnate
+  id: ClothingHeadHatFezMantisOrnateFolded
+  suffix: Folded
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: folded
 
 - type: entity
   parent: [ClothingHeadCage, BaseMantisContraband]
@@ -288,3 +299,27 @@
     sprite: _DEN/Clothing/Head/Hats/diner_fastfood.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Head/Hats/diner_fastfood.rsi
+
+## BASEBALL
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatNanoballsoft
+  name: NT dogs baseball cap
+  description: This is the only baseball team you're allowed to rep at work.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/nt_baseballcap.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/nt_baseballcap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSyndieballsoft
+  name: syndi cats baseball cap
+  description: "\"War is an inefficient business.\""
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/syndie_baseballcap.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/syndie_baseballcap.rsi

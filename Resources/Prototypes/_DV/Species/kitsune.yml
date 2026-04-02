@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: species
   id: Kitsune
@@ -39,7 +39,7 @@
       points: 1
       required: false
     Head: # Floof - M3739 - #937
-      points: 3 # Floof - M3739 - #937
+      points: 6
       required: false # Floof - M3739 - #937
     Snout:
       points: 1
@@ -49,7 +49,7 @@
       required: true
       defaultMarkings: [ KitsuneTailDefault ]
     HeadTop:
-      points: 1
+      points: 6
       required: true
       defaultMarkings: [ KitsuneEarsDefault ]
 #    UndergarmentTop: # Floof - M3739 - #937 - Commented out for posterity. Superseded by Underwear and Undershirt.
@@ -59,35 +59,35 @@
 #      points: 1
 #      required: false
     Chest:
-      points: 3 # Floof - M3739 - #937
+      points: 6
       required: false
     Nipples:
       points: 2
       required: false
     RightLeg: # Floof - M3739 - #937
-      points: 2
+      points: 6
       required: false
     RightFoot: # Floof - M3739 - #937
-      points: 2
+      points: 6
       required: false
     LeftLeg: # Floof - M3739 - #937
-      points: 2
+      points: 6
       required: false
     LeftFoot: # Floof - M3739 - #937
-      points: 2
+      points: 6
       required: false
     RightArm: # Floof - M3739 - #937
-      points: 2
+      points: 6
       required: false
     RightHand: # Floof - M3739 - #937
-      points: 3
+      points: 6
       required: false
     LeftArm: # Floof - M3739 - #937
-      points: 2
+      points: 6
       required: false
     LeftHand: # Floof - M3739 - #937
-      points: 3
+      points: 6
       required: false
     HeadSide: # Floof - M3739 - #937
-      points: 2 # Floof - M3739 - #937
+      points: 6
       required: false # Floof - M3739 - #937

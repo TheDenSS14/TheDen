@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2026 Alex C
+#
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  parent: BaseDildo
+  id: SmoothDildo
+  name: smooth dildo
+  description: It's so smooth, you almost want to idly rub it.
+  components:
+  - type: Sprite
+    layers:
+    - state: dildo-smooth

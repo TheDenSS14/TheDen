@@ -13,7 +13,7 @@
 # SPDX-FileCopyrightText: 2025 pocl v
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 ## hey this is carousel
 ## in service of vox being somewhat in line with impstation species design standards
@@ -44,6 +44,7 @@
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
     Head: MobVoxHead
+    Face: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
@@ -73,45 +74,45 @@
       points: 1
       required: false
     Head:
-      points: 2
+      points: 6
       required: false # imp
     HeadSide: # imp
-      points: 2
+      points: 6
       required: false
     Snout:
       points: 1
       required: true
       defaultMarkings: [ VoxBeakColor ] # Den
     RightArm:
-      points: 2 # Den
+      points: 6
       required: true
       defaultMarkings: [ VoxRArmScales ]
     RightHand:
-      points: 1
+      points: 6
       required: true
       defaultMarkings: [ VoxRHandScales ]
     LeftArm:
-      points: 2 # Den
+      points: 6
       required: true
       defaultMarkings: [ VoxLArmScales ]
     LeftHand:
-      points: 1
+      points: 6
       required: true
       defaultMarkings: [ VoxLHandScales ]
     RightLeg:
-      points: 2 # Den
+      points: 6
       required: true
       defaultMarkings: [ VoxRLegScales ]
     LeftLeg:
-      points: 2 # Den
+      points: 6
       required: true
       defaultMarkings: [ VoxLLegScales ]
     RightFoot:
-      points: 1
+      points: 6
       required: true
       defaultMarkings: [ VoxRFootScales ]
     LeftFoot:
-      points: 1
+      points: 6
       required: true
       defaultMarkings: [ VoxLFootScales ]
     Undershirt:
@@ -121,10 +122,7 @@
       points: 6
       required: false
     Chest:
-      points: 3 # Den
-      required: false
-    Overlay: # imp
-      points: 4
+      points: 6
       required: false
     Tail:
       points: 1

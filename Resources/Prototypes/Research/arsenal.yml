@@ -28,8 +28,9 @@
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Kellaris
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Tier 1
 
@@ -52,7 +53,6 @@
   - WeaponEnergyGun
   - WeaponEnergyGunMini
   - WeaponLaserSvalinn
-  - WeaponEnergyGunPistol
   - WeaponDisablerSMG
   - Truncheon
   #- WeaponDisabler #TheDen, Made roundstart tech
@@ -215,10 +215,12 @@
   - WeaponMechCombatSolarisLaser # Goobstation
   # - WeaponPistolN1984 # DEN
   # - WeaponPistolViper # DEN
+  - WeaponEnergyGunPistol # Den
   - Terminus
   - WeaponSubMachineGunDrozdEmpty # DEN
   - WeaponRifleLecterEmpty # DEN
   - WeaponRifleVulcanEmpty # DEN
+  - PortableRecharger # Den
   technologyPrerequisites:
   - BasicWeapons
 
@@ -273,7 +275,6 @@
   cost: 20000
   recipeUnlocks:
   - WeaponAdvancedLaser
-  - PortableRecharger
   - GrenadeEMP
   - PowerCageHigh
   - ShuttleGunDusterCircuitboard
@@ -282,5 +283,5 @@
   - WeaponSubMachineGunFPA90
   - WeaponSubMachineGunBRDIR25
   - WeaponPistolBRDIP15Standard #TheDen
-  - WeaponPistolEnergyRevolver #TheDen
+  # - WeaponPistolEnergyRevolver #TheDen
   softCapContribution: 1.5

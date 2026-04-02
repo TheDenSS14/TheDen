@@ -11,7 +11,7 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: species
   id: Shadowkin
@@ -49,6 +49,7 @@
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
     Head: MobShadowkinHead
+    Face: MobHumanoidAnyMarking
     Snout: MobShadowkinAnyMarkingFollowSkin
     Underwear: MobHumanoidAnyMarking
     Undershirt: MobHumanoidAnyMarking
@@ -74,11 +75,11 @@
       required: true
       defaultMarkings: [TailShadowkin]
     HeadTop:
-      points: 1
+      points: 6
       required: true
       defaultMarkings: [EarsShadowkin]
     Head: # den edit start, giving shadowkin their glowing eyes back
-      points: 1
+      points: 6
       required: true
       defaultMarkings: [EyesShadowkinUnshaded] # den edit end
     Chest:

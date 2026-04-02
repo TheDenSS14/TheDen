@@ -1,18 +1,20 @@
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Kellaris
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: presetPicker
   id: HighDanger
   possibleWeightedPresets:
-    Survival: 0.80
+    Survival: 0.60
     RoundstartAntagsNoScheduler: 0.20
+    Conspiracy: 0.20
     # Nukeops: 0.25
 
 - type: presetPicker
   id: LowDanger
   possibleWeightedPresets:
-    SurvivalIrregularExtended: 0.6
-    Extended: 0.2
-    Traitor: 0.2
+    SurvivalIrregularExtended: 0.5
+    Extended: 0.5

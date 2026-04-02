@@ -1,4 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Dirius77
 # SPDX-FileCopyrightText: 2026 crekulon
+# SPDX-FileCopyrightText: 2026 lunarcomets
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -38,3 +40,133 @@
           types:
             # this 50% less or 50% more according to default variance, 20-60 damage
             Heat: 40 # 20 more than mites take to make it real scary
+
+- type: trait
+  id: TenuousGrip
+  category: Mental
+  points: 3
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - StationAi
+    - Borg
+    - MedicalBorg
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+      - Shadowkin # Innate Psionics
+    - !type:CharacterTraitRequirement
+      traits:
+      - LatentPsychic
+    - !type:CharacterJobRequirement
+      jobs:
+      - Chaplain
+      - ResearchDirector
+      - Librarian
+      - ForensicMantis
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - IPC
+    - !type:CharacterTraitRequirement
+      traits:
+      - AnomalousPositronics
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - ShadowkinBlackeye
+    - Unrevivable
+    - RandomUnrevivable
+    - Uncloneable
+  functions:
+  - !type:TraitAddComponent
+    components:
+    - type: NoosphereVulnerability
+
+- type: trait
+  id: NoosphericAlignedMood
+  category: Mental
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - StationAi
+    - Borg
+    - MedicalBorg
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - IPC
+    - !type:CharacterTraitRequirement
+      traits:
+      - AnomalousPositronics
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+      - ShadowkinBlackeye
+      - NoosphericOpposedMood
+  functions:
+  - !type:TraitAddComponent
+    components:
+    - type: NoosphericMood
+      thresholds:
+        NoosphericAlignedGlimmerVeryHigh: 600
+        NoosphericAlignedGlimmerHigh: 400
+        NoosphericAlignedGlimmerNeutral: 300
+        NoosphericAlignedGlimmerLow: 150
+        NoosphericAlignedGlimmerVeryLow: 0
+
+- type: trait
+  id: NoosphericOpposedMood
+  category: Mental
+  points: 0
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - StationAi
+    - Borg
+    - MedicalBorg
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - IPC
+    - !type:CharacterTraitRequirement
+      traits:
+      - AnomalousPositronics
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+      - ShadowkinBlackeye
+      - NoosphericAlignedMood
+  functions:
+  - !type:TraitAddComponent
+    components:
+    - type: NoosphericMood
+      thresholds:
+        NoosphericOpposedGlimmerVeryHigh: 800
+        NoosphericOpposedGlimmerHigh: 600
+        NoosphericOpposedGlimmerNeutral: 400
+        NoosphericOpposedGlimmerLow: 200
+        NoosphericOpposedGlimmerVeryLow: 0

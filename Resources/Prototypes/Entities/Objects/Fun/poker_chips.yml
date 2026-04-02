@@ -1,83 +1,541 @@
 # SPDX-FileCopyrightText: 2025 Hedera
+# SPDX-FileCopyrightText: 2026 Luke Stearns
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  name: red poker chip
+  name: poker chip
+  suffix: Full
   parent: BaseItem
-  id: RedPokerChip
-  description: A red poker chip, worth 5 spesos. Gambling is fun!
+  id: PokerChip
+  abstract: true
+  description: A poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
   components:
+  - type: Tag
+    tags:
+    - PokerChip
   - type: Sprite
-    sprite: Objects/Fun/poker_chips.rsi
-    state: chip_red
+    sprite: _DEN/Objects/Fun/poker_chips.rsi
+    state: chip
   - type: Item
     size: Tiny
   - type: EmitSoundOnPickup
-    sound: /Audio/Items/Poker_Chips/chips_handle_large.ogg
+    sound: /Audio/_DEN/Items/Poker_Chips/chips_handle_large.ogg
   - type: EmitSoundOnDrop
-    sound: /Audio/Items/Poker_Chips/chips_stack.ogg
+    sound: /Audio/_DEN/Items/Poker_Chips/chips_stack.ogg
+
+- type: entity
+  name: white poker chip
+  parent: PokerChip
+  id: WhitePokerChip
+  description: A white poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
+  abstract: true
+  components:
+  - type: Stack
+    stackType: PokerWhite
+    baseLayer: base
+    layerStates:
+    - chip
+    - chip_2
+    - chip_3
+    - chip_4
+    - chip_5
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/poker_chips.rsi
+    state: chip_5
+    layers:
+    - state: chip_5
+      map: [ "base" ]
+  - type: Item
+    heldPrefix: white poker chip
+  - type: Appearance
+
+- type: entity
+  parent: WhitePokerChip
+  id: WhitePokerChip1
+  suffix: 1
+  components:
+  - type: Sprite
+    state: chip
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: WhitePokerChip
+  id: WhitePokerChip10
+  suffix: 10
+  components:
+  - type: Sprite
+    state: chip_2
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: WhitePokerChip
+  id: WhitePokerChip20
+  suffix: 20
+  components:
+  - type: Sprite
+    state: chip_3
+  - type: Stack
+    count: 20
+
+- type: entity
+  parent: WhitePokerChip
+  id: WhitePokerChip30
+  suffix: 30
+  components:
+  - type: Sprite
+    state: chip_4
+  - type: Stack
+    count: 30
+
+- type: entity
+  parent: WhitePokerChip
+  id: WhitePokerChip40
+  suffix: 40
+  components:
+  - type: Sprite
+    state: chip_5
+  - type: Stack
+    count: 40
+
+- type: entity
+  parent: WhitePokerChip
+  id: WhitePokerChip50
+  suffix: 50
+  components:
+  - type: Sprite
+    state: chip_5
+  - type: Stack
+    count: 50
+
+- type: entity
+  name: red poker chip
+  parent: PokerChip
+  id: RedPokerChip
+  description: A red poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
+  abstract: true
+  components:
+  - type: Stack
+    stackType: PokerRed
+    baseLayer: base
+    layerStates:
+    - chip_red
+    - chip_red_2
+    - chip_red_3
+    - chip_red_4
+    - chip_red_5
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/poker_chips.rsi
+    state: chip_red_5
+    layers:
+    - state: chip_red_5
+      map: [ "base" ]
+  - type: Item
+    heldPrefix: red poker chip
+  - type: Appearance
+
+- type: entity
+  parent: RedPokerChip
+  id: RedPokerChip1
+  suffix: 1
+  components:
+  - type: Sprite
+    state: chip_red
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: RedPokerChip
+  id: RedPokerChip10
+  suffix: 10
+  components:
+  - type: Sprite
+    state: chip_red_2
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: RedPokerChip
+  id: RedPokerChip20
+  suffix: 20
+  components:
+  - type: Sprite
+    state: chip_red_3
+  - type: Stack
+    count: 20
+
+- type: entity
+  parent: RedPokerChip
+  id: RedPokerChip30
+  suffix: 30
+  components:
+  - type: Sprite
+    state: chip_red_4
+  - type: Stack
+    count: 30
+
+- type: entity
+  parent: RedPokerChip
+  id: RedPokerChip40
+  suffix: 40
+  components:
+  - type: Sprite
+    state: chip_red_5
+  - type: Stack
+    count: 40
+
+- type: entity
+  parent: RedPokerChip
+  id: RedPokerChip50
+  suffix: 50
+  components:
+  - type: Sprite
+    state: chip_red_5
+  - type: Stack
+    count: 50
 
 - type: entity
   name: green poker chip
-  parent: BaseItem
+  parent: PokerChip
   id: GreenPokerChip
-  description: A green poker chip, worth 25 spesos. Gambling is fun!
+  description: A green poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
+  abstract: true
+  components:
+  - type: Stack
+    stackType: PokerGreen
+    baseLayer: base
+    layerStates:
+    - chip_green
+    - chip_green_2
+    - chip_green_3
+    - chip_green_4
+    - chip_green_5
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/poker_chips.rsi
+    state: chip_green_5
+    layers:
+    - state: chip_green_5
+      map: [ "base" ]
+  - type: Item
+    heldPrefix: green poker chip
+  - type: Appearance
+
+- type: entity
+  parent: GreenPokerChip
+  id: GreenPokerChip1
+  suffix: 1
   components:
   - type: Sprite
-    sprite: Objects/Fun/poker_chips.rsi
     state: chip_green
-  - type: Item
-    size: Tiny
-  - type: EmitSoundOnPickup
-    sound: /Audio/Items/Poker_Chips/chips_handle_large.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/Items/Poker_Chips/chips_stack.ogg
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: GreenPokerChip
+  id: GreenPokerChip10
+  suffix: 10
+  components:
+  - type: Sprite
+    state: chip_green_2
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: GreenPokerChip
+  id: GreenPokerChip20
+  suffix: 20
+  components:
+  - type: Sprite
+    state: chip_green_3
+  - type: Stack
+    count: 20
+
+- type: entity
+  parent: GreenPokerChip
+  id: GreenPokerChip30
+  suffix: 30
+  components:
+  - type: Sprite
+    state: chip_green_4
+  - type: Stack
+    count: 30
+
+- type: entity
+  parent: GreenPokerChip
+  id: GreenPokerChip40
+  suffix: 40
+  components:
+  - type: Sprite
+    state: chip_green_5
+  - type: Stack
+    count: 40
+
+- type: entity
+  parent: GreenPokerChip
+  id: GreenPokerChip50
+  suffix: 50
+  components:
+  - type: Sprite
+    state: chip_green_5
+  - type: Stack
+    count: 50
 
 - type: entity
   name: yellow poker chip
-  parent: BaseItem
+  parent: PokerChip
   id: YellowPokerChip
-  description: A yellow poker chip, worth 10 spesos. Gambling is fun!
+  description: A yellow poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
+  abstract: true
+  components:
+  - type: Stack
+    stackType: PokerYellow
+    baseLayer: base
+    layerStates:
+    - chip_yellow
+    - chip_yellow_2
+    - chip_yellow_3
+    - chip_yellow_4
+    - chip_yellow_5
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/poker_chips.rsi
+    state: chip_yellow_5
+    layers:
+    - state: chip_yellow_5
+      map: [ "base" ]
+  - type: Item
+    heldPrefix: yellow poker chip
+  - type: Appearance
+
+- type: entity
+  parent: YellowPokerChip
+  id: YellowPokerChip1
+  suffix: 1
   components:
   - type: Sprite
-    sprite: Objects/Fun/poker_chips.rsi
     state: chip_yellow
-  - type: Item
-    size: Tiny
-  - type: EmitSoundOnPickup
-    sound: /Audio/Items/Poker_Chips/chips_handle_large.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/Items/Poker_Chips/chips_stack.ogg
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: YellowPokerChip
+  id: YellowPokerChip10
+  suffix: 10
+  components:
+  - type: Sprite
+    state: chip_yellow_2
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: YellowPokerChip
+  id: YellowPokerChip20
+  suffix: 20
+  components:
+  - type: Sprite
+    state: chip_yellow_3
+  - type: Stack
+    count: 20
+
+- type: entity
+  parent: YellowPokerChip
+  id: YellowPokerChip30
+  suffix: 30
+  components:
+  - type: Sprite
+    state: chip_yellow_4
+  - type: Stack
+    count: 30
+
+- type: entity
+  parent: YellowPokerChip
+  id: YellowPokerChip40
+  suffix: 40
+  components:
+  - type: Sprite
+    state: chip_yellow_5
+  - type: Stack
+    count: 40
+
+- type: entity
+  parent: YellowPokerChip
+  id: YellowPokerChip50
+  suffix: 50
+  components:
+  - type: Sprite
+    state: chip_yellow_5
+  - type: Stack
+    count: 50
 
 - type: entity
   name: blue poker chip
-  parent: BaseItem
+  parent: PokerChip
   id: BluePokerChip
-  description: A blue poker chip, worth 50 spesos. Gambling is fun!
+  description: A blue poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
+  abstract: true
+  components:
+  - type: Stack
+    stackType: PokerBlue
+    baseLayer: base
+    layerStates:
+    - chip_blue
+    - chip_blue_2
+    - chip_blue_3
+    - chip_blue_4
+    - chip_blue_5
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/poker_chips.rsi
+    state: chip_blue_5
+    layers:
+    - state: chip_blue_5
+      map: [ "base" ]
+  - type: Item
+    heldPrefix: blue poker chip
+  - type: Appearance
+
+- type: entity
+  parent: BluePokerChip
+  id: BluePokerChip1
+  suffix: 1
   components:
   - type: Sprite
-    sprite: Objects/Fun/poker_chips.rsi
     state: chip_blue
-  - type: Item
-    size: Tiny
-  - type: EmitSoundOnPickup
-    sound: /Audio/Items/Poker_Chips/chips_handle_large.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/Items/Poker_Chips/chips_stack.ogg
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: BluePokerChip
+  id: BluePokerChip10
+  suffix: 10
+  components:
+  - type: Sprite
+    state: chip_blue_2
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: BluePokerChip
+  id: BluePokerChip20
+  suffix: 20
+  components:
+  - type: Sprite
+    state: chip_blue_3
+  - type: Stack
+    count: 20
+
+- type: entity
+  parent: BluePokerChip
+  id: BluePokerChip30
+  suffix: 30
+  components:
+  - type: Sprite
+    state: chip_blue_4
+  - type: Stack
+    count: 30
+
+- type: entity
+  parent: BluePokerChip
+  id: BluePokerChip40
+  suffix: 40
+  components:
+  - type: Sprite
+    state: chip_blue_5
+  - type: Stack
+    count: 40
+
+- type: entity
+  parent: BluePokerChip
+  id: BluePokerChip50
+  suffix: 50
+  components:
+  - type: Sprite
+    state: chip_blue_5
+  - type: Stack
+    count: 50
 
 - type: entity
   name: black poker chip
-  parent: BaseItem
+  parent: PokerChip
   id: BlackPokerChip
-  description: A black poker chip, worth 100 spesos. Gambling is fun!
+  description: A black poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
+  abstract: true
+  components:
+  - type: Stack
+    stackType: PokerBlack
+    baseLayer: base
+    layerStates:
+    - chip_black
+    - chip_black_2
+    - chip_black_3
+    - chip_black_4
+    - chip_black_5
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/poker_chips.rsi
+    state: chip_black_5
+    layers:
+    - state: chip_black_5
+      map: [ "base" ]
+  - type: Item
+    heldPrefix: black poker chip
+  - type: Appearance
+
+- type: entity
+  parent: BlackPokerChip
+  id: BlackPokerChip1
+  suffix: 1
   components:
   - type: Sprite
-    sprite: Objects/Fun/poker_chips.rsi
     state: chip_black
-  - type: Item
-    size: Tiny
-  - type: EmitSoundOnPickup
-    sound: /Audio/Items/Poker_Chips/chips_handle_large.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/Items/Poker_Chips/chips_stack.ogg
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: BlackPokerChip
+  id: BlackPokerChip10
+  suffix: 10
+  components:
+  - type: Sprite
+    state: chip_black_2
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: BlackPokerChip
+  id: BlackPokerChip20
+  suffix: 20
+  components:
+  - type: Sprite
+    state: chip_black_3
+  - type: Stack
+    count: 20
+
+- type: entity
+  parent: BlackPokerChip
+  id: BlackPokerChip30
+  suffix: 30
+  components:
+  - type: Sprite
+    state: chip_black_4
+  - type: Stack
+    count: 30
+
+- type: entity
+  parent: BlackPokerChip
+  id: BlackPokerChip40
+  suffix: 40
+  components:
+  - type: Sprite
+    state: chip_black_5
+  - type: Stack
+    count: 40
+
+- type: entity
+  parent: BlackPokerChip
+  id: BlackPokerChip50
+  suffix: 50
+  components:
+  - type: Sprite
+    state: chip_black_5
+  - type: Stack
+    count: 50

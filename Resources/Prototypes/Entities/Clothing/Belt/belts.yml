@@ -375,6 +375,7 @@
   - type: Storage
     whitelist:
       tags:
+        - Syringe
         - Wrench
         - Bottle
         - Spray
@@ -442,6 +443,7 @@
           tags:
           - Medkit
           - Portafib
+          - Compactdefib
           - Rollerbed
         insertOnInteract: true
   - type: ContainerContainer
@@ -626,6 +628,7 @@
         - Truncheon
         - HolofanProjector
         - SimpleMeleeWeapon
+        - SecTicket
       components:
         - Stunbaton
         - FlashOnTrigger

@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2026 sheepie
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -19,7 +20,7 @@ ert-security-loadout-2-name = Combat Evolved
 ert-security-loadout-2-desc = A Pulse carbine, smoke, EMP and stinger grenades
 
 ert-security-loadout-3-name = Breach & Clear
-ert-security-loadout-3-desc = An Enforcer shotgun, extra drums of ammo and stinger grenades
+ert-security-loadout-3-desc = An MA-A49 shotgun, extra boxes of ammo and stinger grenades
 
 ert-engineer-loadout-2-name = Live Wire
 ert-engineer-loadout-2-desc = A Pulse carbine, tear gas & stinger grenades, with breaching charges
@@ -28,7 +29,7 @@ ert-engineer-loadout-3-name = Assault Engineer
 ert-engineer-loadout-3-desc = A Lecter assault rifle, magazines and stinger grenades
 
 ert-engineer-loadout-4-name = Sapper
-ert-engineer-loadout-4-desc = A Disabler SMG, tear gas & stinger grenades, with breaching charges
+ert-engineer-loadout-4-desc = Pulse PDW, tear gas & stinger grenades, with breaching charges
 
 ert-engineer-loadout-5-name = Last Stand
 ert-engineer-loadout-5-desc = A full set of materials, cables, RPD, RCD and enough compressed matter to rebuild half the station
@@ -36,14 +37,17 @@ ert-engineer-loadout-5-desc = A full set of materials, cables, RPD, RCD and enou
 ert-medic-loadout-1-name = Close Quarters Medical
 ert-medic-loadout-1-desc = A WT550 SMG, magazines and extra medical supplies
 
-ert-medic-loadout-2-name = Stunning Support
-ert-medic-loadout-2-desc = A Disabler SMG, tear gas & stinger grenades, with extra medical supplies
+ert-medic-loadout-2-name = Suppressive Support
+ert-medic-loadout-2-desc = Pulse PDW, tear gas & stinger grenades, with extra medical supplies
 
 ert-medic-loadout-3-name = Combat Medic
 ert-medic-loadout-3-desc = A Lecter assault rifle, magazines and stinger grenades
 
 ert-janitor-loadout-1-name = Hazard Response
 ert-janitor-loadout-1-desc = Trashbags, a hydra grenade launcher and plenty of cleanades
+
+ert-cburn-loadout-1-name = Standard Issue
+ert-cburn-loadout-1-desc = The standard CBURN unit loadout, featuring the MA-A49 shotgun.
 
 # emergency-internals-selector-name = undetermined emergency internals
 # emergency-internals-selector-desc = Exactly what you need to breathe, right when you need it.
@@ -59,3 +63,18 @@ emergency-internals-option-3-desc = An extended emergency water vapor tank for e
 
 emergency-internals-option-4-name = Extended Emergency Plasma Tank
 emergency-internals-option-4-desc = An extended emergency plasma tank for emergencies.
+
+blured-team-set-1-name = Rifle
+blured-team-set-1-desc = Your teams assault rifle, four mags and grenades.
+
+blured-team-set-2-name = SMG
+blured-team-set-2-desc = Your teams SMG, four mags and grenades.
+
+blured-team-set-3-name = Sniper
+blured-team-set-3-desc = A Hristov with spare ammo, and your teams revolver sidearm.
+
+blured-team-set-4-name = Shotgun
+blured-team-set-4-desc = Your teams shotgun, spare ammo and grenades.
+
+blured-team-set-5-name = Medic
+blured-team-set-5-desc = A revolver sidearm, medkit and combat pens.

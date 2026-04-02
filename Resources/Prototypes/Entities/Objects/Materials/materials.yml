@@ -42,9 +42,10 @@
 # SPDX-FileCopyrightText: 2025 Your Name
 # SPDX-FileCopyrightText: 2025 fishbait
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 January Nelson
 # SPDX-FileCopyrightText: 2026 entings
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   abstract: true
@@ -75,6 +76,7 @@
   parent: MaterialBase
   id: MaterialCardboard
   name: cardboard
+  description: A tough corrugated paper that is really neither card nor board. # den
   suffix: Full
   components:
   - type: Material
@@ -140,6 +142,7 @@
   parent: MaterialBase
   id: MaterialCloth
   name: cloth
+  description: A fibrous textile, ancient in origin. Yet to be woven, or perhaps recently unwoven. # den
   suffix: Full
   components:
   - type: Healing
@@ -222,6 +225,7 @@
   parent: MaterialBase
   id: MaterialDurathread
   name: durathread
+  description: A tough textile made from cloth and plastic, useful for armor, uniforms, or nice bedsheets. # den
   suffix: Full
   components:
   - type: Stack
@@ -275,6 +279,7 @@
   parent: MaterialBase
   id: MaterialWoodPlank
   name: wood
+  description: The medium of carpentry. Four of these could make a crafting table, maybe. # den
   suffix: Full
   components:
   - type: Material
@@ -329,6 +334,7 @@
   parent: MaterialBase
   id: MaterialBiomass
   name: biomass
+  description: Pure biological currency. One full cube contains about the same amount of suffering as your entire body. # den
   suffix: Full
   components:
   - type: Material
@@ -359,6 +365,7 @@
   parent: MaterialBase
   id: MaterialHideBear
   name: bear hide
+  description: All the fluffiness of a space bear hug, with none of the claws. # den
   components:
   - type: Sprite
     sprite: Objects/Materials/materials.rsi
@@ -407,6 +414,7 @@
   parent: MaterialBase
   id: MaterialDiamond
   name: refined diamond
+  description: A luxurious pure carbon jewel, used throughout history for jewelry and engineering. Not made from ashes. # imp
   suffix: Full
   components:
   - type: Stack
@@ -452,6 +460,7 @@
   parent: MaterialBase
   id: MaterialCotton
   name: cotton
+  description: A soft, fibrous material that grows on a plant. Core to limitless comfort galaxy-wide... and to the moth palate. # den
   suffix: Full
   components:
   - type: Stack
@@ -505,6 +514,7 @@
   parent: MaterialBase
   id: MaterialPyrotton
   name: pyrotton
+  description: An ever-burning variant of cotton, ironically made by attempts to fireproof it. # den
   suffix: Full
   components:
   - type: Stack
@@ -557,6 +567,7 @@
   parent: MaterialBase
   id: MaterialBananium
   name: bananium
+  description: An anomalous material, just as weird but nowhere near as useful as plasma. It has the same exact spatiotemporal properties of a banana. # den
   suffix: Full
   components:
   - type: Material
@@ -618,7 +629,7 @@
   parent: MaterialBase
   id: MaterialWebSilk
   name: silk
-  description: A webby material.
+  description: A webby material produced organically, once thought quite luxurious. Can be used to catch both flies or non-fly entities. # den edit
   suffix: Full
   components:
   - type: Material
@@ -676,6 +687,7 @@
   parent: MaterialBase
   id: MaterialBones
   name: bones
+  description: Most crew members have at least one of these. # den
   suffix: Full
   components:
   - type: Stack
@@ -713,7 +725,7 @@
   parent: MaterialBase
   id: MaterialGunpowder
   name: gunpowder
-  description: An explosive compound.
+  description: An explosive compound. Outdated, but still bangs. Remember, remember, the Fifth of November... # den edit
   components:
   - type: Stack
     stackType: Gunpowder

@@ -6,6 +6,8 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2026 Asa
+# SPDX-FileCopyrightText: 2026 Eightballll
+# SPDX-FileCopyrightText: 2026 Kellaris
 # SPDX-FileCopyrightText: 2026 sheepie
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -59,14 +61,6 @@
     - PlushieVega
 
 - type: loadout
-  id: LoadoutPlushieAlice
-  category: GeneralToys
-  cost: 0
-  canBeHeirloom: true
-  items:
-    - PlushieAlice
-
-- type: loadout
   id: LoadoutPlushieJenn
   category: GeneralToys
   cost: 0
@@ -113,6 +107,14 @@
   canBeHeirloom: true
   items:
   - PlushieStu
+
+- type: loadout
+  id: LoadoutPlushieInkdrop
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items: 
+  - PlushieInkdrop
 
 - type: loadout
   id: PlushieFelinid

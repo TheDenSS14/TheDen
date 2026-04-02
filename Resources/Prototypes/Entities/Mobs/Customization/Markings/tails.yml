@@ -1,23 +1,20 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2026 Aikakakah
 # SPDX-FileCopyrightText: 2026 ivorytemple
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: marking
   id: LizardTailShort
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian, Human, IPC, SlimePerson]
+  parent: BaseTailMarking
   sprites:
   - sprite: Mobs/Customization/tails.rsi
     state: m_tail_short
 
 - type: marking
   id: LizardTailShortTwoTone
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian, Human, IPC, SlimePerson]
+  parent: BaseTailMarking
   sprites:
   - sprite: Mobs/Customization/tails.rsi
     state: m_tail_short
@@ -26,9 +23,7 @@
 
 - type: marking
   id: LizardTailShortTwoToneU
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian, Human, IPC, SlimePerson]
+  parent: BaseTailMarking
   sprites:
   - sprite: Mobs/Customization/tails.rsi
     state: m_tail_short2tone

@@ -9,7 +9,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: XenoVents
@@ -84,6 +84,7 @@
     minimumPlayers: 10
     maxOccurrences: 1
     duration: 1
+  - type: PirateRadioSpawnRule
 
 - type: entity
   parent: BaseGameRule
@@ -97,7 +98,7 @@
     minimumPlayers: 20
     duration: null # Den
   - type: GlimmerEvent
-    minimumGlimmer: 250
+    minimumGlimmer: 300 # DEN - match this to the glimmer required for revival
     maximumGlimmer: 1000
   # - type: PrecognitionResult
   #   message: psionic-power-precognition-skia-result-message

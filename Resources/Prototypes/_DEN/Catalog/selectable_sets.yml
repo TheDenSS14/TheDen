@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2026 sheepie
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -49,7 +50,7 @@
     sprite: _Goobstation/Objects/Weapons/Guns/Rifles/annie.rsi
     state: base
   content:
-    - WeaponRifleAnnie
+    - WeaponRiflBSOAk
     - MagazineLightRifle
     - MagazineLightRifle
     - MagazineLightRifle
@@ -77,13 +78,12 @@
   name: ert-security-loadout-3-name
   description: ert-security-loadout-3-desc
   sprite:
-    sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
+    sprite: _DEN/Objects/Weapons/Guns/Shotguns/salamander.rsi
     state: icon
   content:
-    - WeaponShotgunEnforcer
-    - MagazineShotgun
-    - MagazineShotgun
-    - MagazineShotgunSlug
+    - WeaponShotgunSalamander
+    - MagazineBoxShotgunHighCaliber
+    - MagazineBoxShotgunSlugHighCaliber
     - GrenadeStinger
     - GrenadeStinger
 
@@ -139,10 +139,10 @@
   name: ert-engineer-loadout-4-name
   description: ert-engineer-loadout-4-desc
   sprite:
-    sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi
+    sprite: _DEN/Objects/Weapons/Guns/Battery/pulse_pdw.rsi
     state: base
   content:
-    - WeaponDisablerSMG
+    - WeaponPulsePDW
     - TearGasGrenade
     - TearGasGrenade
     - GrenadeStinger
@@ -192,10 +192,10 @@
   name: ert-medic-loadout-2-name
   description: ert-medic-loadout-2-desc
   sprite:
-    sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi
+    sprite: _DEN/Objects/Weapons/Guns/Battery/pulse_pdw.rsi
     state: base
   content:
-    - WeaponDisablerSMG
+    - WeaponPulsePDW
     - MedkitCombatFilled
     - TearGasGrenade
     - TearGasGrenade
@@ -232,6 +232,36 @@
     - CleanerGrenade
     - CleanerGrenade
     - CleanerGrenade
+
+# ERT CBURN
+- type: selectableSet
+  id: ERTCBURNLoadout1
+  name: ert-cburn-loadout-1-name
+  description: ert-cburn-loadout-1-desc
+  sprite:
+    sprite: _DEN/Objects/Weapons/Guns/Shotguns/salamander.rsi
+    state: icon
+  content:
+    - BoxSurvivalEngineering
+    - WeaponShotgunSalamanderIncendiary
+    - MagazineBoxShotgunIncendiaryHighCaliber
+    - MagazineBoxShotgunIncendiaryHighCaliber
+    - MagazineBoxShotgunHighCaliber
+    - GrenadeIncendiary
+    - GrenadeIncendiary
+    - TearGasGrenade
+    - TearGasGrenade
+    - PillAmbuzolPlus
+    - PillCanisterAmbuzol
+    - Zipties
+    - Zipties
+    - Zipties
+    - Zipties
+    - Flare
+    - Flare
+    - Flare
+    - Flare
+
 
 # Emergency internals
 - type: selectableSet
@@ -273,3 +303,193 @@
     state: icon
   content:
     - ExtendedEmergencyPlasmaTankFilled
+
+# RED v BLU
+- type: selectableSet
+  id: BLUTeamSet1
+  name: blured-team-set-1-name
+  description: blured-team-set-1-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Rifles/lecter.rsi
+    state: icon
+  content:
+    - WeaponRifleLecter
+    - MagazineRifle
+    - MagazineRifle
+    - MagazineRifle
+    - GrenadeShrapnel
+    - GrenadeShrapnel
+    - ExGrenade
+    - ExGrenade
+
+- type: selectableSet
+  id: BLUTeamSet2
+  name: blured-team-set-2-name
+  description: blured-team-set-2-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+    state: icon
+  content:
+    - WeaponSubMachineGunDrozd
+    - MagazinePistolSubMachineGun
+    - MagazinePistolSubMachineGun
+    - MagazinePistolSubMachineGun
+    - GrenadeShrapnel
+    - GrenadeShrapnel
+    - GrenadeFlashBang
+    - GrenadeFlashBang
+
+- type: selectableSet
+  id: BLUTeamSet3
+  name: blured-team-set-3-name
+  description: blured-team-set-3-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
+    state: base
+  content:
+    - WeaponSniperHristov
+    - MagazineBoxAntiMateriel
+    - MagazineBoxAntiMateriel
+    - WeaponRevolverInspector
+    - SpeedLoaderMagnum
+    - SpeedLoaderMagnum
+    - SmokeGrenade
+    - GrenadeFlashBang
+
+- type: selectableSet
+  id: BLUTeamSet4
+  name: blured-team-set-4-name
+  description: blured-team-set-4-desc
+  sprite:
+    sprite: _DEN/Objects/Weapons/Guns/Shotguns/salamander.rsi
+    state: icon
+  content:
+    - WeaponShotgunSalamander
+    - MagazineBoxShotgunHighCaliber
+    - MagazineBoxShotgunHighCaliber
+    - WeaponPistolMk58
+    - MagazinePistol
+    - GrenadeShrapnel
+    - GrenadeIncendiary
+
+- type: selectableSet
+  id: BLUTeamSet5
+  name: blured-team-set-5-name
+  description: blured-team-set-5-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
+    state: icon
+  content:
+    - WeaponRevolverMateba
+    - SpeedLoaderMagnum
+    - SpeedLoaderMagnum
+    - SpeedLoaderMagnum
+    - MedkitCombatFilled
+    - PunctAutoInjector
+    - PunctAutoInjector
+    - PunctAutoInjector
+    - PunctAutoInjector
+    - AirlossAutoInjector
+    - AirlossAutoInjector
+    - SmokeGrenade
+    - SmokeGrenade
+
+- type: selectableSet
+  id: REDTeamSet1
+  name: blured-team-set-1-name
+  description: blured-team-set-1-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Rifles/ak.rsi
+    state: icon
+  content:
+    - WeaponRifleAk
+    - MagazineLightRifle
+    - MagazineLightRifle
+    - MagazineLightRifle
+    - GrenadeShrapnel
+    - GrenadeShrapnel
+    - ExGrenade
+    - ExGrenade
+    - NukeCodePaper
+    - PinpointerNuclear
+
+- type: selectableSet
+  id: REDTeamSet2
+  name: blured-team-set-2-name
+  description: blured-team-set-2-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
+    state: icon
+  content:
+    - WeaponSubMachineGunC20r
+    - MagazinePistolSubMachineGun
+    - MagazinePistolSubMachineGun
+    - MagazinePistolSubMachineGun
+    - GrenadeShrapnel
+    - GrenadeShrapnel
+    - GrenadeFlashBang
+    - GrenadeFlashBang
+    - NukeCodePaper
+    - PinpointerNuclear
+
+- type: selectableSet
+  id: REDTeamSet3
+  name: blured-team-set-3-name
+  description: blured-team-set-3-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
+    state: base
+  content:
+    - WeaponSniperHristov
+    - MagazineBoxAntiMateriel
+    - MagazineBoxAntiMateriel
+    - WeaponRevolverPython
+    - SpeedLoaderMagnum
+    - SpeedLoaderMagnum
+    - SmokeGrenade
+    - GrenadeFlashBang
+    - NukeCodePaper
+    - PinpointerNuclear
+
+- type: selectableSet
+  id: REDTeamSet4
+  name: blured-team-set-4-name
+  description: blured-team-set-4-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
+    state: icon
+  content:
+    - WeaponShotgunBulldog
+    - MagazineShotgun
+    - MagazineShotgun
+    - MagazineShotgun
+    - WeaponPistolViper
+    - MagazinePistol
+    - GrenadeShrapnel
+    - GrenadeIncendiary
+    - NukeCodePaper
+    - PinpointerNuclear
+
+- type: selectableSet
+  id: REDTeamSet5
+  name: blured-team-set-5-name
+  description: blured-team-set-5-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
+    state: icon
+  content:
+    - WeaponRevolverMateba
+    - SpeedLoaderMagnum
+    - SpeedLoaderMagnum
+    - SpeedLoaderMagnum
+    - MedkitCombatFilled
+    - PunctAutoInjector
+    - PunctAutoInjector
+    - PunctAutoInjector
+    - PunctAutoInjector
+    - AirlossAutoInjector
+    - AirlossAutoInjector
+    - SmokeGrenade
+    - SmokeGrenade
+    - NukeCodePaper
+    - PinpointerNuclear

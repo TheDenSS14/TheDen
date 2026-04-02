@@ -1,4 +1,7 @@
 # SPDX-FileCopyrightText: 2024 V
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2026 mhachimagus
+# SPDX-FileCopyrightText: 2026 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -35,6 +38,7 @@
       slots:
       - HEAD
       - EYES
+    - type: VisionCorrection
     - type: Tag
       tags:
       - WhitelistChameleon
@@ -89,3 +93,14 @@
     sprite: _Impstation/Clothing/Eyes/Glasses/colorfulglasses/yellow.rsi
   - type: Clothing
     sprite: _Impstation/Clothing/Eyes/Glasses/colorfulglasses/yellow.rsi
+
+- type: entity
+  parent: ClothingEyesBase # DEN: Have to remove "BaseLensSlot" parent bc we dont have that
+  id: ClothingEyesGlassesWhiteHalfMask
+  name: white half mask
+  description: Hide your face, the world will never find you.
+  components:
+    - type: Sprite
+      sprite: _Impstation/Clothing/Eyes/Glasses/whitehalfmask.rsi
+    - type: Clothing
+      sprite: _Impstation/Clothing/Eyes/Glasses/whitehalfmask.rsi

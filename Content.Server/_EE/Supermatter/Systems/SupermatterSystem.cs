@@ -1,31 +1,26 @@
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 Solaris <60526456+SolarisBirb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
-
-using Content.Server.AlertLevel;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
-using Content.Server.DoAfter;
 using Content.Server.Examine;
 using Content.Server.Explosion.EntitySystems;
+using Content.Server.GameTicking;
+using Content.Server.Ghost;
 using Content.Server.Lightning;
 using Content.Server.Popups;
 using Content.Server.Radio.EntitySystems;
+using Content.Server.Silicons.Laws;
 using Content.Server.Singularity.Components;
 using Content.Server.Singularity.EntitySystems;
 using Content.Server.Traits.Assorted;
-using Content.Shared._EE.CCVars;
+using Content.Shared._EE.CCVar;
 using Content.Shared._EE.Supermatter.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Audio;
 using Content.Shared.Damage.Components;
 using Content.Shared.Database;
+using Content.Shared.DeviceLinking;
 using Content.Shared.Examine;
 using Content.Shared.Ghost;
 using Content.Shared.Interaction;
@@ -42,9 +37,9 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Shared.DeviceLinking;
 
 namespace Content.Server._EE.Supermatter.Systems;
 
@@ -53,11 +48,13 @@ public sealed partial class SupermatterSystem : EntitySystem
     [Dependency] private readonly AppearanceSystem _appearance = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
     [Dependency] private readonly ExamineSystem _examine = default!;
     [Dependency] private readonly ExplosionSystem _explosion = default!;
+    [Dependency] private readonly GameTicker _gameTicker = default!;
+    [Dependency] private readonly GhostSystem _ghost = default!;
     [Dependency] private readonly GravityWellSystem _gravityWell = default!;
+    [Dependency] private readonly IonStormSystem _ionStorm = default!;
     [Dependency] private readonly LightningSystem _lightning = default!;
     [Dependency] private readonly ParacusiaSystem _paracusia = default!;
     [Dependency] private readonly PointLightSystem _light = default!;
@@ -72,6 +69,7 @@ public sealed partial class SupermatterSystem : EntitySystem
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
@@ -82,7 +80,7 @@ public sealed partial class SupermatterSystem : EntitySystem
         SubscribeLocalEvent<SupermatterComponent, AtmosDeviceUpdateEvent>(OnSupermatterUpdated);
 
         SubscribeLocalEvent<SupermatterComponent, StartCollideEvent>(OnCollideEvent);
-        // SubscribeLocalEvent<SupermatterComponent, EmbeddedEvent>(OnEmbedded); // -- requires EE's throwing system
+        SubscribeLocalEvent<SupermatterComponent, EmbeddedEvent>(OnEmbedded);
         SubscribeLocalEvent<SupermatterComponent, InteractHandEvent>(OnHandInteract);
         SubscribeLocalEvent<SupermatterComponent, InteractUsingEvent>(OnItemInteract);
         SubscribeLocalEvent<SupermatterComponent, ExaminedEvent>(OnExamine);
@@ -102,7 +100,7 @@ public sealed partial class SupermatterSystem : EntitySystem
     private void OnMapInit(EntityUid uid, SupermatterComponent sm, MapInitEvent args)
     {
         // Set the yell timer
-        sm.YellTimer = TimeSpan.FromSeconds(_config.GetCVar(ECCVars.SupermatterYellTimer));
+        sm.YellTimer = TimeSpan.FromSeconds(_config.GetCVar(EECCVars.SupermatterYellTimer));
 
         // Set the sound
         _ambient.SetAmbience(uid, true);
@@ -112,7 +110,6 @@ public sealed partial class SupermatterSystem : EntitySystem
         mix?.AdjustMoles(Gas.Oxygen, Atmospherics.OxygenMolesStandard - mix.GetMoles(Gas.Oxygen));
         mix?.AdjustMoles(Gas.Nitrogen, Atmospherics.NitrogenMolesStandard - mix.GetMoles(Gas.Nitrogen));
 
-
         // Send the inactive port for any linked devices
         if (HasComp<DeviceLinkSourceComponent>(uid))
             _link.InvokePort(uid, sm.PortInactive);
@@ -120,7 +117,7 @@ public sealed partial class SupermatterSystem : EntitySystem
 
     public void OnSupermatterUpdated(EntityUid uid, SupermatterComponent sm, AtmosDeviceUpdateEvent args)
     {
-        ProcessAtmos(uid, sm);
+        ProcessAtmos(uid, sm, args.dt);
         HandleDamage(uid, sm);
 
         if (sm.Damage >= sm.DamageDelaminationPoint || sm.Delamming)
@@ -132,7 +129,7 @@ public sealed partial class SupermatterSystem : EntitySystem
         HandleSoundLoop(uid, sm);
         HandleAccent(uid, sm);
 
-        if (sm.Power > _config.GetCVar(ECCVars.SupermatterPowerPenaltyThreshold) || sm.Damage > sm.DamagePenaltyPoint)
+        if (sm.Power > _config.GetCVar(EECCVars.SupermatterPowerPenaltyThreshold) || sm.Damage > sm.DamagePenaltyPoint)
         {
             SupermatterZap(uid, sm);
             GenerateAnomalies(uid, sm);
@@ -144,11 +141,10 @@ public sealed partial class SupermatterSystem : EntitySystem
         TryCollision(uid, sm, args.OtherEntity, args.OtherBody);
     }
 
-    // requires EE's throwing system/embed edits and i truly cannot be bothered to also go port those
-    /*private void OnEmbedded(EntityUid uid, SupermatterComponent sm, ref EmbeddedEvent args)
+    private void OnEmbedded(EntityUid uid, SupermatterComponent sm, ref EmbeddedEvent args)
     {
         TryCollision(uid, sm, args.Embedded, checkStatic: false);
-    }*/
+    }
 
     private void OnHandInteract(EntityUid uid, SupermatterComponent sm, ref InteractHandEvent args)
     {
@@ -190,9 +186,6 @@ public sealed partial class SupermatterSystem : EntitySystem
             HasComp<GhostComponent>(target) ||
             HasComp<SupermatterImmuneComponent>(item) ||
             HasComp<GodmodeComponent>(item))
-            return;
-
-        if (HasComp<SupermatterImmuneComponent>(item) || HasComp<GodmodeComponent>(item))
             return;
 
         // TODO: supermatter scalpel
@@ -296,7 +289,7 @@ public sealed partial class SupermatterSystem : EntitySystem
         if (!sm.HasBeenPowered)
             LogFirstPower(uid, sm, target);
 
-        if (!HasComp<ProjectileComponent>(target))
+        if (!TryComp<ProjectileComponent>(target, out var projectile))
         {
             var popup = "supermatter-collide";
 
@@ -325,7 +318,7 @@ public sealed partial class SupermatterSystem : EntitySystem
 
         if (TryComp<SupermatterFoodComponent>(target, out var food))
             sm.Power += food.Energy;
-        else if (TryComp<ProjectileComponent>(target, out var projectile))
+        else if (projectile != null)
             sm.Power += (float)projectile.Damage.GetTotal();
         else
             sm.Power++;
@@ -366,7 +359,7 @@ public sealed partial class SupermatterSystem : EntitySystem
         if (sm.Damage >= sm.DamageWarningThreshold)
             return SupermatterStatusType.Warning;
 
-        if (mix.Temperature > Atmospherics.T0C + _config.GetCVar(ECCVars.SupermatterHeatPenaltyThreshold) * 0.8)
+        if (mix.Temperature > Atmospherics.T0C + _config.GetCVar(EECCVars.SupermatterHeatPenaltyThreshold) * 0.8)
             return SupermatterStatusType.Caution;
 
         if (sm.Power > 5)

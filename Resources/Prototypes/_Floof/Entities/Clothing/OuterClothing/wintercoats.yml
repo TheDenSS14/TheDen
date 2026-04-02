@@ -131,15 +131,15 @@
   - type: Armor #A stylish but solid middle-ground between the Durathread Vest and Plate Carrier, but not as good as the Armored Trenchcoat or Armored Longcoat.
     modifiers:
       coefficients:
-        Blunt: 0.75
-        Slash: 0.70
-        Piercing: 0.75
-        Heat: 0.9
-        Caustic: 0.95
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.65
+        Heat: 0.75
+        Caustic: 0.90
   - type: StaminaDamageResistance #Den
     coefficient: 0.7 #Den
   - type: ExplosionResistance
-    damageCoefficient: 0.9
+    damageCoefficient: 0.8
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
@@ -158,18 +158,18 @@
   - type: Armor #overall better than the Secoff Armored Longcoat, Warden Longcoat defense stats have parity to Warden's Armored Jacket, being slightly better than the Armored Jacket but maintaining the slowdown.
     modifiers:
       coefficients:
-        Blunt: 0.70
-        Slash: 0.65
-        Piercing: 0.70
-        Heat: 0.70
-        Caustic: 0.90
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.6
+        Caustic: 0.70
   - type: StaminaDamageResistance #Den
     coefficient: 0.6 #Den
   - type: ExplosionResistance
-    damageCoefficient: 0.85
+    damageCoefficient: 0.75
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.85
+    sprintModifier: 0.85
 
 - type: entity
   parent: ClothingLongcoatSec
@@ -184,10 +184,10 @@
   - type: Armor #Trades physical resistances for heat/caust/explosive compared to secoff armored longcoat, and is only 5% slow.
     modifiers:
       coefficients:
-        Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.85
-        Heat: 0.65
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.75
         Caustic: 0.25
   - type: StaminaDamageResistance #Den
     coefficient: 0.75 #Den
@@ -210,10 +210,10 @@
   - type: Armor #Effectively a heavier Armored Trenchcoat, trading speed for slightly better Slash and Explosion resistance.
     modifiers:
       coefficients:
-        Blunt: 0.7
+        Blunt: 0.6
         Slash: 0.6
-        Piercing: 0.7
-        Heat: 0.7
+        Piercing: 0.6
+        Heat: 0.6
         Caustic: 0.75
   - type: StaminaDamageResistance #Den
     coefficient: 0.55 #Den

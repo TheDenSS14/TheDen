@@ -65,6 +65,16 @@
     - MantisFist
     - MantisBeltStorable
 
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: MantisMeleeFist
+  id: MantisMeleeFistFlipped
+  suffix: Flipped
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
+
 - type: entity
   parent: [BaseRivalCompanyContraband, MantisMeleeFist] # Traitor version, loosely comparable to BaseBallBatHomeRun, but with less damage and knockback because it's wearable
   id: MantisMeleeFistDouble

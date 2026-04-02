@@ -1,15 +1,17 @@
-# SPDX-FileCopyrightText: 2022 Zymem <97173622+Zymem@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2023 JoeHammad1844 <130668733+JoeHammad1844@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 lapatison <100279397+lapatison@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Agoichi <92464780+Agoichi@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Zymem
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2023 JoeHammad1844
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 Whisper
+# SPDX-FileCopyrightText: 2023 lapatison
+# SPDX-FileCopyrightText: 2024 Agoichi
+# SPDX-FileCopyrightText: 2024 Brandon Hu
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Kellaris
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -100,10 +102,14 @@
       - id: SpaceCash20000
         amount: 1
       - id: ClothingUniformJumpsuitTacticool
-      - id: ClothingOuterCoatJensen
+      - id: EncryptionKeyStationMaster
       - id: ClothingHandsGlovesCombat
-      - id: ClothingMaskNeckGaiter
-      - id: ToyFigurineThief
+      - id: SpyCrewMonitor
+      - id: ClothingMaskGasVoiceChameleon
+      - id: CyberPen
+      - id: TraitorCodePaper
+      - id: EncryptionKeyFreelance
+        amount: 2
 
 - type: entity
   id: BriefcaseThiefBribingBundlePlasmamanFilled
@@ -117,6 +123,58 @@
         amount: 1
       - id: ClothingUniformEnvirosuitTacticool
       - id: ClothingHeadEnvirohelmTacticool
-      - id: ClothingOuterCoatJensen
+      - id: EncryptionKeyStationMaster
       - id: ClothingHandsGlovesCombat
-      - id: ToyFigurineThief
+      - id: SpyCrewMonitor
+      - id: CyberPen
+      - id: TraitorCodePaper
+      - id: EncryptionKeyFreelance
+        amount: 2
+
+- type: entity
+  id: BriefcaseThiefSyndiBundleFilled
+  parent: BriefcaseSyndie
+  suffix: Thief
+  components:
+  - type: StorageFill
+    contents:
+    - id: RadioJammer
+    - id: TraitorCodePaper
+    - id: Emag
+    - id: MysteryLighterBox
+    - id: SyndicatePersonalAI
+    - id: ClothingHeadHatSyndieMAA
+    - id: CigPackSyndicate
+    - id: Telecrystal50 #The thief cannot use them, but it may induce communication with traitors
+
+- type: entity
+  id: BriefcaseThiefSleeperBundleFilled
+  parent: BriefcaseSyndie
+  suffix: Thief
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadPyjamaSyndicateBlack
+    - id: ClothingUniformJumpsuitPyjamaSyndicateBlack
+    - id: NocturineChemistryBottle
+    - id: NocturineChemistryBottle
+    - id: NocturineChemistryBottle
+    - id: HypopenBox
+    - id: NitrousOxideTankFilled
+    - id: BedsheetSyndie
+    - id: Handcuffs
+    - id: ClothingMaskBreathMedical
+
+- type: entity
+  id: BriefcaseThiefChemistryBundleFilled
+  parent: BriefcaseSyndie
+  suffix: Thief
+  components:
+  - type: StorageFill
+    contents:
+    - id: StorageImplanter
+    - id: DnaScramblerImplanter
+    - id: EphedrineChemistryBottle
+    - id: SoapOmega
+    - id: Syringe
+    - id: DrinkVodkaBottleFull

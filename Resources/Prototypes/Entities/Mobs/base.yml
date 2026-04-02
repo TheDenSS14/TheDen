@@ -46,7 +46,7 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 therealDLondon
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # The progenitor. This should only container the most basic components possible.
 # Only put things on here if every mob *must* have it. This includes ghosts.
@@ -139,6 +139,21 @@
 #      - !type:PlaySoundBehavior
 #        sound:
 #          collection: MeatLaserImpact
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Radiation
+        damage: 15
+      behaviors:
+      - !type:PopupBehavior
+        popup: mouth-taste-metal
+        popupType: LargeCaution
+        targetOnly: true
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Radiation
+        damage: 40
+      behaviors:
+      - !type:VomitBehavior
   - type: RadiationReceiver
   - type: Stamina
   - type: MobState
@@ -161,6 +176,11 @@
     - Piercing
     - Heat
     - Shock
+    # wizden edit begin, better health examine
+    - Cold
+    - Caustic
+    - Asphyxiation
+    - Radiation # wizden edit end
   - type: DamageOnHighSpeedImpact
     damage:
       types:
@@ -294,3 +314,14 @@
         Bloodloss: -1
     bloodRegenerationHunger: 1
     bloodRegenerationThirst: 1.5 # 1 unit of normal blood satiates 1t, 0.3t for vampires, 0.75h, and restores 0.25 blood for non-humans...
+
+# Den start
+
+- type: entity
+  id: MobVentCritter
+  abstract: true
+  categories: [HideSpawnMenu]
+  components:
+  - type: BodyDissolvable
+
+# Den end

@@ -1,6 +1,7 @@
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 HTML/Crystal
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Text;
 using Content.Server.PowerCell;
@@ -143,7 +144,8 @@ public sealed class DamagedSiliconAccentSystem : EntitySystem
 
     private string CorruptPunctuize()
     {
-        const string punctuation = "\"\\`~!@#$%^&*()_+-={}[]|\\;:<>,.?/";
+        // The Den - removed [] from the string
+        const string punctuation = "\"\\`~!@#$%^&*()_+-={}|\\;:<>,.?/";
         return punctuation[_random.NextByte((byte)punctuation.Length)].ToString();
     }
 

@@ -5,6 +5,7 @@
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Aikakakah
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -52,6 +53,13 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/tail_markings.rsi
     state: ovinia-tail
+
+- type: marking
+  parent: BaseOviniaTail
+  id: OviniaTailAnimated
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/tail_markings.rsi
+    state: ovinia-tail_wag
 
 # Ears Markings
 - type: marking
@@ -328,3 +336,166 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
     state: hand-hoof-right
+
+# Satyr Markings
+- type: marking
+  id: SatyrChestMale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Ovinia ]
+  sexRestriction: Male
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+    layers:
+      satyr_torso_m:
+        type:
+          !type:SimpleColoring
+            color: "#ffdad1"
+      satyr_torso_fur:
+        type:
+          !type:SkinColoring
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Ovinia/satyr_markings.rsi
+      state: satyr_torso_m
+    - sprite: _DEN/Mobs/Customization/Ovinia/satyr_markings.rsi
+      state: satyr_torso_fur
+
+- type: marking
+  id: SatyrChestFemale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Ovinia ]
+  sexRestriction: Female
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+    layers:
+      satyr_torso_f:
+        type:
+          !type:SimpleColoring
+            color: "#ffdad1"
+      satyr_torso_fur:
+        type:
+          !type:SkinColoring
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Ovinia/satyr_markings.rsi
+      state: satyr_torso_f
+    - sprite: _DEN/Mobs/Customization/Ovinia/satyr_markings.rsi
+      state: satyr_torso_fur
+
+- type: marking
+  id: SatyrCowPrint
+  speciesRestriction: [ Ovinia ]
+  bodyPart: Chest
+  markingCategory: Chest
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#2c2c2c"
+  layering:
+    satyr_cow_body: Chest
+    satyr_cow_left_leg: LFoot
+    satyr_cow_right_leg: RFoot
+  colorLinks:
+    satyr_cow_left_leg: satyr_cow_body
+    satyr_cow_right_leg: satyr_cow_body
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Ovinia/satyr_markings.rsi
+      state: satyr_cow_body
+    - sprite: _DEN/Mobs/Customization/Ovinia/satyr_markings.rsi
+      state: satyr_cow_left_leg
+    - sprite: _DEN/Mobs/Customization/Ovinia/satyr_markings.rsi
+      state: satyr_cow_right_leg
+
+- type: marking
+  id: SatyrLeftArm
+  speciesRestriction: [ Ovinia ]
+  bodyPart: LArm
+  markingCategory: LeftArm
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#ffdad1"
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Ovinia/satyr_markings.rsi
+      state: l_arm
+
+- type: marking
+  id: SatyrRightArm
+  speciesRestriction: [ Ovinia ]
+  bodyPart: RArm
+  markingCategory: RightArm
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#ffdad1"
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Ovinia/satyr_markings.rsi
+      state: r_arm
+
+- type: marking
+  id: SatyrLeftHand
+  speciesRestriction: [ Ovinia ]
+  bodyPart: LHand
+  markingCategory: LeftHand
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#ffdad1"
+  sprites:
+    - sprite: Mobs/Species/Human/parts.rsi
+      state: l_hand
+
+- type: marking
+  id: SatyrRightHand
+  speciesRestriction: [ Ovinia ]
+  bodyPart: RHand
+  markingCategory: RightHand
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#ffdad1"
+  sprites:
+    - sprite: Mobs/Species/Human/parts.rsi
+      state: r_hand
+
+- type: marking
+  id: SatyrHeadMale
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Ovinia ]
+  sexRestriction: Male
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#ffdad1"
+  sprites:
+    - sprite: Mobs/Species/Human/parts.rsi
+      state: head_m
+
+- type: marking
+  id: SatyrHeadFemale
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Ovinia ]
+  sexRestriction: Female
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#ffdad1"
+  sprites:
+    - sprite: Mobs/Species/Human/parts.rsi
+      state: head_f
+
+- type: marking
+  id: NoSnout
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [ Ovinia ]
+  forcedColoring: true
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Ovinia/satyr_markings.rsi
+      state: no_snout
