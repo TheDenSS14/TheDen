@@ -2363,7 +2363,7 @@
 
 - type: entity
   parent: MarkerBase
-  id: MarkerSoundPiano
+  id: MarkerSoundMusicBoss
   name: invisible sound emitter
   suffix: Boss Music, Signal Friendly
   components:
@@ -2388,6 +2388,54 @@
   - type: DeviceLinkSink
     ports:
       - Trigger
+  - type: AutoLinkReceiver
+    channel: MusicBoss
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkMusicBoss
+  suffix: PENTHOUSE] [Autolink (Boss Music), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: MusicBoss
+  - type: SignalSwitch
+    clickSound: /Audio/Effects/silence.ogg
+
+- type: entity
+  parent: ShuttersFogWallBossOpenAutolink
+  id: ShuttersFogWallBossOpenAutolinkBoss
+  suffix: PENTHOUSE] [Autolink (Fog), Open Privacy Shutter
+  components:
+    - type: AutoLinkReceiver
+      channel: FogBoss
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkFogBoss
+  suffix: PENTHOUSE] [Autolink (Boss Fog), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: FogBoss
+  - type: SignalSwitch
+    clickSound: /Audio/Effects/silence.ogg
+
+- type: entity
+  parent: MarkerShutterOpenAutolink
+  id: MarkerShutterOpenAutolinkBoss
+  suffix: PENTHOUSE] [Autolink (Boss Wall), Open
+  components:
+    - type: AutoLinkReceiver
+      channel: WallBoss
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkInvisShutterBoss
+  suffix: PENTHOUSE] [Autolink (Boss Wall), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: WallBoss
+  - type: SignalSwitch
+    clickSound: /Audio/Effects/silence.ogg
 
 - type: entity
   parent: [ BaseStructure, BasePsionic ]

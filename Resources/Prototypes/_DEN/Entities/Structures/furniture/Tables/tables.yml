@@ -632,20 +632,20 @@
     soundActivate:
       path: /Audio/_DEN/Effects/crystaltap1.ogg
       params:
-        volume: -6
+        volume: -8
         pitch: 0.5
         variation: 0.05
     soundDeactivate:
       path: /Audio/_DEN/Effects/crystaltap2.ogg
       params:
-        volume: -6
+        volume: -8
         pitch: 0.5
         variation: 0.05
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/Ambience/Objects/fireplace.ogg
       params:
-        volume: -6
+        volume: -8
         range: 5
   - type: EtherealLight # Dims around ethereal entities
   - type: StaticPrice

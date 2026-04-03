@@ -28,16 +28,6 @@
       ]
     },
     {
-      "name": "poolwater",
-      "directions": 4,
-      "delays": [
-        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ],
-        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ],
-        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ],
-        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ]
-      ]
-    },
-    {
       "name": "watercorner",
       "directions": 4,
       "delays": [
@@ -58,14 +48,12 @@
       ]
     },
     {
-      "name": "poolwatercorner",
-      "directions": 4,
-      "delays": [
-        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ],
-        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ],
-        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ],
-        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ]
-      ]
+      "name": "pooltile",
+      "directions": 4
+    },
+    {
+      "name": "pooltilecorner",
+      "directions": 4
     },
     {
       "name": "poolbox",
@@ -129,6 +117,14 @@
     },
     {
       "name": "poolglassdark",
+      "directions": 4
+    },
+    {
+      "name": "poolglassdiagonal",
+      "directions": 4
+    },
+    {
+      "name": "poolglassdiagonaldark",
       "directions": 4
     },
     {

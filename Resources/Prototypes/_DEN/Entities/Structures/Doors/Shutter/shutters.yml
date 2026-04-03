@@ -585,7 +585,7 @@
 # Toggleable invisible walls for mappers
 - type: entity
   parent: MarkerBase
-  id: MarkerShutter
+  id: MarkerShutterClosed
   name: invisible shutter
   suffix: Closed, Signal-Friendly] [Right Click To Link
   components:
@@ -654,7 +654,7 @@
       DoorStatus: false
 
 - type: entity
-  parent: MarkerShutter
+  parent: MarkerShutterClosed
   id: MarkerShutterOpen
   suffix: Open, Signal-Friendly] [Right Click To Link
   components:
@@ -662,3 +662,19 @@
     state: Open
   - type: Physics
     canCollide: false
+
+- type: entity
+  parent: MarkerShutterClosed
+  id: MarkerShutterClosedAutolink
+  suffix: Autolink (Invisible Shutter), Closed
+  components:
+    - type: AutoLinkReceiver
+      channel: InvisShutter
+
+- type: entity
+  parent: MarkerShutterOpen
+  id: MarkerShutterOpenAutolink
+  suffix: Autolink (Invisible Shutter), Open
+  components:
+    - type: AutoLinkReceiver
+      channel: InvisShutter

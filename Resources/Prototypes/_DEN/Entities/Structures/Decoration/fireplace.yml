@@ -50,20 +50,20 @@
     soundActivate:
       path: /Audio/_DEN/Effects/crystaltap1.ogg
       params:
-        volume: -6
+        volume: -8
         pitch: 0.5
         variation: 0.05
     soundDeactivate:
       path: /Audio/_DEN/Effects/crystaltap2.ogg
       params:
-        volume: -6
+        volume: -8
         pitch: 0.5
         variation: 0.05
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/Ambience/Objects/fireplace.ogg
       params:
-        volume: -6
+        volume: -8
         range: 5
   - type: AmbientSound
     enabled: false
@@ -175,15 +175,15 @@
     soundDeactivate:
       path: /Audio/_DEN/Effects/crystaltap2.ogg
       params:
-        volume: -6
+        volume: -8
         pitch: 0.75
         variation: 0.05
-  - type: ItemToggleActiveSound
-    activeSound:
-      path: /Audio/Ambience/Objects/fireplace.ogg
-      params:
-        volume: -6
-        range: 5
+#  - type: ItemToggleActiveSound # It's a cute idea, but there end up being so many of these you hear sound repeating
+#    activeSound:
+#      path: /Audio/Ambience/Objects/fireplace.ogg
+#      params:
+#        volume: -10
+#        range: 5
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
     enabled: false

@@ -85,7 +85,8 @@
     norot: false
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
   - type: Fixtures # These pools won't grab you from half a tile away
@@ -119,7 +120,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwatercorner
+    - state: pooltilecorner
+    - state: watercorner
     - state: watershinecorner
       shader: unshaded
   - type: Fixtures
@@ -155,7 +157,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolbox
@@ -190,7 +193,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolcircle
@@ -225,7 +229,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolcorner
@@ -260,7 +265,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: pooldiagonal
@@ -295,7 +301,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolend
@@ -330,7 +337,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolnarrow
@@ -365,7 +373,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolside
@@ -402,7 +411,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolboxdark
@@ -415,7 +425,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolcircledark
@@ -428,7 +439,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolcornerdark
@@ -441,7 +453,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: pooldiagonaldark
@@ -454,7 +467,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolenddark
@@ -467,7 +481,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolnarrowdark
@@ -480,12 +495,13 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolsidedark
 
-# Standard Color, No Open Water
+# Standard Color, No Open Water (Glass Covered, Etc.)
 
 - type: entity
   parent: SomberPoolWater
@@ -495,7 +511,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglass
@@ -513,13 +530,28 @@
 
 - type: entity
   parent: SomberPoolWaterGlass
+  id: SomberPoolWaterGlassCorner
+  suffix: Walkable Glass, Diagonal
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltilecorner
+    - state: watercorner
+    - state: watershinecorner
+      shader: unshaded
+    - state: poolglassdiagonal
+
+- type: entity
+  parent: SomberPoolWaterGlass
   id: SomberPoolWaterEye
   suffix: Walkable, Eye
   components:
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: pooleye
@@ -532,7 +564,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: pooleyeland
@@ -545,7 +578,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglass
@@ -559,7 +593,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglass
@@ -573,7 +608,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglass
@@ -587,7 +623,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglass
@@ -601,7 +638,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglass
@@ -615,7 +653,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglass
@@ -629,7 +668,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglass
@@ -643,7 +683,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglass
@@ -657,13 +698,14 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglass
     - state: poolside
 
-# Dark Color, No Open Water
+# Dark Color, No Open Water (Glass Covered, Etc.)
 
 - type: entity
   parent: SomberPoolWaterGlass
@@ -673,10 +715,25 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglassdark
+
+- type: entity
+  parent: SomberPoolWaterGlass
+  id: SomberPoolWaterGlassCornerDark
+  suffix: Walkable Glass, Diagonal, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltilecorner
+    - state: watercorner
+    - state: watershinecorner
+      shader: unshaded
+    - state: poolglassdiagonaldark
 
 - type: entity
   parent: SomberPoolWaterEye
@@ -686,7 +743,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: pooleyedark
@@ -699,7 +757,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: pooleyelanddark
@@ -712,7 +771,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglassdark
@@ -726,7 +786,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglassdark
@@ -740,7 +801,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglassdark
@@ -754,7 +816,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglassdark
@@ -768,7 +831,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglassdark
@@ -782,7 +846,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglassdark
@@ -796,7 +861,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglassdark
@@ -810,7 +876,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglassdark
@@ -824,7 +891,8 @@
   - type: Sprite
     sprite: _DEN/Tiles/Planet/Somber/water.rsi
     layers:
-    - state: poolwater
+    - state: pooltile
+    - state: water
     - state: watershine
       shader: unshaded
     - state: poolglassdark
@@ -870,10 +938,12 @@
     drawdepth: Overdoors
     sprite: _DEN/Tiles/Planet/Somber/waterfall.rsi
     layers:
-    - state: poolwaterfall
-      offset: 0,0.09375 # 3 pixels up to reach the spout
-    - state: poolwaterfallshine
-      offset: 0,0.09375
+    - state: pooltile
+    - state: waterfallcut
+      offset: 0,0.125 # 4 pixels up to reach the spout
+    - state: pooltile
+    - state: waterfallshinecut
+      offset: 0,0.125
       shader: unshaded
 
 # Waterfall Spouts
@@ -882,12 +952,14 @@
   parent: [ BaseStructure, BasePsionic ]
   id: SomberPoolWaterfallSpout
   name: somber pool waterfall spout
+  suffix: Wall
   description: "A narrow spout set into the wall, providing fresh water from hidden filters."
   components:
   - type: Sprite
     drawdepth: BlastDoors # One layer lower than the waterfall itself
     sprite: _DEN/Tiles/Planet/Somber/waterfall.rsi
     state: poolwaterfallspout
+  - type: Fixtures
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -906,7 +978,23 @@
 - type: entity
   parent: SomberPoolWaterfallSpout
   id: SomberPoolWaterfallSpoutDark
-  suffix: Dark
+  suffix: Wall, Dark
   components:
   - type: Sprite
     state: poolwaterfallspoutdark
+
+- type: entity
+  parent: SomberPoolWaterfallSpout
+  id: SomberPoolWaterfallSpoutWindow
+  suffix: Window
+  components:
+  - type: Sprite
+    state: poolwaterfallspoutwindow
+
+- type: entity
+  parent: SomberPoolWaterfallSpout
+  id: SomberPoolWaterfallSpoutWindowDark
+  suffix: Window, Dark
+  components:
+  - type: Sprite
+    state: poolwaterfallspoutwindowdark

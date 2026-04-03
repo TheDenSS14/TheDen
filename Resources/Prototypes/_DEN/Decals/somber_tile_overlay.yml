@@ -1,0 +1,236 @@
+- type: decal
+  id: SomberTileOverlay
+  parent: Overlays
+  abstract: true
+
+- type: decal
+  id: SomberTileOverlayDarkNE
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-dark-NE
+
+- type: decal
+  id: SomberTileOverlayDarkNW
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-dark-NW
+
+- type: decal
+  id: SomberTileOverlayDarkSE
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-dark-SE
+
+- type: decal
+  id: SomberTileOverlayDarkSW
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-dark-SW
+
+- type: decal
+  id: SomberTileOverlayDefaultGlass
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-glass
+
+- type: decal
+  id: SomberTileOverlayGlassDarkNE
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglass-dark-NE
+
+- type: decal
+  id: SomberTileOverlayGlassDarkNW
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglass-dark-NW
+
+- type: decal
+  id: SomberTileOverlayGlassDarkSE
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglass-dark-SE
+
+- type: decal
+  id: SomberTileOverlayGlassDarkSW
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglass-dark-SW
+
+- type: decal
+  id: SomberTileOverlayGlassNE
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglass-NE
+
+- type: decal
+  id: SomberTileOverlayGlassNW
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglass-NW
+
+- type: decal
+  id: SomberTileOverlayDefaultGlassPlasma
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-glass-plasma
+
+- type: decal
+  id: SomberTileOverlayGlassSE
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglass-SE
+
+- type: decal
+  id: SomberTileOverlayGlassSW
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglass-SW
+
+- type: decal
+  id: SomberTileOverlayGlassTileDarkNE
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglasstile-dark-NE
+
+- type: decal
+  id: SomberTileOverlayGlassTileDarkNW
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglasstile-dark-NW
+
+- type: decal
+  id: SomberTileOverlayGlassTileDarkSE
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglasstile-dark-SE
+
+- type: decal
+  id: SomberTileOverlayGlassTileDarkSW
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglasstile-dark-SW
+
+- type: decal
+  id: SomberTileOverlayGlassTileNE
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglasstile-NE
+
+- type: decal
+  id: SomberTileOverlayGlassTileNW
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglasstile-NW
+
+- type: decal
+  id: SomberTileOverlayGlassTileSE
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglasstile-SE
+
+- type: decal
+  id: SomberTileOverlayGlassTileSW
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somberglasstile-SW
+
+- type: decal
+  id: SomberTileOverlayGlass
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-glass-tinted
+
+- type: decal
+  id: SomberTileOverlayGlassDark
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-glass-tinted-dark
+
+- type: decal
+  id: SomberTileOverlayDefaultGlassUranium
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-glass-uranium
+
+- type: decal
+  id: SomberTileOverlayNE
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-NE
+
+- type: decal
+  id: SomberTileOverlayNW
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-NW
+
+- type: decal
+  id: SomberTileOverlaySE
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-SE
+
+- type: decal
+  id: SomberTileOverlaySW
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-SW
