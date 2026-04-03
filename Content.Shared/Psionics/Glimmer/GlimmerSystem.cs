@@ -50,7 +50,7 @@ public sealed class GlimmerSystem : EntitySystem
         get
         {
             var output = _glimmerInput.ToString("#.##");
-            return string.IsNullOrEmpty(output) ? output : "0";
+            return string.IsNullOrEmpty(output) ? "0" : output;
         }
     }
 
@@ -89,7 +89,7 @@ public sealed class GlimmerSystem : EntitySystem
         get
         {
             var output = _glimmerInput.ToString("#.##");
-            return string.IsNullOrEmpty(output) ? output : "0";
+            return string.IsNullOrEmpty(output) ? "0" : output;
         }
     }
 
