@@ -53,6 +53,48 @@
   items:
     - PillCanisterSpaceDrugs
 
+- type: loadout
+  id: LoadoutMysticWeaponPistolCHIMP
+  category: JobsEpistemicsMystic
+  cost: 0
+  guideEntry: Psionics
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMysticEquipment
+  - !type:CharacterJobRequirement
+    jobs:
+    - SeniorResearcher
+  items:
+  - WeaponPistolCHIMP
+
+- type: loadout
+  id: LoadoutMysticNodeScanner
+  category: JobsEpistemicsMystic
+  cost: 0
+  guideEntry: Psionics
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMysticEquipment
+  - !type:CharacterJobRequirement
+    jobs:
+    - SeniorResearcher
+  items:
+  - NodeScanner
+
+- type: loadout
+  id: LoadoutMysticAnomalyScanner
+  category: JobsEpistemicsMystic
+  cost: 0
+  guideEntry: Psionics
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMysticEquipment
+  - !type:CharacterJobRequirement
+    jobs:
+    - SeniorResearcher
+  items:
+  - AnomalyScanner
+
 # Eyes
 
 # Gloves

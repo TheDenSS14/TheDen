@@ -40,6 +40,45 @@
   items:
     - ClothingBeltMedicalAdvancedFilled
 
+- type: loadout
+  id: LoadoutSeniorPhysicianJetInjector
+  category: JobsMedicalSeniorPhysician
+  cost: 4
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSeniorPhysicianEquipment
+  - !type:CharacterJobRequirement
+    jobs:
+    - SeniorPhysician
+  items:
+  - JetInjector
+
+- type: loadout
+  id: LoadoutSeniorPhysicianEpinephrineBottle
+  category: JobsMedicalSeniorPhysician
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSeniorPhysicianEquipment
+  - !type:CharacterJobRequirement
+    jobs:
+    - SeniorPhysician
+  items:
+  - EpinephrineChemistryBottle
+
+- type: loadout
+  id: LoadoutSeniorPhysicianPillCanisterTricordrazine
+  category: JobsMedicalSeniorPhysician
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSeniorPhysicianEquipment
+  - !type:CharacterJobRequirement
+    jobs:
+    - SeniorPhysician
+  items:
+  - PillCanisterTricordrazine
+
 # Eyes
 
 # Gloves

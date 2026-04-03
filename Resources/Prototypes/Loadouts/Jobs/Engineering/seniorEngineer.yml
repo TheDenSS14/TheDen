@@ -133,6 +133,32 @@
     - PowerDrill
 
 - type: loadout
+  id: LoadoutSeniorEngineerEquipmentWelderExperimental
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSeniorEngineerEquipment
+  - !type:CharacterJobRequirement
+    jobs:
+    - SeniorEngineer
+  items:
+  - WelderExperimental
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentHandHeldPowerMonitor
+  category: JobsEngineeringSeniorEngineer
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSeniorEngineerEquipment
+  - !type:CharacterJobRequirement
+    jobs:
+    - SeniorEngineer
+  items:
+  - HandHeldPowerMonitor
+
+- type: loadout
   id: LoadoutSeniorEngineerEquipmentSheetSteel
   category: JobsEngineeringSeniorEngineer
   cost: 1

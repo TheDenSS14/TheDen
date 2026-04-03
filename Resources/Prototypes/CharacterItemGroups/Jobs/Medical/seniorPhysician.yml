@@ -23,10 +23,16 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutSeniorPhysicianEquipment
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutSeniorPhysicianEquipment
+  maxItems: 3
+  items:
+  - type: loadout
+    id: LoadoutSeniorPhysicianJetInjector
+  - type: loadout
+    id: LoadoutSeniorPhysicianEpinephrineBottle
+  - type: loadout
+    id: LoadoutSeniorPhysicianPillCanisterTricordrazine
 #
 #- type: characterItemGroup
 #  id: LoadoutSeniorPhysicianEyes
