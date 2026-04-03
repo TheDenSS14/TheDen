@@ -77,7 +77,7 @@ public sealed class ReagentProductionSystem : EntitySystem
                     productionType.UnitsPerProduction);
 
                 if (amountToAdd <= 0)
-                    return;
+                    continue;
                 //and add it :)
                 solution.AddReagent(productionType.Reagent, amountToAdd);
             }

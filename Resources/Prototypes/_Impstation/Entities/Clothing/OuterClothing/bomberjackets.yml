@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 Kellaris
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -141,10 +143,14 @@
   - type: Armor # Identical stats to the security winter coat
     modifiers:
       coefficients:
-        Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.85
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
         Heat: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.8 #Den
 
 - type: entity
   parent: ClothingOuterCoatBomberWhite
@@ -164,10 +170,14 @@
   - type: Armor # Identical stats to the security winter coat
     modifiers:
       coefficients:
-        Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.85
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
         Heat: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.8 #Den
 
 # You can adjust your bomber jacket to fit loose around the shoulders by butchering it, or change it back the same way - think of it as clothing alterations
 # These bombers are all parented to their non-loose counterparts, instead of the basic white one

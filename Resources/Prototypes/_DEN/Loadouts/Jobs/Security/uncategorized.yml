@@ -5,6 +5,7 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2026 Jakumba
+# SPDX-FileCopyrightText: 2026 Kiara
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -64,6 +65,7 @@
   id: LoadoutSecurityPlasteelArmingSword
   category: JobsSecurityAUncategorized
   cost: 3
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -313,6 +315,7 @@
   id: LoadoutSecurityPlasteelEpee
   category: JobsSecurityAUncategorized
   cost: 3
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -332,6 +335,7 @@
   id: LoadoutSecurityPlasteelMace
   category: JobsSecurityAUncategorized
   cost: 3
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -350,6 +354,7 @@
   id: LoadoutSecurityPlasteelAxe
   category: JobsSecurityAUncategorized
   cost: 3
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -368,6 +373,7 @@
   id: LoadoutSecurityPlasteelSpear
   category: JobsSecurityAUncategorized
   cost: 3
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
