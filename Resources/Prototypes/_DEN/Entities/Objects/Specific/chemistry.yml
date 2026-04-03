@@ -95,3 +95,75 @@
       - PillCanister
       - MantisBeltStorable
       - MantisBoxChemicalsStorable
+
+- type: entity
+  name: extra-large beaker
+  parent: BaseBeaker
+  description: Used to contain a very large amount of chemicals or solutions.
+  id: ExtraLargeBeaker
+  components:
+  - type: Spillable
+    solution: beaker
+  - type: Sprite
+    sprite: _DEN\Objects\Specific\Chemistry\beaker_extralarge.rsi
+    layers:
+    - state: beakerextralarge
+    - state: beakerextralarge1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Item
+    size: Normal
+    sprite: _DEN\Objects\Specific\Chemistry\beaker_extralarge.rsi
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 250
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
+    fillBaseName: beakerextralarge
+    inHandsMaxFillLevels: 4
+    inHandsFillBaseName: -fill-
+  - type: PhysicalComposition
+    materialComposition:
+      ReinforcedGlass: 100
+  - type: StaticPrice
+    price: 40
+
+- type: entity
+  name: plasma-glass beaker
+  parent: BaseBeaker
+  description: Used to contain an absurdly large amount of chemicals or solutions.
+  id: PlasmaGlassBeaker
+  components:
+  - type: Spillable
+    solution: beaker
+  - type: Sprite
+    sprite: _DEN\Objects\Specific\Chemistry\beaker_plasmaglass.rsi
+    layers:
+    - state: plasmaglassbeaker
+    - state: plasmaglassbeaker1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Item
+    size: Normal
+    sprite: _DEN\Objects\Specific\Chemistry\beaker_plasmaglass.rsi
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 500
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
+    fillBaseName: plasmaglassbeaker
+    inHandsMaxFillLevels: 4
+    inHandsFillBaseName: -fill-
+  - type: PhysicalComposition
+    materialComposition:
+      PlasmaGlass: 100
+  - type: ReverseEngineering # Delta
+    difficulty: 3
+    recipes:
+    - PlasmaGlassBeaker
+  - type: StaticPrice
+    price: 80
