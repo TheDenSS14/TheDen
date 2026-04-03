@@ -8,8 +8,8 @@
   id: Acrux
   mapName: 'Port Acrux'
   mapPath: /Maps/TheDen/acrux.yml
-  minPlayers: 10
-  maxPlayers: 70
+  minPlayers: 5
+  maxPlayers: 60
   stations:
     Acrux:
       stationProto: StandardNanotrasenStation
@@ -27,7 +27,7 @@
           availableJobs:
           #Service
             Passenger: [ -1, -1 ]
-            ServiceWorker: [ 2, 3 ]
+            ServiceWorker: [ 2, 4 ]
             Reporter: [ 1, 1 ]
             Lawyer: [ 1, 1 ]
             Bartender: [ 2, 3 ]
@@ -53,7 +53,7 @@
             ChiefMedicalOfficer: [ 1, 1 ]
             SeniorPhysician: [ 1, 1 ]
             Paramedic: [ 1, 1 ]
-            MedicalDoctor: [ 3, 4 ]
+            MedicalDoctor: [ 2, 3 ]
             Chemist: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ]
             Psychologist: [ 1, 1 ]
@@ -69,7 +69,7 @@
           #Science
             ResearchDirector: [ 1, 1 ]
             SeniorResearcher: [ 1, 1 ]
-            Scientist: [ 2, 4 ]
+            Scientist: [ 2, 3 ]
             ResearchAssistant: [ 2, 2 ]
             Chaplain: [ 1, 1 ]
             ForensicMantis: [ 1, 1 ]
@@ -78,7 +78,7 @@
             Librarian: [ 1, 1 ]
           #Logistics
             Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 2, 4 ]
+            SalvageSpecialist: [ 4, 4 ]
             MailCarrier: [ 1, 1 ]
             CargoTechnician: [ 3, 4 ]
           # Silicon

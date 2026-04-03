@@ -18358,3 +18358,182 @@ Entries:
   id: 1802
   time: '2026-03-20T20:30:54.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2577
+- author: Pinkbat5
+  changes:
+    - type: Add
+      message: >-
+        Radiation/caustic burns and asphyxiation damage are now visible upon
+        examination.
+    - type: Tweak
+      message: Most visible damage types are now described in more detail.
+  id: 1803
+  time: '2026-03-21T20:55:35.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2581
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Added a consent toggle for turning into a zombie, it is on by default.
+    - type: Tweak
+      message: Reworked zombies completely. Please see PR 2417 for details.
+  id: 1804
+  time: '2026-03-21T21:25:42.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2417
+- author: Swissed_Fox
+  changes:
+    - type: Tweak
+      message: (P.ACRUX) Various changes, fixes, and new places to explore!
+  id: 1805
+  time: '2026-03-22T04:53:49.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2585
+- author: MajorMoth
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the problem where putting on a taking off clothing that changes
+        your typing indicator would leave you stuck with the default one.
+  id: 1806
+  time: '2026-03-23T15:36:02.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2583
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Admins now have access to a PrefixSuffixAccentComponent, allowing them
+        to append text to the start or end of your messages. This text can be
+        added independently of other accents so that your formatting tags don't
+        break.
+  id: 1807
+  time: '2026-03-23T19:03:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2579
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Added new glimmer events, spooky.
+    - type: Tweak
+      message: Made glimmer events more likely to occur.
+  id: 1808
+  time: '2026-03-24T18:10:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2578
+- author: glassgardens
+  changes:
+    - type: Add
+      message: pan flutes and ocarinas can now be played from your pocket or neck
+  id: 1809
+  time: '2026-03-24T18:11:16.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2515
+- author: Swissed_Fox
+  changes:
+    - type: Tweak
+      message: (DINGO) Various adjustments, see PR for the details
+  id: 1810
+  time: '2026-03-25T22:10:54.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2589
+- author: Kelaris
+  changes:
+    - type: Fix
+      message: >-
+        Thaven now asphyxiate at the baseline rate, instead of twice as fast as
+        most species.
+  id: 1811
+  time: '2026-03-27T10:11:36.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2590
+- author: GreggTheFather
+  changes:
+    - type: Fix
+      message: (BAIKAL) Small fixes
+  id: 1812
+  time: '2026-03-28T08:10:01.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2597
+- author: GreggTheFather
+  changes:
+    - type: Tweak
+      message: >-
+        (GLACIER) Various Glacier Fixes and QoL changes. Kiss your local Mapper
+        today.
+  id: 1813
+  time: '2026-03-28T08:39:24.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2598
+- author: GreggTheFather
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the Nyx, adding a Liberation Station for faster ERT Response
+        times potentially.
+  id: 1814
+  time: '2026-03-28T08:40:43.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2596
+- author: RoY7x
+  changes:
+    - type: Fix
+      message: Made poker chips actually obtainable via poker chip set.
+    - type: Tweak
+      message: >-
+        You can now obtain a poker chip set at the GoodCleanFun vend, even
+        includes a deck box!
+    - type: Add
+      message: Poker Chip Set Case
+    - type: Add
+      message: Missing white chips to the set!
+  id: 1815
+  time: '2026-03-28T21:51:56.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2587
+- author: Tomce795
+  changes:
+    - type: Add
+      message: Ovinia now has the simple glowing eyes markings.
+  id: 1816
+  time: '2026-03-28T21:56:33.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2592
+- author: Shaman
+  changes:
+    - type: Add
+      message: >-
+        Added the Retainer's Clasp Knife, an omnitool+configurator that's also a
+        combat knife, found exactly as rarely as omnitools in the lottery or
+        engineering surplus crates (so never)
+  id: 1817
+  time: '2026-03-28T21:58:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2593
+- author: MajorMoth
+  changes:
+    - type: Tweak
+      message: Allowed mappers to choose the shower state on map initialization.
+  id: 1818
+  time: '2026-03-28T22:29:14.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2599
+- author: HTMLSystem
+  changes:
+    - type: Fix
+      message: >-
+        Being damaged with the Synthetic Voicebox trait should no longer have a
+        chance to delete your message.
+  id: 1819
+  time: '2026-03-29T13:05:36.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2601
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Increased the charges of the NSFW/Private holo barriers from 2=> 8
+  id: 1820
+  time: '2026-03-29T14:21:46.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2604
+- author: Kelaris
+  changes:
+    - type: Tweak
+      message: >-
+        Conspiracy requires 40 players to vote for, matching other high danger
+        game modes.
+    - type: Tweak
+      message: Lower Danger game mode can no longer roll high danger game modes.
+  id: 1821
+  time: '2026-03-29T18:16:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2603
+- author: GreggTheFather
+  changes:
+    - type: Tweak
+      message: >-
+        (MANTA & GLACIER) QoL fixes and Turnstile fixes on both for GenPop 2nd
+        Exits
+  id: 1822
+  time: '2026-03-29T18:54:43.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2605
