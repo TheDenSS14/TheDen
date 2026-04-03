@@ -132,7 +132,6 @@ public sealed class GlimmerSystem : EntitySystem
             _ => GlimmerTier.Critical,
         };
     }
-
     /// <summary>
     ///     Returns a 0 through 10 range of glimmer. Do not divide by this for any reason.
     /// </summary>
