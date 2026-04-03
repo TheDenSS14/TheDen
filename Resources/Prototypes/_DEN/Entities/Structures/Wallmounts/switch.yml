@@ -22,6 +22,48 @@
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
     state: base
 
+# Autolinking Buttons
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkFog
+  suffix: Autolink (Fog), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: Fog
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkTint1
+  suffix: Autolink (Tint 1), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: Tint1
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkTint2
+  suffix: Autolink (Tint 2), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: Tint2
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkTint3
+  suffix: Autolink (Tint 3), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: Tint3
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkInvisShutter
+  suffix: Autolink (Invisible Shutter), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: InvisShutter
+
 # Lockable buttons
 
 - type: entity
