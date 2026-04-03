@@ -52,10 +52,6 @@
   - type: Rotatable
   - type: AnimationPlayer
   - type: Appearance
-  - type: UserInterface
-    interfaces:
-      enum.WiresUiKey.Key:
-        type: WiresBoundUserInterface
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StrongMetallic
@@ -239,10 +235,6 @@
   - type: Rotatable
   - type: AnimationPlayer
   - type: Appearance
-  - type: UserInterface
-    interfaces:
-      enum.WiresUiKey.Key:
-        type: WiresBoundUserInterface
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StrongMetallic
@@ -254,7 +246,7 @@
       behaviors:
       - !type:PlaySoundBehavior
         sound:
-          path: /Audio/_DEN/Effects/fogopen.ogg
+          path: /Audio/Effects/pop_high.ogg # Hehe
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: DoorSignalControl
@@ -644,10 +636,6 @@
     openSound: /Audio/Effects/silence.ogg
     closeSound: /Audio/Effects/silence.ogg
   - type: Rotatable
-  - type: UserInterface
-    interfaces:
-      enum.WiresUiKey.Key:
-        type: WiresBoundUserInterface
   - type: DoorSignalControl
   - type: DeviceNetwork
     deviceNetId: Wireless

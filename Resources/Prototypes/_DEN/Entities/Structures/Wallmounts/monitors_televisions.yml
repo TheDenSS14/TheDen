@@ -65,10 +65,15 @@
   parent: [ BaseStructure, BasePsionic ]
   id: SomberTV
   name: somber widescreen television
-  suffix: Decorative Only] [Somber TV Kit
+  suffix: Signal-Friendly] [Somber TV Kit
   description: "A futuristic frame television with a textured, shifting surface, set to freeze its last image in faux mnemolith--an eclipsed, bleeding sun breaking through clouds, this time. This thing must be ungodly expensive."
-  components: # TODO: HELP MAKE THIS LISTEN TO REMOTE SIGNALLERS PLEASE GOD PLEASE (WHAT TV DOESN'T HAVE A REMOTE)
-  - type: Sprite # TODO: MAYBE IT SHOULD FUNCTION LIKE AN ACTUAL TV BUT REALLY I JUST WANT A TV FOR RP, IDK HOW TO CLICK TO OPEN CAMERA HUD BUT ALSO KEEP IT GLOWING...
+  components:
+  - type: ItemToggleOnTrigger
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
+  - type: Sprite
     sprite: _DEN/Structures/Wallmounts/sombertv.rsi
     drawdepth: WallMountedItems
     layers:
@@ -91,7 +96,7 @@
     color: "#ff9833"
   - type: ItemTogglePointLight
   - type: ItemToggle
-    activated: true
+    activated: false
     soundActivate:
       path: /Audio/Machines/lightswitch.ogg
       params:
@@ -148,24 +153,16 @@
             max: 3
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: DeviceNetwork
-    deviceNetId: Wireless
-    receiveFrequencyId: SmartLight
-  - type: WirelessNetworkConnection
-    range: 200
-  - type: DeviceLinkSink
-    ports:
-      - On
-      - Off
-      - Toggle
-  - type: PoweredLightVisuals
-    blinkingSound:
-      path: "/Audio/Machines/light_tube_on.ogg"
-    spriteStateMap:
-      off: tv
-      on: tv
   - type: InteractionVerbs
     allowedVerbs:
     - KnockOn
     - KissObject
     - LickObject
+
+- type: entity
+  parent: SomberTV
+  id: SomberTVAutolink
+  suffix: Autolink (TV)] [Somber TV Kit
+  components:
+  - type: AutoLinkReceiver
+    channel: TV

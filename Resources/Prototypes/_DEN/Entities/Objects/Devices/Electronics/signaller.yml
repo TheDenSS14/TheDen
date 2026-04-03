@@ -20,3 +20,11 @@
   name: somber television remote
   suffix: Must Be Linked] [Somber TV Kit
   description: "A brushed metal remote for the television. It can activate other items, too, but don't run off with it or you'll pay."
+
+- type: entity
+  parent: RemoteSignallerSomberTV
+  id: RemoteSignallerSomberTVAutolink
+  suffix: Autolink (TV)] [Somber TV Kit
+  components:
+  - type: AutoLinkTransmitter
+    channel: TV

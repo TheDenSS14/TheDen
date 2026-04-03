@@ -116,34 +116,43 @@
   parent: [ ButtonFrame, BasePsionic ]
   id: ButtonFrameSomberGold
   name: somber signal button frame
-  suffix: Gold
+  suffix: Gold, Glows In Dark
   description: "A gold button frame shaped like an eye."
   components:
   - type: Sprite
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
-    state: framegold
+    layers:
+    - state: framegold
+    - state: framegold-unshaded
+      shader: unshaded
 
 - type: entity
   parent: [ ButtonFrame, BasePsionic ]
   id: ButtonFrameSomberMagenta
   name: somber signal button frame
-  suffix: Magenta
+  suffix: Magenta, Glows In Dark
   description: "A magenta button frame shaped like an eye."
   components:
   - type: Sprite
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
-    state: framepink
+    layers:
+    - state: framepink
+    - state: framepink-unshaded
+      shader: unshaded
 
 - type: entity
   parent: [ ButtonFrame, BasePsionic ]
   id: ButtonFrameSomberPurple
   name: somber signal button frame
-  suffix: Purple
+  suffix: Purple, Glows In Dark
   description: "A purple button frame shaped like an eye."
   components:
   - type: Sprite
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
-    state: framepurple
+    layers:
+    - state: framepurple
+    - state: framepurple-unshaded
+      shader: unshaded
 
 # Timers
 

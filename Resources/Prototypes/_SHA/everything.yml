@@ -2362,6 +2362,34 @@
     range: 1000
 
 - type: entity
+  parent: MarkerBase
+  id: MarkerSoundPiano
+  name: invisible sound emitter
+  suffix: Boss Music, Signal Friendly
+  components:
+  - type: Sprite
+    layers:
+      - sprite: _DEN/Markers/environment.rsi
+        state: base-purple
+        shader: unshaded
+      - sprite: _DEN/Markers/environment.rsi
+        shader: unshaded
+        state: sound
+  - type: ItemToggle
+    activated: false
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_SHA/piano.ogg
+      params:
+        volume: 0
+        range: 8
+  - type: ItemToggleOnTrigger
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
+
+- type: entity
   parent: [ BaseStructure, BasePsionic ]
   id: SomberNazarInlaid
   name: nazar (inlaid)

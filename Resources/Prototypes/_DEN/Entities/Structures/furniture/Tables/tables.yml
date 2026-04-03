@@ -448,8 +448,7 @@
 - type: entity
   parent: [ BaseStructure, BasePsionic ] # Doesn't merge with nearby tables, so I can't parent it
   id: SomberTableCoffee
-  name: somber table
-  suffix: Coffee Table
+  name: somber coffee table
   description: "An expensive coffee table made of gloomy, patterned wood."
   components:
   - type: Sprite
@@ -518,8 +517,7 @@
 - type: entity
   parent: SomberDresser
   id: SomberTableEnd
-  name: somber table
-  suffix: End Table
+  name: somber end table
   description: "An expensive end table made of gloomy, patterned wood. It has drawers, of course. Can't you see them there?"
   components:
   - type: Storage
@@ -559,10 +557,15 @@
 - type: entity
   parent: SomberTableCoffee
   id: SomberTableFire
-  name: somber table
-  suffix: Fire Table
+  name: somber fire table
+  suffix: Signal-Friendly
   description: "An expensive fire table made of gloomy, patterned wood. Mind your hands."
-  components: # TODO: MAKE THIS TOGGLEABLE WITH SIGNALS USING THAT BOUNTY ONCE IT'S MERGED
+  components:
+  - type: ItemToggleOnTrigger
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
   - type: Sprite
     sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtablefire.rsi
     layers:
@@ -638,12 +641,12 @@
         volume: -6
         pitch: 0.5
         variation: 0.05
-  - type: AmbientSound
-    enabled: false
-    volume: -8
-    range: 5
-    sound:
+  - type: ItemToggleActiveSound
+    activeSound:
       path: /Audio/Ambience/Objects/fireplace.ogg
+      params:
+        volume: -6
+        range: 5
   - type: EtherealLight # Dims around ethereal entities
   - type: StaticPrice
     price: 125

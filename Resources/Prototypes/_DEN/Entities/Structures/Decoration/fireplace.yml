@@ -7,8 +7,14 @@
   parent: [ Fireplace, BasePsionic ]
   id: SomberFireplace
   name: electrum fireplace
+  suffix: Signal-Friendly
   description: "An avant-garde fireplace shaped like an eye, its smokeless psionic flame rippling like liquid."
-  components: # TODO: MAKE THIS TOGGLEABLE WITH SIGNALS USING THAT BOUNTY ONCE IT'S MERGED
+  components:
+  - type: ItemToggleOnTrigger
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
   - type: Sprite
     snapCardinals: true
     noRot: true
@@ -53,12 +59,14 @@
         volume: -6
         pitch: 0.5
         variation: 0.05
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+      params:
+        volume: -6
+        range: 5
   - type: AmbientSound
     enabled: false
-    volume: -6
-    range: 5
-    sound:
-      path: /Audio/Ambience/Objects/fireplace.ogg
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
     enabled: false
@@ -116,10 +124,16 @@
   parent: [ BaseSignDirectional, BasePsionic ] # So it's technically wall decor, but whatever
   id: SomberHangingBrazier
   name: electrum hanging brazier
+  suffix: Signal-Friendly
   description: "An electrum brazier, its smokeless psionic flame rippling like liquid."
   placement:
     mode: WallmountLight
-  components: # TODO: MAKE THIS TOGGLEABLE WITH SIGNALS USING THAT BOUNTY ONCE IT'S MERGED
+  components:
+  - type: ItemToggleOnTrigger
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
   - type: Sprite
     drawdepth: WallMountedItems
     noRot: false
@@ -155,7 +169,7 @@
     soundActivate:
       path: /Audio/_DEN/Effects/crystaltap1.ogg
       params:
-        volume: -6
+        volume: -8
         pitch: 0.75
         variation: 0.05
     soundDeactivate:
@@ -164,12 +178,12 @@
         volume: -6
         pitch: 0.75
         variation: 0.05
-  - type: AmbientSound
-    enabled: false
-    volume: -8
-    range: 5
-    sound:
+  - type: ItemToggleActiveSound
+    activeSound:
       path: /Audio/Ambience/Objects/fireplace.ogg
+      params:
+        volume: -6
+        range: 5
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
     enabled: false
