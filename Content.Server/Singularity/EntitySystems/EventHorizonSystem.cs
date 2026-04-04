@@ -20,6 +20,7 @@
 
 using System.Numerics;
 using Content.Server.Administration.Logs;
+using Content.Server.Lightning.Components;
 using Content.Server.Singularity.Events;
 using Content.Server.Station.Components;
 using Content.Shared.Database;
@@ -69,6 +70,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
         SubscribeLocalEvent<GhostComponent, EventHorizonAttemptConsumeEntityEvent>(PreventConsume);
         SubscribeLocalEvent<TelegnosticProjectionComponent, EventHorizonAttemptConsumeEntityEvent>(PreventConsume); ///Nyano - Summary: the telegnositic projection has the same trait as ghosts.
         SubscribeLocalEvent<StationDataComponent, EventHorizonAttemptConsumeEntityEvent>(PreventConsume);
+        SubscribeLocalEvent<LightningComponent, EventHorizonAttemptConsumeEntityEvent>(PreventConsume);
         SubscribeLocalEvent<EventHorizonComponent, MapInitEvent>(OnHorizonMapInit);
         SubscribeLocalEvent<EventHorizonComponent, StartCollideEvent>(OnStartCollide);
         SubscribeLocalEvent<EventHorizonComponent, EntGotInsertedIntoContainerMessage>(OnEventHorizonContained);
