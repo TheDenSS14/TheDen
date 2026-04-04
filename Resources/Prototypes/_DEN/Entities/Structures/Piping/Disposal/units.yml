@@ -13,7 +13,7 @@
   parent: DisposalUnitSomber
   id: DisposalUnitSomberCounterside
   name: compact somber disposal unit
-  suffix: Place On Counters
+  suffix: Counter Side
   description: "A compact pneumatic waste disposal unit. There is no reason for it to be this ornate, though it does fit nicely into the counter."
   components:
   - type: Sprite
@@ -34,6 +34,16 @@
         layer:
         - TabletopMachineLayer
         hard: false
+
+- type: entity
+  parent: DisposalUnitSomberCounterside
+  id: DisposalUnitSomberWall
+  name: compact somber disposal unit
+  suffix: Wall
+  description: "A compact pneumatic waste disposal unit. There is no reason for it to be this ornate, though it does fit nicely into the wall."
+  components:
+  - type: Sprite
+    offset: 0,1
 
 - type: entity
   parent: [ MailingUnit, BasePsionic ]
