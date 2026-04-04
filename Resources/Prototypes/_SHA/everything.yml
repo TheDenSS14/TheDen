@@ -17,6 +17,28 @@
   maps:
   - Infinity # TODO
 
+# Parent
+
+- type: entity
+  id: BaseImmovableObject
+  abstract: true
+  components:
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+    flags:
+    - Anchorable
+    delay: 3600 # Quit it
+
+- type: entity
+  id: MeditationChamberLight
+  abstract: true
+  components:
+  - type: PointLight
+    energy: 1
+    radius: 3
+    color: "#4dc4ff"
+
 # Sound Collections
 
 - type: soundCollection
@@ -135,7 +157,7 @@
   - type: PointLight
     radius: 1.5
     energy: 2
-    color: "#00684E" # Mansus grasp color
+    color: "#00684E" # Mansus fire color
   - type: Ammo
     muzzleFlash: null
   - type: Projectile
@@ -185,7 +207,7 @@
   - type: PointLight
     radius: 1.5
     energy: 2
-    color: "#00684E" # Mansus grasp color
+    color: "#00684E" # Mansus fire color
 
 - type: entity
   parent: BulletGrasp
@@ -680,6 +702,16 @@
   - type: IconSmooth
     key: walls
     mode: NoSprite
+
+- type: entity
+  parent: WallSomber
+  id: WallSomberMeditation
+  suffix: Meditation Chamber] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/sombermeditation.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Walls/sombermeditation.rsi
 
 # Chairs
 
@@ -1279,6 +1311,39 @@
     state: stairs_fire_escape
     drawdepth: FloorTiles
 
+- type: entity
+  parent: StairStageSomberSteel
+  id: StairsWideSomberFade
+  name: somber steel stairs
+  suffix: PENTHOUSE, Meditation Chamber
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/stairs.rsi
+    state: wide_somber_stairs_fade
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: StairStageSomberSteel
+  id: StairsWideSomber
+  name: somber steel stairs
+  suffix: PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/stairs.rsi
+    state: wide_somber_stairs
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: StairStageSomberSteel
+  id: StairsWideSomberDark
+  name: somber steel stairs
+  suffix: PENTHOUSE, Dark
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/stairs.rsi
+    state: wide_somber_stairs_dark
+    drawdepth: FloorTiles
+
 # Tiles
 
 - type: tile
@@ -1820,7 +1885,7 @@
     - type: FireVisuals
       sprite: _SHA/Objects/Misc/candlessanctum.rsi
       normalState: fire-big
-      lightColor: "#00684E" # Mansus grasp color
+      lightColor: "#00684E" # Mansus fire color
 
 - type: entity
   parent: CandleSomberSanctum
@@ -1877,7 +1942,7 @@
     radius: 5
     energy: 7
     softness: 1.22
-    color: "#00684E" # Mansus grasp color
+    color: "#00684E" # Mansus fire color
 
 - type: entity
   parent: SomberHangingBrazierPenthouse
@@ -1894,7 +1959,7 @@
     radius: 4
     energy: 5
     softness: 1.22
-    color: "#00684E" # Mansus grasp color
+    color: "#00684E" # Mansus fire color
 
 - type: entity
   parent: SomberTableFirePenthouse
@@ -1917,7 +1982,7 @@
     radius: 4
     energy: 5
     softness: 1.22
-    color: "#00684E" # Mansus grasp color
+    color: "#00684E" # Mansus fire color
 
 - type: entity
   parent: VendingMachineSomberMantis
@@ -1933,12 +1998,12 @@
     radius: 2.4
     energy: 2.4
     softness: 1.22
-    color: "#00684E" # Mansus grasp color
+    color: "#00684E" # Mansus fire color
     mask: null
   - type: ThermalVision # Weird psionic senses
     pulseTime: 0 # Toggled, not timed
     lightRadius: 7
-    color: "#00684E" # Mansus grasp color
+    color: "#00684E" # Mansus fire color
     activateSound:
       path: /Audio/Effects/eye_open.ogg
       params:
@@ -1969,7 +2034,7 @@
     radius: 2.4
     energy: 2.4
     softness: 1.22
-    color: "#00684E" # Mansus grasp color
+    color: "#00684E" # Mansus fire color
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
   - type: Fixtures
@@ -1995,14 +2060,6 @@
         shader: unshaded
       - state: glow
         shader: unshaded
-      - state: straps
-      - state: faust
-        map: ["enum.ItemCabinetVisualLayers.ContainsItem"]
-        visible: true
-      - state: cover
-        map: ["enum.ItemCabinetVisualLayers.Door"]
-      - state: locked
-        map: ["enum.LockVisualLayers.Lock"]
   - type: Icon
     sprite: _SHA/Structures/Furniture/Altars/Cults/sombersanctum.rsi
     state: altar
@@ -2103,7 +2160,7 @@
     radius: 3.5
     energy: 3
     softness: 1.22
-    color: "#00684E" # Mansus grasp color
+    color: "#00684E" # Mansus fire color
     autoRot: true
     mask: /Textures/_DEN/Effects/LightMasks/double_circle.png
   - type: AmbientSound
@@ -2113,58 +2170,6 @@
       path: /Audio/Ambience/Objects/gravity_gen_hum.ogg # So ominous it needs a rumble
   - type: StealTarget
     stealGroup: AltarNanotrasen
-  - type: ItemSlots # Let it store Faust like the antique laser case
-  - type: ContainerContainer
-    containers:
-      ItemCabinet: !type:ContainerSlot
-  - type: AccessReader
-    access: [["Mantis"]]
-    breakOnEmag: false # It's not electronic...
-    loggingDisabled: true
-  - type: LockVisuals
-  - type: Lock
-    breakOnEmag: false
-    unlockOnClick: true
-    lockOnClick: false
-    unlockingSound:
-      path: /Audio/_DEN/Effects/crystalshimmer3.ogg
-      params:
-        pitch: 1.0 # Happy sword
-        variation: 0.025
-    lockingSound:
-      path: /Audio/_DEN/Effects/crystalshimmer3.ogg
-      params:
-        pitch: 0.75 # Sad sword
-        variation: 0.025
-    locked: true
-  - type: ItemCabinet
-    opened: false
-    cabinetSlot:
-      ejectOnInteract: true
-      ejectOnBreak: true
-      swap: false
-      insertVerbText: faust-insert-verb
-      ejectVerbText: faust-eject-verb
-      insertSuccessPopup: faust-insert-success
-      insertSound:
-        path: /Audio/_DEN/Weapons/Melee/faustsheath.ogg
-        params:
-          volume: -2
-          variation: 0.05
-      ejectSound:
-        path: /Audio/_DEN/Weapons/Melee/faustunsheath.ogg
-        params:
-          volume: -2
-          variation: 0.05
-      whitelist:
-        tags:
-        - MantisGreatsword
-    doorSound:
-      path: /Audio/Items/Handling/cloth_drop.ogg
-      params:
-        variation: 0.025
-    openState: cover-off
-    closedState: cover
 
 - type: entity
   parent: SomberHangingBrazierPillarShorter
@@ -2313,42 +2318,6 @@
         layer:
         - WallLayer
 
-# Meditation Chamber Altar
-
-- type: entity
-  parent: AltarSomber
-  id: AltarSomberFaustPenthouse
-  suffix: Faust, Filled] [PENTHOUSE, Map With Amphorae
-  components:
-  - type: ItemCabinet
-    cabinetSlot:
-      startingItem: MantisMeleeGreatswordBreak
-      ejectOnInteract: true # For some reason I have to specify all of this again for it to work
-      ejectOnBreak: true
-      swap: false
-      insertVerbText: faust-insert-verb
-      ejectVerbText: faust-eject-verb
-      insertSuccessPopup: faust-insert-success
-      insertSound:
-        path: /Audio/_DEN/Weapons/Melee/faustsheath.ogg
-        params:
-          volume: -2
-          variation: 0.05
-      ejectSound:
-        path: /Audio/_DEN/Weapons/Melee/faustunsheath.ogg
-        params:
-          volume: -2
-          variation: 0.05
-      whitelist:
-        tags:
-        - MantisGreatsword
-    doorSound:
-      path: /Audio/Items/Handling/cloth_drop.ogg
-      params:
-        variation: 0.025
-    openState: cover-off
-    closedState: cover
-
 # Misc
 
 - type: entity
@@ -2360,82 +2329,6 @@
   components:
   - type: WirelessNetworkConnection
     range: 1000
-
-- type: entity
-  parent: MarkerBase
-  id: MarkerSoundMusicBoss
-  name: invisible sound emitter
-  suffix: Boss Music, Signal Friendly
-  components:
-  - type: Sprite
-    layers:
-      - sprite: _DEN/Markers/environment.rsi
-        state: base-purple
-        shader: unshaded
-      - sprite: _DEN/Markers/environment.rsi
-        shader: unshaded
-        state: sound
-  - type: ItemToggle
-    activated: false
-  - type: ItemToggleActiveSound
-    activeSound:
-      path: /Audio/_SHA/piano.ogg
-      params:
-        volume: 0
-        range: 8
-  - type: ItemToggleOnTrigger
-  - type: TriggerOnSignal
-  - type: DeviceLinkSink
-    ports:
-      - Trigger
-  - type: AutoLinkReceiver
-    channel: MusicBoss
-
-- type: entity
-  parent: SignalButtonSomber
-  id: SignalButtonSomberAutolinkMusicBoss
-  suffix: PENTHOUSE] [Autolink (Boss Music), Directional
-  components:
-  - type: AutoLinkTransmitter
-    channel: MusicBoss
-  - type: SignalSwitch
-    clickSound: /Audio/Effects/silence.ogg
-
-- type: entity
-  parent: ShuttersFogWallBossOpenAutolink
-  id: ShuttersFogWallBossOpenAutolinkBoss
-  suffix: PENTHOUSE] [Autolink (Fog), Open Privacy Shutter
-  components:
-    - type: AutoLinkReceiver
-      channel: FogBoss
-
-- type: entity
-  parent: SignalButtonSomber
-  id: SignalButtonSomberAutolinkFogBoss
-  suffix: PENTHOUSE] [Autolink (Boss Fog), Directional
-  components:
-  - type: AutoLinkTransmitter
-    channel: FogBoss
-  - type: SignalSwitch
-    clickSound: /Audio/Effects/silence.ogg
-
-- type: entity
-  parent: MarkerShutterOpenAutolink
-  id: MarkerShutterOpenAutolinkBoss
-  suffix: PENTHOUSE] [Autolink (Boss Wall), Open
-  components:
-    - type: AutoLinkReceiver
-      channel: WallBoss
-
-- type: entity
-  parent: SignalButtonSomber
-  id: SignalButtonSomberAutolinkInvisShutterBoss
-  suffix: PENTHOUSE] [Autolink (Boss Wall), Directional
-  components:
-  - type: AutoLinkTransmitter
-    channel: WallBoss
-  - type: SignalSwitch
-    clickSound: /Audio/Effects/silence.ogg
 
 - type: entity
   parent: [ BaseStructure, BasePsionic ]
@@ -3325,7 +3218,7 @@
   - type: PointLight
     radius: 1.5
     energy: 2.5
-    color: "#00684E" # Mansus grasp color
+    color: "#00684E" # Mansus fire color
   - type: DeleteOnDrop
   - type: Tool
     qualities:
@@ -3705,9 +3598,12 @@
       params:
         volume: -6
         variation: 0.075
+  - type: EmitSoundOnUse
+    sound: /Audio/_Lavaland/heartbeat.ogg
   - type: DisarmMalus
     malus: 1.0
-  - type: CultItem # Only she can wield it
+  - type: CultItem
+  - type: DeleteOnDrop
 
 - type: entity
   parent: [ BaseHereticContraband, BreakSilhouette ]
@@ -3751,6 +3647,8 @@
     damage:
       types:
         Shock: 5
+  - type: EmitSoundOnPickup
+    sound: /Audio/Effects/silence.ogg
   - type: AmbientSound
     range: 5
     volume: -8
@@ -3762,9 +3660,62 @@
       params:
         volume: -10
         variation: 0.05
-  - type: DeleteOnDrop
   - type: TypingIndicatorClothing
     proto: breakfaint
+
+- type: entity
+  parent: [ BaseHereticContraband, BreakSilhouette ]
+  id: BreakSoulReflection
+  name: nothing
+  suffix: DO NOT MAP] [BREAK
+  description: "What are you looking at down there...?"
+  components:
+  - type: ItemToggle # Pressing Z quickly toggles the visuals
+    verbToggleOn: item-toggle-reflecton
+    verbToggleOff: item-toggle-reflectoff
+    soundActivate: /Audio/Effects/silence.ogg
+    soundDeactivate: /Audio/Effects/silence.ogg
+  - type: UseDelay
+    delay: 0
+  - type: Appearance
+  - type: ToggleableVisuals
+    spriteLayer: null
+    replaceMode: true
+    inhandVisuals:
+      left:
+      - state: invisible
+      right:
+      - state: invisible
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    layers:
+    - state: icon-soul-reflection
+      shader: unshaded
+  - type: Item
+    size: Small
+    sprite: _SHA/Heretic/break-96x.rsi
+    inhandVisuals:
+      left:
+      - state: soul-reflection
+        shader: unshaded
+        offset: 0,-1.0
+      right:
+      - state: soul-reflection
+        shader: unshaded
+        offset: 0,-1.0
+  - type: MeleeWeapon
+    soundHit:
+      collection: ShockPunch
+    angle: 30
+    animation: WeaponArcPunch
+    wideAnimation: WeaponArcPunch
+    damage:
+      types:
+        Shock: 5
+  - type: EmitSoundOnPickup
+    sound: /Audio/Effects/silence.ogg
+  - type: EmitSoundOnUse
+    sound: /Audio/Effects/silence.ogg
 
 # Spells
 
@@ -4078,7 +4029,7 @@
   - type: PointLight
     radius: 1.5
     energy: 2.5
-    color: "#00684E" # Mansus grasp color
+    color: "#00684E" # Mansus fire color
   - type: Tag
     tags:
       - Book
@@ -4321,23 +4272,25 @@
   - type: Clothing
     sprite: _SHA/Clothing/Belt/waist.rsi
     renderLayer: innerBelt
+    equipDelay: 0
   - type: Item
     size: Ginormous
   - type: Storage
     maxItemSize: Ginormous
     grid:
     - 0,0,19,2
-    storageOpenSound:
-      collection: trashBagRustle
+    storageOpenSound: /Audio/Effects/silence.ogg
     storageCloseSound: /Audio/Effects/silence.ogg
     storageInsertSound: /Audio/Effects/silence.ogg
     storageRemoveSound: /Audio/Effects/silence.ogg
   - type: StorageFill
     contents:
-    - id: BreakSilhouette
-      amount: 10
+    - id: BreakSoulReflection
+      amount: 8
     - id: BreakFocusMeditation
-      amount: 10
+      amount: 4
+    - id: BreakSilhouette
+      amount: 8
     - id: FragmentStorageSound
       amount: 5
     - id: FragmentStorage
@@ -4881,3 +4834,363 @@
     - state: carpplushcast
   - type: Item
     heldPrefix: carpplushcast
+
+# Meditation Room Stuff
+
+- type: entity
+  id: MeditationChamberReflection
+  name: reflection
+  description: PENTHOUSE, Meditation Chamber
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      sprite: _SHA/Structures/Decoration/reflection.rsi
+      layers:
+        - state: reflection
+        - state: reflection-unshaded
+          shader: unshaded
+      drawdepth: FloorObjects
+    - type: Transform
+      anchored: true
+    - type: Tag
+      tags:
+        - HideContextMenu
+
+- type: entity
+  parent: MeditationChamberReflection
+  id: MeditationChamberReflectionNoGlass
+  name: reflection
+  description: PENTHOUSE, No Glass, Meditation Chamber
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      layers:
+        - state: reflection-noglass
+        - state: reflection-unshaded
+          shader: unshaded
+
+- type: entity
+  parent: MarkerBase
+  id: MarkerSoundMusicBoss
+  name: invisible sound emitter
+  suffix: Boss Music, Signal Friendly
+  components:
+  - type: Sprite
+    layers:
+      - sprite: _DEN/Markers/environment.rsi
+        state: base-purple
+        shader: unshaded
+      - sprite: _DEN/Markers/environment.rsi
+        shader: unshaded
+        state: sound
+  - type: ItemToggle
+    activated: false
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_SHA/piano.ogg
+      params:
+        volume: 0
+        range: 8
+  - type: ItemToggleOnTrigger
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
+  - type: AutoLinkReceiver
+    channel: MusicBoss
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkMusicBoss
+  suffix: PENTHOUSE] [Autolink (Boss Music), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: MusicBoss
+  - type: SignalSwitch
+    clickSound: /Audio/Effects/silence.ogg
+
+- type: entity
+  parent: ShuttersFogWallBossOpenAutolink
+  id: ShuttersFogWallBossOpenAutolinkBoss
+  suffix: PENTHOUSE] [Autolink (Fog), Open Privacy Shutter
+  components:
+    - type: AutoLinkReceiver
+      channel: FogBoss
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkFogBoss
+  suffix: PENTHOUSE] [Autolink (Boss Fog), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: FogBoss
+  - type: SignalSwitch
+    clickSound: /Audio/Effects/silence.ogg
+
+- type: entity
+  parent: MarkerShutterOpenAutolink
+  id: MarkerShutterOpenAutolinkBoss
+  suffix: PENTHOUSE] [Autolink (Boss Wall), Open
+  components:
+    - type: AutoLinkReceiver
+      channel: WallBoss
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkInvisShutterBoss
+  suffix: PENTHOUSE] [Autolink (Boss Wall), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: WallBoss
+  - type: SignalSwitch
+    clickSound: /Audio/Effects/silence.ogg
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberSilent
+  suffix: PENTHOUSE] [Silent
+  components:
+  - type: SignalSwitch
+    clickSound: /Audio/Effects/silence.ogg
+
+- type: entity
+  parent: [ BaseImmovableObject, AltarSomber ]
+  id: AltarSomberFaustPenthouse
+  suffix: PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Altars/Cults/somber.rsi
+  - type: ItemCabinet
+    cabinetSlot:
+      startingItem: MantisMeleeGreatswordBreak
+      ejectOnInteract: true # For some reason I have to specify all of this again for it to work
+      ejectOnBreak: true
+      swap: false
+      insertVerbText: faust-insert-verb
+      ejectVerbText: faust-eject-verb
+      insertSuccessPopup: faust-insert-success
+      insertSound:
+        path: /Audio/_DEN/Weapons/Melee/faustsheath.ogg
+        params:
+          volume: -2
+          variation: 0.05
+      ejectSound:
+        path: /Audio/_DEN/Weapons/Melee/faustunsheath.ogg
+        params:
+          volume: -2
+          variation: 0.05
+      whitelist:
+        tags:
+        - MantisGreatsword
+    doorSound:
+      path: /Audio/Items/Handling/cloth_drop.ogg
+      params:
+        variation: 0.025
+    openState: cover-off
+    closedState: cover
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisSmall ]
+  id: CandleSomberMantisSmallImmovable1
+  suffix: "PENTHOUSE, Immovable #1"
+  components:
+  - type: Sprite
+    offset: -1.03125,-0.46875
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisSmall ]
+  id: CandleSomberMantisSmallImmovable2
+  suffix: "PENTHOUSE, Immovable #2"
+  components:
+  - type: Sprite
+    offset: -0.46875,-1.03125
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisSmall ]
+  id: CandleSomberMantisSmallImmovable3
+  suffix: "PENTHOUSE, Immovable #3"
+  components:
+  - type: Sprite
+    offset: 0.4375,-1.03125
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisSmall ]
+  id: CandleSomberMantisSmallImmovable4
+  suffix: "PENTHOUSE, Immovable #4"
+  components:
+  - type: Sprite
+    offset: 1,-0.46875
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisTiny ]
+  id: CandleSomberMantisTinyImmovable1
+  suffix: "PENTHOUSE, Immovable #1"
+  components:
+  - type: Sprite
+    offset: -1.65625,0.09375
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisTiny ]
+  id: CandleSomberMantisTinyImmovable2
+  suffix: "PENTHOUSE, Immovable #2"
+  components:
+  - type: Sprite
+    offset: -1.3125,-1.1875
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisTiny ]
+  id: CandleSomberMantisTinyImmovable3
+  suffix: "PENTHOUSE, Immovable #3"
+  components:
+  - type: Sprite
+    offset: -0.03125,-1.65625
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisTiny ]
+  id: CandleSomberMantisTinyImmovable4
+  suffix: "PENTHOUSE, Immovable #4"
+  components:
+  - type: Sprite
+    offset: 1.28125,-1.1875
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisTiny ]
+  id: CandleSomberMantisTinyImmovable5
+  suffix: "PENTHOUSE, Immovable #5"
+  components:
+  - type: Sprite
+    offset: 1.625,0.09375
+
+- type: entity
+  parent: [ BaseImmovableObject, SomberChairCushionFancyBlue ]
+  id: SomberChairCushionFancyBlueImmovable
+  suffix: PENTHOUSE, Immovable, Blue
+  placement:
+    mode: SnapgridCenter
+
+- type: entity
+  parent: [ BaseImmovableObject, SomberElectrumFocus ]
+  id: SomberElectrumFocusImmovable
+  suffix: PENTHOUSE, Immovable
+
+- type: entity
+  parent: [ BaseImmovableObject, LightSomberEidoliteWellLampAzure ]
+  id: LightSomberEidoliteWellLampAzureImmovable
+  suffix: PENTHOUSE, Immovable
+  components:
+  - type: PointLight
+    energy: 20
+    radius: 1.5
+    color: "#4dc4ff"
+
+- type: entity
+  parent: [ BaseImmovableObject, MeditationChamberLight, LightSomberEidoliteFloorLampAzure ]
+  id: LightSomberEidoliteFloorLampAzureImmovable
+  suffix: PENTHOUSE, Immovable
+
+- type: entity
+  parent: [ MeditationChamberLight, SomberHangingBrazierPillarShorter ]
+  id: SomberHangingBrazierPillarShorterMeditation
+  suffix: PENTHOUSE, Shorter, Meditation Chamber
+
+- type: entity
+  parent: [ MeditationChamberLight, SomberHangingBrazierPillarShort ]
+  id: SomberHangingBrazierPillarShortMeditation
+  suffix: PENTHOUSE, Short, Meditation Chamber
+
+- type: entity
+  parent: [ MeditationChamberLight, SomberHangingBrazierPillarTall ]
+  id: SomberHangingBrazierPillarTallMeditation
+  suffix: PENTHOUSE, Tall, Meditation Chamber
+
+- type: entity
+  parent: [ MeditationChamberLight, SomberHangingBrazierPillarTaller ]
+  id: SomberHangingBrazierPillarTallerMeditation
+  suffix: PENTHOUSE, Taller, Meditation Chamber
+
+- type: entity
+  id: SomberChairCushionBluePurpleImmovable # All this to make them not pullable... Every component should be nullable
+  name: somber floor cushion
+  description: "A textured cushion filled with mnemolith beads."
+  suffix: PENTHOUSE, Immovable, Blue-Purple
+  placement:
+    mode: WallmountLight
+  components:
+  - type: Sprite
+    offset: "0.0,-0.25"
+    sprite: _DEN/Structures/Furniture/chairs.rsi
+    state: sombercushion-bluepurple
+    norot: false
+    snapCardinals: true
+    drawdepth: Objects
+  - type: RequireProjectileTarget
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Dynamic
+  - type: Anchorable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        hard: false
+        density: 100
+        mask:
+        - TableMask
+  - type: Rotatable
+    rotateWhileAnchored: true
+  - type: StaticPrice
+    price: 100
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Items/Handling/cloth_drop.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialCloth:
+            min: 3
+            max: 5
+          MnemolithPowder:
+            min: 5
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Strap
+    position: Stand
+    buckleOffset: "0,-0.05"
+    buckleSound:
+      path: /Audio/Items/Handling/cloth_drop.ogg
+      params:
+        volume: -2
+        variation: 0.05
+    unbuckleSound:
+      path: /Audio/Items/Handling/cloth_pickup.ogg
+      params:
+        volume: -2
+        variation: 0.05
+
+- type: entity
+  parent: SomberChairCushionBluePurpleImmovable
+  id: SomberChairCushionPurpleBlueImmovable
+  suffix: PENTHOUSE, Immovable, Purple-Blue
+  components:
+  - type: Sprite
+    state: sombercushion-purpleblue

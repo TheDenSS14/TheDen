@@ -48,11 +48,39 @@
       ]
     },
     {
+      "name": "watercircle",
+      "directions": 4,
+      "delays": [
+        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ],
+        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ],
+        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ],
+        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ]
+      ]
+    },
+    {
+      "name": "watershinecircle",
+      "directions": 4,
+      "delays": [
+        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ],
+        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ],
+        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ],
+        [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ]
+      ]
+    },
+    {
       "name": "pooltile",
       "directions": 4
     },
     {
       "name": "pooltilecorner",
+      "directions": 4
+    },
+    {
+      "name": "pooltilecircle",
+      "directions": 4
+    },
+    {
+      "name": "pooltilecircledark",
       "directions": 4
     },
     {
@@ -128,6 +156,22 @@
       "directions": 4
     },
     {
+      "name": "poolglasscircle",
+      "directions": 4
+    },
+    {
+      "name": "poolglasscircledark",
+      "directions": 4
+    },
+    {
+      "name": "poolglassoutercircle",
+      "directions": 4
+    },
+    {
+      "name": "poolglassoutercircledark",
+      "directions": 4
+    },
+    {
       "name": "poolnarrow",
       "directions": 4
     },
@@ -141,6 +185,14 @@
     },
     {
       "name": "poolsidedark",
+      "directions": 4
+    },
+    {
+      "name": "poolinner",
+      "directions": 4
+    },
+    {
+      "name": "poolinnerdark",
       "directions": 4
     }
   ]

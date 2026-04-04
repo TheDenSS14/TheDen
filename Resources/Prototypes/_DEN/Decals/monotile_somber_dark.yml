@@ -150,3 +150,51 @@
   sprite:
     sprite: _DEN/Decals/monotile_somber_dark.rsi
     state: steel_inner_sw
+
+- type: decal
+  id: MonoTileSomberDarkLineContinuousTop
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber_dark.rsi
+    state: steel_line_continuous_top
+
+- type: decal
+  id: MonoTileSomberDarkLineContinuousTopSeamLeft
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber_dark.rsi
+    state: steel_line_continuous_top_seam_left
+
+- type: decal
+  id: MonoTileSomberDarkLineContinuousTopSeamRight
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber_dark.rsi
+    state: steel_line_continuous_top_seam_right
+
+- type: decal
+  id: MonoTileSomberDarkLineContinuousBottom
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber_dark.rsi
+    state: steel_line_continuous_bottom
+
+- type: decal
+  id: MonoTileSomberDarkLineContinuousBottomSeamLeft
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber_dark.rsi
+    state: steel_line_continuous_bottom_seam_left
+
+- type: decal
+  id: MonoTileSomberDarkLineContinuousBottomSeamRight
+  parent: MonoTileSomberDark
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/monotile_somber_dark.rsi
+    state: steel_line_continuous_bottom_seam_right

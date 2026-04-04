@@ -1,9 +1,9 @@
-# Welcome to the most mechanically complex altar in the game, with 200 lines of code
+# Welcome to the most mechanically complex altar in the game, with about 200 unique lines of code among its versions
 - type: entity
   parent: [ BaseStructure, BaseObjectVerbsStructure, BasePsionic ] # Not parented because it's so weird
-  id: AltarSomber
+  id: AltarSomberBasic
   name: mnemolith altar
-  suffix: Map With Amphorae
+  suffix: Map With Amphorae, Basic
   description: "A broad, dark mnemolith altar. Its basins slowly well with a draught distilled from the stone itself, best gathered with an amphora. The surface is etched with a rare example of psychomantic script, legible to anyone who looks upon it:          \"IN STILLNESS, ALL RETURNS.\""
   components:
   - type: Anchorable
@@ -21,14 +21,6 @@
         shader: unshaded
       - state: glow
         shader: unshaded
-      - state: straps
-      - state: faust
-        map: ["enum.ItemCabinetVisualLayers.ContainsItem"]
-        visible: true
-      - state: cover
-        map: ["enum.ItemCabinetVisualLayers.Door"]
-      - state: locked
-        map: ["enum.LockVisualLayers.Lock"]
   - type: Icon
     sprite: _DEN/Structures/Furniture/Altars/Cults/somber.rsi
     state: altar
@@ -144,6 +136,34 @@
       path: /Audio/Ambience/Objects/gravity_gen_hum.ogg # So ominous it needs a rumble
   - type: StealTarget
     stealGroup: AltarNanotrasen
+
+- type: entity
+  parent: AltarSomberBasic
+  id: AltarSomber
+  name: mnemolith altar
+  suffix: Map With Amphorae, Faust Bindings
+  description: "A broad, dark mnemolith altar. Its basins slowly well with a draught distilled from the stone itself, best gathered with an amphora. The surface is etched with a rare example of psychomantic script, legible to anyone who looks upon it:          \"IN STILLNESS, ALL RETURNS.\""
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Altars/Cults/somber.rsi
+    drawdepth: Objects
+    layers:
+      - state: altar
+      - state: fill-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: candles
+        shader: unshaded
+      - state: glow
+        shader: unshaded
+      - state: straps
+      - state: faust
+        map: ["enum.ItemCabinetVisualLayers.ContainsItem"]
+        visible: true
+      - state: cover
+        map: ["enum.ItemCabinetVisualLayers.Door"]
+      - state: locked
+        map: ["enum.LockVisualLayers.Lock"]
   - type: ItemSlots # Let it store Faust like the antique laser case
   - type: ContainerContainer
     containers:
@@ -200,7 +220,7 @@
 - type: entity
   parent: AltarSomber
   id: AltarSomberFaust
-  suffix: Faust, Filled] [MAP CAREFULLY
+  suffix: Map With Amphorae, Faust-Filled] [MAP CAREFULLY
   components:
   - type: ItemCabinet
     cabinetSlot:

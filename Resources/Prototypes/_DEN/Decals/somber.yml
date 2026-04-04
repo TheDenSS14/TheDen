@@ -235,3 +235,21 @@
   sprite:
     sprite: _DEN/Decals/somber_dark.rsi
     state: planter
+
+# The trim that goes under windoors in case you want directional windows to match
+
+- type: decal
+  id: SomberWindoorUnderlay
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: windoorunderlay
+
+- type: decal
+  id: SomberWindoorUnderlayDark
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: windoorunderlay

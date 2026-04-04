@@ -29,5 +29,8 @@ fibers-magenta = magenta
 
 # Verbs
 
-item-toggle-ritualon = Begin Ritual
+item-toggle-ritualon = Perform Ritual
 item-toggle-ritualoff = Prepare Ritual
+
+item-toggle-reflecton = Reflect
+item-toggle-reflectoff = Conceal

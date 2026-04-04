@@ -258,9 +258,7 @@
     sprite: _DEN/Structures/Furniture/chairs.rsi # No need to duplicate a sprite just because it's not being a chair here
     layers:
     - state: sombercushion-underlay
-    - state: sombercushion-underlay-unshaded1
-      shader: unshaded
-    - state: sombercushion-underlay-unshaded2
+    - state: sombercushion-underlay-unshaded
       shader: unshaded
   - type: Fixtures
     fixtures:

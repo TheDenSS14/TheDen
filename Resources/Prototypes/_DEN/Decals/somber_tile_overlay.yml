@@ -234,3 +234,67 @@
   sprite:
     sprite: _DEN/Decals/somber_tile_overlay.rsi
     state: somber-SW
+
+- type: decal
+  id: SomberTileOverlayEyeframe
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: eyeframe
+
+- type: decal
+  id: SomberTileOverlayEyeframeDark
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: eyeframe-dark
+
+- type: decal
+  id: SomberTileOverlayEyeland
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: eyeland
+
+- type: decal
+  id: SomberTileOverlayEyelandDark
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: eyeland-dark
+
+- type: decal
+  id: SomberTileOverlayMono
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-tile-mono
+
+- type: decal
+  id: SomberTileOverlayMonoEye
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-tile-mono-eye
+
+- type: decal
+  id: SomberTileOverlayMonoDark
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-tile-mono-dark
+
+- type: decal
+  id: SomberTileOverlayMonoDarkEye
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-tile-mono-dark-eye

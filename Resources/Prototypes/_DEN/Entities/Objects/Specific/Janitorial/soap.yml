@@ -1,9 +1,9 @@
 - type: entity
-  parent: Soap
+  parent: [ Soap, BasePsionic ] # All Somber things are technically psionic. I find this funny.
   id: SoapSomberViolet
   name: fine soap
   suffix: Somber, Violet
-  description: "A striped violet bar of soap. Smells like lavender and anise."
+  description: "A striped violet bar of soap, so expensive it comes with its own polished bronze dish. Smells like lavender and anise."
   components:
   - type: Sprite
     sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
@@ -15,23 +15,22 @@
   - type: Item
     sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
     heldPrefix: somberviolet
-  - type: SolutionContainerManager
-    solutions:
-      soap:
-        maxVol: 100
-        reagents:
-        - ReagentId: SoapReagent
-          Quantity: 100
   - type: Residue
     residueAdjective: residue-slippery
     residueColor: residue-violet
+  - type: StaticPrice
+    price: 1500
+  - type: Food
+    trash:
+    - SomberSoapDish # This is stupid
+
 
 - type: entity
-  parent: Soap
+  parent: [ Soap, BasePsionic ]
   id: SoapSomberIndigo
   name: fine soap
   suffix: Somber, Indigo
-  description: "A striped indigo bar of soap. Smells like like sweet incense."
+  description: "A striped indigo bar of soap, so expensive it comes with its own polished bronze dish.. Smells like like sweet incense."
   components:
   - type: Sprite
     sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
@@ -43,13 +42,83 @@
   - type: Item
     sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
     heldPrefix: somberindigo
-  - type: SolutionContainerManager
-    solutions:
-      soap:
-        maxVol: 100
-        reagents:
-        - ReagentId: SoapReagent
-          Quantity: 100
   - type: Residue
     residueAdjective: residue-slippery
     residueColor: residue-indigo
+  - type: Food
+    trash:
+    - SomberSoapDish # This is stupid
+
+- type: entity
+  parent: [ BaseItem, BasePsionic ]
+  id: SomberSoapDish
+  name: bronze soap dish
+  suffix: Somber
+  description: "A surprisingly heavy dish made of polished bronze. It held soap once. Surprisingly."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
+    state: sombersoapdish
+  - type: Item
+    size: Small
+    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
+    heldPrefix: sombersoapdish
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5
+    soundHit:
+      path: /Audio/Items/trayhit1.ogg # Funny
+      params:
+        variation: 0.15
+    soundNoDamage:
+      path: /Audio/Items/trayhit1.ogg
+      params:
+        variation: 0.15
+  - type: DamageOtherOnHit
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/trayhit1.ogg
+      params:
+        variation: 0.15
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Items/trayhit1.ogg
+      params:
+        variation: 0.15
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 50
+        mask:
+        - ItemMask
+        layer:
+        - BulletImpassable # Like plates
+  - type: InteractionVerbs
+    allowedVerbs:
+    - LickObject

@@ -10,7 +10,7 @@
     mode: PlaceFree
   components:
   - type: Sprite
-    offset: "0.0,0.0"
+    offset: 0.0,0.25
     sprite: _DEN/Structures/Furniture/somber_potted_plants.rsi
 
 - type: entity
@@ -79,6 +79,8 @@
 - type: entity
   id: PottedPlantSomberBioluminescent
   parent: PottedPlantSomberBase
+  placement:
+    mode: SnapgridCenter
   components:
   - type: Sprite
     state: plant-09
@@ -176,3 +178,4 @@
   components:
   - type: Sprite
     state: plant-29
+    offset: 0,0

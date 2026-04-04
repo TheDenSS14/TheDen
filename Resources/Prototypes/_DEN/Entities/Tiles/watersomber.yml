@@ -73,6 +73,40 @@
         hard: false
 
 - type: entity
+  parent: SomberWater
+  id: SomberWaterCircle
+  suffix: Circle
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: watercircle
+    - state: watershinecircle
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
   parent: FloorWaterEntityPool
   id: SomberPoolWater
   name: somber pool
@@ -146,6 +180,54 @@
         - HighImpassable
         density: 1000
         hard: false
+
+- type: entity
+  parent: SomberPoolWater
+  id: SomberPoolWaterCircleOnly
+  suffix: Circle Only
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltilecircle
+    - state: watercircle
+    - state: watershinecircle
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.1,0.4,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: SomberPoolWaterCircle
+  id: SomberPoolWaterCircleOnlyDark
+  suffix: Circle Only, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltilecircledark
+    - state: watercircle
+    - state: watershinecircle
+      shader: unshaded
 
 # Standard Color, Open Water
 
@@ -222,6 +304,20 @@
         hard: false
 
 - type: entity
+  parent: SomberPoolWaterCircle
+  id: SomberPoolWaterCircleGlassOuter
+  suffix: Glass Outer Circle
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltile
+    - state: water
+    - state: watershine
+      shader: unshaded
+    - state: poolglassoutercircle
+
+- type: entity
   parent: SomberPoolWater
   id: SomberPoolWaterCornerTile
   suffix: Corner
@@ -252,7 +348,7 @@
           bounds: "-0.4,0.5,0,0.4"
         layer:
         - ItemMask
-        mask:
+        mask: 
         - HighImpassable
         density: 1000
         hard: false
@@ -328,6 +424,56 @@
         - HighImpassable
         density: 1000
         hard: false
+
+- type: entity
+  parent: SomberPoolWater
+  id: SomberPoolWaterInner
+  suffix: Inner
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltile
+    - state: water
+    - state: watershine
+      shader: unshaded
+    - state: poolinner
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.5,0,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.5,0,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: SomberPoolWaterCorner
+  id: SomberPoolWaterCornerInner
+  suffix: Diagonal Inner
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltilecorner
+    - state: watercorner
+    - state: watershinecorner
+      shader: unshaded
+    - state: poolinner
 
 - type: entity
   parent: SomberPoolWater
@@ -432,6 +578,20 @@
     - state: poolcircledark
 
 - type: entity
+  parent: SomberPoolWaterCircleGlassOuter
+  id: SomberPoolWaterCircleGlassOuterDark
+  suffix: Glass Outer Circle, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltile
+    - state: water
+    - state: watershine
+      shader: unshaded
+    - state: poolglassoutercircledark
+
+- type: entity
   parent: SomberPoolWaterCornerTile
   id: SomberPoolWaterCornerTileDark
   suffix: Corner, Dark
@@ -472,6 +632,34 @@
     - state: watershine
       shader: unshaded
     - state: poolenddark
+
+- type: entity
+  parent: SomberPoolWaterInner
+  id: SomberPoolWaterInnerDark
+  suffix: Inner, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltile
+    - state: water
+    - state: watershine
+      shader: unshaded
+    - state: poolinnerdark
+
+- type: entity
+  parent: SomberPoolWaterCornerInner
+  id: SomberPoolWaterCornerInnerDark
+  suffix: Diagonal Inner, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltilecorner
+    - state: watercorner
+    - state: watershinecorner
+      shader: unshaded
+    - state: poolinnerdark
 
 - type: entity
   parent: SomberPoolWaterNarrow
@@ -662,6 +850,20 @@
 
 - type: entity
   parent: SomberPoolWaterGlass
+  id: SomberPoolWaterCircleOnlyGlass
+  suffix: Walkable Glass, Circle Only
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltilecircle
+    - state: watercircle
+    - state: watershinecircle
+      shader: unshaded
+    - state: poolglasscircle
+
+- type: entity
+  parent: SomberPoolWaterGlass
   id: SomberPoolWaterEndGlass
   suffix: Walkable Glass, End
   components:
@@ -674,6 +876,36 @@
       shader: unshaded
     - state: poolglass
     - state: poolend
+
+- type: entity
+  parent: SomberPoolWaterGlass
+  id: SomberPoolWaterInnerGlass
+  suffix: Walkable Glass, Inner
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltile
+    - state: water
+    - state: watershine
+      shader: unshaded
+    - state: poolglass
+    - state: poolinner
+
+- type: entity
+  parent: SomberPoolWaterGlass
+  id: SomberPoolWaterCornerInnerGlass
+  suffix: Walkable Glass, Diagonal Inner
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltilecorner
+    - state: watercorner
+    - state: watershinecorner
+      shader: unshaded
+    - state: poolglassdiagonal
+    - state: poolinner
 
 - type: entity
   parent: SomberPoolWaterGlass
@@ -734,6 +966,20 @@
     - state: watershinecorner
       shader: unshaded
     - state: poolglassdiagonaldark
+
+- type: entity
+  parent: SomberPoolWaterCircleOnlyGlass
+  id: SomberPoolWaterCircleOnlyGlassDark
+  suffix: Walkable Glass, Circle Only, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltilecircledark
+    - state: watercircle
+    - state: watershinecircle
+      shader: unshaded
+    - state: poolglasscircledark
 
 - type: entity
   parent: SomberPoolWaterEye
@@ -869,6 +1115,36 @@
     - state: poolenddark
 
 - type: entity
+  parent: SomberPoolWaterInnerGlass
+  id: SomberPoolWaterInnerGlassDark
+  suffix: Walkable Glass, Inner, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltile
+    - state: water
+    - state: watershine
+      shader: unshaded
+    - state: poolglassdark
+    - state: poolinnerdark
+
+- type: entity
+  parent: SomberPoolWaterGlass
+  id: SomberPoolWaterCornerInnerGlassDark
+  suffix: Walkable Glass, Diagonal Inner, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltilecorner
+    - state: watercorner
+    - state: watershinecorner
+      shader: unshaded
+    - state: poolglassdiagonaldark
+    - state: poolinnerdark
+
+- type: entity
   parent: SomberPoolWaterNarrowGlass
   id: SomberPoolWaterNarrowGlassDark
   suffix: Walkable Glass, Narrow, Dark
@@ -905,7 +1181,7 @@
   id: FloorWaterfallEntitySomber
   name: somber waterfall
   suffix: Non-Occluded
-  description: "Dark water, like something drawn up from far below. But there is nothing down there."
+  description: "Dark water, like something drawn up from far below. But there's nothing down there."
   components:
   - type: Sprite
     drawdepth: Overdoors
@@ -932,17 +1208,15 @@
   id: FloorWaterfallEntitySomberPool
   name: somber pool waterfall
   suffix: Non-Occluded
-  description: "Dark water, like something drawn up from far below. But there is nothing down there."
+  description: "Dark water, like something drawn up from far below. But there's nothing down there."
   components:
   - type: Sprite
     drawdepth: Overdoors
     sprite: _DEN/Tiles/Planet/Somber/waterfall.rsi
     layers:
-    - state: pooltile
-    - state: waterfallcut
+    - state: poolwaterfallcut
       offset: 0,0.125 # 4 pixels up to reach the spout
-    - state: pooltile
-    - state: waterfallshinecut
+    - state: poolwaterfallshinecut
       offset: 0,0.125
       shader: unshaded
 
