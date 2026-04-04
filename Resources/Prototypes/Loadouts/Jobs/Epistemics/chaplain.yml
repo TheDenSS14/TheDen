@@ -7,8 +7,9 @@
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 starlighthowls
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Chaplain
 # Backpacks
@@ -58,6 +59,20 @@
         - Chaplain
   items:
     - HolyBookTanakh
+
+- type: loadout # TheDen add
+  id: LoadoutChaplainClarion
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+     - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainEquipment
+     - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - HolyBookClarion
 
 - type: loadout
   id: LoadoutChaplainStamp

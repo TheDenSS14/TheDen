@@ -1,10 +1,10 @@
-// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 exincore <me@exin.xyz>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 RadsammyT <32146976+RadsammyT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Debug
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2024 exincore
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 RadsammyT
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -51,6 +51,9 @@ public sealed class StorageWindow : BaseWindow
 
     private ValueList<EntityUid> _contained = new();
     private ValueList<EntityUid> _toRemove = new();
+
+    // Manually store this because you can't have a 0x0 GridContainer but we still need to add child controls for 1x1 containers.
+    private Vector2i _pieceGridSize;
 
     private TextureButton? _backButton;
 
@@ -421,11 +424,14 @@ public sealed class StorageWindow : BaseWindow
         _contained.Clear();
         _contained.AddRange(storageComp.Container.ContainedEntities.Reverse());
 
+        var width = boundingGrid.Width + 1;
+        var height = boundingGrid.Height + 1;
+
         // Build the grid representation
-        if (_pieceGrid.Rows - 1 != boundingGrid.Height || _pieceGrid.Columns - 1 != boundingGrid.Width)
+         if (_pieceGrid.Rows != _pieceGridSize.Y || _pieceGrid.Columns != _pieceGridSize.X)
         {
-            _pieceGrid.Rows = boundingGrid.Height + 1;
-            _pieceGrid.Columns = boundingGrid.Width + 1;
+            _pieceGrid.Rows = height;
+            _pieceGrid.Columns = width;
             _controlGrid.Clear();
 
             for (var y = boundingGrid.Bottom; y <= boundingGrid.Top; y++)
@@ -443,6 +449,7 @@ public sealed class StorageWindow : BaseWindow
             }
         }
 
+        _pieceGridSize = new(width, height);
         _toRemove.Clear();
 
         // Remove entities no longer relevant / Update existing ones

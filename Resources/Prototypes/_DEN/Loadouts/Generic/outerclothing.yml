@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Using the chef apron for this one, because the sprite is already white.
 - type: loadout
@@ -121,3 +121,25 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingOuterCoatSpotsJacket
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    -  ClothingOuterCoatSpotsJacket
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingOuterCoatSpotsJacketLoose
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    -  ClothingOuterCoatSpotsJacketLoose
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
