@@ -1762,6 +1762,78 @@
   itemDrop: FloorTileItemSomberSteelMonoKitchenEye
   heatCapacity: 10000
 
+- type: tile
+  id: FloorSomberSteelSlatsHorizontal
+  name: tiles-somber-steel-floor-slats-horizontal
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-slats-horizontal.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelSlatsHorizontal
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelSlatsVertical
+  name: tiles-somber-steel-floor-slats-vertical
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-slats-vertical.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelSlatsVertical
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelSlatsDarkHorizontal
+  name: tiles-somber-steel-floor-slats-dark-horizontal
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-slats-dark-horizontal.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelSlatsDarkHorizontal
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelSlatsDarkVertical
+  name: tiles-somber-steel-floor-slats-dark-vertical
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-slats-dark-vertical.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelSlatsDarkVertical
+  heatCapacity: 10000
+
 # "Planet" tiles (dirt, grass, etc)
 
 - type: tile

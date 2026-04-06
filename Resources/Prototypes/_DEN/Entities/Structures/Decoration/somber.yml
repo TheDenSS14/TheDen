@@ -54,6 +54,11 @@
         density: 1000
         layer:
         - WallLayer
+  - type: AmbientSound
+    volume: -4
+    range: 10
+    sound:
+      path: /Audio/_DEN/Effects/Fluids/waterfall.ogg
 
 - type: entity
   parent: [ FloorDrainSomber, BasePsionic ] # Fuck it, being built under mnemolith makes them absorb noospheric energy or something
@@ -180,7 +185,7 @@
   - type: SpriteFade
   - type: Sprite
     noRot: true
-    offset: "0.0,1.15625" # 37 pixels up from sprite center
+    offset: -0.015625,1.15625 # 37 pixels up, half a pixel left from sprite center
     drawdepth: Mobs # Just don't put them against doors
     sprite: _DEN/Structures/Decoration/somberpillar.rsi
     state: pillartaller

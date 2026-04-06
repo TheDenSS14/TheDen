@@ -1,2 +1,2 @@
 residue-violet = violet
-residue-indigo = indigo
+residue-teal = teal

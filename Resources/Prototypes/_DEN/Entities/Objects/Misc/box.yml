@@ -307,6 +307,29 @@
     - MantisBeltStorable
 
 - type: entity
+  parent: MantisCaseCandles
+  id: MantisCaseCandlesAlabaster # A version with normal fire, not just for psionics like the mantis
+  name: alabaster candle case
+  suffix: Warm Fire
+  description: "A floral wood case of mixed candles."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+  - type: Item
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+  - type: StorageFill
+    contents:
+    - id: CandleSomberAlabasterTiny
+    - id: CandleSomberAlabasterSmall
+    - id: CandleSomberAlabasterTiny
+    - id: CandleSomberAlabaster
+    - id: CandleSomberAlabasterCluster
+    - id: CandleSomberAlabaster
+    - id: CandleSomberAlabasterSmall
+    - id: CandleSomberAlabaster
+    - id: CandleSomberAlabasterSmall
+
+- type: entity
   parent: [MantisCaseLarge, BaseMantisContraband] # Contraband since its contents are
   id: MantisCaseRestraints
   suffix: DO NOT MAP # Mantes need to get this from loadout - see tags below

@@ -1191,8 +1191,8 @@
     - state: waterfallshine
       shader: unshaded
   - type: AmbientSound
-    volume: 0
-    range: 8
+    volume: -4 # Shhh... It's quiet...
+    range: 10
     sound:
       path: /Audio/_DEN/Effects/Fluids/waterfall.ogg
 
@@ -1219,6 +1219,11 @@
     - state: poolwaterfallshinecut
       offset: 0,0.125
       shader: unshaded
+  - type: AmbientSound
+    volume: -4
+    range: 10
+    sound:
+      path: /Audio/_DEN/Effects/Fluids/waterfall.ogg
 
 # Waterfall Spouts
 

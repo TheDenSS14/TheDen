@@ -38,13 +38,39 @@
   description: "Who the hell buys an electrum ice bucket. It's made of gold. At least partly."
   components:
   - type: Sprite
-    sprite: _DEN/Objects/Consumable/Drinks/sombericebucket.rsi
+    sprite: _DEN/Objects/Consumable/Drinks/somberbucket.rsi
   - type: Item
-    sprite: _DEN/Objects/Consumable/Drinks/sombericebucket.rsi
+    sprite: _DEN/Objects/Consumable/Drinks/somberbucket.rsi
   - type: PhysicalComposition
     materialComposition:
       Gold: 10
       Silver: 10
+
+- type: entity
+  parent: DrinkIceBucketSomber
+  id: DrinkIceBucketSomberSauna
+  name: electrum sauna bucket
+  suffix: Best With Blue Firelight] [Somber Sauna
+  description: "An unreasonably expensive bucket, for water that's fated to become steam."
+  components:
+  - type: Sprite
+    state: icon-sauna
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 200
+
+- type: entity
+  parent: DrinkIceBucketSomberSauna
+  id: DrinkIceBucketSomberSaunaSilvery
+  name: electrum sauna bucket
+  suffix: Best With Warm Firelight] [Somber Sauna
+  description: "An unreasonably expensive bucket, for water that's fated to become steam. The natural alloy contains more silver than usual."
+  components:
+  - type: Sprite
+    state: icon-sauna-silvery
 
 - type: entity
   parent: [ DrinkGlassCoupeShaped, BasePsionic ] # Breakable somber dishes should be psionic

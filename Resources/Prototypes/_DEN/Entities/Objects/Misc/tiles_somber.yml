@@ -1507,3 +1507,59 @@
       - FloorSomberSteelMonoKitchenEye
   - type: Stack
     stackType: FloorTileSomberSteelMonoKitchenEye
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelSlatsHorizontal
+  name: somber steel tile (slats, horizontal)
+  components:
+  - type: Sprite
+    state: somber-tile-slats-horizontal
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelSlatsHorizontal
+  - type: Stack
+    stackType: FloorTileSomberSteelSlatsHorizontal
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelSlatsVertical
+  name: somber steel tile (slats, vertical)
+  components:
+  - type: Sprite
+    state: somber-tile-slats-vertical
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelSlatsVertical
+  - type: Stack
+    stackType: FloorTileSomberSteelSlatsVertical
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelSlatsDarkHorizontal
+  name: somber steel tile (slats, horizontal, dark)
+  components:
+  - type: Sprite
+    state: somber-tile-slats-dark-horizontal
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelSlatsDarkHorizontal
+  - type: Stack
+    stackType: FloorTileSomberSteelSlatsDarkHorizontal
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelSlatsDarkVertical
+  name: somber steel tile (slats, vertical, dark)
+  components:
+  - type: Sprite
+    state: somber-tile-slats-dark-vertical
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelSlatsDarkVertical
+  - type: Stack
+    stackType: FloorTileSomberSteelSlatsDarkVertical

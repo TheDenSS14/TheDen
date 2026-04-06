@@ -2,6 +2,9 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# Somber Benches Start
+
+# Sofa and sectionals
 - type: entity
   parent: [ BenchBaseMiddle, BasePsionic ]
   id: BenchSofaSomberMiddle
@@ -12,6 +15,8 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
+    snapCardinals: false
+    noRot: false
     sprite: _DEN/Structures/Furniture/Benches/sombersofa.rsi
   - type: StaticPrice
     price: 125
@@ -69,6 +74,55 @@
     state: corner
 
 - type: entity
+  parent: BenchSofaSomberMiddle
+  id: BenchSofaSomberFootrestRight
+  name: somber leather sectional
+  suffix: Right, Place Atop Sofa
+  description: "A plush leather sectional so you can stretch out."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Benches/sombersofasectional.rsi
+    state: right
+    offset: 0,-0.5
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: -0.2,-0.4
+
+- type: entity
+  parent: BenchSofaSomberMiddle
+  id: BenchSofaSomberFootrestMiddle
+  name: somber leather sectional
+  suffix: Middle, Place Atop Sofa
+  description: "A plush leather sectional so you can stretch out."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Benches/sombersofasectional.rsi
+    state: middle
+    offset: 0,-0.5
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: 0,-0.4
+
+- type: entity
+  parent: BenchSofaSomberMiddle
+  id: BenchSofaSomberFootrestLeft
+  name: somber leather sectional
+  suffix: Left, Place Atop Sofa
+  description: "A plush leather sectional so you can stretch out."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Benches/sombersofasectional.rsi
+    state: left
+    offset: 0,-0.5
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: 0,-0.4
+
+# Benches
+- type: entity
   parent: [ BenchBaseMiddle, BasePsionic ]
   id: BenchSomberMiddle
   name: somber bench
@@ -80,6 +134,8 @@
   - type: Sprite
     sprite: _DEN/Structures/Furniture/Benches/somberbench.rsi
     state: middlepink
+    snapCardinals: false
+    noRot: false
   - type: StaticPrice
     price: 125
   - type: Damageable
@@ -200,3 +256,4 @@
   components:
   - type: Sprite
     state: cornerpurple
+# Somber Benches End

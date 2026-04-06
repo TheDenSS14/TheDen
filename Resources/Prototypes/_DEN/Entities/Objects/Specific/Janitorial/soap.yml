@@ -1,13 +1,14 @@
 - type: entity
-  parent: [ Soap, BasePsionic ] # All Somber things are technically psionic. I find this funny.
+  parent: Soap
   id: SoapSomberViolet
   name: fine soap
   suffix: Somber, Violet
-  description: "A striped violet bar of soap, so expensive it comes with its own polished bronze dish. Smells like lavender and anise."
+  description: "A striped violet bar of soap, so expensive it comes with its own polished electrum dish. Smells like lavender and anise."
   components:
   - type: Sprite
     sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
     layers:
+    - state: sombersoapdish
     - state: somberviolet-4
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: SolutionContainerVisuals
@@ -26,35 +27,36 @@
 
 
 - type: entity
-  parent: [ Soap, BasePsionic ]
-  id: SoapSomberIndigo
+  parent: Soap
+  id: SoapSomberTeal
   name: fine soap
-  suffix: Somber, Indigo
-  description: "A striped indigo bar of soap, so expensive it comes with its own polished bronze dish.. Smells like like sweet incense."
+  suffix: Somber, Teal
+  description: "A striped teal bar of soap, so expensive it comes with its own polished electrum dish. Smells like like sweet incense."
   components:
   - type: Sprite
     sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
     layers:
-    - state: somberindigo-4
+    - state: sombersoapdish
+    - state: somberteal-4
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: SolutionContainerVisuals
-    fillBaseName: somberindigo-
+    fillBaseName: somberteal-
   - type: Item
     sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
-    heldPrefix: somberindigo
+    heldPrefix: somberteal
   - type: Residue
     residueAdjective: residue-slippery
-    residueColor: residue-indigo
+    residueColor: residue-teal
   - type: Food
     trash:
     - SomberSoapDish # This is stupid
 
 - type: entity
-  parent: [ BaseItem, BasePsionic ]
+  parent: BaseItem
   id: SomberSoapDish
-  name: bronze soap dish
+  name: electrum dish
   suffix: Somber
-  description: "A surprisingly heavy dish made of polished bronze. It held soap once. Surprisingly."
+  description: "A surprisingly heavy dish made of a natural alloy of gold and silver."
   components:
   - type: Sprite
     sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
@@ -86,28 +88,6 @@
       path: /Audio/Items/trayhit1.ogg
       params:
         variation: 0.15
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 15
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-          params:
-            volume: -6
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: Fixtures
     fixtures:
       fix1:
@@ -122,3 +102,7 @@
   - type: InteractionVerbs
     allowedVerbs:
     - LickObject
+  - type: PhysicalComposition # Funny
+    materialComposition:
+      Gold: 100
+      Silver: 100

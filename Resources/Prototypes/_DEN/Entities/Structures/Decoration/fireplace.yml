@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# Somber Psionic Fire Items
+
 - type: entity
   parent: [ Fireplace, BasePsionic ]
   id: SomberFireplace
@@ -121,6 +123,22 @@
     bodyType: Static
 
 - type: entity
+  parent: SomberFireplace
+  id: SomberFireplaceSauna
+  name: electrum sauna fireplace # Has glowy stones in it and no Christmas presents layer
+  suffix: Map With Sauna Marker] [Somber Sauna
+  description: "An avant-garde fireplace shaped like an eye, its smokeless psionic flame rippling like liquid around a basin of sauna stones."
+  components:
+  - type: Sprite
+    layers:
+      - state: fireplace
+      - state: sauna_stones
+      - state: sauna_fireplace_fire
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+- type: entity
   parent: [ BaseSignDirectional, BasePsionic ] # So it's technically wall decor, but whatever
   id: SomberHangingBrazier
   name: electrum hanging brazier
@@ -178,12 +196,6 @@
         volume: -8
         pitch: 0.75
         variation: 0.05
-#  - type: ItemToggleActiveSound # It's a cute idea, but there end up being so many of these you hear sound repeating
-#    activeSound:
-#      path: /Audio/Ambience/Objects/fireplace.ogg
-#      params:
-#        volume: -10
-#        range: 5
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
     enabled: false
@@ -230,7 +242,7 @@
   - type: SpriteFade
   - type: Sprite
     noRot: true
-    offset: "0.0,1.15625" # 37 pixels up from sprite center
+    offset: -0.015625,1.15625 # 37 pixels up, half a pixel left from sprite center
     drawdepth: Mobs # You have to place these after the pillars, but otherwise they won't be hidden by them if the camera turns
     sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
 
@@ -260,3 +272,86 @@
   - type: SpriteFade
   - type: Sprite
     sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartaller.rsi
+
+# Somber Warm Fire Items
+
+- type: entity
+  parent: SomberFireplace
+  id: SomberFireplaceWarm
+  suffix: Warm Fire, Signal-Friendly
+  description: "An avant-garde fireplace shaped like an eye. The natural alloy contains more silver than usual."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/somberfireplacewarm.rsi
+  - type: PointLight
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberFireplaceWarm
+  id: SomberFireplaceWarmSauna
+  name: electrum sauna fireplace
+  suffix: Warm Fire, Map With Sauna Marker] [Somber Sauna
+  description: "An avant-garde fireplace shaped like an eye, filled with a basin of sauna stones. The natural alloy contains more silver than usual."
+  components:
+  - type: Sprite
+    layers:
+      - state: fireplace
+      - state: sauna_stones
+      - state: sauna_fireplace_fire
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+- type: entity
+  parent: SomberHangingBrazier
+  id: SomberHangingBrazierWarm
+  suffix: Warm Fire, Signal-Friendly
+  description: "An electrum brazier. The natural alloy contains more silver than usual."
+  placement:
+    mode: WallmountLight
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/somberhangingbrazierwarm.rsi
+  - type: PointLight
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberHangingBrazierPillarShorter
+  id: SomberHangingBrazierWarmPillarShorter
+  suffix: Warm Fire, Fits Shorter Pillars
+  description: "An electrum brazier. The natural alloy contains more silver than usual."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshorter.rsi
+  - type: PointLight
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberHangingBrazierWarmPillarShorter
+  id: SomberHangingBrazierWarmPillarShort
+  suffix: Warm Fire, Fits Short Pillars
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshort.rsi
+
+- type: entity
+  parent: SomberHangingBrazierWarmPillarShorter
+  id: SomberHangingBrazierWarmPillarTall
+  suffix: Warm Fire, Fits Tall Pillars
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartall.rsi
+
+- type: entity
+  parent: SomberHangingBrazierWarmPillarShorter
+  id: SomberHangingBrazierWarmPillarTaller
+  suffix: Warm Fire, Fits Taller Pillars
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartaller.rsi

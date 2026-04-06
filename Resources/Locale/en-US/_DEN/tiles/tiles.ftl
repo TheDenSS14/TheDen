@@ -114,6 +114,10 @@ tiles-somber-steel-floor-checker-kitchen = somber steel tile (checkered, kitchen
 tiles-somber-steel-floor-checker-kitchen-dark = somber steel tile (checkered, kitchen, dark)
 tiles-somber-steel-floor-mono-kitchen = somber steel tile (mono, kitchen)
 tiles-somber-steel-floor-mono-kitchen-eye = somber steel tile (mono, kitchen, eye)
+tiles-somber-steel-floor-slats-horizontal = somber steel tile (slats, horizontal)
+tiles-somber-steel-floor-slats-vertical = somber steel tile (slats, vertical)
+tiles-somber-steel-floor-slats-dark-horizontal = somber steel tile (slats, horizontal, dark)
+tiles-somber-steel-floor-slats-dark-vertical = somber steel tile (slats, vertical, dark)
 # Somber tileset end
 
 tiles-invisible = invisible floor

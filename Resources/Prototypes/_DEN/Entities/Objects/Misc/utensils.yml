@@ -31,3 +31,31 @@
     materialComposition:
       Gold: 10
       Silver: 10
+
+- type: entity
+  parent: SkimmerSomber
+  id: SkimmerSomberSauna
+  name: electrum sauna ladle
+  suffix: Best With Blue Firelight] [Somber Sauna
+  description: "A long electrum ladle used to pour water over the sauna stones."
+  components:
+  - type: Sprite
+    layers:
+    - state: skimmer-sauna
+    - state: skimmer1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+
+- type: entity
+  parent: SkimmerSomberSauna
+  id: SkimmerSomberSaunaSilvery
+  name: electrum sauna ladle
+  suffix: Best With Warm Firelight] [Somber Sauna
+  description: "A long electrum ladle used to pour water over the sauna stones. The natural alloy contains more silver than usual."
+  components:
+  - type: Sprite
+    layers:
+    - state: skimmer-sauna-silvery
+    - state: skimmer1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false

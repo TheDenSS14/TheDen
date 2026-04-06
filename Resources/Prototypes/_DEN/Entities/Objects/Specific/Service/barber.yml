@@ -65,3 +65,20 @@
     damage:
       types:
         Blunt: 0
+
+- type: entity
+  parent: HairComb
+  id: HairCombGold
+  suffix: gold
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tools/comb_gold.rsi
+
+- type: entity
+  parent: BarberScissors
+  id: BarberScissorsGold
+  name: scissors
+  suffix: gold
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tools/scissors_gold.rsi

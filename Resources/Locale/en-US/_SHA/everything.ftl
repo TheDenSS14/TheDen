@@ -23,10 +23,6 @@ tiles-elevator-glass-8 = elevator glass #8 [PENTHOUSE]
 tiles-elevator-glass-9 = elevator glass #9 [PENTHOUSE]
 tiles-black = pitch black [PENTHOUSE]
 
-# Fibers
-
-fibers-magenta = magenta
-
 # Verbs
 
 item-toggle-ritualon = Perform Ritual

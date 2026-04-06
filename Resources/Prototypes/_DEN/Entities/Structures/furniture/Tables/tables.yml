@@ -559,7 +559,7 @@
   id: SomberTableFire
   name: somber fire table
   suffix: Signal-Friendly
-  description: "An expensive fire table made of gloomy, patterned wood. Mind your hands."
+  description: "An expensive fire table made of gloomy wood, its smokeless psionic flame rippling like liquid. Mind your hands."
   components:
   - type: ItemToggleOnTrigger
   - type: TriggerOnSignal
@@ -653,8 +653,21 @@
   - type: ItemToggleHot
   - type: PointLight
     enabled: false
-    radius: 4
-    energy: 5
+    energy: 1.8
+    radius: 8
     softness: 1.22
     color: "#4dc4ff"
+
+- type: entity
+  parent: SomberTableFire
+  id: SomberTableFireWarm
+  suffix: Warm Fire, Signal-Friendly
+  description: "An expensive fire table made of gloomy wood. Mind your hands."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtablefirewarm.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Tables/Somber/somberwoodtablefirewarm.rsi
+  - type: PointLight
+    color: "#FF9833"
 # Somber Tables End

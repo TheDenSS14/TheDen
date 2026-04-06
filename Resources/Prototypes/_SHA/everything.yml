@@ -745,100 +745,6 @@
     rotation: 90
     buckleOffset: "0.775,0.475"
 
-# Couches
-
-- type: entity
-  parent: BenchSofaSomberMiddle
-  id: BenchSofaSomberMiddleNoRotation
-  suffix: Rotation Disabled, Middle] [PENTHOUSE
-  placement:
-    mode: SnapgridCenter
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Furniture/Benches/sombersofa.rsi
-    snapCardinals: false
-    noRot: false
-
-- type: entity
-  parent: BenchSofaSomberLeft
-  id: BenchSofaSomberLeftNoRotation
-  suffix: Rotation Disabled, Left] [PENTHOUSE
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Furniture/Benches/sombersofa.rsi
-    snapCardinals: false
-    noRot: false
-
-- type: entity
-  parent: BenchSofaSomberRight
-  id: BenchSofaSomberRightNoRotation
-  suffix: Rotation Disabled, Right] [PENTHOUSE
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Furniture/Benches/sombersofa.rsi
-    snapCardinals: false
-    noRot: false
-
-- type: entity
-  parent: BenchSofaSomberCorner
-  id: BenchSofaSomberCornerNoRotation
-  suffix: Rotation Disabled, Corner] [PENTHOUSE
-  components:
-  - type: Sprite
-    snapCardinals: false
-    noRot: false
-
-- type: entity
-  parent: [ BigBedUpperFancy1, BasePsionic ]
-  id: BenchSofaSomberFootrestRight
-  name: somber leather footrest
-  suffix: Right] [PENTHOUSE
-  description: "A plush leather footrest so you can stretch out."
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
-    state: sofafootrestright
-    snapCardinals: false
-    noRot: false
-  - type: Strap
-    position: Down
-    rotation: 90
-    buckleOffset: "0.35,0.64"
-
-- type: entity
-  parent: [ BigBedUpperFancy1, BasePsionic ]
-  id: BenchSofaSomberFootrestMiddle
-  name: somber leather footrest
-  suffix: Middle] [PENTHOUSE
-  description: "A plush leather footrest so you can stretch out."
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
-    state: sofafootrestmiddle
-    snapCardinals: false
-    noRot: false
-  - type: Strap
-    position: Down
-    rotation: 90
-    buckleOffset: "0.35,-0.06"
-
-- type: entity
-  parent: [ BigBedUpperFancy1, BasePsionic ]
-  id: BenchSofaSomberFootrestLeft
-  name: somber leather footrest
-  suffix: Left] [PENTHOUSE
-  description: "A plush leather footrest so you can stretch out."
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
-    state: sofafootrestleft
-    snapCardinals: false
-    noRot: false
-  - type: Strap
-    position: Down
-    rotation: 90
-    buckleOffset: "0.35,-0.74"
-
 # Small fancy beds
 
 - type: entity
@@ -1634,140 +1540,6 @@
 # Warm Fire Items
 
 - type: entity
-  parent: CandleSomberMantis
-  id: CandleSomberPenthouse
-  name: candle
-  suffix: PENTHOUSE] [Light After Mapping
-  description: "A candle. That's all."
-  components:
-    - type: Sprite
-      sprite: _SHA/Objects/Misc/candlespenthouse.rsi
-    - type: Item
-      sprite: _SHA/Objects/Misc/candlespenthouse.rsi
-    - type: FireVisuals
-      sprite: _SHA/Objects/Misc/candlespenthouse.rsi
-      normalState: fire-big
-      lightColor: "#FF9833"
-    - type: Damageable
-      damageModifierSet: Wood
-    - type: Destructible
-      thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 100
-        behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-      - trigger:
-          !type:DamageTrigger
-          damage: 5
-        behaviors:
-        - !type:SpawnEntitiesBehavior
-          spawn:
-              ScrapElectrum: # The dish it sits in
-                min: 1
-                max: 1
-        - !type:PlaySoundBehavior
-          sound:
-            path: /Audio/Effects/drop.ogg
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-
-- type: entity
-  parent: CandleSomberPenthouse
-  id: CandleSomberPenthouseSmall
-  name: candle (small)
-  description: "A small candle. That's all."
-  components:
-    - type: Sprite
-      layers:
-        - state: candle-small
-          color: "#ffffff"
-    - type: FireVisuals
-      normalState: fire-small
-
-- type: entity
-  parent: CandleSomberPenthouse
-  id: CandleSomberPenthouseCluster
-  name: candle (cluster)
-  description: "A cluster of candles. Not a birthday cake."
-  components:
-    - type: Sprite
-      layers:
-        - state: candle-cluster
-          color: "#ffffff"
-    - type: FireVisuals
-      normalState: fire-cluster
-
-- type: entity
-  parent: CandleSomberPenthouse
-  id: CandleSomberPenthouseTiny
-  name: candle (tea light)
-  description: "A tea light. Light enough to float on water."
-  components:
-    - type: Sprite
-      layers:
-        - state: candle-tiny
-          color: "#ffffff"
-    - type: FireVisuals
-      normalState: fire-tiny
-
-- type: entity
-  parent: SomberFireplace
-  id: SomberFireplacePenthouse
-  suffix: PENTHOUSE
-  description: "An avant-garde fireplace shaped like an eye. The natural alloy contains more silver than usual."
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Decoration/somberfireplacepenthouse.rsi
-  - type: PointLight
-    enabled: false
-    radius: 5
-    energy: 7
-    softness: 1.22
-    color: "#FF9833"
-
-- type: entity
-  parent: SomberHangingBrazier
-  id: SomberHangingBrazierPenthouse
-  suffix: PENTHOUSE
-  description: "An electrum brazier. The natural alloy contains more silver than usual."
-  placement:
-    mode: WallmountLight
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Decoration/somberhangingbrazierpenthouse.rsi
-  - type: PointLight
-    enabled: false
-    radius: 4
-    energy: 5
-    softness: 1.22
-    color: "#FF9833"
-
-- type: entity
-  parent: SomberTableFire
-  id: SomberTableFirePenthouse
-  suffix: Fire Table] [PENTHOUSE
-  description: "An expensive fire table made of gloomy, patterned wood. Mind your hands."
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Furniture/Tables/Somber/somberwoodtablefirepenthouse.rsi
-    layers:
-      - state: full
-      - state: fire
-        shader: unshaded
-        visible: false
-        map: ["light"]
-  - type: Icon
-    sprite: _SHA/Structures/Furniture/Tables/Somber/somberwoodtablefirepenthouse.rsi
-  - type: PointLight
-    enabled: false
-    radius: 4
-    energy: 5
-    softness: 1.22
-    color: "#FF9833"
-
-- type: entity
   parent: VendingMachineSomberMantis
   id: VendingMachineSomberMantisPenthouse
   name: reliquary conduit
@@ -1778,9 +1550,6 @@
     noRot: true
     sprite: _SHA/Structures/Machines/VendingMachines/mantispenthouse.rsi
   - type: PointLight # As bright as a candle
-    radius: 2.4
-    energy: 2.4
-    softness: 1.22
     color: "#FF9833"
     mask: null
   - type: ThermalVision # Weird psionic senses
@@ -1816,65 +1585,18 @@
     noRot: true
     sprite: _SHA/Structures/Machines/VendingMachines/mantiswallpenthouse.rsi
   - type: PointLight # As bright as a candle
-    radius: 2.4
-    energy: 2.4
-    softness: 1.22
     color: "#FF9833"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
   - type: Fixtures
   - type: BlockMovement
 
-- type: entity
-  parent: SomberHangingBrazierPillarShorter
-  id: SomberHangingBrazierPenthousePillarShorter
-  suffix: PENTHOUSE] [Fits Shorter Pillars
-  placement:
-    mode: SnapgridCenter
-  components:
-  - type: SpriteFade
-  - type: Sprite
-    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpenthousepillarshorter.rsi
-  - type: PointLight
-    enabled: false
-    radius: 4
-    energy: 5
-    softness: 1.22
-    color: "#FF9833"
-
-- type: entity
-  parent: SomberHangingBrazierPenthousePillarShorter
-  id: SomberHangingBrazierPenthousePillarShort
-  suffix: PENTHOUSE] [Fits Short Pillars
-  components:
-  - type: SpriteFade
-  - type: Sprite
-    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpenthousepillarshort.rsi
-
-- type: entity
-  parent: SomberHangingBrazierPenthousePillarShorter
-  id: SomberHangingBrazierPenthousePillarTall
-  suffix: PENTHOUSE] [Fits Tall Pillars
-  components:
-  - type: SpriteFade
-  - type: Sprite
-    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpenthousepillartall.rsi
-
-- type: entity
-  parent: SomberHangingBrazierPenthousePillarShorter
-  id: SomberHangingBrazierPenthousePillarTaller
-  suffix: PENTHOUSE] [Fits Taller Pillars
-  components:
-  - type: SpriteFade
-  - type: Sprite
-    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpenthousepillartaller.rsi
-
 # Mansus Fire Items
 
 - type: entity
-  parent: CandleSomberPenthouse
+  parent: CandleSomberAlabaster
   id: CandleSomberSanctum
-  name: candle
+  name: otherworldly candle
   suffix: SANCTUM] [Light After Mapping
   description: "A candle. That's all."
   components:
@@ -1890,7 +1612,7 @@
 - type: entity
   parent: CandleSomberSanctum
   id: CandleSomberSanctumSmall
-  name: candle (small)
+  name: otherworldly candle (small)
   suffix: SANCTUM] [Light After Mapping
   description: "A small candle. That's all."
   components:
@@ -1904,9 +1626,9 @@
 - type: entity
   parent: CandleSomberSanctum
   id: CandleSomberSanctumCluster
-  name: candle (cluster)
+  name: otherworldly candle (cluster)
   suffix: SANCTUM] [Light After Mapping
-  description: "A cluster of candles. Not a birthday cake."
+  description: "A cluster of candles. That's all."
   components:
     - type: Sprite
       layers:
@@ -1918,9 +1640,9 @@
 - type: entity
   parent: CandleSomberSanctum
   id: CandleSomberSanctumTiny
-  name: candle (tea light)
+  name: otherworldly candle (tea light)
   suffix: SANCTUM] [Light After Mapping
-  description: "A tea light. Light enough to float on water."
+  description: "A tea light. That's all"
   components:
     - type: Sprite
       layers:
@@ -1930,7 +1652,7 @@
       normalState: fire-tiny
 
 - type: entity
-  parent: SomberFireplacePenthouse
+  parent: SomberFireplace
   id: SomberFireplaceSanctum
   suffix: SANCTUM
   description: "An avant-garde fireplace shaped like an eye."
@@ -1938,14 +1660,10 @@
   - type: Sprite
     sprite: _SHA/Structures/Decoration/somberfireplacesanctum.rsi
   - type: PointLight
-    enabled: false
-    radius: 5
-    energy: 7
-    softness: 1.22
     color: "#00684E" # Mansus fire color
 
 - type: entity
-  parent: SomberHangingBrazierPenthouse
+  parent: SomberHangingBrazier
   id: SomberHangingBrazierSanctum
   suffix: SANCTUM
   description: "An electrum brazier."
@@ -1955,14 +1673,10 @@
   - type: Sprite
     sprite: _SHA/Structures/Decoration/somberhangingbraziersanctum.rsi
   - type: PointLight
-    enabled: false
-    radius: 4
-    energy: 5
-    softness: 1.22
     color: "#00684E" # Mansus fire color
 
 - type: entity
-  parent: SomberTableFirePenthouse
+  parent: SomberTableFire
   id: SomberTableFireSanctum
   suffix: Fire Table] [SANCTUM
   description: "An expensive fire table made of gloomy, patterned wood. Mind your hands."
@@ -1978,10 +1692,6 @@
   - type: Icon
     sprite: _SHA/Structures/Furniture/Tables/Somber/somberwoodtablefiresanctum.rsi
   - type: PointLight
-    enabled: false
-    radius: 4
-    energy: 5
-    softness: 1.22
     color: "#00684E" # Mansus fire color
 
 - type: entity
@@ -1995,9 +1705,6 @@
     noRot: true
     sprite: _SHA/Structures/Machines/VendingMachines/mantissanctum.rsi
   - type: PointLight # As bright as a candle
-    radius: 2.4
-    energy: 2.4
-    softness: 1.22
     color: "#00684E" # Mansus fire color
     mask: null
   - type: ThermalVision # Weird psionic senses
@@ -2031,9 +1738,6 @@
     noRot: true
     sprite: _SHA/Structures/Machines/VendingMachines/mantiswallsanctum.rsi
   - type: PointLight # As bright as a candle
-    radius: 2.4
-    energy: 2.4
-    softness: 1.22
     color: "#00684E" # Mansus fire color
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
@@ -2119,7 +1823,7 @@
           ScrapElectrum:
             min: 3
             max: 5
-          CandleSomberMantisSmall:
+          CandleSomberSanctumSmall:
             min: 1
             max: 6
       - !type:SpillBehavior { }
@@ -2157,9 +1861,6 @@
     rotation: -90
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
-    radius: 3.5
-    energy: 3
-    softness: 1.22
     color: "#00684E" # Mansus fire color
     autoRot: true
     mask: /Textures/_DEN/Effects/LightMasks/double_circle.png
@@ -2182,10 +1883,6 @@
   - type: Sprite
     sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbraziersanctumpillarshorter.rsi
   - type: PointLight
-    enabled: false
-    radius: 4
-    energy: 5
-    softness: 1.22
     color: "#00684E"
 
 - type: entity
@@ -2360,42 +2057,6 @@
         density: 10
         mask:
         - MachineMask
-
-- type: entity
-  id: TowelColorMagenta
-  parent: BaseTowel
-  name: magenta towel
-  description: "An absurdly expensive magenta towel, plush enough to feel indulgent even when used for something ordinary."
-  suffix: PENTHOUSE
-  components:
-  - type: Sprite
-    layers:
-    - state: icon
-      color: "#b32d70"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#b32d70"
-      right:
-      - state: inhand-right
-        color: "#b32d70"
-  - type: Clothing
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-        color: "#b32d70"
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#b32d70"
-      belt:
-      - state: equipped-BELT
-        color: "#b32d70"
-      neck: # DEN - Add neck sprite
-      - state: equipped-NECK
-        color: "#b32d70"
-  - type: Fiber
-    fiberColor: fibers-magenta
 
 - type: entity
   parent: CigPackMnemolith
@@ -3216,8 +2877,6 @@
     sound:
       path: /Audio/Ambience/wisp_ambience.ogg
   - type: PointLight
-    radius: 1.5
-    energy: 2.5
     color: "#00684E" # Mansus fire color
   - type: DeleteOnDrop
   - type: Tool
@@ -3506,6 +3165,8 @@
   - type: AntiGravityClothing
   - type: DisarmMalus
     malus: 1.0
+  - type: Tag
+    tags: []
 
 - type: entity
   parent: [ BaseHereticContraband, BreakFocusMeditation ]
@@ -3523,28 +3184,30 @@
     size: Ginormous
   - type: Clothing
     quickEquip: false
-  - type: Armor # Magic bullshit (in case I sprint into a wall)
+  - type: Armor # Mostly to protect me from physics damage if I use this for character speed during mapping
     modifiers:
       coefficients:
-        Asphyxiation: 0.5
-        Bloodloss: 0.5
-        Blunt: 0.5
-        Cellular: 0.5
-        Caustic: 0.5
-        Cold: 0.5
-        Heat: 0.5
-        Piercing: 0.5
-        Poison: 0.5
-        Radiation: 0.5
-        Shock: 0.5
-        Slash: 0.5
-        Structural: 0.5
+        Asphyxiation: 0
+        Bloodloss: 0
+        Blunt: 0
+        Cellular: 0
+        Caustic: 0
+        Cold: 0
+        Heat: 0
+        Piercing: 0
+        Poison: 0
+        Radiation: 0
+        Shock: 0
+        Slash: 0
+        Structural: 0
+        Holy: 0
   - type: StaminaDamageResistance
-    coefficient: 0.5
+    coefficient: 0
   - type: ClothingSpeedModifier
-    walkModifier: 1
+    walkModifier: 5
     sprintModifier: 10
     requiresToggle: false
+  - type: HeldSpeedModifier # For mapping purposes - walk or you'll die
   - type: NoSlip
   - type: Insulated
   - type: FlashImmunity
@@ -4358,29 +4021,6 @@
       amount: 4
 
 - type: entity
-  parent: MantisCaseCandles
-  id: MantisCaseCandlesPenthouse
-  name: candle case
-  suffix: PENTHOUSE
-  description: "A floral wood case of mixed candles."
-  components:
-  - type: Sprite
-    sprite: _DEN/Objects/Storage/boxfloral.rsi
-  - type: Item
-    sprite: _DEN/Objects/Storage/boxfloral.rsi
-  - type: StorageFill
-    contents:
-    - id: CandleSomberPenthouseTiny
-    - id: CandleSomberPenthouseSmall
-    - id: CandleSomberPenthouseTiny
-    - id: CandleSomberPenthouse
-    - id: CandleSomberPenthouseCluster
-    - id: CandleSomberPenthouse
-    - id: CandleSomberPenthouseSmall
-    - id: CandleSomberPenthouse
-    - id: CandleSomberPenthouseSmall
-
-- type: entity
   parent: MantisCaseChemicals
   id: MantisCaseChemicalsPenthouse
   name: chemicals case
@@ -4835,7 +4475,7 @@
   - type: Item
     heldPrefix: carpplushcast
 
-# Meditation Room Stuff
+# Meditation Room (So specific it gets its own category)
 
 - type: entity
   id: MeditationChamberReflection
@@ -5194,3 +4834,92 @@
   components:
   - type: Sprite
     state: sombercushion-purpleblue
+
+# Per-Room Item Edits (Offsets, Renames, Etc.)
+
+- type: entity
+  parent: BenchSomberMiddleGreen
+  id: BenchSomberMiddleGreenSauna
+  suffix: Middle, Sauna
+  components:
+  - type: Sprite
+    offset: 0.28125,0
+  - type: Strap
+    buckleOffset: 0.1,-0.05
+
+- type: entity
+  parent: BenchSomberLeftGreen
+  id: BenchSomberLeftGreenSauna1
+  suffix: Left Upper, Sauna
+  components:
+  - type: Sprite
+    offset: 0,0.28125
+  - type: Strap
+    buckleOffset: 0.1,0.1
+
+- type: entity
+  parent: BenchSomberLeftGreen
+  id: BenchSomberLeftGreenSauna2
+  suffix: Left Lower, Sauna
+  components:
+  - type: Sprite
+    offset: 0,-0.28125
+  - type: Strap
+    buckleOffset: -0.075,-0.35
+
+- type: entity
+  parent: BenchSomberLeftGreen
+  id: BenchSomberLeftGreenSauna3
+  suffix: Left Lower-Right, Sauna
+  components:
+  - type: Sprite
+    offset: 0,-0.28125
+  - type: Strap
+    buckleOffset: 0.1,-0.35
+
+- type: entity
+  parent: BenchSomberRightGreen
+  id: BenchSomberRightGreenSauna1
+  suffix: Right Upper, Sauna
+  components:
+  - type: Sprite
+    offset: 0,0.28125
+  - type: Strap
+    buckleOffset: -0.1,0.1
+
+- type: entity
+  parent: BenchSomberRightGreen
+  id: BenchSomberRightGreenSauna2
+  suffix: Right Lower, Sauna
+  components:
+  - type: Sprite
+    offset: 0,-0.28125
+  - type: Strap
+    buckleOffset: -0.1,-0.35
+
+- type: entity
+  parent: BenchSomberCornerGreen
+  id: BenchSomberCornerGreenSauna1
+  suffix: Corner Upper, Sauna
+  components:
+  - type: Sprite
+    offset: 0.28125,0
+  - type: Strap
+    buckleOffset: 0.1,-0.05
+
+- type: entity
+  parent: BenchSomberCornerGreen
+  id: BenchSomberCornerGreenSauna2
+  suffix: Corner Lower, Sauna
+  components:
+  - type: Sprite
+    offset: 0,-0.28125
+  - type: Strap
+    buckleOffset: -0.5,-0.35
+
+- type: entity
+  parent: BaseFoodShakerSomber
+  id: BaseFoodShakerSomberCosmetic
+  name: eidolite cosmetic bottle
+  suffix: PENTHOUSE, Somber, Empty
+  description: "A small, crystal bottle for cosmetic products."
