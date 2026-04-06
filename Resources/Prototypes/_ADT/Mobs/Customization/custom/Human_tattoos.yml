@@ -178,8 +178,8 @@
 
 - type: marking
   id: HumanTattooSkeletbody
-  bodyPart: LLeg
-  markingCategory: Overlay
+  bodyPart: Chest # The Den - changed from LLeg to Chest
+  markingCategory: Chest # The Den - changed from Overlay to Chest
   speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
@@ -436,8 +436,8 @@
 
 - type: marking
   id: HumanTattooSkeletbodyU
-  bodyPart: LLeg
-  markingCategory: Overlay
+  bodyPart: Chest # The Den - changed from LLeg to Chest
+  markingCategory: Chest # The Den - changed from Overlay to Chest
   speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
