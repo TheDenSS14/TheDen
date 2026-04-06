@@ -72,8 +72,8 @@
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
     enabled: false
-    energy: 1.8
-    radius: 8
+    energy: 1.5
+    radius: 6
     softness: 1.22
     color: "#4dc4ff"
   - type: ItemToggleHot
@@ -200,7 +200,7 @@
   - type: PointLight
     enabled: false
     energy: 1.5
-    radius: 5
+    radius: 4
     softness: 1.22
     color: "#4dc4ff"
   - type: StaticPrice

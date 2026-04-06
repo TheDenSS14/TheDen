@@ -141,8 +141,8 @@
     guides: [ MantisGuide ]
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight # As bright as a candle
-    radius: 2.4
     energy: 2.4
+    radius: 2.4
     softness: 1.22
     color: "#4dc4ff"
     mask: null
@@ -278,8 +278,8 @@
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight # As bright as a candle
-    radius: 2.4
     energy: 2.4
+    radius: 2.4
     softness: 1.22
     color: "#4dc4ff"
     mask: /Textures/Effects/LightMasks/cone.png

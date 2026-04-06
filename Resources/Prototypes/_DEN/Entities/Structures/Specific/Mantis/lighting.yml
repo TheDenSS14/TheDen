@@ -48,7 +48,7 @@
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
     enabled: false
-    energy: 1.5
+    energy: 2
     radius: 5
     softness: 1.22
     color: "#d9418d"
@@ -201,6 +201,7 @@
   - type: PointLight
     energy: 1
     radius: 3
+    softness: 1.22
     color: "#ba473f"
 
 - type: entity
@@ -221,8 +222,6 @@
       visible: false
       map: ["light"]
   - type: PointLight
-    energy: 2
-    radius: 4
     color: "#9e00ff"
 
 - type: entity
@@ -275,8 +274,9 @@
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
     enabled: false
-    energy: 1.8
-    radius: 8
+    energy: 2
+    radius: 10
+    softness: 1.22
 
 - type: entity
   parent: LightSomberEidoliteFloorLamp
@@ -377,7 +377,8 @@
       map: ["light"]
   - type: PointLight
     energy: 1
-    radius: 6
+    radius: 5
+    softness: 1.22
     color: "#ba473f"
 
 - type: entity
@@ -398,8 +399,6 @@
       visible: false
       map: ["light"]
   - type: PointLight
-    energy: 2
-    radius: 6
     color: "#9e00ff"
 
 - type: entity

@@ -17,10 +17,10 @@
   - type: Charger
     chargeRate: 20 # This is the default value, I'm just putting it here for battery math
   - type: EtherealLight # Dims around ethereal entities
-  - type: PointLight
+  - type: PointLight # As bright as a candle
     enabled: true
-    radius: 1.4
-    energy: 1.4
+    energy: 2.4
+    radius: 2.4
     softness: 1.22
     color: "#d9418d"
   - type: Damageable
