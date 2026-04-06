@@ -1,0 +1,156 @@
+# Basic new landmine types
+
+- type: entity
+  name: smoke mine
+  parent: BaseLandMine
+  id: LandMineSmoke
+  components:
+  - type: SmokeOnTrigger
+    duration: 30
+    spreadAmount: 50
+  - type: SoundOnTrigger
+    sound: /Audio/Items/smoke_grenade_smoke.ogg
+  - type: DeleteOnTrigger
+
+- type: entity
+  name: flash mine
+  parent: BaseLandMine
+  id: LandMineFlash
+  components:
+  - type: FlashOnTrigger
+    range: 7
+  - type: SoundOnTrigger
+    sound:
+      path: "/Audio/Effects/flash_bang.ogg"
+  - type: DeleteOnTrigger
+  - type: SpawnOnTrigger
+    proto: GrenadeFlashEffect
+  - type: Flashbang
+  
+- type: entity
+  name: emp mine
+  parent: BaseLandMine
+  id: LandMineEMP
+  components:
+  - type: EmpOnTrigger
+    range: 7
+    energyConsumption: 2700000
+  - type: DeleteOnTrigger
+    
+- type: entity
+  name: false mine
+  parent: BaseLandMine
+  id: LandMineFake
+  components:
+  - type: SpawnOnTrigger
+    proto: GrenadeFlashEffect
+  - type: SoundOnTrigger
+    sound:
+      path: /Audio/Effects/Emotes/parp1.ogg
+  - type: DeleteOnTrigger
+      
+# fancy land mines
+
+- type: entity
+  name: razorium mine
+  parent: BaseLandMine
+  id: LandMineSmokeRazorium
+  components:
+  - type: SmokeOnTrigger
+    duration: 10
+    spreadAmount: 30
+    solution:
+      reagents:
+      - ReagentId: Razorium
+        Quantity: 40 # Enough to crit them if they stay in the cloud
+  - type: SoundOnTrigger
+    sound: /Audio/Items/smoke_grenade_smoke.ogg
+  - type: DeleteOnTrigger
+
+- type: entity
+  name: obliteration mine
+  parent: BaseLandMine
+  id: LandMineObliteration
+  suffix: Avoid Mapping
+  components:
+  - type: DamageUserOnTrigger
+    ignoreResistances: false # They're already far past crit. No need to push it further.
+    damage:
+      types:
+        Asphyxiation: 25
+        Bloodloss: 25
+        Blunt: 25
+        Slash: 25
+        Piercing: 25
+        Heat: 25
+        Cold: 25
+        Shock: 25
+        Poison: 25
+        Caustic: 25
+        Radiation: 25
+        Structural: 25
+        Holy: 25
+  - type: SoundOnTrigger
+    sound: /Audio/Effects/ominous.ogg
+  - type: DeleteOnTrigger
+
+# For landmine roulette
+
+- type: entity
+  name: explosive mine
+  parent: LandMineSmoke
+  id: LandMineSmokeHidden
+  suffix: smoke
+
+- type: entity
+  name: explosive mine
+  parent: LandMineFlash
+  id: LandMineFlashHidden
+  suffix: flash
+  
+- type: entity
+  name: explosive mine
+  parent: LandMineEMP
+  id: LandMineEMPHidden
+  suffix: emp
+  
+- type: entity
+  name: explosive mine
+  parent: LandMineFake
+  id: LandMineFakeHidden
+  suffix: fake
+  
+- type: entity
+  name: explosive mine
+  parent: LandMineSmokeRazorium
+  id: LandMineSmokeRazoriumHidden
+  suffix: razorium
+
+- type: entity
+  name: explosive mine
+  parent: LandMineObliteration
+  id: LandMineObliterationHidden
+  suffix: obliteration
+  
+- type: entity
+  name: Random Land Mine Spawner
+  suffix: For chaotic maps only
+  id: LandMineSpawnerRandom
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - sprite: Objects/Misc/landmine.rsi
+          state: landmine
+    - type: RandomSpawner
+      rarePrototypes:
+        - LandMineSmokeRazoriumHidden
+        - LandMineObliterationHidden
+      rareChance: 0.04    
+      prototypes:
+        - LandMineExplosive
+        - LandMineSmokeHidden
+        - LandMineFlashHidden
+        - LandMineEMPHidden
+        - LandMineFakeHidden
+      chance: 0.96
