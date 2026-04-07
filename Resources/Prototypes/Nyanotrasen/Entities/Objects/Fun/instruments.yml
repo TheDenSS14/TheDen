@@ -1,10 +1,11 @@
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2024 dge21 <129136517+dge21@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Skubman
+# SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 MajorMoth
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: BaseHandheldInstrument
@@ -39,6 +40,11 @@
       types:
         Blunt: 7
     bluntStaminaDamageFactor: 1.50 #13.5 stamina damage
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
 
 - type: entity
   parent: Rickenbacker4003Instrument

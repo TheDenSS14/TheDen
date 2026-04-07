@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2026 Jakumba
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: body
   id: Replicator1
@@ -35,54 +35,12 @@
       part: TorsoBorg
       connections:
       - right arm
-      # - right arm 2
-      - left arm
-      # - left arm 2
-    right arm:
-      part: RightArmBorg
-      connections:
-      - right hand
-    # right arm 2:
-    #   part: RightArmBorg
-    #   connections:
-    #   - right hand 2
-    left arm:
-      part: LeftArmBorg
-      connections:
-      - left hand
-    # left arm 2:
-    #   part: LeftArmBorg
-    #   connections:
-    #   - left hand 2
-    right hand:
-      part: RightHandHuman # shitmed moment
-    # right hand 2:
-    #   part: RightHandHuman
-    left hand:
-      part: LeftHandHuman
-    # left hand 2:
-    #   part: LeftHandHuman
-
-- type: body
-  id: Replicator3
-  name: "replicator t3"
-  root: torso
-  slots:
-    torso:
-      part: TorsoBorg
-      connections:
-      - right arm
-      - right arm 2
       - left arm
       - left arm 2
     right arm:
       part: RightArmBorg
       connections:
       - right hand
-    right arm 2:
-      part: RightArmBorg
-      connections:
-      - right hand 2
     left arm:
       part: LeftArmBorg
       connections:
@@ -93,9 +51,53 @@
       - left hand 2
     right hand:
       part: RightHandHuman # shitmed moment
-    right hand 2:
-      part: RightHandHuman
     left hand:
       part: LeftHandHuman
     left hand 2:
+      part: LeftHandHuman
+
+- type: body
+  id: Replicator2Alt
+  name: "replicator t2 alt"
+  root: torso
+  slots:
+    torso:
+      part: TorsoBorg
+      connections:
+      - right arm
+      - left arm
+    right arm:
+      part: RightArmBorg
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmBorg
+      connections:
+      - left hand
+    right hand:
+      part: RightHandHuman # shitmed moment
+    left hand:
+      part: LeftHandHuman
+
+- type: body
+  id: Replicator3
+  name: "replicator t3"
+  root: torso
+  slots:
+    torso:
+      part: TorsoBorg
+      connections:
+      - right arm
+      - left arm
+    right arm:
+      part: RightArmBorg
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmBorg
+      connections:
+      - left hand
+    right hand:
+      part: RightHandHuman # shitmed moment
+    left hand:
       part: LeftHandHuman
