@@ -77,7 +77,7 @@
   parent: BenchSofaSomberMiddle
   id: BenchSofaSomberFootrestRight
   name: somber leather sectional
-  suffix: Right, Place Atop Sofa
+  suffix: Right, Place On Sofa
   description: "A plush leather sectional so you can stretch out."
   components:
   - type: Sprite
@@ -93,7 +93,7 @@
   parent: BenchSofaSomberMiddle
   id: BenchSofaSomberFootrestMiddle
   name: somber leather sectional
-  suffix: Middle, Place Atop Sofa
+  suffix: Middle, Place On Sofa
   description: "A plush leather sectional so you can stretch out."
   components:
   - type: Sprite
@@ -109,7 +109,7 @@
   parent: BenchSofaSomberMiddle
   id: BenchSofaSomberFootrestLeft
   name: somber leather sectional
-  suffix: Left, Place Atop Sofa
+  suffix: Left, Place On Sofa
   description: "A plush leather sectional so you can stretch out."
   components:
   - type: Sprite
@@ -126,14 +126,15 @@
   parent: [ BenchBaseMiddle, BasePsionic ]
   id: BenchSomberMiddle
   name: somber bench
-  suffix: Amaranth, Middle
-  description: "A gloomy steel bench with a polished amaranth wood seat."
+  suffix: Base, Middle
+  description: "A gloomy bench with a polished steel seat. A bit plain."
   placement:
     mode: SnapgridCenter
   components:
   - type: Sprite
     sprite: _DEN/Structures/Furniture/Benches/somberbench.rsi
-    state: middlepink
+    layers:
+    - state: middle
     snapCardinals: false
     noRot: false
   - type: StaticPrice
@@ -170,35 +171,81 @@
 - type: entity
   parent: BenchSomberMiddle
   id: BenchSomberLeft
-  suffix: Amaranth, Left
+  suffix: Base, Left
   components:
   - type: Sprite
-    state: leftpink
+    layers:
+    - state: left
 
 - type: entity
   parent: BenchSomberMiddle
   id: BenchSomberRight
-  suffix: Amaranth, Right
+  suffix: Base, Right
   components:
   - type: Sprite
-    state: rightpink
+    layers:
+    - state: right
 
 - type: entity
   parent: BenchSomberMiddle
   id: BenchSomberCorner
+  suffix: Base, Corner
+  components:
+  - type: Sprite
+    layers:
+    - state: corner
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberMiddlePink
+  suffix: Amaranth, Middle
+  description: "A gloomy bench with a polished amaranth wood seat."
+  components:
+  - type: Sprite
+    layers:
+    - state: middle
+    - state: middlepink
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberLeftPink
+  suffix: Amaranth, Left
+  components:
+  - type: Sprite
+    layers:
+    - state: left
+    - state: leftpink
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberRightPink
+  suffix: Amaranth, Right
+  components:
+  - type: Sprite
+    layers:
+    - state: right
+    - state: rightpink
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberCornerPink
   suffix: Amaranth, Corner
   components:
   - type: Sprite
-    state: cornerpink
+    layers:
+    - state: corner
+    - state: cornerpink
 
 - type: entity
   parent: BenchSomberMiddle
   id: BenchSomberMiddleGreen
   suffix: Floral, Middle
-  description: "A gloomy steel bench with a polished floral wood seat."
+  description: "A gloomy bench with a polished floral wood seat."
   components:
   - type: Sprite
-    state: middlegreen
+    layers:
+    - state: middle
+    - state: middlegreen
 
 - type: entity
   parent: BenchSomberMiddleGreen
@@ -206,7 +253,9 @@
   suffix: Floral, Left
   components:
   - type: Sprite
-    state: leftgreen
+    layers:
+    - state: left
+    - state: leftgreen
 
 - type: entity
   parent: BenchSomberMiddleGreen
@@ -214,7 +263,9 @@
   suffix: Floral, Right
   components:
   - type: Sprite
-    state: rightgreen
+    layers:
+    - state: right
+    - state: rightgreen
 
 - type: entity
   parent: BenchSomberMiddleGreen
@@ -222,16 +273,20 @@
   suffix: Floral, Corner
   components:
   - type: Sprite
-    state: cornergreen
+    layers:
+    - state: corner
+    - state: cornergreen
 
 - type: entity
   parent: BenchSomberMiddle
   id: BenchSomberMiddlePurple
   suffix: Shadow, Middle
-  description: "A gloomy steel bench with a polished shadow wood seat."
+  description: "A gloomy bench with a polished shadow wood seat."
   components:
   - type: Sprite
-    state: middlepurple
+    layers:
+    - state: middle
+    - state: middlepurple
 
 - type: entity
   parent: BenchSomberMiddle
@@ -239,7 +294,9 @@
   suffix: Shadow, Left
   components:
   - type: Sprite
-    state: leftpurple
+    layers:
+    - state: left
+    - state: leftpurple
 
 - type: entity
   parent: BenchSomberMiddle
@@ -247,7 +304,9 @@
   suffix: Shadow, Right
   components:
   - type: Sprite
-    state: rightpurple
+    layers:
+    - state: right
+    - state: rightpurple
 
 - type: entity
   parent: BenchSomberMiddle
@@ -255,5 +314,7 @@
   suffix: Shadow, Corner
   components:
   - type: Sprite
-    state: cornerpurple
+    layers:
+    - state: corner
+    - state: cornerpurple
 # Somber Benches End

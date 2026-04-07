@@ -1563,3 +1563,31 @@
       - FloorSomberSteelSlatsDarkVertical
   - type: Stack
     stackType: FloorTileSomberSteelSlatsDarkVertical
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelMonoLabyrinth
+  name: somber steel tile (mono, labyrinth)
+  components:
+  - type: Sprite
+    state: somber-tile-mono-labyrinth
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelMonoLabyrinth
+  - type: Stack
+    stackType: FloorTileSomberSteelMonoLabyrinth
+
+- type: entity
+  parent: FloorTileItemSomberSteel
+  id: FloorTileItemSomberSteelMonoDarkLabyrinth
+  name: somber steel tile (mono, labyrinth, dark)
+  components:
+  - type: Sprite
+    state: somber-tile-mono-dark-labyrinth
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberSteelMonoDarkLabyrinth
+  - type: Stack
+    stackType: FloorTileSomberSteelMonoDarkLabyrinth

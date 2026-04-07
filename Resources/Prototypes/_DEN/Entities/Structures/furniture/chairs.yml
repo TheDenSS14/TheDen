@@ -367,6 +367,45 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+
+- type: entity
+  parent: ChairBase
+  id: SomberChairBeachLounge # I'm sorry I ruined your sprite Port I'm desperate
+  name: somber leather chaise
+  suffix: Somber, Lounge Chair
+  description: "Only a chaise, this time. No, you may not lounge."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/lounge_chair.rsi
+    state: somber
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 3
 # Somber chairs end
 
 # beach lounge chairs

@@ -253,3 +253,21 @@
   sprite:
     sprite: _DEN/Decals/somber_dark.rsi
     state: windoorunderlay
+
+# A mazelike ornamental overlay
+
+- type: decal
+  id: SomberLabyrinth
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: labyrinth
+
+- type: decal
+  id: SomberLabyrinthDark
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: labyrinth

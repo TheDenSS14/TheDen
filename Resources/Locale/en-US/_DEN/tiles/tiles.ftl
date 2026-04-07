@@ -118,6 +118,8 @@ tiles-somber-steel-floor-slats-horizontal = somber steel tile (slats, horizontal
 tiles-somber-steel-floor-slats-vertical = somber steel tile (slats, vertical)
 tiles-somber-steel-floor-slats-dark-horizontal = somber steel tile (slats, horizontal, dark)
 tiles-somber-steel-floor-slats-dark-vertical = somber steel tile (slats, vertical, dark)
+tiles-somber-steel-floor-mono-labyrinth = somber steel tile (mono, labyrinth)
+tiles-somber-steel-floor-mono-dark-labyrinth = somber steel tile (mono, labyrinth, dark)
 # Somber tileset end
 
 tiles-invisible = invisible floor

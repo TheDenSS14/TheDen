@@ -426,3 +426,19 @@
   sprite:
     sprite: _DEN/Decals/somber_tile_overlay.rsi
     state: somber-tile-slats-dark-vertical
+
+- type: decal
+  id: SomberTileOverlayMonoLabyrinth
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-tile-mono-labyrinth
+
+- type: decal
+  id: SomberTileOverlayMonoDarkLabyrinth
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-tile-mono-dark-labyrinth

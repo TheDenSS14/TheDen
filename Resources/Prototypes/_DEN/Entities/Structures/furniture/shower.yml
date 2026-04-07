@@ -1,16 +1,42 @@
 - type: entity
-  parent: [ Shower, BasePsionic ]
+  parent: BasePsionic # Unparented so they can be toggled with signals, in case multiple showerheads are together
   id: SomberShower
   name: somber shower
-  suffix: Start Off
+  suffix: Signal-Friendly # We have showers at home
   description: "A wide, angled showerhead with pressure tuned for full coverage."
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
   components:
-  - type: Shower
-    startupState: Off
+  - type: ItemToggleOnTrigger
+  - type: Rotatable
+  - type: Transform
+    noRot: false
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
   - type: Sprite
     sprite: _DEN/Structures/Furniture/sombershower.rsi
-  - type: StaticPrice
-    price: 125
+    drawdepth: WallMountedItems
+    layers:
+    - state: shower
+      map: [ "shower" ]
+    - state: shower_on
+      visible: false
+      map: [ "shower_on" ]
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/sombershower.rsi
+    state: shower
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
   - type: Destructible
     thresholds:
       - trigger:
@@ -36,3 +62,36 @@
               ScrapElectrum:
                 min: 1
                 max: 2
+  - type: UseDelay
+    delay: 0.5
+  - type: Appearance
+  - type: ItemToggle
+    verbToggleOn: shower-turn-on
+    verbToggleOff: shower-turn-off
+    soundActivate:
+      collection: valveSqueak
+      params:
+        volume: -6
+        pitch: 1.1
+    soundDeactivate:
+      collection: valveSqueak
+      params:
+        volume: -6
+        pitch: 0.8
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Ambience/Objects/shower_running.ogg
+      params:
+        volume: -2
+        range: 5
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        shower:
+          True: { visible: true }
+          False: { visible: true }
+        shower_on:
+          True: { visible: true }
+          False: { visible: false }
+  - type: InteractionVerbs
+    allowedVerbs: [WashHands]

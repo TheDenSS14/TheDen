@@ -1834,6 +1834,42 @@
   itemDrop: FloorTileItemSomberSteelSlatsDarkVertical
   heatCapacity: 10000
 
+- type: tile
+  id: FloorSomberSteelMonoLabyrinth
+  name: tiles-somber-steel-floor-mono-labyrinth
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-mono-labyrinth.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelMonoLabyrinth
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSomberSteelMonoDarkLabyrinth
+  name: tiles-somber-steel-floor-mono-dark-labyrinth
+  sprite: /Textures/_DEN/Tiles/Somber/somber-tile-mono-dark-labyrinth.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSomberSteelMonoDarkLabyrinth
+  heatCapacity: 10000
+
 # "Planet" tiles (dirt, grass, etc)
 
 - type: tile

@@ -4239,7 +4239,7 @@
   parent: LightBulb
   id: UvLightBulb
   name: ultraviolet light bulb
-  suffix: Ultraviolet Bulb] [PENTHOUSE
+  suffix: PENTHOUSE
   description: A high power high energy bulb for the depths of space. Purple.
   components:
   - type: LightBulb
@@ -4254,7 +4254,7 @@
 - type: entity
   parent: PoweredlightSomber
   id: PoweredlightSomberWarm
-  suffix: Warm Bulb] [PENTHOUSE
+  suffix: Warm] [PENTHOUSE
   components:
   - type: PoweredLight
     hasLampOnSpawn: WarmLightTube
@@ -4278,6 +4278,59 @@
     softness: 0.9
 
 - type: entity
+  parent: LightTube
+  id: OrchidLightTube
+  name: orchid light tube
+  suffix: PENTHOUSE
+  description: "A rare, rosy light."
+  components:
+  - type: LightBulb
+    color: "#ff94e8"
+    lightEnergy: 1
+    lightRadius: 10
+    lightSoftness: 1
+
+- type: entity
+  parent: LightBulb
+  id: OrchidLightBulb
+  name: orchid light bulb
+  suffix: PENTHOUSE
+  description: "A rare, rosy light."
+  components:
+  - type: LightBulb
+    bulb: Bulb
+    color: "#ff94e8"
+    lightEnergy: 1
+    lightRadius: 6
+    lightSoftness: 1
+
+- type: entity
+  parent: PoweredlightSomber
+  id: PoweredlightSomberOrchid
+  suffix: Orchid] [PENTHOUSE
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: OrchidLightTube
+  - type: PointLight
+    color: "#ff94e8"
+    energy: 1
+    radius: 10
+    softness: 1
+
+- type: entity
+  parent: PoweredSmallLightSomber
+  id: PoweredSmallLightSomberOrchid
+  suffix: Orchid] [PENTHOUSE
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: OrchidLightBulb
+  - type: PointLight
+    color: "#ff94e8"
+    energy: 1
+    radius: 6
+    softness: 1
+
+- type: entity
   parent: LightReplacer
   id: LightReplacerWarm
   suffix: Warm] [PENTHOUSE
@@ -4286,9 +4339,24 @@
     currentLabel: warm
   - type: Sprite
     sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
-    state: icon
+    layers:
+    - state: icon
+    - state: icon-bulb
+      color: "#ff9833"
+      shader: unshaded
   - type: Item
     sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      - state: bulb-inhand-left
+        color: "#ff9833"
+        shader: unshaded
+      right:
+      - state: inhand-right
+      - state: bulb-inhand-right
+        color: "#ff9833"
+        shader: unshaded
   - type: LightReplacer
     contents:
     - id: WarmLightTube
@@ -4305,15 +4373,63 @@
     currentLabel: ultraviolet
   - type: Sprite
     sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
-    state: icon-UV
+    layers:
+    - state: icon
+    - state: icon-bulb
+      color: "#9E00FF"
+      shader: unshaded
   - type: Item
     sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
-    heldPrefix: UV
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      - state: bulb-inhand-left
+        color: "#9E00FF"
+        shader: unshaded
+      right:
+      - state: inhand-right
+      - state: bulb-inhand-right
+        color: "#9E00FF"
+        shader: unshaded
   - type: LightReplacer
     contents:
     - id: UvLightTube
       amount: 20
     - id: UvLightBulb
+      amount: 20
+
+- type: entity
+  parent: LightReplacer
+  id: LightReplacerOrchid
+  suffix: Orchid] [PENTHOUSE
+  components:
+  - type: Label
+    currentLabel: orchid
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
+    layers:
+    - state: icon
+    - state: icon-bulb
+      color: "#ff94e8"
+      shader: unshaded
+  - type: Item
+    sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      - state: bulb-inhand-left
+        color: "#ff94e8"
+        shader: unshaded
+      right:
+      - state: inhand-right
+      - state: bulb-inhand-right
+        color: "#ff94e8"
+        shader: unshaded
+  - type: LightReplacer
+    contents:
+    - id: OrchidLightTube
+      amount: 20
+    - id: OrchidLightBulb
       amount: 20
 
 - type: entity
@@ -4923,3 +5039,46 @@
   name: eidolite cosmetic bottle
   suffix: PENTHOUSE, Somber, Empty
   description: "A small, crystal bottle for cosmetic products."
+
+- type: entity
+  parent: Cobweb1
+  id: Cobweb1Penthouse
+  name: cobweb
+  suffix: PENTHOUSE, No Spider
+  description: Somebody should remove that.
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/cobweb.rsi
+    state: cobweb1
+    drawdepth: OverMobs
+  - type: Icon
+    sprite: _SHA/Structures/Decoration/cobweb.rsi
+    state: cobweb1
+
+- type: entity
+  parent: Cobweb2
+  id: Cobweb2Penthouse
+  suffix: PENTHOUSE, Variant, No Spider
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/cobweb.rsi
+    state: cobweb2
+  - type: Icon
+    sprite: _SHA/Structures/Decoration/cobweb.rsi
+    state: cobweb2
+
+- type: entity
+  parent: PlushieHeartInsert
+  id: PlushieHeartInsertPenthouse
+  name: old valentine's day gift
+  description: "A cute, relaxing little stress ball that Break gave Alex last year as part of a larger gift. Now it's a keepsake."
+  components:
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: HoloprojectorNSFW
+  id: HoloprojectorNSFWPenthouse
+  name: nsfw holobarrier projector
+  suffix: PENTHOUSE, MAP IN BATHROOMS
+  description: "This isn't real. You're hallucinating."
