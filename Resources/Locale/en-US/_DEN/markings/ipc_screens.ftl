@@ -27,3 +27,6 @@ marking-NoScreenMonoEye-ipc_no_screen_monoeye = Eye
 
 marking-NoScreenRing = Ring (No Screen)
 marking-NoScreenRing-ipc_no_screen_ring = Ring
+
+marking-NoScreenHeart = Heart (No Screen)
+marking-NoScreenHeart-ipc_no_screen_heart = Heart
