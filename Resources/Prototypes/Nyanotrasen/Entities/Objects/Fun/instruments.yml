@@ -39,6 +39,11 @@
       types:
         Blunt: 7
     bluntStaminaDamageFactor: 1.50 #13.5 stamina damage
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
 
 - type: entity
   parent: Rickenbacker4003Instrument
