@@ -160,3 +160,8 @@ trait-name-NoosphericOpposedMood = Noospheric Opposed Mood
 trait-description-NoosphericOpposedMood =
     Something about the connection to the noosphere grates on your psyche.
     Low glimmer improves your mood. High glimmer dampens your mood.
+
+trait-name-MonochromaticVision = Monochromatic Vision
+trait-description-MonochromaticVision =
+    Either through unique anatomy or perhaps damage, you are no longer able to perceive color.
+    You will see the entire world in shades of gray.

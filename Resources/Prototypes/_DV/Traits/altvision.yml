@@ -31,6 +31,7 @@
       inverted: true
       traits:
         - DogVision
+        - MonochromaticVision # Den
   functions:
     - !type:TraitAddComponent
       components:
@@ -57,6 +58,7 @@
       inverted: true
       traits:
         - UltraVision
+        - MonochromaticVision # Den
   functions:
     - !type:TraitAddComponent
       components:
