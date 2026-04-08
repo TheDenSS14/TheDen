@@ -25,14 +25,16 @@
 
 - type: trait
   id: NalRasan
-  category: AASpecies
+  category: TraitsSpeechLanguages #Den Edit
   points: -1
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesTajaran
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Tajaran
+  # Den Edit Start
+  # requirements:
+  #   - !type:CharacterItemGroupRequirement
+  #     group: TraitsLanguagesTajaran
+  #   - !type:CharacterSpeciesRequirement
+  #     species:
+  #       - Tajaran
+  # Den Edit End
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -42,14 +44,16 @@
 
 - type: trait
   id: SiikTajr
-  category: AASpecies
+  category: TraitsSpeechLanguages #Den Edit
   points: -2
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesTajaran
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Tajaran
+  # Den Edit Start
+  # requirements:
+  #   - !type:CharacterItemGroupRequirement
+  #     group: TraitsLanguagesTajaran
+  #   - !type:CharacterSpeciesRequirement
+  #     species:
+  #       - Tajaran
+  # Den Edit End
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -59,14 +63,16 @@
 
 - type: trait
   id: YaSsa
-  category: AASpecies
+  category: TraitsSpeechLanguages #Den Edit
   points: -2
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesTajaran
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Tajaran
+  # Den Edit Start
+  # requirements:
+  #   - !type:CharacterItemGroupRequirement
+  #     group: TraitsLanguagesTajaran
+  #   - !type:CharacterSpeciesRequirement
+  #     species:
+  #       - Tajaran
+  # Den Edit End
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -76,14 +82,16 @@
 
 - type: trait
   id: Delvahii
-  category: AASpecies
+  category: TraitsSpeechLanguages #Den Edit
   points: -2
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesTajaran
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Tajaran
+  # Den Edit Start
+  # requirements:
+  #   - !type:CharacterItemGroupRequirement
+  #     group: TraitsLanguagesTajaran
+  #   - !type:CharacterSpeciesRequirement
+  #     species:
+  #       - Tajaran
+  # Den Edit End
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
