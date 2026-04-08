@@ -125,6 +125,7 @@ reagent-physical-desc-thick-and-grainy = thick and grainy
 reagent-physical-desc-translucent = translucent
 reagent-physical-desc-tropical = tropical
 reagent-physical-desc-vibrant = vibrant
+reagent-physical-desc-inversed = inversed
 reagent-physical-desc-viscous = viscous
 reagent-physical-desc-volatile = volatile
 reagent-physical-desc-wormy = wormy
