@@ -17,3 +17,36 @@
     Telecrystal: 15
   categories:
     - UplinkWeaponry
+
+- type: listing
+  id: UplinkMixedRejects
+  name: uplink-mixed-rejects-name
+  description: uplink-mixed-rejects-desc
+  icon: { sprite: /Textures/_Impstation/Objects/Consumable/Smokeables/Cigarettes/Packs/mixedrejects.rsi, state: closed }
+  productEntity: CigPackMixedRejects
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkChemicals
+
+- type: listing
+  id: UplinkMixedRejectsCarton
+  name: uplink-mixed-rejects-carton-name
+  description: uplink-mixed-rejects-carton-desc
+  icon: { sprite: /Textures/_Impstation/Objects/Consumable/Smokeables/Cigarettes/Cartons/mixedrejectscarton.rsi, state: closed }
+  productEntity: CigCartonMixedRejects
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkChemicals
+
+#todo: port drazils
+#todo: make sure flash and emp cigs working (DONE)
+#todo: bugfix mute toxin
+#todo: panic attack cigarettes & other psychiatric cigs
+
+#working: rollbacks, performance art, passion of love, Big City Slugger, cruise chaser, banana scented, say cheese, anarcho prim, botanist's folly, slept past alarm
+#not working: on second thought (mute toxin), super powered (weh + hew)
