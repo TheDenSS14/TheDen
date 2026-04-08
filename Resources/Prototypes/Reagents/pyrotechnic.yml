@@ -103,6 +103,7 @@
         multiplier: 0.1
       - !type:AdjustTemperature
         amount: 6000
+      - !type:Ignite # wizden edit
   reactiveEffects:
     Flammable:
       methods: [ Touch ]
