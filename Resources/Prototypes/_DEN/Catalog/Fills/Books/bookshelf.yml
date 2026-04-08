@@ -1,52 +1,25 @@
-# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Kit0vras <123590995+Kit0vras@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 KonstantinAngelov <168754339+KonstantinAngelov@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 lapatison <100279397+lapatison@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
-
 - type: entity
-  id: BookshelfFilled
-  parent: Bookshelf
-  suffix: random filled
+  id: BookshelfSomberFill
+  description: "A tall, gloomy bookshelf crowded with rare and obscure volumes. Neatly organized--though someone seems to have jammed a storybook in the middle of it all."
+  abstract: true # Just the fill, not the entity, see BookshelfSomberFilled
   components:
-  - type: StorageFill
+  - type: StorageFill # Random stories and guidebooks are removed in favor of pretty filler books (author books are untouched and generated amongst the filler)
     contents:
-      - id: BookRandomStory
-        prob: 0.6
-        amount: 2
-        maxAmount: 6
-      - id: BookSpaceEncyclopedia
-        orGroup: BookPool
-      - id: BookTheBookOfControl
-        orGroup: BookPool
-      - id: BookBartendersManual
-        orGroup: BookPool
-      - id: BookHowToCookForFortySpaceman
-        orGroup: BookPool
-      - id: BookLeafLoversSecret
-        orGroup: BookPool
-      - id: BookEngineersHandbook
-        orGroup: BookPool
-      - id: BookScientistsGuidebook
-        orGroup: BookPool
-      - id: BookSecurity
-        orGroup: BookPool
-      - id: BookHowToKeepStationClean
-        orGroup: BookPool
-      - id: BookHowToRockAndStone
-        orGroup: BookPool
-      - id: BookMedicalReferenceBook
-        orGroup: BookPool
-      - id: BookHowToSurvive
-        orGroup: BookPool
-      - id: BookChemicalCompendium
-        orGroup: BookPool
+      - id: SomberBook1
+        prob: 0.9
+        amount: 1
+        maxAmount: 4
+        orGroup: BookFiller1 # Without groups, the books generate out of order
+      - id: SomberBook2
+        prob: 0.9
+        amount: 1
+        maxAmount: 3
+        orGroup: BookFiller2
+      - id: SomberBook3
+        prob: 0.9
+        amount: 1
+        maxAmount: 3
+        orGroup: BookFiller3
       - id: BookNarsieLegend
         prob: 0.1
         orGroup: BookAuthor
@@ -140,6 +113,20 @@
       - id: BookInspiration
         prob: 0.1
         orGroup: BookAuthor
-      - id: BookTenebraeConspiracy # TheDen
+      - id: BookTenebraeConspiracy
         prob: 0.3 # Den books should be more common
         orGroup: BookAuthor
+      - id: SomberBook4
+        prob: 0.9
+        amount: 1
+        maxAmount: 3
+        orGroup: BookFiller4
+      - id: SomberBook5
+        prob: 0.9
+        amount: 1
+        maxAmount: 3
+        orGroup: BookFiller5
+      - id: SomberBook6 # Pretty and rare filler, without a group so it isn't guaranteed to appear
+        prob: 0.2
+        amount: 1
+        maxAmount: 1

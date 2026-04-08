@@ -3734,143 +3734,6 @@
     enabled: false
 
 - type: entity
-  parent: BaseItem
-  id: SomberBook1
-  name: imposing tome
-  suffix: PENTHOUSE, Somber
-  description: "It feels less like casual reading and more like something to be wrestled with."
-  components:
-  - type: Sprite
-    sprite: _SHA/Objects/Misc/somberbooks.rsi
-    layers:
-    - state: book-base1
-    - state: book-icon1
-      map : [ "icon" ]
-  - type: RandomSprite
-    available:
-      - icon:
-          book-icon1: ""
-          book-icon2: ""
-          book-icon3: ""
-          book-icon4: ""
-          book-icon5: ""
-          book-icon6: ""
-  - type: Tag
-    tags:
-      - Book
-  - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/book_pickup.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
-  - type: EmitSoundOnLand
-    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
-
-- type: entity
-  parent: SomberBook1
-  id: SomberBook2 # Just name variants, I don't feel like learning the random name generation system
-  name: ancient memoir # I also don't want books named "gooey folio" or whatever
-  description: "A weathered account from some long-forgotten life. The pages drift between reflection and quiet confession, as if the author never expected anyone else to read it."
-  components:
-  - type: Sprite
-    layers:
-    - state: book-base2
-    - state: book-icon1
-      map : [ "icon" ]
-  - type: RandomSprite
-    available:
-      - icon:
-          book-icon1: ""
-          book-icon2: ""
-          book-icon3: ""
-          book-icon4: ""
-          book-icon5: ""
-          book-icon6: ""
-
-- type: entity
-  parent: SomberBook1
-  id: SomberBook3
-  name: reference codex
-  description: "A dense catalog of obscure facts, diagrams, and careful marginal notes. The sort of book meant to be consulted again and again, never truly finished."
-  components:
-  - type: Sprite
-    layers:
-    - state: book-base3
-    - state: book-icon1
-      map : [ "icon" ]
-  - type: RandomSprite
-    available:
-      - icon:
-          book-icon1: ""
-          book-icon2: ""
-          book-icon3: ""
-          book-icon4: ""
-          book-icon5: ""
-          book-icon6: ""
-
-- type: entity
-  parent: SomberBook1
-  id: SomberBook4
-  name: enlightened monograph
-  description: "A precise work devoted to a single, stubborn idea. The argument unfolds slowly, with the calm certainty of someone convinced they have seen something others have not."
-  components:
-  - type: Sprite
-    layers:
-    - state: book-base4
-    - state: book-icon1
-      map : [ "icon" ]
-  - type: RandomSprite
-    available:
-      - icon:
-          book-icon1: ""
-          book-icon2: ""
-          book-icon3: ""
-          book-icon4: ""
-          book-icon5: ""
-          book-icon6: ""
-
-- type: entity
-  parent: SomberBook1
-  id: SomberBook5
-  name: exhausting dissertation
-  description: "A relentlessly thorough treatise that refuses to leave any point unexamined. Even a quick glance suggests the author had far more stamina than mercy."
-  components:
-  - type: Sprite
-    layers:
-    - state: book-base5
-    - state: book-icon1
-      map : [ "icon" ]
-  - type: RandomSprite
-    available:
-      - icon:
-          book-icon1: ""
-          book-icon2: ""
-          book-icon3: ""
-          book-icon4: ""
-          book-icon5: ""
-          book-icon6: ""
-
-- type: entity
-  parent: SomberBook1
-  id: SomberBook6 # This one's pretty, so it's more rare
-  name: gilded manuscript
-  description: "A gold-edged book whose ornate cover catches the light even in shadow. The writing inside seems to shimmer when you look at it too long."
-  components:
-  - type: Sprite
-    layers:
-    - state: book-base6
-    - state: book-icon1
-      map : [ "icon" ]
-  - type: RandomSprite
-    available:
-      - icon:
-          book-icon1: ""
-          book-icon2: ""
-          book-icon3: ""
-          book-icon4: ""
-          book-icon5: ""
-          book-icon6: ""
-
-- type: entity
   parent: BookshelfSomberFilled
   id: BookshelfSomberFilledPenthouse
   name: somber bookshelf
@@ -3885,22 +3748,27 @@
         prob: 0.90
         amount: 1
         maxAmount: 3
+        orGroup: BookFiller1
       - id: SomberBook2
         prob: 0.90
         amount: 1
         maxAmount: 3
+        orGroup: BookFiller2
       - id: SomberBook3
         prob: 0.85
         amount: 1
         maxAmount: 3
+        orGroup: BookFiller3
       - id: SomberBook4
         prob: 0.90
         amount: 1
         maxAmount: 4
+        orGroup: BookFiller4
       - id: SomberBook5
         prob: 0.80
         amount: 1
         maxAmount: 3
+        orGroup: BookFiller5
       - id: SomberBook6
         prob: 0.18
         amount: 1
