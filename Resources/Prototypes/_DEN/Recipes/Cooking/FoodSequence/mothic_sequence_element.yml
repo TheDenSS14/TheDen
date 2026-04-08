@@ -133,7 +133,7 @@
   id: InkdropPlushie # got permission from eight -eight
   scale: 0.8, 0.8
   name: food-sequence-cotton-burger-content-plushie-inkdrop
-  sprites: 
+  sprites:
   - sprite: _DEN/Objects/Fun/inkdropplushie.rsi
     state: icon
 
@@ -390,6 +390,14 @@
   sprites:
   - sprite: Objects/Fun/catplushie.rsi
     state: grey
+
+- type: foodSequenceElement
+  id: AgenaPlushie
+  scale: 0.8, 0.8
+  name: food-sequence-cotton-burger-content-plushie-agena
+  sprites:
+    - sprite: _DEN/Objects/Fun/agenaplushie.rsi
+      state: icon
 
 - type: foodSequenceElement
   id: OrangeCatPlushie

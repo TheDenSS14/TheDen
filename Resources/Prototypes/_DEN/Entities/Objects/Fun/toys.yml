@@ -340,6 +340,26 @@
     entries:
       CottonBurger: PhilPlushie
 
+# @ hibirdstansunny; approved by june (owner)
+- type: entity
+  parent: BasePlushie
+  id: PlushieAgena
+  name: pink slime plushie
+  description: A fairly squishy plushie of a pink slime person. It has a noticeable bubblegum fragrance.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/agenaplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+  - type: Item
+    inhandVisuals:
+      left:
+        - state: inhand-left
+      right:
+        - state: inhand-right
+    entries:
+      CottonBurger: AgenaPlushie
+
 # @ eightballll;; approved by june (owner)
 - type: entity
   parent: BasePlushieCat

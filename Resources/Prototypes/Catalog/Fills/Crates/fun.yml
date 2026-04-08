@@ -49,7 +49,7 @@
 # SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
-#
+# SPDX-FileCopyrightText: 2026 UndertaleSex
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entityTable
@@ -123,6 +123,8 @@
         id: PlushiePhil
       - !type:EntSelector
         id: PlushieInkdrop
+        !type:EntSelector
+        id: PlushieAgena
       - !type:EntSelector
         id: PlushieSharkBlue
       - !type:EntSelector
