@@ -124,3 +124,35 @@
   - type: TemperatureProtection
     heatingCoefficient: 1.0
     coolingCoefficient: 0.6
+
+- type: entity
+  parent: ClothingOuterCoatBomberWhite
+  id: ClothingOuterCoatSpotsJacket
+  name: spots bomber jacket
+  description: A lightweight bomber jacket with spots on it to deter predators. Cute!
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/OuterClothing/Coats/spots_jacket.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/OuterClothing/Coats/spots_jacket.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: ClothingOuterCoatSpotsJacketLoose
+      amount: 1
+
+- type: entity
+  parent: ClothingOuterCoatBomberWhite
+  id: ClothingOuterCoatSpotsJacketLoose
+  name: spots bomber jacket (loose)
+  description: A lightweight bomber jacket, worn low and loose, with spots on it to deter predators. Cute!
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/OuterClothing/Coats/spots_jacket_loose.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/OuterClothing/Coats/spots_jacket_loose.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: ClothingOuterCoatSpotsJacket
+      amount: 1

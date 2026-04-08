@@ -117,17 +117,17 @@
       glimmerBurnUpper: 120
     - type: PsionicCatGotYourTongueRule
 
-- type: entity
-  id: MassMindSwap
-  parent: BaseGlimmerEvent
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: GlimmerEvent
-      minimumGlimmer: 700
-      glimmerBurnLower: 750
-      glimmerBurnUpper: 950 # Unless epistemics badly f-d up, this will restore the Glimmer balance for a while.
-    - type: MassMindSwapRule
-      isTemporary: true # Permanent mindswap is hell.
+# - type: entity
+#   id: MassMindSwap
+#   parent: BaseGlimmerEvent
+#   categories: [ HideSpawnMenu ]
+#   components:
+#     - type: GlimmerEvent
+#       minimumGlimmer: 700
+#       glimmerBurnLower: 750
+#       glimmerBurnUpper: 950 # Unless epistemics badly f-d up, this will restore the Glimmer balance for a while.
+#     - type: MassMindSwapRule
+#       isTemporary: true # Permanent mindswap is hell.
 
 - type: entity
   abstract: true

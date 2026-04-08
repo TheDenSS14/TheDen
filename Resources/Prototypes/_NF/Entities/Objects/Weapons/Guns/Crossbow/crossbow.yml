@@ -1,8 +1,9 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Kiara
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Base
 - type: entity
@@ -292,7 +293,7 @@
 - type: entity
   id: CrossbowImprovised
   parent: BaseCrossbowWieldable
-  name: impovised crossbow
+  name: improvised crossbow
   components:
   - type: UseDelay
     delay: 2
@@ -333,7 +334,7 @@
 - type: entity
   id: CrossbowImprovisedHand
   parent: BaseCrossbow
-  name: impovised hand crossbow
+  name: improvised hand crossbow
   components:
   - type: UseDelay
     delay: 2

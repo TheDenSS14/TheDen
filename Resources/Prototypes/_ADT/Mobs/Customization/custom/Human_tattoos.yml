@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 HTML/Crystal
 # SPDX-FileCopyrightText: 2026 ivorytemple
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
@@ -178,8 +179,8 @@
 
 - type: marking
   id: HumanTattooSkeletbody
-  bodyPart: LLeg
-  markingCategory: Overlay
+  bodyPart: Chest # The Den - changed from LLeg to Chest
+  markingCategory: Chest # The Den - changed from Overlay to Chest
   speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
@@ -436,8 +437,8 @@
 
 - type: marking
   id: HumanTattooSkeletbodyU
-  bodyPart: LLeg
-  markingCategory: Overlay
+  bodyPart: Chest # The Den - changed from LLeg to Chest
+  markingCategory: Chest # The Den - changed from Overlay to Chest
   speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
