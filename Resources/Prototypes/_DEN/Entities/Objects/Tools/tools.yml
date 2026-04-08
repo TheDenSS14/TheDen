@@ -32,3 +32,128 @@
     - MantisBoxRestraintsStorable
   - type: GuideHelp
     guides: [ MantisGuide ]
+
+- type: entity
+  parent: [ BaseKnife, Omnitool ] # Primarily an admin tool, but the speedModifier can possibly be balanced to make this salvage loot (since aghosts skip doafters)
+  id: ThavenArmyKnife
+  name: retainer's clasp knife
+  suffix: Omnitool
+  description: "A traditional thaven clasp knife carried by the sworn retainers of Aureate nobles, with practical tools folded into the handle. This design has remained in use since before most species developed interstellar travel."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+    state: omnitool-slicing
+  - type: Item
+    sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+    storedSprite:
+      state: storage
+      sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+  - type: Clothing
+    sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: Tool
+    qualities:
+      - Slicing
+    speedModifier: 1.0 # It feels criminal to make it faster than this since it does so many things
+    useSound: /Audio/Items/Culinary/chop.ogg
+  - type: ToolTileCompatible
+  - type: MultipleTool
+    statusShowBehavior: true
+    entries: # Rising pitches as you cycle through, spaced evenly among the network configurators tones
+      - behavior: Slicing
+        sprite:
+          sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+          state: omnitool-slicing
+        useSound:
+          path: /Audio/Items/Culinary/chop.ogg
+        changeSound:
+          collection: ToolSlap
+          params:
+            pitch: 0.829
+      - behavior: Cutting
+        sprite:
+          sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+          state: omnitool-snipping
+        useSound:
+          path: /Audio/Items/wirecutter.ogg
+        changeSound:
+          collection: ToolSlap
+          params:
+            pitch: 0.857
+      - behavior: Pulsing
+        sprite:
+          sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+          state: omnitool-pulsing
+        changeSound:
+          collection: ToolSlap
+          params:
+            pitch: 0.886
+      - behavior: Screwing
+        sprite:
+          sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+          state: omnitool-screwing
+        useSound:
+          collection: Screwdriver
+        changeSound:
+          collection: ToolSlap
+          params:
+            pitch: 0.914
+      - behavior: Prying
+        sprite:
+          sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+          state: omnitool-prying
+        useSound:
+          path: /Audio/Items/crowbar.ogg
+        changeSound:
+          collection: ToolSlap
+          params:
+            pitch: 0.943
+      - behavior: Anchoring
+        sprite:
+          sprite: _DEN/Objects/Tools/thavenarmyknife.rsi
+          state: omnitool-wrenching
+        useSound:
+          path: /Audio/Items/ratchet.ogg
+        changeSound:
+          collection: ToolSlap
+          params:
+            pitch: 0.971
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 0.8
+    damage:
+      types:
+        Slash: 12
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 9
+  - type: ThrowingAngle
+    angle: 225
+  - type: DisarmMalus
+    malus: 0.225
+  - type: NetworkConfigurator
+    soundSwitchMode:
+      collection: ToolSlap
+  - type: ActivatableUI
+    key: enum.NetworkConfiguratorUiKey.List
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.NetworkConfiguratorUiKey.List:
+        type: NetworkConfiguratorBoundUserInterface
+      enum.NetworkConfiguratorUiKey.Configure:
+        type: NetworkConfiguratorBoundUserInterface
+      enum.NetworkConfiguratorUiKey.Link:
+        type: NetworkConfiguratorBoundUserInterface
+  - type: Tag
+    tags:
+    - CombatKnife
+    - Knife
+    - Multitool
+    - DoorElectronicsConfigurator

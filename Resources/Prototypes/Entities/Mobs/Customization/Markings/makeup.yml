@@ -1,19 +1,18 @@
-# SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Sapphire <98045970+sapphirescript@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Tonk-GCR <190437025+Tonk-GCR@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tonk-GCR
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Aikakakah
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: MakeupLips
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Harpy; The Den - Canid
+  parent: BaseFaceSnoutlessMarking
   coloring:
     default:
       type:
@@ -24,10 +23,22 @@
     state: lips
 
 - type: marking
-  id: MakeupBlush
+  id: MakeupLipsSnout
+  speciesRestriction: [ Tajaran, Rodentia ]
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, Reptilian, SlimePerson, Felinid, Oni, Vulpkanin, Harpy, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Vulpkanin, Harpy; The Den - Canid
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#7e2727"
+  sprites:
+  - sprite: Mobs/Customization/makeup.rsi
+    state: snout_lips
+    
+- type: marking
+  id: MakeupBlush
+  parent: BaseFaceMarking
   coloring:
     default:
       type:
@@ -39,9 +50,7 @@
 
 - type: marking
   id: MakeupNailPolishRight
-  bodyPart: RHand
-  markingCategory: RightHand
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Vulpkanin; The Den - Canid
+  parent: BaseRHandMarking
   coloring:
     default:
       type:
@@ -53,9 +62,7 @@
 
 - type: marking
   id: MakeupNailPolishLeft
-  bodyPart: LHand
-  markingCategory: LeftHand
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Vulpkanin; The Den - Canid
+  parent: BaseLHandMarking
   coloring:
     default:
       type:

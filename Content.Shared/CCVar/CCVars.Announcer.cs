@@ -3,12 +3,19 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared._EE.Supermatter.Components;
+using Content.Shared.Atmos;
+using Robust.Shared;
 using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
 public sealed partial class CCVars
 {
+    // TODO: Move the rest of the announcer code to _EinsteinEngines
+
+    #region Announcers
+
     /// <summary>
     ///     Weighted list of announcers to choose from
     /// </summary>
@@ -39,4 +46,6 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> AnnouncerDisableMultipleSounds =
         CVarDef.Create("announcer.disable_multiple_sounds", false, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    #endregion
 }

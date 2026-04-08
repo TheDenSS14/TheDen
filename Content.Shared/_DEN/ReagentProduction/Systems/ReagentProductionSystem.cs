@@ -77,7 +77,7 @@ public sealed class ReagentProductionSystem : EntitySystem
                     productionType.UnitsPerProduction);
 
                 if (amountToAdd <= 0)
-                    return;
+                    continue;
                 //and add it :)
                 solution.AddReagent(productionType.Reagent, amountToAdd);
             }
@@ -86,8 +86,14 @@ public sealed class ReagentProductionSystem : EntitySystem
 
     private void AddVerbs(Entity<RefillableSolutionComponent> container, ref GetVerbsEvent<InteractionVerb> args)
     {
-        if (!args.CanInteract || !args.CanAccess || !TryComp<ReagentProducerComponent>(args.User, out var producerComp))
+        var user = args.User;
+
+        if (!args.Using.HasValue || !args.CanInteract || !args.CanAccess)
             return;
+
+        if (!TryComp<ReagentProducerComponent>(user, out var producerComp))
+            return;
+
         // Add a verb for every production type the producer has
         foreach (var productionTypeId in producerComp.ProductionTypes)
         {
@@ -95,14 +101,13 @@ public sealed class ReagentProductionSystem : EntitySystem
                 !_protoManager.TryIndex(productionType.Reagent, out var reagent))
                 continue;
 
-            var producer = args.User;
             var verb = new InteractionVerb
             {
                 Category = ReagentFillCategory,
-                Act = () => StartFillDoAfter((producer, producerComp), container, productionTypeId),
+                Act = () => StartFillDoAfter((user, producerComp), container, productionTypeId),
                 Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(reagent.LocalizedName),
-                CloseMenu = true,
-                Priority = -1
+                Priority = -1,
+                CloseMenu = false,
             };
             args.Verbs.Add(verb);
         }
@@ -126,7 +131,7 @@ public sealed class ReagentProductionSystem : EntitySystem
 
     private void FinishFillDoAfter(Entity<ReagentProducerComponent> ent, ref ReagentProductionFillEvent args)
     {
-        if (!_protoManager.TryIndex(args.ProductionType, out var productionType) || args.Target == null || args.Cancelled)
+        if (!_protoManager.TryIndex(args.ProductionType, out var productionType) || args.Target == null || args.Cancelled || args.Handled)
             return;
 
         if (!TryComp<RefillableSolutionComponent>(args.Target.Value, out var refillableSolution))
@@ -141,7 +146,7 @@ public sealed class ReagentProductionSystem : EntitySystem
         // If theres no cum to cum you cant cum okay?
         if (userSolutionComp.Value.Comp.Solution.Volume <= 0)
         {
-            _popup.PopupEntity(Loc.GetString(productionType.DryPopup),ent,ent);
+            _popup.PopupPredicted(Loc.GetString(productionType.DryPopup),ent,ent);
             return;
         }
 
@@ -159,14 +164,16 @@ public sealed class ReagentProductionSystem : EntitySystem
         var split = _solutionContainer.SplitSolution(userSolutionComp.Value, amountToAdd);
 
         var quantity = _solutionContainer.AddSolution(targetSolutionComp.Value, split);
-        _popup.PopupEntity(
+        _popup.PopupPredicted(
             Loc.GetString(
             productionType.SuccessPopup,
             ("amount", quantity),
             ("target", Identity.Entity(args.Target.Value, EntityManager))),
-            args.Target.Value,
+            args.Args.User,
             args.Args.User,
             PopupType.Medium);
+
+        args.Handled = true;
     }
 
     public void AddProductionType(EntityUid entity, ReagentProductionTypePrototype prototypeType)

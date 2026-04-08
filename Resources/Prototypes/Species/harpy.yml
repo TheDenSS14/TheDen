@@ -11,7 +11,7 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: species
   id: Harpy
@@ -72,7 +72,7 @@
       required: true
       defaultMarkings: [ HarpyTailPhoenix ]
     HeadTop:
-      points: 2
+      points: 6
       required: true
       defaultMarkings: [ HarpyEarsDefault ]
     HeadSide:

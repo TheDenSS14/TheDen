@@ -16,7 +16,7 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: species
   id: Human
@@ -79,10 +79,10 @@
       points: 1
       required: false
     HeadTop:
-      points: 4
+      points: 6
       required: false
     HeadSide:
-      points: 4
+      points: 6
       required: false
     Chest:
       points: 6

@@ -6,7 +6,7 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   parent: ClothingUniformBase
@@ -174,6 +174,16 @@
   - type: FoldableClothing
     foldedEquippedPrefix: folded
 
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingUniformJumpsuitMantisLoincloth
+  id: ClothingUniformJumpsuitMantisLoinclothFolded
+  suffix: No Bra
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: folded
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformAdminAssistantTurtleneck
@@ -331,3 +341,14 @@
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/syndie_baseball.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/syndie_baseball.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformStrainedShorts
+  name: strained shorts
+  description: These things are not the right size.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/strainedshorts.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/strainedshorts.rsi

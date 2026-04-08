@@ -1,10 +1,10 @@
-// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2024 Angelo Fallaria
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -22,7 +22,7 @@ public sealed partial class HealthExaminableComponent : Component
     //     These are calculated as a percentage of the entity's critical threshold.
     // </summary>
     public List<FixedPoint2> Thresholds = new()
-        { FixedPoint2.New(0.10), FixedPoint2.New(0.25), FixedPoint2.New(0.50), FixedPoint2.New(0.75) };
+        { FixedPoint2.New(0.08), FixedPoint2.New(0.15), FixedPoint2.New(0.30), FixedPoint2.New(0.50), FixedPoint2.New(0.75), FixedPoint2.New(1), FixedPoint2.New(2) }; // wizden edit, better health examine
 
     [DataField(required: true)]
     public HashSet<ProtoId<DamageTypePrototype>> ExaminableTypes = default!;

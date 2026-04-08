@@ -3,12 +3,13 @@
 # SPDX-FileCopyrightText: 2024 Rane
 # SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Jakumba
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: IDCardStandard
-  id: PrisonerIDCard
+  id: BasePrisonerIDCard
   name: prisoner ID card
   components:
   - type: Sprite
@@ -31,10 +32,6 @@
     jobTitle: job-name-prisoner
     jobIcon: JobIconPrisoner
     canMicrowave: false
-  - type: ExpireIdCard
-    expireMessage: genpop-prisoner-id-expire
-    expiredAccess:
-    - GenpopLeave
   - type: Speech
     speechVerb: Robotic
   - type: Tag
@@ -45,6 +42,17 @@
     - Recyclable
   - type: StaticPrice # these are infinitely producible.
     price: 0
+
+
+- type: entity
+  parent: BasePrisonerIDCard
+  id: PrisonerIDCard
+  name: prisoner ID card
+  components:
+  - type: ExpireIdCard
+    expireMessage: genpop-prisoner-id-expire
+    expiredAccess:
+    - GenpopLeave
 
 - type: entity
   parent: IDCardStandard

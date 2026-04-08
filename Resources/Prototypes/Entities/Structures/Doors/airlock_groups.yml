@@ -10,6 +10,7 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Shaman
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -46,6 +47,7 @@
     logistics maintenance:    _DEN/Structures/Doors/Airlocks/Standard/maint_cargo.rsi
     logistics officer:        _DEN/Structures/Doors/Airlocks/Standard/command_qm.rsi
     maintenance:              _DEN/Structures/Doors/Airlocks/Standard/maint.rsi
+    mantis:                   _DEN/Structures/Doors/Airlocks/Standard/mantis.rsi
     medical:                  _DEN/Structures/Doors/Airlocks/Standard/medical.rsi
     medical maintenance:      _DEN/Structures/Doors/Airlocks/Standard/maint_medical.rsi
     mystagogue:               _DEN/Structures/Doors/Airlocks/Standard/command_rd.rsi
@@ -58,7 +60,7 @@
     service maintenance:      _DEN/Structures/Doors/Airlocks/Standard/maint_service.rsi
     virology:                 _DEN/Structures/Doors/Airlocks/Standard/virology.rsi
     # End changes
-  
+
 - type: AirlockGroup
   id: Glass
   iconPriority: 90
@@ -92,6 +94,7 @@
     logistics maintenance:    _DEN/Structures/Doors/Airlocks/Glass/maint_cargo.rsi
     logistics officer:        _DEN/Structures/Doors/Airlocks/Glass/command_qm.rsi
     maintenance:              _DEN/Structures/Doors/Airlocks/Glass/maint.rsi
+    mantis:                   _DEN/Structures/Doors/Airlocks/Glass/mantis.rsi
     medical:                  _DEN/Structures/Doors/Airlocks/Glass/medical.rsi
     medical maintenance:      _DEN/Structures/Doors/Airlocks/Glass/maint_medical.rsi
     mystagogue:               _DEN/Structures/Doors/Airlocks/Glass/command_rd.rsi

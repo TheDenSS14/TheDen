@@ -45,10 +45,15 @@
   id: ConspiratorObjectiveGroup # if you want to add another objective, feel free
   weights:
     ConspiratorUnionObjective: 1
-    ConspiratorGameshowObjective: 1
+    # ConspiratorGameshowObjective: 1 # DEN
     ConspiratorTechnologyObjective: 1
     ConspiratorArmsObjective: 1
     ConspiratorThiefObjective: 1
     ConspiratorMafiaObjective: 1
     ConspiratorArrestObjective: 1
     ConspiratorCameraObjective: 1
+    # DEN adds
+    ConspiratorDrugRing: 1
+    ConspiratorAnimalRightsConsortium: 1
+    ConspiratorDarkCommunion: 1
+    ConspiratorArmTheCrew: 1

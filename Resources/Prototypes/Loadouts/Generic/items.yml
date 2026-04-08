@@ -334,7 +334,7 @@
 - type: loadout
   id: LoadoutItemRickenbacker
   category: GeneralInstruments
-  cost: 10
+  cost: 5
   items:
     - Rickenbacker4003Instrument
   requirements:
@@ -587,6 +587,7 @@
   id: LoadoutItemDrinkMREFlask
   category: GeneralItems
   cost: 2
+  customColorTint: true
   items:
     - DrinkMREFlask
   requirements:

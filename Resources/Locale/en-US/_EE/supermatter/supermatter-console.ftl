@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
-
 supermatter-console-window-title = Supermatter Monitoring Console
 supermatter-console-window-station-name = [color=white][font size=14]{$stationName}[/font][/color]
 supermatter-console-window-unknown-location = Unknown location
@@ -19,6 +14,8 @@ supermatter-console-window-status-warning = Warning
 supermatter-console-window-status-danger = Danger
 supermatter-console-window-status-emergency = Emergency
 supermatter-console-window-status-delaminating = Delaminating
+
+supermatter-console-window-label-show-all-gas = Show All Gases
 
 supermatter-console-window-label-integrity = Integrity:
 supermatter-console-window-label-integrity-bar = {$integrity}%

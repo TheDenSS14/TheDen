@@ -4,6 +4,7 @@
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2026 Marcel
+# SPDX-FileCopyrightText: 2026 Sunburstschitin
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -60,6 +61,7 @@ flavor-complex-arkveiltemple = like a tropical adventure
 flavor-complex-plasmaflood = like fruity plasma burn
 flavor-complex-vodkacheers = like spicy cherry
 flavor-complex-chainmail = like death in a dark, cold cellar
+flavor-complex-kindness = like cherry-speckled blood
 
 ## Chemicals
 flavor-complex-mantispaper = like a name set in stone

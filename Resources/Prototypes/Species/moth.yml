@@ -15,7 +15,7 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: species
   id: Moth
@@ -89,10 +89,10 @@
       points: 6
       required: false
     Head:
-      points: 4 # imp 1<4
+      points: 6
       required: false
     Chest:
-      points: 4 # imp 1<4
+      points: 6
       required: false
     Undershirt:
       points: 6

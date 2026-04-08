@@ -78,3 +78,15 @@
   items:
   - HoloprojectorNSFW
 
+#Dildos
+
+- type: loadout
+  id: LoadoutItemLewdSmoothDildo
+  category: ItemsLewd
+  cost: 2
+  customColorTint: true
+  items:
+  - SmoothDildo
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewdDildo

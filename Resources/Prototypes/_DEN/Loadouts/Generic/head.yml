@@ -197,3 +197,38 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatMagician
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingHeadHatMagician
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatCuteTiara
+  category: Head
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingHeadHatCuteTiara
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatSimpleTiara
+  category: Head
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingHeadHatSimpleTiara
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead

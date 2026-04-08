@@ -63,3 +63,18 @@ emergency-internals-option-3-desc = An extended emergency water vapor tank for e
 
 emergency-internals-option-4-name = Extended Emergency Plasma Tank
 emergency-internals-option-4-desc = An extended emergency plasma tank for emergencies.
+
+blured-team-set-1-name = Rifle
+blured-team-set-1-desc = Your teams assault rifle, four mags and grenades.
+
+blured-team-set-2-name = SMG
+blured-team-set-2-desc = Your teams SMG, four mags and grenades.
+
+blured-team-set-3-name = Sniper
+blured-team-set-3-desc = A Hristov with spare ammo, and your teams revolver sidearm.
+
+blured-team-set-4-name = Shotgun
+blured-team-set-4-desc = Your teams shotgun, spare ammo and grenades.
+
+blured-team-set-5-name = Medic
+blured-team-set-5-desc = A revolver sidearm, medkit and combat pens.

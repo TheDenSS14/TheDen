@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2026 Marcel
+# SPDX-FileCopyrightText: 2026 Sunburstschitin
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -621,4 +622,17 @@
         maxVol: 30
         reagents:
         - ReagentId: Chainmail
+          Quantity: 30
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkKindnessGlass
+  suffix: kindness
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Kindness
           Quantity: 30

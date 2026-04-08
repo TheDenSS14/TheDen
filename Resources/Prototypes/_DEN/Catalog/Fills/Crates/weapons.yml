@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2026 GWDYMT
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: CrateArmoryDerringer
+  parent: CrateWeaponSecure
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSmallFancyDerringer
+        amount: 2

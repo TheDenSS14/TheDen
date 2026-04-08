@@ -11,6 +11,7 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Jakumba
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -100,7 +101,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: GlimmerEvent
-      minimumGlimmer: 700
+      minimumGlimmer: 500
       maximumGlimmer: 1000
     - type: NoosphericFryRule
 
@@ -110,23 +111,23 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: GlimmerEvent
-      minimumGlimmer: 600
+      minimumGlimmer: 500
       maximumGlimmer: 1000
       glimmerBurnLower: 80
       glimmerBurnUpper: 120
     - type: PsionicCatGotYourTongueRule
 
-- type: entity
-  id: MassMindSwap
-  parent: BaseGlimmerEvent
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: GlimmerEvent
-      minimumGlimmer: 900
-      glimmerBurnLower: 750
-      glimmerBurnUpper: 950 # Unless epistemics badly f-d up, this will restore the Glimmer balance for a while.
-    - type: MassMindSwapRule
-      isTemporary: true # Permanent mindswap is hell.
+# - type: entity
+#   id: MassMindSwap
+#   parent: BaseGlimmerEvent
+#   categories: [ HideSpawnMenu ]
+#   components:
+#     - type: GlimmerEvent
+#       minimumGlimmer: 700
+#       glimmerBurnLower: 750
+#       glimmerBurnUpper: 950 # Unless epistemics badly f-d up, this will restore the Glimmer balance for a while.
+#     - type: MassMindSwapRule
+#       isTemporary: true # Permanent mindswap is hell.
 
 - type: entity
   abstract: true
@@ -157,7 +158,7 @@
   components:
   - type: FreeProberRule
   - type: GlimmerEvent
-    minimumGlimmer: 700
+    minimumGlimmer: 600
     maximumGlimmer: 1000
 
 ## converted upstream events
@@ -195,7 +196,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: GlimmerEvent
-    minimumGlimmer: 620
+    minimumGlimmer: 520
     maximumGlimmer: 900
     glimmerBurnLower: 50
     glimmerBurnUpper: 250

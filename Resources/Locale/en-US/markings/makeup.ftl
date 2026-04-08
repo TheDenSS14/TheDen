@@ -1,11 +1,15 @@
-# SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Aikakakah
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 marking-MakeupLips-lips = Lips
 marking-MakeupLips = Lips
+
+marking-MakeupLipsSnout-snout_lips = Lips
+marking-MakeupLipsSnout = Lips
 
 marking-MakeupBlush-blush = Blush
 marking-MakeupBlush = Blush
