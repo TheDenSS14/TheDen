@@ -350,13 +350,13 @@
   - type: Sprite
     sprite: _DEN/Objects/Fun/agenaplushie.rsi
     state: icon
-  - type: FoodSequenceElement
   - type: Item
     inhandVisuals:
       left:
         - state: inhand-left
       right:
         - state: inhand-right
+  - type: FoodSequenceElement
     entries:
       CottonBurger: AgenaPlushie
 
