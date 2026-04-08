@@ -151,7 +151,7 @@
   parent: BeachUmbrellaBase
   id: SomberBeachUmbrellaBluePurple
   name: somber parasol
-  suffix: Blue-Purple, Beach Umbrella
+  suffix: Blue-Purple, Rotate To Position, Umbrella
   description: "A broad, patterned parasol meant to cast a patch of welcome shade and shelter. Whether it's accomplishing that is up for debate."
   placement:
     mode: WallmountLight # Gives four positions to place it in by rotating
@@ -205,7 +205,7 @@
 - type: entity
   parent: SomberBeachUmbrellaBluePurple
   id: SomberBeachUmbrellaPurpleBlue
-  suffix: Purple-Blue, Beach Umbrella
+  suffix: Purple-Blue, Rotate To Position, Umbrella
   components:
   - type: ItemToggle
     activated: true

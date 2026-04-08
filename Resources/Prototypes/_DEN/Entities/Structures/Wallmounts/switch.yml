@@ -9,6 +9,24 @@
   - type: Sprite
     drawdepth: WallMountedItems
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+  - type: Transform
+    anchored: false
+
+- type: entity
+  parent: [ SignalButton, BasePsionic ]
+  id: SignalButtonSomberCenter
+  name: somber signal button
+  suffix: Center
+  description: "A brushed metal button shaped like an eye."
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    state: base-center
 
 - type: entity
   parent: [ SignalButtonDirectional, BasePsionic ]
@@ -165,14 +183,68 @@
       shader: unshaded
 
 - type: entity
-  parent: [ ButtonFrame, BasePsionic ]
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberGoldCenter
+  suffix: Gold, Center, Glows In Dark
+  components:
+  - type: Sprite
+    layers:
+    - state: framegold-center
+    - state: framegold-center-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberSilver
+  suffix: Silver, Glows In Dark
+  description: "A silver button frame shaped like an eye."
+  components:
+  - type: Sprite
+    layers:
+    - state: framesilver
+    - state: framesilver-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberSilver
+  id: ButtonFrameSomberSilverLeft
+  suffix: Silver, Left, Glows In Dark
+  components:
+  - type: Sprite
+    layers:
+    - state: framesilver-left
+    - state: framesilver-left-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberSilver
+  id: ButtonFrameSomberSilverRight
+  suffix: Silver, Right, Glows In Dark
+  components:
+  - type: Sprite
+    layers:
+    - state: framesilver-right
+    - state: framesilver-right-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberSilverCenter
+  suffix: Silver, Center, Glows In Dark
+  components:
+  - type: Sprite
+    layers:
+    - state: framesilver-center
+    - state: framesilver-center-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
   id: ButtonFrameSomberMagenta
-  name: somber signal button frame
   suffix: Magenta, Glows In Dark
   description: "A magenta button frame shaped like an eye."
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
     layers:
     - state: framepink
     - state: framepink-unshaded
@@ -201,14 +273,23 @@
       shader: unshaded
 
 - type: entity
-  parent: [ ButtonFrame, BasePsionic ]
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberMagentaCenter
+  suffix: Magenta, Center, Glows In Dark
+  components:
+  - type: Sprite
+    layers:
+    - state: framepink-center
+    - state: framepink-center-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
   id: ButtonFrameSomberPurple
-  name: somber signal button frame
   suffix: Purple, Glows In Dark
   description: "A purple button frame shaped like an eye."
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
     layers:
     - state: framepurple
     - state: framepurple-unshaded
@@ -236,6 +317,17 @@
     - state: framepurple-right-unshaded
       shader: unshaded
 
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberPurpleCenter
+  suffix: Purple, Center, Glows In Dark
+  components:
+  - type: Sprite
+    layers:
+    - state: framepurple-center
+    - state: framepurple-center-unshaded
+      shader: unshaded
+
 # Timers
 
 - type: entity
@@ -251,30 +343,6 @@
     drawdepth: WallMountedItems
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
     state: on
-
-- type: entity
-  parent: SomberSignalTimer
-  id: SomberSignalTimer4
-  suffix: Directional, 4 seconds
-  components:
-  - type: SignalTimer
-    delay: 4
-
-- type: entity
-  parent: SomberSignalTimer
-  id: SomberSignalTimer3
-  suffix: Directional, 3 seconds
-  components:
-  - type: SignalTimer
-    delay: 3
-
-- type: entity
-  parent: SomberSignalTimer
-  id: SomberSignalTimer2
-  suffix: Directional, 2 seconds
-  components:
-  - type: SignalTimer
-    delay: 2
 
 - type: entity
   parent: SomberSignalTimer
@@ -297,30 +365,6 @@
 
 - type: entity
   parent: SomberSignalTimerLeft
-  id: SomberSignalTimerLeft4
-  suffix: Directional, Left, 4 seconds
-  components:
-  - type: SignalTimer
-    delay: 4
-
-- type: entity
-  parent: SomberSignalTimer
-  id: SomberSignalTimerLeft3
-  suffix: Directional, Left, 3 seconds
-  components:
-  - type: SignalTimer
-    delay: 3
-
-- type: entity
-  parent: SomberSignalTimerLeft
-  id: SomberSignalTimerLeft2
-  suffix: Directional, Left, 2 seconds
-  components:
-  - type: SignalTimer
-    delay: 2
-
-- type: entity
-  parent: SomberSignalTimerLeft
   id: SomberSignalTimerLeft1
   suffix: Directional, Left, 1 second
   components:
@@ -339,32 +383,26 @@
 
 - type: entity
   parent: SomberSignalTimerRight
-  id: SomberSignalTimerRight4
-  suffix: Directional, Right, 4 seconds
-  components:
-  - type: SignalTimer
-    delay: 4
-
-- type: entity
-  parent: SomberSignalTimerRight
-  id: SomberSignalTimerRight3
-  suffix: Directional, Right, 3 seconds
-  components:
-  - type: SignalTimer
-    delay: 3
-
-- type: entity
-  parent: SomberSignalTimerRight
-  id: SomberSignalTimerRight2
-  suffix: Directional, Right, 2 seconds
-  components:
-  - type: SignalTimer
-    delay: 2
-
-- type: entity
-  parent: SomberSignalTimerRight
   id: SomberSignalTimerRight1
   suffix: Directional, Right, 1 second
+  components:
+  - type: SignalTimer
+    delay: 1
+
+- type: entity
+  parent: SomberSignalTimer
+  id: SomberSignalTimerCenter
+  suffix: Directional, Center, 5 seconds
+  components:
+  - type: SignalTimer
+    delay: 5
+  - type: Sprite
+    state: on-center
+
+- type: entity
+  parent: SomberSignalTimerCenter
+  id: SomberSignalTimerCenter1
+  suffix: Directional, Center, 1 seconds
   components:
   - type: SignalTimer
     delay: 1

@@ -71,18 +71,18 @@
     soundActivate:
       collection: valveSqueak
       params:
-        volume: -6
+        volume: -8
         pitch: 1.1
     soundDeactivate:
       collection: valveSqueak
       params:
-        volume: -6
+        volume: -8
         pitch: 0.8
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/Ambience/Objects/shower_running.ogg
       params:
-        volume: -2
+        volume: -6
         range: 5
   - type: GenericVisualizer
     visuals:
