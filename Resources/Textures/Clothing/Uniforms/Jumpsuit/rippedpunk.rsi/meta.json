@@ -1,18 +1,26 @@
 {
-  "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from World Server at commit https://github.com/GeneriedJenelle/The-World-Server-Redux/commit/53179e9bfdd2fbd028849aa9eddd2a2fbbf332e7",
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
-    {
-      "name": "icon"
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from World Server at commit https://github.com/GeneriedJenelle/The-World-Server-Redux/commit/53179e9bfdd2fbd028849aa9eddd2a2fbbf332e7, 1 pixel added to INNERCLOTHING sprite and inhands by HTMLSystem (github)",
+    "size": {
+        "x": 32,
+        "y": 32
     },
-    {
-      "name": "equipped-INNERCLOTHING",
-      "directions": 4
-    }
-  ]
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "equipped-INNERCLOTHING",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        }
+    ]
 }
