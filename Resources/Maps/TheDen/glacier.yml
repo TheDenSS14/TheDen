@@ -14,7 +14,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 03/28/2026 07:56:33
+  time: 03/29/2026 17:21:06
   entityCount: 19694
 maps:
 - 1
@@ -12499,7 +12499,7 @@ entities:
       pos: -34.5,32.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -52523.816
+      secondsUntilStateChange: -53867.977
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12877,7 +12877,7 @@ entities:
       pos: -22.5,5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -15482.086
+      secondsUntilStateChange: -16826.244
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -56380,7 +56380,7 @@ entities:
       pos: 24.5,-33.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -105174.836
+      secondsUntilStateChange: -106518.99
       state: Closing
   - uid: 5575
     components:
@@ -114055,6 +114055,19 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
+- proto: Turnstile
+  entities:
+  - uid: 10014
+    components:
+    - type: Transform
+      pos: -3.5,10.5
+      parent: 2
+  - uid: 11524
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 0.5,16.5
+      parent: 2
 - proto: TurnstileGenpopEnter
   entities:
   - uid: 10216
@@ -114081,17 +114094,6 @@ entities:
     components:
     - type: Transform
       pos: -3.5,17.5
-      parent: 2
-  - uid: 10014
-    components:
-    - type: Transform
-      pos: -3.5,10.5
-      parent: 2
-  - uid: 11524
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 0.5,16.5
       parent: 2
 - proto: TwoWayLever
   entities:

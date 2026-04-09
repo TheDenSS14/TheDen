@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 beck
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # these are HEAVILY based on the Bingle free-agent ghostrole from GoobStation, but reflavored and reprogrammed to make them more Robust (and less of a meme.)
 # all credit for the core gameplay concepts and a lot of the core functionality of the code goes to the folks over at Goob, but I re-wrote enough of it to justify putting it in our filestructure.
@@ -96,6 +96,7 @@
     maxZoom: 1.2, 1.2
   - type: Tag
     tags:
+      - SiliconEmotes # Den
       - CannotSuicide
       - EmagImmune
       - DoorBumpOpener
@@ -204,6 +205,11 @@
       types:
         Bloodloss:
           -1
+  - type: LanguageKnowledge
+    speaks:
+    - RobotTalk
+    understands:
+    - RobotTalk
     # DEN
 
 - type: entity
@@ -409,7 +415,7 @@
     damageContainer: StructuralInorganic
     damageModifierSet: Replicator2
   - type: Body
-    prototype: Replicator2
+    prototype: Replicator2Alt
   - type: Loadout
     prototypes:
       - StartingGearReplicatorT2Alt

@@ -26,8 +26,9 @@
 // SPDX-FileCopyrightText: 2025 RedFoxIV
 // SPDX-FileCopyrightText: 2025 Tirochora
 // SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 oberonics
 //
-// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
@@ -183,6 +184,10 @@ public abstract partial class SharedStunSystem : EntitySystem
             return;
 
         if (!TryComp<StatusEffectsComponent>(args.OtherEntity, out var status))
+            return;
+
+        if (TryComp<PhysicsComponent>(args.OtherEntity, out var otherPhysics) &&
+            otherPhysics.LinearVelocity.Length() < ent.Comp.TriggerSpeed)
             return;
 
         TryStun(args.OtherEntity, ent.Comp.Duration, true, status);

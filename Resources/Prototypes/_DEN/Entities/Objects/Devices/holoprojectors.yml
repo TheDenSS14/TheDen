@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Dirius77
+# SPDX-FileCopyrightText: 2026 Jakumba
 # SPDX-FileCopyrightText: 2026 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -21,8 +22,8 @@
       enum.LabelableHolosignUIKey.Key:
         type: LabelableHolosignProjectorBoundUserInterface
   - type: LimitedCharges
-    maxCharges: 2
-    charges: 2
+    maxCharges: 8
+    charges: 8
   - type: AutoRecharge
     rechargeDuration: 60
   - type: Tag

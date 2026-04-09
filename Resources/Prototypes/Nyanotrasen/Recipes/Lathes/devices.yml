@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2023 PHCodes <47927305+PHCodes@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <***>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 PHCodes
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2026 LilNutters
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -18,8 +18,17 @@
   result: JetpackBlue
   completetime: 10
   materials:
-    Steel: 8000
-    Plastic: 8000
+    Steel: 800
+    Plastic: 800
+    Gold: 50
+
+- type: latheRecipe
+  id: JetpackSecurity
+  result: JetpackSecurity
+  completetime: 10
+  materials:
+    Steel: 800
+    Plastic: 800
     Gold: 50
 
 - type: latheRecipe
@@ -27,6 +36,6 @@
   result: JetpackMini
   completetime: 10
   materials:
-    Steel: 4000
-    Plastic: 4000
+    Steel: 400
+    Plastic: 400
     Gold: 50

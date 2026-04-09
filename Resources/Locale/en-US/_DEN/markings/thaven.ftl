@@ -64,6 +64,15 @@ marking-ThavenChestHeavyTattoosU-chest_heavy3 = Heavy Chest Tattoos (Lower)
 marking-ThavenTopSurgeryF = Smooth Chest
 marking-ThavenTopSurgeryF-nonaturals_f = Smooth Chest
 
+marking-ThavenChestRings = Rings Thigh Tattoo (Top)
+marking-ThavenChestRings-chest_rings = Rings Thigh Tattoo (Top)
+
+marking-ThavenChestFreckles = Chest Freckles
+marking-ThavenChestFreckles-chest_freckles = Chest Freckles
+
+marking-ThavenChestFrecklesU = Chest Freckles (Glowing)
+marking-ThavenChestFrecklesU-chest_freckles = Chest Freckles
+
 # Head
 
 marking-ThavenHeadHeavyTattoos = Heavy Neck Tattoos
@@ -105,6 +114,9 @@ marking-ThavenArmHeavyTattoosRight-r_arm_heavy2 = Heavy Arm Tattoos (Lower)
 marking-ThavenArmHeavyTattoosRightU = Heavy Arm Tattoos (Right, Glowing)
 marking-ThavenArmHeavyTattoosRightU-r_arm_heavy1 = Heavy Arm Tattoos (Upper)
 marking-ThavenArmHeavyTattoosRightU-r_arm_heavy2 = Heavy Arm Tattoos (Lower)
+
+marking-ThavenArmRingsRight = Rings Arm Tattoo (Right)
+marking-ThavenArmRingsRight-r_arm_rings = Rings Arm Tattoo (Right)
 
 # RHand
 
@@ -162,6 +174,9 @@ marking-ThavenArmHeavyTattoosLeftU = Heavy Arm Tattoos (Left, Glowing)
 marking-ThavenArmHeavyTattoosLeftU-l_arm_heavy1 = Heavy Arm Tattoos (Upper)
 marking-ThavenArmHeavyTattoosLeftU-l_arm_heavy2 = Heavy Arm Tattoos (Lower)
 
+marking-ThavenArmRingsLeft = Rings Arm Tattoo (Left)
+marking-ThavenArmRingsLeft-l_arm_rings = Rings Arm Tattoo (Left)
+
 # LHand
 
 marking-GradientLHandT = Gradient (Left)
@@ -198,6 +213,9 @@ marking-GradientRLegT-m_gradient_r_leg = Gradient
 marking-GradientRLegTUS = Gradient (Right, Glowing)
 marking-GradientRLegTUS-m_gradient_r_leg = Gradient
 
+marking-ThavenRLegRings = Rings Thigh Tattoo (Right, Bottom)
+marking-ThavenRLegRings-r_leg_rings = Rings Thigh Tattoo (Right, Bottom)
+
 # RFoot
 
 marking-GradientRFootT = Gradient (Right)
@@ -213,6 +231,9 @@ marking-GradientLLegT-m_gradient_l_leg = Gradient
 
 marking-GradientLLegTUS = Gradient (Left, Glowing)
 marking-GradientLLegTUS-m_gradient_l_leg = Gradient
+
+marking-ThavenLLegRings = Rings Thigh Tattoo (Left, Bottom)
+marking-ThavenLLegRings-l_leg_rings = Rings Thigh Tattoo (Left, Bottom)
 
 # LFoot
 
@@ -321,6 +342,8 @@ marking-Thavengloomy_longer = Gloomy Longer
 
 marking-Thavengloomy_medium = Gloomy Medium
 
+marking-ThavenGloomyFluffy = Gloomy Medium (Fluffy)
+marking-ThavenGloomyFluffy-hair_gloomy_fluffy = Hair
 
 # HeadSide
 
@@ -330,7 +353,14 @@ marking-ThavenEarsWideEars-wideears = Outie Ears
 marking-ThavenEarsTallEars = Uppie Ears
 marking-ThavenEarsTallEars-tallears = Uppie Ears
 
+marking-ThavenEarsWideFreckledEars = Outie Ears (Freckled)
+marking-ThavenEarsWideFreckledEars-wideears_freckled1 = Base
+marking-ThavenEarsWideFreckledEars-wideears_freckled2 = Freckles
+
 # HeadTop
+
+marking-ThavenHeadTopStrand = Hair Strand
+marking-ThavenHeadTopStrand-headtop_strand = Hair Strand
 
 # Tail
 

@@ -5,6 +5,7 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
 # SPDX-FileCopyrightText: 2026 Alex C
+# SPDX-FileCopyrightText: 2026 Octofoss
 # SPDX-FileCopyrightText: 2026 meatsmall
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -41,15 +42,21 @@ loadout-name-LoadoutClothingOuterCoatTurtleneckHalfBlouse = turtleneck half blou
 loadout-name-LoadoutClothingOuterCoatBomberWhite = lightweight bomber jacket (colorable)
 loadout-name-LoadoutClothingOuterCoatBomberWhiteLoose = lightweight bomber jacket (loose, colorable)
 loadout-name-LoadoutOuterVestValet = valet vest
+loadout-name-LoadoutClothingOuterCoatSpotsJacket = spots bomber jacket (colorable)
+loadout-name-LoadoutClothingOuterCoatSpotsJacketLoose = spots bomber jacket (loose, colorable)
 
 # innerclothing
 loadout-name-LoadoutClothingUniformBootyShorts = booty shorts (colorable)
 loadout-name-LoadoutClothingUniformSimplePants = simple pants (colorable)
+loadout-name-LoadoutClothingUniformStrainedShorts = strained shorts (colorable)
 
 # hands
 loadout-name-LoadoutClothingHandsSentimentalRing = sentimental ring (colorable)
 loadout-name-LoadoutHandsGlovesFingerlessColorable = fingerless gloves (colorable)
 loadout-name-LoadoutHandsWristCuffsSpiked = spiked wrist cuffs (colorable)
+
+# shoes
+loadout-name-LoadoutShoesHighTops = high-top shoes (colorable)
 
 # plush
 loadout-name-PlushieTeddyBearRecolorable = teddy bear (colorable)
