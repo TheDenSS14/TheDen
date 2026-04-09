@@ -153,6 +153,7 @@
     ports:
       - Trigger
   - type: Sprite
+    offset: 0,-0.125 # Down four pixels to keep the fire out of the wall (better for occlusion)
     drawdepth: WallMountedItems
     noRot: false
     sprite: _DEN/Structures/Decoration/somberhangingbrazier.rsi
@@ -198,6 +199,7 @@
         variation: 0.05
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
+    offset: 0,-0.125 # Keep the light centered on the fire
     enabled: false
     energy: 1.5
     radius: 4
@@ -243,7 +245,7 @@
   - type: Sprite
     noRot: true
     offset: -0.015625,1.15625 # 37 pixels up, half a pixel left from sprite center
-    drawdepth: Mobs # You have to place these after the pillars, but otherwise they won't be hidden by them if the camera turns
+    drawdepth: Mobs # You have to place these after the pillars, but without this, they won't be hidden by them if the camera turns
     sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
 
 - type: entity

@@ -12,7 +12,15 @@
         shader: unshaded
   - type: Item
     sprite: _DEN/Objects/Devices/signaller.rsi
-    heldPrefix: somber
+    inhandVisuals:
+      left:
+        - state: somber-inhand-left
+        - state: somber-inhand-left-light
+          shader: unshaded
+      right:
+        - state: somber-inhand-right
+        - state: somber-inhand-right-light
+          shader: unshaded
 
 - type: entity
   parent: RemoteSignallerSomber
