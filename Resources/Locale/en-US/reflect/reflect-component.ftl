@@ -1,4 +1,3 @@
-reflect-component-examine = You sense that [bold]shooting her would be a mistake.[/bold]
+reflect-component-examine = It has a [color=lightblue]{$value}%[/color] chance to [color=cyan]reflect[/color] {$type}.
 reflect-component-nonenergy = bullets
 reflect-component-energy = energy bolts
-# SHA - YOU'LL ONLY SEE THESE ON MY ITEMS ON MY SERVER SO I CHANGED THEM TO FIT
