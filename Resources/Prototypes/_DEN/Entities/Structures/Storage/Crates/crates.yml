@@ -76,3 +76,27 @@
           ScrapElectrum:
             min: 1
             max: 2
+
+- type: entity
+  parent: CrateSomber
+  id: CrateSomberFloral
+  name: floral crate
+  suffix: Somber
+  description: "An ornamented floral wood crate."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Storage/Crates/sombercratefloral.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Storage/Crates/sombercratefloral.rsi
+
+- type: entity
+  parent: CrateSomber
+  id: CrateSomberShadow
+  name: shadow crate
+  suffix: Somber
+  description: "An ornamented shadow wood crate."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Storage/Crates/sombercrateshadow.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Storage/Crates/sombercrateshadow.rsi
