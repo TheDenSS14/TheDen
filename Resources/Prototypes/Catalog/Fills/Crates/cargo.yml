@@ -16,7 +16,6 @@
 # SPDX-FileCopyrightText: 2026 Kellaris
 # SPDX-FileCopyrightText: 2026 Shaman
 # SPDX-FileCopyrightText: 2026 sheepie
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
@@ -379,6 +378,8 @@
       prob: 0.01
       orGroup: Plushies
     - id: PlushieInkdrop
+      prob: 0.01
+    - id: PlushieAgena
       prob: 0.01
       orGroup: Plushies
     - id: PlushieMothObservant # TheDen
