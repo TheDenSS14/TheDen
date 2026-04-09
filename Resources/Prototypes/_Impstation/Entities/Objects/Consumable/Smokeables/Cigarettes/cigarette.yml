@@ -147,7 +147,7 @@
           - ReagentId: ChlorineTrifluoride
             Quantity: 5
 
-- type: entity # Currently unobtainable because they don't work as intended, supposed to cause 1~ second of muteness periodically, blocking messages if sent during it
+- type: entity
   id: CigaretteMute
   parent: SoakedCigarette
   name: On Second Thought
@@ -157,17 +157,13 @@
       smokable:
         maxVol: 40
         reagents:
-          - ReagentId: Nicotine
-            Quantity: 10
           - ReagentId: MuteToxin
-            Quantity: 5
+            Quantity: 10
       food: # imp
         maxVol: 40
         reagents:
-          - ReagentId: Nicotine
-            Quantity: 10
           - ReagentId: MuteToxin
-            Quantity: 5
+            Quantity: 10
 
 - type: entity
   id: CigaretteLead
