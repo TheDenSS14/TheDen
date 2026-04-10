@@ -50,6 +50,7 @@ namespace Content.Shared.PDA
         public const string PdaPenSlotId = "PDA-pen";
         public const string PdaPaiSlotId = "PDA-pai";
         public const string PdaPassportSlotId = "PDA-passport"; // The Den
+        public const string PdaProjectorSlotId = "PDA-projector"; // The Den
 
         /// <summary>
         /// The base PDA sprite state, eg. "pda", "pda-clown"
@@ -66,6 +67,8 @@ namespace Content.Shared.PDA
         public ItemSlot PaiSlot = new();
         [DataField("passportSlot")]     // The Den
         public ItemSlot PassportSlot = new();
+        [DataField("projectSlot")]     // The Den
+        public ItemSlot ProjectorSlot = new();
 
         // Really this should just be using ItemSlot.StartingItem. However, seeing as we have so many different starting
         // PDA's and no nice way to inherit the other fields from the ItemSlot data definition, this makes the yaml much

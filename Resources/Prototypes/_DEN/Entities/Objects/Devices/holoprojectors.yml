@@ -15,12 +15,14 @@
   - type: UseDelay
     delay: 2.0
   - type: ActivatableUI
-    key: enum.LabelableHolosignUIKey.Key
+    key: enum.LabelableHolosignUIKey.Signs
     inHandsOnly: true
   - type: UserInterface
     interfaces:
-      enum.LabelableHolosignUIKey.Key:
-        type: LabelableHolosignProjectorBoundUserInterface
+      enum.LabelableHolosignUIKey.Signs:
+        type: LabelableHolosignProjectorSignBUI
+      enum.LabelableHolosignUIKey.Description:
+        type: LabelableHolosignProjectorDescriptionBUI
   - type: LimitedCharges
     maxCharges: 8
     charges: 8
@@ -29,6 +31,7 @@
   - type: Tag
     tags:
     - HolofanProjector
+    - CivilianHoloprojector
   - type: StaticPrice
     price: 80
 
@@ -42,7 +45,9 @@
     sprite: _DEN/Objects/Devices/Holoprojectors/adult.rsi
     state: icon
   - type: LabelableHolosignProjector
-    signProto: HolosignNSFW
+    signProtos:
+    - HolosignNSFW
+    - HolosignPrivate
     isNSFW: true
     usesCharges: true
     signWhitelist:
@@ -60,7 +65,9 @@
     sprite: _DEN/Objects/Devices/Holoprojectors/private.rsi
     state: icon
   - type: LabelableHolosignProjector
-    signProto: HolosignPrivate
+    signProtos:
+      - HolosignNSFW
+      - HolosignPrivate
     isNSFW: false
     usesCharges: true
     signWhitelist:

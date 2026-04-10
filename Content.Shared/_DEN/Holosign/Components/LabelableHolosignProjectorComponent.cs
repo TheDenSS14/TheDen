@@ -6,19 +6,19 @@ using Content.Shared._DEN.Holosign.Systems;
 using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
-
 
 namespace Content.Shared._DEN.Holosign.Components;
 
-[RegisterComponent, NetworkedComponent, Access(typeof(SharedLabelableHolosignProjectorSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true), Access(typeof(SharedLabelableHolosignProjectorSystem))]
 public sealed partial class LabelableHolosignProjectorComponent : Component
 {
     /// <summary>
     /// The entity to spawn with this projector.
     /// </summary>
-    [DataField(required: true)]
-    public EntProtoId SignProto;
+    [DataField(required: true), Access(Other = AccessPermissions.ReadWriteExecute)]
+    public List<EntProtoId> SignProtos;
+
+    [DataField, AutoNetworkedField] public EntProtoId? SelectedSignProto;
 
     [DataField]
     public EntityWhitelist SignWhitelist;
@@ -27,24 +27,16 @@ public sealed partial class LabelableHolosignProjectorComponent : Component
     public bool UsesCharges = false;
 
     [ViewVariables(VVAccess.ReadWrite), Access(Other = AccessPermissions.ReadWriteExecute)]
-    [DataField]
+    [DataField, AutoNetworkedField]
     public string BarrierDescription = string.Empty;
 
     /// <summary>
     /// The maximum length of a description that can be attached to a barrier.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField]
+    [DataField, AutoNetworkedField]
     public int MaxDescriptionChars = 512;
-
-    [DataField(required: true)]
-    public bool IsNSFW;
-}
-
-[Serializable, NetSerializable]
-public sealed class LabelableHolosignProjectorComponentState(string barrierDescription) : IComponentState
-{
-    public string BarrierDescription = barrierDescription;
-
-    public int MaxDescriptionChars;
+    
+    [DataField, AutoNetworkedField]
+    public bool IsNsfw;
 }
