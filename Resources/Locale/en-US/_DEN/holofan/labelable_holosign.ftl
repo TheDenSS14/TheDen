@@ -10,3 +10,4 @@ labelable-holoprojector-ui-header = Labelable Holoprojector
 labelable-holoprojector-current-text-label = Description:
 labelable-holoprojector-is-nsfw-label = NSFW?
 labelable-holoprojector-ui-set-description = Set the description of your projected barrier.
+labelable-holoprojector-selected-sign = Currently selected: {$sign}

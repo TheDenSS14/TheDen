@@ -18,7 +18,6 @@ using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
 using Content.Shared.Whitelist;
-using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -48,11 +47,12 @@ public abstract class SharedLabelableHolosignProjectorSystem : EntitySystem
         SubscribeLocalEvent<LabelableHolosignProjectorComponent, LabelableHolosignDescriptionMessage>(OnHolosignDescriptionChanged);
         SubscribeLocalEvent<LabelableHolosignProjectorComponent, LabelableHolosignSignChosen>(OnSignChosen);
         SubscribeLocalEvent<LabelableHolosignProjectorComponent, LabelableHolosignOpenOtherUI>(OnOpenOtherUI);
+        SubscribeLocalEvent<LabelableHolosignProjectorComponent, ExaminedEvent>(OnProjectorExamined);
 
-        SubscribeLocalEvent<LabeledHolosignComponent, ExaminedEvent>(OnExamine);
+        SubscribeLocalEvent<LabeledHolosignComponent, ExaminedEvent>(OnSignExamine);
     }
 
-    private void OnExamine(EntityUid uid, LabeledHolosignComponent component, ExaminedEvent args)
+    private void OnSignExamine(EntityUid uid, LabeledHolosignComponent component, ExaminedEvent args)
     {
         if (component.IsNSFW)
         {
@@ -66,6 +66,14 @@ public abstract class SharedLabelableHolosignProjectorSystem : EntitySystem
         else
         {
             args.PushMarkup(component.Description);
+        }
+    }
+
+    private void OnProjectorExamined(Entity<LabelableHolosignProjectorComponent> entity, ref ExaminedEvent evt)
+    {
+        if (entity.Comp.SelectedSignProto is { } signProto)
+        {
+            evt.PushMarkup(Loc.GetString("labelable-holoprojector-selected-sign", ("sign", signProto)));
         }
     }
 
