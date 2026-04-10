@@ -237,10 +237,12 @@
 - type: entity
   parent: SomberHangingBrazier
   id: SomberHangingBrazierPillarShorter
-  suffix: Fits Shorter Pillars
+  suffix: Fits Shorter Columns
   placement:
     mode: SnapgridCenter
   components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
   - type: SpriteFade
   - type: Sprite
     noRot: true
@@ -251,7 +253,7 @@
 - type: entity
   parent: SomberHangingBrazierPillarShorter
   id: SomberHangingBrazierPillarShort
-  suffix: Fits Short Pillars
+  suffix: Fits Short Columns
   components:
   - type: SpriteFade
   - type: Sprite
@@ -260,7 +262,7 @@
 - type: entity
   parent: SomberHangingBrazierPillarShorter
   id: SomberHangingBrazierPillarTall
-  suffix: Fits Tall Pillars
+  suffix: Fits Tall Columns
   components:
   - type: SpriteFade
   - type: Sprite
@@ -269,7 +271,7 @@
 - type: entity
   parent: SomberHangingBrazierPillarShorter
   id: SomberHangingBrazierPillarTaller
-  suffix: Fits Taller Pillars
+  suffix: Fits Taller Columns
   components:
   - type: SpriteFade
   - type: Sprite
@@ -320,7 +322,7 @@
 - type: entity
   parent: SomberHangingBrazierPillarShorter
   id: SomberHangingBrazierWarmPillarShorter
-  suffix: Warm Fire, Fits Shorter Pillars
+  suffix: Warm Fire, Fits Shorter Columns
   description: "An electrum brazier. The natural alloy contains more silver than usual."
   placement:
     mode: SnapgridCenter
@@ -334,7 +336,7 @@
 - type: entity
   parent: SomberHangingBrazierWarmPillarShorter
   id: SomberHangingBrazierWarmPillarShort
-  suffix: Warm Fire, Fits Short Pillars
+  suffix: Warm Fire, Fits Short Columns
   components:
   - type: SpriteFade
   - type: Sprite
@@ -343,7 +345,7 @@
 - type: entity
   parent: SomberHangingBrazierWarmPillarShorter
   id: SomberHangingBrazierWarmPillarTall
-  suffix: Warm Fire, Fits Tall Pillars
+  suffix: Warm Fire, Fits Tall Columns
   components:
   - type: SpriteFade
   - type: Sprite
@@ -352,7 +354,7 @@
 - type: entity
   parent: SomberHangingBrazierWarmPillarShorter
   id: SomberHangingBrazierWarmPillarTaller
-  suffix: Warm Fire, Fits Taller Pillars
+  suffix: Warm Fire, Fits Taller Columns
   components:
   - type: SpriteFade
   - type: Sprite

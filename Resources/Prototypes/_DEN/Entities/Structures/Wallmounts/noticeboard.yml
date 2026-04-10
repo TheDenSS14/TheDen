@@ -8,6 +8,8 @@
   name: mantis pinboard
   description: "Is there a job for a witcher?" # This is also the other notice board's description and I'm keeping it unless I get vetoed (crossing my arms)
   components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
   - type: Sprite
     sprite: _DEN/Structures/Specific/Mantis/mantisnoticeboard.rsi
   - type: StorageFillVisualizer

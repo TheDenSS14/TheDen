@@ -555,6 +555,17 @@
   - type: ThrownItemImmune
 
 - type: entity
+  parent: SomberTableEnd
+  id: SomberTableEndUnanchored
+  name: somber end table
+  suffix: Unanchored, PlaceFree
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
+
+- type: entity
   parent: SomberTableCoffee
   id: SomberTableFire
   name: somber fire table

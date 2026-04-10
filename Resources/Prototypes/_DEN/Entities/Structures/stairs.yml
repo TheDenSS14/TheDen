@@ -2,6 +2,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# Standard Stairs
+
 - type: entity
   parent: [ Stairs, BasePsionic ]
   id: StairSomberSteel
@@ -162,6 +164,8 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 
+# Stage Stairs
+
 - type: entity
   parent: StairSomberSteel
   id: StairStageSomberSteel
@@ -248,4 +252,68 @@
   - type: Sprite
     sprite: _DEN/Structures/stairs.rsi
     state: stairs_stage_somber_mnemolith
+    drawdepth: FloorTiles
+
+# Wide Stairs
+
+- type: entity
+  parent: StairStageSomberSteel
+  id: StairsWideSomberSteel
+  suffix: Wide, Middle
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: wide_somber_stairs
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: StairsWideSomberSteel
+  id: StairsWideSomberSteelLeft
+  suffix: Wide, Left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: wide_somber_stairs_left
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: StairsWideSomberSteel
+  id: StairsWideSomberSteelRight
+  suffix: Wide, Right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: wide_somber_stairs_right
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: StairStageSomberSteelDark
+  id: StairsWideSomberSteelDark
+  suffix: Wide, Middle
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: wide_somber_stairs_dark
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: StairsWideSomberSteelDark
+  id: StairsWideSomberSteelDarkLeft
+  name: somber dark steel stairs
+  suffix: Wide, Left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: wide_somber_stairs_dark_left
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: StairsWideSomberSteelDark
+  id: StairsWideSomberSteelDarkRight
+  name: somber dark steel stairs
+  suffix: Wide, Right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: wide_somber_stairs_dark_right
     drawdepth: FloorTiles

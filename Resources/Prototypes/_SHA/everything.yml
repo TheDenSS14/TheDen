@@ -1221,7 +1221,7 @@
   parent: StairStageSomberSteel
   id: StairsWideSomberFade
   name: somber steel stairs
-  suffix: PENTHOUSE, Meditation Chamber
+  suffix: PENTHOUSE, Fade, Middle
   components:
   - type: Sprite
     sprite: _SHA/Structures/stairs.rsi
@@ -1230,24 +1230,24 @@
 
 - type: entity
   parent: StairStageSomberSteel
-  id: StairsWideSomber
+  id: StairsWideSomberFadeLeft
   name: somber steel stairs
-  suffix: PENTHOUSE
+  suffix: PENTHOUSE, Fade, Left
   components:
   - type: Sprite
     sprite: _SHA/Structures/stairs.rsi
-    state: wide_somber_stairs
+    state: wide_somber_stairs_fade_left
     drawdepth: FloorTiles
 
 - type: entity
   parent: StairStageSomberSteel
-  id: StairsWideSomberDark
+  id: StairsWideSomberFadeRight
   name: somber steel stairs
-  suffix: PENTHOUSE, Dark
+  suffix: PENTHOUSE, Fade, Right
   components:
   - type: Sprite
     sprite: _SHA/Structures/stairs.rsi
-    state: wide_somber_stairs_dark
+    state: wide_somber_stairs_fade_right
     drawdepth: FloorTiles
 
 # Tiles
@@ -1387,6 +1387,23 @@
   footstepSounds:
     collection: FootstepTile
   heatCapacity: 10000
+
+# Water
+
+- type: entity
+  parent: SomberPoolWaterSideGlass
+  id: SomberPoolWaterDiagonalCutGlassDark
+  suffix: PENTHOUSE, Glass, Diagonal Cut
+  components:
+  - type: Sprite
+    sprite: _SHA/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltilecorner
+    - state: watercorner
+    - state: watershinecorner
+      shader: unshaded
+    - state: poolglassdiagonaldark
+    - state: pooldiagonalcut
 
 # Carpets
 
@@ -1922,7 +1939,6 @@
   suffix: Floor, Basin] [SANCTUM
   components:
   - type: Sprite
-    offset: "0.0,-0.5"
     snapCardinals: false
     noRot: true
     drawdepth: Mobs
@@ -1959,7 +1975,6 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.875
-          offset: "0.0,0.05"
         density: 1000
         layer:
         - WallLayer
@@ -1972,7 +1987,6 @@
   suffix: Wall] [SANCTUM
   components:
   - type: Sprite
-    offset: "0.0,0.0"
     snapCardinals: false
     noRot: false
     layers:
@@ -4714,11 +4728,6 @@
   suffix: PENTHOUSE, Immovable, Blue
   placement:
     mode: SnapgridCenter
-
-- type: entity
-  parent: [ BaseImmovableObject, SomberElectrumFocus ]
-  id: SomberElectrumFocusImmovable
-  suffix: PENTHOUSE, Immovable
 
 - type: entity
   parent: [ BaseImmovableObject, LightSomberEidoliteWellLampAzure ]
