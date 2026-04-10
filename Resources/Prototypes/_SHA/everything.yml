@@ -632,6 +632,16 @@
     sprite: _SHA/Structures/Walls/elevatorleft.rsi
 
 - type: entity
+  parent: [ WallMining, BasePsionic ]
+  id: WallMiningPenthouseBlack
+  suffix: Left Side, Black] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/elevatorleftblack.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Walls/elevatorleftblack.rsi
+
+- type: entity
   parent: WindowSomberDirectionalTinted
   id: WindowFireEscape
   name: skyscraper wall
@@ -712,6 +722,36 @@
     sprite: _SHA/Structures/Walls/sombermeditation.rsi
   - type: Icon
     sprite: _SHA/Structures/Walls/sombermeditation.rsi
+
+- type: entity
+  parent: WallSomberMeditation
+  id: WallSomberMeditationLeft
+  suffix: Meditation Chamber, Left Curve] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/sombermeditationleft.rsi
+    state: full
+  - type: Icon
+    sprite: _SHA/Structures/Walls/sombermeditationleft.rsi
+    state: full
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+
+- type: entity
+  parent: WallSomberMeditation
+  id: WallSomberMeditationRight
+  suffix: Meditation Chamber, Right Curve] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/sombermeditationright.rsi
+    state: full
+  - type: Icon
+    sprite: _SHA/Structures/Walls/sombermeditationright.rsi
+    state: full
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
 
 # Chairs
 
@@ -1057,6 +1097,30 @@
   components:
   - type: Sprite
     sprite: _SHA/Structures/Doors/Airlocks/Standard/elevatorleft.rsi
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: SomberSecretDoor
+  id: SecretDoorElevatorExitLeft
+  name: skyscraper wall
+  description: "It keeps the city out."
+  suffix: NON-AIRTIGHT, LEFT] [Secret Door, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Doors/SecretDoors/secretdoorelevatorexitleft.rsi
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: SomberSecretDoor
+  id: SecretDoorElevatorExitRight
+  name: skyscraper wall
+  description: "It keeps the city out."
+  suffix: NON-AIRTIGHT, RIGHT] [Secret Door, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Doors/SecretDoors/secretdoorelevatorexitright.rsi
   - type: Airtight
     airBlocked: false
 
@@ -4534,7 +4598,7 @@
   parent: MarkerBase
   id: MarkerSoundMusicBoss
   name: invisible sound emitter
-  suffix: Boss Music, Signal Friendly
+  suffix: Boss Music, Signal-Friendly
   components:
   - type: Sprite
     layers:
@@ -4979,3 +5043,60 @@
   name: nsfw holobarrier projector
   suffix: PENTHOUSE, MAP IN BATHROOMS
   description: "This isn't real. You're hallucinating."
+
+# Infrastructure (Elevator, Travel, etc.)
+
+- type: entity
+  parent: [ SignalButtonDirectional, BasePsionic ]
+  id: SignalButtonDirectionalElevatorExit
+  name: elevator buttons (depart)
+  suffix: Elevator Exit
+  description: "They'll be here when it's time to leave."
+  components:
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _SHA/Structures/Wallmounts/switch.rsi
+    layers:
+    - state: buttons
+    - state: buttons-unshaded
+      shader: unshaded
+  - type: WallMount
+    arc: 360
+  - type: SignalSwitch
+    clickSound: /Audio/_SHA/elevatording.ogg
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 300
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+              params:
+                volume: -8
+
+- type: entity
+  parent: [ SignalTimer, BasePsionic ]
+  id: SignalTimerDirectionalElevatorExit
+  name: elevator electronics
+  suffix: Elevator Exit
+  description: "Wires and things."
+  components:
+  - type: SignalTimer
+    delay: 5
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _SHA/Structures/Wallmounts/switch.rsi
+    state: wires

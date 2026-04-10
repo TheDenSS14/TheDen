@@ -158,3 +158,29 @@
       - !type:SpillBehavior { }
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+
+- type: entity
+  parent: [ DrinkBaseMug, BasePsionic ]
+  id: DrinkMugSomber
+  name: somber mug
+  suffix: Somber Barware
+  description: "A finely glazed ceramic mug ringed with ornamental electrum trim. Just ostentatious enough to make an everyday drink feel like a small indulgence."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/sombermug.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpillBehavior { }
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

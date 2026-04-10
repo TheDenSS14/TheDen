@@ -346,3 +346,94 @@
           Quantity: 150
   - type: Label
     currentLabel: egg
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkWaterJugXL # You shouldn't need a sink to make an americano
+  suffix: water
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300 # Bigger, because it's just water
+        reagents:
+        - ReagentId: Water
+          Quantity: 300
+  - type: Label
+    currentLabel: water
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkHotCocoaJug
+  suffix: hot cocoa
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300 # Coffee and tea are both 300
+        reagents:
+        - ReagentId: HotCocoa
+          Quantity: 300
+  - type: Label
+    currentLabel: cocoa # We can presume a coffee machine dispenses hot drinks
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkMilkJug # 50% more milk than the cartons
+  suffix: milk
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: Milk
+          Quantity: 150
+  - type: Label
+    currentLabel: milk
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkSoyMilkJug # 50% more milk than the cartons
+  suffix: soy milk
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: MilkSoy
+          Quantity: 150
+  - type: Label
+    currentLabel: soy milk
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkOatMilkJug
+  suffix: oat milk
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: MilkOat
+          Quantity: 150
+  - type: Label
+    currentLabel: oat milk
+
+- type: entity
+  parent: CustomDrinkJug
+  id: DrinkCaramexininJug
+  description: "Mix 1:5 with coffee to prevent theobromine poisoning."
+  suffix: caramexinin
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300 # If a sugar jug is 300, let's be fair to people
+        reagents:
+        - ReagentId: Caramexinin
+          Quantity: 300
+  - type: Label
+    currentLabel: caramexinin

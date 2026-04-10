@@ -1,0 +1,33 @@
+- type: entity
+  parent: [ SodaDispenser, BasePsionic ] # If we make craftable coffee machines, update this
+  id: CoffeeDispenserSomber
+  name: somber espresso machine
+  suffix: Somber Barware, Coffee
+  description: "Like any proper espresso machine, this thing cost about as much as a small shuttle."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Machines/sombercoffeemachine.rsi
+    state: coffeemachine
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.125,-0.125,0.125,0.125"
+        density: 190
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+  - type: Machine
+    board: SodaDispenserMachineCircuitboard # If we make craftable coffee machines, update this
+  - type: ReagentDispenser
+    pack: CoffeeDispenserInventory
+
+- type: entity
+  parent: CoffeeDispenserSomber
+  id: CoffeeDispenserExtendedSomber
+  suffix: Somber Barware, Coffee, Extended
+  components:
+  - type: ReagentDispenser
+    pack: CoffeeDispenserInventoryExtended # Has tea and oat milk too
