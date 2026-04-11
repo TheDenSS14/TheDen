@@ -634,7 +634,7 @@
 - type: entity
   parent: [ WallMining, BasePsionic ]
   id: WallMiningPenthouseBlack
-  suffix: Left Side, Black] [PENTHOUSE
+  suffix: Left Side, Elevator Exit] [PENTHOUSE
   components:
   - type: Sprite
     sprite: _SHA/Structures/Walls/elevatorleftblack.rsi
@@ -1105,24 +1105,30 @@
   id: SecretDoorElevatorExitLeft
   name: skyscraper wall
   description: "It keeps the city out."
-  suffix: NON-AIRTIGHT, LEFT] [Secret Door, Signal-Friendly] [PENTHOUSE
+  suffix: NON-AIRTIGHT, LEFT] [Secret Door, Elevator Exit] [PENTHOUSE
   components:
   - type: Sprite
     sprite: _SHA/Structures/Doors/SecretDoors/secretdoorelevatorexitleft.rsi
   - type: Airtight
     airBlocked: false
+  - type: Door
+    bumpOpen: false
+    clickOpen: false
 
 - type: entity
   parent: SomberSecretDoor
   id: SecretDoorElevatorExitRight
   name: skyscraper wall
   description: "It keeps the city out."
-  suffix: NON-AIRTIGHT, RIGHT] [Secret Door, Signal-Friendly] [PENTHOUSE
+  suffix: NON-AIRTIGHT, RIGHT] [Secret Door, Elevator Exit] [PENTHOUSE
   components:
   - type: Sprite
     sprite: _SHA/Structures/Doors/SecretDoors/secretdoorelevatorexitright.rsi
   - type: Airtight
     airBlocked: false
+  - type: Door
+    bumpOpen: false
+    clickOpen: false
 
 - type: entity
   parent: [ AirlockMining, BasePsionic ]
@@ -1180,11 +1186,28 @@
 
 - type: entity
   parent: GloomyWindoorSecureMantisLocked
+  id: GloomyWindoorSecureMantisBlackLockedAir
+  name: obstacle
+  suffix: NON-AIRTIGHT] [Mantis, Locked, Black] [Somber] [PENTHOUSE
+  description: "WHERE DO YOU THINK YOU ARE RIGHT NOW? ANSWER ME."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Doors/Windoors/somberblack.rsi
+  - type: Label
+    currentLabel: private
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: GloomyWindoorSecureMantisLocked
   id: GloomyWindoorSecureMantisLockedAir
   suffix: NON-AIRTIGHT] [Mantis, Locked] [Somber] [PENTHOUSE
   components:
   - type: Label
-    currentLabel: mantis
+    currentLabel: private
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMantis ]
@@ -1197,7 +1220,7 @@
   suffix: NON-AIRTIGHT] [Mantis, Locked, Dark] [Somber] [PENTHOUSE
   components:
   - type: Label
-    currentLabel: mantis
+    currentLabel: private
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMantis ]
@@ -1210,7 +1233,7 @@
   suffix: NON-AIRTIGHT] [Mantis, Locked] [Somber] [PENTHOUSE
   components:
   - type: Label
-    currentLabel: mantis
+    currentLabel: private
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMantis ]
@@ -1223,7 +1246,7 @@
   suffix: NON-AIRTIGHT] [Mantis, Locked, Dark] [Somber] [PENTHOUSE
   components:
   - type: Label
-    currentLabel: mantis
+    currentLabel: private
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMantis ]
