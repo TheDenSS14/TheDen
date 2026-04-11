@@ -1,18 +1,3 @@
-<!--
-SPDX-FileCopyrightText: 2021 Pieter-Jan Briers
-SPDX-FileCopyrightText: 2021 Swept
-SPDX-FileCopyrightText: 2021 mirrorcult
-SPDX-FileCopyrightText: 2022 AJCM-git
-SPDX-FileCopyrightText: 2022 Kara
-SPDX-FileCopyrightText: 2023 DrSmugleaf
-SPDX-FileCopyrightText: 2023 Kevin Zheng
-SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
-SPDX-FileCopyrightText: 2025 sleepyyapril
-SPDX-FileCopyrightText: 2026 portfiend
-
-SPDX-License-Identifier: AGPL-3.0-or-later
--->
-
 <!-- Guidelines: https://docs.spacestation14.io/en/getting-started/pr-guideline -->
 <!-- NOTE: All code submitted to this repository is ALWAYS licensed under the AGPL-3.0-or-later license.
 The REUSE Specification headers or separate .license files indicate a secondary license (e.g., MPL or MIT) solely to facilitate
