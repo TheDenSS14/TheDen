@@ -1186,23 +1186,6 @@
 
 - type: entity
   parent: GloomyWindoorSecureMantisLocked
-  id: GloomyWindoorSecureMantisBlackLockedAir
-  name: obstacle
-  suffix: NON-AIRTIGHT] [Mantis, Locked, Black] [Somber] [PENTHOUSE
-  description: "WHERE DO YOU THINK YOU ARE RIGHT NOW? ANSWER ME."
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Doors/Windoors/somberblack.rsi
-  - type: Label
-    currentLabel: private
-  - type: ContainerFill
-    containers:
-      board: [ DoorElectronicsMantis ]
-  - type: Airtight
-    airBlocked: false
-
-- type: entity
-  parent: GloomyWindoorSecureMantisLocked
   id: GloomyWindoorSecureMantisLockedAir
   suffix: NON-AIRTIGHT] [Mantis, Locked] [Somber] [PENTHOUSE
   components:
@@ -1247,6 +1230,23 @@
   components:
   - type: Label
     currentLabel: private
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
+  - type: Airtight
+    airBlocked: false
+
+- type: entity
+  parent: GloomyWindoorSecureTintedMantisLocked
+  id: GloomyWindoorSecureMantisBlackLockedAir
+  name: obstacle
+  suffix: NON-AIRTIGHT] [Mantis, Locked, Black] [Somber] [PENTHOUSE
+  description: "WHERE DO YOU THINK YOU ARE RIGHT NOW? ANSWER ME."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Doors/Windoors/somberblack.rsi
+  - type: Label
+    currentLabel: ""
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMantis ]
@@ -2127,6 +2127,18 @@
   components:
   - type: WirelessNetworkConnection
     range: 1000
+
+- type: entity
+  parent: DoorRemoteAll
+  id: DoorRemoteAllSomber
+  name: somber door remote
+  suffix: PENTHOUSE, DO NOT MAP
+  components:
+  - type: Sprite
+    layers:
+    - state: door_remotebase
+    - state: door_remotelightscolour
+      shader: unshaded
 
 - type: entity
   parent: [ BaseStructure, BasePsionic ]
@@ -4001,9 +4013,9 @@
     contents:
     - id: MantisMeleeSickle
     - id: MantisMeleeKnife
-    - id: MantisTailorsKnife
     - id: ThavenArmyKnife
     - id: RemoteSignallerSomberAdmin
+    - id: DoorRemoteAllSomber
     - id: ClothingNeckMantisPendulum
     - id: BoxFolderMantis
     - id: MantisCaseChemicalsPenthouse
