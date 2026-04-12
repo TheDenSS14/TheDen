@@ -41,13 +41,13 @@ public sealed partial class SuitSensorComponent : Component
     ///     Choose a random sensor mode when item is spawned.
     /// </summary>
     [DataField("randomMode")]
-    public bool RandomMode = true;
+    public bool RandomMode = false; // # SHA - BREAK KNOWS WHERE PEOPLE ARE IN HER HOUSE
 
     /// <summary>
     ///     If true user can't change suit sensor mode
     /// </summary>
     [DataField("controlsLocked")]
-    public bool ControlsLocked = false;
+    public bool ControlsLocked = true; // # SHA - BREAK KNOWS WHERE PEOPLE ARE IN HER HOUSE
 
     /// <summary>
     ///  How much time it takes to change another player's sensors
@@ -59,7 +59,7 @@ public sealed partial class SuitSensorComponent : Component
     ///     Current sensor mode. Can be switched by user verbs.
     /// </summary>
     [DataField("mode")]
-    public SuitSensorMode Mode = SuitSensorMode.SensorOff;
+    public SuitSensorMode Mode = SuitSensorMode.SensorCords; // # SHA - BREAK KNOWS WHERE PEOPLE ARE IN HER HOUSE
 
     /// <summary>
     ///     Activate sensor if user wear it in this slot.

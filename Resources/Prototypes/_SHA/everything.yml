@@ -2384,8 +2384,15 @@
   parent: [ PlushieDollHair, BasePsionic ]
   id: PlushieDollHairPenthouse
   name: Tatter
-  suffix: PENTHOUSE
+  suffix: PENTHOUSE, Standard
   description: "A cute amigurumi doll. You swear she moves when you're not looking."
+
+- type: entity
+  parent: PlushieDollMantis
+  id: PlushieDollMantisPenthouse
+  name: Tatter
+  suffix: PENTHOUSE, Mantis
+  description: "A cute amigurumi doll with a mantis fez and a toy ritual knife. Wait--why is it sharp!? You swear she moves when you're not looking."
 
 - type: entity
   parent: PersonalAISomber
@@ -4209,6 +4216,7 @@
     - id: MantisMeleeSickle
     - id: MantisMeleeKnife
     - id: ThavenArmyKnife
+    - id: HandheldCrewMonitorMantis
     - id: RemoteSignallerSomberAdmin
     - id: DoorRemoteAllSomber
     - id: ClothingNeckMantisPendulum
@@ -4224,7 +4232,7 @@
       amount: 3
     - id: WrenchMantis
     - id: LeashMantisPenthouse
-      amount: 4
+      amount: 2
 
 - type: entity
   parent: MantisCaseChemicals
