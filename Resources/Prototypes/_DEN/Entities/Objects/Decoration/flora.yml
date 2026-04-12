@@ -2,6 +2,7 @@
   parent: [ BaseTree, BasePsionic ] # Fuck it, psionic trees. That's why they glow, or some shit
   id: SomberAmaranthTree01
   name: amaranth tree
+  suffix: "Somber, #1"
   description: "An exotic hardwood tree with faintly luminescent leaves. Its resin is toxic, making the lumber notoriously difficult to work."
   components:
   - type: Sprite
@@ -46,6 +47,7 @@
 - type: entity
   parent: SomberAmaranthTree01
   id: SomberAmaranthTree02
+  suffix: "Somber, #2"
   components:
   - type: Sprite
     layers:
@@ -56,6 +58,7 @@
 - type: entity
   parent: SomberAmaranthTree01
   id: SomberAmaranthTree03
+  suffix: "Somber, #3"
   components:
   - type: Sprite
     layers:
@@ -66,6 +69,7 @@
 - type: entity
   parent: SomberAmaranthTree01
   id: SomberAmaranthTree04
+  suffix: "Somber, #1 Flipped"
   components:
   - type: Sprite
     layers:
@@ -76,6 +80,7 @@
 - type: entity
   parent: SomberAmaranthTree01
   id: SomberAmaranthTree05
+  suffix: "Somber, #2 Flipped"
   components:
   - type: Sprite
     layers:
@@ -86,6 +91,7 @@
 - type: entity
   parent: SomberAmaranthTree01
   id: SomberAmaranthTree06
+  suffix: "Somber, #3 Flipped"
   components:
   - type: Sprite
     layers:

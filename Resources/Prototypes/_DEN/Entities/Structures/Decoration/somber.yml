@@ -246,6 +246,8 @@
   - type: Sprite
     state: stonecolumnshorter
 
+# Floor plates that look nice under the stone columns
+
 - type: entity
   parent: [ BaseStructure, BasePsionic ]
   id: SomberElectrumFocus
@@ -256,7 +258,6 @@
   - type: Transform
     anchored: false # So it can use other snapping modes
   - type: Sprite
-    snapCardinals: true
     noRot: true
     drawdepth: FloorObjects
     sprite: _DEN/Structures/Furniture/chairs.rsi # No need to duplicate a sprite just because it's not being a chair here
@@ -304,3 +305,117 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
+
+# Floating armillary spheres
+
+- type: entity
+  parent: [ BaseStructure, BasePsionic ]
+  id: SomberArmillary
+  name: armillary
+  suffix: Somber, Electrum
+  description: "An intricate electrum armillary suspended in the air, spinning far too quickly to reflect any real celestial motion. Whatever it measures must belong to the noosphere rather than the sky."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Overdoors
+    sprite: _DEN/Structures/Decoration/somberarmillary.rsi
+    layers:
+    - state: shadow # There's also shadow-hard if people don't like the blurred pixels
+    - state: gold
+      offset: 0.0,1.5 # 48 pixels up so people can visually walk under them
+    - state: gold-unshaded
+      offset: 0.0,1.5
+      shader: unshaded
+  - type: Transform
+    anchored: false # So it can use other snapping modes
+  - type: SpriteFade
+  - type: RequireProjectileTarget # Bullets should generally go under or through it
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 200
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/metal_slam2.ogg
+          params:
+            volume: -4
+            variation: 0.15
+  - type: AmbientSound
+    range: 5
+    volume: -4
+    sound:
+      path: /Audio/_DEN/Ambience/Objects/armillary.ogg
+
+- type: entity
+  parent: SomberArmillary
+  id: SomberArmillarySilver
+  name: armillary
+  suffix: Somber, Mu-Metal
+  description: "An intricate mu-metal armillary suspended in the air, spinning far too quickly to reflect any real celestial motion. Whatever it measures must belong to the noosphere rather than the sky."
+  components:
+  - type: Sprite
+    layers:
+    - state: shadow
+    - state: silver
+      offset: 0.0,1.5
+    - state: silver-unshaded
+      offset: 0.0,1.5
+      shader: unshaded
+
+- type: entity
+  parent: SomberArmillary
+  id: SomberArmillarySteel
+  name: armillary
+  suffix: Somber, Steel
+  description: "An intricate steel armillary suspended in the air, spinning far too quickly to reflect any real celestial motion. Whatever it measures must belong to the noosphere rather than the sky."
+  components:
+  - type: Sprite
+    layers:
+    - state: shadow
+    - state: steel
+      offset: 0.0,1.5
+    - state: steel-unshaded
+      offset: 0.0,1.5
+      shader: unshaded
+
+- type: entity
+  parent: SomberArmillary
+  id: SomberArmillaryStone
+  name: armillary
+  suffix: Somber, Mnemolith
+  description: "An intricate mnemolith armillary suspended in the air, spinning far too quickly to reflect any real celestial motion. Whatever it measures must belong to the noosphere rather than the sky."
+  components:
+  - type: Sprite
+    layers:
+    - state: shadow
+    - state: stone
+      offset: 0.0,1.5
+    - state: stone-unshaded
+      offset: 0.0,1.5
+      shader: unshaded

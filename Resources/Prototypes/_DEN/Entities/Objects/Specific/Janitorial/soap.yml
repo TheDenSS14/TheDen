@@ -53,7 +53,7 @@
 
 - type: entity
   parent: BaseItem
-  id: SomberSoapDish
+  id: SomberSoapDish # Or, possibly, a coaster
   name: electrum dish
   suffix: Somber
   description: "A surprisingly heavy dish made of a natural alloy of gold and silver."
@@ -104,5 +104,5 @@
     - LickObject
   - type: PhysicalComposition # Funny
     materialComposition:
-      Gold: 100
-      Silver: 100
+      Gold: 50
+      Silver: 50

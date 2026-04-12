@@ -51,6 +51,8 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
   - type: Sprite
     sprite: _DEN/Structures/Specific/Chapel/somber-nazar.rsi
     state: icon
@@ -77,9 +79,6 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
-  - type: Anchorable
-  - type: Transform
-    anchored: true
   - type: MovedByPressure
   - type: EmitSoundOnCollide
     sound:

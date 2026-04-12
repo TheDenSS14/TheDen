@@ -256,6 +256,23 @@
         acts: [ "Destruction" ]
 
 - type: entity
+  parent: MarkerBase
+  name: mantis chair spawner
+  id: SpawnVehicleMantisChair
+  components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
+  - type: Sprite
+    layers:
+      - state: green
+        shader: unshaded
+      - sprite: _DEN/Structures/Specific/Mantis/mantischair.rsi
+        state: vehicle
+  - type: ConditionalSpawner
+    prototypes:
+      - SomberChairLeatherMantisWheelchair
+
+- type: entity
   parent: SomberChairLeatherMantisWheelchair
   id: SomberChairLeatherMantisWheelchairFolded
   name: bound mantis chair

@@ -9,6 +9,7 @@
   description: "A gloomy mannequin with only slightly unsettling electrum eyes, made to display clothes."
   components:
   - type: Sprite
+    drawdepth: Mobs
     sprite: _DEN/Structures/Decoration/mannequin.rsi
     state: sombermannequin
     noRot: true

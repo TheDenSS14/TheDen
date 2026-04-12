@@ -306,6 +306,7 @@
   description: "Your reflection shimmers faintly in the glass."
   components:
   - type: Sprite
+    drawdepth: OverMobs
     sprite: _DEN/Structures/Windows/Somber/somber_directional.rsi
     state: sombercorner
   - type: Icon

@@ -497,6 +497,149 @@
     sprite: _SHA/Decals/somber_dark.rsi
     state: penthouse-lattice-horizontal
 
+- type: decal
+  id: MonoTileShadow
+  parent: Overlays
+  abstract: true
+
+- type: decal
+  id: MonoTileShadowBox
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_box
+
+- type: decal
+  id: MonoTileShadowCornerNe
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_corner_ne
+
+- type: decal
+  id: MonoTileShadowCornerSe
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_corner_se
+
+- type: decal
+  id: MonoTileShadowCornerNw
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_corner_nw
+
+- type: decal
+  id: MonoTileShadowCornerSw
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_corner_sw
+
+- type: decal
+  id: MonoTileShadowInnerNe
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_inner_ne
+
+- type: decal
+  id: MonoTileShadowInnerSe
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_inner_se
+
+- type: decal
+  id: MonoTileShadowInnerNw
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_inner_nw
+
+- type: decal
+  id: MonoTileShadowInnerSw
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_inner_sw
+
+- type: decal
+  id: MonoTileShadowEndN
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_end_n
+
+- type: decal
+  id: MonoTileShadowEndE
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_end_e
+
+- type: decal
+  id: MonoTileShadowEndS
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_end_s
+
+- type: decal
+  id: MonoTileShadowEndW
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_end_w
+
+- type: decal
+  id: MonoTileShadowLineN
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_line_n
+
+- type: decal
+  id: MonoTileShadowLineE
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_line_e
+
+- type: decal
+  id: MonoTileShadowLineS
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_line_s
+
+- type: decal
+  id: MonoTileShadowLineW
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_line_w
+
+
+
 # Diagonal windows
 
 - type: entity
@@ -571,6 +714,9 @@
     snap:
     - Wall
   components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
   - type: Sprite
     drawdepth: WallTops
     sprite: _SHA/Structures/Walls/invisible.rsi
@@ -581,12 +727,18 @@
   - type: Fixtures
   - type: Occluder
     boundingBox: "-0.5,-0.5,0.5,-.484375" # Just half a pixel thick, centered in the occluding line
+#  - type: Tag # TODO: SHA UNCOMMENT THESE
+#    tags:
+#      - HideContextMenu
 
 - type: entity
   parent: InvisibleOccluder
   id: InvisibleOccluderCentered
   suffix: PENTHOUSE, Centered
   components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
   - type: Sprite
     state: occludercenter
   - type: Icon
@@ -594,6 +746,9 @@
   - type: Fixtures
   - type: Occluder
     boundingBox: "-0.5,-0.0234375,0.5,-.0078125" # Just half a pixel thick, centered in the occluding line
+#  - type: Tag # TODO: SHA UNCOMMENT THESE
+#    tags:
+#      - HideContextMenu
 
 - type: entity
   parent: WallSomber
@@ -869,7 +1024,7 @@
   id: AmaranthTree01Penthouse
   name: amaranth tree
   description: "An exotic hardwood tree with faintly luminescent leaves. Its resin is toxic, making the lumber notoriously difficult to work."
-  suffix: Somber] [PENTHOUSE
+  suffix: "Somber, #1] [PENTHOUSE"
   placement:
     mode: SnapgridCenter
   components:
@@ -899,6 +1054,7 @@
 - type: entity
   parent: AmaranthTree01Penthouse
   id: AmaranthTree02Penthouse
+  suffix: "Somber, #2] [PENTHOUSE"
   components:
   - type: Sprite
     layers:
@@ -909,6 +1065,7 @@
 - type: entity
   parent: AmaranthTree01Penthouse
   id: AmaranthTree03Penthouse
+  suffix: "Somber, #3] [PENTHOUSE"
   components:
   - type: Sprite
     layers:
@@ -919,6 +1076,7 @@
 - type: entity
   parent: AmaranthTree01Penthouse
   id: AmaranthTree04Penthouse
+  suffix: "Somber, #1 Flipped] [PENTHOUSE"
   components:
   - type: Sprite
     layers:
@@ -929,6 +1087,7 @@
 - type: entity
   parent: AmaranthTree01Penthouse
   id: AmaranthTree05Penthouse
+  suffix: "Somber, #2 Flipped] [PENTHOUSE"
   components:
   - type: Sprite
     layers:
@@ -939,6 +1098,7 @@
 - type: entity
   parent: AmaranthTree01Penthouse
   id: AmaranthTree06Penthouse
+  suffix: "Somber, #3 Flipped] [PENTHOUSE"
   components:
   - type: Sprite
     layers:
@@ -955,6 +1115,7 @@
   components:
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: SomberMnemolithDoor
@@ -963,6 +1124,7 @@
   components:
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: SomberSteelDoor
@@ -971,6 +1133,7 @@
   components:
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: SomberSteelDoorDark
@@ -979,6 +1142,7 @@
   components:
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: SomberAmaranthDoorAir
@@ -1019,6 +1183,7 @@
   components:
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyAirlockDark
@@ -1027,6 +1192,7 @@
   components:
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyAirlockGlass
@@ -1035,6 +1201,7 @@
   components:
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyAirlockGlassDark
@@ -1043,6 +1210,7 @@
   components:
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyAirlockMantisLocked
@@ -1051,6 +1219,7 @@
   components:
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyAirlockMantisDarkLocked
@@ -1059,6 +1228,7 @@
   components:
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyAirlockMantisGlassLocked
@@ -1067,6 +1237,7 @@
   components:
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyAirlockMantisGlassDarkLocked
@@ -1075,6 +1246,7 @@
   components:
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: [ AirlockMining, BasePsionic ]
@@ -1087,6 +1259,7 @@
     sprite: _SHA/Structures/Doors/Airlocks/Standard/elevator.rsi
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: [ AirlockMining, BasePsionic ]
@@ -1099,6 +1272,7 @@
     sprite: _SHA/Structures/Doors/Airlocks/Standard/elevatorleft.rsi
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: SomberSecretDoor
@@ -1111,6 +1285,7 @@
     sprite: _SHA/Structures/Doors/SecretDoors/secretdoorelevatorexitleft.rsi
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
   - type: Door
     bumpOpen: false
     clickOpen: false
@@ -1126,6 +1301,7 @@
     sprite: _SHA/Structures/Doors/SecretDoors/secretdoorelevatorexitright.rsi
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
   - type: Door
     bumpOpen: false
     clickOpen: false
@@ -1138,6 +1314,7 @@
   components:
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyWindoorSecure
@@ -1150,6 +1327,7 @@
     sprite: _DEN/Structures/Doors/Windoors/somber.rsi
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyWindoorSecureDark
@@ -1160,6 +1338,7 @@
     sprite: _DEN/Structures/Doors/Windoors/somberdark.rsi
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyWindoorSecureTinted
@@ -1173,6 +1352,7 @@
     boundingBox: "-0.5,-0.5,0.5,-0.3"
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyWindoorSecureTintedDark
@@ -1183,6 +1363,7 @@
     sprite: _DEN/Structures/Doors/Windoors/somberdark.rsi
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyWindoorSecureMantisLocked
@@ -1196,6 +1377,7 @@
       board: [ DoorElectronicsMantis ]
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyWindoorSecureMantisDarkLocked
@@ -1209,6 +1391,7 @@
       board: [ DoorElectronicsMantis ]
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyWindoorSecureTintedMantisLocked
@@ -1222,6 +1405,7 @@
       board: [ DoorElectronicsMantis ]
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyWindoorSecureTintedMantisDarkLocked
@@ -1235,6 +1419,7 @@
       board: [ DoorElectronicsMantis ]
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: GloomyWindoorSecureTintedMantisLocked
@@ -1252,6 +1437,7 @@
       board: [ DoorElectronicsMantis ]
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: SomberSecretDoor
@@ -1261,6 +1447,7 @@
   components:
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: SomberSecretDoorDark
@@ -1269,6 +1456,7 @@
   components:
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: SomberSecretDoorDarkAir
@@ -1279,6 +1467,7 @@
     sprite: _SHA/Structures/Doors/SecretDoors/sombersecretdoordarkcorner.rsi
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: SomberSecretDoorDarkAir
@@ -1289,6 +1478,7 @@
     sprite: _SHA/Structures/Doors/SecretDoors/sombersecretdoordarkinset.rsi
   - type: Airtight
     airBlocked: false
+    noAirWhenFullyAirBlocked: false
 
 # Stairs
 
@@ -2134,7 +2324,10 @@
   name: somber door remote
   suffix: PENTHOUSE, DO NOT MAP
   components:
+  - type: Item
+    storedRotation: 0
   - type: Sprite
+    sprite: _SHA/Objects/Devices/door_remote.rsi
     layers:
     - state: door_remotebase
     - state: door_remotelightscolour
@@ -2149,6 +2342,8 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
   - type: Sprite
     snapCardinals: true
     noRot: true
@@ -4598,17 +4793,39 @@
 - type: entity
   id: MeditationChamberReflection
   name: reflection
-  description: PENTHOUSE, Meditation Chamber
+  suffix: PENTHOUSE, Meditation Chamber
   placement:
     mode: SnapgridCenter
   components:
     - type: Sprite
       sprite: _SHA/Structures/Decoration/reflection.rsi
+      drawdepth: FloorObjects
       layers:
         - state: reflection
         - state: reflection-unshaded
           shader: unshaded
+    - type: Transform
+      anchored: true
+    - type: Tag
+      tags:
+        - HideContextMenu
+
+- type: entity
+  id: MeditationChamberReflectionArmillary
+  name: armillary reflection
+  suffix: PENTHOUSE, Meditation Chamber
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      sprite: _SHA/Structures/Decoration/reflectionarmillary.rsi
       drawdepth: FloorObjects
+      layers:
+      - state: gold
+        offset: 0.0,-1.5
+      - state: gold-unshaded
+        offset: 0.0,-1.5
+        shader: unshaded
     - type: Transform
       anchored: true
     - type: Tag
@@ -4619,7 +4836,7 @@
   parent: MeditationChamberReflection
   id: MeditationChamberReflectionNoGlass
   name: reflection
-  description: PENTHOUSE, No Glass, Meditation Chamber
+  suffix: PENTHOUSE, No Glass, Meditation Chamber
   placement:
     mode: SnapgridCenter
   components:
@@ -5027,7 +5244,7 @@
   - type: Sprite
     offset: 0,-0.28125
   - type: Strap
-    buckleOffset: -0.5,-0.35
+    buckleOffset: -0.4,-0.35
 
 - type: entity
   parent: BaseFoodShakerSomber
@@ -5079,6 +5296,50 @@
   suffix: PENTHOUSE, MAP IN BATHROOMS
   description: "This isn't real. You're hallucinating."
 
+- type: entity
+  parent: [ LightSomberEidoliteColorUV, BasePsionic ]
+  id: LightSomberEidoliteWellLampUVPenthouse
+  name: eidolite well lamp
+  suffix: Mantis, Ultraviolet] [PENTHOUSE
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. Something feels different about this one. You feel watched."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    noRot: false
+    drawdepth: HighFloorObjects # So they render above puddles
+    offset: 0.0,0.0
+    sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitewell.rsi
+    layers:
+    - state: base
+    - state: crystal-ultraviolet
+    - state: glow-ultraviolet
+      shader: unshaded
+    - state: crystal-ultraviolet
+      shader: unshaded
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.125
+        hard: true
+        density: 100
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: PointLight
+    energy: 2
+    radius: 5
+    softness: 1.22
+    color: "#9e00ff"
+  - type: InteractionOutline
+  - type: RequireProjectileTarget
+
 # Infrastructure (Elevator, Travel, etc.)
 
 - type: entity
@@ -5126,12 +5387,22 @@
   parent: [ SignalTimer, BasePsionic ]
   id: SignalTimerDirectionalElevatorExit
   name: elevator electronics
-  suffix: Elevator Exit
+  suffix: Elevator Exit, 3 Seconds
   description: "Wires and things."
   components:
   - type: SignalTimer
-    delay: 5
+    delay: 3
   - type: Sprite
     drawdepth: WallMountedItems
     sprite: _SHA/Structures/Wallmounts/switch.rsi
-    state: wires
+    state: wiresleft
+
+- type: entity
+  parent: SignalTimerDirectionalElevatorExit
+  id: SignalTimerDirectionalElevatorExitLights
+  suffix: Elevator Exit, 4 Seconds
+  components:
+  - type: SignalTimer
+    delay: 4
+  - type: Sprite
+    state: wiresright

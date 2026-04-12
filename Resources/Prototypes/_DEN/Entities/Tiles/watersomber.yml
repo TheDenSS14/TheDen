@@ -1,4 +1,5 @@
-# I wish these sprites behaved better when the camera rotates, but I'm not flooding the entity list with four times this amount just to fix it. Stop looking around.
+# I didn't know what I was getting into when I started making these. God have mercy
+# Forgive the clumsy juggling of "corner" and "diagonal"
 
 - type: entity
   parent: FloorWaterEntity
@@ -358,6 +359,43 @@
 
 - type: entity
   parent: SomberPoolWater
+  id: SomberPoolWaterNarrowCornerTile
+  suffix: Narrow Corner
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltile
+    - state: water
+    - state: watershine
+      shader: unshaded
+    - state: poolcorner
+    - state: poolouter
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.5,0,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fishing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0.5,0,0.4"
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: SomberPoolWater
   id: SomberPoolWaterDiagonal
   suffix: Diagonal
   components:
@@ -609,6 +647,21 @@
     - state: poolcornerdark
 
 - type: entity
+  parent: SomberPoolWaterNarrowCornerTile
+  id: SomberPoolWaterNarrowCornerTileDark
+  suffix: Narrow Corner, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltile
+    - state: water
+    - state: watershine
+      shader: unshaded
+    - state: poolcornerdark
+    - state: poolouterdark
+
+- type: entity
   parent: SomberPoolWaterDiagonal
   id: SomberPoolWaterDiagonalDark
   suffix: Diagonal, Dark
@@ -838,6 +891,22 @@
 
 - type: entity
   parent: SomberPoolWaterGlass
+  id: SomberPoolWaterNarrowCornerTileGlass
+  suffix: Walkable Glass, Narrow Corner
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltile
+    - state: water
+    - state: watershine
+      shader: unshaded
+    - state: poolglass
+    - state: poolcorner
+    - state: poolouter
+
+- type: entity
+  parent: SomberPoolWaterGlass
   id: SomberPoolWaterDiagonalGlass
   suffix: Walkable Glass, Diagonal
   components:
@@ -957,7 +1026,7 @@
     - state: poolglassdark
 
 - type: entity
-  parent: SomberPoolWaterGlass
+  parent: SomberPoolWaterGlassCorner
   id: SomberPoolWaterGlassCornerDark
   suffix: Walkable Glass, Diagonal, Dark
   components:
@@ -1088,6 +1157,22 @@
     - state: poolcornerdark
 
 - type: entity
+  parent: SomberPoolWaterNarrowCornerTileGlass
+  id: SomberPoolWaterNarrowCornerTileGlassDark
+  suffix: Walkable Glass, Narrow Corner, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltile
+    - state: water
+    - state: watershine
+      shader: unshaded
+    - state: poolglassdark
+    - state: poolcornerdark
+    - state: poolouterdark
+
+- type: entity
   parent: SomberPoolWaterDiagonalGlass
   id: SomberPoolWaterDiagonalGlassDark
   suffix: Walkable Glass, Diagonal, Dark
@@ -1133,7 +1218,7 @@
     - state: poolinnerdark
 
 - type: entity
-  parent: SomberPoolWaterGlass
+  parent: SomberPoolWaterCornerInnerGlass
   id: SomberPoolWaterCornerInnerGlassDark
   suffix: Walkable Glass, Diagonal Inner, Dark
   components:

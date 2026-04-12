@@ -297,9 +297,7 @@
     drawdepth: HighFloorObjects # So they render above puddles
     offset: 0.0,0.0
     sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitewell.rsi
-  - type: Anchorable
-  - type: Transform
-    anchored: true
+    noRot: false
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -370,6 +368,7 @@
     drawdepth: Mobs
     offset: 0.0,0.3125 # 10 pixels up, centering the base on the tile
     sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitefloor.rsi
+    noRot: true
   - type: RequireProjectileTarget
     active: false
   - type: Fixtures

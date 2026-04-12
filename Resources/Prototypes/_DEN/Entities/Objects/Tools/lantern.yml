@@ -9,6 +9,11 @@
   name: mantis lantern
   description: "An ornate lantern housing an eidolite pyramid that draws power from the noosphere. Stare too long and the gleam resolves into shapes you almost recognize, then promptly forget. For all its theatrics, the handle still hangs comfortably on your back."
   components:
+    - type: ItemToggleOnTrigger # Makes it possibly useful for decoration
+    - type: TriggerOnSignal
+    - type: DeviceLinkSink
+      ports:
+        - Trigger
     - type: Sprite
       sprite: _DEN/Objects/Specific/Mantis/lanternmantis.rsi
       layers:
@@ -97,6 +102,11 @@
   name: somber lamp
   description: "A palm-sized electrum sphere studded with shards of eidolite, each humming with faint noospheric charge. Its glow lingers in your vision, imprinting shapes you can't quite name."
   components:
+    - type: ItemToggleOnTrigger
+    - type: TriggerOnSignal
+    - type: DeviceLinkSink
+      ports:
+        - Trigger
     - type: Sprite
       sprite: _DEN/Objects/Tools/somberlamp.rsi
       layers:
