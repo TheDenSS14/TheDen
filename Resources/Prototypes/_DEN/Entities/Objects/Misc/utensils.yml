@@ -1,5 +1,5 @@
 - type: entity
-  parent: BarSpoon
+  parent: [ BaseDecorativeFixture, BarSpoon ]
   id: BarSpoonSomber
   name: electrum bar spoon
   suffix: Somber Barware
@@ -17,7 +17,7 @@
       Silver: 10
 
 - type: entity
-  parent: Skimmer # It's technically a chemistry item, but it only comes from VendingMachineBoozeSomber, so whatever
+  parent: [ BaseDecorativeFixture, Skimmer ] # It's technically a chemistry item, but it only comes from VendingMachineBoozeSomber, so whatever
   id: SkimmerSomber
   name: electrum skimmer
   suffix: Somber Barware

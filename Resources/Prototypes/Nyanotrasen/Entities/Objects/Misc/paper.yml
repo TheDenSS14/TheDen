@@ -8,7 +8,7 @@
 
 - type: entity
   name: mantis seal
-  parent: [RubberStampBase, BaseMantisContraband] # TheDen
+  parent: [ BaseDecorativeFixture, RubberStampBase, BaseMantisContraband] # TheDen - Smaller fixture, mantis contraband
   id: RubberStampMantis
   description: "A heavy seal belonging to the mantis, made of polished electrum with an eidolite tip." # TheDen
   components:

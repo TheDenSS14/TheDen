@@ -1,5 +1,5 @@
 - type: entity
-  parent: RemoteSignaller
+  parent: [ BaseDecorativeFixture, RemoteSignaller ]
   id: RemoteSignallerSomber
   name: somber remote signaller
   description: "A brushed metal remote used for remotely sending signals to objects within a small radius of about 15 meters."

@@ -24,17 +24,32 @@
   - type: Food
     trash:
     - SomberSoapDish # This is stupid
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.18 # Smaller sprite, smaller fixture
+        layer:
+        - SlipLayer
+        hard: false
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.18 # Smaller sprite, smaller fixture
+        density: 10
+        mask:
+        - ItemMask
 
 
 - type: entity
-  parent: Soap
+  parent: SoapSomberViolet
   id: SoapSomberTeal
   name: fine soap
   suffix: Somber, Teal
   description: "A striped teal bar of soap, so expensive it comes with its own polished electrum dish. Smells like like sweet incense."
   components:
   - type: Sprite
-    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
     layers:
     - state: sombersoapdish
     - state: somberteal-4
@@ -47,9 +62,6 @@
   - type: Residue
     residueAdjective: residue-slippery
     residueColor: residue-teal
-  - type: Food
-    trash:
-    - SomberSoapDish # This is stupid
 
 - type: entity
   parent: BaseItem
@@ -92,13 +104,11 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeAabb
-          bounds: "-0.25,-0.25,0.25,0.25"
-        density: 50
+          !type:PhysShapeCircle
+          radius: 0.18
+        density: 10
         mask:
         - ItemMask
-        layer:
-        - BulletImpassable # Like plates
   - type: InteractionVerbs
     allowedVerbs:
     - LickObject

@@ -386,7 +386,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: ChairBase
+  parent: [ ChairBase, BasePsionic ]
   id: SomberChairBeachLounge # I'm sorry I ruined your sprite Port I'm desperate
   name: somber leather chaise
   suffix: Somber, Lounge Chair

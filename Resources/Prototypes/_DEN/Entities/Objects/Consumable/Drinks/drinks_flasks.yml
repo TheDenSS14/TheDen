@@ -1,5 +1,5 @@
 - type: entity
-  parent: DrinkFlaskBar
+  parent: [ BaseDecorativeFixture, DrinkFlaskBar ]
   id: DrinkFlaskBarSomber
   name: electrum flask
   suffix: Somber Barware
@@ -15,7 +15,7 @@
       Silver: 10
 
 - type: entity
-  parent: DrinkVacuumFlask
+  parent: [ BaseDecorativeFixture, DrinkVacuumFlask ]
   id: DrinkVacuumFlaskSomber
   name: electrum vacuum flask
   suffix: Somber Barware

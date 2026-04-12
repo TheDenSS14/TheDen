@@ -75,13 +75,16 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeCircle
-          radius: 0.28125
-          offset: "-0.328125,-0.109375"
+          !type:PolygonShape
+            vertices:
+            - "0.35,-0.35"
+            - "-0.3,-0.35"
+            - "0.35,0.3"
         density: 55
         mask:
         - TableMask
         layer:
+        - TableLayer
         - MidImpassable
         - BulletImpassable
   - type: IconSmooth
@@ -102,13 +105,16 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeCircle
-          radius: 0.28125
-          offset: "0.296875,-0.109375"
+          !type:PolygonShape
+            vertices:
+            - "-0.35,-0.35"
+            - "-0.35,0.3"
+            - "0.3,-0.35"
         density: 55
         mask:
         - TableMask
         layer:
+        - TableLayer
         - MidImpassable
         - BulletImpassable
 
@@ -125,13 +131,16 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeCircle
-          radius: 0.28125
-          offset: "-0.203125,-0.109375"
+          !type:PolygonShape
+            vertices:
+            - "0.35,0.35"
+            - "0.35,-0.3"
+            - "-0.3,0.35"
         density: 55
         mask:
         - TableMask
         layer:
+        - TableLayer
         - MidImpassable
         - BulletImpassable
 
@@ -148,13 +157,16 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeCircle
-          radius: 0.28125
-          offset: "0.171875,-0.109375"
+          !type:PolygonShape
+            vertices:
+            - "-0.35,0.35"
+            - "0.3,0.35"
+            - "-0.35,-0.3"
         density: 55
         mask:
         - TableMask
         layer:
+        - TableLayer
         - MidImpassable
         - BulletImpassable
 
@@ -180,6 +192,7 @@
         mask:
         - TableMask
         layer:
+        - TableLayer
         - MidImpassable
         - LowImpassable
         - BulletImpassable
@@ -199,13 +212,16 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeCircle
-          radius: 0.28125
-          offset: "-0.328125,-0.109375"
+          !type:PolygonShape
+            vertices:
+            - "0.35,-0.35"
+            - "-0.3,-0.35"
+            - "0.35,0.3"
         density: 55
         mask:
         - TableMask
         layer:
+        - TableLayer
         - MidImpassable
         - LowImpassable
         - BulletImpassable
@@ -227,13 +243,16 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeCircle
-          radius: 0.28125
-          offset: "0.296875,-0.109375"
+          !type:PolygonShape
+            vertices:
+            - "-0.35,-0.35"
+            - "-0.35,0.3"
+            - "0.3,-0.35"
         density: 55
         mask:
         - TableMask
         layer:
+        - TableLayer
         - MidImpassable
         - LowImpassable
         - BulletImpassable
@@ -251,13 +270,16 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeCircle
-          radius: 0.28125
-          offset: "-0.203125,-0.109375"
+          !type:PolygonShape
+            vertices:
+            - "0.35,0.35"
+            - "0.35,-0.3"
+            - "-0.3,0.35"
         density: 55
         mask:
         - TableMask
         layer:
+        - TableLayer
         - MidImpassable
         - LowImpassable
         - BulletImpassable
@@ -275,13 +297,16 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeCircle
-          radius: 0.28125
-          offset: "0.171875,-0.109375"
+          !type:PolygonShape
+            vertices:
+            - "-0.35,0.35"
+            - "0.3,0.35"
+            - "-0.35,-0.3"
         density: 55
         mask:
         - TableMask
         layer:
+        - TableLayer
         - MidImpassable
         - LowImpassable
         - BulletImpassable
@@ -308,6 +333,7 @@
         mask:
         - TableMask
         layer:
+        - TableLayer
         - MidImpassable
         - LowImpassable
         - BulletImpassable
@@ -358,13 +384,16 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeCircle
-          radius: 0.28125
-          offset: "-0.328125,-0.109375"
+          !type:PolygonShape
+            vertices:
+            - "0.35,-0.35"
+            - "-0.3,-0.35"
+            - "0.35,0.3"
         density: 55
         mask:
         - TableMask
         layer:
+        - TableLayer
         - MidImpassable
         - LowImpassable
         - BulletImpassable
@@ -386,13 +415,16 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeCircle
-          radius: 0.28125
-          offset: "0.296875,-0.109375"
+          !type:PolygonShape
+            vertices:
+            - "-0.35,-0.35"
+            - "-0.35,0.3"
+            - "0.3,-0.35"
         density: 55
         mask:
         - TableMask
         layer:
+        - TableLayer
         - MidImpassable
         - LowImpassable
         - BulletImpassable
@@ -410,13 +442,16 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeCircle
-          radius: 0.28125
-          offset: "-0.203125,-0.109375"
+          !type:PolygonShape
+            vertices:
+            - "0.35,0.35"
+            - "0.35,-0.3"
+            - "-0.3,0.35"
         density: 55
         mask:
         - TableMask
         layer:
+        - TableLayer
         - MidImpassable
         - LowImpassable
         - BulletImpassable
@@ -434,13 +469,16 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeCircle
-          radius: 0.28125
-          offset: "0.171875,-0.109375"
+          !type:PolygonShape
+            vertices:
+            - "-0.35,0.35"
+            - "0.3,0.35"
+            - "-0.35,-0.3"
         density: 55
         mask:
         - TableMask
         layer:
+        - TableLayer
         - MidImpassable
         - LowImpassable
         - BulletImpassable
@@ -546,6 +584,7 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepWood
+  - type: PlaceableSurface
   - type: Climbable
   - type: Bonkable
     bonkDamage:

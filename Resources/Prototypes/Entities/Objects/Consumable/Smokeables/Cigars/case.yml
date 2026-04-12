@@ -85,7 +85,7 @@
     - id: CigarGold
       amount: 8
 
-- type: entity 
+- type: entity
   id: CigarRobustCase
   parent: CigarCase
   name: Cohiba Robusto cigar case
@@ -114,7 +114,7 @@
       visible: false
   - type: Storage
     grid:
-    - 0,1,4,1
+    - 0,0,4,1 # SHA - THIS SHIT WAS BROKEN
   - type: Item
     sprite: Objects/Consumable/Smokeables/Cigars/case_robust.rsi
     size: Normal
@@ -124,7 +124,7 @@
   - type: StorageFill
     contents:
     - id: CigarRobust
-      amount: 5
+      amount: 10 # SHA - FUCK IT I'M ALREADY CHANGING OTHER STUFF HERE
   - type: ItemCounter
     count:
       tags: [Cigar]
@@ -135,3 +135,14 @@
     - cigar3
     - cigar4
     - cigar5
+  - type: Fixtures # SHA - IT KEEPS BUMPING AGAINST THE WALL AND LOOKING BAD ON THE TABLE...
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.2,0.1,0.0"
+        density: 10
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2

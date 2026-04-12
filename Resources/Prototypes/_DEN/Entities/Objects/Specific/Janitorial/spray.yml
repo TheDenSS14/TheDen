@@ -21,7 +21,7 @@
         - Spray
 
 - type: entity
-  parent: SprayBottle
+  parent: [ BaseDecorativeFixture, SprayBottle ]
   id: SprayBottleSomber
   name: spray bottle
   description: "A spray bottle made of unreasonably rare materials. Who the hell buys these things?"
@@ -32,9 +32,18 @@
     state: cleaner
   - type: Item
     sprite: _DEN/Objects/Specific/Janitorial/somberspraybottle.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.1 # Small so it stops rebounding off walls
+        density: 20
+        mask:
+        - ItemMask
 
 - type: entity
-  parent: MegaSprayBottle
+  parent: [ BaseDecorativeFixture, MegaSprayBottle ]
   id: MegaSprayBottleSomber
   name: mega spray bottle
   description: "A large spray bottle made of unreasonably rare materials. Who the hell buys these things?"
@@ -47,7 +56,7 @@
     sprite: _DEN/Objects/Specific/Janitorial/somberspraybottle.rsi
 
 - type: entity
-  parent: SprayBottleSpaceCleaner
+  parent: [ BaseDecorativeFixture, SprayBottleSpaceCleaner ]
   id: SprayBottleSpaceCleanerSomber
   name: space cleaner
   description: "Space cleaner in a spray bottle made of unreasonably rare materials. Who the hell buys these things?"
@@ -60,7 +69,7 @@
     sprite: _DEN/Objects/Specific/Janitorial/somberspraybottle.rsi
 
 - type: entity
-  parent: MegaSprayBottleSpaceCleaner
+  parent: [ BaseDecorativeFixture, MegaSprayBottleSpaceCleaner ]
   id: MegaSprayBottleSpaceCleanerSomber
   name: mega space cleaner
   description: "Space cleaner in a large spray bottle made of unreasonably rare materials. Who the hell buys these things?"

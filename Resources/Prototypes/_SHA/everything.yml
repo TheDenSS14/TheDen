@@ -3922,7 +3922,7 @@
     sprite: _SHA/Clothing/Head/Hats/cagemantis.rsi
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseDecorativeFixture, BaseItem ]
   id: HandcuffsMantisPenthouse
   suffix: PENTHOUSE
   name: gilded shackles
@@ -4003,7 +4003,7 @@
 # Books
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseDecorativeFixture, BaseItem ]
   id: EldritchTome
   name: eldritch tome
   suffix: SANCTUM ONLY

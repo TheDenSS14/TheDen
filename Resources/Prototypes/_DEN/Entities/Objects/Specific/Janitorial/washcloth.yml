@@ -1,5 +1,5 @@
 - type: entity
-  parent: RagItem
+  parent: [ BaseDecorativeFixture, RagItem ]
   id: RagItemColor
   name: white washcloth
   suffix: Damp Rag
@@ -19,7 +19,7 @@
       right:
       - state: inhand-right
         color: "#EAE8E8"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorPurple
@@ -39,7 +39,7 @@
       right:
       - state: inhand-right
         color: "#9C0DE1"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorRed
@@ -59,7 +59,7 @@
       right:
       - state: inhand-right
         color: "#940000"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorBlue
@@ -79,7 +79,7 @@
       right:
       - state: inhand-right
         color: "#0089EF"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorDarkBlue
@@ -99,7 +99,7 @@
       right:
       - state: inhand-right
         color: "#3285ba"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorLightBlue
@@ -119,7 +119,7 @@
       right:
       - state: inhand-right
         color: "#58abcc"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorTeal
@@ -139,7 +139,7 @@
       right:
       - state: inhand-right
         color: "#3CB57C"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorBrown
@@ -159,7 +159,7 @@
       right:
       - state: inhand-right
         color: "#723A02"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorLightBrown
@@ -179,7 +179,7 @@
       right:
       - state: inhand-right
         color: "#c59431"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorGray
@@ -199,7 +199,7 @@
       right:
       - state: inhand-right
         color: "#999999"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorGreen
@@ -219,7 +219,7 @@
       right:
       - state: inhand-right
         color: "#5ABF2F"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorDarkGreen
@@ -239,7 +239,7 @@
       right:
       - state: inhand-right
         color: "#79CC26"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorGold
@@ -261,7 +261,7 @@
       right:
       - state: inhand-right
         color: "#F7C430"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorOrange
@@ -281,7 +281,7 @@
       right:
       - state: inhand-right
         color: "#EF8100"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorBlack
@@ -301,7 +301,7 @@
       right:
       - state: inhand-right
         color: "#535353"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorPink
@@ -341,7 +341,7 @@
       right:
       - state: inhand-right
         color: "#ffe14d"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorMaroon
@@ -361,7 +361,7 @@
       right:
       - state: inhand-right
         color: "#cc295f"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorSilver
@@ -383,7 +383,7 @@
       right:
       - state: inhand-right
         color: "#d0d0d0"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorMime
@@ -405,7 +405,7 @@
       right:
       - state: inhand-right
         color: "#EAE8E8"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorNT
@@ -429,7 +429,7 @@
       right:
       - state: inhand-right
         color: "#004787"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorCentcom
@@ -451,7 +451,7 @@
       right:
       - state: inhand-right
         color: "#29722e"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorSyndicate
@@ -473,7 +473,7 @@
       right:
       - state: inhand-right
         color: "#535353"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorMagenta
@@ -493,7 +493,7 @@
       right:
       - state: inhand-right
         color: "#b32d70"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorAzure
@@ -513,7 +513,7 @@
       right:
       - state: inhand-right
         color: "#2968e6"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorRoyalRed
@@ -533,7 +533,7 @@
       right:
       - state: inhand-right
         color: "#8a0027"
-        
+
 - type: entity
   parent: RagItemColor
   id: RagItemColorPine

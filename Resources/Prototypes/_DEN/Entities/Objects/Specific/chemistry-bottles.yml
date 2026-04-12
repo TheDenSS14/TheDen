@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: [ BaseChemistryEmptyBottle, BasePsionic ]
+  parent: [ BaseDecorativeFixture, BaseChemistryEmptyBottle, BasePsionic ]
   id: ChemistryEmptyBottleMantis
   name: electrum bottle
   suffix: Somber

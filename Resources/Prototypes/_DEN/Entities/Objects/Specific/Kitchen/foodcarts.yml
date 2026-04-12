@@ -1,5 +1,5 @@
 - type: entity
-  parent: FoodCartHot
+  parent: [ FoodCartHot, BasePsionic ] # The Outer Chamber Crucible is basically noospherically radioactive, it's fine
   id: FoodCartSomber
   name: somber food cart
   description: "A pricey food cart with room for sauces up top and an insulated freezer compartment below, complete with fasteners to safely haul dinnerware. Whoever made this must have no joy in their soul--there's no little umbrella."

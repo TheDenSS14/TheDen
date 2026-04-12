@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ SodaDispenser, BasePsionic ] # If we make craftable coffee machines, update this
+  parent: [ SodaDispenser, BasePsionic ] # If we make craftable coffee machines, update the parent
   id: CoffeeDispenserSomber
   name: somber espresso machine
   suffix: Somber Barware, Coffee
@@ -20,7 +20,7 @@
         layer:
         - TabletopMachineLayer
   - type: Machine
-    board: SodaDispenserMachineCircuitboard # If we make craftable coffee machines, update this
+    board: SodaDispenserMachineCircuitboard # If we make craftable coffee machines, update the board
   - type: ReagentDispenser
     pack: CoffeeDispenserInventory
 
