@@ -122,9 +122,10 @@
     - 0,0,2,1
     storedRotation: 90
   - type: StorageFill
-    contents:
+    contents: # SHA - FUCK IT I'M ALREADY CHANGING OTHER STUFF HERE
+    - id: FlippoLighterMantis
     - id: CigarRobust
-      amount: 10 # SHA - FUCK IT I'M ALREADY CHANGING OTHER STUFF HERE
+      amount: 9
   - type: ItemCounter
     count:
       tags: [Cigar]

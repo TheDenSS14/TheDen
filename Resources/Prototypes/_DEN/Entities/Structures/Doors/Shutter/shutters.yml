@@ -44,8 +44,14 @@
     performCollisionCheck: false
     canPry: false
     changeAirtight: false
-    openSound: /Audio/_DEN/Effects/crystalshimmer1.ogg
-    closeSound: /Audio/_DEN/Effects/crystalshimmer2.ogg
+    openSound: !type:SoundPathSpecifier
+      path: /Audio/_White/BloodCult/veilin.ogg
+      params:
+        volume: -6
+    closeSound: !type:SoundPathSpecifier
+      path: /Audio/_White/BloodCult/veilout.ogg
+      params:
+        volume: -6
   - type: Anchorable
     flags:
     - Anchorable

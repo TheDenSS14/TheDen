@@ -797,8 +797,8 @@
     sprite: _SHA/Structures/Walls/elevatorleftblack.rsi
 
 - type: entity
-  parent: WindowSomberDirectionalTinted
-  id: WindowFireEscape
+  parent: WallSolidDirectional
+  id: WindowFireEscape # Not that anyone's reading this but me, but I made these before I made the directional walls, hence the ID
   name: skyscraper wall
   suffix: Directional, Opaque] [PENTHOUSE
   description: "It keeps the city out."
@@ -811,7 +811,7 @@
     state: fire_escape
 
 - type: entity
-  parent: WindowSomberDirectionalTinted
+  parent: WallSolidDirectional
   id: WindowFireEscapeLeft
   name: skyscraper wall
   suffix: Directional, Opaque, Left] [PENTHOUSE
@@ -827,7 +827,7 @@
     boundingBox: "-0.5,-0.5,0,-0.3"
 
 - type: entity
-  parent: WindowSomberDirectionalTinted
+  parent: WallSolidDirectional
   id: WindowFireEscapeRight
   name: skyscraper wall
   suffix: Directional, Opaque, Right] [PENTHOUSE
@@ -843,7 +843,7 @@
     boundingBox: "0,-0.5,0.5,-0.3"
 
 - type: entity
-  parent: WindowSomberDirectionalTintedCorner
+  parent: WallSolidDirectionalCorner
   id: WindowFireEscapeCorner
   name: skyscraper wall
   suffix: Directional, Opaque] [PENTHOUSE
@@ -857,13 +857,31 @@
     state: fire_escape_corner
 
 - type: entity
-  parent: WallSomber
+  parent: WallSomberDark
   id: WallSomberNoSmoothing
   suffix: No Smoothing, Dark] [PENTHOUSE
   components:
   - type: Sprite
     sprite: _DEN/Structures/Doors/SecretDoors/sombersecretdoordark.rsi
     state: closed
+  - type: Icon
+    sprite: _DEN/Structures/Doors/SecretDoors/sombersecretdoordark.rsi
+    state: closed
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+
+- type: entity
+  parent: WindowSomberDarkDiagonal
+  id: WindowSomberDiagonalNoSmoothing
+  suffix: No Smoothing, Dark, Diagonal] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal.rsi
+    state: state0
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal.rsi
+    state: state0
   - type: IconSmooth
     key: walls
     mode: NoSprite
@@ -2313,7 +2331,7 @@
   id: RemoteSignallerSomberAdmin
   name: somber remote signaller
   suffix: PENTHOUSE, DO NOT MAP
-  description: "A brushed metal remote used for remotely sending signals to objects."
+  description: "A brushed metal remote used to send signals to devices."
   components:
   - type: WirelessNetworkConnection
     range: 1000
@@ -2323,6 +2341,7 @@
   id: DoorRemoteAllSomber
   name: somber door remote
   suffix: PENTHOUSE, DO NOT MAP
+  description: "A brushed metal remote that controls the doors."
   components:
   - type: Item
     storedRotation: 0
@@ -4263,6 +4282,17 @@
     - id: PillCanisterSpaceDrugsMantisBreak
     - id: PillCanisterPsicodineMantisBreak
     - id: PillCanisterPhilterexMantisBreak
+
+- type: entity
+  parent: [ MantisCaseMedkit, MedkitCombatFilledBSO ]
+  id: MantisCaseMedkitPenthouseFilled
+  name: shadow medical case
+  suffix: Somber, Blueshield Medkit, PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+  - type: Item
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
 
 - type: entity
   parent: PillCanisterSpaceDrugsMantis

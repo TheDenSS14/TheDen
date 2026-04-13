@@ -4,11 +4,11 @@
   id: SignalSwitchSomber
   name: somber signal switch
   suffix: Directional
-  description: "A brushed metal switch, shaped like an eye."
+  description: "A brushed metal switch shaped like an eye."
   components:
   - type: Sprite
     drawdepth: WallMountedItems
-    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi # There are sprites for centered, left, and right switches...but who uses switches...
   - type: Transform
     anchored: false
 
@@ -27,6 +27,8 @@
     drawdepth: WallMountedItems
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
     state: base-center
+  - type: WallMount
+    arc: 360
 
 - type: entity
   parent: [ SignalButtonDirectional, BasePsionic ]
@@ -103,19 +105,100 @@
 - type: entity
   parent: [ LockableButton, BasePsionic ]
   id: LockableButtonSomber
-  name: somber lockable button
-  suffix: Unprogrammed
+  name: somber signal button (locking)
+  suffix: Unprogrammed, Directional
   description: "A brushed metal button shaped like an eye. It closes when locked."
   categories: [] # If mappers want more than these they'll have to configure them themselves, sorry...
   components:
+  - type: LockVisuals
+    stateLocked: locked
   - type: Sprite
     drawdepth: WallMountedItems
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    layers:
+    - state: base
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+
+- type: entity
+  parent: LockableButtonSomber
+  id: LockableButtonSomberLeft
+  suffix: Unprogrammed, Left
+  components:
+  - type: LockVisuals
+    stateLocked: locked-left
+  - type: Sprite
+    layers:
+    - state: base-left
+    - state: locked-left
+      map: ["enum.LockVisualLayers.Lock"]
+
+- type: entity
+  parent: LockableButtonSomber
+  id: LockableButtonSomberRight
+  suffix: Unprogrammed, Right
+  components:
+  - type: LockVisuals
+    stateLocked: locked-right
+  - type: Sprite
+    layers:
+    - state: base-right
+    - state: locked-right
+      map: ["enum.LockVisualLayers.Lock"]
+
+- type: entity
+  parent: LockableButtonSomber
+  id: LockableButtonSomberCenter
+  suffix: Unprogrammed, Center
+  components:
+  - type: LockVisuals
+    stateLocked: locked-center
+  - type: Sprite
+    layers:
+    - state: base-center
+    - state: locked-center
+      map: ["enum.LockVisualLayers.Lock"]
+  - type: WallMount
+    arc: 360
+
+- type: entity
+  parent: LockableButtonSomber
+  id: LockableButtonSomberMantis
+  suffix: Mantis, Directional
+  components:
+  - type: AccessReader
+    access: [["Mantis"]]
+
+- type: entity
+  parent: LockableButtonSomberLeft
+  id: LockableButtonSomberMantisLeft
+  suffix: Mantis, Directional, Left
+  components:
+  - type: AccessReader
+    access: [["Mantis"]]
+
+- type: entity
+  parent: LockableButtonSomberRight
+  id: LockableButtonSomberMantisRight
+  suffix: Mantis, Directional, Right
+  components:
+  - type: AccessReader
+    access: [["Mantis"]]
+
+- type: entity
+  parent: LockableButtonSomberCenter
+  id: LockableButtonSomberMantisCenter
+  suffix: Mantis, Center
+  components:
+  - type: AccessReader
+    access: [["Mantis"]]
+  - type: WallMount
+    arc: 360
 
 - type: entity
   parent: LockableButtonSomber
   id: LockableButtonSomberResearch
-  suffix: Epistemics
+  suffix: Epistemics # These guys don't get the varied directions, there's already so many prototypes filling up the entity list here...
   components:
   - type: AccessReader
     access: [["Research"]]
@@ -127,14 +210,6 @@
   components:
   - type: AccessReader
     access: [["Chapel"]]
-
-- type: entity
-  parent: LockableButtonSomber
-  id: LockableButtonSomberMantis
-  suffix: Mantis
-  components:
-  - type: AccessReader
-    access: [["Mantis"]]
 
 - type: entity
   parent: LockableButtonSomber
@@ -150,7 +225,7 @@
   parent: [ ButtonFrame, BasePsionic ]
   id: ButtonFrameSomberGold
   name: somber signal button frame
-  suffix: Gold, Glows In Dark
+  suffix: Gold, Directional
   description: "A gold button frame shaped like an eye."
   components:
   - type: Sprite
@@ -163,7 +238,7 @@
 - type: entity
   parent: ButtonFrameSomberGold
   id: ButtonFrameSomberGoldLeft
-  suffix: Gold, Left, Glows In Dark
+  suffix: Gold, Directional Left
   components:
   - type: Sprite
     layers:
@@ -174,7 +249,7 @@
 - type: entity
   parent: ButtonFrameSomberGold
   id: ButtonFrameSomberGoldRight
-  suffix: Gold, Right, Glows In Dark
+  suffix: Gold, Directional Right
   components:
   - type: Sprite
     layers:
@@ -185,7 +260,7 @@
 - type: entity
   parent: ButtonFrameSomberGold
   id: ButtonFrameSomberGoldCenter
-  suffix: Gold, Center, Glows In Dark
+  suffix: Gold, Center
   components:
   - type: Sprite
     layers:
@@ -196,7 +271,7 @@
 - type: entity
   parent: ButtonFrameSomberGold
   id: ButtonFrameSomberSilver
-  suffix: Silver, Glows In Dark
+  suffix: Silver, Directional
   description: "A silver button frame shaped like an eye."
   components:
   - type: Sprite
@@ -208,7 +283,7 @@
 - type: entity
   parent: ButtonFrameSomberSilver
   id: ButtonFrameSomberSilverLeft
-  suffix: Silver, Left, Glows In Dark
+  suffix: Silver, Directional Left
   components:
   - type: Sprite
     layers:
@@ -219,7 +294,7 @@
 - type: entity
   parent: ButtonFrameSomberSilver
   id: ButtonFrameSomberSilverRight
-  suffix: Silver, Right, Glows In Dark
+  suffix: Silver, Directional Right
   components:
   - type: Sprite
     layers:
@@ -230,7 +305,7 @@
 - type: entity
   parent: ButtonFrameSomberGold
   id: ButtonFrameSomberSilverCenter
-  suffix: Silver, Center, Glows In Dark
+  suffix: Silver, Center
   components:
   - type: Sprite
     layers:
@@ -241,7 +316,7 @@
 - type: entity
   parent: ButtonFrameSomberGold
   id: ButtonFrameSomberMagenta
-  suffix: Magenta, Glows In Dark
+  suffix: Magenta, Directional
   description: "A magenta button frame shaped like an eye."
   components:
   - type: Sprite
@@ -253,7 +328,7 @@
 - type: entity
   parent: ButtonFrameSomberMagenta
   id: ButtonFrameSomberMagentaLeft
-  suffix: Magenta, Left, Glows In Dark
+  suffix: Magenta, Directional Left
   components:
   - type: Sprite
     layers:
@@ -264,7 +339,7 @@
 - type: entity
   parent: ButtonFrameSomberMagenta
   id: ButtonFrameSomberMagentaRight
-  suffix: Magenta, Right, Glows In Dark
+  suffix: Magenta, Directional Right
   components:
   - type: Sprite
     layers:
@@ -275,7 +350,7 @@
 - type: entity
   parent: ButtonFrameSomberGold
   id: ButtonFrameSomberMagentaCenter
-  suffix: Magenta, Center, Glows In Dark
+  suffix: Magenta, Center
   components:
   - type: Sprite
     layers:
@@ -286,7 +361,7 @@
 - type: entity
   parent: ButtonFrameSomberGold
   id: ButtonFrameSomberPurple
-  suffix: Purple, Glows In Dark
+  suffix: Purple, Directional
   description: "A purple button frame shaped like an eye."
   components:
   - type: Sprite
@@ -298,7 +373,7 @@
 - type: entity
   parent: ButtonFrameSomberPurple
   id: ButtonFrameSomberPurpleLeft
-  suffix: Purple, Left, Glows In Dark
+  suffix: Purple, Directional Left
   components:
   - type: Sprite
     layers:
@@ -309,7 +384,7 @@
 - type: entity
   parent: ButtonFrameSomberPurple
   id: ButtonFrameSomberPurpleRight
-  suffix: Purple, Right, Glows In Dark
+  suffix: Purple, Directional Right
   components:
   - type: Sprite
     layers:
@@ -320,7 +395,7 @@
 - type: entity
   parent: ButtonFrameSomberGold
   id: ButtonFrameSomberPurpleCenter
-  suffix: Purple, Center, Glows In Dark
+  suffix: Purple, Center
   components:
   - type: Sprite
     layers:
@@ -392,17 +467,19 @@
 - type: entity
   parent: SomberSignalTimer
   id: SomberSignalTimerCenter
-  suffix: Directional, Center, 5 seconds
+  suffix: Center, 5 seconds
   components:
   - type: SignalTimer
     delay: 5
   - type: Sprite
     state: on-center
+  - type: WallMount
+    arc: 360
 
 - type: entity
   parent: SomberSignalTimerCenter
   id: SomberSignalTimerCenter1
-  suffix: Directional, Center, 1 seconds
+  suffix: Center, 1 seconds
   components:
   - type: SignalTimer
     delay: 1

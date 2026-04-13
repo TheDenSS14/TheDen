@@ -12,6 +12,8 @@
     snap:
     - Wall
   components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
   - type: Sprite
     sprite: _DEN/Structures/Wallmounts/mirror.rsi
     state: sombermirror

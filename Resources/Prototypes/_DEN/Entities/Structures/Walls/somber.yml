@@ -4,7 +4,7 @@
   parent: [ WallReinforced, BasePsionic ]
   id: WallSomber
   name: somber wall
-  description: "Layered with rough, slanted mnemolith slabs in a tight grid to prevent psionic scrying."
+  description: "Layered with dark, rough mnemolith slabs in a tight grid to prevent psionic scrying."
   components:
   - type: Sprite
     sprite: _DEN/Structures/Walls/Somber/somber.rsi
@@ -102,6 +102,90 @@
     sprite: _DEN/Structures/Walls/Somber/somberdark.rsi
   - type: Icon
     sprite: _DEN/Structures/Walls/Somber/somberdark.rsi
+
+# Opaque Directional
+
+- type: entity
+  parent: WallSolidDirectional
+  id: WallSomberDirectional
+  name: somber wall
+  suffix: Directional
+  description: "Made of gloomy, patterned steel. It hums faintly, just below hearing."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somber_directional.rsi
+    state: somber
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somber_directional.rsi
+    state: somber
+
+- type: entity
+  parent: WallSomberDirectional
+  id: WallSomberDarkDirectional
+  suffix: Directional, Dark
+  components:
+  - type: Sprite
+    state: somberdark
+  - type: Icon
+    state: somberdark
+
+- type: entity
+  parent: WallSolidDirectionalCorner
+  id: WallSomberDirectionalCorner
+  name: somber wall
+  suffix: Directional Corner
+  description: "Made of gloomy, patterned steel. It hums faintly, just below hearing."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somber_directional.rsi
+    state: sombercorner
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somber_directional.rsi
+    state: sombercorner
+
+- type: entity
+  parent: WallSomberDirectionalCorner
+  id: WallSomberDarkDirectionalCorner
+  suffix: Directional Corner, Dark
+  components:
+  - type: Sprite
+    state: somberdarkcorner
+  - type: Icon
+    state: somberdarkcorner
+
+# See-Through Directional
+
+- type: entity
+  parent: WallSomberDirectional
+  id: WallSomberDirectionalSeeThrough
+  suffix: Directional, SEE-THROUGH
+  components:
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: WallSomberDarkDirectional
+  id: WallSomberDarkDirectionalSeeThrough
+  suffix: Directional, Dark, SEE-THROUGH
+  components:
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: WallSomberDirectionalCorner
+  id: WallSomberDirectionalCornerSeeThrough
+  suffix: Directional Corner, SEE-THROUGH
+  components:
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: WallSomberDarkDirectionalCorner
+  id: WallSomberDarkDirectionalCornerSeeThrough
+  suffix: Directional Corner, Dark, SEE-THROUGH
+  components:
+  - type: Occluder
+    enabled: false
 
 # Grilles
 
@@ -552,3 +636,79 @@
   - type: Icon
     sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
     state: middle
+
+- type: entity
+  parent: WallSomberDirectional # They don't occlude, but they don't show damage or cracks, so they're closer to walls
+  id: SomberTVSpeakerBig
+  name: somber sound system
+  description: "A sleek surround sound speaker in brushed metal, set into the wall. This system could probably blow the windows out. Occasionally emits low murmuring."
+  suffix: Speaker Window/Wall Attachment, Big] [Somber TV Kit
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    drawdepth: FloorObjects
+    state: wallspeakerbig
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    state: wallspeakerbig
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.36"
+        hard: false
+        density: 1500
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: MetalThud
+  - type: Occluder # You can see over them
+    enabled: false
+
+- type: entity
+  parent: SomberTVSpeakerBig
+  id: SomberTVSpeakerSmall
+  name: somber sound system
+  suffix: Speaker Window/Wall Attachment, Small] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    state: wallspeakersmall
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    state: wallspeakersmall
+
+- type: entity
+  parent: SomberTVSpeakerBig
+  id: SomberTVSpeakerSteel
+  name: somber sound system
+  suffix: Speaker, Matches Walls] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    state: wallspeakersteel
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    state: wallspeakersteel
+
+- type: entity
+  parent: SomberTVSpeakerBig
+  id: SomberTVSpeakerMnemolith
+  name: somber sound system
+  suffix: Speaker, Matches Diagonal Walls] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    state: wallspeakermnemolith
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    state: wallspeakermnemolith

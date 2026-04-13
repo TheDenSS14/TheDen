@@ -8,12 +8,23 @@
   "copyright": "By Sha-Seng (GitHub)",
   "states": [
     {
+      "name": "unlocked",
+      "directions": 4
+    },
+    {
       "name": "locked",
       "directions": 4
     },
     {
-      "name": "unlocked",
+      "name": "locked-left",
       "directions": 4
+    },
+    {
+      "name": "locked-right",
+      "directions": 4
+    },
+    {
+      "name": "locked-center"
     },
     {
       "name": "base",

@@ -362,4 +362,81 @@
     - MantisBoxRestraintsStorable # Technically you could put this box inside itself, but only one should exist in a game at a time since it's a loadout item
   - type: GuideHelp
     guides: [ MantisGuide ]
+
+- type: entity
+  parent: MantisCaseExtraLarge
+  id: MantisCaseMedkit # Mechanically identical to their corresponding medkits, mostly for mappers
+  name: amaranth medical case (basic)
+  suffix: Somber, Basic Medkit, Empty
+  description: "A medical case made of exotic, extremely durable hardwood."
+  abstract: true # I doubt this will ever be needed
+  components:
+  - type: Sprite
+    layers:
+    - state: 4-closed
+    - state: label-medical
+    - state: 4-open
+      map: ["openLayer"]
+  - type: Item
+    size: Large
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,3,1
+    - 5,0,8,1
+    whitelist:
+      tags:
+        - Bottle
+        - Spray
+        - Brutepack
+        - Bloodpack
+        - Gauze
+        - Ointment
+        - PillCanister
+        - DiscreteHealthAnalyzer
+        - Dropper
+        - Vial
+        - CableCoil
+        - WeldingTool
+        - BodyBag
+        - Rollerbed
+        - Syringe
+      components:
+        - BreathMask
+        - Hypospray
+        - Injector
+        - Pill
+        - GasTank
+        - AACTablet
+  - type: Tag
+    tags:
+    - Medkit
+
+- type: entity
+  parent: [ MantisCaseMedkit, MedkitFilled ]
+  id: MantisCaseMedkitFilled
+  name: amaranth medical case (basic)
+  suffix: Somber, Basic Medkit, Filled
+
+- type: entity
+  parent: [ MantisCaseMedkit, MedkitAdvancedFilled ]
+  id: MantisCaseMedkitAdvancedFilled
+  name: floral medical case (advanced)
+  suffix: Somber, Advanced Medkit, Filled
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+  - type: Item
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+
+- type: entity
+  parent: [ MantisCaseMedkit, MedkitCombatFilled ]
+  id: MantisCaseMedkitCombatFilled
+  name: shadow medical case (combat)
+  suffix: Somber, Combat Medkit, Filled
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+  - type: Item
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
 # Mantis cases end

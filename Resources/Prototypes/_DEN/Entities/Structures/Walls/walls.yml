@@ -1,0 +1,139 @@
+# Directional Walls (what if directional windows were walls)
+- type: entity
+  parent: [BaseObjectVerbsStructure, BaseStructure]
+  id: WallSolidDirectional
+  name: directional solid wall
+  description: Keeps the air in and the greytide out.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Mobs # Less useful for decoration if they go under windows
+    sprite: _DEN/Structures/Walls/directional.rsi
+    state: solid
+  - type: Icon
+    sprite: _DEN/Structures/Walls/directional.rsi
+    state: solid
+  - type: WallMount
+    arc: 360 # Interact despite grilles, though they're not repairable
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Rotatable
+  - type: RangedDamageSound
+    soundGroups:
+      Brute:
+        collection:
+          MetalBulletImpact
+    soundTypes:
+      Heat:
+        collection:
+          MetalLaserImpact
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.36"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,-0.3"
+  - type: RCDDeconstructable
+    cost: 4
+    delay: 2
+    fx: EffectRCDDeconstruct2
+#  - type: Construction # TODO: Make these constructable?
+#    graph: WallDirectional
+#    node: wallDirectional
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+    - trigger:
+        !type:DamageTrigger
+        damage: 50 # A quarter as much as full walls
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+#      - !type:SpawnEntitiesBehavior # TODO: If constructable, make them drop some relevant materials
+#        spawn:
+#          SheetSteel1:
+#            min: 1
+#            max: 3
+  - type: Airtight
+    noAirWhenFullyAirBlocked: false
+    airBlockedDirection:
+    - South
+  - type: RadiationBlocker
+    resistance: 1 # Half as much as full walls
+  - type: BlockWeather # Probably needs testing
+  - type: StaticPrice
+    price: 25
+  - type: Tag
+    tags:
+      - Wall
+      - Directional
+
+# Directional Corner Walls (occlusion acts up if there's an unfilled outer corner)
+- type: entity
+  parent: WallSolidDirectional
+  id: WallSolidDirectionalCorner
+  suffix: Directional Corner
+  components:
+  - type: Sprite
+    drawdepth: OverMobs # Display over directional walls so they don't Z-fight
+    state: solid_corner
+  - type: Icon
+    state: solid_corner
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.36,-0.49,0.49,-0.36"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: Occluder
+    boundingBox: "0.3,-0.5,0.5,-0.3"
+
+# But occluder layering is weird, so there's also versions without occlusion if you just want to cover up an ugly wall transition without affecting shadows
+# Sort of like wall decals at this point, but I need them so someone else might too
+- type: entity
+  parent: WallSolidDirectional
+  id: WallSolidDirectionalSeeThrough
+  suffix: Directional, SEE-THROUGH
+  components:
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: WallSolidDirectionalCorner
+  id: WallSolidDirectionalCornerSeeThrough
+  suffix: Directional Corner, SEE-THROUGH
+  components:
+  - type: Occluder
+    enabled: false
