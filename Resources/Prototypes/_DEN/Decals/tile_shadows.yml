@@ -8,6 +8,14 @@
   abstract: true
 
 - type: decal
+  id: TileShadowFull
+  parent: TileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _DEN/Decals/tile_shadows.rsi
+    state: shadow_full
+
+- type: decal
   id: TileShadowBox
   parent: TileShadow
   tags: ["station", "markings"]

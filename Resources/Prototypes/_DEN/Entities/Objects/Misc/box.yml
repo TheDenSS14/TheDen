@@ -439,4 +439,15 @@
     sprite: _DEN/Objects/Storage/boxshadow.rsi
   - type: Item
     sprite: _DEN/Objects/Storage/boxshadow.rsi
+
+- type: entity
+  parent: [ MantisCaseMedkit, MedkitCombatFilledBSO ]
+  id: MantisCaseMedkitCombatFilledBSO
+  name: shadow medical case (combat, alt)
+  suffix: Somber, Blueshield Medkit, Filled
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+  - type: Item
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
 # Mantis cases end

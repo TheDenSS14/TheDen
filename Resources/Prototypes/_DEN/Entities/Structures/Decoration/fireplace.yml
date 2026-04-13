@@ -277,13 +277,13 @@
   - type: Sprite
     sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartaller.rsi
 
-# Somber Warm Fire Items
+# Somber Warm Fire Items (with two fireplace colors depending on taste, since orange light and sauna steam change a lot)
 
 - type: entity
   parent: SomberFireplace
   id: SomberFireplaceWarm
   suffix: Warm Fire, Signal-Friendly
-  description: "An avant-garde fireplace shaped like an eye. The natural alloy contains more silver than usual."
+  description: "An avant-garde fireplace shaped like an eye."
   components:
   - type: Sprite
     sprite: _DEN/Structures/Decoration/somberfireplacewarm.rsi
@@ -292,14 +292,47 @@
 
 - type: entity
   parent: SomberFireplaceWarm
+  id: SomberFireplaceWarmSilvery
+  suffix: Warm Fire, Silvery, Signal-Friendly
+  description: "An avant-garde fireplace shaped like an eye. The natural alloy contains more silver than usual."
+  components:
+  - type: Sprite
+    layers:
+      - state: fireplace_silvery
+      - state: fireplacefestive
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+- type: entity
+  parent: SomberFireplaceWarm
   id: SomberFireplaceWarmSauna
   name: electrum sauna fireplace
-  suffix: Warm Fire, Map With Sauna Marker] [Somber Sauna
-  description: "An avant-garde fireplace shaped like an eye, filled with a basin of sauna stones. The natural alloy contains more silver than usual."
+  suffix: Somber Sauna, Warm Fire, Signal-Friendly
+  description: "An avant-garde fireplace shaped like an eye, filled with a basin of sauna stones."
   components:
   - type: Sprite
     layers:
       - state: fireplace
+      - state: sauna_stones
+      - state: sauna_fireplace_fire
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+- type: entity
+  parent: SomberFireplaceWarm
+  id: SomberFireplaceWarmSaunaSilvery
+  name: electrum sauna fireplace
+  suffix: Somber Sauna, Warm Fire, Silvery, Signal-Friendly
+  description: "An avant-garde fireplace shaped like an eye, filled with a basin of sauna stones. The natural alloy contains more silver than usual."
+  components:
+  - type: Sprite
+    layers:
+      - state: fireplace_silvery
       - state: sauna_stones
       - state: sauna_fireplace_fire
         shader: unshaded
