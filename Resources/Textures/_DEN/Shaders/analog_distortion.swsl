@@ -22,6 +22,10 @@ uniform lowp float tape_crease_jitter = 2;
 uniform lowp float tape_crease_speed = 0.1;
 uniform lowp float tape_crease_discoloration = 1;
 
+// these two parameters essentially control the "thickness" of the tape crease
+uniform lowp float tape_crease_min = 0.90; // values below 0 will create strange visuals
+uniform lowp float tape_crease_max = 0.96; // values below 0 will create strange visuals
+
 uniform lowp float bottom_border_thickness = 32.0;
 uniform lowp float bottom_border_jitter = 10.0;
 
@@ -67,7 +71,7 @@ void fragment() {
 	uvn.x += (v2random(vec2(uvn.y, TIME * 10.0)) - 0.5) / vhs_resolution.x * 1.0;
 
 	// tape crease
-	highp float tc_phase = smoothstep(0.9, 0.96, sin(uvn.y * 8.0 - (TIME * tape_crease_speed + tape_crease_jitter * (v2random(TIME * vec2(0.67, 0.59)) * 2.0 - 1.0)) * PI * 1.2));
+	highp float tc_phase = smoothstep(tape_crease_min, tape_crease_max, sin(uvn.y * 8.0 - (TIME * tape_crease_speed + tape_crease_jitter * (v2random(TIME * vec2(0.67, 0.59)) * 2.0 - 1.0)) * PI * 1.2));
 	highp float tc_noise = smoothstep(0.3, 1.0, v2random(vec2(uvn.y * 4.77, TIME)));
 	highp float tc = tc_phase * tc_noise;
 	uvn.x = uvn.x - tc / vhs_resolution.x * 8.0 * tape_crease_smear;
@@ -75,6 +79,7 @@ void fragment() {
 	// switching noise
 	highp float sn_phase = smoothstep(1.0 - bottom_border_thickness / vhs_resolution.y, 1.0, uvn.y);
 	uvn.x += sn_phase * (v2random(vec2(UV.y * 100.0, TIME * 10.0)) - 0.5) / vhs_resolution.x * bottom_border_jitter;
+    uvn = clamp(uvn, 0.0, 1.0);
 
 	// fetch
 	col = vhx_tex_2D(SCREEN_TEXTURE, uvn, tc_phase * 0.2 + sn_phase * 2.0);

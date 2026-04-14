@@ -11,8 +11,11 @@
       shaderProto: AnalogDistortion
       shaderParams:
         tape_crease_smear: 2
-        tape_crease_discoloration: 3
-        tape_crease_speed: 1
+        tape_crease_discoloration: 9
+        tape_crease_speed: 0.1
+        tape_crease_jitter: 4
+        tape_crease_min: 0.5
+        tape_crease_max: 1.5
 
 - type: entity
   parent: ClothingNeckCloakMoth
