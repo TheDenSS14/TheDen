@@ -10,23 +10,23 @@ public sealed partial class ApplyShaderToEntityComponent : Component
     /// Whether the shader is currently enabled.
     /// </summary>
     [DataField("enabled")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public bool Enabled = true;
 
     /// <summary>
     /// The shader prototype to be applied to the entity.
     /// </summary>
-    [DataField("shaderProto")]
+    [DataField("shaderProto", required: true)]
+    [ViewVariables(VVAccess.ReadWrite)]
     public string ShaderPrototype = "AnalogDistortion";
 
     /// <summary>
-    /// The shader parameters, a list of tuples constructed like ("parameter name", floatvalue).
+    /// The shader parameters, a dict constructed like "shaderParameter": value
+    /// You will need to look into the actual shader's code for parameter names and what kind of values they take.
+    /// Unfortunately, for now, I simply don't know how to parse anything other than floats, so shaders with parameters expressed in vectors cannot be changed here.
     /// </summary>
-    [DataField("shaderParams")]
-    public List<(string, float)> ShaderParameters = new List<(string, float)>
-    {
-        ("tape_crease_smear", 2f),
-        ("tape_crease_intensity", 2f),
-        ("tape_crease_speed", .2f)
-    };
+    [DataField("shaderParams", required: true)]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public Dictionary<string, float> ShaderParameters = new Dictionary<string, float> { };
 
 }

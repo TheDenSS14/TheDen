@@ -9,7 +9,7 @@ const highp float PI = 3.14159265;
 
 uniform sampler2D SCREEN_TEXTURE;
 
-uniform lowp vec2 vhs_resolution = vec2(500.0, 500.0);
+uniform lowp vec2 vhs_resolution = vec2(200.0, 200.0);
 
 uniform lowp int samples = 2;
 uniform lowp float crease_noise = 0.3;
@@ -99,9 +99,10 @@ void fragment() {
 	col = clamp(col, 0.0, 1.0);
 
 	// yiq
-	col = rgb2yiq(col);
-	col = vec3(0.9, 1.1, 1.5) * col + vec3(0.1, -0.1, 0.0) * filter_intensity;
-	col = yiq2rgb(col);
+    col = rgb2yiq(col);
+    col = vec3(0.9, 1.1, 1.5) * col;
+    col = col + vec3(0.1, -0.1, 0.0) * filter_intensity;
+    col = yiq2rgb(col);
 
 	COLOR = vec4(col, tex.a);
 }

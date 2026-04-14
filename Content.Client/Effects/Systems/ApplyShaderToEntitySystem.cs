@@ -34,6 +34,16 @@ public sealed class ApplyShaderToEntitySystem : SharedApplyShaderToEntitySystem
     }
     private void OnStartup(EntityUid uid, ApplyShaderToEntityComponent component, ComponentStartup args)
     {
+        if (!_prototypeManager.HasIndex<ShaderPrototype>(component.ShaderPrototype))
+        {
+            _sawmill.Info($"Did not find specified shader prototype: {component.ShaderPrototype}");
+            return;
+        }
+
+        _shader = _prototypeManager.Index<ShaderPrototype>(component.ShaderPrototype).InstanceUnique();
+
+        _shader.SetParameter("noise_texture", _noiseTexture); // we don't need to set this every frame since it's completely static and never changes.
+
         SetShader(uid, component.Enabled, component);
     }
 
@@ -47,25 +57,16 @@ public sealed class ApplyShaderToEntitySystem : SharedApplyShaderToEntitySystem
     {
         if (!Resolve(uid, ref component, ref sprite, false))
             return;
-        if (!_prototypeManager.HasIndex<ShaderPrototype>(component.ShaderPrototype))
-        {
-            _sawmill.Info($"Did not find specified shader prototype: {component.ShaderPrototype}");
-            return;
-        }
-
-        _shader = _prototypeManager.Index<ShaderPrototype>(component.ShaderPrototype).InstanceUnique();
 
         sprite.PostShader = enabled ? _shader : null;
-        //sprite.GetScreenTexture = enabled;
+        //sprite.GetScreenTexture = enabled; // do not pass the screen texture since we're trying to affect the entity's sprite. reminder to myself to not do this
         sprite.RaiseShaderEvent = enabled;
     }
     private void OnShaderRender(EntityUid uid, ApplyShaderToEntityComponent component, BeforePostShaderRenderEvent args)
     {
-        _shader.SetParameter("noise_texture", _noiseTexture);
-
         foreach (var parameter in component.ShaderParameters)
         {
-            _shader.SetParameter(parameter.Item1, parameter.Item2);
+            _shader.SetParameter(parameter.Key, parameter.Value);
         }
     }
 }
