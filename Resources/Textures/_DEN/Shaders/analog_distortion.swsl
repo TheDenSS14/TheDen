@@ -24,7 +24,7 @@ uniform lowp float tape_crease_discoloration = 1;
 
 // these two parameters essentially control the "thickness" of the tape crease
 uniform lowp float tape_crease_min = 0.90; // values below 0 will create strange visuals
-uniform lowp float tape_crease_max = 0.96; // values below 0 will create strange visuals
+uniform lowp float tape_crease_max = 0.96;
 
 uniform lowp float bottom_border_thickness = 32.0;
 uniform lowp float bottom_border_jitter = 10.0;

@@ -20,7 +20,7 @@ public sealed partial class ApplyShaderToEntityComponent : Component
     [DataField("shaderProto", required: true)]
     [ViewVariables(VVAccess.ReadWrite)]
     [AutoNetworkedField]
-    public string ShaderPrototype = "AnalogDistortion";
+    public string ShaderPrototype;
 
     /// <summary>
     /// The shader parameters, a dict constructed like "shaderParameter": value
