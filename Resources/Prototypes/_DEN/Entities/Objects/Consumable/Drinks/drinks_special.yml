@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ BaseDecorativeFixture, DrinkShaker ]
+  parent: [ BaseDecorativeFixtureNoRot, DrinkShaker ]
   id: DrinkShakerSomber
   name: electrum shaker
   suffix: Somber Barware
@@ -15,7 +15,7 @@
       Silver: 10
 
 - type: entity
-  parent: [ BaseDecorativeFixture, DrinkJigger ]
+  parent: [ BaseDecorativeFixtureNoRot, DrinkJigger ]
   id: DrinkJiggerSomber
   name: electrum jigger
   suffix: Somber Barware
@@ -32,7 +32,7 @@
       Silver: 10
 
 - type: entity
-  parent: [ BaseDecorativeFixture, DrinkIceBucket ]
+  parent: [ BaseDecorativeFixtureNoRot, DrinkIceBucket ]
   id: DrinkIceBucketSomber
   name: electrum ice bucket
   suffix: Somber Barware
@@ -74,7 +74,7 @@
     state: icon-sauna-silvery
 
 - type: entity
-  parent: [ BaseDecorativeFixture, DrinkGlassCoupeShaped, BasePsionic ] # Breakable somber dishes should be psionic
+  parent: [ BaseDecorativeFixtureNoRot, DrinkGlassCoupeShaped, BasePsionic ] # Breakable somber dishes should be psionic
   id: DrinkGlassCoupeShapedSomber
   name: eidolite chalice
   suffix: Somber Barware, Coupe
@@ -102,7 +102,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: [ BaseDecorativeFixture, DrinkShotGlass, BasePsionic] # Breakable somber dishes should be psionic
+  parent: [ BaseDecorativeFixtureNoRot, DrinkShotGlass, BasePsionic] # Breakable somber dishes should be psionic
   id: DrinkShotGlassSomber
   name: eidolite shot glass
   suffix: Somber Barware
@@ -130,7 +130,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: [ BaseDecorativeFixture, DrinkGlass, BasePsionic ] # Breakable somber dishes should be psionic
+  parent: [ BaseDecorativeFixtureNoRot, DrinkGlass, BasePsionic ] # Breakable somber dishes should be psionic
   id: DrinkGlassSomber
   name: eidolite glass
   suffix: Somber Barware
@@ -160,7 +160,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: [ BaseDecorativeFixture, DrinkBaseMug, BasePsionic ]
+  parent: [ BaseDecorativeFixtureNoRot, DrinkBaseMug, BasePsionic ]
   id: DrinkMugSomber
   name: somber mug
   suffix: Somber Barware

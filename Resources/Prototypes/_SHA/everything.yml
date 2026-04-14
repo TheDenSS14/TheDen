@@ -876,6 +876,8 @@
           bounds: "-0.5,-0.5,0.5,-0.1"
         hard: false
         density: 10
+  - type: Physics
+    canCollide: False
   - type: Occluder
     boundingBox: "-0.5,-0.5,0.5,-.484375" # Just half a pixel thick, centered in the occluding line
 #  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
@@ -894,7 +896,6 @@
     state: occludercenter
   - type: Icon
     state: occludercenter
-  - type: Fixtures
   - type: Occluder
     boundingBox: "-0.5,-0.0234375,0.5,-.0078125" # Just half a pixel thick, centered in the occluding line
 #  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
@@ -1284,7 +1285,9 @@
   components:
   - type: Airtight
     airBlocked: false
-    noAirWhenFullyAirBlocked: false
+    noAirWhenFullyAirBlocked: false # The planet has an atmosphere and nobody's getting Cask of Amontillado'd at home
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: SomberMnemolithDoor
@@ -1294,6 +1297,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: SomberSteelDoor
@@ -1303,6 +1308,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: SomberSteelDoorDark
@@ -1312,6 +1319,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: SomberAmaranthDoorAir
@@ -1353,6 +1362,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyAirlockDark
@@ -1362,6 +1373,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyAirlockGlass
@@ -1371,6 +1384,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyAirlockGlassDark
@@ -1380,6 +1395,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyAirlockMantisLocked
@@ -1389,6 +1406,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyAirlockMantisDarkLocked
@@ -1398,6 +1417,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyAirlockMantisGlassLocked
@@ -1407,6 +1428,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyAirlockMantisGlassDarkLocked
@@ -1416,6 +1439,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: [ AirlockMining, BasePsionic ]
@@ -1429,6 +1454,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: [ AirlockMining, BasePsionic ]
@@ -1442,6 +1469,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: SomberSecretDoor
@@ -1458,6 +1487,7 @@
   - type: Door
     bumpOpen: false
     clickOpen: false
+    changeAirtight: false
 
 - type: entity
   parent: SomberSecretDoor
@@ -1474,6 +1504,7 @@
   - type: Door
     bumpOpen: false
     clickOpen: false
+    changeAirtight: false
 
 - type: entity
   parent: [ AirlockMining, BasePsionic ]
@@ -1484,6 +1515,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyWindoorSecure
@@ -1497,6 +1530,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyWindoorSecureDark
@@ -1508,6 +1543,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyWindoorSecureTinted
@@ -1522,6 +1559,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyWindoorSecureTintedDark
@@ -1533,6 +1572,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyWindoorSecureMantisLocked
@@ -1547,6 +1588,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyWindoorSecureMantisDarkLocked
@@ -1561,6 +1604,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyWindoorSecureTintedMantisLocked
@@ -1575,6 +1620,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyWindoorSecureTintedMantisDarkLocked
@@ -1589,6 +1636,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: GloomyWindoorSecureTintedMantisLocked
@@ -1607,6 +1656,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: SomberSecretDoor
@@ -1617,6 +1668,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: SomberSecretDoorDark
@@ -1626,6 +1679,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: SomberSecretDoorDarkAir
@@ -1637,6 +1692,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 - type: entity
   parent: SomberSecretDoorDarkAir
@@ -1648,6 +1705,8 @@
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
 
 # Stairs
 
@@ -5433,7 +5492,18 @@
   id: BaseFoodShakerSomberCosmetic
   name: eidolite cosmetic bottle
   suffix: PENTHOUSE, Somber, Empty
-  description: "A small, crystal bottle for cosmetic products."
+  description: "A small bottle for holding fine cosmetics."
+
+- type: entity
+  parent: RubberStampMantis
+  id: RubberStampMantisCosmetic
+  name: electrum cosmetic tube
+  suffix: PENTHOUSE, Somber
+  description: "A small tube for holding fine cosmetics."
+  components:
+  - type: Sprite
+    layers:
+    - state: stamp-mantis
 
 - type: entity
   parent: Cobweb1

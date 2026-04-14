@@ -54,7 +54,7 @@
     - MantisBoxChemicalsStorable
 
 - type: entity
-  parent: [ BaseDecorativeFixture, PillCanister, BasePsionic ]
+  parent: [ BaseDecorativeFixtureNoRot, PillCanister, BasePsionic ]
   id: PillCanisterMantis
   name: electrum pill canister
   suffix: Somber

@@ -97,7 +97,7 @@
       - MantisBeltStorable
 
 - type: entity
-  parent: [ BaseDecorativeFixture, BaseItem ]
+  parent: [ BaseDecorativeFixtureNoRot, BaseItem ]
   id: LanternSomber
   name: somber lamp
   description: "A palm-sized electrum sphere studded with shards of eidolite, each humming with faint noospheric charge. Its glow lingers in your vision, imprinting shapes you can't quite name."

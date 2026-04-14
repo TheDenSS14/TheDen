@@ -12,7 +12,7 @@
   name: base towel
   abstract: true
   description: If you want to survive out here, you gotta know where your towel is.
-  parent: [ BaseDecorativeFixture, UnsensoredClothingUniformBase, ClothingHeadBase, ClothingBeltBase ] # TheDen - Reduced fixture size for easier decorating
+  parent: [ BaseDecorativeFixtureNoRot, UnsensoredClothingUniformBase, ClothingHeadBase, ClothingBeltBase ] # TheDen - Reduced fixture size for easier decorating
   components:
   - type: Sprite
     sprite: Clothing/Multiple/towel.rsi

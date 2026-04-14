@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: [ BaseDecorativeFixture, CustomDrinkJug, BasePsionic ] # Breakable somber dishes should be psionic
+  parent: [ BaseDecorativeFixtureNoRot, CustomDrinkJug, BasePsionic ] # Breakable somber dishes should be psionic
   id: CustomDrinkJugSomber
   name: eidolite decanter
   suffix: Somber Barware, Jug

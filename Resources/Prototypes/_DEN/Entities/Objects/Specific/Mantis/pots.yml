@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: [ BaseAmphora, BasePsionic ]
+  parent: [ BaseDecorativeFixtureNoRot, BaseAmphora, BasePsionic ]
   id: SomberElectrumAmphora
   name: electrum amphora
   description: "An electrum amphora with carved alabaster handles, possibly useful for carrying liquids."
@@ -56,7 +56,7 @@
         Blunt: 0
 
 - type: entity
-  parent: [ Urn, BasePsionic ]
+  parent: [ BaseDecorativeFixtureNoRot, Urn, BasePsionic ]
   id: SomberElectrumUrn
   name: electrum urn
   description: "An electrum urn with a carved alabaster band, possibly useful for storing things."
