@@ -1,8 +1,9 @@
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Effects.Components;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class ApplyShaderToEntityComponent : Component
 {
     /// <summary>

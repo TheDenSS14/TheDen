@@ -59,7 +59,8 @@ highp vec3 vhx_tex_2D(sampler2D tex, highp vec2 uv, highp float rot) {
 
 void fragment() {
 	vec2 uvn = UV;
-	vec3 col = vec3(0.0, 0.0, 0.0);
+    vec4 tex = texture(TEXTURE, uvn);
+    vec3 col = tex.rgb;
 
 	// Tape wave.
 	uvn.x += (v2random(vec2(uvn.y / 10.0, TIME / 10.0) / 1.0) - 0.5) / vhs_resolution.x * 1.0;
@@ -102,5 +103,5 @@ void fragment() {
 	col = vec3(0.9, 1.1, 1.5) * col + vec3(0.1, -0.1, 0.0) * filter_intensity;
 	col = yiq2rgb(col);
 
-	COLOR = vec4(col, 1.0);
+	COLOR = vec4(col, tex.a);
 }
