@@ -66,7 +66,7 @@ public sealed class ApplyShaderToEntitySystem : SharedApplyShaderToEntitySystem
             return;
 
         sprite.PostShader = enabled ? _shader : null;
-        //sprite.GetScreenTexture = enabled; // do not pass the screen texture since we're trying to affect the entity's sprite. reminder to myself to not do this
+        sprite.GetScreenTexture = false; // do not pass the screen texture since we're trying to affect the entity's sprite. we set it to false specifically in case there is another shader
         sprite.RaiseShaderEvent = enabled;
     }
     private void OnShaderRender(EntityUid uid, ApplyShaderToEntityComponent component, BeforePostShaderRenderEvent args)
