@@ -852,7 +852,7 @@
   id: InvisibleOccluder
   name: darkness
   description: "You can't see anything..."
-  suffix: PENTHOUSE
+  suffix: PENTHOUSE, Edge
   placement:
     mode: SnapgridCenter
     snap:
@@ -898,6 +898,104 @@
     state: occludercenter
   - type: Occluder
     boundingBox: "-0.5,-0.0234375,0.5,-.0078125" # Just half a pixel thick, centered in the occluding line
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: WindowFireEscapeSeeThrough
+  id: InvisibleOccluderHalf
+  name: darkness
+  description: "You can't see anything..."
+  suffix: Half Directional, See-Through] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_half
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_half
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: InvisibleOccluderHalf
+  id: InvisibleOccluderHalfLeft
+  suffix: Half Directional, Left, See-Through] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_half_left
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_half_left
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: InvisibleOccluderHalf
+  id: InvisibleOccluderHalfRight
+  suffix: Half Directional, Right, See-Through] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_half_right
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_half_right
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: WallSomberNoSmoothing
+  id: InvisibleOccluderFull
+  name: darkness
+  description: "You can't see anything..."
+  suffix: Full, See-Through] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_full
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_full
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: WindowFireEscapeLeft
+  id: InvisibleOccluderLeft
+  name: darkness
+  description: "You can't see anything..."
+  suffix: Directional, Left, Opaque] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_left
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_left
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: WindowFireEscapeRight
+  id: InvisibleOccluderRight
+  name: darkness
+  description: "You can't see anything..."
+  suffix: Directional, Right, Opaque] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_right
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_right
 #  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
 #    tags:
 #      - HideContextMenu
@@ -963,10 +1061,24 @@
     state: fire_escape
 
 - type: entity
+  parent: WallSolidDirectionalSeeThrough
+  id: WindowFireEscapeSeeThrough
+  name: skyscraper wall
+  suffix: Directional, See-Through] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape
+
+- type: entity
   parent: WallSolidDirectional
   id: WindowFireEscapeLeft
   name: skyscraper wall
-  suffix: Directional, Opaque, Left] [PENTHOUSE
+  suffix: Directional, Left, Opaque] [PENTHOUSE
   description: "It keeps the city out."
   components:
   - type: Sprite
@@ -976,13 +1088,13 @@
     sprite: _SHA/Structures/Walls/fire_escape.rsi
     state: fire_escape_left
   - type: Occluder
-    boundingBox: "-0.5,-0.5,0,-0.3"
+    boundingBox: "-0.5,-0.5,0.0,-0.3"
 
 - type: entity
   parent: WallSolidDirectional
   id: WindowFireEscapeRight
   name: skyscraper wall
-  suffix: Directional, Opaque, Right] [PENTHOUSE
+  suffix: Directional, Right, Opaque] [PENTHOUSE
   description: "It keeps the city out."
   components:
   - type: Sprite
@@ -992,7 +1104,35 @@
     sprite: _SHA/Structures/Walls/fire_escape.rsi
     state: fire_escape_right
   - type: Occluder
-    boundingBox: "0,-0.5,0.5,-0.3"
+    boundingBox: "0.0,-0.5,0.5,-0.3"
+
+- type: entity
+  parent: WallSolidDirectionalSeeThrough
+  id: WindowFireEscapeLeftSeeThrough
+  name: skyscraper wall
+  suffix: Directional, Left, See-Through] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_left
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_left
+
+- type: entity
+  parent: WallSolidDirectionalSeeThrough
+  id: WindowFireEscapeRightSeeThrough
+  name: skyscraper wall
+  suffix: Directional, Right, See-Through] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_right
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_right
 
 - type: entity
   parent: WallSolidDirectionalCorner
@@ -1007,6 +1147,78 @@
   - type: Icon
     sprite: _SHA/Structures/Walls/fire_escape.rsi
     state: fire_escape_corner
+
+- type: entity
+  parent: WallSolidDirectionalCornerSeeThrough
+  id: WindowFireEscapeCornerSeeThrough
+  name: skyscraper wall
+  suffix: Directional, See-Through] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_corner
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_corner
+
+- type: entity
+  parent: WindowFireEscape
+  id: WindowFireEscapeHalf
+  name: skyscraper wall
+  suffix: Half Directional, Opaque] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,0.0"
+
+- type: entity
+  parent: WindowFireEscapeSeeThrough
+  id: WindowFireEscapeSeeThroughHalf
+  name: skyscraper wall
+  suffix: Half Directional, See-Through] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half
+
+- type: entity
+  parent: WindowFireEscapeSeeThroughHalf
+  id: WindowFireEscapeSeeThroughHalfLeft
+  name: skyscraper wall
+  suffix: Half Directional, Left, See-Through] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half_left
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half_left
+
+- type: entity
+  parent: WindowFireEscapeSeeThroughHalf
+  id: WindowFireEscapeSeeThroughHalfRight
+  name: skyscraper wall
+  suffix: Half Directional, Right, See-Through] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half_right
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half_right
 
 - type: entity
   parent: WallSomberDark
@@ -1450,6 +1662,7 @@
   suffix: NON-AIRTIGHT] [PENTHOUSE
   components:
   - type: Sprite
+    snapCardinals: false
     sprite: _SHA/Structures/Doors/Airlocks/Standard/elevator.rsi
   - type: Airtight
     airBlocked: false
@@ -2565,6 +2778,19 @@
     - state: door_remotebase
     - state: door_remotelightscolour
       shader: unshaded
+
+- type: entity
+  parent: LanternMantis
+  id: LanternMantisAdmin
+  name: mantis lantern
+  suffix: PENTHOUSE, DO NOT MAP
+  description: "An ornate lantern housing an eidolite pyramid that draws power from the noosphere. Stare too long and the gleam resolves into shapes you almost recognize, then promptly forget. Something seems especially wrong with this one."
+  components:
+  - type: PointLight
+    color: "#FFE4CE" # Just a pocket fluorescent light for admin work
+    energy: 0.8
+    radius: 20
+    softness: 1
 
 - type: entity
   parent: [ BaseStructure, BasePsionic ]
@@ -5602,7 +5828,7 @@
   description: "They'll be here when it's time to leave."
   components:
   - type: Sprite
-    drawdepth: WallMountedItems
+    drawdepth: Overdoors
     sprite: _SHA/Structures/Wallmounts/switch.rsi
     layers:
     - state: buttons
@@ -5613,8 +5839,8 @@
   - type: SignalSwitch
     clickSound: /Audio/_SHA/elevatording.ogg
   - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: StrongMetallic
+    damageContainer: Indestructible
+    damageModifierSet: Indestructible
   - type: Destructible
     thresholds:
       - trigger:
@@ -5639,15 +5865,18 @@
   parent: [ SignalTimer, BasePsionic ]
   id: SignalTimerDirectionalElevatorExit
   name: elevator electronics
-  suffix: Elevator Exit, 3 Seconds
+  suffix: Elevator Exit, 4 Seconds
   description: "Wires and things."
   components:
   - type: SignalTimer
-    delay: 3
+    delay: 4
   - type: Sprite
-    drawdepth: WallMountedItems
+    drawdepth: WallTops
     sprite: _SHA/Structures/Wallmounts/switch.rsi
     state: wiresleft
+  - type: Tag
+    tags:
+      - HideContextMenu
 
 - type: entity
   parent: SignalTimerDirectionalElevatorExit

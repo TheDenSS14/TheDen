@@ -102,6 +102,7 @@
   suffix: Directional Corner
   components:
   - type: Sprite
+    drawdepth: OverMobs # Otherwise it z-fights with directional windows
     state: solid_corner
   - type: Icon
     state: solid_corner

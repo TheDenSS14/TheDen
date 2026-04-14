@@ -370,7 +370,7 @@
   description: "Your reflection shimmers faintly in the glass."
   components:
   - type: Sprite
-    drawdepth: OverMobs
+    drawdepth: OverMobs # Otherwise it z-fights with directional windows
     state: sombercorner
   - type: Icon
     state: sombercorner
