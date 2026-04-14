@@ -252,6 +252,14 @@
     state: eyeframe-dark
 
 - type: decal
+  id: SomberTileOverlayEyeframeKitchen
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: eyeframe-kitchen
+
+- type: decal
   id: SomberTileOverlayEyeland
   tags: ["station", "overlay"]
   parent: SomberTileOverlay
@@ -266,6 +274,38 @@
   sprite:
     sprite: _DEN/Decals/somber_tile_overlay.rsi
     state: eyeland-dark
+
+- type: decal
+  id: SomberTileOverlayEyelandKitchen
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: eyeland-kitchen
+
+- type: decal
+  id: SomberTileOverlayEyediamond
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: eyediamond
+
+- type: decal
+  id: SomberTileOverlayEyediamondDark
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: eyediamond-dark
+
+- type: decal
+  id: SomberTileOverlayEyediamondKitchen
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: eyediamond-kitchen
 
 - type: decal
   id: SomberTileOverlayMono
@@ -298,6 +338,22 @@
   sprite:
     sprite: _DEN/Decals/somber_tile_overlay.rsi
     state: somber-tile-mono-dark-eye
+
+- type: decal
+  id: SomberTileOverlayMonoKitchen
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-tile-mono-kitchen
+
+- type: decal
+  id: SomberTileOverlayMonoEyeKitchen
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: somber-tile-mono-kitchen-eye
 
 - type: decal
   id: SomberTileOverlaySomberDirtNE

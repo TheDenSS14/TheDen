@@ -7,7 +7,7 @@
   description: "A brushed metal switch shaped like an eye."
   components:
   - type: Sprite
-    drawdepth: WallMountedItems
+    drawdepth: Items # Necessary to display over frames, which display over panels
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi # There are sprites for centered, left, and right switches...but who uses switches...
   - type: Transform
     anchored: false
@@ -24,7 +24,7 @@
     - Wallmount
   components:
   - type: Sprite
-    drawdepth: WallMountedItems
+    drawdepth: Items
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
     state: base-center
   - type: WallMount
@@ -38,7 +38,7 @@
   description: "A brushed metal button shaped like an eye."
   components:
   - type: Sprite
-    drawdepth: WallMountedItems
+    drawdepth: Items
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
     state: base
 
@@ -113,7 +113,7 @@
   - type: LockVisuals
     stateLocked: locked
   - type: Sprite
-    drawdepth: WallMountedItems
+    drawdepth: Items
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
     layers:
     - state: base
@@ -219,6 +219,33 @@
   - type: AccessReader
     access: [["ResearchDirector"]]
 
+# Button frame panels
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberPanelThree
+  name: somber signal button panel
+  suffix: Three, SnapGrid Directional Frames/Buttons # Fits around frames/buttons where they land naturally
+  description: "An inset panel that fits three somber buttons."
+  components:
+  - type: Sprite
+    drawdepth: SmallObjects # Display over tables, but under frames/buttons
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    layers:
+    - state: panel-three
+
+- type: entity
+  parent: ButtonFrameSomberPanelThree
+  id: ButtonFrameSomberPanelFour
+  name: somber signal button panel
+  suffix: Four, PlaceFree Directional Frames/Buttons # Have to manually place things, and don't use Center ones or you can press them through walls
+  description: "An inset panel that fits four somber buttons."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    layers:
+    - state: panel-four
+
 # Button frames
 
 - type: entity
@@ -229,6 +256,7 @@
   description: "A gold button frame shaped like an eye."
   components:
   - type: Sprite
+    drawdepth: WallMountedItems # Display between panels and buttons
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
     layers:
     - state: framegold
@@ -403,6 +431,98 @@
     - state: framepurple-center-unshaded
       shader: unshaded
 
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberRoseGold
+  name: somber signal button frame
+  suffix: Rose Gold, Directional
+  description: "A rose gold button frame shaped like an eye."
+  components:
+  - type: Sprite
+    layers:
+    - state: framerosegold
+    - state: framerosegold-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberRoseGold
+  id: ButtonFrameSomberRoseGoldLeft
+  suffix: Rose Gold, Directional Left
+  components:
+  - type: Sprite
+    layers:
+    - state: framerosegold-left
+    - state: framerosegold-left-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberRoseGold
+  id: ButtonFrameSomberRoseGoldRight
+  suffix: Rose Gold, Directional Right
+  components:
+  - type: Sprite
+    layers:
+    - state: framerosegold-right
+    - state: framerosegold-right-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberRoseGold
+  id: ButtonFrameSomberRoseGoldCenter
+  suffix: Rose Gold, Center
+  components:
+  - type: Sprite
+    layers:
+    - state: framerosegold-center
+    - state: framerosegold-center-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberWhiteGold
+  name: somber signal button frame
+  suffix: White Gold, Directional
+  description: "A white gold button frame shaped like an eye."
+  components:
+  - type: Sprite
+    layers:
+    - state: framewhitegold
+    - state: framewhitegold-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberWhiteGold
+  id: ButtonFrameSomberWhiteGoldLeft
+  suffix: White Gold, Directional Left
+  components:
+  - type: Sprite
+    layers:
+    - state: framewhitegold-left
+    - state: framewhitegold-left-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberWhiteGold
+  id: ButtonFrameSomberWhiteGoldRight
+  suffix: White Gold, Directional Right
+  components:
+  - type: Sprite
+    layers:
+    - state: framewhitegold-right
+    - state: framewhitegold-right-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberWhiteGold
+  id: ButtonFrameSomberWhiteGoldCenter
+  suffix: White Gold, Center
+  components:
+  - type: Sprite
+    layers:
+    - state: framewhitegold-center
+    - state: framewhitegold-center-unshaded
+      shader: unshaded
+
 # Timers
 
 - type: entity
@@ -415,7 +535,7 @@
   - type: SignalTimer
     delay: 5
   - type: Sprite
-    drawdepth: WallMountedItems
+    drawdepth: Items
     sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
     state: on
 

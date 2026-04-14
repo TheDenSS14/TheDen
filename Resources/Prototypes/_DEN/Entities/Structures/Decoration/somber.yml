@@ -246,6 +246,326 @@
   - type: Sprite
     state: stonecolumnshorter
 
+# Pillars with braziers attached
+# Unfortunately placing them separately sometimes causes layering issues... If there's a way to change render order to force braziers on top of pillars, we should do that instead
+
+# Pillars with psionic fire (blue)
+- type: entity
+  parent: [ SomberPillarTaller, SomberHangingBrazier ]
+  id: SomberPillarTallerBrazier
+  suffix: Brazier, Taller, Signal-Friendly
+  description: "A mnemolith pillar etched with dense, repeating patterns. The stone seems to bear a weight you cannot see. An electrum brazier hangs from its side."
+  components:
+  - type: Sprite
+    layers:
+      - state: pillartaller
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: Physics
+    canCollide: true
+
+- type: entity
+  parent: SomberPillarTallerBrazier
+  id: SomberPillarTallBrazier
+  suffix: Brazier, Tall, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: pillartall
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+- type: entity
+  parent: SomberPillarTallerBrazier
+  id: SomberPillarShortBrazier
+  suffix: Brazier, Short, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: pillarshort
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+# Columns with psionic fire (blue)
+- type: entity
+  parent: SomberPillarTallerBrazier
+  id: SomberPillarStoneTallerBrazier
+  name: raw mnemolith column
+  suffix: Brazier, Taller, Signal-Friendly
+  description: "A rough hexagonal column of raw mnemolith that appears to have grown straight from the floor. It reacts to nearby thoughts, cutting new patterns into itself around powerful psions. An electrum brazier hangs from its side."
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumntaller
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartaller.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartaller.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartaller.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+- type: entity
+  parent: SomberPillarStoneTallerBrazier
+  id: SomberPillarStoneTallBrazier
+  suffix: Brazier, Tall, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumntall
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+- type: entity
+  parent: SomberPillarStoneTallerBrazier
+  id: SomberPillarStoneShortBrazier
+  suffix: Brazier, Short, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumnshort
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+- type: entity
+  parent: SomberPillarStoneTallerBrazier
+  id: SomberPillarStoneShorterBrazier
+  suffix: Brazier, Shorter, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumnshorter
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+# Pillars with natural fire (orange)
+- type: entity
+  parent: SomberPillarTallerBrazier
+  id: SomberPillarTallerBrazierWarm
+  suffix: Brazier, Warm Fire, Taller, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: pillartaller
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartall.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartall.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartall.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: PointLight
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberPillarTallBrazier
+  id: SomberPillarTallBrazierWarm
+  suffix: Brazier, Warm Fire, Tall, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: pillartall
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshort.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshort.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshort.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: PointLight
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberPillarShortBrazier
+  id: SomberPillarShortBrazierWarm
+  suffix: Brazier, Warm Fire, Short, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: pillarshort
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshorter.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshorter.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshorter.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: PointLight
+    color: "#FF9833"
+
+# Columns with natural fire (orange)
+- type: entity
+  parent: SomberPillarStoneTallerBrazier
+  id: SomberPillarStoneTallerBrazierWarm
+  suffix: Brazier, Warm Fire, Taller, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumntaller
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartaller.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartaller.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartaller.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: PointLight
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberPillarStoneTallBrazier
+  id: SomberPillarStoneTallBrazierWarm
+  suffix: Brazier, Warm Fire, Tall, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumntall
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartall.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartall.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartall.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: PointLight
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberPillarStoneShortBrazier
+  id: SomberPillarStoneShortBrazierWarm
+  suffix: Brazier, Warm Fire, Short, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumnshort
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshort.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshort.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshort.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: PointLight
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberPillarStoneShorterBrazier
+  id: SomberPillarStoneShorterBrazierWarm
+  suffix: Brazier, Warm Fire, Shorter, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumnshorter
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshorter.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshorter.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshorter.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: PointLight
+    color: "#FF9833"
+
 # Floor plates that look nice under the stone columns
 
 - type: entity

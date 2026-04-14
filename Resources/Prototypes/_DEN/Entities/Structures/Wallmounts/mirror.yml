@@ -15,6 +15,7 @@
   - type: Transform
     anchored: false # So it can use other snapping modes
   - type: Sprite
+    drawdepth: OverMobs # So they can be turned and placed on directional windows/walls (for cute bathrooms)
     sprite: _DEN/Structures/Wallmounts/mirror.rsi
     state: sombermirror
 

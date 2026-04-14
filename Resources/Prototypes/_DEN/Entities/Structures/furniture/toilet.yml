@@ -6,6 +6,7 @@
   description: "A sleek porcelain toilet fitted with an integrated bidet, offering heated water, subtle air drying, and discreet controls."
   components:
   - type: Sprite
+    snapCardinals: true
     sprite: _DEN/Structures/Furniture/sombertoilet.rsi
   - type: GenericVisualizer
     visuals:

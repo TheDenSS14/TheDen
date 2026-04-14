@@ -3,8 +3,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# Somber Psionic Fire Items
-
+## Somber Fireplaces Start
+# Psionic fire (blue)
 - type: entity
   parent: [ Fireplace, BasePsionic ]
   id: SomberFireplace
@@ -147,6 +147,8 @@
   placement:
     mode: WallmountLight
   components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
   - type: ItemToggleOnTrigger
   - type: TriggerOnSignal
   - type: DeviceLinkSink
@@ -234,56 +236,14 @@
             min: 1
             max: 3
 
-- type: entity
-  parent: SomberHangingBrazier
-  id: SomberHangingBrazierPillarShorter
-  suffix: Fits Shorter Columns
-  placement:
-    mode: SnapgridCenter
-  components:
-  - type: Transform
-    anchored: false # So it can use other snapping modes
-  - type: SpriteFade
-  - type: Sprite
-    noRot: true
-    offset: -0.015625,1.15625 # 37 pixels up, half a pixel left from sprite center
-    drawdepth: Mobs # You have to place these after the pillars, but without this, they won't be hidden by them if the camera turns
-    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
-
-- type: entity
-  parent: SomberHangingBrazierPillarShorter
-  id: SomberHangingBrazierPillarShort
-  suffix: Fits Short Columns
-  components:
-  - type: SpriteFade
-  - type: Sprite
-    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
-
-- type: entity
-  parent: SomberHangingBrazierPillarShorter
-  id: SomberHangingBrazierPillarTall
-  suffix: Fits Tall Columns
-  components:
-  - type: SpriteFade
-  - type: Sprite
-    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
-
-- type: entity
-  parent: SomberHangingBrazierPillarShorter
-  id: SomberHangingBrazierPillarTaller
-  suffix: Fits Taller Columns
-  components:
-  - type: SpriteFade
-  - type: Sprite
-    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartaller.rsi
-
-# Somber Warm Fire Items (with two fireplace colors depending on taste, since orange light and sauna steam change a lot)
+# Natural fire (orange)
 
 - type: entity
   parent: SomberFireplace
   id: SomberFireplaceWarm
   suffix: Warm Fire, Signal-Friendly
   description: "An avant-garde fireplace shaped like an eye."
+  categories: [ HideSpawnMenu ] # This one isn't for saunas and doesn't match the other warm fire items, so it's best not to confuse people about why the set seems incomplete
   components:
   - type: Sprite
     sprite: _DEN/Structures/Decoration/somberfireplacewarm.rsi
@@ -293,8 +253,9 @@
 - type: entity
   parent: SomberFireplaceWarm
   id: SomberFireplaceWarmSilvery
-  suffix: Warm Fire, Silvery, Signal-Friendly
+  suffix: Warm Fire, Signal-Friendly
   description: "An avant-garde fireplace shaped like an eye. The natural alloy contains more silver than usual."
+  categories: []
   components:
   - type: Sprite
     layers:
@@ -307,12 +268,15 @@
         visible: false
         map: ["light"]
 
+# Just orange light makes the standard color too yellow, but when sauna steam is added, it makes the silvery color too pale
+# I recommend using this one, personally
 - type: entity
   parent: SomberFireplaceWarm
   id: SomberFireplaceWarmSauna
   name: electrum sauna fireplace
   suffix: Somber Sauna, Warm Fire, Signal-Friendly
   description: "An avant-garde fireplace shaped like an eye, filled with a basin of sauna stones."
+  categories: []
   components:
   - type: Sprite
     layers:
@@ -329,6 +293,7 @@
   name: electrum sauna fireplace
   suffix: Somber Sauna, Warm Fire, Silvery, Signal-Friendly
   description: "An avant-garde fireplace shaped like an eye, filled with a basin of sauna stones. The natural alloy contains more silver than usual."
+  categories: []
   components:
   - type: Sprite
     layers:
@@ -350,13 +315,66 @@
   - type: Sprite
     sprite: _DEN/Structures/Decoration/somberhangingbrazierwarm.rsi
   - type: PointLight
-    color: "#FF9833"
+    color: "#ff9833"
+
+# Hanging braziers made to fit pillars
+# Unfortunately, even when you place them second, they render under pillars on rare occasion (and you can't manually set render priority to fix that)
+# And if they were on a higher drawdepth, pillars wouldn't occlude them when the camera rotates
+# If we ever find a way around this problem, consider adding these to the spawn menu and migrating the brazier pillars out (see SomberPillarTallerBrazier)
+
+- type: entity
+  parent: SomberHangingBrazier
+  id: SomberHangingBrazierPillarShorter
+  suffix: Fits Shorter Columns/Short Pillars
+  categories: [ HideSpawnMenu ]
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
+  - type: SpriteFade
+  - type: Sprite
+    noRot: true
+    offset: -0.015625,1.15625 # 37 pixels up, half a pixel left from sprite center
+    drawdepth: Mobs # You have to place these after the pillars, but without this, they won't be hidden by them if the camera turns (OR SO I THOUGHT) (IT WORKED SOMETIMES)
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
+
+- type: entity
+  parent: SomberHangingBrazierPillarShorter
+  id: SomberHangingBrazierPillarShort
+  suffix: Fits Short Columns/Tall Pillars
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
+
+- type: entity
+  parent: SomberHangingBrazierPillarShorter
+  id: SomberHangingBrazierPillarTall
+  suffix: Fits Tall Columns/Taller Pillars
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
+
+- type: entity
+  parent: SomberHangingBrazierPillarShorter
+  id: SomberHangingBrazierPillarTaller
+  categories: [ HideSpawnMenu ]
+  suffix: Fits Taller Columns
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartaller.rsi
 
 - type: entity
   parent: SomberHangingBrazierPillarShorter
   id: SomberHangingBrazierWarmPillarShorter
-  suffix: Warm Fire, Fits Shorter Columns
+  suffix: Warm Fire, Fits Shorter Columns/Short Pillars
   description: "An electrum brazier. The natural alloy contains more silver than usual."
+  categories: [ HideSpawnMenu ]
   placement:
     mode: SnapgridCenter
   components:
@@ -369,7 +387,8 @@
 - type: entity
   parent: SomberHangingBrazierWarmPillarShorter
   id: SomberHangingBrazierWarmPillarShort
-  suffix: Warm Fire, Fits Short Columns
+  suffix: Warm Fire, Fits Short Columns/Tall Pillars
+  categories: [ HideSpawnMenu ]
   components:
   - type: SpriteFade
   - type: Sprite
@@ -378,7 +397,8 @@
 - type: entity
   parent: SomberHangingBrazierWarmPillarShorter
   id: SomberHangingBrazierWarmPillarTall
-  suffix: Warm Fire, Fits Tall Columns
+  suffix: Warm Fire, Fits Tall Columns/Taller Pillars
+  categories: [ HideSpawnMenu ]
   components:
   - type: SpriteFade
   - type: Sprite
@@ -388,7 +408,9 @@
   parent: SomberHangingBrazierWarmPillarShorter
   id: SomberHangingBrazierWarmPillarTaller
   suffix: Warm Fire, Fits Taller Columns
+  categories: [ HideSpawnMenu ]
   components:
   - type: SpriteFade
   - type: Sprite
     sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartaller.rsi
+## Somber Fireplaces End

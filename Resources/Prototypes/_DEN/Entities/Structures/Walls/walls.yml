@@ -10,7 +10,7 @@
     - Wall
   components:
   - type: Sprite
-    drawdepth: Mobs # Less useful for decoration if they go under windows
+    drawdepth: Mobs # Same as directional windows
     sprite: _DEN/Structures/Walls/directional.rsi
     state: solid
   - type: Icon
@@ -102,7 +102,6 @@
   suffix: Directional Corner
   components:
   - type: Sprite
-    drawdepth: OverMobs # Display over directional walls so they don't Z-fight
     state: solid_corner
   - type: Icon
     state: solid_corner
