@@ -4096,7 +4096,7 @@
     sprite: _SHA/Clothing/Head/Hats/cagemantis.rsi
 
 - type: entity
-  parent: [ BaseDecorativeFixture, BaseItem ]
+  parent: BaseItem
   id: HandcuffsMantisPenthouse
   suffix: PENTHOUSE
   name: gilded shackles
@@ -5273,8 +5273,8 @@
     offset: "0.0,-0.25"
     sprite: _DEN/Structures/Furniture/chairs.rsi
     state: sombercushion-bluepurple
-    noRot: false
-    snapCardinals: true
+    snapCardinals: false
+    noRot: true
     drawdepth: Objects
   - type: RequireProjectileTarget
   - type: Clickable

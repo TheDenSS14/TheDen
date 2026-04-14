@@ -13,3 +13,12 @@
         - ItemMask
         restitution: 0.3 # These are just the same as BaseItem
         friction: 0.2
+
+- type: entity
+  parent: BaseDecorativeFixture
+  id: BaseDecorativeFixtureNoRot # Same as above but also forces sprites to always face the camera (for things like amphorae that shouldn't invert when the camera turns)
+  abstract: true
+  components:
+  - type: Sprite
+    snapCardinals: false
+    noRot: true
