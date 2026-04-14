@@ -8,9 +8,9 @@ using Content.Shared.Inventory;
 ///     Raised on an entity when a surgery is about to be performed, in case a system wants to modify the speed, such as surgical gloves.
 /// </summary>
 [ByRefEvent]
-public record struct SurgerySpeedModifyEvent() : IInventoryRelayEvent
+public record struct SurgerySpeedModifyEvent() : IInventoryRelayEvent // DEN - Rewrote Event
 {
-    public float Multiplier = 1f;
+    public float Multiplier = 1f; // DEN
 
-    public SlotFlags TargetSlots => SlotFlags.WITHOUT_POCKET;
+    public SlotFlags TargetSlots => SlotFlags.WITHOUT_POCKET; // DEN
 }

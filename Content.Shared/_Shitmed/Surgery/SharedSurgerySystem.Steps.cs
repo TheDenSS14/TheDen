@@ -782,7 +782,7 @@ public abstract partial class SharedSurgerySystem
             return 2f; // Shouldnt really happen but just a failsafe.
 
         var speed = toolSpeed;
-
+        // DEN - Fixed a bug and rewrote the method.
         var ev = new SurgerySpeedModifyEvent();
         RaiseLocalEvent(user, ref ev);
 
@@ -790,7 +790,7 @@ public abstract partial class SharedSurgerySystem
             RaiseLocalEvent(buckledTo, ref ev);
 
         speed *= ev.Multiplier;
-
+        // DEN - Fixed a bug and rewrote the method.
         return stepComp.Duration / speed;
     }
     private (Entity<SurgeryComponent> Surgery, int Step)? GetNextStep(EntityUid body, EntityUid part, Entity<SurgeryComponent?> surgery, List<EntityUid> requirements)
