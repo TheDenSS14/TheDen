@@ -34,9 +34,15 @@ public sealed class ApplyShaderToEntitySystem : SharedApplyShaderToEntitySystem
     }
     private void OnStartup(EntityUid uid, ApplyShaderToEntityComponent component, ComponentStartup args)
     {
+        if (component.ShaderPrototype is null)
+        {
+            _sawmill.Info($"Shader prototype was null on component startup.");
+            return;
+        }
+
         if (!_prototypeManager.HasIndex<ShaderPrototype>(component.ShaderPrototype))
         {
-            _sawmill.Info($"Did not find specified shader prototype: {component.ShaderPrototype}");
+            _sawmill.Info($"Did not find specified shader prototype: {component.ShaderPrototype} on component startup.");
             return;
         }
 
@@ -45,6 +51,7 @@ public sealed class ApplyShaderToEntitySystem : SharedApplyShaderToEntitySystem
         _shader.SetParameter("noise_texture", _noiseTexture); // we don't need to set this every frame since it's completely static and never changes.
 
         SetShader(uid, component.Enabled, component);
+        Dirty(uid, component);
     }
 
     private void OnShutdown(EntityUid uid, ApplyShaderToEntityComponent component, ComponentShutdown args)

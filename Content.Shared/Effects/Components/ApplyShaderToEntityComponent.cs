@@ -1,9 +1,10 @@
+using Content.Shared.Effects.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Effects.Components;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedApplyShaderToEntitySystem)), AutoGenerateComponentState]
 public sealed partial class ApplyShaderToEntityComponent : Component
 {
     /// <summary>
@@ -18,6 +19,7 @@ public sealed partial class ApplyShaderToEntityComponent : Component
     /// </summary>
     [DataField("shaderProto", required: true)]
     [ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
     public string ShaderPrototype = "AnalogDistortion";
 
     /// <summary>
@@ -25,7 +27,7 @@ public sealed partial class ApplyShaderToEntityComponent : Component
     /// You will need to look into the actual shader's code for parameter names and what kind of values they take.
     /// Unfortunately, for now, I simply don't know how to parse anything other than floats, so shaders with parameters expressed in vectors cannot be changed here.
     /// </summary>
-    [DataField("shaderParams", required: true)]
+    [DataField("shaderParams")]
     [ViewVariables(VVAccess.ReadWrite)]
     public Dictionary<string, float> ShaderParameters = new Dictionary<string, float> { };
 

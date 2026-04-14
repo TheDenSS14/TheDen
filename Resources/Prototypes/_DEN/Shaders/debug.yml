@@ -1,0 +1,27 @@
+- type: entity
+  parent: ClothingNeckCloakMoth
+  category: DEBUG
+  id: ShaderDebugCloak
+  name: shader debugging cloak
+  description: Hehe... bug...
+  components:
+  - type: ClothingGrantComponent
+    component:
+    - type: ApplyShaderToEntity
+      shaderProto: AnalogDistortion
+      shaderParams:
+        tape_crease_smear: 2
+        tape_crease_discoloration: 3
+        tape_crease_speed: 1
+
+- type: entity
+  parent: ClothingNeckCloakMoth
+  category: DEBUG
+  id: ShaderDebugCloakCrispy
+  name: crispy shader debugging cloak
+  description: Hehe... bug...
+  components:
+  - type: ClothingGrantComponent
+    component:
+    - type: ApplyShaderToEntity
+      shaderProto: Crispy
