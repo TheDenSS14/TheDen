@@ -6,7 +6,6 @@
   description: "A striped violet bar of soap, so expensive it comes with its own polished electrum dish. Smells like lavender and anise."
   components:
   - type: Sprite
-    noRot: true
     sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
     layers:
     - state: sombersoapdish
@@ -51,7 +50,6 @@
   description: "A striped teal bar of soap, so expensive it comes with its own polished electrum dish. Smells like like sweet incense."
   components:
   - type: Sprite
-    noRot: true
     layers:
     - state: sombersoapdish
     - state: somberteal-4
