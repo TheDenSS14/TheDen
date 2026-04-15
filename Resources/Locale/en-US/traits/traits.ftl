@@ -763,8 +763,9 @@ trait-description-EggLaying = You have an organ capable of laying eggs at the co
 trait-name-Caprine = Caprine
 trait-description-Caprine = A language spoken by the Ovinia, the language is composed of many loose bleating and baahing noises strung together to create words.
 
+# DEN Change - Change description of Synthetic trait, blood changing is decoupled
 trait-name-Synthetic = Synthetic
-trait-description-Synthetic = You are a biomechanical construct, who bleeds coolant and is notified of ongoing Ion Storms.
+trait-description-Synthetic = You are a biomechanical construct, who is notified of ongoing Ion Storms.
 
 trait-name-SyntheticVoicebox = Synthetic Voicebox
 trait-description-SyntheticVoicebox = Your vocal apparatus is itself synthetic, and starts to malfunction when you are injured.
