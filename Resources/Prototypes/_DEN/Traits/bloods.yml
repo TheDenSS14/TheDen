@@ -156,6 +156,27 @@
   - !type:TraitModifyBloodstream
     bloodReagent: Blood
 
+# I killed the hardcoded blood reagent code in SynthSystem.cs because this is duplicate code, atomizing it into its own trait
+- type: trait
+  id: SynthBlood
+  category: TraitsBloods
+  points: -2
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - StationAi
+    - Borg
+    - MedicalBorg
+  - !type:CharacterItemGroupRequirement
+    group: TraitsBloods
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - Plasmaman
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: SynthBlood
 
 # Thaven blood is hallucinogenic, which can grant psionics. For this reason, they cost points.
 - type: trait
@@ -203,4 +224,4 @@
     - Plasmaman
   functions:
   - !type:TraitModifyBloodstream
-    bloodReagent: IntoxicatingBlood 
+    bloodReagent: IntoxicatingBlood
