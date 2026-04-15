@@ -40,7 +40,19 @@ public sealed class GlimmerSystem : EntitySystem
     ///     This returns a string that returns a more display-friendly glimmer input.
     ///     For example, 502.03837847 will become 502.03.
     /// </summary>
-    public string GlimmerInputString => _glimmerInput.ToString("#.##");
+    /// <remarks>
+    ///     The output string gets a little weird when it is set to 0.0, because it will return String.Empty.
+    ///     For this case, the get property runs a small check to see if the internal glimmer output is 0.
+    ///     In any other case where it is not 0, we continue and reformat the string.
+    /// </remarks>
+    public string GlimmerInputString
+    {
+        get
+        {
+            var output = _glimmerInput.ToString("#.##");
+            return string.IsNullOrEmpty(output) ? "0" : output; // DEN Change - Fix String.Empty bug
+        }
+    }
 
     private double _glimmerOutput = 0;
 
@@ -67,7 +79,19 @@ public sealed class GlimmerSystem : EntitySystem
     ///     This returns a string that returns a more display-friendly glimmer output.
     ///     For example, 502.03837847 will become 502.03.
     /// </summary>
-    public string GlimmerOutputString => _glimmerOutput.ToString("#.##");
+    /// <remarks>
+    ///     The output string gets a little weird when it is set to 0.0, because it will return String.Empty.
+    ///     For this case, the get property runs a small check to see if the internal glimmer output is 0.
+    ///     In any other case where it is not 0, we continue and reformat the string.
+    /// </remarks>
+    public string GlimmerOutputString
+    {
+        get
+        {
+            var output = _glimmerInput.ToString("#.##");
+            return string.IsNullOrEmpty(output) ? "0" : output; // DEN Change - Fix String.Empty bug
+        }
+    }
 
     private bool _enabled;
     public override void Initialize()
@@ -104,7 +128,7 @@ public sealed class GlimmerSystem : EntitySystem
             _ => GlimmerTier.Critical,
         };
     }
-    
+
     /// <summary>
     ///     Returns a 0 through 10 range of glimmer. Do not divide by this for any reason.
     /// </summary>
