@@ -356,16 +356,18 @@ public sealed class ClientClothingSystem : ClothingSystem
             switch (equipeeSex)
             {
                 case Sex.Male:
-                    if (inventory.MaleDisplacements.Count > 0)
+                    if (inventory.MaleDisplacements.Count > 0 
+                        && inventory.MaleDisplacements.GetValueOrDefault(slot) is {} maleDisp) // DEN
                     {
-                        displacementData = inventory.MaleDisplacements.GetValueOrDefault(slot);
+                        displacementData = maleDisp;
                         hasSexDisplacement = true; // DEN addition
                     }
                     break;
                 case Sex.Female:
-                    if (inventory.FemaleDisplacements.Count > 0)
+                    if (inventory.FemaleDisplacements.Count > 0 
+                        && inventory.FemaleDisplacements.GetValueOrDefault(slot) is {} femaleDisp) // DEN
                     {
-                        displacementData = inventory.FemaleDisplacements.GetValueOrDefault(slot);
+                        displacementData = femaleDisp;
                         hasSexDisplacement = true; // DEN addition
                     }
                     break;
