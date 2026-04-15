@@ -18713,3 +18713,16 @@ Entries:
   id: 1840
   time: '2026-04-12T17:15:17.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2636
+- author: SirWarock
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Autodocs speed being calculated squared. The 0.5x speed autodoc
+        had the speed of 0.25x in reality.
+    - type: Tweak
+      message: >-
+        Increased the speed of the autodoc by 6, so it's 1.5x faster than a
+        surgeon with optimal tools!
+  id: 1841
+  time: '2026-04-15T01:33:42.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2639
