@@ -1639,7 +1639,6 @@
         - MedicalBorg
     # DEN START - Add Blood group exclusion
     - !type:CharacterItemGroupRequirement
-      inverted: true
       group: TraitsBloods
     # DEN END
     - !type:CharacterSpeciesRequirement
