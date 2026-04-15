@@ -28,6 +28,6 @@ public sealed class SynthSystem : EntitySystem
         }
 
         // Give them synth blood. Ion storm notif is handled in that system
-        _bloodstream.ChangeBloodReagent(uid, "SynthBlood");
+        // _bloodstream.ChangeBloodReagent(uid, "SynthBlood"); DEN Change - Blood refactoring, killing duplicate code due to traits
     }
 }
