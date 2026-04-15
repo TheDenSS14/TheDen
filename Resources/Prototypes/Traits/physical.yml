@@ -1637,6 +1637,11 @@
         - StationAi
         - Borg
         - MedicalBorg
+    # DEN START - Add Blood group exclusion
+    - !type:CharacterItemGroupRequirement
+      inverted: true
+      group: TraitsBlood
+    # DEN END
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
