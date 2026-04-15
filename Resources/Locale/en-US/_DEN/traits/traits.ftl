@@ -10,12 +10,13 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Dirius
 # SPDX-FileCopyrightText: 2026 Dirius77
 # SPDX-FileCopyrightText: 2026 Fuvias
 # SPDX-FileCopyrightText: 2026 Jadrek
 # SPDX-FileCopyrightText: 2026 lunarcomets
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 trait-name-Heavyweight = Heavyweight
 trait-description-Heavyweight =

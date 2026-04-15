@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Dirius
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared._DEN.Traits.Components;
 using Content.Shared.CCVar;
 using Robust.Client.Graphics;
