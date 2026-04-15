@@ -1640,7 +1640,7 @@
     # DEN START - Add Blood group exclusion
     - !type:CharacterItemGroupRequirement
       inverted: true
-      group: TraitsBlood
+      group: TraitsBloods
     # DEN END
     - !type:CharacterSpeciesRequirement
       inverted: true
