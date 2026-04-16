@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 somekindofbox
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 trait-name-BlackBlood = Black Blood
 trait-description-BlackBlood =
     Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
