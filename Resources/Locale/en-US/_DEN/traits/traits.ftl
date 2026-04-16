@@ -10,12 +10,13 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Dirius
 # SPDX-FileCopyrightText: 2026 Dirius77
 # SPDX-FileCopyrightText: 2026 Fuvias
 # SPDX-FileCopyrightText: 2026 Jadrek
 # SPDX-FileCopyrightText: 2026 lunarcomets
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 trait-name-Heavyweight = Heavyweight
 trait-description-Heavyweight =
@@ -160,3 +161,8 @@ trait-name-NoosphericOpposedMood = Noospheric Opposed Mood
 trait-description-NoosphericOpposedMood =
     Something about the connection to the noosphere grates on your psyche.
     Low glimmer improves your mood. High glimmer dampens your mood.
+
+trait-name-MonochromaticVision = Monochromatic Vision
+trait-description-MonochromaticVision =
+    Either through unique anatomy or perhaps damage, you are no longer able to perceive color.
+    You will see the entire world in shades of gray.

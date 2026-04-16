@@ -782,23 +782,15 @@ public abstract partial class SharedSurgerySystem
             return 2f; // Shouldnt really happen but just a failsafe.
 
         var speed = toolSpeed;
-
-        if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
-            speed *= surgerySpeedMod.SpeedModifier;
-
-        var ev = new SurgerySpeedModifyEvent(speed);
+        // DEN - Fixed a bug and rewrote the method.
+        var ev = new SurgerySpeedModifyEvent();
         RaiseLocalEvent(user, ref ev);
-        if (TryComp<InventoryComponent>(user, out var inv))
-            _inventory.RelayEvent((user, inv), ref ev);
-        speed = ev.Multiplier;
 
         if (TryComp<BuckleComponent>(target, out var buckle) && buckle.BuckledTo is {} buckledTo)
-        {
-            var buckledEvent = new SurgerySpeedModifyEvent(speed);
-            RaiseLocalEvent(buckledTo, ref buckledEvent);
-            speed = buckledEvent.Multiplier;
-        }
+            RaiseLocalEvent(buckledTo, ref ev);
 
+        speed *= ev.Multiplier;
+        // DEN - Fixed a bug and rewrote the method.
         return stepComp.Duration / speed;
     }
     private (Entity<SurgeryComponent> Surgery, int Step)? GetNextStep(EntityUid body, EntityUid part, Entity<SurgeryComponent?> surgery, List<EntityUid> requirements)
