@@ -1,5 +1,4 @@
 using Content.Shared.Effects.Components;
-using Content.Shared.Effects.Systems;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
@@ -7,10 +6,9 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Effects.Systems;
 
-public sealed class ApplyShaderToEntitySystem : SharedApplyShaderToEntitySystem
+public sealed class ApplyShaderToEntitySystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly SpriteSystem _spriteSystem = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
 
@@ -26,6 +24,7 @@ public sealed class ApplyShaderToEntitySystem : SharedApplyShaderToEntitySystem
         SubscribeLocalEvent<ApplyShaderToEntityComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<ApplyShaderToEntityComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<ApplyShaderToEntityComponent, BeforePostShaderRenderEvent>(OnShaderRender);
+        SubscribeLocalEvent<ApplyShaderToEntityComponent, AfterAutoHandleStateEvent>(OnHandleState);
 
         _sawmill = _logManager.GetSawmill("ApplyShaderToEntity");
 
@@ -34,24 +33,7 @@ public sealed class ApplyShaderToEntitySystem : SharedApplyShaderToEntitySystem
     }
     private void OnStartup(EntityUid uid, ApplyShaderToEntityComponent component, ComponentStartup args)
     {
-        if (component.ShaderPrototype is null)
-        {
-            _sawmill.Info($"Shader prototype was null on component startup.");
-            return;
-        }
-
-        if (!_prototypeManager.HasIndex<ShaderPrototype>(component.ShaderPrototype))
-        {
-            _sawmill.Info($"Did not find specified shader prototype: {component.ShaderPrototype} on component startup.");
-            return;
-        }
-
-        _shader = _prototypeManager.Index<ShaderPrototype>(component.ShaderPrototype).InstanceUnique();
-
-        _shader.SetParameter("noise_texture", _noiseTexture); // we don't need to set this every frame since it's completely static and never changes.
-
         SetShader(uid, component.Enabled, component);
-        Dirty(uid, component);
     }
 
     private void OnShutdown(EntityUid uid, ApplyShaderToEntityComponent component, ComponentShutdown args)
@@ -59,15 +41,42 @@ public sealed class ApplyShaderToEntitySystem : SharedApplyShaderToEntitySystem
         if (!Terminating(uid))
             SetShader(uid, false, component);
     }
+    private void OnHandleState(Entity<ApplyShaderToEntityComponent> entity, ref AfterAutoHandleStateEvent evt)
+    {
+        SetShader(entity, entity.Comp.Enabled, entity.Comp);
+    }
 
     private void SetShader(EntityUid uid, bool enabled, ApplyShaderToEntityComponent? component = null, SpriteComponent? sprite = null)
     {
         if (!Resolve(uid, ref component, ref sprite, false))
             return;
 
+        if (!ValidateShaderId(uid, component.ShaderPrototypeId))
+            return;
+
+        _shader = _prototypeManager.Index<ShaderPrototype>(component.ShaderPrototypeId).InstanceUnique();
+
         sprite.PostShader = enabled ? _shader : null;
-        sprite.GetScreenTexture = false; // do not pass the screen texture since we're trying to affect the entity's sprite. we set it to false specifically in case there is another shader
+        sprite.GetScreenTexture = component.PassScreenTexture && enabled;
         sprite.RaiseShaderEvent = enabled;
+
+        _shader.SetParameter("noise_texture", _noiseTexture); // we don't need to set this every frame since it's completely static and never changes.
+    }
+    private bool ValidateShaderId(EntityUid uid, string shaderPrototypeId)
+    {
+        if (shaderPrototypeId is null)
+        {
+            _sawmill.Info($"Shader prototype on entity {uid} was null.");
+            return false;
+        }
+
+        if (!_prototypeManager.HasIndex<ShaderPrototype>(shaderPrototypeId))
+        {
+            _sawmill.Info($"Did not find specified shader prototype: {shaderPrototypeId} on entity {uid}");
+            return false;
+        }
+
+        return true;
     }
     private void OnShaderRender(EntityUid uid, ApplyShaderToEntityComponent component, BeforePostShaderRenderEvent args)
     {
