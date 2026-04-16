@@ -1,7 +1,8 @@
 # Oversized beds that come in pieces like sofas, possibly only for Eternity since their bedsheets are baked in
 # They can't rotate when the camera turns or else characters will go flying off them
-# The incorrect perspective is the cost of having big beds, but who even rotates their camera...
-# Originally made for private use, but April liked them, so it's probably fine
+# The incorrect perspective is the cost of having big beds, but who rotates their camera...
+
+# TODO: Make them at least turn like beds (will require sprite adjustments and offsets and so on)
 
 # Fancy1 (gold stripes)
 # Parent any new ones to these four, as seen in Fancy2 below
@@ -141,8 +142,6 @@
   - type: Sprite
     sprite: _DEN/Structures/Furniture/furniture-64x32.rsi
     state: somberpsychbedlong
-    snapCardinals: false
-    noRot: false
   - type: Strap
     position: Down
     rotation: -90
@@ -156,9 +155,70 @@
   - type: Sprite
     sprite: _DEN/Structures/Furniture/furniture-64x32.rsi
     state: somberpsychbedlongflipped
-    snapCardinals: false
-    noRot: false
   - type: Strap
     position: Down
     rotation: 90
     buckleOffset: "0.275,0.06"
+
+- type: entity
+  parent: SomberPsychBedLong
+  id: SomberPsychBedLongTable
+  name: somber leather chaise lounge
+  description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it. This one has a small table attached."
+  suffix: Long, Table
+  components:
+  - type: Sprite
+    state: somberpsychbedlongtable
+    offset: 0.0,0.0625 # 2 pixels up to line up with the other long ones
+
+- type: entity
+  parent: SomberPsychBedLongFlipped
+  id: SomberPsychBedLongFlippedTable
+  description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it. This one has a small table attached."
+  suffix: Long, Flipped, Table
+  components:
+  - type: Sprite
+    state: somberpsychbedlongflippedtable
+    offset: 0.0,0.0625 # 2 pixels up to line up with the other long ones
+
+# Versions that are stuck in place like sofas, which means you can't move them, but also they don't snap to the tile grid which is really helpful sometimes
+
+- type: entity
+  parent: SomberPsychBedLong
+  id: SomberPsychBedLongUnanchored
+  suffix: Long] [Unanchored, PlaceFree, Immovable
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+
+- type: entity
+  parent: SomberPsychBedLongFlipped
+  id: SomberPsychBedLongFlippedUnanchored
+  suffix: Long, Flipped] [Unanchored, PlaceFree, Immovable
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+
+- type: entity
+  parent: SomberPsychBedLongTable
+  id: SomberPsychBedLongTableUnanchored
+  suffix: Long, Table] [Unanchored, PlaceFree, Immovable
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+
+- type: entity
+  parent: SomberPsychBedLongFlippedTable
+  id: SomberPsychBedLongFlippedTableUnanchored
+  suffix: Long, Flipped, Table] [Unanchored, PlaceFree, Immovable
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false

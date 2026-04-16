@@ -257,8 +257,10 @@
 
 - type: entity
   parent: MarkerBase
-  name: mantis chair spawner
   id: SpawnVehicleMantisChair
+  name: mantis chair spawner
+  placement:
+    mode: SnapgridCenter
   components:
   - type: Transform
     anchored: false # So it can use other snapping modes
@@ -292,6 +294,23 @@
     tags:
     - MantisBeltStorable
     - DoorBumpOpener
+
+- type: entity
+  parent: SpawnVehicleMantisChair
+  id: SpawnVehicleMantisChairFolded
+  name: mantis chair spawner (folded)
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+        shader: unshaded
+      - sprite: _DEN/Structures/Specific/Mantis/mantischair.rsi
+        state: vehicle_folded
+  - type: ConditionalSpawner
+    prototypes:
+      - SomberChairLeatherMantisWheelchairFolded
 
 - type: entity
   parent: [ UnanchoredChairBase, BasePsionic ]
@@ -386,6 +405,16 @@
         acts: [ "Destruction" ]
 
 - type: entity
+  parent: SomberBarStool
+  id: SomberBarStoolUnanchored
+  suffix: Unanchored, PlaceFree, Immovable
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
+
+- type: entity
   parent: [ ChairBase, BasePsionic ]
   id: SomberChairBeachLounge # I'm sorry I ruined your sprite Port I'm desperate
   name: somber leather chaise
@@ -423,6 +452,16 @@
           ScrapElectrum:
             min: 1
             max: 3
+
+- type: entity
+  parent: SomberChairBeachLounge
+  id: SomberChairBeachLoungeUnanchored
+  suffix: Unanchored, PlaceFree, Immovable
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
 # Somber chairs end
 
 # beach lounge chairs

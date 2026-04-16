@@ -28,7 +28,7 @@
   - type: Sprite
     sprite: _DEN/Structures/Doors/Windoors/somberdark.rsi
 
-# Public, Standard
+# Public, Standard (Tinted)
 - type: entity
   parent: GloomyWindoorSecure
   id: GloomyWindoorSecureTinted
@@ -41,7 +41,7 @@
   - type: Occluder
     boundingBox: "-0.5,-0.5,0.5,-0.3"
 
-# Public, Dark
+# Public, Dark (Tinted)
 - type: entity
   parent: GloomyWindoorSecureTinted
   id: GloomyWindoorSecureTintedDark
@@ -49,6 +49,48 @@
   components:
   - type: Sprite
     sprite: _DEN/Structures/Doors/Windoors/somberdark.rsi
+
+# I also made some that open the other way so they can be double doors for style points, but no need for all these prototypes, so just public ones from me
+
+# Public, Standard (Flipped)
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureFlipped
+  name: gloomy windoor
+  suffix: Opens LEFT, Public] [Somber
+  description: "A gloomy, secure windoor, designed to match everything else in this place."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Windoors/somberflipped.rsi
+
+# Public, Dark (Flipped)
+- type: entity
+  parent: GloomyWindoorSecureDark
+  id: GloomyWindoorSecureDarkFlipped
+  suffix: Opens LEFT, Public, Dark] [Somber
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Windoors/somberdarkflipped.rsi
+
+# Public, Standard (Flipped, Tinted)
+- type: entity
+  parent: GloomyWindoorSecureTinted
+  id: GloomyWindoorSecureTintedFlipped
+  name: gloomy windoor (tinted)
+  suffix: Opens LEFT, Public] [Somber
+  description: "A gloomy, secure windoor, designed to match everything else in this place."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Windoors/somberflipped.rsi
+
+# Public, Dark (Flipped, Tinted)
+- type: entity
+  parent: GloomyWindoorSecureTintedDark
+  id: GloomyWindoorSecureTintedDarkFlipped
+  suffix: Opens LEFT, Public, Dark] [Somber
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Windoors/somberdarkflipped.rsi
 
 
 # MANTIS WINDOORS (ALL VARIANTS IN ONE PLACE)
@@ -97,7 +139,6 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMantis ]
-
 
 # DEPARMTENTAL STANDARD (LOCKED)
 

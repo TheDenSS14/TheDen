@@ -638,7 +638,7 @@
     state: middle
 
 - type: entity
-  parent: WallSomberDirectional # They don't occlude, but they don't show damage or cracks, so they're closer to walls
+  parent: WallSomberDirectionalSeeThrough
   id: SomberTVSpeakerBig
   name: somber sound system
   description: "A sleek surround sound speaker in brushed metal, set into the wall. This system could probably blow the windows out. Occasionally emits low murmuring."
@@ -671,8 +671,6 @@
     soundGroups:
       Brute:
         collection: MetalThud
-  - type: Occluder # You can see over them
-    enabled: false
 
 - type: entity
   parent: SomberTVSpeakerBig

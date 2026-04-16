@@ -280,6 +280,70 @@
     state: penthouseeye
 
 - type: decal
+  id: SomberElectrumPenthouseEyeTop
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _SHA/Decals/somber_electrum.rsi
+    state: penthouseeyetop
+
+- type: decal
+  id: SomberElectrumPenthouseEyeBottom
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _SHA/Decals/somber_electrum.rsi
+    state: penthouseeyebottom
+
+- type: decal
+  id: SomberElectrumPenthouseEyeLeft
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _SHA/Decals/somber_electrum.rsi
+    state: penthouseeyeleft
+
+- type: decal
+  id: SomberElectrumPenthouseEyeRight
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _SHA/Decals/somber_electrum.rsi
+    state: penthouseeyeright
+
+- type: decal
+  id: SomberElectrumPenthouseEye1
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _SHA/Decals/somber_electrum.rsi
+    state: penthouseeye1
+
+- type: decal
+  id: SomberElectrumPenthouseEye2
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _SHA/Decals/somber_electrum.rsi
+    state: penthouseeye2
+
+- type: decal
+  id: SomberElectrumPenthouseEye3
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _SHA/Decals/somber_electrum.rsi
+    state: penthouseeye3
+
+- type: decal
+  id: SomberElectrumPenthouseEye4
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _SHA/Decals/somber_electrum.rsi
+    state: penthouseeye4
+
+- type: decal
   id: SomberElectrumPenthouseEyeBase
   tags: ["station", "overlay"]
   parent: SomberElectrum
@@ -642,6 +706,38 @@
     state: penthouse-lattice-horizontal
 
 - type: decal
+  id: SomberMiscTileSeamN
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: tileseamN
+
+- type: decal
+  id: SomberMiscTileSeamS
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: tileseamS
+
+- type: decal
+  id: SomberMiscTileSeamE
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: tileseamE
+
+- type: decal
+  id: SomberMiscTileSeamW
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: tileseamW
+
+- type: decal
   id: MonoTileShadow
   parent: Overlays
   abstract: true
@@ -907,7 +1003,7 @@
   id: InvisibleOccluderHalf
   name: darkness
   description: "You can't see anything..."
-  suffix: Half Directional, See-Through] [PENTHOUSE
+  suffix: Half Directional, SEE-THROUGH] [PENTHOUSE
   components:
   - type: Sprite
     sprite: _SHA/Structures/Walls/invisible.rsi
@@ -922,7 +1018,7 @@
 - type: entity
   parent: InvisibleOccluderHalf
   id: InvisibleOccluderHalfLeft
-  suffix: Half Directional, Left, See-Through] [PENTHOUSE
+  suffix: Half Directional, Left, SEE-THROUGH] [PENTHOUSE
   components:
   - type: Sprite
     sprite: _SHA/Structures/Walls/invisible.rsi
@@ -937,7 +1033,7 @@
 - type: entity
   parent: InvisibleOccluderHalf
   id: InvisibleOccluderHalfRight
-  suffix: Half Directional, Right, See-Through] [PENTHOUSE
+  suffix: Half Directional, Right, SEE-THROUGH] [PENTHOUSE
   components:
   - type: Sprite
     sprite: _SHA/Structures/Walls/invisible.rsi
@@ -954,7 +1050,7 @@
   id: InvisibleOccluderFull
   name: darkness
   description: "You can't see anything..."
-  suffix: Full, See-Through] [PENTHOUSE
+  suffix: Full, SEE-THROUGH] [PENTHOUSE
   components:
   - type: Sprite
     sprite: _SHA/Structures/Walls/invisible.rsi
@@ -996,6 +1092,24 @@
   - type: Icon
     sprite: _SHA/Structures/Walls/invisible.rsi
     state: occluder_right
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: InvisibleOccluder
+  id: InvisibleOccluderNoSprite
+  name: darkness
+  description: "You can't see anything..."
+  suffix: PENTHOUSE, Edge, No Sprite
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: invisible
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: invisible
 #  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
 #    tags:
 #      - HideContextMenu
@@ -1064,7 +1178,7 @@
   parent: WallSolidDirectionalSeeThrough
   id: WindowFireEscapeSeeThrough
   name: skyscraper wall
-  suffix: Directional, See-Through] [PENTHOUSE
+  suffix: Directional, SEE-THROUGH] [PENTHOUSE
   description: "It keeps the city out."
   components:
   - type: Sprite
@@ -1110,7 +1224,7 @@
   parent: WallSolidDirectionalSeeThrough
   id: WindowFireEscapeLeftSeeThrough
   name: skyscraper wall
-  suffix: Directional, Left, See-Through] [PENTHOUSE
+  suffix: Directional, Left, SEE-THROUGH] [PENTHOUSE
   description: "It keeps the city out."
   components:
   - type: Sprite
@@ -1124,7 +1238,7 @@
   parent: WallSolidDirectionalSeeThrough
   id: WindowFireEscapeRightSeeThrough
   name: skyscraper wall
-  suffix: Directional, Right, See-Through] [PENTHOUSE
+  suffix: Directional, Right, SEE-THROUGH] [PENTHOUSE
   description: "It keeps the city out."
   components:
   - type: Sprite
@@ -1152,7 +1266,7 @@
   parent: WallSolidDirectionalCornerSeeThrough
   id: WindowFireEscapeCornerSeeThrough
   name: skyscraper wall
-  suffix: Directional, See-Through] [PENTHOUSE
+  suffix: Directional, SEE-THROUGH] [PENTHOUSE
   description: "It keeps the city out."
   components:
   - type: Sprite
@@ -1182,7 +1296,7 @@
   parent: WindowFireEscapeSeeThrough
   id: WindowFireEscapeSeeThroughHalf
   name: skyscraper wall
-  suffix: Half Directional, See-Through] [PENTHOUSE
+  suffix: Half Directional, SEE-THROUGH] [PENTHOUSE
   description: "It keeps the city out."
   components:
   - type: Sprite
@@ -1196,7 +1310,7 @@
   parent: WindowFireEscapeSeeThroughHalf
   id: WindowFireEscapeSeeThroughHalfLeft
   name: skyscraper wall
-  suffix: Half Directional, Left, See-Through] [PENTHOUSE
+  suffix: Half Directional, Left, SEE-THROUGH] [PENTHOUSE
   description: "It keeps the city out."
   components:
   - type: Sprite
@@ -1210,7 +1324,7 @@
   parent: WindowFireEscapeSeeThroughHalf
   id: WindowFireEscapeSeeThroughHalfRight
   name: skyscraper wall
-  suffix: Half Directional, Right, See-Through] [PENTHOUSE
+  suffix: Half Directional, Right, SEE-THROUGH] [PENTHOUSE
   description: "It keeps the city out."
   components:
   - type: Sprite
@@ -1289,38 +1403,6 @@
   - type: IconSmooth
     key: walls
     mode: NoSprite
-
-# Chairs
-
-- type: entity
-  parent: SomberPsychBedLong
-  id: SomberPsychBedLongTable
-  name: somber leather chaise lounge
-  description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it. This one has a table attached."
-  suffix: Long, Table] [PENTHOUSE
-  components:
-  - type: Sprite
-    sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
-    state: somberpsychbedlongtable
-    snapCardinals: false
-    noRot: false
-  - type: Strap
-    position: Down
-    rotation: -90
-    buckleOffset: "-0.775,0.4375"
-
-- type: entity
-  parent: SomberPsychBedLongTable
-  id: SomberPsychBedLongFlippedTable
-  description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it. This one has a table attached."
-  suffix: Long, Flipped, Table] [PENTHOUSE
-  components:
-  - type: Sprite
-    state: somberpsychbedlongflippedtable
-  - type: Strap
-    position: Down
-    rotation: 90
-    buckleOffset: "0.775,0.475"
 
 # Small fancy beds
 
@@ -1724,6 +1806,54 @@
   id: AirlockMiningPenthouseAir
   name: skyscraper airlock # For the fire escape utility room
   suffix: NON-AIRTIGHT] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureFlipped
+  id: GloomyWindoorSecureFlippedAir
+  name: gloomy windoor
+  suffix: NON-AIRTIGHT] [Opens LEFT, Public] [Somber
+  description: "A gloomy, secure windoor, designed to match everything else in this place."
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureDarkFlipped
+  id: GloomyWindoorSecureDarkFlippedAir
+  suffix: NON-AIRTIGHT] [Opens LEFT, Public, Dark] [Somber
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureTintedFlipped
+  id: GloomyWindoorSecureTintedFlippedAir
+  name: gloomy windoor (tinted)
+  suffix: NON-AIRTIGHT] [Opens LEFT, Public] [Somber
+  description: "A gloomy, secure windoor, designed to match everything else in this place."
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureTintedDarkFlipped
+  id: GloomyWindoorSecureTintedDarkFlippedAir
+  suffix: NON-AIRTIGHT] [Opens LEFT, Public, Dark] [Somber
   components:
   - type: Airtight
     airBlocked: false
@@ -2789,7 +2919,7 @@
   - type: PointLight
     color: "#FFE4CE" # Just a pocket fluorescent light for admin work
     energy: 0.8
-    radius: 20
+    radius: 50
     softness: 1
 
 - type: entity
@@ -2888,6 +3018,21 @@
       drink:
         reagents:
         - ReagentId: Absinthe
+          Quantity: 150
+
+- type: entity
+  parent: CustomDrinkJugSomber
+  id: CustomDrinkJugSomberPenthouseFeverDream
+  name: eidolite decanter
+  suffix: PENTHOUSE, Fever Dream] [Somber Barware
+  components:
+  - type: Label
+    currentLabel: fever dream
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: FeverDream
           Quantity: 150
 
 # Huge Bed
@@ -4526,7 +4671,7 @@
 - type: entity
   parent: BookshelfSomberFilledSanctum
   id: BookshelfSomberBacklessFilledSanctum
-  suffix: SANCTUM ONLY, See-Through, Filled
+  suffix: SANCTUM ONLY, SEE-THROUGH, Filled
   components:
   - type: Sprite
     sprite: _SHA/Structures/Furniture/somberbookshelfsanctum.rsi
@@ -4581,7 +4726,7 @@
 - type: entity
   parent: BookshelfSomberFilledPenthouse
   id: BookshelfSomberBacklessFilledPenthouse
-  suffix: PENTHOUSE, See-Through, Filled
+  suffix: PENTHOUSE, SEE-THROUGH, Filled
   components:
   - type: Sprite
     sprite: _DEN/Structures/Furniture/somberbookshelf.rsi
@@ -4952,20 +5097,20 @@
 
 - type: entity
   parent: LightTube
-  id: OrchidLightTube
+  id: OrchidLightTubeNew
   name: orchid light tube
   suffix: PENTHOUSE
   description: "A rare, rosy light."
   components:
   - type: LightBulb
     color: "#ff94e8"
-    lightEnergy: 1
+    lightEnergy: 1.5
     lightRadius: 10
     lightSoftness: 1
 
 - type: entity
   parent: LightBulb
-  id: OrchidLightBulb
+  id: OrchidLightBulbNew
   name: orchid light bulb
   suffix: PENTHOUSE
   description: "A rare, rosy light."
@@ -4973,34 +5118,34 @@
   - type: LightBulb
     bulb: Bulb
     color: "#ff94e8"
-    lightEnergy: 1
-    lightRadius: 6
+    lightEnergy: 1.5
+    lightRadius: 5
     lightSoftness: 1
 
 - type: entity
   parent: PoweredlightSomber
-  id: PoweredlightSomberOrchid
+  id: PoweredlightSomberOrchidNew
   suffix: Orchid] [PENTHOUSE
   components:
   - type: PoweredLight
-    hasLampOnSpawn: OrchidLightTube
+    hasLampOnSpawn: OrchidLightTubeNew
   - type: PointLight
     color: "#ff94e8"
-    energy: 1
+    energy: 1.5
     radius: 10
     softness: 1
 
 - type: entity
   parent: PoweredSmallLightSomber
-  id: PoweredSmallLightSomberOrchid
+  id: PoweredSmallLightSomberOrchidNew
   suffix: Orchid] [PENTHOUSE
   components:
   - type: PoweredLight
-    hasLampOnSpawn: OrchidLightBulb
+    hasLampOnSpawn: OrchidLightBulbNew
   - type: PointLight
     color: "#ff94e8"
-    energy: 1
-    radius: 6
+    energy: 1.5
+    radius: 5
     softness: 1
 
 - type: entity
@@ -5100,9 +5245,9 @@
         shader: unshaded
   - type: LightReplacer
     contents:
-    - id: OrchidLightTube
+    - id: OrchidLightTubeNew
       amount: 20
-    - id: OrchidLightBulb
+    - id: OrchidLightBulbNew
       amount: 20
 
 - type: entity
@@ -5256,6 +5401,26 @@
     heldPrefix: carpplushcast
 
 # Meditation Room (So specific it gets its own category)
+
+- type: entity
+  parent: WallSomberDirectional
+  id: WallSomberDirectionalMeditation
+  suffix: PENTHOUSE, Directional, Meditation Chamber
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/somber_directional.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Walls/somber_directional.rsi
+
+- type: entity
+  parent: WallSomberDirectionalMeditation
+  id: WallSomberDirectionalMeditationSeeThrough
+  suffix: PENTHOUSE, Directional, SEE-THROUGH, Meditation Chamber
+  categories: []
+  components:
+  - type: Occluder
+    enabled: false
 
 - type: entity
   id: MeditationChamberReflection
@@ -5721,15 +5886,18 @@
   description: "A small bottle for holding fine cosmetics."
 
 - type: entity
-  parent: RubberStampMantis
+  parent: [ BaseDecorativeFixtureNoRot, BaseItem ]
   id: RubberStampMantisCosmetic
   name: electrum cosmetic tube
   suffix: PENTHOUSE, Somber
   description: "A small tube for holding fine cosmetics."
   components:
+  - type: Item
+    sprite: Nyanotrasen/Objects/Misc/bureaucracy.rsi
+    heldPrefix: stamp-mantis
   - type: Sprite
-    layers:
-    - state: stamp-mantis
+    sprite: Nyanotrasen/Objects/Misc/bureaucracy.rsi
+    state: stamp-mantis
 
 - type: entity
   parent: Cobweb1
@@ -5817,6 +5985,16 @@
     color: "#9e00ff"
   - type: InteractionOutline
   - type: RequireProjectileTarget
+
+- type: entity
+  parent: SomberMirror
+  id: SomberMirrorPenthouse
+  suffix: PENTHOUSE
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Sprite
+    drawdepth: OverMobs
 
 # Infrastructure (Elevator, Travel, etc.)
 

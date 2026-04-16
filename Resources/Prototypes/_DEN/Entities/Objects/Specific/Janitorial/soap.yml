@@ -1,5 +1,5 @@
 - type: entity
-  parent: Soap
+  parent: [ BaseDecorativeFixtureNoRot, Soap ]
   id: SoapSomberViolet
   name: fine soap
   suffix: Somber, Violet
@@ -64,7 +64,7 @@
     residueColor: residue-teal
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseDecorativeFixtureNoRot, BaseItem ]
   id: SomberSoapDish # Or, possibly, a coaster
   name: electrum dish
   suffix: Somber

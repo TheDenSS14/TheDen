@@ -1,6 +1,43 @@
 # Unpotted plants in gloomy colors
 
 - type: entity
+  parent: MarkerBase
+  id: PottedPlantRandomSomber
+  name: random somber potted plant spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _DEN/Structures/Furniture/somber_potted_plants.rsi
+        state: plant-26
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+      - PottedPlantSomber0
+      - PottedPlantSomber1
+      - PottedPlantSomber2
+      - PottedPlantSomber3
+      - PottedPlantSomber4
+      - PottedPlantSomber5
+      - PottedPlantSomber6
+      - PottedPlantSomber7
+      - PottedPlantSomber8
+      - PottedPlantSomber10
+      - PottedPlantSomber11
+      - PottedPlantSomber12
+      - PottedPlantSomber13
+      - PottedPlantSomber14
+      - PottedPlantSomber16
+      - PottedPlantSomber18
+      - PottedPlantSomber19
+      - PottedPlantSomber21
+      - PottedPlantSomber22
+      - PottedPlantSomber24
+      - PottedPlantSomber26
+      - PottedPlantSomber29
+    chance: 1
+
+- type: entity
   parent: [ PottedPlantBase, BasePsionic ] # Anomaly things are technically psionic
   id: PottedPlantSomberBase
   name: somber ornamental plant

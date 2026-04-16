@@ -161,6 +161,32 @@
     - type: AutoLinkReceiver
       channel: Tint3
 
+# A diagonal version that doesn't occlude, but makes diagonal windows against occluded windows match
+- type: entity
+  parent: ShuttersSomberWindowTint
+  id: ShuttersSomberWindowTintDiagonalClosed
+  suffix: Closed Privacy Shutter, SEE-THROUGH
+  components:
+  - type: WallMount
+    arc: 360 # Doesn't matter on this one since it doesn't occlude
+  - type: Sprite
+    offset: "0.0,0.0"
+    sprite: _DEN/Structures/Doors/Shutters/somberwindowtintingdiagonal.rsi
+  - type: Door
+    occludes: false
+  - type: Occluder
+    enabled: false
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  parent: ShuttersSomberWindowTintDiagonalClosed
+  id: ShuttersSomberWindowTintDiagonalOpen
+  suffix: Open Privacy Shutter, SEE-THROUGH] [Right Click To Link
+  components:
+  - type: Door
+    state: Open
+
 # Fog Walls Start
 - type: entity
   parent: BaseStructure
