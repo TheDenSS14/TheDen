@@ -78,7 +78,7 @@
 - type: entity # So chameleon clothes can select the folded sprite
   parent: ClothingBackpackMantis
   id: ClothingBackpackMantisFlipped
-  suffix: Flipped
+  suffix: Folded
   components:
   - type: Foldable
     folded: true
@@ -110,7 +110,7 @@
 - type: entity # So chameleon clothes can select the folded sprite
   parent: ClothingBackpackDuffelMantis
   id: ClothingBackpackDuffelMantisFlipped
-  suffix: Flipped
+  suffix: Folded
   components:
   - type: Foldable
     folded: true
@@ -170,7 +170,7 @@
 - type: entity # So chameleon clothes can select the folded sprite
   parent: ClothingBackpackMessengerMantis
   id: ClothingBackpackMessengerMantisFlipped
-  suffix: Flipped
+  suffix: Folded
   components:
   - type: Foldable
     folded: true
