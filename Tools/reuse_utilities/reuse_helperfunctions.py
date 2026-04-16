@@ -118,7 +118,8 @@ REPO_PATH = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fi
 # these start at the repo's path. that is, an empty string here would make literally everything be ignored since the check also includes subdirectories.
 IGNORED_DIRECTORIES: (str,) = (
     "bin",
-    "RobustToolbox"
+    "RobustToolbox",
+    ".github"
 )
 
 IGNORED_DIRECTORIES = frozenset(os.path.abspath(os.path.join(REPO_PATH, ignored)) for ignored in IGNORED_DIRECTORIES)
