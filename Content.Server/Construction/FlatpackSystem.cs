@@ -31,6 +31,9 @@ public sealed class FlatpackSystem : SharedFlatpackSystem
 
         SubscribeLocalEvent<FlatpackCreatorComponent, FlatpackCreatorStartPackBuiMessage>(OnStartPack);
         SubscribeLocalEvent<FlatpackCreatorComponent, PowerChangedEvent>(OnPowerChanged);
+
+        SubscribeLocalEvent<FlatpackCreatorComponent, RefreshPartsEvent>(OnPartsRefresh); // DEN: Part upgrades
+        SubscribeLocalEvent<FlatpackCreatorComponent, UpgradeExamineEvent>(OnUpgradeExamine); // DEN: Part upgrades
     }
 
     private void OnStartPack(Entity<FlatpackCreatorComponent> ent, ref FlatpackCreatorStartPackBuiMessage args)
@@ -51,11 +54,18 @@ public sealed class FlatpackSystem : SharedFlatpackSystem
         if (cost is null)
             return;
 
+        // DEN: Part Upgrades
+        foreach (var (mat, amount) in cost)
+        {
+            var adjustedAmount = amount * ent.Comp.FinalMaterialUseMultiplier;
+            cost[mat] = (int)adjustedAmount;
+        }
+
         if (!MaterialStorage.CanChangeMaterialAmount(uid, cost))
             return;
 
         comp.Packing = true;
-        comp.PackEndTime = _timing.CurTime + comp.PackDuration;
+        comp.PackEndTime = _timing.CurTime + (comp.PackDuration * comp.FinalTimeMultiplier); // DEN: Part upgrades.
         Appearance.SetData(uid, FlatpackCreatorVisuals.Packing, true);
         _ambientSound.SetAmbience(uid, true);
         Dirty(uid, comp);
@@ -66,6 +76,24 @@ public sealed class FlatpackSystem : SharedFlatpackSystem
         if (args.Powered)
             return;
         FinishPacking(ent, true);
+    }
+
+    // DEN: Part upgrades
+    private void OnPartsRefresh(Entity<FlatpackCreatorComponent> ent, ref RefreshPartsEvent args)
+    {
+        var printTimeRating = args.PartRatings[ent.Comp.MachinePartPrintSpeed];
+        var materialUseRating = args.PartRatings[ent.Comp.MachinePartMaterialUse];
+
+        ent.Comp.FinalTimeMultiplier= MathF.Pow(ent.Comp.PartRatingPrintTimeMultiplier, printTimeRating - 1);
+        ent.Comp.FinalMaterialUseMultiplier = MathF.Pow(ent.Comp.PartRatingMaterialUseMultiplier, materialUseRating - 1);
+        Dirty(ent);
+    }
+
+    // DEN: Part upgrades
+    private void OnUpgradeExamine(Entity<FlatpackCreatorComponent> ent, ref UpgradeExamineEvent args)
+    {
+        args.AddPercentageUpgrade("lathe-component-upgrade-speed", 1 / ent.Comp.FinalTimeMultiplier);
+        args.AddPercentageUpgrade("lathe-component-upgrade-material-use", ent.Comp.FinalMaterialUseMultiplier);
     }
 
     private void FinishPacking(Entity<FlatpackCreatorComponent> ent, bool interrupted)
