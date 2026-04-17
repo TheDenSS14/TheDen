@@ -128,6 +128,12 @@ namespace Content.Shared.Lathe
         /// </summary>
         [DataField]
         public float PartRatingMaterialUseMultiplier = 0.85f;
+
+        /// <summary>
+        /// Causes produced items to not have their material quantities reduced by the input cost discount.
+        /// </summary>
+        [DataField] public bool IgnoreMaterialPenalty = false; // DEN: Ore processor upgrades produce more mats.
+
         #endregion
     }
 
