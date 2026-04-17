@@ -4,7 +4,7 @@
 
 ## These get sorted alphabetically within the menu.
 ## If you do add more blood reagents in the future, be *absolutely* sure to include the exclusions for the other bloods.
-## It's boilerplatey as hell, but we do not have trait group requirements. A future refactor might help with this.
+## It's boilerplatey as hell, but group exclusions now have to be made in _DEN/CharcterItemGroups/Traits/bloods.yml.
 
 - type: trait
   id: AmmoniaBlood
@@ -14,18 +14,11 @@
   - !type:CharacterJobRequirement
       inverted: true
       jobs:
-      - StationAi
-      - Borg
-      - MedicalBorg
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - Synthetic
-    - BlackBlood
-    - InsectBlood
-    - BlueBlood
-    - SlimeBlood
-    - ShimmeringBlood
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterItemGroupRequirement
+    group: TraitsBloods
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
@@ -45,19 +38,11 @@
   - !type:CharacterJobRequirement
       inverted: true
       jobs:
-      - StationAi
-      - Borg
-      - MedicalBorg
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - Synthetic
-    - InsectBlood
-    - BlueBlood
-    - SlimeBlood
-    - RedBlood
-    - AmmoniaBlood
-    - ShimmeringBlood
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterItemGroupRequirement
+    group: TraitsBloods
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
@@ -76,19 +61,11 @@
   - !type:CharacterJobRequirement
       inverted: true
       jobs:
-      - StationAi
-      - Borg
-      - MedicalBorg
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - Synthetic
-    - BlackBlood
-    - InsectBlood
-    - RedBlood
-    - SlimeBlood
-    - AmmoniaBlood
-    - ShimmeringBlood
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterItemGroupRequirement
+    group: TraitsBloods
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
@@ -107,19 +84,11 @@
   - !type:CharacterJobRequirement
       inverted: true
       jobs:
-      - StationAi
-      - Borg
-      - MedicalBorg
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - Synthetic
-    - BlackBlood
-    - BlueBlood
-    - RedBlood
-    - SlimeBlood
-    - AmmoniaBlood
-    - ShimmeringBlood
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterItemGroupRequirement
+    group: TraitsBloods
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
@@ -139,19 +108,11 @@
   - !type:CharacterJobRequirement
       inverted: true
       jobs:
-      - StationAi
-      - Borg
-      - MedicalBorg
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - Synthetic
-    - BlackBlood
-    - InsectBlood
-    - BlueBlood
-    - RedBlood
-    - AmmoniaBlood
-    - ShimmeringBlood
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterItemGroupRequirement
+    group: TraitsBloods
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
@@ -170,19 +131,11 @@
   - !type:CharacterJobRequirement
       inverted: true
       jobs:
-      - StationAi
-      - Borg
-      - MedicalBorg
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - Synthetic
-    - BlackBlood
-    - InsectBlood
-    - BlueBlood
-    - SlimeBlood
-    - AmmoniaBlood
-    - ShimmeringBlood
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterItemGroupRequirement
+    group: TraitsBloods
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
@@ -235,18 +188,11 @@
   - !type:CharacterJobRequirement
       inverted: true
       jobs:
-      - StationAi
-      - Borg
-      - MedicalBorg
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - Synthetic
-    - BlackBlood
-    - InsectBlood
-    - BlueBlood
-    - SlimeBlood
-    - AmmoniaBlood
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterItemGroupRequirement
+    group: TraitsBloods
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
