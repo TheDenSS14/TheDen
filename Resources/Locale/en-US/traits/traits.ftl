@@ -50,7 +50,7 @@
 # SPDX-FileCopyrightText: 2026 Jadrek
 # SPDX-FileCopyrightText: 2026 entings
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 trait-name-Blindness = Blindness
 trait-description-Blindness = You are legally blind, and can't see clearly past a few meters in front of you.
