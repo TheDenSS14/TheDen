@@ -551,13 +551,15 @@
   - type: Clickable
   - type: RequireProjectileTarget
   - type: ThrownItemImmune
+  - type: Anchorable # It doesn't iconsmooth, so it should be movable
+  - type: Rotatable
 
 - type: entity
   parent: SomberTableCoffee
   id: SomberTableCoffeeUnanchored
-  suffix: Unanchored, PlaceFree, Immovable
+  suffix: Unanchored, Place Freely
   placement:
-    mode: PlaceFree
+    mode: AlignWallProper
   components:
   - type: Transform
     anchored: false # So it can use other snapping modes
@@ -606,9 +608,9 @@
 - type: entity
   parent: SomberTableEnd
   id: SomberTableEndUnanchored
-  suffix: Unanchored, PlaceFree, Immovable
+  suffix: Unanchored, Place Freely
   placement:
-    mode: PlaceFree
+    mode: AlignWallProper
   components:
   - type: Transform
     anchored: false # So it can use other snapping modes
@@ -713,16 +715,16 @@
   - type: PointLight
     enabled: false
     energy: 1.5
-    radius: 6
+    radius: 8
     softness: 1.22
     color: "#4dc4ff"
 
 - type: entity
   parent: SomberTableFire
   id: SomberTableFireUnanchored
-  suffix: Unanchored, PlaceFree, Immovable
+  suffix: Unanchored, Place Freely
   placement:
-    mode: PlaceFree
+    mode: AlignWallProper
   components:
   - type: Transform
     anchored: false # So it can use other snapping modes
@@ -743,9 +745,9 @@
 - type: entity
   parent: SomberTableFireWarm
   id: SomberTableFireWarmUnanchored
-  suffix: Warm Fire, Unanchored, PlaceFree, Immovable
+  suffix: Warm Fire, Unanchored, Place Freely
   placement:
-    mode: PlaceFree
+    mode: AlignWallProper
   components:
   - type: Transform
     anchored: false # So it can use other snapping modes

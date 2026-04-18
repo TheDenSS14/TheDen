@@ -122,3 +122,43 @@
   sprite:
     sprite: _DEN/Decals/misc.rsi
     state: planter
+
+- type: decal
+  id: PlanterSmall
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: planter-small
+
+- type: decal
+  id: PlanterSmallNE
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: planter-small-NE
+
+- type: decal
+  id: PlanterSmallNW
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: planter-small-NW
+
+- type: decal
+  id: PlanterSmallSE
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: planter-small-SE
+
+- type: decal
+  id: PlanterSmallSW
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: planter-small-SW

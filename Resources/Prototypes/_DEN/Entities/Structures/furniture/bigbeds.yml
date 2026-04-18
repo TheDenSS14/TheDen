@@ -186,9 +186,9 @@
 - type: entity
   parent: SomberPsychBedLong
   id: SomberPsychBedLongUnanchored
-  suffix: Long] [Unanchored, PlaceFree, Immovable
+  suffix: Long] [Unanchored, Place Freely
   placement:
-    mode: PlaceFree
+    mode: AlignWallProper
   components:
   - type: Transform
     anchored: false
@@ -196,9 +196,9 @@
 - type: entity
   parent: SomberPsychBedLongFlipped
   id: SomberPsychBedLongFlippedUnanchored
-  suffix: Long, Flipped] [Unanchored, PlaceFree, Immovable
+  suffix: Long, Flipped] [Unanchored, Place Freely
   placement:
-    mode: PlaceFree
+    mode: AlignWallProper
   components:
   - type: Transform
     anchored: false
@@ -206,9 +206,9 @@
 - type: entity
   parent: SomberPsychBedLongTable
   id: SomberPsychBedLongTableUnanchored
-  suffix: Long, Table] [Unanchored, PlaceFree, Immovable
+  suffix: Long, Table] [Unanchored, Place Freely
   placement:
-    mode: PlaceFree
+    mode: AlignWallProper
   components:
   - type: Transform
     anchored: false
@@ -216,9 +216,9 @@
 - type: entity
   parent: SomberPsychBedLongFlippedTable
   id: SomberPsychBedLongFlippedTableUnanchored
-  suffix: Long, Flipped, Table] [Unanchored, PlaceFree, Immovable
+  suffix: Long, Flipped, Table] [Unanchored, Place Freely
   placement:
-    mode: PlaceFree
+    mode: AlignWallProper
   components:
   - type: Transform
     anchored: false

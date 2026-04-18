@@ -6,7 +6,7 @@
 ## Somber Fireplaces Start
 # Psionic fire (blue)
 - type: entity
-  parent: [ Fireplace, BasePsionic ]
+  parent: [ BaseStructure, BasePsionic ]
   id: SomberFireplace
   name: electrum fireplace
   suffix: Signal-Friendly
@@ -67,13 +67,11 @@
       params:
         volume: -8
         range: 5
-  - type: AmbientSound
-    enabled: false
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
     enabled: false
     energy: 1.5
-    radius: 6
+    radius: 8
     softness: 1.22
     color: "#4dc4ff"
   - type: ItemToggleHot
@@ -204,7 +202,7 @@
     offset: 0,-0.125 # Keep the light centered on the fire
     enabled: false
     energy: 1.5
-    radius: 4
+    radius: 5
     softness: 1.22
     color: "#4dc4ff"
   - type: StaticPrice

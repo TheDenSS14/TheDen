@@ -407,9 +407,9 @@
 - type: entity
   parent: SomberBarStool
   id: SomberBarStoolUnanchored
-  suffix: Unanchored, PlaceFree, Immovable
+  suffix: Unanchored, Place Freely
   placement:
-    mode: PlaceFree
+    mode: AlignWallProper
   components:
   - type: Transform
     anchored: false # So it can use other snapping modes
@@ -456,9 +456,9 @@
 - type: entity
   parent: SomberChairBeachLounge
   id: SomberChairBeachLoungeUnanchored
-  suffix: Unanchored, PlaceFree, Immovable
+  suffix: Unanchored, Place Freely
   placement:
-    mode: PlaceFree
+    mode: AlignWallProper
   components:
   - type: Transform
     anchored: false # So it can use other snapping modes

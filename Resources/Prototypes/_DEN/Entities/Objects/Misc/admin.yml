@@ -113,6 +113,7 @@
     - id: TrashBananaPeel
     - id: PowerCellMicroreactor
       amount: 2
+    - id: HandheldCrewMonitorMantis # SHA
     - id: SprayPaintMagicInfinite
     - id: HoloprojectorPrivate
     - id: HoloprojectorNSFW
@@ -120,7 +121,7 @@
     damageCoefficient: 0
   - type: ChameleonClothing
     slot: [BACK]
-    default: ClothingBackpackSatchelHolding
+    default: ClothingBackpackDuffelMantis # SHA
   - type: UserInterface
     interfaces:
       enum.ChameleonUiKey.Key:
@@ -161,7 +162,7 @@
     damageCoefficient: 0
   - type: ChameleonClothing
     slot: [BELT]
-    default: ClothingBeltChiefEngineer
+    default: ClothingBeltMantisOrnate # SHA
   - type: UserInterface
     interfaces:
       enum.ChameleonUiKey.Key:

@@ -594,7 +594,7 @@
 
 # Somber TV Kit
 # To make theaters using ComputerSomberTelevision and RemoteSignallerSomberTV
-# Only comes in the dark color
+# Only comes in the dark color (theaters should be dark anyway, it's fine)
 
 - type: entity
   parent: WallSomberDark
@@ -636,6 +636,20 @@
   - type: Icon
     sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
     state: middle
+
+- type: entity
+  parent: SomberTVSpeakerWallLeft
+  id: SomberTVSpeakerWall
+  name: somber wall
+  description: "Layered with dark, rough mnemolith slabs in a tight grid to prevent psionic scrying."
+  suffix: TV Backing Wall] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: tvback
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: tvback
 
 - type: entity
   parent: WallSomberDirectionalSeeThrough

@@ -229,6 +229,46 @@
     state: planter
 
 - type: decal
+  id: SomberPlanterSmall
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: planter-small
+
+- type: decal
+  id: SomberPlanterSmallNE
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: planter-small-NE
+
+- type: decal
+  id: SomberPlanterSmallNW
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: planter-small-NW
+
+- type: decal
+  id: SomberPlanterSmallSE
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: planter-small-SE
+
+- type: decal
+  id: SomberPlanterSmallSW
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: planter-small-SW
+
+- type: decal
   id: SomberPlanterDark
   tags: ["station", "overlay"]
   parent: SomberMisc
@@ -236,7 +276,47 @@
     sprite: _DEN/Decals/somber_dark.rsi
     state: planter
 
-# The trim that goes under windoors in case you want directional windows to match
+- type: decal
+  id: SomberPlanterDarkSmall
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: planter-small
+
+- type: decal
+  id: SomberPlanterDarkSmallNE
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: planter-small-NE
+
+- type: decal
+  id: SomberPlanterDarkSmallNW
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: planter-small-NW
+
+- type: decal
+  id: SomberPlanterDarkSmallSE
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: planter-small-SE
+
+- type: decal
+  id: SomberPlanterDarkSmallSW
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: planter-small-SW
+
+# The trim that goes under windoors in case you need it for some reason
 
 - type: decal
   id: SomberWindoorUnderlay
