@@ -16480,7 +16480,7 @@ Entries:
       message: >-
         Admin clothing (belt+satchel) is now chameleon clothing. You will need
         to take them off and put them on again for the chameleon visuals to
-        apply. 
+        apply.
   id: 1614
   time: '2026-01-21T22:45:11.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2324
@@ -16531,7 +16531,7 @@ Entries:
     - type: Tweak
       message: >-
         Senior physicians now also get emergency paramedic access just like how
-        MD's do. 
+        MD's do.
     - type: Tweak
       message: The service worker job now gets emergency janitorial access.
     - type: Tweak
@@ -17485,7 +17485,7 @@ Entries:
     - type: Add
       message: >-
         Got a shipment of Ticket Pads from the Imp sector which have been added
-        to the Security lockers. 
+        to the Security lockers.
   id: 1715
   time: '2026-02-24T09:30:20.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2449
@@ -17496,7 +17496,7 @@ Entries:
         Xeno-B-Gone body dissolution tacks - dissolve vent critter bodies on the
         spot and get on with your day. Issued to janitors roundstart, resupply
         via cargo. Xeno-B-Gone is not responsible for any injuries caused by
-        bypassing critical safety features. 
+        bypassing critical safety features.
   id: 1716
   time: '2026-02-24T09:31:04.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2418
@@ -17890,7 +17890,7 @@ Entries:
     - type: Tweak
       message: >-
         Alt-click now removes your weapon or item from portable rechargers,
-        mimicking holster behavior. 
+        mimicking holster behavior.
     - type: Tweak
       message: Changed the portable recharger's size in inventory to 2x4.
     - type: Fix
@@ -17938,7 +17938,7 @@ Entries:
     - type: Tweak
       message: >-
         Alt-click now removes your weapon or item from portable rechargers,
-        mimicking holster behavior. 
+        mimicking holster behavior.
     - type: Tweak
       message: Changed the portable recharger's size in inventory to 2x4.
     - type: Fix
@@ -18195,7 +18195,7 @@ Entries:
     - type: Add
       message: >-
         A tiny derringer pistol that comes in a fancy giftbox. Purchasable at
-        Logistics, or very rarely found in maintenance. 
+        Logistics, or very rarely found in maintenance.
   id: 1788
   time: '2026-03-16T14:32:01.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2528
@@ -18676,7 +18676,7 @@ Entries:
     - type: Tweak
       message: >-
         The Rickenbacker is cheaper in loadouts to get for non-musicians and can
-        be worn on your back (no sprite though...) 
+        be worn on your back (no sprite though...)
   id: 1836
   time: '2026-04-07T15:10:04.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2626
@@ -18809,26 +18809,6 @@ Entries:
   url: https://github.com/TheDenSS14/TheDen/pull/2649
 - author: Dirius77
   changes:
-    - type: Tweak
-      message: Changed civilian holoprojectors to fit in your PDA.
-    - type: Add
-      message: >-
-        Added the ability to select which barrier you want to project with your
-        projector.
-    - type: Tweak
-      message: Changed holobarrier's nsfw flag to be an option in the UI.
-  id: 1853
-  time: '2026-04-18T17:31:27.0000000+00:00'
-  url: https://github.com/TheDenSS14/TheDen/pull/2641
-- author: Kellaris
-  changes:
-    - type: Tweak
-      message: Gorilla Gauntlet no longer unanchors things (like walls and doors).
-  id: 1854
-  time: '2026-04-18T17:32:23.0000000+00:00'
-  url: https://github.com/TheDenSS14/TheDen/pull/2624
-- author: Dirius77
-  changes:
     - type: Add
       message: >-
         The NSFW holoprojector and privacy holoprojector have been merged into
@@ -18839,6 +18819,13 @@ Entries:
       message: >-
         Changed privacy holobarrier projector's NSFW flag to be an option in the
         UI.
-  id: 1855
+  id: 1853
   time: '2026-04-18T17:31:27.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2641
+- author: Kellaris
+  changes:
+    - type: Tweak
+      message: Gorilla Gauntlet no longer unanchors things (like walls and doors).
+  id: 1854
+  time: '2026-04-18T17:32:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2624
