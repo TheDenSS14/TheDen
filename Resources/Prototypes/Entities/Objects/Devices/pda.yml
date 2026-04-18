@@ -125,6 +125,11 @@
       whitelist:
         components:
         - Passport
+    projectorSlot:
+      priority: -2
+      whitelist:
+        components:
+        - CivilianHoloprojector
     # End The Den Changes
     penSlot:
       startingItem: Pen
@@ -148,6 +153,7 @@
       PDA-pen: !type:ContainerSlot {}
       PDA-pai: !type:ContainerSlot {}
       PDA-passport: !type:ContainerSlot {}
+      PDA-projector: !type:ContainerSlot {} # DEN: Projectors
       Cartridge-Slot: !type:ContainerSlot {}
       program-container: !type:Container
   - type: Clothing
