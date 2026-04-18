@@ -202,3 +202,27 @@
   functions:
   - !type:TraitModifyBloodstream
     bloodReagent: ShimmeringBlood
+
+# Intoxicating blood can cause entities to become drunk. For this reason, they cost points.
+- type: trait
+  id: IntoxicatingBlood
+  category: TraitsBloods
+  points: -2
+  requirements:
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+  - !type:CharacterItemGroupRequirement
+    group: TraitsBloods
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Thaven
+    - Plasmaman
+  functions:
+  - !type:TraitModifyBloodstream
+    bloodReagent: IntoxicatingBlood

@@ -1,7 +1,8 @@
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 SpeltIncorrectyl <66873282+SpeltIncorrectyl@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 SpeltIncorrectyl
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 Dirius77
 //
 // SPDX-License-Identifier: MIT
 
@@ -64,6 +65,42 @@ public sealed partial class FlatpackCreatorComponent : Component
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public string SlotId = "board_slot";
+
+    // DEN: Part upgrades.
+    /// <summary>
+    /// The part that influences the flatpacker's speed.
+    /// </summary>
+    [DataField]
+    public string MachinePartPrintSpeed = "Manipulator";
+
+    /// <summary>
+    /// Controls how much of an impact an upgraded part has on the print time.
+    /// </summary>
+    [DataField] public float PartRatingPrintTimeMultiplier = 0.5f;
+    
+    /// <summary>
+    /// The part that influences the flatpacker's material use.
+    /// </summary>
+    [DataField]
+    public string MachinePartMaterialUse = "MatterBin";
+
+    /// <summary>
+    /// Controls how much of an impact an upgraded part has on the material cost.
+    /// </summary>
+    [DataField] public float PartRatingMaterialUseMultiplier = 1.0f;
+    
+    /// <summary>
+    /// The multiplier for the amount of time the packing takes with upgrades.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float FinalTimeMultiplier = 1.0f;
+    
+    /// <summary>
+    /// The multiplier for the amount of material the packing takes with upgrades.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float FinalMaterialUseMultiplier = 1.0f;
+    // DEN end
 }
 
 [Serializable, NetSerializable]
