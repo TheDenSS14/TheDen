@@ -37,8 +37,43 @@
   supervisors: job-supervisors-command
   canBeAntag: false
   access:
+    - Atmospherics
+    - Bar
+    - Boxer
+    - Detective
+    - Cargo
+    - Chapel
+    - Chemistry
+    - Clown
+    - Corpsman
     - Command
+    - Cryogenics
+    - Engineering
+    - External
+    - Hydroponics
+    - Janitor
+    - Kitchen
+    - Lawyer
+    - Library
     - Maintenance
+    - Medical
+    - Mime
+    - Musician
+    - Paramedic
+    - Psychologist
+    - Reporter
+    - Research
+    - Salvage
+    - Security
+    - Service
+    - Theatre
+    - Orders
+    - Mail
+    - Mantis
+    - Zookeeper
+    - Justice
+    - Prosecutor
+    - Clerk
   special:
     - !type:AddImplantSpecial
       implants: [MindShieldImplant]
