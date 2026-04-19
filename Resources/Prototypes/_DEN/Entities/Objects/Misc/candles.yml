@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: Candle
+  parent: [ BaseDecorativeFixtureNoRot, Candle, BasePsionic ]
   id: CandleSomberMantis
   name: mnemolith candle
-  suffix: Magic
+  suffix: Never Burns Out, Light After Mapping
   description: "A candle made with mnemolith powder. It doesn't want to go out."
   components:
     - type: Sprite
@@ -40,7 +40,7 @@
       thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 100
+          damage: 100 # No actions to process besides destruction if it gets nuked
         behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
@@ -88,3 +88,89 @@
           color: "#ffffff"
     - type: FireVisuals
       normalState: fire-cluster
+
+- type: entity
+  parent: CandleSomberMantis
+  id: CandleSomberMantisTiny
+  name: mnemolith candle (tea light)
+  description: "A tea light made with mnemolith powder. Light enough to float on water."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-tiny
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-tiny
+
+- type: entity
+  parent: CandleSomberMantis
+  id: CandleSomberAlabaster
+  name: alabaster candle
+  description: "A long-lasting candle made with alabaster powder, set on a silvery electrum plate."
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Misc/candlesalabaster.rsi
+    - type: Item
+      sprite: _DEN/Objects/Misc/candlesalabaster.rsi
+    - type: FireVisuals
+      sprite: _DEN/Objects/Misc/candlesalabaster.rsi
+      normalState: fire-big
+      lightColor: "#FF9833"
+    - type: Damageable
+      damageModifierSet: Wood
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100 # No actions to process besides destruction if it gets nuked
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 5
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/drop.ogg
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+
+- type: entity
+  parent: CandleSomberAlabaster
+  id: CandleSomberAlabasterSmall
+  name: alabaster candle (small)
+  description: "A small, long-lasting candle made with alabaster powder, set on a silvery electrum plate."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-small
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-small
+
+- type: entity
+  parent: CandleSomberAlabaster
+  id: CandleSomberAlabasterCluster
+  name: alabaster candle (cluster)
+  description: "A cluster of long-lasting candles made with alabaster powder, set on a silvery electrum plate. Not a birthday cake."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-cluster
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-cluster
+
+- type: entity
+  parent: CandleSomberAlabaster
+  id: CandleSomberAlabasterTiny
+  name: alabaster candle (tea light)
+  description: "A long-lasting tea light made with alabaster powder, set on a silvery electrum plate. Light enough to float on water."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-tiny
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-tiny

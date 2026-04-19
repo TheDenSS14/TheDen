@@ -1,0 +1,55 @@
+- type: entity
+  parent: [ DisposalUnit, BasePsionic ]
+  id: DisposalUnitSomber
+  name: somber disposal unit
+  description: "A pneumatic waste disposal unit. There is no reason for it to be this ornate."
+  components:
+  - type: Sprite
+    snapCardinals: false
+    noRot: true
+    sprite: _DEN/Structures/Piping/somberdisposal.rsi
+
+- type: entity
+  parent: DisposalUnitSomber
+  id: DisposalUnitSomberCounterside
+  name: compact somber disposal unit
+  suffix: Counter Side
+  description: "A compact pneumatic waste disposal unit. There is no reason for it to be this ornate, though it does fit nicely into the counter."
+  components:
+  - type: Sprite
+    drawdepth: SmallObjects
+    snapCardinals: false
+    noRot: false
+    sprite: _DEN/Structures/Piping/somberdisposalcounterside.rsi
+  - type: Transform
+    noRot: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.21875,-0.4375,0.1875,-0.28125"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+        hard: false
+
+- type: entity
+  parent: DisposalUnitSomberCounterside
+  id: DisposalUnitSomberWall
+  name: compact somber disposal unit
+  suffix: Wall
+  description: "A compact pneumatic waste disposal unit. There is no reason for it to be this ornate, though it does fit nicely into the wall."
+  components:
+  - type: Sprite
+    offset: 0,1
+
+- type: entity
+  parent: [ MailingUnit, BasePsionic ]
+  id: MailingUnitSomber
+  name: somber mailing unit
+  description: "A pneumatic mail delivery unit. There is no reason for it to be this ornate."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Piping/somberdisposal.rsi

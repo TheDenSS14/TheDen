@@ -1,0 +1,186 @@
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, DrinkShaker ]
+  id: DrinkShakerSomber
+  name: electrum shaker
+  suffix: Somber Barware
+  description: "An expensive shaker made of a natural alloy of gold and silver."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/sombershaker.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Drinks/sombershaker.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, DrinkJigger ]
+  id: DrinkJiggerSomber
+  name: electrum jigger
+  suffix: Somber Barware
+  description: "An expensive jigger made of a natural alloy of gold and silver."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/somberjigger.rsi
+  - type: Item
+    size: Tiny
+    sprite: _DEN/Objects/Consumable/Drinks/somberjigger.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, DrinkIceBucket ]
+  id: DrinkIceBucketSomber
+  name: electrum ice bucket
+  suffix: Somber Barware
+  description: "Who the hell buys an electrum ice bucket. It's made of gold. At least partly."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/somberbucket.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Drinks/somberbucket.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: DrinkIceBucketSomber
+  id: DrinkIceBucketSomberSauna
+  name: electrum sauna bucket
+  suffix: Somber Sauna
+  description: "An unreasonably expensive bucket, for water that's fated to become steam."
+  components:
+  - type: Sprite
+    state: icon-sauna
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 200
+
+- type: entity
+  parent: DrinkIceBucketSomberSauna
+  id: DrinkIceBucketSomberSaunaSilvery
+  name: electrum sauna bucket
+  suffix: Somber Sauna, Silvery
+  description: "An unreasonably expensive bucket, for water that's fated to become steam. The natural alloy contains more silver than usual."
+  components:
+  - type: Sprite
+    state: icon-sauna-silvery
+
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, DrinkGlassCoupeShaped, BasePsionic ] # Breakable somber dishes should be psionic
+  id: DrinkGlassCoupeShapedSomber
+  name: eidolite chalice
+  suffix: Somber Barware, Coupe
+  description: "A swirling chalice shaped from eidolite crystal."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/sombercoupeglass.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Drinks/sombercoupeglass.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+  - type: Destructible # They don't drop glass shards, and can't drop eidolite or electrum because they're too valuable
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpillBehavior { }
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, DrinkShotGlass, BasePsionic] # Breakable somber dishes should be psionic
+  id: DrinkShotGlassSomber
+  name: eidolite shot glass
+  suffix: Somber Barware
+  description: "A trimmed shot glass shaped from eidolite crystal."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/sombershotglass.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Drinks/sombershotglass.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpillBehavior { }
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, DrinkGlass, BasePsionic ] # Breakable somber dishes should be psionic
+  id: DrinkGlassSomber
+  name: eidolite glass
+  suffix: Somber Barware
+  description: "An eidolite glass that knows to reshape itself based on what you pour into it. That's normal. At least it looks nice for now."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/somberglass.rsi
+  - type: SolutionContainerVisuals
+    metamorphicDefaultSprite:
+      sprite: _DEN/Objects/Consumable/Drinks/somberglass.rsi
+      state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpillBehavior { }
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, DrinkBaseMug, BasePsionic ]
+  id: DrinkMugSomber
+  name: somber mug
+  suffix: Somber Barware
+  description: "A finely glazed ceramic mug ringed with ornamental electrum trim. Just ostentatious enough to make an everyday drink feel like a small indulgence."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/sombermug.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpillBehavior { }
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

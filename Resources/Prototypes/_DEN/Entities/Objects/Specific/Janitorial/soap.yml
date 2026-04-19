@@ -1,0 +1,118 @@
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, Soap ]
+  id: SoapSomberViolet
+  name: fine soap
+  suffix: Somber, Violet
+  description: "A striped violet bar of soap, so expensive it comes with its own polished electrum dish. Smells like lavender and anise."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
+    layers:
+    - state: sombersoapdish
+    - state: somberviolet-4
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    fillBaseName: somberviolet-
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
+    heldPrefix: somberviolet
+  - type: Residue
+    residueAdjective: residue-slippery
+    residueColor: residue-violet
+  - type: StaticPrice
+    price: 1500
+  - type: Food
+    trash:
+    - SomberSoapDish # This is stupid
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.18 # Smaller sprite, smaller fixture
+        layer:
+        - SlipLayer
+        hard: false
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.18 # Smaller sprite, smaller fixture
+        density: 10
+        mask:
+        - ItemMask
+
+
+- type: entity
+  parent: SoapSomberViolet
+  id: SoapSomberTeal
+  name: fine soap
+  suffix: Somber, Teal
+  description: "A striped teal bar of soap, so expensive it comes with its own polished electrum dish. Smells like like sweet incense."
+  components:
+  - type: Sprite
+    layers:
+    - state: sombersoapdish
+    - state: somberteal-4
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    fillBaseName: somberteal-
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
+    heldPrefix: somberteal
+  - type: Residue
+    residueAdjective: residue-slippery
+    residueColor: residue-teal
+
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, BaseItem ]
+  id: SomberSoapDish # Or, possibly, a coaster
+  name: electrum dish
+  suffix: Somber
+  description: "A surprisingly heavy dish made of a natural alloy of gold and silver."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
+    state: sombersoapdish
+  - type: Item
+    size: Small
+    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
+    heldPrefix: sombersoapdish
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5
+    soundHit:
+      path: /Audio/Items/trayhit1.ogg # Funny
+      params:
+        variation: 0.15
+    soundNoDamage:
+      path: /Audio/Items/trayhit1.ogg
+      params:
+        variation: 0.15
+  - type: DamageOtherOnHit
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/trayhit1.ogg
+      params:
+        variation: 0.15
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Items/trayhit1.ogg
+      params:
+        variation: 0.15
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.18
+        density: 10
+        mask:
+        - ItemMask
+  - type: InteractionVerbs
+    allowedVerbs:
+    - LickObject
+  - type: PhysicalComposition # Funny
+    materialComposition:
+      Gold: 50
+      Silver: 50

@@ -568,7 +568,7 @@
     - CriminalRecords
 
 - type: entity
-  parent: BaseComputerAiAccess
+  parent: [ BaseComputerAiAccess, BasePsionic ] # Funny
   id: ComputerPsionicsRecords
   name: psion registry computer # TheDen - Standardizing "psion" to mean people, and "psionic" to be an adjective
   description: This can be used to check psion registry records. Only Epistemics can modify them. # TheDen
@@ -876,7 +876,7 @@
   - type: CommunicationsConsole
     title: comms-console-announcement-title-station
   - type: DeviceNetwork
-    deviceNetId: Wireless    
+    deviceNetId: Wireless
     transmitFrequencyId: ShuttleTimer
   - type: ActivatableUI
     key: enum.CommunicationsConsoleUiKey.Key

@@ -4,3 +4,4 @@
 
 fibers-stony = stony
 fibers-bluish = bluish
+fibers-magenta = magenta

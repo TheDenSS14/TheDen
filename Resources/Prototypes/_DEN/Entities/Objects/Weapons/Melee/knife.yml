@@ -13,7 +13,6 @@
   - type: ItemToggle # You can toggle spinning it around your finger, though it's just cosmetic
     verbToggleOn: item-toggle-spin
     verbToggleOff: item-toggle-catch
-    predictable: false
     soundActivate:
       path: /Audio/Effects/toss.ogg # Spin
       params:

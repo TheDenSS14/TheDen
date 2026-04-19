@@ -1,0 +1,124 @@
+- type: entity
+  parent: [ ChurchBell, BasePsionic ]
+  id: ChurchBellSomber
+  name: electrum bell
+  description: "A heavy bell plated in electrum, suspended from a patterned steel beam."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Specific/Chapel/somber-church-bell.rsi
+  - type: InteractionPopup
+    interactDelay: 1
+    successChance: 1
+    interactSuccessSound:
+      path: /Audio/_DEN/Effects/spookybell.ogg
+      params:
+        variation: 0.15
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ScrapElectrum:
+            min: 3
+            max: 3
+
+# A floor-layer nazar that mappers can place to give areas chapel ambience, easily hidden under other entities, including walls
+# Players can unanchor them and pick them up, so only chaplains can use them to pray, and they only produce sound when anchored
+# Not parented since it's halfway between an item and a structure (spawns anchored, no interaction outlines, etc.)
+- type: entity
+  parent: BasePsionic
+  id: SomberNazar
+  name: nazar
+  suffix: Chapel Ambience, 5 Tile Radius
+  description: "An eyelike mnemolith plate affixed to the floor to shelter the area from certain metaphysical threats."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
+  - type: Sprite
+    sprite: _DEN/Structures/Specific/Chapel/somber-nazar.rsi
+    state: icon
+    drawdepth: HighFloorObjects
+    snapCardinals: true
+    noRot: true
+  - type: Item
+    sprite: _DEN/Structures/Specific/Chapel/somber-nazar.rsi
+    size: Normal
+  - type: Prayable
+    bibleUserOnly: true
+    sentMessage: prayer-popup-notify-nazar-sent
+    notificationPrefix: prayer-chat-notify-nazar
+    verb: prayer-verbs-nazar
+    verbImage: null
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.1
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: MovedByPressure
+  - type: EmitSoundOnCollide
+    sound:
+      collection: WeakHit
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Effects/drop.ogg
+  - type: CollisionWake
+  - type: Physics
+    bodyType: Dynamic
+    fixedRotation: true
+  - type: Clickable
+  - type: Pullable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialMnemolith1:
+            min: 3
+            max: 4
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+#  - type: DamageOtherOnHit
+#    damage:
+#      types:
+#        Holy: 5 # This is a terrible idea
+

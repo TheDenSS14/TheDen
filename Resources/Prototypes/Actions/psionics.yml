@@ -22,7 +22,7 @@
   components:
     - type: EntityTargetAction
       icon: Interface/VerbIcons/dispel.png
-      useDelay: 45
+      useDelay: 10 # SHA
       checkCanAccess: false
       range: 6
       itemIconStyle: BigAction
@@ -41,7 +41,7 @@
   components:
     - type: WorldTargetAction
       icon: Interface/VerbIcons/mass_sleep.png
-      useDelay: 60
+      useDelay: 10 # SHA
       checkCanAccess: false
       range: 8
       itemIconStyle: BigAction
@@ -55,7 +55,7 @@
   components:
     - type: EntityTargetAction
       icon: Interface/VerbIcons/mind_swap.png
-      useDelay: 120
+      useDelay: 1 # SHA
       checkCanAccess: false
       range: 8
       itemIconStyle: BigAction
@@ -63,7 +63,7 @@
         components:
           - PsionicInsulation
           - Mindbroken
-          - MindShield
+#          - MindShield # SHA
       event: !type:MindSwapPowerActionEvent
 
 - type: entity
@@ -74,7 +74,7 @@
   components:
     - type: InstantAction
       icon: Interface/VerbIcons/mind_swap_return.png
-      useDelay: 20
+      useDelay: 1 # SHA
       checkCanInteract: false
       event: !type:MindSwapPowerReturnActionEvent
 
@@ -86,7 +86,7 @@
   components:
     - type: EntityTargetAction
       icon: Interface/VerbIcons/noospheric_zap.png
-      useDelay: 50
+      useDelay: 10 # SHA
       range: 5
       itemIconStyle: BigAction
       blacklist:
@@ -128,7 +128,7 @@
   components:
     - type: InstantAction
       icon: Interface/VerbIcons/psionic_regeneration.png
-      useDelay: 120
+      useDelay: 1 # SHA
       event: !type:PsionicRegenerationPowerActionEvent
 
 - type: entity
@@ -139,7 +139,7 @@
   components:
     - type: InstantAction
       icon: Interface/VerbIcons/telegnosis.png
-      useDelay: 150
+      useDelay: 1 # SHA
       event: !type:TelegnosisPowerActionEvent
 
 - type: entity
@@ -171,7 +171,7 @@
   components:
     - type: EntityTargetAction
       icon: { sprite: Interface/Actions/psionics.rsi, state: healing_word }
-      useDelay: 10
+      useDelay: 1 # SHA
       checkCanAccess: false
       range: 6
       itemIconStyle: BigAction
@@ -209,7 +209,7 @@
   components:
     - type: EntityTargetAction
       icon: { sprite: Interface/Actions/psionics.rsi, state: revivify }
-      useDelay: 120
+      useDelay: 1 # SHA
       checkCanAccess: false
       range: 2
       itemIconStyle: BigAction
@@ -317,7 +317,7 @@
   components:
     - type: InstantAction
       icon: { sprite: Interface/Actions/shadowkin_icons.rsi, state: darkswap }
-      useDelay: 10
+      useDelay: 1 # SHA
       checkCanInteract: false
       event: !type:DarkSwapActionEvent
 
@@ -393,7 +393,7 @@
   components:
     - type: EntityTargetAction
       icon: { sprite: Interface/Actions/psionics.rsi, state: assay }
-      useDelay: 45
+      useDelay: 1 # SHA
       checkCanAccess: false
       range: 2
       itemIconStyle: BigAction

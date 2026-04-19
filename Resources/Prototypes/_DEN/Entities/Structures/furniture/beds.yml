@@ -3,9 +3,9 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: PsychBed
+  parent: [ PsychBed, BasePsionic ]
   id: SomberPsychBed
-  name: somber chaise lounge
+  name: somber leather chaise lounge
   description: "Technically it's a chaise \"longue,\" which is French for \"long chair,\" but you do lounge on it."
   components:
   - type: Sprite
@@ -39,3 +39,14 @@
           ScrapElectrum:
             min: 1
             max: 3
+
+- type: entity
+  parent: SomberPsychBed
+  id: SomberPsychBedFlipped
+  suffix: Flipped # Characters lie to the left instead, fine since it doesn't need bedsheets
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/furniture.rsi
+    state: somberpsychbedflipped
+  - type: Strap
+    rotation: 90

@@ -61,7 +61,7 @@
     - DoctorGear
 
 - type: entity
-  parent: SalvageHumanCorpse
+  parent: [ SalvageHumanCorpse, BasePsionic ] # Grim humor
   id: MobRandomScienceCorpse
   suffix: Dead, Epistemics # DeltaV - Epistemics Department replacing Science
   components:

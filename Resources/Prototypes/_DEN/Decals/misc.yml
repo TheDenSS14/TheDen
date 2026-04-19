@@ -1,0 +1,164 @@
+- type: decal
+  id: Misc
+  parent: Overlays
+  abstract: true
+
+# Wall spikes (snap to tile, then place on diagonal walls)
+
+- type: decal
+  id: WallSpikeNE
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeNE
+
+- type: decal
+  id: WallSpikeNW
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeNW
+
+- type: decal
+  id: WallSpikeSE
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeSE
+
+- type: decal
+  id: WallSpikeSW
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeSW
+
+# Rotatable wall spikes (snap to tile, then rotate 45 degrees to place on non-diagonal walls)
+
+- type: decal
+  id: WallSpikeNERotatable
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeNErotatable
+
+- type: decal
+  id: WallSpikeNWRotatable
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeNWrotatable
+
+- type: decal
+  id: WallSpikeSERotatable
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeSErotatable
+
+- type: decal
+  id: WallSpikeSWRotatable
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: wallspikeSWrotatable
+
+# Diagonal stairs (don't snap to tile, rotate 45 degrees and zoom in and do pixel-perfect placement) (good luck)
+# The underlay will help the corner stairs not shift a fraction of a pixel and expose bright tile when the map reloads
+
+- type: decal
+  id: CornerStairsUnderlay
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: cornerstairsunderlay
+
+- type: decal
+  id: CornerStairsLeft
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: cornerstairsleft
+
+- type: decal
+  id: CornerStairsRight
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: cornerstairsright
+
+- type: decal
+  id: CornerStairsUpLeft
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: cornerstairsupleft
+
+- type: decal
+  id: CornerStairsUpRight
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: cornerstairsupright
+
+# Planter decals to put non-potted plants in
+- type: decal
+  id: Planter
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: planter
+
+- type: decal
+  id: PlanterSmall
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: planter-small
+
+- type: decal
+  id: PlanterSmallNE
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: planter-small-NE
+
+- type: decal
+  id: PlanterSmallNW
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: planter-small-NW
+
+- type: decal
+  id: PlanterSmallSE
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: planter-small-SE
+
+- type: decal
+  id: PlanterSmallSW
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: planter-small-SW

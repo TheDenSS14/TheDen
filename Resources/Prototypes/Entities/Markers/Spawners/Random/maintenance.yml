@@ -79,8 +79,16 @@
         id: ClothingHeadHatCake
       - !type:EntSelector
         id: ClothingHeadHatSkub
-      - !type:EntSelector
-        id: ClothingHeadHatCone
+      - !type:GroupSelector # TheDen - Added a cone group, included ClothingHeadHatCone in it
+        children:
+        - !type:EntSelector
+          id: ClothingHeadHatCone
+        - !type:EntSelector
+          id: ClothingHeadHatConeSomber
+          weight: 0.25
+        - !type:EntSelector
+          id: ClothingHeadHatConeSomberPink
+          weight: 0.25
       - !type:EntSelector
         id: ClothingNeckBling
       - !type:EntSelector
@@ -506,9 +514,17 @@
     - !type:GroupSelector
       weight: 23
       children:
-      - !type:EntSelector
-        id: ClothingHeadHatCone
+      - !type:GroupSelector # TheDen - Added a cone group, included ClothingHeadHatCone in it
         weight: 2
+        children:
+        - !type:EntSelector
+          id: ClothingHeadHatCone
+        - !type:EntSelector
+          id: ClothingHeadHatConeSomber
+          weight: 0.25
+        - !type:EntSelector
+          id: ClothingHeadHatConeSomberPink
+          weight: 0.25
       - !type:EntSelector
         id: BookRandomStory
         weight: 0.25
@@ -659,7 +675,7 @@
       - !type:EntSelector
         id: HydroponicsToolMiniHoe
       - !type:EntSelector
-        id: BoxSmallFancyDerringer     #DEN 
+        id: BoxSmallFancyDerringer     #DEN
 
 - type: entity
   name: Maint Loot Spawner

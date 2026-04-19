@@ -81,3 +81,95 @@
     - type: SolutionContainerVisuals
       maxFillLevels: 2
       fillBaseName: packet-solid-
+
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, BaseFoodShaker, BasePsionic ]
+  id: BaseFoodShakerSomber
+  name: eidolite shaker
+  suffix: Somber, Empty
+  description: "A crystal shaker for spices."
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpillBehavior { }
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialEidolite1:
+            min: 1
+            max: 1
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/condiments.rsi
+    state: somber-shaker-empty
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Food/condiments.rsi
+    state: somber-shaker-empty
+
+- type: entity
+  parent: BaseFoodShakerSomber
+  id: FoodShakerSaltSomber
+  name: salt shaker
+  suffix: Somber
+  description: "Pink salt. From the Space Himalayas, probably."
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: TableSalt
+          Quantity: 20
+  - type: Sprite
+    state: somber-shaker-salt
+  - type: Icon
+    state: somber-shaker-salt
+  - type: Tag
+    tags:
+      - SaltShaker
+
+- type: entity
+  parent: BaseFoodShakerSomber
+  id: FoodShakerPepperSomber
+  name: pepper shaker
+  suffix: Somber
+  description: "You already know what pepper is for."
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Blackpepper
+          Quantity: 20
+  - type: Sprite
+    state: somber-shaker-pepper
+  - type: Icon
+    state: somber-shaker-pepper
+  - type: Tag
+    tags:
+      - PepperShaker
+
+- type: entity
+  parent: BaseFoodShakerSomber
+  id: FoodShakerMnemolithSomber
+  name: mnemolith shaker
+  suffix: Somber
+  description: "A potent psionic drug in a cute little crystal shaker."
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: MnemolithReagent
+          Quantity: 20
+  - type: Sprite
+    state: somber-shaker-mnemolith
+  - type: Icon
+    state: somber-shaker-mnemolith

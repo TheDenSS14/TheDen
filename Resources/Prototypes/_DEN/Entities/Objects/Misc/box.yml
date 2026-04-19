@@ -21,6 +21,7 @@
   parent: [ BaseStorageItem, BaseBagOpenClose ]
   id: MantisCase
   name: amaranth case # Generic version with no whitelist, but also doesn't fit in the mantis belt. Gift box?
+  suffix: Somber
   description: "A case made of exotic, extremely durable hardwood."
   components:
   - type: Sprite
@@ -43,6 +44,7 @@
   parent: MantisCase
   id: MantisCaseSmall
   name: amaranth case (small)
+  suffix: Somber
   description: "A case made of exotic, extremely durable hardwood."
   components:
   - type: Sprite
@@ -63,6 +65,7 @@
   parent: MantisCase
   id: MantisCaseLarge
   name: amaranth case (long)
+  suffix: Somber
   description: "A case made of exotic, extremely durable hardwood."
   components:
   - type: Sprite
@@ -84,6 +87,7 @@
   parent: MantisCase
   id: MantisCaseExtraLarge
   name: amaranth case (extra long)
+  suffix: Somber
   description: "A case made of exotic, extremely durable hardwood."
   components:
   - type: Sprite
@@ -100,6 +104,102 @@
     maxItemSize: Large
     grid:
     - 0,0,3,1 # 4x2
+
+- type: entity
+  parent: MantisCase
+  id: MantisCaseFloral
+  name: floral case
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+    layers:
+    - state: 2-closed
+    - state: 2-open
+      map: ["openLayer"]
+
+- type: entity
+  parent: MantisCaseSmall
+  id: MantisCaseFloralSmall
+  name: floral case (small)
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+    layers:
+    - state: 1-closed
+    - state: 1-open
+      map: ["openLayer"]
+
+- type: entity
+  parent: MantisCaseLarge
+  id: MantisCaseFloralLarge
+  name: floral case (long)
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+    layers:
+    - state: 3-closed
+    - state: 3-open
+      map: ["openLayer"]
+
+- type: entity
+  parent: MantisCaseExtraLarge
+  id: MantisCaseFloralExtraLarge
+  name: floral case (extra long)
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+    layers:
+    - state: 4-closed
+    - state: 4-open
+      map: ["openLayer"]
+
+- type: entity
+  parent: MantisCase
+  id: MantisCaseShadow
+  name: shadow case
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+    layers:
+    - state: 2-closed
+    - state: 2-open
+      map: ["openLayer"]
+
+- type: entity
+  parent: MantisCaseSmall
+  id: MantisCaseShadowSmall
+  name: shadow case (small)
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+    layers:
+    - state: 1-closed
+    - state: 1-open
+      map: ["openLayer"]
+
+- type: entity
+  parent: MantisCaseLarge
+  id: MantisCaseShadowLarge
+  name: shadow case (long)
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+    layers:
+    - state: 3-closed
+    - state: 3-open
+      map: ["openLayer"]
+
+- type: entity
+  parent: MantisCaseExtraLarge
+  id: MantisCaseShadowExtraLarge
+  name: shadow case (extra long)
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+    layers:
+    - state: 4-closed
+    - state: 4-open
+      map: ["openLayer"]
 
 - type: entity
   parent: [MantisCaseLarge, BaseMantisContraband] # Contraband since its contents are
@@ -193,9 +293,9 @@
         - MantisBoxCandlesStorable # Only the mantis candles should have this
   - type: StorageFill
     contents: # A cute radial arrangement of items, like a gift box
+    - id: CandleSomberMantisTiny
     - id: CandleSomberMantisSmall
-    - id: CandleSomberMantis
-    - id: CandleSomberMantisSmall
+    - id: CandleSomberMantisTiny
     - id: CandleSomberMantis
     - id: CandleSomberMantisCluster
     - id: CandleSomberMantis
@@ -205,6 +305,29 @@
   - type: Tag
     tags:
     - MantisBeltStorable
+
+- type: entity
+  parent: MantisCaseCandles
+  id: MantisCaseCandlesAlabaster # A version with normal fire, not just for psionics like the mantis
+  name: alabaster candle case
+  suffix: Warm Fire
+  description: "A floral wood case of mixed candles."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+  - type: Item
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+  - type: StorageFill
+    contents:
+    - id: CandleSomberAlabasterTiny
+    - id: CandleSomberAlabasterSmall
+    - id: CandleSomberAlabasterTiny
+    - id: CandleSomberAlabaster
+    - id: CandleSomberAlabasterCluster
+    - id: CandleSomberAlabaster
+    - id: CandleSomberAlabasterSmall
+    - id: CandleSomberAlabaster
+    - id: CandleSomberAlabasterSmall
 
 - type: entity
   parent: [MantisCaseLarge, BaseMantisContraband] # Contraband since its contents are
@@ -239,4 +362,92 @@
     - MantisBoxRestraintsStorable # Technically you could put this box inside itself, but only one should exist in a game at a time since it's a loadout item
   - type: GuideHelp
     guides: [ MantisGuide ]
+
+- type: entity
+  parent: MantisCaseExtraLarge
+  id: MantisCaseMedkit # Mechanically identical to their corresponding medkits, mostly for mappers
+  name: amaranth medical case (basic)
+  suffix: Somber, Basic Medkit, Empty
+  description: "A medical case made of exotic, extremely durable hardwood."
+  abstract: true # I doubt this will ever be needed
+  components:
+  - type: Sprite
+    layers:
+    - state: 4-closed
+    - state: label-medical
+    - state: 4-open
+      map: ["openLayer"]
+  - type: Item
+    size: Large
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,3,1
+    - 5,0,8,1
+    whitelist:
+      tags:
+        - Bottle
+        - Spray
+        - Brutepack
+        - Bloodpack
+        - Gauze
+        - Ointment
+        - PillCanister
+        - DiscreteHealthAnalyzer
+        - Dropper
+        - Vial
+        - CableCoil
+        - WeldingTool
+        - BodyBag
+        - Rollerbed
+        - Syringe
+      components:
+        - BreathMask
+        - Hypospray
+        - Injector
+        - Pill
+        - GasTank
+        - AACTablet
+  - type: Tag
+    tags:
+    - Medkit
+
+- type: entity
+  parent: [ MantisCaseMedkit, MedkitFilled ]
+  id: MantisCaseMedkitFilled
+  name: amaranth medical case (basic)
+  suffix: Somber, Basic Medkit, Filled
+
+- type: entity
+  parent: [ MantisCaseMedkit, MedkitAdvancedFilled ]
+  id: MantisCaseMedkitAdvancedFilled
+  name: floral medical case (advanced)
+  suffix: Somber, Advanced Medkit, Filled
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+  - type: Item
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+
+- type: entity
+  parent: [ MantisCaseMedkit, MedkitCombatFilled ]
+  id: MantisCaseMedkitCombatFilled
+  name: shadow medical case (combat)
+  suffix: Somber, Combat Medkit, Filled
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+  - type: Item
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+
+- type: entity
+  parent: [ MantisCaseMedkit, MedkitCombatFilledBSO ]
+  id: MantisCaseMedkitCombatFilledBSO
+  name: shadow medical case (combat, alt)
+  suffix: Somber, Blueshield Medkit, Filled
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+  - type: Item
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
 # Mantis cases end

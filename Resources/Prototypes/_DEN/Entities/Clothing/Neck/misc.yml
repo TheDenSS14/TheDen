@@ -116,7 +116,6 @@
   - type: ItemToggle # You can toggle swinging it back and forth, though it's just cosmetic
     verbToggleOn: item-toggle-swingstart
     verbToggleOff: item-toggle-swingstop
-    predictable: false
     soundActivate:
       path: /Audio/Effects/toss.ogg
       params:

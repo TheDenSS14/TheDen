@@ -1321,8 +1321,11 @@
 - type: entity
   parent: BaseWall
   id: WallMining
-  name: wall
+  name: skyscraper wall # SHA
+  description: "It keeps the city out." # SHA
   components:
+  - type: Reflect # SHA
+    reflectProb: 0
   - type: Tag
     tags:
       - Wall
@@ -1345,13 +1348,16 @@
 - type: entity
   parent: WallShuttleDiagonal
   id: WallMiningDiagonal
-  name: wall
+  name: skyscraper wall # SHA
+  description: "It keeps the city out." # SHA
   suffix: diagonal
   placement:
     mode: SnapgridCenter
     snap:
     - Wall
   components:
+  - type: Reflect # SHA
+    reflectProb: 0
   - type: Sprite
     drawdepth: Walls
     sprite: Structures/Walls/mining_diagonal.rsi

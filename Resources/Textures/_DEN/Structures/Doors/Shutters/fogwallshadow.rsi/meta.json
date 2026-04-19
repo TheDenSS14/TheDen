@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from https://github.com/discordia-space/CEV-Eris/blob/81b3a082ccdfb425f36bbed6e5bc1f0faed346ec/icons/effects/chemsmoke.dmi, edit by TheShuEd (github), turned into occluding 'shutters' by Sha-Seng (GitHub)",
+  "size": {
+    "x": 96,
+    "y": 96
+  },
+  "states": [
+    {
+        "name": "frame"
+    },
+    {
+        "name": "open"
+    },
+    {
+        "name": "closed",
+        "delays":
+        [
+            [
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2
+            ]
+        ]
+    },
+    {
+        "name": "closed-line",
+        "delays":
+        [
+            [
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2
+            ]
+        ]
+    },
+    {
+        "name": "closed-noline",
+        "delays":
+        [
+            [
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2
+            ]
+        ]
+    },
+    {
+        "name": "closing",
+        "delays":
+        [
+            [
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2
+            ]
+        ]
+    },
+    {
+        "name": "closing-line",
+        "delays":
+        [
+            [
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2
+            ]
+        ]
+    },
+    {
+        "name": "closing-noline",
+        "delays":
+        [
+            [
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2
+            ]
+        ]
+    },
+    {
+        "name": "opening",
+        "delays":
+        [
+            [
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2
+            ]
+        ]
+    },
+    {
+        "name": "opening-line",
+        "delays":
+        [
+            [
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2
+            ]
+        ]
+    },
+    {
+        "name": "opening-noline",
+        "delays":
+        [
+            [
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2
+            ]
+        ]
+    }
+  ]
+}

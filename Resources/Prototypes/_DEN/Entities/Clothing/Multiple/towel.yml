@@ -1,0 +1,136 @@
+- type: entity
+  parent: BaseTowel
+  id: TowelColorMagenta
+  name: magenta towel
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#b32d70"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#b32d70"
+      right:
+      - state: inhand-right
+        color: "#b32d70"
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#b32d70"
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#b32d70"
+      belt:
+      - state: equipped-BELT
+        color: "#b32d70"
+      neck:
+      - state: equipped-NECK
+        color: "#b32d70"
+  - type: Fiber
+    fiberColor: fibers-magenta
+
+- type: entity
+  parent: BaseTowel
+  id: TowelColorAzure
+  name: azure towel
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#2968e6"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#2968e6"
+      right:
+      - state: inhand-right
+        color: "#2968e6"
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#2968e6"
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#2968e6"
+      belt:
+      - state: equipped-BELT
+        color: "#2968e6"
+      neck:
+      - state: equipped-NECK
+        color: "#2968e6"
+  - type: Fiber
+    fiberColor: fibers-blue
+
+- type: entity
+  parent: BaseTowel
+  id: TowelColorRoyalRed
+  name: royal red towel
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#8a0027"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8a0027"
+      right:
+      - state: inhand-right
+        color: "#8a0027"
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#8a0027"
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#8a0027"
+      belt:
+      - state: equipped-BELT
+        color: "#8a0027"
+      neck:
+      - state: equipped-NECK
+        color: "#8a0027"
+  - type: Fiber
+    fiberColor: fibers-red
+
+- type: entity
+  parent: BaseTowel
+  id: TowelColorPine
+  name: pine towel
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#337c60"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#337c60"
+      right:
+      - state: inhand-right
+        color: "#337c60"
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#337c60"
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#337c60"
+      belt:
+      - state: equipped-BELT
+        color: "#337c60"
+      neck:
+      - state: equipped-NECK
+        color: "#337c60"
+  - type: Fiber
+    fiberColor: fibers-green
+    

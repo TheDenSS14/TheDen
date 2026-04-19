@@ -1,0 +1,252 @@
+# Welcome to the most mechanically complex altar in the game, with about 200 unique lines of code among its versions
+- type: entity
+  parent: [ BaseStructure, BaseObjectVerbsStructure, BasePsionic ] # Not parented because it's so weird
+  id: AltarSomberBasic
+  name: mnemolith altar
+  suffix: Map With Amphorae, Basic
+  description: "A broad, dark mnemolith altar. Its basins slowly well with a draught distilled from the stone itself, best gathered with an amphora. The surface is etched with a rare example of psychomantic script, legible to anyone who looks upon it:          \"IN STILLNESS, ALL RETURNS.\""
+  components:
+  - type: Anchorable
+  - type: Transform
+  - type: Prayable
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Altars/Cults/somber.rsi
+    drawdepth: Objects
+    layers:
+      - state: altar
+      - state: fill-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: candles
+        shader: unshaded
+      - state: glow
+        shader: unshaded
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Altars/Cults/somber.rsi
+    state: altar
+  - type: SolutionContainerManager
+    solutions:
+      fountain:
+        maxVol: 120 # Enough mnemolith to get two people into the deepest level of dosing
+        reagents:
+        - ReagentId: MnemolithReagent
+          Quantity: 120
+  - type: SolutionRegeneration # The only infinite source of mnemolith
+    solution: fountain
+    generated:
+      reagents:
+      - ReagentId: MnemolithReagent
+        Quantity: 0.4 # Takes five minutes to refill
+  - type: Drink
+    solution: fountain
+    transferAmount: 5
+    delay: 3 # Longer in case they drink accidentally since it's also a cabinet and a bed
+  - type: DrawableSolution
+    solution: fountain
+  - type: DrainableSolution
+    solution: fountain
+  - type: ExaminableSolution
+    solution: fountain
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: fill-
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak # Mnemolith is glassy
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Ambience/ambiruin6.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialMnemolith1:
+            min: 30 # It's a massive slab of stone
+            max: 30 # If you take the time to break it, you deserve it
+          ScrapElectrum:
+            min: 3
+            max: 5
+          CandleSomberMantisSmall:
+            min: 1
+            max: 6
+      - !type:SpillBehavior { }
+      - !type:EmptyAllContainersBehaviour
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Climbable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.95,-0.35,0.95,0.35"
+        density: 2000
+        mask:
+        - TableMask
+        - LowImpassable
+        layer:
+        - TableLayer
+  - type: Clickable
+  - type: SacrificialAltar
+  - type: Strap
+    buckleSound:
+      path: /Audio/_White/BloodCult/veilin.ogg
+      params:
+        volume: -2
+        variation: 0.05
+    unbuckleSound:
+      path: /Audio/_White/BloodCult/veilout.ogg
+      params:
+        volume: -2
+        variation: 0.05
+    buckleOnInteractHand: false
+    position: Down
+    rotation: -90
+  - type: HealOnBuckle # Slowly heals holy damage at the cost of slash damage
+    damage:
+      types:
+        Slash: 0.5
+        Holy: -0.25
+  - type: EtherealLight # Dims around ethereal entities
+  - type: PointLight
+    energy: 3.6
+    radius: 3.6
+    softness: 1.22
+    color: "#4dc4ff"
+    autoRot: true
+    mask: /Textures/_DEN/Effects/LightMasks/double_circle.png
+  - type: AmbientSound
+    range: 8
+    volume: -1
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg # So ominous it needs a rumble
+  - type: StealTarget
+    stealGroup: AltarNanotrasen
+
+- type: entity
+  parent: AltarSomberBasic
+  id: AltarSomber
+  name: mnemolith altar
+  suffix: Map With Amphorae, Faust Bindings
+  description: "A broad, dark mnemolith altar. Its basins slowly well with a draught distilled from the stone itself, best gathered with an amphora. The surface is etched with a rare example of psychomantic script, legible to anyone who looks upon it:          \"IN STILLNESS, ALL RETURNS.\""
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Altars/Cults/somber.rsi
+    drawdepth: Objects
+    layers:
+      - state: altar
+      - state: fill-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: candles
+        shader: unshaded
+      - state: glow
+        shader: unshaded
+      - state: straps
+      - state: faust
+        map: ["enum.ItemCabinetVisualLayers.ContainsItem"]
+        visible: true
+      - state: cover
+        map: ["enum.ItemCabinetVisualLayers.Door"]
+      - state: locked
+        map: ["enum.LockVisualLayers.Lock"]
+  - type: ItemSlots # Let it store Faust like the antique laser case
+  - type: ContainerContainer
+    containers:
+      ItemCabinet: !type:ContainerSlot
+  - type: AccessReader
+    access: [["Mantis"], ["Chaplain"]] # It would be rude otherwise
+    breakOnEmag: false # It's not electronic...
+    loggingDisabled: true
+  - type: LockVisuals
+  - type: Lock
+    breakOnEmag: false
+    unlockOnClick: true
+    lockOnClick: false
+    unlockingSound:
+      path: /Audio/_DEN/Effects/crystalshimmer3.ogg
+      params:
+        pitch: 1.0 # Happy sword
+        variation: 0.025
+    lockingSound:
+      path: /Audio/_DEN/Effects/crystalshimmer3.ogg
+      params:
+        pitch: 0.75 # Sad sword
+        variation: 0.025
+    locked: true
+  - type: ItemCabinet
+    opened: false
+    cabinetSlot:
+      ejectOnInteract: true
+      ejectOnBreak: true
+      swap: false
+      insertVerbText: faust-insert-verb
+      ejectVerbText: faust-eject-verb
+      insertSuccessPopup: faust-insert-success
+      insertSound:
+        path: /Audio/_DEN/Weapons/Melee/faustsheath.ogg
+        params:
+          volume: -2
+          variation: 0.05
+      ejectSound:
+        path: /Audio/_DEN/Weapons/Melee/faustunsheath.ogg
+        params:
+          volume: -2
+          variation: 0.05
+      whitelist:
+        tags:
+        - MantisGreatsword
+    doorSound:
+      path: /Audio/Items/Handling/cloth_drop.ogg
+      params:
+        variation: 0.025
+    openState: cover-off
+    closedState: cover
+
+- type: entity
+  parent: AltarSomber
+  id: AltarSomberFaust
+  suffix: Map With Amphorae, Faust-Filled] [MAP CAREFULLY
+  components:
+  - type: ItemCabinet
+    cabinetSlot:
+      startingItem: MantisMeleeGreatsword
+      ejectOnInteract: true # For some reason I have to specify all of this again for it to work
+      ejectOnBreak: true
+      swap: false
+      insertVerbText: faust-insert-verb
+      ejectVerbText: faust-eject-verb
+      insertSuccessPopup: faust-insert-success
+      insertSound:
+        path: /Audio/_DEN/Weapons/Melee/faustsheath.ogg
+        params:
+          volume: -2
+          variation: 0.05
+      ejectSound:
+        path: /Audio/_DEN/Weapons/Melee/faustunsheath.ogg
+        params:
+          volume: -2
+          variation: 0.05
+      whitelist:
+        tags:
+        - MantisGreatsword
+    doorSound:
+      path: /Audio/Items/Handling/cloth_drop.ogg
+      params:
+        variation: 0.025
+    openState: cover-off
+    closedState: cover

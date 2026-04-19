@@ -83,10 +83,62 @@
   - AllAccess
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [] # SHA
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      # SHA EDITS START
+      - type: BloodCultist # So only she can wield her magic weapons
+      - type: BloodCultSpellsHolder # So she can summon them
+      - type: Psionic
+        removable: false
+        roller: false # Don't need more powers than this
+        powerSlots: 100 # So she never increases Glimmer
+      - type: NightVision
+        color: "#4dc4ff"
+        activateSound:
+          path: /Audio/Effects/eye_open.ogg
+          params:
+            volume: -5
+            variation: 0.075
+        deactivateSound:
+          path: /Audio/Effects/eye_close.ogg
+          params:
+            volume: -5
+            variation: 0.075
+      - type: ThermalVision # The order of these components affects their position in the action bar so I don't have to rearrange everything every time I use Telegnosis
+        pulseTime: 2
+        lightRadius: 0
+        color: "#4dc4ff"
+        activateSound:
+          path: /Audio/_White/BloodCult/veilin.ogg
+          params:
+            volume: -3
+            variation: 0.075
+        deactivateSound:
+          path: /Audio/_White/BloodCult/veilout.ogg
+          params:
+            volume: -3
+            variation: 0.075
+      - type: InnatePsionicPowers
+        powersToAdd:
+        - HypnosisPower #5
+        - TelegnosisPower #6
+        #- DarkSwapPower #7 # TODO: SHA UNCOMMENT THIS ONCE CONSTRUCTION IS COMPLETE
+        - HealingWordPower #8
+        - PowerOverwhelming
+        - XenoglossyPower
+        - TelepathyPower
+        - PsychognomyPower
+      - type: ActionGrant
+        actions:
+        - ActionBreakSummonFaust
+        - ActionBreakSummonMansusGrasp
+        - ActionBreakSummonMansusGraspDouble
+        - ActionBreakSummonBloodyBlade
+        - ActionBreakApparition
+        - ActionBreakCoronation
+      # SHA EDITS END
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial
     charges: 8
@@ -101,8 +153,13 @@
     jumpsuit: ClothingUniformJumpsuitCaptain
     back: ClothingBackpackCaptainFilled
     shoes: ClothingShoesBootsLaceup
-    id: CaptainPDA
-    ears: ClothingHeadsetAltCommand
+    # SHA EDITS START
+    head: ClothingHeadHatHardhatSomber # TODO: SHA REMOVE THIS ONCE CONSTRUCTION IS COMPLETE
+    id: ForensicMantisPDA
+    ears: ClothingHeadsetMantis
+    belt: ClothingBeltBreak
+    pocket1: MantisCaseAdmin
+    # SHA EDITS END
   innerClothingSkirt: ClothingUniformJumpskirtCaptain
   satchel: ClothingBackpackSatchelCaptainFilled
   duffelbag: ClothingBackpackDuffelCaptainFilled

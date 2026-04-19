@@ -16,6 +16,18 @@
       sprite: _DEN/Objects/Specific/Mantis/handlabelermantis.rsi
       storedSprite:
       storedRotation: -90
+    - type: HandLabeler
+      whitelist:
+        components:
+          - Item
+          - SignalSwitch
+          - SignalTimer
+          - TwoWayLever
+        tags:
+          - Structure
+          - Airlock
+          - GlassAirlock
+          - HighSecDoor
     - type: MeleeWeapon # You can swing it like a weapon
       attackRate: 0.6666
       wideAnimationRotation: -90

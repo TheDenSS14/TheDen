@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: BaseSignDirectional
+  parent: [ BaseSignDirectional, BasePsionic ]
   id: WallDecorSomberPsi
   name: electrum psi
   description: "A Greek psi, symbolizing the noosphere and the mantis who watches over it."

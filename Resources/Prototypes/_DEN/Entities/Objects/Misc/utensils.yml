@@ -1,0 +1,61 @@
+- type: entity
+  parent: [ BaseDecorativeFixture, BarSpoon ]
+  id: BarSpoonSomber
+  name: electrum bar spoon
+  suffix: Somber Barware
+  description: "A swept mixing spoon made of a natural alloy of gold and silver."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    state: electrumbarspoon
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    heldPrefix: electrumbarspoon
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: [ BaseDecorativeFixture, Skimmer ] # It's technically a chemistry item, but it only comes from VendingMachineBoozeSomber, so whatever
+  id: SkimmerSomber
+  name: electrum skimmer
+  suffix: Somber Barware
+  description: "An electrum skimmer. Used to skim."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberskimmer.rsi
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberskimmer.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: SkimmerSomber
+  id: SkimmerSomberSauna
+  name: electrum sauna ladle
+  suffix: Somber Sauna
+  description: "A long electrum ladle used to pour water over the sauna stones."
+  components:
+  - type: Sprite
+    layers:
+    - state: skimmer-sauna
+    - state: skimmer1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+
+- type: entity
+  parent: SkimmerSomberSauna
+  id: SkimmerSomberSaunaSilvery
+  name: electrum sauna ladle
+  suffix: Somber Sauna, Silvery
+  description: "A long electrum ladle used to pour water over the sauna stones. The natural alloy contains more silver than usual."
+  components:
+  - type: Sprite
+    layers:
+    - state: skimmer-sauna-silvery
+    - state: skimmer1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false

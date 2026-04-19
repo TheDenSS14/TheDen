@@ -78,7 +78,7 @@
 - type: entity # So chameleon clothes can select the folded sprite
   parent: ClothingBackpackMantis
   id: ClothingBackpackMantisFlipped
-  suffix: Flipped
+  suffix: Folded
   components:
   - type: Foldable
     folded: true
@@ -110,7 +110,7 @@
 - type: entity # So chameleon clothes can select the folded sprite
   parent: ClothingBackpackDuffelMantis
   id: ClothingBackpackDuffelMantisFlipped
-  suffix: Flipped
+  suffix: Folded
   components:
   - type: Foldable
     folded: true
@@ -170,7 +170,7 @@
 - type: entity # So chameleon clothes can select the folded sprite
   parent: ClothingBackpackMessengerMantis
   id: ClothingBackpackMessengerMantisFlipped
-  suffix: Flipped
+  suffix: Folded
   components:
   - type: Foldable
     folded: true
@@ -231,6 +231,12 @@
       path: /Audio/Effects/metal_slam2.ogg
       params:
         volume: -6
+        variation: 0.05
+  - type: EmitSoundOnThrow
+    sound:
+      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg
+      params:
+        volume: -3
         variation: 0.05
   - type: MeleeThrowOnHit # So heavy it knocks targets back a little
     speed: 5

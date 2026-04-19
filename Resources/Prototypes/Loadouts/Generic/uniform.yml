@@ -2426,10 +2426,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
-    - !type:CharacterDepartmentRequirement
-      inverted: true
-      departments:
-        - Command
+#    - !type:CharacterDepartmentRequirement
+#      inverted: true
+#      departments:
+#        - Command
 
 - type: loadout
   id: LoadoutUniformJumpskirtDressPuffy

@@ -1,0 +1,23 @@
+- type: entity
+  id: BaseDecorativeFixture # Put this first in the parent list to get a small circular fixture, which prevents decorations from rebounding off walls on map init
+  abstract: true
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.1
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.3 # These are just the same as BaseItem
+        friction: 0.2
+
+- type: entity
+  parent: BaseDecorativeFixture
+  id: BaseDecorativeFixtureNoRot # Same as above but also forces sprites to always face the camera (for things like amphorae that shouldn't invert when the camera turns)
+  abstract: true
+  components:
+  - type: Sprite
+    noRot: true

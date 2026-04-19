@@ -1,0 +1,6125 @@
+# Game Presets
+
+- type: gamePreset
+  id: BreakHome
+  alias:
+  - breakhome
+  - home
+  name: breakhome-title
+  description: breakhome-description
+  supportedMaps: HomeMapPool
+  rules: []
+
+# Game Map Pools
+
+- type: gameMapPool
+  id: HomeMapPool
+  maps:
+  - Infinity # TODO
+
+# Parent
+
+- type: entity
+  id: BaseImmovableObject
+  abstract: true
+  components:
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+    flags:
+    - Anchorable
+    delay: 3600 # Quit it
+
+- type: entity
+  id: MeditationChamberLight
+  abstract: true
+  components:
+  - type: PointLight
+    energy: 1
+    radius: 3
+    color: "#4dc4ff"
+
+# Sound Collections
+
+- type: soundCollection
+  id: SoulTalk
+  files:
+    - /Audio/_SHA/soultalk1.ogg
+    - /Audio/_SHA/soultalk2.ogg
+    - /Audio/_SHA/soultalk3.ogg
+    - /Audio/_SHA/soultalk4.ogg
+    - /Audio/_SHA/soultalk5.ogg
+    - /Audio/_SHA/soultalk6.ogg
+    - /Audio/_SHA/soultalk7.ogg
+    - /Audio/_SHA/soultalk8.ogg
+
+- type: soundCollection
+  id: Storage
+  files:
+    - /Audio/_SHA/storage1.ogg
+    - /Audio/_SHA/storage2.ogg
+    - /Audio/_SHA/storage3.ogg
+
+# Typing Indicator
+
+- type: typingIndicator
+  id: break
+  spritePath: /Textures/_SHA/Effects/speech.rsi
+  typingState: break0
+  idleState: break3
+  offset: -.44, 1.16
+
+- type: typingIndicator
+  id: breakfaint
+  spritePath: /Textures/_SHA/Effects/speech.rsi
+  typingState: break0
+  idleState: break3
+  offset: -.36, 0.36
+
+# Parallax
+
+- type: parallax
+  id: Bloom
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_SHA/Parallaxes/bloomcitylights.png"
+      slowness: 0.98
+      scale: "1.0,1.0"
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_SHA/Parallaxes/bloomcloudslightpollution.png"
+      slowness: 0.78
+      scale: "0.5,0.5"
+      scrolling: "0.30, -0.50"
+
+# Contraband
+
+- type: contrabandSeverity
+  id: contrabandSeverityHeretic
+  examineText: contraband-examine-text-heretic
+
+- type: entity
+  id: BaseHereticContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: contrabandSeverityHeretic
+
+# Weapon Arcs
+
+- type: entity
+  parent: WeaponArcStatic
+  id: WeaponArcNone
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _SHA/Effects/arcs.rsi
+      state: none
+
+- type: entity
+  parent: WeaponArcPunch
+  id: WeaponArcPunchDark
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _SHA/Effects/arcs.rsi
+      layers:
+      - state: punchdark
+        shader: unshaded
+
+- type: entity
+  parent: WeaponArcSmash
+  id: WeaponArcSmashDark
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _SHA/Effects/arcs.rsi
+      layers:
+      - state: smashdark
+        shader: unshaded
+
+# Projectiles
+
+- type: entity
+  parent: BaseBullet
+  id: BulletGrasp
+  name: mage hand
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 10
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    layers:
+    - state: bulletgrasp
+      shader: unshaded
+  - type: PointLight
+    radius: 1.5
+    energy: 2
+    color: "#00684E" # Mansus fire color
+  - type: Ammo
+    muzzleFlash: null
+  - type: Projectile
+    impactEffect: BulletImpactGrasp
+    forceSound: true
+    soundHit:
+      path: /Audio/_SHA/resonatorblast.ogg
+      params:
+        volume: 0
+        pitch: 1
+        variation: 0.05
+    damage:
+      types:
+        Holy: 0
+  - type: StaminaDamageOnCollide
+    damage: 150
+  - type: FlyBySound
+    sound:
+      path: /Audio/_SHA/rites.ogg
+      params:
+        volume: -2
+        pitch: 0.5
+        variation: 0.05
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.3,0.15,0.3"
+        hard: false
+        mask:
+        - Opaque
+
+- type: entity
+  parent: BulletImpactEffect
+  id: BulletImpactGrasp
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.8
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    layers:
+    - state: impactgrasp
+      shader: unshaded
+  - type: PointLight
+    radius: 1.5
+    energy: 2
+    color: "#00684E" # Mansus fire color
+
+- type: entity
+  parent: BulletGrasp
+  id: BulletGraspSoul
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: bulletgraspsoul
+      shader: unshaded
+  - type: PointLight
+    radius: 0
+    energy: 0
+    color: "#ff0066"
+  - type: Projectile
+    impactEffect: BulletImpactGraspSoul
+    soundHit:
+      path: /Audio/_SHA/resonatorblast.ogg
+      params:
+        volume: -2
+        pitch: 1
+        variation: 0.05
+
+- type: entity
+  parent: BulletGraspSoul
+  id: BulletGraspSoulSpread
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: BulletGraspSoul
+    count: 5
+    spread: 15
+
+- type: entity
+  parent: BulletImpactGrasp
+  id: BulletImpactGraspSoul
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: impactgraspsoul
+      shader: unshaded
+  - type: PointLight
+    radius: 0
+    energy: 0
+    color: "#ff0066"
+
+# Damage
+
+- type: damageContainer
+  id: Indestructible
+  supportedTypes:
+    - Holy
+
+- type: damageModifierSet
+  id: Indestructible
+  coefficients:
+    Holy: 0.0
+  flatReductions:
+    Holy: 100
+
+# Decals
+
+- type: decal
+  id: SomberElectrumPenthouseEye
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _SHA/Decals/somber_electrum.rsi
+    state: penthouseeye
+
+- type: decal
+  id: SomberElectrumPenthouseEyeBase
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _SHA/Decals/somber_electrum.rsi
+    state: penthouseeyebase
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseMigrations
+  parent: Overlays
+  abstract: true
+
+- type: decal
+  id: MonoTileSomberDarkPenthouse
+  parent: MiniTile
+  abstract: true
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimN
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  abstract: true
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_n
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimS
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  abstract: true
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_s
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimE
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  abstract: true
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_e
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimW
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  abstract: true
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_w
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimNE
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  abstract: true
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_ne
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimNW
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  abstract: true
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_nw
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimSE
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  abstract: true
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_se
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimSW
+  parent: MonoTileSomberDarkPenthouseMigrations
+  tags: ["station", "markings"]
+  abstract: true
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark.rsi
+    state: steel_trim_sw
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimNReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_n
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimSReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_s
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimEReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_e
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimWReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_w
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimNEReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_ne
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimNWReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_nw
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimSEReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_se
+
+- type: decal
+  id: MonoTileSomberDarkPenthouseTrimSWReal
+  parent: MonoTileSomberDarkPenthouse
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_somber_dark_penthouse.rsi
+    state: steel_trim_sw
+
+- type: decal
+  id: SomberRailPenthouseBalcony
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony
+
+- type: decal
+  id: SomberRailPenthouseBalconyN
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony-N
+
+- type: decal
+  id: SomberRailPenthouseBalconyS
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony-S
+
+- type: decal
+  id: SomberRailPenthouseBalconyNInner
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony-N-inner
+
+- type: decal
+  id: SomberRailPenthouseBalconySInner
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony-S-inner
+
+- type: decal
+  id: SomberRailPenthouseBalconyDiagonal
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-balcony-diagonal
+
+- type: decal
+  id: SomberRailPenthouseV
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-vertical
+
+- type: decal
+  id: SomberRailPenthouseH
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: penthouse-lattice-horizontal
+
+- type: decal
+  id: SomberMiscTileSeamN
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: tileseamN
+
+- type: decal
+  id: SomberMiscTileSeamS
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: tileseamS
+
+- type: decal
+  id: SomberMiscTileSeamE
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: tileseamE
+
+- type: decal
+  id: SomberMiscTileSeamW
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _SHA/Decals/somber_dark.rsi
+    state: tileseamW
+
+- type: decal
+  id: MonoTileShadow
+  parent: Overlays
+  abstract: true
+
+- type: decal
+  id: MonoTileShadowBox
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_box
+
+- type: decal
+  id: MonoTileShadowCornerNe
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_corner_ne
+
+- type: decal
+  id: MonoTileShadowCornerSe
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_corner_se
+
+- type: decal
+  id: MonoTileShadowCornerNw
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_corner_nw
+
+- type: decal
+  id: MonoTileShadowCornerSw
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_corner_sw
+
+- type: decal
+  id: MonoTileShadowInnerNe
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_inner_ne
+
+- type: decal
+  id: MonoTileShadowInnerSe
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_inner_se
+
+- type: decal
+  id: MonoTileShadowInnerNw
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_inner_nw
+
+- type: decal
+  id: MonoTileShadowInnerSw
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_inner_sw
+
+- type: decal
+  id: MonoTileShadowEndN
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_end_n
+
+- type: decal
+  id: MonoTileShadowEndE
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_end_e
+
+- type: decal
+  id: MonoTileShadowEndS
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_end_s
+
+- type: decal
+  id: MonoTileShadowEndW
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_end_w
+
+- type: decal
+  id: MonoTileShadowLineN
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_line_n
+
+- type: decal
+  id: MonoTileShadowLineE
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_line_e
+
+- type: decal
+  id: MonoTileShadowLineS
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_line_s
+
+- type: decal
+  id: MonoTileShadowLineW
+  parent: MonoTileShadow
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SHA/Decals/monotile_shadows.rsi
+    state: shadow_line_w
+
+
+
+# Diagonal windows
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDiagonalFramedLeftEnd
+  name: somber window
+  suffix: Diagonal, Framed, Left End] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Windows/Somber/somber_diagonal_framed_left_end.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Windows/Somber/somber_diagonal_framed_left_end.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDiagonalFramedRightEnd
+  name: somber window
+  suffix: Diagonal, Framed, Right End] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Windows/Somber/somber_diagonal_framed_right_end.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Windows/Somber/somber_diagonal_framed_right_end.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDarkDiagonalFramedLeftEnd
+  name: somber window
+  suffix: Dark, Diagonal, Framed, Left End] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Windows/Somber/somberdark_diagonal_framed_left_end.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Windows/Somber/somberdark_diagonal_framed_left_end.rsi
+    mode: Diagonal
+    key: walls
+    base: state
+
+- type: entity
+  parent: WindowSomberDiagonal
+  id: WindowSomberDarkDiagonalFramedRightEnd
+  name: somber window
+  suffix: Dark, Diagonal, Framed, Right End] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Windows/Somber/somberdark_diagonal_framed_right_end.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Windows/Somber/somberdark_diagonal_framed_right_end.rsi
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+
+# Walls
+
+- type: entity
+  parent: WindowSomberDirectionalTinted
+  id: InvisibleOccluder
+  name: darkness
+  description: "You can't see anything..."
+  suffix: PENTHOUSE, Edge
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,-0.1"
+        hard: false
+        density: 10
+  - type: Physics
+    canCollide: False
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,-.484375" # Just half a pixel thick, centered in the occluding line
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: InvisibleOccluder
+  id: InvisibleOccluderCentered
+  suffix: PENTHOUSE, Centered
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Sprite
+    state: occludercenter
+  - type: Icon
+    state: occludercenter
+  - type: Occluder
+    boundingBox: "-0.5,-0.0234375,0.5,-.0078125" # Just half a pixel thick, centered in the occluding line
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: WindowFireEscapeSeeThrough
+  id: InvisibleOccluderHalf
+  name: darkness
+  description: "You can't see anything..."
+  suffix: Half Directional, SEE-THROUGH] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_half
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_half
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: InvisibleOccluderHalf
+  id: InvisibleOccluderHalfLeft
+  suffix: Half Directional, Left, SEE-THROUGH] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_half_left
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_half_left
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: InvisibleOccluderHalf
+  id: InvisibleOccluderHalfRight
+  suffix: Half Directional, Right, SEE-THROUGH] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_half_right
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_half_right
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: WallSomberNoSmoothing
+  id: InvisibleOccluderFull
+  name: darkness
+  description: "You can't see anything..."
+  suffix: Full, SEE-THROUGH] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_full
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_full
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: WindowFireEscapeLeft
+  id: InvisibleOccluderLeft
+  name: darkness
+  description: "You can't see anything..."
+  suffix: Directional, Left, Opaque] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_left
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_left
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: WindowFireEscapeRight
+  id: InvisibleOccluderRight
+  name: darkness
+  description: "You can't see anything..."
+  suffix: Directional, Right, Opaque] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_right
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: occluder_right
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: InvisibleOccluder
+  id: InvisibleOccluderNoSprite
+  name: darkness
+  description: "You can't see anything..."
+  suffix: PENTHOUSE, Edge, No Sprite
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: invisible
+  - type: Icon
+    sprite: _SHA/Structures/Walls/invisible.rsi
+    state: invisible
+#  - type: Tag # TODO: SHA UNCOMMENT THESE FOR "RELEASE"
+#    tags:
+#      - HideContextMenu
+
+- type: entity
+  parent: WallSomber
+  id: WallSomberSeethrough
+  suffix: SEE-THROUGH] [PENTHOUSE
+  components:
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: WallSomberDark
+  id: WallSomberDarkSeethrough
+  suffix: SEE-THROUGH, Dark] [PENTHOUSE
+  components:
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: [ WallMining, BasePsionic ]
+  id: WallMiningPenthouse
+  suffix: Right Side] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/elevator.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Walls/elevator.rsi
+
+- type: entity
+  parent: [ WallMining, BasePsionic ]
+  id: WallMiningPenthouseLeft
+  suffix: Left Side] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/elevatorleft.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Walls/elevatorleft.rsi
+
+- type: entity
+  parent: [ WallMining, BasePsionic ]
+  id: WallMiningPenthouseBlack
+  suffix: Left Side, Elevator Exit] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/elevatorleftblack.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Walls/elevatorleftblack.rsi
+
+- type: entity
+  parent: WallSolidDirectional
+  id: WindowFireEscape # Not that anyone's reading this but me, but I made these before I made the directional walls, hence the ID
+  name: skyscraper wall
+  suffix: Directional, Opaque] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape
+
+- type: entity
+  parent: WallSolidDirectionalSeeThrough
+  id: WindowFireEscapeSeeThrough
+  name: skyscraper wall
+  suffix: Directional, SEE-THROUGH] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape
+
+- type: entity
+  parent: WallSolidDirectional
+  id: WindowFireEscapeLeft
+  name: skyscraper wall
+  suffix: Directional, Left, Opaque] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_left
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_left
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.0,-0.3"
+
+- type: entity
+  parent: WallSolidDirectional
+  id: WindowFireEscapeRight
+  name: skyscraper wall
+  suffix: Directional, Right, Opaque] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_right
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_right
+  - type: Occluder
+    boundingBox: "0.0,-0.5,0.5,-0.3"
+
+- type: entity
+  parent: WallSolidDirectionalSeeThrough
+  id: WindowFireEscapeLeftSeeThrough
+  name: skyscraper wall
+  suffix: Directional, Left, SEE-THROUGH] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_left
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_left
+
+- type: entity
+  parent: WallSolidDirectionalSeeThrough
+  id: WindowFireEscapeRightSeeThrough
+  name: skyscraper wall
+  suffix: Directional, Right, SEE-THROUGH] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_right
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_right
+
+- type: entity
+  parent: WallSolidDirectionalCorner
+  id: WindowFireEscapeCorner
+  name: skyscraper wall
+  suffix: Directional, Opaque] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_corner
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_corner
+
+- type: entity
+  parent: WallSolidDirectionalCornerSeeThrough
+  id: WindowFireEscapeCornerSeeThrough
+  name: skyscraper wall
+  suffix: Directional, SEE-THROUGH] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_corner
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_corner
+
+- type: entity
+  parent: WindowFireEscape
+  id: WindowFireEscapeHalf
+  name: skyscraper wall
+  suffix: Half Directional, Opaque] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,0.0"
+
+- type: entity
+  parent: WindowFireEscapeSeeThrough
+  id: WindowFireEscapeSeeThroughHalf
+  name: skyscraper wall
+  suffix: Half Directional, SEE-THROUGH] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half
+
+- type: entity
+  parent: WindowFireEscapeSeeThroughHalf
+  id: WindowFireEscapeSeeThroughHalfLeft
+  name: skyscraper wall
+  suffix: Half Directional, Left, SEE-THROUGH] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half_left
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half_left
+
+- type: entity
+  parent: WindowFireEscapeSeeThroughHalf
+  id: WindowFireEscapeSeeThroughHalfRight
+  name: skyscraper wall
+  suffix: Half Directional, Right, SEE-THROUGH] [PENTHOUSE
+  description: "It keeps the city out."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half_right
+  - type: Icon
+    sprite: _SHA/Structures/Walls/fire_escape.rsi
+    state: fire_escape_half_right
+
+- type: entity
+  parent: WallSomberDark
+  id: WallSomberNoSmoothing
+  suffix: No Smoothing, Dark] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/SecretDoors/sombersecretdoordark.rsi
+    state: closed
+  - type: Icon
+    sprite: _DEN/Structures/Doors/SecretDoors/sombersecretdoordark.rsi
+    state: closed
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+
+- type: entity
+  parent: WindowSomberDarkDiagonal
+  id: WindowSomberDiagonalNoSmoothing
+  suffix: No Smoothing, Dark, Diagonal] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal.rsi
+    state: state0
+  - type: Icon
+    sprite: _DEN/Structures/Windows/Somber/somberdark_diagonal.rsi
+    state: state0
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+
+- type: entity
+  parent: WallSomberDark
+  id: WallSomberSafeRoomNoSmoothing
+  suffix: No Smoothing, Window Corner] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/nosmooth.rsi
+    state: windowcorner
+  - type: Icon
+    sprite: _SHA/Structures/nosmooth.rsi
+    state: windowcorner
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+
+- type: entity
+  parent: WallSomberDark
+  id: WallSomberNoSmoothingEdge
+  suffix: No Smoothing, Edge] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/nosmooth.rsi
+    state: walledge
+  - type: Icon
+    sprite: _SHA/Structures/nosmooth.rsi
+    state: walledge
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+
+- type: entity
+  parent: WallSomberDark
+  id: WallSomberNoSmoothingEdgeFramed
+  suffix: No Smoothing, Edge, Framed] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/nosmooth.rsi
+    state: walledgeframed
+  - type: Icon
+    sprite: _SHA/Structures/nosmooth.rsi
+    state: walledgeframed
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+
+- type: entity
+  parent: WindowSomberDark
+  id: WindowSomberDarkNoSmoothingContinuous
+  suffix: No Smoothing, Dark, Continuous] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/nosmooth.rsi
+    state: window
+  - type: Icon
+    sprite: _SHA/Structures/nosmooth.rsi
+    state: window
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+
+- type: entity
+  parent: WallSomber
+  id: WallSomberMeditation
+  suffix: Meditation Chamber] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/sombermeditation.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Walls/sombermeditation.rsi
+
+- type: entity
+  parent: WallSomberMeditation
+  id: WallSomberMeditationLeft
+  suffix: Meditation Chamber, Left Curve] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/sombermeditationleft.rsi
+    state: full
+  - type: Icon
+    sprite: _SHA/Structures/Walls/sombermeditationleft.rsi
+    state: full
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+
+- type: entity
+  parent: WallSomberMeditation
+  id: WallSomberMeditationRight
+  suffix: Meditation Chamber, Right Curve] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/sombermeditationright.rsi
+    state: full
+  - type: Icon
+    sprite: _SHA/Structures/Walls/sombermeditationright.rsi
+    state: full
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+
+# Small fancy beds
+
+- type: entity
+  parent: [ BaseStructure, BasePsionic ]
+  id: BedPenthouseSmall
+  name: penthouse bed
+  description: "A plush bed draped in silky sheets."
+  suffix: Small, Fancy] [PENTHOUSE
+  components:
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -0.1
+        Blunt: -0.1
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,0.45,0.45,0.0"
+        density: 190
+        mask:
+        - TableMask
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture.rsi
+    state: bed
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: -90
+    buckleOffset: "0.02,0"
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Anchorable
+  - type: Pullable
+  - type: InteractionOutline
+
+- type: entity
+  parent: BedPenthouseSmall
+  id: BedPenthouseSmallFlipped
+  suffix: Small, Fancy, Flipped] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: bedflipped
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: "-0.02,0"
+
+# Small basic beds
+
+- type: entity
+  parent: BedPenthouseSmall
+  id: BedPenthouseSmallBasic
+  description: "A plush bed draped in warm sheets."
+  suffix: Small, Basic] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: bedbasic
+    noRot: true
+
+- type: entity
+  parent: BedPenthouseSmallFlipped
+  id: BedPenthouseSmallBasicFlipped
+  suffix: Small, Basic, Flipped] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: bedbasicflipped
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: 90
+
+# Trees
+
+- type: entity
+  parent: SomberAmaranthTree01
+  id: AmaranthTree01Penthouse
+  name: amaranth tree
+  description: "An exotic hardwood tree with faintly luminescent leaves. Its resin is toxic, making the lumber notoriously difficult to work."
+  suffix: "Somber, #1] [PENTHOUSE"
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Decoration/Flora/flora_amaranth_trees.rsi
+    layers:
+    - state: tree01
+    - state: tree01glow
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.2,0.1,0.2"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: MetalThud # They're tough as hell
+  - type: Damageable
+    damageContainer: Indestructible
+    damageModifierSet: Indestructible
+
+- type: entity
+  parent: AmaranthTree01Penthouse
+  id: AmaranthTree02Penthouse
+  suffix: "Somber, #2] [PENTHOUSE"
+  components:
+  - type: Sprite
+    layers:
+    - state: tree02
+    - state: tree02glow
+      shader: unshaded
+
+- type: entity
+  parent: AmaranthTree01Penthouse
+  id: AmaranthTree03Penthouse
+  suffix: "Somber, #3] [PENTHOUSE"
+  components:
+  - type: Sprite
+    layers:
+    - state: tree03
+    - state: tree03glow
+      shader: unshaded
+
+- type: entity
+  parent: AmaranthTree01Penthouse
+  id: AmaranthTree04Penthouse
+  suffix: "Somber, #1 Flipped] [PENTHOUSE"
+  components:
+  - type: Sprite
+    layers:
+    - state: tree04
+    - state: tree04glow
+      shader: unshaded
+
+- type: entity
+  parent: AmaranthTree01Penthouse
+  id: AmaranthTree05Penthouse
+  suffix: "Somber, #2 Flipped] [PENTHOUSE"
+  components:
+  - type: Sprite
+    layers:
+    - state: tree05
+    - state: tree05glow
+      shader: unshaded
+
+- type: entity
+  parent: AmaranthTree01Penthouse
+  id: AmaranthTree06Penthouse
+  suffix: "Somber, #3 Flipped] [PENTHOUSE"
+  components:
+  - type: Sprite
+    layers:
+    - state: tree06
+    - state: tree06glow
+      shader: unshaded
+
+# NON-AIRTIGHT Doors
+
+- type: entity
+  parent: SomberAmaranthDoor
+  id: SomberAmaranthDoorAir
+  suffix: NON-AIRTIGHT, CLOSED] [Amaranth, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false # The planet has an atmosphere and nobody's getting Cask of Amontillado'd at home
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: SomberMnemolithDoor
+  id: SomberMnemolithDoorAir
+  suffix: NON-AIRTIGHT, CLOSED] [Mnemolith, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: SomberSteelDoor
+  id: SomberSteelDoorAir
+  suffix: NON-AIRTIGHT, CLOSED] [Steel, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: SomberSteelDoorDark
+  id: SomberSteelDoorDarkAir
+  suffix: NON-AIRTIGHT, CLOSED] [Steel, Dark, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: SomberAmaranthDoorAir
+  id: SomberAmaranthDoorAirOpen
+  suffix: NON-AIRTIGHT, OPEN] [Amaranth, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Door
+    state: Open
+
+- type: entity
+  parent: SomberMnemolithDoorAir
+  id: SomberMnemolithDoorAirOpen
+  suffix: NON-AIRTIGHT, OPEN] [Mnemolith, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Door
+    state: Open
+
+- type: entity
+  parent: SomberSteelDoorAir
+  id: SomberSteelDoorAirOpen
+  suffix: NON-AIRTIGHT, OPEN] [Steel, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Door
+    state: Open
+
+- type: entity
+  parent: SomberSteelDoorDarkAir
+  id: SomberSteelDoorDarkAirOpen
+  suffix: NON-AIRTIGHT, OPEN] [Steel, Dark, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Door
+    state: Open
+
+- type: entity
+  parent: GloomyAirlock
+  id: GloomyAirlockAir
+  suffix: NON-AIRTIGHT] [Public] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyAirlockDark
+  id: GloomyAirlockDarkAir
+  suffix: NON-AIRTIGHT] [Public, Dark] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyAirlockGlass
+  id: GloomyAirlockGlassAir
+  suffix: NON-AIRTIGHT] [Public] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyAirlockGlassDark
+  id: GloomyAirlockGlassDarkAir
+  suffix: NON-AIRTIGHT] [Public, Dark] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyAirlockMantisLocked
+  id: GloomyAirlockMantisLockedAir
+  suffix: NON-AIRTIGHT] [Mantis, Locked] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyAirlockMantisDarkLocked
+  id: GloomyAirlockMantisDarkLockedAir
+  suffix: NON-AIRTIGHT] [Mantis, Locked, Dark] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyAirlockMantisGlassLocked
+  id: GloomyAirlockMantisGlassLockedAir
+  suffix: NON-AIRTIGHT] [Mantis, Locked] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyAirlockMantisGlassDarkLocked
+  id: GloomyAirlockMantisGlassDarkLockedAir
+  suffix: NON-AIRTIGHT] [Mantis, Locked, Dark] [Somber] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: [ AirlockMining, BasePsionic ]
+  id: AirlockMiningPenthouse
+  name: elevator door
+  description: "Two-sided doors that link with those of the residence."
+  suffix: NON-AIRTIGHT] [PENTHOUSE
+  components:
+  - type: Sprite
+    snapCardinals: false
+    sprite: _SHA/Structures/Doors/Airlocks/Standard/elevator.rsi
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: [ AirlockMining, BasePsionic ]
+  id: AirlockMiningPenthouseLeft
+  name: elevator utility door # For the little cryopod closet
+  description: "Two-sided doors that link with those of maintenance levels."
+  suffix: NON-AIRTIGHT] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Doors/Airlocks/Standard/elevatorleft.rsi
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: SomberSecretDoor
+  id: SecretDoorElevatorExitLeft
+  name: skyscraper wall
+  description: "It keeps the city out."
+  suffix: NON-AIRTIGHT, LEFT] [Secret Door, Elevator Exit] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Doors/SecretDoors/secretdoorelevatorexitleft.rsi
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    bumpOpen: false
+    clickOpen: false
+    changeAirtight: false
+
+- type: entity
+  parent: SomberSecretDoor
+  id: SecretDoorElevatorExitRight
+  name: skyscraper wall
+  description: "It keeps the city out."
+  suffix: NON-AIRTIGHT, RIGHT] [Secret Door, Elevator Exit] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Doors/SecretDoors/secretdoorelevatorexitright.rsi
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    bumpOpen: false
+    clickOpen: false
+    changeAirtight: false
+
+- type: entity
+  parent: [ AirlockMining, BasePsionic ]
+  id: AirlockMiningPenthouseAir
+  name: skyscraper airlock # For the fire escape utility room
+  suffix: NON-AIRTIGHT] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureFlipped
+  id: GloomyWindoorSecureFlippedAir
+  name: gloomy windoor
+  suffix: NON-AIRTIGHT] [Opens LEFT, Public] [Somber
+  description: "A gloomy, secure windoor, designed to match everything else in this place."
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureDarkFlipped
+  id: GloomyWindoorSecureDarkFlippedAir
+  suffix: NON-AIRTIGHT] [Opens LEFT, Public, Dark] [Somber
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureTintedFlipped
+  id: GloomyWindoorSecureTintedFlippedAir
+  name: gloomy windoor (tinted)
+  suffix: NON-AIRTIGHT] [Opens LEFT, Public] [Somber
+  description: "A gloomy, secure windoor, designed to match everything else in this place."
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureTintedDarkFlipped
+  id: GloomyWindoorSecureTintedDarkFlippedAir
+  suffix: NON-AIRTIGHT] [Opens LEFT, Public, Dark] [Somber
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecure
+  id: GloomyWindoorSecureAir
+  name: gloomy windoor
+  suffix: NON-AIRTIGHT] [Public] [Somber] [PENTHOUSE
+  description: "A gloomy, secure windoor, designed to match everything else in this place."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Windoors/somber.rsi
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureDark
+  id: GloomyWindoorSecureDarkAir
+  suffix: NON-AIRTIGHT] [Public, Dark] [Somber] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Windoors/somberdark.rsi
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureTinted
+  id: GloomyWindoorSecureTintedAir
+  suffix: NON-AIRTIGHT] [Public] [Somber] [PENTHOUSE
+  description: "A gloomy, secure windoor, designed to match everything else in this place."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Windoors/somber.rsi
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,0.5,-0.3"
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureTintedDark
+  id: GloomyWindoorSecureTintedDarkAir
+  suffix: NON-AIRTIGHT] [Public, Dark] [Somber] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Windoors/somberdark.rsi
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureMantisLocked
+  id: GloomyWindoorSecureMantisLockedAir
+  suffix: NON-AIRTIGHT] [Mantis, Locked] [Somber] [PENTHOUSE
+  components:
+  - type: Label
+    currentLabel: private
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureMantisDarkLocked
+  id: GloomyWindoorSecureMantisDarkLockedAir
+  suffix: NON-AIRTIGHT] [Mantis, Locked, Dark] [Somber] [PENTHOUSE
+  components:
+  - type: Label
+    currentLabel: private
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureTintedMantisLocked
+  id: GloomyWindoorSecureTintedMantisLockedAir
+  suffix: NON-AIRTIGHT] [Mantis, Locked] [Somber] [PENTHOUSE
+  components:
+  - type: Label
+    currentLabel: private
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureTintedMantisDarkLocked
+  id: GloomyWindoorSecureTintedMantisDarkLockedAir
+  suffix: NON-AIRTIGHT] [Mantis, Locked, Dark] [Somber] [PENTHOUSE
+  components:
+  - type: Label
+    currentLabel: private
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: GloomyWindoorSecureTintedMantisLocked
+  id: GloomyWindoorSecureMantisBlackLockedAir
+  name: obstacle
+  suffix: NON-AIRTIGHT] [Mantis, Locked, Black] [Somber] [PENTHOUSE
+  description: "WHERE DO YOU THINK YOU ARE RIGHT NOW? ANSWER ME."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Doors/Windoors/somberblack.rsi
+  - type: Label
+    currentLabel: ""
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: SomberSecretDoor
+  id: SomberSecretDoorAir
+  name: somber wall
+  suffix: NON-AIRTIGHT] [Secret Door, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: SomberSecretDoorDark
+  id: SomberSecretDoorDarkAir
+  suffix: NON-AIRTIGHT] [Secret Door, Dark, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: SomberSecretDoorDarkAir
+  id: SomberSecretDoorDarkAirCorner
+  suffix: NON-AIRTIGHT, Corner] [Secret Door, Dark, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Doors/SecretDoors/sombersecretdoordarkcorner.rsi
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+- type: entity
+  parent: SomberSecretDoorDarkAir
+  id: SomberSecretDoorDarkAirInset
+  suffix: NON-AIRTIGHT, Inset] [Secret Door, Dark, Signal-Friendly] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Doors/SecretDoors/sombersecretdoordarkinset.rsi
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Door
+    changeAirtight: false
+
+# Stairs
+
+- type: entity
+  parent: Stairs
+  id: StairFireEscape
+  suffix: PENTHOUSE
+  name: fire escape stairs
+  description: "Just in case."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/stairs.rsi
+    state: stairs_fire_escape
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: StairStageSomberSteel
+  id: StairsWideSomberFade
+  name: somber steel stairs
+  suffix: PENTHOUSE, Fade, Middle
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/stairs.rsi
+    state: wide_somber_stairs_fade
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: StairStageSomberSteel
+  id: StairsWideSomberFadeLeft
+  name: somber steel stairs
+  suffix: PENTHOUSE, Fade, Left
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/stairs.rsi
+    state: wide_somber_stairs_fade_left
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: StairStageSomberSteel
+  id: StairsWideSomberFadeRight
+  name: somber steel stairs
+  suffix: PENTHOUSE, Fade, Right
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/stairs.rsi
+    state: wide_somber_stairs_fade_right
+    drawdepth: FloorTiles
+
+# Tiles
+
+- type: tile
+  id: FloorElevatorTransition
+  name: tiles-elevator-transition
+  sprite: /Textures/_SHA/Tiles/elevator.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorTransitionLeft
+  name: tiles-elevator-transition-left
+  sprite: /Textures/_SHA/Tiles/elevatorleft.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass0
+  name: tiles-elevator-glass-0
+  sprite: /Textures/_SHA/Tiles/elevator0.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass1
+  name: tiles-elevator-glass-1
+  sprite: /Textures/_SHA/Tiles/elevator1.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass2
+  name: tiles-elevator-glass-2
+  sprite: /Textures/_SHA/Tiles/elevator2.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass3
+  name: tiles-elevator-glass-3
+  sprite: /Textures/_SHA/Tiles/elevator3.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass4
+  name: tiles-elevator-glass-4
+  sprite: /Textures/_SHA/Tiles/elevator4.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass5
+  name: tiles-elevator-glass-5
+  sprite: /Textures/_SHA/Tiles/elevator5.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass6
+  name: tiles-elevator-glass-6
+  sprite: /Textures/_SHA/Tiles/elevator6.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass7
+  name: tiles-elevator-glass-7
+  sprite: /Textures/_SHA/Tiles/elevator7.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass8
+  name: tiles-elevator-glass-8
+  sprite: /Textures/_SHA/Tiles/elevator8.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorGlass9
+  name: tiles-elevator-glass-9
+  sprite: /Textures/_SHA/Tiles/elevator9.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: BlackFloor
+  name: tiles-black
+  sprite: /Textures/_SHA/Tiles/black.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+# Water
+
+- type: entity
+  parent: SomberPoolWaterSideGlass
+  id: SomberPoolWaterDiagonalCutGlassDark
+  suffix: PENTHOUSE, Glass, Diagonal Cut
+  components:
+  - type: Sprite
+    sprite: _SHA/Tiles/Planet/Somber/water.rsi
+    layers:
+    - state: pooltilecorner
+    - state: watercorner
+    - state: watershinecorner
+      shader: unshaded
+    - state: poolglassdiagonaldark
+    - state: pooldiagonalcut
+
+# Carpets
+
+- type: entity
+  parent: FloorCarpetItemBlack
+  id: FloorCarpetItemMidnight
+  name: midnight carpet
+  description: "Finely trimmed and durable."
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _SHA/Objects/Tiles/tile.rsi
+    state: carpet-midnight
+  - type: Item
+    sprite: _SHA/Objects/Tiles/tile.rsi
+    heldPrefix: carpet-midnight
+  - type: Stack
+    stackType: FloorCarpetMidnight
+  - type: Tag
+    tags:
+    - CarpetMidnight
+  - type: SpawnAfterInteract
+    prototype: CarpetMidnight
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+
+- type: entity
+  id: CarpetMidnight
+  parent: CarpetBase
+  name: midnight carpet
+  description: "Finely trimmed and durable."
+  suffix: "Tile, #1"
+  components:
+  - type: IconSmooth
+    key: carpet1
+  - type: Clickable
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Carpets/midnight_carpet.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Furniture/Carpets/midnight_carpet.rsi
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 50
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              FloorCarpetItemMidnight:
+                min: 1
+                max: 1
+
+- type: entity
+  id: CarpetMidnightSeparate
+  parent: CarpetMidnight
+  suffix: "Tile, #2"
+  components:
+  - type: IconSmooth
+    key: carpet2
+
+- type: stack
+  id: FloorCarpetMidnight
+  name: midnight carpet
+  icon: { sprite: _SHA/Objects/Tiles/tile.rsi, state: carpet-midnight }
+  spawn: FloorCarpetItemMidnight
+  maxCount: 30
+  itemSize: 5
+
+- type: entity
+  parent: FloorCarpetItemMidnight
+  id: FloorCarpetItemMidnightNarrow
+  name: narrow midnight carpet
+  description: "Finely trimmed and durable."
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _SHA/Objects/Tiles/tile.rsi
+    state: carpet-midnight-narrow
+  - type: Item
+    sprite: _SHA/Objects/Tiles/tile.rsi
+    heldPrefix: carpet-midnight
+  - type: Stack
+    stackType: FloorCarpetMidnightNarrow
+  - type: Tag
+    tags:
+    - CarpetMidnight
+  - type: SpawnAfterInteract
+    prototype: CarpetMidnightNarrow
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+
+- type: entity
+  id: CarpetMidnightNarrow
+  parent: CarpetMidnight
+  name: narrow midnight carpet
+  description: "Finely trimmed and durable."
+  suffix: "Tile, #3"
+  components:
+  - type: IconSmooth
+    key: carpet3
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Carpets/narrow_midnight_carpet.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Furniture/Carpets/narrow_midnight_carpet.rsi
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 50
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              FloorCarpetItemMidnightNarrow:
+                min: 1
+                max: 1
+
+- type: entity
+  id: CarpetMidnightNarrowSeparate
+  parent: CarpetMidnightNarrow
+  suffix: "Tile, #4"
+  components:
+  - type: IconSmooth
+    key: carpet4
+
+- type: stack
+  id: FloorCarpetMidnightNarrow
+  name: narrow midnight carpet
+  icon: { sprite: _SHA/Objects/Tiles/tile.rsi, state: carpet-midnight-narrow }
+  spawn: FloorCarpetItemMidnightNarrow
+  maxCount: 30
+  itemSize: 5
+
+# Warm Fire Items
+
+- type: entity
+  parent: VendingMachineSomberMantis
+  id: VendingMachineSomberMantisPenthouse
+  name: reliquary conduit
+  suffix: PENTHOUSE, Unlocked
+  description: "An occult-machine interface that reacts to thought alone."
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _SHA/Structures/Machines/VendingMachines/mantispenthouse.rsi
+  - type: PointLight # As bright as a candle
+    color: "#FF9833"
+    mask: null
+  - type: ThermalVision # Weird psionic senses
+    pulseTime: 0 # Toggled, not timed
+    lightRadius: 7
+    color: "#FF9833"
+    activateSound:
+      path: /Audio/Effects/eye_open.ogg
+      params:
+        volume: -5
+        variation: 0.075
+    deactivateSound:
+      path: /Audio/Effects/eye_close.ogg
+      params:
+        volume: -5
+        variation: 0.075
+  - type: AccessReader
+    access: []
+
+- type: entity
+  parent: VendingMachineSomberMantisSanctum
+  id: VendingMachineSomberMantisWallPenthouse
+  suffix: PENTHOUSE] [Wall, Decorative Only
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: WallMount
+    arc: 0
+  - type: Sprite
+    drawdepth: WallMountedItems
+    noRot: true
+    sprite: _SHA/Structures/Machines/VendingMachines/mantiswallpenthouse.rsi
+  - type: PointLight # As bright as a candle
+    color: "#FF9833"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Fixtures
+  - type: BlockMovement
+
+# Mansus Fire Items
+
+- type: entity
+  parent: CandleSomberAlabaster
+  id: CandleSomberSanctum
+  name: otherworldly candle
+  suffix: SANCTUM] [Light After Mapping
+  description: "A candle. That's all."
+  components:
+    - type: Sprite
+      sprite: _SHA/Objects/Misc/candlessanctum.rsi
+    - type: Item
+      sprite: _SHA/Objects/Misc/candlessanctum.rsi
+    - type: FireVisuals
+      sprite: _SHA/Objects/Misc/candlessanctum.rsi
+      normalState: fire-big
+      lightColor: "#00684E" # Mansus fire color
+
+- type: entity
+  parent: CandleSomberSanctum
+  id: CandleSomberSanctumSmall
+  name: otherworldly candle (small)
+  suffix: SANCTUM] [Light After Mapping
+  description: "A small candle. That's all."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-small
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-small
+
+- type: entity
+  parent: CandleSomberSanctum
+  id: CandleSomberSanctumCluster
+  name: otherworldly candle (cluster)
+  suffix: SANCTUM] [Light After Mapping
+  description: "A cluster of candles. That's all."
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-cluster
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-cluster
+
+- type: entity
+  parent: CandleSomberSanctum
+  id: CandleSomberSanctumTiny
+  name: otherworldly candle (tea light)
+  suffix: SANCTUM] [Light After Mapping
+  description: "A tea light. That's all"
+  components:
+    - type: Sprite
+      layers:
+        - state: candle-tiny
+          color: "#ffffff"
+    - type: FireVisuals
+      normalState: fire-tiny
+
+- type: entity
+  parent: SomberFireplace
+  id: SomberFireplaceSanctum
+  suffix: SANCTUM
+  description: "A fireplace. That's all."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/somberfireplacesanctum.rsi
+  - type: PointLight
+    color: "#00684E" # Mansus fire color
+
+- type: entity
+  parent: SomberHangingBrazier
+  id: SomberHangingBrazierSanctum
+  suffix: SANCTUM
+  description: "An electrum brazier. That's all."
+  placement:
+    mode: WallmountLight
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/somberhangingbraziersanctum.rsi
+  - type: PointLight
+    color: "#00684E" # Mansus fire color
+
+- type: entity
+  parent: SomberTableFire
+  id: SomberTableFireSanctum
+  suffix: Fire Table] [SANCTUM
+  description: "A fire table. That's all."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Tables/Somber/somberwoodtablefiresanctum.rsi
+    layers:
+      - state: full
+      - state: fire
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: Icon
+    sprite: _SHA/Structures/Furniture/Tables/Somber/somberwoodtablefiresanctum.rsi
+  - type: PointLight
+    color: "#00684E" # Mansus fire color
+
+- type: entity
+  parent: VendingMachineSomberMantis
+  id: VendingMachineSomberMantisSanctum
+  name: reliquary conduit
+  suffix: SANCTUM
+  description: "An occult-machine interface that reacts to thought alone."
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _SHA/Structures/Machines/VendingMachines/mantissanctum.rsi
+  - type: PointLight # As bright as a candle
+    color: "#00684E" # Mansus fire color
+    mask: null
+  - type: ThermalVision # Weird psionic senses
+    pulseTime: 0 # Toggled, not timed
+    lightRadius: 7
+    color: "#00684E" # Mansus fire color
+    activateSound:
+      path: /Audio/Effects/eye_open.ogg
+      params:
+        volume: -5
+        variation: 0.075
+    deactivateSound:
+      path: /Audio/Effects/eye_close.ogg
+      params:
+        volume: -5
+        variation: 0.075
+
+- type: entity
+  parent: VendingMachineSomberMantisSanctum
+  id: VendingMachineSomberMantisWallSanctum
+  suffix: SANCTUM] [Wall, Decorative Only
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: WallMount
+    arc: 0
+  - type: Sprite
+    drawdepth: WallMountedItems
+    noRot: true
+    sprite: _SHA/Structures/Machines/VendingMachines/mantiswallsanctum.rsi
+  - type: PointLight # As bright as a candle
+    color: "#00684E" # Mansus fire color
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Fixtures
+  - type: BlockMovement
+
+- type: entity
+  parent: [BaseStructure, BaseObjectVerbsStructure, BasePsionic ]
+  id: AltarSomberSanctum
+  name: mnemolith altar
+  suffix: SANCTUM, Map With Amphorae
+  description: "A broad, dark mnemolith altar. Its basins slowly well with a draught distilled from the stone itself, best gathered with an amphora. The surface is etched with a rare example of psychomantic script, legible to anyone who looks upon it:          \"IN STILLNESS, ALL RETURNS.\""
+  components:
+  - type: Anchorable
+  - type: Transform
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Altars/Cults/sombersanctum.rsi
+    layers:
+      - state: altar
+      - state: fill-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: candles
+        shader: unshaded
+      - state: glow
+        shader: unshaded
+  - type: Icon
+    sprite: _SHA/Structures/Furniture/Altars/Cults/sombersanctum.rsi
+    state: altar
+  - type: SolutionContainerManager
+    solutions:
+      fountain:
+        maxVol: 120 # Enough mnemolith to get two people into the deepest level of dosing
+        reagents:
+        - ReagentId: MnemolithReagent
+          Quantity: 120
+  - type: SolutionRegeneration # The only infinite source of mnemolith
+    solution: fountain
+    generated:
+      reagents:
+      - ReagentId: MnemolithReagent
+        Quantity: 4.0 # Takes five seconds to refill
+  - type: Drink
+    solution: fountain
+    transferAmount: 5
+    delay: 3 # Longer in case they drink accidentally since it's also a cabinet and a bed
+  - type: DrawableSolution
+    solution: fountain
+  - type: DrainableSolution
+    solution: fountain
+  - type: ExaminableSolution
+    solution: fountain
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: fill-
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak # Mnemolith is glassy
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Ambience/ambiruin6.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialMnemolith1:
+            min: 30 # It's a massive slab of stone
+            max: 30 # If you take the time to break it, you deserve it
+          ScrapElectrum:
+            min: 3
+            max: 5
+          CandleSomberSanctumSmall:
+            min: 1
+            max: 6
+      - !type:SpillBehavior { }
+      - !type:EmptyAllContainersBehaviour
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Climbable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.95,-0.35,0.95,0.35"
+        density: 2000
+        mask:
+        - TableMask
+        - LowImpassable
+        layer:
+        - TableLayer
+  - type: Clickable
+  - type: SacrificialAltar
+  - type: Strap
+    buckleSound:
+      path: /Audio/_White/BloodCult/veilin.ogg
+      params:
+        volume: -2
+        variation: 0.05
+    unbuckleSound:
+      path: /Audio/_White/BloodCult/veilout.ogg
+      params:
+        volume: -2
+        variation: 0.05
+    buckleOnInteractHand: false
+    position: Down
+    rotation: -90
+  - type: EtherealLight # Dims around ethereal entities
+  - type: PointLight
+    color: "#00684E" # Mansus fire color
+    autoRot: true
+    mask: /Textures/_DEN/Effects/LightMasks/double_circle.png
+  - type: AmbientSound
+    range: 5
+    volume: -2
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg # So ominous it needs a rumble
+  - type: StealTarget
+    stealGroup: AltarNanotrasen
+
+- type: entity
+  parent: SomberHangingBrazierPillarShorter
+  id: SomberHangingBrazierSanctumPillarShorter
+  suffix: SANCTUM] [Fits Shorter Pillars
+  categories: [ HideSpawnMenu ]
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbraziersanctumpillarshorter.rsi
+  - type: PointLight
+    color: "#00684E"
+
+- type: entity
+  parent: SomberHangingBrazierSanctumPillarShorter
+  id: SomberHangingBrazierSanctumPillarShort
+  suffix: SANCTUM] [Fits Short Pillars
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbraziersanctumpillarshort.rsi
+
+- type: entity
+  parent: SomberHangingBrazierSanctumPillarShorter
+  id: SomberHangingBrazierSanctumPillarTall
+  suffix: SANCTUM] [Fits Tall Pillars
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbraziersanctumpillartall.rsi
+
+- type: entity
+  parent: SomberHangingBrazierSanctumPillarShorter
+  id: SomberHangingBrazierSanctumPillarTaller
+  suffix: SANCTUM] [Fits Taller Pillars
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/SomberPillarBraziers/somberhangingbraziersanctumpillartaller.rsi
+
+# Sanctum Fountains
+
+- type: entity
+  parent: [ BaseStructure, BasePsionic ]
+  id: FountainSomberSanctum
+  name: somber fountain
+  description: "A carved mnemolith basin crowned with electrum spouts, spilling streams of water into drains set into the floor below."
+  suffix: Floor, Basin] [SANCTUM
+  components:
+  - type: Sprite
+    snapCardinals: false
+    noRot: true
+    drawdepth: Mobs
+    sprite: _DEN/Structures/Decoration/somberfountains-96x.rsi
+    layers:
+    - state: fountain
+    - state: fountainwater
+    - state: fountainwatershine
+      shader: unshaded
+    - state: fountainstreams
+    - state: fountainstreamshine
+      shader: unshaded
+  - type: SolutionContainerManager
+    solutions:
+      fountain:
+        maxVol: 100
+  - type: SolutionRegeneration
+    solution: fountain
+    generated:
+      reagents:
+      - ReagentId: Water
+        Quantity: 100
+  - type: Drink
+    solution: fountain
+  - type: DrawableSolution
+    solution: fountain
+  - type: DrainableSolution
+    solution: fountain
+  - type: ExaminableSolution
+    solution: fountain
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.875
+        density: 1000
+        layer:
+        - WallLayer
+
+- type: entity
+  parent: FountainSomberSanctum
+  id: FountainSomberRingHalfSanctum
+  name: somber fountain
+  description: "A carved mnemolith ring crowned with electrum spouts, spilling streams of water into drains set into the floor below."
+  suffix: Wall] [SANCTUM
+  components:
+  - type: Sprite
+    snapCardinals: false
+    noRot: false
+    layers:
+    - state: halfringfountain
+    - state: halfringstreams
+    - state: halfringstreamshine
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.75,0.45,0.75,1.5"
+        hard: false
+        density: 1000
+        layer:
+        - WallLayer
+
+- type: entity
+  parent: FountainSomberRingHalfSanctum
+  id: FountainSomberRingQuarterSanctum
+  name: somber fountain
+  description: "A carved mnemolith ring crowned with electrum spouts, spilling streams of water into drains set into the floor below."
+  suffix: Corner] [SANCTUM
+  components:
+  - type: Sprite
+    layers:
+    - state: quarterringfountain
+    - state: quarterringstreams
+    - state: quarterringstreamshine
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.55,0.45,1.5,1.5"
+        hard: false
+        density: 1000
+        layer:
+        - WallLayer
+
+# Misc
+
+- type: entity
+  parent: RemoteSignallerSomber
+  id: RemoteSignallerSomberAdmin
+  name: somber remote signaller
+  suffix: PENTHOUSE, DO NOT MAP
+  description: "A brushed metal remote used to send signals to devices."
+  components:
+  - type: WirelessNetworkConnection
+    range: 1000
+
+- type: entity
+  parent: DoorRemoteAll
+  id: DoorRemoteAllSomber
+  name: somber door remote
+  suffix: PENTHOUSE, DO NOT MAP
+  description: "A brushed metal remote that controls the doors."
+  components:
+  - type: Item
+    storedRotation: 0
+  - type: Sprite
+    sprite: _SHA/Objects/Devices/door_remote.rsi
+    layers:
+    - state: door_remotebase
+    - state: door_remotelightscolour
+      shader: unshaded
+
+- type: entity
+  parent: LanternMantisOrchid
+  id: LanternMantisAdmin
+  name: mantis lantern
+  suffix: PENTHOUSE, DO NOT MAP
+  description: "An ornate lantern housing an eidolite pyramid that draws power from the noosphere. Stare too long and the gleam resolves into shapes you almost recognize, then promptly forget. Something seems especially wrong with this one."
+  components:
+  - type: PointLight
+    color: "#FFE4CE" # Just a pocket fluorescent light for admin work
+    energy: 0.8
+    radius: 50
+    softness: 1
+
+- type: entity
+  parent: [ BaseStructure, BasePsionic ]
+  id: SomberNazarInlaid
+  name: nazar (inlaid)
+  suffix: PENTHOUSE] [Produces Chapel Ambience
+  description: "An eyelike mnemolith plate inlaid in the floor to shelter the area from certain metaphysical threats."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
+  - type: Sprite
+    snapCardinals: true
+    noRot: true
+    drawdepth: HighFloorObjects
+    sprite: _SHA/Structures/Specific/Chapel/sombernazarinlaid.rsi
+    state: invisible # Use "inlaid" if you want the sprite back
+  - type: Prayable
+    bibleUserOnly: true
+    sentMessage: prayer-popup-notify-nazar-sent
+    notificationPrefix: prayer-chat-notify-nazar
+    verb: prayer-verbs-nazar
+    verbImage: null
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.1
+        density: 10
+        mask:
+        - MachineMask
+
+- type: entity
+  parent: CigPackMnemolith
+  id: CigPackMnemolithLighter
+  suffix: PENTHOUSE
+  components:
+  - type: Storage
+    grid:
+    - 0,0,9,1
+  - type: StorageFill
+    contents:
+    - id: FlippoLighterMantis
+    - id: CigaretteMnemolith
+      amount: 19
+
+- type: entity
+  parent: [ PlushieDollHair, BasePsionic ]
+  id: PlushieDollHairPenthouse
+  name: Tatter
+  suffix: PENTHOUSE, Standard
+  description: "A cute amigurumi doll. You swear she moves when you're not looking."
+
+- type: entity
+  parent: PlushieDollMantis
+  id: PlushieDollMantisPenthouse
+  name: Tatter
+  suffix: PENTHOUSE, Mantis
+  description: "A cute amigurumi doll with a mantis fez and a toy ritual knife. Wait--why is it sharp!? You swear she moves when you're not looking."
+
+- type: entity
+  parent: PersonalAISomber
+  id: PersonalAISomberTatter
+  name: Tatter's soul
+  suffix: PENTHOUSE, MAP IN TATTER
+  description: "This doesn't exist. You're hallucinating. The doll is possessed - that part's real."
+
+- type: entity
+  parent: CustomDrinkJugSomber
+  id: CustomDrinkJugSomberPenthouseWater
+  name: eidolite decanter
+  suffix: PENTHOUSE, Water] [Somber Barware
+  components:
+  - type: Label
+    currentLabel: water
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 150
+
+- type: entity
+  parent: CustomDrinkJugSomber
+  id: CustomDrinkJugSomberPenthouseAbsinthe
+  name: eidolite decanter
+  suffix: PENTHOUSE, Absinthe] [Somber Barware
+  components:
+  - type: Label
+    currentLabel: absinthe
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Absinthe
+          Quantity: 150
+
+- type: entity
+  parent: CustomDrinkJugSomber
+  id: CustomDrinkJugSomberPenthouseFeverDream
+  name: eidolite decanter
+  suffix: PENTHOUSE, Fever Dream] [Somber Barware
+  components:
+  - type: Label
+    currentLabel: fever dream
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: FeverDream
+          Quantity: 150
+
+# Huge Bed
+
+- type: entity
+  parent: [ BaseStructure, BasePsionic ]
+  id: PenthouseBreakBedLower
+  name: Break's bed
+  suffix: Lower] [PENTHOUSE
+  description: "A massive, plush bed with silky sheets and a cashmere throw blanket folded over the end."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/furniture-96x96.rsi
+    state: bedlowerhugeflipped
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -0.1
+        Blunt: -0.1
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.45,-1.0,0.45,-0.2"
+        hard: false
+        density: 190
+        mask:
+        - TableMask
+    snapCardinals: false
+    noRot: false
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: "-.85,-0.4"
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+  - type: Pullable
+  - type: InteractionOutline
+
+- type: entity
+  parent: PenthouseBreakBedLower
+  id: PenthouseBreakBedMiddle
+  suffix: Middle] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: bedmiddlehugeflipped
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.45,-0.2,0.45,0.4"
+        hard: false
+        density: 190
+        mask:
+        - TableMask
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: ".1,-0.08"
+
+- type: entity
+  parent: PenthouseBreakBedLower
+  id: PenthouseBreakBedUpper
+  suffix: Upper] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: bedupperhugeflipped
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.45,0.4,0.45,1.0"
+        hard: false
+        density: 190
+        mask:
+        - TableMask
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: ".1,-0.08"
+
+# Paintings
+
+- type: entity
+  parent: [ PaintingBase, BasePsionic ]
+  id: PaintingBasePenthouse
+  name: painting
+  description: "An original work framed in patterned electrum."
+  suffix: PENTHOUSE
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Wallmounts/paintings.rsi
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse1
+  suffix: "PENTHOUSE, #1"
+  components:
+  - type: Sprite
+    state: painting1
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse2
+  suffix: "PENTHOUSE, #2"
+  components:
+  - type: Sprite
+    state: painting2
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse3
+  suffix: "PENTHOUSE, #3"
+  components:
+  - type: Sprite
+    state: painting3
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse4
+  suffix: "PENTHOUSE, #4"
+  components:
+  - type: Sprite
+    state: painting4
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse5
+  suffix: "PENTHOUSE, #5"
+  components:
+  - type: Sprite
+    state: painting5
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse6
+  suffix: "PENTHOUSE, #6"
+  components:
+  - type: Sprite
+    state: painting6
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse7
+  suffix: "PENTHOUSE, #7"
+  components:
+  - type: Sprite
+    state: painting7
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse8
+  suffix: "PENTHOUSE, #8"
+  components:
+  - type: Sprite
+    state: painting8
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse9
+  suffix: "PENTHOUSE, #9"
+  components:
+  - type: Sprite
+    state: painting9
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse12
+  suffix: "PENTHOUSE, #12"
+  components:
+  - type: Sprite
+    state: painting12
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse13
+  suffix: "PENTHOUSE, #13"
+  components:
+  - type: Sprite
+    state: painting13
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse14
+  suffix: "PENTHOUSE, #14"
+  components:
+  - type: Sprite
+    state: painting14
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse15
+  suffix: "PENTHOUSE, #15"
+  components:
+  - type: Sprite
+    state: painting15
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse21
+  suffix: "PENTHOUSE, #21"
+  components:
+  - type: Sprite
+    state: painting21
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse22
+  suffix: "PENTHOUSE, #22"
+  components:
+  - type: Sprite
+    state: painting22
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse23
+  suffix: "PENTHOUSE, #23"
+  components:
+  - type: Sprite
+    state: painting23
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse24
+  suffix: "PENTHOUSE, #24"
+  components:
+  - type: Sprite
+    state: painting24 # Kaasi hehe
+
+- type: entity
+  parent: PaintingBasePenthouse
+  id: PaintingPenthouse25
+  name: Aldieux family portrait
+  suffix: "PENTHOUSE, #25"
+  description: "A painting of several serious-faced humans in dated clothing, with Mireille standing at their side."
+  components:
+  - type: Sprite
+    state: painting25
+
+# Guns
+
+- type: entity
+  parent: MantisRangedPistol
+  id: MantisRangedPistolLethal
+  name: OCC-P12-P "Kalliste"
+  suffix: PENTHOUSE
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MantisCasterPistolLethal
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        whitelist:
+          tags:
+          - MantisCasterPistol
+
+- type: entity
+  parent: MantisRangedRevolver
+  id: MantisRangedRevolverLethal
+  name: OCC-P06-P "Charon"
+  suffix: PENTHOUSE
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MantisCasterRevolverLethal
+        insertSound: /Audio/Weapons/Guns/Misc/revolver_spin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        whitelist:
+          tags:
+          - MantisCasterRevolver
+
+- type: entity
+  parent: MantisRangedShotgun
+  id: MantisRangedShotgunLethal
+  name: OCC-S05-P "Empusa"
+  suffix: PENTHOUSE
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MantisCasterShotgunLethal
+        insertSound: /Audio/Weapons/Guns/Misc/revolver_spin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        whitelist:
+          tags:
+          - MantisCasterShotgun
+
+- type: entity
+  parent: MantisRangedSubMachineGun
+  id: MantisRangedSubMachineGunLethal
+  name: OCC-A24-P "Strix"
+  suffix: PENTHOUSE
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MantisCasterSubMachineGunLethal
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        whitelist:
+          tags:
+          - MantisCasterSubMachineGun
+
+- type: entity
+  parent: MantisRangedShotgunLethal
+  id: MantisRangedShotgunLethalSummoned
+  suffix: PENTHOUSE, DO NOT MAP
+  components:
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_White/BloodCult/veilin.ogg
+      params:
+        volume: 0
+        variation: 0.05
+
+- type: entity
+  parent: MantisRangedRevolverLethal
+  id: MantisRangedRevolverLethalSummoned
+  suffix: PENTHOUSE, DO NOT MAP
+  components:
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_White/BloodCult/veilout.ogg
+      params:
+        volume: 0
+        variation: 0.05
+
+# Special Items/Effects
+
+- type: entity
+  parent: [ BaseItem, BaseHereticContraband ]
+  id: BaseFragmentToggle
+  name: inert otherworldly fragment
+  suffix: DO NOT MAP] [BREAK
+  description: "Something about this feels terribly unnatural."
+  abstract: true
+  components:
+#  - type: SpawnItemsOnUse
+#    items:
+#    - id: null
+  - type: Sprite
+    sprite: _SHA/Misc/misc.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: Item
+    size: Tiny
+    sprite: null
+  - type: DisarmMalus
+    malus: 1.0
+
+- type: entity
+  parent: [ BaseItem, BaseHereticContraband ]
+  id: BaseFragment
+  name: otherworldly fragment
+  suffix: DO NOT MAP] [BREAK
+  description: "Something about this feels terribly unnatural."
+  abstract: true
+  components:
+#  - type: TimedDespawn
+#    lifetime: 0.7
+  - type: Appearance # Forces visual effects to render over items in the other hand
+  - type: Sprite
+    sprite: _SHA/Misc/misc.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: Item
+    size: Tiny
+    sprite: null
+  - type: DisarmMalus
+    malus: 1.0
+
+- type: entity
+  parent: BaseFragment
+  id: FragmentGreatswordFlash
+  components:
+  - type: TimedDespawn
+    lifetime: 0.7
+  - type: Sprite
+    layers:
+    - state: icon-light
+      shader: unshaded
+  - type: Item
+    sprite: _SHA/Objects/Weapons/Melee/Mantis/mantisgreatsword-inhands-64x.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-right-summon
+        shader: unshaded
+        loop: false
+      right:
+      - state: inhand-left-summon
+        shader: unshaded
+        loop: false
+
+- type: entity
+  parent: BaseFragment
+  id: FragmentBladeFlash
+  components:
+  - type: TimedDespawn
+    lifetime: 0.7
+  - type: Sprite
+    layers:
+    - state: icon-light
+      shader: unshaded
+  - type: Item
+    sprite: _SHA/Heretic/break-64x.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-right-grasp-summon
+        shader: unshaded
+        loop: false
+      - state: inhand-right-summon
+        shader: unshaded
+        loop: false
+      right:
+      - state: inhand-left-grasp-summon
+        shader: unshaded
+        loop: false
+      - state: inhand-left-summon
+        shader: unshaded
+        loop: false
+
+- type: entity
+  parent: [ BaseFragment, BaseStorageItem ]
+  id: FragmentStorage
+  components:
+  - type: Sprite
+    sprite: _SHA/Misc/misc.rsi
+    layers:
+    - state: icon-storage
+      shader: unshaded
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+      - 0,0,20,23
+    storageOpenSound: /Audio/Effects/silence.ogg
+    storageCloseSound: /Audio/Effects/silence.ogg
+    storageInsertSound:
+      collection: Storage
+      params:
+        volume: 0
+        variation: 0.33
+
+- type: entity
+  parent: BaseFragment
+  id: FragmentStorageSound
+  components:
+  - type: Sprite
+    sprite: _SHA/Misc/misc.rsi
+    layers:
+    - state: icon-sound1
+      shader: unshaded
+  - type: EmitSoundOnUse
+    sound:
+      collection: Storage
+      params:
+        volume: 0
+        variation: 0.33
+
+- type: entity
+  parent: BaseFragmentToggle
+  id: FragmentStorageAmbienceToggle
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: FragmentStorageAmbience
+  - type: Sprite
+    sprite: _SHA/Misc/misc.rsi
+    layers:
+    - state: icon-sound2
+      shader: unshaded
+
+- type: entity
+  parent: BaseFragment
+  id: FragmentStorageAmbience
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: FragmentStorageAmbienceToggle
+  - type: Sprite
+    sprite: _SHA/Misc/misc.rsi
+    layers:
+    - state: icon-sound2
+      shader: unshaded
+  - type: AmbientSound
+    range: 5
+    volume: 0
+    sound:
+      path: /Audio/_SHA/storage.ogg
+
+# Weapons
+
+- type: entity
+  parent: MantisMeleeGreatsword
+  id: MantisMeleeGreatswordBreak
+  suffix: PENTHOUSE, DO NOT MAP
+  description: "It sees you.                                                                                                    It does not know you.                                                                                                    It only answers to her."
+  components:
+  - type: AntiPsionicWeapon # It knows her
+    punishChances: 1
+    punishSelfDamage: 1
+    punishStunDuration: 1
+  - type: MeleeRequiresWield # She just won't swing it if she's not wielding it
+    fumbleOnAttempt: false
+  - type: MeleeWeapon
+    heavyStaminaCost: 0
+  - type: DamageOtherOnHit
+    staminaCost: 0
+  - type: MeleeThrowOnHit # Throws you like a manifold
+    speed: 10
+    lifetime: 0.5
+  - type: Reflect # No cheesing the boss fight
+    reflectProb: 1.0
+    spread: 0
+    innate: true
+  - type: DisarmMalus
+    malus: 1.0
+  - type: CultItem # Only she can wield it
+  - type: EmbeddableProjectile
+    minimumSpeed: 1
+    autoRemoveDuration: 0
+
+- type: entity
+  parent: MantisMeleeGreatswordBreak
+  id: MantisMeleeGreatswordBreakSummoned
+  components:
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_SHA/castsummoninstant+faustunsheath.ogg
+      params:
+        volume: 0
+        variation: 0.05
+
+- type: entity
+  parent: MantisMeleeGreatswordSheath
+  id: MantisMeleeGreatswordSheathFilledBreak
+  suffix: Faust, Filled] [PENTHOUSE, DO NOT MAP
+  components:
+  - type: ContainerFill
+    containers:
+      mantisgreatsword:
+      - MantisMeleeGreatswordBreak
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: folded
+
+- type: entity
+  parent: [ BaseHereticContraband, BaseKnife, BaseAntiPsionicWeapon ]
+  id: HereticBladeFleshBreakSummoned
+  name: bloody blade
+  suffix: DO NOT MAP] [BREAK
+  description: "Her flesh and blood.                                                                                                    It stings the eye to behold.                                                                                                    Look away. Look away."
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+  - type: Item
+    size: Normal
+    sprite: _SHA/Heretic/break-64x.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left-grasp
+        shader: unshaded
+      - state: inhand-left
+      - state: inhand-left-unshaded
+        shader: unshaded
+      - state: inhand-left-unshaded-eye
+        shader: unshaded
+      right:
+      - state: inhand-right-grasp
+        shader: unshaded
+      - state: inhand-right
+      - state: inhand-right-unshaded
+        shader: unshaded
+      - state: inhand-right-unshaded-eye
+        shader: unshaded
+  - type: MeleeWeapon
+    autoAttack: true
+    heavyStaminaCost: 0
+    attackRate: 0.6666
+    angle: 90
+    maxTargets: 10
+    damage:
+      types:
+        Slash: 15
+        Holy: 7.5
+    soundHit:
+      path: /Audio/_White/BloodCult/butcher.ogg
+      params:
+        volume: -2
+        variation: 0.15
+    soundSwing:
+      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg
+      params:
+        volume: -3
+        variation: 0.15
+    animation: WeaponArcPunch
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_SHA/scrape.ogg
+      params:
+        volume: -1
+        pitch: 1.1
+        variation: 0.1
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    staminaCost: 0
+  - type: MeleeThrowOnHit
+    speed: 6
+    lifetime: 0.05
+  - type: Reflect
+    reflectProb: 1.0
+    spread: 0
+    innate: true
+  - type: DisarmMalus
+    malus: 1.0
+  - type: ThrowingAngle
+    angle: 225
+  - type: CultItem
+  - type: EmbeddableProjectile
+    minimumSpeed: 1
+    autoRemoveDuration: 0
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_SHA/blood+enterblood.ogg
+      params:
+        volume: -2
+        pitch: 1.0
+  - type: SpawnItemsOnUse # To get around an annoying inhands layering issue with toggled items...
+    items:
+    - id: HereticBladeFleshBreak
+
+- type: entity
+  parent: [ HereticBladeFleshBreakSummoned, BaseKnifeSpinnable ]
+  id: HereticBladeFleshBreak
+  name: bloody blade
+  suffix: DO NOT MAP] [BREAK
+  description: "Her flesh and blood.                                                                                                    It stings the eye to behold.                                                                                                    Look away. Look away."
+  components:
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg # Spin
+      params:
+        volume: -5
+        variation: 0.15
+    soundDeactivate:
+      path: /Audio/Effects/weak_hit2.ogg # Catch
+      params:
+        volume: -5
+        pitch: 0.5
+        variation: 0.05
+  - type: ToggleableVisuals
+    spriteLayer: null # Spinning it only changes the inhand sprites
+    replaceMode: true # The original inhand sprites won't remain visible when toggled
+    inhandVisuals:
+      left:
+      - state: inhand-left-grasp
+        shader: unshaded
+      - state: spinning-inhand-left
+      - state: spinning-inhand-left-unshaded
+        shader: unshaded
+      - state: spinning-inhand-left-unshaded-eye
+        shader: unshaded
+      right:
+      - state: inhand-right-grasp
+        shader: unshaded
+      - state: spinning-inhand-right
+      - state: spinning-inhand-right-unshaded
+        shader: unshaded
+      - state: spinning-inhand-right-unshaded-eye
+        shader: unshaded
+  - type: EmitSoundOnSpawn
+    sound: null
+
+# Magic Effects
+
+- type: entity
+  parent: [ BaseHereticContraband, BaseItem, BaseAntiPsionicWeapon ]
+  id: HereticMansusGraspBreak
+  name: mansus grasp
+  suffix: DO NOT MAP] [BREAK
+  description: "The hand wreathed in false flame.                                                                                                    It pries at the world's threads.                                                                                                    The witch's will made manifest."
+  components:
+  - type: ItemToggle # You can flash a ritual circle by toggling it
+    verbToggleOn: item-toggle-ritualon
+    verbToggleOff: item-toggle-ritualoff
+    soundActivate:
+      path: /Audio/_SHA/castsummonfast.ogg
+      params:
+        volume: 0
+        variation: 0.05
+    soundDeactivate: /Audio/Effects/silence.ogg
+  - type: UseDelay
+    delay: 1.27
+  - type: Appearance
+  - type: ToggleableVisuals
+    spriteLayer: null
+    replaceMode: false
+    inhandVisuals:
+      left:
+      - state: ritual-mirror-fast-break
+        shader: unshaded
+        offset: 0,-0.5
+        loop: false
+      right:
+      - state: ritual-mirror-fast-break
+        shader: unshaded
+        offset: 0,-0.5
+        loop: false
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    layers:
+    - state: icon-grasp-left
+      shader: unshaded
+  - type: Item
+    size: Ginormous
+    sprite: _SHA/Heretic/break-96x.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left-grasp
+        shader: unshaded
+      - state: inhand-left-grasp-summon
+        shader: unshaded
+        loop: false
+      right:
+      - state: inhand-right-grasp
+        shader: unshaded
+      - state: inhand-right-grasp-summon
+        shader: unshaded
+        loop: false
+  - type: MeleeWeapon
+    autoAttack: true
+    heavyStaminaCost: 0
+    attackRate: 0.6666
+    angle: 90
+    maxTargets: 1
+    damage:
+      types:
+        Blunt: 10
+        Holy: 5
+        Structural: 25
+    soundHit:
+      path: /Audio/_SHA/repulseinstant.ogg
+      params:
+        volume: 0
+        variation: 0.15
+    soundSwing:
+      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg
+      params:
+        volume: -3
+        variation: 0.15
+    animation: WeaponArcPunch
+    wideAnimation: WeaponArcSmash
+  - type: MeleeThrowOnHit
+    speed: 10
+    lifetime: 0.5
+  - type: Reflect
+    reflectProb: 1.0
+    spread: 0
+    innate: true
+  - type: DisarmMalus
+    malus: 1.0
+  - type: CultItem
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_SHA/voidblink.ogg
+      params:
+        volume: -2
+        pitch: 0.75
+  - type: AmbientSound
+    range: 5
+    volume: -4
+    sound:
+      path: /Audio/Ambience/wisp_ambience.ogg
+  - type: PointLight
+    color: "#00684E" # Mansus fire color
+  - type: DeleteOnDrop
+  - type: Tool
+    qualities:
+      - Prying
+  - type: Prying
+  - type: Gun
+    projectileSpeed: 9
+    cameraRecoilScalar: 0
+    fireOnDropChance: 0
+    meleeCooldown: 0
+    resetOnHandSelected: false
+    showExamineText: false
+    uniformSpread: true
+    soundGunshot:
+      path: /Audio/_SHA/rites.ogg
+      params:
+        volume: -1
+        pitch: 0.5
+        variation: 0.05
+    soundEmpty: /Audio/Effects/silence.ogg
+    fireRate: 3
+    useKey: false
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.333
+    rechargeSound: /Audio/Effects/silence.ogg
+  - type: BasicEntityAmmoProvider
+    proto: BulletGrasp
+    capacity: 1
+    count: 1
+
+- type: entity
+  parent: [ BaseHereticContraband, BaseItem, BaseAntiPsionicWeapon ]
+  id: HereticMansusGraspFarGoneBreak
+  name: far-gone grasp
+  suffix: DO NOT MAP] [BREAK
+  description: "The hand wreathed in false flame.                                                                                                    It pries at the world's threads.                                                                                                    The witch's will made manifest."
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    layers:
+    - state: icon-grasp-right
+      shader: unshaded
+  - type: Item
+    size: Ginormous
+    sprite: _SHA/Heretic/break-64x.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-both-silhouette
+        shader: unshaded
+      - state: inhand-left-grasp
+        shader: unshaded
+      - state: inhand-both-silhouette-summon
+        shader: unshaded
+        loop: false
+      - state: inhand-left-grasp-summon
+        shader: unshaded
+        loop: false
+      right:
+      - state: inhand-both-silhouette
+        shader: unshaded
+      - state: inhand-right-grasp
+        shader: unshaded
+      - state: inhand-both-silhouette-summon
+        shader: unshaded
+        loop: false
+      - state: inhand-right-grasp-summon
+        shader: unshaded
+        loop: false
+  - type: MeleeWeapon
+    autoAttack: true
+    heavyStaminaCost: 0
+    attackRate: 0.3333
+    angle: 90
+    maxTargets: 10
+    damage:
+      types:
+        Blunt: 10
+        Holy: 5
+        Structural: 50
+    soundHit:
+      path: /Audio/_SHA/repulseinstant.ogg
+      params:
+        volume: 0
+        variation: 0.15
+    soundSwing:
+      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg
+      params:
+        volume: -3
+        variation: 0.15
+    animation: WeaponArcPunch
+    wideAnimation: WeaponArcSmash
+  - type: MeleeThrowOnHit
+    speed: 10
+    lifetime: 0.5
+  - type: Reflect
+    reflectProb: 1.0
+    spread: 0
+    innate: true
+  - type: DisarmMalus
+    malus: 1.0
+  - type: CultItem
+  - type: DeleteOnDrop
+  - type: Tool
+    qualities:
+      - Prying
+  - type: Prying
+  - type: PointLight # For the "muzzle flashes"
+    radius: 0
+    energy: 0
+    color: "#00684E"
+
+- type: entity
+  parent: HereticMansusGraspFarGoneBreak
+  id: BreakSoul
+  name: what remained
+  suffix: DO NOT MAP] [BREAK SOUL, RIGHT HAND
+  description: "A fractured thing, long unseen.                                                                                                    Now brought forth as a weapon.                                                                                                    What have you done."
+  components:
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    layers:
+    - state: icon-grasp-soul-right
+      shader: unshaded
+  - type: Item
+    sprite: _SHA/Heretic/break-96x.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-both-silhouette-black
+        shader: unshaded
+      - state: soul
+        shader: unshaded
+      - state: soul-eyes
+        shader: unshaded
+        scale: 0.2,0.2
+        offset: 0,0.42
+      - state: soul-cover
+        shader: unshaded
+        loop: false
+      - state: draw-ritual-mirror
+        shader: unshaded
+        offset: 0,-0.5
+        loop: false
+      - state: soul-crown
+        shader: unshaded
+        loop: false
+      right:
+      - state: inhand-both-silhouette-black
+        shader: unshaded
+      - state: soul
+        shader: unshaded
+      - state: soul-eyes
+        shader: unshaded
+        scale: 0.2,0.2
+        offset: 0,0.42
+      - state: soul-cover
+        shader: unshaded
+        loop: false
+      - state: draw-ritual-mirror
+        shader: unshaded
+        offset: 0,-0.5
+        loop: false
+      - state: soul-crown
+        shader: unshaded
+        loop: false
+  - type: MeleeWeapon
+    animation: WeaponArcPunchDark
+    wideAnimation: WeaponArcSmashDark
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_SHA/soulscream+ascendfleshlong.ogg
+      params:
+        volume: 0
+        pitch: 1.0
+  - type: AmbientSound
+    range: 25
+    volume: -3
+    sound:
+      path: /Audio/_SHA/whatwasleft+wisp.ogg
+      params:
+        volume: 0
+        pitch: 1.0
+  - type: EmitSoundOnUse
+    sound:
+      collection: SoulTalk
+      params:
+        volume: -4
+        variation: 0.05
+  - type: PointLight
+    radius: 30.0
+    energy: 0.025
+    falloff: 0.0
+    color: "#ff0066" # Her crimson
+
+- type: entity
+  parent: HereticMansusGraspBreak
+  id: BreakSoulHand
+  name: what remained
+  suffix: DO NOT MAP] [BREAK SOUL, LEFT HAND
+  description: "A fractured thing, long unseen.                                                                                                    Now brought forth as a weapon.                                                                                                    What have you done."
+  components:
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: ToggleableVisuals
+    spriteLayer: null
+    replaceMode: false
+    inhandVisuals:
+      left:
+      - state: ritual-mirror-fast-soul
+        shader: unshaded
+        offset: 0,-0.5
+        loop: false
+      right:
+      - state: ritual-mirror-fast-soul
+        shader: unshaded
+        offset: 0,-0.5
+        loop: false
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    layers:
+    - state: icon-grasp-soul-left
+      shader: unshaded
+  - type: Item
+    sprite: _SHA/Heretic/break-96x.rsi
+    inhandVisuals:
+      left:
+      - state: invisible
+      right:
+      - state: invisible
+  - type: MeleeWeapon
+    autoAttack: true
+    heavyStaminaCost: 0
+    attackRate: 0.6666
+    angle: 90
+    maxTargets: 1
+    damage:
+      types:
+        Blunt: 10
+        Holy: 5
+        Structural: 25
+    soundHit:
+      path: /Audio/_SHA/repulseinstant.ogg
+      params:
+        volume: 0
+        variation: 0.15
+    soundSwing:
+      path: /Audio/_DEN/Weapons/Melee/bigswoosh.ogg
+      params:
+        volume: -3
+        variation: 0.15
+    animation: WeaponArcPunchDark
+    wideAnimation: WeaponArcSmashDark
+  - type: MeleeThrowOnHit
+    speed: 10
+    lifetime: 0.5
+  - type: PointLight # For the "muzzle flashes"
+    radius: 0
+    energy: 0
+    color: "#ff0066"
+  - type: BasicEntityAmmoProvider
+    proto: BulletGraspSoulSpread
+
+- type: entity
+  parent: ClothingNeckBase
+  id: BreakFocusMeditation
+  name: meditation
+  suffix: DO NOT MAP] [BREAK
+  description: "So focused that she seems to have forgotten about gravity."
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    layers:
+    - state: icon-meditation
+      shader: unshaded
+  - type: Item
+    size: Small
+  - type: Clothing
+    sprite: null
+    equipDelay: 0
+    unequipDelay: 0
+    quickEquip: true
+  - type: AntiGravityClothing
+  - type: DisarmMalus
+    malus: 1.0
+  - type: Tag
+    tags: []
+
+- type: entity
+  parent: [ BaseHereticContraband, BreakFocusMeditation ]
+  id: BreakFocusTrance
+  name: trance
+  suffix: DO NOT MAP] [BREAK
+  description: "You have earned her full attention."
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    layers:
+    - state: icon-soul
+      shader: unshaded
+  - type: Item
+    size: Ginormous
+  - type: Clothing
+    quickEquip: false
+  - type: Armor # Mostly to protect me from physics damage if I use this for character speed during mapping
+    modifiers:
+      coefficients:
+        Asphyxiation: 0
+        Bloodloss: 0
+        Blunt: 0
+        Cellular: 0
+        Caustic: 0
+        Cold: 0
+        Heat: 0
+        Piercing: 0
+        Poison: 0
+        Radiation: 0
+        Shock: 0
+        Slash: 0
+        Structural: 0
+        Holy: 0
+  - type: StaminaDamageResistance
+    coefficient: 0
+  - type: ClothingSpeedModifier
+    walkModifier: 5
+    sprintModifier: 10
+    requiresToggle: false
+  - type: HeldSpeedModifier # For mapping purposes - walk or you'll die
+  - type: NoSlip
+  - type: Insulated
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 60
+  - type: DeleteOnDrop
+  - type: TypingIndicatorClothing
+    proto: break
+  - type: SpawnItemsOnUse
+    items:
+    - id: null
+
+- type: entity
+  parent: BaseItem
+  id: BreakSilhouette
+  name: ominous silhouette
+  suffix: DO NOT MAP] [BREAK
+  description: "Oh lord."
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    layers:
+    - state: icon-silhouette
+      shader: unshaded
+  - type: Item
+    size: Small
+    sprite: _SHA/Heretic/break-64x.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-both-silhouette
+        shader: unshaded
+      - state: inhand-both-silhouette-eyes
+        shader: unshaded
+      right:
+      - state: inhand-both-silhouette
+        shader: unshaded
+      - state: inhand-both-silhouette-eyes
+        shader: unshaded
+  - type: MeleeWeapon
+    soundHit:
+      collection: ShockPunch
+    angle: 30
+    animation: WeaponArcPunch
+    wideAnimation: WeaponArcPunch
+    damage:
+      types:
+        Shock: 5
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/Effects/eye_close.ogg
+      params:
+        volume: -6
+        variation: 0.075
+  - type: EmitSoundOnUse
+    sound: /Audio/_Lavaland/heartbeat.ogg
+  - type: DisarmMalus
+    malus: 1.0
+  - type: CultItem
+  - type: DeleteOnDrop
+
+- type: entity
+  parent: [ BaseHereticContraband, BreakSilhouette ]
+  id: BreakSoulFaint
+  name: the shape behind her
+  suffix: DO NOT MAP] [BREAK SOUL, FAINT
+  description: "Something is there, unseen by most.                                                                                                    A ragged shape that stares unblinking.                                                                                                    It moves before she moves."
+  components:
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    layers:
+    - state: icon-soul-faint
+      shader: unshaded
+  - type: Item
+    size: Ginormous
+    sprite: _SHA/Heretic/break-96x.rsi
+    inhandVisuals:
+      left:
+      - state: soul-faint
+        shader: unshaded
+      - state: soul-eyes-faint
+        shader: unshaded
+        scale: 0.2,0.2
+        offset: 0,0.42
+      right:
+      - state: soul-faint
+        shader: unshaded
+      - state: soul-eyes-faint
+        shader: unshaded
+        scale: 0.2,0.2
+        offset: 0,0.42
+  - type: MeleeWeapon
+    soundHit:
+      collection: ShockPunch
+    angle: 30
+    animation: WeaponArcPunch
+    wideAnimation: WeaponArcPunch
+    damage:
+      types:
+        Shock: 5
+  - type: EmitSoundOnPickup
+    sound: /Audio/Effects/silence.ogg
+  - type: AmbientSound
+    range: 5
+    volume: -8
+    sound:
+      path: /Audio/Ambience/wisp_ambience.ogg
+  - type: EmitSoundOnUse
+    sound:
+      collection: SoulTalk
+      params:
+        volume: -10
+        variation: 0.05
+  - type: TypingIndicatorClothing
+    proto: breakfaint
+
+- type: entity
+  parent: [ BaseHereticContraband, BreakSilhouette ]
+  id: BreakSoulReflection
+  name: nothing
+  suffix: DO NOT MAP] [BREAK
+  description: "What are you looking at down there...?"
+  components:
+  - type: ItemToggle # Pressing Z quickly toggles the visuals
+    verbToggleOn: item-toggle-reflecton
+    verbToggleOff: item-toggle-reflectoff
+    soundActivate: /Audio/Effects/silence.ogg
+    soundDeactivate: /Audio/Effects/silence.ogg
+  - type: UseDelay
+    delay: 0
+  - type: Appearance
+  - type: ToggleableVisuals
+    spriteLayer: null
+    replaceMode: true
+    inhandVisuals:
+      left:
+      - state: invisible
+      right:
+      - state: invisible
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    layers:
+    - state: icon-soul-reflection
+      shader: unshaded
+  - type: Item
+    size: Small
+    sprite: _SHA/Heretic/break-96x.rsi
+    inhandVisuals:
+      left:
+      - state: soul-reflection
+        shader: unshaded
+        offset: 0,-1.0
+      right:
+      - state: soul-reflection
+        shader: unshaded
+        offset: 0,-1.0
+  - type: MeleeWeapon
+    soundHit:
+      collection: ShockPunch
+    angle: 30
+    animation: WeaponArcPunch
+    wideAnimation: WeaponArcPunch
+    damage:
+      types:
+        Shock: 5
+  - type: EmitSoundOnPickup
+    sound: /Audio/Effects/silence.ogg
+  - type: EmitSoundOnUse
+    sound: /Audio/Effects/silence.ogg
+
+# Spells
+
+- type: entity
+  id: ActionBreakSummonFaust
+  name: Summon Faust
+  description: "It sees you.                                                                                                    It does not know you.                                                                                                    It only answers to her."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatsword.rsi
+    state: icon
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatsword.rsi
+      state: icon
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand1: MantisMeleeGreatswordBreakSummoned
+        hand2: FragmentGreatswordFlash
+  - type: BaseCultSpell
+
+- type: entity
+  id: ActionBreakSummonBloodyBlade
+  name: Bloody Blade
+  description: "Her flesh and blood.                                                                                                    It stings the eye to behold.                                                                                                    Look away. Look away."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    state: icon
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _SHA/Heretic/break-32x.rsi
+      state: icon
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand1: HereticBladeFleshBreakSummoned
+        hand2: FragmentBladeFlash
+  - type: BaseCultSpell
+
+- type: entity
+  id: ActionBreakSummonMansusGrasp
+  name: Mansus Grasp
+  description: "The hand wreathed in false flame.                                                                                                    It pries at the world's threads.                                                                                                    The witch's will made manifest."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    state: icon-grasp-right
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _SHA/Heretic/break-32x.rsi
+      state: icon-grasp-right
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand: HereticMansusGraspBreak
+  - type: BaseCultSpell
+
+- type: entity
+  id: ActionBreakSummonMansusGraspDouble
+  name: Far-Gone Grasp
+  description: "The hand wreathed in false flame.                                                                                                    It pries at the world's threads.                                                                                                    The witch's will made manifest."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    state: icon-grasp-both
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _SHA/Heretic/break-32x.rsi
+      state: icon-grasp-both
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand1: HereticMansusGraspFarGoneBreak
+        hand2: HereticMansusGraspBreak
+  - type: BaseCultSpell
+
+- type: entity
+  id: ActionBreakApparition
+  name: The Shape Behind Her
+  description: "Something is there, unseen by most.                                                                                                    A ragged shape that stares unblinking.                                                                                                    It moves before she moves."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    state: icon-soul-faint
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _SHA/Heretic/break-32x.rsi
+      state: icon-soul-faint
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand: BreakSoulFaint
+  - type: BaseCultSpell
+
+- type: entity
+  id: ActionBreakCoronation
+  name: What Remained
+  description: "A fractured thing, long unseen.                                                                                                    Now brought forth as a weapon.                                                                                                    What have you done."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/break-32x.rsi
+    state: icon-soul
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _SHA/Heretic/break-32x.rsi
+      state: icon-soul
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand1: BreakSoul
+        hand2: BreakSoulHand
+        neck: BreakFocusTrance
+  - type: BaseCultSpell
+
+# Unused Spells
+
+- type: entity
+  id: ActionBreakSummonGuns
+  name: Summon Empusa & Charon
+  description: ""
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Guns/Battery/Mantis/mantis-shotgun.rsi
+    state: icon
+  - type: InstantAction
+    itemIconStyle: BigAction
+    charges: 1000
+    temporary: false
+    icon:
+      sprite: _DEN/Objects/Weapons/Guns/Battery/Mantis/mantis-shotgun.rsi
+      state: icon
+    event: !type:SummonEquipmentEvent
+      prototypes:
+        hand1: MantisRangedShotgunLethalSummoned
+        hand2: MantisRangedRevolverLethalSummoned
+  - type: BaseCultSpell
+
+# Restraints
+
+- type: entity
+  parent: MantisCaseShadowLarge
+  id: MantisCaseRestraintsPenthouse
+  name: restraints case
+  suffix: PENTHOUSE
+  description: "A floral case filled with shackles and chains, complete with an antique wrench."
+  components:
+  - type: Sprite
+    layers:
+    - state: 3-closed
+    - state: label-restraints
+    - state: 3-open
+      map: ["openLayer"]
+  - type: Storage
+    grid:
+    - 0,0,5,1
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadCageMantisPenthouse
+    - id: HandcuffsMantisPenthouse
+    - id: ClothingNeckMantisShacklesPenthouse
+    - id: WrenchMantis
+    - id: LeashMantisPenthouse
+      amount: 4
+
+- type: entity
+  parent: ClothingHeadCage
+  id: ClothingHeadCageMantisPenthouse
+  name: gilded headcage
+  suffix: PENTHOUSE
+  description: "A durable cage with a heavy chain."
+  components:
+  - type: Sprite
+    sprite: _SHA/Clothing/Head/Hats/cagemantis.rsi
+  - type: Clothing
+    sprite: _SHA/Clothing/Head/Hats/cagemantis.rsi
+
+- type: entity
+  parent: BaseItem
+  id: HandcuffsMantisPenthouse
+  suffix: PENTHOUSE
+  name: gilded shackles
+  description: "Heavy shackles to bind the unruly."
+  components:
+  - type: Item
+    size: Small
+  - type: Handcuff
+    breakoutTime: 10
+    cuffTime: 3
+    stunBonus: 2
+    uncuffTime: 3
+    cuffedRSI: _SHA/Objects/Misc/handcuffsmantis.rsi
+    bodyIconState: body-overlay
+    breakOnRemove: false
+    startCuffSound:
+      path: /Audio/_DEN/Items/Handcuffs/chain_start.ogg
+    endCuffSound:
+      path: /Audio/_DEN/Items/Handcuffs/chain_end.ogg
+    startUncuffSound:
+      path: /Audio/_DEN/Items/Handcuffs/chain_start.ogg
+    endUncuffSound:
+      path: /Audio/_DEN/Items/Handcuffs/chain_end.ogg
+    startBreakoutSound:
+      path: /Audio/_DEN/Items/Handcuffs/chain_takeoff.ogg
+  - type: Sprite
+    sprite: _SHA/Objects/Misc/handcuffsmantis.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    resetOnHandSelected: false
+    animation: WeaponArcDisarm
+    damage:
+      types:
+        Blunt: 0
+  - type: UseDelay
+    delay: 1
+
+- type: entity
+  parent: ClothingNeckCollarBase
+  id: ClothingNeckMantisShacklesPenthouse
+  name: gilded bindings
+  suffix: PENTHOUSE
+  description: "A set of massive bindings with hanging chains."
+  components:
+  - type: Sprite
+    sprite: _SHA/Clothing/Neck/Misc/mantisshackles.rsi
+  - type: Clothing
+    sprite: _SHA/Clothing/Neck/Misc/mantisshackles.rsi
+
+- type: entity
+  parent: BaseLeash
+  id: LeashMantisPenthouse
+  name: gilded chain
+  suffix: PENTHOUSE
+  description: "A heavy chain leading to a round, anchorable base."
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Mantis/leashmantis.rsi
+    state: icon
+  - type: Leash
+    leashSprite:
+      sprite: _SHA/Objects/Specific/Mantis/leashmantis-chain.rsi
+      state: chain
+    pullInterval: 0.75
+    length: 3
+    lengthConfigs: [1.5, 2.25, 3]
+    maxDistance: 6
+    attachDelay: 1
+    detachDelay: 1
+    selfDetachDelay: 10
+  - type: Anchorable
+    delay: 1
+    snap: false
+
+# Books
+
+- type: entity
+  parent: [ BaseDecorativeFixture, BaseItem ]
+  id: EldritchTome
+  name: eldritch tome
+  suffix: SANCTUM ONLY
+  description: "A strange book with some kind of ritualistic rune emblazoned on the front. The text seems to rewrite itself whenever you look away."
+  components:
+  - type: Sprite
+    sprite: _SHA/Heretic/eldritch_book.rsi
+    layers:
+    - state: eldritch-book-base1
+      map : [ "cover" ]
+    - state: eldritch-book-icon1
+      map : [ "icon" ]
+  - type: RandomSprite
+    available:
+      - cover:
+          eldritch-book-base1: ""
+          eldritch-book-base2: ""
+          eldritch-book-base3: ""
+          eldritch-book-base4: ""
+          eldritch-book-base5: ""
+          eldritch-book-base6: ""
+          eldritch-book-base7: ""
+          eldritch-book-base8: ""
+        icon:
+          eldritch-book-icon1: ""
+          eldritch-book-icon2: ""
+          eldritch-book-icon3: ""
+          eldritch-book-icon4: ""
+          eldritch-book-icon5: ""
+          eldritch-book-icon6: ""
+  - type: PointLight
+    radius: 1.5
+    energy: 2.5
+    color: "#00684E" # Mansus fire color
+  - type: Tag
+    tags:
+      - Book
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/book_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+
+- type: entity
+  parent: BookshelfSomberFilled
+  id: BookshelfSomberFilledSanctum
+  name: somber bookshelf
+  suffix: SANCTUM ONLY, Filled
+  description: "A tall, gloomy bookshelf sagging beneath volumes that should not exist. Their spines are cracked, titles faded, and the air around them feels wrong when you linger too long."
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/somberbookshelfsanctum.rsi
+  - type: StorageFill
+    contents:
+      - id: EldritchTome
+        prob: 1.0
+        amount: 5
+        maxAmount: 10
+
+- type: entity
+  parent: BookshelfSomberFilledSanctum
+  id: BookshelfSomberBacklessFilledSanctum
+  suffix: SANCTUM ONLY, SEE-THROUGH, Filled
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/somberbookshelfsanctum.rsi
+    layers:
+      - state: base-backless
+      - state: book-0
+      - map: ["enum.StorageFillLayers.Fill"]
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: BookshelfSomberFilled
+  id: BookshelfSomberFilledPenthouse
+  name: somber bookshelf
+  suffix: PENTHOUSE, Filled
+  description: "A tall, gloomy bookshelf crowded with rare and obscure volumes. This collection must have cost a fortune."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/somberbookshelf.rsi
+  - type: StorageFill
+    contents:
+      - id: SomberBook1
+        prob: 0.90
+        amount: 1
+        maxAmount: 3
+        orGroup: BookFiller1
+      - id: SomberBook2
+        prob: 0.90
+        amount: 1
+        maxAmount: 3
+        orGroup: BookFiller2
+      - id: SomberBook3
+        prob: 0.85
+        amount: 1
+        maxAmount: 3
+        orGroup: BookFiller3
+      - id: SomberBook4
+        prob: 0.90
+        amount: 1
+        maxAmount: 4
+        orGroup: BookFiller4
+      - id: SomberBook5
+        prob: 0.80
+        amount: 1
+        maxAmount: 3
+        orGroup: BookFiller5
+      - id: SomberBook6
+        prob: 0.18
+        amount: 1
+        maxAmount: 1
+
+- type: entity
+  parent: BookshelfSomberFilledPenthouse
+  id: BookshelfSomberBacklessFilledPenthouse
+  suffix: PENTHOUSE, SEE-THROUGH, Filled
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/somberbookshelf.rsi
+    layers:
+      - state: base-backless
+      - state: book-0
+      - map: ["enum.StorageFillLayers.Fill"]
+  - type: Occluder
+    enabled: false
+
+# Break's Belt (Extra Storage)
+
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltBreak
+  name: skirt band
+  suffix: PENTHOUSE, DO NOT MAP
+  description: "Technically the band of a high-waisted skirt, though it seems like you've ripped it off. You animal."
+  components:
+  - type: Sprite
+    sprite: _SHA/Clothing/Belt/waist.rsi
+    state: icon
+  - type: Clothing
+    sprite: _SHA/Clothing/Belt/waist.rsi
+    renderLayer: innerBelt
+    equipDelay: 0
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Ginormous
+    grid:
+    - 0,0,19,2
+    storageOpenSound: /Audio/Effects/silence.ogg
+    storageCloseSound: /Audio/Effects/silence.ogg
+    storageInsertSound: /Audio/Effects/silence.ogg
+    storageRemoveSound: /Audio/Effects/silence.ogg
+  - type: StorageFill
+    contents:
+    - id: BreakSoulReflection
+      amount: 8
+    - id: BreakFocusMeditation
+      amount: 4
+    - id: BreakSilhouette
+      amount: 8
+    - id: FragmentStorageSound
+      amount: 5
+    - id: FragmentStorage
+      amount: 10
+    - id: FragmentStorageAmbienceToggle
+      amount: 5
+
+# Tatter's "Belt"
+
+- type: entity
+  parent: ClothingBeltBreak
+  id: ClothingBeltTatter
+  name: nothing
+  suffix: PENTHOUSE, DO NOT MAP
+  description: "Nothing to see here."
+  components:
+  - type: Sprite
+    sprite: _SHA/Clothing/Belt/nothing.rsi
+  - type: Clothing
+    sprite: _SHA/Clothing/Belt/nothing.rsi
+
+# Cases
+
+- type: entity
+  parent: MantisCaseSmall
+  id: MantisCaseAdmin
+  name: small case
+  suffix: PENTHOUSE, DO NOT MAP
+  description: "A shadow wood case for important things."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+    layers:
+    - state: 1-closed
+    - state: label-psi
+    - state: 1-open
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    sprite: _DEN/Objects/Storage/boxshadow.rsi
+  - type: Storage
+    maxItemSize: Ginormous
+    grid:
+    - 0,0,20,7
+  - type: StorageFill
+    contents:
+    - id: MantisMeleeSickle
+    - id: MantisMeleeKnife
+    - id: ThavenArmyKnife
+    - id: HandheldCrewMonitorMantis
+    - id: RemoteSignallerSomberAdmin
+    - id: DoorRemoteAllSomber
+    - id: ClothingNeckMantisPendulum
+    - id: BoxFolderMantis
+    - id: MantisCaseChemicalsPenthouse
+    - id: CigPackMnemolithLighter
+      amount: 2
+    - id: ClothingHeadCageMantisPenthouse
+      amount: 1
+    - id: HandcuffsMantisPenthouse
+      amount: 3
+    - id: ClothingNeckMantisShacklesPenthouse
+      amount: 3
+    - id: WrenchMantis
+    - id: LeashMantisPenthouse
+      amount: 2
+
+- type: entity
+  parent: MantisCaseChemicals
+  id: MantisCaseChemicalsPenthouse
+  name: chemicals case
+  suffix: PENTHOUSE
+  description: "A floral wood case of chemicals."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+  - type: Item
+    sprite: _DEN/Objects/Storage/boxfloral.rsi
+  - type: Storage
+    grid:
+    - 0,0,1,2 # 2x3
+    whitelist:
+      tags:
+        - Syringe
+        - Bottle
+        - PillCanister
+        - Pill
+        - MantisBoxChemicalsStorable
+  - type: StorageFill
+    contents:
+    - id: SyringeMantis
+    - id: ChemistryEmptyBottleMantis
+    - id: PillCanisterMnemolithMantis
+    - id: PillCanisterSpaceDrugsMantisBreak
+    - id: PillCanisterPsicodineMantisBreak
+    - id: PillCanisterPhilterexMantisBreak
+
+- type: entity
+  parent: PillCanisterSpaceDrugsMantis
+  id: PillCanisterSpaceDrugsMantisBreak
+  suffix: LSD, 10] [PENTHOUSE
+  description: "A potent psychedelic that may awaken psionic abilities in those with potential, coloquially called \"space drugs.\""
+  components:
+  - type: Label
+    currentLabel: LSD 15u
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Mantis/pillcanistermantis.rsi
+    layers:
+      - state: pill_canister
+      - state: pill_canister-spacedrugs
+  - type: StorageFill
+    contents:
+    - id: PillSpaceDrugs
+      amount: 10
+
+- type: entity
+  parent: PillCanisterMantis
+  id: PillCanisterPhilterexMantisBreak
+  suffix: Philterex, 10] [PENTHOUSE
+  description: "An alarmingly potent aphrodisiac. Extra strength. Only take one."
+  components:
+  - type: Label
+    currentLabel: philterex 30u
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Mantis/pillcanistermantis.rsi
+    layers:
+      - state: pill_canister
+      - state: pill_canister-philterex
+  - type: StorageFill
+    contents:
+    - id: PillPhilterexMantisBreak
+      amount: 10
+
+- type: entity
+  parent: PillCanisterMantis
+  id: PillCanisterPsicodineMantisBreak
+  suffix: Psicodine, 10] [PENTHOUSE
+  description: "To calm the nerves. Extra strength. Only take one."
+  components:
+  - type: Label
+    currentLabel: psicodine 15u
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Mantis/pillcanistermantis.rsi
+    layers:
+      - state: pill_canister
+      - state: pill_canister-psicodine
+  - type: StorageFill
+    contents:
+    - id: PillPsicodineMantisBreak
+      amount: 10
+
+- type: entity
+  parent: Pill
+  id: PillPhilterexMantisBreak
+  name: pill
+  suffix: Philterex 30u
+  description: "Extra strength. Only take one."
+  components:
+  - type: Label
+    currentLabel: philterex 30u
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Chemistry/pills.rsi
+    state: philterexpill
+  - type: Item
+    size: Tiny
+    sprite: _SHA/Objects/Specific/Chemistry/pills.rsi
+    heldPrefix: philterex
+  - type: Pill
+    state: philterexpill
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Philterex
+          Quantity: 30
+
+- type: entity
+  parent: Pill
+  id: PillPsicodineMantisBreak
+  name: pill
+  suffix: Psicodine 15u
+  description: "Extra strength. Only take one."
+  components:
+  - type: Label
+    currentLabel: psicodine 15u
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Chemistry/pills.rsi
+    state: psicodinepill
+  - type: Item
+    size: Tiny
+    sprite: _SHA/Objects/Specific/Chemistry/pills.rsi
+    heldPrefix: psicodine
+  - type: Pill
+    state: psicodinepill
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Psicodine
+          Quantity: 10
+
+- type: entity
+  parent: MantisCaseFloral
+  id: MantisCaseFloralPistolAmmoPenthouse
+  name: pistol ammo case
+  components:
+  - type: Sprite
+    layers:
+    - state: 2-closed
+    - state: label-pistol
+    - state: 2-open
+      map: ["openLayer"]
+  - type: StorageFill
+    contents:
+    - id: MantisCasterPistolLethal
+      amount: 2
+
+- type: entity
+  parent: MantisCaseFloral
+  id: MantisCaseFloralRevolverAmmoPenthouse
+  name: revolver ammo case
+  components:
+  - type: Sprite
+    layers:
+    - state: 2-closed
+    - state: label-revolver
+    - state: 2-open
+      map: ["openLayer"]
+  - type: StorageFill
+    contents:
+    - id: MantisCasterRevolverLethal
+      amount: 2
+
+- type: entity
+  parent: MantisCaseShadow
+  id: MantisCaseShadowShotgunAmmoPenthouse
+  name: shotgun ammo case
+  components:
+  - type: Sprite
+    layers:
+    - state: 2-closed
+    - state: label-shotgun
+    - state: 2-open
+      map: ["openLayer"]
+  - type: StorageFill
+    contents:
+    - id: MantisCasterShotgunLethal
+      amount: 2
+
+- type: entity
+  parent: MantisCaseShadow
+  id: MantisCaseShadowSubMachineGunAmmoPenthouse
+  name: submachine gun ammo case
+  components:
+  - type: Sprite
+    layers:
+    - state: 2-closed
+    - state: label-smg
+    - state: 2-open
+      map: ["openLayer"]
+  - type: StorageFill
+    contents:
+    - id: MantisCasterSubMachineGunLethal
+      amount: 2
+
+# Lights
+
+- type: entity
+  parent: LightTube
+  id: WarmLightTube
+  name: warm light tube
+  suffix: PENTHOUSE
+  description: A warm light tube for a more cozy atmosphere.
+  components:
+  - type: LightBulb
+    color: "#ff9833"
+    lightEnergy: 0.8
+    lightRadius: 10
+    lightSoftness: 1
+
+- type: entity
+  parent: LightBulb
+  id: UvLightBulb
+  name: ultraviolet light bulb
+  suffix: PENTHOUSE
+  description: A high power high energy bulb for the depths of space. Purple.
+  components:
+  - type: LightBulb
+    bulb: Bulb
+    color: "#9E00FF"
+    lightEnergy: 1
+    lightRadius: 9
+    lightSoftness: 0.9
+    BurningTemperature: 190
+    PowerUse: 60
+
+- type: entity
+  parent: PoweredlightSomber
+  id: PoweredlightSomberWarm
+  suffix: Warm] [PENTHOUSE
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: WarmLightTube
+  - type: PointLight
+    color: "#ff9833"
+    energy: 0.8
+    radius: 10
+    softness: 1
+
+- type: entity
+  parent: PoweredSmallLightSomber
+  id: PoweredSmallLightSomberUV
+  suffix: Ultraviolet] [PENTHOUSE
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: UvLightBulb
+  - type: PointLight
+    color: "#9E00FF"
+    energy: 1
+    radius: 9
+    softness: 0.9
+
+- type: entity
+  parent: LightTube
+  id: OrchidLightTubeNew
+  name: orchid light tube
+  suffix: PENTHOUSE
+  description: "A rare, rosy light."
+  components:
+  - type: LightBulb
+    color: "#ff94e8"
+    lightEnergy: 1.5
+    lightRadius: 10
+    lightSoftness: 1
+
+- type: entity
+  parent: LightBulb
+  id: OrchidLightBulbNew
+  name: orchid light bulb
+  suffix: PENTHOUSE
+  description: "A rare, rosy light."
+  components:
+  - type: LightBulb
+    bulb: Bulb
+    color: "#ff94e8"
+    lightEnergy: 1.5
+    lightRadius: 5
+    lightSoftness: 1
+
+- type: entity
+  parent: PoweredlightSomber
+  id: PoweredlightSomberOrchidNew
+  suffix: Orchid] [PENTHOUSE
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: OrchidLightTubeNew
+  - type: PointLight
+    color: "#ff94e8"
+    energy: 1.5
+    radius: 10
+    softness: 1
+
+- type: entity
+  parent: PoweredSmallLightSomber
+  id: PoweredSmallLightSomberOrchidNew
+  suffix: Orchid] [PENTHOUSE
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: OrchidLightBulbNew
+  - type: PointLight
+    color: "#ff94e8"
+    energy: 1.5
+    radius: 5
+    softness: 1
+
+- type: entity
+  parent: LightReplacer
+  id: LightReplacerWarm
+  suffix: Warm] [PENTHOUSE
+  components:
+  - type: Label
+    currentLabel: warm
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
+    layers:
+    - state: icon
+    - state: icon-bulb
+      color: "#ff9833"
+      shader: unshaded
+  - type: Item
+    sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      - state: bulb-inhand-left
+        color: "#ff9833"
+        shader: unshaded
+      right:
+      - state: inhand-right
+      - state: bulb-inhand-right
+        color: "#ff9833"
+        shader: unshaded
+  - type: LightReplacer
+    contents:
+    - id: WarmLightTube
+      amount: 20
+    - id: WarmLightBulb
+      amount: 20
+
+- type: entity
+  parent: LightReplacer
+  id: LightReplacerUV
+  suffix: Ultraviolet] [PENTHOUSE
+  components:
+  - type: Label
+    currentLabel: ultraviolet
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
+    layers:
+    - state: icon
+    - state: icon-bulb
+      color: "#9E00FF"
+      shader: unshaded
+  - type: Item
+    sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      - state: bulb-inhand-left
+        color: "#9E00FF"
+        shader: unshaded
+      right:
+      - state: inhand-right
+      - state: bulb-inhand-right
+        color: "#9E00FF"
+        shader: unshaded
+  - type: LightReplacer
+    contents:
+    - id: UvLightTube
+      amount: 20
+    - id: UvLightBulb
+      amount: 20
+
+- type: entity
+  parent: LightReplacer
+  id: LightReplacerOrchid
+  suffix: Orchid] [PENTHOUSE
+  components:
+  - type: Label
+    currentLabel: orchid
+  - type: Sprite
+    sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
+    layers:
+    - state: icon
+    - state: icon-bulb
+      color: "#ff94e8"
+      shader: unshaded
+  - type: Item
+    sprite: _SHA/Objects/Specific/Janitorial/light_replacer.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      - state: bulb-inhand-left
+        color: "#ff94e8"
+        shader: unshaded
+      right:
+      - state: inhand-right
+      - state: bulb-inhand-right
+        color: "#ff94e8"
+        shader: unshaded
+  - type: LightReplacer
+    contents:
+    - id: OrchidLightTubeNew
+      amount: 20
+    - id: OrchidLightBulbNew
+      amount: 20
+
+- type: entity
+  parent: LightSomberEidoliteColorBase
+  id: LightSomberEidoliteColorOrchid
+  suffix: PENTHOUSE, Orchid] [Signal-Friendly
+  abstract: true
+  components:
+  - type: PointLight
+    color: "#ff94e8"
+
+- type: entity
+  parent: [LightSomberEidoliteColorOrchid, LightSomberEidoliteSkyLantern]
+  id: LightSomberEidoliteSkyLanternOrchid
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, held aloft by its own power. You can turn it on and off by hand. This one's been altered to produce orchid light--at great cost, since the Outer Chamber Crucible had to psionically \"anneal\" it through the entire color spectrum to reach this point."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitefloating.rsi
+
+- type: entity
+  parent: [LightSomberEidoliteColorOrchid, LightSomberEidoliteWellLamp]
+  id: LightSomberEidoliteWellLampOrchid
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on and off by hand. This one's been altered to produce orchid light--at great cost, since the Outer Chamber Crucible had to psionically \"anneal\" it through the entire color spectrum to reach this point."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitewell.rsi
+
+- type: entity
+  parent: [LightSomberEidoliteColorOrchid, LightSomberEidoliteFloorLamp]
+  id: LightSomberEidoliteFloorLampOrchid
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. You can turn it on and off by hand. This one's been altered to produce orchid light--at great cost, since the Outer Chamber Crucible had to psionically \"anneal\" it through the entire color spectrum to reach this point."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitefloor.rsi
+
+- type: entity
+  parent: LanternMantis
+  id: LanternMantisOrchid
+  suffix: Orchid] [PENTHOUSE
+  description: "An ornate lantern housing an altered eidolite pyramid that draws power from the noosphere. Stare too long and the gleam resolves into shapes you almost recognize, then promptly forget. For all its theatrics, the handle still hangs comfortably on your back."
+  components:
+    - type: Sprite
+      sprite: _SHA/Objects/Specific/Mantis/lanternmantis.rsi
+    - type: Item
+      sprite: _SHA/Objects/Specific/Mantis/lanternmantis.rsi
+    - type: PointLight
+      color: "#ff94e8"
+
+- type: entity
+  parent: LanternSomber
+  id: LanternSomberOrchid
+  suffix: Orchid] [PENTHOUSE
+  description: "A palm-sized electrum sphere studded with shards of altered eidolite, each humming with faint noospheric charge. Its glow lingers in your vision, imprinting shapes you can't quite name."
+  components:
+    - type: Sprite
+      sprite: _SHA/Objects/Tools/somberlamp.rsi
+    - type: Item
+      sprite: _SHA/Objects/Tools/somberlamp.rsi
+    - type: PointLight
+      color: "#ff94e8"
+
+# Mnemolith Columns
+
+- type: entity
+  parent: SomberPillarStoneTaller
+  id: SomberPillarStoneTallerPenthouse
+  suffix: Taller] [PENTHOUSE
+  description: "A rough hexagonal column of raw mnemolith that appears to have grown straight from the floor. It reacts to nearby thoughts, cutting new patterns into itself around powerful psions--though this one is already filled with a dense labyrinth of them."
+  components:
+  - type: Sprite
+    state: stonecolumntaller
+
+- type: entity
+  parent: SomberPillarStoneTallerPenthouse
+  id: SomberPillarStoneTallPenthouse
+  suffix: Tall] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: stonecolumntall
+
+- type: entity
+  parent: SomberPillarStoneTallerPenthouse
+  id: SomberPillarStoneShortPenthouse
+  suffix: Short] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: stonecolumnshort
+
+- type: entity
+  parent: SomberPillarStoneTallerPenthouse
+  id: SomberPillarStoneShorterPenthouse
+  suffix: Shorter] [PENTHOUSE
+  components:
+  - type: Sprite
+    state: stonecolumnshorter
+
+# Fish
+
+- type: entity
+  parent: PlushieCarp
+  id: PlushieCarpBreak
+  name: carp plushie
+  suffix: PENTHOUSE, Break
+  description: "An adorable stuffed toy that resembles the monstrous space carp, or perhaps something similar."
+  components:
+  - type: Sprite
+    sprite: _SHA/Objects/Fun/toys.rsi
+    layers:
+    - state: carpplushbreak
+    - state: carpplushbreak-unshaded
+      shader: unshaded
+  - type: Item
+    heldPrefix: carpplushbreak
+  - type: PointLight
+    energy: 0.5
+    radius: 1.5
+    color: "#FFFFFF"
+
+- type: entity
+  parent: PlushieCarpBreak
+  id: PlushieCarpSucker
+  name: carp plushie
+  suffix: PENTHOUSE, Sucker
+  description: "An adorable stuffed toy that resembles the monstrous space carp, or perhaps something similar."
+  components:
+  - type: Sprite
+    layers:
+    - state: carpplushsucker
+    - state: carpplushsucker-unshaded
+      shader: unshaded
+  - type: Item
+    heldPrefix: carpplushsucker
+
+- type: entity
+  parent: PlushieCarpBreak
+  id: PlushieCarpDream
+  name: carp plushie
+  suffix: PENTHOUSE, Dream
+  description: "An adorable stuffed toy that resembles the monstrous space carp, or perhaps something similar."
+  components:
+  - type: Sprite
+    layers:
+    - state: carpplushdream
+    - state: carpplushdream-unshaded
+      shader: unshaded
+  - type: Item
+    heldPrefix: carpplushdream
+
+- type: entity
+  parent: PlushieCarpBreak
+  id: PlushieCarpTatter
+  name: carp plushie
+  suffix: PENTHOUSE, Tatter
+  description: "An adorable stuffed toy that resembles the monstrous space carp, or perhaps something similar."
+  components:
+  - type: Sprite
+    layers:
+    - state: carpplushtatter
+    - state: carpplushtatter-unshaded
+      shader: unshaded
+  - type: Item
+    heldPrefix: carpplushtatter
+
+- type: entity
+  parent: PlushieCarpBreak
+  id: PlushieCarpCast
+  name: carp plushie
+  suffix: PENTHOUSE, Cast
+  description: "An adorable stuffed toy that resembles the monstrous space carp, or perhaps something similar."
+  components:
+  - type: Sprite
+    layers:
+    - state: carpplushcast-unshaded
+      shader: unshaded
+    - state: carpplushcast
+  - type: Item
+    heldPrefix: carpplushcast
+
+# Meditation Room (So specific it gets its own category)
+
+- type: entity
+  parent: WallSomberDirectional
+  id: WallSomberDirectionalMeditation
+  suffix: PENTHOUSE, Directional, Meditation Chamber
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/somber_directional.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Walls/somber_directional.rsi
+
+- type: entity
+  parent: WallSomberDirectionalMeditation
+  id: WallSomberDirectionalMeditationSeeThrough
+  suffix: PENTHOUSE, Directional, SEE-THROUGH, Meditation Chamber
+  categories: []
+  components:
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  id: MeditationChamberReflection
+  name: reflection
+  suffix: PENTHOUSE, Meditation Chamber
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      sprite: _SHA/Structures/Decoration/reflection.rsi
+      drawdepth: FloorObjects
+      layers:
+        - state: reflection
+        - state: reflection-unshaded
+          shader: unshaded
+    - type: Transform
+      anchored: true
+    - type: Tag
+      tags:
+        - HideContextMenu
+
+- type: entity
+  id: MeditationChamberReflectionArmillary
+  name: armillary reflection
+  suffix: PENTHOUSE, Meditation Chamber
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      sprite: _SHA/Structures/Decoration/reflectionarmillary.rsi
+      drawdepth: FloorObjects
+      layers:
+      - state: gold
+        offset: 0.0,-1.5
+      - state: gold-unshaded
+        offset: 0.0,-1.5
+        shader: unshaded
+    - type: Transform
+      anchored: true
+    - type: Tag
+      tags:
+        - HideContextMenu
+
+- type: entity
+  parent: MeditationChamberReflection
+  id: MeditationChamberReflectionNoGlass
+  name: reflection
+  suffix: PENTHOUSE, No Glass, Meditation Chamber
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      layers:
+        - state: reflection-noglass
+        - state: reflection-unshaded
+          shader: unshaded
+
+- type: entity
+  parent: MarkerBase
+  id: MarkerSoundMusicBoss
+  name: invisible sound emitter
+  suffix: Boss Music, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - sprite: _DEN/Markers/environment.rsi
+        state: base-purple
+        shader: unshaded
+      - sprite: _DEN/Markers/environment.rsi
+        shader: unshaded
+        state: sound
+  - type: ItemToggle
+    activated: false
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_SHA/piano.ogg
+      params:
+        volume: 0
+        range: 8
+  - type: ItemToggleOnTrigger
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
+  - type: AutoLinkReceiver
+    channel: MusicBoss
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkMusicBoss
+  suffix: PENTHOUSE] [Autolink (Boss Music), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: MusicBoss
+  - type: SignalSwitch
+    clickSound: /Audio/Effects/silence.ogg
+
+- type: entity
+  parent: ShuttersFogWallBossOpenAutolink
+  id: ShuttersFogWallBossOpenAutolinkBoss
+  suffix: PENTHOUSE] [Autolink (Fog), Open Privacy Shutter
+  components:
+    - type: AutoLinkReceiver
+      channel: FogBoss
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkFogBoss
+  suffix: PENTHOUSE] [Autolink (Boss Fog), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: FogBoss
+  - type: SignalSwitch
+    clickSound: /Audio/Effects/silence.ogg
+
+- type: entity
+  parent: MarkerShutterOpenAutolink
+  id: MarkerShutterOpenAutolinkBoss
+  suffix: PENTHOUSE] [Autolink (Boss Wall), Open
+  components:
+    - type: AutoLinkReceiver
+      channel: WallBoss
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkInvisShutterBoss
+  suffix: PENTHOUSE] [Autolink (Boss Wall), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: WallBoss
+  - type: SignalSwitch
+    clickSound: /Audio/Effects/silence.ogg
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberSilent
+  suffix: PENTHOUSE] [Silent
+  components:
+  - type: SignalSwitch
+    clickSound: /Audio/Effects/silence.ogg
+
+- type: entity
+  parent: [ BaseImmovableObject, AltarSomber ]
+  id: AltarSomberFaustPenthouse
+  suffix: PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Furniture/Altars/Cults/somber.rsi
+  - type: ItemCabinet
+    cabinetSlot:
+      startingItem: MantisMeleeGreatswordBreak
+      ejectOnInteract: true # For some reason I have to specify all of this again for it to work
+      ejectOnBreak: true
+      swap: false
+      insertVerbText: faust-insert-verb
+      ejectVerbText: faust-eject-verb
+      insertSuccessPopup: faust-insert-success
+      insertSound:
+        path: /Audio/_DEN/Weapons/Melee/faustsheath.ogg
+        params:
+          volume: -2
+          variation: 0.05
+      ejectSound:
+        path: /Audio/_DEN/Weapons/Melee/faustunsheath.ogg
+        params:
+          volume: -2
+          variation: 0.05
+      whitelist:
+        tags:
+        - MantisGreatsword
+    doorSound:
+      path: /Audio/Items/Handling/cloth_drop.ogg
+      params:
+        variation: 0.025
+    openState: cover-off
+    closedState: cover
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisSmall ]
+  id: CandleSomberMantisSmallImmovable1
+  suffix: "PENTHOUSE, Immovable #1"
+  components:
+  - type: Sprite
+    offset: -1.03125,-0.46875
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisSmall ]
+  id: CandleSomberMantisSmallImmovable2
+  suffix: "PENTHOUSE, Immovable #2"
+  components:
+  - type: Sprite
+    offset: -0.46875,-1.03125
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisSmall ]
+  id: CandleSomberMantisSmallImmovable3
+  suffix: "PENTHOUSE, Immovable #3"
+  components:
+  - type: Sprite
+    offset: 0.4375,-1.03125
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisSmall ]
+  id: CandleSomberMantisSmallImmovable4
+  suffix: "PENTHOUSE, Immovable #4"
+  components:
+  - type: Sprite
+    offset: 1,-0.46875
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisTiny ]
+  id: CandleSomberMantisTinyImmovable1
+  suffix: "PENTHOUSE, Immovable #1"
+  components:
+  - type: Sprite
+    offset: -1.65625,0.09375
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisTiny ]
+  id: CandleSomberMantisTinyImmovable2
+  suffix: "PENTHOUSE, Immovable #2"
+  components:
+  - type: Sprite
+    offset: -1.3125,-1.1875
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisTiny ]
+  id: CandleSomberMantisTinyImmovable3
+  suffix: "PENTHOUSE, Immovable #3"
+  components:
+  - type: Sprite
+    offset: -0.03125,-1.65625
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisTiny ]
+  id: CandleSomberMantisTinyImmovable4
+  suffix: "PENTHOUSE, Immovable #4"
+  components:
+  - type: Sprite
+    offset: 1.28125,-1.1875
+
+- type: entity
+  parent: [ BaseImmovableObject, CandleSomberMantisTiny ]
+  id: CandleSomberMantisTinyImmovable5
+  suffix: "PENTHOUSE, Immovable #5"
+  components:
+  - type: Sprite
+    offset: 1.625,0.09375
+
+- type: entity
+  parent: [ BaseImmovableObject, SomberChairCushionFancyBlue ]
+  id: SomberChairCushionFancyBlueImmovable
+  suffix: PENTHOUSE, Immovable, Blue
+  placement:
+    mode: SnapgridCenter
+
+- type: entity
+  parent: [ BaseImmovableObject, LightSomberEidoliteWellLampAzure ]
+  id: LightSomberEidoliteWellLampAzureImmovable
+  suffix: PENTHOUSE, Immovable
+  components:
+  - type: PointLight
+    energy: 20
+    radius: 1.5
+
+- type: entity
+  parent: [ BaseImmovableObject, MeditationChamberLight, LightSomberEidoliteFloorLampAzure ]
+  id: LightSomberEidoliteFloorLampAzureImmovable
+  suffix: PENTHOUSE, Immovable
+
+- type: entity
+  parent: [ MeditationChamberLight, SomberHangingBrazierPillarShorter ]
+  id: SomberHangingBrazierPillarShorterMeditation
+  suffix: PENTHOUSE, Shorter, Meditation Chamber
+
+- type: entity
+  parent: [ MeditationChamberLight, SomberHangingBrazierPillarShort ]
+  id: SomberHangingBrazierPillarShortMeditation
+  suffix: PENTHOUSE, Short, Meditation Chamber
+
+- type: entity
+  parent: [ MeditationChamberLight, SomberHangingBrazierPillarTall ]
+  id: SomberHangingBrazierPillarTallMeditation
+  suffix: PENTHOUSE, Tall, Meditation Chamber
+
+- type: entity
+  parent: [ MeditationChamberLight, SomberHangingBrazierPillarTaller ]
+  id: SomberHangingBrazierPillarTallerMeditation
+  suffix: PENTHOUSE, Taller, Meditation Chamber
+
+- type: entity
+  id: SomberChairCushionBluePurpleImmovable # All this to make them not pullable... Every component should be nullable
+  name: somber floor cushion
+  description: "A textured cushion filled with mnemolith beads."
+  suffix: PENTHOUSE, Immovable, Blue-Purple
+  placement:
+    mode: WallmountLight
+  components:
+  - type: Sprite
+    offset: "0.0,-0.25"
+    sprite: _DEN/Structures/Furniture/chairs.rsi
+    state: sombercushion-bluepurple
+    snapCardinals: false
+    noRot: true
+    drawdepth: Objects
+  - type: RequireProjectileTarget
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Dynamic
+  - type: Anchorable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        hard: false
+        density: 100
+        mask:
+        - TableMask
+  - type: Rotatable
+    rotateWhileAnchored: true
+  - type: StaticPrice
+    price: 100
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Items/Handling/cloth_drop.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialCloth:
+            min: 3
+            max: 5
+          MnemolithPowder:
+            min: 5
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Strap
+    position: Stand
+    buckleOffset: "0,-0.05"
+    buckleSound:
+      path: /Audio/Items/Handling/cloth_drop.ogg
+      params:
+        volume: -2
+        variation: 0.05
+    unbuckleSound:
+      path: /Audio/Items/Handling/cloth_pickup.ogg
+      params:
+        volume: -2
+        variation: 0.05
+
+- type: entity
+  parent: SomberChairCushionBluePurpleImmovable
+  id: SomberChairCushionPurpleBlueImmovable
+  suffix: PENTHOUSE, Immovable, Purple-Blue
+  components:
+  - type: Sprite
+    state: sombercushion-purpleblue
+
+# Per-Room Item Edits (Offsets, Renames, Etc.)
+
+- type: entity
+  parent: BenchSomberMiddleGreen
+  id: BenchSomberMiddleGreenSauna
+  suffix: Middle, Sauna
+  components:
+  - type: Sprite
+    offset: 0.28125,0
+  - type: Strap
+    buckleOffset: 0.1,-0.05
+
+- type: entity
+  parent: BenchSomberLeftGreen
+  id: BenchSomberLeftGreenSauna1
+  suffix: Left Upper, Sauna
+  components:
+  - type: Sprite
+    offset: 0,0.28125
+  - type: Strap
+    buckleOffset: 0.1,0.1
+
+- type: entity
+  parent: BenchSomberLeftGreen
+  id: BenchSomberLeftGreenSauna2
+  suffix: Left Lower, Sauna
+  components:
+  - type: Sprite
+    offset: 0,-0.28125
+  - type: Strap
+    buckleOffset: -0.075,-0.35
+
+- type: entity
+  parent: BenchSomberLeftGreen
+  id: BenchSomberLeftGreenSauna3
+  suffix: Left Lower-Right, Sauna
+  components:
+  - type: Sprite
+    offset: 0,-0.28125
+  - type: Strap
+    buckleOffset: 0.1,-0.35
+
+- type: entity
+  parent: BenchSomberRightGreen
+  id: BenchSomberRightGreenSauna1
+  suffix: Right Upper, Sauna
+  components:
+  - type: Sprite
+    offset: 0,0.28125
+  - type: Strap
+    buckleOffset: -0.1,0.1
+
+- type: entity
+  parent: BenchSomberRightGreen
+  id: BenchSomberRightGreenSauna2
+  suffix: Right Lower, Sauna
+  components:
+  - type: Sprite
+    offset: 0,-0.28125
+  - type: Strap
+    buckleOffset: -0.1,-0.35
+
+- type: entity
+  parent: BenchSomberCornerGreen
+  id: BenchSomberCornerGreenSauna1
+  suffix: Corner Upper, Sauna
+  components:
+  - type: Sprite
+    offset: 0.28125,0
+  - type: Strap
+    buckleOffset: 0.1,-0.05
+
+- type: entity
+  parent: BenchSomberCornerGreen
+  id: BenchSomberCornerGreenSauna2
+  suffix: Corner Lower, Sauna
+  components:
+  - type: Sprite
+    offset: 0,-0.28125
+  - type: Strap
+    buckleOffset: -0.4,-0.35
+
+- type: entity
+  parent: BaseFoodShakerSomber
+  id: BaseFoodShakerSomberCosmetic
+  name: eidolite cosmetic bottle
+  suffix: PENTHOUSE, Somber, Empty
+  description: "A small bottle for holding fine cosmetics."
+
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, BaseItem ]
+  id: RubberStampMantisCosmetic
+  name: electrum cosmetic tube
+  suffix: PENTHOUSE, Somber
+  description: "A small tube for holding fine cosmetics."
+  components:
+  - type: Item
+    sprite: Nyanotrasen/Objects/Misc/bureaucracy.rsi
+    heldPrefix: stamp-mantis
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Misc/bureaucracy.rsi
+    state: stamp-mantis
+
+- type: entity
+  parent: Cobweb1
+  id: Cobweb1Penthouse
+  name: cobweb
+  suffix: PENTHOUSE, No Spider
+  description: Somebody should remove that.
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/cobweb.rsi
+    state: cobweb1
+    drawdepth: OverMobs
+  - type: Icon
+    sprite: _SHA/Structures/Decoration/cobweb.rsi
+    state: cobweb1
+
+- type: entity
+  parent: Cobweb2
+  id: Cobweb2Penthouse
+  suffix: PENTHOUSE, Variant, No Spider
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/cobweb.rsi
+    state: cobweb2
+  - type: Icon
+    sprite: _SHA/Structures/Decoration/cobweb.rsi
+    state: cobweb2
+
+- type: entity
+  parent: PlushieHeartInsert
+  id: PlushieHeartInsertPenthouse
+  name: old valentine's day gift
+  description: "A cute, relaxing little stress ball that Break gave Alex last year as part of a larger gift. Now it's a keepsake."
+  components:
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: HoloprojectorNSFW
+  id: HoloprojectorNSFWPenthouse
+  name: nsfw holobarrier projector
+  suffix: PENTHOUSE, MAP IN BATHROOMS
+  description: "This isn't real. You're hallucinating."
+
+- type: entity
+  parent: SomberMirror
+  id: SomberMirrorPenthouse
+  suffix: PENTHOUSE
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Sprite
+    drawdepth: OverMobs
+
+# Infrastructure (Elevator, Travel, etc.)
+
+- type: entity
+  parent: [ SignalButtonDirectional, BasePsionic ]
+  id: SignalButtonDirectionalElevatorExit
+  name: elevator buttons (depart)
+  suffix: Elevator Exit
+  description: "They'll be here when it's time to leave."
+  components:
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _SHA/Structures/Wallmounts/switch.rsi
+    layers:
+    - state: buttons
+    - state: buttons-unshaded
+      shader: unshaded
+  - type: WallMount
+    arc: 360
+  - type: SignalSwitch
+    clickSound: /Audio/_SHA/elevatording.ogg
+  - type: Damageable
+    damageContainer: Indestructible
+    damageModifierSet: Indestructible
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 300
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+              params:
+                volume: -8
+
+- type: entity
+  parent: [ SignalTimer, BasePsionic ]
+  id: SignalTimerDirectionalElevatorExit
+  name: elevator electronics
+  suffix: Elevator Exit, 4 Seconds
+  description: "Wires and things."
+  components:
+  - type: SignalTimer
+    delay: 4
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _SHA/Structures/Wallmounts/switch.rsi
+    state: wiresleft
+  - type: Tag
+    tags:
+      - HideContextMenu
+
+- type: entity
+  parent: SignalTimerDirectionalElevatorExit
+  id: SignalTimerDirectionalElevatorExitLights
+  suffix: Elevator Exit, 4 Seconds
+  components:
+  - type: SignalTimer
+    delay: 4
+  - type: Sprite
+    state: wiresright
+
+# Lattices
+
+- type: entity
+  parent: BasePsionic
+  id: LightSomberEidoliteWellLampLatticePenthouse
+  name: eidolite well lamp
+  suffix: Lattice, Center] [PENTHOUSE
+  description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. Something feels different about this one, though. It emits almost no light--and it can't be turned off."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    noRot: false
+    drawdepth: HighFloorObjects
+    sprite: _SHA/Structures/Lighting/LightPosts/lampeidolitewell.rsi
+    layers:
+    - state: crystal-lattice
+    - state: glow-lattice
+      shader: unshaded
+    - state: crystal-lattice
+      shader: unshaded
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.125
+        hard: true
+        density: 100
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: PointLight
+    energy: 20
+    radius: 5
+    softness: 1.22
+    color: "#0a0718"
+  - type: RequireProjectileTarget
+
+- type: entity
+  parent: LightSomberEidoliteWellLampLatticePenthouse
+  id: LightSomberEidoliteWellLampLatticePenthouseBorder
+  suffix: Lattice, Border] [PENTHOUSE
+  placement:
+    mode: SnapgridBorder
+
+- type: entity
+  parent: [ BaseStructure, BasePsionic ]
+  id: SomberLatticeLarge
+  name: lattice
+  suffix: Large] [PENTHOUSE
+  description: "A trimmed mnemolith inlay, meticulously arranged. Something about it feels quietly aware. Perhaps you're imagining things."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
+  - type: Sprite
+    noRot: false
+    drawdepth: FloorTiles
+    sprite: _SHA/Structures/Decoration/somberlattice-96x.rsi
+    layers:
+    - state: large
+    - state: large-stone-unshaded
+      shader: unshaded
+    - state: large-gold-unshaded
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.5,-1.5,1.5,1.5"
+        hard: false
+        density: 1500
+  - type: AmbientSound
+    range: 4
+    volume: -3
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+
+- type: entity
+  parent: SomberLatticeLarge
+  id: SomberLattice
+  suffix: Medium] [PENTHOUSE
+  placement:
+    mode: SnapgridBorder
+  components:
+  - type: Sprite
+    layers:
+    - state: medium
+    - state: medium-stone-unshaded
+      shader: unshaded
+    - state: medium-gold-unshaded
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.0,-1.0,1.0,1.0"
+        hard: false
+        density: 1000
+  - type: AmbientSound
+    range: 3
+    volume: -4
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+
+- type: entity
+  parent: SomberLattice
+  id: SomberLatticeTrimmed
+  suffix: Medium, Trimmed] [PENTHOUSE
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    layers:
+    - state: medium-trimmed
+    - state: medium-stone-unshaded
+      shader: unshaded
+    - state: medium-gold-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: SomberLattice
+  id: SomberLatticeSmall
+  suffix: Small] [PENTHOUSE
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/somberlattice-64x.rsi
+    layers:
+    - state: small
+    - state: small-stone-unshaded
+      shader: unshaded
+    - state: small-gold-unshaded
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        hard: false
+        density: 500
+  - type: AmbientSound
+    range: 2
+    volume: -5
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+
+- type: entity
+  parent: SomberLatticeSmall
+  id: SomberLatticeSmallTrimmed
+  suffix: Small, Trimmed] [PENTHOUSE
+  placement:
+    mode: SnapgridBorder
+  components:
+  - type: Sprite
+    layers:
+    - state: small-trimmed
+    - state: small-stone-unshaded
+      shader: unshaded
+    - state: small-gold-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: SomberLatticeSmall
+  id: SomberLatticeSmallFramedCenter
+  suffix: Small, Framed, Center] [PENTHOUSE
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    layers:
+    - state: small-framed-center
+    - state: small-stone-unshaded
+      shader: unshaded
+    - state: small-framed-gold-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: SomberLatticeSmallTrimmed
+  id: SomberLatticeSmallFramedBorder
+  suffix: Small, Framed, Border] [PENTHOUSE
+  placement:
+    mode: SnapgridBorder
+  components:
+  - type: Sprite
+    layers:
+    - state: small-framed-border
+    - state: small-stone-unshaded
+      shader: unshaded
+    - state: small-framed-gold-unshaded
+      shader: unshaded
+
+# Umbrellas (no shadows, it's nighttime)
+
+- type: entity
+  parent: SomberBeachUmbrellaBluePurple
+  id: SomberBeachUmbrellaBluePurpleNoShadow
+  suffix: Purple-Blue, Umbrella, No Shadow] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/umbrella.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Decoration/umbrella.rsi
+
+- type: entity
+  parent: SomberBeachUmbrellaPurpleBlue
+  id: SomberBeachUmbrellaPurpleBlueNoShadow
+  suffix: Purple-Blue, Umbrella, No Shadow] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Decoration/umbrella.rsi
+  - type: Icon
+    sprite: _SHA/Structures/Decoration/umbrella.rsi

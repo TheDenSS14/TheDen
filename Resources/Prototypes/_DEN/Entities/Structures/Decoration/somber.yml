@@ -1,0 +1,739 @@
+# Round Fountains
+
+- type: entity
+  parent: [ BaseStructure, BasePsionic ]
+  id: FountainSomber
+  name: somber fountain
+  description: "A carved mnemolith basin crowned with electrum spouts, spilling streams of water into drains set into the floor below."
+  suffix: Floor, Basin
+  components:
+  - type: Sprite
+    snapCardinals: false
+    noRot: true
+    drawdepth: Mobs
+    sprite: _DEN/Structures/Decoration/somberfountains-96x.rsi
+    layers:
+    - state: fountain
+    - state: fountainwater
+    - state: fountainwatershine
+      shader: unshaded
+    - state: fountainstreams
+    - state: fountainstreamshine
+      shader: unshaded
+  - type: SolutionContainerManager
+    solutions:
+      fountain:
+        maxVol: 100
+  - type: SolutionRegeneration
+    solution: fountain
+    generated:
+      reagents:
+      - ReagentId: Water
+        Quantity: 100
+  - type: Drink
+    solution: fountain
+  - type: DrawableSolution
+    solution: fountain
+  - type: DrainableSolution
+    solution: fountain
+  - type: ExaminableSolution
+    solution: fountain
+  - type: Prayable
+    sentMessage: prayer-popup-notify-fountainwish-sent
+    notificationPrefix: prayer-chat-notify-fountainwish
+    verb: prayer-verbs-fountainwish
+    verbImage: null
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.875
+        density: 1000
+        layer:
+        - WallLayer
+  - type: AmbientSound
+    volume: -4
+    range: 10
+    sound:
+      path: /Audio/_DEN/Effects/Fluids/waterfall.ogg
+
+- type: entity
+  parent: [ FloorDrainSomber, BasePsionic ] # Fuck it, being built under mnemolith makes them absorb noospheric energy or something
+  id: FountainSomberDrains
+  name: somber fountain drains
+  description: "An artful array of electrum drains set into the floor."
+  suffix: Floor
+  components:
+  - type: Sprite
+    snapCardinals: false
+    noRot: true
+    drawdepth: FloorObjects
+    sprite: _DEN/Structures/Decoration/somberfountains-96x.rsi
+    layers:
+    - state: fountaindrains
+    - state: fountaindrains-fill-1
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+      visible: false
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    fillBaseName: fountaindrains-fill-
+    solutionName: drainBuffer
+
+- type: entity
+  parent: FountainSomber
+  id: FountainSomberRingHalf
+  name: somber fountain
+  description: "A carved mnemolith ring crowned with electrum spouts, spilling streams of water into drains set into the floor below."
+  suffix: Wall
+  components:
+  - type: Sprite
+    snapCardinals: false
+    noRot: false
+    layers:
+    - state: halfringfountain
+    - state: halfringstreams
+    - state: halfringstreamshine
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.75,0.45,0.75,1.5"
+        hard: false
+        density: 1000
+        layer:
+        - WallLayer
+
+- type: entity
+  parent: FountainSomberDrains
+  id: FountainSomberRingHalfDrains
+  name: somber fountain drains
+  description: "An artful array of electrum drains set into the floor."
+  suffix: Wall
+  components:
+  - type: Sprite
+    snapCardinals: false
+    noRot: false
+    layers:
+    - state: halfringfountaindrains
+    - state: halfringfountaindrains-fill-1
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+      visible: false
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    fillBaseName: halfringfountaindrains-fill-
+    solutionName: drainBuffer
+
+- type: entity
+  parent: FountainSomberRingHalf
+  id: FountainSomberRingQuarter
+  name: somber fountain
+  description: "A carved mnemolith ring crowned with electrum spouts, spilling streams of water into drains set into the floor below."
+  suffix: Corner
+  components:
+  - type: Sprite
+    layers:
+    - state: quarterringfountain
+    - state: quarterringstreams
+    - state: quarterringstreamshine
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.55,0.45,1.5,1.5"
+        hard: false
+        density: 1000
+        layer:
+        - WallLayer
+
+- type: entity
+  parent: FountainSomberRingHalfDrains
+  id: FountainSomberRingQuarterDrains
+  name: somber fountain drains
+  description: "An artful array of electrum drains set into the floor."
+  suffix: Corner
+  components:
+  - type: Sprite
+    layers:
+    - state: quarterringfountaindrains
+    - state: quarterringfountaindrains-fill-1
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+      visible: false
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    fillBaseName: quarterringfountaindrains-fill-
+    solutionName: drainBuffer
+
+# Pillars (see SomberMemorial for the monuments)
+
+- type: entity
+  parent: [ Memorial, BasePsionic ]
+  id: SomberPillarTaller
+  name: mnemolith pillar
+  suffix: Taller
+  description: "A mnemolith pillar etched with dense, repeating patterns. The stone seems to bear a weight you cannot see."
+  components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
+  - type: SpriteFade
+  - type: Sprite
+    noRot: true
+    offset: -0.015625,1.15625 # 37.5 pixels up, 0.5 pixels left, to center them on tiles a bit better
+    drawdepth: Mobs # Just don't put them against doors
+    sprite: _DEN/Structures/Decoration/somberpillar.rsi
+    state: pillartaller
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.09375,0.25,0.40625"
+        density: 1000
+        layer:
+        - WallLayer
+
+- type: entity
+  parent: SomberPillarTaller
+  id: SomberPillarTall
+  suffix: Tall
+  components:
+  - type: Sprite
+    state: pillartall
+
+- type: entity
+  parent: SomberPillarTaller
+  id: SomberPillarShort
+  suffix: Short
+  components:
+  - type: Sprite
+    state: pillarshort
+
+- type: entity
+  parent: SomberPillarTaller
+  id: SomberPillarStoneTaller
+  name: raw mnemolith column
+  suffix: Taller
+  description: "A rough hexagonal column of raw mnemolith that appears to have grown straight from the floor. It reacts to nearby thoughts, cutting new patterns into itself around powerful psions."
+  components:
+  - type: Sprite
+    state: stonecolumntaller
+
+- type: entity
+  parent: SomberPillarStoneTaller
+  id: SomberPillarStoneTall
+  suffix: Tall
+  components:
+  - type: Sprite
+    state: stonecolumntall
+
+- type: entity
+  parent: SomberPillarStoneTaller
+  id: SomberPillarStoneShort
+  suffix: Short
+  components:
+  - type: Sprite
+    state: stonecolumnshort
+
+- type: entity
+  parent: SomberPillarStoneTaller
+  id: SomberPillarStoneShorter
+  suffix: Shorter
+  components:
+  - type: Sprite
+    state: stonecolumnshorter
+
+# Pillars with braziers attached
+# Unfortunately placing them separately sometimes causes layering issues... If there's a way to change render order to force braziers on top of pillars, we should do that instead
+
+# Pillars with psionic fire (blue)
+- type: entity
+  parent: [ SomberPillarTaller, SomberHangingBrazier ]
+  id: SomberPillarTallerBrazier
+  suffix: Brazier, Taller, Signal-Friendly
+  description: "A mnemolith pillar etched with dense, repeating patterns. The stone seems to bear a weight you cannot see. An electrum brazier hangs from its side."
+  components:
+  - type: Sprite
+    layers:
+      - state: pillartaller
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: Physics
+    canCollide: true
+
+- type: entity
+  parent: SomberPillarTallerBrazier
+  id: SomberPillarTallBrazier
+  suffix: Brazier, Tall, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: pillartall
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+- type: entity
+  parent: SomberPillarTallerBrazier
+  id: SomberPillarShortBrazier
+  suffix: Brazier, Short, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: pillarshort
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+# Columns with psionic fire (blue)
+- type: entity
+  parent: SomberPillarTallerBrazier
+  id: SomberPillarStoneTallerBrazier
+  name: raw mnemolith column
+  suffix: Brazier, Taller, Signal-Friendly
+  description: "A rough hexagonal column of raw mnemolith that appears to have grown straight from the floor. It reacts to nearby thoughts, cutting new patterns into itself around powerful psions. An electrum brazier hangs from its side."
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumntaller
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartaller.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartaller.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartaller.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+- type: entity
+  parent: SomberPillarStoneTallerBrazier
+  id: SomberPillarStoneTallBrazier
+  suffix: Brazier, Tall, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumntall
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+- type: entity
+  parent: SomberPillarStoneTallerBrazier
+  id: SomberPillarStoneShortBrazier
+  suffix: Brazier, Short, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumnshort
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+- type: entity
+  parent: SomberPillarStoneTallerBrazier
+  id: SomberPillarStoneShorterBrazier
+  suffix: Brazier, Shorter, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumnshorter
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+# Pillars with natural fire (orange)
+- type: entity
+  parent: SomberPillarTallerBrazier
+  id: SomberPillarTallerBrazierWarm
+  suffix: Brazier, Warm Fire, Taller, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: pillartaller
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartall.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartall.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartall.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: PointLight
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberPillarTallBrazier
+  id: SomberPillarTallBrazierWarm
+  suffix: Brazier, Warm Fire, Tall, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: pillartall
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshort.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshort.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshort.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: PointLight
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberPillarShortBrazier
+  id: SomberPillarShortBrazierWarm
+  suffix: Brazier, Warm Fire, Short, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: pillarshort
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshorter.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshorter.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshorter.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: PointLight
+    color: "#FF9833"
+
+# Columns with natural fire (orange)
+- type: entity
+  parent: SomberPillarStoneTallerBrazier
+  id: SomberPillarStoneTallerBrazierWarm
+  suffix: Brazier, Warm Fire, Taller, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumntaller
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartaller.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartaller.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartaller.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: PointLight
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberPillarStoneTallBrazier
+  id: SomberPillarStoneTallBrazierWarm
+  suffix: Brazier, Warm Fire, Tall, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumntall
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartall.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartall.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartall.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: PointLight
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberPillarStoneShortBrazier
+  id: SomberPillarStoneShortBrazierWarm
+  suffix: Brazier, Warm Fire, Short, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumnshort
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshort.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshort.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshort.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: PointLight
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberPillarStoneShorterBrazier
+  id: SomberPillarStoneShorterBrazierWarm
+  suffix: Brazier, Warm Fire, Shorter, Signal-Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: stonecolumnshorter
+        sprite: _DEN/Structures/Decoration/somberpillar.rsi
+      - state: fireplace
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshorter.rsi
+      - state: fireplacefestive
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshorter.rsi
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshorter.rsi
+        shader: unshaded
+        visible: false
+        map: ["light"]
+  - type: PointLight
+    color: "#FF9833"
+
+# Floor plates that look nice under the stone columns
+
+- type: entity
+  parent: [ BaseStructure, BasePsionic ]
+  id: SomberElectrumFocus
+  name: electrum resonator
+  suffix: Somber Floor Decor, Fits Under Columns, Etc.
+  description: "A psionic lattice that resonates softly, shaping the flow of the noosphere above it."
+  components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
+  - type: Sprite
+    noRot: true
+    drawdepth: FloorObjects
+    sprite: _DEN/Structures/Furniture/chairs.rsi # No need to duplicate a sprite just because it's not being a chair here
+    layers:
+    - state: sombercushion-underlay
+    - state: sombercushion-underlay-unshaded
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.375,-0.25,0.375,0.25"
+        hard: false
+        density: 100
+        mask:
+        - MachineMask
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialMnemolith1:
+            min: 2
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+
+# Floating armillary spheres
+
+- type: entity
+  parent: [ BaseStructure, BasePsionic ]
+  id: SomberArmillary
+  name: armillary
+  suffix: Somber, Electrum
+  description: "An intricate electrum armillary suspended in the air, spinning far too quickly to reflect any real celestial motion. Whatever it measures must belong to the noosphere rather than the sky."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Overdoors
+    sprite: _DEN/Structures/Decoration/somberarmillary.rsi
+    layers:
+    - state: shadow # There's also shadow-hard if people don't like the blurred pixels
+    - state: gold
+      offset: 0.0,1.5 # 48 pixels up so people can visually walk under them
+    - state: gold-unshaded
+      offset: 0.0,1.5
+      shader: unshaded
+  - type: Transform
+    anchored: false # So it can use other snapping modes
+  - type: SpriteFade
+  - type: RequireProjectileTarget # Bullets should generally go under or through it
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 200
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/metal_slam2.ogg
+          params:
+            volume: -4
+            variation: 0.15
+  - type: AmbientSound
+    range: 5
+    volume: -4
+    sound:
+      path: /Audio/_DEN/Ambience/Objects/armillary.ogg
+
+- type: entity
+  parent: SomberArmillary
+  id: SomberArmillarySilver
+  name: armillary
+  suffix: Somber, Mu-Metal
+  description: "An intricate mu-metal armillary suspended in the air, spinning far too quickly to reflect any real celestial motion. Whatever it measures must belong to the noosphere rather than the sky."
+  components:
+  - type: Sprite
+    layers:
+    - state: shadow
+    - state: silver
+      offset: 0.0,1.5
+    - state: silver-unshaded
+      offset: 0.0,1.5
+      shader: unshaded
+
+- type: entity
+  parent: SomberArmillary
+  id: SomberArmillarySteel
+  name: armillary
+  suffix: Somber, Steel
+  description: "An intricate steel armillary suspended in the air, spinning far too quickly to reflect any real celestial motion. Whatever it measures must belong to the noosphere rather than the sky."
+  components:
+  - type: Sprite
+    layers:
+    - state: shadow
+    - state: steel
+      offset: 0.0,1.5
+    - state: steel-unshaded
+      offset: 0.0,1.5
+      shader: unshaded
+
+- type: entity
+  parent: SomberArmillary
+  id: SomberArmillaryStone
+  name: armillary
+  suffix: Somber, Mnemolith
+  description: "An intricate mnemolith armillary suspended in the air, spinning far too quickly to reflect any real celestial motion. Whatever it measures must belong to the noosphere rather than the sky."
+  components:
+  - type: Sprite
+    layers:
+    - state: shadow
+    - state: stone
+      offset: 0.0,1.5
+    - state: stone-unshaded
+      offset: 0.0,1.5
+      shader: unshaded

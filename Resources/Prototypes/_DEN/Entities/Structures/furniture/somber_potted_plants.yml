@@ -1,0 +1,635 @@
+# Unpotted plants in gloomy colors
+
+- type: entity
+  parent: MarkerBase
+  id: PottedPlantRandomSomber
+  name: random somber unpotted plant spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _DEN/Structures/Furniture/somber_potted_plants.rsi
+        state: plant-26
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+      - PottedPlantSomber0
+      - PottedPlantSomber1
+      - PottedPlantSomber2
+      - PottedPlantSomber3
+      - PottedPlantSomber4
+      - PottedPlantSomber5
+      - PottedPlantSomber6
+      - PottedPlantSomber7
+      - PottedPlantSomber8
+      - PottedPlantSomber10
+      - PottedPlantSomber12
+      - PottedPlantSomber13
+      - PottedPlantSomber14
+      - PottedPlantSomber16
+      - PottedPlantSomber18
+      - PottedPlantSomber19
+      - PottedPlantSomber21
+      - PottedPlantSomber22
+      - PottedPlantSomber24
+      - PottedPlantSomber26
+      - PottedPlantSomber29
+      - PottedPlantSomber31
+      - PottedPlantSomber0Flipped
+      - PottedPlantSomber1Flipped
+      - PottedPlantSomber2Flipped
+      - PottedPlantSomber3Flipped
+      - PottedPlantSomber4Flipped
+      - PottedPlantSomber5Flipped
+      - PottedPlantSomber6Flipped
+      - PottedPlantSomber7Flipped
+      - PottedPlantSomber8Flipped
+      - PottedPlantSomber10Flipped
+      - PottedPlantSomber12Flipped
+      - PottedPlantSomber13Flipped
+      - PottedPlantSomber14Flipped
+      - PottedPlantSomber16Flipped
+      - PottedPlantSomber18Flipped
+      - PottedPlantSomber19Flipped
+      - PottedPlantSomber21Flipped
+      - PottedPlantSomber22Flipped
+      - PottedPlantSomber24Flipped
+      - PottedPlantSomber26Flipped
+      - PottedPlantSomber29Flipped
+      - PottedPlantSomber31Flipped
+    chance: 1
+
+- type: entity
+  parent: MarkerBase
+  id: PottedPlantRandomSomberPot
+  name: random somber potted plant spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _DEN/Structures/Furniture/somber_potted_plants.rsi
+        state: potted-plant-26
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+      - PottedPlantSomber1Pot
+      - PottedPlantSomber7Pot
+      - PottedPlantSomber18Pot
+      - PottedPlantSomber21Pot
+      - PottedPlantSomber24Pot
+      - PottedPlantSomber26Pot
+      - PottedPlantSomber29Pot
+      - PottedPlantSomber1PotFlipped
+      - PottedPlantSomber7PotFlipped
+      - PottedPlantSomber18PotFlipped
+      - PottedPlantSomber21PotFlipped
+      - PottedPlantSomber24PotFlipped
+      - PottedPlantSomber26PotFlipped
+      - PottedPlantSomber29PotFlipped
+    chance: 1
+
+- type: entity
+  parent: [ PottedPlantBase, BasePsionic ] # Anomaly products are technically psionic
+  id: PottedPlantSomberBase
+  name: somber ornamental plant
+  description: "As it turns out, there's a market for plants altered by floral anomalies. It persists even without its pot."
+  abstract: true
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    offset: 0.0,0.25
+    sprite: _DEN/Structures/Furniture/somber_potted_plants.rsi
+
+- type: entity
+  id: PottedPlantSomber0 # Made from applebush, now properly named
+  suffix: 00] [Use With Planter Decals
+  parent: PottedPlantSomberBase
+  components:
+  - type: Sprite
+    state: plant-00
+
+- type: entity
+  id: PottedPlantSomber1
+  parent: PottedPlantSomberBase
+  suffix: 01
+  components:
+  - type: Sprite
+    state: plant-01
+
+- type: entity
+  id: PottedPlantSomber2
+  parent: PottedPlantSomberBase
+  suffix: 02
+  components:
+  - type: Sprite
+    state: plant-02
+
+- type: entity
+  id: PottedPlantSomber3 # The left half of plant-03
+  parent: PottedPlantSomberBase
+  suffix: 03
+  components:
+  - type: Sprite
+    state: plant-03
+
+- type: entity
+  id: PottedPlantSomber4
+  parent: PottedPlantSomberBase
+  suffix: 04
+  components:
+  - type: Sprite
+    state: plant-04
+
+- type: entity
+  id: PottedPlantSomber5
+  parent: PottedPlantSomberBase
+  suffix: 05
+  components:
+  - type: Sprite
+    state: plant-05
+
+- type: entity
+  id: PottedPlantSomber6
+  parent: PottedPlantSomberBase
+  suffix: 06
+  components:
+  - type: Sprite
+    state: plant-06
+
+- type: entity
+  id: PottedPlantSomber7
+  parent: PottedPlantSomberBase
+  suffix: 07
+  components:
+  - type: Sprite
+    state: plant-07
+
+- type: entity
+  id: PottedPlantSomber8
+  parent: PottedPlantSomberBase
+  suffix: 08
+  components:
+  - type: Sprite
+    state: plant-08
+
+- type: entity
+  id: PottedPlantSomberBioluminescent
+  parent: PottedPlantSomberBase
+  suffix: 09] [Emits Light
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    state: plant-09
+  - type: PointLight
+    radius: 2
+    color: "#4dc4ff" # Slight adjustment to the color of psionic fire
+
+- type: entity
+  id: PottedPlantSomber10
+  parent: PottedPlantSomberBase
+  suffix: 10
+  components:
+  - type: Sprite
+    state: plant-10
+
+- type: entity
+  id: PottedPlantSomber12
+  parent: PottedPlantSomberBase
+  suffix: 12
+  components:
+  - type: Sprite
+    state: plant-12
+
+- type: entity
+  id: PottedPlantSomber13
+  parent: PottedPlantSomberBase
+  suffix: 13
+  components:
+  - type: Sprite
+    state: plant-13
+
+- type: entity
+  id: PottedPlantSomber14
+  parent: PottedPlantSomberBase
+  suffix: 14
+  components:
+  - type: Sprite
+    state: plant-14
+
+- type: entity
+  id: PottedPlantSomber16
+  parent: PottedPlantSomberBase
+  suffix: 16
+  components:
+  - type: Sprite
+    state: plant-16
+
+- type: entity
+  id: PottedPlantSomber18
+  parent: PottedPlantSomberBase
+  suffix: 18
+  components:
+  - type: Sprite
+    state: plant-18
+
+- type: entity
+  id: PottedPlantSomber19
+  parent: PottedPlantSomberBase
+  suffix: 19
+  components:
+  - type: Sprite
+    state: plant-19
+
+- type: entity
+  id: PottedPlantSomber21
+  parent: PottedPlantSomberBase
+  suffix: 21
+  components:
+  - type: Sprite
+    state: plant-21
+
+- type: entity
+  id: PottedPlantSomber22
+  parent: PottedPlantSomberBase
+  suffix: 22
+  components:
+  - type: Sprite
+    state: plant-22
+
+- type: entity
+  id: PottedPlantSomber24
+  parent: PottedPlantSomberBase
+  suffix: 24
+  components:
+  - type: Sprite
+    state: plant-24
+
+- type: entity
+  id: PottedPlantSomber26
+  parent: PottedPlantSomberBase
+  suffix: 26
+  components:
+  - type: Sprite
+    state: plant-26
+
+- type: entity
+  id: PottedPlantSomber29
+  parent: PottedPlantSomberBase
+  suffix: 29
+  components:
+  - type: Sprite
+    state: plant-29
+    offset: 0,0
+
+- type: entity
+  id: PottedPlantSomber31 # The right half of plant-03
+  parent: PottedPlantSomberBase
+  suffix: 31
+  components:
+  - type: Sprite
+    state: plant-31
+
+# Horizontally flipped versions for some variety
+
+- type: entity
+  id: PottedPlantSomber0Flipped
+  parent: PottedPlantSomber0
+  suffix: 00, Flipped
+  components:
+  - type: Sprite
+    state: plant-00-flipped
+
+- type: entity
+  id: PottedPlantSomber1Flipped
+  parent: PottedPlantSomber1
+  suffix: 01, Flipped
+  components:
+  - type: Sprite
+    state: plant-01-flipped
+
+- type: entity
+  id: PottedPlantSomber2Flipped
+  parent: PottedPlantSomber2
+  suffix: 02, Flipped
+  components:
+  - type: Sprite
+    state: plant-02-flipped
+
+- type: entity
+  id: PottedPlantSomber3Flipped
+  parent: PottedPlantSomber3
+  suffix: 03, Flipped
+  components:
+  - type: Sprite
+    state: plant-03-flipped
+
+- type: entity
+  id: PottedPlantSomber4Flipped
+  parent: PottedPlantSomber4
+  suffix: 04, Flipped
+  components:
+  - type: Sprite
+    state: plant-04-flipped
+
+- type: entity
+  id: PottedPlantSomber5Flipped
+  parent: PottedPlantSomber5
+  suffix: 05, Flipped
+  components:
+  - type: Sprite
+    state: plant-05-flipped
+
+- type: entity
+  id: PottedPlantSomber6Flipped
+  parent: PottedPlantSomber6
+  suffix: 06, Flipped
+  components:
+  - type: Sprite
+    state: plant-06-flipped
+
+- type: entity
+  id: PottedPlantSomber7Flipped
+  parent: PottedPlantSomber7
+  suffix: 07, Flipped
+  components:
+  - type: Sprite
+    state: plant-07-flipped
+
+- type: entity
+  id: PottedPlantSomber8Flipped
+  parent: PottedPlantSomber8
+  suffix: 08, Flipped
+  components:
+  - type: Sprite
+    state: plant-08-flipped
+
+- type: entity
+  id: PottedPlantSomberBioluminescentFlipped
+  parent: PottedPlantSomberBioluminescent
+  suffix: 09, Flipped] [Emits Light
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    state: plant-09-flipped
+
+- type: entity
+  id: PottedPlantSomber10Flipped
+  parent: PottedPlantSomber10
+  suffix: 10, Flipped
+  components:
+  - type: Sprite
+    state: plant-10-flipped
+
+- type: entity
+  id: PottedPlantSomber12Flipped
+  parent: PottedPlantSomber12
+  suffix: 12, Flipped
+  components:
+  - type: Sprite
+    state: plant-12-flipped
+
+- type: entity
+  id: PottedPlantSomber13Flipped
+  parent: PottedPlantSomber13
+  suffix: 13, Flipped
+  components:
+  - type: Sprite
+    state: plant-13-flipped
+
+- type: entity
+  id: PottedPlantSomber14Flipped
+  parent: PottedPlantSomber14
+  suffix: 14, Flipped
+  components:
+  - type: Sprite
+    state: plant-14-flipped
+
+- type: entity
+  id: PottedPlantSomber16Flipped
+  parent: PottedPlantSomber16
+  suffix: 16, Flipped
+  components:
+  - type: Sprite
+    state: plant-16-flipped
+
+- type: entity
+  id: PottedPlantSomber18Flipped
+  parent: PottedPlantSomber18
+  suffix: 18, Flipped
+  components:
+  - type: Sprite
+    state: plant-18-flipped
+
+- type: entity
+  id: PottedPlantSomber19Flipped
+  parent: PottedPlantSomber19
+  suffix: 19, Flipped
+  components:
+  - type: Sprite
+    state: plant-19-flipped
+
+- type: entity
+  id: PottedPlantSomber21Flipped
+  parent: PottedPlantSomber21
+  suffix: 21, Flipped
+  components:
+  - type: Sprite
+    state: plant-21-flipped
+
+- type: entity
+  id: PottedPlantSomber22Flipped
+  parent: PottedPlantSomber22
+  suffix: 22, Flipped
+  components:
+  - type: Sprite
+    state: plant-22-flipped
+
+- type: entity
+  id: PottedPlantSomber24Flipped
+  parent: PottedPlantSomber24
+  suffix: 24, Flipped
+  components:
+  - type: Sprite
+    state: plant-24-flipped
+
+- type: entity
+  id: PottedPlantSomber26Flipped
+  parent: PottedPlantSomber26
+  suffix: 26, Flipped
+  components:
+  - type: Sprite
+    state: plant-26-flipped
+
+- type: entity
+  id: PottedPlantSomber29Flipped
+  parent: PottedPlantSomber29
+  suffix: 29, Flipped
+  components:
+  - type: Sprite
+    state: plant-29-flipped
+    offset: 0,0
+
+- type: entity
+  id: PottedPlantSomber31Flipped
+  parent: PottedPlantSomber31
+  suffix: 31, Flipped
+  components:
+  - type: Sprite
+    state: plant-31-flipped
+
+# Re-potted versions, made as needed
+
+- type: entity
+  parent: PottedPlantSomberBase
+  id: PottedPlantSomberBasePot
+  name: somber ornamental plant
+  description: "As it turns out, there's a market for plants altered by floral anomalies. It persists even without its pot, though this one is clearly being cared for."
+  abstract: true
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Sprite
+    offset: 0.0,0.25
+    sprite: _DEN/Structures/Furniture/somber_potted_plants.rsi
+
+- type: entity
+  id: PottedPlantSomber1Pot
+  parent: PottedPlantSomberBasePot
+  suffix: Potted, 01
+  components:
+  - type: Sprite
+    state: potted-plant-01
+
+- type: entity
+  id: PottedPlantSomber7Pot
+  parent: PottedPlantSomberBasePot
+  suffix: Potted, 07
+  components:
+  - type: Sprite
+    state: potted-plant-07
+
+- type: entity
+  id: PottedPlantSomberBioluminescentPot
+  parent: PottedPlantSomberBasePot
+  suffix: Potted, 09] [Emits Light
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    state: potted-plant-09
+  - type: PointLight
+    radius: 2
+    color: "#4dc4ff"
+
+- type: entity
+  id: PottedPlantSomber18Pot
+  parent: PottedPlantSomberBasePot
+  suffix: Potted, 18
+  components:
+  - type: Sprite
+    state: potted-plant-18
+
+- type: entity
+  id: PottedPlantSomber21Pot
+  parent: PottedPlantSomberBasePot
+  suffix: Potted, 21
+  components:
+  - type: Sprite
+    state: potted-plant-21
+
+- type: entity
+  id: PottedPlantSomber24Pot
+  parent: PottedPlantSomberBasePot
+  suffix: Potted, 24
+  components:
+  - type: Sprite
+    state: potted-plant-24
+
+- type: entity
+  id: PottedPlantSomber26Pot
+  parent: PottedPlantSomberBasePot
+  suffix: Potted, 26
+  components:
+  - type: Sprite
+    state: potted-plant-26
+
+- type: entity
+  id: PottedPlantSomber29Pot
+  parent: PottedPlantSomberBasePot
+  suffix: Potted, 29
+  components:
+  - type: Sprite
+    state: potted-plant-29
+
+# Horizontally flipped potted versions (the pot itself isn't flipped)
+
+- type: entity
+  id: PottedPlantSomber1PotFlipped
+  parent: PottedPlantSomber1Pot
+  suffix: Potted, 01, Flipped
+  components:
+  - type: Sprite
+    state: potted-plant-01-flipped
+
+- type: entity
+  id: PottedPlantSomber7PotFlipped
+  parent: PottedPlantSomber7Pot
+  suffix: Potted, 07, Flipped
+  components:
+  - type: Sprite
+    state: potted-plant-07-flipped
+
+- type: entity
+  id: PottedPlantSomberBioluminescentPotFlipped
+  parent: PottedPlantSomberBioluminescentPot
+  suffix: Potted, 09, Flipped] [Emits Light
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    state: potted-plant-09-flipped
+
+- type: entity
+  id: PottedPlantSomber18PotFlipped
+  parent: PottedPlantSomber18Pot
+  suffix: Potted, 18, Flipped
+  components:
+  - type: Sprite
+    state: potted-plant-18-flipped
+
+- type: entity
+  id: PottedPlantSomber21PotFlipped
+  parent: PottedPlantSomber21Pot
+  suffix: Potted, 21, Flipped
+  components:
+  - type: Sprite
+    state: potted-plant-21-flipped
+
+- type: entity
+  id: PottedPlantSomber24PotFlipped
+  parent: PottedPlantSomber24Pot
+  suffix: Potted, 24, Flipped
+  components:
+  - type: Sprite
+    state: potted-plant-24-flipped
+
+- type: entity
+  id: PottedPlantSomber26PotFlipped
+  parent: PottedPlantSomber26Pot
+  suffix: Potted, 26, Flipped
+  components:
+  - type: Sprite
+    state: potted-plant-26-flipped
+
+- type: entity
+  id: PottedPlantSomber29PotFlipped
+  parent: PottedPlantSomber29Pot
+  suffix: Potted, 29, Flipped
+  components:
+  - type: Sprite
+    state: potted-plant-29-flipped

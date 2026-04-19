@@ -1,0 +1,726 @@
+# Standard
+
+- type: entity
+  parent: [ WallReinforced, BasePsionic ]
+  id: WallSomber
+  name: somber wall
+  description: "Layered with dark, rough mnemolith slabs in a tight grid to prevent psionic scrying."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somber.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somber.rsi
+
+- type: entity
+  parent: [ WallReinforcedDiagonal, BasePsionic ]
+  id: WallSomberDiagonal
+  name: somber wall
+  suffix: Diagonal
+  description: "Layered with dark, rough mnemolith slabs in a tight grid to prevent psionic scrying."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somber_diagonal.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somber_diagonal.rsi
+
+- type: entity
+  parent: WallSomberDiagonal
+  id: WallSomberDiagonalEnd
+  suffix: Diagonal End
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somber_diagonal_end.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somber_diagonal_end.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PolygonShape
+            vertices:
+            - "-0.5,-0.5"
+            - "0.0,0.0"
+            - "0.5,-0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 2000
+
+- type: entity
+  parent: [ WallSolid, BasePsionic ] # Weaker, better for real maps, but I can't make weak versions of all this or I'll die (if you wanna help be my guest)
+  id: WallSomberSolid
+  name: somber wall
+  suffix: Solid
+  description: "Made of gloomy, patterned steel. It hums faintly, just below hearing."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somber.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somber.rsi
+
+# Dark
+
+- type: entity
+  parent: WallSomber
+  id: WallSomberDark
+  suffix: Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberdark.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberdark.rsi
+
+- type: entity
+  parent: WallSomberDiagonal
+  id: WallSomberDarkDiagonal
+  suffix: Dark, Diagonal
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberdark_diagonal.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberdark_diagonal.rsi
+
+- type: entity
+  parent: WallSomberDiagonalEnd
+  id: WallSomberDarkDiagonalEnd
+  suffix: Dark, Diagonal End
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberdark_diagonal_end.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberdark_diagonal_end.rsi
+
+- type: entity
+  parent: WallSomberSolid # Weaker, better for real maps, but I can't make weak versions of all this or I'll die (if you wanna help be my guest)
+  id: WallSomberSolidDark
+  name: somber wall
+  suffix: Dark, Solid
+  description: "Made of gloomy, patterned steel. It hums faintly, just below hearing."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberdark.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberdark.rsi
+
+# Opaque Directional
+
+- type: entity
+  parent: WallSolidDirectional
+  id: WallSomberDirectional
+  name: somber wall
+  suffix: Directional
+  description: "Made of gloomy, patterned steel. It hums faintly, just below hearing."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somber_directional.rsi
+    state: somber
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somber_directional.rsi
+    state: somber
+
+- type: entity
+  parent: WallSomberDirectional
+  id: WallSomberDarkDirectional
+  suffix: Directional, Dark
+  components:
+  - type: Sprite
+    state: somberdark
+  - type: Icon
+    state: somberdark
+
+- type: entity
+  parent: WallSolidDirectionalCorner
+  id: WallSomberDirectionalCorner
+  name: somber wall
+  suffix: Directional Corner
+  description: "Made of gloomy, patterned steel. It hums faintly, just below hearing."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somber_directional.rsi
+    state: sombercorner
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somber_directional.rsi
+    state: sombercorner
+
+- type: entity
+  parent: WallSomberDirectionalCorner
+  id: WallSomberDarkDirectionalCorner
+  suffix: Directional Corner, Dark
+  components:
+  - type: Sprite
+    state: somberdarkcorner
+  - type: Icon
+    state: somberdarkcorner
+
+# See-Through Directional
+
+- type: entity
+  parent: WallSomberDirectional
+  id: WallSomberDirectionalSeeThrough
+  suffix: Directional, SEE-THROUGH
+  components:
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: WallSomberDarkDirectional
+  id: WallSomberDarkDirectionalSeeThrough
+  suffix: Directional, Dark, SEE-THROUGH
+  components:
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: WallSomberDirectionalCorner
+  id: WallSomberDirectionalCornerSeeThrough
+  suffix: Directional Corner, SEE-THROUGH
+  components:
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: WallSomberDarkDirectionalCorner
+  id: WallSomberDarkDirectionalCornerSeeThrough
+  suffix: Directional Corner, Dark, SEE-THROUGH
+  components:
+  - type: Occluder
+    enabled: false
+
+# Grilles
+
+- type: entity
+  parent: [ Grille, BasePsionic ]
+  id: GrilleSomber
+  name: somber grille
+  description: "A lattice of patterned steel rods. They seem to shift slightly when you look away."
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Walls/Somber/sombergrille.rsi
+    - type: Icon
+      sprite: _DEN/Structures/Walls/Somber/sombergrille.rsi
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 100
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+
+- type: entity
+  parent: [ GrilleBroken, BasePsionic ]
+  id: GrilleSomberBroken
+  name: somber grille
+  description: "A lattice of patterned steel rods. They seem to shift slightly when you look away. Broken, now."
+  suffix: Broken
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Walls/Somber/sombergrille.rsi
+    - type: Icon
+      sprite: _DEN/Structures/Walls/Somber/sombergrille.rsi
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 10
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+
+- type: entity
+  parent: [ GrilleDiagonal, BasePsionic ]
+  id: GrilleSomberDiagonal
+  name: somber grille
+  description: "A lattice of patterned steel rods. They seem to shift slightly when you look away."
+  suffix: Diagonal
+  components:
+    - type: MeleeSound
+      soundGroups:
+        Brute:
+          path:
+            "/Audio/Weapons/grille_hit.ogg"
+    - type: Sprite
+      sprite: _DEN/Structures/Walls/Somber/sombergrille.rsi
+    - type: Icon
+      sprite: _DEN/Structures/Walls/Somber/sombergrille.rsi
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 100
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+
+# Railings
+
+- type: entity
+  parent: [ Railing, BasePsionic ]
+  id: RailingSomber
+  name: somber railing
+  description: "A sturdy, patterned rail. The lines seem to ripple in the presence of psions. Why can't things just be normal."
+  suffix: Straight
+  components:
+  - type: Sprite
+    drawdepth: Walls # So they won't display over diagonal walls...
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: side
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: side
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PartRodMetal1:
+            min: 0
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: [ RailingCorner, BasePsionic ]
+  id: RailingSomberCorner
+  name: somber railing
+  description: "A sturdy, patterned rail. The lines seem to ripple in the presence of psions. Why can't things just be normal."
+  suffix: Corner
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PartRodMetal1:
+            min: 0
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: [ RailingCornerSmall, BasePsionic ]
+  id: RailingSomberCornerSmall
+  name: somber railing
+  description: "A sturdy, patterned rail. The lines seem to ripple in the presence of psions. Why can't things just be normal."
+  suffix: Small Corner
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_small
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_small
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PartRodMetal1:
+            min: 0
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: [ RailingRound, BasePsionic ]
+  id: RailingSomberRound
+  name: somber railing
+  description: "A sturdy, patterned rail. The lines seem to ripple in the presence of psions. Why can't things just be normal."
+  suffix: Round
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: round
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: round
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PartRodMetal1:
+            min: 0
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: RailingSomber
+  id: RailingSomberDark
+  suffix: Straight, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: side_dark
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: side_dark
+
+- type: entity
+  parent: RailingSomberCorner
+  id: RailingSomberCornerDark
+  suffix: Corner, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_dark
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_dark
+
+- type: entity
+  parent: RailingSomberCornerSmall
+  id: RailingSomberCornerSmallDark
+  suffix: Small Corner, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_small_dark
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_small_dark
+
+- type: entity
+  parent: RailingSomberRound
+  id: RailingSomberRoundDark
+  suffix: Round, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: round_dark
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: round_dark
+
+- type: entity
+  parent: RailingSomber
+  id: RailingSomberElectrum
+  suffix: Straight, Electrum
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: side_electrum
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: side_electrum
+
+- type: entity
+  parent: RailingSomberCorner
+  id: RailingSomberCornerElectrum
+  suffix: Corner, Electrum
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_electrum
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_electrum
+
+- type: entity
+  parent: RailingSomberCornerSmall
+  id: RailingSomberCornerSmallElectrum
+  suffix: Small Corner, Electrum
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_small_electrum
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: corner_small_electrum
+
+- type: entity
+  parent: RailingSomberRound
+  id: RailingSomberRoundElectrum
+  suffix: Round, Electrum
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: round_electrum
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: round_electrum
+
+# I invented a way for rails to swap sides mid-rail
+- type: entity
+  parent: RailingSomber
+  id: RailingSomberTransitionLeft
+  suffix: Transition, Left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: transition_left
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: transition_left
+
+- type: entity
+  parent: RailingSomber
+  id: RailingSomberTransitionRight
+  suffix: Transition, Right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: transition_right
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: transition_right
+
+- type: entity
+  parent: RailingSomber
+  id: RailingSomberTransitionLeftDark
+  suffix: Transition, Left, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: transition_left_dark
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: transition_left_dark
+
+- type: entity
+  parent: RailingSomber
+  id: RailingSomberTransitionRightDark
+  suffix: Transition, Right, Dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: transition_right_dark
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: transition_right_dark
+
+- type: entity
+  parent: RailingSomber
+  id: RailingSomberTransitionLeftElectrum
+  suffix: Transition, Left, Electrum
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: transition_left_electrum
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: transition_left_electrum
+
+- type: entity
+  parent: RailingSomber
+  id: RailingSomberTransitionRightElectrum
+  suffix: Transition, Right, Electrum
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: transition_right_electrum
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/somberrailing.rsi
+    state: transition_right_electrum
+
+# Somber TV Kit
+# To make theaters using ComputerSomberTelevision and RemoteSignallerSomberTV
+# Only comes in the dark color (theaters should be dark anyway, it's fine)
+
+- type: entity
+  parent: WallSomberDark
+  id: SomberTVSpeakerWallLeft
+  name: somber sound system
+  description: "A sleek surround sound speaker in brushed metal, set into the wall. This system could probably blow the windows out. Occasionally emits low murmuring."
+  suffix: Speaker Wall, Left] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: left
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: left
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+
+- type: entity
+  parent: SomberTVSpeakerWallLeft
+  id: SomberTVSpeakerWallRight
+  suffix: Speaker Wall, Right] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: right
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: right
+
+- type: entity
+  parent: SomberTVSpeakerWallLeft
+  id: SomberTVSpeakerWallMiddle
+  suffix: Speaker Wall, Middle] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: middle
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: middle
+
+- type: entity
+  parent: SomberTVSpeakerWallLeft
+  id: SomberTVSpeakerWall
+  name: somber wall
+  description: "Layered with dark, rough mnemolith slabs in a tight grid to prevent psionic scrying."
+  suffix: TV Backing Wall] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: tvback
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvwalls.rsi
+    state: tvback
+
+- type: entity
+  parent: WallSomberDirectionalSeeThrough
+  id: SomberTVSpeakerBig
+  name: somber sound system
+  description: "A sleek surround sound speaker in brushed metal, set into the wall. This system could probably blow the windows out. Occasionally emits low murmuring."
+  suffix: Speaker Window/Wall Attachment, Big] [Somber TV Kit
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    drawdepth: FloorObjects
+    state: wallspeakerbig
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    state: wallspeakerbig
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.36"
+        hard: false
+        density: 1500
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: MetalThud
+
+- type: entity
+  parent: SomberTVSpeakerBig
+  id: SomberTVSpeakerSmall
+  name: somber sound system
+  suffix: Speaker Window/Wall Attachment, Small] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    state: wallspeakersmall
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    state: wallspeakersmall
+
+- type: entity
+  parent: SomberTVSpeakerBig
+  id: SomberTVSpeakerSteel
+  name: somber sound system
+  suffix: Speaker, Matches Walls] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    state: wallspeakersteel
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    state: wallspeakersteel
+
+- type: entity
+  parent: SomberTVSpeakerBig
+  id: SomberTVSpeakerMnemolith
+  name: somber sound system
+  suffix: Speaker, Matches Diagonal Walls] [Somber TV Kit
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    state: wallspeakermnemolith
+  - type: Icon
+    sprite: _DEN/Structures/Walls/Somber/sombertvspeakers.rsi
+    state: wallspeakermnemolith
