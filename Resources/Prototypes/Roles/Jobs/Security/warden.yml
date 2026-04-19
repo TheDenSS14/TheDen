@@ -62,10 +62,10 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobDetective
-      min: 10800 # The Den - 3 hours
+      min: 28800 # The Den - 8 hours
     - !type:CharacterDepartmentTimeRequirement
       department: Security
-      min: 72000 # The Den - 20 hours
+      min: 108000 # The Den - 30 hours (higher than other command due to the impact this can have on others shifts)
     - !type:CharacterOverallTimeRequirement
       min: 180000 # The Den - 50 hours
   startingGear: WardenGear
