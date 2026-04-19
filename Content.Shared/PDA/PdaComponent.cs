@@ -67,7 +67,7 @@ namespace Content.Shared.PDA
         public ItemSlot PaiSlot = new();
         [DataField("passportSlot")]     // The Den
         public ItemSlot PassportSlot = new();
-        [DataField("projectSlot")]     // The Den
+        [DataField("projectorSlot")]     // The Den
         public ItemSlot ProjectorSlot = new();
 
         // Really this should just be using ItemSlot.StartingItem. However, seeing as we have so many different starting
