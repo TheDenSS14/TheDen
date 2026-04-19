@@ -57,13 +57,13 @@
   #    time: 21600 #6 hrs
     - !type:CharacterPlaytimeRequirement
       tracker: JobSalvageSpecialist
-      min: 10800 #3 hrs
+      min: 32400 #9 hrs
     - !type:CharacterPlaytimeRequirement # DeltaV - Courier role time requirement
       tracker: JobMailCarrier
-      min: 7200 # 2 hours
+      min: 21600 # 6 hours
     - !type:CharacterDepartmentTimeRequirement
       department: Logistics # DeltaV - Logistics Department replacing Cargo
-      min: 43200 #DeltaV 12 hours
+      min: 72000 #Den, 20 hours
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
