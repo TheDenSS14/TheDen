@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2026 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -648,3 +649,54 @@
   itemDrop: FloorTileItemSomberWoodParquet
   heatCapacity: 10000
 # Somber tileset end
+
+- type: tile
+  id: FloorTilePool
+  name: pool tile
+  sprite: /Textures/_DEN/Tiles/pool.rsi/pool.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: FloorTileItemPool
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorTilePoolDark
+  name: dark pool tile
+  sprite: /Textures/_DEN/Tiles/pool.rsi/pool-dark.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: FloorTileItemPoolDark
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorEightiesLowContrast
+  name: tiles-eighties-floor
+  sprite: /Textures/_DEN/Tiles/eighties.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepCarpet
+  barestepSounds:
+    collection: BarestepCarpet
+  friction: 0.25
+  itemDrop: FloorTileItemEightiesLowContrast
+  heatCapacity: 10000

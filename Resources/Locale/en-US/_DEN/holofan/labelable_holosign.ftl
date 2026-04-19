@@ -8,3 +8,6 @@ labelable-holoprojector-no-charges = {CAPITALIZE(THE($item))} is empty, reclaim 
 labelable-holoprojector-consent-not-available = Additional information is hidden by your consent settings.
 labelable-holoprojector-ui-header = Labelable Holoprojector
 labelable-holoprojector-current-text-label = Description:
+labelable-holoprojector-is-nsfw-label = Requires NSFW Consent?
+labelable-holoprojector-ui-set-description = Set the description of your projected barrier.
+labelable-holoprojector-selected-sign = Currently selected: {$sign}

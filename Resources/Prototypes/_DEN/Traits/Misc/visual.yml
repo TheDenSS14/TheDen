@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2026 Dirius
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: trait
+  id: MonochromaticVision
+  category: Visual
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - DogVision
+        - UltraVision
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: MonochromaticVision

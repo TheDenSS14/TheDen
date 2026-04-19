@@ -29,7 +29,7 @@
 // SPDX-FileCopyrightText: 2025 deltanedas
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -290,7 +290,8 @@ namespace Content.Server.Lathe
                     var result = Spawn(resultProto, Transform(uid).Coordinates);
                     // DEN: Part upgrades, prevent surplus materials.
                     // We used less materials to make the item, it physically contains less materials.
-                    if (TryComp<PhysicalCompositionComponent>(result, out var physicalComposition))
+                    if (!comp.IgnoreMaterialPenalty 
+                        && TryComp<PhysicalCompositionComponent>(result, out var physicalComposition))
                     {
                         foreach(var (mat, amount) in physicalComposition.MaterialComposition)
                             physicalComposition.MaterialComposition[mat] = (int) Math.Floor(amount * comp.FinalMaterialUseMultiplier);

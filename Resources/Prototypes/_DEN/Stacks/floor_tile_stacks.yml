@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2026 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -244,5 +245,26 @@
   id: FloorTileSomberWoodParquet
   name: somber wood floor (parquet)
   spawn: FloorTileItemSomberWoodParquet
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTilePool
+  name: pool tile
+  spawn: FloorTileItemPool
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTilePoolDark
+  name: dark pool tile
+  spawn: FloorTileItemPoolDark
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileStackEightiesLowContrast
+  name: eighties floor tile
+  spawn: FloorTileItemEightiesLowContrast
   maxCount: 30
   itemSize: 5
