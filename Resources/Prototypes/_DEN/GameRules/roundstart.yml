@@ -24,3 +24,36 @@
   - type: SubGamemodes
     rules:
     - id: Thief
+
+- type: entity
+  parent: Conspirators
+  categories: [ HideSpawnMenu ]
+  id: LessConspirator
+  components:
+  - type: GameRule
+    # minPlayers: 20 # minimum of 2 conspirators
+    delay:
+      min: 1800
+      max: 2400
+  - type: ConspiratorRule
+  - type: AntagSelection
+    # selectionTime: IntraPlayerSpawn
+    definitions:
+    - prefRoles: [ Conspirator ]
+      min: 4
+      max: 6
+      playerRatio: 15
+      briefing:
+        text: conspirator-role-greeting
+        color: SaddleBrown
+        sound: /Audio/_Harmony/Misc/conspirator_greeting.ogg
+      blacklist:
+        components:
+        - AntagImmune
+      components:
+      - type: Conspirator
+      - type: AutoImplant
+        implants:
+        - RadioImplantConspiracy
+      mindRoles:
+      - MindRoleConspirator
