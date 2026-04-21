@@ -62,9 +62,12 @@
     - !type:CharacterPlaytimeRequirement
       tracker: JobForensicMantis
       min: 14400 # The Den - 4 hour
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobScientist
+      min: 36000 # The Den - 10 hour
     - !type:CharacterDepartmentTimeRequirement
       department: Epistemics # DeltaV - Epistemics Department replacing Science
-      min: 72000 # The Den - 20 hour
+      min: 108000 # The Den - 30 hour
     - !type:CharacterLogicOrRequirement
       requirements:
       - !type:CharacterSpeciesRequirement

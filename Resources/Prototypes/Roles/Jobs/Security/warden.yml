@@ -65,9 +65,9 @@
       min: 28800 # The Den - 8 hours
     - !type:CharacterDepartmentTimeRequirement
       department: Security
-      min: 108000 # The Den - 30 hours (higher than other command due to the impact this can have on others shifts)
+      min: 144000 # The Den - 40 hours (higher than other command due to the impact this can have on others shifts)
     - !type:CharacterOverallTimeRequirement
-      min: 180000 # The Den - 50 hours
+      min: 360000 # The Den - 100 hours
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

@@ -53,7 +53,7 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement # Den - Engineering dept time requirement
       department: Engineering
-      min: 72000 # The Den - 20 hours
+      min: 144000 # The Den - 40 hours
     - !type:CharacterPlaytimeRequirement
       tracker: JobAtmosphericTechnician
       min: 28800 # The Den - 8 hours
