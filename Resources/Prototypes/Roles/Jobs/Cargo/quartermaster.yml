@@ -53,7 +53,7 @@
   playTimeTracker: JobQuartermaster
   requirements:
     - !type:CharacterPlaytimeRequirement #Den
-      role: JobCargoTechnician
+      tracker: JobCargoTechnician
       time: 32400 #9 hrs
     - !type:CharacterPlaytimeRequirement
       tracker: JobSalvageSpecialist
