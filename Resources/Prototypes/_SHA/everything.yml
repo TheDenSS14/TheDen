@@ -2887,6 +2887,36 @@
         - ReagentId: FeverDream
           Quantity: 150
 
+- type: entity
+  parent: CustomDrinkJugSomber
+  id: CustomDrinkJugSomberPenthouseCremeDeCacao
+  name: eidolite decanter
+  suffix: PENTHOUSE, Crème de Cacao] [Somber Barware
+  components:
+  - type: Label
+    currentLabel: crème de cacao
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: CremeDeCacao
+          Quantity: 150
+
+- type: entity
+  parent: CustomDrinkJugSomber
+  id: CustomDrinkJugSomberPenthouseCafeDeCacao
+  name: eidolite decanter
+  suffix: PENTHOUSE, Café de Cacao] [Somber Barware
+  components:
+  - type: Label
+    currentLabel: café de cacao
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: CafeDeCacao
+          Quantity: 150
+
 # Huge Bed
 
 - type: entity
@@ -5117,7 +5147,7 @@
   description: "An eidolite pyramid that draws energy from the noosphere to produce light, held aloft by its own power. You can turn it on and off by hand. This one's been altered to produce orchid light--at great cost, since the Outer Chamber Crucible had to psionically \"anneal\" it through the entire color spectrum to reach this point."
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitefloating.rsi
+    sprite: _SHA/Structures/Lighting/LightPosts/lampeidolitefloating.rsi
 
 - type: entity
   parent: [LightSomberEidoliteColorOrchid, LightSomberEidoliteWellLamp]
@@ -5125,7 +5155,7 @@
   description: "An eidolite pyramid that draws energy from the noosphere to produce light, recessed into the ground. You can turn it on and off by hand. This one's been altered to produce orchid light--at great cost, since the Outer Chamber Crucible had to psionically \"anneal\" it through the entire color spectrum to reach this point."
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitewell.rsi
+    sprite: _SHA/Structures/Lighting/LightPosts/lampeidolitewell.rsi
 
 - type: entity
   parent: [LightSomberEidoliteColorOrchid, LightSomberEidoliteFloorLamp]
@@ -5133,7 +5163,7 @@
   description: "An eidolite pyramid that draws energy from the noosphere to produce light, mounted on a mnemolith column. You can turn it on and off by hand. This one's been altered to produce orchid light--at great cost, since the Outer Chamber Crucible had to psionically \"anneal\" it through the entire color spectrum to reach this point."
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Lighting/LightPosts/lampeidolitefloor.rsi
+    sprite: _SHA/Structures/Lighting/LightPosts/lampeidolitefloor.rsi
 
 - type: entity
   parent: LanternMantis
@@ -5331,9 +5361,9 @@
       sprite: _SHA/Structures/Decoration/reflectionarmillary.rsi
       drawdepth: FloorObjects
       layers:
-      - state: gold
+      - state: gold-decalcut
         offset: 0.0,-1.5
-      - state: gold-unshaded
+      - state: gold-decalcut-unshaded
         offset: 0.0,-1.5
         shader: unshaded
     - type: Transform
@@ -5341,20 +5371,6 @@
     - type: Tag
       tags:
         - HideContextMenu
-
-- type: entity
-  parent: MeditationChamberReflection
-  id: MeditationChamberReflectionNoGlass
-  name: reflection
-  suffix: PENTHOUSE, No Glass, Meditation Chamber
-  placement:
-    mode: SnapgridCenter
-  components:
-    - type: Sprite
-      layers:
-        - state: reflection-noglass
-        - state: reflection-unshaded
-          shader: unshaded
 
 - type: entity
   parent: MarkerBase
@@ -6123,3 +6139,77 @@
     sprite: _SHA/Structures/Decoration/umbrella.rsi
   - type: Icon
     sprite: _SHA/Structures/Decoration/umbrella.rsi
+
+# Fire Escape Rails (I've given up on keeping this organized)
+
+- type: entity
+  parent: RailingSomber
+  id: RailingSomberFireEscape
+  suffix: Straight, Fire Escape] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
+    state: side
+  - type: Icon
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
+    state: side
+
+- type: entity
+  parent: RailingSomberCorner
+  id: RailingSomberCornerFireEscape
+  suffix: Corner, Fire Escape] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
+    state: corner
+  - type: Icon
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
+    state: corner
+
+- type: entity
+  parent: RailingSomberCornerSmall
+  id: RailingSomberCornerSmallFireEscape
+  suffix: Small Corner, Fire Escape] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
+    state: corner_small
+  - type: Icon
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
+    state: corner_small
+
+- type: entity
+  parent: RailingSomberRound
+  id: RailingSomberRoundFireEscape
+  suffix: Round, Fire Escape] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
+    state: round
+  - type: Icon
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
+    state: round
+    
+- type: entity
+  parent: RailingSomber
+  id: RailingSomberTransitionLeftFireEscape
+  suffix: Transition, Left, Fire Escape] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
+    state: transition_left
+  - type: Icon
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
+    state: transition_left
+
+- type: entity
+  parent: RailingSomber
+  id: RailingSomberTransitionRightFireEscape
+  suffix: Transition, Right, Fire Escape] [PENTHOUSE
+  components:
+  - type: Sprite
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
+    state: transition_right
+  - type: Icon
+    sprite: _SHA/Structures/Walls/somberrailing.rsi
+    state: transition_right

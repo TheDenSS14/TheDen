@@ -9,6 +9,8 @@
     snap:
     - Wallmount
   components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
   - type: Storage # Duffel sized
     maxItemSize: Huge
     grid:
@@ -163,6 +165,8 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
   - type: Storage # Two cabinets around a small drawer and a big drawer
     grid:
     - 0,0,1,3

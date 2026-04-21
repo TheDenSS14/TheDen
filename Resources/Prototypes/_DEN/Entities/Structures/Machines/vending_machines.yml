@@ -373,12 +373,48 @@
   - type: AccessReader
     access: []
 
+# Left and right variants of the liquor cabinet in case mappers want to pair it with something and save space
+
+- type: entity
+  parent: VendingMachineBoozeSomber
+  id: VendingMachineBoozeSomberLeft
+  suffix: Booze-O-Mat, Left Side, Pairable
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Machines/VendingMachines/somberboozeomatleft.rsi
+
+- type: entity
+  parent: VendingMachineBoozeSomberLeft
+  id: VendingMachineBoozeSomberLeftUnlocked
+  suffix: Booze-O-Mat, Left Side, Pairable] [Unlocked
+  components:
+  - type: AccessReader
+    access: []
+
+- type: entity
+  parent: VendingMachineBoozeSomber
+  id: VendingMachineBoozeSomberRight
+  suffix: Booze-O-Mat, Right Side, Pairable
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Machines/VendingMachines/somberboozeomatright.rsi
+
+- type: entity
+  parent: VendingMachineBoozeSomberRight
+  id: VendingMachineBoozeSomberRightUnlocked
+  suffix: Booze-O-Mat, Right Side, Pairable] [Unlocked
+  components:
+  - type: AccessReader
+    access: []
+
+# The kitchen vendors only come in halves since they're meant to be together
+
 - type: entity
   parent: [ VendingMachineSilent, BasePsionic ]
   id: VendingMachineChefvendSomber
   name: somber pantry (ingredients)
-  suffix: ChefVend, Left
-  description: "A glossy, brushed-metal pantry.                              This side has ingredients in it." # Force new line
+  suffix: ChefVend, Pair With Dinnerware # Both kitchen vendors fit together into one sprite
+  description: "A glossy, brushed-metal pantry.                              This side has ingredients in it."
   components:
   - type: VendingMachine
     pack: ChefvendInventory
@@ -419,8 +455,8 @@
   parent: [ VendingMachineSilent, BasePsionic ]
   id: VendingMachineDinnerwareSomber
   name: somber pantry (utensils)
-  suffix: Dinnerware, Right
-  description: "A glossy, brushed-metal pantry.                              This side has utensils in it." # Force new line
+  suffix: Dinnerware, Pair With ChefVend # Both kitchen vendors fit together into one sprite
+  description: "A glossy, brushed-metal pantry.                              This side has utensils in it."
   components:
   - type: VendingMachine
     pack: DinnerwareInventory

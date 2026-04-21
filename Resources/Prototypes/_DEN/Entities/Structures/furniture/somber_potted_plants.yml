@@ -89,7 +89,7 @@
     chance: 1
 
 - type: entity
-  parent: [ PottedPlantBase, BasePsionic ] # Anomaly products are technically psionic
+  parent: [ BaseDecorativeFixtureNoRot, PottedPlantBase, BasePsionic ] # Anomaly products are technically psionic
   id: PottedPlantSomberBase
   name: somber ornamental plant
   description: "As it turns out, there's a market for plants altered by floral anomalies. It persists even without its pot."
