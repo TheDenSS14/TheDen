@@ -52,7 +52,7 @@
   description: job-description-qm
   playTimeTracker: JobQuartermaster
   requirements:
-    - !type:RoleTimeRequirement #Den
+    - !type:CharacterPlaytimeRequirement #Den
       role: JobCargoTechnician
       time: 32400 #9 hrs
     - !type:CharacterPlaytimeRequirement
