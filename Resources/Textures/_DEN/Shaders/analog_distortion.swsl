@@ -82,7 +82,7 @@ void fragment() {
     uvn = clamp(uvn, 0.0, 1.0);
 
 	// fetch
-	col = vhx_tex_2D(SCREEN_TEXTURE, uvn, tc_phase * 0.2 + sn_phase * 2.0);
+	col = vhx_tex_2D(TEXTURE, uvn, tc_phase * 0.2 + sn_phase * 2.0);
 
 	// crease noise
 	highp float cn = tc_noise * crease_noise * (0.7 * tc_phase * tape_crease_intensity + 0.3);
