@@ -368,7 +368,7 @@
 - type: entity
   parent: VendingMachineBoozeSomber
   id: VendingMachineBoozeSomberUnlocked
-  suffix: Booze-O-Mat] [Unlocked
+  suffix: Unlocked Booze-O-Mat
   components:
   - type: AccessReader
     access: []
@@ -386,7 +386,7 @@
 - type: entity
   parent: VendingMachineBoozeSomberLeft
   id: VendingMachineBoozeSomberLeftUnlocked
-  suffix: Booze-O-Mat, Left Side, Pairable] [Unlocked
+  suffix: Unlocked Booze-O-Mat, Left Side, Pairable
   components:
   - type: AccessReader
     access: []
@@ -402,7 +402,7 @@
 - type: entity
   parent: VendingMachineBoozeSomberRight
   id: VendingMachineBoozeSomberRightUnlocked
-  suffix: Booze-O-Mat, Right Side, Pairable] [Unlocked
+  suffix: Unlocked Booze-O-Mat, Right Side, Pairable
   components:
   - type: AccessReader
     access: []
@@ -446,7 +446,7 @@
 - type: entity
   parent: VendingMachineChefvendSomber
   id: VendingMachineChefvendSomberUnlocked
-  suffix: ChefVend, Left] [Unlocked
+  suffix: Unlocked ChefVend, Left
   components:
   - type: AccessReader
     access: []
@@ -488,7 +488,7 @@
 - type: entity
   parent: VendingMachineDinnerwareSomber
   id: VendingMachineDinnerwareSomberUnlocked
-  suffix: Dinnerware, Right] [Unlocked
+  suffix: Unlocked Dinnerware, Right
   components:
   - type: AccessReader
     access: []
