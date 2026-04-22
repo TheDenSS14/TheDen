@@ -9,6 +9,33 @@
 # Belt
 
 # Ears
+- type: loadout
+  id: LoadoutClothingHeadsetAdminAssist
+  category: JobsCommandAdminAssistant
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutAdminAssistantEars
+  - !type:CharacterJobRequirement
+    jobs:
+    - AdministrativeAssistant
+  items:
+  - ClothingHeadsetAdminAssist
+
+- type: loadout
+  id: LoadoutClothingHeadsetAltAdminAssist
+  category: JobsCommandAdminAssistant
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutAdminAssistantEars
+  - !type:CharacterJobRequirement
+    jobs:
+    - AdministrativeAssistant
+  items:
+  - ClothingHeadsetAltAdminAssist
 
 # Equipment
 - type: loadout
