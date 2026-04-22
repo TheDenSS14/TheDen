@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 MajorMoth
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Effects.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
