@@ -1,8 +1,9 @@
 - type: entity
   parent: LunchboxGeneric
   id: LunchboxSomber
-  name: somber lunchbox
-  description: "A compact lunchbox with a strangely ceremonial feel."
+  name: alabaster lunchbox
+  suffix: Somber Dinnerware
+  description: "A compact lunchbox with a braided handle. It has a strangely ceremonial feel."
   components:
   - type: Sprite
     sprite: _DEN/Objects/Storage/lunchbox.rsi
@@ -13,6 +14,17 @@
   - type: Item
     sprite: _DEN/Objects/Storage/lunchbox.rsi
     heldPrefix: somber
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/trayhit1.ogg
+      params:
+        variation: 0.15
+  - type: EmitSoundOnPickup
+    sound: /Audio/Items/Handling/drinkglass_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/Items/Handling/drinkglass_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/Items/Handling/drinkglass_drop.ogg
   - type: PhysicalComposition
     materialComposition:
       Gold: 10

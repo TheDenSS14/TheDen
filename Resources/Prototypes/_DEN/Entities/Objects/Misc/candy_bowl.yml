@@ -1,7 +1,7 @@
 - type: entity
   parent: [ CandyBowl, BasePsionic ] # Breakable somber dishes should be psionic
   id: CandyBowlSomber
-  name: eidolite candy bowl
+  name: alabaster candy bowl
   suffix: Somber Dinnerware
   description: "An alabaster candy bowl, rimmed with electrum."
   components:
@@ -9,6 +9,15 @@
     sprite: _DEN/Objects/Misc/sombercandybowl.rsi
   - type: ItemMapper
     sprite: _DEN/Objects/Misc/sombercandybowl.rsi
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 0 # Just tossing it won't break it
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 3 # You have to throw it harder
+    damage:
+      types:
+        Blunt: 5 # Three hard throws will break it
   - type: Destructible
     thresholds:
     - trigger:
@@ -24,8 +33,16 @@
       - !type:PlaySoundBehavior
         sound:
           collection: GlassBreak
-          params:
-            volume: -4
       - !type:EmptyAllContainersBehaviour
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: EmitSoundOnPickup
+    sound: /Audio/Items/Handling/drinkglass_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/Items/Handling/drinkglass_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/Items/Handling/drinkglass_drop.ogg
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10

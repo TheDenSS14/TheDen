@@ -26,6 +26,21 @@
   - type: Item
     size: Tiny
     sprite: _DEN/Objects/Consumable/Drinks/somberjigger.rsi
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/drinkglass_pickup.ogg
+      params:
+        volume: -2
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+      params:
+        volume: -2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+      params:
+        volume: -2
   - type: PhysicalComposition
     materialComposition:
       Gold: 10
@@ -42,6 +57,12 @@
     sprite: _DEN/Objects/Consumable/Drinks/somberbucket.rsi
   - type: Item
     sprite: _DEN/Objects/Consumable/Drinks/somberbucket.rsi
+  - type: EmitSoundOnPickup
+    sound: /Audio/Items/Handling/drinkglass_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/Items/Handling/drinkglass_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/Items/Handling/drinkglass_drop.ogg
   - type: PhysicalComposition
     materialComposition:
       Gold: 10
@@ -195,6 +216,21 @@
   components:
   - type: Sprite
     sprite: _DEN/Objects/Consumable/Drinks/sombermug.rsi
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/drinkglass_pickup.ogg
+      params:
+        volume: -2
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+      params:
+        volume: -2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+      params:
+        volume: -2
   - type: PhysicalComposition
     materialComposition:
       Gold: 10

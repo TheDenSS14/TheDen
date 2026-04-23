@@ -4528,11 +4528,11 @@
     tags:
       - Book
   - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/book_pickup.ogg
+    sound: /Audio/Items/Handling/book_pickup.ogg
   - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+    sound: /Audio/Items/Handling/book_drop.ogg
   - type: EmitSoundOnLand
-    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+    sound: /Audio/Items/Handling/book_drop.ogg
 
 - type: entity
   parent: BookshelfSomberFilled
@@ -5058,8 +5058,8 @@
         color: "#ff9833"
         shader: unshaded
   - type: PointLight
-    energy: 0.5
-    radius: 1.5
+    energy: 0.75
+    radius: 1.75
     color: "#ff9833"
   - type: LightReplacer
     contents:
@@ -5096,8 +5096,8 @@
         color: "#9E00FF"
         shader: unshaded
   - type: PointLight
-    energy: 0.5
-    radius: 1.5
+    energy: 0.75
+    radius: 1.75
     color: "#9E00FF"
   - type: LightReplacer
     contents:
@@ -5134,8 +5134,8 @@
         color: "#ff94e8"
         shader: unshaded
   - type: PointLight
-    energy: 0.5
-    radius: 1.5
+    energy: 0.75
+    radius: 1.75
     color: "#ff94e8"
   - type: LightReplacer
     contents:

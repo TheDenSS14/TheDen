@@ -30,6 +30,8 @@
       - id: ChopSticksSomber
     sound:
       path: /Audio/Effects/chopstickbreak.ogg
+      params:
+        volume: -6
 
 - type: entity
   parent: ChopSticksSomber
@@ -58,8 +60,6 @@
   - type: SpawnItemsOnUse
     items:
       - id: ChopSticksSomberFloral
-    sound:
-      path: /Audio/Effects/chopstickbreak.ogg
 
 - type: entity
   parent: ChopSticksSomber
@@ -88,5 +88,3 @@
   - type: SpawnItemsOnUse
     items:
       - id: ChopSticksSomberShadow
-    sound:
-      path: /Audio/Effects/chopstickbreak.ogg

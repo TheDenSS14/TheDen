@@ -162,6 +162,7 @@
   parent: RollingPin
   id: RollingPinSomber
   name: alabaster rolling pin
+  suffix: Somber Dinnerware
   description: "A French-style rolling pin without handles, made from alabaster."
   components:
   - type: Sprite
@@ -170,6 +171,10 @@
     sprite: _DEN/Objects/Tools/somberrollingpin.rsi
   - type: Clothing
     sprite: _DEN/Objects/Tools/somberrollingpin.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: -90
+  - type: ThrowingAngle
+    angle: -90
   - type: PhysicalComposition
     materialComposition:
       Gold: 10
