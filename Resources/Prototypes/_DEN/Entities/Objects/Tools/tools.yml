@@ -157,3 +157,20 @@
     - Knife
     - Multitool
     - DoorElectronicsConfigurator
+
+- type: entity
+  parent: RollingPin
+  id: RollingPinSomber
+  name: alabaster rolling pin
+  description: "A French-style rolling pin without handles. Made from alabaster, for some reason."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tools/somberrollingpin.rsi
+  - type: Item
+    sprite: _DEN/Objects/Tools/somberrollingpin.rsi
+  - type: Clothing
+    sprite: _DEN/Objects/Tools/somberrollingpin.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10

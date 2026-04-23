@@ -1,0 +1,92 @@
+# I don't know why these couldn't just have gone in utensils.yml, but I'll follow the precedent
+- type: entity
+  parent: [ BaseDecorativeFixture, ChopSticks ]
+  id: ChopSticksSomber
+  name: amaranth chopsticks
+  suffix: Somber Dinnerware
+  description: "Amaranth wood shaped into peaceful eating utensils."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberchopstick.rsi
+    state: icon
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberchopstick.rsi
+
+- type: entity
+  parent: PairedChopsticks
+  id: PairedChopsticksSomber
+  name: paired amaranth chopsticks
+  suffix: Somber Dinnerware
+  description: "Separate them if you wish. In the end, your life is your own responsibility."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberchopstick.rsi
+    state: paired
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberchopstick.rsi
+    heldPrefix:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ChopSticksSomber
+    sound:
+      path: /Audio/Effects/chopstickbreak.ogg
+
+- type: entity
+  parent: ChopSticksSomber
+  id: ChopSticksSomberFloral
+  name: floral chopsticks
+  description: "Floral wood shaped into peaceful eating utensils."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberchopstick.rsi
+    state: floral-icon
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberchopstick.rsi
+    heldPrefix: floral
+
+- type: entity
+  parent: PairedChopsticksSomber
+  id: PairedChopsticksSomberFloral
+  name: paired floral chopsticks
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberchopstick.rsi
+    state: floral-paired
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberchopstick.rsi
+    heldPrefix: floral
+  - type: SpawnItemsOnUse
+    items:
+      - id: ChopSticksSomberFloral
+    sound:
+      path: /Audio/Effects/chopstickbreak.ogg
+
+- type: entity
+  parent: ChopSticksSomber
+  id: ChopSticksSomberShadow
+  name: shadow chopsticks
+  description: "Shadow wood shaped into peaceful eating utensils."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberchopstick.rsi
+    state: shadow-icon
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberchopstick.rsi
+    heldPrefix: shadow
+
+- type: entity
+  parent: PairedChopsticksSomber
+  id: PairedChopsticksSomberShadow
+  name: paired shadow chopsticks
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberchopstick.rsi
+    state: shadow-paired
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberchopstick.rsi
+    heldPrefix: shadow
+  - type: SpawnItemsOnUse
+    items:
+      - id: ChopSticksSomberShadow
+    sound:
+      path: /Audio/Effects/chopstickbreak.ogg

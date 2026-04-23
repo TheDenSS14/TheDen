@@ -165,3 +165,43 @@
     - Knife
     - MantisSickle
     - MantisBeltStorable
+
+- type: entity
+  parent: [ BaseCivilianContraband, KitchenKnife, BaseAntiPsionicWeapon ]
+  id: KitchenKnifeSomber
+  name: mnemolith kitchen knife
+  suffix: Somber Dinnerware
+  description: "A kitchen knife carved from a rare psionic stone that learns its purpose through use."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/somberkitchenknife.rsi
+  - type: Item
+    sprite: _DEN/Objects/Weapons/Melee/somberkitchenknife.rsi
+  - type: Clothing
+    sprite: _DEN/Objects/Weapons/Melee/somberkitchenknife.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 8
+        Holy: 4 # From the mnemolith
+
+- type: entity
+  parent: [ BaseCivilianContraband, ButchCleaver, BaseAntiPsionicWeapon ]
+  id: ButchCleaverSomber
+  name: mnemolith butcher's cleaver
+  suffix: Somber Dinnerware
+  description: "A sharpened slab of mnemolith stone, shaped for butchery. If you're psionic, mind your fingers."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/sombercleaver.rsi
+  - type: Item
+    sprite: _DEN/Objects/Weapons/Melee/sombercleaver.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 8
+        Blunt: 1
+        Holy: 4.5 # From the mnemolith

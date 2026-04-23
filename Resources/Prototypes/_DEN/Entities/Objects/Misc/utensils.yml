@@ -7,17 +7,17 @@
   components:
   - type: Sprite
     sprite: _DEN/Objects/Misc/somberutensils.rsi
-    state: electrumbarspoon
+    state: bar_spoon
   - type: Item
     sprite: _DEN/Objects/Misc/somberutensils.rsi
-    heldPrefix: electrumbarspoon
+    heldPrefix: bar_spoon
   - type: PhysicalComposition
     materialComposition:
       Gold: 10
       Silver: 10
 
 - type: entity
-  parent: [ BaseDecorativeFixture, Skimmer ] # It's technically a chemistry item, but it only comes from VendingMachineBoozeSomber, so whatever
+  parent: [ BaseDecorativeFixture, Skimmer ] # It's arguably a chemistry item, but it only comes from the somber bar and kitchen vendors, so whatever
   id: SkimmerSomber
   name: electrum skimmer
   suffix: Somber Barware
@@ -59,3 +59,75 @@
     - state: skimmer1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+
+- type: entity
+  parent: [ BaseDecorativeFixture, Fork ]
+  id: ForkSomber
+  name: electrum fork
+  suffix: Somber Dinnerware
+  description: "A fork made of a natural alloy of gold and silver."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    state: fork
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    heldPrefix: fork
+  - type: ThrowingAngle
+    angle: -30
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: [ BaseDecorativeFixture, Spoon ]
+  id: SpoonSomber
+  name: electrum spoon
+  suffix: Somber Dinnerware
+  description: "A spoon made of a natural alloy of gold and silver. Perfect for testing your psionic ability."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    state: spoon
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    heldPrefix: spoon
+  - type: ThrowingAngle
+    angle: -30
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: [ BaseDecorativeFixture, BaseKnife ]
+  id: KnifeSomber # Barely a weapon, so it goes here
+  name: electrum knife
+  suffix: Somber Dinnerware
+  description: "A knife made of a natural alloy of gold and silver. Good for food, and little else."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    state: knife
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    heldPrefix: knife
+  - type: MeleeWeapon
+    wideAnimationRotation: -150
+    attackRate: .9
+    heavyRateModifier: 1.5
+    heavyDamageBaseModifier: 1.1
+    range: 1.4
+    damage:
+      types:
+        Slash: 4 # Weaker than a shiv (it's a gold knife, come on)
+  - type: EmbeddableProjectile
+    removalTime: 1
+  - type: LandAtCursor
+  - type: ThrowingAngle
+    angle: -150
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10

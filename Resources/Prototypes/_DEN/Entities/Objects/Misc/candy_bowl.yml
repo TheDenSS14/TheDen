@@ -1,0 +1,31 @@
+- type: entity
+  parent: [ CandyBowl, BasePsionic ] # Breakable somber dishes should be psionic
+  id: CandyBowlSomber
+  name: eidolite candy bowl
+  suffix: Somber Dinnerware
+  description: "It gives off a surprisingly pleasant ring when struck lightly, but don't try it."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/sombercandybowl.rsi
+  - type: ItemMapper
+    sprite: _DEN/Objects/Misc/sombercandybowl.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100 # Excess damage deletes the contents to save computation
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -4
+      - !type:EmptyAllContainersBehaviour
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

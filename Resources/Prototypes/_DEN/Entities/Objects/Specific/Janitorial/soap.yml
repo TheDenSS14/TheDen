@@ -8,7 +8,8 @@
   - type: Sprite
     sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
     layers:
-    - state: sombersoapdish
+    - state: somberdish
+      sprite: _DEN/Objects/Consumable/Food/plates.rsi
     - state: somberviolet-4
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: SolutionContainerVisuals
@@ -23,7 +24,7 @@
     price: 1500
   - type: Food
     trash:
-    - SomberSoapDish # This is stupid
+    - SomberDish # This is stupid
   - type: Fixtures
     fixtures:
       slips:
@@ -51,7 +52,8 @@
   components:
   - type: Sprite
     layers:
-    - state: sombersoapdish
+    - state: somberdish
+      sprite: _DEN/Objects/Consumable/Food/plates.rsi
     - state: somberteal-4
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: SolutionContainerVisuals
@@ -62,57 +64,3 @@
   - type: Residue
     residueAdjective: residue-slippery
     residueColor: residue-teal
-
-- type: entity
-  parent: [ BaseDecorativeFixtureNoRot, BaseItem ]
-  id: SomberSoapDish # Or, possibly, a coaster
-  name: electrum dish
-  suffix: Somber
-  description: "A surprisingly heavy dish made of a natural alloy of gold and silver."
-  components:
-  - type: Sprite
-    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
-    state: sombersoapdish
-  - type: Item
-    size: Small
-    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
-    heldPrefix: sombersoapdish
-  - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 5
-    soundHit:
-      path: /Audio/Items/trayhit1.ogg # Funny
-      params:
-        variation: 0.15
-    soundNoDamage:
-      path: /Audio/Items/trayhit1.ogg
-      params:
-        variation: 0.15
-  - type: DamageOtherOnHit
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Items/trayhit1.ogg
-      params:
-        variation: 0.15
-  - type: EmitSoundOnCollide
-    sound:
-      path: /Audio/Items/trayhit1.ogg
-      params:
-        variation: 0.15
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.18
-        density: 10
-        mask:
-        - ItemMask
-  - type: InteractionVerbs
-    allowedVerbs:
-    - LickObject
-  - type: PhysicalComposition # Funny
-    materialComposition:
-      Gold: 50
-      Silver: 50

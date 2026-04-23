@@ -1,0 +1,34 @@
+# A special inventory for VendingMachineDinnerwareSomber with unique utensils since it's a fancy pantry
+# No point in making real plates or bowls though since food sprites overwrite them anyway
+# And beakers are boring! If anyone wants to make somber beakers go nuts, but also update KitchenReagentGrinderSomber if you do
+- type: vendingMachineInventory
+  id: SomberDinnerwareInventory
+  startingInventory:
+    ButchCleaverSomber: 1 # These are made of mnemolith and are thus antipsionic
+    KitchenKnifeSomber: 5
+    RollingPinSomber: 4
+    SpoonSomber: 15 # More utensils than usual since VendingMachineCondimentsSomber has none
+    ForkSomber: 15
+    KnifeSomber: 15 # This thing is weaker than a shiv, don't worry too much
+    PairedChopsticksSomber: 5
+    PairedChopsticksSomberFloral: 5
+    PairedChopsticksSomberShadow: 5
+    FoodBowlBig: 10
+    FoodPlate: 10
+    FoodPlateSmall: 10
+    FoodPlateTin: 5
+    FoodPlateMuffinTin: 5
+    FoodKebabSkewer: 5
+    DrinkGlassSomber: 5
+    Beaker: 5
+    LargeBeaker: 5
+    IceCreamBowl: 10
+    DrinkMugSomber: 10
+    SomberDish: 10
+    SomberPlatter: 10
+    LunchboxSomber: 15
+    SkimmerSomber: 2
+  contrabandInventory:
+    CandyBowlSomber: 1
+    BarSpoonSomber: 2
+    DrinkShakerSomber: 2

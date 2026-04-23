@@ -1,21 +1,54 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Electrumbarspoon by RosySaturniidae (GitHub)",
+  "copyright": "Bar_spoon by RosySaturniidae (GitHub), others made from that by Sha-Seng (GitHub)",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
     {
-      "name": "electrumbarspoon"
+      "name": "bar_spoon"
     },
     {
-      "name": "electrumbarspoon-inhand-left",
+      "name": "bar_spoon-inhand-left",
       "directions": 4
     },
     {
-      "name": "electrumbarspoon-inhand-right",
+      "name": "bar_spoon-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "fork"
+    },
+    {
+      "name": "fork-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "fork-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "spoon"
+    },
+    {
+      "name": "spoon-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "spoon-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "knife"
+    },
+    {
+      "name": "knife-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "knife-inhand-right",
       "directions": 4
     }
   ]

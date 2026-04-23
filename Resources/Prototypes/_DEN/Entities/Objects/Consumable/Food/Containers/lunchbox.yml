@@ -1,0 +1,19 @@
+- type: entity
+  parent: LunchboxGeneric
+  id: LunchboxSomber
+  name: somber lunchbox
+  description: "A compact lunchbox with a strangely ceremonial feel."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/lunchbox.rsi
+    layers:
+    - state: somber
+    - state: somber-open
+      map: ["openLayer"]
+  - type: Item
+    sprite: _DEN/Objects/Storage/lunchbox.rsi
+    heldPrefix: somber
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10

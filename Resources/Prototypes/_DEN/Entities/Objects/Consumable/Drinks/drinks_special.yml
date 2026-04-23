@@ -84,12 +84,21 @@
     sprite: _DEN/Objects/Consumable/Drinks/sombercoupeglass.rsi
   - type: Item
     sprite: _DEN/Objects/Consumable/Drinks/sombercoupeglass.rsi
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/sombercoupeglass.rsi
+    state: icon-combined
   - type: PhysicalComposition
     materialComposition:
       Gold: 10
       Silver: 10
   - type: Destructible # They don't drop glass shards, and can't drop eidolite or electrum because they're too valuable
     thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100 # Excess damage deletes the contents to save computation
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 5
@@ -112,12 +121,21 @@
     sprite: _DEN/Objects/Consumable/Drinks/sombershotglass.rsi
   - type: Item
     sprite: _DEN/Objects/Consumable/Drinks/sombershotglass.rsi
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/sombershotglass.rsi
+    state: icon-combined
   - type: PhysicalComposition
     materialComposition:
       Gold: 10
       Silver: 10
   - type: Destructible
     thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 5
@@ -138,6 +156,9 @@
   components:
   - type: Sprite
     sprite: _DEN/Objects/Consumable/Drinks/somberglass.rsi
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/somberglass.rsi
+    state: icon-combined
   - type: SolutionContainerVisuals
     metamorphicDefaultSprite:
       sprite: _DEN/Objects/Consumable/Drinks/somberglass.rsi
@@ -148,6 +169,12 @@
       Silver: 10
   - type: Destructible
     thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 5
@@ -174,6 +201,12 @@
       Silver: 10
   - type: Destructible
     thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 5

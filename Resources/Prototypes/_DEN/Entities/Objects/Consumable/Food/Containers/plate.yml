@@ -1,0 +1,75 @@
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, BaseItem ] # Not parented because they're not really for food, don't want to inherit possible future plate behavior
+  id: SomberDish
+  name: electrum dish
+  suffix: Somber Dinnerware
+  description: "A surprisingly heavy dish--perhaps a coaster, or something like it."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/plates.rsi
+    state: somberdish
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Food/plates.rsi
+    size: Small
+    shape:
+    - 0,0,1,0
+    heldPrefix: somber
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5
+    soundHit:
+      path: /Audio/Items/trayhit1.ogg # Funny
+      params:
+        variation: 0.15
+    soundNoDamage:
+      path: /Audio/Items/trayhit1.ogg
+      params:
+        variation: 0.15
+  - type: DamageOtherOnHit
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/trayhit1.ogg
+      params:
+        variation: 0.15
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Items/trayhit1.ogg
+      params:
+        variation: 0.15
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.18
+        density: 10
+        mask:
+        - ItemMask
+  - type: InteractionVerbs
+    allowedVerbs:
+    - LickObject
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: SomberDish
+  id: SomberPlatter
+  name: electrum platter
+  suffix: Somber Dinnerware
+  description: "A little less a plate, a little more a platter--meant for display, you know."
+  components:
+  - type: Sprite
+    state: somberplatter
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.28125,0.25,-0.03125"
+        density: 25
+        mask:
+        - ItemMask
+
