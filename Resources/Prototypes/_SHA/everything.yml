@@ -5057,6 +5057,10 @@
       - state: bulb-inhand-right
         color: "#ff9833"
         shader: unshaded
+  - type: PointLight
+    energy: 0.5
+    radius: 1.5
+    color: "#ff9833"
   - type: LightReplacer
     contents:
     - id: WarmLightTube
@@ -5091,6 +5095,10 @@
       - state: bulb-inhand-right
         color: "#9E00FF"
         shader: unshaded
+  - type: PointLight
+    energy: 0.5
+    radius: 1.5
+    color: "#9E00FF"
   - type: LightReplacer
     contents:
     - id: UvLightTube
@@ -5125,6 +5133,10 @@
       - state: bulb-inhand-right
         color: "#ff94e8"
         shader: unshaded
+  - type: PointLight
+    energy: 0.5
+    radius: 1.5
+    color: "#ff94e8"
   - type: LightReplacer
     contents:
     - id: OrchidLightTubeNew
@@ -6189,7 +6201,7 @@
   - type: Icon
     sprite: _SHA/Structures/Walls/somberrailing.rsi
     state: round
-    
+
 - type: entity
   parent: RailingSomber
   id: RailingSomberTransitionLeftFireEscape

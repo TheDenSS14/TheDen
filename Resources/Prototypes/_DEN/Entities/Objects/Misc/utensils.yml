@@ -11,6 +11,11 @@
   - type: Item
     sprite: _DEN/Objects/Misc/somberutensils.rsi
     heldPrefix: bar_spoon
+  - type: MeleeWeapon
+    wideAnimationRotation: -35
+  - type: ThrowingAngle
+    angle: -35
+  - type: LandAtCursor
   - type: PhysicalComposition
     materialComposition:
       Gold: 10
@@ -27,6 +32,15 @@
     sprite: _DEN/Objects/Misc/somberskimmer.rsi
   - type: Item
     sprite: _DEN/Objects/Misc/somberskimmer.rsi
+  - type: MeleeWeapon # It might as well bonk people like other utensils, based on the bar spoon
+    wideAnimationRotation: 25
+    attackRate: .5
+    damage:
+      types:
+        Blunt: 2
+  - type: DamageOtherOnHit
+  - type: ThrowingAngle
+    angle: 25
   - type: PhysicalComposition
     materialComposition:
       Gold: 10
@@ -61,26 +75,6 @@
       visible: false
 
 - type: entity
-  parent: [ BaseDecorativeFixture, Fork ]
-  id: ForkSomber
-  name: electrum fork
-  suffix: Somber Dinnerware
-  description: "A fork made of a natural alloy of gold and silver."
-  components:
-  - type: Sprite
-    sprite: _DEN/Objects/Misc/somberutensils.rsi
-    state: fork
-  - type: Item
-    sprite: _DEN/Objects/Misc/somberutensils.rsi
-    heldPrefix: fork
-  - type: ThrowingAngle
-    angle: -30
-  - type: PhysicalComposition
-    materialComposition:
-      Gold: 10
-      Silver: 10
-
-- type: entity
   parent: [ BaseDecorativeFixture, Spoon ]
   id: SpoonSomber
   name: electrum spoon
@@ -93,8 +87,34 @@
   - type: Item
     sprite: _DEN/Objects/Misc/somberutensils.rsi
     heldPrefix: spoon
+  - type: MeleeWeapon
+    wideAnimationRotation: 25
   - type: ThrowingAngle
-    angle: -30
+    angle: 25
+  - type: LandAtCursor
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: [ BaseDecorativeFixture, Fork ]
+  id: ForkSomber
+  name: electrum fork
+  suffix: Somber Dinnerware
+  description: "A fork made of a natural alloy of gold and silver."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    state: fork
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    heldPrefix: fork
+  - type: MeleeWeapon
+    wideAnimationRotation: 25
+  - type: ThrowingAngle
+    angle: 25
+  - type: LandAtCursor
   - type: PhysicalComposition
     materialComposition:
       Gold: 10
@@ -113,20 +133,21 @@
   - type: Item
     sprite: _DEN/Objects/Misc/somberutensils.rsi
     heldPrefix: knife
-  - type: MeleeWeapon
-    wideAnimationRotation: -150
-    attackRate: .9
-    heavyRateModifier: 1.5
-    heavyDamageBaseModifier: 1.1
-    range: 1.4
+  - type: MeleeWeapon # Fork stats, but slash instead of pierce
+    wideAnimationRotation: -160
+    attackRate: .6666
     damage:
       types:
-        Slash: 4 # Weaker than a shiv (it's a gold knife, come on)
+        Slash: 5
+  - type: DamageOtherOnHit
+    staminaCost: 2.5
   - type: EmbeddableProjectile
-    removalTime: 1
-  - type: LandAtCursor
+    removalTime: 0.5
+    autoRemoveDuration: 10
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
-    angle: -150
+    angle: -160
+  - type: LandAtCursor
   - type: PhysicalComposition
     materialComposition:
       Gold: 10

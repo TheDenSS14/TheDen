@@ -3,7 +3,7 @@
   id: CandyBowlSomber
   name: eidolite candy bowl
   suffix: Somber Dinnerware
-  description: "It gives off a surprisingly pleasant ring when struck lightly, but don't try it."
+  description: "An alabaster candy bowl, rimmed with electrum."
   components:
   - type: Sprite
     sprite: _DEN/Objects/Misc/sombercandybowl.rsi
@@ -19,7 +19,7 @@
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 5
+        damage: 15 # A bit tougher since it's made of stone
       behaviors:
       - !type:PlaySoundBehavior
         sound:
