@@ -125,6 +125,11 @@
       whitelist:
         components:
         - Passport
+    projectorSlot:
+      priority: -2
+      whitelist:
+        tags:
+        - CivilianHoloprojector
     # End The Den Changes
     penSlot:
       startingItem: Pen
@@ -148,6 +153,7 @@
       PDA-pen: !type:ContainerSlot {}
       PDA-pai: !type:ContainerSlot {}
       PDA-passport: !type:ContainerSlot {}
+      PDA-projector: !type:ContainerSlot {} # DEN: Projectors
       Cartridge-Slot: !type:ContainerSlot {}
       program-container: !type:Container
   - type: Clothing
@@ -528,7 +534,7 @@
   parent: BasePDA
   id: MimePDA
   name: mime PDA
-  description: Suprisingly not on mute.
+  description: Surprisingly not on mute.
   components:
   - type: Pda
     id: MimeIDCard
@@ -668,7 +674,7 @@
   name: LO special PDA unit # DeltaV - Logistics Department replacing Cargo
   parent: BasePDA
   id: QuartermasterNTPDA
-  description: PDA for the guy that directs logistics.it says in gold "special unit unique to the best logistics officer in the sector". # DeltaV - Logistics Department replacing Cargo
+  description: PDA for the guy that directs logistics.  It says in gold "special unit unique to the best logistics officer in the sector". # DeltaV - Logistics Department replacing Cargo
   components:
   - type: Pda
     id: QuartermasterIDCard

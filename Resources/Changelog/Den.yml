@@ -16480,7 +16480,7 @@ Entries:
       message: >-
         Admin clothing (belt+satchel) is now chameleon clothing. You will need
         to take them off and put them on again for the chameleon visuals to
-        apply. 
+        apply.
   id: 1614
   time: '2026-01-21T22:45:11.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2324
@@ -16531,7 +16531,7 @@ Entries:
     - type: Tweak
       message: >-
         Senior physicians now also get emergency paramedic access just like how
-        MD's do. 
+        MD's do.
     - type: Tweak
       message: The service worker job now gets emergency janitorial access.
     - type: Tweak
@@ -17485,7 +17485,7 @@ Entries:
     - type: Add
       message: >-
         Got a shipment of Ticket Pads from the Imp sector which have been added
-        to the Security lockers. 
+        to the Security lockers.
   id: 1715
   time: '2026-02-24T09:30:20.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2449
@@ -17496,7 +17496,7 @@ Entries:
         Xeno-B-Gone body dissolution tacks - dissolve vent critter bodies on the
         spot and get on with your day. Issued to janitors roundstart, resupply
         via cargo. Xeno-B-Gone is not responsible for any injuries caused by
-        bypassing critical safety features. 
+        bypassing critical safety features.
   id: 1716
   time: '2026-02-24T09:31:04.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2418
@@ -17890,7 +17890,7 @@ Entries:
     - type: Tweak
       message: >-
         Alt-click now removes your weapon or item from portable rechargers,
-        mimicking holster behavior. 
+        mimicking holster behavior.
     - type: Tweak
       message: Changed the portable recharger's size in inventory to 2x4.
     - type: Fix
@@ -17938,7 +17938,7 @@ Entries:
     - type: Tweak
       message: >-
         Alt-click now removes your weapon or item from portable rechargers,
-        mimicking holster behavior. 
+        mimicking holster behavior.
     - type: Tweak
       message: Changed the portable recharger's size in inventory to 2x4.
     - type: Fix
@@ -18195,7 +18195,7 @@ Entries:
     - type: Add
       message: >-
         A tiny derringer pistol that comes in a fancy giftbox. Purchasable at
-        Logistics, or very rarely found in maintenance. 
+        Logistics, or very rarely found in maintenance.
   id: 1788
   time: '2026-03-16T14:32:01.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2528
@@ -18641,3 +18641,253 @@ Entries:
   id: 1833
   time: '2026-04-02T22:04:06.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2595
+- author: HTMLSystem
+  changes:
+    - type: Fix
+      message: The ribcage tattoo should no longer be hidden by heelstockings
+    - type: Tweak
+      message: The ribcage tattoo is now in the chest marking category
+  id: 1834
+  time: '2026-04-06T22:01:29.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2632
+- author: LilNutters
+  changes:
+    - type: Add
+      message: Added blue to the engi techfab.
+    - type: Add
+      message: Added security jetpacks to the sec techfab.
+    - type: Remove
+      message: Removed blue jetpacks from the sec techfab.
+    - type: Tweak
+      message: All jetpack fabrication costs adjusted.
+    - type: Fix
+      message: >-
+        Space heaters and electrolyzers can now be fabricated at the engi
+        techfab.
+    - type: Add
+      message: Added grappling guns and mass scanners to the engi techfab.
+    - type: Add
+      message: Added the advanced SMES board to the engi techfab.
+  id: 1835
+  time: '2026-04-07T02:15:21.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2608
+- author: MajorMoth
+  changes:
+    - type: Tweak
+      message: >-
+        The Rickenbacker is cheaper in loadouts to get for non-musicians and can
+        be worn on your back (no sprite though...)
+  id: 1836
+  time: '2026-04-07T15:10:04.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2626
+- author: Dirius77
+  changes:
+    - type: Fix
+      message: Fixed the Tesla eating its own lightning for free energy.
+  id: 1837
+  time: '2026-04-07T15:11:18.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2631
+- author: HTMLSystem
+  changes:
+    - type: Fix
+      message: Fixed the Angel Dress in hand sprites
+    - type: Fix
+      message: Characters with a male body can now wear Ripped Punk jeans
+  id: 1838
+  time: '2026-04-08T21:56:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2602
+- author: crumchy
+  changes:
+    - type: Add
+      message: Added a mysterious pink plushie!
+  id: 1839
+  time: '2026-04-09T00:57:25.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2637
+- author: Tomce795
+  changes:
+    - type: Tweak
+      message: >-
+        People can now freely choose the Tarajan specific languages as traits
+        independent of their species. You'll find them with the other language
+        options.
+  id: 1840
+  time: '2026-04-12T17:15:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2636
+- author: SirWarock
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Autodocs speed being calculated squared. The 0.5x speed autodoc
+        had the speed of 0.25x in reality.
+    - type: Tweak
+      message: >-
+        Increased the speed of the autodoc by 6, so it's 1.5x faster than a
+        surgeon with optimal tools!
+  id: 1841
+  time: '2026-04-15T01:33:42.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2639
+- author: superjeepboy
+  changes:
+    - type: Fix
+      message: Fixed Sophia returning nothing instead of 0 when Glimmer is zero.
+  id: 1842
+  time: '2026-04-15T08:52:04.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2629
+- author: Tomce795
+  changes:
+    - type: Add
+      message: Added the plasteel spear to the salvage vendor
+  id: 1843
+  time: '2026-04-15T14:53:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2644
+- author: Dirius77
+  changes:
+    - type: Fix
+      message: Fixed some species displacements applying when they shouldn't.
+  id: 1844
+  time: '2026-04-15T14:54:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2646
+- author: Dirius77
+  changes:
+    - type: Add
+      message: Added a Monochromatic Vision trait.
+  id: 1845
+  time: '2026-04-15T14:59:08.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2638
+- author: superjeepboy
+  changes:
+    - type: Tweak
+      message: >-
+        Cleaned up a bunch of code related to the Blood Type system. You won't
+        notice many changes forward-facing.
+  id: 1846
+  time: '2026-04-16T12:43:39.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2648
+- author: Dirius77
+  changes:
+    - type: Fix
+      message: Gave Resomi their earrings back.
+  id: 1847
+  time: '2026-04-16T19:26:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2652
+- author: Dirius77
+  changes:
+    - type: Fix
+      message: Fixed Resomi displacements, woops.
+  id: 1848
+  time: '2026-04-16T19:27:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2651
+- author: Dirius77
+  changes:
+    - type: Add
+      message: Made the flatpacker's speed upgradeable with parts.
+  id: 1849
+  time: '2026-04-17T15:35:03.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2654
+- author: Dirius77
+  changes:
+    - type: Fix
+      message: Fixed ore processor upgrades being net neutral.
+  id: 1850
+  time: '2026-04-17T15:36:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2653
+- author: superjeepboy
+  changes:
+    - type: Add
+      message: Added Intoxicating Blood to the round-start blood types.
+  id: 1851
+  time: '2026-04-18T08:23:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2650
+- author: superjeepboy
+  changes:
+    - type: Add
+      message: Added the ability to take Synth Blood as a new blood type.
+    - type: Remove
+      message: Removed the Synthetic trait changing your blood to Synth Blood.
+  id: 1852
+  time: '2026-04-18T10:10:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2649
+- author: Dirius77
+  changes:
+    - type: Add
+      message: >-
+        The NSFW holoprojector and privacy holoprojector have been merged into
+        one item, the privacy holoprojector. Make sure to update your loadouts.
+        The privacy holoprojector allows you to pick the barrier type using a
+        radial menu and can be slotted into your PDA.
+    - type: Tweak
+      message: >-
+        Changed privacy holobarrier projector's NSFW flag to be an option in the
+        UI.
+  id: 1853
+  time: '2026-04-18T17:31:27.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2641
+- author: Kellaris
+  changes:
+    - type: Tweak
+      message: Gorilla Gauntlet no longer unanchors things (like walls and doors).
+  id: 1854
+  time: '2026-04-18T17:32:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2624
+- author: superjeepboy
+  changes:
+    - type: Tweak
+      message: Blood Type traits no longer take up any slots. Have fun!
+  id: 1855
+  time: '2026-04-19T11:53:54.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2656
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        You can print a new variant of eighties floor that has lower
+        brightness/contrast than the standard one at the cutter machine.
+  id: 1856
+  time: '2026-04-19T16:05:12.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2570
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Added Conspiracy back to Even More Antags, however fewer will roll.
+  id: 1857
+  time: '2026-04-20T18:47:34.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2615
+- author: Drachimera
+  changes:
+    - type: Add
+      message: Quintessa Station is now available for your sector!
+  id: 1858
+  time: '2026-04-20T21:31:33.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2660
+- author: LilNutters
+  changes:
+    - type: Add
+      message: Added a master encryption key to the vault freezer.
+    - type: Add
+      message: Added new alternative titles to the administrative assistant.
+    - type: Add
+      message: >-
+        Added both headset and over-ear headset to loadouts for the
+        administrative assistant.
+    - type: Add
+      message: >-
+        Added a master encryption key to the administrative assistant headset
+        and nearly all access to their ID.
+    - type: Add
+      message: >-
+        Added an apple juice jug as an alternative to those that cannot drink
+        coffee.
+    - type: Remove
+      message: >-
+        Removed the spare headset and ID from the administrative assistant's
+        locker.
+  id: 1859
+  time: '2026-04-22T14:59:57.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2657
+- author: juniwoofs
+  changes:
+    - type: Tweak
+      message: Assorted fixes and whatnot (Baikal)
+  id: 1860
+  time: '2026-04-23T00:27:12.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2662

@@ -763,8 +763,9 @@ trait-description-EggLaying = You have an organ capable of laying eggs at the co
 trait-name-Caprine = Caprine
 trait-description-Caprine = A language spoken by the Ovinia, the language is composed of many loose bleating and baahing noises strung together to create words.
 
+# DEN Change - Change description of Synthetic trait, blood changing is decoupled
 trait-name-Synthetic = Synthetic
-trait-description-Synthetic = You are a biomechanical construct, who bleeds coolant and is notified of ongoing Ion Storms.
+trait-description-Synthetic = You are a biomechanical construct, who is notified of ongoing Ion Storms.
 
 trait-name-SyntheticVoicebox = Synthetic Voicebox
 trait-description-SyntheticVoicebox = Your vocal apparatus is itself synthetic, and starts to malfunction when you are injured.
@@ -787,38 +788,3 @@ trait-name-PainNumbness = Pain Numbness
 trait-description-PainNumbness =
     Whether due to a rare mutation, freak medical accident, or some other reason, you're not able to feel pain
     making it much eaiser to miss possibly life threatening injuries.
-
-trait-name-BlackBlood = Black Blood
-trait-description-BlackBlood =
-    Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
-    Your body produces Black Blood instead of whatever blood your species normally generates.
-
-trait-name-InsectBlood = Insect Blood
-trait-description-InsectBlood =
-    Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
-    Your body produces Insect Blood instead of whatever blood your species normally generates.
-
-trait-name-BlueBlood = Blue Blood
-trait-description-BlueBlood =
-    Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
-    Your body produces Blue Blood instead of whatever blood your species normally generates.
-
-trait-name-SlimeBlood = Slime Blood
-trait-description-SlimeBlood =
-    Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
-    Your body produces slime instead of whatever blood your species normally generates.
-
-trait-name-RedBlood = Red Blood
-trait-description-RedBlood =
-    Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
-    Your body produces regular blood instead of whatever blood your species normally generates.
-
-trait-name-AmmoniaBlood = Ammonia Blood
-trait-description-AmmoniaBlood =
-    Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
-    Your body produces Ammonia Blood instead of whatever blood your species normally generates.
-
-trait-name-ShimmeringBlood = Psychedelic Blood
-trait-description-ShimmeringBlood =
-    Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
-    Your body produces Psychedelic Blood instead of whatever blood your species normally generates. [color=red]Note:[/color] Due to Psychedelic Blood being hallucinogenic, this comes with additional trait cost.

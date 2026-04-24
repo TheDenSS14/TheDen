@@ -8,9 +8,10 @@
 # SPDX-FileCopyrightText: 2026 Asa
 # SPDX-FileCopyrightText: 2026 Eightballll
 # SPDX-FileCopyrightText: 2026 Kellaris
+# SPDX-FileCopyrightText: 2026 crumchy
 # SPDX-FileCopyrightText: 2026 sheepie
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: loadout
   id: LoadoutToyBasketball
@@ -113,8 +114,16 @@
   category: GeneralToys
   cost: 0
   canBeHeirloom: true
-  items: 
+  items:
   - PlushieInkdrop
+
+- type: loadout
+  id: LoadoutPlushieAgena
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items:
+  - PlushieAgena
 
 - type: loadout
   id: PlushieFelinid

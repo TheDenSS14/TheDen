@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2026 MajorMoth
+#
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  parent: ClothingNeckCloakMoth
+  suffix: DEBUG
+  id: ShaderDebugCloak
+  name: shader debugging cloak
+  description: Hehe... bug...
+  components:
+  - type: ClothingGrantComponent
+    component:
+    - type: ApplyShaderToEntity
+      shaderProto: AnalogDistortion
+      shaderParams:
+        tape_crease_smear: 4
+        tape_crease_discoloration: 20
+        tape_crease_speed: 0.1
+        tape_crease_jitter: 0.5
+        tape_crease_min: 0.5
+        tape_crease_max: 1.5
+
+- type: entity
+  parent: ShaderDebugCloak
+  id: ShaderDebugCloakCrispy
+  name: crispy shader debugging cloak
+  components:
+  - type: ClothingGrantComponent
+    component:
+    - type: ApplyShaderToEntity
+      shaderProto: Crispy
