@@ -6,9 +6,7 @@
 
 - type: marking
   id: TailFox
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   #Begin Den additions - organized skyrattails textures
   sprites:
   - sprite: _Floof/Mobs/Customization/Skyrattails/fox.rsi
@@ -19,9 +17,7 @@
 
 - type: marking
   id: Tail9sune
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_9sune_BEHIND_primary: TailBehind
     m_tail_9sune_BEHIND_secondary: TailBehind
@@ -45,9 +41,7 @@
 # COOKIECUT!
 - type: marking
   id: TailAvian1
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_avian1_BEHIND_primary: TailBehind
     m_tail_avian1_BEHIND_secondary: TailBehind
@@ -71,9 +65,7 @@
 # COOKIECUT!
 - type: marking
   id: TailAvian2
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_avian2_BEHIND_primary: TailBehind
     m_tail_avian2_BEHIND_secondary: TailBehind
@@ -96,9 +88,7 @@
 
 - type: marking
   id: TailBatl
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_batl_BEHIND_primary: TailBehind
     m_tail_batl_BEHIND_secondary: TailBehind
@@ -121,9 +111,7 @@
 
 - type: marking
   id: TailBats
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_bats_BEHIND_primary: TailBehind
     m_tail_bats_BEHIND_secondary: TailBehind
@@ -146,8 +134,7 @@
 
 - type: marking
   id: TailBee
-  bodyPart: Tail
-  markingCategory: Tail
+  parent: BaseTailMarking
   layering:
     m_tail_bee_BEHIND_primary: TailBehind
     m_tail_bee_BEHIND_secondary: TailBehind
@@ -156,7 +143,6 @@
   colorLinks:
     m_tail_bee_BEHIND_primary: m_tail_bee_FRONT_primary
     m_tail_bee_BEHIND_secondary: m_tail_bee_FRONT_secondary
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
   #Begin Den additions - organized skyrattails textures
   sprites:
   - sprite: _Floof/Mobs/Customization/Skyrattails/bee.rsi
@@ -172,9 +158,7 @@
 # COOKIECUT!
 - type: marking
   id: TailCable
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_cable_BEHIND_primary: TailBehind
     m_tail_cable_BEHIND_secondary: TailBehind
@@ -193,9 +177,7 @@
 
 - type: marking
   id: TailCat
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_cat_BEHIND: TailBehind
     m_tail_cat_FRONT: Tail #should go over backpack!
@@ -211,9 +193,7 @@
 
 - type: marking
   id: TailCatBig
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_catbig_BEHIND: TailBehind
     m_tail_catbig_FRONT: TailOversuit
@@ -229,9 +209,7 @@
 
 - type: marking
   id: TailCow
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Ovinia, Oni] # Den-Added Oni
+  parent: BaseTailMarking
   layering:
     m_tail_cow_BEHIND_primary: TailBehind
     m_tail_cow_FRONT_primary: TailOversuit
@@ -247,9 +225,7 @@
 
 - type: marking
   id: TailCrow
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_crow_BEHIND_primary: TailBehind
     m_tail_crow_FRONT_primary: TailOversuit
@@ -282,9 +258,7 @@
 # COOKIECUT?
 - type: marking
   id: TailDeer
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_deer_BEHIND_primary: TailBehind
     m_tail_deer_BEHIND_secondary: TailBehind
@@ -307,9 +281,7 @@
 
 - type: marking
   id: TailDeerTwo
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_deer_two_BEHIND: TailBehind
     m_tail_deer_two_FRONT: TailOversuit
@@ -326,9 +298,7 @@
 # COOKIECUT!
 - type: marking
   id: TailDoubleKitsune
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_doublekitsune_BEHIND_primary: TailBehind
     m_tail_doublekitsune_BEHIND_secondary: TailBehind
@@ -351,9 +321,7 @@
 
 - type: marking
   id: TailDTiger
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_dtiger_BEHIND: TailBehind
     m_tail_dtiger_FRONT: TailOversuit
@@ -369,9 +337,7 @@
 
 - type: marking
   id: TailEevee
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_eevee_BEHIND_primary: TailBehind
     m_tail_eevee_BEHIND_secondary: TailBehind
@@ -394,9 +360,7 @@
 
 - type: marking
   id: TailFennec
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_fennec_BEHIND_primary: TailBehind
     m_tail_fennec_BEHIND_secondary: TailBehind
@@ -420,9 +384,7 @@
 # COOKIECUT!
 - type: marking
   id: TailFox2
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_fox2_BEHIND_primary: TailBehind
     m_tail_fox2_FRONT_primary: TailOversuit
@@ -439,9 +401,7 @@
 # COOKIECUT?
 - type: marking
   id: TailFox3
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_fox3_BEHIND_primary: TailBehind
     m_tail_fox3_FRONT_primary: TailOversuit
@@ -457,9 +417,7 @@
 
 - type: marking
   id: TailGuilmon
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_guilmon_BEHIND_primary: TailBehind
     m_tail_guilmon_FRONT_primary: TailOversuit
@@ -475,9 +433,7 @@
 
 - type: marking
   id: TailHawk
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_hawk_BEHIND_primary: TailBehind
     m_tail_hawk_BEHIND_secondary: TailBehind
@@ -500,9 +456,7 @@
 
 - type: marking
   id: TailHorse
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Ovinia]
+  parent: BaseTailMarking
   layering:
     m_tail_horse_BEHIND: TailBehind
     m_tail_horse_FRONT: TailOversuit
@@ -527,9 +481,7 @@
 
 - type: marking
   id: TailHusk
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_husk_BEHIND_primary: TailBehind
     m_tail_husk_FRONT_primary: TailOversuit
@@ -545,9 +497,7 @@
 
 - type: marking
   id: TailHusky
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_husky_BEHIND_primary: TailBehind
     m_tail_husky_BEHIND_secondary: TailBehind
@@ -570,9 +520,7 @@
 
 - type: marking
   id: TailInsect
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_insect_BEHIND_primary: TailBehind
     m_tail_insect_FRONT_primary: TailOversuit
@@ -588,9 +536,7 @@
 
 - type: marking
   id: TailKangaroo
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_kangaroo_BEHIND_primary: TailBehind
     m_tail_kangaroo_FRONT_primary: TailOversuit
@@ -606,9 +552,7 @@
 
 - type: marking
   id: TailKitsune
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_kitsune_BEHIND_primary: TailBehind
     m_tail_kitsune_BEHIND_secondary: TailBehind
@@ -631,9 +575,7 @@
 
 - type: marking
   id: TailLab
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_lab_BEHIND_primary: TailBehind
     m_tail_lab_FRONT_primary: Tail
@@ -649,9 +591,7 @@
 
 - type: marking
   id: TailLeopard
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_leopard_BEHIND_primary: TailBehind
     m_tail_leopard_BEHIND_tertiary: TailBehind
@@ -674,9 +614,7 @@
 
 - type: marking
   id: TailLTiger
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_ltiger_BEHIND: TailBehind
     m_tail_ltiger_FRONT: Tail
@@ -692,9 +630,7 @@
 
 - type: marking
   id: TailLunasune
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_lunasune_BEHIND: TailBehind
     m_tail_lunasune_FRONT: Tail
@@ -722,9 +658,7 @@
 
 - type: marking
   id: TailMurid
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_murid_BEHIND_primary: TailBehind
     m_tail_murid_FRONT_primary: TailOversuit
@@ -740,9 +674,7 @@
 
 - type: marking
   id: TailMuridTwo
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_murid_two_BEHIND_primary: TailBehind
     m_tail_murid_two_FRONT_primary: TailOversuit
@@ -758,9 +690,7 @@
 
 - type: marking
   id: TailOrca
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_orca_BEHIND_primary: TailBehind
     m_tail_orca_FRONT_primary: TailOversuit
@@ -776,9 +706,7 @@
 
 - type: marking
   id: TailOtie
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_otie_BEHIND_primary: TailBehind
     m_tail_otie_FRONT_primary: TailOversuit
@@ -794,9 +722,7 @@
 
 - type: marking
   id: TailPede
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_pede_BEHIND_primary: TailBehind
     m_tail_pede_BEHIND_secondary: TailBehind
@@ -826,9 +752,7 @@
 
 - type: marking
   id: TailPlugTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_plugtail_BEHIND_primary: TailBehind
     m_tail_plugtail_BEHIND_secondary: TailBehind
@@ -858,9 +782,7 @@
 
 - type: marking
   id: TailQueenBee
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_queenbee_BEHIND_primary: TailBehind
     m_tail_queenbee_BEHIND_secondary: TailBehind
@@ -883,9 +805,7 @@
 
 - type: marking
   id: TailQueenInsect
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_queeninsect_BEHIND_primary: TailBehind
     m_tail_queeninsect_BEHIND_secondary: TailBehind
@@ -904,9 +824,7 @@
 
 - type: marking
   id: TailRabbit
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_rabbit_BEHIND_primary: TailBehind
     m_tail_rabbit_FRONT_primary: Tail
@@ -922,9 +840,7 @@
 
 - type: marking
   id: TailRabbitAlt
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_rabbit_alt_FRONT_primary: Tail
     m_tail_rabbit_alt_FRONT_secondary: Tail
@@ -938,9 +854,7 @@
 
 - type: marking
   id: TailRaccoon
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_raccoon_BEHIND_primary: TailBehind
     m_tail_raccoon_BEHIND_secondary: TailBehind
@@ -963,9 +877,7 @@
 
 - type: marking
   id: TailRaptor
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_raptor_BEHIND_primary: TailBehind
     m_tail_raptor_BEHIND_secondary: TailBehind
@@ -995,9 +907,7 @@
 
 - type: marking
   id: TailReptileSlim
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_reptileslim_BEHIND: TailBehind
     m_tail_reptileslim_FRONT: Tail
@@ -1013,9 +923,7 @@
 
 - type: marking
   id: TailSabresune
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_sabresune_BEHIND_primary: TailBehind
     m_tail_sabresune_BEHIND_secondary: TailBehind
@@ -1038,9 +946,7 @@
 
 - type: marking
   id: TailSegmentedTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_segmentedtail_BEHIND_primary: TailBehind
     m_tail_segmentedtail_BEHIND_secondary: TailBehind
@@ -1070,9 +976,7 @@
 
 - type: marking
   id: TailSergal
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_sergal_BEHIND_primary: TailBehind
     m_tail_sergal_BEHIND_secondary: TailBehind
@@ -1095,9 +999,7 @@
 
 - type: marking
   id: TailSevenKitsune
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_sevenkitsune_BEHIND_primary: TailBehind
     m_tail_sevenkitsune_BEHIND_secondary: TailBehind
@@ -1120,9 +1022,7 @@
 
 - type: marking
   id: TailShark
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_shark_BEHIND_primary: TailBehind
     m_tail_shark_FRONT_primary: TailOversuit
@@ -1138,9 +1038,7 @@
 
 - type: marking
   id: TailSharkNoFin
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_sharknofin_BEHIND_primary: TailBehind
     m_tail_sharknofin_FRONT_primary: TailOversuit
@@ -1156,9 +1054,7 @@
 
 - type: marking
   id: TailShepherd
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_shepherd_BEHIND_secondary: TailBehind
     m_tail_shepherd_BEHIND_tertiary: TailBehind
@@ -1181,9 +1077,7 @@
 
 - type: marking
   id: TailSkunk
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_skunk_BEHIND_primary: TailBehind
     m_tail_skunk_BEHIND_secondary: TailBehind
@@ -1213,9 +1107,7 @@
 
 - type: marking
   id: TailSmooth
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_smooth_BEHIND: TailBehind
     m_tail_smooth_FRONT: TailOversuit
@@ -1231,9 +1123,7 @@
 
 - type: marking
   id: TailSnakeDual
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Reptilian]
+  parent: BaseTailMarking
   layering:
     m_tail_snakedual_BEHIND_primary: TailBehind
     m_tail_snakedual_BEHIND_secondary: TailBehind
@@ -1254,9 +1144,7 @@
 
 - type: marking
   id: TailSnakeStripe
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Reptilian]
+  parent: BaseTailMarking
   layering:
     m_tail_snakestripe_BEHIND_primary: TailBehind
     m_tail_snakestripe_BEHIND_secondary: TailBehind
@@ -1277,9 +1165,7 @@
 
 - type: marking
   id: TailSnakeStripeAlt
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Reptilian]
+  parent: BaseTailMarking
   layering:
     m_tail_snakestripealt_BEHIND_primary: TailBehind
     m_tail_snakestripealt_BEHIND_secondary: TailBehind
@@ -1300,9 +1186,7 @@
 
 - type: marking
   id: TailSnakeStripeU
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Reptilian]
+  parent: BaseTailMarking
   layering:
     m_tail_snakestripe_BEHIND_primary: TailBehind
     m_tail_snakestripe_BEHIND_secondary: TailBehind
@@ -1320,9 +1204,7 @@
 
 - type: marking
   id: TailSnakeStripeAltU
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Reptilian]
+  parent: BaseTailMarking
   layering:
     m_tail_snakestripealt_BEHIND_primary: TailBehind
     m_tail_snakestripealt_BEHIND_secondary: TailBehind
@@ -1340,9 +1222,7 @@
 
 - type: marking
   id: TailSnakeTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_snaketail_BEHIND: TailBehind
     m_tail_snaketail_FRONT: Tail
@@ -1356,9 +1236,7 @@
 
 - type: marking
   id: TailSnakeUnder
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Reptilian]
+  parent: BaseTailMarking
   layering:
     m_tail_snakeunder_BEHIND_primary: TailBehind
     m_tail_snakeunder_BEHIND_secondary: TailBehind
@@ -1379,9 +1257,7 @@
 
 - type: marking
   id: TailSnakeUnderU
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Reptilian]
+  parent: BaseTailMarking
   layering:
     m_tail_snakeunder_BEHIND_primary: TailBehind
     m_tail_snakeunder_BEHIND_secondary: TailBehind
@@ -1399,9 +1275,7 @@
 
 - type: marking
   id: TailSpade
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_spade_BEHIND_primary: TailBehind
     m_tail_spade_FRONT_primary: TailOversuit
@@ -1417,9 +1291,7 @@
 
 - type: marking
   id: TailSpikes
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_spikes_BEHIND: TailBehind
     m_tail_spikes_FRONT: TailOversuit
@@ -1435,9 +1307,7 @@
 
 - type: marking
   id: TailSquirrel
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_squirrel_BEHIND: TailBehind
     m_tail_squirrel_FRONT: Tail
@@ -1453,9 +1323,7 @@
 
 - type: marking
   id: TailStraightTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_straighttail_BEHIND_primary: TailBehind
     m_tail_straighttail_FRONT_primary: Tail
@@ -1471,9 +1339,7 @@
 
 - type: marking
   id: TailStripe
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_stripe_BEHIND_primary: TailBehind
     m_tail_stripe_BEHIND_secondary: TailBehind
@@ -1513,9 +1379,7 @@
 
 - type: marking
   id: TailThreeCat
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_threecat_BEHIND_primary: TailBehind
     m_tail_threecat_FRONT_primary: Tail
@@ -1531,9 +1395,7 @@
 
 - type: marking
   id: TailTiger
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_tiger_BEHIND_primary: TailBehind
     m_tail_tiger_BEHIND_secondary: TailBehind
@@ -1563,9 +1425,7 @@
 
 - type: marking
   id: TailTiger2
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_tiger2_BEHIND_primary: TailBehind
     m_tail_tiger2_BEHIND_secondary: TailBehind
@@ -1595,9 +1455,7 @@
 
 - type: marking
   id: TailTwoCat
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_twocat_BEHIND_primary: TailBehind
     m_tail_twocat_FRONT_primary: Tail
@@ -1613,9 +1471,7 @@
 
 - type: marking
   id: TailWah
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_wah_BEHIND_primary: TailBehind
     m_tail_wah_BEHIND_secondary: TailBehind
@@ -1638,9 +1494,7 @@
 
 - type: marking
   id: TailWolf
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_wolf_BEHIND: TailBehind
     m_tail_wolf_FRONT: Tail
@@ -1656,9 +1510,7 @@
 
 - type: marking
   id: TailZorgoia
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni]
+  parent: BaseTailMarking
   layering:
     m_tail_zorgoia_BEHIND_primary: TailBehind
     m_tail_zorgoia_BEHIND_secondary: TailBehind

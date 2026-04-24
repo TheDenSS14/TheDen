@@ -10,9 +10,7 @@
 
 - type: marking
   id: ArmProstheticLeft
-  bodyPart: LArm
-  markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  parent: BaseLArmMarking
   followSkinColor: false
   coloring:
     default:
@@ -25,9 +23,7 @@
 
 - type: marking
   id: ArmTwistingLeft
-  bodyPart: LArm
-  markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  parent: BaseLArmMarking
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -35,9 +31,7 @@
 
 - type: marking
   id: ArmProstheticRight
-  bodyPart: RArm
-  markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  parent: BaseRArmMarking
   followSkinColor: false
   coloring:
     default:
@@ -50,9 +44,7 @@
 
 - type: marking
   id: ArmTwistingRight
-  bodyPart: RArm
-  markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  parent: BaseRArmMarking
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -60,9 +52,7 @@
 
 - type: marking
   id: ChestBackstabbed
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Thaven, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  parent: BaseChestMarking
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -70,9 +60,7 @@
 
 - type: marking
   id: ChestTwistingLeft
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  parent: BaseChestMarking
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -80,9 +68,7 @@
 
 - type: marking
   id: ChestTwistingRight
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  parent: BaseChestMarking
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -90,9 +76,7 @@
 
 - type: marking
   id: ChestStar
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  parent: BaseChestMarking
   sexRestriction: [Male] #TheDen - Splitting the scars and tattoos
   followSkinColor: false
   sprites:
@@ -101,9 +85,7 @@
 
 - type: marking
   id: ChestStarFemale
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  parent: BaseChestMarking
   sexRestriction: [Female] #TheDen - Splitting the scars and tattoos
   followSkinColor: false
   sprites:
@@ -112,9 +94,7 @@
 
 - type: marking
   id: FootProstheticLeft
-  bodyPart: LFoot
-  markingCategory: LeftFoot
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Thaven, Oni, Felinid, Canid, Kitsune, Vulpkanin, Feroxi, Rodentia]
+  parent: BaseLFootMarking
   followSkinColor: false
   coloring:
     default:
@@ -127,9 +107,7 @@
 
 - type: marking
   id: FootProstheticRight
-  bodyPart: RFoot
-  markingCategory: RightFoot
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Thaven, Oni, Felinid, Canid, Kitsune, Vulpkanin, Feroxi, Rodentia]
+  parent: BaseRFootMarking
   followSkinColor: false
   coloring:
     default:
@@ -142,9 +120,7 @@
 
 - type: marking
   id: HandProstheticLeft
-  bodyPart: LHand
-  markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  parent: BaseLHandMarking
   followSkinColor: false
   coloring:
     default:
@@ -157,9 +133,7 @@
 
 - type: marking
   id: HandTwistingLeft
-  bodyPart: LHand
-  markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  parent: BaseLHandMarking
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -167,9 +141,7 @@
 
 - type: marking
   id: HandProstheticRight
-  bodyPart: RHand
-  markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  parent: BaseRHandMarking
   followSkinColor: false
   coloring:
     default:
@@ -182,9 +154,7 @@
 
 - type: marking
   id: HandTwistingRight
-  bodyPart: RHand
-  markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  parent: BaseRHandMarking
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -212,9 +182,7 @@
 
 - type: marking
   id: LegProstheticLeft
-  bodyPart: LLeg
-  markingCategory: LeftLeg
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Thaven, Oni, Felinid, Canid, Kitsune, Vulpkanin, Feroxi, Rodentia]
+  parent: BaseLLegMarking
   followSkinColor: false
   coloring:
     default:
@@ -227,9 +195,7 @@
 
 - type: marking
   id: LegTwistingLeft
-  bodyPart: LLeg
-  markingCategory: LeftLeg
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Thaven, Oni, Felinid, Canid, Kitsune, Vulpkanin, Feroxi, Rodentia]
+  parent: BaseLLegMarking
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -237,9 +203,7 @@
 
 - type: marking
   id: LegProstheticRight
-  bodyPart: RLeg
-  markingCategory: RightLeg
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Thaven, Oni, Felinid, Canid, Kitsune, Vulpkanin, Feroxi, Rodentia]
+  parent: BaseRLegMarking
   followSkinColor: false
   coloring:
     default:
@@ -252,9 +216,7 @@
 
 - type: marking
   id: LegTwistingRight
-  bodyPart: RLeg
-  markingCategory: RightLeg
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Thaven, Oni, Felinid, Canid, Kitsune, Vulpkanin, Feroxi, Rodentia]
+  parent: BaseRLegMarking
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -262,9 +224,7 @@
 
 - type: marking
   id: TorsoIncision
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  parent: BaseChestMarking
   sexRestriction: [Male] #TheDen - Splitting the scars and tattoos
   followSkinColor: false
   sprites:
@@ -273,9 +233,7 @@
 
 - type: marking
   id: TorsoIncisionFemale
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
+  parent: BaseChestMarking
   sexRestriction: [Female] #TheDen - Splitting the scars and tattoos
   followSkinColor: false
   sprites:

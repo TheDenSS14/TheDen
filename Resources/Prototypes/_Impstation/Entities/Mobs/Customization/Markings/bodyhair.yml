@@ -6,9 +6,7 @@
 
 - type: marking
   id: BodyhairHumanMale
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Oni, Felinid, Kitsune ] # Frontier: add Oni, Felinid
+  parent: BaseChestMarking
   sexRestriction: [ Male ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/bodyhair.rsi
@@ -16,9 +14,7 @@
 
 - type: marking
   id: BodyhairHumanFemale
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Oni, Felinid, Kitsune ] # Frontier: add Oni, Felinid
+  parent: BaseChestMarking
   sexRestriction: [ Female ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/bodyhair.rsi
@@ -26,9 +22,7 @@
 
 - type: marking
   id: BodyhairHumanUnsexed
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Oni, Felinid, Kitsune ] # Frontier: add Oni, Felinid
+  parent: BaseChestMarking
   sexRestriction: [ Unsexed ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/bodyhair.rsi
