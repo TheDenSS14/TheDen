@@ -626,3 +626,27 @@
   sprite:
     sprite: _DEN/Decals/somber_tile_overlay.rsi
     state: somber-dark-diagonal-end-outer-W
+
+- type: decal
+  id: SomberTileOverlayDirt
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: dirt
+
+- type: decal
+  id: SomberTileOverlayGrass
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: grass
+
+- type: decal
+  id: SomberTileOverlaySand
+  tags: ["station", "overlay"]
+  parent: SomberTileOverlay
+  sprite:
+    sprite: _DEN/Decals/somber_tile_overlay.rsi
+    state: sand

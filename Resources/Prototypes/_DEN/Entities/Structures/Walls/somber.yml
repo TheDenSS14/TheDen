@@ -112,6 +112,8 @@
   suffix: Directional
   description: "Made of gloomy, patterned steel. It hums faintly, just below hearing."
   components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
   - type: Sprite
     sprite: _DEN/Structures/Walls/Somber/somber_directional.rsi
     state: somber
@@ -136,6 +138,8 @@
   suffix: Directional Corner
   description: "Made of gloomy, patterned steel. It hums faintly, just below hearing."
   components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
   - type: Sprite
     sprite: _DEN/Structures/Walls/Somber/somber_directional.rsi
     state: sombercorner
