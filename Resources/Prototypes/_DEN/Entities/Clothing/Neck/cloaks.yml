@@ -50,3 +50,32 @@
     folded: true
   - type: Clothing
     equippedPrefix: folded
+
+- type: entity
+  parent: Clothing # It's not edible or butcherable!
+  id: ClothingNeckCloakMantisShroud
+  name: mantis wolfskin
+  description: "A heavy traveler's cloak adorned with a charm-laden necklace, built to turn wind, rain, and dust alike. The origins of the name are lost to history, but the association with hunting remains."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Cloaks/mantis_shroud.rsi
+    state: icon
+  - type: Item
+    sprite: _DEN/Clothing/Neck/Cloaks/mantis_shroud.rsi
+    size: Small
+  - type: Clothing
+    quickEquip: true
+    slots:
+    - neck
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatMantisShroud
+    requiredSlot:
+    - neck
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:Container {}
