@@ -3,34 +3,32 @@
 // https://www.shadertoy.com/view/MdffD7
 // Fork of FMS_Cat's VCR distortion shader
 
-// TODO: Add uniforms for tape crease discoloration and image jiggle
+light_mode unshaded;
 
 const highp float PI = 3.14159265;
 
 uniform sampler2D SCREEN_TEXTURE;
+uniform sampler2D noise_texture;
 
-uniform lowp vec2 vhs_resolution = vec2(200.0, 200.0);
+uniform lowp vec2 vhs_resolution;
+uniform lowp float noise_intensity;
+uniform lowp int samples;
+uniform lowp float crease_noise;
+uniform lowp float crease_opacity;
+uniform lowp float filter_intensity;
 
-uniform lowp int samples = 2;
-uniform lowp float crease_noise = 0.3;
-uniform lowp float crease_opacity = 1;
-uniform lowp float filter_intensity = 0.0;
-
-uniform lowp float tape_crease_smear = 1;
-uniform lowp float tape_crease_intensity = 1;
-uniform lowp float tape_crease_jitter = 2;
-uniform lowp float tape_crease_speed = 0.1;
-uniform lowp float tape_crease_discoloration = 1;
+uniform lowp float tape_crease_smear;
+uniform lowp float tape_crease_intensity;
+uniform lowp float tape_crease_jitter;
+uniform lowp float tape_crease_speed;
+uniform lowp float tape_crease_discoloration;
 
 // these two parameters essentially control the "thickness" of the tape crease
-uniform lowp float tape_crease_min = 0.90; // values below 0 will create strange visuals
-uniform lowp float tape_crease_max = 0.96;
+uniform lowp float tape_crease_min; // values below 0 will create strange visuals
+uniform lowp float tape_crease_max;
 
-uniform lowp float bottom_border_thickness = 32.0;
-uniform lowp float bottom_border_jitter = 10.0;
-
-uniform lowp float noise_intensity = 0.0;
-uniform sampler2D noise_texture;
+uniform lowp float bottom_border_thickness;
+uniform lowp float bottom_border_jitter;
 
 highp float v2random(highp vec2 uv) {
 	return texture(noise_texture, mod(uv, vec2(1.0))).x;
