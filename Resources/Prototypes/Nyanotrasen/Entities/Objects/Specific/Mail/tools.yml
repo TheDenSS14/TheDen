@@ -46,6 +46,7 @@
         - MailCapsule # Frontier
         - Paper
         - Book
+        - PetWearable # Den
   - type: MagnetPickup # Frontier
     magnetEnabled: false
     magnetCanBeEnabled: false
@@ -64,3 +65,6 @@
     off: item-toggle-examine-magnet-off
   - type: Appearance
   # End Frontier
+  - type: Tag # Den
+    tags:
+    - SecDogWearable
