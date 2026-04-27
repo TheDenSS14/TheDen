@@ -162,3 +162,13 @@
   sprite:
     sprite: _DEN/Decals/misc.rsi
     state: planter-small-SW
+
+# Stepping stones to go in gardens or whatever
+
+- type: decal
+  id: SteppingStone1
+  tags: ["station", "overlay"]
+  parent: Misc
+  sprite:
+    sprite: _DEN/Decals/misc.rsi
+    state: steppingstone1

@@ -351,3 +351,21 @@
   sprite:
     sprite: _DEN/Decals/somber_dark.rsi
     state: labyrinth
+
+# Stepping stones to go in gardens or whatever
+
+- type: decal
+  id: SomberSteppingStone1
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber.rsi
+    state: steppingstone1
+
+- type: decal
+  id: SomberSteppingStone1Dark
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_dark.rsi
+    state: steppingstone1
