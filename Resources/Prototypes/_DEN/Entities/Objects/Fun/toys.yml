@@ -380,3 +380,63 @@
   - type: FoodSequenceElement
     entries:
       CottonBurger: InkdropPlushie
+
+ # @Jakumba; approved by Jakumba (maint)
+- type: entity
+  parent: PlushieExperiment
+  id: PlushieJak
+  name: wet cat plushie
+  description: Milk sold separately.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/jakplushie.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: shaded
+      right:
+      - state: inhand-right
+        shader: shaded
+    heldPrefix: plushielizard
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: Tag
+    tags:
+    - ClothMade
+    - Payload
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        shader: shaded
+    quickEquip: false
+    sprite: _DEN/Objects/Fun/jakplushie.rsi
+    equippedPrefix: equipped-HELMET.png
+    slots:
+    - HEAD
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: JakPlushie
