@@ -15,12 +15,12 @@
   abstract: true
   components:
     - type: StationMap
-    - type: Sprite
-      sprite: Objects/Devices/tablets.rsi
-      layers:
-        - state: tablet
-        - state: generic
-          shader: unshaded
+#    - type: Sprite | den, commented out because A. abstract proto, no need sprite and B. no matter what i did to this it would keep using THIS sprite and not the new one  
+#      sprite: Objects/Devices/tablets.rsi
+#      layers:
+#        - state: tablet
+#        - state: generic
+#          shader: unshaded
     - type: ActivatableUI
       inHandsOnly: true
       singleUser: true
@@ -42,10 +42,29 @@
 
 - type: entity
   id: HandheldStationMap
-  parent:
-  - BaseHandheldStationMap
-  - BaseHandheldComputer
+  parent: [BaseHandheldStationMap, BaseHandheldComputer] 
   suffix: Handheld, Powered
+  components: # den
+  - type: Item
+    sprite: _DEN/Objects/Tools/handheld_station_map.rsi
+    heldPrefix: map
+  - type: Sprite
+    sprite: _DEN/Objects/Tools/handheld_station_map.rsi
+    state: icon
+    layers:
+      - state: icon
+      - state: map
+        shader: unshaded
+        visible: true
+        map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: Appearance
+  - type: GenericVisualizer 
+    visuals:
+      enum.PowerCellSlotVisuals.Enabled:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+
 
 - type: entity
   id: HandheldStationMapEmpty
@@ -56,8 +75,17 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
+  - type: Sprite
+    sprite: _DEN/Objects/Tools/handheld_station_map.rsi
+    state: icon
+    layers:
+      - state: icon
+      - state: map
+        shader: unshaded
+        visible: false
+        map: [ "enum.PowerDeviceVisualLayers.Powered" ]
 
-- type: entity
-  id: HandheldStationMapUnpowered
-  parent: BaseHandheldStationMap
-  suffix: Handheld, Unpowered
+# - type: entity | den, commented out because this straight up doesnt do anything. previously used in barrier.yml and borg_modules.yml, both replaced
+#   id: HandheldStationMapUnpowered
+#   parent: BaseHandheldStationMap
+#   suffix: Handheld, Unpowered

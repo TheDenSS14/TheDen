@@ -14,13 +14,14 @@
   description: A hand-held power monitor.
   components:
   - type: Item
+    sprite: _DEN/Objects/Tools/handheld_power_monitor.rsi
+    heldPrefix: powmon
   - type: Sprite
     sprite: _DEN/Objects/Tools/handheld_power_monitor.rsi
     state: icon
     layers:
       - state: icon
-      - state: scanner
-        shader: unshaded
+      - state: power_monitor
         visible: true
         map: [ "enum.PowerDeviceVisualLayers.Powered" ]
   - type: PowerMonitoringConsole
@@ -63,8 +64,7 @@
     state: icon
     layers:
       - state: icon
-      - state: scanner
-        shader: unshaded
+      - state: power_monitor
         visible: false
         map: [ "enum.PowerDeviceVisualLayers.Powered" ]
 

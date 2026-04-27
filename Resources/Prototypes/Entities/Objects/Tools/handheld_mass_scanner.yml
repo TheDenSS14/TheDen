@@ -17,9 +17,10 @@
   components:
   - type: Item
     size: Small
-    sprite: Objects/Tools/handheld_mass_scanner.rsi
+    sprite: _DEN/Objects/Tools/handheld_mass_scanner.rsi #funky resprite originally but im not splitting this into two folders for the funky icon vs the den inhands
+    heldPrefix: scanner #den
   - type: Sprite
-    sprite: Objects/Tools/handheld_mass_scanner.rsi
+    sprite: _DEN/Objects/Tools/handheld_mass_scanner.rsi
     state: icon
     layers:
       - state: icon
@@ -66,9 +67,9 @@
         name: power-cell-slot-component-slot-name-default
   - type: Item
     size: Normal
-    sprite: Objects/Tools/handheld_mass_scanner.rsi
+    sprite: _DEN/Objects/Tools/handheld_mass_scanner.rsi
   - type: Sprite
-    sprite: Objects/Tools/handheld_mass_scanner.rsi
+    sprite: _DEN/Objects/Tools/handheld_mass_scanner.rsi
     state: icon
     layers:
       - state: icon
