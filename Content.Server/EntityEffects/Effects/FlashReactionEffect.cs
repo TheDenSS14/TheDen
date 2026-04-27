@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 pocl v
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.EntityEffects;
 using Content.Server.Flash;
 using Robust.Server.GameObjects;

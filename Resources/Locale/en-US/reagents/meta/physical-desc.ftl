@@ -1,30 +1,29 @@
-# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
-# SPDX-FileCopyrightText: 2022 Interrobang01 <113810873+Interrobang01@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Theomund <34360334+Theomund@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
-# SPDX-FileCopyrightText: 2023 Bakke <luringens@protonmail.com>
-# SPDX-FileCopyrightText: 2023 Boaz1111 <149967078+boaz1111@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 CrigCrag <137215465+CrigCrag@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Floofi <126319569+Shadowtheprotogen546@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 GoodWheatley <109803540+GoodWheatley@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Mr0maks <mr.maks0443@gmail.com>
-# SPDX-FileCopyrightText: 2023 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Veritius <veritiusgaming@gmail.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 lapatison <100279397+lapatison@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 SleepyScarecrow <136123749+SleepyScarecrow@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
-# SPDX-FileCopyrightText: 2024 Ubaser <134914314+ubaserb@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 cool dolphin <36332236+Afrokada@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 potato1234_x <79580518+potato1234x@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Hedera <185189451+Hederadaii@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin
+# SPDX-FileCopyrightText: 2022 Interrobang01
+# SPDX-FileCopyrightText: 2022 Nemanja
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 Theomund
+# SPDX-FileCopyrightText: 2022 metalgearsloth
+# SPDX-FileCopyrightText: 2023 Bakke
+# SPDX-FileCopyrightText: 2023 Boaz1111
+# SPDX-FileCopyrightText: 2023 CrigCrag
+# SPDX-FileCopyrightText: 2023 Floofi
+# SPDX-FileCopyrightText: 2023 GoodWheatley
+# SPDX-FileCopyrightText: 2023 Mr0maks
+# SPDX-FileCopyrightText: 2023 Psychpsyo
+# SPDX-FileCopyrightText: 2023 Veritius
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 lapatison
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow
+# SPDX-FileCopyrightText: 2024 Ubaser
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 cool dolphin
+# SPDX-FileCopyrightText: 2024 potato1234_x
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Hedera
+# SPDX-FileCopyrightText: 2026 pocl v
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
