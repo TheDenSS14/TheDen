@@ -12,7 +12,7 @@ uniform sampler2D noise_texture;
 
 uniform lowp vec2 vhs_resolution;
 uniform lowp float noise_intensity;
-uniform lowp int samples;
+uniform lowp int samples; // this mimics the poor horizontal color accuracy of vhs. more samples = more smear
 uniform lowp float crease_noise;
 uniform lowp float crease_opacity;
 uniform lowp float filter_intensity;
@@ -47,7 +47,7 @@ highp vec3 yiq2rgb(highp vec3 yiq) {
 }
 
 highp vec3 vhx_tex_2D(sampler2D tex, highp vec2 uv, highp float rot) {
-	vec3 yiq = vec3(0.0);
+	highp vec3 yiq = vec3(0.0);
 	for (int i = 0; i < samples; i++) {
 		yiq += rgb2yiq(texture(tex, uv - vec2(float(i), 0.0) / vhs_resolution).xyz) *
 				vec2(float(i), float(samples - 1 - i)).yxx / float(samples - 1)
@@ -60,33 +60,39 @@ highp vec3 vhx_tex_2D(sampler2D tex, highp vec2 uv, highp float rot) {
 }
 
 void fragment() {
-	vec2 uvn = UV;
-    vec4 tex = texture(TEXTURE, uvn);
-    vec3 col = tex.rgb;
+    highp vec2 uvn = UV;
+    highp vec2 screen_uvn = Pos;
 
 	// Tape wave.
-	uvn.x += (v2random(vec2(uvn.y / 10.0, TIME / 10.0) / 1.0) - 0.5) / vhs_resolution.x * 1.0;
-	uvn.x += (v2random(vec2(uvn.y, TIME * 10.0)) - 0.5) / vhs_resolution.x * 1.0;
+    lowp float tape_wave_offset1 = (v2random(vec2(uvn.y / 10.0, TIME / 10.0) / 1.0) - 0.5) / vhs_resolution.x * 1.0;
+    lowp float tape_wave_offset2 = (v2random(vec2(uvn.y, TIME * 10.0)) - 0.5) / vhs_resolution.x * 1.0;
+	uvn.x += tape_wave_offset1 + tape_wave_offset2;
 
 	// tape crease
-	highp float tc_phase = smoothstep(tape_crease_min, tape_crease_max, sin(uvn.y * 8.0 - (TIME * tape_crease_speed + tape_crease_jitter * (v2random(TIME * vec2(0.67, 0.59)) * 2.0 - 1.0)) * PI * 1.2));
-	highp float tc_noise = smoothstep(0.3, 1.0, v2random(vec2(uvn.y * 4.77, TIME)));
-	highp float tc = tc_phase * tc_noise;
-	uvn.x = uvn.x - tc / vhs_resolution.x * 8.0 * tape_crease_smear;
+	lowp float tc_phase = smoothstep(tape_crease_min, tape_crease_max, sin(uvn.y * 8.0 - (TIME * tape_crease_speed + tape_crease_jitter * (v2random(TIME * vec2(0.67, 0.59)) * 2.0 - 1.0)) * PI * 1.2));
+	lowp float tc_noise = smoothstep(0.3, 1.0, v2random(vec2(uvn.y * 4.77, TIME)));
+	lowp float tc = tc_phase * tc_noise;
+    lowp float crease_direction = v2random(vec2(TIME * 0.1, 0.0)) * 2.0 - 1.0;
+    lowp float tape_crease_offset = tc / vhs_resolution.x * 16.0 * tape_crease_smear * crease_direction;
+	uvn.x -= tape_crease_offset;
 
 	// switching noise
-	highp float sn_phase = smoothstep(1.0 - bottom_border_thickness / vhs_resolution.y, 1.0, uvn.y);
-	uvn.x += sn_phase * (v2random(vec2(UV.y * 100.0, TIME * 10.0)) - 0.5) / vhs_resolution.x * bottom_border_jitter;
-    uvn = clamp(uvn, 0.0, 1.0);
+	lowp float sn_phase = smoothstep(1.0 - bottom_border_thickness / vhs_resolution.y, 1.0, uvn.y);
+    lowp float switching_noise = sn_phase * (v2random(vec2(UV.y * 100.0, TIME * 10.0)) - 0.5) / vhs_resolution.x * bottom_border_jitter;
+	uvn.x += switching_noise;
+
+    highp vec4 screen = texture(SCREEN_TEXTURE, screen_uvn);
+    highp vec4 tex = texture(TEXTURE, uvn);
+    highp vec3 col = tex.rgb;
 
 	// fetch
 	col = vhx_tex_2D(TEXTURE, uvn, tc_phase * 0.2 + sn_phase * 2.0);
 
 	// crease noise
-	highp float cn = tc_noise * crease_noise * (0.7 * tc_phase * tape_crease_intensity + 0.3);
+	lowp float cn = tc_noise * crease_noise * (0.7 * tc_phase * tape_crease_intensity + 0.3);
 	if (0.29 < cn) {
-		vec2 V = vec2(0.0, crease_opacity);
-		vec2 uvt = (uvn + V.yx * v2random(vec2(uvn.y, TIME))) * vec2(0.1, 1.0);
+		highp vec2 V = vec2(0.0, crease_opacity);
+		highp vec2 uvt = (uvn + V.yx * v2random(vec2(uvn.y, TIME))) * vec2(0.1, 1.0);
 		highp float n0 = v2random(uvt);
 		highp float n1 = v2random(uvt + V.yx / vhs_resolution.x);
 		if (n1 < n0) {
@@ -107,5 +113,5 @@ void fragment() {
     col = col + vec3(0.1, -0.1, 0.0) * filter_intensity;
     col = yiq2rgb(col);
 
-	COLOR = vec4(col, tex.a);
+    COLOR = mix(screen, vec4(col, tex.a), tex.a);
 }
