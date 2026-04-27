@@ -61,7 +61,7 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement # DeltaV - Civilian dept time requirement
       department: Civilian
-      min: 28800 # The Den - 8 hours
+      min: 108000 # The Den - 30 hours
     - !type:CharacterPlaytimeRequirement
       tracker: JobChef
       min: 7200 # The Den - 2 hour

@@ -52,18 +52,18 @@
   description: job-description-qm
   playTimeTracker: JobQuartermaster
   requirements:
-  #  - !type:RoleTimeRequirement #DeltaV
-  #    role: JobCargoTechnician
-  #    time: 21600 #6 hrs
+    - !type:CharacterPlaytimeRequirement #Den
+      tracker: JobCargoTechnician
+      min: 32400 #9 hrs
     - !type:CharacterPlaytimeRequirement
       tracker: JobSalvageSpecialist
-      min: 10800 #3 hrs
+      min: 32400 #9 hrs
     - !type:CharacterPlaytimeRequirement # DeltaV - Courier role time requirement
       tracker: JobMailCarrier
-      min: 7200 # 2 hours
+      min: 10800 # 3 hours
     - !type:CharacterDepartmentTimeRequirement
       department: Logistics # DeltaV - Logistics Department replacing Cargo
-      min: 43200 #DeltaV 12 hours
+      min: 108000 #Den, 30 hours
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
