@@ -5,13 +5,11 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: PiercingCross
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
+  parent: BaseNippleMarking
   coloring:
     default:
       type:
@@ -37,9 +35,7 @@
 
 - type: marking
   id: PiercingCrossMale
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
+  parent: BaseNippleMarking
   coloring:
     default:
       type:
@@ -52,8 +48,7 @@
 - type: marking
   id: PiercingHori
   bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
+  parent: BaseNippleMarking
   coloring:
     default:
       type:
@@ -79,9 +74,7 @@
 
 - type: marking
   id: PiercingHoriMale
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
+  parent: BaseNippleMarking
   coloring:
     default:
       type:
@@ -93,9 +86,7 @@
 
 - type: marking
   id: PiercingKnocker
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
+  parent: BaseNippleMarking
   coloring:
     default:
       type:
@@ -121,9 +112,7 @@
 
 - type: marking
   id: PiercingKnockerMale
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
+  parent: BaseNippleMarking
   coloring:
     default:
       type:
@@ -135,9 +124,7 @@
 
 - type: marking
   id: PiercingPlus
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
+  parent: BaseNippleMarking
   coloring:
     default:
       type:
@@ -163,9 +150,7 @@
 
 - type: marking
   id: PiercingPlusMale
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
+  parent: BaseNippleMarking
   coloring:
     default:
       type:
@@ -177,9 +162,7 @@
 
 - type: marking
   id: PiercingVert
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
+  parent: BaseNippleMarking
   coloring:
     default:
       type:
@@ -205,9 +188,7 @@
 
 - type: marking
   id: PiercingVertMale
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
+  parent: BaseNippleMarking
   coloring:
     default:
       type:
@@ -219,9 +200,7 @@
 
 - type: marking
   id: PiercingRings
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
+  parent: BaseNippleMarking
   coloring:
     default:
       type:
@@ -247,9 +226,7 @@
 
 - type: marking
   id: PiercingRingsMale
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
+  parent: BaseNippleMarking
   coloring:
     default:
       type:

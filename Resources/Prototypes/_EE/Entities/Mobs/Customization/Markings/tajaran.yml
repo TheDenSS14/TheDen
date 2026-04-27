@@ -3,34 +3,29 @@
 # SPDX-FileCopyrightText: 2025 KekaniCreates
 # SPDX-FileCopyrightText: 2025 SX-7
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Aikakakah
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Tajaran Tails
 
 - type: marking
   id: TajaranTailRetro
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Tajaran, Felinid]
+  parent: BaseTailMarking
   sprites:
   - sprite: _EE/Mobs/Customization/Tajaran/tails.rsi
     state: tail
 
 - type: marking
   id: TajaranTailAnim
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Tajaran, Felinid]
+  parent: BaseTailMarking
   sprites:
   - sprite: _EE/Mobs/Customization/Tajaran/tails.rsi
     state: tail_anim
 
 - type: marking
   id: TajaranTailRetroRings
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Tajaran, Felinid]
+  parent: BaseTailMarking
   sprites:
   - sprite: _EE/Mobs/Customization/Tajaran/tails.rsi
     state: tail
@@ -39,9 +34,7 @@
 
 - type: marking
   id: TajaranTailAnimRings
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Tajaran, Felinid]
+  parent: BaseTailMarking
   sprites:
   - sprite: _EE/Mobs/Customization/Tajaran/tails.rsi
     state: tail_anim
@@ -50,9 +43,7 @@
 
 - type: marking
   id: TajaranLeoTailNoAnim # Den Addition - Leopard Tail No Animation
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Tajaran, Felinid]
+  parent: BaseTailMarking
   sprites:
   - sprite: _EE/Mobs/Customization/Tajaran/leotail.rsi
     state: leopard_primary
@@ -61,9 +52,7 @@
 
 - type: marking
   id: TajaranLeoTailAnim # Den Addition - Leopard Tail Animation
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Tajaran, Felinid]
+  parent: BaseTailMarking
   sprites:
   - sprite: _EE/Mobs/Customization/Tajaran/leotail.rsi
     state: leotailanim_primary
@@ -321,18 +310,14 @@
 # compatibility
 - type: marking
   id: TajaranTailRetroAnimated
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Tajaran, Felinid]
+  parent: BaseTailMarking
   sprites:
   - sprite: _EE/Mobs/Customization/Tajaran/tails.rsi
     state: tail_anim
 
 - type: marking
   id: TajaranTailRetroRingsAnimated
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Tajaran, Felinid]
+  parent: BaseTailMarking
   sprites:
   - sprite: _EE/Mobs/Customization/Tajaran/tails.rsi
     state: tail_anim
@@ -341,9 +326,7 @@
 
 - type: marking
   id: TajaranLeoTail # Den Addition - Leopard Tail No Animation
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Tajaran, Felinid]
+  parent: BaseTailMarking
   sprites:
   - sprite: _EE/Mobs/Customization/Tajaran/leotail.rsi
     state: leopard_primary
@@ -352,9 +335,7 @@
 
 - type: marking
   id: TajaranLeoTailAnimated # Den Addition - Leopard Tail Animation
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Tajaran, Felinid]
+  parent: BaseTailMarking
   sprites:
   - sprite: _EE/Mobs/Customization/Tajaran/leotail.rsi
     state: leotailanim_primary

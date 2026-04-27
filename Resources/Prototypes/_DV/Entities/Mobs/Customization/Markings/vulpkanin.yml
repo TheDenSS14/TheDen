@@ -11,16 +11,14 @@
 # SPDX-FileCopyrightText: 2025 kc the sheep
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # All the Vulpkanin customization
 
 # Ears Markings
 - type: marking
   id: VulpEar
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseEarsMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: vulp
@@ -29,9 +27,7 @@
 
 - type: marking
   id: VulpEarFade
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseEarsMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: vulp
@@ -40,9 +36,7 @@
 
 - type: marking
   id: VulpEarSharp
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseEarsMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: vulp
@@ -51,9 +45,7 @@
 
 - type: marking
   id: VulpEarJackal
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseEarsMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: jackal
@@ -62,9 +54,7 @@
 
 - type: marking
   id: VulpEarTerrier
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseEarsMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: terrier
@@ -73,9 +63,7 @@
 
 - type: marking
   id: VulpEarWolf
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseEarsMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: wolf
@@ -84,9 +72,7 @@
 
 - type: marking
   id: VulpEarFennec
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseEarsMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: fennec
@@ -95,9 +81,7 @@
 
 - type: marking
   id: VulpEarFox
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseEarsMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: fox
@@ -106,9 +90,7 @@
 
 - type: marking
   id: VulpEarOtie
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseEarsMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: otie
@@ -117,9 +99,7 @@
 
 - type: marking
   id: VulpEarTajaran
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseEarsMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: msai
@@ -128,27 +108,21 @@
 
 - type: marking
   id: VulpEarShock
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseEarsMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: shock
 
 - type: marking
   id: VulpEarCoyote
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseEarsMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: coyote
 
 - type: marking
   id: VulpEarDalmatian
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseEarsMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: dalmatian
@@ -287,9 +261,7 @@
 # Tail Markings
 - type: marking
   id: VulpTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp
@@ -309,9 +281,7 @@
 
 - type: marking
   id: VulpTailTip
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp
@@ -331,9 +301,7 @@
 
 - type: marking
   id: VulpTailAlt
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_alt
@@ -342,9 +310,7 @@
 
 - type: marking
   id: VulpTailAltTip
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_alt
@@ -353,9 +319,7 @@
 
 - type: marking
   id: VulpTailLong
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: long
@@ -364,9 +328,7 @@
 
 - type: marking
   id: VulpTailFox
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: fox
@@ -386,9 +348,7 @@
 
 - type: marking
   id: VulpTailFoxTip
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: fox
@@ -408,9 +368,7 @@
 
 - type: marking
   id: VulpTailBushy
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: bushfluff
@@ -426,9 +384,7 @@
 
 - type: marking
   id: VulpTailCoyote
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: coyote
@@ -444,9 +400,7 @@
 
 - type: marking
   id: VulpTailCorgi
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: corgi
@@ -462,9 +416,7 @@
 
 - type: marking
   id: VulpTailHusky
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: husky-inner
@@ -473,27 +425,21 @@
 
 - type: marking
   id: VulpTailHuskyAlt
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: husky
 
 - type: marking
   id: VulpTailFox2
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: fox2
 
 - type: marking
   id: VulpTailFox3
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: fox3
@@ -502,36 +448,28 @@
 
 - type: marking
   id: VulpTailFennec
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: fennec
 
 - type: marking
   id: VulpTailOtie
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: otie
 
 - type: marking
   id: VulpTailFluffy
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid, Kitsune] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: fluffy
 
 - type: marking
   id: VulpTailDalmatian
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Canid] # The Den - Add Canid
+  parent: BaseTailMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: dalmatian
@@ -550,7 +488,8 @@
   id: VulpBellyCrest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Vulpkanin, IPC, SlimePerson, Human, Kitsune, Oni]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Shadowkin, Plasmaman, Thaven, Diona, Moth, Chitinid]
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/body_markings.rsi
       state: belly_crest
@@ -559,7 +498,8 @@
   id: VulpBellyFull
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Vulpkanin, IPC, SlimePerson, Human, Kitsune, Oni]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Shadowkin, Plasmaman, Thaven, Diona, Moth, Chitinid]
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/body_markings.rsi
       state: belly_full
@@ -568,7 +508,8 @@
   id: VulpBellyFox
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Vulpkanin, IPC, SlimePerson, Human, Kitsune, Oni]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Shadowkin, Plasmaman, Thaven, Diona, Moth, Chitinid]
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/body_markings.rsi
       state: belly_fox
@@ -605,18 +546,14 @@
 # Leg Markings
 - type: marking
   id: VulpPointsFeet
-  markingCategory: RightFoot
-  bodyPart: RFoot
-  speciesRestriction: [Vulpkanin, SlimePerson, Human, Kitsune, Oni]
+  parent: BaseRFootMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_feet
 
 - type: marking
   id: VulpPointsCrestLegs
-  markingCategory: LeftLeg
-  bodyPart: LLeg
-  speciesRestriction: [Vulpkanin, SlimePerson, Human, Kitsune, Oni]
+  parent: BaseLLegMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_crest-legs
@@ -624,17 +561,14 @@
 - type: marking
   id: VulpPointsFadeLegs
   markingCategory: LeftLeg
-  bodyPart: LLeg
-  speciesRestriction: [Vulpkanin, SlimePerson, Human, Kitsune, Oni]
+  parent: BaseLLegMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_fade-legs
 
 - type: marking
   id: VulpPointsSharpLegs
-  markingCategory: LeftLeg
-  bodyPart: LLeg
-  speciesRestriction: [Vulpkanin, SlimePerson, Human, Kitsune, Oni]
+  parent: BaseLLegMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_sharp-legs
@@ -642,35 +576,28 @@
 # Arm Markings
 - type: marking
   id: VulpPointsHands
-  markingCategory: RightHand
-  bodyPart: RHand
-  speciesRestriction: [Vulpkanin, SlimePerson, Human, Oni]
+  parent: BaseRHandMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_hands
 
 - type: marking
   id: VulpPointsCrestArms
-  markingCategory: LeftArm
-  bodyPart: LArm
-  speciesRestriction: [Vulpkanin, SlimePerson, Human, Oni]
+  parent: BaseLArmMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_crest-arms
 
 - type: marking
   id: VulpPointsFadeArms
-  markingCategory: LeftArm
-  bodyPart: LArm
-  speciesRestriction: [Vulpkanin, SlimePerson, Human, Oni]
+  parent: BaseLArmMarking
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_fade-arms
 
 - type: marking
   id: VulpPointsSharpArms
-  markingCategory: LeftArm
-  bodyPart: LArm
+  parent: BaseLArmMarking
   speciesRestriction: [Vulpkanin, SlimePerson, Human, Oni]
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/body_markings.rsi

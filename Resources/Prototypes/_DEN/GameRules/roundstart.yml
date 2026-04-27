@@ -1,4 +1,6 @@
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Jakumba
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -24,3 +26,36 @@
   - type: SubGamemodes
     rules:
     - id: Thief
+
+- type: entity
+  parent: Conspirators
+  categories: [ HideSpawnMenu ]
+  id: LessConspirator
+  components:
+  - type: GameRule
+    # minPlayers: 20 # minimum of 2 conspirators
+    delay:
+      min: 1800
+      max: 2400
+  - type: ConspiratorRule
+  - type: AntagSelection
+    # selectionTime: IntraPlayerSpawn
+    definitions:
+    - prefRoles: [ Conspirator ]
+      min: 4
+      max: 6
+      playerRatio: 15
+      briefing:
+        text: conspirator-role-greeting
+        color: SaddleBrown
+        sound: /Audio/_Harmony/Misc/conspirator_greeting.ogg
+      blacklist:
+        components:
+        - AntagImmune
+      components:
+      - type: Conspirator
+      - type: AutoImplant
+        implants:
+        - RadioImplantConspiracy
+      mindRoles:
+      - MindRoleConspirator

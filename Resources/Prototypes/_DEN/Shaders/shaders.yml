@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: 2026 MajorMoth
+#
+# SPDX-License-Identifier: MIT
+
+- type: shader
+  id: AnalogDistortion
+  kind: source
+  path: "/Textures/_DEN/Shaders/analog_distortion.swsl"
+  params:
+    vhs_resolution: 200.0, 200.0
+    samples: 2
+    crease_noise: 0.3
+    crease_opacity: 1
+    filter_intensity: 0.0
+    tape_crease_smear: 1
+    tape_crease_intensity: 1
+    tape_crease_jitter: 2
+    tape_crease_speed: 0.1
+    tape_crease_discoloration: 1
+    tape_crease_min: 0.90
+    tape_crease_max: 0.96
+    bottom_border_thickness: 32.0
+    bottom_border_jitter: 10.0
+    noise_intensity: 0.0

@@ -1,0 +1,161 @@
+# SPDX-FileCopyrightText: 2026 Aikakakah
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Head
+- type: marking
+  abstract: true
+  id: BaseHeadMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Shadowkin, Plasmaman, Thaven, IPC, Diona, Moth, Chitinid, Arachnid]
+  bodyPart: Head
+  markingCategory: Head
+
+- type: marking
+  abstract: true
+  id: BaseEarrings
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Shadowkin, Plasmaman, Thaven, Moth, Chitinid, Tajaran, Rodentia, Resomi]
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+
+- type: marking
+  abstract: true
+  id: BaseEarsMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Shadowkin, Plasmaman, Thaven, Moth, Chitinid, Diona, Resomi, Feroxi, Reptilian]
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+
+- type: marking
+  abstract: true
+  id: BaseSideEarsMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Shadowkin, Plasmaman, Thaven, Moth, Chitinid, Diona, Resomi]
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+
+- type: marking
+  abstract: true
+  id: BaseHornsMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Shadowkin, Plasmaman, Thaven, Moth, Chitinid, Diona, Resomi, Harpy, Rodentia, Kitsune, Arachnid, Canid, Tajaran, Felinid, Vulpkanin]
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+
+# Face
+- type: marking
+  abstract: true
+  id: BaseFaceMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Shadowkin, Plasmaman, Thaven, IPC, Diona, Moth, Chitinid, Arachnid]
+  bodyPart: Face
+  markingCategory: Face
+
+- type: marking
+  abstract: true
+  id: BaseFaceSnoutlessMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Shadowkin, Plasmaman, Thaven, IPC, Diona, Moth, Chitinid, Arachnid, Vulpkanin, Feroxi, Reptillian, Tajaran, Rodentia ]
+  bodyPart: Face
+  markingCategory: Face
+
+- type: marking
+  abstract: true
+  id: BaseEyesMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Shadowkin, Plasmaman, Thaven, IPC, Diona, Moth, Chitinid, Arachnid]
+  bodyPart: Eyes
+  markingCategory: Head
+
+# Chest
+- type: marking
+  abstract: true
+  id: BaseChestMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Shadowkin, Plasmaman, Thaven, IPC, Diona, Moth, Chitinid]
+  bodyPart: Chest
+  markingCategory: Chest
+
+- type: marking
+  abstract: true
+  id: BaseNippleMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Shadowkin, Plasmaman, Thaven, IPC, Diona, Moth, Chitinid, Vulpkanin ]
+  bodyPart: Chest
+  markingCategory: Nipples
+
+# Arms and Hands
+- type: marking
+  abstract: true
+  id: BaseRArmMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Harpy, Plasmaman, Thaven, IPC, Diona, Moth, Chitinid]
+  bodyPart: RArm
+  markingCategory: RightArm
+
+- type: marking
+  abstract: true
+  id: BaseLArmMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Harpy, Plasmaman, Thaven, IPC, Diona, Moth, Chitinid]
+  bodyPart: LArm
+  markingCategory: LeftArm
+
+- type: marking
+  abstract: true
+  id: BaseRHandMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Harpy, Plasmaman, IPC, Diona, Moth, Chitinid]
+  bodyPart: RHand
+  markingCategory: RightHand
+
+- type: marking
+  abstract: true
+  id: BaseLHandMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Harpy, Plasmaman, IPC, Diona, Moth, Chitinid]
+  bodyPart: LHand
+  markingCategory: LeftHand
+
+# Legs and Feet
+- type: marking
+  abstract: true
+  id: BaseRLegMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Shadowkin, Ovinia, Harpy, Plasmaman, IPC, Diona, Arachne, Moth, Chitinid]
+  bodyPart: RLeg
+  markingCategory: RightLeg
+
+- type: marking
+  abstract: true
+  id: BaseLLegMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Shadowkin, Ovinia, Harpy, Plasmaman, IPC, Diona, Arachne, Moth, Chitinid]
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+
+- type: marking
+  abstract: true
+  id: BaseRFootMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Shadowkin, Ovinia, Harpy, Plasmaman, Tajaran, IPC, Diona, Arachne, Moth, Chitinid]
+  bodyPart: RFoot
+  markingCategory: RightFoot
+
+- type: marking
+  abstract: true
+  id: BaseLFootMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Shadowkin, Ovinia, Harpy, Plasmaman, Tajaran, IPC, Diona, Arachne, Moth, Chitinid]
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+
+# Tails
+- type: marking
+  abstract: true
+  id: BaseTailMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Shadowkin, Plasmaman, Thaven, Diona, Moth, Chitinid, Arachnid, Arachne]
+  bodyPart: Tail
+  markingCategory: Tail

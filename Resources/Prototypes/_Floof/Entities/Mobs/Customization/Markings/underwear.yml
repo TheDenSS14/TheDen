@@ -2,13 +2,14 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2026 Selva
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: UnderwearClassicbriefs
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -22,7 +23,8 @@
   id: UnderwearClassicjockstrap
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -36,7 +38,8 @@
   id: UnderwearClassicmankini
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -50,7 +53,8 @@
   id: UnderwearClassicboxers
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -64,7 +68,8 @@
   id: UnderwearClassicheartboxers
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -78,7 +83,8 @@
   id: UnderwearClassicukboxers
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -92,7 +98,8 @@
   id: UnderwearClassicassblastusaboxers
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -106,7 +113,8 @@
   id: UnderwearClassiccommieboxers
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -120,7 +128,8 @@
   id: UnderwearClassicstripedboxers
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -134,7 +143,8 @@
   id: UnderwearClassicboxerbriefs
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -148,7 +158,8 @@
   id: UnderwearClassicbeeshorts
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -162,7 +173,8 @@
   id: UnderwearClassicpanties
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -176,7 +188,8 @@
   id: UnderwearClassicpantiesalt
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -190,7 +203,8 @@
   id: UnderwearClassicpantiesslim
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -204,7 +218,8 @@
   id: UnderwearClassicpantiesthin
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -218,7 +233,8 @@
   id: UnderwearClassicpantiesneko
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -232,7 +248,8 @@
   id: UnderwearClassicpantiesswimming
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -246,7 +263,8 @@
   id: UnderwearClassicthong
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -260,7 +278,8 @@
   id: UnderwearClassicthongbabydoll
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -274,7 +293,8 @@
   id: UnderwearFishnetlower
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -288,7 +308,8 @@
   id: UnderwearClassicpantiesassblastusa
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -302,7 +323,8 @@
   id: UnderwearClassicpantiesbeekini
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -316,7 +338,8 @@
   id: UnderwearClassicpantiescommie
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -330,7 +353,8 @@
   id: UnderwearClassicpantiesuk
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -344,7 +368,8 @@
   id: UnderwearClassicpantiesstriped
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -358,7 +383,8 @@
   id: UnderwearClassicpantiesbow
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -372,7 +398,8 @@
   id: UnderwearClassicpantiesbowslim
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -386,7 +413,8 @@
   id: UnderwearClassicthongbow
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -400,7 +428,8 @@
   id: UnderwearClassicthongbowbabydoll
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:
@@ -414,7 +443,8 @@
   id: UnderwearClassicpantiescow
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy, Tajaran]
+  invertSpeciesRestriction: true
+  speciesRestriction: [Thaven]
   coloring:
     default:
       type:

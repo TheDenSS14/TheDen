@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Aikakakah
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: DemonChestCowSpots
@@ -59,153 +60,119 @@
 
 - type: marking
   id: DemonCowEars
-  bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [Oni, Harpy, Arachne, Lamia, Human, IPC]
+  parent: BaseSideEarsMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: cow_ears
 
 - type: marking
   id: DemonEars
-  bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [Oni, Harpy, Arachne, Lamia, Human, IPC]
+  parent: BaseSideEarsMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: demon_ears
 
 - type: marking
   id: DemonElfEars
-  bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [Oni, Harpy, Arachne, Lamia, Human, IPC]
+  parent: BaseSideEarsMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: ears_elf
 
 - type: marking
   id: DemonCowHorns
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
+  parent: BaseHornsMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: cow_horns
 
 - type: marking
   id: DemonHornsDeer
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
+  parent: BaseHornsMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: deer_antlers_horns
 
 - type: marking
   id: DemonHornsSmall
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
+  parent: BaseHornsMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: small_horns
 
 - type: marking
   id: DemonHornsBuffalo
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
+  parent: BaseHornsMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_buffalo
 
 - type: marking
   id: DemonHornsCarpicorn
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
+  parent: BaseHornsMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_capricorn
 
 - type: marking
   id: DemonHornsDevil
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
+  parent: BaseHornsMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_devil
 
 - type: marking
   id: DemonHornsDevil2
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
+  parent: BaseHornsMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_devil2
 
 - type: marking
   id: DemonHornsDevil3
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
+  parent: BaseHornsMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_devil3
 
 - type: marking
   id: DemonHornsDevil4
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
+  parent: BaseHornsMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_devil4
 
 - type: marking
   id: DemonHornsRam
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
+  parent: BaseHornsMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_ram
 
 - type: marking
   id: DemonHornsUnicorn
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
+  parent: BaseHornsMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_unicorn
 
 - type: marking
   id: DemomTail1
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Human, IPC]
+  parent: BaseTailMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: demon_tail
 
 - type: marking
   id: DemomTailLong
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Human, IPC]
+  parent: BaseTailMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: long
 
 - type: marking
   id: DemomTailUp
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Human, IPC]
+  parent: BaseTailMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: up
