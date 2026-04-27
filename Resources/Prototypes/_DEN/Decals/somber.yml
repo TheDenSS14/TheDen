@@ -369,3 +369,27 @@
   sprite:
     sprite: _DEN/Decals/somber_dark.rsi
     state: steppingstone1
+
+- type: decal
+  id: SomberSteppingStone1Electrum
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_misc.rsi
+    state: steppingstone1electrum
+
+- type: decal
+  id: SomberSteppingStone1Mnemolith
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_misc.rsi
+    state: steppingstone1mnemolith
+
+- type: decal
+  id: SomberSteppingStone1Steel
+  tags: ["station", "overlay"]
+  parent: SomberMisc
+  sprite:
+    sprite: _DEN/Decals/somber_misc.rsi
+    state: steppingstone1steel
