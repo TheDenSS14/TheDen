@@ -43,7 +43,11 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using System.Globalization;
 using Content.Shared._DEN.Bed.Cryostorage.Components;
-
+using Content.Server.Mind;
+using Content.Shared.CCVar;
+using Robust.Shared.Timing;
+using Robust.Shared.Configuration;
+using Content.Shared.Ghost;
 
 namespace Content.Server.Bed.Cryostorage;
 
@@ -66,7 +70,9 @@ public sealed partial class CryostorageSystem : SharedCryostorageSystem
     [Dependency] private readonly StationRecordsSystem _stationRecords = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
-
+    [Dependency] private readonly MindSystem _mindSystem = default!; // WD EDIT
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
     // DEN - Client option to receive Cryosleep Messages.
     partial void InitializeIgnoreMessage();
     partial void DispatchStationAnnouncement(EntityUid source, string message);
@@ -315,6 +321,18 @@ public sealed partial class CryostorageSystem : SharedCryostorageSystem
             : "cryostorage-insert-message-permanent";
 
         var msg = Loc.GetString(locKey, ("time", comp.GracePeriod.TotalMinutes));
+
+        // DEN edit start
+        if (_mindSystem.TryGetMind(args.Entity, out _, out var mind))
+        {
+            var roundJoinTime = mind.TimeOfRoundJoin ?? TimeSpan.Zero;
+            var timeUntilGraceEnd = TimeSpan.FromMinutes(_cfg.GetCVar(CCVars.RoundjoinRespawnPeriod));
+            var timePastGrace = _gameTiming.CurTime - roundJoinTime;
+
+            if (timePastGrace <= timeUntilGraceEnd)
+                msg += $"\n{Loc.GetString("cryostorage-roundjoin-respawn-message", ("time", _cfg.GetCVar(CCVars.RoundjoinRespawnPeriod)))}";
+        }
+        // DEN edit end
         if (TryComp<ActorComponent>(args.Entity, out var actor))
             _chatManager.ChatMessageToOne(ChatChannel.Server, msg, msg, uid, false, actor.PlayerSession.Channel);
     }
