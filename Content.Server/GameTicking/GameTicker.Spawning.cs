@@ -443,6 +443,9 @@ namespace Content.Server.GameTicking
                 var name = GetPlayerProfile(player).Name;
                 var (mindId, mindComp) = _mind.CreateMind(player.UserId, name);
                 mind = (mindId, mindComp);
+
+                mindComp.TimeOfRoundJoin = _gameTiming.CurTime; // DEN edit
+
                 _mind.SetUserId(mind.Value, player.UserId);
                 _roles.MindAddRole(mind.Value, "MindRoleObserver");
             }

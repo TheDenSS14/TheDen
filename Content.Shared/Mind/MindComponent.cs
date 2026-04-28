@@ -116,7 +116,6 @@ public sealed partial class MindComponent : Component
 
     /// <summary>
     ///     The time the entity spawned in the round.
-    ///     Can be null - will be null if the Mind has not joined the round and is observing, for example.
     /// </summary>
     [DataField]
     public TimeSpan? TimeOfRoundJoin { get; set; }
