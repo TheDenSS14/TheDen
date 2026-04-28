@@ -129,6 +129,22 @@
     equippedPrefix: folded
 
 - type: entity
+  parent: ClothingHeadHatFezMantis
+  id: ClothingHeadHatMantisShroud
+  name: mantis mati
+  description: "A broad traveler's hat with a hanging veil, keeping sun and rain at bay while the world fades at the edges. So named for the watchful eye engraved into its crown."
+  categories: [ HideSpawnMenu ] # Really should only come from ClothingNeckCloakMantisShroud
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/mantis_shroud_hat.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/mantis_shroud_hat.rsi
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
   parent: [ClothingHeadCage, BaseMantisContraband]
   id: ClothingHeadCageMantis # This version has a chain on the front to match the other ClothingBackpackCoffinMantis items
   name: graven headcage

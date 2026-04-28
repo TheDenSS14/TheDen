@@ -520,6 +520,20 @@
   items:
     - ClothingNeckMantleMantisOrnate
 
+- type: loadout
+  id: LoadoutPsionicMantisNeckCloakMantisShroud
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingNeckCloakMantisShroud
+
 # Mask
 
 - type: loadout
