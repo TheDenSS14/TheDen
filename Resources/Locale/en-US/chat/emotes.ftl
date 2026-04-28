@@ -7,8 +7,9 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 pocl v
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Names
 chat-emote-name-scream = Scream
@@ -30,6 +31,7 @@ chat-emote-name-salute = Salute
 chat-emote-name-gasp = Gasp
 chat-emote-name-deathgasp = Deathgasp
 chat-emote-name-weh = Weh
+chat-emote-name-hew = Hew
 chat-emote-name-sneeze = Sneeze
 chat-emote-name-cough = Cough
 chat-emote-name-monkeyscreeches = Monkey Screeches
@@ -89,7 +91,9 @@ chat-emote-msg-salute = salutes.
 chat-emote-msg-gasp = gasps.
 chat-emote-msg-deathgasp = seizes up and falls limp, {POSS-ADJ($entity)} eyes dead and lifeless...
 chat-emote-msg-deathgasp-monkey = lets out a faint chimper as {SUBJECT($entity)} collapses and stops moving...
-chat-emote-msg-buzz = buzz!
+chat-emote-msg-buzz = buzzes!
+chat-emote-msg-weh = wehs!
+chat-emote-msg-hew = hews!
 chat-emote-msg-chirp = chirps!
 chat-emote-msg-beep = beeps.
 chat-emote-msg-chime = chimes.

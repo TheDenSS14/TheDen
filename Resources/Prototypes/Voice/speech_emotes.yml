@@ -32,6 +32,7 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2026 Aikakakah
 # SPDX-FileCopyrightText: 2026 Dirius77
+# SPDX-FileCopyrightText: 2026 pocl v
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -351,10 +352,19 @@
   name: chat-emote-name-weh
   category: Vocal
   icon: Interface/Emotes/weh.png
-  chatMessages: [ wehs ]
+  chatMessages: ["chat-emote-msg-weh"]
   chatTriggers: # Floof - you can weh now
     - weh
     - wehs
+    - wehs! # den edit
+    - wehs. # den edit
+
+- type: emote
+  id: Hew
+  name: chat-emote-name-hew
+  category: Vocal
+  icon: Interface/Emotes/hew.png
+  chatMessages: ["chat-emote-msg-hew"] # you can't hew on command though. sorry
 
 - type: emote
   id: Chirp

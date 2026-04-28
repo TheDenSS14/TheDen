@@ -11,8 +11,9 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 pocl v
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 -create-3rd-person =
     { $chance ->
@@ -52,6 +53,12 @@ reagent-effect-guidebook-emp-reaction-effect =
         [1] Causes
         *[other] cause
     } an electromagnetic pulse
+
+reagent-effect-guidebook-flash-reaction-effect =
+    { $chance ->
+        [1] Causes
+        *[other] cause
+    } a blinding flash
 
 reagent-effect-guidebook-foam-area-reaction-effect =
     { $chance ->

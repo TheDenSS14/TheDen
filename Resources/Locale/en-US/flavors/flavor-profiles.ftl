@@ -353,3 +353,4 @@ flavor-complex-sax = like jazz
 flavor-complex-bottledlightning = like lightning in a bottle
 flavor-complex-punishment = like punishment
 flavor-weh = like weh
+flavor-hew = like hew
