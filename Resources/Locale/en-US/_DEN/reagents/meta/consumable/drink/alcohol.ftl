@@ -9,7 +9,7 @@ reagent-name-blood-moon = blood moon
 reagent-desc-blood-moon = Devilish beneath the gaze of the stars.
 
 reagent-name-jaegermister = jaegermister
-reagent-desc-jaegermister = A bittersweet alcohol that hasn't changed its recipe in nearly a thousand years.
+reagent-desc-jaegermister = A bittersweet alcohol that hasn't changed it's recipe in nearly a thousand years.
 
 reagent-name-jaegerbomb = jaegerbomb
 reagent-desc-jaegerbomb = Almost as fun to make as it is to drink!
