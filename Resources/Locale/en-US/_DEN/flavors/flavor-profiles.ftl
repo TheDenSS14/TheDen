@@ -62,6 +62,11 @@ flavor-complex-plasmaflood = like fruity plasma burn
 flavor-complex-vodkacheers = like spicy cherry
 flavor-complex-chainmail = like death in a dark, cold cellar
 flavor-complex-kindness = like cherry-speckled blood
+flavor-complex-eggcream = like fizzy chocolate milk
+flavor-complex-vanillamilkshake = like cold, creamy bliss
+flavor-complex-chocolatemilkshake = like chocolatey, creamy bliss
+flavor-complex-berrymilkshake = like fruity, creamy bliss
+flavor-complex-cottonmilkshake = like cottony, creamy bliss
 
 ## Chemicals
 flavor-complex-mantispaper = like a name set in stone

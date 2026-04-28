@@ -1039,3 +1039,117 @@
           type: Thaven
           shouldHave: false
   fizziness: 0.2
+
+- type: reagent
+  id: EggCream
+  name: reagent-name-eggcream
+  parent: BaseSoda
+  desc: reagent-desc-eggcream
+  physicalDesc: reagent-physical-desc-fizzy-and-creamy
+  flavor: eggcream
+  color: "#f4e6df"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/eggcream.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: 0.05
+  fizziness: 0.5
+  
+- type: reagent
+  id: VanillaMilkshake
+  name: reagent-name-vanillamilkshake
+  parent: BaseSoda
+  desc: reagent-desc-vanillamilkshake
+  physicalDesc: reagent-physical-desc-creamy
+  flavor: vanillamilkshake
+  color: "#f8f5d0"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/vanillamilkshake.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 1
+  fizziness: 0
+
+- type: reagent
+  id: ChocolateMilkshake
+  name: reagent-name-chocolatemilkshake
+  parent: BaseSoda
+  desc: reagent-desc-chocolatemilkshake
+  physicalDesc: reagent-physical-desc-creamy
+  flavor: chocolatemilkshake
+  color: "#b2592c"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/chocolatemilkshake.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 1
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: 0.05
+  fizziness: 0
+
+- type: reagent
+  id: BerryMilkshake
+  name: reagent-name-berrymilkshake
+  parent: BaseSoda
+  desc: reagent-desc-berrymilkshake
+  physicalDesc: reagent-physical-desc-creamy
+  flavor: berrymilkshake
+  color: "#b79ac6"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/berrymilkshake.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 1
+  fizziness: 0
+
+- type: reagent
+  id: CottonMilkshake
+  name: reagent-name-cottonmilkshake
+  parent: BaseSoda
+  desc: reagent-desc-cottonmilkshake
+  physicalDesc: reagent-physical-desc-creamy
+  flavor: cottonmilkshake
+  color: "#ffb9b9"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/cottonmilkshake.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 1
+      - !type: AdjustReagent
+        reagent: Fiber
+        amount: 0.09
+  fizziness: 0
