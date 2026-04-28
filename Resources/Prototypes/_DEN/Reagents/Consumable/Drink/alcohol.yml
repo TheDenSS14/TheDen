@@ -1083,8 +1083,6 @@
       effects:
       - !type:SatiateThirst
         factor: 1
-      - !type:SatiateHunger
-        factor: 2
   fizziness: 0
 
 - type: reagent
@@ -1106,8 +1104,6 @@
       effects:
       - !type:SatiateThirst
         factor: 1
-      - !type:SatiateHunger
-        factor: 2
       - !type:AdjustReagent
         reagent: Theobromine
         amount: 0.05
@@ -1132,8 +1128,6 @@
       effects:
       - !type:SatiateThirst
         factor: 1
-      - !type:SatiateHunger
-        factor: 2
   fizziness: 0
 
 - type: reagent
@@ -1155,10 +1149,7 @@
       effects:
       - !type:SatiateThirst
         factor: 1
-      - !type:SatiateHunger
-        conditions:
-        - !type:OrganType
-          type: Moth
-          shouldHave: true
-          factor: 2
+      - !type: AdjustReagent
+        reagent: fiber
+        amount: 0.09
   fizziness: 0
