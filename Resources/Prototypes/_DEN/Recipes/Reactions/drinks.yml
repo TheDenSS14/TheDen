@@ -537,3 +537,72 @@
       amount: 2
   products:
       Kindness: 6
+
+- type: reaction
+  id: EggCream
+  priority: 1
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Milk:
+      amount: 3
+    SodaWater:
+      amount: 2
+    CocoaPowder:
+      amount: 1
+  products:
+      EggCream: 6
+
+- type: reaction
+  id: VanillaMilkshake
+  requiredMixerCategories: 
+  - Shake
+  reactants:
+    IceCream:
+      amount: 1
+    Milk:
+      amount: 1
+  products:
+      VanillaMilkshake: 2
+
+- type: reaction
+  id: ChocolateMilkshake
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    IceCream:
+      amount: 3
+    Milk:
+      amount: 2
+    CocoaPowder:
+      amount: 1
+  products:
+      ChocolateMilkshake: 6
+
+- type: reaction
+  id: BerryMilkshake
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    IceCream:
+      amount: 3
+    Milk:
+      amount: 2
+    JuiceBerry:
+      amount: 1
+  products:
+      BerryMilkshake: 6
+
+- type: reaction
+  id: CottonMilkshake
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    IceCream:
+      amount: 3
+    Milk:
+      amount: 2
+    Fiber:
+      amount: 1
+  products:
+      CottonMilkshake: 6

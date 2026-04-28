@@ -9,7 +9,7 @@ reagent-name-blood-moon = blood moon
 reagent-desc-blood-moon = Devilish beneath the gaze of the stars.
 
 reagent-name-jaegermister = jaegermister
-reagent-desc-jaegermister = A bittersweet alcohol that hasn't changed it's recipe in nearly a thousand years.
+reagent-desc-jaegermister = A bittersweet alcohol that hasn't changed its recipe in nearly a thousand years.
 
 reagent-name-jaegerbomb = jaegerbomb
 reagent-desc-jaegerbomb = Almost as fun to make as it is to drink!
@@ -124,3 +124,18 @@ reagent-desc-chainmail = A bitter bite, served in a dark oak tankard. Only for t
 
 reagent-name-kindness = kindness
 reagent-desc-kindness = A fungal sister-drink to Bad, this thaven offering can be seen as insult or succour, depending on the circumstance. Small effervescent crystals mollify the sharp, organic flavor over time.
+
+reagent-name-eggcream = egg cream
+reagent-desc-eggcream = Contains neither eggs, nor cream. The coveted specialty of the soda jerk.
+
+reagent-name-vanillamilkshake = vanilla milkshake
+reagent-desc-vanillamilkshake = The pinnacle of dairy. Arguably still worth it for the lactose intolerant.
+
+reagent-name-chocolatemilkshake = chocolate milkshake
+reagent-desc-chocolatemilkshake = The pinnacle of dairy, but there's nothing a little chocolate can't improve.
+
+reagent-name-berrymilkshake = berry milkshake
+reagent-desc-berrymilkshake = The pinnacle of dairy. Adding berry syrup has transformed the humble milkshake.
+
+reagent-name-cottonmilkshake = cotton milkshake
+reagent-desc-cottonmilkshake = The pinnacle of dairy. Hand-spun for maximum moth enjoyment!

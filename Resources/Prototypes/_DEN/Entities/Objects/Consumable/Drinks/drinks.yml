@@ -636,3 +636,68 @@
         reagents:
         - ReagentId: Kindness
           Quantity: 30
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkEggCreamGlass
+  suffix: eggcream
+  components:
+  - type: SolutionContainerManager
+    solutions:
+     drink:
+       maxVol: 30
+       reagents:
+       - ReagentId: EggCream
+         Quantity: 30
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkVanillaMilkshakeGlass
+  suffix: vanillamilkshake
+  components:
+  - type: SolutionContainerManager
+    solutions:
+     drink:
+       maxVol: 30
+       reagents:
+       - ReagentId: VanillaMilkshake
+         Quantity: 30
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkChocolateMilkshakeGlass
+  suffix: chocolatemilkshake
+  components:
+  - type: SolutionContainerManager
+    solutions:
+     drink:
+       maxVol: 30
+       reagents:
+       - ReagentId: ChocolateMilkshake
+         Quantity: 30
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkBerryMilkshakeGlass
+  suffix: berrymilkshake
+  components:
+  - type: SolutionContainerManager
+    solutions:
+     drink:
+       maxVol: 30
+       reagents:
+       - ReagentId: BerryMilkshake
+         Quantity: 30
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkCottonMilkshakeGlass
+  suffix: cottonmilkshake
+  components:
+  - type: SolutionContainerManager
+    solutions:
+     drink:
+       maxVol: 30
+       reagents:
+       - ReagentId: CottonMilkshake
+         Quantity: 30
