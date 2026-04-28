@@ -459,6 +459,19 @@
   - type: ComputerBoard
     prototype: SyndicateComputerComms
 
+# DEN start
+- type: entity
+  parent: SyndicateCommsComputerCircuitboard
+  id: LPOCommsComputerCircuitboard
+  name: LPO communications computer board
+  description: A computer printed circuit board for an LPO communications console.
+  components:
+  - type: Sprite
+    state: cpu_security
+  - type: ComputerBoard
+    prototype: LPOComputerComms
+# DEN end
+
 - type: entity
   parent: BaseComputerCircuitboard
   id: RadarConsoleCircuitboard

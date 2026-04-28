@@ -876,7 +876,7 @@
   - type: CommunicationsConsole
     title: comms-console-announcement-title-station
   - type: DeviceNetwork
-    deviceNetId: Wireless    
+    deviceNetId: Wireless
     transmitFrequencyId: ShuttleTimer
   - type: ActivatableUI
     key: enum.CommunicationsConsoleUiKey.Key
@@ -928,6 +928,30 @@
     radius: 1.5
     energy: 1.6
     color: "#f71713"
+
+# DEN start
+- type: entity
+  parent: SyndicateComputerComms
+  id: LPOComputerComms
+  components:
+  - type: CommunicationsConsole
+    title: comms-console-announcement-title-lpo
+    sound: !type:SoundPathSpecifier
+      params:
+        variation: null
+        playOffsetSeconds: 0
+        loop: False
+        referenceDistance: 1
+        rolloffFactor: 1
+        maxDistance: 15
+        pitch: 1
+        volume: 0
+      path: /Audio/Floof/Announcements/pirateannounce.ogg
+      delay: 300
+      color: '#FFD700FF'
+  - type: Computer
+    board: LPOCommsComputerCircuitboard
+# DEN end
 
 - type: entity
   parent: BaseComputerAiAccess
