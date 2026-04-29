@@ -411,7 +411,7 @@
         Holy: 4.75 # 17.81 total damage against supernaturals
 
 - type: entity
-  parent: [FloorTileItemSomberSteel, BaseAntiPsionicWeapon]
+  parent: FloorTileItemSomberMnemolithRough
   id: FloorTileItemSomberMnemolithSmooth
   name: somber mnemolith tile (smooth)
   components:
@@ -423,14 +423,9 @@
       - FloorSomberMnemolithSmooth
   - type: Stack
     stackType: FloorTileSomberMnemolithSmooth
-  - type: DamageOtherOnHit
-    damage:
-      types: # Damage against non-psions is based on FloorTileItemSteel
-        Blunt: 9.5 # 11.88 damage against psions
-        Holy: 4.75 # 17.81 total damage against supernaturals
 
 - type: entity
-  parent: [FloorTileItemSomberSteel, BaseAntiPsionicWeapon]
+  parent: FloorTileItemSomberMnemolithRough
   id: FloorTileItemSomberMnemolithTracksHorizontal
   name: somber mnemolith tracks (horizontal)
   components:
@@ -442,14 +437,9 @@
       - FloorSomberMnemolithTracksHorizontal
   - type: Stack
     stackType: FloorTileSomberMnemolithTracksHorizontal
-  - type: DamageOtherOnHit
-    damage:
-      types: # Damage against non-psions is based on FloorTileItemSteel
-        Blunt: 9.5 # 11.88 damage against psions
-        Holy: 4.75 # 17.81 total damage against supernaturals
 
 - type: entity
-  parent: [FloorTileItemSomberSteel, BaseAntiPsionicWeapon]
+  parent: FloorTileItemSomberMnemolithRough
   id: FloorTileItemSomberMnemolithTracksVertical
   name: somber mnemolith tracks (vertical)
   components:
@@ -461,11 +451,34 @@
       - FloorSomberMnemolithTracksVertical
   - type: Stack
     stackType: FloorTileSomberMnemolithTracksVertical
-  - type: DamageOtherOnHit
-    damage:
-      types: # Damage against non-psions is based on FloorTileItemSteel
-        Blunt: 9.5 # 11.88 damage against psions
-        Holy: 4.75 # 17.81 total damage against supernaturals
+
+- type: entity
+  parent: FloorTileItemSomberMnemolithRough
+  id: FloorTileItemSomberMnemolithTracksHorizontalDark
+  name: somber mnemolith tracks (horizontal, dark)
+  components:
+  - type: Sprite
+    state: somber-mnemolith-tracks-horizontal-dark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberMnemolithTracksHorizontalDark
+  - type: Stack
+    stackType: FloorTileSomberMnemolithTracksHorizontalDark
+
+- type: entity
+  parent: FloorTileItemSomberMnemolithRough
+  id: FloorTileItemSomberMnemolithTracksVerticalDark
+  name: somber mnemolith tracks (vertical, dark)
+  components:
+  - type: Sprite
+    state: somber-mnemolith-tracks-vertical-dark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSomberMnemolithTracksVerticalDark
+  - type: Stack
+    stackType: FloorTileSomberMnemolithTracksVerticalDark
 
 - type: entity
   parent: FloorTileItemSomberWood

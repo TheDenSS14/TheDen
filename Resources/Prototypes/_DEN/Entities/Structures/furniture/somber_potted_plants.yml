@@ -74,6 +74,7 @@
     prototypes:
       - PottedPlantSomber1Pot
       - PottedPlantSomber7Pot
+      - PottedPlantSomber10Pot
       - PottedPlantSomber18Pot
       - PottedPlantSomber21Pot
       - PottedPlantSomber24Pot
@@ -81,6 +82,7 @@
       - PottedPlantSomber29Pot
       - PottedPlantSomber1PotFlipped
       - PottedPlantSomber7PotFlipped
+      - PottedPlantSomber10PotFlipped
       - PottedPlantSomber18PotFlipped
       - PottedPlantSomber21PotFlipped
       - PottedPlantSomber24PotFlipped
@@ -527,6 +529,14 @@
     color: "#4dc4ff"
 
 - type: entity
+  id: PottedPlantSomber10Pot
+  parent: PottedPlantSomberBasePot
+  suffix: Potted, 10
+  components:
+  - type: Sprite
+    state: potted-plant-10
+
+- type: entity
   id: PottedPlantSomber18Pot
   parent: PottedPlantSomberBasePot
   suffix: Potted, 18
@@ -593,6 +603,14 @@
   components:
   - type: Sprite
     state: potted-plant-09-flipped
+
+- type: entity
+  id: PottedPlantSomber10PotFlipped
+  parent: PottedPlantSomber10Pot
+  suffix: Potted, 10, Flipped
+  components:
+  - type: Sprite
+    state: potted-plant-10-flipped
 
 - type: entity
   id: PottedPlantSomber18PotFlipped
