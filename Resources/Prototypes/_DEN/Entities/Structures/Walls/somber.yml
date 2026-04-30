@@ -112,8 +112,6 @@
   suffix: Directional
   description: "Made of gloomy, patterned steel. It hums faintly, just below hearing."
   components:
-  - type: Transform
-    anchored: false # So it can use other snapping modes
   - type: Sprite
     sprite: _DEN/Structures/Walls/Somber/somber_directional.rsi
     state: somber
@@ -138,8 +136,6 @@
   suffix: Directional Corner
   description: "Made of gloomy, patterned steel. It hums faintly, just below hearing."
   components:
-  - type: Transform
-    anchored: false # So it can use other snapping modes
   - type: Sprite
     sprite: _DEN/Structures/Walls/Somber/somber_directional.rsi
     state: sombercorner
@@ -190,6 +186,49 @@
   components:
   - type: Occluder
     enabled: false
+
+# See-through ones you can place freely (for framing off-grid closets and stuff)
+# Note that this doesn't work with occluding ones
+
+- type: entity
+  parent: WallSomberDirectionalSeeThrough
+  id: WallSomberDirectionalSeeThroughUnanchored
+  suffix: Directional, SEE-THROUGH] [Unanchored, Place Freely
+  placement:
+    mode: AlignWallProper
+  components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
+
+- type: entity
+  parent: WallSomberDarkDirectionalSeeThrough
+  id: WallSomberDarkDirectionalSeeThroughUnanchored
+  suffix: Directional, Dark, SEE-THROUGH] [Unanchored, Place Freely
+  placement:
+    mode: AlignWallProper
+  components:
+  - type: Transform
+    anchored: false
+
+- type: entity
+  parent: WallSomberDirectionalCornerSeeThrough
+  id: WallSomberDirectionalCornerSeeThroughUnanchored
+  suffix: Directional Corner, SEE-THROUGH] [Unanchored, Place Freely
+  placement:
+    mode: AlignWallProper
+  components:
+  - type: Transform
+    anchored: false
+
+- type: entity
+  parent: WallSomberDarkDirectionalCornerSeeThrough
+  id: WallSomberDarkDirectionalCornerSeeThroughUnanchored
+  suffix: Directional Corner, Dark, SEE-THROUGH] [Unanchored, Place Freely
+  placement:
+    mode: AlignWallProper
+  components:
+  - type: Transform
+    anchored: false
 
 # Grilles
 

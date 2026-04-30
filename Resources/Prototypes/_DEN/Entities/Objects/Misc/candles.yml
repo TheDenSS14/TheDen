@@ -58,6 +58,18 @@
             path: /Audio/Effects/drop.ogg
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.1
+            offset: 0,0.3125 # One pixel downward since that's closer to the base
+          density: 20
+          mask:
+          - ItemMask
+          restitution: 0.3 # These are just the same as BaseItem
+          friction: 0.2
     - type: Tag
       tags:
       - MantisBeltStorable
