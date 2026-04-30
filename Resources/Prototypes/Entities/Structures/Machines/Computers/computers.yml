@@ -936,19 +936,8 @@
   components:
   - type: CommunicationsConsole
     title: comms-console-announcement-title-lpo
-    sound: !type:SoundPathSpecifier
-      params:
-        variation: null
-        playOffsetSeconds: 0
-        loop: False
-        referenceDistance: 1
-        rolloffFactor: 1
-        maxDistance: 15
-        pitch: 1
-        volume: 0
-      path: /Audio/Floof/Announcements/pirateannounce.ogg
-      delay: 300
-      color: '#FFD700FF'
+    delay: 300
+    color: '#FFD700FF'
   - type: Computer
     board: LPOCommsComputerCircuitboard
 # DEN end
