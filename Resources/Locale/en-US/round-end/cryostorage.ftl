@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 MajorMoth
 #
 # SPDX-License-Identifier: MIT
 
@@ -13,3 +14,5 @@ cryostorage-ui-filler-hand = inhand
 cryostorage-ui-label-no-bodies = No bodies in cryostorage
 
 cryostorage-popup-access-denied = Access denied!
+
+cryostorage-roundjoin-respawn-message = [color=green]You can respawn quickly since you joined the round less than {$time} minutes ago.[/color]
