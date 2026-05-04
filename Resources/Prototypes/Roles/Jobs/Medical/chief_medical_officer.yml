@@ -55,8 +55,17 @@
   description: job-description-cmo
   playTimeTracker: JobChiefMedicalOfficer
   requirements:
+    - !type:CharacterDepartmentTimeRequirement # Den - Medical dept time requirement
+      department: Medical
+      min: 144000 # The Den - 40 hours (higher than other heads due to the high impact this role can have in slowing/preventing the revival ot other players)
     - !type:CharacterPlaytimeRequirement
       tracker: JobChemist
+      min: 36000 # The Den - 10 hour
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobParamedic
+      min: 10800 # The Den - 3 hour
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobMedicalDoctor
       min: 28800 # The Den - 8 hour
   weight: 10
   startingGear: CMOGear

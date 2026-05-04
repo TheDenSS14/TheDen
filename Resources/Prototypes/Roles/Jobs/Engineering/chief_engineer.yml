@@ -51,9 +51,12 @@
   description: job-description-ce
   playTimeTracker: JobChiefEngineer
   requirements:
+    - !type:CharacterDepartmentTimeRequirement # Den - Engineering dept time requirement
+      department: Engineering
+      min: 144000 # The Den - 40 hours
     - !type:CharacterPlaytimeRequirement
       tracker: JobAtmosphericTechnician
-      min: 28800 # The Den - 8 hour
+      min: 28800 # The Den - 8 hours
 #    - !type:OverallPlaytimeRequirement
 #      time: 72000 # DeltaV - 20 hours
   weight: 10
