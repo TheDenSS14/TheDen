@@ -18928,3 +18928,48 @@ Entries:
   id: 1863
   time: '2026-04-27T20:30:34.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2640
+- author: Aikakakah
+  changes:
+    - type: Fix
+      message: Fixed satyr cow print showing over clothes.
+  id: 1864
+  time: '2026-04-30T16:58:29.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2664
+- author: MajorMoth
+  changes:
+    - type: Add
+      message: >-
+        There is now a 10-minute grace period starting from when you join the
+        round, that allows you to cryo and quickly respawn instead of waiting
+        the full 15 minutes. Additionally, the waiting period to go back to the
+        lobby when joining as a ghost is much shorter.
+  id: 1865
+  time: '2026-04-30T22:31:49.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2622
+- author: MajorMoth
+  changes:
+    - type: Tweak
+      message: >-
+        The syndicate communication console's header will now say "Gorlex
+        Marauder Announcement" instead of "Syndicate Nuclear Operative
+        Annoucement".
+  id: 1866
+  time: '2026-05-02T15:48:57.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2675
+- author: Sha-Seng
+  changes:
+    - type: Add
+      message: >-
+        Added the Mantis Wolfskin cloak to loadout, which has a built-in toggled
+        hat.
+    - type: Tweak
+      message: >-
+        Salvagers can now find the three mantis neck items on the mantis bodies
+        they find in space, because they look cool on hardsuits.
+    - type: Tweak
+      message: >-
+        Faust's sheath sprite has had a couple pixels removed so it plays nicer
+        with cloaks.
+  id: 1867
+  time: '2026-05-02T18:17:37.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2669
