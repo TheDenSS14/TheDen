@@ -1,0 +1,14 @@
+- type: reagent
+  id: BaseMilkshake
+  parent: BaseDrink
+  abstract: true
+  flavor: creamy
+  plantMetabolism:
+    - !type:PlantAdjustNutrition
+      amount: 0.1
+    - !type:PlantAdjustWater
+      amount: 0.9
+  footstepSound:
+    collection: FootstepSticky
+    params:
+      volume: 6
