@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   parent: ClothingHeadBase
@@ -127,6 +127,22 @@
     folded: true
   - type: Clothing
     equippedPrefix: folded
+
+- type: entity
+  parent: ClothingHeadHatFezMantis
+  id: ClothingHeadHatMantisShroud
+  name: mantis mati
+  description: "A broad traveler's hat with a hanging veil, keeping sun and rain at bay while the world fades at the edges. So named for the watchful eye engraved into its crown."
+  categories: [ HideSpawnMenu ] # Really should only come from ClothingNeckCloakMantisShroud
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/mantis_shroud_hat.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/mantis_shroud_hat.rsi
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: [ClothingHeadCage, BaseMantisContraband]
