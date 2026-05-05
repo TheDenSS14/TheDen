@@ -183,13 +183,13 @@
     foldVerbText: fold-straps-verb
     unfoldVerbText: unfold-straps-verb
   - type: FoldableClothing
-    foldedEquippedPrefix: flipped # This should've always been "folded" to play nicer with BaseFoldable
+    foldedEquippedPrefix: folded
   - type: Sprite
     sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatswordsheath.rsi
     layers:
     - state: icon
       map: ["unfoldedLayer"]
-    - state: icon-flipped
+    - state: icon-folded
       map: ["foldedLayer"]
       visible: false
   - type: Item
@@ -256,6 +256,11 @@
           tags:
           - MantisGreatsword
     sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatswordsheath.rsi
+  - type: Butcherable # Since Foldable is already used, I have to resort to Butcherable to change to the hip carry
+    butcheringType: Knife
+    spawned:
+    - id: MantisMeleeGreatswordSheathHip
+      amount: 1
   - type: GuideHelp
     guides: [ MantisGuide ]
 
@@ -263,6 +268,36 @@
   parent: MantisMeleeGreatswordSheath
   id: MantisMeleeGreatswordSheathFilled
   suffix: Faust, Filled, DO NOT MAP
+  components:
+  - type: ContainerFill
+    containers:
+      mantisgreatsword:
+      - MantisMeleeGreatsword
+
+- type: entity
+  parent: MantisMeleeGreatswordSheath
+  id: MantisMeleeGreatswordSheathHip
+  suffix: Faust, Empty] [Hip Carry
+  description: "A heavy scabbard reinforced with mu-metal bands that cross over its ornamental eyes, likely as a warning. This psionically insulating metal is only used to contain weapons that would otherwise recoil violently against their housing when drawn. Suspended from the hip with a thick cloth wrap--traditional when worn with a mantis's wolfskin to keep the draw clear of the hat. It can be reworked to ride the back again with a bit of clever knife tailoring. So heavy it can only be worn over outerwear, and the weapon within so long it must be drawn with telekinesis."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatswordsheath-alt.rsi
+  - type: Item
+    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatswordsheath-alt.rsi
+  - type: ItemMapper
+    sprite: _DEN/Objects/Weapons/Melee/Mantis/mantisgreatswordsheath-alt.rsi
+  - type: Foldable
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: Butcherable
+    spawned:
+    - id: MantisMeleeGreatswordSheath
+      amount: 1
+
+- type: entity
+  parent: MantisMeleeGreatswordSheathHip
+  id: MantisMeleeGreatswordSheathHipFilled
+  suffix: Faust, Filled, DO NOT MAP] [Hip Carry
   components:
   - type: ContainerFill
     containers:
