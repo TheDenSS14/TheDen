@@ -23,6 +23,7 @@
 # SPDX-FileCopyrightText: 2024 themias
 # SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2026 pocl v
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -535,7 +536,7 @@
   parent: [BaseBrandedLighter, BaseCommandContraband] #TheDen - Since it's a command loadout item, it makes sense for it to be command contra. Maybe?
   id: NanotrasenFlippo
   name: Nanotrasen flippo #TheDen - Nitpick, lowercased the F in flippo.
-  description: "A navy blue luxury flippo, generally handed out to loyal heads of staff instead of a payraise. Fueled with liquid plasma"
+  description: "A navy blue luxury flippo, generally handed out to loyal heads of staff instead of a payraise. Fueled with liquid plasma." # den - punctuation fix
   components:
   - type: ItemToggleMeleeWeapon
     activatedDamage:
@@ -620,7 +621,7 @@
   - type: Lock
   - type: AccessReader
     access: [["CentralCommand"]]
-    
+
 # Begin Den additions - more normal version for NT rep etc, didn't include access reader and made it more normal
 - type: entity
   parent: [BaseBrandedLighter, BaseCentcommDignitaryContraband]

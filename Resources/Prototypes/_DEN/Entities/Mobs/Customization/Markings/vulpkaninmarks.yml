@@ -5,22 +5,24 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+- type: marking
+  abstract: true
+  id: VulpkaninChestMarking
+  invertSpeciesRestriction: true
+  speciesRestriction: [Vox, Resomi, Shadowkin, Plasmaman, Thaven, Diona, Moth, Chitinid]
+  bodyPart: Chest
+  markingCategory: Chest
 
 - type: marking
   id: NeckChestfluff
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Vulpkanin, IPC, SlimePerson, Human, Kitsune, Oni]
+  parent: VulpkaninChestMarking
   sprites:
   - sprite: _DEN/Mobs/Customization/Vulpkanin/vulpkanin.rsi
     state: chestfloof
 
-
 - type: marking
   id: TailBrushtip
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, IPC, SlimePerson, Human, Kitsune, Oni]
+  parent: BaseTailMarking
   sprites:
   - sprite: _DEN/Mobs/Customization/Vulpkanin/vulpkanin.rsi
     state: brushtiptail
@@ -40,9 +42,7 @@
 
 - type: marking
   id: EarsCheesegal
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, IPC, SlimePerson, Human, Kitsune, Oni]
+  parent: BaseEarsMarking
   sprites:
   - sprite: _DEN/Mobs/Customization/Vulpkanin/cheesegal.rsi
     state: sergears-1
@@ -51,9 +51,7 @@
 
 - type: marking
   id: TailCheesegal
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, IPC, SlimePerson, Human, Kitsune, Oni]
+  parent: BaseTailMarking
   sprites:
   - sprite: _DEN/Mobs/Customization/Vulpkanin/cheesegal.rsi
     state: sergtail-1
@@ -62,63 +60,49 @@
 
 - type: marking
   id: NeckChestsmallfluff
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Vulpkanin, IPC, SlimePerson, Human, Kitsune, Oni]
+  parent: VulpkaninChestMarking
   sprites:
   - sprite: _DEN/Mobs/Customization/Vulpkanin/neckfluff.rsi
     state: smallfluff
 
 - type: marking
   id: NeckChestbigfluff
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Vulpkanin, IPC, SlimePerson, Human, Kitsune, Oni]
+  parent: VulpkaninChestMarking
   sprites:
   - sprite: _DEN/Mobs/Customization/Vulpkanin/neckfluff.rsi
     state: bigfluff
 
 - type: marking
   id: NeckChestbandanafluff
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Vulpkanin, IPC, SlimePerson, Human, Kitsune, Oni]
+  parent: VulpkaninChestMarking
   sprites:
   - sprite: _DEN/Mobs/Customization/Vulpkanin/neckfluff.rsi
     state: bandanafluff
 
 - type: marking
   id: NeckChestbackgerm
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Vulpkanin, IPC, SlimePerson, Human, Kitsune, Oni]
+  parent: VulpkaninChestMarking
   sprites:
   - sprite: _DEN/Mobs/Customization/Vulpkanin/backmarks.rsi
     state: backgerm
 
 - type: marking
   id: NeckChestbackupper
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Vulpkanin, IPC, SlimePerson, Human, Kitsune, Oni]
+  parent: VulpkaninChestMarking
   sprites:
   - sprite: _DEN/Mobs/Customization/Vulpkanin/backmarks.rsi
     state: backupper
 
 - type: marking
   id: NeckChestbackwhole
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Vulpkanin, IPC, SlimePerson, Human, Kitsune, Oni]
+  parent: VulpkaninChestMarking
   sprites:
   - sprite: _DEN/Mobs/Customization/Vulpkanin/backmarks.rsi
     state: backwhole
 
 - type: marking
   id: VulpTailFluffyTip
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, IPC, SlimePerson, Human, Kitsune, Oni]
+  parent: BaseTailMarking
   sprites:
   - sprite: _DEN/Mobs/Customization/Vulpkanin/fluffytip.rsi
     state: fluffyalt

@@ -38,9 +38,7 @@
 
 - type: marking
   id: TailShadowkinBigFluffAnimated
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Shadowkin, Reptilian, SlimePerson, Human]
+  parent: BaseTailMarking
   layering:
     shadowkin_big_fluff_under_wag: TailBehind
     shadowkin_big_fluff_over_wag: Tail

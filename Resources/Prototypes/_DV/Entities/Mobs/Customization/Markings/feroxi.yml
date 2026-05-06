@@ -1,9 +1,10 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Aikakakah
 # SPDX-FileCopyrightText: 2026 mart
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Default
 - type: marking
@@ -19,9 +20,7 @@
 
 - type: marking
   id: FeroxiTailAndDorsal
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC ]
+  parent: BaseTailMarking
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -114,18 +113,14 @@
 # Tail Markings
 - type: marking
   id: FeroxiTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC, Human, Oni ] # The Den - Human
+  parent: BaseTailMarking
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
 
 - type: marking
   id: FeroxiStripedTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC, Human, Oni ] # The Den - Human
+  parent: BaseTailMarking
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -134,9 +129,7 @@
 
 - type: marking
   id: FeroxiStripedTailAndDorsal
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC, Human, Oni ]
+  parent: BaseTailMarking
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -149,9 +142,7 @@
 
 - type: marking
   id: FeroxiTipTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC, Human, Oni ] # The Den - Human
+  parent: BaseTailMarking
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -164,9 +155,7 @@
 
 - type: marking
   id: FeroxiTipTailAndDorsal
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC, Human, Oni  ]
+  parent: BaseTailMarking
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -183,9 +172,7 @@
 
 - type: marking
   id: FeroxiTailBlitz
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC, Human, Oni  ]
+  parent: BaseTailMarking
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -204,9 +191,7 @@
 
 - type: marking
   id: FeroxiTailBlitzNoDorsal
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC, Human, Oni ] # The Den - Human
+  parent: BaseTailMarking
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -221,9 +206,7 @@
 
 - type: marking
   id: FeroxiTwoToneTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC, Human, Oni ] # The Den - Human
+  parent: BaseTailMarking
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -232,9 +215,7 @@
 
 - type: marking
   id: FeroxiTwoToneTailAndDorsal
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC, Human, Oni  ]
+  parent: BaseTailMarking
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -245,9 +226,7 @@
 
 - type: marking
   id: FeroxiStripeTwoToneTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC, Human, Oni ] # The Den - Human
+  parent: BaseTailMarking
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -258,9 +237,7 @@
 
 - type: marking
   id: FeroxiStripeTwoToneTailAndDorsal
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC, Human, Oni  ]
+  parent: BaseTailMarking
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -275,9 +252,7 @@
 
 - type: marking
   id: FeroxiTipTwoToneTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC, Human, Oni ] # The Den - Human
+  parent: BaseTailMarking
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -292,9 +267,7 @@
 
 - type: marking
   id: FeroxiTipTwoToneTailAndDorsal
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC, Human, Oni  ]
+  parent: BaseTailMarking
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
