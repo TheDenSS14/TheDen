@@ -850,3 +850,18 @@
         - ForensicMantis
   items:
     - MantisMeleeGreatswordSheathFilled # Faust
+
+- type: loadout
+  id: LoadoutPsionicMantisMeleeGreatswordHip
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisRanged # Choosing the risk/reward greatsword prevents you from taking a gun, you have to commit
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisMelee
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - MantisMeleeGreatswordSheathHipFilled # Faust (Hip Carry)
