@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 chuga-git
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server._DEN.Speech.Components;
 using System.Text.RegularExpressions;
 using Content.Server.Speech;
