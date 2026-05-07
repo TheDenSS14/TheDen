@@ -31,6 +31,7 @@
   id: Accentless
   category: TraitsSpeechAccents
   points: 0
+  slots: 0
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -48,6 +49,7 @@
           - type: MothAccent
           - type: ReplacementAccent
             accent: dwarf
+          - type: TajaranAccent
 
 - type: trait
   id: Southern
