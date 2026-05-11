@@ -15,5 +15,5 @@ namespace Content.Shared.Overlays;
 ///     This component allows you to see Psionics record status of mobs.
 /// </summary>
 
-[RegisterComponent, NetworkedComponent]
-public sealed partial class ShowPsionicsRecordIconsComponent : Component { }
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+public sealed partial class ShowPsionicsRecordIconsComponent : BaseEquipmentHudComponent { }
