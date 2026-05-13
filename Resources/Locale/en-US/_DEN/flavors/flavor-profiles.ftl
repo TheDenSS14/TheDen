@@ -63,10 +63,13 @@ flavor-complex-vodkacheers = like spicy cherry
 flavor-complex-chainmail = like death in a dark, cold cellar
 flavor-complex-kindness = like cherry-speckled blood
 flavor-complex-eggcream = like fizzy chocolate milk
-flavor-complex-vanillamilkshake = like cold, creamy bliss
-flavor-complex-chocolatemilkshake = like chocolatey, creamy bliss
-flavor-complex-berrymilkshake = like fruity, creamy bliss
-flavor-complex-cottonmilkshake = like cottony, creamy bliss
+
+## Milkshakes
+milkshake-flavor = creamy bliss
+flavor-complex-vanillamilkshake = like cold, {milkshake-flavor}
+flavor-complex-chocolatemilkshake = like chocolatey, {milkshake-flavor}
+flavor-complex-berrymilkshake = like fruity, {milkshake-flavor}
+flavor-complex-cottonmilkshake = like cottony, {milkshake-flavor}
 
 ## Chemicals
 flavor-complex-mantispaper = like a name set in stone
