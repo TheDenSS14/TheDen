@@ -220,7 +220,7 @@
 - type: entity
   id: ActionMorphGeras
   name: Morph into Geras
-  description:  Morphs you into a Geras - a miniature version of you which allows you to move fast, at the cost of your inventory.
+  description:  Morphs you into a Geras - a miniature version of you which allows you to move fast, but cannot access your inventory.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
