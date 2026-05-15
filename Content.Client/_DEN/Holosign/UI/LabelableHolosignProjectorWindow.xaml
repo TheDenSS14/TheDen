@@ -6,17 +6,24 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 <DefaultWindow xmlns="https://spacestation14.io"
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-            Title="{Loc 'labelable-holoprojector-ui-header'}">
+            Title="{Loc 'labelable-holoprojector-ui-header'}"
+            MinHeight="180"
+            MinWidth="340">
     <BoxContainer
         Orientation="Vertical"
-        HorizontalExpand="True"
-        HorizontalAlignment="Left"
-        MaxWidth="900">
+        HorizontalExpand="False"
+        VerticalExpand="True"
+        Margin="3">
         <Label Name="CurrentTextLabel" Text="{Loc 'labelable-holoprojector-current-text-label'}" />
         <TextEdit Name="DescriptionTextEdit"
-                  HorizontalExpand="True"
                   VerticalExpand="True"
-                  Margin="3"
-                  MinSize="220 150"/>
+                  HorizontalExpand="True"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch"
+                  MinHeight="100"/>
+        <BoxContainer Orientation="Horizontal" Margin="3">
+            <CheckBox Name="IsNSFW" />
+            <Label Text="{Loc 'labelable-holoprojector-is-nsfw-label'}" />
+        </BoxContainer>
     </BoxContainer>
 </DefaultWindow>

@@ -235,7 +235,12 @@
             32:
               sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
               state: belt
-        # DEN: Removed duplicate displacements.
+      femaleDisplacements:
+        jumpsuit:
+          sizeMaps:
+            32:
+              sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
+              state: jumpsuit
 
 - type: entity
   save: false
@@ -305,4 +310,9 @@
             32:
               sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
               state: belt
-        # DEN: Removed duplicate displacements
+      femaleDisplacements:
+        jumpsuit:
+          sizeMaps:
+            32:
+              sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
+              state: jumpsuit

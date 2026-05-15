@@ -9,6 +9,7 @@ using Content.Shared._Floof.Consent;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Coordinates.Helpers;
 using Content.Shared.Database;
 using Content.Shared.Examine;
@@ -17,8 +18,9 @@ using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
 using Content.Shared.Whitelist;
-using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+
 
 namespace Content.Shared._DEN.Holosign.Systems;
 
@@ -32,22 +34,25 @@ public abstract class SharedLabelableHolosignProjectorSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly SharedConsentSystem _consent = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     private readonly ProtoId<ConsentTogglePrototype> _nsfwDescriptionsConsent = "NSFWDescriptions";
 
     public override void Initialize()
     {
         base.Initialize();
-
-        SubscribeLocalEvent<LabelableHolosignProjectorComponent, ComponentGetState>(OnGetState);
-        SubscribeLocalEvent<LabelableHolosignProjectorComponent, ComponentHandleState>(OnHandleState);
+        
+        SubscribeLocalEvent<LabelableHolosignProjectorComponent, AfterAutoHandleStateEvent>(OnHandleState);
         SubscribeLocalEvent<LabelableHolosignProjectorComponent, BeforeRangedInteractEvent>(OnBeforeInteract);
-        SubscribeLocalEvent<LabelableHolosignProjectorComponent, LabelableHolosignChangedMessage>(OnHolosignDescriptionChanged);
+        SubscribeLocalEvent<LabelableHolosignProjectorComponent, LabelableHolosignDescriptionMessage>(OnHolosignDescriptionChanged);
+        SubscribeLocalEvent<LabelableHolosignProjectorComponent, LabelableHolosignSignChosen>(OnSignChosen);
+        SubscribeLocalEvent<LabelableHolosignProjectorComponent, LabelableHolosignOpenOtherUI>(OnOpenOtherUI);
+        SubscribeLocalEvent<LabelableHolosignProjectorComponent, ExaminedEvent>(OnProjectorExamined);
 
-        SubscribeLocalEvent<LabeledHolosignComponent, ExaminedEvent>(OnExamine);
+        SubscribeLocalEvent<LabeledHolosignComponent, ExaminedEvent>(OnSignExamine);
     }
 
-    private void OnExamine(EntityUid uid, LabeledHolosignComponent component, ExaminedEvent args)
+    private void OnSignExamine(EntityUid uid, LabeledHolosignComponent component, ExaminedEvent args)
     {
         if (component.IsNSFW)
         {
@@ -64,10 +69,19 @@ public abstract class SharedLabelableHolosignProjectorSystem : EntitySystem
         }
     }
 
+    private void OnProjectorExamined(Entity<LabelableHolosignProjectorComponent> entity, ref ExaminedEvent evt)
+    {
+        if (entity.Comp.SelectedSignProto is { } signProto)
+        {
+            evt.PushMarkup(Loc.GetString("labelable-holoprojector-selected-sign", ("sign", signProto)));
+        }
+    }
+
     private void OnBeforeInteract(Entity<LabelableHolosignProjectorComponent> ent, ref BeforeRangedInteractEvent args)
     {
         if (args.Handled || !args.CanReach ||
-            HasComp<StorageComponent>(args.Target))
+            HasComp<StorageComponent>(args.Target) ||
+            HasComp<ItemSlotsComponent>(args.Target))
             return;
 
         var coords = args.ClickLocation.SnapToGrid(EntityManager);
@@ -84,11 +98,20 @@ public abstract class SharedLabelableHolosignProjectorSystem : EntitySystem
 
     private bool TryPlaceSign(Entity<LabelableHolosignProjectorComponent> ent, BeforeRangedInteractEvent args, EntityUid user)
     {
+        if (ent.Comp.SelectedSignProto == null)
+        {
+            if (!_uiSystem.HasUi(ent, LabelableHolosignUIKey.Signs))
+                return false;
+            _uiSystem.OpenUi(ent.Owner, LabelableHolosignUIKey.Signs, user);
+            UpdateUI(ent);
+            return true;
+        }
+        
         if (ent.Comp.BarrierDescription.Length == 0)
         {
-            if (!_uiSystem.HasUi(ent, LabelableHolosignUIKey.Key))
+            if (!_uiSystem.HasUi(ent, LabelableHolosignUIKey.Description))
                 return false;
-            _uiSystem.OpenUi(ent.AsType(), LabelableHolosignUIKey.Key, user);
+            _uiSystem.OpenUi(ent.Owner, LabelableHolosignUIKey.Description, user);
             UpdateUI(ent);
             return true;
         }
@@ -103,19 +126,27 @@ public abstract class SharedLabelableHolosignProjectorSystem : EntitySystem
         }
 
         var holoUid = EntityManager.PredictedSpawnAtPosition(
-            ent.Comp.SignProto,
+            ent.Comp.SelectedSignProto,
             args.ClickLocation.SnapToGrid(EntityManager));
 
         var labelComp = EnsureComp<LabeledHolosignComponent>(holoUid);
         labelComp.Description = ent.Comp.BarrierDescription;
-        labelComp.IsNSFW = ent.Comp.IsNSFW;
+        labelComp.IsNSFW = ent.Comp.IsNsfw;
         Dirty(holoUid, labelComp);
 
         var xform = Transform(holoUid);
         if (!xform.Anchored)
             _transform.AnchorEntity(holoUid, xform);
 
+        var nsfwStr = labelComp.IsNSFW ? "nsfw" : "";
+        _adminLogger.Add(LogType.Action, LogImpact.Low, $"{ToPrettyString(user):user} placed a {ToPrettyString(holoUid):holosign} with {nsfwStr} description {labelComp.Description}");
+        
         return true;
+    }
+
+    private void OnHandleState(Entity<LabelableHolosignProjectorComponent> ent, ref AfterAutoHandleStateEvent evt)
+    {
+        UpdateUI(ent);
     }
 
     private bool TryRemoveSign(Entity<LabelableHolosignProjectorComponent> ent, EntityUid sign, EntityUid user)
@@ -135,39 +166,41 @@ public abstract class SharedLabelableHolosignProjectorSystem : EntitySystem
         return true;
     }
 
-    private void OnGetState(Entity<LabelableHolosignProjectorComponent> entity, ref ComponentGetState args)
-    {
-        args.State = new LabelableHolosignProjectorComponentState(entity.Comp.BarrierDescription)
-        {
-            MaxDescriptionChars = entity.Comp.MaxDescriptionChars,
-        };
-    }
-
-    private void OnHandleState(Entity<LabelableHolosignProjectorComponent> entity, ref ComponentHandleState args)
-    {
-        if (args.Current is not LabelableHolosignProjectorComponentState state)
-            return;
-
-        entity.Comp.MaxDescriptionChars = state.MaxDescriptionChars;
-
-        if (entity.Comp.BarrierDescription == state.BarrierDescription)
-            return;
-
-        entity.Comp.BarrierDescription = state.BarrierDescription;
-        UpdateUI(entity);
-    }
-
     protected virtual void UpdateUI(Entity<LabelableHolosignProjectorComponent> entity) { }
 
     private void OnHolosignDescriptionChanged(
         EntityUid uid,
         LabelableHolosignProjectorComponent component,
-        LabelableHolosignChangedMessage args
+        LabelableHolosignDescriptionMessage args
     )
     {
         var description = args.Description.Trim();
         component.BarrierDescription = description[..Math.Min(component.MaxDescriptionChars, description.Length)];
+        component.IsNsfw = args.IsNsfw;
         UpdateUI((uid, component));
         Dirty(uid, component);
+    }
+
+    private void OnSignChosen(Entity<LabelableHolosignProjectorComponent> entity, ref LabelableHolosignSignChosen args)
+    {
+        // Use an index because trusting the client to send an arbitrary ProtoId seems bad.
+        if (entity.Comp.SignProtos.TryGetValue(args.Selection, out var signProtoId) &&
+            _prototypeManager.TryIndex(signProtoId, out var proto))
+        {
+            entity.Comp.SelectedSignProto = proto;
+            UpdateUI(entity);
+            Dirty(entity);
+        }
+    }
+
+    private void OnOpenOtherUI(Entity<LabelableHolosignProjectorComponent> entity, 
+        ref LabelableHolosignOpenOtherUI args)
+    {
+        // Have to send this over here to open the BUI since I can't seem to do it from inside the UI.
+        var user = args.Actor;
+        if (!_uiSystem.HasUi(entity, LabelableHolosignUIKey.Description))
+            return;
+        _uiSystem.OpenUi(entity.Owner, LabelableHolosignUIKey.Description, user);
+        UpdateUI(entity);
     }
 }

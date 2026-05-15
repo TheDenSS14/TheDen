@@ -11,9 +11,9 @@ namespace Content.Shared._DEN.Holosign.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(SharedLabelableHolosignProjectorSystem))]
 public sealed partial class LabeledHolosignComponent : Component
 {
-    [AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public string Description;
 
-    [AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public bool IsNSFW;
 }

@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2026 Kiara
 # SPDX-FileCopyrightText: 2026 Nata F Miakova
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -85525,18 +85526,6 @@ entities:
     - type: Transform
       pos: 52.5,-23.5
       parent: 2
-- proto: GiftsSecurityRiot
-  entities:
-  - uid: 3688
-    components:
-    - type: Transform
-      pos: 45.181812,-2.667724
-      parent: 2
-  - uid: 3689
-    components:
-    - type: Transform
-      pos: 45.181812,-2.667724
-      parent: 2
 - proto: GlimmerProber
   entities:
   - uid: 2428
@@ -91112,11 +91101,11 @@ entities:
     components:
     - type: MetaData
       desc: >-
-        A fox jumped out one winter’s night, 
+        A fox jumped out one winter’s night,
 
-        And begged the moon to give him light. 
+        And begged the moon to give him light.
 
-        For he’d many miles to trot that night. 
+        For he’d many miles to trot that night.
 
         Before he reached his den
       name: the fox stone

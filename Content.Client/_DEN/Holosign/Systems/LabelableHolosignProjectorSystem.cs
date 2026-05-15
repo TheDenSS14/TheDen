@@ -16,8 +16,8 @@ public sealed class LabelableHolosignProjectorSystem : SharedLabelableHolosignPr
 {
     protected override void UpdateUI(Entity<LabelableHolosignProjectorComponent> ent)
     {
-        if (_uiSystem.TryGetOpenUi(ent.Owner, LabelableHolosignUIKey.Key, out var bui)
-            && bui is LabelableHolosignProjectorBoundUserInterface cBui)
+        if (_uiSystem.TryGetOpenUi(ent.Owner, LabelableHolosignUIKey.Description, out var bui)
+            && bui is LabelableHolosignProjectorDescriptionBUI cBui)
         {
             cBui.Reload();
         }

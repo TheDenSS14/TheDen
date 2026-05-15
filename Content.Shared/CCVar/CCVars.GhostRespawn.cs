@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 MajorMoth
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -17,4 +18,15 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<bool> GhostAllowSameCharacter =
         CVarDef.Create("ghost.allow_same_character", false, CVar.SERVERONLY);
+
+    // DEN edit start
+
+    /// <summary>
+    /// This is a configurable grace period which begins ticking down from they moment they spawn, that allows players to quickly respawn if they cryo again.
+    /// Unit is minutes.
+    /// </summary>
+    public static readonly CVarDef<float> RoundjoinRespawnPeriod =
+        CVarDef.Create("ghost.roundjoin_respawn_period", 10f, CVar.SERVERONLY);
+
+    // DEN edit end
 }

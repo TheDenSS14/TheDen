@@ -31,6 +31,7 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Spatison
 # SPDX-FileCopyrightText: 2025 eightballll
+# SPDX-FileCopyrightText: 2026 Kellaris
 # SPDX-FileCopyrightText: 2026 MajorMoth
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -220,7 +221,7 @@
 - type: entity
   id: ActionMorphGeras
   name: Morph into Geras
-  description:  Morphs you into a Geras - a miniature version of you which allows you to move fast, at the cost of your inventory.
+  description:  Morphs you into a Geras - a miniature version of you which allows you to move fast, but cannot access your inventory.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction

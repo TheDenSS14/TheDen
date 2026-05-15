@@ -37,7 +37,7 @@
 # SPDX-FileCopyrightText: 2025 Your Name
 # SPDX-FileCopyrightText: 2025 fishbait
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   parent: BaseItem
@@ -458,6 +458,19 @@
     state: cpu_security
   - type: ComputerBoard
     prototype: SyndicateComputerComms
+
+# DEN start
+- type: entity
+  parent: SyndicateCommsComputerCircuitboard
+  id: LPOCommsComputerCircuitboard
+  name: LPO communications computer board
+  description: A computer printed circuit board for an LPO communications console.
+  components:
+  - type: Sprite
+    state: cpu_security
+  - type: ComputerBoard
+    prototype: LPOComputerComms
+# DEN end
 
 - type: entity
   parent: BaseComputerCircuitboard

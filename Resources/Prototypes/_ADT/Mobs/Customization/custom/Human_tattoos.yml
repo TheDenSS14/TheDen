@@ -9,18 +9,14 @@
 
 - type: marking
   id: HumanTattooArmImheartmomL
-  bodyPart: LArm
-  markingCategory: LeftArm
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseLArmMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_arm_imheartmom_l
 
 - type: marking
   id: HumanTattooArmImheartmomR
-  bodyPart: RArm
-  markingCategory: RightArm
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseRArmMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_arm_imheartmom_r
@@ -94,18 +90,14 @@
 
 - type: marking
   id: HumanTattooLineArmL
-  bodyPart: LArm
-  markingCategory: LeftArm
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseLArmMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_line_arm_l
 
 - type: marking
   id: HumanTattooLineArmR
-  bodyPart: RArm
-  markingCategory: RightArm
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseRArmMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_line_arm_r
@@ -161,18 +153,14 @@
 
 - type: marking
   id: HumanTattooSkeletarmL
-  bodyPart: LArm
-  markingCategory: LeftArm
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseLArmMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_skelet_arm_l
 
 - type: marking
   id: HumanTattooSkeletarmR
-  bodyPart: RArm
-  markingCategory: RightArm
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseRArmMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_skelet_arm_r
@@ -251,18 +239,14 @@
 
 - type: marking
   id: HumanTattooArmlazaL
-  bodyPart: LArm
-  markingCategory: LeftArm
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseLArmMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattooarm-laza_l
 
 - type: marking
   id: HumanTattooArmlazaR
-  bodyPart: RArm
-  markingCategory: RightArm
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseRArmMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattooarm-laza_r
@@ -343,9 +327,7 @@
 
 - type: marking
   id: HumanTattooLineArmLU
-  bodyPart: LArm
-  markingCategory: LeftArm
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseLArmMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_line_arm_l
@@ -353,9 +335,7 @@
 
 - type: marking
   id: HumanTattooLineArmRU
-  bodyPart: RArm
-  markingCategory: RightArm
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseRArmMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_line_arm_r
@@ -417,9 +397,7 @@
 
 - type: marking
   id: HumanTattooSkeletarmLU
-  bodyPart: LArm
-  markingCategory: LeftArm
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseLArmMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_skelet_arm_l
@@ -427,9 +405,7 @@
 
 - type: marking
   id: HumanTattooSkeletarmRU
-  bodyPart: RArm
-  markingCategory: RightArm
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseRArmMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_skelet_arm_r
@@ -447,9 +423,7 @@
 
 - type: marking
   id: HumanTattooSkeletfootLU
-  bodyPart: LFoot
-  markingCategory: LeftFoot
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseLFootMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_skelet_foot_l
@@ -457,9 +431,7 @@
 
 - type: marking
   id: HumanTattooSkeletfootRU
-  bodyPart: RFoot
-  markingCategory: RightFoot
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseRFootMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_skelet_foot_r
@@ -467,9 +439,7 @@
 
 - type: marking
   id: HumanTattooSkeletlegLU
-  bodyPart: LLeg
-  markingCategory: LeftLeg
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseLLegMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_skelet_leg_l
@@ -477,9 +447,7 @@
 
 - type: marking
   id: HumanTattooSkeletlegRU
-  bodyPart: RLeg
-  markingCategory: RightLeg
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseRLegMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_skelet_leg_r
@@ -497,9 +465,7 @@
 
 - type: marking
   id: HumanTattooSymbolElysiumU
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseChestMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_symbol_elysium
@@ -507,9 +473,7 @@
 
 - type: marking
   id: HumanTattooNarsiU
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseChestMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattoo_narsi
@@ -517,9 +481,7 @@
 
 - type: marking
   id: HumanTattooArmlazaLU
-  bodyPart: LArm
-  markingCategory: LeftArm
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseLArmMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattooarm-laza_l
@@ -527,9 +489,7 @@
 
 - type: marking
   id: HumanTattooArmlazaRU
-  bodyPart: RArm
-  markingCategory: RightArm
-  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, Kitsune]
+  parent: BaseRArmMarking
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: tattooarm-laza_r

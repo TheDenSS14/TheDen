@@ -1,26 +1,25 @@
-# SPDX-FileCopyrightText: 2024 Adrian16199 <144424013+Adrian16199@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Aikakakah <145503852+Aikakakah@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 KittenColony <149278380+KittenColony@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Memeji <greyalphawolf7@gmail.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 XavierSomething <tylernguyen203@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 Adrian16199
+# SPDX-FileCopyrightText: 2024 Aikakakah
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 KittenColony
+# SPDX-FileCopyrightText: 2024 Memeji
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 XavierSomething
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SX-7
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: GauzeLefteyePatch
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, Feroxi, Arachne, Lamia, Tajaran, IPC, Harpy, Rodentia, Canid] # Delta V - Felinid, Oni, Vulpkanin, Feroxi; Einstein Engines - Tajaran; The Den - Canid
+  # speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, Feroxi, Arachne, Lamia, Tajaran, IPC, Harpy, Rodentia, Canid] # Delta V - Felinid, Oni, Vulpkanin, Feroxi; Einstein Engines - Tajaran; The Den - Canid
   coloring:
     default:
       type:
@@ -34,7 +33,7 @@
   id: GauzeLefteyePad
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Feroxi, Arachne, Lamia, Tajaran, IPC, Harpy, Rodentia, Canid] # Delta V - Felinid, Oni, Vulpkanin, Feroxi; Einstein Engines - Tajaran; The Den - Canid
+  # speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Feroxi, Arachne, Lamia, Tajaran, IPC, Harpy, Rodentia, Canid] # Delta V - Felinid, Oni, Vulpkanin, Feroxi; Einstein Engines - Tajaran; The Den - Canid
   coloring:
     default:
       type:
@@ -48,7 +47,7 @@
   id: GauzeRighteyePatch
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, Feroxi, Arachne, Lamia, Tajaran, IPC, Harpy, Rodentia, Canid] # Delta V - Felinid, Oni, Vulpkanin, Feroxi; Einstein Engines - Tajaran; The Den - Canid
+  # speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, Feroxi, Arachne, Lamia, Tajaran, IPC, Harpy, Rodentia, Canid] # Delta V - Felinid, Oni, Vulpkanin, Feroxi; Einstein Engines - Tajaran; The Den - Canid
   coloring:
     default:
       type:
@@ -62,7 +61,7 @@
   id: GauzeRighteyePad
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Feroxi, Arachne, Lamia, Tajaran, IPC, Harpy, Rodentia, Canid] # Delta V - Felinid, Oni, Vulpkanin, Feroxi; Einstein Engines - Tajaran; The Den - Canid
+  # speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Feroxi, Arachne, Lamia, Tajaran, IPC, Harpy, Rodentia, Canid] # Delta V - Felinid, Oni, Vulpkanin, Feroxi; Einstein Engines - Tajaran; The Den - Canid
   coloring:
     default:
       type:
@@ -76,7 +75,7 @@
   id: GauzeBlindfold
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Harpy, Vulpkanin, Feroxi, Arachne, Lamia, Tajaran, IPC, Harpy, Rodentia] # Delta V - Felinid, Oni, Harpy, Vulpkanin, Feroxi; Einstein Engines - Tajaran
+  # speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Harpy, Vulpkanin, Feroxi, Arachne, Lamia, Tajaran, IPC, Harpy, Rodentia] # Delta V - Felinid, Oni, Harpy, Vulpkanin, Feroxi; Einstein Engines - Tajaran
   coloring:
     default:
       type:

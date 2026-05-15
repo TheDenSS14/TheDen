@@ -12,6 +12,7 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 chuga-git
 # SPDX-FileCopyrightText: 2026 entings
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
@@ -31,6 +32,7 @@
   id: Accentless
   category: TraitsSpeechAccents
   points: 0
+  slots: 0
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -48,6 +50,7 @@
           - type: MothAccent
           - type: ReplacementAccent
             accent: dwarf
+          - type: TajaranAccent
 
 - type: trait
   id: Southern

@@ -12,7 +12,7 @@
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 // SPDX-FileCopyrightText: 2026 Dirius77
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Lathe.Prototypes;
@@ -128,6 +128,12 @@ namespace Content.Shared.Lathe
         /// </summary>
         [DataField]
         public float PartRatingMaterialUseMultiplier = 0.85f;
+
+        /// <summary>
+        /// Causes produced items to not have their material quantities reduced by the input cost discount.
+        /// </summary>
+        [DataField] public bool IgnoreMaterialPenalty = false; // DEN: Ore processor upgrades produce more mats.
+
         #endregion
     }
 

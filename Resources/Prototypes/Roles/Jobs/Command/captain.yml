@@ -43,7 +43,7 @@
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: job
   id: Captain
@@ -51,26 +51,24 @@
   description: job-description-captain
   playTimeTracker: JobCaptain
   requirements:
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobQuartermaster # DeltaV - Logistics Department replacing Cargo
-      min: 7200 # The Den - 2 hour
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobChiefEngineer
-      min: 7200 # The Den - 2 hour
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobChiefMedicalOfficer
-      min: 7200 # The Den - 2 hour
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobHeadOfSecurity
-      min: 7200 # The Den - 2 hour
-    - !type:CharacterPlaytimeRequirement # DeltaV - Epistemics dept time requirement
-      tracker: JobResearchDirector # DeltaV - Epistemics Department replacing Science
-      min: 7200 # The Den - 2 hour
-    - !type:CharacterPlaytimeRequirement # DeltaV - Epistemics dept time requirement
-      tracker: JobHeadOfPersonnel # DeltaV - Epistemics Department replacing Science
-      min: 7200 # The Den - 2 hour
-    - !type:CharacterOverallTimeRequirement
-      min: 144000 # The Den - 40 hour
+     - !type:CharacterDepartmentTimeRequirement
+       department: Security
+       min: 36000
+     - !type:CharacterDepartmentTimeRequirement
+       department: Logistics
+       min: 36000
+     - !type:CharacterDepartmentTimeRequirement
+       department: Engineering
+       min: 36000
+     - !type:CharacterDepartmentTimeRequirement
+       department: Medical
+       min: 36000
+     - !type:CharacterDepartmentTimeRequirement
+       department: Epistemics
+       min: 36000
+     - !type:CharacterDepartmentTimeRequirement
+       department: Civilian
+       min: 36000
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"

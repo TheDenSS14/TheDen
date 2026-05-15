@@ -42,6 +42,11 @@ trait-description-IntoxicatingBlood =
     Either due to a blood transfusion, inheritance from your parents, or some other reason, your body contains different blood than usual.
     Your body produces Intoxicating Blood instead of whatever blood your species normally generates. [color=red]Note:[/color] Due to Intoxicating Blood causing drunkness, this comes with additional trait cost.
 
+trait-name-SynthBlood = Synth Blood
+trait-description-SynthBlood =
+    Either due to a blood transfusion, a procedure done on you, or some other reason, your body contains different blood than usual.
+    Your body produces Synth Blood instead of whatever blood your species normally generates.
+
 ## Blood group type
 
 character-item-group-TraitsBloods = Blood Types

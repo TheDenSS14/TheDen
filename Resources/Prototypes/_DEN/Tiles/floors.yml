@@ -1,6 +1,17 @@
-# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2026 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: tile
+  id: FloorInvisible
+  name: tiles-invisible
+  sprite: /Textures/_DEN/Tiles/invisible.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
 
 - type: tile
   id: FloorTilePool
@@ -39,11 +50,16 @@
   heatCapacity: 10000
 
 - type: tile
-  id: FloorInvisible
-  name: tiles-invisible
-  sprite: /Textures/_DEN/Tiles/invisible.png
+  id: FloorEightiesLowContrast
+  name: tiles-eighties-floor
+  sprite: /Textures/_DEN/Tiles/eighties.png
   baseTurf: Plating
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
-    collection: FootstepTile
+    collection: FootstepCarpet
+  barestepSounds:
+    collection: BarestepCarpet
+  friction: 0.25
+  itemDrop: FloorTileItemEightiesLowContrast
   heatCapacity: 10000

@@ -15,12 +15,14 @@
   - type: UseDelay
     delay: 2.0
   - type: ActivatableUI
-    key: enum.LabelableHolosignUIKey.Key
+    key: enum.LabelableHolosignUIKey.Signs
     inHandsOnly: true
   - type: UserInterface
     interfaces:
-      enum.LabelableHolosignUIKey.Key:
-        type: LabelableHolosignProjectorBoundUserInterface
+      enum.LabelableHolosignUIKey.Signs:
+        type: LabelableHolosignProjectorSignBUI
+      enum.LabelableHolosignUIKey.Description:
+        type: LabelableHolosignProjectorDescriptionBUI
   - type: LimitedCharges
     maxCharges: 8
     charges: 8
@@ -29,6 +31,7 @@
   - type: Tag
     tags:
     - HolofanProjector
+    - CivilianHoloprojector
   - type: StaticPrice
     price: 80
 
@@ -37,13 +40,16 @@
   id: HoloprojectorNSFW
   name: nsfw holobarrier projector
   description: Creates a holographic barrier indicating an NSFW area.
+  suffix: DO NOT MAP
   components:
   - type: Sprite
     sprite: _DEN/Objects/Devices/Holoprojectors/adult.rsi
     state: icon
   - type: LabelableHolosignProjector
-    signProto: HolosignNSFW
-    isNSFW: true
+    signProtos:
+    - HolosignNSFW
+    - HolosignPrivate
+    isNsfw: true
     usesCharges: true
     signWhitelist:
       components:
@@ -53,15 +59,17 @@
 - type: entity
   parent: BaseIndicatorHoloprojector
   id: HoloprojectorPrivate
-  name: private holobarrier projector
+  name: privacy holobarrier projector
   description: Creates a holographic barrier indicating a private area.
   components:
   - type: Sprite
     sprite: _DEN/Objects/Devices/Holoprojectors/private.rsi
     state: icon
   - type: LabelableHolosignProjector
-    signProto: HolosignPrivate
-    isNSFW: false
+    signProtos:
+      - HolosignNSFW
+      - HolosignPrivate
+    isNsfw: false
     usesCharges: true
     signWhitelist:
       components:

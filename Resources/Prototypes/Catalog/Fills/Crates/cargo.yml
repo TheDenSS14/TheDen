@@ -18,7 +18,7 @@
 # SPDX-FileCopyrightText: 2026 crumchy
 # SPDX-FileCopyrightText: 2026 sheepie
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   id: CrateCargoLuxuryHardsuit
@@ -385,6 +385,9 @@
       prob: 0.01
       orGroup: Plushies
     - id: PlushieMothObservant # TheDen
+      prob: 0.01
+      orGroup: Plushies
+    - id: PlushieJak # TheDen
       prob: 0.01
       orGroup: Plushies
     #useful

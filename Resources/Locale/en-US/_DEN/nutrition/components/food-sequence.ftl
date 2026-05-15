@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2026 Eightballll
+# SPDX-FileCopyrightText: 2026 Jakumba
 # SPDX-FileCopyrightText: 2026 crumchy
 # SPDX-FileCopyrightText: 2026 sheepie
 #
@@ -60,3 +61,4 @@ food-sequence-cotton-burger-content-plushie-stu = stu
 food-sequence-cotton-burger-content-plushie-phil = normal?
 food-sequence-cotton-burger-content-plushie-inkdrop = inkdrop
 food-sequence-cotton-burger-content-plushie-agena = pink
+food-sequence-cotton-burger-content-plushie-jak = wet
