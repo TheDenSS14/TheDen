@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 Briffit
 # SPDX-FileCopyrightText: 2026 Marcel
 # SPDX-FileCopyrightText: 2026 Sunburstschitin
 #

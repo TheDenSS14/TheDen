@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Briffit
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 reagent-name-eggcream = egg cream
 reagent-desc-eggcream = Contains neither eggs, nor cream. The coveted specialty of the soda jerk.
 
