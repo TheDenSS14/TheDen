@@ -114,10 +114,12 @@
 #  maxItems: 1
 #  items:
 
-#- type: characterItemGroup
-#  id: LoadoutSeniorEngineerMask
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutSeniorEngineerMask
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSeniorEngineerMaskGasAtmos
 
 #- type: characterItemGroup
 #  id: LoadoutSeniorEngineerOuter
