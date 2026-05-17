@@ -48,6 +48,9 @@ using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Content.Server.Atmos.Rotting;
 using Content.Shared._DEN.Kitchen;
+using Content.Shared.Containers.ItemSlots;
+using NetCord;
+
 
 namespace Content.Server.Kitchen.EntitySystems;
 
@@ -61,6 +64,7 @@ public sealed class SharpSystem : EntitySystem
     [Dependency] private readonly ContainerSystem _containerSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!; // DEN
 
     public override void Initialize()
     {
@@ -91,6 +95,19 @@ public sealed class SharpSystem : EntitySystem
 
         if (TryComp<MobStateComponent>(target, out var mobState) && !_mobStateSystem.IsDead(target, mobState))
             return false;
+
+        // DEN Start
+        if (TryComp<ItemSlotsComponent>(target, out var itemSlots))
+        {
+            //Basically for every slot, see if you can eject something. if you can, there's something inside and you can't butcher!!!!!
+            foreach (var slot in itemSlots.Slots)
+                if (_itemSlots.CanEject(target, user, slot.Value))
+                {
+                    _popupSystem.PopupEntity(Loc.GetString("butcherable-full-of-item", ("target", target)), knife, user);
+                    return false;
+                }
+        }
+        // DEN End
 
         if (butcher.Type != ButcheringType.Knife && target != user)
         {
