@@ -52,7 +52,8 @@ public sealed class SharedCybereyeControlSystem : EntitySystem
     private void OnActionEvent(EntityUid uid, BaseCybereyeControlComponent component, CybereyeControlActionEvent args)
     {
         // we don't check for handling here, since multiple components will have to handle the event at the same time
-        TryToggleCybereye(uid, component);
+        if (!TryToggleCybereye(uid, component))
+            _sawmill.Error($"Failed to toggle cybereye on entity {uid}");
     }
 
     public bool TryToggleCybereye(EntityUid uid, BaseCybereyeControlComponent? cybereyeControlComponent)
