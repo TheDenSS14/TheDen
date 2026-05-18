@@ -1,4 +1,3 @@
-using Content.Shared.Overlays;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -10,9 +9,6 @@ namespace Content.Shared._DEN.Cybereye.Components;
 [RegisterComponent, NetworkedComponent]
 public abstract partial class BaseCybereyeControlComponent : Component
 {
-    [DataField]
-    public EntProtoId Action = "CybereyeControlAction";
-    public EntityUid? ActionEntity;
 
     [DataField]
     public ComponentRegistry RemoveOnToggle = new ComponentRegistry();
