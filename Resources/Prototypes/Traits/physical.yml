@@ -890,6 +890,7 @@
     - !type:TraitReplaceComponent
       components:
         - type: Flashable # Effectively, removes any flash-vulnerability species traits.
+        - type: CybereyeControl
 
 
 - type: trait
@@ -947,6 +948,11 @@
         - type: ShowJobIcons
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
+        - type: SecCybereyeControl
+          removeOnToggle: 
+          - type: ShowJobIcons
+          - type: ShowMindShieldIcons
+          - type: ShowCriminalRecordIcons
 
 - type: trait
   id: CyberEyesMedical
@@ -980,6 +986,16 @@
           damageContainers:
           - Biological
           - BiologicalMetaphysical # Floof - M3739 - #1006
+        - type: MedCybereyeControl
+          removeOnToggle: 
+          - type: ShowHealthBars
+            damageContainers:
+            - Biological
+            - BiologicalMetaphysical # Floof - M3739 - #1006
+          - type: ShowHealthIcons
+            damageContainers:
+            - Biological
+            - BiologicalMetaphysical # Floof - M3739 - #1006
 
 - type: trait
   id: CyberEyesDiagnostic
@@ -1009,6 +1025,12 @@
           damageContainers:
           - Inorganic
           - Silicon
+        - type: DiagCybereyeControl
+          removeOnToggle: 
+          - type: ShowHealthBars
+            damageContainers:
+            - Inorganic
+            - Silicon
 
 - type: trait
   id: CyberEyesOmni
@@ -1055,6 +1077,21 @@
           - BiologicalMetaphysical # Floof - M3739 - #1006
           - Inorganic
           - Silicon
+        - type: OmniCybereyeControl
+          removeOnToggle: 
+          - type: ShowJobIcons
+          - type: ShowMindShieldIcons
+          - type: ShowCriminalRecordIcons
+          - type: ShowHealthIcons
+            damageContainers:
+            - Biological
+            - BiologicalMetaphysical # Floof - M3739 - #1006
+          - type: ShowHealthBars
+            damageContainers:
+            - Biological
+            - BiologicalMetaphysical # Floof - M3739 - #1006
+            - Inorganic
+            - Silicon
 
 - type: trait
   id: Redshirt
@@ -1318,6 +1355,12 @@
         - type: ShowJobIcons
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
+        - type: CybereyeControl
+        - type: SecCybereyeControl
+          removeOnToggle: 
+          - type: ShowJobIcons
+          - type: ShowMindShieldIcons
+          - type: ShowCriminalRecordIcons
 
 - type: trait
   id: MedicalEyesModule
@@ -1349,6 +1392,17 @@
         - type: ShowHealthIcons
           damageContainers:
           - Biological
+        - type: CybereyeControl
+        - type: MedCybereyeControl
+          removeOnToggle: 
+          - type: ShowHealthBars
+            damageContainers:
+            - Biological
+            - BiologicalMetaphysical # Floof - M3739 - #1006
+          - type: ShowHealthIcons
+            damageContainers:
+            - Biological
+            - BiologicalMetaphysical # Floof - M3739 - #1006
 
 - type: trait
   id: DiagnosticEyesModule
@@ -1378,6 +1432,13 @@
           damageContainers:
           - Inorganic
           - Silicon
+        - type: CybereyeControl
+        - type: DiagCybereyeControl
+          removeOnToggle: 
+          - type: ShowHealthBars
+            damageContainers:
+            - Inorganic
+            - Silicon
 
 - type: trait
   id: OmniEyesModule
@@ -1425,6 +1486,22 @@
           - Biological
           - Inorganic
           - Silicon
+        - type: CybereyeControl
+        - type: OmniCybereyeControl
+          removeOnToggle: 
+          - type: ShowJobIcons
+          - type: ShowMindShieldIcons
+          - type: ShowCriminalRecordIcons
+          - type: ShowHealthIcons
+            damageContainers:
+            - Biological
+            - BiologicalMetaphysical # Floof - M3739 - #1006
+          - type: ShowHealthBars
+            damageContainers:
+            - Biological
+            - BiologicalMetaphysical # Floof - M3739 - #1006
+            - Inorganic
+            - Silicon
 
 - type: trait
   id: LightAmplificationModule
