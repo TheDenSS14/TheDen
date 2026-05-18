@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 MajorMoth
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Actions;
 
 namespace Content.Shared._DEN.Actions;

@@ -3,6 +3,7 @@
 // SPDX-FileCopyrightText: 2024 Krunklehorn
 // SPDX-FileCopyrightText: 2024 Morb
 // SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 MajorMoth
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
