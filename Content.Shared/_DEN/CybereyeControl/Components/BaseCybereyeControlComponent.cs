@@ -6,7 +6,6 @@ namespace Content.Shared._DEN.Cybereye.Components;
 /// <summary>
 /// A bandaid fix for not being able to turn off the HUD which cybereyes provide. 
 /// </summary>
-[RegisterComponent, NetworkedComponent]
 public abstract partial class BaseCybereyeControlComponent : Component
 {
 
