@@ -39,12 +39,12 @@ public sealed class SharedCybereyeControlSystem : EntitySystem
         _sawmill = _logManager.GetSawmill("CybereyeControl");
     }
 
-    private void OnCybereyeControlMapInit(EntityUid uid, BaseCybereyeControlComponent component, MapInitEvent args)
+    private void OnCybereyeControlMapInit(EntityUid uid, CybereyeControlComponent component, MapInitEvent args)
     {
         _actions.AddAction(uid, ref component.ActionEntity, component.Action, uid);
     }
 
-    private void OnCybereyeControlShutdown(EntityUid uid, BaseCybereyeControlComponent component, ComponentShutdown args)
+    private void OnCybereyeControlShutdown(EntityUid uid, CybereyeControlComponent component, ComponentShutdown args)
     {
         _actions.RemoveAction(uid, component.ActionEntity);
     }
