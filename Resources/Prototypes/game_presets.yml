@@ -35,12 +35,11 @@
   name: survival-title
   showInVote: true # secret # DeltaV - Me when the survival. Used for periapsis.
   highDanger: true
-  minPlayers: 40 # DEN: Minimum population for high-danger presets to account for lack of security
+  minPlayers: 25 # DEN: Minimum population for medium-danger presets to account for lack of security
   description: survival-description
   rules:
     - RampingStationEventScheduler
     - BasicRoundstartVariation
-    - Traitor
     - SubGamemodesRule
     - LavalandStormScheduler # Lavaland Change
 
@@ -177,7 +176,8 @@
   highDanger: true
   minPlayers: 40 # DEN: Minimum population for high-danger presets to account for lack of security
   rules:
-    - Traitor
+    - MoreTraitor
+    - ListeningOutpostDelayedRandomSpawn
     - SubGamemodesRule
     - BasicStationEventScheduler
     - BasicRoundstartVariation
