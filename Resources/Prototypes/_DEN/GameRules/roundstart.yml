@@ -36,7 +36,7 @@
     # minPlayers: 20 # minimum of 2 conspirators
     delay:
       min: 1800
-      max: 2400
+      max: 2100
   - type: ConspiratorRule
   - type: AntagSelection
     # selectionTime: IntraPlayerSpawn
@@ -59,3 +59,16 @@
         - RadioImplantConspiracy
       mindRoles:
       - MindRoleConspirator
+
+- type: entity
+  id: ListeningOutpostDelayedRandomSpawn
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: PirateRadioSpawn
+      prob: 0.5
+      delay:
+        min: 2400
+        max: 3600
