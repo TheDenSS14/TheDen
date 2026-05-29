@@ -14,12 +14,14 @@
   description: A hand-held atmospherics monitor.
   components:
   - type: Item
+    sprite: _DEN/Objects/Tools/handheld_atmospherics_monitor.rsi
+    heldPrefix: atmomon
   - type: Sprite
     sprite: _DEN/Objects/Tools/handheld_atmospherics_monitor.rsi
     state: icon
     layers:
       - state: icon
-      - state: scanner
+      - state: atmospherics_monitor
         shader: unshaded
         visible: true
         map: [ "enum.PowerDeviceVisualLayers.Powered" ]
@@ -63,7 +65,7 @@
     state: icon
     layers:
       - state: icon
-      - state: scanner
+      - state: atmospherics_monitor
         shader: unshaded
         visible: false
         map: [ "enum.PowerDeviceVisualLayers.Powered" ]
