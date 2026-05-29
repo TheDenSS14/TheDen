@@ -69,10 +69,8 @@
   - type: FaxMachine
     name: "Nanotrasen Representative"
   - type: Sprite
-    sprite: _Goobstation/Objects/Tools/handheld_fax.rsi
+    sprite: _DEN/Objects/Tools/handheld_fax.rsi
     drawdepth: SmallObjects
     layers:
     - state: icon
       map: [ "enum.FaxMachineVisuals.VisualState" ]
-    - state: scanner
-      shader: unshaded

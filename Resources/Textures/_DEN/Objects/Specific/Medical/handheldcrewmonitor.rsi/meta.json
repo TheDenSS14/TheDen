@@ -1,0 +1,34 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "by RosySaturniidae",
+    "states": [
+        {
+            "name": "crew_monitor",
+            "delays": [
+                [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ]
+            ]
+        },
+        {
+            "name": "crewmon-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "crewmon-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "icon",
+            "directions": 1
+        }
+    ]
+}
