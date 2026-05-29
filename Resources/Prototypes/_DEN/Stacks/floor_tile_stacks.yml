@@ -18,6 +18,13 @@
   itemSize: 5
 
 - type: stack
+  id: FloorTileStackEightiesLowContrast
+  name: eighties floor tile
+  spawn: FloorTileItemEightiesLowContrast
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
   id: FloorTileInvisible
   name: invisible floor
   spawn: FloorTileItemInvisible
@@ -53,26 +60,5 @@
   name: narrow cyan carpet
   icon: { sprite: _DEN/Objects/Tiles/tile.rsi, state: carpet-cyan-narrow }
   spawn: FloorCarpetItemCyanNarrow
-  maxCount: 30
-  itemSize: 5
-
-- type: stack
-  id: FloorTilePool
-  name: pool tile
-  spawn: FloorTileItemPool
-  maxCount: 30
-  itemSize: 5
-
-- type: stack
-  id: FloorTilePoolDark
-  name: dark pool tile
-  spawn: FloorTileItemPoolDark
-  maxCount: 30
-  itemSize: 5
-
-- type: stack
-  id: FloorTileStackEightiesLowContrast
-  name: eighties floor tile
-  spawn: FloorTileItemEightiesLowContrast
   maxCount: 30
   itemSize: 5
