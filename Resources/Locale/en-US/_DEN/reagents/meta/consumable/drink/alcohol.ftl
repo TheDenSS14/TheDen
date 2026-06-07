@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2026 Briffit
 # SPDX-FileCopyrightText: 2026 Marcel
 # SPDX-FileCopyrightText: 2026 Sunburstschitin
 #

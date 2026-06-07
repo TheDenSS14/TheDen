@@ -4,7 +4,7 @@
 # SPDX-FileCopyrightText: 2026 Jakumba
 # SPDX-FileCopyrightText: 2026 Kellaris
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: gamePreset
   id: LowDanger
@@ -39,9 +39,8 @@
   description: roundstart-antags-description
   rules:
     - BasicRoundstartVariation
-    - MoreTraitor
+    - Traitor
     - LessConspirator
-    - Thief
     - SubGamemodesRule
     - LavalandStormScheduler # Lavaland Change
     - IrregularExtendedStationEventScheduler
@@ -65,7 +64,7 @@
   description: conspiracy-description
   showInVote: true
   highDanger: true
-  minPlayers: 40
+  minPlayers: 25 # DEN: Minimum population for medium-danger presets to account for lack of security
   rules:
   - Conspirators
   - BasicRoundstartVariation
@@ -83,3 +82,14 @@
   showInVote: false
   highDanger: false
   minPlayers: 0
+
+- type: gamePreset
+  id: Redshift
+  alias:
+  - redshift
+  name: redshift-title
+  showInVote: true
+  highDanger: true
+  description: redshift-description
+  rules:
+  - LavalandStormScheduler # Lavaland Change

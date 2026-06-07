@@ -1617,15 +1617,17 @@
     notificationsEnabled: false
     diskSpace: 10 # DeltaV
     preinstalled:
-    # den - every cartridge alphabetically
-     - AstroNavCartridge
-     - CrewManifestCartridge
-     - LogProbeCartridge
-     #- MedTekCartridge  # not needed, already has HealthAnalyzer component
-     - NetProbeCartridge
-     - NewsReaderCartridge
-     - NotekeeperCartridge
-     - PsiWatchCartridge
+      # den - every cartridge alphabetically
+      - AstroNavCartridge
+      - CrewManifestCartridge
+      - GlimmerMonitorCartridge
+      - LogProbeCartridge
+      - SecWatchCartridge
+      #- MedTekCartridge  # not needed, already has HealthAnalyzer component
+      - NetProbeCartridge
+      - NewsReaderCartridge
+      - NotekeeperCartridge
+      - PsiWatchCartridge
 
 - type: entity
   parent: CentcomPDA

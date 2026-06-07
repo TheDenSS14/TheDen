@@ -1,27 +1,40 @@
-# SPDX-FileCopyrightText: 2022 Fishfish458 <47410468+Fishfish458@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
-# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Fishfish458
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 fishfish458
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Emisse
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 RosySaturniidae
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: global positioning system
-  parent: BaseItem
+  parent: BaseHandheldComputer # den - battery powered! only for the screen though because gps component kind of doesnt care. its flava
   id: HandheldGPSBasic
-  description: Helping lost spacemen find their way through the planets since 2016.
+  description: Helping lost spacemen find their way through the planets since 2016. It's technically battery powered, but only for the screen, not the little readout at the bottom. #den - haha battery no work
   components:
-  - type: Sprite
-    sprite: Objects/Devices/gps.rsi
+  - type: Item # den
+    sprite: _DEN/Objects/Devices/gps.rsi
+    heldPrefix: gps
+  - type: Sprite # den
+    sprite: _DEN/Objects/Devices/gps.rsi
+    state: icon
     layers:
-    - state: icon
-    - state: active
-  - type: Item
-    sprite: Objects/Devices/gps.rsi
+      - state: icon
+      - state: gps
+        shader: unshaded # technically not how a slcd screen works but we ball
+        visible: true
+        map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: Appearance # den
+  - type: GenericVisualizer #den
+    visuals:
+      enum.PowerCellSlotVisuals.Enabled:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
   - type: HandheldGPS
   - type: PhysicalComposition
     materialComposition:
@@ -31,3 +44,22 @@
   - type: Tag
     tags:
     - GPS
+
+- type: entity #den
+  id: HandheldGPSBasicEmpty
+  parent: HandheldGPSBasic
+  suffix: Empty 
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Devices/gps.rsi
+    state: icon
+    layers:
+      - state: icon
+      - state: gps
+        shader: unshaded
+        visible: false
+        map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default

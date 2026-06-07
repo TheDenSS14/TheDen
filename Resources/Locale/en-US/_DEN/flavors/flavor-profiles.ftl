@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2026 Briffit
 # SPDX-FileCopyrightText: 2026 Marcel
 # SPDX-FileCopyrightText: 2026 Sunburstschitin
 #
@@ -62,6 +63,14 @@ flavor-complex-plasmaflood = like fruity plasma burn
 flavor-complex-vodkacheers = like spicy cherry
 flavor-complex-chainmail = like death in a dark, cold cellar
 flavor-complex-kindness = like cherry-speckled blood
+flavor-complex-eggcream = like fizzy chocolate milk
+
+## Milkshakes
+milkshake-flavor = creamy bliss
+flavor-complex-vanillamilkshake = like cold, {milkshake-flavor}
+flavor-complex-chocolatemilkshake = like chocolatey, {milkshake-flavor}
+flavor-complex-berrymilkshake = like fruity, {milkshake-flavor}
+flavor-complex-cottonmilkshake = like cottony, {milkshake-flavor}
 
 ## Chemicals
 flavor-complex-mantispaper = like a name set in stone

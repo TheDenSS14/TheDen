@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "by RosySaturniidae (github)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+        "name": "syndicate_monitor",
+        "delays": [
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
+    },
+    {
+      "name": "syndiemon-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "syndiemon-inhand-right",
+      "directions": 4
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2026 MajorMoth
+#
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  id: CybereyeControlAction
+  name: Cybereye Toggle
+  description: Allows you to toggle the visibility of the HUD provided by your cybereye(s).
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    icon: 
+      sprite: /Textures/Mobs/Species/IPC/organs.rsi
+      state: eyes
+    priority: 3
+    event: !type:CybereyeControlActionEvent

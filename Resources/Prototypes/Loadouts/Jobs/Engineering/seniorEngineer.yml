@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 pocl v
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -442,6 +443,19 @@
 # Id
 
 # Mask
+- type: loadout
+  id: LoadoutSeniorEngineerMaskGasAtmos
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - ClothingMaskGasAtmos
 
 # Neck
 
