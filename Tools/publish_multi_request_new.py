@@ -41,7 +41,7 @@ def main():
 
     data = {
         "version": VERSION,
-        "engineVersion": get_engine_version(),
+        "engineVersion": "267.3.0",
     }
     headers = {
         "Content-Type": "application/json"
