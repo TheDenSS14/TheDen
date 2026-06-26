@@ -44,6 +44,12 @@ public sealed class DenCCVars
     public static readonly CVarDef<bool> MarkingGlowAnimation =
         CVarDef.Create("game.marking_glow_animation", false, CVar.SERVERONLY);
 
+    /// <summary>
+    /// Whether players can prone.
+    /// </summary>
+    public static readonly CVarDef<bool> ProneEnabled =
+        CVarDef.Create("game.prone_enabled", true, CVar.SERVER | CVar.REPLICATED);
+
     // Denu
 
     /// <summary>
