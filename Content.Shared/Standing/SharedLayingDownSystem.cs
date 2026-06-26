@@ -10,6 +10,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared._DEN.CCVars;
 using Content.Shared.ActionBlocker;
 using Content.Shared.CCVar;
 using Content.Shared.DoAfter;
@@ -40,8 +41,15 @@ public abstract class SharedLayingDownSystem : EntitySystem
     [Dependency] private readonly MovementSpeedModifierSystem _speed = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
 
+    private bool _canProne;
+
     public override void Initialize()
     {
+        base.Initialize();
+
+        _canProne = _config.GetCVar(DenCCVars.ProneEnabled);
+        Subs.CVar(_config, DenCCVars.ProneEnabled, OnProneAllowedChanged);
+
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.ToggleStanding, InputCmdHandler.FromDelegate(ToggleStanding))
             .Bind(ContentKeyFunctions.ToggleCrawlingUnder, InputCmdHandler.FromDelegate(HandleCrawlUnderRequest, handle: false))
@@ -52,6 +60,11 @@ public abstract class SharedLayingDownSystem : EntitySystem
         SubscribeLocalEvent<StandingStateComponent, StandingUpDoAfterEvent>(OnStandingUpDoAfter);
         SubscribeLocalEvent<LayingDownComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeed);
         SubscribeLocalEvent<LayingDownComponent, EntParentChangedMessage>(OnParentChanged);
+    }
+
+    private void OnProneAllowedChanged(bool newValue)
+    {
+        _canProne = newValue;
     }
 
     public override void Shutdown()
@@ -66,7 +79,8 @@ public abstract class SharedLayingDownSystem : EntitySystem
         if (session is not { AttachedEntity: { Valid: true } uid } _
             || !Exists(uid)
             || !HasComp<LayingDownComponent>(session.AttachedEntity)
-            || _gravity.IsWeightless(session.AttachedEntity.Value))
+            || _gravity.IsWeightless(session.AttachedEntity.Value)
+            || !_canProne)
             return;
 
         RaiseNetworkEvent(new ChangeLayingDownEvent());
