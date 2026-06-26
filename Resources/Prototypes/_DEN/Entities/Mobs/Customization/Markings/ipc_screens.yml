@@ -41,3 +41,59 @@
         type:
           !type:SimpleColoring
             color: "#111111"
+
+- type: marking
+  parent: BaseRobotScreen
+  id: NoScreenEyes
+  sprites:
+  - sprite: Mobs/Customization/ipc_screens.rsi
+    state: ipc_no_screen_eyes
+    shader: unshaded
+
+- type: marking
+  parent: BaseRobotScreen
+  id: NoScreenEyesAngry
+  sprites:
+  - sprite: Mobs/Customization/ipc_screens.rsi
+    state: ipc_no_screen_eyesangry
+    shader: unshaded
+
+- type: marking
+  parent: BaseRobotScreen
+  id: NoScreenEyesTall
+  sprites:
+  - sprite: Mobs/Customization/ipc_screens.rsi
+    state: ipc_no_screen_eyestall
+    shader: unshaded
+
+- type: marking
+  parent: BaseRobotScreen
+  id: NoScreenL
+  sprites:
+  - sprite: Mobs/Customization/ipc_screens.rsi
+    state: ipc_no_screen_l
+    shader: unshaded
+
+- type: marking
+  parent: BaseRobotScreen
+  id: NoScreenMonoEye
+  sprites:
+  - sprite: Mobs/Customization/ipc_screens.rsi
+    state: ipc_no_screen_monoeye
+    shader: unshaded
+
+- type: marking
+  parent: BaseRobotScreen
+  id: NoScreenRing
+  sprites:
+  - sprite: Mobs/Customization/ipc_screens.rsi
+    state: ipc_no_screen_ring
+    shader: unshaded
+
+- type: marking
+  parent: BaseRobotScreen
+  id: NoScreenHeart
+  sprites:
+  - sprite: Mobs/Customization/ipc_screens.rsi
+    state: ipc_no_screen_heart
+    shader: unshaded
