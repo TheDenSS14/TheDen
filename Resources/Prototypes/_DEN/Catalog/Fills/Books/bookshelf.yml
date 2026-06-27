@@ -1,0 +1,132 @@
+- type: entity
+  id: BookshelfSomberFill
+  description: "A tall, gloomy bookshelf crowded with rare and obscure volumes. Neatly organized--though someone seems to have jammed a storybook in the middle of it all."
+  abstract: true # Just the fill, not the entity, see BookshelfSomberFilled
+  components:
+  - type: StorageFill # Random stories and guidebooks are removed in favor of pretty filler books (author books are untouched and generated amongst the filler)
+    contents:
+      - id: SomberBook1
+        prob: 0.9
+        amount: 1
+        maxAmount: 4
+        orGroup: BookFiller1 # Without groups, the books generate out of order
+      - id: SomberBook2
+        prob: 0.9
+        amount: 1
+        maxAmount: 3
+        orGroup: BookFiller2
+      - id: SomberBook3
+        prob: 0.9
+        amount: 1
+        maxAmount: 3
+        orGroup: BookFiller3
+      - id: BookNarsieLegend
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookTruth
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: RevolutionaryManifesto
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookWorld
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookIanAntarctica
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookSlothClownSSS
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookSlothClownPranks
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookSlothClownMMD
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookStruck
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookSun
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookPossum
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookCafe
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookFeather
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookIanLostWolfPup
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookIanRanch
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookIanOcean
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookIanMountain
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookIanCity
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookIanArctic
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookIanDesert
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookNames
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookEarth
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookAurora
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookTemple
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookWatched
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookMedicalOfficer
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookMorgue
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookRufus
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookMap
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookJourney
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookInspiration
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: BookTenebraeConspiracy
+        prob: 0.3 # Den books should be more common
+        orGroup: BookAuthor
+      - id: SomberBook4
+        prob: 0.9
+        amount: 1
+        maxAmount: 3
+        orGroup: BookFiller4
+      - id: SomberBook5
+        prob: 0.9
+        amount: 1
+        maxAmount: 3
+        orGroup: BookFiller5
+      - id: SomberBook6 # Pretty and rare filler, without a group so it isn't guaranteed to appear
+        prob: 0.2
+        amount: 1
+        maxAmount: 1

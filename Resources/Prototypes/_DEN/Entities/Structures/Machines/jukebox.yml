@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: Jukebox
+  parent: [ Jukebox, BasePsionic ]
   id: SomberJukebox
   name: somber radio
   description: "A striped amaranth radio. You do not need an entire god damn jukebox in here. It would be tacky."

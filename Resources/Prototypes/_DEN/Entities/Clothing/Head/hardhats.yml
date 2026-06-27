@@ -1,0 +1,80 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHardhatSomber
+  name: somber hard hat
+  description: "A hard hat embedded with an eidolite crystal that siphons energy from the noosphere. A humble reminder of the Great Work."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hardhats/somber.rsi
+    layers:
+    - state: icon
+    - state: light-icon
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    sprite: _DEN/Clothing/Head/Hardhats/somber.rsi
+    heldPrefix: off
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hardhats/somber.rsi
+    equippedPrefix: off
+  - type: EtherealLight # Dims around ethereal entities
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    energy: 3 # More energy because the color isn't as bright
+    radius: 7
+    softness: 1.22
+    color: "#d9418d"
+    netsync: false
+  - type: Appearance
+  - type: UseDelay
+  - type: ToggleableVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        shader: unshaded
+  - type: ItemToggle
+    onUse: false # Equipping it takes priority
+    onAltUse: true # But alt use isn't doing anything else so sure
+    soundActivate:
+      path: /Audio/_DEN/Effects/crystalshimmer1.ogg
+      params:
+        volume: -2
+        variation: 0.05
+    soundDeactivate:
+      path: /Audio/_DEN/Effects/crystalshimmer2.ogg
+      params:
+        volume: -2
+        variation: 0.05
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        light:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ItemTogglePointLight
+  - type: ToggleClothing
+    action: ActionToggleSomberLight
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HardHat
+
+- type: entity
+  id: ActionToggleSomberLight
+  name: Toggle Eidolite Lamp
+  description: Turn the lamp on or off.
+  components:
+  - type: InstantAction
+    itemIconStyle: BigItem
+    event: !type:ToggleActionEvent

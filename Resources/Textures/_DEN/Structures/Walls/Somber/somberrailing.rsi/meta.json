@@ -1,0 +1,83 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "By Sha-Seng (GitHub)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "side",
+            "directions": 4
+        },
+        {
+            "name": "corner",
+            "directions": 4
+        },
+        {
+            "name": "corner_small",
+            "directions": 4
+        },
+        {
+            "name": "round",
+            "directions": 4
+        },
+        {
+            "name": "side_dark",
+            "directions": 4
+        },
+        {
+            "name": "corner_dark",
+            "directions": 4
+        },
+        {
+            "name": "corner_small_dark",
+            "directions": 4
+        },
+        {
+            "name": "round_dark",
+            "directions": 4
+        },
+        {
+            "name": "side_electrum",
+            "directions": 4
+        },
+        {
+            "name": "corner_electrum",
+            "directions": 4
+        },
+        {
+            "name": "corner_small_electrum",
+            "directions": 4
+        },
+        {
+            "name": "round_electrum",
+            "directions": 4
+        },
+        {
+            "name": "transition_left",
+            "directions": 4
+        },
+        {
+            "name": "transition_left_dark",
+            "directions": 4
+        },
+        {
+            "name": "transition_left_electrum",
+            "directions": 4
+        },
+        {
+            "name": "transition_right",
+            "directions": 4
+        },
+        {
+            "name": "transition_right_dark",
+            "directions": 4
+        },
+        {
+            "name": "transition_right_electrum",
+            "directions": 4
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+# Somber Rod
+- type: entity
+  parent: [ FishingRodGolden, BaseAntiPsionicWeapon ]
+  id: SomberFishingRod
+  name: somber fishing rod
+  description: "Is that a mnemolith hook? Oh god. Cast carefully."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Fishing/somber_rod.rsi
+  - type: Item
+    sprite: _DEN/Objects/Specific/Fishing/somber_rod.rsi
+
+# Somber Lure
+- type: entity
+  parent: FishingLure
+  id: SomberFishingLure
+  name: somber fishing lure
+  description: "Come here, fish."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Fishing/somber_lure.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _DEN/Objects/Specific/Fishing/somber_lure.rsi

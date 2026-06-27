@@ -19,3 +19,64 @@
     - type: Tag
       tags:
         - Spray
+
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, SprayBottle ]
+  id: SprayBottleSomber
+  name: spray bottle
+  description: "A spray bottle made of unreasonably rare materials. Who the hell buys these things?"
+  suffix: Somber, Empty
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/somberspraybottle.rsi
+    state: cleaner
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/somberspraybottle.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.1 # Small so it stops rebounding off walls
+        density: 20
+        mask:
+        - ItemMask
+
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, MegaSprayBottle ]
+  id: MegaSprayBottleSomber
+  name: mega spray bottle
+  description: "A large spray bottle made of unreasonably rare materials. Who the hell buys these things?"
+  suffix: Somber, Empty
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/somberspraybottle.rsi
+    state: cleaner_large
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/somberspraybottle.rsi
+
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, SprayBottleSpaceCleaner ]
+  id: SprayBottleSpaceCleanerSomber
+  name: space cleaner
+  description: "Space cleaner in a spray bottle made of unreasonably rare materials. Who the hell buys these things?"
+  suffix: Somber
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/somberspraybottle.rsi
+    state: cleaner
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/somberspraybottle.rsi
+
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, MegaSprayBottleSpaceCleaner ]
+  id: MegaSprayBottleSpaceCleanerSomber
+  name: mega space cleaner
+  description: "Space cleaner in a large spray bottle made of unreasonably rare materials. Who the hell buys these things?"
+  suffix: Somber
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/somberspraybottle.rsi
+    state: cleaner_large
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/somberspraybottle.rsi

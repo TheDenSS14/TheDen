@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-4.0",
-  "copyright": "Made By BombasterDS, somber resprited by Sha-Seng (GitHub)",
+  "copyright": "Made By BombasterDS, resprited by Sha-Seng (GitHub)",
   "size": {
     "x": 32,
     "y": 32
@@ -9,6 +9,14 @@
   "states": [
     {
       "name": "sombermannequin",
+	  "directions": 4
+    },
+    {
+      "name": "sombermammet",
+	  "directions": 4
+    },
+    {
+      "name": "sombermammet-unshaded",
 	  "directions": 4
     }
   ]

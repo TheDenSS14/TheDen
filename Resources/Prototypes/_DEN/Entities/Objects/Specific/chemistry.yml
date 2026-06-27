@@ -4,14 +4,17 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: BaseSyringe
+  parent: [ BaseSyringe, BasePsionic ]
   id: SyringeMantis
   name: electrum syringe
+  suffix: Somber
   description: "An electrum syringe with an eidolite barrel. Naturally antimicrobial."
   components:
   - type: Sprite
     sprite: _DEN/Objects/Specific/Mantis/syringemantis.rsi
   - type: Item
+    sprite: _DEN/Objects/Specific/Mantis/syringemantis.rsi
+  - type: Icon
     sprite: _DEN/Objects/Specific/Mantis/syringemantis.rsi
   - type: SolutionContainerVisuals
     maxFillLevels: 3
@@ -51,9 +54,10 @@
     - MantisBoxChemicalsStorable
 
 - type: entity
-  parent: PillCanister
+  parent: [ BaseDecorativeFixtureNoRot, PillCanister, BasePsionic ]
   id: PillCanisterMantis
   name: electrum pill canister
+  suffix: Somber
   description: "A electrum pill canister with an eidolite window. Expensive for no reason."
   components:
   - type: Sprite

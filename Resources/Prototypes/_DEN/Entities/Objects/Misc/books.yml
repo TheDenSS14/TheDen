@@ -1,0 +1,159 @@
+﻿# Somber Books Start
+- type: entity
+  parent: BookBase
+  id: SomberBook1
+  name: imposing tome # These are still filler books, but they're more specific
+  suffix: Somber
+  description: "It feels less like casual reading and more like something to be wrestled with."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberbooks.rsi
+    layers:
+    - state: book-base1
+      map : [ "cover" ]
+    - state: book-icon1
+      map : [ "icon" ]
+  - type: RandomSprite # The colors match the fill sprites of the somber bookshelves
+    available:
+      - cover:
+          book-base1: ""
+          book-base2: ""
+          book-base3: ""
+          book-base4: ""
+          book-base5: ""
+      - icon:
+          book-icon1: ""
+          book-icon2: ""
+          book-icon3: ""
+          book-icon4: ""
+          book-icon5: ""
+  - type: Paper
+    content: book-text-loremipsum # I much prefer this to randomly-generated stories, at least for serious libraries...
+
+- type: entity
+  parent: SomberBook1
+  id: SomberBook2
+  name: ancient memoir
+  description: "A weathered account from some long-forgotten life. The pages drift between reflection and quiet confession, as if the author never expected anyone else to read it."
+  components:
+  - type: Sprite
+    layers:
+    - state: book-base2
+      map : [ "cover" ]
+    - state: book-icon2
+      map : [ "icon" ]
+  - type: RandomSprite
+    available:
+      - cover:
+          book-base1: ""
+          book-base2: ""
+          book-base3: ""
+          book-base4: ""
+          book-base5: ""
+      - icon:
+          book-icon1: ""
+          book-icon2: ""
+          book-icon3: ""
+          book-icon4: ""
+          book-icon5: ""
+
+- type: entity
+  parent: SomberBook1
+  id: SomberBook3
+  name: reference codex
+  description: "A dense catalog of obscure facts, diagrams, and careful marginal notes. The sort of book meant to be consulted again and again, never truly finished."
+  components:
+  - type: Sprite
+    layers:
+    - state: book-base3
+      map : [ "cover" ]
+    - state: book-icon3
+      map : [ "icon" ]
+  - type: RandomSprite
+    available:
+      - cover:
+          book-base1: ""
+          book-base2: ""
+          book-base3: ""
+          book-base4: ""
+          book-base5: ""
+      - icon:
+          book-icon1: ""
+          book-icon2: ""
+          book-icon3: ""
+          book-icon4: ""
+          book-icon5: ""
+
+- type: entity
+  parent: SomberBook1
+  id: SomberBook4
+  name: enlightened monograph
+  description: "A precise work devoted to a single, stubborn idea. The argument unfolds slowly, with the calm certainty of someone convinced they have seen something others have not."
+  components:
+  - type: Sprite
+    layers:
+    - state: book-base4
+      map : [ "cover" ]
+    - state: book-icon4
+      map : [ "icon" ]
+  - type: RandomSprite
+    available:
+      - cover:
+          book-base1: ""
+          book-base2: ""
+          book-base3: ""
+          book-base4: ""
+          book-base5: ""
+      - icon:
+          book-icon1: ""
+          book-icon2: ""
+          book-icon3: ""
+          book-icon4: ""
+          book-icon5: ""
+
+- type: entity
+  parent: SomberBook1
+  id: SomberBook5
+  name: exhausting dissertation
+  description: "A relentlessly thorough treatise that refuses to leave any point unexamined. Even a quick glance suggests the author had far more stamina than mercy."
+  components:
+  - type: Sprite
+    layers:
+    - state: book-base5
+      map : [ "cover" ]
+    - state: book-icon5
+      map : [ "icon" ]
+  - type: RandomSprite
+    available:
+      - cover:
+          book-base1: ""
+          book-base2: ""
+          book-base3: ""
+          book-base4: ""
+          book-base5: ""
+      - icon:
+          book-icon1: ""
+          book-icon2: ""
+          book-icon3: ""
+          book-icon4: ""
+          book-icon5: ""
+
+- type: entity
+  parent: SomberBook1
+  id: SomberBook6 # This one's especially pretty, so it's more rare and specific
+  name: gilded manuscript
+  description: "A gold-edged book whose ornate cover catches the light even in shadow. The writing inside seems to shimmer when you look at it too long."
+  components:
+  - type: Sprite
+    layers:
+    - state: book-base6
+      map : [ "cover" ]
+    - state: book-icon6
+      map : [ "icon" ]
+  - type: RandomSprite
+    available:
+      - cover:
+          book-base6: ""
+      - icon:
+          book-icon6: ""
+# Somber Books End

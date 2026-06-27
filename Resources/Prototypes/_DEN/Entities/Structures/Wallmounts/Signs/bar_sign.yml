@@ -13,6 +13,15 @@
     current: TheBahr
 
 - type: entity
+  parent: BaseBarSign
+  id: BarSignTheRaggedSun
+  name: The Ragged Sun
+  description: "If you know what this is, perhaps it's best to play dumb. You have no idea who owns this place--or what they might do."
+  components:
+  - type: BarSign
+    current: TheRaggedSun
+
+- type: entity
   parent: BarSign
   id: BarSignUnlocked
   suffix: Random, Unlocked

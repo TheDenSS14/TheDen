@@ -339,13 +339,14 @@
 - type: startingGear
   id: MobAghostGear
   equipment:
+    head: ClothingHeadHatHardhatSomber # SHA
     back: ClothingBackpackSatchelHoldingAdmin
     id: AdminPDA
     belt: AdminToolbelt
-    pocket1: BoxFolderAdmin
-    #pocket2:
-    #pocket3:
-    #pocket4:
+    pocket1: ThavenArmyKnife # SHA
+    pocket2: RemoteSignallerSomberAdmin # SHA
+    pocket3: FlippoLighterMantis # SHA
+    pocket4: LanternMantisAdmin # SHA
 
 #Head Rev Gear
 - type: startingGear

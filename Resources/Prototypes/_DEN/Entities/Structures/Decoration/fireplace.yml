@@ -3,24 +3,34 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+## Somber Fireplaces Start
+# Psionic fire (blue)
 - type: entity
-  parent: Fireplace
+  parent: [ BaseStructure, BasePsionic ]
   id: SomberFireplace
-  name: somber electrum fireplace
+  name: electrum fireplace
+  suffix: Signal-Friendly
   description: "An avant-garde fireplace shaped like an eye, its smokeless psionic flame rippling like liquid."
   components:
+  - type: ItemToggleOnTrigger
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
   - type: Sprite
+    snapCardinals: true
     noRot: true
+    drawdepth: Mobs
     sprite: _DEN/Structures/Decoration/somberfireplace.rsi
     layers:
       - state: fireplace
       - state: fireplacefestive
         map: ["christmas"]
         visible: false
-      - state: fireplace_fire4
+      - state: fireplace_fire
         shader: unshaded
-      - state: fireplace_glow
-        shader: unshaded
+        visible: false
+        map: ["light"]
   - type: Appearance
   - type: HolidayVisuals
     holidays:
@@ -31,16 +41,40 @@
       enum.HolidayVisuals.Holiday:
         christmas:
           festive: { visible: true }
-  - type: AmbientSound
-    volume: -6
-    range: 5
-    sound:
+      enum.ToggleableVisuals.Enabled:
+        light:
+          True: { visible: true }
+          False: { visible: false }
+  - type: InteractionOutline
+  - type: ItemTogglePointLight
+  - type: ItemToggle
+    activated: true
+    soundActivate:
+      path: /Audio/_DEN/Effects/crystaltap1.ogg
+      params:
+        volume: -8
+        pitch: 0.5
+        variation: 0.05
+    soundDeactivate:
+      path: /Audio/_DEN/Effects/crystaltap2.ogg
+      params:
+        volume: -8
+        pitch: 0.5
+        variation: 0.05
+  - type: ItemToggleActiveSound
+    activeSound:
       path: /Audio/Ambience/Objects/fireplace.ogg
+      params:
+        volume: -8
+        range: 5
+  - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
-    radius: 4
-    energy: 6
+    enabled: false
+    energy: 1.5
+    radius: 8
+    softness: 1.22
     color: "#4dc4ff"
-  - type: AlwaysHot
+  - type: ItemToggleHot
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -70,38 +104,68 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeAabb
-          bounds: "-0.05,0.1,0.05,0.35"
+          !type:PhysShapeCircle
+          radius: 0.4
         hard: true
-        density: 200
+        density: 300
         mask:
         - MachineMask
         layer:
         - MidImpassable
         - LowImpassable
         - BulletImpassable
+  - type: UseDelay
+  - type: Anchorable
+  - type: Transform
+  - type: Physics
+    bodyType: Static
 
 - type: entity
-  parent: BaseSignDirectional # So it's technically wall decor, but whatever
+  parent: SomberFireplace
+  id: SomberFireplaceSauna
+  name: electrum sauna fireplace # Has glowy stones in it and no Christmas presents layer
+  suffix: Map With Sauna Marker] [Somber Sauna
+  description: "An avant-garde fireplace shaped like an eye, its smokeless psionic flame rippling like liquid around a basin of sauna stones."
+  components:
+  - type: Sprite
+    layers:
+      - state: fireplace
+      - state: sauna_stones
+      - state: sauna_fireplace_fire
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+- type: entity
+  parent: [ BaseSignDirectional, BasePsionic ] # So it's technically wall decor, but whatever
   id: SomberHangingBrazier
-  name: somber hanging brazier
+  name: electrum hanging brazier
+  suffix: Signal-Friendly
   description: "An electrum brazier, its smokeless psionic flame rippling like liquid."
   placement:
     mode: WallmountLight
   components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
+  - type: ItemToggleOnTrigger
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
   - type: Sprite
-    drawdepth: SmallObjects
-    noRot: true
+    offset: 0,-0.125 # Down four pixels to keep the fire out of the wall (better for occlusion)
+    drawdepth: WallMountedItems
+    noRot: false
     sprite: _DEN/Structures/Decoration/somberhangingbrazier.rsi
     layers:
       - state: fireplace
       - state: fireplacefestive # It still gets a ribbon when it's Christmas
         map: ["christmas"]
         visible: false
-      - state: fireplace_fire4
+      - state: fireplace_fire
         shader: unshaded
-      - state: fireplace_glow
-        shader: unshaded
+        visible: false
+        map: ["light"]
   - type: Appearance
   - type: HolidayVisuals
     holidays:
@@ -112,14 +176,38 @@
       enum.HolidayVisuals.Holiday:
         christmas:
           festive: { visible: true }
+      enum.ToggleableVisuals.Enabled:
+        light:
+          True: { visible: true }
+          False: { visible: false }
+  - type: UseDelay
+  - type: InteractionOutline
+  - type: ItemTogglePointLight
+  - type: ItemToggle
+    activated: true
+    soundActivate:
+      path: /Audio/_DEN/Effects/crystaltap1.ogg
+      params:
+        volume: -8
+        pitch: 0.75
+        variation: 0.05
+    soundDeactivate:
+      path: /Audio/_DEN/Effects/crystaltap2.ogg
+      params:
+        volume: -8
+        pitch: 0.75
+        variation: 0.05
+  - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
-    radius: 3
-    energy: 4
-    softness: 1.1
+    offset: 0,-0.125 # Keep the light centered on the fire
+    enabled: false
+    energy: 1.5
+    radius: 5
+    softness: 1.22
     color: "#4dc4ff"
   - type: StaticPrice
     price: 125
-  - type: AlwaysHot
+  - type: ItemToggleHot
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -145,3 +233,182 @@
           ScrapElectrum:
             min: 1
             max: 3
+
+# Natural fire (orange)
+
+- type: entity
+  parent: SomberFireplace
+  id: SomberFireplaceWarm
+  suffix: Warm Fire, Signal-Friendly
+  description: "An avant-garde fireplace shaped like an eye."
+  categories: [ HideSpawnMenu ] # This one isn't for saunas and doesn't match the other warm fire items, so it's best not to confuse people about why the set seems incomplete
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/somberfireplacewarm.rsi
+  - type: PointLight
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberFireplaceWarm
+  id: SomberFireplaceWarmSilvery
+  suffix: Warm Fire, Signal-Friendly
+  description: "An avant-garde fireplace shaped like an eye. The natural alloy contains more silver than usual."
+  categories: []
+  components:
+  - type: Sprite
+    layers:
+      - state: fireplace_silvery
+      - state: fireplacefestive
+        map: ["christmas"]
+        visible: false
+      - state: fireplace_fire
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+# Just orange light makes the standard color too yellow, but when sauna steam is added, it makes the silvery color too pale
+# I recommend using this one, personally
+- type: entity
+  parent: SomberFireplaceWarm
+  id: SomberFireplaceWarmSauna
+  name: electrum sauna fireplace
+  suffix: Somber Sauna, Warm Fire, Signal-Friendly
+  description: "An avant-garde fireplace shaped like an eye, filled with a basin of sauna stones."
+  categories: []
+  components:
+  - type: Sprite
+    layers:
+      - state: fireplace
+      - state: sauna_stones
+      - state: sauna_fireplace_fire
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+- type: entity
+  parent: SomberFireplaceWarm
+  id: SomberFireplaceWarmSaunaSilvery
+  name: electrum sauna fireplace
+  suffix: Somber Sauna, Warm Fire, Silvery, Signal-Friendly
+  description: "An avant-garde fireplace shaped like an eye, filled with a basin of sauna stones. The natural alloy contains more silver than usual."
+  categories: []
+  components:
+  - type: Sprite
+    layers:
+      - state: fireplace_silvery
+      - state: sauna_stones
+      - state: sauna_fireplace_fire
+        shader: unshaded
+        visible: false
+        map: ["light"]
+
+- type: entity
+  parent: SomberHangingBrazier
+  id: SomberHangingBrazierWarm
+  suffix: Warm Fire, Signal-Friendly
+  description: "An electrum brazier. The natural alloy contains more silver than usual."
+  placement:
+    mode: WallmountLight
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/somberhangingbrazierwarm.rsi
+  - type: PointLight
+    color: "#ff9833"
+
+# Hanging braziers made to fit pillars
+# Unfortunately, even when you place them second, they render under pillars on rare occasion (and you can't manually set render priority to fix that)
+# And if they were on a higher drawdepth, pillars wouldn't occlude them when the camera rotates
+# If we ever find a way around this problem, consider adding these to the spawn menu and migrating the brazier pillars out (see SomberPillarTallerBrazier)
+
+- type: entity
+  parent: SomberHangingBrazier
+  id: SomberHangingBrazierPillarShorter
+  suffix: Fits Shorter Columns/Short Pillars
+  categories: [ HideSpawnMenu ]
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
+  - type: SpriteFade
+  - type: Sprite
+    noRot: true
+    offset: -0.015625,1.15625 # 37 pixels up, half a pixel left from sprite center
+    drawdepth: Mobs # You have to place these after the pillars, but without this, they won't be hidden by them if the camera turns (OR SO I THOUGHT) (IT WORKED SOMETIMES)
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshorter.rsi
+
+- type: entity
+  parent: SomberHangingBrazierPillarShorter
+  id: SomberHangingBrazierPillarShort
+  suffix: Fits Short Columns/Tall Pillars
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillarshort.rsi
+
+- type: entity
+  parent: SomberHangingBrazierPillarShorter
+  id: SomberHangingBrazierPillarTall
+  suffix: Fits Tall Columns/Taller Pillars
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartall.rsi
+
+- type: entity
+  parent: SomberHangingBrazierPillarShorter
+  id: SomberHangingBrazierPillarTaller
+  categories: [ HideSpawnMenu ]
+  suffix: Fits Taller Columns
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierpillartaller.rsi
+
+- type: entity
+  parent: SomberHangingBrazierPillarShorter
+  id: SomberHangingBrazierWarmPillarShorter
+  suffix: Warm Fire, Fits Shorter Columns/Short Pillars
+  description: "An electrum brazier. The natural alloy contains more silver than usual."
+  categories: [ HideSpawnMenu ]
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshorter.rsi
+  - type: PointLight
+    color: "#FF9833"
+
+- type: entity
+  parent: SomberHangingBrazierWarmPillarShorter
+  id: SomberHangingBrazierWarmPillarShort
+  suffix: Warm Fire, Fits Short Columns/Tall Pillars
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillarshort.rsi
+
+- type: entity
+  parent: SomberHangingBrazierWarmPillarShorter
+  id: SomberHangingBrazierWarmPillarTall
+  suffix: Warm Fire, Fits Tall Columns/Taller Pillars
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartall.rsi
+
+- type: entity
+  parent: SomberHangingBrazierWarmPillarShorter
+  id: SomberHangingBrazierWarmPillarTaller
+  suffix: Warm Fire, Fits Taller Columns
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/SomberPillarBraziers/somberhangingbrazierwarmpillartaller.rsi
+## Somber Fireplaces End

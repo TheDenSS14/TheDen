@@ -1,0 +1,412 @@
+- type: decal
+  id: SomberElectrum
+  parent: Overlays
+  abstract: true
+
+- type: decal
+  id: SomberElectrumCircle
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcircle
+
+- type: decal
+  id: SomberElectrumCircleE
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcircleE
+
+- type: decal
+  id: SomberElectrumCircleN
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcircleN
+
+- type: decal
+  id: SomberElectrumCircleS
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcircleS
+
+- type: decal
+  id: SomberElectrumCircleSmall
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclesmall
+
+- type: decal
+  id: SomberElectrumCircleSmallNE
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclesmallNE
+
+- type: decal
+  id: SomberElectrumCircleSmallNW
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclesmallNW
+
+- type: decal
+  id: SomberElectrumCircleSmallSE
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclesmallSE
+
+- type: decal
+  id: SomberElectrumCircleSmallSW
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclesmallSW
+
+- type: decal
+  id: SomberElectrumCircleW
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcircleW
+
+- type: decal
+  id: SomberElectrumEye
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumeye
+
+- type: decal
+  id: SomberElectrumTrim
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumtrim
+
+- type: decal
+  id: SomberElectrumTrimFancy
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumtrimfancy
+
+- type: decal
+  id: SomberElectrumTrimFancyNE
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumtrimfancyNE
+
+- type: decal
+  id: SomberElectrumTrimFancyNW
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumtrimfancyNW
+
+- type: decal
+  id: SomberElectrumTrimFancySE
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumtrimfancySE
+
+- type: decal
+  id: SomberElectrumTrimFancySW
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumtrimfancySW
+
+- type: decal
+  id: SomberElectrumTrimNE
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumtrimNE
+
+- type: decal
+  id: SomberElectrumTrimNW
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumtrimNW
+
+- type: decal
+  id: SomberElectrumTrimSE
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumtrimSE
+
+- type: decal
+  id: SomberElectrumTrimSW
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumtrimSW
+
+- type: decal
+  id: SomberElectrumCircleSmallFilled
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclesmallfilled
+
+- type: decal
+  id: SomberElectrumCircleSmallNEFilled
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclesmallNEfilled
+
+- type: decal
+  id: SomberElectrumCircleSmallNWFilled
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclesmallNWfilled
+
+- type: decal
+  id: SomberElectrumCircleSmallSEFilled
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclesmallSEfilled
+
+- type: decal
+  id: SomberElectrumCircleSmallSWFilled
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclesmallSWfilled
+
+- type: decal
+  id: SomberElectrumCircleMid
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclemid
+
+- type: decal
+  id: SomberElectrumCircleMidNE
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclemidNE
+
+- type: decal
+  id: SomberElectrumCircleMidNW
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclemidNW
+
+- type: decal
+  id: SomberElectrumCircleMidSE
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclemidSE
+
+- type: decal
+  id: SomberElectrumCircleMidSW
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclemidSW
+
+- type: decal
+  id: SomberElectrumLinerHorizontal
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumlinerhorizontal
+
+- type: decal
+  id: SomberElectrumLinerHorizontalN
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumlinerhorizontalN
+
+- type: decal
+  id: SomberElectrumLinerHorizontalS
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumlinerhorizontalS
+
+- type: decal
+  id: SomberElectrumLinerVertical
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumlinervertical
+
+- type: decal
+  id: SomberElectrumLinerVerticalE
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumlinerverticalE
+
+- type: decal
+  id: SomberElectrumLinerVerticalW
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumlinerverticalW
+
+- type: decal
+  id: SomberElectrumLinerS
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumlinerS
+
+- type: decal
+  id: SomberElectrumLinerE
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumlinerE
+
+- type: decal
+  id: SomberElectrumSquare
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumsquare
+
+- type: decal
+  id: SomberElectrumDiamond
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumdiamond
+
+- type: decal
+  id: SomberElectrumCircleLarge
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumcirclelarge
+
+- type: decal
+  id: SomberOuterElectrumCircle1
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: outerelectrumcircle1
+
+- type: decal
+  id: SomberOuterElectrumCircle2
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: outerelectrumcircle2
+
+- type: decal
+  id: SomberOuterElectrumCircle3
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: outerelectrumcircle3
+
+- type: decal
+  id: SomberOuterElectrumCircle4
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: outerelectrumcircle4
+
+- type: decal
+  id: SomberOuterElectrumCircle6
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: outerelectrumcircle6
+
+- type: decal
+  id: SomberOuterElectrumCircle7
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: outerelectrumcircle7
+
+- type: decal
+  id: SomberOuterElectrumCircle8
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: outerelectrumcircle8
+
+- type: decal
+  id: SomberOuterElectrumCircle9
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: outerelectrumcircle9
+
+- type: decal
+  id: SomberElectrumTrimInner
+  tags: ["station", "overlay"]
+  parent: SomberElectrum
+  sprite:
+    sprite: _DEN/Decals/somber_electrum.rsi
+    state: electrumtriminner

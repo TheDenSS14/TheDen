@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "By Sha-Seng (GitHub)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "normal-unshaded"
+    },
+    {
+      "name": "eject-unshaded",
+	  "delays": [
+        [
+          0.15,
+		  0.35
+        ]
+      ]
+    },
+    {
+      "name": "deny-unshaded"
+    },
+    {
+      "name": "off"
+    },
+    {
+      "name": "broken"
+    },
+    {
+      "name": "panel"
+    }
+  ]
+}

@@ -14,6 +14,7 @@
   whitelist:
     components:
     - HumanoidAppearance
+    - TelegnosticProjection # SHA
   chatMessages: ["chat-emote-msg-flip"]
   chatTriggers:
   - flip
@@ -28,6 +29,7 @@
   whitelist:
     components:
     - HumanoidAppearance
+    - TelegnosticProjection # SHA
   chatMessages: ["chat-emote-msg-spin"]
   chatTriggers:
   - spin
@@ -46,6 +48,7 @@
   whitelist:
     components:
     - HumanoidAppearance
+    - TelegnosticProjection # SHA
   chatMessages: ["chat-emote-msg-jump"]
   chatTriggers:
   - jump
