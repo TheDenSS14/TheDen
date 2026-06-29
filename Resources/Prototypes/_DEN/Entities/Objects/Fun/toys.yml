@@ -441,3 +441,42 @@
   - type: FoodSequenceElement
     entries:
       CottonBurger: JakPlushie
+
+# @justani; approved by june (owner)
+- type: entity
+  parent: BasePlushie
+  id: PlushieAni
+  name: Ani Plushie
+  description: A plushie of a inky witch. It is rumored that her drinks are made out of ink?
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/aniplushie.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: shaded
+      right:
+      - state: inhand-right
+        shader: shaded
+    heldPrefix: plushielizard
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: Tag
+    tags:
+    - ClothMade
+    - Payload
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: AniPlushie
