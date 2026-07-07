@@ -62,3 +62,4 @@ food-sequence-cotton-burger-content-plushie-phil = normal?
 food-sequence-cotton-burger-content-plushie-inkdrop = inkdrop
 food-sequence-cotton-burger-content-plushie-agena = pink
 food-sequence-cotton-burger-content-plushie-jak = wet
+food-sequence-cotton-burger-content-plushie-ani = colors
