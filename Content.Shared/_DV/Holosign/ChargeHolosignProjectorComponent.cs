@@ -30,4 +30,6 @@ public sealed partial class ChargeHolosignProjectorComponent : Component
     public string SignComponentName;
 
     public Type SignComponent = default!;
+
+    [DataField] public TimeSpan PlaceTime = TimeSpan.Zero;
 }

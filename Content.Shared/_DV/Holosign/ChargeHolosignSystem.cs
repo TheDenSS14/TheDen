@@ -13,9 +13,13 @@ using Content.Shared.Storage;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using System.Linq;
+using Content.Shared.DoAfter;
 // Start TheDen - Add sounds to holofan
 using Content.Shared.Sound;
 using Content.Shared.Sound.Components;
+using Robust.Shared.Serialization;
+
+
 // End TheDen
 
 namespace Content.Shared._DV.Holosign;
@@ -28,6 +32,8 @@ public sealed class ChargeHolosignSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedEmitSoundSystem _sound = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!; // DEN: Sign placement doafters.
+    [Dependency] private readonly SharedTransformSystem _xforms = default!; // DEN: Sign placement doafters.
 
     private HashSet<Entity<IComponent>> _signs = new();
 
@@ -38,6 +44,8 @@ public sealed class ChargeHolosignSystem : EntitySystem
         SubscribeLocalEvent<ChargeHolosignProjectorComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<ChargeHolosignProjectorComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<ChargeHolosignProjectorComponent, BeforeRangedInteractEvent>(OnBeforeInteract);
+
+        SubscribeLocalEvent<ChargeHolosignProjectorComponent, SignPlaceActionEvent>(OnSignPlaceAction); // DEN: Place doafters
     }
 
     private void OnInit(Entity<ChargeHolosignProjectorComponent> ent, ref ComponentInit args)
@@ -71,22 +79,73 @@ public sealed class ChargeHolosignSystem : EntitySystem
         _lookup.GetEntitiesInRange(ent.Comp.SignComponent, mapCoords, 0.25f, _signs);
 
         if (_signs.Count == 0)
-            TryPlaceSign((ent, ent, charges), args);
+        {
+            // DEN Start: Sign placement doafters.
+            if (ent.Comp.PlaceTime > TimeSpan.Zero)
+            {
+                TryStartDoafter((ent, ent, charges), args);
+            }
+            else
+            {
+                TryPlaceSign(
+                    (ent, ent, charges), 
+                    args.User, 
+                    _xforms.ToMapCoordinates(args.ClickLocation.SnapToGrid(EntityManager)));
+            }
+            // DEN End
+        }
         else
             TryRemoveSign((ent, ent, charges), _signs.First(), args.User);
 
         args.Handled = true;
     }
 
-    public bool TryPlaceSign(Entity<ChargeHolosignProjectorComponent, LimitedChargesComponent> ent, BeforeRangedInteractEvent args)
+    // DEN Start: Sign placement doafters
+    public void TryStartDoafter(
+        Entity<ChargeHolosignProjectorComponent, LimitedChargesComponent> ent, BeforeRangedInteractEvent args
+    )
+    {
+        if (_charges.HasInsufficientCharges(ent.Owner, 1, ent.Comp2))
+        {
+            _popup.PopupClient(Loc.GetString("charge-holoprojector-no-charges", ("item", ent)), ent, args.User);
+            return;
+        }
+
+        _doAfterSystem.TryStartDoAfter(
+            new(
+                    EntityManager,
+                    args.User,
+                    ent.Comp1.PlaceTime,
+                    new SignPlaceActionEvent(_xforms.ToMapCoordinates(args.ClickLocation.SnapToGrid(EntityManager))),
+                    ent.Owner,
+                    used: ent.Owner)
+            {
+                BreakOnMove = true,
+                BreakOnWeightlessMove = false
+            });
+    }
+
+    public void OnSignPlaceAction(Entity<ChargeHolosignProjectorComponent> ent, ref SignPlaceActionEvent args)
+    {
+        if (args.Cancelled)
+            return;
+        
+        if (!TryComp<LimitedChargesComponent>(ent, out var charges))
+            return;
+
+        TryPlaceSign((ent, ent.Comp, charges), args.User, args.Location);
+    }
+    // DEN End
+    
+    public bool TryPlaceSign(Entity<ChargeHolosignProjectorComponent, LimitedChargesComponent> ent, EntityUid user, MapCoordinates location) // DEN: Change arguments to not take ranged event.
     {
         if (!_charges.TryUseCharge((ent, ent.Comp2)))
         {
-            _popup.PopupClient(Loc.GetString("charge-holoprojector-no-charges", ("item", ent)), ent, args.User);
+            _popup.PopupClient(Loc.GetString("charge-holoprojector-no-charges", ("item", ent)), ent, user);
             return false;
         }
 
-        var holoUid = EntityManager.PredictedSpawnAtPosition(ent.Comp1.SignProto, args.ClickLocation.SnapToGrid(EntityManager));
+        var holoUid = EntityManager.PredictedSpawn(ent.Comp1.SignProto, location);
         var xform = Transform(holoUid);
         if (!xform.Anchored)
             _transform.AnchorEntity(holoUid, xform); // anchor to prevent any tempering with (don't know what could even interact with it)
@@ -112,4 +171,13 @@ public sealed class ChargeHolosignSystem : EntitySystem
         EntityManager.PredictedDeleteEntity(sign);
         return true;
     }
+}
+
+// DEN: Sign placement doafter
+[Serializable, NetSerializable]
+public sealed partial class SignPlaceActionEvent : SimpleDoAfterEvent
+{
+    public MapCoordinates Location { get; set; }
+
+    public SignPlaceActionEvent(MapCoordinates location) : this() => Location = location;
 }

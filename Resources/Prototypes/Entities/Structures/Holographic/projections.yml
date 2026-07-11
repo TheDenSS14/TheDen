@@ -152,6 +152,7 @@
   - type: Clickable
   - type: ContainmentField
     throwForce: 0
+  - type: Holobarrier # DEN - for whitelisting
   - type: Destructible
     thresholds:
       - trigger:
