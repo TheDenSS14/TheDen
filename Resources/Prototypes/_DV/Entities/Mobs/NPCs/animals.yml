@@ -90,14 +90,14 @@
   name: security dog
   parent: MobCorgi # There isn't a base dog mob, surprisingly.
   id: MobSecDog
-  description: Funnily enough, this pig is actually a dog.
+  description: Large, fluffy and loveable. This mutt is here to make a bad day just a little bit better.
   components:
   - type: GhostRole
     makeSentient: true
     allowSpeech: true
     allowMovement: true
-    name: "sentient security dog"
-    description: "Help out the security team by biting the baddies and barking at everything that moves."
+    name: "emotional support dog" # Den
+    description: "Help out the crew by biting the baddies and barking at everything that moves." # Den
   - type: GhostTakeoverAvailable
   - type: CombatMode
   - type: MovementSpeedModifier
@@ -108,10 +108,10 @@
       - PetsNT
   - type: Sprite
     drawdepth: Mobs
-    sprite: _DV/Mobs/Pets/secdog.rsi
+    sprite: _DEN/Mobs/Pets/laika.rsi # Den
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: secdog
+      state: dog # Den
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
@@ -169,11 +169,11 @@
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: secdog
+        Base: dog # Den
       Critical:
-        Base: secdog_crit
+        Base: dog_crit # Den
       Dead:
-        Base: secdog_dead
+        Base: dog_dead # Den
   - type: Butcherable
     spawned:
     - id: FoodMeat
