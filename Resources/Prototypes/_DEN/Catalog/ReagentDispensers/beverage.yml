@@ -16,5 +16,48 @@
   - DrinkJuicePineappleJug
   - DrinkJuicePomegranateJug
   - DrinkJuiceRoseJug
+  - DrinkJuiceTomatoJug
   - DrinkBloodJug
   - DrinkPomelustineJug
+
+- type: reagentDispenserInventory
+  parent: BoozeDispenserInventory
+  id: BoozeDispenserInventoryExtended
+  inventory:
+  - DrinkAbsintheBottleFull
+  - DrinkAngobittersBottleFull
+  - DrinkAnisetteBottleFull
+  - DrinkBlueCuracaoBottleFull
+  - DrinkBottleOfNothingFull
+  - DrinkEggnogBottleFull
+  - DrinkGrenadineBottleFull
+  - DrinkGildlagerBottleFull
+  - DrinkChampagneBottleFull
+  - DrinkMelonLiquorBottleFull
+  - DrinkPatronBottleFull
+  - DrinkSakeBottleFull
+  - DrinkSojuBottleFull
+  - DrinkEggJug # Only served with alcohol, so it's "booze"
+  - DrinkShimmeringBloodJug # Psychoactive, so it's "booze"
+
+- type: reagentDispenserInventory
+  id: CoffeeDispenserInventory
+  inventory:
+  - DrinkCoffeeJug
+  - DrinkHotCocoaJug # We can presume a coffee machine dipenses hot drinks
+  - DrinkWaterJugXL # You shouldn't need a sink to make americanos
+  - DrinkIceJug
+  - DrinkSugarJug
+  - DrinkCaramexininJug
+  - DrinkCreamCartonXL
+  - DrinkMilkJug
+  - DrinkSoyMilkJug
+
+- type: reagentDispenserInventory
+  parent: CoffeeDispenserInventory
+  id: CoffeeDispenserInventoryExtended
+  inventory:
+  - DrinkOatMilkJug
+  - DrinkTeaJug
+  - DrinkGreenTeaJug
+  - DrinkJuiceOrangeCartonXL

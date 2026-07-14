@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: ComputerTelevision
+  parent: [ ComputerTelevision, BasePsionic ]
   id: ComputerSomberTelevision
   name: somber television
   description: "A striped amaranth television. It looks like an expensive antique, but the screen is so small and square that it's hard to appreciate. For some reason, it has a channel zero that only displays grainy images of rotating fruit."
@@ -17,8 +17,9 @@
       state: sombertelevision-on
   - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
-    radius: 2
-    energy: 4
+    energy: 1
+    radius: 3
+    softness: 1.22
     color: "#4dc4ff"
   - type: Fixtures
     fixtures:
@@ -59,3 +60,109 @@
           ScrapElectrum:
             min: 1
             max: 3
+
+- type: entity
+  parent: [ BaseStructure, BasePsionic ]
+  id: SomberTV
+  name: somber widescreen television
+  suffix: Signal-Friendly] [Somber TV Kit
+  description: "A futuristic frame television with a textured, shifting surface, set to freeze its last image in faux mnemolith--an eclipsed, bleeding sun breaking through clouds, this time. This thing must be ungodly expensive."
+  components:
+  - type: ItemToggleOnTrigger
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/sombertv.rsi
+    drawdepth: WallMountedItems
+    layers:
+    - state: tv
+    - state: tvglow
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: ToggleableVisuals
+    spriteLayer: light
+  - type: Appearance
+  - type: Anchorable
+  - type: InteractionOutline
+  - type: EtherealLight # Dims around ethereal entities
+  - type: PointLight
+    enabled: false
+    energy: 1
+    radius: 10
+    softness: 1.22
+    color: "#964143"
+  - type: ItemTogglePointLight
+  - type: ItemToggle
+    activated: false
+    soundActivate:
+      path: /Audio/Machines/lightswitch.ogg
+      params:
+        pitch: 1.1
+    soundDeactivate:
+      path: /Audio/Machines/lightswitch.ogg
+      params:
+        pitch: 0.9
+  - type: WallMount
+    arc: 360
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-2,-0.375,2,0.375"
+        hard: false
+        density: 1000
+        mask:
+          - FullTileMask
+        layer:
+          - WallLayer
+  - type: Transform
+    anchored: true
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmack
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassSmash
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 3
+            max: 3
+          SheetGlass1:
+            min: 3
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KnockOn
+    - KissObject
+    - LickObject
+
+- type: entity
+  parent: SomberTV
+  id: SomberTVAutolink
+  suffix: Autolink (TV)] [Somber TV Kit
+  components:
+  - type: AutoLinkReceiver
+    channel: TV

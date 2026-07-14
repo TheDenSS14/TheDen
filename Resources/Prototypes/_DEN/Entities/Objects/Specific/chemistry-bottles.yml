@@ -5,9 +5,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: BaseChemistryEmptyBottle
+  parent: [ BaseDecorativeFixtureNoRot, BaseChemistryEmptyBottle, BasePsionic ]
   id: ChemistryEmptyBottleMantis
   name: electrum bottle
+  suffix: Somber
   description: "An eidolite bottle in a durable electrum shell. Useful for your rituals."
   components:
   - type: Sprite
@@ -68,3 +69,18 @@
     - Bottle
     - MantisBeltStorable
     - MantisBoxChemicalsStorable
+
+- type: entity
+  parent: ChemistryEmptyBottleMantis
+  id: EthanolChemistryBottleMantis
+  suffix: Somber, Ethanol
+  components:
+  - type: Label
+    currentLabel: reagent-name-ethanol
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Ethanol
+          Quantity: 30

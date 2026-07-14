@@ -146,3 +146,68 @@
     state: yellow
   - type: Icon
     state: yellow
+
+- type: entity
+  parent: [ BeachUmbrellaBase, BasePsionic ]
+  id: SomberBeachUmbrellaBluePurple
+  name: somber parasol
+  suffix: Blue-Purple, Rotate To Position, Umbrella
+  description: "A broad, patterned parasol meant to cast a patch of welcome shade and shelter. Whether it's accomplishing that is up for debate."
+  placement:
+    mode: WallmountLight # Gives four positions to place it in by rotating
+  components:
+  - type: ItemToggleOnTrigger # Turning them with signals will be useful in the puzzle adventure DLC
+  - type: Rotatable
+  - type: Transform
+    noRot: false
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
+  - type: Sprite
+    layers:
+    - state: somber-blue-purple
+      map: [ "somber-blue-purple" ]
+    - state: somber-purple-blue
+      visible: false
+      map: [ "somber-purple-blue" ]
+  - type: Icon
+    state: somber-blue-purple
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic # Tougher since they're not craftable
+  - type: UseDelay
+    delay: 0.5
+  - type: Appearance
+  - type: ItemToggle # You can turn it to make the other color face forward, just for fun
+    verbToggleOn: item-toggle-spin
+    verbToggleOff: item-toggle-spin
+    soundActivate:
+      collection: valveSqueak
+      params:
+        volume: -6
+        variation: 0.05
+    soundDeactivate:
+      collection: valveSqueak
+      params:
+        volume: -6
+        variation: 0.05
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        somber-blue-purple:
+          True: { visible: false }
+          False: { visible: true }
+        somber-purple-blue:
+          True: { visible: true }
+          False: { visible: false }
+
+- type: entity
+  parent: SomberBeachUmbrellaBluePurple
+  id: SomberBeachUmbrellaPurpleBlue
+  suffix: Purple-Blue, Rotate To Position, Umbrella
+  components:
+  - type: ItemToggle
+    activated: true
+  - type: Icon
+    state: somber-purple-blue

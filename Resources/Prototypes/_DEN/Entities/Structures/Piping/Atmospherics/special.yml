@@ -1,0 +1,9 @@
+- type: entity
+  parent: [ AtmosDeviceFanDirectional, BasePsionic ]
+  id: AtmosDeviceFanDirectionalSomber
+  name: somber directional fan
+  suffix: Somber Sauna
+  description: "A narrow floor vent above which air grows unnaturally still. The electrum blades within glint faintly as they turn."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Piping/Atmospherics/somberdirectionalfan.rsi

@@ -1,0 +1,91 @@
+- type: entity
+  parent: FloorCarpetItemBlack
+  id: FloorCarpetItemBlackNarrow
+  name: narrow black carpet
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tiles/tile.rsi
+    state: carpet-black-narrow
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: carpet-black
+  - type: Stack
+    stackType: FloorCarpetBlackNarrow
+  - type: Tag
+    tags:
+    - CarpetBlack
+  - type: SpawnAfterInteract
+    prototype: CarpetBlackNarrow
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+
+- type: entity
+  parent: FloorCarpetItemPurple
+  id: FloorCarpetItemPurpleNarrow
+  name: narrow purple carpet
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tiles/tile.rsi
+    state: carpet-purple-narrow
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: carpet-purple
+  - type: Stack
+    stackType: FloorCarpetPurpleNarrow
+  - type: Tag
+    tags:
+    - CarpetPurple
+  - type: SpawnAfterInteract
+    prototype: CarpetPurpleNarrow
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+
+- type: entity
+  parent: FloorCarpetItemPink
+  id: FloorCarpetItemPinkNarrow
+  name: narrow pink carpet
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tiles/tile.rsi
+    state: carpet-pink-narrow
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: carpet-pink
+  - type: Stack
+    stackType: FloorCarpetPinkNarrow
+  - type: Tag
+    tags:
+    - CarpetPink
+  - type: SpawnAfterInteract
+    prototype: CarpetPinkNarrow
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+
+- type: entity
+  parent: FloorCarpetItemCyan
+  id: FloorCarpetItemCyanNarrow
+  name: narrow cyan carpet
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tiles/tile.rsi
+    state: carpet-cyan-narrow
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: carpet-cyan
+  - type: Stack
+    stackType: FloorCarpetCyanNarrow
+  - type: Tag
+    tags:
+    - CarpetCyan
+  - type: SpawnAfterInteract
+    prototype: CarpetCyanNarrow
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
