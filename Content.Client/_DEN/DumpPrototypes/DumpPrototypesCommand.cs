@@ -22,7 +22,7 @@ public sealed class DumpPrototypesCommand : IConsoleCommand
 
     public async void Execute(IConsoleShell shell, string argStr, string[] args)
     {
-        var file = await _dialogManager.SaveFile(new FileDialogFilters(new FileDialogFilters.Group("csv"))); // Content.Client fails the type check when I try to use json
+        var file = await _dialogManager.SaveFile(new FileDialogFilters(new FileDialogFilters.Group("txt"))); // Content.Client fails the type check when I try to use json
 
         var sawmill = _logManager.GetSawmill(Command);
 
@@ -35,11 +35,18 @@ public sealed class DumpPrototypesCommand : IConsoleCommand
 
         var dump = new StringBuilder();
 
-        dump.AppendLine("Entities,Tiles");
+        dump.AppendLine("=== Entities ===");
 
-        foreach (var (entity, tile) in Enumerable.Zip(entities, tiles))
+        foreach (var entity in entities)
         {
-            dump.AppendLine($"{entity.ID},{tile.ID}");
+            dump.AppendLine(entity.ID);
+        }
+
+        dump.AppendLine("=== Tiles ===");
+
+        foreach (var tile in tiles)
+        {
+            dump.AppendLine(tile.ID);
         }
 
         if (file == null)
