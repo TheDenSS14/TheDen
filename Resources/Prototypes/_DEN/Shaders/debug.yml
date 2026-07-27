@@ -32,3 +32,46 @@
     - type: ApplyShaderToEntity
       passScreen: false
       shaderProto: Crispy
+
+- type: entity
+  id: ShaderStaff
+  parent: BaseItem
+  name: shader staff
+  description: Helps fix the underabundance of shaders on station.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Basic/staves.rsi
+    layers:
+    - state: nothing
+    - state: nothing-unshaded
+      shader: unshaded
+  - type: ActionOnInteract
+    actions:
+    - ActionApplyShader
+  - type: Item
+    size: Normal
+    inhandVisuals:
+      left:
+      - state: staff-inhand-left
+      - state: staff-inhand-left-unshaded
+        shader: unshaded
+      right:
+      - state: staff-inhand-right
+      - state: staff-inhand-right-unshaded
+        shader: unshaded
+  - type: RgbLightController
+  - type: PointLight
+    enabled: true
+    radius: 2
+
+- type: entity
+  id: ActionApplyShader
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    sound: /Audio/Magic/blink.ogg
+    event: !type:ChangeComponentsSpellEvent
+      toAdd:
+      - type: ApplyShaderToEntity
+        passScreen: false
+        shaderProto: OilSpill

@@ -22,3 +22,8 @@
     bottom_border_thickness: 32.0
     bottom_border_jitter: 10.0
     noise_intensity: 0.0
+
+- type: shader
+  id: OilSpill
+  kind: source
+  path: "/Textures/_DEN/Shaders/oil_spill.swsl"
