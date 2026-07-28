@@ -1,0 +1,57 @@
+// light_mode unshaded; // we want lighting to work, which will unfortunately make it not as vibrant.
+
+const highp float PI = 3.14159265;
+
+const highp vec3 color1 = vec3(0.117647, 0.152941, 0.380392);          // #1e2761
+const highp vec3 color2 = vec3(0.223529, 0.066667, 0.270588);        // #391145
+const highp vec3 color3 = vec3(0.039216, 0.368627, 0.243137);         // #0a5e3e
+const highp vec3 highlight_color = vec3(0.168627, 0.611765, 0.439216); // #2b9c70
+
+uniform lowp float scale;
+uniform lowp float speed;
+
+highp mat2 rot(highp float t) {
+	return mat2(vec2(cos(t), sin(t)), vec2(-sin(t), cos(t)));
+}
+
+void fragment() {
+    highp vec3 col = vec3(0.0);
+    highp vec2 uv = vec2(UV.x + 0.5, UV.y + 5) * scale;
+
+    highp float t = TIME * speed;
+    highp vec2 p = uv;
+    highp vec2 q = uv;
+    highp float k = length(p);
+
+    col = vec3(1, 2, 3) * 8;
+
+    t -= 500.0;
+    highp int T = 5;
+    for (highp int i = 0; i < T; ++i) {
+        p = (sin(p * PI * 2.0 + t * float(i + 1) * 0.03) * 0.5 + 0.5);
+        p *= rot(float(i+1) * PI * 2.0 / float(T) - t * 0.3 + k * 5.0);
+        col = cross(col.zyx, vec3(p, k));
+    }
+
+    // col = normalize(col) * 0.5 + 0.5;
+    col = clamp(col * 1.2 - 0.2, 0.0, 1.0);
+    col = pow(col, vec3(1.0 / 2.2));
+
+    // color remapping starts here
+
+    highp float luminance = (col.r + col.g + col.b) / 3.0;
+
+    highp vec3 result = vec3(0.0);
+
+    result = mix(result, highlight_color, -luminance + 1);
+
+    result = mix(result, mix(color1, color2, sin(TIME * speed) * 0.5 + 0.5), col.r);
+    result = mix(result, mix(color2, color1, sin(TIME * speed) * 0.5 + 0.5), col.g);
+    result = mix(result, vec3(0.0), col.b);
+
+    col = result;
+
+    highp vec4 tex = texture(TEXTURE, UV);
+
+    COLOR = vec4(col, tex.a);
+}

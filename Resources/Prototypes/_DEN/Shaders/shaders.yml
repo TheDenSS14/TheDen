@@ -30,3 +30,11 @@
   params:
     scale: 0.5
     speed: 0.2
+
+- type: shader
+  id: AlienGoo
+  kind: source
+  path: "/Textures/_DEN/Shaders/alien_goo.swsl"
+  params:
+    scale: 0.2
+    speed: 0.5
