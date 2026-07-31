@@ -1,116 +1,65 @@
 // light_mode unshaded; // we want lighting to work, which will unfortunately make it not as vibrant.
+// blobs taken from https://www.shadertoy.com/view/WttyRX
+// gabor noise field from https://www.shadertoy.com/view/3slXDf
 
-const highp float PI = 3.14159265;
+const mediump float PI = 3.14159265;
 
-const highp vec3 color1 = vec3(0.117647, 0.152941, 0.380392);          // #1e2761
-const highp vec3 color2 = vec3(0.223529, 0.066667, 0.270588);        // #391145
-const highp vec3 color3 = vec3(0.039216, 0.368627, 0.243137);         // #0a5e3e
-const highp vec3 highlight_color = vec3(0.168627, 0.611765, 0.439216); // #2b9c70
+const lowp vec3 color1 = vec3(0.117647, 0.152941, 0.380392);          // #1e2761
+const lowp vec3 color2 = vec3(0.223529, 0.066667, 0.270588);        // #391145
+const lowp vec3 color3 = vec3(0.039216, 0.368627, 0.243137);         // #0a5e3e
+const lowp vec3 highlight_color = vec3(0.168627, 0.611765, 0.439216); // #2b9c70
+
+//const lowp vec3 highlight_color = vec3(1.0, 0.0, 0.0); // #2b9c70
 
 uniform lowp float scale;
 uniform lowp float speed;
 uniform lowp float color_scale;
 uniform lowp float inline_width;
+uniform lowp float colormap_width;
+uniform lowp float blob_size;
+uniform lowp int num_blobs;
 
-uniform highp float max_line_width;
-uniform highp float min_line_width;
-uniform highp float freq;
-uniform highp float block_size;
-
-const lowp int ang_res = 32;
-const lowp int grad_res = 16;
-
-highp float hash(highp vec2 p, highp float s) {
-	return fract(35.1 * sin(dot(vec3(112.3, 459.2, 753.2), vec3(p, s))));
-}
-
-highp float noise2(highp vec2 p, highp float s) {
-	highp vec2 d = vec2(0, 1);
-	highp vec2 b = floor(p);
-	highp vec2 f = fract(p);
-	return mix(
-		mix(hash(b + d.xx, s), hash(b + d.yx, s), f.x),
-		mix(hash(b + d.xy, s), hash(b + d.yy, s), f.x), f.y);
-}
-
-highp float getLineWidth(highp vec2 p, highp float s) {
-	p /= block_size;
-	highp float w = 0.0;
-	highp float intensity = 1.0;
-	for (highp int i = 0; i < 3; i++) {
-		w = mix(w, noise2(p, s), intensity);
-		p /= 2.0;
-		intensity /= 2.0;
-	}
-	
-	return mix(max_line_width, min_line_width, w);
-}
-
-bool pixelInRange(sampler2D text, highp vec2 uv, highp vec2 dist) {
-	float alpha = 0.0;
-	for (int i = 0; i < ang_res; i++) {
-		highp float angle = 2.0 * PI * float(i) / float(ang_res);
-		highp vec2 disp = dist * vec2(cos(angle), sin(angle));
-		if (texture(text, uv + disp).a > 0.0) return true;
-	}
-	return false;
-}
-
-highp float getClosestDistance(sampler2D text, highp vec2 uv, highp vec2 maxDist) {
-	if (!pixelInRange(text, uv, maxDist)) return -1.0;
-	
-	highp float hi = 1.0;
-    highp float lo = 0.0;
-	
-	for (highp int i = 1; i <= grad_res; i++) {
-		highp float curr = (hi + lo) / 2.0;
-		if (pixelInRange(text, uv, curr * maxDist)) {
-			hi = curr;
-		}
-		else {
-			lo = curr;
-		}
-	}
-	return hi;
-	
-}
-
-highp vec2 random(highp vec2 uv) {
+lowp vec2 random(lowp vec2 uv) {
 	return vec2(fract(sin(dot(uv.xy,
 		vec2(12.9898,78.233))) * 43758.5453123));
 }
 
-highp float noise(highp vec2 uv) {
-    highp vec2 i = floor(uv);
-    highp vec2 f = fract(uv);
-    highp float a = random(i).x;
-    highp float b = random(i + vec2(1.0, 0.0)).x;
-    highp float c = random(i + vec2(0.0, 1.0)).x;
-    highp float d = random(i + vec2(1.0, 1.0)).x;
-    highp vec2 u = f * f * (3.0 - 2.0 * f);
+lowp float noise(lowp vec2 uv) {
+    lowp vec2 i = floor(uv);
+    lowp vec2 f = fract(uv);
+    lowp float a = random(i).x;
+    lowp float b = random(i + vec2(1.0, 0.0)).x;
+    lowp float c = random(i + vec2(0.0, 1.0)).x;
+    lowp float d = random(i + vec2(1.0, 1.0)).x;
+    lowp vec2 u = f * f * (3.0 - 2.0 * f);
     return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
 }
 
-highp vec2 distort(highp vec2 uv, highp float time, lowp float speed) {
+highp vec2 distort(highp vec2 uv) {
     highp vec2 warp;
-    warp.x = noise(uv * 3.0 + time * speed);
-    warp.y = noise(uv * 3.0 + time * speed + 100.0);
-    return uv + (warp - 0.5) * 0.5;
+    warp.x = noise(uv * 3.0 + TIME * speed * 0.01 + 100.0);
+    warp.y = noise(uv * 3.0 + TIME * speed * 0.01 - 100.0);
+    return uv + (warp - 0.5) * 0.1;
 }
 
-highp mat2 rot(highp float t) {
+mediump mat2 rot(lowp float t) {
 	return mat2(vec2(cos(t), sin(t)), vec2(-sin(t), cos(t)));
 }
 
-bool hasContraryNeighbour(highp vec2 uv, sampler2D text) {
-	for (highp float i = -ceil(inline_width); i <= ceil(inline_width); i++) {
-		highp float x = abs(i) > inline_width ? inline_width * sign(i) : i;
-		highp float offset;
-		
+void contrast(inout highp vec3 color) {
+    color = clamp(color * 1.6 - 0.3, 0.0, 1.0); // contrast and clamping of negative values
+}
 
-        offset = floor(sqrt(pow(inline_width + 0.5, 2) - x * x));
+void gamma(inout highp vec3 color) {
+    color = pow(color, vec3(1.0 / 2.2)); // gamma
+}
+
+bool hasContraryNeighbour(highp vec2 uv, sampler2D text) {
+	for (lowp float i = -ceil(inline_width); i <= ceil(inline_width); i++) {
+		highp float x = abs(i) > inline_width ? inline_width * sign(i) : i;
+		highp float offset = floor(sqrt(pow(inline_width + 0.5, 2.0) - x * x));
 		
-		for (highp float j = -ceil(offset); j <= ceil(offset); j++) {
+		for (lowp float j = -ceil(offset); j <= ceil(offset); j++) {
 			highp float y = abs(j) > offset ? offset * sign(j) : j;
 			highp vec2 xy = uv + SCREEN_PIXEL_SIZE * vec2(x, y);
 			
@@ -123,65 +72,61 @@ bool hasContraryNeighbour(highp vec2 uv, sampler2D text) {
 	return false;
 }
 
-void fragment() {
-    highp vec3 col = vec3(0.0);
-    highp vec2 uvn = vec2(UV.x + 0.5, UV.y + 5) * scale;
-    highp vec2 uv = distort(UV, TIME, 0.01);
+void colormap_additive(inout highp vec3 color) {
+    // this is technically subtractive color mapping(?) we start out with white and subtract the INVERTED color pallette
+	highp vec3 result = vec3(1.0);
+    result -= mix(vec3(0.0), 1.0 - color1, color.r);
+    result -= mix(vec3(0.0), 1.0 - color2, color.g);
+    result -= mix(vec3(0.0), 1.0 - color3, color.b);
 
-    highp vec2 pixel_coord = UV * (1.0 / TEXTURE_PIXEL_SIZE);
-    highp float grad = zCircleGradient(1.0 / TEXTURE_PIXEL_SIZE, pixel_coord, 1.0, length(1.0 / TEXTURE_PIXEL_SIZE) * 1, 0.0, 30);
-    highp float fade = 1.0 - grad;
+    // saturation to key out greys/whites into the highlight color
+    highp float maxC = max(result.r, max(result.g, result.b));
+    highp float minC = min(result.r, min(result.g, result.b));
+    highp float saturation = maxC - minC;
 
+    highp float key = 1.0 - smoothstep(0.0, 0.3, saturation);
+    result = mix(result, highlight_color, key);
+
+	color = result;
+}
+
+void oil_spill(inout highp vec3 color, in highp vec2 uv, in bool do_normalization) {
     highp float t = TIME * speed;
-    highp vec2 p = uvn;
-    highp vec2 q = uvn;
+    highp vec2 p = uv;
     highp float k = length(p);
-
-    col = vec3(1.0) * 6;
-
     t -= 500.0;
     highp int T = 5;
     for (highp int i = 0; i < T; ++i) {
         p = (sin(p * PI * 2.0 + t * float(i + 1) * 0.03) * 0.5 + 0.5);
         p *= rot(float(i+1) * PI * 2.0 / float(T) - t * 0.3 + k * 5.0);
-        col = cross(col.zyx, vec3(p, k));
+        color = cross(color.zyx, vec3(p, k));
     }
+    if (do_normalization) {
+        color = normalize(color) * 0.5 + 0.5;
+    }
+}
 
-    // col = normalize(col) * 0.5 + 0.5;
-    col = clamp(col * 1.2 - 0.2, 0.0, 1.0);
-    col = pow(col, vec3(1.0 / 2.2));
+void draw_inline(inout highp vec4 color) {
+	if ((color.a > 0.0) == true && hasContraryNeighbour(UV, TEXTURE)) {
+		color.rgb = true ? mix(color.rgb, vec3(0.0), 1.0) : vec3(0.0);
+		color.a += (1.0 - color.a);
+	}
+}
 
-    highp float luminance = (col.r + col.g + col.b) / 3.0;
+void fragment() {
+    highp vec3 col = vec3(1.0) * 1.0; // the multiplier will affect how aggressive the spill is
+    highp vec2 uv_shifted = vec2(UV.x + 0.5, UV.y + 5) * scale; // UV moved such that it's centered and below the texture (0.5, 5), scale multiplier for the zoom
+    highp vec2 uv_centered = vec2(UV - 0.5) * scale; // UV moved such that it's centered on the texture, scale multiplier for the zoom
+    highp vec2 uv_distorted = distort(uv_centered); // distorted UV
 
-    highp vec3 result = vec3(0.0);
-
-    //result = mix(result, color3, -luminance + 1);
-
-    result = mix(result, color1 * color_scale, col.r);
-    result = mix(result, color2 * color_scale, col.g);
-    result = mix(result, color3 * color_scale, col.b);
-
-    col = result;
+    oil_spill(col, uv_distorted, true); // stage 1: fbm oil spill kinda deal, this has a completely random color everywhere
+    contrast(col); // stage 2: contrast and clamping nonsensical values
+    gamma(col); // stage 3: gamma
+    colormap_additive(col); // stage 4: map it to the color pallette
 
     highp vec4 tex = texture(TEXTURE, UV);
 
-    COLOR = vec4(col, tex.a);
+    COLOR = vec4(col, tex.a); // what this does, for future me: COLOR outside of the bounds of the texture will have an alpha value of 0.0
 
-	if ((COLOR.a > 0.0) == true && hasContraryNeighbour(UV, TEXTURE)) {
-		COLOR.rgb = true ? mix(COLOR.rgb, vec3(0.0), 1.0) : vec3(0.0);
-		COLOR.a += (1.0 - COLOR.a);
-	}
-
-	highp float timeStep = floor(freq * TIME);
-	highp vec2 scaledDist = TEXTURE_PIXEL_SIZE;
-	scaledDist *= getLineWidth(UV / TEXTURE_PIXEL_SIZE, timeStep);
-	highp float w = getClosestDistance(TEXTURE, UV, scaledDist);
-	
-	if (( w > 0.0) && (texture(TEXTURE, UV).a < 0.2)) {
-		// COLOR = mix(vec4(vec3(0.0), 0.0), vec4(vec3(0.0), 1.0), luminance);
-	}
-    if (texture(TEXTURE, UV).a < 0.2 && (-luminance + 1 == 1.0)) {
-        COLOR = mix(COLOR, vec4(vec3(0.0), 1.0 * fade), -luminance + 1);
-    }
-
+    draw_inline(COLOR); // stage 5: black inline around the texture
 }
