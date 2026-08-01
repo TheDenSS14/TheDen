@@ -1,6 +1,6 @@
 // light_mode unshaded; // we want lighting to work, which will unfortunately make it not as vibrant.
-// blobs taken from https://www.shadertoy.com/view/WttyRX
-// gabor noise field from https://www.shadertoy.com/view/3slXDf
+// original oil spill shader that was translated and modified can be found here: https://www.shadertoy.com/view/NsKBRy
+
 
 const mediump float PI = 3.14159265;
 
@@ -44,6 +44,31 @@ mediump mat2 rot(lowp float t) {
 
 void contrast(inout highp vec3 color) {
     color = clamp(color * 1.6 - 0.3, 0.0, 1.0); // contrast and clamping of negative values
+}
+
+void apply_contrast(in lowp float value, in highp vec3 color_in, out highp vec3 color_out) {
+    color_out = clamp(color_in * 1.6 - 0.3, 0.0, 1.0);
+}
+
+void fragment() {
+    highp vec4 text_1 = texture(TEXTURE, UV);
+
+    highp float vector_decompose_r_1 = text_1.r;
+    highp float vector_decompose_g_1 = text_1.g;
+    highp float vector_decompose_b_1 = text_1.b;
+    highp float vector_decompose_a_1 = text_1.a;
+
+    highp vec3 vector_compose_vec3_1 = vec3(vector_decompose_r_1, vector_decompose_g_1, vector_decompose_b_1);
+
+    highp vec3 contrast_color_1;
+    contrast(1.2, vector_compose_vec3_1, contrast_color_1);
+
+    highp float vector_decompose_r_2 = contrast_color_1.r;
+    highp float vector_decompose_g_2 = contrast_color_1.g;
+    highp float vector_decompose_b_2 = contrast_color_1.b;
+
+    highp vec4 vector_compose_vec4_1 = vec4(vector_decompose_r_2, vector_decompose_g_2, vector_decompose_b_2, vector_decompose_a_1);
+    COLOR = vector_compose_vec4_1;
 }
 
 void gamma(inout highp vec3 color) {
