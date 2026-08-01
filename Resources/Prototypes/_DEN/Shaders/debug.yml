@@ -33,6 +33,28 @@
       passScreen: false
       shaderProto: Crispy
 
+
+- type: entity
+  id: ActionApplyShader
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    event: !type:ChangeComponentsSpellEvent
+      toAdd:
+      - type: ApplyShaderToEntity
+        passScreen: false
+        shaderProto: AlienGoo
+
+- type: entity
+  id: ActionRemoveShader
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    event: !type:ChangeComponentsSpellEvent
+      toRemove:
+      - ApplyShaderToEntity
+
+
 - type: entity
   id: ShaderStaff
   parent: BaseItem
@@ -49,29 +71,18 @@
     actions:
     - ActionApplyShader
   - type: Item
-    size: Normal
-    inhandVisuals:
-      left:
-      - state: staff-inhand-left
-      - state: staff-inhand-left-unshaded
-        shader: unshaded
-      right:
-      - state: staff-inhand-right
-      - state: staff-inhand-right-unshaded
-        shader: unshaded
+    size: Tiny
   - type: RgbLightController
   - type: PointLight
     enabled: true
     radius: 2
 
 - type: entity
-  id: ActionApplyShader
-  categories: [ HideSpawnMenu ]
+  id: ShaderStaffRemove
+  parent: ShaderStaff
+  name: shader removal staff
+  description: Helps make the underabundance of shaders on station worse.
   components:
-  - type: EntityTargetAction
-    sound: /Audio/Magic/blink.ogg
-    event: !type:ChangeComponentsSpellEvent
-      toAdd:
-      - type: ApplyShaderToEntity
-        passScreen: false
-        shaderProto: AlienGoo
+  - type: ActionOnInteract
+    actions:
+    - ActionRemoveShader

@@ -13,11 +13,7 @@ const lowp vec3 highlight_color = vec3(0.168627, 0.611765, 0.439216); // #2b9c70
 
 uniform lowp float scale;
 uniform lowp float speed;
-uniform lowp float color_scale;
 uniform lowp float inline_width;
-uniform lowp float colormap_width;
-uniform lowp float blob_size;
-uniform lowp int num_blobs;
 
 lowp vec2 random(lowp vec2 uv) {
 	return vec2(fract(sin(dot(uv.xy,
