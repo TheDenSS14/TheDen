@@ -1,0 +1,153 @@
+// light_mode unshaded; // we want lighting to work, which will unfortunately make it not as vibrant.
+// original oil spill shader that was translated and modified can be found here: https://www.shadertoy.com/view/NsKBRy
+
+
+const mediump float PI = 3.14159265;
+
+const lowp vec3 color1 = vec3(0.117647, 0.152941, 0.380392);          // #1e2761
+const lowp vec3 color2 = vec3(0.223529, 0.066667, 0.270588);        // #391145
+const lowp vec3 color3 = vec3(0.039216, 0.368627, 0.243137);         // #0a5e3e
+const lowp vec3 highlight_color = vec3(0.168627, 0.611765, 0.439216); // #2b9c70
+
+//const lowp vec3 highlight_color = vec3(1.0, 0.0, 0.0); // #2b9c70
+
+uniform lowp float scale;
+uniform lowp float speed;
+uniform lowp float inline_width;
+
+lowp vec2 random(lowp vec2 uv) {
+	return vec2(fract(sin(dot(uv.xy,
+		vec2(12.9898,78.233))) * 43758.5453123));
+}
+
+lowp float noise(lowp vec2 uv) {
+    lowp vec2 i = floor(uv);
+    lowp vec2 f = fract(uv);
+    lowp float a = random(i).x;
+    lowp float b = random(i + vec2(1.0, 0.0)).x;
+    lowp float c = random(i + vec2(0.0, 1.0)).x;
+    lowp float d = random(i + vec2(1.0, 1.0)).x;
+    lowp vec2 u = f * f * (3.0 - 2.0 * f);
+    return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+}
+
+highp vec2 distort(highp vec2 uv) {
+    highp vec2 warp;
+    warp.x = noise(uv * 3.0 + TIME * speed * 0.01 + 100.0);
+    warp.y = noise(uv * 3.0 + TIME * speed * 0.01 - 100.0);
+    return uv + (warp - 0.5) * 0.1;
+}
+
+mediump mat2 rot(lowp float t) {
+	return mat2(vec2(cos(t), sin(t)), vec2(-sin(t), cos(t)));
+}
+
+void contrast(inout highp vec3 color) {
+    color = clamp(color * 1.6 - 0.3, 0.0, 1.0); // contrast and clamping of negative values
+}
+
+void apply_contrast(in lowp float value, in highp vec3 color_in, out highp vec3 color_out) {
+    color_out = clamp(color_in * 1.6 - 0.3, 0.0, 1.0);
+}
+
+void fragment() {
+    highp vec4 text_1 = texture(TEXTURE, UV);
+
+    highp float vector_decompose_r_1 = text_1.r;
+    highp float vector_decompose_g_1 = text_1.g;
+    highp float vector_decompose_b_1 = text_1.b;
+    highp float vector_decompose_a_1 = text_1.a;
+
+    highp vec3 vector_compose_vec3_1 = vec3(vector_decompose_r_1, vector_decompose_g_1, vector_decompose_b_1);
+
+    highp vec3 contrast_color_1;
+    contrast(1.2, vector_compose_vec3_1, contrast_color_1);
+
+    highp float vector_decompose_r_2 = contrast_color_1.r;
+    highp float vector_decompose_g_2 = contrast_color_1.g;
+    highp float vector_decompose_b_2 = contrast_color_1.b;
+
+    highp vec4 vector_compose_vec4_1 = vec4(vector_decompose_r_2, vector_decompose_g_2, vector_decompose_b_2, vector_decompose_a_1);
+    COLOR = vector_compose_vec4_1;
+}
+
+void gamma(inout highp vec3 color) {
+    color = pow(color, vec3(1.0 / 2.2)); // gamma
+}
+
+bool hasContraryNeighbour(highp vec2 uv, sampler2D text) {
+	for (lowp float i = -ceil(inline_width); i <= ceil(inline_width); i++) {
+		highp float x = abs(i) > inline_width ? inline_width * sign(i) : i;
+		highp float offset = floor(sqrt(pow(inline_width + 0.5, 2.0) - x * x));
+		
+		for (lowp float j = -ceil(offset); j <= ceil(offset); j++) {
+			highp float y = abs(j) > offset ? offset * sign(j) : j;
+			highp vec2 xy = uv + SCREEN_PIXEL_SIZE * vec2(x, y);
+			
+			if (xy != clamp(xy, vec2(0.0), vec2(1.0)) || texture(text, xy).a <= 0.0) {
+				return true;
+			}
+		}
+	}
+	
+	return false;
+}
+
+void colormap_additive(inout highp vec3 color) {
+    // this is technically subtractive color mapping(?) we start out with white and subtract the INVERTED color pallette
+	highp vec3 result = vec3(1.0);
+    result -= mix(vec3(0.0), 1.0 - color1, color.r);
+    result -= mix(vec3(0.0), 1.0 - color2, color.g);
+    result -= mix(vec3(0.0), 1.0 - color3, color.b);
+
+    // saturation to key out greys/whites into the highlight color
+    highp float maxC = max(result.r, max(result.g, result.b));
+    highp float minC = min(result.r, min(result.g, result.b));
+    highp float saturation = maxC - minC;
+
+    highp float key = 1.0 - smoothstep(0.0, 0.3, saturation);
+    result = mix(result, highlight_color, key);
+
+	color = result;
+}
+
+void oil_spill(inout highp vec3 color, in highp vec2 uv, in bool do_normalization) {
+    highp float t = TIME * speed;
+    highp vec2 p = uv;
+    highp float k = length(p);
+    t -= 500.0;
+    highp int T = 5;
+    for (highp int i = 0; i < T; ++i) {
+        p = (sin(p * PI * 2.0 + t * float(i + 1) * 0.03) * 0.5 + 0.5);
+        p *= rot(float(i+1) * PI * 2.0 / float(T) - t * 0.3 + k * 5.0);
+        color = cross(color.zyx, vec3(p, k));
+    }
+    if (do_normalization) {
+        color = normalize(color) * 0.5 + 0.5;
+    }
+}
+
+void draw_inline(inout highp vec4 color) {
+	if ((color.a > 0.0) == true && hasContraryNeighbour(UV, TEXTURE)) {
+		color.rgb = true ? mix(color.rgb, vec3(0.0), 1.0) : vec3(0.0);
+		color.a += (1.0 - color.a);
+	}
+}
+
+void fragment() {
+    highp vec3 col = vec3(1.0) * 1.0; // the multiplier will affect how aggressive the spill is
+    highp vec2 uv_shifted = vec2(UV.x + 0.5, UV.y + 5) * scale; // UV moved such that it's centered and below the texture (0.5, 5), scale multiplier for the zoom
+    highp vec2 uv_centered = vec2(UV - 0.5) * scale; // UV moved such that it's centered on the texture, scale multiplier for the zoom
+    highp vec2 uv_distorted = distort(uv_centered); // distorted UV
+
+    oil_spill(col, uv_distorted, true); // stage 1: fbm oil spill kinda deal, this has a completely random color everywhere
+    contrast(col); // stage 2: contrast and clamping nonsensical values
+    gamma(col); // stage 3: gamma
+    colormap_additive(col); // stage 4: map it to the color pallette
+
+    highp vec4 tex = texture(TEXTURE, UV);
+
+    COLOR = vec4(col, tex.a); // what this does, for future me: COLOR outside of the bounds of the texture will have an alpha value of 0.0
+
+    draw_inline(COLOR); // stage 5: black inline around the texture
+}

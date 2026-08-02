@@ -22,3 +22,20 @@
     bottom_border_thickness: 32.0
     bottom_border_jitter: 10.0
     noise_intensity: 0.0
+
+- type: shader
+  id: OilSpill
+  kind: source
+  path: "/Textures/_DEN/Shaders/oil_spill.swsl"
+  params:
+    scale: 0.5
+    speed: 0.2
+
+- type: shader
+  id: AlienGoo
+  kind: source
+  path: "/Textures/_DEN/Shaders/alien_goo.swsl"
+  params:
+    scale: 0.1
+    speed: 0.2
+    inline_width: 30.0
