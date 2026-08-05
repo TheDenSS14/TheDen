@@ -204,3 +204,113 @@
     - type: Tag
       tags:
       - WhitelistChameleon
+
+- type: entity
+  parent: ClothingEyesHudMedical
+  id: ClothingMedicalTajVeil
+  name: medhud tajaran veil
+  description: A nano-fiber veil worn by certain Tajaran sects. It comes with an integrated medhud.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/medtaj.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/medtaj.rsi
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - BiologicalMetaphysical
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+    - BiologicalMetaphysical
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HudMedical
+
+- type: entity
+  parent: [ClothingEyesBase, ShowSecurityIcons]
+  id: ClothingSecurityTajVeil
+  name: sechud tajaran veil
+  description: a nano-fiber veil worn by certain Tajaran sects. It comes with an integrated sechud.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/sectaj.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/sectaj.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protection Time: 5
+  - type: Tag
+    tags:
+    - Sunglasses
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingCivilianTajVeil
+  name: tajaran veil
+  description: A nano-fiber veil worn by certain Tajaran sects.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/civtaj.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/civtaj.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEngineeringTajVeil
+  name: engineering tajaran veil
+  description: A nano-fiber veil worn by certain Tajaran sects. It comes with added eye protection for engineering work.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/engtaj.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/engtaj.rsi
+  - type: EyeProtection
+  - type: SupermatterHallucinationImmune
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingChemistryTajVeil
+  name: chemical tajaran veil
+  description: A nano-fiber veil worn by certain Tajaran sects. It comes with a scanner to analyze chemical solutions.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/chemtaj.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/chemtaj.rsi
+  - type: SolutionScanner
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingDiagnosticTajVeil
+  name: diagnostic tajaran veil
+  description: A nano-fiber veil worn by certain Tajaran sects. It comes with a diagnostic scanner for analyzing robots and mechsuits.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/diagtaj.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/diagtaj.rsi
+  - type: ShowHealthBars
+    damageContainers:
+    - Inorganic
+    - Silicon
+  - type: ShowHealthIcons
+    damageContainers:
+    - Inorganic
+    - Silicon
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HudMedical
+
