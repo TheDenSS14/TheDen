@@ -1,0 +1,46 @@
+- type: entity
+  parent: CryogenicSleepUnit
+  id: CryogenicSleepUnitSomber
+  name: somber cryogenic sleep unit
+  description: "An austere, precision-engineered stasis vessel crafted for long, silent voyages between the stars."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/sombercryostorage.rsi
+    layers:
+    - state: sleeper_0
+      map: ["base"]
+    - state: sleeper_0-overlay
+      shader: unshaded
+      map: ["overlay"]
+  - type: GenericVisualizer
+    visuals:
+      enum.CryostorageVisuals.Full:
+        base:
+          True: { state: sleeper_1 }
+          False: { state: sleeper_0 }
+        overlay:
+          True: { state: sleeper_1-overlay }
+          False: { state: sleeper_0-overlay }
+  - type: PointLight
+    color: "#ce4c8d"
+    radius: 1.5
+    energy: 3
+
+# This one handles all spawns, latejoin and roundstart.
+- type: entity
+  parent: CryogenicSleepUnitSomber
+  id: CryogenicSleepUnitSomberSpawner
+  suffix: Spawner, Roundstart AllJobs
+  components:
+  - type: ContainerSpawnPoint
+    containerId: storage
+
+# This one only handles latejoin spawns.
+- type: entity
+  parent: CryogenicSleepUnitSomber
+  id: CryogenicSleepUnitSomberSpawnerLateJoin
+  suffix: Spawner, LateJoin
+  components:
+  - type: ContainerSpawnPoint
+    containerId: storage
+    spawnType: LateJoin

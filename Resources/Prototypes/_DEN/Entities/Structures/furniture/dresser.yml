@@ -3,14 +3,15 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: Dresser
+  parent: [ Dresser, BasePsionic ]
   id: SomberDresser
   name: somber dresser
-  description: "An expensive dresser made of gloomy, patterned wood with electrum accents."
+  description: "An expensive dresser made of gloomy, patterned wood."
   components:
   - type: Sprite
     sprite: _DEN/Structures/Furniture/furniture.rsi
     state: somberdresser
+    noRot: true
   - type: Damageable
     damageModifierSet: Wood
     damageContainer: Inorganic
@@ -42,7 +43,7 @@
       - !type:EmptyAllContainersBehaviour
 
 - type: entity
-  parent: DresserFilled
+  parent: [ DresserFilled, BasePsionic ]
   id: SomberDresserFilled
   name: somber dresser
   suffix: Filled

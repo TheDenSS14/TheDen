@@ -1,0 +1,606 @@
+# Somber switches start
+- type: entity
+  parent: [ SignalSwitchDirectional, BasePsionic ]
+  id: SignalSwitchSomber
+  name: somber signal switch
+  suffix: Directional
+  description: "A brushed metal switch shaped like an eye."
+  components:
+  - type: Sprite
+    drawdepth: Items # Necessary to display over frames, which display over panels
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi # There are sprites for centered, left, and right switches...but who uses switches...
+  - type: Transform
+    anchored: false
+
+- type: entity
+  parent: [ SignalButton, BasePsionic ]
+  id: SignalButtonSomberCenter
+  name: somber signal button
+  suffix: Center
+  description: "A brushed metal button shaped like an eye."
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: Sprite
+    drawdepth: Items
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    state: base-center
+  - type: WallMount
+    arc: 360
+
+- type: entity
+  parent: [ SignalButtonDirectional, BasePsionic ]
+  id: SignalButtonSomber
+  name: somber signal button
+  suffix: Directional
+  description: "A brushed metal button shaped like an eye."
+  components:
+  - type: Sprite
+    drawdepth: Items
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    state: base
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberLeft
+  suffix: Directional, Left
+  components:
+  - type: Sprite
+    state: base-left
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberRight
+  suffix: Directional, Right
+  components:
+  - type: Sprite
+    state: base-right
+
+# Autolinking Buttons
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkFog
+  suffix: Autolink (Fog), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: Fog
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkTint1
+  suffix: Autolink (Tint 1), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: Tint1
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkTint2
+  suffix: Autolink (Tint 2), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: Tint2
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkTint3
+  suffix: Autolink (Tint 3), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: Tint3
+
+- type: entity
+  parent: SignalButtonSomber
+  id: SignalButtonSomberAutolinkInvisShutter
+  suffix: Autolink (Invisible Shutter), Directional
+  components:
+  - type: AutoLinkTransmitter
+    channel: InvisShutter
+
+# Lockable buttons
+
+- type: entity
+  parent: [ LockableButton, BasePsionic ]
+  id: LockableButtonSomber
+  name: somber signal button (locking)
+  suffix: Unprogrammed, Directional
+  description: "A brushed metal button shaped like an eye. It closes when locked."
+  categories: [] # If mappers want more than these they'll have to configure them themselves, sorry...
+  components:
+  - type: LockVisuals
+    stateLocked: locked
+  - type: Sprite
+    drawdepth: Items
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    layers:
+    - state: base
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+
+- type: entity
+  parent: LockableButtonSomber
+  id: LockableButtonSomberLeft
+  suffix: Unprogrammed, Left
+  components:
+  - type: LockVisuals
+    stateLocked: locked-left
+  - type: Sprite
+    layers:
+    - state: base-left
+    - state: locked-left
+      map: ["enum.LockVisualLayers.Lock"]
+
+- type: entity
+  parent: LockableButtonSomber
+  id: LockableButtonSomberRight
+  suffix: Unprogrammed, Right
+  components:
+  - type: LockVisuals
+    stateLocked: locked-right
+  - type: Sprite
+    layers:
+    - state: base-right
+    - state: locked-right
+      map: ["enum.LockVisualLayers.Lock"]
+
+- type: entity
+  parent: LockableButtonSomber
+  id: LockableButtonSomberCenter
+  suffix: Unprogrammed, Center
+  components:
+  - type: LockVisuals
+    stateLocked: locked-center
+  - type: Sprite
+    layers:
+    - state: base-center
+    - state: locked-center
+      map: ["enum.LockVisualLayers.Lock"]
+  - type: WallMount
+    arc: 360
+
+- type: entity
+  parent: LockableButtonSomber
+  id: LockableButtonSomberMantis
+  suffix: Mantis, Directional
+  components:
+  - type: AccessReader
+    access: [["Mantis"]]
+
+- type: entity
+  parent: LockableButtonSomberLeft
+  id: LockableButtonSomberMantisLeft
+  suffix: Mantis, Directional, Left
+  components:
+  - type: AccessReader
+    access: [["Mantis"]]
+
+- type: entity
+  parent: LockableButtonSomberRight
+  id: LockableButtonSomberMantisRight
+  suffix: Mantis, Directional, Right
+  components:
+  - type: AccessReader
+    access: [["Mantis"]]
+
+- type: entity
+  parent: LockableButtonSomberCenter
+  id: LockableButtonSomberMantisCenter
+  suffix: Mantis, Center
+  components:
+  - type: AccessReader
+    access: [["Mantis"]]
+  - type: WallMount
+    arc: 360
+
+- type: entity
+  parent: LockableButtonSomber
+  id: LockableButtonSomberResearch
+  suffix: Epistemics # These guys don't get the varied directions, there's already so many prototypes filling up the entity list here...
+  components:
+  - type: AccessReader
+    access: [["Research"]]
+
+- type: entity
+  parent: LockableButtonSomber
+  id: LockableButtonSomberChapel
+  suffix: Chapel
+  components:
+  - type: AccessReader
+    access: [["Chapel"]]
+
+- type: entity
+  parent: LockableButtonSomber
+  id: LockableButtonSomberResearchDirector
+  suffix: Mystagogue
+  components:
+  - type: AccessReader
+    access: [["ResearchDirector"]]
+
+# Button frame panels
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberPanelThree
+  name: somber signal button panel
+  suffix: Three, SnapGrid Directional Frames/Buttons # Fits around frames/buttons where they land naturally
+  description: "An inset panel that fits three somber buttons."
+  components:
+  - type: Sprite
+    drawdepth: SmallObjects # Display over tables, but under frames/buttons
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    layers:
+    - state: panel-three
+
+- type: entity
+  parent: ButtonFrameSomberPanelThree
+  id: ButtonFrameSomberPanelFour
+  name: somber signal button panel
+  suffix: Four, PlaceFree Directional Frames/Buttons # Have to manually place things, and don't use Center ones or you can press them through walls
+  description: "An inset panel that fits four somber buttons."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    layers:
+    - state: panel-four
+
+# Button frames
+
+- type: entity
+  parent: [ ButtonFrame, BasePsionic ]
+  id: ButtonFrameSomberGold
+  name: somber signal button frame
+  suffix: Gold, Directional
+  description: "A gold button frame shaped like an eye."
+  components:
+  - type: Sprite
+    drawdepth: WallMountedItems # Display between panels and buttons
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    layers:
+    - state: framegold
+    - state: framegold-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberGoldLeft
+  suffix: Gold, Directional Left
+  components:
+  - type: Sprite
+    layers:
+    - state: framegold-left
+    - state: framegold-left-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberGoldRight
+  suffix: Gold, Directional Right
+  components:
+  - type: Sprite
+    layers:
+    - state: framegold-right
+    - state: framegold-right-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberGoldCenter
+  suffix: Gold, Center
+  components:
+  - type: Sprite
+    layers:
+    - state: framegold-center
+    - state: framegold-center-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberSilver
+  suffix: Silver, Directional
+  description: "A silver button frame shaped like an eye."
+  components:
+  - type: Sprite
+    layers:
+    - state: framesilver
+    - state: framesilver-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberSilver
+  id: ButtonFrameSomberSilverLeft
+  suffix: Silver, Directional Left
+  components:
+  - type: Sprite
+    layers:
+    - state: framesilver-left
+    - state: framesilver-left-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberSilver
+  id: ButtonFrameSomberSilverRight
+  suffix: Silver, Directional Right
+  components:
+  - type: Sprite
+    layers:
+    - state: framesilver-right
+    - state: framesilver-right-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberSilverCenter
+  suffix: Silver, Center
+  components:
+  - type: Sprite
+    layers:
+    - state: framesilver-center
+    - state: framesilver-center-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberMagenta
+  suffix: Magenta, Directional
+  description: "A magenta button frame shaped like an eye."
+  components:
+  - type: Sprite
+    layers:
+    - state: framepink
+    - state: framepink-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberMagenta
+  id: ButtonFrameSomberMagentaLeft
+  suffix: Magenta, Directional Left
+  components:
+  - type: Sprite
+    layers:
+    - state: framepink-left
+    - state: framepink-left-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberMagenta
+  id: ButtonFrameSomberMagentaRight
+  suffix: Magenta, Directional Right
+  components:
+  - type: Sprite
+    layers:
+    - state: framepink-right
+    - state: framepink-right-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberMagentaCenter
+  suffix: Magenta, Center
+  components:
+  - type: Sprite
+    layers:
+    - state: framepink-center
+    - state: framepink-center-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberPurple
+  suffix: Purple, Directional
+  description: "A purple button frame shaped like an eye."
+  components:
+  - type: Sprite
+    layers:
+    - state: framepurple
+    - state: framepurple-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberPurple
+  id: ButtonFrameSomberPurpleLeft
+  suffix: Purple, Directional Left
+  components:
+  - type: Sprite
+    layers:
+    - state: framepurple-left
+    - state: framepurple-left-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberPurple
+  id: ButtonFrameSomberPurpleRight
+  suffix: Purple, Directional Right
+  components:
+  - type: Sprite
+    layers:
+    - state: framepurple-right
+    - state: framepurple-right-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberPurpleCenter
+  suffix: Purple, Center
+  components:
+  - type: Sprite
+    layers:
+    - state: framepurple-center
+    - state: framepurple-center-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberRoseGold
+  name: somber signal button frame
+  suffix: Rose Gold, Directional
+  description: "A rose gold button frame shaped like an eye."
+  components:
+  - type: Sprite
+    layers:
+    - state: framerosegold
+    - state: framerosegold-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberRoseGold
+  id: ButtonFrameSomberRoseGoldLeft
+  suffix: Rose Gold, Directional Left
+  components:
+  - type: Sprite
+    layers:
+    - state: framerosegold-left
+    - state: framerosegold-left-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberRoseGold
+  id: ButtonFrameSomberRoseGoldRight
+  suffix: Rose Gold, Directional Right
+  components:
+  - type: Sprite
+    layers:
+    - state: framerosegold-right
+    - state: framerosegold-right-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberRoseGold
+  id: ButtonFrameSomberRoseGoldCenter
+  suffix: Rose Gold, Center
+  components:
+  - type: Sprite
+    layers:
+    - state: framerosegold-center
+    - state: framerosegold-center-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberGold
+  id: ButtonFrameSomberWhiteGold
+  name: somber signal button frame
+  suffix: White Gold, Directional
+  description: "A white gold button frame shaped like an eye."
+  components:
+  - type: Sprite
+    layers:
+    - state: framewhitegold
+    - state: framewhitegold-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberWhiteGold
+  id: ButtonFrameSomberWhiteGoldLeft
+  suffix: White Gold, Directional Left
+  components:
+  - type: Sprite
+    layers:
+    - state: framewhitegold-left
+    - state: framewhitegold-left-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberWhiteGold
+  id: ButtonFrameSomberWhiteGoldRight
+  suffix: White Gold, Directional Right
+  components:
+  - type: Sprite
+    layers:
+    - state: framewhitegold-right
+    - state: framewhitegold-right-unshaded
+      shader: unshaded
+
+- type: entity
+  parent: ButtonFrameSomberWhiteGold
+  id: ButtonFrameSomberWhiteGoldCenter
+  suffix: White Gold, Center
+  components:
+  - type: Sprite
+    layers:
+    - state: framewhitegold-center
+    - state: framewhitegold-center-unshaded
+      shader: unshaded
+
+# Timers
+
+- type: entity
+  parent: [ SignalTimer, BasePsionic ]
+  id: SomberSignalTimer
+  name: somber signal timer
+  suffix: Directional, 5 Seconds
+  description: "A brushed metal timer that sends a signal after a delay."
+  components:
+  - type: SignalTimer
+    delay: 5
+  - type: Sprite
+    drawdepth: Items
+    sprite: _DEN/Structures/Wallmounts/somberswitch.rsi
+    state: on
+
+- type: entity
+  parent: SomberSignalTimer
+  id: SomberSignalTimer1
+  suffix: Directional, 1 Second
+  components:
+  - type: SignalTimer
+    delay: 1
+
+- type: entity
+  parent: SomberSignalTimer
+  id: SomberSignalTimerLeft
+  suffix: Directional, Left, 5 Seconds
+  components:
+  - type: SignalTimer
+    delay: 5
+  - type: Sprite
+    state: on-left
+    delay: 1
+
+- type: entity
+  parent: SomberSignalTimerLeft
+  id: SomberSignalTimerLeft1
+  suffix: Directional, Left, 1 Second
+  components:
+  - type: SignalTimer
+    delay: 1
+
+- type: entity
+  parent: SomberSignalTimer
+  id: SomberSignalTimerRight
+  suffix: Directional, Right, 5 Seconds
+  components:
+  - type: SignalTimer
+    delay: 5
+  - type: Sprite
+    state: on-right
+
+- type: entity
+  parent: SomberSignalTimerRight
+  id: SomberSignalTimerRight1
+  suffix: Directional, Right, 1 Second
+  components:
+  - type: SignalTimer
+    delay: 1
+
+- type: entity
+  parent: SomberSignalTimer
+  id: SomberSignalTimerCenter
+  suffix: Center, 5 Seconds
+  components:
+  - type: SignalTimer
+    delay: 5
+  - type: Sprite
+    state: on-center
+  - type: WallMount
+    arc: 360
+
+- type: entity
+  parent: SomberSignalTimerCenter
+  id: SomberSignalTimerCenter1
+  suffix: Center, 1 Second
+  components:
+  - type: SignalTimer
+    delay: 1
+# Somber switches end

@@ -3,11 +3,49 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: Mirror
+  parent: [ Mirror, BasePsionic ]
   id: SomberMirror
-  name: somber electrum mirror
+  name: somber mirror
   description: "A glossy electrum mirror with a polished mu-metal backing that prevents psionic scrying. A calm, private moment."
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
   components:
+  - type: Transform
+    anchored: false # So it can use other snapping modes
   - type: Sprite
     sprite: _DEN/Structures/Wallmounts/mirror.rsi
     state: sombermirror
+
+- type: entity
+  parent: SomberMirror
+  id: SomberMirrorWide
+  suffix: Wide
+  components:
+  - type: Sprite
+    state: sombermirrorwide
+
+- type: entity
+  parent: SomberMirror
+  id: SomberMirrorLeft
+  suffix: Left
+  components:
+  - type: Sprite
+    state: sombermirrorleft
+
+- type: entity
+  parent: SomberMirror
+  id: SomberMirrorMiddle
+  suffix: Middle
+  components:
+  - type: Sprite
+    state: sombermirrormiddle
+
+- type: entity
+  parent: SomberMirror
+  id: SomberMirrorRight
+  suffix: Right
+  components:
+  - type: Sprite
+    state: sombermirrorright

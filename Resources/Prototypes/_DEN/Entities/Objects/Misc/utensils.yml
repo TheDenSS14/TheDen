@@ -1,0 +1,154 @@
+- type: entity
+  parent: [ BaseDecorativeFixture, BarSpoon ]
+  id: BarSpoonSomber
+  name: electrum bar spoon
+  suffix: Somber Barware
+  description: "A swept mixing spoon made of a natural alloy of gold and silver."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    state: bar_spoon
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    heldPrefix: bar_spoon
+  - type: MeleeWeapon
+    wideAnimationRotation: -35
+  - type: ThrowingAngle
+    angle: -35
+  - type: LandAtCursor
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: [ BaseDecorativeFixture, Skimmer ] # It's arguably a chemistry item, but it only comes from the somber bar and kitchen vendors, so whatever
+  id: SkimmerSomber
+  name: electrum skimmer
+  suffix: Somber Barware
+  description: "An electrum skimmer. Used to skim."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberskimmer.rsi
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberskimmer.rsi
+  - type: MeleeWeapon # It might as well bonk people like other utensils, based on the bar spoon
+    wideAnimationRotation: 25
+    attackRate: .5
+    damage:
+      types:
+        Blunt: 2
+  - type: DamageOtherOnHit
+  - type: ThrowingAngle
+    angle: 25
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: SkimmerSomber
+  id: SkimmerSomberSauna
+  name: electrum sauna ladle
+  suffix: Somber Sauna
+  description: "A long electrum ladle used to pour water over the sauna stones."
+  components:
+  - type: Sprite
+    layers:
+    - state: skimmer-sauna
+    - state: skimmer1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+
+- type: entity
+  parent: SkimmerSomberSauna
+  id: SkimmerSomberSaunaSilvery
+  name: electrum sauna ladle
+  suffix: Somber Sauna, Silvery
+  description: "A long electrum ladle used to pour water over the sauna stones. The natural alloy contains more silver than usual."
+  components:
+  - type: Sprite
+    layers:
+    - state: skimmer-sauna-silvery
+    - state: skimmer1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+
+- type: entity
+  parent: [ BaseDecorativeFixture, Spoon ]
+  id: SpoonSomber
+  name: electrum spoon
+  suffix: Somber Dinnerware
+  description: "A spoon made of a natural alloy of gold and silver. Perfect for testing your psionic ability."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    state: spoon
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    heldPrefix: spoon
+  - type: MeleeWeapon
+    wideAnimationRotation: 25
+  - type: ThrowingAngle
+    angle: 25
+  - type: LandAtCursor
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: [ BaseDecorativeFixture, Fork ]
+  id: ForkSomber
+  name: electrum fork
+  suffix: Somber Dinnerware
+  description: "A fork made of a natural alloy of gold and silver."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    state: fork
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    heldPrefix: fork
+  - type: MeleeWeapon
+    wideAnimationRotation: 25
+  - type: ThrowingAngle
+    angle: 25
+  - type: LandAtCursor
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: [ BaseDecorativeFixture, BaseKnife ]
+  id: KnifeSomber # Barely a weapon, so it goes here
+  name: electrum knife
+  suffix: Somber Dinnerware
+  description: "A knife made of a natural alloy of gold and silver. Good for food, and little else."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    state: knife
+  - type: Item
+    sprite: _DEN/Objects/Misc/somberutensils.rsi
+    heldPrefix: knife
+  - type: MeleeWeapon # Fork stats, but slash instead of pierce
+    wideAnimationRotation: -160
+    attackRate: .6666
+    damage:
+      types:
+        Slash: 5
+  - type: DamageOtherOnHit
+    staminaCost: 2.5
+  - type: EmbeddableProjectile
+    removalTime: 0.5
+    autoRemoveDuration: 10
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: -160
+  - type: LandAtCursor
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10

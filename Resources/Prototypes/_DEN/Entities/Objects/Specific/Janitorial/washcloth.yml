@@ -1,0 +1,555 @@
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, RagItem ]
+  id: RagItemColor
+  name: white washcloth
+  suffix: Damp Rag
+  description: "Only a washcloth. Useful for tidying up."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#EAE8E8"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#EAE8E8"
+      right:
+      - state: inhand-right
+        color: "#EAE8E8"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorPurple
+  name: purple washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#9C0DE1"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#9C0DE1"
+      right:
+      - state: inhand-right
+        color: "#9C0DE1"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorRed
+  name: red washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#940000"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#940000"
+      right:
+      - state: inhand-right
+        color: "#940000"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorBlue
+  name: blue washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#0089EF"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#0089EF"
+      right:
+      - state: inhand-right
+        color: "#0089EF"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorDarkBlue
+  name: dark blue washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#3285ba"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3285ba"
+      right:
+      - state: inhand-right
+        color: "#3285ba"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorLightBlue
+  name: light blue washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#58abcc"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#58abcc"
+      right:
+      - state: inhand-right
+        color: "#58abcc"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorTeal
+  name: teal washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#3CB57C"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3CB57C"
+      right:
+      - state: inhand-right
+        color: "#3CB57C"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorBrown
+  name: brown washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#723A02"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#723A02"
+      right:
+      - state: inhand-right
+        color: "#723A02"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorLightBrown
+  name: light brown washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#c59431"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#c59431"
+      right:
+      - state: inhand-right
+        color: "#c59431"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorGray
+  name: gray washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#999999"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#999999"
+      right:
+      - state: inhand-right
+        color: "#999999"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorGreen
+  name: green washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#5ABF2F"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#5ABF2F"
+      right:
+      - state: inhand-right
+        color: "#5ABF2F"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorDarkGreen
+  name: dark green washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#79CC26"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#79CC26"
+      right:
+      - state: inhand-right
+        color: "#79CC26"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorGold
+  name: gold washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#F7C430"
+    - state: iconstripe
+      color: "#535353"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#F7C430"
+      right:
+      - state: inhand-right
+        color: "#F7C430"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorOrange
+  name: orange washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#EF8100"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#EF8100"
+      right:
+      - state: inhand-right
+        color: "#EF8100"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorBlack
+  name: black washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#535353"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#535353"
+      right:
+      - state: inhand-right
+        color: "#535353"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorPink
+  name: pink washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#ffa69b"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffa69b"
+      right:
+      - state: inhand-right
+        color: "#ffa69b"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorYellow
+  name: yellow washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#ffe14d"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffe14d"
+      right:
+      - state: inhand-right
+        color: "#ffe14d"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorMaroon
+  name: maroon washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#cc295f"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#cc295f"
+      right:
+      - state: inhand-right
+        color: "#cc295f"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorSilver
+  name: silver washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#d0d0d0"
+    - state: iconstripe
+      color: "#F7C430"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d0d0d0"
+      right:
+      - state: inhand-right
+        color: "#d0d0d0"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorMime
+  name: silent washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#EAE8E8"
+    - state: iconstripe
+      color: "#535353"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#EAE8E8"
+      right:
+      - state: inhand-right
+        color: "#EAE8E8"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorNT
+  name: nanotrasen brand washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#004787"
+    - state: iconstripe
+      color: "#EAE8E8"
+    - state: NTmono
+      color: "#EAE8E8"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#004787"
+      right:
+      - state: inhand-right
+        color: "#004787"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorCentcom
+  name: centcom washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#29722e"
+    - state: iconstripe
+      color: "#F7C430"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#29722e"
+      right:
+      - state: inhand-right
+        color: "#29722e"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorSyndicate
+  name: syndicate washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#535353"
+    - state: iconstripe
+      color: "#940000"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#535353"
+      right:
+      - state: inhand-right
+        color: "#535353"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorMagenta
+  name: magenta washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#b32d70"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#b32d70"
+      right:
+      - state: inhand-right
+        color: "#b32d70"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorAzure
+  name: azure washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#2968e6"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#2968e6"
+      right:
+      - state: inhand-right
+        color: "#2968e6"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorRoyalRed
+  name: royal red washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#8a0027"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8a0027"
+      right:
+      - state: inhand-right
+        color: "#8a0027"
+
+- type: entity
+  parent: RagItemColor
+  id: RagItemColorPine
+  name: pine washcloth
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    layers:
+    - state: icon
+      color: "#337c60"
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/washcloth.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#337c60"
+      right:
+      - state: inhand-right
+        color: "#337c60"

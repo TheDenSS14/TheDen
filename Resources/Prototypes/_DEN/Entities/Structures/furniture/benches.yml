@@ -1,0 +1,320 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Somber Benches Start
+
+# Sofa and sectionals
+- type: entity
+  parent: [ BenchBaseMiddle, BasePsionic ]
+  id: BenchSofaSomberMiddle
+  name: somber leather sofa
+  suffix: Middle
+  description: "A plush leather sofa with electrum accents."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    snapCardinals: false
+    noRot: false
+    sprite: _DEN/Structures/Furniture/Benches/sombersofa.rsi
+  - type: StaticPrice
+    price: 125
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: BenchSofaSomberMiddle
+  id: BenchSofaSomberLeft
+  suffix: Left
+  components:
+  - type: Sprite
+    state: left
+
+- type: entity
+  parent: BenchSofaSomberMiddle
+  id: BenchSofaSomberRight
+  suffix: Right
+  components:
+  - type: Sprite
+    state: right
+
+- type: entity
+  parent: BenchSofaSomberMiddle
+  id: BenchSofaSomberCorner
+  suffix: Corner
+  components:
+  - type: Sprite
+    state: corner
+
+- type: entity
+  parent: BenchSofaSomberMiddle
+  id: BenchSofaSomberFootrestRight
+  name: somber leather sectional
+  suffix: Right, Place On Sofa
+  description: "A plush leather sectional so you can stretch out."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Benches/sombersofasectional.rsi
+    state: right
+    offset: 0,-0.5
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: -0.2,-0.4
+
+- type: entity
+  parent: BenchSofaSomberMiddle
+  id: BenchSofaSomberFootrestMiddle
+  name: somber leather sectional
+  suffix: Middle, Place On Sofa
+  description: "A plush leather sectional so you can stretch out."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Benches/sombersofasectional.rsi
+    state: middle
+    offset: 0,-0.5
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: 0,-0.4
+
+- type: entity
+  parent: BenchSofaSomberMiddle
+  id: BenchSofaSomberFootrestLeft
+  name: somber leather sectional
+  suffix: Left, Place On Sofa
+  description: "A plush leather sectional so you can stretch out."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Benches/sombersofasectional.rsi
+    state: left
+    offset: 0,-0.5
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: 0,-0.4
+
+# Benches
+- type: entity
+  parent: [ BenchBaseMiddle, BasePsionic ]
+  id: BenchSomberMiddle
+  name: somber bench
+  suffix: Base, Middle
+  description: "A gloomy bench with a polished steel seat. A bit plain."
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Benches/somberbench.rsi
+    layers:
+    - state: middle
+    snapCardinals: false
+    noRot: false
+  - type: StaticPrice
+    price: 125
+  - type: Damageable
+    damageModifierSet: Metallic
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberLeft
+  suffix: Base, Left
+  components:
+  - type: Sprite
+    layers:
+    - state: left
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberRight
+  suffix: Base, Right
+  components:
+  - type: Sprite
+    layers:
+    - state: right
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberCorner
+  suffix: Base, Corner
+  components:
+  - type: Sprite
+    layers:
+    - state: corner
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberMiddlePink
+  suffix: Amaranth, Middle
+  description: "A gloomy bench with a polished amaranth wood seat."
+  components:
+  - type: Sprite
+    layers:
+    - state: middle
+    - state: middlepink
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberLeftPink
+  suffix: Amaranth, Left
+  components:
+  - type: Sprite
+    layers:
+    - state: left
+    - state: leftpink
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberRightPink
+  suffix: Amaranth, Right
+  components:
+  - type: Sprite
+    layers:
+    - state: right
+    - state: rightpink
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberCornerPink
+  suffix: Amaranth, Corner
+  components:
+  - type: Sprite
+    layers:
+    - state: corner
+    - state: cornerpink
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberMiddleGreen
+  suffix: Floral, Middle
+  description: "A gloomy bench with a polished floral wood seat."
+  components:
+  - type: Sprite
+    layers:
+    - state: middle
+    - state: middlegreen
+
+- type: entity
+  parent: BenchSomberMiddleGreen
+  id: BenchSomberLeftGreen
+  suffix: Floral, Left
+  components:
+  - type: Sprite
+    layers:
+    - state: left
+    - state: leftgreen
+
+- type: entity
+  parent: BenchSomberMiddleGreen
+  id: BenchSomberRightGreen
+  suffix: Floral, Right
+  components:
+  - type: Sprite
+    layers:
+    - state: right
+    - state: rightgreen
+
+- type: entity
+  parent: BenchSomberMiddleGreen
+  id: BenchSomberCornerGreen
+  suffix: Floral, Corner
+  components:
+  - type: Sprite
+    layers:
+    - state: corner
+    - state: cornergreen
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberMiddlePurple
+  suffix: Shadow, Middle
+  description: "A gloomy bench with a polished shadow wood seat."
+  components:
+  - type: Sprite
+    layers:
+    - state: middle
+    - state: middlepurple
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberLeftPurple
+  suffix: Shadow, Left
+  components:
+  - type: Sprite
+    layers:
+    - state: left
+    - state: leftpurple
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberRightPurple
+  suffix: Shadow, Right
+  components:
+  - type: Sprite
+    layers:
+    - state: right
+    - state: rightpurple
+
+- type: entity
+  parent: BenchSomberMiddle
+  id: BenchSomberCornerPurple
+  suffix: Shadow, Corner
+  components:
+  - type: Sprite
+    layers:
+    - state: corner
+    - state: cornerpurple
+# Somber Benches End

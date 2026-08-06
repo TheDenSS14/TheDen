@@ -1,0 +1,712 @@
+# Most of these things are debatably curtains, but since they're signal-friendly or could possibly be made physical, I'm leaving them here
+
+# Toggled window tinting that fits under (almost) all windows
+- type: entity
+  parent: BaseStructure # Too many non-nullable components to parent it...
+  id: ShuttersSomberWindowTint
+  name: electrochromic glass
+  description: "A pane of electrochromic glass that shifts from clear to opaque at the touch of a signal. Privacy, rendered obedient to electricity."
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: WallMount
+    arc: 175
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: BelowWalls # These go under the windows, really
+    offset: "0.0,-0.0625" # Two pixels down, so a silver panel pokes out at the bottom for access
+    sprite: _DEN/Structures/Doors/Shutters/somberwindowtinting.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Physics
+    canCollide: false
+  - type: Fixtures # If you specify bounding boxes here, WallMount's arc breaks and stops rotating...
+  - type: Door
+    closeTimeOne: 0.75
+    closeTimeTwo: 0.75
+    openTimeOne: 0.75
+    openTimeTwo: 0.75
+    openingAnimationTime: 1.5
+    closingAnimationTime: 1.5
+    bumpOpen: false
+    clickOpen: false
+    openDrawDepth: BelowWalls
+    closedDrawDepth: BelowWalls
+    canCrush: false # If you're somehow in it, you're standing on a pane of glass on the floor, it's fine
+    doorStunTime: 0
+    crushDamage:
+      types:
+        Blunt: 0 # Just for good measure
+    performCollisionCheck: false
+    canPry: false
+    changeAirtight: false
+    openSound: !type:SoundPathSpecifier
+      path: /Audio/_White/BloodCult/veilin.ogg
+      params:
+        volume: -6
+    closeSound: !type:SoundPathSpecifier
+      path: /Audio/_White/BloodCult/veilout.ogg
+      params:
+        volume: -6
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Rotatable
+  - type: AnimationPlayer
+  - type: Appearance
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: DoorSignalControl
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - Open
+      - Close
+      - Toggle
+  - type: DeviceLinkSource
+    ports:
+    - DoorStatus
+    lastSignals:
+      DoorStatus: false
+  - type: Airtight
+    airBlocked: false
+  - type: RadiationBlocker
+    enabled: false
+
+- type: entity
+  parent: [ ShuttersSomberWindowTint, BasePsionic ]
+  id: ShuttersSomberWindowTintClosed
+  suffix: Closed Privacy Shutter, Somber Window Underlay
+  components:
+  - type: Physics
+    canCollide: false
+  - type: Occluder
+    enabled: true
+
+- type: entity
+  parent: [ ShuttersSomberWindowTint, BasePsionic ]
+  id: ShuttersSomberWindowTintOpen
+  suffix: Open Privacy Shutter, Somber Window Underlay
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: ShuttersSomberWindowTintClosed
+  id: ShuttersSomberWindowTintClosedAutolink1
+  suffix: Autolink (Tint 1), Closed Privacy Shutter, Somber
+  components:
+    - type: AutoLinkReceiver
+      channel: Tint1
+
+- type: entity
+  parent: ShuttersSomberWindowTintOpen
+  id: ShuttersSomberWindowTintOpenAutolink1
+  suffix: Autolink (Tint 1), Open Privacy Shutter, Somber
+  components:
+    - type: AutoLinkReceiver
+      channel: Tint1
+
+- type: entity
+  parent: ShuttersSomberWindowTintClosed
+  id: ShuttersSomberWindowTintClosedAutolink2
+  suffix: Autolink (Tint 2), Closed Privacy Shutter, Somber
+  components:
+    - type: AutoLinkReceiver
+      channel: Tint2
+
+- type: entity
+  parent: ShuttersSomberWindowTintOpen
+  id: ShuttersSomberWindowTintOpenAutolink2
+  suffix: Autolink (Tint 2), Open Privacy Shutter, Somber
+  components:
+    - type: AutoLinkReceiver
+      channel: Tint2
+
+- type: entity
+  parent: ShuttersSomberWindowTintClosed
+  id: ShuttersSomberWindowTintClosedAutolink3
+  suffix: Autolink (Tint 3), Closed Privacy Shutter, Somber
+  components:
+    - type: AutoLinkReceiver
+      channel: Tint3
+
+- type: entity
+  parent: ShuttersSomberWindowTintOpen
+  id: ShuttersSomberWindowTintOpenAutolink3
+  suffix: Autolink (Tint 3), Open Privacy Shutter, Somber
+  components:
+    - type: AutoLinkReceiver
+      channel: Tint3
+
+# A diagonal version that doesn't occlude, but makes diagonal windows against occluded windows match
+- type: entity
+  parent: ShuttersSomberWindowTint
+  id: ShuttersSomberWindowTintDiagonalClosed
+  suffix: Closed Privacy Shutter, SEE-THROUGH
+  components:
+  - type: WallMount
+    arc: 360 # Doesn't matter on this one since it doesn't occlude
+  - type: Sprite
+    offset: "0.0,0.0"
+    sprite: _DEN/Structures/Doors/Shutters/somberwindowtintingdiagonal.rsi
+  - type: Door
+    occludes: false
+  - type: Occluder
+    enabled: false
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  parent: ShuttersSomberWindowTintDiagonalClosed
+  id: ShuttersSomberWindowTintDiagonalOpen
+  suffix: Open Privacy Shutter, SEE-THROUGH] [Right Click To Link
+  components:
+  - type: Door
+    state: Open
+
+# Fog Walls Start
+- type: entity
+  parent: BaseStructure
+  id: ShuttersFogWall
+  name: fog wall
+  description: "A wall of heavy, roiling fog."
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _DEN/Structures/Doors/Shutters/fogwall.rsi
+    layers:
+      - state: closed
+        map: [ "default" ]
+      - state: frame
+        visible: false
+        map: [ "enum.DoorVisualLayers.Base", "animations" ]
+  - type: GenericVisualizer # Witchcraft to keep the door animated after it opens and closes
+    visuals:
+      enum.DoorVisuals.State:
+        animations:
+          Closed: { visible: false }
+          Closing: { visible: true }
+          Open: { visible: false }
+          Opening: { visible: true }
+          Welded: { visible: false }
+          Denying: { visible: false }
+          Emagging: { visible: false }
+        default:
+          Closed: { visible: true, state: closed }
+          Closing: { visible: false }
+          Open: { visible: true, state: open }
+          Opening: { visible: false }
+          Welded: { visible: false }
+          Denying: { visible: false }
+          Emagging: { visible: false }
+  - type: Physics
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.125
+        hard: false
+        density: 100
+        mask:
+        - MachineMask
+  - type: Door
+    closeTimeOne: 1.3
+    closeTimeTwo: 1.3
+    openTimeOne: 1.3
+    openTimeTwo: 1.3
+    openingAnimationTime: 2.4
+    closingAnimationTime: 2.4
+    bumpOpen: false
+    clickOpen: false
+    openDrawDepth: Effects
+    closedDrawDepth: Effects
+    canCrush: false # It's fog
+    doorStunTime: 0
+    crushDamage:
+      types:
+        Blunt: 0 # Just for good measure
+    performCollisionCheck: false
+    canPry: false
+    changeAirtight: false
+    openSound: /Audio/_DEN/Effects/fogopen.ogg
+    closeSound: /Audio/_DEN/Effects/fogclose.ogg
+    openedSpriteState: "frame" # Part of the witchcraft, since the frames on these are empty
+    closedSpriteState: "frame"
+  - type: Rotatable
+  - type: AnimationPlayer
+  - type: Appearance
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/pop_high.ogg # Hehe
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: DoorSignalControl
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - Open
+      - Close
+      - Toggle
+  - type: DeviceLinkSource
+    ports:
+    - DoorStatus
+    lastSignals:
+      DoorStatus: false
+  - type: Occluder
+    boundingBox: "-0.5,-0.0234375,0.5,-.0078125" # Just half a pixel thick, centered in the occluding line
+  - type: Airtight
+    airBlocked: false
+  - type: RadiationBlocker
+    enabled: false
+
+- type: entity
+  parent: ShuttersFogWall
+  id: ShuttersFogWallClosed
+  suffix: Closed Privacy Shutter
+  components:
+  - type: Sprite
+    layers:
+    - state: closed
+      map: ["default"]
+      color: "#808080"
+    - state: frame
+      map: ["enum.DoorVisualLayers.Base", "animations"]
+      color: "#808080"
+  - type: Physics
+    canCollide: false
+  - type: Occluder
+    enabled: true
+
+- type: entity
+  parent: ShuttersFogWall
+  id: ShuttersFogWallOpen
+  suffix: Open Privacy Shutter] [Right Click To Link
+  components:
+  - type: Sprite
+    layers:
+    - state: closed
+      map: ["default"]
+      color: "#808080"
+    - state: frame
+      map: ["enum.DoorVisualLayers.Base", "animations"]
+      color: "#808080"
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: ShuttersFogWallClosed
+  id: ShuttersFogWallClosedAutolink
+  suffix: Autolink (Fog), Closed Privacy Shutter
+  components:
+    - type: AutoLinkReceiver
+      channel: Fog
+
+- type: entity
+  parent: ShuttersFogWallOpen
+  id: ShuttersFogWallOpenAutolink
+  suffix: Autolink (Fog), Open Privacy Shutter
+  components:
+    - type: AutoLinkReceiver
+      channel: Fog
+
+# Black Fog ("Smoke")
+- type: entity
+  parent: ShuttersFogWallClosed
+  id: ShuttersFogWallSmokeClosed
+  name: smoke wall
+  description: "A wall of heavy, roiling smoke."
+  suffix: Closed Fog Wall
+  components:
+  - type: Sprite
+    layers:
+    - state: closed
+      map: ["default"]
+      color: "#000000"
+    - state: frame
+      map: ["enum.DoorVisualLayers.Base", "animations"]
+      color: "#000000"
+
+- type: entity
+  parent: ShuttersFogWallSmokeClosed
+  id: ShuttersFogWallSmokeOpen
+  name: smoke wall
+  description: "A wall of heavy, roiling smoke."
+  suffix: Open Fog Wall] [Right Click To Link
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: ShuttersFogWallSmokeClosed
+  id: ShuttersFogWallSmokeClosedAutolink
+  suffix: Autolink (Fog), Closed Fog Wall
+  components:
+    - type: AutoLinkReceiver
+      channel: Fog
+
+- type: entity
+  parent: ShuttersFogWallSmokeOpen
+  id: ShuttersFogWallSmokeOpenAutolink
+  suffix: Autolink (Fog), Open Fog Wall
+  components:
+    - type: AutoLinkReceiver
+      channel: Fog
+
+# White Fog ("Steam")
+- type: entity
+  parent: ShuttersFogWallClosed
+  id: ShuttersFogWallSteamClosed
+  name: steam wall
+  description: "A wall of heavy, roiling steam."
+  suffix: Closed Fog Wall
+  components:
+  - type: Sprite
+    layers:
+    - state: closed
+      map: ["default"]
+      color: "#FFFFFF"
+    - state: frame
+      map: ["enum.DoorVisualLayers.Base", "animations"]
+      color: "#FFFFFF"
+
+- type: entity
+  parent: ShuttersFogWallSteamClosed
+  id: ShuttersFogWallSteamOpen
+  name: steam wall
+  description: "A wall of heavy, roiling steam."
+  suffix: Open Fog Wall] [Right Click To Link
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: ShuttersFogWallSteamClosed
+  id: ShuttersFogWallSteamClosedAutolink
+  suffix: Autolink (Fog), Closed Fog Wall
+  components:
+    - type: AutoLinkReceiver
+      channel: Fog
+
+- type: entity
+  parent: ShuttersFogWallSteamOpen
+  id: ShuttersFogWallSteamOpenAutolink
+  suffix: Autolink (Fog), Open Fog Wall
+  components:
+    - type: AutoLinkReceiver
+      channel: Fog
+
+# Purple-Black Fog (Resembles shadow anomaly fog and has a slower framerate to match, includes a variant that spawns shadow basalt)
+- type: entity
+  parent: ShuttersFogWallClosed
+  id: ShuttersFogWallShadowClosed
+  name: dark haze
+  description: "A wall of heavy, roiling fog, contained by some unseen mechanism so it cannot spread. Shapes drift within like something half-formed."
+  suffix: No Basalt, Closed Fog Wall
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Shutters/fogwallshadow.rsi
+  - type: Door # Aligns the appearance of the occluder line with the occluding state of the door
+    closeTimeOne: 1.4
+    closeTimeTwo: 1.4
+    openTimeOne: 1.4
+    openTimeTwo: 1.4
+
+- type: entity
+  parent: ShuttersFogWallShadowClosed
+  id: ShuttersFogWallShadowOpen
+  name: dark haze
+  description: "A wall of heavy, roiling fog, contained by some unseen mechanism so it cannot spread. Shapes drift within like something half-formed."
+  suffix: No Basalt, Open Fog Wall] [Right Click To Link
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: ShuttersFogWallShadowClosed
+  id: ShuttersFogWallShadowClosedAutolink
+  suffix: Autolink (Fog), No Basalt, Closed Fog Wall
+  components:
+    - type: AutoLinkReceiver
+      channel: Fog
+
+- type: entity
+  parent: ShuttersFogWallShadowOpen
+  id: ShuttersFogWallShadowOpenAutolink
+  suffix: Autolink (Fog), No Basalt, Open Fog Wall
+  components:
+    - type: AutoLinkReceiver
+      channel: Fog
+
+- type: entity
+  parent: ShuttersFogWallShadowClosed
+  id: ShuttersFogWallShadowBasaltClosed
+  suffix: Spawns Basalt, Closed Fog Wall
+  components:
+  - type: RandomSpawner # Spawns floor crystals like real dark haze
+    deleteSpawnerAfterSpawn: false
+    rareChance: 0
+    offset: 0.2
+    chance: 1
+    prototypes:
+      - ShadowBasaltRandom
+
+- type: entity
+  parent: ShuttersFogWallShadowBasaltClosed
+  id: ShuttersFogWallShadowBasaltOpen
+  suffix: Spawns Basalt, Open Fog Wall] [Right Click To Link
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: ShuttersFogWallShadowBasaltClosed
+  id: ShuttersFogWallShadowBasaltClosedAutolink
+  suffix: Autolink (Fog), Spawns Basalt, Closed Fog Wall
+  components:
+    - type: AutoLinkReceiver
+      channel: Fog
+
+- type: entity
+  parent: ShuttersFogWallShadowBasaltOpen
+  id: ShuttersFogWallShadowBasaltOpenAutolink
+  suffix: Autolink (Fog), Spawns Basalt, Open Fog Wall
+  components:
+    - type: AutoLinkReceiver
+      channel: Fog
+
+# White Light (Funny)
+- type: entity
+  parent: ShuttersFogWallClosed
+  id: ShuttersFogWallBossClosed
+  name: white light
+  description: "A curtain of pale light fills the doorway. You have a bad feeling about this."
+  suffix: Closed Fog Wall
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Doors/Shutters/fogwallboss.rsi
+    layers:
+      - state: closed
+        map: [ "default" ]
+      - state: frame
+        visible: false
+        map: [ "enum.DoorVisualLayers.Base", "animations" ]
+      - state: closed-unshaded
+        shader: unshaded
+        map: [ "unshaded" ]
+  - type: GenericVisualizer # Witchcraft to keep the door animated after it opens and closes, but now with an unshaded layer (help me)
+    visuals:
+      enum.DoorVisuals.State:
+        animations:
+          Closed: { visible: false }
+          Closing: { visible: true }
+          Open: { visible: false }
+          Opening: { visible: true }
+          Welded: { visible: false }
+          Denying: { visible: false }
+          Emagging: { visible: false }
+        default:
+          Closed: { visible: true, state: closed }
+          Closing: { visible: false }
+          Open: { visible: true, state: open }
+          Opening: { visible: false }
+          Welded: { visible: false }
+          Denying: { visible: false }
+          Emagging: { visible: false }
+        unshaded:
+          Closed: { visible: true, state: closed-unshaded }
+          Closing: { visible: true, state: closing-unshaded }
+          Open: { visible: false }
+          Opening: { visible: true, state: opening-unshaded }
+          Welded: { visible: false }
+          Denying: { visible: false }
+          Emagging: { visible: false }
+  - type: Door
+    closeTimeOne: 1.7
+    closeTimeTwo: 1.7
+    openTimeOne: 1.7
+    openTimeTwo: 1.7
+    openingAnimationTime: 3.2
+    closingAnimationTime: 3.2
+    openSound: /Audio/_DEN/Effects/fogopenlong.ogg
+    closeSound: /Audio/_DEN/Effects/fogcloselong.ogg
+
+- type: entity
+  parent: ShuttersFogWallBossClosed
+  id: ShuttersFogWallBossOpen
+  name: white light
+  description: "A curtain of pale light fills the doorway. You have a bad feeling about this."
+  suffix: Open Fog Wall] [Right Click To Link
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  parent: ShuttersFogWallBossClosed
+  id: ShuttersFogWallBossClosedAutolink
+  suffix: Autolink (Fog), Closed Fog Wall
+  components:
+    - type: AutoLinkReceiver
+      channel: Fog
+
+- type: entity
+  parent: ShuttersFogWallBossOpen
+  id: ShuttersFogWallBossOpenAutolink
+  suffix: Autolink (Fog), Open Fog Wall
+  components:
+    - type: AutoLinkReceiver
+      channel: Fog
+# Fog Walls End
+
+# Toggleable invisible walls for mappers
+- type: entity
+  parent: MarkerBase
+  id: MarkerShutterClosed
+  name: invisible shutter
+  suffix: Closed, Signal-Friendly] [Right Click To Link
+  components:
+  - type: Sprite
+    layers:
+      - sprite: _DEN/Markers/environment.rsi
+        state: base-blue
+        shader: unshaded
+      - sprite: _DEN/Markers/environment.rsi
+        shader: unshaded
+        state: shutter
+  - type: PlacementReplacement
+    key: blocker
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.03125,0.5,0" # Just one pixel thick, just below the center of the tile
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000
+  - type: Physics
+    canCollide: true
+  - type: Airtight
+    airBlocked: false # People don't need to suffocate because of an invisible wall
+  - type: Door # Instant and silent
+    closeTimeOne: 0
+    closeTimeTwo: 0
+    openTimeOne: 0
+    openTimeTwo: 0
+    openingAnimationTime: 0
+    closingAnimationTime: 0
+    bumpOpen: false
+    clickOpen: false
+    openDrawDepth: Effects
+    closedDrawDepth: Effects
+    canCrush: false
+    doorStunTime: 0
+    crushDamage:
+      types:
+        Blunt: 0
+    performCollisionCheck: true
+    canPry: false
+    changeAirtight: false # Imagine suddenly spacing a room with this
+    openSound: /Audio/Effects/silence.ogg
+    closeSound: /Audio/Effects/silence.ogg
+  - type: Rotatable
+  - type: DoorSignalControl
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - Open
+      - Close
+      - Toggle
+  - type: DeviceLinkSource
+    ports:
+    - DoorStatus
+    lastSignals:
+      DoorStatus: false
+
+- type: entity
+  parent: MarkerShutterClosed
+  id: MarkerShutterOpen
+  suffix: Open, Signal-Friendly] [Right Click To Link
+  components:
+  - type: Door
+    state: Open
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  parent: MarkerShutterClosed
+  id: MarkerShutterClosedAutolink
+  suffix: Autolink (Invisible Shutter), Closed
+  components:
+    - type: AutoLinkReceiver
+      channel: InvisShutter
+
+- type: entity
+  parent: MarkerShutterOpen
+  id: MarkerShutterOpenAutolink
+  suffix: Autolink (Invisible Shutter), Open
+  components:
+    - type: AutoLinkReceiver
+      channel: InvisShutter

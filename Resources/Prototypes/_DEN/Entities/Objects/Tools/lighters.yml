@@ -59,9 +59,11 @@
       right:
       - state: mantis-inhand-right-flame
         shader: unshaded
+  - type: EtherealLight # Dims around ethereal entities
   - type: PointLight
-    radius: 1.75
-    energy: 2
+    energy: 1.5
+    radius: 1.5
+    softness: 1.22
     color: "#4dc4ff"
   - type: MeleeWeapon
     attackRate: .6666

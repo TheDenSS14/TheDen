@@ -1,0 +1,120 @@
+
+- type: entity
+  id: CarpetBlackNarrow
+  parent: CarpetBlack
+  name: narrow black carpet
+  suffix: Tile
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Carpets/narrow_black_carpet.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Carpets/narrow_black_carpet.rsi
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 10
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              FloorCarpetItemBlackNarrow:
+                min: 1
+                max: 1
+
+- type: entity
+  id: CarpetPinkNarrow
+  parent: CarpetPink
+  name: narrow pink carpet
+  suffix: Tile
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Carpets/narrow_pink_carpet.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Carpets/narrow_pink_carpet.rsi
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 10
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              FloorCarpetItemPinkNarrow:
+                min: 1
+                max: 1
+
+- type: entity
+  id: CarpetPurpleNarrow
+  parent: CarpetPurple
+  name: narrow purple carpet
+  suffix: Tile
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Carpets/narrow_purple_carpet.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Carpets/narrow_purple_carpet.rsi
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 10
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              FloorCarpetItemPurpleNarrow:
+                min: 1
+                max: 1
+
+- type: entity
+  id: CarpetCyanNarrow
+  parent: CarpetCyan
+  name: narrow cyan carpet
+  suffix: Tile
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Carpets/narrow_cyan_carpet.rsi
+  - type: Icon
+    sprite: _DEN/Structures/Furniture/Carpets/narrow_cyan_carpet.rsi
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 10
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              FloorCarpetItemCyanNarrow:
+                min: 1
+                max: 1
