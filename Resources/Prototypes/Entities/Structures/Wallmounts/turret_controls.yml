@@ -207,6 +207,7 @@
     access: [["StationAi"], ["Captain"], ["ResearchDirector"]]
   - type: TurretTargetSettings
     exemptAccessLevels:
+    - Command
     - Captain
     - ResearchDirector
     - BasicSilicon

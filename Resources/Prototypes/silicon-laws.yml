@@ -164,7 +164,6 @@
 - type: siliconLawset
   id: NTDefault
   laws:
-  - ObeyAI
   - NTDefault1
   - NTDefault2
   - NTDefault3
@@ -805,9 +804,9 @@
   id: GameshowLawset
   laws:
   - Gameshow1
-  - Gameshow2 
-  - Gameshow3 
-  - Gameshow4 
+  - Gameshow2
+  - Gameshow3
+  - Gameshow4
   obeysTo: laws-owner-crew
 
 # ion storm random lawsets
