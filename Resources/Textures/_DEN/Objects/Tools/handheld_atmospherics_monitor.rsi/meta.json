@@ -5,10 +5,11 @@
         "y": 32
     },
     "license": "CC-BY-SA-3.0",
-    "copyright": "original by marteeno on Discord, updated by RosySaturniidae",
+    "copyright": "by marteeno on Discord",
     "states": [
         {
-            "name": "atmospherics_monitor",
+            "name": "scanner",
+            "directions": 1,
             "delays": [
                 [
                     0.4,
@@ -17,15 +18,8 @@
             ]
         },
         {
-            "name": "icon"
-        },
-        {
-            "name": "atmomon-inhand-left",
-            "directions": 4
-        },
-        {
-            "name": "atmomon-inhand-right",
-            "directions": 4
+            "name": "icon",
+            "directions": 1
         }
     ]
 }
