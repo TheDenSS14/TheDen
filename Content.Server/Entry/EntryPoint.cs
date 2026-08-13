@@ -48,6 +48,7 @@
 // SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server._DEN.Hub;
+using Content.Server._DEN.Redial;
 using Content.Server._Floof.Consent;
 using Content.Server.Acz;
 using Content.Server.Administration;
@@ -211,6 +212,7 @@ namespace Content.Server.Entry
 //                IoCManager.Resolve<MultiServerKickManager>().Initialize();
                 IoCManager.Resolve<CVarControlManager>().Initialize();
                 IoCManager.Resolve<HubManager>().Initialize(); // DEN
+                IoCManager.Resolve<RedialManager>().Initialize();
             }
         }
 

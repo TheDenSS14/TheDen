@@ -96,6 +96,7 @@ public sealed partial class ServerApi : IPostInjectInit
         RegisterHandler(HttpMethod.Post, "/admin/actions/send_bwoink", ActionSendBwoink); // Frontier - Discord Ahelp Reply
 
         InitializeFunky();
+        InitializeDen();
     }
 
     public void Initialize()
