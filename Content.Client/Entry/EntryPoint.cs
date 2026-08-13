@@ -64,6 +64,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Client._DEN.Redial;
 using Content.Client._Floof.Consent;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
@@ -149,6 +150,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly DebugMonitorManager _debugMonitorManager = default!;
         [Dependency] private readonly TitleWindowManager _titleWindowManager = default!;
         [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
+        [Dependency] private readonly RedialManager _redialManager = null!; // DEN
 
         public override void Init()
         {
@@ -211,6 +213,7 @@ namespace Content.Client.Entry
             _extendedDisconnectInformation.Initialize();
             _jobRequirements.Initialize();
             _playbackMan.Initialize();
+            _redialManager.Initialize();
 
             //AUTOSCALING default Setup!
             _configManager.SetCVar("interface.resolutionAutoScaleUpperCutoffX", 1080);

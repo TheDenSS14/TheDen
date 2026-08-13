@@ -31,6 +31,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Client._DEN.Redial;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
@@ -99,6 +100,7 @@ namespace Content.Client.IoC
             collection.Register<MappingManager>();
             collection.Register<DebugMonitorManager>();
             collection.Register<TitleWindowManager>();
+            collection.Register<RedialManager>(); // DEN
         }
     }
 }

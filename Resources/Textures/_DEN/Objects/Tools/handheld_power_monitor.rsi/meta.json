@@ -5,73 +5,21 @@
         "y": 32
     },
     "license": "CC-BY-SA-3.0",
-    "copyright": "orignal by marteeno on Discord, new by RosySaturniidae (github)",
+    "copyright": "by marteeno on Discord",
     "states": [
         {
-            "name": "power_monitor",
+            "name": "scanner",
+            "directions": 1,
             "delays": [
                 [
-                    0.2,
-                    0.2,
-                    0.2,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.2,
-                    0.2,
-                    0.2,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.2,
-                    0.2,
-                    0.2,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.2,
-                    0.2,
-                    0.2,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.2,
-                    0.2,
-                    0.2,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.2,
-                    0.2,
-                    0.2,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1
+                    0.4,
+                    0.4
                 ]
             ]
         },
         {
-            "name": "icon"
-        },
-        {
-            "name": "powmon-inhand-left",
-            "directions": 4
-        },
-        {
-            "name": "powmon-inhand-right",
-            "directions": 4
+            "name": "icon",
+            "directions": 1
         }
     ]
 }
