@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Net.Http;
 using System.Threading.Tasks;
 using Content.Server._DEN.Redial;

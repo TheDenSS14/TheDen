@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.UserInterface.Controls;
 using Robust.Client;
 using Robust.Client.UserInterface;
