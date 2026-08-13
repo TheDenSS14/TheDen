@@ -14,10 +14,28 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Command
-      min: 54000 # 15 hours
+      min: 72000 # 20 hours
     - !type:CharacterDepartmentTimeRequirement
       department: Security
-      min: 54000 # 15 hours
+      min: 144000 # The Den - 40 hours
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobWarden
+      min: 14400 # The Den - 4 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Logistics
+      min: 36000 # The Den - 10 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Engineering
+      min: 36000 # The Den - 10 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Medical
+      min: 36000 # The Den - 10 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Epistemics
+      min: 36000 # The Den - 10 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Civilian
+      min: 36000 # The Den - 10 hours
   weight: 20
   startingGear: MagistrateGear
   icon: "JobIconMagistrate"

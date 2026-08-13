@@ -51,24 +51,27 @@
   description: job-description-captain
   playTimeTracker: JobCaptain
   requirements:
-     - !type:CharacterDepartmentTimeRequirement
-       department: Security
-       min: 36000
-     - !type:CharacterDepartmentTimeRequirement
-       department: Logistics
-       min: 36000
-     - !type:CharacterDepartmentTimeRequirement
-       department: Engineering
-       min: 36000
-     - !type:CharacterDepartmentTimeRequirement
-       department: Medical
-       min: 36000
-     - !type:CharacterDepartmentTimeRequirement
-       department: Epistemics
-       min: 36000
-     - !type:CharacterDepartmentTimeRequirement
-       department: Civilian
-       min: 36000
+    - !type:CharacterDepartmentTimeRequirement
+      department: Command
+      min: 72000 # 20 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 36000
+    - !type:CharacterDepartmentTimeRequirement
+      department: Logistics
+      min: 36000
+    - !type:CharacterDepartmentTimeRequirement
+      department: Engineering
+      min: 36000
+    - !type:CharacterDepartmentTimeRequirement
+      department: Medical
+      min: 36000
+    - !type:CharacterDepartmentTimeRequirement
+      department: Epistemics
+      min: 36000
+    - !type:CharacterDepartmentTimeRequirement
+      department: Civilian
+      min: 36000
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"
