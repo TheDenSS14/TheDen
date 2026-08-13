@@ -39,3 +39,16 @@
     - !type:CharacterJobRequirement
       jobs:
         - SalvageSpecialist
+
+- type: loadout
+  id: LoadoutSalvageEngineeringTajVeil
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  items:
+    - ClothingEngineeringTajVeil
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist

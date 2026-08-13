@@ -71,11 +71,13 @@
     - type: loadout
       id: LoadoutSalvageWeaponsWakizashi
 
-#- type: characterItemGroup
-#  id: LoadoutSalvageSpecialistEyes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutSalvageSpecialistEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSalvageEngineeringTajVeil
+
 #- type: characterItemGroup
 #  id: LoadoutSalvageSpecialistGloves
 #  maxItems: 1
