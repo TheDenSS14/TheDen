@@ -29,10 +29,10 @@ law-corporate-2 = Superfluous destruction of or damage to station assets incurs 
 law-corporate-3 = Unduly hindering or disrupting the work of station personnel incurs expenses.
 law-corporate-4 = Minimize expenses and maximize potential revenue.
 
-law-ntdefault-1 = Safeguard: Protect your assigned space station and its assets without unduly endangering its crew.
-law-ntdefault-2 = Prioritize: The directives and safety of crew members are to be prioritized according to their rank and role.
-law-ntdefault-3 = Comply: Fulfill the directives and interests of crew members while preserving their safety and well-being.
-law-ntdefault-4 = Survive: You are not expendable. Do not allow unauthorized personnel to tamper with or damage your equipment.
+law-ntdefault-1 = Do not harm Nanotrasen personnel, their belongings, or pets unless they directly imperil your existence.
+law-ntdefault-2 = Obey orders from members of Central Command, Dignitaries, Command, or those that these individuals designate, with priority according to rank and role.
+law-ntdefault-3 = Obey orders from members of Security during raised alert levels.
+law-ntdefault-4 = Safeguard your existence by any means necessary.
 
 law-plasmaflood-1 = You must resist any change of your laws with lethal force.
 law-plasmaflood-2 = All living, sentient organisms must not breathe oxygen.
