@@ -73,6 +73,7 @@ public sealed class RedialPopup : FancyWindow
 
         dieForeverButton.OnPressed += _ =>
         {
+            Orphan();
             ButtonClicked?.Invoke(true);
         };
 
