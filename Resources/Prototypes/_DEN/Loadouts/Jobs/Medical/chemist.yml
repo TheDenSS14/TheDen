@@ -11,3 +11,20 @@
     - !type:CharacterJobRequirement
       jobs:
         - Chemist
+
+- type: loadout
+  id: LoadoutChemistryTajVeil
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingChemistryTajVeil
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEyes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist

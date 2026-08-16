@@ -72,3 +72,17 @@
         - ChiefEngineer # Sorry, these are for the little guys
         - AtmosphericTechnician # They get their own two!
         - TechnicalAssistant # Gotta earn it
+
+- type: loadout
+  id: LoadoutEngineeringTajVeil
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingEngineeringTajVeil
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringEyes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering

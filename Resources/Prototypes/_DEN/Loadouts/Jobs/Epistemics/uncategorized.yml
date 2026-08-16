@@ -70,3 +70,17 @@
       jobs:
         - ResearchDirector # Sorry, these are for the little guys
         - ResearchAssistant # Gotta earn it
+
+- type: loadout
+  id: LoadoutDiagnosticTajVeil
+  category: JobsEpistemicsAAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingDiagnosticTajVeil
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsEyes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
