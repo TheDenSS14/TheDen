@@ -5,4 +5,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-stamp-component-stamped-name-mantis = Mantis
+# SHA - SHE'S NOT A MANTIS AT HOME
+stamp-component-stamped-name-mantis = ◎

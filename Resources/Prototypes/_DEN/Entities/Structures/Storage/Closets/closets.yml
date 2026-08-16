@@ -4,8 +4,9 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# Somber lockers start
 - type: entity
-  parent: ClosetBase
+  parent: [ ClosetBase, BasePsionic ]
   id: SomberCloset
   name: somber cabinet
   description: "An expensive cabinet made of gloomy, patterned wood."
@@ -108,8 +109,115 @@
       map: ["enum.WeldableLayers.BaseWelded"]
 
 - type: entity
-  parent: BaseWallCloset
-  id: SomberWallCloset # If we ever fix shelves, replace this with SomberWallShelf
+  parent: SomberCloset
+  id: SomberFreezer
+  name: somber refrigerator
+  suffix: Freezer] [No Lock
+  description: "A glossy, brushed-metal refrigerator."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Storage/somberfridge.rsi
+  - type: EntityStorage
+    closeSound:
+      path: /Audio/Effects/closetclose.ogg
+    openSound:
+      path: /Audio/Effects/closetopen.ogg
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 3
+      - !type:EmptyAllContainersBehaviour
+  - type: ExplosionResistance
+    damageCoefficient: 0.90 # Funny
+  - type: AntiRottingContainer
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: SomberFreezer
+  id: SomberFreezerLocker
+  suffix: Freezer] [Locked
+  components:
+  - type: AccessReader
+    access: [["Kitchen"]]
+  - type: Lock
+  - type: LockVisuals
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: door-closed
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+      shader: unshaded
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+
+- type: entity
+  parent: SomberFreezer
+  id: SomberFreezerLeft
+  name: somber refrigerator (left)
+  suffix: Freezer, Double] [No Lock
+  description: "A glossy, brushed-metal refrigerator with twice the storage of a standard model."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Storage/somberfridgeleft.rsi
+
+- type: entity
+  parent: SomberFreezerLocker
+  id: SomberFreezerLeftLocker
+  name: somber refrigerator (left)
+  suffix: Freezer, Double] [Locked
+  description: "A glossy, brushed-metal refrigerator with twice the storage of a standard model."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Storage/somberfridgeleft.rsi
+
+- type: entity
+  parent: SomberFreezerLeft
+  id: SomberFreezerRight
+  name: somber refrigerator (right)
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Storage/somberfridgeright.rsi
+
+- type: entity
+  parent: SomberFreezerLeftLocker
+  id: SomberFreezerRightLocker
+  name: somber refrigerator (right)
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Storage/somberfridgeright.rsi
+
+- type: entity
+  parent: [ BaseWallCloset, BasePsionic ]
+  id: SomberWallCloset
   name: somber wall cabinet
   description: "An expensive wall cabinet made of gloomy, patterned wood. Unfortunately, the shelves are unstable, and it's likely to dump your things in the floor..."
   components:
@@ -171,7 +279,7 @@
 
 - type: entity
   parent: SomberWallCloset
-  id: SomberWallClosetLocker # If we ever fix shelves, replace this with SomberWallShelfLocking
+  id: SomberWallClosetLocker
   name: somber wall cabinet
   suffix: Locking
   description: "An expensive, locking wall cabinet made of gloomy, patterned wood. Unfortunately, the shelves are unstable, and it's likely to dump your things in the floor..."
@@ -191,6 +299,7 @@
     - state: welded
       visible: false
       map: ["enum.WeldableLayers.BaseWelded"]
+# Somber lockers end
 
 - type: entity
   id: ClosetEmergencyUniversal

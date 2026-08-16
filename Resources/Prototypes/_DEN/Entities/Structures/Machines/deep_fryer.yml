@@ -1,0 +1,8 @@
+- type: entity
+  parent: [ KitchenDeepFryer, BasePsionic ] # I don't care anymore.
+  id: KitchenDeepFryerSomber
+  name: somber deep fryer
+  description: "A sleek, compact deep fryer, special ordered. But where are the controls..."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Machines/somberdeepfryer.rsi

@@ -1,0 +1,168 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "Originally by rosieposieeee (Github), heavily edited by Sha-Seng (GitHub)",
+    "size": {
+        "x": 96,
+        "y": 96
+    },
+    "states": [
+        {
+            "name": "fountain"
+        },
+        {
+            "name": "fountaindrains"
+        },
+        {
+            "name": "fountaindrains-fill-1"
+        },
+        {
+            "name": "fountainwater",
+            "delays": [
+                [
+                    0.5,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "fountainwatershine",
+            "delays": [
+                [
+                    0.5,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "fountainstreams",
+            "delays": [
+                [
+                    0.3,
+                    0.3
+                ]
+            ]
+        },
+        {
+            "name": "fountainstreamshine",
+            "delays": [
+                [
+                    0.3,
+                    0.3
+                ]
+            ]
+        },
+        {
+            "name": "halfringfountain",
+            "directions": 4
+        },
+        {
+            "name": "halfringfountaindrains",
+            "directions": 4
+        },
+        {
+            "name": "halfringfountaindrains-fill-1",
+            "directions": 4
+        },
+        {
+            "name": "halfringstreams",
+            "directions": 4,
+            "delays": [
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ]
+            ]
+        },
+        {
+            "name": "halfringstreamshine",
+            "directions": 4,
+            "delays": [
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ]
+            ]
+        },
+        {
+            "name": "quarterringfountain",
+            "directions": 4
+        },
+        {
+            "name": "quarterringfountaindrains",
+            "directions": 4
+        },
+        {
+            "name": "quarterringfountaindrains-fill-1",
+            "directions": 4
+        },
+        {
+            "name": "quarterringstreams",
+            "directions": 4,
+            "delays": [
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ]
+            ]
+        },
+        {
+            "name": "quarterringstreamshine",
+            "directions": 4,
+            "delays": [
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3
+                ]
+            ]
+        }
+    ]
+}

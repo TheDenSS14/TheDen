@@ -1,0 +1,31 @@
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, DrinkFlaskBar ]
+  id: DrinkFlaskBarSomber
+  name: electrum flask
+  suffix: Somber Barware
+  description: "An electrum flask with an exotic leather wrap."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/somberflask.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Drinks/somberflask.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, DrinkVacuumFlask ]
+  id: DrinkVacuumFlaskSomber
+  name: electrum vacuum flask
+  suffix: Somber Barware
+  description: "An electrum vacuum flask with an alabaster grip. Absurd."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Drinks/sombervacuumflask.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Drinks/sombervacuumflask.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10

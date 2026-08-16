@@ -1,0 +1,47 @@
+# A gateway that looks like a shadow rift for mappers
+- type: entity
+  parent: BasePortal
+  id: ShadowPortalGateway
+  name: shadow rift
+  suffix: Gateway
+  description: Looks unstable.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Portal
+    arrivalSound: /Audio/Items/hiss.ogg
+    departureSound: /Audio/Items/hiss.ogg
+    canTeleportToOtherMaps: true
+    randomTeleport: false
+  - type: Sprite
+    state: portal-artifact
+    color: "#793a80dd"
+  - type: PointLight
+    color: "#793a80dd"
+    radius: 3
+    energy: 1
+    netsync: false
+  - type: Fixtures
+    fixtures:
+      portalFixture:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.125,-0.25,0.125,0.25" # Smaller so you don't trip into it
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        hard: false
+  - type: AmbientSound
+    range: 6
+    volume: -3
+    sound:
+      path: /Audio/Ambience/anomaly_scary.ogg
+
+- type: entity
+  parent: ShadowPortalGateway
+  id: ShadowPortalGatewaySilent
+  suffix: Gateway, Silent
+  components:
+  - type: AmbientSound
+    enabled: false

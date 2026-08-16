@@ -1,0 +1,66 @@
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, Soap ]
+  id: SoapSomberViolet
+  name: fine soap
+  suffix: Somber, Violet
+  description: "A striped violet bar of soap, so expensive it comes with its own polished electrum dish. Smells like lavender and anise."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
+    layers:
+    - state: somberdish
+      sprite: _DEN/Objects/Consumable/Food/plates.rsi
+    - state: somberviolet-4
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    fillBaseName: somberviolet-
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
+    heldPrefix: somberviolet
+  - type: Residue
+    residueAdjective: residue-slippery
+    residueColor: residue-violet
+  - type: StaticPrice
+    price: 1500
+  - type: Food
+    trash:
+    - SomberDish # This is stupid
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.18 # Smaller sprite, smaller fixture
+        layer:
+        - SlipLayer
+        hard: false
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.18 # Smaller sprite, smaller fixture
+        density: 10
+        mask:
+        - ItemMask
+
+
+- type: entity
+  parent: SoapSomberViolet
+  id: SoapSomberTeal
+  name: fine soap
+  suffix: Somber, Teal
+  description: "A striped teal bar of soap, so expensive it comes with its own polished electrum dish. Smells like like sweet incense."
+  components:
+  - type: Sprite
+    layers:
+    - state: somberdish
+      sprite: _DEN/Objects/Consumable/Food/plates.rsi
+    - state: somberteal-4
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    fillBaseName: somberteal-
+  - type: Item
+    sprite: _DEN/Objects/Specific/Janitorial/soap.rsi
+    heldPrefix: somberteal
+  - type: Residue
+    residueAdjective: residue-slippery
+    residueColor: residue-teal

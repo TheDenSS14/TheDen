@@ -1,0 +1,48 @@
+- type: entity
+  parent: [ BaseDecorativeFixtureNoRot, ClothingHeadHatCone]
+  id: ClothingHeadHatConeSomber
+  name: somber warning cone
+  description: "It stands vigil where caution is required. A humble reminder of the Great Work."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Misc/sombercone.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Misc/sombercone.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10
+      Silver: 10
+  - type: Butcherable
+    butcheringType: Spike # A cone shouldn't chop into cloth, but Butcherable isn't nullable
+
+- type: entity
+  parent: ClothingHeadHatConeSomber
+  id: ClothingHeadHatConeSomberPink
+  name: somber warning cone
+  suffix: Bright
+  description: "It stands vigil where caution is required. A humble reminder of the Great Work. This brighter variant arose from worker safety complaints."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Misc/somberconepink.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _DEN/Clothing/Head/Misc/somberconepink.rsi
+    inhandVisuals:
+      left:
+        - state: inhand-left
+        - state: inhand-left-unshaded
+          shader: unshaded
+      right:
+        - state: inhand-right
+        - state: inhand-right-unshaded
+          shader: unshaded
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Misc/somberconepink.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+      - state: equipped-HELMET-unshaded
+        shader: unshaded

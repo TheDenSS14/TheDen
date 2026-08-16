@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Heretic weapons from TG station, impacts from Impstation's Flamer by DVD Player, all edited and more added by Sha-Seng (GitHub) for personal use",
+  "MetaAtlas": false,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+        "name": "invisible"
+    },
+    {
+        "name": "firetexture"
+    },
+    {
+      "name": "icon",
+      "delays":
+      [
+        [
+          0.2, 0.1, 0.1, 0.1,
+          0.1, 0.1, 0.1, 0.1,
+          0.2, 0.2, 0.2
+        ]
+      ]
+    },
+    {
+      "name": "icon-unshaded",
+      "delays":
+      [
+        [
+          0.2, 0.1, 0.1, 0.1,
+          0.1, 0.1, 0.1, 0.1,
+          0.2, 0.2, 0.2
+        ]
+      ]
+    },
+    {
+        "name": "icon-grasp-left"
+    },
+    {
+        "name": "icon-grasp-right"
+    },
+    {
+        "name": "icon-grasp-both"
+    },
+    {
+        "name": "icon-grasp-soul-left"
+    },
+    {
+        "name": "icon-grasp-soul-right"
+    },
+    {
+        "name": "icon-meditation"
+    },
+    {
+        "name": "icon-trance"
+    },
+    {
+        "name": "icon-soul"
+    },
+    {
+        "name": "icon-soul-faint"
+    },
+    {
+        "name": "icon-soul-reflection"
+    },
+    {
+        "name": "icon-silhouette"
+    },
+    {
+        "name": "icon-fella"
+    },
+    {
+      "name": "bulletgrasp",
+      "delays":
+      [
+        [ 0.1, 0.1, 0.1, 0.1 ]
+      ]
+    },
+    {
+      "name": "bulletgraspsoul",
+      "delays":
+      [
+        [ 0.1, 0.1, 0.1, 0.1 ]
+      ]
+    },
+    {
+      "name": "impactgrasp",
+      "delays":
+      [
+        [
+          0.05, 0.05, 0.05, 0.05,
+          0.05, 0.05, 0.05, 0.05,
+          0.05, 0.05, 0.05, 0.05,
+          0.05, 0.05, 0.05, 0.05
+        ]
+      ]
+    },
+    {
+      "name": "impactgraspsoul",
+      "delays":
+      [
+        [
+          0.05, 0.05, 0.05, 0.05,
+          0.05, 0.05, 0.05, 0.05,
+          0.05, 0.05, 0.05, 0.05,
+          0.05, 0.05, 0.05, 0.05
+        ]
+      ]
+    }
+  ]
+}
